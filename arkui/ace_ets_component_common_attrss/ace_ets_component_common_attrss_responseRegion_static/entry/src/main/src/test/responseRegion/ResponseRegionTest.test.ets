@@ -15,16 +15,15 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect,afterEach } from '../../../../hypium/index';
-import { UIContext } from "@ohos.arkui.UIContext";
-import { $r,  Rectangle } from '@ohos.arkui.component'
+import { describe, beforeAll, expect, afterEach } from '../../../../hypium/index';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { $r, Rectangle } from '@ohos.arkui.component';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
@@ -58,7 +57,7 @@ async function resetStatus(data: BasePageConfig) {
 }
 
 async function eventResult(data: BasePageConfig, expectationValue: string) {
-  let referenceComponent: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
+  let referenceComponent: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
   await Utils.sleep(1000);
   console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getElement('$attrs').getString('content'));
   console.log('data.pageConfig.referenceComponentKey',data.pageConfig.referenceComponentKey) //data.pageConfig.referenceComponentKey referenceComponentKey
@@ -73,7 +72,7 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 
 
 
-export default async function responseRegionTest() {
+export default function responseRegionTest() {
   console.log('+++++++++++responseRegionTest start')
   let supportView:Array<string> = new Array<string>(
     'AlphabetIndexer',
@@ -260,7 +259,7 @@ export default async function responseRegionTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get the initial region information of the target component
       console.info('[' + data.caseTag + '] get Component rect before position changed.');
-      let rect: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey);
+      let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
       let rectHeight = rect.bottom - rect.top;
       let rectWidth = rect.right - rect.left;
       console.info('[' + data.caseTag + '] setValue : ' + String(data.testValue.setValue));  // ] setValue : [{}] 值是空
@@ -270,7 +269,7 @@ export default async function responseRegionTest() {
       AppStorage.setOrCreate<string>('eventCallBackStr', '')
       await Utils.sleep(2000);
       console.info('wj--'+JSON.stringify(data.pageConfig.componentKey))
-      let viewObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
       await Utils.sleep(2000);
       console.info('[wll]viewObj'+JSON.stringify(viewObj.toString()))
       console.info('+++++++describe'+data.testValue.describe)

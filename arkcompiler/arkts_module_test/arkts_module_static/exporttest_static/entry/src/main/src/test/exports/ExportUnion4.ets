@@ -30,6 +30,6 @@ const myComplexObject: ComplexUnion = {
   value: 50,
 }as NumObj;
 
-export const myExport1 = myComplexObject;
+export const myExport1: ComplexUnion = myComplexObject;
 
 export { NumObj, StrObj, ComplexUnion };

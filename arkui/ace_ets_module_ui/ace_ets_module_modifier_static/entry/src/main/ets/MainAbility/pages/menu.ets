@@ -53,7 +53,7 @@ struct TestMenuPage {
       .attributeModifier(this.customModifier as CustomModifier)
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("menu_changeButton")
     }
     .width('100%')
     .height('100%')

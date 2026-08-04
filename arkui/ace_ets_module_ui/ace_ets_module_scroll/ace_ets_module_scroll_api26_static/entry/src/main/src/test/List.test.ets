@@ -32,6 +32,20 @@ import arcSwiperShow from './ArcSwiperTest/arcSwiperShow.test'
 import arcSwiperBoolean from './ArcSwiperTest/arcSwiperBoolean.test'
 import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
 import gridEnableEditMode from './Grid/gridEnableEditMode.test'
+import gridEditModeChange from './Grid/gridEditModeChange.test'
+import gridEditModeOptions from './Grid/gridEditModeOptions.test'
+import listEnableEditMode from './List/listEnableEditMode.test'
+import listEditModeChange from './List/listEditModeChange.test'
+import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test'
+import LazyVWaterFlowLayoutProperties from './LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties.test'
+import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test'
+import headerFooterStickyFlow from './LazyVWaterFlowLayout/headerFooterStickyFlow.test'
+import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColumn.test'
+import lazyColumnLayoutModifier from './LazyColumnLayout/lazyColumnLayoutModifier.test'
+import lazyVWaterFlowLayoutModifier from './LazyVWaterFlowLayout/lazyVWaterFlowLayoutModifier.test'
+import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.test'
+import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
+import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -52,4 +66,12 @@ export default function testsuite() {
   arcSwiperBoolean();
   arcSwiperEffectMode();
   gridEnableEditMode();
+  gridEditModeChange();
+  gridEditModeOptions();
+  listEnableEditMode();
+  listEditModeChange();
+  headerFooterStickyGrid();
+  lazyVGridLayoutModifier();
+  ScrollScrollBarHeight();
+  customListLayoutTest();
 }

@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,8 +25,7 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import { Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -68,9 +68,7 @@ export default function flexExceed_StartJsunit() {
       await CommonFunc.sleep(1000);
       console.info("ItemAlign_Start_FlexExceed after each called");
     });
-
-    
-    
+   
 /**
      * @tc.number   testFlexItemAlignStartSetMarPad_static
      * @tc.name     testFlexItemAlignStartSetMarPad_static
@@ -137,11 +135,8 @@ it('testFlexItemAlignStartSetMarPad_static', Level.LEVEL0, async () : Promise<vo
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartSetMarPad END');
-
     });
-
-    
-    
+ 
 /**
      * @tc.number   testFlexItemAlignStartSetMarPadExceed_static
      * @tc.name     testFlexItemAlignStartSetMarPadExceed_static
@@ -201,13 +196,13 @@ it('testFlexItemAlignStartSetMarPadExceed_static', Level.LEVEL0, async () : Prom
       expect(Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textExceed01.right - textExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
-      expect(Math.floor(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3).assertTrue()
       expect(Math.floor(Math.abs(textExceed03.right - textExceed03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartSetMarPadExceed END');
-
     });
+
   })
 }

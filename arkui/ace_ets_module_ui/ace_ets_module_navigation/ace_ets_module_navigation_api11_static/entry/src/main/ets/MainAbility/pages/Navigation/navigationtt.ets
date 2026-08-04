@@ -13,21 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,NavigationCommonTitle,NavDestinationCommonTitle
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, AnimateParam, Search, TextAlign, Axis, NavBarPosition, NavigationTitleMode, Image, NavigationMode, Column, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, Position, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, NavDestinationMode, Dimension, FontWeight, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, NavigationCommonTitle, NavDestinationCommonTitle, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
-import { RecordData } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 interface EventMsg {
   titleMode: NavigationTitleMode
   hideToolBar: string
@@ -104,7 +93,7 @@ struct NavigationExamplett {
       Navigation({}) {
         Button(this.hideBar ? "tool bar" : "hide bar")
           .backgroundColor(Color.Red).width('20%').height('10%').fontSize(20)
-          .key('NavigationContent1')
+          .key('navigationtt_NavigationContent1')
           .onClick((e: ClickEvent) => {
             this.hideBar = !this.hideBar;
             console.info('navigationContent1 current action state is: ' + this.hideBar);
@@ -140,7 +129,7 @@ struct NavigationExamplett {
           }, (item: number) => String(item))
         }
         .listDirection(Axis.Vertical)
-        .key('Navigation')
+        .key('navigationtt_Navigation')
         .height(300)
         .margin({ top: 10, left: 18 } as Margin)
         .width('100%')

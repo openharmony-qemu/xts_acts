@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {FlexAlign} from '@ohos.arkui.component'
 // import {fp2px,lpx2px} from '@ohos.arkui.UIContext'

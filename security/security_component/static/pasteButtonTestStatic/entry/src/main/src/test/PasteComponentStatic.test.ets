@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +39,8 @@ import {
   VerticalAlign,
   Axis,
   ChainStyle,
-  AlignRuleOption
+  AlignRuleOption,
+  SecurityComponentRoleType
 } from '@ohos.arkui.component';
 
 let gContext: common.UIAbilityContext;
@@ -123,7 +125,7 @@ export default function pasteComponentStaticTest() {
           priority: events_emitter.EventPriority.LOW
         }
         let clickCallback = (clickData:events_emitter.EventData) => {
-          (async () => {
+          waitForCompletion(async () => {
           if( clickData.data != undefined ){
             const data = clickData.data as Record<string, RecordData>;
             console.info('====>[Test_Security_Button_StaticPaste_0100] get clickEvent result is: ' + JSON.stringify(clickEvent));
@@ -146,7 +148,7 @@ export default function pasteComponentStaticTest() {
             console.info('====>[Test_Security_Button_StaticPaste_0100] END====');
             done();
           }
-          })().awaitSync()
+          })
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
@@ -1551,6 +1553,7 @@ export default function pasteComponentStaticTest() {
       console.info('====>[Test_Security_Button_StaticPaste_1500] START====');
       await UtilsTest.msSleep(1000);
       let positX: String = '0';
+      let button_width: String = '0';
       gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
         let windowClass: window.Window | undefined = await window.getLastWindow(gContext);
@@ -1560,6 +1563,8 @@ export default function pasteComponentStaticTest() {
           let window_width: Int = properties.windowRect.width;
           console.info('====>[Test_Security_Button_StaticPaste_1500] properties.windowRect.width is: ' + window_width);
           positX = `-${Math.trunc(window_width / 2).toFixed(2)}px`;
+          button_width = `${Math.trunc(window_width / 2).toFixed(2)}px`;
+          console.info('====>[Test_Security_Button_StaticPaste_1500] button_width is: ' + button_width);
         }
       } catch (err) {
         err = err as BusinessError;
@@ -1588,6 +1593,7 @@ export default function pasteComponentStaticTest() {
           'borderWid': 0,
           'borderCol': '#ffffffff',
           'borderRad': 0,
+          'buWidth': button_width,
           'left': 12,
           'right': 12,
           'top': 4,
@@ -2623,5 +2629,284 @@ export default function pasteComponentStaticTest() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.number SUB_SEC_AccCtl_SpecialItemStaticPaste_2500
+     * @tc.name   SUB_SEC_AccCtl_SpecialItemStaticPaste_2500
+     * @tc.desc   Test SecurityComponent fallbackLineSpacing and accessibilityDescription and accessibilityRole
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
+     */
+    it('SUB_SEC_AccCtl_SpecialItemStaticPaste_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2500] START====');
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'fallbackLineSpacing':true,
+          'accessibilityDescriptionValue':"test",
+          'accessibilityRoleValue':SecurityComponentRoleType.ROLE_NONE
+        };
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2500] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.error('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2500] change component data error: ' + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste');
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_2500 ==>" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      let fallbackLineSpacing  = obj.getElement('$attrs').getBoolean('fallbackLineSpacing');
+      let accessibilityDescription = obj.getElement('$attrs').getString('accessibilityDescription');
+
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_2500 =@>" + fallbackLineSpacing + "==>" + accessibilityDescription);
+      expect(obj.getElement('$attrs').getString('accessibilityDescription')).assertEqual("test");
+      done();
+
+    });
+
+    /**
+     * @tc.number SUB_SEC_AccCtl_SpecialItemStaticPaste_2600
+     * @tc.name   SUB_SEC_AccCtl_SpecialItemStaticPaste_2600
+     * @tc.desc   Test SecurityComponent fallbackLineSpacing false
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
+     */
+     it('SUB_SEC_AccCtl_SpecialItemStaticPaste_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2600] START====');
+      try {
+        let data: Record<string, RecordData> = {
+          'fallbackLineSpacing':false,
+          'accessibilityDescriptionValue':"test",
+          'accessibilityRoleValue':SecurityComponentRoleType.ROLE_NONE
+        };
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2600] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.error('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2600] change component data error: ' + err.message);
+      }
+      
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste');
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_2600 ==>" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      let fallbackLineSpacing  = obj.getElement('$attrs').getBoolean('fallbackLineSpacing');
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_2600 =@>" + fallbackLineSpacing +  "==>" + fallbackLineSpacing);
+      expect(obj.getElement('$attrs').getBoolean('fallbackLineSpacing')).assertEqual(false);
+      done();
+
+    });
+
+    /**
+     * @tc.number SUB_SEC_AccCtl_SpecialItemStaticPaste_2800
+     * @tc.name   SUB_SEC_AccCtl_SpecialItemStaticPaste_2800
+     * @tc.desc   Test SecurityComponent fallbackLineSpacing undefined
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
+     */
+      it('SUB_SEC_AccCtl_SpecialItemStaticPaste_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2800] START====');
+  
+        try {
+          let data: Record<string, RecordData> = {
+            'fallbackLineSpacing':undefined,
+            'accessibilityDescriptionValue':"test",
+            'accessibilityRoleValue':SecurityComponentRoleType.ROLE_NONE
+          };
+          let eventData:events_emitter.EventData = {};
+          eventData.data = data;
+          let innerEvent:events_emitter.InnerEvent = {
+            eventId: 1,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2800] start to publish emit');
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.error('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2800] change component data error: ' + err.message);
+        }
+  
+        await UtilsTest.msSleep(1000);
+        let strJson: string = inspector.getInspectorByKey('keyPaste');
+        console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_2800 ==>" + strJson);
+        let obj = JSON.parseJsonElement(strJson);
+        let fallbackLineSpacing  = obj.getElement('$attrs').getBoolean('fallbackLineSpacing');
+        console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_2800 =@>" + fallbackLineSpacing +  "==>" + fallbackLineSpacing);
+        expect(obj.getElement('$attrs').getBoolean('fallbackLineSpacing')).assertEqual(false);
+        done();
+      });
+
+    /**
+     * @tc.number SUB_SEC_AccCtl_SpecialItemStaticPaste_3000
+     * @tc.name   SUB_SEC_AccCtl_SpecialItemStaticPaste_3000
+     * @tc.desc   Test SecurityComponent enum value test
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
+     */
+    it('SUB_SEC_AccCtl_SpecialItemStaticPaste_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_3000] START====');
+      await UtilsTest.msSleep(1000);
+      expect(SecurityComponentRoleType.ROLE_NONE).assertEqual(0);
+      expect(SecurityComponentRoleType.BUTTON).assertEqual(1);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_SEC_AccCtl_SpecialItemStaticPaste_3100
+     * @tc.name   SUB_SEC_AccCtl_SpecialItemStaticPaste_3100
+     * @tc.desc   Test SecurityComponent accessibilityDescription ''
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
+     */
+     it('SUB_SEC_AccCtl_SpecialItemStaticPaste_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2500] START====');
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.VERTICAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'fallbackLineSpacing':true,
+          'accessibilityDescriptionValue':"",
+          'accessibilityRoleValue':SecurityComponentRoleType.ROLE_NONE
+
+
+        };
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2500] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.error('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_2500] change component data error: ' + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste');
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_2500 ==>" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      let fallbackLineSpacing  = obj.getElement('$attrs').getBoolean('fallbackLineSpacing');
+      let accessibilityDescription = obj.getElement('$attrs').getString('accessibilityDescription');
+
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_3100 =@>" + fallbackLineSpacing + "==>" + accessibilityDescription);
+      expect(obj.getElement('$attrs').getString('accessibilityDescription')).assertEqual('');
+      done();
+
+    });
+
+   /** 
+    * @tc.number SUB_SEC_AccCtl_SpecialItemStaticPaste_3200
+    * @tc.name   SUB_SEC_AccCtl_SpecialItemStaticPaste_3200
+    * @tc.desc   Test SecurityComponent accessibilityDescription undefined
+    * @tc.size   MEDIUMTEST
+    * @tc.type   Function
+    * @tc.level  LEVEL 3
+    */
+     it('SUB_SEC_AccCtl_SpecialItemStaticPaste_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_3300] START====');
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.VERTICAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'fallbackLineSpacing':true,
+          'accessibilityDescriptionValue':undefined,
+          'accessibilityRoleValue':SecurityComponentRoleType.ROLE_NONE
+
+
+        };
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_3300] start to publish emit');
+        
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.error('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_3300] change component data error: ' + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste');
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_3300 ==>" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      let fallbackLineSpacing  = obj.getElement('$attrs').getBoolean('fallbackLineSpacing');
+      let accessibilityDescription = obj.getElement('$attrs').getString('accessibilityDescription');
+
+      console.info("SUB_SEC_AccCtl_SpecialItemStaticPaste_3300 =@>" + fallbackLineSpacing + "==>" + accessibilityDescription);
+      expect(obj.getElement('$attrs').getString('accessibilityDescription')).assertEqual('');
+      done();
+
+    });
+
+   
+
+
+
   })
 }

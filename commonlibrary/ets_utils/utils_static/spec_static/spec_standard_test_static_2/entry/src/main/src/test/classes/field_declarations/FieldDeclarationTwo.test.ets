@@ -25,15 +25,8 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
 class A_F001 {
   public x: int;
@@ -2489,7 +2482,7 @@ export default function FieldDeclarationTwoTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

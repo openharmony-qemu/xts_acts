@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +28,8 @@ import {
   getPermission,
   driveFn,
   sleep,
-  pushCreateAsset
+  pushCreateAsset,
+  waitForLcdSizePopulated
 } from '../Common.test.ets'
 import { BusinessError } from '@ohos.base'
 
@@ -73,7 +75,7 @@ export default function getTest() {
         expect(false).assertTrue();
         done();
       } catch (error) {
-        error = error as BusinessError;
+       
         hilog.info(domain, tag, `${testNum} failed; error: ${error} ${error.code}`);
         expect(error.code).assertEqual(14000014);
         done();
@@ -88,7 +90,7 @@ export default function getTest() {
         expect(false).assertTrue();
         done();
       } catch (error) {
-        error = error as BusinessError;
+       
         hilog.info(domain, tag, `${testNum} failed; error: ${error} ${error.code}`);
         expect(error.code === 13900020 || error.code === 401).assertTrue();
         done();
@@ -101,6 +103,15 @@ export default function getTest() {
       await sleep(1000);
       await driveFn();
       await pushCreateAsset(testContext, fileNameList);
+      for (let i = 0; i < fileNameList.length; i++) {
+        let fileName = fileNameList[i];
+        if (fileName.endsWith('.jpg')) {
+          let success = await waitForLcdSizePopulated(fileName, 15000);
+          if (!success) {
+            hilog.error(domain, tag, `beforeAll: ${fileName} lcd_size not populated`);
+          }
+        }
+      }
     });
 
     const checkProvisionAsset = async (done: () => void, testNum: string, displayName: string): Promise<void> => {

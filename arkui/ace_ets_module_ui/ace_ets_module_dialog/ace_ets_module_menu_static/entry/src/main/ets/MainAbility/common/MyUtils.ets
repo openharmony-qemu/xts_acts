@@ -34,19 +34,19 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: string, eventId: number) {
+  static sendEvent(message: string, eventId: number): void {
 
 
   }
 
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<String,undefined|null|Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String,undefined|null|Object>;
+      JSON.parse<Object>(strJson, Class.from<String>()) as Record<String,undefined|null|Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     Utils.rect_left = Number(rectInfo[0][0] ?? 0);
     Utils.rect_top = Number(rectInfo[0][1] ?? 0);

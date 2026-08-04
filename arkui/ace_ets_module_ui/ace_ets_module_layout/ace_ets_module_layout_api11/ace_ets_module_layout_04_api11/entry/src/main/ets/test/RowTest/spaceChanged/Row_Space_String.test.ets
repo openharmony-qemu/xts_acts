@@ -61,10 +61,10 @@ export default function Row_Space_String() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -117,10 +117,10 @@ export default function Row_Space_String() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -172,10 +172,10 @@ export default function Row_Space_String() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -225,10 +225,10 @@ export default function Row_Space_String() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -280,10 +280,10 @@ export default function Row_Space_String() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -338,10 +338,10 @@ export default function Row_Space_String() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -394,10 +394,10 @@ export default function Row_Space_String() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -448,10 +448,10 @@ export default function Row_Space_String() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -504,10 +504,10 @@ export default function Row_Space_String() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -558,10 +558,10 @@ export default function Row_Space_String() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -614,10 +614,10 @@ export default function Row_Space_String() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)
@@ -671,10 +671,10 @@ export default function Row_Space_String() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
-      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
-      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String_013');
-      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String_01');
+      let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_011');
+      let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_012');
+      let Row_Space_String_013: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_013');
+      let Row_Space_String_01: RectValue = CommonFunc.getComponentRect('Row_Space_String' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_String_011.top - Row_Space_String_01.top) - Math.round(Row_Space_String_01.bottom - Row_Space_String_011.bottom)) <= 1)

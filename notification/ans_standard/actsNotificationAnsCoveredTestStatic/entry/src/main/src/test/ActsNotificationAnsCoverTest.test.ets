@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2021 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,8 +40,7 @@ import router from '@ohos.router'
 import { Router } from '@ohos.arkui.UIContext';
 import { UIContext } from '@ohos.arkui.UIContext'
 import image from '@ohos.multimedia.image';
-import { BusinessError, RecordData } from '@ohos.base';
-import hilog from '@ohos.hilog';
+import { RecordData } from '@ohos.base';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import wantagent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
@@ -83,7 +83,12 @@ export default function actsNotificationAnsCoveredTest() {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName)
+      let cmd = `aa start -a EntryAbility -b ${bundleName}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll end');
@@ -377,6 +382,51 @@ export default function actsNotificationAnsCoveredTest() {
       })
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_4300 END')
     })
+
+     /**
+     * @tc.name   SUB_Notification_Ans_Notification_Static_4100
+     * @tc.number SUB_Notification_Ans_Notification_Static_4100
+     * @tc.desc   verify the getSlot function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('SUB_Notification_Ans_Notification_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+     async (done: () => void): Promise<void> => {
+       let TAG: string = "SUB_Notification_Ans_Notification_Static_4100"
+       console.info('SUB_Notification_Ans_Notification_Static_4100 START');
+
+       let count: int = 0
+       notificationManager.addSlot(notificationManager.SlotType.LIVE_VIEW, (err: BusinessError<void> | null): void => {
+         if (err) {
+           console.error(TAG + `Failed to add slot. Code is ${err.code}, message is ${err.message}`);
+         } else {
+           console.info(TAG + `Succeeded in adding slot.`);
+           notificationManager.getSlot(notificationManager.SlotType.LIVE_VIEW, (err: BusinessError<void> | null,
+             data: notificationManager.NotificationSlot | undefined | null): void => {
+             if (err) {
+               console.info(`${TAG} getSlot AsyncCallback err: ${err?.code}`);
+               expect(false).assertTrue();
+               done();
+             } else {
+               console.info(`${TAG} getSlot AsyncCallback success ${JSON.stringify(data)}`);
+               expect(data?.notificationType).assertEqual(4);
+               expect(data?.badgeFlag).assertEqual(true);
+               expect(data?.bypassDnd).assertEqual(false);
+               expect(data?.vibrationEnabled).assertEqual(true);
+               expect(data?.lockscreenVisibility).assertEqual(2);
+               expect(data?.sound).assertEqual("file://system/etc/Light.ogg");
+               expect(data?.lightEnabled).assertEqual(false);
+               expect(data?.enabled).assertEqual(true);
+               expect(data?.vibrationValues?.[0]).assertEqual(200);
+               expect(data?.lightColor).assertEqual(0);
+               console.info(TAG + 'Acts_NotificationSlot_0100 END');
+               done();
+             }
+           })
+         }
+       })
+     })
 
     /**
      * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_4000
@@ -704,7 +754,7 @@ export default function actsNotificationAnsCoveredTest() {
               expect(code3).assertEqual(2);
               console.info(TAG + `getCodeSync after setCodeAndDataSync, code is ${code3}`)
 
-              Utils.msSleep(1000).awaitSync()
+              waitForCompletion(() => Utils.msSleep(1000))
               count = 0;
               // console.info(TAG+`getAbortCommonEventSync isaborted ${isaborted}`)
               subscriber.clearAbortCommonEventSync()
@@ -783,7 +833,7 @@ export default function actsNotificationAnsCoveredTest() {
                     expect(false).assertTrue()
                     done()
                   } else {
-                    Utils.msSleep(500).awaitSync()
+                    waitForCompletion(() => Utils.msSleep(500))
                     console.info(TAG + `666: ` + count)
                     subscriber.setCode(1, (err: BusinessError | null) => {
                       if (err) {
@@ -804,7 +854,7 @@ export default function actsNotificationAnsCoveredTest() {
                         })
                       }
                     })
-                    Utils.msSleep(1000).awaitSync()
+                    waitForCompletion(() => Utils.msSleep(1000))
                     subscriber.setData('data01', (err: BusinessError | null) => {
                       if (err) {
                         console.info(TAG + `setData_1 err, error code: ${err.code}, message: ${err.message}`)
@@ -824,7 +874,7 @@ export default function actsNotificationAnsCoveredTest() {
                         })
                       }
                     })
-                    Utils.msSleep(500).awaitSync()
+                    waitForCompletion(() => Utils.msSleep(500))
                     count = 0;
                     subscriber.setCodeAndData(1, '', (err: BusinessError | null) => {
                       if (err) {
@@ -837,7 +887,7 @@ export default function actsNotificationAnsCoveredTest() {
                         expect(count).assertEqual(1);
                       }
                     })
-                    Utils.msSleep(500).awaitSync()
+                    waitForCompletion(() => Utils.msSleep(500))
                     count = 0;
                     subscriber.getSubscribeInfo((err: BusinessError | null, CommonEventSubscribeInfo) => {
                       if (err) {
@@ -851,7 +901,7 @@ export default function actsNotificationAnsCoveredTest() {
                       }
                     })
 
-                    Utils.msSleep(500).awaitSync()
+                    waitForCompletion(() => Utils.msSleep(500))
                     count = 0;
                     subscriber.clearAbortCommonEvent((err: BusinessError | null) => {
                       if (err) {
@@ -864,7 +914,7 @@ export default function actsNotificationAnsCoveredTest() {
                         expect(count).assertEqual(1);
                       }
                     })
-                    Utils.msSleep(500).awaitSync()
+                    waitForCompletion(() => Utils.msSleep(500))
                     count = 0;
                     subscriber.finishCommonEvent((err: BusinessError | null) => {
                       if (err) {
@@ -875,7 +925,7 @@ export default function actsNotificationAnsCoveredTest() {
                         console.info(TAG + `finishCommonEvent_1 success `)
                         count++;
                         expect(count).assertEqual(1);
-                        Utils.msSleep(200).awaitSync()
+                        waitForCompletion(() => Utils.msSleep(200))
                         done()
                       }
                     })
@@ -947,7 +997,7 @@ export default function actsNotificationAnsCoveredTest() {
               count = 0;
               commonEventManager.subscribe(subscriber,
                 (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined) => {
-                  (async () => {
+                  waitForCompletion(async () => {
                   if (err) {
                     expect(false).assertTrue()
                     done()
@@ -1024,7 +1074,7 @@ export default function actsNotificationAnsCoveredTest() {
                       done()
                     })
                   }
-                  })().awaitSync()
+                  })
                 })
             }
           })

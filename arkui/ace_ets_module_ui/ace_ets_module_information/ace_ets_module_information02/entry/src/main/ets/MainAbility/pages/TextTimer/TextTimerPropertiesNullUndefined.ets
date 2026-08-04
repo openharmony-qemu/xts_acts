@@ -33,12 +33,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_format_default')
+              .key('TextTimer_format_default')
 
             // Null
             TextTimer()
               .width('30%')
               .height('5%')
               .id('TextTimer_format_null')
+              .key('TextTimer_format_null')
               .format(null)
 
             // Undefined
@@ -46,6 +48,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_format_undefined')
+              .key('TextTimer_format_undefined')
               .format(undefined)
 
             // Empty String
@@ -53,6 +56,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_format_empty')
+              .key('TextTimer_format_empty')
               .format('')
           }
           .width('100%')
@@ -69,12 +73,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontColor_default')
+              .key('TextTimer_fontColor_default')
 
             // Null
             TextTimer()
               .width('30%')
               .height('5%')
               .id('TextTimer_fontColor_null')
+              .key('TextTimer_fontColor_null')
               .fontColor(null)
 
             // Undefined
@@ -82,6 +88,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontColor_undefined')
+              .key('TextTimer_fontColor_undefined')
               .fontColor(undefined)
 
             // Empty String
@@ -89,6 +96,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontColor_empty')
+              .key('TextTimer_fontColor_empty')
               .fontColor('')
           }
           .width('100%')
@@ -105,12 +113,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontSize_default')
+              .key('TextTimer_fontSize_default')
 
             // Null
             TextTimer()
               .width('30%')
               .height('5%')
               .id('TextTimer_fontSize_null')
+              .key('TextTimer_fontSize_null')
               .fontSize(null)
 
             // Undefined
@@ -118,6 +128,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontSize_undefined')
+              .key('TextTimer_fontSize_undefined')
               .fontSize(undefined)
 
             // Empty String
@@ -125,6 +136,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontSize_empty')
+              .key('TextTimer_fontSize_empty')
               .fontSize('')
           }
           .width('100%')
@@ -141,12 +153,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontStyle_default')
+              .key('TextTimer_fontStyle_default')
 
             // Null
             TextTimer()
               .width('30%')
               .height('5%')
               .id('TextTimer_fontStyle_null')
+              .key('TextTimer_fontStyle_null')
               .fontStyle(null)
 
             // Undefined
@@ -154,6 +168,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontStyle_undefined')
+              .key('TextTimer_fontStyle_undefined')
               .fontStyle(undefined)
           }
           .width('100%')
@@ -170,12 +185,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('20%')
               .height('5%')
               .id('TextTimer_fontWeight_default')
+              .key('TextTimer_fontWeight_default')
 
             // Null
             TextTimer()
               .width('20%')
               .height('5%')
               .id('TextTimer_fontWeight_null')
+              .key('TextTimer_fontWeight_null')
               .fontWeight(null)
 
             // Undefined
@@ -183,6 +200,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('20%')
               .height('5%')
               .id('TextTimer_fontWeight_undefined')
+              .key('TextTimer_fontWeight_undefined')
               .fontWeight(undefined)
 
             // Empty String
@@ -190,12 +208,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('20%')
               .height('5%')
               .id('TextTimer_fontWeight_empty')
+              .key('TextTimer_fontWeight_empty')
               .fontWeight('')
             // Number
             TextTimer()
               .width('20%')
               .height('5%')
               .id('TextTimer_fontWeight_number')
+              .key('TextTimer_fontWeight_number')
               .fontWeight(400)
           }
           .width('100%')
@@ -212,12 +232,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontFamily_default')
+              .key('TextTimer_fontFamily_default')
 
             // Null
             TextTimer()
               .width('30%')
               .height('5%')
               .id('TextTimer_fontFamily_null')
+              .key('TextTimer_fontFamily_null')
               .fontFamily(null)
 
             // Undefined
@@ -225,6 +247,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontFamily_undefined')
+              .key('TextTimer_fontFamily_undefined')
               .fontFamily(undefined)
 
             // Empty String
@@ -232,6 +255,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_fontFamily_empty')
+              .key('TextTimer_fontFamily_empty')
               .fontFamily('')
           }
           .width('100%')
@@ -248,12 +272,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_textShadow_default')
+              .key('TextTimer_textShadow_default')
 
             // Null
             TextTimer()
               .width('30%')
               .height('5%')
               .id('TextTimer_textShadow_null')
+              .key('TextTimer_textShadow_null')
               .textShadow(null)
 
             // Undefined
@@ -261,6 +287,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_textShadow_undefined')
+              .key('TextTimer_textShadow_undefined')
               .textShadow(undefined)
           }
           .width('100%')
@@ -277,12 +304,14 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_contentModifier_default')
+              .key('TextTimer_contentModifier_default')
 
             // Null
             TextTimer()
               .width('30%')
               .height('5%')
               .id('TextTimer_contentModifier_null')
+              .key('TextTimer_contentModifier_null')
               .contentModifier(null)
 
             // Undefined
@@ -290,6 +319,7 @@ struct TextTimerPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextTimer_contentModifier_undefined')
+              .key('TextTimer_contentModifier_undefined')
               .contentModifier(undefined)
           }
           .width('100%')

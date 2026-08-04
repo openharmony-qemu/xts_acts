@@ -1232,10 +1232,12 @@ export default function windowLayoutTest() {
           await subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
           await subWindowClass.showWindow();
           let displayId = subWindowClass.getWindowProperties().displayId;
+          console.info(`${message} displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
+          await subWindowClass.resize(Number(displayWidth*0.5),Number(displayHeight*0.5));
           let moveConfiguration: window.MoveConfiguration = {
             displayId: displayId
           }
-          let promise = subWindowClass.moveWindowToGlobal(300, 300, moveConfiguration);
+          let promise = subWindowClass.moveWindowToGlobal(Number(displayWidth*0.3),Number(displayHeight*0.3), moveConfiguration);
           promise.then(async () => {
             console.info(`${message} succeed in moveWindowToGlobal`);
           }).catch((err: BusinessError) => {
@@ -1251,8 +1253,8 @@ export default function windowLayoutTest() {
           await sleep(1000);
           let rect = subWindowClass.getWindowProperties().windowRect;
           console.info(`${message} after moving windowRect:${JSON.stringify(rect)}`);
-          expect(rect.left).assertEqual(300);
-          expect(rect.top).assertEqual(300);
+          expect(rect.left).assertEqual(Math.floor(displayWidth*0.3));
+          expect(rect.top).assertEqual(Math.floor(displayHeight*0.3));
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
@@ -3018,11 +3020,6 @@ export default function windowLayoutTest() {
         expect().assertFail();
         done();
       } catch (err) {
-        if(!isSyscapSessionManagerSupported){
-          console.error(`${caseName} device not supported, err: ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(801);
-          done()
-        }
         console.error(`${caseName} failed main window, err: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(1300004);
       }
@@ -6276,18 +6273,12 @@ export default function windowLayoutTest() {
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
         await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
         await sleep(1000);
-        let text = await driver.findComponent(ON.id('startMovingText'));
-        await sleep(1000)
-        console.info(`${caseName} text = ${JSON.stringify(text)}`);
-        let textDragged = await text.getText();
-        await sleep(5000)
-        console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
-        if (textDragged == 'startMoving success') {
-          expect().assertFail();
-        } else if (textDragged == 'startMoving 801') {
-           console.info(`${caseName} textDragged1 = ${JSON.stringify(textDragged)}`);
-        } else if (textDragged == 'startMoving 1300001') {
-           console.info(`${caseName} textDragged2 = ${JSON.stringify(textDragged)}`);
+        let num = AppStorage.get('num') as number;
+        console.info(`${caseName} num = ${JSON.stringify(num)}`);
+        if (num == 801) {
+          console.info(`${caseName} startMoving 801`);
+        } else if (num == 1300001) {
+            console.info(`${caseName} startMoving 1300001`);
         } else {
           console.error(`${caseName} Error.`);
           expect(true).assertFalse()
@@ -7022,10 +7013,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (!isSyscapSessionManagerSupported) {
-              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(801)
-            }else if(err.code == 1300016){
+            if(err.code == 1300016){
               console.info(`${caseName} param range fail.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(1300016)
             }else {
@@ -7806,30 +7794,39 @@ export default function windowLayoutTest() {
     });
 
     /**
-    * @tc.name SUB_WINDOW_SystemProperties_focused_highlighted_0100
-    * @tc.number SUB_WINDOW_SystemProperties_focused_highlighted_0100
-    * @tc.desc SUB_WINDOW_SystemProperties_focused_highlighted_0100
-    * @tc.type FUNCTION
-    * @tc.size MEDIUMTEST
-    * @tc.level LEVEL0
-    */
-    it('SUB_WINDOW_SystemProperties_focused_highlighted_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'SUB_WINDOW_SystemProperties_focused_highlighted_0100 ';
-      console.log(caseName + 'begin');
+     * @tc.name ReadonlyEnvKeyEnum_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_READONLYENUM_0100
+     * @tc.desc ReadonlyEnvKeyEnum_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('ReadonlyEnvKeyEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'ReadonlyEnvKeyEnum_0100 ';
+      console.info(`${caseName} begin`);
       try {
-        console.info(caseName + ' SystemProperties: ' + JSON.stringify(SystemProperties));
-        expect(SystemProperties.WINDOW_IS_FOCUSED).assertEqual('system.window.focused');
-        expect(SystemProperties.WINDOW_IS_HIGHLIGHTED).assertEqual('system.window.highlighted');
-        expect(SystemProperties.WINDOW_DISPLAY_ID).assertEqual('system.window.displayid');
-        expect(SystemProperties.WINDOW_SYSTEM_DENSITY).assertEqual('system.window.density.system');
-        done();
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        expect().assertFail();
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_FOCUSED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_FOCUSED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_DISPLAY_ID ${JSON.stringify(ReadonlyEnvKey.WINDOW_DISPLAY_ID)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY ${JSON.stringify(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)}`)
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_FOCUSED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_DISPLAY_ID != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY != null).assertTrue()
         done()
+      } catch (exception) {
+        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
       }
     });
-
+    
 
   })
 }

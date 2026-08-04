@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
@@ -29,7 +29,7 @@ import inspector from '@ohos.arkui.inspector';
 const SLEEP_TIME = 1000;
 const DIALOG_ANIMATION_TIME = 3000;
 
-export default function PromptActionTest() {
+export default function PromptActionTest(): void {
   describe('PromptActionTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("PromptActionTest beforeAll start");

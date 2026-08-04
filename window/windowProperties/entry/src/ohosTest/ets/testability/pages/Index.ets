@@ -17,8 +17,8 @@ import router from '@ohos.router';
 @Entry
 @Component
 struct Index {
-  @Env(SystemProperties.WINDOW_SYSTEM_DENSITY) SystemDensity: number;
-  @Env(SystemProperties.WINDOW_DISPLAY_ID) DisplayId: number;
+  @Env(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY) SystemDensity: number;
+  @Env(ReadonlyEnvKey.WINDOW_DISPLAY_ID) DisplayId: number;
   
   aboutToAppear() {
     console.info('TestAbility index aboutToAppear');

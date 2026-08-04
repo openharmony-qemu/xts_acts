@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -933,7 +934,7 @@ export default function pasteComponentSetUndefinedStaticTest() {
       await clickSwitchButton(TCNAME, driver);
       let strJson: string = inspector.getInspectorByKey('setNullStr01');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('0.00vp');
+      expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('0.00px');
       await UtilsTest.msSleep(1000);
       sucCallback(TCNAME, done);
       await clickSecComponent(TCNAME, driver, 0);
@@ -954,7 +955,7 @@ export default function pasteComponentSetUndefinedStaticTest() {
       await clickSwitchButton(TCNAME, driver);
       let strJson: string = inspector.getInspectorByKey('setNullStr02');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('0.00vp');
+      expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('0.00px');
       await UtilsTest.msSleep(1000);
       sucCallback(TCNAME, done);
       await clickSecComponent(TCNAME, driver, 0);

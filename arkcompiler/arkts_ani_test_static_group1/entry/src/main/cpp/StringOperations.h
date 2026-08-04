@@ -1924,6 +1924,34 @@ ani_boolean CheckUtf8String(ani_env *env, const std::string example)
     return ANI_TRUE;
 }
 
+ani_boolean CheckUtf8IllegalString(ani_env *env, const std::string example)
+{
+    ani_string utf8String = nullptr;
+    ani_status status = env->String_NewUTF8(example.c_str(), example.size(), &utf8String);
+    if (status != ANI_OK) {
+        return ANI_TRUE;
+    }
+    if (utf8String == nullptr) {
+        return ANI_FALSE;
+    }
+    const uint32_t bufferSize = example.size() + 1;
+    char utfBuffer[bufferSize];
+    ani_size resultSize = 0U;
+    auto status1 = env->String_GetUTF8(utf8String, utfBuffer, bufferSize, &resultSize);
+    if (status1 != ANI_OK) {
+        return ANI_TRUE;
+    }
+    if (resultSize != example.size()) {
+        return ANI_TRUE;
+    }
+    for (size_t i = 0; i < example.size(); ++i) {
+        if (example[i] != utfBuffer[i]) {
+            return ANI_TRUE;
+        }
+    }
+    return ANI_FALSE;
+}
+
 ani_boolean test_String_New_UTF8_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     // 原始C字符串
@@ -1980,7 +2008,7 @@ ani_boolean test_String_New_UTF8_16([[maybe_unused]] ani_env *env, [[maybe_unuse
 {
     // 0x80 -> 二进制为10000000，最高位为1，不符合单字节字符规范
     const std::string example {"Hello, OpenHarmony!\x80"};
-    return CheckUtf8String(env, example.c_str());
+    return CheckUtf8IllegalString(env, example.c_str());
 }
 
 ani_boolean test_String_New_UTF8_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -1993,7 +2021,7 @@ ani_boolean test_String_New_UTF8_17([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_boolean test_String_New_UTF8_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     const std::string example {"Hello, OpenHarmony!\xCC\x5C"};
-    return CheckUtf8String(env, example.c_str());
+    return CheckUtf8IllegalString(env, example.c_str());
 }
 
 ani_boolean test_String_New_UTF8_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -2006,7 +2034,7 @@ ani_boolean test_String_New_UTF8_19([[maybe_unused]] ani_env *env, [[maybe_unuse
 ani_boolean test_String_New_UTF8_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     const std::string example {"Hello, OpenHarmony!\xE0\x7F\x80"};
-    return CheckUtf8String(env, example.c_str());
+    return CheckUtf8IllegalString(env, example.c_str());
 }
 
 ani_boolean test_String_New_UTF8_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)

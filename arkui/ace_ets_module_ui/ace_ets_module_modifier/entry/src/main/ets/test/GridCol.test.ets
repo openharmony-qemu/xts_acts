@@ -108,7 +108,7 @@ export default function gridColJsunit() {
 
       console.info('gridColTest_0004 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('gridCol' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -22,7 +23,7 @@ import {hidebug} from '@kit.PerformanceAnalysisKit'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function versionInfoTest() {
+export default function versionInfoTest(): void {
 
   describe("ActsVersionInfoTest", (): void => {
     try {

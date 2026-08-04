@@ -15,17 +15,17 @@
 import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
 import {
-  GetAesGenerateOptions, GetEccGenerateOptions, GetEd25519GenerateOptions, GetX25519GenerateOptions,
+  GetAesGenerateOptions, GetEccGenerateOptions, GetEd25519GenerateOptions, GetMlKemGenerateOptions, GetX25519GenerateOptions,
 } from './utils/huks/GenerateKeyUtils';
-import { CheckSoftware, ClearAllKeys, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { CheckSoftware, ClearAllKeys, GetEmptyOptions, GetParam, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array, Uint8ArrayToHexString } from './utils/common/CommonUtils';
 import { Logger } from './utils/common/Logger';
 import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils';
 import { GetAesImportData } from './utils/huks/ImportKeyUtils';
 import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
 import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
-import { GetCbcPkcs7Options } from './utils/huks/CipherUtils';
+import { GetCbcPkcs7Options, GetCtrNoPaddingOptions } from './utils/huks/CipherUtils';
 
 export default function SecurityHuksApiCoverInterfaceParam() {
 
@@ -3460,6 +3460,1134 @@ export default function SecurityHuksApiCoverInterfaceParam() {
 
       try {
         await huks.anonAttestKeyItemOffline(keyAlias, []);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0000
+     * @tc.desc   test encapsulate with keyAlias length 1 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0000";
+
+      let keyAlias = "a";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+        expect(encapResult.outData?.length).assertLarger(0);
+        expect(encapResult.sharedSecret?.length).assertLarger(0);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0100
+     * @tc.desc   test encapsulate with keyAlias length 128 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0100";
+
+      let keyAlias: string = GetDataBySize(HuksMaxAliasLength);
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+        expect(encapResult.outData?.length).assertLarger(0);
+        expect(encapResult.sharedSecret?.length).assertLarger(0);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0200
+     * @tc.desc   test encapsulate with keyAlias length 0, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0200";
+
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.encapsulate("", mlKemEncapParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0300
+     * @tc.desc   test encapsulate with keyAlias length 129, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0300";
+
+      let keyAlias: string = testNumber.padEnd(HuksMaxAliasLength + 1, "a");
+
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0400
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0400
+     * @tc.desc   test encapsulate with keyAlias null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0400";
+
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.encapsulate(null, mlKemEncapParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0500
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0500
+     * @tc.desc   test encapsulate with keyAlias undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_0500";
+
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.encapsulate(undefined, mlKemEncapParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1000
+     * @tc.desc   test encapsulate with params null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1000";
+
+      let keyAlias: string = testNumber;
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, null);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1100
+     * @tc.desc   test encapsulate with params undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1100";
+
+      let keyAlias: string = testNumber;
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1200
+     * @tc.desc   test encapsulate with params length 0 (empty array), expect error 12000002
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_1200";
+
+      let keyAlias: string = testNumber;
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, []);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000002);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2000
+     * @tc.desc   test encapsulate with sharedKeyAlias length 1 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2000";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias = "a";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(encapResult.outData?.length).assertLarger(0);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2100
+     * @tc.desc   test encapsulate with sharedKeyAlias length 128 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2100";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = GetDataBySize(HuksMaxAliasLength);
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(encapResult.outData?.length).assertLarger(0);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2200
+     * @tc.desc   test encapsulate with sharedKeyAlias length 0, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2200";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties, "", sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2300
+     * @tc.desc   test encapsulate with sharedKeyAlias length 129, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2300";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber.padEnd(HuksMaxAliasLength + 1, "a");
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2400
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2400
+     * @tc.desc   test encapsulate with sharedKeyAlias null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2400";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties, null, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2500
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2500
+     * @tc.desc   test encapsulate with sharedKeyAlias undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_2500";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties, undefined, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3000
+     * @tc.desc   test encapsulate with sharedKeyParams length 0, expect error 12000002
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3000";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, []);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000002);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3100
+     * @tc.desc   test encapsulate with sharedKeyParams null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3100";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, null);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3200
+     * @tc.desc   test encapsulate with sharedKeyParams undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3200";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300
+     * @tc.desc   test encapsulate without sharedKeyParams parameter, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, wrapParams.properties, sharedKeyAlias);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0000
+     * @tc.desc   test decapsulate with keyAlias length 1 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0000";
+
+      let keyAlias = "a";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
+
+      try {
+        let decapResult = await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData);
+        expect(decapResult.sharedSecret?.length).assertLarger(0);
+        expect(Uint8ArrayToHexString(encapResult.sharedSecret!)).assertEqual(Uint8ArrayToHexString(decapResult.sharedSecret!));
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0100
+     * @tc.desc   test decapsulate with keyAlias length 128 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0100";
+
+      let keyAlias: string = GetDataBySize(HuksMaxAliasLength);
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
+
+      try {
+        let decapResult = await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData);
+        expect(decapResult.sharedSecret?.length).assertLarger(0);
+        expect(Uint8ArrayToHexString(encapResult.sharedSecret!)).assertEqual(Uint8ArrayToHexString(decapResult.sharedSecret!));
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0200
+     * @tc.desc   test decapsulate with keyAlias length 0, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0200";
+
+      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.decapsulate("", mlKemDecapParams.properties, new Uint8Array([0]));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0300
+     * @tc.desc   test decapsulate with keyAlias length 129, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0300";
+
+      let keyAlias: string = testNumber.padEnd(HuksMaxAliasLength + 1, "a");
+
+      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, new Uint8Array([0]));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0400
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0400
+     * @tc.desc   test decapsulate with keyAlias null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0400";
+
+      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.decapsulate(null, mlKemDecapParams.properties, new Uint8Array([0]));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0500
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0500
+     * @tc.desc   test decapsulate with keyAlias undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0500";
+
+      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.decapsulate(undefined, mlKemDecapParams.properties, new Uint8Array([0]));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1000
+     * @tc.desc   test decapsulate with params null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1000";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, null, encapResult.outData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1100
+     * @tc.desc   test decapsulate with params undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1100";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, undefined, encapResult.outData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1200
+     * @tc.desc   test decapsulate with params length 0 (empty array), expect error 12000002
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_1200";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, [], encapResult.outData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000002);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2000
+     * @tc.desc   test decapsulate with encapData length 0 (empty Uint8Array), expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2000";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, new Uint8Array(0));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2100
+     * @tc.desc   test decapsulate with encapData null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2100";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, null);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2200
+     * @tc.desc   test decapsulate with encapData undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_2200";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3000
+     * @tc.desc   test decapsulate with sharedKeyAlias length 1 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3000";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias = "a";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams: Array<huks.HuksParam> = [
+        { tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_ML_KEM }
+      ];
+      let sharedKeyParams: Array<huks.HuksParam> = [
+        { tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_AES },
+        { tag: huks.HuksTag.HUKS_TAG_KEY_SIZE, value: 256 },
+        { tag: huks.HuksTag.HUKS_TAG_PURPOSE, value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT },
+        { tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE, value: huks.HuksCipherMode.HUKS_MODE_CTR },
+        { tag: huks.HuksTag.HUKS_TAG_PADDING, value: huks.HuksKeyPadding.HUKS_PADDING_NONE },
+        { tag: huks.HuksTag.HUKS_TAG_IV, value: StringToUint8Array(GetDataBySize(16)) }
+      ];
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams, sharedKeyAlias, sharedKeyParams);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams, encapResult.outData, sharedKeyAlias, sharedKeyParams);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3100
+     * @tc.desc   test decapsulate with sharedKeyAlias length 128 (valid boundary)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3100";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = GetDataBySize(HuksMaxAliasLength);
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, sharedKeyParams.properties);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3200
+     * @tc.desc   test decapsulate with sharedKeyAlias length 0, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3200";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, "", sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3300
+     * @tc.desc   test decapsulate with sharedKeyAlias length 129, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3300";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber.padEnd(HuksMaxAliasLength + 1, "a");
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3400
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3400
+     * @tc.desc   test decapsulate with sharedKeyAlias null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3400";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, null, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3500
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3500
+     * @tc.desc   test decapsulate with sharedKeyAlias undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_3500";
+
+      let keyAlias: string = testNumber + "_key";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, undefined, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4000
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4000
+     * @tc.desc   test decapsulate with sharedKeyParams length 0, expect error 12000002
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4000";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_decap_shared";
+      let encapSharedKeyAlias: string = testNumber + "_encap_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, []);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000002);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4100
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4100
+     * @tc.desc   test decapsulate with sharedKeyParams null, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4100";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_decap_shared";
+      let encapSharedKeyAlias: string = testNumber + "_encap_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, null);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4200
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4200
+     * @tc.desc   test decapsulate with sharedKeyParams undefined, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4200";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_decap_shared";
+      let encapSharedKeyAlias: string = testNumber + "_encap_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300
+     * @tc.desc   test decapsulate without sharedKeyParams parameter, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_decap_shared";
+      let encapSharedKeyAlias: string = testNumber + "_encap_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);

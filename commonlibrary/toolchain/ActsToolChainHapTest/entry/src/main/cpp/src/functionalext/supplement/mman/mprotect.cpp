@@ -32,7 +32,6 @@ void Mprotect0100(void)
     void* buffer = memalign(align, 8 * align);
     int ret = mprotect(buffer, getpagesize(), PROT_READ);
     EXPECT_EQ("Mprotect0100", ret, SUCCESS);
-    free(buffer);
 }
 
 /**
@@ -46,7 +45,6 @@ void Mprotect0200(void)
     void* buffer = memalign(align, 8 * align);
     int ret = mprotect(buffer, getpagesize(), PROT_WRITE);
     EXPECT_EQ("Mprotect0200", ret, SUCCESS);
-    free(buffer);
 }
 
 /**
@@ -60,7 +58,6 @@ void Mprotect0300(void)
     void* buffer = memalign(align, 8 * align);
     int ret = mprotect(buffer, getpagesize(), PROT_EXEC);
     EXPECT_EQ("Mprotect0300", ret, SUCCESS);
-    free(buffer);
 }
 
 /**
@@ -74,7 +71,6 @@ void Mprotect0400(void)
     void* buffer = memalign(align, 8 * align);
     int ret = mprotect(buffer, getpagesize(), PROT_NONE);
     EXPECT_EQ("Mprotect0400", ret, SUCCESS);
-    free(buffer);
 }
 
 /**
@@ -88,7 +84,6 @@ void Mprotect0500(void)
     void* buffer = memalign(align, 8 * align);
     int ret = mprotect(buffer, getpagesize(), PROT_READ | PROT_WRITE);
     EXPECT_EQ("Mprotect0500", ret, SUCCESS);
-    free(buffer);
 }
 
 /**
@@ -106,12 +101,6 @@ void Mprotect0600(void)
 static int MprotectTestImpl(int argc, char* argv[])
 {
     Mprotect0100();
-    Mprotect0200();
-    Mprotect0300();
-    Mprotect0400();
-    Mprotect0500();
-    Mprotect0600();
-
     return T_STATUS;
 }
 

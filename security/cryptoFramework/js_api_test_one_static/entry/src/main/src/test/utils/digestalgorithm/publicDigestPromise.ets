@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,20 +63,20 @@ async function testHMACDigestPromise(HMACAlgoName: string, keyAlgoName: string):
     console.log("symKeyGenerator algName:" + globalSymKeyGenerator.algName);
     globalSymKeyGenerator
       .generateSymKey()
-      .then(async (key: cryptoFramework.SymKey) => {
+      .then((key: cryptoFramework.SymKey) => {
         console.log("key algName:" + key.algName);
         console.log("key format:" + key.format);
         let encodedKey = key.getEncoded();
         console.log(
           "key getEncoded hex: " + uInt8ArrayToShowStr(encodedKey.data)
         );
-        await globalHMAC.init(key);
+        waitForCompletion(async () => {await globalHMAC.init(key);})
       })
-      .then(async () => {
-        await globalHMAC.update(inBlob);
+      .then(() => {
+        waitForCompletion(async () => {await globalHMAC.update(inBlob);})
       })
       .then<cryptoFramework.DataBlob>(() => {
-        return (async () => {return await globalHMAC.doFinal();})().awaitSync() as cryptoFramework.DataBlob
+        return waitForCompletion(async () => {return await globalHMAC.doFinal();}) as cryptoFramework.DataBlob
       })
       .then((macOutput: cryptoFramework.DataBlob) => {
         console.log("HMAC result:" + macOutput.data);

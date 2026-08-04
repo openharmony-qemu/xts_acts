@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -81,7 +81,7 @@ it('ParticleAnimatorTest_static_001', Level.LEVEL0, async (done: () => void): Pr
 
       console.info('[ParticleAnimatorTest_static_001] START');
       await CommonFunc.sleep(500);
-      let json = inspector.getInspectorByKey('particleTest');
+      let json = inspector.getInspectorByKey('particleAnimationTest_particleTest');
       await CommonFunc.sleep(2000);
       console.info('particleAnimatorTest_00_0100 :' + JSON.stringify(json));
       // test whether support the commonAttrs

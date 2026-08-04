@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../../Util.test'
 
 enum TypedEnum: byte { A = -2, B = 3, C = 3}
 
@@ -36,8 +30,6 @@ enum TypedEnum4: float { A = -2.0f, B = 3.0f, C = 3.0f}
 
 enum TypedEnum5: double { A = -2.0, B = 3.0, C = 3.0}
 
-
-
 export default function EqualityExpressionsTest(): void {
   describe('EqualityExpressionsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -50,7 +42,7 @@ export default function EqualityExpressionsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -63,7 +55,6 @@ export default function EqualityExpressionsTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
 
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_XTSTEST_0100
@@ -78,7 +69,6 @@ export default function EqualityExpressionsTest(): void {
       expect(TypedEnum.B === TypedEnum.C).assertEqual(true)
       expect(TypedEnum.A != TypedEnum.B).assertEqual(true)
       expect(TypedEnum.B !== TypedEnum.C).assertEqual(false)
-
     });
 
     /**
@@ -94,7 +84,6 @@ export default function EqualityExpressionsTest(): void {
       expect(TypedEnum1.B === TypedEnum1.C).assertEqual(true)
       expect(TypedEnum1.A != TypedEnum1.B).assertEqual(true)
       expect(TypedEnum1.B !== TypedEnum1.C).assertEqual(false)
-
     });
 
     /**
@@ -110,7 +99,6 @@ export default function EqualityExpressionsTest(): void {
       expect(TypedEnum2.B === TypedEnum2.C).assertEqual(true)
       expect(TypedEnum2.A != TypedEnum2.B).assertEqual(true)
       expect(TypedEnum2.B !== TypedEnum2.C).assertEqual(false)
-
     });
 
     /**
@@ -127,7 +115,6 @@ export default function EqualityExpressionsTest(): void {
 
       expect(TypedEnum3.A != TypedEnum3.B).assertEqual(true)
       expect(TypedEnum3.B !== TypedEnum3.C).assertEqual(false)
-
     });
 
     /**
@@ -143,7 +130,6 @@ export default function EqualityExpressionsTest(): void {
       expect(TypedEnum4.B === TypedEnum4.C).assertEqual(true)
       expect(TypedEnum4.A != TypedEnum4.B).assertEqual(true)
       expect(TypedEnum4.B !== TypedEnum4.C).assertEqual(false)
-
     });
 
     /**
@@ -159,7 +145,6 @@ export default function EqualityExpressionsTest(): void {
       expect(TypedEnum5.B === TypedEnum5.C).assertEqual(true)
       expect(TypedEnum5.A != TypedEnum5.B).assertEqual(true)
       expect(TypedEnum5.B !== TypedEnum5.C).assertEqual(false)
-
     });
   })
 }

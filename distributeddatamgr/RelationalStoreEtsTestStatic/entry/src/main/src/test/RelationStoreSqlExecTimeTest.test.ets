@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../hypium";
+} from "../../../hypium/index";
 import relationalStore from '@ohos.data.relationalStore';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
@@ -50,7 +51,12 @@ export default function SqlExecutionTimeTest() {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext
       rdbStore = await relationalStore.getRdbStore(context!, config);

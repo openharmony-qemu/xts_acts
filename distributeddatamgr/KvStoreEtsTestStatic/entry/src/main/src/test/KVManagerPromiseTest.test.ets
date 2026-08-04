@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import factory from '@ohos.data.distributedKVStore'
 import dataShare from '@ohos.data.dataSharePredicates'
@@ -54,7 +55,12 @@ export default function KVManagerPromiseTest(){
       try {
         hilog.info(domain, tag, '%{public}s', '================ Context start==========');
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
@@ -101,12 +107,14 @@ export default function KVManagerPromiseTest(){
     afterEach(async (done: () => void) => {
       hilog.info(domain, tag, 'afterEach');
       try {
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async (error: undefined) => {
-          hilog.info(domain, tag, 'afterEach closeKVStore success ' );
-          await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-          hilog.info(domain, tag, 'afterEach deleteKVStore success ');
-          kvStore = null;
-          done();
+        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then((error) => {
+          waitForCompletion(async () => {
+            hilog.info(domain, tag, 'afterEach closeKVStore success ' );
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
+            hilog.info(domain, tag, 'afterEach deleteKVStore success ');
+            kvStore = null;
+            done();
+          })
         }).catch((err: Error) => {
           hilog.error(domain, tag, 'afterEach closeKVStore and deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           done();

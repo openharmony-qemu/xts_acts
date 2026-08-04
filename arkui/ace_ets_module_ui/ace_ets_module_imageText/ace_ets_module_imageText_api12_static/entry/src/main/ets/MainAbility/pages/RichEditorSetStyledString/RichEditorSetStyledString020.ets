@@ -14,42 +14,11 @@
  * limitations under the License.
  */
 
-import { LengthMetrics } from '@ohos.arkui.node'
-import image from "@ohos.multimedia.image";
+import { LengthMetrics } from '@ohos.arkui.node';
+import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
-import common from '@ohos.app.ability.common';
-import {
-  Entry,GestureStyle,ImageSpanAlignment,ImageFit,ImageAttachmentInterface,
-  Component,
-  Column,
-  Row,
-  Text,
-  ColumnOptions,
-  TouchType,
-  CustomBuilder,
-  DragItemInfo,
-  Color,
-  Button,
-  TouchEvent,
-  Margin,
-  Scroller,
-  GestureRecognizer,
-  PanRecognizer,
-  GestureEvent,
-  ScrollableTargetInfo,
-  Stack,
-  Alignment,
-  Scroll,
-  TextAlign,
-  ForEach,
-  ScrollDirection,
-  BarState,
-  EdgeEffect,
-  GestureControl,
-  PanGesture,
-  GestureRecognizerState,RichEditorController,RichEditor,RichEditorChangeValue,RichEditorTextSpanResult,RichEditorOptions,RichEditorLayoutStyle,LongPressGesture,Direction,RichEditorRange,ClickEvent,$r,LayoutManager,RichEditorOptions,MutableStyledString,TextStyle,StyledString,RichEditorStyledStringController,Resource,ImageAttachment,FontWeight,FontStyle,StyledStringKey,RichEditorStyledStringOptions,TextEditControllerEx,TextMenuItem,TextRange,TextMenuItemId,CopyOptions,RichEditorInsertValue,Builder
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, GestureStyle, ImageSpanAlignment, ImageFit, ImageAttachmentInterface, Component, Column, Row, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, Button, TouchEvent, Margin, Scroller, GestureRecognizer, PanRecognizer, GestureEvent, ScrollableTargetInfo, Stack, Alignment, Scroll, TextAlign, ForEach, ScrollDirection, BarState, EdgeEffect, GestureControl, PanGesture, GestureRecognizerState, RichEditorController, RichEditor, RichEditorChangeValue, RichEditorTextSpanResult, RichEditorOptions, RichEditorLayoutStyle, LongPressGesture, Direction, RichEditorRange, ClickEvent, $r, LayoutManager, MutableStyledString, TextStyle, StyledString, RichEditorStyledStringController, Resource, ImageAttachment, FontWeight, FontStyle, StyledStringKey, RichEditorStyledStringOptions, TextEditControllerEx, TextMenuItem, TextRange, TextMenuItemId, CopyOptions, RichEditorInsertValue, Builder } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
@@ -79,9 +48,9 @@ struct RichEditorSetStyledString020 {
   options: RichEditorStyledStringOptions = { controller: this.controller } as RichEditorStyledStringOptions;
 
   onPageShow() {
-    (async ()=>{
+    waitForCompletion(async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    })().awaitSync()
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

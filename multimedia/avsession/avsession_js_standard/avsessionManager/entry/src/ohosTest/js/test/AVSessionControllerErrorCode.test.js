@@ -1757,5 +1757,506 @@ export default function AVSessionControllerErrorCode() {
             });
 			done();
 		})
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHAGE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHAGE_CALLBACK_0200
+         * @tc.desc   test on('activeStateChange') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHAGE_CALLBACK_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try{
+                await onCallbackInvalidController('activeStateChange')
+            }catch{
+                console.info('TestLog: off callback error');
+                expect().assertFail();
+                done()
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHAGE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHAGE_CALLBACK_0300
+         * @tc.desc   test on('activeStateChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHAGE_CALLBACK_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.on('activeStateChange', callback1, callback2);
+                expect().assertFail();
+            } catch (err) {
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+        
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHAGE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHAGE_CALLBACK_0100
+         * @tc.desc   test off('activeStateChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHAGE_CALLBACK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.off('activeStateChange', callback1, callback2);
+                expect().assertFail();
+            } catch (err) {
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHAGE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHAGE_CALLBACK_0200
+         * @tc.desc   test off('activeStateChange') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHAGE_CALLBACK_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try{
+                await offCallbackInvalidController('activeStateChange')
+            }catch{
+                console.info('TestLog: off callback error');
+                expect().assertFail();
+                done()
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0100
+         * @tc.desc   test on('validCommandChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.on('validCommandChange', INVALID_STRING);
+                expect().assertFail();
+            } catch (err) {
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0200
+         * @tc.desc   test on('validCommandChange') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try{
+                await onCallbackInvalidController('validCommandChange')
+            }catch{
+                console.info('TestLog: off callback error');
+                expect().assertFail();
+                done()
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0300
+         * @tc.desc   test on('validCommandChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_CALLBACK_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.on('validCommandChange', callback1, callback2);
+                expect().assertFail();
+            } catch (err) {
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+        
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0100
+         * @tc.desc   test off('validCommandChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.off('validCommandChange', callback1, callback2);
+                expect().assertFail();
+            } catch (err) {
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0200
+         * @tc.desc   test off('validCommandChange') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try{
+                await offCallbackInvalidController('validCommandChange')
+            }catch{
+                console.info('TestLog: off callback error');
+                expect().assertFail();
+                done()
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0300
+         * @tc.desc   test off('validCommandChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.off('validCommandChange');
+                done();
+            } catch (err) {
+                expect().assertFail();
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0100
+         * @tc.desc   test off('metadataChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.off('metadataChange', callback1, callback2);
+                expect().assertFail();
+            } catch (err) {
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0200
+         * @tc.desc   test off('metadataChange') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try{
+                await offCallbackInvalidController('metadataChange')
+            }catch{
+                console.info('TestLog: off callback error');
+                expect().assertFail();
+                done()
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0300
+         * @tc.desc   test off('metadataChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.off('metadataChange');
+                done();
+            } catch (err) {
+                expect().assertFail();
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+        /* *
+         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHANGE_0101
+         * @tc.name      : ONACTIVESTATECHANGE_0100
+         * @tc.desc      : Testing active State callback registration
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHANGE_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let flag = false;
+            controller.on('activeStateChange', (callback) => {
+                if (callback) {
+                    console.info('TestLog: Active state change successful');
+                    flag = true;
+                } else {
+                    console.info('TestLog: Active state change error');
+                }
+            });
+            
+            await session.deactivate().then(() => {
+                console.info('TestLog: session deactivate success');
+            }).catch(err => {
+                console.info(`TestLog: session deactivate error: code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+            });
+
+            await session.activate().then(() => {
+                console.info('TestLog: Session activate');
+            }).catch((err) => {
+                console.info(`TestLog: Session activate error: code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+            });
+
+            await sleep(500);
+
+            if (flag) {
+                console.info('TestLog: ActiveStateChange callback registration successful');
+                expect(true).assertTrue();
+            } else {
+                console.info('TestLog: ActiveStateChange callback registration failed');
+                expect(false).assertTrue();
+            }
+            done();
+        })
+
+        /* *
+         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHANGE_0101
+         * @tc.name      : OFFACTIVESTATECHANGE_0101
+         * @tc.desc      : Testing active State callback unRegistration
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHANGE_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let flag = true;
+
+            function callback1(data) {
+                if (data) {
+                    console.info('TestLog: ActiveStateChange command registration1 success');
+                    flag = false;
+                }
+            }
+
+            function callback2(data) {
+                if (data) {
+                    console.info('TestLog: ActiveStateChange command registration2 success');
+                    flag = false;
+                }
+            }
+
+            controller.on('activeStateChange', callback1);
+
+            controller.on('activeStateChange', callback2);
+
+            controller.off('activeStateChange');
+
+            await sleep(500);
+
+            if (flag) {
+                console.info('TestLog: activeStateChange command unRegistration success')
+                expect(true).assertTrue();
+            } else {
+                console.info('TestLog: activeStateChange command unRegistration failed');
+                expect(false).assertTrue();
+            }
+            done();
+        })
+
+        /* *
+         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHANGE_0200
+         * @tc.name      : OFFACTIVESTATECHANGE_0200
+         * @tc.desc      : Testing active State callback unRegistration
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_OFFACTIVESTATECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            function callback1(data) {
+                if (data) {
+                    console.info('TestLog: ActiveStateChange command registration1 success');
+                    expect(false).assertTrue();
+                }
+            }
+
+            function callback2(data) {
+                if (data) {
+                    console.info('TestLog: ActiveStateChange command registration1 success');
+                    expect(true).assertTrue();
+                }
+            }
+
+            controller.on('activeStateChange', callback1);
+
+            controller.on('activeStateChange', callback2);
+
+            controller.off('activeStateChange', callback1);
+            await sleep(500);
+
+            done();
+        })
+
+        /* *
+         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_0101
+         * @tc.name      : ONVALIDCOMMANDCHANGE_0101
+         * @tc.desc      : Testing valid command change callback registration
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONVALIDCOMMANDCHANGE_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let flag = false;
+            controller.on('validCommandChange', (callback) => {
+                if (callback.length > 0 && callback[0] === 'play') {
+                    console.info('TestLog: Valid command change successfully');
+                    flag = true;
+                } else {
+                    console.info('TestLog: Get valid command failed');
+                    console.info(`TestLog: Valid command size is:${callback.length}`);
+                    for(var i = 0; i < callback.length; i++) {
+                        console.info(callback[i]);
+                    }
+                    console.info('TestLog: Valid Command change error');
+                }
+            });
+
+            session.on('play', () => {
+                console.info('TestLog: Play command callback registration successful');
+            });
+
+            await sleep(500);
+
+            if (flag) {
+                console.info('TestLog: ValidCommandChange callback registration successful');
+                expect(true).assertTrue();
+            } else {
+                console.info('TestLog: ValidCommandChange callback registration failed');
+                expect(false).assertTrue();
+            }
+            done();
+        })
+
+        /* *
+         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_0201
+         * @tc.name      : OFFVALIDCOMMANDCHANGE_0201
+         * @tc.desc      : Testing valid command change callback unRegistration
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            function callback1(data) {
+                if (data.length > 0 && data[0] === 'play') {
+                    console.info('TestLog: Valid command change successfully');
+                    expect(false).assertTrue();
+                } else {
+                    console.info('TestLog: Get valid command failed');
+                    expect(false).assertTrue();
+                }
+            }
+
+            function callback2(data) {
+                if (data.length > 0 && data[0] === 'play') {
+                    console.info('TestLog: Valid command change successfully');
+                    expect(true).assertTrue();
+                } else {
+                    console.info('TestLog: Get valid command failed');
+                    expect(false).assertTrue();
+                }
+            }
+
+            controller.on('validCommandChange', callback1);
+
+            controller.on('validCommandChange', callback2);
+
+            controller.off('validCommandChange', callback1);
+
+            session.on('play', () => {
+                console.info('TestLog: Play command callback registration successful');
+            });
+
+            await sleep(500);
+            done();
+        })
+        
+    /* *
+      * @tc.number    : SUB_MULTIMEDIA_AVSESSION_MANAGER_OFFSESSIONDESTROY_0101
+      * @tc.name      : OFFSESSIONDESTROY_0101
+      * @tc.desc      : Testing session destroy Callback unRegistration
+      * @tc.size      : MediumTest
+      * @tc.type      : Function
+      * @tc.level     : Level2
+      */
+    it('SUB_MULTIMEDIA_AVSESSION_MANAGER_OFFSESSIONDESTROY_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        let flag = true;
+        function callback1(callback) {
+            console.info(`TestLog: Session: ${callback.sessionId} destroyed`);
+            flag = false;
+        }
+
+        function callback2(callback) {
+            console.info(`TestLog: Session: ${callback.sessionId} destroyed`);
+            flag = false;
+        }
+
+        controller.on('sessionDestroy', callback1);
+
+        controller.on('sessionDestroy', callback2);
+
+        controller.off('sessionDestroy');
+
+        await sleep(500);
+
+        if (flag) {
+            console.info('TestLog: Session destroy callback unRegistration successful');
+            expect(true).assertTrue();
+        } else {
+            console.info('TestLog: Session destroy callback unRegistration failed');
+            expect(false).assertTrue();
+        }
+        done();
+    })
+
+    /**
+      * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0400
+      * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0400
+      * @tc.desc   test off('metadataChange')
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it("SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        try {
+            controller.off('metadataChange', callback1);
+            done();
+        } catch (err) {
+            expect().assertFail();
+            done();
+        }
+        done();
+    })
     })
 }

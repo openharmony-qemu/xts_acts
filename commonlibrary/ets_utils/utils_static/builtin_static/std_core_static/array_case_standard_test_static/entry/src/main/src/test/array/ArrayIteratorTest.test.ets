@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -375,7 +375,7 @@ export default function ArrayIteratorTest(): void {
 
       const entryResult = entriesIter.next();
       expect(entryResult.done).assertFalse();
-      expect(entryResult.value != undefined).assertTrue();
+      expect(JSON.stringify(entryResult.value)).assertEqual("[0,10]");
     });
 
     /**
@@ -512,9 +512,10 @@ export default function ArrayIteratorTest(): void {
       const iterator = arr.$_iterator();
       expect(iterator.next().value).assertEqual(1);
       const middle = iterator.next().value;
-      expect(middle != undefined).assertTrue();
       if (middle != undefined) {
         expect(Number.isNaN(middle)).assertTrue();
+      }else {
+        expect().assertFail();
       }
       expect(iterator.next().value).assertEqual(3);
     });

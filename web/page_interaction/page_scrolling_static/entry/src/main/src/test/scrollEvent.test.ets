@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -84,6 +85,26 @@ export default function webViewSrollableJsunit() {
       await Utils.msSleep(1000);
       done();
     })
-
+	
+	 /** 
+      * @tc.name   emitonSwitchNextPage 
+      * @tc.number SUB_WEB_SWITCH_NEXT_0400
+      * @tc.desc   emitonSwitchNextPage 
+      * @tc.type   FUNCTION 
+      * @tc.size   MEDIUMTEST 
+      * @tc.level  LEVEL3 
+      */ 
+     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
+       async (done: () => void): Promise<void> => { 
+         Utils.emitEvent('emitonSwitchNextPage2', 10) 
+         await Utils.msSleep(1000); 
+         let driver: Driver = Driver.create(); 
+         await Utils.msSleep(1000); 
+         let button = await driver.findComponent(ON.id('scrollEvent01')); 
+         await Utils.msSleep(1000); 
+         button?.click(); 
+         await Utils.msSleep(5000) 
+         done() 
+       })
   })
 }

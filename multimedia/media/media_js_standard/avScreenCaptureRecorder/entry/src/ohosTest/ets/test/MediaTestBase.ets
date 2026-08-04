@@ -38,6 +38,7 @@ export default class MediaTestBase {
   PAUSERECORDER_EVENT = 'pause';
   RESUMERECORDER_EVENT = 'resume';
   SKIPPRIVACYMODE_EVENT = 'skipPrivacyMode';
+  SET_CONTENT_AUTO_ROTATION = 'setContentAutoRotation';
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
   PRESENTT_PICKER_EVENT = 'presentPicker';
@@ -204,8 +205,10 @@ export default class MediaTestBase {
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP);
             console.info('avScreenCaptureRecorder setPickerMode success');
           } catch (error) {
-            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
-            this.testFail();
+            if (error.code != 5400103) {
+              console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
+              this.testFail();
+            }
           }
         }
 
@@ -218,10 +221,12 @@ export default class MediaTestBase {
         if (this.isTestSucceeded()) {
           const excludedWindowIds: number[] = [101, 102, 103];
           await avScreenCaptureRecorder?.excludePickerWindows(excludedWindowIds).then(() => {
-            console.info('avScreenCaptureRecorder setPickerMode success');
+            console.info('avScreenCaptureRecorder excludePickerWindows success');
           }).catch((err: BusinessError) => {
-            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-            this.testFail();
+            if (err.code != 5400103) {
+              console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + err.message);
+              this.testFail();
+            }
           });
         }
 
@@ -347,6 +352,18 @@ export default class MediaTestBase {
             console.info('avScreenCaptureRecorder setMicEnabled success');
           }).catch((err: BusinessError) => {
             console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.SET_CONTENT_AUTO_ROTATION:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.setContentAutoRotation(true).then(() => {
+            console.info('avScreenCaptureRecorder setContentAutoRotation success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
             this.testFail();
           });
         }

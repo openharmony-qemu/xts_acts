@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
 import sim from '@ohos.telephony.sim';
 import { BusinessError } from '@ohos.base';
-import sim from '@ohos.telephony.sim';
 import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import hilog from '@ohos.hilog';
-
-
 let domain: int = 0x0000;
 let tag: string = 'Sim1Public';
 let PERMISSION_DENIED_CODE: number = 201;

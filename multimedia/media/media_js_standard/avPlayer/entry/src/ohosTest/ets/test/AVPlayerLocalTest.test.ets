@@ -27,6 +27,7 @@ const VIDEO_SOURCE_MKV = 'H264_AAC.mkv'
 const AUDIO_SOURCE = '01.mp3';
 const VIDEO_NOAUDIO = 'H264_NONE.mp4'
 const SUBTITLE = 'srt_2800.srt'
+const AD_SOURCE = 'H264_AAC.mp4';
 const PLAY_TIME = 3000;
 const TAG = 'AVPlayerLocalTest:';
 const IDLE = 'idle';
@@ -39,11 +40,15 @@ const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
 const PAGE_PATH = "testability/pages/Surface"
+const TRACK_ZORO = 0;
+const TRACK_ONE = 1;
 let fileDescriptor: media.AVFileDescriptor;
 let fileDescriptor_mkv: media.AVFileDescriptor;
 let fileDescriptor2: media.AVFileDescriptor;
 let fileDescriptor3: media.AVFileDescriptor;
 let avPlayer: media.AVPlayer | null = null;
+let adsController: media.AVAdsController | undefined = undefined;
+let adMediaSource: media.MediaSource | undefined = undefined;
 let fdPath = '';
 let fdNumber = 0;
 let loopTime: number = 0;
@@ -2365,6 +2370,182 @@ function getCurrentPresentationTimestamp(avPlayer: media.AVPlayer | null, done: 
     }
   })
 }
+
+async function testGetCurrentTrack(src: string | media.AVFileDescriptor, done: Function){
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      getCurrentTrack(avPlayer, done);
+      setSource(avPlayer, src);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+
+function getCurrentTrack(avPlayer: media.AVPlayer | null, done: Function) {
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.audioRendererInfo = { 
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE, 
+          rendererFlags: 0
+        }
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          expect(track).assertEqual(TRACK_ONE);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_VID).then((track) => {
+          expect(track).assertEqual(TRACK_ZORO);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.play();
+        break;
+      case PLAYING:
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          expect(track).assertEqual(TRACK_ONE);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_VID).then((track) => {
+          expect(track).assertEqual(TRACK_ZORO);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.pause();
+        break;
+      case PAUSED:        
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testPrivacyType(src: string | media.AVFileDescriptor, done: Function, type: audio.AudioPrivacyType){
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      privacyType(avPlayer, done, type);
+      setSource(avPlayer, src);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+
+function privacyType(avPlayer: media.AVPlayer | null, done: Function, type: audio.AudioPrivacyType) {
+  let surfaceID: string = globalThis.value;
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.surfaceId = surfaceID;
+        avPlayer.privacyType = type;
+        avPlayer.audioRendererInfo = { 
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE, 
+          rendererFlags: 0
+        }
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        if(avPlayer){
+          expect(avPlayer.privacyType).assertEqual(type);
+        }
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testCreateAdsController(done: Function) {
+  try {
+    avPlayer = await media.createAVPlayer();
+    if (typeof avPlayer == 'undefined') {
+      console.error(`createAVPlayer returned undefined`);
+      expect().assertFail();
+      done();
+      return
+    }
+    adsController = await media.createAVAdsController(avPlayer);
+    if (typeof adsController == 'undefined') {
+      console.error(`createAVAdsController returned undefined`);
+      expect().assertFail();
+      done();
+      return
+    }
+    expect(adsController != null).assertTrue();
+    adsController!!.release();
+    adsController = undefined;
+    avPlayer?.release();
+    avPlayer = null;
+    done();
+  } catch (err) {
+    console.error(`testCreateAdsController error: ${err?.message}`);
+    expect().assertFail();
+    done();
+  }
+}
+
 export default function AVPlayerLocalTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -3660,5 +3841,1146 @@ export default function AVPlayerLocalTest() {
         testSetPlaybackStrategy(fileDescriptor, avPlayer, done, playbackStrategy);
       }
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_0100
+     * @tc.desc   Local Video getCurrentTrack test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_0100', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor) {
+          testGetCurrentTrack(fileDescriptor, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0100
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PUBLIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0100', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor) {
+          testPrivacyType(fileDescriptor, done, audio.AudioPrivacyType.PRIVACY_TYPE_PUBLIC);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0200
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PRIVATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0200', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor) {
+          testPrivacyType(fileDescriptor, done, audio.AudioPrivacyType.PRIVACY_TYPE_PRIVATE);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0100
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0100', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            try {
+              adsController = await media.createAVAdsController(avPlayer);
+            } catch (error) {
+              console.info(`createAVAdsController err code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            let id: string | undefined = "ad-1";
+            try {
+              id = await adsController?.addAdsMediaSource(adMediaSource, 1000);
+              expect(id!.length).assertLarger(0);
+            } catch (error) {
+              console.info(`addAdsMediaSource err code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0101
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0101', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            try {
+              await adsController?.addAdsMediaSource(null, 1000);
+              expect().assertFail();
+            } catch (error) {
+              console.info(`addAdsMediaSource null MediaSource error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0102
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0102
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0102', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            try {
+              await adsController?.addAdsMediaSource(adMediaSource, null);
+              expect().assertFail();
+            } catch (error) {
+              console.info(`addAdsMediaSource null adMarkType error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0103
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0103
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0103', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            try {
+              await adsController?.addAdsMediaSource(undefined, 1000);
+              expect().assertFail();
+            } catch (error) {
+              console.info(`addAdsMediaSource undefined MediaSource error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0104
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0104
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0104', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            try {
+              await adsController?.addAdsMediaSource(adMediaSource, undefined);
+              expect().assertFail();
+            } catch (error) {
+              console.info(`addAdsMediaSource undefined adMarkType error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0200
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0200', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            try {
+              await adsController?.removeAdsMediaSource("ad-1");
+            } catch (error) {
+              console.info(`removeAdsMediaSource error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0201
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0201
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0201', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            try {
+              await adsController?.removeAdsMediaSource("");
+              expect().assertFail();
+            } catch (error) {
+              console.info(`removeAdsMediaSource error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0202
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0202
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0202', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            try {
+              await adsController?.removeAdsMediaSource(null);
+              expect().assertFail();
+            } catch (error) {
+              console.info(`removeAdsMediaSource error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0203
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0203
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0203', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            try {
+              await adsController?.removeAdsMediaSource(undefined);
+              expect().assertFail();
+            } catch (error) {
+              console.info(`removeAdsMediaSource error code: ${error.code}`);
+              expect(error.code).assertEqual(5400108);
+            }
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0300
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0300', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.skipCurrentAdsMediaSource();
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0400
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0400', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.disableAllAdsMediaSource();
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0500
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0500', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.release();
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0600
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0600', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            let callback: media.OnAdsEventLoadingErrorHandle = (adsId: string, reason: BusinessError) => {
+              console.info(`SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0600 callback adsId: ${adsId}, reason: ${reason}`);
+            };
+            adsController?.onAdsEventListenerLoadingError(callback);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0601
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0601
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0601', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.onAdsEventListenerLoadingError(null);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0602
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0602
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0602', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.onAdsEventListenerLoadingError(undefined);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0700
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0700', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            let callback: media.OnAdsEventAdsStartedHandle = (adsId: string, duration: number) => {
+              console.info(`SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0700 callback adsId: ${adsId}, duration: ${duration}`);
+            };
+            adsController?.onAdsListenerAdsStarted(callback);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0701
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0701
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0701', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.onAdsListenerAdsStarted(null);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0702
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0702
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0702', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.onAdsListenerAdsStarted(undefined);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0800
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0800', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.onAdsListenerAdsSkipped((adsId: string) => {
+              console.error(`Ads Skipped, adsId: ${adsId}`);
+            });
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0900
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0900', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.onAdsListenerAdsCompleted((adsId: string) => {
+              console.error(`Ads Completed, adsId: ${adsId}`);
+            });
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1000
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1000', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsEventListenerLoadingError();
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1001
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1001', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsEventListenerLoadingError((adsId: string, reason: BusinessError) => {
+              console.error(`Ads loading failed, adsId: ${adsId}, reason: ${reason.message}`);
+            });
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1002
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1002', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsEventListenerLoadingError(null);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1003
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1003
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1003', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsEventListenerLoadingError(undefined);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1100
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1100', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsStarted();
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1101
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1101', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsStarted((adsId: string, duration: number) => {
+              console.error(`Ads started, adsId: ${adsId}, duration: ${duration}ms`);
+            });
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1102
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1102
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1102', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsStarted(null);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1103
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1103
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1103', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsStarted(undefined);
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1200
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1200', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsSkipped();
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1201
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1201
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1201', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsSkipped((adsId: string) => {
+              console.error(`Ads Skipped, adsId: ${adsId}`);
+            });
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1300
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1300', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsCompleted((adsId: string) => {
+              console.error(`Ads Completed, adsId: ${adsId}`);
+            });
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1301
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1301
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1301', Level.LEVEL0,async (done: Function) => {
+      if (fileDescriptor) {
+        let playbackStrategy: media.PlaybackStrategy = {mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
+        media.createAVPlayer(async (err, video) => {
+          console.info(`case media err: ${err}`);
+          if (typeof (video) !== 'undefined') {
+            console.info(`case createAVPlayer success`);
+            avPlayer = video;
+            setPlaybackStrategy(avPlayer, done, playbackStrategy);
+            setSource(avPlayer, fileDescriptor);
+            adsController = await media.createAVAdsController(avPlayer);
+            adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
+            adsController?.offAdsListenerAdsCompleted();
+          }
+          if (err != null) {
+            console.info(`case createAVPlayer error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1400
+     * @tc.desc   Test addAdsMediaSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_1400', Level.LEVEL0,async (done: Function) => {
+      testCreateAdsController(done);
+    });
+
+
   })
 }

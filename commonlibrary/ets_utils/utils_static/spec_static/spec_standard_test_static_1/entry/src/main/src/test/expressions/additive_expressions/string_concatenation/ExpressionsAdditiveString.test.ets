@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -24,15 +27,8 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium';
+} from '../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 class Bird {
   static fly() {
     return "Fly ";
@@ -87,8 +83,7 @@ const Color3: GeneratedObjectLiteralInterface_3 = {
   Green: 1,
 };
 
-
-export default function ExpressionsAdditiveStringTest() {
+export default function ExpressionsAdditiveStringTest(): void {
   describe("ExpressionsAdditiveStringTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -99,7 +94,7 @@ export default function ExpressionsAdditiveStringTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -144,7 +139,7 @@ export default function ExpressionsAdditiveStringTest() {
      */
     it("testExpressionsAdditiveString0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(("aaa" + "AAA")).assertEqual("aaaAAA");
-      expect(("фыва" + "ФЫВА")).assertEqual("фываФЫВА");
+      expect(("褎褘胁邪" + "肖蝎袙袗")).assertEqual("褎褘胁邪肖蝎袙袗");
     })
     /**
      * @tc.number    SUB_EXPRESSIONS_ADDITIVE_STRING_0400

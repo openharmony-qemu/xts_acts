@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import cameraJSUnitOutput from './CameraJSUnitOutput.test.ets'
 import cameraSessionFlashTest from './CameraSessionFlashTest.test.ets'
 import cameraSessionExposureTest from './CameraSessionExposureTest.test.ets'
@@ -43,40 +46,54 @@ import {CameraConcurrentTest,isSupportCameras} from './CameraConcurrentTest.test
 import cameraCaptureSceneTest from './CameraCaptureSceneTest.test.ets'
 import CameraMacroTest from './CameraMacroTest.test.ets'
 import CameraPhotoQualityPrioritizationTest from './CameraPhotoQualityPrioritization.test.ets'
+import CameraPreviewBandwidthCompressionTest from './CameraPreviewBandwidthCompressionTest.test.ets'
+import CameraCapturePhotoWithCompressionQuality from './CameraCapturePhotoWithCompressionQuality.test.ets'
 
 let TAG = 'CameraModuleTest: '
+let testContext: common.UIAbilityContext = AppStorage.get('thisContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
 
 export default function cameraKit() {
   console.info(TAG + 'Entering cameraKit')
   //无权限优先执行
-  CameraNoPermissionErrorCodeTest()
-  CameraVideoQualityPrioritizationTest()
-  cameraTorchTest()
-  cameraInputTest()
-  cameraVideoSuperStabilizationTest()
-  cameraJSUnitOutput()
-  cameraSessionFlashTest()
-  cameraSessionExposureTest()
-  cameraSessionFocusTest()
-  cameraSessionZoomRatioTest()
-  cameraSessionVideoStabilizationTest()
-  cameraSessionBaseTest()
-  cameraSessionMultiSessionTest();
-  CameraErrorCodeUsecaseTest()
-  cameraManagerTest()
-  cameraPreconfigTest()
-  cameraEnumTest()
-  cameraSecureSessionTest()
-  CameraSessionCameraRotationTest()
-  CameraVideoCodecTypeTest()
-  cameraSessionAutoDeviceSwitchTest()
-  cameraSessionSystemPressureTest()
-  cameraSessionControlCenterTest()
-  CameraMirrorTest()
-  CameraVideoMirrorTest()
-  CameraPhotoSessionTest()
-  CameraConcurrentTest()
+  if (cameraDeviceArray.length === 0) {
+    cameraTorchTest()
+    cameraEnumTest()
+    CameraVideoCodecTypeTest()
+    CameraPhotoQualityPrioritizationTest()
+  } else {
+    CameraNoPermissionErrorCodeTest()
+    CameraVideoQualityPrioritizationTest()
+    cameraTorchTest()
+    cameraInputTest()
+    cameraVideoSuperStabilizationTest()
+    cameraJSUnitOutput()
+    cameraSessionFlashTest()
+    cameraSessionExposureTest()
+    cameraSessionFocusTest()
+    cameraSessionZoomRatioTest()
+    cameraSessionVideoStabilizationTest()
+    cameraSessionBaseTest()
+    cameraSessionMultiSessionTest();
+    CameraErrorCodeUsecaseTest()
+    cameraManagerTest()
+    cameraPreconfigTest()
+    cameraEnumTest()
+    cameraSecureSessionTest()
+    CameraSessionCameraRotationTest()
+    CameraVideoCodecTypeTest()
+    cameraSessionAutoDeviceSwitchTest()
+    cameraSessionSystemPressureTest()
+    cameraSessionControlCenterTest()
+    CameraMirrorTest()
+    CameraVideoMirrorTest()
+    CameraPhotoSessionTest()
+    CameraConcurrentTest()
     CameraMacroTest()
-  cameraCaptureSceneTest()
-  CameraPhotoQualityPrioritizationTest()
+    cameraCaptureSceneTest()
+    CameraPhotoQualityPrioritizationTest()
+    CameraPreviewBandwidthCompressionTest()
+    CameraCapturePhotoWithCompressionQuality()
+  }
 }

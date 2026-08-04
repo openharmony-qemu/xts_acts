@@ -111,7 +111,8 @@ export default function comSizeAbilityTest_02() {
     it('comSizeAbilityTestJsunit_06', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_06 START')
       await CommonFunc.sleep(1000);
-      let modePosition: componentUtils.ComponentInfo = componentUtils.getRectangleById("Checkbox_Size");
+      let modePosition: componentUtils.ComponentInfo =
+        componentUtils.getRectangleById('comSizeAbilityTest_02' + '_Checkbox_Size');
       let modePosition1: componentUtils.ComponentInfo = componentUtils.getRectangleById("Checkbox_Father");
       let Size = modePosition.size
       let SizeWidth = Size.width
@@ -124,7 +125,7 @@ export default function comSizeAbilityTest_02() {
       let Scale = modePosition.scale
       let Rotate = modePosition.rotate
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('Checkbox_Size'));
+      let button = await driver.findComponent(ON.id('comSizeAbilityTest_02_Checkbox_Size'));
       let rect = await button.getBounds();
       console.info("[comSizeAbilityTestJsunit_06] component rect is: " + JSON.stringify(rect))
       console.info("[comSizeAbilityTestJsunit_06] component Size is: " + JSON.stringify(Size))

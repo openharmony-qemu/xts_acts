@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,19 +55,19 @@ export default function ActsCommonEventSystemAPITest() {
     let TAG :string = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     hilog.info(domain, TAG, '%{public}s', 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
 
-    beforeAll(async () => {
+    beforeAll(():void => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
       if(!isWifiActive){
         console.info(TAG+"======> wifi_test/enable wifi:" );
         wifiMg.enableWifi();
-        await Utils.msSleep(5000);
+        waitForCompletion(async ()=>{await Utils.msSleep(5000);})
       }
 
       try {
         let data: wifiMg.WifiLinkedInfo|undefined;
-        data = await wifiMg.getLinkedInfo();
+        waitForCompletion(async ()=>{data = await wifiMg.getLinkedInfo();})
         console.info(TAG+"======> Internet WifiLinkedInfo : " + JSON.stringify(data));
         console.info(TAG+"======> Internet speed : " + JSON.stringify(data!.linkSpeed));
         console.info(TAG+"======> Internet chload : " + JSON.stringify(data!.chload));
@@ -89,9 +90,14 @@ export default function ActsCommonEventSystemAPITest() {
       }
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await Utils.msSleep(2000);
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
-      await Utils.msSleep(2000);
+      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
+      let cmd = `aa start -a EntryAbility -b ${bundleName}`;	 
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];	 
+      if(user !== undefined){ 
+          cmd += ' -u ' + user; 
+      } 
+      abilityDelegator.executeShellCommand(cmd )
+      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })

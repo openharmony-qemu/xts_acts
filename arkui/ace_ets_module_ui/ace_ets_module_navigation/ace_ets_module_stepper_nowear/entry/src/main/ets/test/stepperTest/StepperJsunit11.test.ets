@@ -64,7 +64,7 @@ export default function StepperJsunit11() {
      */
     it('stepperTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperTest_0100 START');
-      let strJson: string = getInspectorByKey('stepper');
+      let strJson: string = getInspectorByKey('stepper' + '_stepper');
       console.info("stepperTest_0100 component strJson:" + strJson);
       console.info("stepperTest_0100 component obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Stepper');
@@ -83,7 +83,7 @@ export default function StepperJsunit11() {
      */
     it('stepperTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperTest_0200 START');
-      let strJson: string = getInspectorByKey('stepper');
+      let strJson: string = getInspectorByKey('stepper' + '_stepper');
       console.info("stepperTest_0200 component strJson:" + strJson);
       console.info("stepperTest_0200 component obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.index).assertEqual('0');
@@ -103,7 +103,7 @@ export default function StepperJsunit11() {
         console.log("stepperTest_0200 change component data error: " + (err as BusinessError).message);
       }
       await sleep(3000);
-      let strJsonNew: string = getInspectorByKey('stepper');
+      let strJsonNew: string = getInspectorByKey('stepper' + '_stepper');
       console.info("stepperTest_0200 component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.index).assertEqual('1');
       console.info('stepperTest_0200 END');
@@ -125,7 +125,7 @@ export default function StepperJsunit11() {
         name: 'index', value: -558038585
       })
       await sleep(2000);
-      let strJsonNew: string = getInspectorByKey('stepper');
+      let strJsonNew: string = getInspectorByKey('stepper' + '_stepper');
       console.info("stepperTest_0400 component objNew is: " + JSON.parse(strJsonNew).$attrs.index);
       expect(JSON.parse(strJsonNew).$attrs.index).assertEqual('0');
       console.info('stepperTest_0400 END');
@@ -147,7 +147,7 @@ export default function StepperJsunit11() {
         name: 'index', value: -10
       })
       await sleep(2000);
-      let strJsonNew: string = getInspectorByKey('stepper');
+      let strJsonNew: string = getInspectorByKey('stepper' + '_stepper');
       console.info("stepperTest_0500 component objNew is: " + JSON.parse(strJsonNew).$attrs.index);
       expect(JSON.parse(strJsonNew).$attrs.index).assertEqual('0');
       console.info('stepperTest_0400 END');
@@ -164,7 +164,7 @@ export default function StepperJsunit11() {
      */
     it('stepperTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperTest_0300v START');
-      let strJson: string = getInspectorByKey('stepper');
+      let strJson: string = getInspectorByKey('stepper' + '_stepper');
       console.info("stepperTest_0300 component strJson:" + strJson);
       console.info("stepperTest_0300 component obj is: " + JSON.stringify(JSON.parse(strJson)));
       try {
@@ -183,7 +183,7 @@ export default function StepperJsunit11() {
         console.log("stepperTest_0300 change component data error: " + (err as BusinessError).message);
       }
       await sleep(3000);
-      let strJsonNew: string = getInspectorByKey('stepper');
+      let strJsonNew: string = getInspectorByKey('stepper' + '_stepper');
       console.info("stepperTest_0300 component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.index).assertEqual('0');
       console.info('stepperTest_0300 END');

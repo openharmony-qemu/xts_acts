@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +20,7 @@ import CombLockTest from "./CombLock.test";
 import MutexLockEnhancedTest from "./MutexLockEnhanced.test";
 import RWLockEnhancedTest from "./RWLockEnhanced.test";
 import CombLockEnhancedTest from "./CombLockEnhanced.test";
-export default function testsuite() {
+export default function testsuite(): void {
   MutexLockTest()
   RWLockTest()
   CombLockTest()

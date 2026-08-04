@@ -25,18 +25,22 @@ class UtilsTest{
   static isStartedAbility = false;
 
   static async loadAndSetUpUiTest() : Promise<boolean> {
-    hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
-    try {
-      if (!UtilsTest.isloadAndSetUpUiTest) {
-        hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-        UtilsTest.isloadAndSetUpUiTest = true;
-        await UtilsTest.msSleep(4000)
-      }
-      return true
-    } catch(error) {
-      hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
-      throw error
-    }
+    return new Promise<boolean>((resolve, reject) => {
+      waitForCompletion(async () => {
+        hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
+        try {
+          if (!UtilsTest.isloadAndSetUpUiTest) {
+            hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
+            UtilsTest.isloadAndSetUpUiTest = true;
+            await UtilsTest.msSleep(4000)
+          }
+          resolve(true)
+        } catch(error) {
+          hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
+          reject(error)
+        }
+      })
+    })
   }
 
   static async msSleep(count:int) : Promise<int> {
@@ -50,7 +54,12 @@ class UtilsTest{
   static async startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
     if (!UtilsTest.isStartedAbility) {
-      await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+      let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
       UtilsTest.isStartedAbility = true;
       await UtilsTest.msSleep(4000)
@@ -77,7 +86,12 @@ async function stopApplication(bundleName: string): Promise<boolean>{
 
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
-    await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+    let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegator.executeShellCommand(cmd);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
     return true;

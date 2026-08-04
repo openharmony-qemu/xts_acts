@@ -13,34 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  Provide,
-  PropRef,
-  ObjectLink,
-  Observed,
-  Consume,
-  StoragePropRef,
-  StorageLink,
-  LocalStorage,
-  LocalStoragePropRef
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row } from '@ohos.arkui.component';
+import { State, Watch, Link, Provide, PropRef, ObjectLink, Observed, Consume, StoragePropRef, StorageLink, LocalStorage, LocalStoragePropRef, AppStorage, Track } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, Observed, Track } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-
 @Observed
 export class LinkAC {
   @Track public value: number

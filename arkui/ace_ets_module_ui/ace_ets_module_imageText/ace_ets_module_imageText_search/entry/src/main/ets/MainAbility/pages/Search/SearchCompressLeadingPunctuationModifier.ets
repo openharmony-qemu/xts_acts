@@ -39,6 +39,7 @@ struct searchModifier {
           placeholder: 'This is Search',
         })
           .id('searchModifier')
+          .key('searchModifier')
           .borderWidth(1)
           .attributeModifier(this.searchModifier)//新接口，控制行首标点符号是否缩进
 

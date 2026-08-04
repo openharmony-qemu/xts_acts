@@ -178,7 +178,7 @@ struct ParticleExample2 {
             noiseFrequency: 15,
             noiseAmplitude: 5,
           }])
-          .key('particleTest')
+          .key('particleAttributeTest_particleTest')
           .id('btn')
           .onClick((e: ClickEvent) => {
             this.text = '1';

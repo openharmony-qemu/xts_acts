@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -24,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 interface I_22 {
   a: number
@@ -33,7 +36,6 @@ interface I_22 {
 
 enum ENM_22 {Red = 8, Blue, Green}
 
-// 类型定义
 type p_0 = Awaited<number>
 type o_0 = Awaited<p_0>
 
@@ -49,15 +51,7 @@ type o_4 = Awaited<p_4>
 type p_5 = Awaited<ENM_22>
 type o_5 = Awaited<p_5>
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function AwaitedUtilityTypeTest() {
+export default function AwaitedUtilityTypeTest(): void {
   describe("AwaitedUtilityTypeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -68,7 +62,7 @@ export default function AwaitedUtilityTypeTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

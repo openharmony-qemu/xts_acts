@@ -13,8 +13,10 @@
  * limitations under the License.
  */
  
-import ActsDlpNDK20Test from './ActsDlpNDK20Test.test'
+import ActsDlpNDK20Test from './ActsDlpNDK20Test.test';
+import DlpEnterpriseServiceTest from './DlpEnterpriseServiceTest.test.ets';
 
 export default function testsuite() {
-  ActsDlpNDK20Test()
+  ActsDlpNDK20Test();
+  DlpEnterpriseServiceTest();
 }

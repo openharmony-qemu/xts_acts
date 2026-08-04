@@ -162,12 +162,12 @@ struct TapGestureExample {
         .width('80%')
         .padding('5%')
         .border({ width: 3 })
-        .margin('5%')
+        .margin('1%')
 
         Button('点击添加监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.addGlobalGestureListener(GestureListenerType.TAP,
@@ -178,14 +178,14 @@ struct TapGestureExample {
         Button('点击移除监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.removeGlobalGestureListener(GestureListenerType.TAP, tapGesture);
             console.info('aaa --- 移除监听')
           })
       }
-      .height('70%')
+      .height('65%')
       .width('100%')
       .backgroundColor(Color.White)
 

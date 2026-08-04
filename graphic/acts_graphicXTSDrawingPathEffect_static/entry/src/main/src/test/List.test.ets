@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,9 @@
  */
 import pathEffectTest from './PathEffect.test';
 import PathEffect2 from './PathEffect2.test';
-export default function testsuite() {
+import DrawingPathEffectPart3Test from './PathEffect3.test';
+export default function testsuite(): void {
   pathEffectTest();
   PathEffect2();
+  DrawingPathEffectPart3Test();
 }

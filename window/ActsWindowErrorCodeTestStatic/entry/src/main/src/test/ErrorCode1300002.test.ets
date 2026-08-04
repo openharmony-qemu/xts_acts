@@ -13,25 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-
 import display from '@ohos.display';
 import floatingBall from '@ohos.window.floatingBall';
-import { BusinessError } from '@ohos.base';
-// import { MyCallback } from '../models/MyCallback';
-import window from '@ohos.window'
+import type { BusinessError, AsyncCallback, Callback } from '@ohos.base';
+import window from '@ohos.window';
 import settings from '@ohos.settings';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
-import StartOptions from '@ohos.app.ability.StartOptions'
+import StartOptions from '@ohos.app.ability.StartOptions';
 import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
-import display from '@ohos.display';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -54,7 +50,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        Utils.msSleep(1000).awaitSync()
+        waitForCompletion(() => Utils.msSleep(1000))
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -75,10 +71,10 @@ async function terminateAbility(caseName: string) {
     }
     await Utils.msSleep(1000)
 }
-export default function ErrorCode201(): void  {
+export default function ErrorCode1300002(): void  {
 
-    describe("ErrorCode201", (): void => {
-        hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
+    describe("ErrorCode1300002", (): void => {
+        hilog.info(domain, tag, '%{public}s', 'ErrorCode1300002 describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage | undefined;
@@ -89,7 +85,12 @@ export default function ErrorCode201(): void  {
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswindowtest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;

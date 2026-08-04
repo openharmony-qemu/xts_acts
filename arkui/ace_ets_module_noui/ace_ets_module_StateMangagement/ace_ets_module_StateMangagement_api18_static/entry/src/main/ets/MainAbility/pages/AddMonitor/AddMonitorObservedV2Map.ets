@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
@@ -25,7 +25,7 @@ export class MapInfo {
   @Trace public text: string = '';
 
   constructor(){this.memberMapMonitor = UIUtils.addMonitor(() => this.memberMap, this.memberMapChange, { path: ['Map'] });}
-  memberMapChange(m: IMonitor) {
+  memberMapChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} has changed from ${m.value<Map<number, string>>(path)?.before} to ${m.value<Map<number, string>>(path)?.now}`);
       this.text = `[addMonitorTest] ${path} has changed from ${m.value<Map<number, string>>(path)?.before} to ${m.value<Map<number, string>>(path)?.now}`

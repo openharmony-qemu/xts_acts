@@ -1,3 +1,4 @@
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,10 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
+import { I8, J, A17, B, C } from '../../Util.test'
+
 
 let elem: Any = null
 let a: Any[] = [elem, elem]
@@ -124,13 +128,6 @@ let a55: FixedArray<number> = [1.0, 2.0]
 type TT = [int, string]
 let a56: TT = [42, "abc"]
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 type my_type1 = Any[]
 type my_type2 = Array<Any>
 type my_type3 = undefined[]
@@ -190,11 +187,6 @@ type my_type48 = Array<undefined>
 type my_type49 = null[]
 type my_type50 = Array<null>
 type my_type51 = byte[]
-interface I8<T> {}
-interface J<T> {}
-class A17<T> implements I8<T> {}
-class B<T> extends A17<T> implements J<T> {}
-class C<T> {}
 
 let c: C<int>
 enum Rating1: double { A = 1.0, B = 1.5 }
@@ -215,7 +207,7 @@ export default function ExpressionsInstanceTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -560,7 +552,7 @@ export default function ExpressionsInstanceTest(): void {
     it("testExpressionsInstance0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v = pass_through(a20)
       expect(v instanceof Array).assertTrue()
-      expect(a20[0] instanceof foo_type).assertTrue()
+      expect(a20[0] instanceof ((a: Any) => never)).assertTrue()
     });
 
     /**
@@ -896,48 +888,48 @@ export default function ExpressionsInstanceTest(): void {
     it("testExpressionsInstance0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v = pass_through(a41)
       expect(v instanceof Array).assertTrue()
-      expect(a41[0] instanceof foo_type).assertTrue()
+      expect(a41[0] instanceof ((a: Any) => never)).assertTrue()
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_INSTANCE_TEST_4300
      * @tc.name      testExpressionsInstance0043
-     * @tc.desc      A compile-time error occurs if type T is not retained after type erasure.
-     *               Generic types cannot be used with instanceof unless T is preserved.
-     *               Fixed-size array types (FixedArray<T>) retain the effective type of the type argument T.
+     * @tc.desc      Non-preserved FixedArray type arguments cannot be used on the right-hand side of instanceof.
+     *               FixedArray without type arguments only checks the preserved runtime container type.
+     *               FixedArray<undefined> remains valid because its element type is preserved after erasure.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsInstance0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(a42 instanceof FixedArray<A8>).assertTrue()
-      expect(a43 instanceof FixedArray<double>).assertTrue()
-      expect(a44 instanceof FixedArray<int>).assertTrue()
-      expect(a45 instanceof FixedArray<string>).assertTrue()
-      expect(a46 instanceof FixedArray<null>).assertTrue()
+      expect(a42 instanceof FixedArray<A8 | undefined>).assertTrue()
+      expect(a43 instanceof FixedArray<double | undefined>).assertTrue()
+      expect(a44 instanceof FixedArray<int | undefined>).assertTrue()
+      expect(a45 instanceof FixedArray<string | undefined>).assertTrue()
+      expect(a46 instanceof FixedArray<null | undefined>).assertTrue()
       expect(a47 instanceof FixedArray<undefined>).assertTrue()
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_INSTANCE_TEST_4400
      * @tc.name      testExpressionsInstance0044
-     * @tc.desc      A compile-time error occurs if type T is not retained after type erasure.
-     *               Generic types cannot be used with instanceof unless T is preserved.
-     *               Fixed-size array types (FixedArray<T>) retain the effective type of the type argument T.
+     * @tc.desc      Non-preserved FixedArray type arguments cannot be used on the right-hand side of instanceof.
+     *               FixedArray without type arguments only checks the preserved runtime container type.
+     *               FixedArray<undefined> remains valid because its element type is preserved after erasure.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsInstance0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(a48 instanceof FixedArray<A8>).assertTrue()
+      expect(a48 instanceof FixedArray<A8 | undefined>).assertTrue()
       expect(a48[0] instanceof A8).assertTrue()
-      expect(a49 instanceof FixedArray<double>).assertTrue()
+      expect(a49 instanceof FixedArray<double | undefined>).assertTrue()
       expect(a49[0] instanceof double).assertTrue()
-      expect(a50 instanceof FixedArray<int>).assertTrue()
+      expect(a50 instanceof FixedArray<int | undefined>).assertTrue()
       expect(a50[0] instanceof int).assertTrue()
-      expect(a51 instanceof FixedArray<string>).assertTrue()
+      expect(a51 instanceof FixedArray<string | undefined>).assertTrue()
       expect(a51[0] instanceof string).assertTrue()
-      expect(a52 instanceof FixedArray<null>).assertTrue()
+      expect(a52 instanceof FixedArray<null | undefined>).assertTrue()
       expect(a52[0] instanceof null).assertTrue()
       expect(a53 instanceof FixedArray<undefined>).assertTrue()
       expect(a53[0] instanceof undefined).assertTrue()
@@ -946,72 +938,72 @@ export default function ExpressionsInstanceTest(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_INSTANCE_TEST_4500
      * @tc.name      testExpressionsInstance0045
-     * @tc.desc      A compile-time error occurs if type T is not retained after type erasure.
-     *               Generic types cannot be used with instanceof unless T is preserved.
-     *               Fixed-size array types (FixedArray<T>) retain the effective type of the type argument T.
+     * @tc.desc      Type arguments erased from FixedArray cannot be used on the right-hand side of instanceof.
+     *               FixedArray without type arguments only checks the preserved runtime container type.
+     *               Element types must be checked separately when needed.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsInstance0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1 = [1, 2] instanceof FixedArray<int>
+      let v1 = [1, 2] instanceof FixedArray<int | undefined>
       expect(v1 instanceof boolean).assertTrue()
       expect(!v1).assertTrue()
-      let v2 = ((p: boolean) => p ? 1 : 0)([1, 2] instanceof FixedArray<int>)
+      let v2 = ((p: boolean) => p ? 1 : 0)([1, 2] instanceof FixedArray<int | undefined>)
       expect(v2).assertEqual(0)
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_INSTANCE_TEST_4600
      * @tc.name      testExpressionsInstance0046
-     * @tc.desc      A compile-time error occurs if type T is not retained after type erasure.
-     *               Generic types cannot be used with instanceof unless T is preserved.
-     *               Fixed-size array types (FixedArray<T>) retain the effective type of the type argument T.
+     * @tc.desc      Type arguments erased from FixedArray cannot be used on the right-hand side of instanceof.
+     *               FixedArray without type arguments only checks the preserved runtime container type.
+     *               Element types must be checked separately when needed.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsInstance0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1 = ((): Any => a54)() instanceof FixedArray<double>
+      let v1 = ((): Any => a54)() instanceof FixedArray<double | undefined>
       expect(v1 instanceof boolean).assertTrue()
       expect(!v1).assertTrue()
-      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => a54)() instanceof FixedArray<double>)
+      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => a54)() instanceof FixedArray<double | undefined>)
       expect(v2).assertEqual(0)
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_INSTANCE_TEST_4700
      * @tc.name      testExpressionsInstance0047
-     * @tc.desc      A compile-time error occurs if type T is not retained after type erasure.
-     *               Generic types cannot be used with instanceof unless T is preserved.
-     *               Fixed-size array types (FixedArray<T>) retain the effective type of the type argument T.
+     * @tc.desc      Type arguments erased from FixedArray cannot be used on the right-hand side of instanceof.
+     *               FixedArray without type arguments only checks the preserved runtime container type.
+     *               Element types must be checked separately when needed.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsInstance0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1 = ((): Any => a55)() instanceof FixedArray<number>
+      let v1 = ((): Any => a55)() instanceof FixedArray<double | undefined>
       expect(v1 instanceof boolean).assertTrue()
       expect(v1).assertTrue()
-      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => a55)() instanceof FixedArray<number>)
+      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => a55)() instanceof FixedArray<double | undefined>)
       expect(v2).assertEqual(1)
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_INSTANCE_TEST_4800
      * @tc.name      testExpressionsInstance0048
-     * @tc.desc      A compile-time error occurs if type T is not retained after type erasure.
-     *               Generic types cannot be used with instanceof unless T is preserved.
-     *               Fixed-size array types (FixedArray<T>) retain the effective type of the type argument T.
+     * @tc.desc      Type arguments erased from FixedArray cannot be used on the right-hand side of instanceof.
+     *               FixedArray without type arguments only checks the preserved runtime container type.
+     *               Element types must be checked separately when needed.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsInstance0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1 = ((): Any => a56)() instanceof FixedArray<int>
+      let v1 = ((): Any => a56)() instanceof FixedArray<int | undefined>
       expect(v1 instanceof boolean).assertTrue()
       expect(!v1).assertTrue()
-      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => a56)() instanceof FixedArray<int>)
+      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => a56)() instanceof FixedArray<int | undefined>)
       expect(v2).assertEqual(0)
     });
 

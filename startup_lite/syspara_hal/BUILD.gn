@@ -13,14 +13,26 @@
 
 import("//test/xts/tools/lite/build/suite_lite.gni")
 
+declare_args() {
+  acts_lite_param_value_len_max_48 = false
+}
+
 hctest_suite("ActsParameterTest") {
   suite_name = "acts"
+
   sources = [
-    "src/deviceinfo_func_test.c",
+    "src/deviceinfo_test.c",
     "src/parameter_func_test.c",
-    "src/parameter_reli_test.c",
     "src/parameter_utils.c",
   ]
+
+  if (acts_lite_param_value_len_max_48) {
+    if (defined(defines)) {
+      defines += [ "PARAM_VALUE_LEN_MAX_48" ]
+    } else {
+      defines = [ "PARAM_VALUE_LEN_MAX_48" ]
+    }
+  }
 
   include_dirs = [
     "src",

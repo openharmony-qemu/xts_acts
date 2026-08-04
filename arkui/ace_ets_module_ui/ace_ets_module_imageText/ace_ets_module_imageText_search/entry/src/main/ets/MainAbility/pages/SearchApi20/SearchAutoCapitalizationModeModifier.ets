@@ -71,6 +71,7 @@ struct SearchAutoCapitalizationModeModifier {
         value: 'AutoCapitalizationMode.NONE',
       })
         .id('Search_AutoCapitalizationModeModifier_NONE')
+        .key('Search_AutoCapitalizationModeModifier_NONE')
         .attributeModifier(this.SearchModifier1)
         .height('5%')
 
@@ -78,6 +79,7 @@ struct SearchAutoCapitalizationModeModifier {
         value: 'AutoCapitalizationMode.WORDS',
       })
         .id('Search_AutoCapitalizationModeModifier_WORDS')
+        .key('Search_AutoCapitalizationModeModifier_WORDS')
         .attributeModifier(this.SearchModifier2)
         .height('5%')
 
@@ -85,6 +87,7 @@ struct SearchAutoCapitalizationModeModifier {
         value: 'AutoCapitalizationMode.SENTENCES',
       })
         .id('Search_AutoCapitalizationModeModifier_SENTENCES')
+        .key('Search_AutoCapitalizationModeModifier_SENTENCES')
         .attributeModifier(this.SearchModifier3)
         .height('5%')
 
@@ -92,6 +95,7 @@ struct SearchAutoCapitalizationModeModifier {
         value: 'AutoCapitalizationMode.ALL_CHARACTERS',
       })
         .id('Search_AutoCapitalizationModeModifier_ALL_CHARACTERS')
+        .key('Search_AutoCapitalizationModeModifier_ALL_CHARACTERS')
         .attributeModifier(this.SearchModifier4)
         .height('5%')
 
@@ -99,6 +103,7 @@ struct SearchAutoCapitalizationModeModifier {
         value: 'AutoCapitalizationMode: undefined',
       })
         .id('Search_AutoCapitalizationModeModifier_undefined')
+        .key('Search_AutoCapitalizationModeModifier_undefined')
         .attributeModifier(this.SearchModifier5)
         .height('5%')
 

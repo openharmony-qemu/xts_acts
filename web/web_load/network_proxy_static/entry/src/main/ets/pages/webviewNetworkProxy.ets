@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +20,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { Button, ClickEvent, Column, Component, Entry, Row, Text, Web } from '@ohos.arkui.component'
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import Utils from '../../src/test/Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 

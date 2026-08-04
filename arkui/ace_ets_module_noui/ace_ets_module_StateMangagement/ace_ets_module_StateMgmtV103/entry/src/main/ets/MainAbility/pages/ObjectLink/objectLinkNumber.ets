@@ -44,25 +44,25 @@ struct ObjectLinkNumber {
         .onClick(() => {
           // 赋值为ClassA111111的实例
           this.count = new ClassAA(100)
-        }).key('state1').height('5%')
+        }).key('objectLinkNumber_state1').height('5%')
 
       Button('change count to ClassBB')
         .onClick(() => {
           // 赋值为ClassA111111的实例
           this.count = new ClassBB(100)
-        }).key('state2').height('5%')
+        }).key('objectLinkNumber_state2').height('5%')
 
       Button('change count to undefined')
         .onClick(() => {
           // 赋值为undefined
           this.count = undefined
-        }).key('state3').height('5%')
+        }).key('objectLinkNumber_state3').height('5%')
 
       Button('change count to null')
         .onClick(() => {
           // 赋值为undefined
           this.count = null
-        }).key('state4').height('5%')
+        }).key('objectLinkNumber_state4').height('5%')
 
     }.width('100%')
   }

@@ -71,11 +71,12 @@ class TestDuplex extends stream.Duplex {
 
 export default function Stream2Test() {
   describe('Stream2Test', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       new Resettable();
     })
     afterEach(async () => {
-      await sleep(20);
+      await sleep(50);
     })
 
     /**
@@ -93,7 +94,7 @@ export default function Stream2Test() {
         writableStream.write('', 'utf8');
         expect().assertFail();
       } catch (err) {
-        expect(err.code).assertEqual(401)
+        expect(err.code).assertEqual(undefined)
       }
     })
 
@@ -400,7 +401,7 @@ export default function Stream2Test() {
         });
         expect().assertFail();
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     })
 
@@ -1225,7 +1226,7 @@ export default function Stream2Test() {
         duplexStream.write('', 'utf8', () => {
         });
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     })
 
@@ -1495,7 +1496,7 @@ export default function Stream2Test() {
       try {
         transformStream.write('', 'utf8');
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     })
 

@@ -18,6 +18,42 @@
 #include "device_certificate/certmanager/cm_native_type.h"
 #include <cstdint>
 #include <string>
+#include <cstring>
+
+constexpr int MAX_BYTE_VALUE = 255;
+
+int SafeMemset(void* s, size_t sse, int c, size_t n)
+{
+    //检查参数有效性
+    if (s == nullptr) {
+        return EINVAL;
+    }
+
+    //检查目标内存大小是否为0
+    if (sse == 0) {
+        return EINVAL;
+    }
+
+    //检查要设置的字节数是否超过目标内存大小
+    if (n > sse) {
+        return ERANGE;
+    }
+
+    //检查要设置的值是否在有效范围内
+    if (c < 0 || c > MAX_BYTE_VALUE) {
+        return EINVAL;
+    }
+
+    //执行内存设置操作
+    unsigned char *ptr = static_cast<unsigned char *>(s);
+    unsigned char value = static_cast<unsigned char>(c);
+
+    for (size_t i = 0; i < n; i++) {
+        ptr[i] = value;
+    }
+
+    return 0;
+}
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -268,7 +304,8 @@ static napi_value OHCertManagerNativeApiPublicErr0100(napi_env env, napi_callbac
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPublicCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
@@ -439,7 +476,8 @@ static napi_value OHCertNativeCredTest0100(napi_env env, napi_callback_info info
         napi_throw_error(env, nullptr, "malloc credential error");
         return nullptr;
     }
-    
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
     
     napi_value resultObj;

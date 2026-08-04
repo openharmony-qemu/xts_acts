@@ -2046,5 +2046,465 @@ export default function RunningLockTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testRunningLockTest_7400
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0740
+     * @tc.desc   isRunningLockTypeSupported(type: RunningLockType): Promise<boolean> when type is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_7400';
+      try {
+        let result = await runningLock.isRunningLockTypeSupported(null);
+        console.info(`${TAG} result: ${result}`);
+        expect(result).assertFalse();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_7500
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0750
+     * @tc.desc   isRunningLockTypeSupported(type: RunningLockType): Promise<boolean> when type is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_7500';
+      try {
+        let result = await runningLock.isRunningLockTypeSupported(undefined);
+        console.info(`${TAG} result: ${result}`);
+        expect(result).assertFalse();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_7600
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0760
+     * @tc.desc   isRunningLockTypeSupported(type: RunningLockType, callback) when type is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_7600';
+      try {
+        runningLock.isRunningLockTypeSupported(null, (error, result) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error != undefined).assertTrue();
+            done();
+          } else {
+            console.info(`${TAG} result: ${result}`);
+            expect(result).assertFalse();
+            done();
+          }
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_7700
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0770
+     * @tc.desc   isRunningLockTypeSupported(type: RunningLockType, callback) when type is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_7700';
+      try {
+        runningLock.isRunningLockTypeSupported(undefined, (error, result) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error != undefined).assertTrue();
+            done();
+          } else {
+            console.info(`${TAG} result: ${result}`);
+            expect(result).assertFalse();
+            done();
+          }
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_7800
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0780
+     * @tc.desc   isSupported(type: RunningLockType): boolean when type is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_7800';
+      try {
+        let result = runningLock.isSupported(null);
+        console.info(`${TAG} result: ${result}`);
+        expect(result).assertUndefined();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_7900
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0790
+     * @tc.desc   isSupported(type: RunningLockType): boolean when type is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_7900';
+      try {
+        let result = runningLock.isSupported(undefined);
+        console.info(`${TAG} result: ${result}`);
+        expect(result).assertUndefined();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8000
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0800
+     * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock> when type is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8000';
+      try {
+        let lock = await runningLock.create(TAG, null);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8100
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0810
+     * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock> when type is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8100';
+      try {
+        let lock = await runningLock.create(TAG, undefined);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8200
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0820
+     * @tc.desc   create(name: string, type: RunningLockType, callback) when type is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8200';
+      try {
+        runningLock.create(TAG, null, (error, lock) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(401);
+            done();
+          } else {
+            console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8300
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0830
+     * @tc.desc   create(name: string, type: RunningLockType, callback) when type is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8300';
+      try {
+        runningLock.create(TAG, undefined, (error, lock) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error.code).assertEqual(401);
+            done();
+          } else {
+            console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8400
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0840
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock> when type is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8400';
+      try {
+        let lock = await runningLock.createRunningLock(TAG, null);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8500
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0850
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock> when type is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8500';
+      try {
+        let lock = await runningLock.createRunningLock(TAG, undefined);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8600
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0860
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback) when type is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8600';
+      try {
+        runningLock.createRunningLock(TAG, null, (error, lock) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error != undefined).assertTrue();
+            done();
+          } else {
+            console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8700
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0870
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback) when type is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8700';
+      try {
+        runningLock.createRunningLock(TAG, undefined, (error, lock) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error != undefined).assertTrue();
+            done();
+          } else {
+            console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8800
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0880
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock> when type is out of range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8800';
+      try {
+        let lock = await runningLock.createRunningLock(TAG, 0);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_8900
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0890
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock> when type is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_8900';
+      try {
+        let lock = await runningLock.createRunningLock(TAG, 3);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_9000
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0900
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback) when type is out of range (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_9000';
+      try {
+        runningLock.createRunningLock(TAG, 0, (error, lock) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error != undefined).assertTrue();
+          } else {
+            console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+            expect(lock).assertUndefined();
+          }
+          done();
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRunningLockTest_9100
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0910
+     * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback) when type is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_9100';
+      try {
+        runningLock.createRunningLock(TAG, 3, (error, lock) => {
+          if (error) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect(error != undefined).assertTrue();
+          } else {
+            console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+            expect(lock).assertUndefined();
+          }
+          done();
+        })
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    })
   })
 }

@@ -77,9 +77,9 @@ it('CustomLayoutOnLayoutTest_static_0010', Level.LEVEL1, async (done: () => void
       const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
 
-      let text_1: RectValue = await CommonFunc.getComponentRect('CustomLayoutOnLayoutText_1') as RectValue;
-      let text_2: RectValue = await CommonFunc.getComponentRect('CustomLayoutOnLayoutText_2') as RectValue;
-      let text_3: RectValue = await CommonFunc.getComponentRect('CustomLayoutOnLayoutText_3') as RectValue;
+      let text_1: RectValue = CommonFunc.getComponentRect('CustomLayoutOnLayoutText_1') as RectValue;
+      let text_2: RectValue = CommonFunc.getComponentRect('CustomLayoutOnLayoutText_2') as RectValue;
+      let text_3: RectValue = CommonFunc.getComponentRect('CustomLayoutOnLayoutText_3') as RectValue;
 
       console.log('test pnumber is: ' + Math.abs(text_2.left - text_1.left - uiContext.vp2px(20)))
 

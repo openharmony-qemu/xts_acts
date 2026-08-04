@@ -21,9 +21,9 @@ import RichEditorMaxLengthTest from './RichEditorTest/RichEditorMaxLengthTest.te
 import textAreaInputTest from './TextTest/textAreaInputTest.test';
 import MovingPhotoView from './MovingPhotoViewTest/MovingPhotoView.test'
 export default function testsuite() {
+  textAreaInputTest();
   getCaretRect();
   TextMenuItemId();
-  RichEditorMaxLengthTest();
-  textAreaInputTest();
+  RichEditorMaxLengthTest();  
   MovingPhotoView();
 }

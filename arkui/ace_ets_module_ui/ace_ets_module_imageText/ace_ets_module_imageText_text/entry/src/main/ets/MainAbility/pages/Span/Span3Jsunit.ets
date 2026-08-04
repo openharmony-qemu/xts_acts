@@ -80,7 +80,7 @@ struct Span3Example {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-      Text('Basic Usage').fontSize(9).fontColor(this.fontColorValue).key('fontColor')
+      Text('Basic Usage').fontSize(9).fontColor(this.fontColorValue).key('Span3Jsunit_fontColor')
       Text() {
         Span('This is the Span component').fontSize(this.fontSizeValue).textCase(this.textCaseValue)
           .decoration(this.decorationValue).key('decoration')

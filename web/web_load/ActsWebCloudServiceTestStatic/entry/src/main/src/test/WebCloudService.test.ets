@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, afterEach, beforeEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -38,7 +39,12 @@ export default function webCloudServiceTest() {
                 hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
             });
             await Utils.msSleep(2000)
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswebcloudservicetest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswebcloudservicetest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000)
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })

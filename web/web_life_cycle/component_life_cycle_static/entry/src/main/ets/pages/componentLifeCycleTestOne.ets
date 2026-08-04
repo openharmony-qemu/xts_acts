@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,7 +63,7 @@ struct httpAuthHandler {
           switch (this.str) {
             case 'emitOnRenderExited': {
               this.controller.loadUrl("chrome://crash/");
-              Utils.msSleep(3000).awaitSync();
+              waitForCompletion(async ()=>{await Utils.msSleep(3000);});
               break;
             }
             case 'emitonInactive': {
@@ -134,7 +135,7 @@ struct httpAuthHandler {
                 let onInactiveCalled = false
                 this.controller.loadUrl("resource://rawfile/webPart1index.html");
                 this.controller.onInactive()
-                Utils.msSleep(2000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(2000);});
                 this.controller.runJavaScript("getTitle()", (error, res) => {
                   console.info('GetTitle++++++' + res)
                   if (res == "\"index\"") {
@@ -171,9 +172,9 @@ struct httpAuthHandler {
             case 'testOnInactive002': {
               try {
                 this.controllerone.onInactive();
-                Utils.msSleep(3000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(3000);});
                 this.controllerone.loadUrl("resource://rawfile/second.html")
-                Utils.msSleep(3000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(3000);});
                 let title = this.controllerone.getTitle();
                 Utils.emitEvent(title, 100077)
               } catch (error) {
@@ -185,9 +186,9 @@ struct httpAuthHandler {
             case 'testOnActive002': {
               try {
                 this.controllerone.loadUrl("resource://rawfile/second.html")
-                Utils.msSleep(3000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(3000);});
                 this.controllerone.onActive();
-                Utils.msSleep(3000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(3000);});
                 let title = this.controllerone.getTitle();
                 Utils.emitEvent(title, 100078)
               } catch (error) {
@@ -203,9 +204,9 @@ struct httpAuthHandler {
 
             case 'emitSetRenderProcessMode': {
               this.controllerone.loadUrl("resource://rawfile/metaViewport.html")
-              Utils.msSleep(3000).awaitSync();
+              waitForCompletion(async ()=>{await Utils.msSleep(3000);});
               web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.MULTIPLE);
-              Utils.msSleep(1000).awaitSync();
+              waitForCompletion(async ()=>{await Utils.msSleep(1000);});
               let mode = web_webview.WebviewController.getRenderProcessMode();
               console.info('>>>>>renderProcessMode:' + mode)
               Utils.emitEvent(mode === web_webview.RenderProcessMode.MULTIPLE, 10005)
@@ -217,7 +218,7 @@ struct httpAuthHandler {
               try {
                 web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.SINGLE);
                 this.controllerone.refresh();
-                Utils.msSleep(2000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(2000);});
                 let oldMode = web_webview.WebviewController.getRenderProcessMode();
                 console.log('oldMode===>'+oldMode)
                 if (oldMode === 0) {
@@ -235,11 +236,11 @@ struct httpAuthHandler {
               try {
                 web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.SINGLE);
                 this.controllerone.refresh();
-                Utils.msSleep(2000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(2000);});
                 let oldMode = web_webview.WebviewController.getRenderProcessMode();
                 console.log('oldMode===>'+oldMode)
                 web_webview.WebviewController.setRenderProcessMode(web_webview.RenderProcessMode.MULTIPLE);
-                Utils.msSleep(2000).awaitSync();
+                waitForCompletion(async ()=>{await Utils.msSleep(2000);});
                 let newMode = web_webview.WebviewController.getRenderProcessMode();
                 console.log('newMode===>'+newMode)
                 if (oldMode===0&&newMode === 1) {
@@ -256,12 +257,12 @@ struct httpAuthHandler {
             case 'emitWebViewOnRenderProcessResponding': {
               this.controllerone.refresh()
               this.controllerone.loadUrl("resource://rawfile/common_index.html")
-              Utils.msSleep(1000).awaitSync();
+              waitForCompletion(async ()=>{await Utils.msSleep(1000);});
               this.controllerone.runJavaScript("jumpPageCaton()", (error, result) => {
                 console.error(`The jumpPageCaton() return error is: ${error}`);
                 console.log(`The jumpPageCaton() return value is: ${result}`);
               })
-              Utils.msSleep(15000).awaitSync();
+              waitForCompletion(async ()=>{await Utils.msSleep(15000);});
               Utils.emitEvent(true,1336)
               break;
             }
@@ -269,12 +270,12 @@ struct httpAuthHandler {
             case 'emitWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT': {
               this.controllerone.refresh()
               this.controllerone.loadUrl("resource://rawfile/common_index.html")
-              Utils.msSleep(1000).awaitSync();
+              waitForCompletion(async ()=>{await Utils.msSleep(1000);});
               this.controllerone.runJavaScript("jumpPageCaton()", (error, result) => {
                 console.error(`The jumpPageCaton() return error is: ${error}`);
                 console.log(`The jumpPageCaton() return value is: ${result}`);
               })
-              Utils.msSleep(15000).awaitSync();
+              waitForCompletion(async ()=>{await Utils.msSleep(15000);});
               Utils.emitEvent(true,1338)
               break;
             }
@@ -327,7 +328,7 @@ struct httpAuthHandler {
             ', [process]=' + data.pid + ', [reason]=' + data.reason);
           console.log('data.reason:' + RenderProcessNotRespondingReason.INPUT_TIMEOUT)
           console.log('data.reason:' + RenderProcessNotRespondingReason.NAVIGATION_COMMIT_TIMEOUT)
-          Utils.msSleep(1000).awaitSync();
+          waitForCompletion(async ()=>{await Utils.msSleep(1000);});
           this.controllerone.runJavaScript("stopBlockJs()", (error, result) => {
             console.error(`The stopBlockJs() return error is: ${error}`);
             console.log(`The stopBlockJs() return value is: ${result}`);

@@ -653,7 +653,7 @@ export default function imagePixelMapForThumbnail() {
         pixelMap = imageSource.createThumbnailSync(decodingOptions);
       } catch (error) {
         logger.log("create Thumbnail failed, errorcode: " + error.code + " message is: " + error.message);
-        expect(Number(error.code)).assertEqual(ERR_NOT_CARRY_THUMBNAIL);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
       }
       done();
     })
@@ -809,7 +809,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(Number(error.code)).assertEqual(ERR_GENERATE_THUMBNAIL);
+        expect(error.code == ERR_GENERATE_THUMBNAIL).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1270,7 +1270,7 @@ export default function imagePixelMapForThumbnail() {
         pixelMap = await imageSource.createThumbnail(decodingOptions);
       } catch (error) {
         logger.log("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
-        expect(Number(error.code)).assertEqual(ERR_NOT_CARRY_THUMBNAIL);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
       }
       done();
     })
@@ -1426,7 +1426,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(Number(error.code)).assertEqual(ERR_GENERATE_THUMBNAIL);
+        expect(error.code == ERR_GENERATE_THUMBNAIL).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1459,7 +1459,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === DECODE_FAILED.toString()).assertTrue();
+        expect(error.code == DECODE_FAILED).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1486,13 +1486,13 @@ export default function imagePixelMapForThumbnail() {
           generateThumbnailIfAbsent: true
         };
         logger.log("Creating thumbnail from imageSource");
-        await imageSource.createThumbnail(decodingOptions);
+        await imageSource.createThumbnailSync(decodingOptions);
         logger.log("Thumbnail created unexpectedly");
         expect().assertFail();
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === DECODE_FAILED.toString()).assertTrue();
+        expect(error.code == DECODE_FAILED).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1525,7 +1525,7 @@ export default function imagePixelMapForThumbnail() {
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === IMAGE_TO_LARGE.toString()).assertTrue();
+        expect(error.code == IMAGE_TO_LARGE).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
@@ -1552,16 +1552,76 @@ export default function imagePixelMapForThumbnail() {
           generateThumbnailIfAbsent: false
         };
         logger.log("Creating thumbnail from imageSource");
-        await imageSource.createThumbnail(decodingOptions);
+        await imageSource.createThumbnailSync(decodingOptions);
         logger.log("Thumbnail created unexpectedly");
         expect().assertFail();
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
-        expect(error.code.toString() === IMAGE_TO_LARGE.toString()).assertTrue();
+        expect(error.code == IMAGE_TO_LARGE).assertTrue();
       }
       logger.log("Test finished successfully");
       done();
     })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0100
+     * @tc.name      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0100
+     * @tc.desc      1. Call the interface with maxGeneratedPixelDimension = 320, generateThumbnailIfAbsent = false
+     *               2. Decode thumbnail failed, PixelMap object is undefined
+     * @tc.size      MediumTest
+     * @tc.type      Functional
+     * @tc.level     Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0100");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320,
+        generateThumbnailIfAbsent: false
+      };
+      const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+      let imageSource = image.createImageSource(filePath);
+      let pixelMap: image.PixelMap | undefined = undefined;
+      await imageSource.release();
+      try {
+        pixelMap = await imageSource.createThumbnail(decodingOptions);
+        expect(pixelMap == undefined).assertTrue();
+      } catch (error) {
+        logger.log("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0200
+     * @tc.name      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0200
+     * @tc.desc      1. Call the interface with maxGeneratedPixelDimension = 320, generateThumbnailIfAbsent = false
+     *               2. Decode thumbnail failed, PixelMap object is undefined
+     * @tc.size      MediumTest
+     * @tc.type      Functional
+     * @tc.level     Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_0200");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320,
+        generateThumbnailIfAbsent: false
+      };
+      const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+      let imageSource = image.createImageSource(filePath);
+      let pixelMap: image.PixelMap | undefined = undefined;
+      await imageSource.release();
+      try {
+        pixelMap = await imageSource.createThumbnailSync(decodingOptions);
+        expect(pixelMap == undefined).assertTrue();
+      } catch (error) {
+        logger.log("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
+        expect().assertFail();
+      }
+      done();
+    })
+    
+
   })
 }

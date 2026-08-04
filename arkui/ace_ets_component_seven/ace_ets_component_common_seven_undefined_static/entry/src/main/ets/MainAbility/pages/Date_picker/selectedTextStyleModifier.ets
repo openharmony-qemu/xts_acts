@@ -1,12 +1,7 @@
 'use static';
-import { Scroll,Entry, Text, Column, Component, Button, ClickEvent, Flex,
-  FlexAlign, Padding, Margin, Row, Visibility, ColumnOptions, HorizontalAlign,
-  AttributeModifier, ButtonAttribute} from '@ohos.arkui.component'
-import { State, Observed} from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import { DatePickerAttribute,ScrollSnapAlign,Axis,EdgeEffect,ChainEdgeEffect,TextAlign,Scroller,ListItem,ForEach,Row,List,Color,FontStyle,FontWeight,DatePicker,Entry, Text, Column, Component, Button, ClickEvent,Optional,PickerTextStyle } from '@ohos.arkui.component'
-
-
+import { Scroll, Entry, Text, Column, Component, Button, ClickEvent, Flex, FlexAlign, Padding, Margin, Row, Visibility, ColumnOptions, HorizontalAlign, AttributeModifier, ButtonAttribute, DatePickerAttribute, ScrollSnapAlign, Axis, EdgeEffect, ChainEdgeEffect, TextAlign, Scroller, ListItem, ForEach, List, Color, FontStyle, FontWeight, DatePicker, Optional, PickerTextStyle } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Observed
 export class MyEnableModifier implements AttributeModifier<DatePickerAttribute> {
   public isChange:Boolean = true;

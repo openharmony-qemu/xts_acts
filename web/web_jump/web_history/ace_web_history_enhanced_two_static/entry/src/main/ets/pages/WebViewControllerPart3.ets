@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -21,7 +22,6 @@ import {
   Button,
   ClickEvent,
   Web,
-  UIContext,
   WebResourceResponse,
   Header
 } from '@ohos.arkui.component'

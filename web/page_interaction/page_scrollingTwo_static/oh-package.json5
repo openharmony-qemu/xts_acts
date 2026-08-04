@@ -1,8 +1,7 @@
+
 {
   "modelVersion": "6.0.0",
   "description": "page_scrollingTwo_static",
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

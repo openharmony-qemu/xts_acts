@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../hypium";
+} from "../../../hypium/index";
 import distributedObject from '@ohos.data.distributedDataObject';
 import commonType from '@ohos.data.commonType';
 import Context from 'application.BaseContext'

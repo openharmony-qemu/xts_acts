@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,13 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 import { image } from '@kit.ImageKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../../hypium/index';
 
 const TAG = 'ImageXts.createImagePacker';
-
 
 export default function createImagePackerTest(): void {
   describe('createImagePackerTest', () => {

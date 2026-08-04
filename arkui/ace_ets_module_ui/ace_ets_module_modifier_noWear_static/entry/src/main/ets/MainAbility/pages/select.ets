@@ -13,53 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  Stack,
-  ColumnOptions,
-  SelectAttribute,
-  Select,
-  Font,
-  ArrowPosition,
-  FontStyle,
-  Position,
-  RowSplit,
-  EffectType,
-  EffectComponent,
-  Text,
-  Color,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,
-  FontWeight,
-  Axis,
-  Margin,
-  Swiper,
-  ForEach,
-  PickerTextStyle,
-  CalendarAlign,
-  CalendarPicker,
-  EdgeEffect,
-  Curve,
-  SwiperDisplayMode,
-  ArrowPosition,
-  Select,
-  BlurStyle,
-  MenuAlignType,
-  TextInputController,
-  TextAlign,
-  AlphabetIndexer
-} from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { SelectModifier } from "@ohos.arkui.modifier";
-
+import { Entry, Component, $r, Column, Stack, ColumnOptions, SelectAttribute, Select, Font, ArrowPosition, FontStyle, Position, RowSplit, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
+import { SelectModifier } from '@ohos.arkui.modifier';
 class CustomModifier extends SelectModifier {
   applyNormalAttribute(instance: SelectAttribute): void {
     // super.applyNormalAttribute(instance);
@@ -114,7 +70,7 @@ struct SelectExample {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("select_changeButton")
       Select([{ value: 'aaa', icon: "/common/public_icon.svg" },
         { value: 'bbb', icon: "/common/public_icon.svg" },
         { value: 'ccc', icon: "/common/public_icon.svg" },

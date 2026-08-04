@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, describe,beforeAll } from '../../../../hypium';
-import { Component, Driver, ON,  PointerMatrix, Rect } from '@ohos.UiTest';
+import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium/index';
+import { Component, Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import router from '@ohos.router';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
-import inspector from '@ohos.arkui.inspector'
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
 export default function dragEventGetDragSourceTest() {
 
   let PAGE_TAG = 'dragEventGetDragSource';

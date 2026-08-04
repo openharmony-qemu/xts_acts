@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -159,12 +160,12 @@ export default function observerManagerSimStateTest1() {
         runTestCaseWithJudgeHasSimCard(caseName, done, async () => {
           try {
             observer.onIccAccountInfoChange( () => {
-              (async () => {
+              waitForCompletion(async () => {
                 let accInfo: sim.IccAccountInfo = await sim.getSimAccountInfo(0);
                 console.info(`${caseName} data ${JSON.stringify(accInfo)}`);
                 ExpectTrue(accInfo.isActive);
                 done();
-              })().awaitSync()
+              })
             });
             // await sim.activateSim(0);
             done();

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -26,7 +27,7 @@ import {
 } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 

@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,8 +40,7 @@ import router from '@ohos.router'
 import { Router } from '@ohos.arkui.UIContext';
 import { UIContext } from '@ohos.arkui.UIContext'
 import image from '@ohos.multimedia.image';
-import { BusinessError, RecordData } from '@ohos.base';
-import hilog from '@ohos.hilog';
+import { RecordData } from '@ohos.base';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import wantagent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';

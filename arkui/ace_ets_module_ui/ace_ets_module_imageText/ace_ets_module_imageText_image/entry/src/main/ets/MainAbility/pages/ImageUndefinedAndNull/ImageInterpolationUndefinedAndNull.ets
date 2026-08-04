@@ -22,6 +22,7 @@ struct imageInterpolationUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageInterpolationUndefined')
+            .key('imageInterpolationUndefined')
             .interpolation(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageInterpolationUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageInterpolationNull')
+            .key('imageInterpolationNull')
             .interpolation(null)
             .border({ width:2, color: Color.Black })
             .width(150)

@@ -203,8 +203,14 @@
  	      "name": "ohos.permission.ENTERPRISE_READ_LOG"
  	    },
       {
-        "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION"
-      }
+            "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION"
+      },
+      {
+        "name": "ohos.permission.ENTERPRISE_MANAGE_LOCAL_ACCOUNTS"
+      },
+      {
+        "name": "ohos.permission.ENTERPRISE_INTERACT_ACROSS_LOCAL_ACCOUNTS"
+      },
     ]
   }
 }

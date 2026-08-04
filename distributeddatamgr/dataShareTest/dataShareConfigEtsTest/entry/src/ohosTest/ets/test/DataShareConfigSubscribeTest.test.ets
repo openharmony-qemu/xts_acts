@@ -1016,5 +1016,62 @@ export default function dataShareConfigSubscribeTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   dataShareConfigSubscribeTest029
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0860
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigSubscribeTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await g_handle!.deleteMyPublishedData(g_config);
+      let testUri = "datashareproxy://com.acts.dataShare.config/test3";
+      let uris = [
+        testUri
+      ]
+      let proxyData: dataShare.ProxyData[] = [{
+        uri: testUri,
+        values: { 1: "test1" },
+        isMultiValues: true,
+        allowList: [],
+        trustProviders: []
+      }];
+      await g_handle!.publish(proxyData, g_config);
+      try {
+        let results = g_handle!.on('dataChange', uris, g_config, (err: BusinessError, changeInfo: dataShare.DataProxyChangeInfo[]) => {
+          console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
+          changeInfo.forEach((info) => {
+            expect(info.type).assertEqual(2);
+            expect(info.uri).assertEqual(testUri);
+            expect(info.values[0]).assertEqual("test1");
+            expect(info.values[1]).assertEqual("test2");
+          });
+          g_handle!.off('dataChange', uris, g_config);
+          done();
+        });
+        console.log(TAG + "[DataShareProvider] dataShareConfigSubscribeTest029 success:" + JSON.stringify(results));
+        results.forEach((result) => {
+          console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
+          expect(result.result).assertEqual(0);
+        });
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest029 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+      try {
+        await g_handle!.putValue(testUri, 2, "test2", g_config);
+        let values = await g_handle!.getValues(testUri, g_config);
+        expect(values.length).assertEqual(2);
+        expect(values[0]).assertEqual("test1");
+        expect(values[1]).assertEqual("test2");
+        await g_handle!.delete(uris, g_config)
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest029 publish failed,code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+
   })
 }

@@ -17,6 +17,21 @@
     "MainAbility/pages/uimaterial/ImmersiveStyleTest",
     "MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor",
     "MainAbility/pages/uimaterial/ImmersiveOptionsColorInvert",
-    "MainAbility/pages/uimaterial/UIMaterialTestPage"
+    "MainAbility/pages/uimaterial/UIMaterialTestPage",
+    "MainAbility/pages/popupSystemMaterial/PopupOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/CustomPopupOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/SheetOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial",
+    "MainAbility/pages/popup/PopupOptionsColorMode",
+    "MainAbility/pages/popup/PopupCommonOptionsColorMode",
+    "MainAbility/pages/popup/CustomPopupOptionsColorMode",
+    "MainAbility/pages/popup/PopupOptionsLevelMode",
+    "MainAbility/pages/popup/PopupCommonOptionsLevelMode",
+    "MainAbility/pages/popup/CustomPopupOptionsLevelMode",
+    "MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow",
+    "MainAbility/pages/popup/PopupOptionsBackgroundEffect",
+    "MainAbility/pages/popup/CustomPopupOptionsBackgroundEffect",
+    "MainAbility/pages/popup/PopupCommonOptionsBackgroundEffect"
   ]
 }

@@ -16,8 +16,10 @@
 import imagePicture from './imagePicture.test';
 import getHdrComposedPixelmapWithOption from './GetHdrComposedPixelmapWithOption.test';
 import createAuxiliaryPictureUsingAllocatorTest from './CreateAuxiliaryPictureUsingAllocator.test.ets';
+import ImagePictureAuxiliaryPicture from './ImagePictureAuxiliaryPicture.test';
 
 export default function testsuite() {
+  ImagePictureAuxiliaryPicture();
   createAuxiliaryPictureUsingAllocatorTest();
   getHdrComposedPixelmapWithOption();
   imagePicture();

@@ -157,6 +157,27 @@ export default function windowNdk() {
     })
 
     /**
+     * @tc.name   test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0201
+     * @tc.desc   test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002";
+      let result = windowNdkTest.unFilterKeyCode(-1);
+      console.info(`${caseName}: unFilterKeyCode result: ${result}`);
+      if (result == 1000 || result == 2000) {
+        console.info(`${caseName}: unFilterKeyCode success`);
+        done();
+      } else {
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   test_OH_WindowManager_ShowWindow
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0300
      * @tc.desc   test_OH_WindowManager_ShowWindow
@@ -450,7 +471,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible && !isFreeWindowMode){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(true)
         done()
@@ -482,7 +503,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible && !isFreeWindowMode){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
@@ -516,7 +537,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible && !isFreeWindowMode){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
@@ -1799,7 +1820,7 @@ export default function windowNdk() {
       let result2 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result2: ${result2}`);
       await sleep(200);
-      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false)) {
+      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false) || deviceType === 'tv') {
         expect(result2).assertEqual(0);
         expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
@@ -1807,7 +1828,7 @@ export default function windowNdk() {
         expect(areaChange!.topRect.height).assertLarger(0);
         WindowClass.off('avoidAreaChange');
         done();
-      } else if (deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
+      } else if (deviceType === 'wearable' || deviceType === '2in1' || deviceType === 'car' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
         expect(result2).assertEqual(0);
         expect(flag).assertEqual(false);
         WindowClass.off('avoidAreaChange');
@@ -2590,6 +2611,78 @@ export default function windowNdk() {
             expect(okResult.timestamp).assertLargerOrEqual(0);
           }
 
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_DurationNullptr_1300016
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7500
+     * @tc.desc   test OH_WindowManager_FrameMetrics_GetInputHandlingDuration with duration nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_DurationNullptr_1300016', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_DurationNullptr_1300016';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.testFrameMetricsGetInputHandlingDurationWithNullDuration();
+          console.info(`${caseName} Result: ${Result}`);
+          expect(Result).assertEqual(1300016);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_DurationNullptr_1300016
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7600
+     * @tc.desc   test OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration with duration nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_DurationNullptr_1300016', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_DurationNullptr_1300016';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.testFrameMetricsGetLayoutMeasureDurationWithNullDuration();
+          console.info(`${caseName} Result: ${Result}`);
+          expect(Result).assertEqual(1300016);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_TimestampNullptr_1300016
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7700
+     * @tc.desc   test OH_WindowManager_FrameMetrics_GetVsyncTimestamp with timestamp nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_TimestampNullptr_1300016', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_TimestampNullptr_1300016';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.testFrameMetricsGetVsyncTimestampWithNullTimestamp();
+          console.info(`${caseName} Result: ${Result}`);
+          expect(Result).assertEqual(1300016);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));

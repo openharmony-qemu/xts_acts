@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +46,12 @@ export default function InjectOfflineResourcesTest() {
           console.log('BusinessError  end')
         });
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.preloadlinkrendingcloudservicewebcontrollerthreetest.static')
+        let cmd = 'aa start -a EntryAbility -b com.open.harmony.preloadlinkrendingcloudservicewebcontrollerthreetest.static';
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', "Succeed!")
       } catch (error) {
@@ -105,7 +111,7 @@ export default function InjectOfflineResourcesTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testOfflineResourceType001", 10)
         await Utils.msSleep(500);
-        let num: byte = 3
+        let num: int = 3
         Utils.registerEvent("testMODULE_JS", Type.of(num) + ' ' + num, 20003, done);
         num = 2
         Utils.registerEvent("testCLASSIC_JS", Type.of(num) + ' ' + num, 20004, done);

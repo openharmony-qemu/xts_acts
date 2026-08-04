@@ -55,21 +55,21 @@ export default function focusWrapModeList2() {
       let uiDriver: UiDriver = UiDriver.create();
       let driver: Driver = Driver.create();
 
-      let text3IsFocused: boolean = await (await driver.findComponent(ON.id('text3'))).isFocused();
+      let text3IsFocused: boolean = await (await driver.findComponent(ON.id('focusWrapModeList2' + '_text3'))).isFocused();
       expect(text3IsFocused).assertEqual(false);
       console.info('[focusWrapModeList2_0100] value:' + text3IsFocused);
 
       await uiDriver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(2000);
-      let text3IsFocused2: boolean = await (await driver.findComponent(ON.id('text3'))).isFocused();
+      let text3IsFocused2: boolean = await (await driver.findComponent(ON.id('focusWrapModeList2' + '_text3'))).isFocused();
       expect(text3IsFocused2).assertEqual(false);
       console.info('[focusWrapModeList2_0100] value:' + text3IsFocused2);
 
       await uiDriver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
       await CommonFunc.sleep(2000);
-      let text3IsFocused3: boolean = await (await driver.findComponent(ON.id('text3'))).isFocused();
+      let text3IsFocused3: boolean = await (await driver.findComponent(ON.id('focusWrapModeList2' + '_text3'))).isFocused();
       expect(text3IsFocused3).assertEqual(false);
-      let text1IsFocused: boolean = await (await driver.findComponent(ON.id('text1'))).isFocused();
+      let text1IsFocused: boolean = await (await driver.findComponent(ON.id('focusWrapModeList2' + '_text1'))).isFocused();
       expect(text1IsFocused).assertEqual(true);
 
       console.info('[focusWrapModeList2_0100] END');

@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+
 export const AddNullPtrReadOnlyRequestInterceptor: () => number;
 export const AddNullPtrWritableResponseInterceptor: () => number;
 export const AddReadOnlyRequestInterceptor: (groupId: number, enabled: number) => number;

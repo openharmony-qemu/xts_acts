@@ -15,33 +15,30 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
-import {Alignment} from '@ohos.arkui.component'
+import { Alignment } from '@ohos.arkui.component';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
-import CommonFunc from "../../../../ets/MainAbility/common/Common";
-import {GlobalContext} from '../../../../ets/MainAbility/common/GlobalContext'
+import CommonFunc from '../../../../ets/MainAbility/common/Common';
+import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import { UIContext } from "@ohos.arkui.UIContext";
-import { Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import window from '@ohos.window';
-import screenshot from "@ohos.screenshot"
-import inspector from '@ohos.arkui.inspector'
+import screenshot from '@ohos.screenshot';
+import inspector from '@ohos.arkui.inspector';
 import image from '@ohos.multimedia.image';
 import { UtilsTest } from '../../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-async function imageComparisonAssert(left: double, top: double) {
+function imageComparisonAssert(left: double, top: double) {
   let theWinTop:long = 0;
   let theWinLeft:long = 0;
   let isTrue = true
@@ -49,7 +46,7 @@ async function imageComparisonAssert(left: double, top: double) {
     // let winTop = window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext'));
     const uiContext = AppStorage.get<UIContext>('uiContext');
     let windowClass: window.Window | undefined = undefined;
-    windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+    waitForCompletion(async ()=>{ windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext); })
     let properties: window.WindowProperties = windowClass!.getWindowProperties();
     theWinTop = (properties.windowRect.top + top).toLong()
     theWinLeft = (properties.windowRect.left + left + uiContext!.vp2px(10)).toLong()
@@ -57,7 +54,7 @@ async function imageComparisonAssert(left: double, top: double) {
   } catch (exception) {
     console.error('Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
   }
-  await CommonFunc.sleep(3000);
+  waitForCompletion(async ()=>{ await CommonFunc.sleep(3000); })
   let screenshotOptions: screenshot.ScreenshotOptions = {
     "screenRect": {
       "left": theWinLeft,
@@ -105,7 +102,7 @@ async function imageComparisonAssert(left: double, top: double) {
     isTrue = false;
   }
   ;
-  await CommonFunc.sleep(5000);
+  waitForCompletion(async ()=>{ await CommonFunc.sleep(5000); })
   return isTrue;
 }
 

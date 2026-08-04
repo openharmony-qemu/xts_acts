@@ -120,7 +120,7 @@ struct Index {
               this.scaleChange = true;
               await waitForExist(() => this.scaleChange, this.str,"true");
               this.isComplete = -1;
-              this.controller.loadUrl({ url: this.mServer.getAssetUrl('index.html') })
+              this.controller.loadUrl({ url: $rawfile('index.html') })
               await waitForExist(() => this.isComplete, this.str, 0);
               break;
             }

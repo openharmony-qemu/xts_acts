@@ -616,5 +616,27 @@ export default function ManagerCreatePhotoOutputSupp() {
         }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_0200
+     * @tc.desc   IsTorchLevelControlSupported(); check return boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_0200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_TEST_0200';
+        try {
+          let isSupported = mCameraManager.isTorchLevelControlSupported();
+          console.info(TAG,testName,`IsTorchLevelControlSupported: ${isSupported}`);
+          expect(isSupported == true || isSupported == false).assertTrue();
+          done();
+        } catch (error) {
+          console.info(TAG,testName,`fail err` + error.code);
+          expect().assertFail();
+          done();
+        }
+    })
+
   })
 }

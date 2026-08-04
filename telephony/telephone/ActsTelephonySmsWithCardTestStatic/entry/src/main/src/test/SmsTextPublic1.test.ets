@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, Level, TestType, Size } from '../../../hypium'
+import { describe, it, expect, beforeAll, Level, TestType, Size } from '../../../hypium/index'
 import sms from '@ohos.telephony.sms';
 import { AsyncCallback, BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
@@ -286,7 +287,7 @@ export default function smsTextNoCardPublic() {
       sms.createMessage(rawArray, '3gpp').then((shortMessage: sms.ShortMessage|undefined) => {
         expect(shortMessage?.visibleMessageBody == "Aa").assertTrue();
         expect(shortMessage?.visibleRawAddress.length !== 0).assertTrue();
-        expect(Number(shortMessage?.messageClass) !== -1).assertTrue();
+        expect(shortMessage?.messageClass !== sms.ShortMessageClass.UNKNOWN).assertTrue();
         expect(shortMessage?.protocolId !== -1).assertTrue();
         expect(shortMessage?.scAddress.length !== 0).assertTrue();
         expect(shortMessage?.scTimestamp !== 0).assertTrue();
@@ -329,7 +330,7 @@ export default function smsTextNoCardPublic() {
         }
         expect(shortMessage?.visibleMessageBody == "Aa").assertTrue();
         expect(shortMessage?.visibleRawAddress.length !== 0).assertTrue();
-        expect(Number(shortMessage?.messageClass) !== -1).assertTrue();
+        expect(shortMessage?.messageClass !== sms.ShortMessageClass.UNKNOWN).assertTrue();
         expect(shortMessage?.protocolId !== -1).assertTrue();
         expect(shortMessage?.scAddress.length !== 0).assertTrue();
         expect(shortMessage?.scTimestamp !== 0).assertTrue();

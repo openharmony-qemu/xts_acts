@@ -315,3 +315,51 @@ export const ActsRealDeviceHasRealDevice: () => number;
 export const ActsRealDeviceCheckDeviceEvent: () => number;
 
 export const ActsRealDeviceCheckGamePadEvent: () => number;
+
+export const ActsGameDeviceGetAllDeviceInfos02: () => number;
+
+export const ActsGameDeviceAllDeviceInfosGetCount03: () => number;
+
+export const ActsGameDeviceAllDeviceInfosGetDeviceInfo06: () => number;
+
+export const ActsGameDeviceDeviceEventGetChangedType03: () => number;
+
+export const ActsGameDeviceDeviceEventGetDeviceInfo03: () => number;
+
+export const ActsGameDeviceDeviceInfoGetProduct03: () => number;
+
+export const ActsGameDeviceDeviceInfoGetVersion03: () => number;
+
+export const ActsGameDeviceDeviceInfoGetDeviceType03: () => number;
+
+export const ActsGameControllerGamePadButtonEventGetButtonAction03: () => number;
+
+export const ActsGameControllerGamePadButtonEventGetButtonCode03: () => number;
+
+export const ActsGameControllerGamePadPressedButtonsGetCount03: () => number;
+
+export const ActsGameControllerGamePadPressedButtonsGetButtonInfo05: () => number;
+
+export const ActsGameControllerGamePadPressedButtonGetButtonCode03: () => number;
+
+export const ActsGameControllerGamePadButtonEventGetActionTime03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetAxisSourceType03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetXAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetYAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetZAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetRZAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetHatXAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetHatYAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetBrakeAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetGasAxisValue03: () => number;
+
+export const ActsGameControllerGamePadAxisEventGetActionTime03: () => number;

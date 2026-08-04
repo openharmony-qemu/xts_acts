@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +20,7 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
 import { createMovingPhoto, fetchOption, getPermission } from "../Common.test";
 import { Context } from '@kit.ArkUI';
-import { beforeAll, describe, expect, Hypium, it, Level, Size, TestType } from '../../../../hypium';
+import { beforeAll, describe, expect, Hypium, it, Level, Size, TestType } from '../../../../hypium/index';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 let domain = 0x0000;

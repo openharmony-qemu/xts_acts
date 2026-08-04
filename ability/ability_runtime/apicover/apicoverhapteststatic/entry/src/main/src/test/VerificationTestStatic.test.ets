@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,18 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { BusinessError, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
@@ -44,7 +43,12 @@ export default function verificationStaticTest() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility2 -b com.example.apicoverhaptest.static")
+      let cmd = "aa start -a EntryAbility2 -b com.example.apicoverhaptest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'beforeAll end');
     })
@@ -90,8 +94,8 @@ export default function verificationStaticTest() {
         try {
           const context: common.UIAbilityContext =
             AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
-          try {
-            await context.startAbility(want);
+          context.startAbility(want).then(() => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag, 'Succeeded in starting SpecifiedAbility.');
             await Utils.msSleep(2000);
             let specifiedId: string= AppStorage.get<string>("specifiedId") as string;
@@ -103,12 +107,13 @@ export default function verificationStaticTest() {
               hilog.error(domain, tag, 'SpecifiedId is not supported.');
               done();
             }
-          } catch (err) {
+            })
+          }).catch((err: Error): void => {
             hilog.error(domain, tag,
               `Failed to start SpecifiedAbility. Code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
             done();
-          }
+          });
         } catch (err) {
           hilog.error(domain, tag, `Failed to start SpecifiedAbility2. Code is ${err.code}, message is ${err.message}`);
           expect().assertFail();

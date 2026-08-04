@@ -378,6 +378,8 @@ export const sessionGetZoomRatio: () => number; // return current ZoomRatio
 
 export const sessionSetZoomRatio: (a: number) => number;
 
+export const sessionGetZoomPointInfoSize: () => number;
+
 export const sessionGetZoomPointInfos: (a: number) => number;
 
 export const sessionDeleteZoomPointInfos: (a: number) => number;
@@ -679,6 +681,8 @@ export const waitForExposureFinish: () => boolean;
 
 export const getColorTintRange: () => number;
 
+export const getColorTintRangeWithParamNull: (index: number) => number;
+
 export const setColorTint: (index: number) => number;
 
 export const getColorTint: (index: number) => number;
@@ -686,3 +690,29 @@ export const getColorTint: (index: number) => number;
 export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
+
+export const getEnumColorSpaceName: (index: number) => number;
+
+export const isLogViewAssistSupported: (index: number) => boolean;
+
+export const setLogViewAssistEnable: (index: number, enable: boolean) => number;
+
+export const createPhotoCaptureSettingExt: (index: number) => number;
+
+export const destroyPhotoCaptureSettingExt: (index: number) => number;
+
+export const setCompressionQuality: (index: number, compression: number) => number;
+
+export const setImageRotation: (index: number, rotation: number) => number;
+
+export const setMirror: (index: number, isMirror: boolean) => number;
+
+export const setLocation: (index: number, latitude: number, longitude: number, altitude: number) => number;
+
+export const captureWithCaptureSettingExt: (index: number) => number;
+
+export const getAutomotiveCameraPosition: () => number;
+
+export const getAutomotiveCameraPositionErrorParameter: () => number;
+
+export const enumTestAutomotiveCameraPosition: () => number;

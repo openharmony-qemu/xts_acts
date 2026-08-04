@@ -33,12 +33,14 @@
 #include "ohaudio/native_audio_stream_manager.h"
 #include "ohaudio/native_audio_session_base.h"
 #include "ohaudio/native_audio_device_enhance_manager.h"
+#include "ohaudio/native_audio_debugging_manager.h"
 #include "hilog/log.h"
 #include <ctime>
 #include <set>
 #include <algorithm>
 #include <random>
 #include <ohaudiosuite/native_audio_suite_engine.h>
+#include <fcntl.h>   // for open, O_*
 
 #include "AudioResourceManagerTest.h"
 
@@ -9179,6 +9181,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_enum_002(napi
     napi_value res;
     uint32_t DEFAULT_BEHAVIOR = 0x00000000;
     uint32_t MUTE_WHEN_INTERRUPTED = 0x00000002;
+    uint32_t pauseWhenInterrupted = 0x00000004;
     int32_t AUDIO_SESSION_STATE_CHANGE_HINT_MUTE = 8;
     int32_t AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE = 9;
     if (DEFAULT_BEHAVIOR != OH_AudioSession_BehaviorFlags::DEFAULT_BEHAVIOR) {
@@ -9190,6 +9193,11 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_enum_002(napi
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOSESSIONMANAGER_MUTE_WHEN_INTERRUPTED fail, result is: %{public}d",
             OH_AudioSession_BehaviorFlags::MUTE_WHEN_INTERRUPTED);
+    }
+    if (pauseWhenInterrupted != OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSESSIONMANAGER_PAUSE_WHEN_INTERRUPTED fail, result is: %{public}d",
+            OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
     }
     if (AUDIO_SESSION_STATE_CHANGE_HINT_MUTE !=
         OH_AudioSession_StateChangeHint::AUDIO_SESSION_STATE_CHANGE_HINT_MUTE) {
@@ -9444,6 +9452,98 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_011(napi_env 
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DEFAULT;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_MIX_WITH_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DUCK_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 fail, result is: %{public}d", result);
+    return res;
+}
+
 static napi_value AudioRenderer_SetIndependentAudioSessionStrategy_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -9680,6 +9780,98 @@ static napi_value AudioRenderer_SetIndependentAudioSessionStrategy_011(napi_env 
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateRenderBuilder();
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DEFAULT;
+    OH_AudioStream_Result result = OH_AudioRenderer_SetIndependentAudioSessionStrategy(
+        audioRenderer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateRenderBuilder();
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_MIX_WITH_OTHERS;
+    OH_AudioStream_Result result = OH_AudioRenderer_SetIndependentAudioSessionStrategy(
+        audioRenderer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateRenderBuilder();
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DUCK_OTHERS;
+    OH_AudioStream_Result result = OH_AudioRenderer_SetIndependentAudioSessionStrategy(
+        audioRenderer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateRenderBuilder();
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
+    OH_AudioStream_Result result = OH_AudioRenderer_SetIndependentAudioSessionStrategy(
+        audioRenderer, &strategy,
+        OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 fail, result is: %{public}d", result);
+    return res;
+}
+
 static napi_value AudioSessionManager_SetBehavior_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -9742,6 +9934,22 @@ static napi_value AudioSessionManager_SetBehavior_004(napi_env env, napi_callbac
     }
     napi_create_int32(env, TEST_FAIL, &res);
     LOG("AudioSessionManager_SetBehavior_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetBehavior(
+ 	    audioSessionManager, OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100 fail, result is: %{public}d", result);
     return res;
 }
 static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100(napi_env env, napi_callback_info info)
@@ -9896,165 +10104,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400(na
     }
     napi_create_int32(env, TEST_FAIL, &res);
     LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400 fail, result is: %{public}d", result);
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    uint32_t voipPrivacyTypePublic = 0x00000001;
-    if (VOIP_PRIVACY_TYPE_PUBLIC != OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC) {
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AUDIOSESSIONMANAGER_VOIP_PRIVACY_TYPE_PUBLIC fail, result is: %{public}d",
-            OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-    }
-    napi_create_int32(env, TEST_PASS, &res);
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
-    OH_AudioCapturer *audioCapturer;
-    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
-    OH_AudioSession_Strategy strategy;
-    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DEFAULT;
-    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
-        audioCapturer, &strategy,
-        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-    OH_AudioCapturer_Release(audioCapturer);
-    OH_AudioStreamBuilder_Destroy(builder);
-    if (result == AUDIOSTREAM_SUCCESS) {
-        napi_create_int32(env, TEST_PASS, &res);
-        return res;
-    }
-    napi_create_int32(env, TEST_FAIL, &res);
-    LOG("AUDIOCAPTURERVOICE_0100 fail, result is: %{public}d", result);
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
-    OH_AudioCapturer *audioCapturer;
-    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
-    OH_AudioSession_Strategy strategy;
-    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_MIX_WITH_OTHERS;
-    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
-        audioCapturer, &strategy,
-        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-    OH_AudioCapturer_Release(audioCapturer);
-    OH_AudioStreamBuilder_Destroy(builder);
-    if (result == AUDIOSTREAM_SUCCESS) {
-        napi_create_int32(env, TEST_PASS, &res);
-        return res;
-    }
-    napi_create_int32(env, TEST_FAIL, &res);
-    LOG("AUDIOCAPTURERVOICE_0200 fail, result is: %{public}d", result);
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
-    OH_AudioCapturer *audioCapturer;
-    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
-    OH_AudioSession_Strategy strategy;
-    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DUCK_OTHERS;
-    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
-        audioCapturer, &strategy,
-        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-    OH_AudioCapturer_Release(audioCapturer);
-    OH_AudioStreamBuilder_Destroy(builder);
-    if (result == AUDIOSTREAM_SUCCESS) {
-        napi_create_int32(env, TEST_PASS, &res);
-        return res;
-    }
-    napi_create_int32(env, TEST_FAIL, &res);
-    LOG("AUDIOCAPTURERVOICE_0300 fail, result is: %{public}d", result);
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
-    OH_AudioCapturer *audioCapturer;
-    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
-    OH_AudioSession_Strategy strategy;
-    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
-    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
-        audioCapturer, &strategy,
-        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-    OH_AudioCapturer_Release(audioCapturer);
-    OH_AudioStreamBuilder_Destroy(builder);
-    if (result == AUDIOSTREAM_SUCCESS) {
-        napi_create_int32(env, TEST_PASS, &res);
-        return res;
-    }
-    napi_create_int32(env, TEST_FAIL, &res);
-    LOG("AUDIOCAPTURERVOICE_0400 fail, result is: %{public}d", result);
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    OH_AudioSessionManager* audioSessionManager;
-    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
-    OH_AudioCommon_Result result =  OH_AudioSessionManager_SetBehavior(
- 	    audioSessionManager, OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-    if (result == AUDIOSTREAM_SUCCESS) {
-        napi_create_int32(env, TEST_PASS, &res);
-        return res;
-    }
-    napi_create_int32(env, TEST_FAIL, &res);
-    LOG("AUDIOSESSIONMANAGERVOICE_0500 fail, result is: %{public}d", result);
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    OH_AudioSessionManager* audioSessionManager;
-    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
-    for (int i = 0 ; i < 100 ;i++) {
-         OH_AudioCommon_Result result =  OH_AudioSessionManager_SetBehavior(
- 	     audioSessionManager, OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-         if (result == AUDIOSTREAM_SUCCESS) {
-         napi_create_int32(env, TEST_PASS, &res);
-         return res;
-         napi_create_int32(env, TEST_FAIL, &res);
-         LOG("ADUIOSESSIONMANAGERVOICEREAPTED_0100 fail, result is: %{public}d", result);
-        }
-    }
-    return res;
-}
-
-static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100(napi_env env, napi_callback_info info)
-{
-    napi_value res;
-    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
-    OH_AudioCapturer *audioCapturer;
-    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
-    OH_AudioSession_Strategy strategy;
-    for (int i = 0 ;i < 100; i++) {
-        strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
-        OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
-        audioCapturer, &strategy,
-        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
-        OH_AudioCapturer_Release(audioCapturer);
-        OH_AudioStreamBuilder_Destroy(builder);
-        if (result == AUDIOSTREAM_SUCCESS) {
-            napi_create_int32(env, TEST_PASS, &res);
-            return res;
-        }
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AUDIOCAPTUREVOICEREAPTED_0100 fail, result is: %{public}d", result);
-    }
     return res;
 }
 
@@ -11106,8 +11155,1404 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVI
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(nullptr);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    OH_AudioCommon_Result resultManager = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (resultManager != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultManager, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioSession_Strategy strategy = {
+        CONCURRENCY_DEFAULT
+    };
+    OH_AudioSession_Scene scene = AUDIO_SESSION_SCENE_MEDIA;
+    OH_AudioCommon_Result sceneResult = OH_AudioSessionManager_SetScene(audioSessionManager, scene);
+    if (sceneResult != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("SetScene fail AUDIO_SESSION_SCENE_MEDIA, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioCommon_Result resultActivate = OH_AudioSessionManager_ActivateAudioSession(audioSessionManager, &strategy);
+    if (resultActivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultActivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100, fd start");
+        int32_t fd = -1;
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100, fd is: %{public}d", fd);
+        result = OH_AudioDebuggingManager_PrintAppInfo(debugManager, fd);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioCommon_Result resultDeactivate = OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);
+    if (resultDeactivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultDeactivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintAppInfo(nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateRenderBuilder();
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        OH_AudioDebuggingManager *debugManager = nullptr;
+        OH_AudioCommon_Result result2 = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+        if (result2 == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+            int32_t fd = -1;
+            result2 = OH_AudioDebuggingManager_PrintRendererInfo(debugManager, audioRenderer, fd);
+            LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100,result: %{public}d", result2);
+            if (result2 == AUDIOCOMMON_RESULT_SUCCESS) {
+                napi_create_int32(env, TEST_PASS, &res);
+            } else {
+                napi_create_int32(env, TEST_FAIL, &res);
+            }
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        OH_AudioRenderer_Release(audioRenderer);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintRendererInfo(nullptr, nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        result = OH_AudioDebuggingManager_PrintRendererInfo(debugManager, nullptr, -1);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        OH_AudioDebuggingManager *debugManager = nullptr;
+        OH_AudioCommon_Result result2 = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+        if (result2 == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+            int32_t fd = -1;
+            result2 = OH_AudioDebuggingManager_PrintCapturerInfo(debugManager, audioCapturer, fd);
+            LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100,result: %{public}d", result2);
+            if (result2 == AUDIOCOMMON_RESULT_SUCCESS) {
+                napi_create_int32(env, TEST_PASS, &res);
+            } else {
+                napi_create_int32(env, TEST_FAIL, &res);
+            }
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        OH_AudioCapturer_Release(audioCapturer);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintCapturerInfo(nullptr, nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        result = OH_AudioDebuggingManager_PrintCapturerInfo(debugManager, nullptr, -1);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *sessionManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioSessionManager(&sessionManager);
+    OH_AudioSession_Strategy strategy = {
+        CONCURRENCY_DEFAULT
+    };
+    OH_AudioSession_Scene scene = AUDIO_SESSION_SCENE_MEDIA;
+    OH_AudioCommon_Result sceneResult = OH_AudioSessionManager_SetScene(sessionManager, scene);
+    if (sceneResult != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("SetScene fail AUDIO_SESSION_SCENE_MEDIA, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioCommon_Result resultActivate = OH_AudioSessionManager_ActivateAudioSession(sessionManager, &strategy);
+    if (resultActivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultActivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result2 = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result2 == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        int32_t fd = -1;
+        result2 = OH_AudioDebuggingManager_PrintSessionInfo(debugManager, sessionManager, fd);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100, result is: %{public}d", result2);
+        if (result2 == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioCommon_Result resultDeactivate = OH_AudioSessionManager_DeactivateAudioSession(sessionManager);
+    if (resultDeactivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultDeactivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintSessionInfo(nullptr, nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        result = OH_AudioDebuggingManager_PrintSessionInfo(debugManager, nullptr, -1);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static void MySensitiveRecordPermitCallback(OH_AudioCapturer* capturer, void* userData, bool isPermitted)
+{
+    LOG("MySensitiveRecordPermitCallback, isPermitted is %{public}d", isPermitted);
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioCapturer_SensitiveRecordPermitCallback callback = MySensitiveRecordPermitCallback;
+    void* userData = nullptr;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, userData);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioCapturer_SensitiveRecordPermitCallback callback = nullptr;
+    void* userData = nullptr;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, userData);
+    OH_AudioStreamBuilder_Destroy(builder);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioCapturer_SensitiveRecordPermitCallback callback = MySensitiveRecordPermitCallback;
+    void* userData = nullptr;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, userData);
+    OH_AudioStreamBuilder_Destroy(builder);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioCapturer_SensitiveRecordPermitCallback callback = MySensitiveRecordPermitCallback;
+    int userDataValue = 100;
+    void* userData = &userDataValue;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, userData);
+    OH_AudioStreamBuilder_Destroy(builder);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Create(&builder, type);
+    napi_value res;
+    
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SCENE_0100: Create failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK;
+    result = OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SCENE_0100: SetCapturerInfo failed, result=%{public}d", result);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioCapturer_SensitiveRecordPermitCallback callback = MySensitiveRecordPermitCallback;
+    result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, nullptr);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        LOG("SCENE_0100: SetSensitiveRecordPermitCallback failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioCapturer* capturer = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Create(&builder, type);
+    napi_value res;
+    
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("FLOW_0100: Create failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK;
+    result = OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("FLOW_0100: SetCapturerInfo failed, result=%{public}d", result);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioCapturer_SensitiveRecordPermitCallback callback = MySensitiveRecordPermitCallback;
+    result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, nullptr);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        result = OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+        if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+            OH_AudioStreamBuilder_Destroy(builder);
+            napi_create_int32(env, TEST_PASS, &res);
+            return res;
+        } else {
+            LOG("FLOW_0100: GenerateCapturer failed, result=%{public}d", result);
+            OH_AudioStreamBuilder_Destroy(builder);
+            napi_create_int32(env, TEST_FAIL, &res);
+            return res;
+        }
+    } else {
+        LOG("FLOW_0100: SetSensitiveRecordPermitCallback failed, result=%{public}d", result);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+}
+
+static bool g_callbackTriggered = false;
+static void MySensitiveRecordPermitCallbackForFlow(OH_AudioCapturer* capturer, void* userData, bool isPermitted)
+{
+    LOG("MySensitiveRecordPermitCallbackForFlow triggered, isPermitted: %{public}d", isPermitted);
+    g_callbackTriggered = true;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200(
+    napi_env env, napi_callback_info info)
+{
+    g_callbackTriggered = false;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioCapturer* capturer = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Create(&builder, type);
+    napi_value res;
+    
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("FLOW_0200: Create failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK;
+    result = OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("FLOW_0200: SetCapturerInfo failed, result=%{public}d", result);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    result = OH_AudioStreamBuilder_SetCellularRecordSecurityParams(builder, "13800138000", "test_token_12345");
+    if (result == AUDIOSTREAM_SUCCESS) {
+        OH_AudioCapturer_SensitiveRecordPermitCallback callback = MySensitiveRecordPermitCallbackForFlow;
+        result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, nullptr);
+        if (result == AUDIOSTREAM_SUCCESS) {
+            result = OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+            if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+                OH_AudioStreamBuilder_Destroy(builder);
+                napi_create_int32(env, TEST_PASS, &res);
+                return res;
+            } else {
+                LOG("FLOW_0200: GenerateCapturer failed, result=%{public}d", result);
+                OH_AudioStreamBuilder_Destroy(builder);
+                napi_create_int32(env, TEST_FAIL, &res);
+                return res;
+            }
+        } else {
+            LOG("FLOW_0200: SetSensitiveRecordPermitCallback failed, result=%{public}d", result);
+            OH_AudioStreamBuilder_Destroy(builder);
+            napi_create_int32(env, TEST_FAIL, &res);
+            return res;
+        }
+    } else {
+        LOG("FLOW_0200: SetCellularRecordSecurityParams failed, result=%{public}d", result);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Create(&builder, type);
+    napi_value res;
+    
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("CALLBACK_0100: Create failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK;
+    result = OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("CALLBACK_0100: SetCapturerInfo failed, result=%{public}d", result);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioCapturer_SensitiveRecordPermitCallback callback = MySensitiveRecordPermitCallback;
+    result = OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(builder, callback, nullptr);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        LOG("CALLBACK_0100: SetSensitiveRecordPermitCallback failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    const char* phoneNum = "13800138000";
+    const char* token = "test_token_12345";
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCellularRecordSecurityParams(builder, phoneNum, token);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    const char* phoneNum = nullptr;
+    const char* token = "test_token_12345";
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCellularRecordSecurityParams(builder, phoneNum, token);
+    OH_AudioStreamBuilder_Destroy(builder);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    const char* phoneNum = "13800138000";
+    const char* token = nullptr;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCellularRecordSecurityParams(builder, phoneNum, token);
+    OH_AudioStreamBuilder_Destroy(builder);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    const char* phoneNum = "13800138000";
+    const char* token = "test_token_12345";
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCellularRecordSecurityParams(builder, phoneNum, token);
+    OH_AudioStreamBuilder_Destroy(builder);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100, result is: %{public}d", 
+        result);
+    napi_value res;
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100(
+    napi_env env, napi_callback_info info)
+{
+    int32_t audiostreamSourceTypeVoiceDownlinkTest = 22;
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK;
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100, sourceType is: %{public}d", sourceType);
+    napi_value res;
+    if (sourceType == audiostreamSourceTypeVoiceDownlinkTest) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Create(&builder, type);
+    napi_value res;
+    
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SCENE_0100: Create failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK;
+    result = OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SCENE_0100: SetCapturerInfo failed, result=%{public}d", result);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    
+    result = OH_AudioStreamBuilder_SetCellularRecordSecurityParams(builder, "13800138000", "test_token_12345");
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        LOG("SCENE_0100: SetCellularRecordSecurityParams failed, result=%{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint32_t fidelity = 0;
+    uint32_t pureVocals = 1;
+    uint32_t standard = 2;
+    uint32_t unsupportedAbility = 6800104;
+    uint32_t serviceDied = 6800302;
+
+    if (fidelity != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIO_NOISE_REDUCTION_MODE_FIDELITY fail, result is: %{public}d",
+            OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    }
+    if (pureVocals != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS fail, result is: %{public}d",
+            OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS);
+    }
+    if (standard != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_STANDARD) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIO_NOISE_REDUCTION_MODE_STANDARD fail, result is: %{public}d",
+            OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    }
+    if (unsupportedAbility != OH_AudioStream_Result::AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY fail, result is: %{public}d",
+            OH_AudioStream_Result::AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY);
+    }
+    if (serviceDied != OH_AudioStream_Result::AUDIOSTREAM_ERROR_SERVICE_DIED) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_ERROR_SERVICE_DIED fail, result is: %{public}d",
+            OH_AudioStream_Result::AUDIOSTREAM_ERROR_SERVICE_DIED);
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("VERIFY_0100: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, &mode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity || (ret == AUDIOSTREAM_SUCCESS && mode == AUDIO_NOISE_REDUCTION_MODE_FIDELITY)) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("VERIFY_0100: GetNoiseReductionMode returns correct FIDELITY mode");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("VERIFY_0100: GetNoiseReductionMode FIDELITY failed, result=%{public}d, mode=%{public}d", ret, mode);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("VERIFY_0200: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS);
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, &mode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity || (ret == AUDIOSTREAM_SUCCESS && mode == AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS)) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("VERIFY_0200: GetNoiseReductionMode returns correct VOCALS mode");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("VERIFY_0200: GetNoiseReductionMode VOCALS failed, result=%{public}d, mode=%{public}d", ret, mode);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_STANDARD) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("VERIFY_0300: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, &mode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity || (ret == AUDIOSTREAM_SUCCESS && mode == AUDIO_NOISE_REDUCTION_MODE_STANDARD)) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("VERIFY_0300: GetNoiseReductionMode returns correct STANDARD mode");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("VERIFY_0300: GetNoiseReductionMode STANDARD failed, result=%{public}d, mode=%{public}d", ret, mode);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0100: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0100: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0100: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0100: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0100: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0200: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(
+        capturer, AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0200: SetNoiseReductionMode returns correct PURE_VOCALS mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0200: SetNoiseReductionMode PURE_VOCALS failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0200: SetNoiseReductionMode returns correct PURE_VOCALS mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0200: SetNoiseReductionMode PURE_VOCALS failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_STANDARD) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0300: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0300: SetNoiseReductionMode returns correct STANDARD mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0300: SetNoiseReductionMode STANDARD failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0300: SetNoiseReductionMode returns correct STANDARD mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0300: SetNoiseReductionMode STANDARD failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0100: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0400: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0400: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0400: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0400: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(nullptr, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_PARAM_0100: nullptr capturer returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_PARAM_0100: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode invalidMode = static_cast<OH_AudioNoiseReductionMode>(9999);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, invalidMode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_PARAM_0200: Invalid mode returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_PARAM_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_STATE_0100: Running state returns ILLEGAL_STATE correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_STATE_0100: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioCapturer_Release(capturer);
+    
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_STATE_0200: Released state returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_STATE_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(nullptr, &mode);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_PARAM_0100: nullptr capturer returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_PARAM_0100: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, nullptr);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_PARAM_0200: nullptr mode returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_PARAM_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode modes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, modes, inSize, &outSize);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_SUCCESS && outSize > 0) {
+        bool hasFidelity = false;
+        for (uint32_t i = 0; i < outSize; i++) {
+            if (modes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+                hasFidelity = true;
+                break;
+            }
+        }
+        if (hasFidelity) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("CAPTURER_GET_SUPPORTED_PARAM_0100: Get supported modes success, includes FIDELITY");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("CAPTURER_GET_SUPPORTED_PARAM_0100: Supported modes not include FIDELITY");
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0100: Failed, result=%{public}d, outSize=%{public}d", ret, outSize);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioNoiseReductionMode modes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(nullptr, modes, inSize, &outSize);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0200: nullptr capturer returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, nullptr, inSize, &outSize);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0300: nullptr modes returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0300: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode modes[20];
+    uint32_t inSize = 20;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, modes, inSize, nullptr);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0400: nullptr outSize returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0400: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
+    {"SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100", nullptr,
         SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200", nullptr,
@@ -11848,28 +13293,52 @@ napi_property_descriptor desc3[] = {
         AudioCapturer_SetIndependentAudioSessionStrategy_010, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioCapturer_SetIndependentAudioSessionStrategy_011", nullptr,
         AudioCapturer_SetIndependentAudioSessionStrategy_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_001", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_001, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_002", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_002, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_003", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_003, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_004", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_004, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_005", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_005, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_006", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_006, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_007", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_007, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_008", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_008, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_009", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_009, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_010", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_010, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioRenderer_SetIndependentAudioSessionStrategy_011", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        AudioRenderer_SetIndependentAudioSessionStrategy_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
     {"AudioSessionManager_SetBehavior_001", nullptr,
         AudioSessionManager_SetBehavior_001, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSessionManager_SetBehavior_002", nullptr,
@@ -11878,22 +13347,8 @@ napi_property_descriptor desc3[] = {
         AudioSessionManager_SetBehavior_003, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSessionManager_SetBehavior_004", nullptr,
         AudioSessionManager_SetBehavior_004, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300", nullptr,
-        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100", nullptr,
-        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200", nullptr,
-        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300", nullptr,
-        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400", nullptr,
-        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500", nullptr,
-        SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100", nullptr,
-        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100", nullptr,
-        SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100,
         nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -11909,8 +13364,6 @@ napi_property_descriptor desc3[] = {
     {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200", nullptr,
         SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200,
         nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100", nullptr,
-        SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100,
         nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -11968,6 +13421,86 @@ napi_property_descriptor desc3[] = {
     {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100,
         nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_RETURN_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_RETURN_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {

@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import Utils  from "../../../ets/MainAbility/common/Utils";
+import Utils from '../../../ets/MainAbility/common/Utils';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -78,11 +78,11 @@ it('TimePickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
       // switch 12-hour
       console.info('[TimePickerJsunit_static_0100] START');
       let driver = Driver.create()
-      let switchButton = await driver.findComponent(ON.id('button'));
+      let switchButton = await driver.findComponent(ON.id('TimePickerPage' + '_button'));
       await (switchButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let timePicker = await driver.findComponent(ON.id('timePicker'));
+      let timePicker = await driver.findComponent(ON.id('TimePickerPage' + '_timePicker'));
       let rect = await (timePicker?.getBounds() as Promise<Rect>);
       let left = rect.left
       let top = rect.top
@@ -138,7 +138,7 @@ it('TimePickerJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promi
       console.info('[TimePickerJsunit_static_0200] START');
       // Verify switch 24-hour
       let driver = Driver.create()
-      let switchButton = await driver.findComponent(ON.id('button'));
+      let switchButton = await driver.findComponent(ON.id('TimePickerPage' + '_button'));
       await (switchButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('mode');
@@ -170,11 +170,11 @@ it('TimePickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
       // Verify 24-hour function of TimePicker component
       console.info('[TimePickerJsunit_static_0300] START');
       let driver = Driver.create()
-      let switchButton = await driver.findComponent(ON.id('button'));
+      let switchButton = await driver.findComponent(ON.id('TimePickerPage' + '_button'));
       await (switchButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let timePicker = await driver.findComponent(ON.id('timePicker'));
+      let timePicker = await driver.findComponent(ON.id('TimePickerPage' + '_timePicker'));
       let rect = await (timePicker?.getBounds() as Promise<Rect>);
       let left = rect.left
       let top = rect.top

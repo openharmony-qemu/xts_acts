@@ -17,12 +17,14 @@ import CollectionsArrayCombinationTest from './CollectionsArrayCombinationTest.t
 import CollectionsArrayCombinationSecondTest from './CollectionsArrayCombinationSecondTest.test';
 import CollectionsArrayCombinationThirdTest from './CollectionsArrayCombinationThirdTest.test';
 import CollectionsArrayCombinationFourthTest from './CollectionsArrayCombinationFourthTest.test';
+import CollectionsArraySupplementTest from './CollectionsArraySupplementTest.test';
 
 export default function testsuite() {
   CollectionsArrayCombinationTest();
   CollectionsArrayCombinationSecondTest();
   CollectionsArrayCombinationThirdTest();
   CollectionsArrayCombinationFourthTest();
+  CollectionsArraySupplementTest();
   
 };
 

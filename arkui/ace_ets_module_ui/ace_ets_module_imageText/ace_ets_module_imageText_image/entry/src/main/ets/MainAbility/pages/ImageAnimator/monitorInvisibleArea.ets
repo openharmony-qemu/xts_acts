@@ -15,6 +15,7 @@ struct ImageAnimatorAutoPauseTest {
         Column() {
           ImageAnimator()
             .id('ImageAnimatorFlag')
+            .key('ImageAnimatorFlag')
             .images([
               {
                 src: $r('app.media.flower')

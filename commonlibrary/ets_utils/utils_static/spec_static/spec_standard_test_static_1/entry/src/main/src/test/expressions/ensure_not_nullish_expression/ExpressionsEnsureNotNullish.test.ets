@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../Util.test";
+
 import {
   expect,
   describe,
@@ -24,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
 
 let expr_0_v: int|null = 5
 let expr_0_w = expr_0_v
@@ -108,15 +111,7 @@ function null_check1_foo2(arg: Object|null) : int {
 }
 let null_check1_a: Object|null = new Object();
 let null_check1_b: Object|null = null;
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function ExpressionsEnsureNotNullishTest() {
+export default function ExpressionsEnsureNotNullishTest(): void {
   describe("ExpressionsEnsureNotNullishTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -127,7 +122,7 @@ export default function ExpressionsEnsureNotNullishTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

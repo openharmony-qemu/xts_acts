@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../Util.test";
+
 import {
   expect,
   describe,
@@ -24,15 +27,8 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 
 interface AddressType_chop_access {
@@ -356,7 +352,7 @@ class B_expression_not_nullish_5 {
 class C_expression_not_nullish_5 {
   value: string = "test"
 }
-export default function ExpressionsChainingOperatorTest() {
+export default function ExpressionsChainingOperatorTest(): void {
   describe("ExpressionsChainingOperatorTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -367,7 +363,7 @@ export default function ExpressionsChainingOperatorTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -897,7 +893,6 @@ export default function ExpressionsChainingOperatorTest() {
     it("testExpressionsChainingOperator0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ex = new Example_chop2()
 
-      // 随机条件测试，这里我们模拟随机结果
       let cond: boolean = Math.random() > 0.5
       let aa = new Example_chop2()
       let a1: Example_chop2|undefined = cond ? aa : foo_undefined_chop2()
@@ -925,7 +920,6 @@ export default function ExpressionsChainingOperatorTest() {
     it("testExpressionsChainingOperator0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ex = new Example_chop2()
 
-      // 测试null版本
       let cond: boolean = Math.random() > 0.5
       let aa = new Example_chop2()
       let a1: Example_chop2|null = cond ? aa : foo_null_chop2()
@@ -953,7 +947,6 @@ export default function ExpressionsChainingOperatorTest() {
     it("testExpressionsChainingOperator0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ex = new Example_chop2()
 
-      // 测试lambda版本
       let cond: boolean = Math.random() > 0.5
       let aa = new Example_chop2()
       let a1: Example_chop2|undefined = cond ? aa : lambda_undefined_chop2()

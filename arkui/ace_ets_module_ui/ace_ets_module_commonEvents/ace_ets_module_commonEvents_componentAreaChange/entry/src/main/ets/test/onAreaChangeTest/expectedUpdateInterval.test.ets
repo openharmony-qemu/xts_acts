@@ -61,7 +61,7 @@ export default function expectedUpdateInterval() {
       await CommonFunc.sleep(500);
       let IntervalText = await driver.findComponent(ON.id('IntervalText'));
       await IntervalText.click();
-      await CommonFunc.sleep(100);
+      await CommonFunc.sleep(3000);
       await IntervalText.click();
       await CommonFunc.sleep(9000);
       let strJson = getInspectorByKey('IntervalText2');

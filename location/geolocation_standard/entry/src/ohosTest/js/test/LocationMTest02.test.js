@@ -678,6 +678,64 @@ export default function geolocationTest_geo8() {
         }
     });
 
+    /**
+     * @tc.name   SUB_Location_findMatchingWlan_null_0100
+     * @tc.number SUB_Location_findMatchingWlan_null_0100
+     * @tc.desc   Test findMatchingWlan with all null parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_findMatchingWlan_null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            let wlanBssidArray = null;
+            let rssiThreshold = null;
+            let needStartScan = null;
+            geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_null_0100 result: ' + JSON.stringify(result));
+                expect(result instanceof Array).assertTrue();
+            }).catch((err) => {
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_null_0100 error: ' + JSON.stringify(err));
+                expect(err.code === 401).assertTrue();
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_findMatchingWlan_null_0100 try err: ' + JSON.stringify(error));
+            expect(error.code === 401).assertTrue();
+        }
+        await sleep(1000);
+        done();
+    });
+
+    /**
+     * @tc.name   SUB_Location_findMatchingWlan_undefined_0100
+     * @tc.number SUB_Location_findMatchingWlan_undefined_0100
+     * @tc.desc   Test findMatchingWlan with all undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_findMatchingWlan_undefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            let wlanBssidArray = undefined;
+            let rssiThreshold = undefined;
+            let needStartScan = undefined;
+            geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_undefined_0100 result: ' + JSON.stringify(result));
+                expect(result instanceof Array).assertTrue();
+            }).catch((err) => {
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_undefined_0100 error: ' + JSON.stringify(err));
+                expect(err.code === 401).assertTrue();
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_findMatchingWlan_undefined_0100 try err: ' + JSON.stringify(error));
+            expect(error.code === 401).assertTrue();
+        }
+        await sleep(1000);
+        done();
+    });
+
     });
 }
 

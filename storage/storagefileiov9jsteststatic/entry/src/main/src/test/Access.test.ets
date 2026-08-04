@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -439,16 +440,19 @@ export default function fileIOAccess() {
       await Utils.prepareFile(fpath, FILE_CONTENT);
 
       try {
-        const ret: boolean | undefined = await fs.access(fpath);
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_001 ret：' + ret);
-                  expect(ret === true).assertTrue();
-                  let file = fs.openSync(fpath);
-                  let res = await Utils.isIntNum(file.fd);
-                  expect(res).assertTrue();
-                  let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
-                  expect(readlen == FILE_CONTENT.length).assertTrue();
-                  fs.closeSync(file);
-                  fs.unlinkSync(fpath);
+        fs.access(fpath, (err: BusinessError | null, ret: boolean | undefined) => {
+          waitForCompletion(async () => {
+          hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_001 ret：' + ret);
+          expect(ret === true).assertTrue();
+          let file = fs.openSync(fpath);
+          let res = await Utils.isIntNum(file.fd);
+          expect(res).assertTrue();
+          let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+          expect(readlen == FILE_CONTENT.length).assertTrue();
+          fs.closeSync(file);
+          fs.unlinkSync(fpath);
+          })
+        });
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_001 end error' + JSON.stringify(e));

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,13 +40,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testLayoutSyncStatic
-     * @tc.number testLayoutSyncStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testLayoutSync_Static_0100
      * @tc.desc   To test Paragraph layoutSyncSync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLayoutSyncStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLayoutSyncStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       let msg = "testLayoutSync"
       console.info(msg + 'begin');
@@ -61,13 +62,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testPaintStatic_02
-     * @tc.number testPaintStatic_02
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPaint_Static_0200
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaintStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPaintStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
         let canvas = new drawing.Canvas(pixel!)
@@ -76,7 +77,7 @@ export default function GraphicTextClass() {
           paragraph.paint(canvas, 10, 10);
           console.info(msg + 'canvasConstructor successed');
         } catch (e) {
-          e = e as BusinessError;
+         
           console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -85,13 +86,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testPaintOnPathStatic_02
-     * @tc.number testPaintOnPathStatic_02
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPaintOnPath_Static_0300
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaintOnPathStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPaintOnPathStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
         let canvas = new drawing.Canvas(pixel!)
@@ -101,7 +102,7 @@ export default function GraphicTextClass() {
           paragraph.paintOnPath(canvas, path, 0, 0);
           console.info(msg + 'canvasConstructor successed');
         } catch (e) {
-          e = e as BusinessError;
+         
           console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -110,13 +111,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testParagraphBuilder_AonstructorAndAddTextStatic
-     * @tc.number testParagraphBuilder_AonstructorAndAddTextStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testParagraphBuilder_AonstructorAndAddText_Static_0400
      * @tc.desc   Constructs a ParagraphBuilder object and calls its methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testParagraphBuilder_AonstructorAndAddTextStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testParagraphBuilder_AonstructorAndAddTextStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       let msg = "testParagraphBuilder_AonstructorAndAddText"
       console.info(msg + 'begin');
@@ -182,13 +183,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testGetLongestLineStatic_01
-     * @tc.number testGetLongestLineStatic_01
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetLongestLine_Static_0500
      * @tc.desc   To test Paragraph GetLongestLine interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLongestLineStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetLongestLineStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       let msg = "testGetLongestLine"
       console.info(msg + 'begin');
@@ -205,13 +206,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testPlaceholderSpanStatic
-     * @tc.number testPlaceholderSpanStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPlaceholderSpan_Static_0600
      * @tc.desc   test for PlaceholderSpan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPlaceholderSpanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testPlaceholderSpanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let msg = "testPlaceholderSpanStatic"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -263,13 +264,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testLineTypesetStatic
-     * @tc.number testLineTypesetStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testLineTypeset_Static_0700
      * @tc.desc   test for LineTypeset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypesetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLineTypesetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let msg = "testLineTypesetStatic"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -301,13 +302,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testLayoutStatic
-     * @tc.number testLayoutStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testLayout_Static_0800
      * @tc.desc   test for Layout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let msg = "testLayoutStatic"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -333,13 +334,13 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testAddSymbolStatic
-     * @tc.number testAddSymbolStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testAddSymbol_Static_0900
      * @tc.desc   test for addSymbol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testAddSymbolStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testAddSymbolStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg = "testAddSymbolStatic"
         console.info(msg + 'begin');
@@ -368,42 +369,48 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testGetFullNameStatic
-     * @tc.number testGetFullNameStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetFullName_Static_1000
      * @tc.desc   test for Layout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetFullNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetFullNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         let msg = "www data testGetFullNameStatic "
         console.info(msg + 'www data begin');
         let fontType: text.SystemFontType = text.SystemFontType.GENERIC;
         console.info(msg + 111);
         try {
-          let fullNames = await text.getSystemFontFullNamesByType(fontType);
-          console.info(msg + JSON.stringify(fullNames))
-          expect(fullNames !== undefined).assertTrue();
-          expect(fullNames.length > 0).assertTrue();
-        } catch (err){
-          console.info(msg + err);
-        }
-        try {
-          let fontDescriptor = await text.getFontDescriptorByFullName("HarmonyOS Sans", fontType);
-          console.info(msg + JSON.stringify(fontDescriptor))
-          expect(fontDescriptor !== undefined).assertTrue();
-          expect(Object.keys(fontDescriptor).length > 0).assertTrue();
-          console.info('www data 00000 ', Object.keys(fontDescriptor).length)
-        } catch (err){
-          console.info(msg + err);
-        }
-        try {
-          let fontDescriptors = await text.matchFontDescriptors({
-            weight: text.FontWeight.W400,
+          waitForCompletion(async () => {
+            let fullNames = await text.getSystemFontFullNamesByType(fontType);
+            console.info(msg + JSON.stringify(fullNames))
+            expect(fullNames !== undefined).assertTrue();
+            expect(fullNames.length > 0).assertTrue();
           })
-          console.info(msg + JSON.stringify(fontDescriptors))
-          expect(fontDescriptors !== undefined).assertTrue();
-          expect(fontDescriptors.length > 0).assertTrue();
+        } catch (err){
+          console.info(msg + err);
+        }
+        try {
+          waitForCompletion(async () => {
+            let fontDescriptor = await text.getFontDescriptorByFullName("HarmonyOS Sans", fontType);
+            console.info(msg + JSON.stringify(fontDescriptor))
+            expect(fontDescriptor !== undefined).assertTrue();
+            expect(Object.keys(fontDescriptor).length > 0).assertTrue();
+            console.info('www data 00000 ', Object.keys(fontDescriptor).length)
+          })
+        } catch (err){
+          console.info(msg + err);
+        }
+        try {
+          waitForCompletion(async () => {
+            let fontDescriptors = await text.matchFontDescriptors({
+              weight: text.FontWeight.W400,
+            })
+            console.info(msg + JSON.stringify(fontDescriptors))
+            expect(fontDescriptors !== undefined).assertTrue();
+            expect(fontDescriptors.length > 0).assertTrue();
+          })
         } catch (err){
           console.info(msg + err);
         }

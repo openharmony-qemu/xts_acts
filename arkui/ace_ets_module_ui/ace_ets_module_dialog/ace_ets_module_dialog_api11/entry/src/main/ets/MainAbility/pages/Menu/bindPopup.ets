@@ -27,7 +27,7 @@ struct PopupExample {
   @Builder popupBuilder() {
     Row({ space: 2 }) {
       Image($rawfile('ic_health_heart.png')).width(24).height(24).margin({ left: -5 }).key('image')
-      Text('Custom Popup').fontSize(12).key('text')
+      Text('Custom Popup').fontSize(12).key('bindPopup_text')
     }.width(100).height(50).backgroundColor(Color.White)
   }
 
@@ -88,7 +88,7 @@ struct PopupExample {
         .position({ x: 100, y: 200 })
 
       Button('custom popup')
-        .key('button')
+        .key('bindPopup_button')
         .onClick(() => {
           this.customPopup = !this.customPopup
           try {

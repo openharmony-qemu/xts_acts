@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect, Level} from '../../../../../../hypium';
+import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect, Level} from '../../../../../../hypium/index';
 
 const TAG = 'ImageXts.createPixelMap';
 
@@ -537,6 +538,50 @@ export default function createPixelMapTest(): void  {
         { editable: true, pixelFormat: image.PixelMapFormat.ASTC_4x4, size: { height: 4, width: 6 } };
       try {
         await createPixelMapCallbackTest(done, testName, color, opts);
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createPixelMap_static_2600
+     * @tc.number SUB_MEDIA_IMAGE_createPixelMap_static_2600
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createPixelMap_static_2600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPixelMap_static_2600';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions =
+        { editable: true, pixelFormat: image.PixelMapFormat.RGBA_1010102, size: { height: 4, width: 6 } };
+      try {
+        await createPixelMapCallbackTest(done, testName, color, opts);
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createPixelMap_static_2700
+     * @tc.number SUB_MEDIA_IMAGE_createPixelMap_static_2700
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createPixelMap_static_2700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPixelMap_static_2700';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions =
+        { editable: true, pixelFormat: image.PixelMapFormat.RGBA_1010102, size: { height: 4, width: 6 } };
+      try {
+        await createPixelMapPromiseTest(done, testName, color, opts);
       } catch (error) {
         console.info(TAG, `failed; error: ${error},${error.code}`, testName);
         expect().assertFail();

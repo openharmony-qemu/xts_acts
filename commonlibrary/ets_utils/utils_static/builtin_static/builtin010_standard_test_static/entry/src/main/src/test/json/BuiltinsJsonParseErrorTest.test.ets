@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +36,7 @@ export default function builtinsJsonParseErrorTest(): void {
     /**
      * @tc.name builtinsJsonParseErrorTest0001
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0001
-     * @tc.desc Test constructor with Empty String message
+     * @tc.desc Test empty string message
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
@@ -44,7 +45,7 @@ export default function builtinsJsonParseErrorTest(): void {
       const msg = "";
       const start = 0;
       const end = 10;
-      const error = new JsonParseError(msg, start as int, end as int);
+      const error = JsonParseError(msg, start as int, end as int);
 
       expect(error.message).assertEqual(" at 0..10");
       expect(error instanceof Error).assertTrue();
@@ -53,14 +54,14 @@ export default function builtinsJsonParseErrorTest(): void {
     /**
      * @tc.name builtinsJsonParseErrorTest0002
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0002
-     * @tc.desc Test constructor with Special Characters string
+     * @tc.desc Test special character message
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-      const error = new JsonParseError(specialChars, 5 as int, 5 as int);
+      const error = JsonParseError(specialChars, 5 as int, 5 as int);
 
       expect(error.message).assertEqual(`${specialChars} at 5..5`);
     });
@@ -68,14 +69,14 @@ export default function builtinsJsonParseErrorTest(): void {
     /**
      * @tc.name builtinsJsonParseErrorTest0003
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0003
-     * @tc.desc Test constructor with Escape Sequences string
+     * @tc.desc Test escape sequence message
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapes = "Line1\nLine2\tTab\rReturn";
-      const error = new JsonParseError(escapes, 100 as int, 200 as int);
+      const error = JsonParseError(escapes, 100 as int, 200 as int);
 
       expect(error.message).assertEqual("Line1\nLine2\tTab\rReturn at 100..200");
     });
@@ -83,14 +84,14 @@ export default function builtinsJsonParseErrorTest(): void {
     /**
      * @tc.name builtinsJsonParseErrorTest0004
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0004
-     * @tc.desc Test constructor with Emoji and Unicode string
+     * @tc.desc Test emoji and Unicode message
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emoji = "Error \ud83d\ude3c occurred";
-      const error = new JsonParseError(emoji, 1 as int, 1 as int);
+      const error = JsonParseError(emoji, 1 as int, 1 as int);
 
       expect(error.message).assertEqual("Error 😼 occurred at 1..1");
     });
@@ -98,92 +99,92 @@ export default function builtinsJsonParseErrorTest(): void {
     /**
      * @tc.name builtinsJsonParseErrorTest0005
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0005
-     * @tc.desc Test constructor with Keyword-like strings
+     * @tc.desc Test keyword-like messages
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const error1 = new JsonParseError("null", 0 as int, 0 as int);
+      const error1 = JsonParseError("null", 0 as int, 0 as int);
       expect(error1.message).assertEqual("null at 0..0");
 
-      const error2 = new JsonParseError("NaN", 1 as int, 1 as int);
+      const error2 = JsonParseError("NaN", 1 as int, 1 as int);
       expect(error2.message).assertEqual("NaN at 1..1");
 
-      const error3 = new JsonParseError("undefined", 2 as int, 2 as int);
+      const error3 = JsonParseError("undefined", 2 as int, 2 as int);
       expect(error3.message).assertEqual("undefined at 2..2");
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0006
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0006
-     * @tc.desc Test constructor with Optional Offsets (undefined)
+     * @tc.desc Test constructor with a message
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new JsonParseError("Parsing Failed");
-      expect(error.message).assertEqual("Parsing Failed at undefined..undefined");
+      expect(error.message).assertEqual("Parsing Failed");
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0007
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0007
-     * @tc.desc Test constructor with One Optional Offset
+     * @tc.desc Test one optional offset
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const error = new JsonParseError("Error", 123 as int);
+      const error = JsonParseError("Error", 123 as int);
       expect(error.message).assertEqual("Error at 123..undefined");
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0008
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0008
-     * @tc.desc Test constructor with Zero offsets
+     * @tc.desc Test zero offsets
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const error = new JsonParseError("Zero Error", 0 as int, 0 as int);
+      const error = JsonParseError("Zero Error", 0 as int, 0 as int);
       expect(error.message).assertEqual("Zero Error at 0..0");
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0009
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0009
-     * @tc.desc Test constructor with Negative offsets
+     * @tc.desc Test negative offsets
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const error = new JsonParseError("Negative", -1 as int, -100 as int);
+      const error = JsonParseError("Negative", -1 as int, -100 as int);
       expect(error.message).assertEqual("Negative at -1..-100");
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0010
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0010
-     * @tc.desc Test constructor with Max Safe Integer offsets
+     * @tc.desc Test maximum safe integer offsets
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const max = Number.MAX_SAFE_INTEGER;
-      const error = new JsonParseError("Max Int", max.toInt(), max.toInt());
+      const error = JsonParseError("Max Int", max.toInt(), max.toInt());
       expect(error.message).assertEqual(`Max Int at ${max.toInt()}..${max.toInt()}`);
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0011
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0011
-     * @tc.desc Test constructor with Floating Point offsets
+     * @tc.desc Test floating-point offsets
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
@@ -195,14 +196,14 @@ export default function builtinsJsonParseErrorTest(): void {
       const startInt = start.toInt();
       const endInt = end.toInt();
 
-      const error = new JsonParseError("Float", startInt, endInt);
+      const error = JsonParseError("Float", startInt, endInt);
       expect(error.message).assertEqual(`Float at ${startInt}..${endInt}`);
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0012
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0012
-     * @tc.desc Test constructor with NaN and Infinity offsets
+     * @tc.desc Test NaN and Infinity offsets
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
@@ -212,30 +213,30 @@ export default function builtinsJsonParseErrorTest(): void {
       const infVal = Infinity.toInt();
       const negInfVal = -Infinity.toInt();
 
-      const error1 = new JsonParseError("Special", nanVal, infVal);
+      const error1 = JsonParseError("Special", nanVal, infVal);
       expect(error1.message).assertEqual(`Special at ${nanVal}..${infVal}`);
 
-      const error2 = new JsonParseError("Special2", negInfVal, nanVal);
+      const error2 = JsonParseError("Special2", negInfVal, nanVal);
       expect(error2.message).assertEqual(`Special2 at ${negInfVal}..${nanVal}`);
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0013
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0013
-     * @tc.desc Test constructor with explicitly passed undefined
+     * @tc.desc Test explicitly undefined offsets
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const error = new JsonParseError("Explicit Undef", undefined, undefined);
+      const error = JsonParseError("Explicit Undef", undefined, undefined);
       expect(error.message).assertEqual("Explicit Undef at undefined..undefined");
     });
 
     /**
      * @tc.name builtinsJsonParseErrorTest0014
      * @tc.number BUILTINS_JSON_PARSE_ERROR_TEST_0014
-     * @tc.desc Test constructor with large string logic
+     * @tc.desc Test large string message
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL0
@@ -245,7 +246,7 @@ export default function builtinsJsonParseErrorTest(): void {
       for(let i=0; i<10; i++) {
         longMsg += longMsg;
       }
-      const error = new JsonParseError(longMsg, 0 as int, 1 as int);
+      const error = JsonParseError(longMsg, 0 as int, 1 as int);
       expect(error.message.startsWith("AAAA")).assertTrue();
       expect(error.message.endsWith(" at 0..1")).assertTrue();
     });

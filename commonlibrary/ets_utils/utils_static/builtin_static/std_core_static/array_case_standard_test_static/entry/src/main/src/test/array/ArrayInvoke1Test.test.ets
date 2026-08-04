@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -549,7 +549,7 @@ export default function ArrayInvoke1Test(): void {
       const arr1 = new Array<string>();
       expect(arr1.length).assertEqual(0);
 
-      const arr2 = new Array<int>(5);
+      const arr2 = Array.create<int>(1, 5);
       expect(arr2.length).assertEqual(1);
       expect(arr2[0]).assertEqual(5);
 
@@ -612,14 +612,14 @@ export default function ArrayInvoke1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2900
      * @tc.name testArrayInvoke1029
-     * @tc.desc Verify default construction differs from passing a single numeric argument
+     * @tc.desc Verify invoke with no args differs from passing a single numeric argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayInvoke1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<int>();
-      const sizedArr = new Array<int>(100);
+      const sizedArr = Array.create<int>(1, 100);
 
       expect(emptyArr.length).assertEqual(0);
       expect(sizedArr.length).assertEqual(1);
@@ -652,7 +652,6 @@ export default function ArrayInvoke1Test(): void {
       const arr = new Array<int | undefined>();
 
       expect(arr.length).assertEqual(0);
-      expect(arr.length > 0).assertFalse();
 
       try {
         arr[0];

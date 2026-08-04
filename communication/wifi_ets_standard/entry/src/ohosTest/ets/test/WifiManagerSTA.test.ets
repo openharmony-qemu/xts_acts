@@ -27,12 +27,32 @@ function sleep(delay:number): Promise<void> {
 
 async function tryToEnableWifi(){
   if(!wifiMg.isWifiActive()){
-    console.info("wifi_test/enable wifi:" + wifiMg.enableWifi());
-    await sleep(5000);
+    console.info("wifi_test enable wifi:" + wifiMg.enableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (wifiMg.isWifiActive()) {
+        console.info("WiFi已成功开启");
+        break;
+      }
+      console.info("等待WiFi开启中...");
+      await sleep(100);
+    }
   }
   console.info("wifi_test/wifi status:" + wifiMg.isWifiActive());
 }
-
+async function tryToDisableWifi(){
+  if(wifiMg.isWifiActive()){
+    console.info("wifi_test disable wifi:" + wifiMg.disableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (!wifiMg.isWifiActive()) {
+        console.info("WiFi已成功关闭");
+        break;
+      }
+      console.info("等待WiFi关闭中...");
+      await sleep(100);
+    }
+  }
+  console.info("wifi_test/wifi status:" + wifiMg.isWifiActive());
+}
 async function tryToDisConnWifi(){
   if(wifiMg.isConnected()){
     console.info("wifi_test/ wifi is connect status :" + wifiMg.isConnected());
@@ -76,7 +96,7 @@ export async function clickText(text_respond: string): Promise<void> {
 export default function wifiSta() {
 
   describe('wifiSta', async () => {
-
+    let networkId = -1;
     beforeAll(async (done:Function) =>{
       console.info('beforeAll case');
       await tryToEnableWifi();
@@ -87,7 +107,18 @@ export default function wifiSta() {
     beforeEach(() => {
     })
 
-    afterEach(() => {
+    afterEach(async (done:Function)=>{
+      console.info('afterEach start');
+      try{
+        if (networkId >= 0) {
+          await wifiMg.removeCandidateConfig(networkId);
+          console.info(`afterEach removeCandidateConfig promise success`);
+        }
+      }catch{
+        console.info(`afterEach not need removeCandidateConfig `);
+      }
+      console.info('afterEach end');
+      done();
     })
 
     afterAll(async (done:Function)=>{
@@ -110,8 +141,7 @@ export default function wifiSta() {
         console.info("isWifiActive result:" + status);
         if(!status) {
           console.info("enableWifi start.");
-          wifiMg.enableWifi();
-          await sleep(1500);
+          await tryToEnableWifi();
           let state = wifiMg.isWifiActive();
           console.info("isWifiActive result:" + state);
           expect(state).assertTrue();
@@ -340,23 +370,20 @@ export default function wifiSta() {
         console.info("isWifiActive result:" + status);
         if(!status) {
           console.info("wifi is close,enableWifi start.");
-          wifiMg.enableWifi();
-          await sleep(2000);
+          await tryToEnableWifi();
           let state1 = wifiMg.isWifiActive();
           console.info("isWifiActive result:" + state1);
           expect(state1).assertTrue();
           console.info("enableWifi success.");
         }
         console.info("wifi is open,disableWifi start.");
-        wifiMg.disableWifi();
-        await sleep(2000);
+        await tryToDisableWifi();
         let state2 = wifiMg.isWifiActive();
         console.info("isWifiActive result:" + state2);
         expect(state2).assertFalse();
         console.info("disableWifi success.");
         console.info("wifi is close,enableWifi start.");
-        wifiMg.enableWifi();
-        await sleep(2000);
+        await tryToEnableWifi();
         let state3 = wifiMg.isWifiActive();
         console.info("isWifiActive result:" + state3);
         expect(state3).assertTrue();
@@ -423,23 +450,20 @@ export default function wifiSta() {
         console.info("isWifiActive result:" + status);
         if(!status) {
           console.info("wifi is close,enableWifi start.");
-          wifiMg.enableWifi();
-          await sleep(2000);
+          await tryToEnableWifi();
           let state1 = wifi.isWifiActive();
           console.info("isWifiActive result:" + state1);
           expect(state1).assertTrue();
           console.info("enableWifi success.");
         }
         console.info("wifi is open,disableWifi start.");
-        wifiMg.disableWifi();
-        await sleep(2000);
+        await tryToDisableWifi();
         let state2 = wifi.isWifiActive();
         console.info("isWifiActive result:" + state2);
         expect(state2).assertFalse();
         console.info("disableWifi success.");
         console.info("wifi is close,enableWifi start.");
-        wifiMg.enableWifi();
-        await sleep(2000);
+        await tryToEnableWifi();
         let state3 = wifi.isWifiActive();
         console.info("isWifiActive result:" + state3);
         expect(state3).assertTrue();
@@ -522,6 +546,26 @@ export default function wifiSta() {
       }
       done();
     })
+    /**
+     * @tc.number Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200
+     * @tc.name Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200
+     * @tc.desc WifiCapability	WIFI_AUTO_ENABLE test.
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = "LOG_Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200";
+      try {
+        let WIFI_AUTO_ENABLE: wifiMg.WifiCapability = wifiMg.WifiCapability.WIFI_AUTO_ENABLE;
+        console.info(`[wifi_js]${caseName}WIFI_AUTO_ENABLE:` + WIFI_AUTO_ENABLE);
+        expect(WIFI_AUTO_ENABLE).assertEqual(0);
+      } catch (err) {
+        console.info(`[wifi_js]${caseName}constant WIFI_AUTO_ENABLE get errCode:` + err.code + `,errMessage:` + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
 
     /**
      * @tc.number SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0001
@@ -534,22 +578,20 @@ export default function wifiSta() {
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0001';
       console.info(`${caseName} test start`);
+      networkId = -1;
       try {
         let config:wifiMg.WifiDeviceConfig = {
           ssid: 'test_ssid',
           preSharedKey: 'test_password',
           securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        let networkId = await wifiMg.addCandidateConfig(config);
+        networkId = await wifiMg.addCandidateConfig(config);
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         let settings:wifiMg.ConnectSettings = {
           networkId: networkId
         };
         await wifiMg.connectToCandidateConfig(settings);
         console.info(`${caseName} connectToCandidateConfig promise success`);
-        if (networkId >= 0) {
-          await wifiMg.removeCandidateConfig(networkId);
-        }
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -573,13 +615,14 @@ export default function wifiSta() {
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0002';
       console.info(`${caseName} test start`);
+      networkId = -1;
       try {
         let config:wifiMg.WifiDeviceConfig = {
           ssid: 'test_ssid_with_action',
           preSharedKey: 'test_password',
           securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        let networkId = await wifiMg.addCandidateConfig(config);
+        networkId = await wifiMg.addCandidateConfig(config);
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
 
         let settings:wifiMg.ConnectSettings = {
@@ -588,9 +631,6 @@ export default function wifiSta() {
         };
         await wifiMg.connectToCandidateConfig(settings);
         console.info(`${caseName} connectToCandidateConfig promise success`);
-        if (networkId >= 0) {
-          await wifiMg.removeCandidateConfig(networkId);
-        }
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -599,9 +639,9 @@ export default function wifiSta() {
         } else {
           console.info(`${caseName} The user does not respond.`);
           expect(err.code).assertEqual(2501005);
+          await clickText('取消');
         }
       }
-      await clickText('取消');
       console.info(`${caseName} test end`);
       done();
     });
@@ -616,13 +656,14 @@ export default function wifiSta() {
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0003';
       console.info(`${caseName} test start`);
+      networkId = -1;
       try {
         let config:wifiMg.WifiDeviceConfig = {
           ssid: 'test_ssid_with_action',
           preSharedKey: 'test_password',
           securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        let networkId = await wifiMg.addCandidateConfig(config);
+        networkId = await wifiMg.addCandidateConfig(config);
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         let settings:wifiMg.ConnectSettings = {
           networkId: networkId,
@@ -630,9 +671,6 @@ export default function wifiSta() {
         };
         await wifiMg.connectToCandidateConfig(settings);
         console.info(`${caseName} connectToCandidateConfig promise success`);
-        if (networkId >= 0) {
-          await wifiMg.removeCandidateConfig(networkId);
-        }
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -656,6 +694,7 @@ export default function wifiSta() {
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0004';
       console.info(`${caseName} test start`);
+      networkId = -1;
       try {
         let config:wifiMg.WifiDeviceConfig = {
           "ssid": "TEST_TYPE_OPEN",
@@ -665,7 +704,7 @@ export default function wifiSta() {
           "isHiddenSsid": false,
           "securityType": wifiMg.WifiSecurityType.WIFI_SEC_TYPE_OPEN
         };
-        let networkId = await wifiMg.addCandidateConfig(config);
+        networkId = await wifiMg.addCandidateConfig(config);
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         let settings:wifiMg.ConnectSettings = {
           networkId: networkId,
@@ -675,7 +714,8 @@ export default function wifiSta() {
         };
         wifiMg.connectToCandidateConfig(settings).then(async(result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
-        }).catch((err: BusinessError) => {
+          done();
+        }).catch(async(err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
           if (err.code === 801) {
             console.info(`${caseName} api is not support`);
@@ -683,13 +723,11 @@ export default function wifiSta() {
           } else {
             expect(err.code).assertEqual(2501000);
           }
+          done();
         });
         await clickText('连接');
         console.info(`${caseName} connectToCandidateConfig promise success`);
         await sleep(1000);
-        if (networkId >= 0) {
-          await wifiMg.removeCandidateConfig(networkId);
-        }
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -698,9 +736,9 @@ export default function wifiSta() {
         } else {
           expect(err.code).assertEqual(2501000);
         }
+        done();
       }
       console.info(`${caseName} test end`);
-      done();
     });
     /**
      * @tc.number SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0005
@@ -713,13 +751,14 @@ export default function wifiSta() {
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0005';
       console.info(`${caseName} test start`);
+      networkId = -1;
       try {
         let config:wifiMg.WifiDeviceConfig = {
           ssid: 'test_ssid_with_action',
           preSharedKey: 'test_password',
           securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        let networkId = await wifiMg.addCandidateConfig(config);
+        networkId = await wifiMg.addCandidateConfig(config);
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
 
         let settings:wifiMg.ConnectSettings = {
@@ -730,9 +769,6 @@ export default function wifiSta() {
         };
         await wifiMg.connectToCandidateConfig(settings);
         console.info(`${caseName} connectToCandidateConfig promise success`);
-        if (networkId >= 0) {
-          await wifiMg.removeCandidateConfig(networkId);
-        }
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -756,13 +792,15 @@ export default function wifiSta() {
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0006';
       console.info(`${caseName} test start`);
+      networkId = -1;
       try {
+        await sleep(10000);//用例弹框影响--消除影响
         let config:wifiMg.WifiDeviceConfig = {
           ssid: 'test_ssid_with_action',
           preSharedKey: 'test_password',
           securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        let networkId = await wifiMg.addCandidateConfig(config);
+        networkId = await wifiMg.addCandidateConfig(config);
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         let settings:wifiMg.ConnectSettings = {
           networkId: networkId,
@@ -772,7 +810,8 @@ export default function wifiSta() {
         };
         wifiMg.connectToCandidateConfig(settings).then(async(result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
-        }).catch((err: BusinessError) => {
+          done();
+        }).catch(async(err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
           if (err.code === 801) {
             console.info(`${caseName} api is not support`);
@@ -780,12 +819,10 @@ export default function wifiSta() {
           } else {
             expect(err.code).assertEqual(2501006);
           }
+          done();
         });
         await clickText('取消');
         console.info(`${caseName} connectToCandidateConfig promise success`);
-        if (networkId >= 0) {
-          await wifiMg.removeCandidateConfig(networkId);
-        }
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -794,9 +831,9 @@ export default function wifiSta() {
         } else {
           expect(err.code).assertEqual(2501006);
         }
+        done();
       }
       console.info(`${caseName} test end`);
-      done();
     });
     /**
      * @tc.number SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0007
@@ -878,6 +915,84 @@ export default function wifiSta() {
       } catch (err) {
         console.info(`${caseName} error code: ${err.code},error message: ${err.message}`);
         expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001
+     * @tc.name Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001
+     * @tc.desc Test connectToCandidateConfig with ConnectSettings - normal case with basic settings
+     * @tc.size MEDIUMTEST
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0001';
+      console.info(`${caseName} test start`);
+      networkId = -1;
+      try {
+        let config: wifiMg.WifiDeviceConfig = {
+          ssid: "TestCandRealAddr",
+          bssid: "00:11:22:33:44:55",
+          securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+          preSharedKey: "12345678",
+          isHiddenSsid: false,
+          randomMacType: 0,
+          randomMacAddr: "00:11:22:33:44:55",
+          showNoInternetDialog: false
+        };
+        networkId = await wifiMg.addCandidateConfig(config);
+        console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
+        await wifiMg.connectToCandidateConfig(networkId);
+        console.info(`${caseName} connectToCandidateConfig promise success`);
+      } catch (err) {
+        console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
+        if (err.code === '801') {
+          console.info(`${caseName} api is not support`);
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        }
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002
+     * @tc.name Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002
+     * @tc.desc Test connectToCandidateConfig with ConnectSettings - normal case with basic settings
+     * @tc.size MEDIUMTEST
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_ShowNoInternetDialog_0002';
+      console.info(`${caseName} test start`);
+      networkId = -1;
+      try {
+        let config: wifiMg.WifiDeviceConfig = {
+          ssid: "TestCandRealAddr",
+          bssid: "00:11:22:33:44:55",
+          securityType: wifiMg.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+          preSharedKey: "12345678",
+          isHiddenSsid: false,
+          randomMacType: 0,
+          randomMacAddr: "00:11:22:33:44:55",
+          showNoInternetDialog: true
+        };
+        networkId = await wifiMg.addCandidateConfig(config);
+        console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
+        await wifiMg.connectToCandidateConfig(networkId);
+        console.info(`${caseName} connectToCandidateConfig promise success`);
+      } catch (err) {
+        console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
+        if (err.code === '801') {
+          console.info(`${caseName} api is not support`);
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        }
       }
       console.info(`${caseName} test end`);
       done();

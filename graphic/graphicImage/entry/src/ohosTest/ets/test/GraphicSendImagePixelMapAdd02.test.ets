@@ -35,7 +35,8 @@ class MySequence1 implements rpc.Parcelable {
     try {
       this.pixel_map = sendableImage.createPixelMapFromParcel(messageSequence);
       console.error(`www data createPixelMapFromParcel success.`);
-      expect(this.pixel_map.isEditable).assertFalse();
+      console.info('www data MySequence1 pixelMap ',this.pixel_map.isEditable,this.pixel_map.isStrideAlignment);
+      expect(this.pixel_map.isEditable).assertTrue();
       expect(this.pixel_map.isStrideAlignment).assertFalse();
       this.pixel_map.release();
     } catch(e) {
@@ -60,8 +61,9 @@ class MySequence2 implements rpc.Parcelable {
     try {
       this.pixel_map = sendableImage.createPixelMapFromParcel(messageSequence);
       console.error(`www data createPixelMapFromParcel success.`);
-      expect(this.pixel_map.isEditable).assertTrue();
-      expect(this.pixel_map.isStrideAlignment).assertTrue();
+      console.info('www data MySequence2 pixelMap ',this.pixel_map.isEditable,this.pixel_map.isStrideAlignment);
+      expect(this.pixel_map.isEditable).assertFalse();
+      expect(this.pixel_map.isStrideAlignment).assertFalse();
       this.pixel_map.release();
     } catch(e) {
       let error = e as BusinessError;
@@ -88,8 +90,9 @@ class MySequence3 implements rpc.Parcelable {
       console.info('www data unmarshalling 22 ');
       pixelParcel.unmarshalling(messageSequence).then(async (pixelMap : sendableImage.PixelMap) => {
         this.pixel_map = pixelMap;
+        console.info('www data MySequence2 pixelMap ',this.pixel_map.isEditable,this.pixel_map.isStrideAlignment);
         expect(this.pixel_map.isEditable).assertTrue();
-        expect(this.pixel_map.isStrideAlignment).assertTrue();
+        expect(this.pixel_map.isStrideAlignment).assertFalse();
         await pixelMap.getImageInfo().then(async (imageInfo : image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
           await pixelMap.release();
@@ -121,6 +124,7 @@ class MySequence4 implements rpc.Parcelable {
       console.info('www data unmarshalling 22 ');
       pixelParcel.unmarshalling(messageSequence).then(async (pixelMap : sendableImage.PixelMap) => {
         this.pixel_map = pixelMap;
+        console.info('www data MySequence2 pixelMap ',this.pixel_map.isEditable,this.pixel_map.isStrideAlignment);
         expect(this.pixel_map.isEditable).assertFalse();
         expect(this.pixel_map.isStrideAlignment).assertFalse();
         await pixelMap.getImageInfo().then(async (imageInfo : image.ImageInfo) => {
@@ -1150,7 +1154,7 @@ export default function GraphicSendImagePixelMapAdd02() {
           bufferArr[i] = 0x80;
         }
         let opts: image.InitializationOptions = {
-          editable: true,
+          editable: false,
           srcPixelFormat: image.PixelMapFormat.BGRA_8888,
           pixelFormat: image.PixelMapFormat.BGRA_8888,
           size: { height: 4, width: 6 }

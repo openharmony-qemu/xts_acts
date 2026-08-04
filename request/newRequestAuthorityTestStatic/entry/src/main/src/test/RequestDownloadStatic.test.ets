@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -55,7 +56,12 @@ export default function RequestDownloadStaticTest() {
         hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.newRequestAuthority.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.newRequestAuthority.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
@@ -807,7 +813,7 @@ export default function RequestDownloadStaticTest() {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 create success");
         let on_completedCallback = (pro: request.agent.Progress): void => {
-          (async () => {
+          waitForCompletion(async () => {
           try {
             let task: request.agent.Task = await request.agent.create(baseContext!, config);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start twice");
@@ -820,7 +826,7 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 err: " + JSON.stringify(err));
             done();
           }
-          })().awaitSync()
+          })
         }
         task.onCompleted(on_completedCallback);
         await task.start();

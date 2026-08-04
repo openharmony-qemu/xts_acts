@@ -15,29 +15,20 @@
  */
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, {
-  BasePageConfig,
-  PageConfig,
-  TestValue,
-  RectValue,
-  ExpectValue,
-  SetValue
-} from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue, SetValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, beforeAll, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, Position, $r } from '@ohos.arkui.component';
-import { UIContext } from "@ohos.arkui.UIContext";
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test'
-
+import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -45,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 /**
  * Test of common attribute: position
  */
-export default async function positionTest() {
+export default function positionTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
     'Button',
@@ -202,11 +193,11 @@ export default async function positionTest() {
 
 
       console.info('[' + data.caseTag + '] get referenceComponent rect before position changed.');
-      let referenceRectBefore: RectValue = await Utils.getComponentRect(data.pageConfig.referenceComponentKey);
+      let referenceRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
 
       //Obtain the region information of the parent component.
       console.info('[' + data.caseTag + '] get parentComponent rect before position changed.');
-      let parentRectBefore: RectValue = await Utils.getComponentRect(data.pageConfig.parentComponentKey);
+      let parentRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.parentComponentKey);
 
       //Modify the target component properties.
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
@@ -218,17 +209,17 @@ export default async function positionTest() {
 
       //Obtain the region information of the reference component.
       console.info('[' + data.caseTag + '] get referenceComponent rect after position changed.');
-      let referenceRectAfter: RectValue = await Utils.getComponentRect(data.pageConfig.referenceComponentKey);
+      let referenceRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.referenceComponentKey);
 
       //Obtain the region information of the parent component.
       console.info('[' + data.caseTag + '] get parentComponent rect after position changed.');
-      let parentRectAfter: RectValue = await Utils.getComponentRect(data.pageConfig.parentComponentKey);
+      let parentRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.parentComponentKey);
       console.info('[' + data.caseTag + '] data.pageConfig.parentComponentKey+++.' +
       data.pageConfig.parentComponentKey);
 
       //Obtain the region information of the target component.
       console.info('[' + data.caseTag + '] check actual position.');
-      let rect: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey ?? '');
+      let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
 
       //When the target component is TabContent,
       //the parent component is the Swiper on the outer layer of Tabs.
@@ -290,8 +281,8 @@ export default async function positionTest() {
       //Confirm that the position attribute value has been set successfully.
       console.info('[' + data.caseTag + '] check position attr value.');
       console.log('+++++++++++++++data.pageConfig.componentKey', data.pageConfig.componentKey, 'getComp',
-        await Utils.getComponentByKey(data.pageConfig.componentKey ?? ""))
-      let viewObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.componentKey ?? "");
+        Utils.getComponentByKey(data.pageConfig.componentKey ?? ""))
+      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey ?? "");
       console.info('[' + data.caseTag + '] check position x.' +
       viewObj.getElement('$attrs').getElement('position').getString('x') + 'expect' + data.testValue.expectValue.x);
       expect(viewObj.getElement('$attrs').getElement('position').getString('x'))

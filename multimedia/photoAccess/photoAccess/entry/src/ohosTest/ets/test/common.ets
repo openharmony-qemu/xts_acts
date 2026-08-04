@@ -258,7 +258,12 @@ export function checkSystemAlbum(expect: Function, testNum: string, album: ESObj
   }
 }
 export async function startAbility(bundleName: string, abilityName: string): Promise<void> {
-  await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
+  let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`[picker] start abilityFinished: ${result}`);
   }).catch((err: BusinessError) => {
     console.error(`[picker] start abilityFailed: ${err}`);
@@ -503,44 +508,85 @@ export async function getAssetCountByMediaSuffix(testNum:string, helper: photoAc
   return count;
 }
 
-export async function createShootingModeAssetBatch(testNum: string, testContext: common.UIAbilityContext, fileNameList: Array<string>, disPlayName: string) { 
-  let photoAssetUriList: Array<string> = []; 
-  try { 
-    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext); 
-    let imageFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE); 
-    let videoFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO); 
-    let photoType: photoAccessHelper.PhotoType | undefined = undefined; 
-    let resourceType: photoAccessHelper.ResourceType | undefined = undefined; 
-    for (let fileName of fileNameList) { 
-      let mediaSuffix: string = fileName.substring((fileName.lastIndexOf(".") + 1), fileName.length); 
-      let assetTitle: string = fileName.substring(0, (fileName.lastIndexOf("."))); 
-      if (imageFormatList.includes(mediaSuffix)) { 
-        photoType = photoAccessHelper.PhotoType.IMAGE; 
-        resourceType = photoAccessHelper.ResourceType.IMAGE_RESOURCE; 
-      } else if (videoFormatList.includes(mediaSuffix)) { 
-        photoType = photoAccessHelper.PhotoType.VIDEO; 
-        resourceType = photoAccessHelper.ResourceType.VIDEO_RESOURCE; 
-      } else { 
-        console.log(`${testNum} :: fileName = ${fileName} is not mediaLibrary support asset !`); 
-        continue; 
-      } 
-      // let fileUri: string = testContext.filesDir + `/${disPlayName}`; 
-      let fileUri: string = `file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/${disPlayName}` 
-      let options: photoAccessHelper.CreateOptions = { 
-        title: assetTitle 
-      } 
-      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, mediaSuffix, options); 
-      assetChangeRequest.addResource(resourceType, fileUri); 
-      await phAccessHelper.applyChanges(assetChangeRequest); 
-      console.info(`${testNum} :: apply createAssetRequest successfully !`); 
-      let photoAssetUri: string = assetChangeRequest.getAsset().uri; 
-      photoAssetUriList.push(photoAssetUri); 
-    } 
-    console.log(`${testNum} :: create all support mediaAsset success, assetCount = ${photoAssetUriList.length}`); 
-  } catch (error) { 
-    console.error(`${testNum} :: createShootingModeAssetBatch failed ! error = ${error}`); 
-  } 
-  return photoAssetUriList; 
+export async function createShootingModeAssetBatch(testNum: string, testContext: common.UIAbilityContext, fileNameList: Array<string>, disPlayName: string) {
+  let photoAssetUriList: Array<string> = [];
+  try {
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+    let imageFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
+    let videoFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO);
+    let photoType: photoAccessHelper.PhotoType | undefined = undefined;
+    let resourceType: photoAccessHelper.ResourceType | undefined = undefined;
+    for (let fileName of fileNameList) {
+      let mediaSuffix: string = fileName.substring((fileName.lastIndexOf(".") + 1), fileName.length);
+      let assetTitle: string = fileName.substring(0, (fileName.lastIndexOf(".")));
+      if (imageFormatList.includes(mediaSuffix)) {
+        photoType = photoAccessHelper.PhotoType.IMAGE;
+        resourceType = photoAccessHelper.ResourceType.IMAGE_RESOURCE;
+      } else if (videoFormatList.includes(mediaSuffix)) {
+        photoType = photoAccessHelper.PhotoType.VIDEO;
+        resourceType = photoAccessHelper.ResourceType.VIDEO_RESOURCE;
+      } else {
+        console.log(`${testNum} :: fileName = ${fileName} is not mediaLibrary support asset !`);
+        continue;
+      }
+      // let fileUri: string = testContext.filesDir + `/${disPlayName}`;
+      let fileUri: string = `file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/${disPlayName}`
+      let options: photoAccessHelper.CreateOptions = {
+        title: assetTitle
+      }
+      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, mediaSuffix, options);
+      assetChangeRequest.addResource(resourceType, fileUri);
+      await phAccessHelper.applyChanges(assetChangeRequest);
+      console.info(`${testNum} :: apply createAssetRequest successfully !`);
+      let photoAssetUri: string = assetChangeRequest.getAsset().uri;
+      photoAssetUriList.push(photoAssetUri);
+    }
+    console.log(`${testNum} :: create all support mediaAsset success, assetCount = ${photoAssetUriList.length}`);
+  } catch (error) {
+    console.error(`${testNum} :: createShootingModeAssetBatch failed ! error = ${error}`);
+  }
+  return photoAssetUriList;
+}
+
+export async function waitForLcdSizePopulated(displayName: string, timeoutMs: number = 10000): Promise<boolean> {
+  let waitedMs = 0;
+  const checkIntervalMs = 500;
+
+  while (waitedMs < timeoutMs) {
+    try {
+      let appContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const helper = photoAccessHelper.getPhotoAccessHelper(appContext);
+
+      const predicates = new dataSharePredicates.DataSharePredicates();
+      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
+
+      const fetchOps: photoAccessHelper.FetchOptions = {
+        fetchColumns: [photoAccessHelper.PhotoKeys.LCD_SIZE],
+        predicates: predicates
+      };
+
+      let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
+      let asset = await fetchResult.getFirstObject();
+      fetchResult.close();
+
+      let lcdSize = asset.get(photoAccessHelper.PhotoKeys.LCD_SIZE) as string;
+
+      console.info(`waitForLcdSizePopulated: ${displayName} lcd_size = ${lcdSize}`);
+
+      if (lcdSize !== undefined && lcdSize !== null && lcdSize !== '') {
+        console.info(`waitForLcdSizePopulated: ${displayName} lcd_size populated successfully`);
+        return true;
+      }
+    } catch (error) {
+      console.info(`waitForLcdSizePopulated: ${displayName} error = ${error}`);
+    }
+
+    await sleep(checkIntervalMs);
+    waitedMs += checkIntervalMs;
+  }
+
+  console.error(`waitForLcdSizePopulated: ${displayName} timeout after ${timeoutMs}ms`);
+  return false;
 }
 
 export {

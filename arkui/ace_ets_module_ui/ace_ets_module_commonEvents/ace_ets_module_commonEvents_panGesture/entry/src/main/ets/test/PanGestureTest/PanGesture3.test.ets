@@ -91,7 +91,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let top = colum.top
       await driver.swipe(Math.round(colum.left+(colum.right - colum.left)/2), Math.round(colum.bottom), Math.round(colum.right), Math.round(top), 600)
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PanGesture3_1');
+      let strJson = getInspectorByKey('PanGesture3' + '_1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[PanGesture3_0200] component obj is: " + JSON.stringify(obj));
       console.info("[PanGesture3_0200] title: " + JSON.stringify(obj.$attrs.content));

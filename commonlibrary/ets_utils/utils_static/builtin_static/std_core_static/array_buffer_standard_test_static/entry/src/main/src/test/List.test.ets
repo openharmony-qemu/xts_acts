@@ -1,3 +1,4 @@
+'use static';
 import arrayBufferAtTest from "./arrayBuffer/ArrayBufferAtTest.test";
 import arrayBufferAtomicTest from "./arrayBuffer/ArrayBufferAtomicTest.test";
 import arrayBufferBytesLengthTest from "./arrayBuffer/ArrayBufferBytesLengthTest.test";
@@ -25,6 +26,32 @@ import arrayBufferToStringTest from "./arrayBuffer/ArrayBufferToStringTest.test"
 import arrayBufferViewPropertyTest from "./arrayBuffer/ArrayBufferViewPropertyTest.test";
 import byteConstructorOneTest from "./arrayBuffer/ByteConstructorOneTest.test";
 import byteConstructorTwoTest from "./arrayBuffer/ByteConstructorTwoTest.test";
+import arrayBufferAt2Test from "./arrayBuffer/ArrayBufferAt2Test.test";
+import arrayBufferDetachedField2Test from "./arrayBuffer/ArrayBufferDetachedField2Test.test";
+import arrayBufferFromFive2Test from "./arrayBuffer/ArrayBufferFromFive2Test.test";
+import arrayBufferFromFour2Test from "./arrayBuffer/ArrayBufferFromFour2Test.test";
+import arrayBufferFromObject2Test from "./arrayBuffer/ArrayBufferFromObject2Test.test";
+import arrayBufferFromOne2Test from "./arrayBuffer/ArrayBufferFromOne2Test.test";
+import arrayBufferFromSeven2Test from "./arrayBuffer/ArrayBufferFromSeven2Test.test";
+import arrayBufferFromSix2Test from "./arrayBuffer/ArrayBufferFromSix2Test.test";
+import arrayBufferFromThree2Test from "./arrayBuffer/ArrayBufferFromThree2Test.test";
+import arrayBufferFromTwo2Test from "./arrayBuffer/ArrayBufferFromTwo2Test.test";
+import arrayBufferLike2Test from "./arrayBuffer/ArrayBufferLike2Test.test";
+import arrayBufferProperty2Test from "./arrayBuffer/ArrayBufferProperty2Test.test";
+import arrayBufferResizableField2Test from "./arrayBuffer/ArrayBufferResizableField2Test.test";
+import arrayBufferResize2Test from "./arrayBuffer/ArrayBufferResize2Test.test";
+import arrayBufferSet2Test from "./arrayBuffer/ArrayBufferSet2Test.test";
+import arrayBufferSliceTwo2Test from "./arrayBuffer/ArrayBufferSliceTwo2Test.test";
+import arrayBufferStringify2Test from "./arrayBuffer/ArrayBufferStringify2Test.test";
+import arrayBufferViewProperty2Test from "./arrayBuffer/ArrayBufferViewProperty2Test.test";
+import byteConstructorTwo2Test from "./arrayBuffer/ByteConstructorTwo2Test.test";
+import arrayBufferAtomic2Test from "./arrayBuffer/ArrayBufferAtomic2Test.test";
+import arrayBufferByteLengthField2Test from "./arrayBuffer/ArrayBufferByteLengthField2Test.test";
+import arrayBufferBytesLength2Test from "./arrayBuffer/ArrayBufferBytesLength2Test.test";
+import arrayBufferGetByteLength2Test from "./arrayBuffer/ArrayBufferGetByteLength2Test.test";
+import arrayBufferIsView2Test from "./arrayBuffer/ArrayBufferIsView2Test.test";
+import arrayBufferSliceOne2Test from "./arrayBuffer/ArrayBufferSliceOne2Test.test";
+import arrayBufferToString2Test from "./arrayBuffer/ArrayBufferToString2Test.test";
 
 export default function testsuite(): void {
   arrayBufferAtTest();
@@ -54,4 +81,30 @@ export default function testsuite(): void {
   arrayBufferViewPropertyTest();
   byteConstructorOneTest();
   byteConstructorTwoTest();
+  arrayBufferAt2Test();
+  arrayBufferAtomic2Test();
+  arrayBufferByteLengthField2Test();
+  arrayBufferBytesLength2Test();
+  arrayBufferDetachedField2Test();
+  arrayBufferFromFive2Test();
+  arrayBufferFromFour2Test();
+  arrayBufferFromObject2Test();
+  arrayBufferFromOne2Test();
+  arrayBufferFromSeven2Test();
+  arrayBufferFromSix2Test();
+  arrayBufferFromThree2Test();
+  arrayBufferFromTwo2Test();
+  arrayBufferGetByteLength2Test();
+  arrayBufferIsView2Test();
+  arrayBufferLike2Test();
+  arrayBufferProperty2Test();
+  arrayBufferResizableField2Test();
+  arrayBufferResize2Test();
+  arrayBufferSet2Test();
+  arrayBufferSliceOne2Test();
+  arrayBufferSliceTwo2Test();
+  arrayBufferStringify2Test();
+  arrayBufferToString2Test();
+  arrayBufferViewProperty2Test();
+  byteConstructorTwo2Test();
 }

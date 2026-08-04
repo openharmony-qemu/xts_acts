@@ -386,6 +386,41 @@ export default function audioSessionManagerTest() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+    * @tc.desc   setDefaultOutputDevice with DEFAULT test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flag: boolean | null = null;
+      let AudioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+            outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+        outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+        flag = true;
+      } else {
+        console.info(`this device has one outputdevice,not suit this case`);
+        done();
+        return
+      }
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with DEFAULT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with DEFAULT: FAIL :${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      done();
+    })
+
+    /**
     * @tc.name   AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100
     * @tc.number AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100
     * @tc.desc   setDefaultOutputDevice with WIRED_HEADSET test.
@@ -1685,44 +1720,22 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100
+     * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400 
+     * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400  
      * @tc.desc   setAudioSessionBehavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      expect(behavior).assertEqual(0x00000004);
       try {
         await sessionManager.setAudioSessionBehavior(behavior);
-        console.info(`AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100: setAudioSessionBehavior with DEFALUT: PASS`);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: PASS`);
         done();
       } catch (err) {
-        console.info(`AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100: FAIL :${(err as BusinessError).message}`);
-        expect(false).assertTrue();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100
-     * @tc.desc   setAudioSessionBehavior
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("SUB_MULTIMEDIA_AUDIO_SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      try {
-        for(let i=0;i < 100; i++){
-          await sessionManager.setAudioSessionBehavior(behavior);
-      }
-        console.info(`SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100: setAudioSessionBehavior with DEFALUT: PASS`);
-        done();
-      } catch (err) {
-        console.info(`SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100: FAIL :${(err as BusinessError).message}`);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: FAIL :${err.message}`);
         expect(false).assertTrue();
       }
       done();

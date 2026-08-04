@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium/index';
 import { camera } from '@kit.CameraKit';
 import { Context } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';

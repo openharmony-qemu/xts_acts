@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -164,7 +164,7 @@ export default function ArrayFill1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_0800
      * @tc.name testArrayFill1008
-     * @tc.desc Verify negative indexes are resolved from the end of the array
+     * @tc.desc Verify negative start index is resolved from the end for fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -296,7 +296,7 @@ export default function ArrayFill1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFill1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       arr[0] = 100;
       arr.fill(0);
       expect(arr[0]).assertEqual(0);

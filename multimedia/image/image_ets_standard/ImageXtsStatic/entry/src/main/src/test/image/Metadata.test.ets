@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,7 @@
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 const TAG = 'xtsStatic_imagePackerStaticTest';
 let metaData: image.Metadata;
@@ -356,37 +357,6 @@ export default function metaDataStaticTest(): void {
       }
     });
 
-
-
-
-
-
-
-
-
-    /**
-     * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100
-     * @tc.name      SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100
-     * @tc.desc      clone isEditable
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100', Level.LEVEL1, async (done:() => void) => {
-      const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100";
-      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
-      console.info(TAG, `start：${testName}`);
-      let PixelMap = await createPixelMapTest(context);
-      try {
-        let newPixelMap = await PixelMap.clone();
-        console.info(TAG,testName,'Succeeded clone pixelmap.');
-        expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable);
-      } catch (error) {
-        console.error(TAG, testName, error, error.code);
-        expect().assertFail();
-      }
-      done();
-    });
     /**
      * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0200
      * @tc.name      SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0200

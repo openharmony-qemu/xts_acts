@@ -34,10 +34,7 @@ export default function textAreaInputTest() {
   describe('textAreaInputTest', () : void=> {
     beforeAll(async (): Promise<void> => {
       console.info("textAreaInputTest beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -60,13 +57,12 @@ export default function textAreaInputTest() {
       }
       console.info("textAreaInputTest foreEach end");
     });
+
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("textAreaInputTest after each called");
     });
 
-    
-    
     /**
      * @tc.number   textAreaInputTest_static_0001
      * @tc.name     textAreaInputTest_static_0001
@@ -74,9 +70,9 @@ export default function textAreaInputTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
+      console.info('textAreaInputTest textAreaInputTest0001 START');
       if (AppStorage.get<number>("winLeft") == 0) {
-        let driver = Driver.create();
-        console.info('textAreaInputTest textAreaInputTest0001 START');
+        let driver = await Driver.create();        
         await CommonFunc.sleep(1000);
         let textArea1 = await driver.findComponent(ON.id('textArea1'));
         await CommonFunc.sleep(500);
@@ -85,10 +81,26 @@ export default function textAreaInputTest() {
         await CommonFunc.sleep(500);
         await (textArea2?.click() as Promise<void>)
         await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.text('同意'));
+        await CommonFunc.sleep(500);
+        if (button) {
+          await button?.click();
+          await CommonFunc.sleep(1000);
+        }
+        await driver.triggerKey(2070);
+        await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
-        button1 ? await button1!.click() : null
+        if (button1) {
+          await button1?.click();
+          await CommonFunc.sleep(1000);
+        }
+        let button2 = await driver.findComponent(ON.text('完成'));
         await CommonFunc.sleep(500);
+        if (button2) {
+          await button2?.click();
+          await CommonFunc.sleep(1000);
+        }
 
         await (textArea1?.longClick() as Promise<void>);
         await CommonFunc.sleep(500);
@@ -129,16 +141,9 @@ export default function textAreaInputTest() {
         }
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 Button success');
-      }
-      
-
-
-        expect("").assertEqual("");
-
+      } 
+      expect("").assertEqual("");
       console.info("[textAreaInputTest0001] end");
-
     });
-
-
   })
 }

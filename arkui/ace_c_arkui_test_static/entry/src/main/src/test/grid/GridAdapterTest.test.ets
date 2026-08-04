@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
-import { describe, expect, it, afterEach, Level,beforeAll,beforeEach } from '../../../../hypium';
+import { describe, expect, it, afterEach, Level,beforeAll,beforeEach } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { Driver, ON, MouseButton,Component,Point } from '@kit.TestKit';
 import { UtilsTest } from '../Util.test'

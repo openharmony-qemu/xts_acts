@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '../../../hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '../../../hypium/index';
 import factory from '@ohos.data.distributedKVStore';
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -88,7 +89,12 @@ export default function KVManagerRootDirEntry() {
             try {
                 hilog.info(domain, TAG, '%{public}s', '================ beforeAll start KVManagerRootDirEntry==========');
                 await Utils.msSleep(2000)
-                abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+                let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+                let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                if(user !== undefined){
+                    cmd += ' -u ' + user;
+                }
+                abilityDelegator.executeShellCommand(cmd)
 
                 await Utils.msSleep(8000)
                 context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;

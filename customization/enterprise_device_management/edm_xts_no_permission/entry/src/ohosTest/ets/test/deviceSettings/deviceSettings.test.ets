@@ -362,7 +362,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.ON);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -383,10 +383,10 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NFC, deviceSettings.SwitchStatus.ON);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 201).assertTrue();
+          expect(error.code === 201).assertTrue();
         }
       } finally {
         await adminManager.disableAdmin(SELFWANT);

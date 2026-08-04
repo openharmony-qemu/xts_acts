@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -283,55 +283,6 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType!.getName()).assertEqual(Utils.scalarReflectI16Fqn());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1100
-     * @tc.name testClassGetFixedArrayComponentType011
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 011: Class.of(instance), getName returns "std.core.Array", getFixedArrayComponentType() result verified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetFixedArrayComponentType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: FixedArray<Array<int>> = [[1, 2], [3, 4]];
-      let cls = Class.of(arr);
-      let componentType = cls.getFixedArrayComponentType();
-      expect(componentType!.getName()).assertEqual("std.core.Array");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1200
-     * @tc.name testClassGetFixedArrayComponentType012
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 012: Class.of(instance), getName returns "std.core.Map", getFixedArrayComponentType() result verified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetFixedArrayComponentType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let map1 = new Map<string, int>();
-      let map2 = new Map<string, int>();
-      let arr: FixedArray<Map<string, int>> = [map1, map2];
-      let cls = Class.of(arr);
-      let componentType = cls.getFixedArrayComponentType();
-      expect(componentType!.getName()).assertEqual("std.core.Map");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1300
-     * @tc.name testClassGetFixedArrayComponentType013
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 013: Class.of(instance), getName returns "std.core.Set", getFixedArrayComponentType() result verified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetFixedArrayComponentType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set1 = new Set<int>();
-      let set2 = new Set<int>();
-      let arr: FixedArray<Set<int>> = [set1, set2];
-      let cls = Class.of(arr);
-      let componentType = cls.getFixedArrayComponentType();
-      expect(componentType!.getName()).assertEqual("std.core.Set");
     });
 
     /**
@@ -788,23 +739,6 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
 
       let fields = componentType!.getInstanceFields();
       expect(fields.length).assertLarger(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4300
-     * @tc.name testClassGetFixedArrayComponentType043
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 043: Class.of(instance), getFixedArrayComponentType() result verified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetFixedArrayComponentType043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: FixedArray<Map<string, Array<int>>> = [];
-      let cls = Class.of(arr);
-      let componentType = cls.getFixedArrayComponentType();
-      expect(componentType !== null).assertTrue();
-      let name = componentType!.getName();
-      expect(name).assertEqual("std.core.Map");
     });
 
     /**

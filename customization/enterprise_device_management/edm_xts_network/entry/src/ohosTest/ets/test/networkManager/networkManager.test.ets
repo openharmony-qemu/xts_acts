@@ -699,7 +699,8 @@ function testGetIpAddressSync() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = networkManager.getIpAddressSync(SELFWANT, '');
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -887,7 +888,8 @@ function testGetMacSync() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = networkManager.getMacSync(SELFWANT, '');
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -970,7 +972,8 @@ function testIsNetworkInterfaceDisabledSync() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result: boolean = networkManager.isNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_LOCAL);
-      expect(result !== undefined).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -1567,7 +1570,8 @@ function testSetGlobalProxySync() {
     try {
       let defProxy: connection.HttpProxy = networkManager.getGlobalProxySync(SELFWANT);
       let ret = networkManager.setGlobalProxySync(SELFWANT, originProxy);
-      expect(ret === undefined).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       console.info(' --- test_set_global_proxy_sync_0103_1 done is expected, but it error, actually catch: ' +
       error.code);

@@ -64,9 +64,12 @@ export default function webOnPermissionRequest() {
      * @tc.level  LEVEL0
      */
     it('emitWebDoubleInnerNucleus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebDoubleInnerNucleus001", 162000)
-      Utils.registerEvent("emitWebDoubleInnerNucleus001", webview.ArkWebEngineVersion.M144, 162010, done);
-      sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
+      Utils.emitEvent("emitWebDoubleInnerNucleus001", 162000);
+      let isReturn = false;
+      Utils.registerEvent("emitWebDoubleInnerNucleus001", webview.ArkWebEngineVersion.M144, 162010, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebviewDoubleInnerNucleus");
+      await Utils.waitForExist(() => isReturn, "emitWebDoubleInnerNucleus001" + '_returnCheck', true, 1000);
+      done();
     })
 
   })

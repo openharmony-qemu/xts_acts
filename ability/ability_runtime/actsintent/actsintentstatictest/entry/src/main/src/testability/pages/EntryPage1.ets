@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,13 @@
  * limitations under the License.
  */
 
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import hilog from '@ohos.hilog'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 import { InsightIntentEntry } from '@ohos.app.ability.InsightIntentDecorator';
-import { insightIntent } from '@kit.AbilityKit';
+import { insightIntent, InsightIntentEntity } from '@kit.AbilityKit';
 import InsightIntentEntryExecutor from '@ohos.app.ability.InsightIntentEntryExecutor';
 import { RecordData } from '@ohos.base';
-import { insightIntent, InsightIntentEntity } from '@kit.AbilityKit';
-
 const entityParameters = {
   '$schema': '',
   '$id': '/schemas/ArtistClassDef',

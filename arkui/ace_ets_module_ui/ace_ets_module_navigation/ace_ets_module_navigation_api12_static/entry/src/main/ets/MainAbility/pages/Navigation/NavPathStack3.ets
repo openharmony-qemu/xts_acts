@@ -13,22 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,PopInfo,AnimateParam,Search,TextAlign,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Margin,Swiper,ForEach,PickerTextStyle, NavigationInterception,CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Callback } from '@ohos.base'
-
-import { Callback } from '@ohos.base'
-
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, PopInfo, AnimateParam, Search, TextAlign, NavBarPosition, FlexAlign, NavPathInfo, NavDestinationContext, NavigationTitleMode, Image, NavigationMode, Column, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, TextInput, SearchController, NavigationOperation, PanGesture, Position, EffectType, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, NavDestinationMode, Dimension, TextOverflow, GestureEvent, FontWeight, Margin, Swiper, ForEach, PickerTextStyle, NavigationInterception, CalendarAlign, Visibility, NavigationCommonTitle, NavDestinationCommonTitle, Alignment, BarStyle, LaunchMode, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, AppStorage } from '@ohos.arkui.stateManagement';
+import { Callback } from '@ohos.base';
 export class DerivedNavPathStack extends NavPathStack{
   id:string = '__default__'
   setId(id:string){

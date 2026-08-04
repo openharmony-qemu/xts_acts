@@ -19,17 +19,15 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test'
 import { UtilsTest } from '../Util.test';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -75,6 +73,7 @@ it('finishTransSwiper_static_0100', Level.LEVEL0, async (done: () => void): Prom
       console.info('[finishTransSwiper_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperScroll = CommonFunc.getComponentRectOnScreen('finishTransition_swiper');
       let top = swiperScroll.top;
       let right = swiperScroll.right;

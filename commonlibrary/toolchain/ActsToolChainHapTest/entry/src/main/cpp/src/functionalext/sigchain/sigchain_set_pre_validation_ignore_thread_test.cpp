@@ -99,7 +99,7 @@ static void SigchainSetPreValidationIgnoreThread001()
         pthread_join(thread, nullptr);
 
         if (g_specialHandlerCount >= PROCESS_SIGNAL_COUNT) {
-            exit(0);
+            _exit(0);
         } else {
             exit(1);
         }

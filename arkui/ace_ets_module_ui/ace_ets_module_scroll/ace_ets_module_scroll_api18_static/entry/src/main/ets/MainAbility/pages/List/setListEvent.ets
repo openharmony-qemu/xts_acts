@@ -194,9 +194,9 @@ struct setOnListIndex02 {
       .height('50%')
       .id('key_listItem_set')
       .edgeEffect(EdgeEffect.None)
-      .onWillScroll((scrollOff: Double, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult => {
+      .onWillScroll((scrollOff: Double, scrollState: ScrollState, scrollSource: ScrollSource): undefined => {
         console.log(`List:: onWillScroll 1 scrollOff=${scrollOff}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
-      })
+       })
       .onDidScroll((scrollOff: Double, scrollState: ScrollState) => {
         console.log(`List:: onDidScroll 1  scrollOff=${scrollOff}, scrollState=${scrollState}`)
       })

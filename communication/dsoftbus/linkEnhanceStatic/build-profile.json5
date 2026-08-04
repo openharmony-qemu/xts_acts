@@ -20,8 +20,8 @@
     "products": [
       {
         "name": "default",
-        "compileSdkVersion": 26,
-        "compatibleSdkVersion": 22,
+        "compileSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "22",
         "arkTSVersion": "1.2",
         "signingConfig": "default",
         "runtimeOS": "OpenHarmony",

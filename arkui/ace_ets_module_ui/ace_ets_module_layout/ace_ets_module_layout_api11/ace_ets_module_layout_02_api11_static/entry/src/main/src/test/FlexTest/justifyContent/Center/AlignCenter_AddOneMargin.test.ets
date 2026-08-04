@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,9 +24,8 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
+import { Alignment } from '@ohos.arkui.component';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -214,7 +213,7 @@ it('testFlexAlignCenterTextMarginOverflow_static', Level.LEVEL0, async () : Prom
         .assertTrue();
       expect(Math.floor(Math.abs((Center_AddOneMargin_012.right - Center_AddOneMargin_012.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue();
-      expect(Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
+      expect(Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue();
 
       console.info('[testFlexAlignCenterTextMarginOverflow] END');

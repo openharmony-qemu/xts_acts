@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -260,7 +261,7 @@ struct Second {
           if (event) {
             console.log('title:' + event.title);
             let title:string  = event.title;
-            if(event.title='baidu.com'||event.title='百度一下'){
+            if(event.title=='baidu.com'||event.title=='百度一下'){
               this.title = 1;
             }
             if(event.isRealTitle){

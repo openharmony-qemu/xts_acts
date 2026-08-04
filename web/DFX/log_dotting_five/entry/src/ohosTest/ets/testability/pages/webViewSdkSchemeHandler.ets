@@ -18,10 +18,13 @@ import Utils from '../../test/Utils'
 import business_error from '@ohos.base'
 import buffer from '@ohos.buffer'
 import {waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct webViewSdkSchemeHandler {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  srcUrl: string = this.mServer.getAssetUrl('sdkSchemeHandler.html');
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   httpBodyStream: webview.WebHttpBodyStream|null = null
   existHttpBodyStream: webview.WebHttpBodyStream|null = null
@@ -60,6 +63,10 @@ struct webViewSdkSchemeHandler {
       console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
     }
   }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
@@ -80,16 +87,16 @@ struct webViewSdkSchemeHandler {
             this.isReceive = -1;
            switch (this.emitKey) {
               case 'emitWebViewSdkSchemeHandler_setNetErrorCode': {
-                this.controller.loadUrl('https://www.baidu.com');
+                this.controller.loadUrl(this.srcUrl);
                 break;
               }
               case 'emitWebViewSdkSchemeHandler_getNetErrorCode': {
-                this.controller.loadUrl('https://www.baidu.com');
+                this.controller.loadUrl(this.srcUrl);
                 break;
               }
            }
           })
-          Web({ src: $rawfile('sdkSchemeHandler.html'), controller: this.controller })
+          Web({ src: this.srcUrl, controller: this.controller })
             .javaScriptAccess(this.javaScriptAccess)
             .fileAccess(this.fileAccess)
             .imageAccess(this.imageAccess)
@@ -102,8 +109,7 @@ struct webViewSdkSchemeHandler {
                   (request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
                     console.log('[schemeHandler] onRequestStart')
                     this.requests.push(request)
-                    if(request.getRequestUrl().toLowerCase().indexOf('custom') > -1 ||
-                    request.getRequestUrl().indexOf('www.example.com') > -1) {
+                    if(request.getRequestUrl().toLowerCase().indexOf('custom') > -1) {
                       if(this.httpBodyStream == null || this.httpBodyStream == undefined) {
                         this.httpBodyStream = request.getHttpBodyStream()
                       }
@@ -119,7 +125,7 @@ struct webViewSdkSchemeHandler {
                     }
 
                     let response = new webview.WebSchemeHandlerResponse();
-                    response.setUrl('https://www.weibo.com');
+                    response.setUrl(this.mServer.getAssetUrl('second.html'));
 
                     response.setNetErrorCode(-2)
                     if(response.getNetErrorCode() == -2){

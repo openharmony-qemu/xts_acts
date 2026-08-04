@@ -166,12 +166,12 @@ struct LongPressGestureExample {
         .width('80%')
         .padding('5%')
         .border({ width: 3 })
-        .margin('5%')
+        .margin('1%')
 
         Button('点击添加监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.addGlobalGestureListener(GestureListenerType.LONG_PRESS,
@@ -182,14 +182,14 @@ struct LongPressGestureExample {
         Button('点击移除监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.removeGlobalGestureListener(GestureListenerType.LONG_PRESS, longPressGesture);
             console.info('aaa --- 移除监听')
           })
       }
-      .height('70%')
+      .height('65%')
       .width('100%')
       .backgroundColor(Color.White)
 

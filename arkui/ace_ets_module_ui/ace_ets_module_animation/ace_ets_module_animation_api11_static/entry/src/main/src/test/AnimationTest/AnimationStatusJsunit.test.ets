@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import emitter from '@ohos.events.emitter';
@@ -120,7 +120,7 @@ it('animationStatus_static_03', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animationStatus_static_03 on emitter err : " + JSON.stringify(err));
       }
       console.info("animationStatus_static_03 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animationStatus_button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('animationStatus_static_03 END');
     });
@@ -151,7 +151,7 @@ it('animationStatus_static_04', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animationStatus_static_04 on emitter err : " + JSON.stringify(err));
       }
       console.info("animationStatus_static_04 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animationStatus_button3', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('animationStatus_static_04 END');
     });

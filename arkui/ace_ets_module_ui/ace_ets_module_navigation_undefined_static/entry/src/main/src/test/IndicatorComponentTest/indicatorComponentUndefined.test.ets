@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -82,7 +83,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       console.info("[indicatorComponentUndefined_static_0001] initialIndex: " +
@@ -119,7 +121,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       console.info("[indicatorComponentUndefined_static_0002] loop: " +
@@ -155,8 +158,9 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0003] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(500);
+      
       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       console.info("[indicatorComponentUndefined_static_0003] count: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('count'));
@@ -191,7 +195,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0004] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       console.info("[indicatorComponentUndefined_static_0004] vertical: " +
@@ -227,7 +232,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0005] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(500);
 
       let nextBtn = await driver.findComponent(ON.id('IndicatorComponent_next'));
       await (nextBtn?.click() as Promise<void>);

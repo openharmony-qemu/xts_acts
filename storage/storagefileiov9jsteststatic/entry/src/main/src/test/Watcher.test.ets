@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,7 +54,7 @@ interface TestWatcher {
   watcher: fs.Watcher|undefined
 }
 
-async function startWatcher(testNum: string, eventCode: int|undefined , watchPath: string): Promise<TestWatcher> {
+function startWatcher(testNum: string, eventCode: int|undefined , watchPath: string): TestWatcher {
   let ret: TestWatcher = {
     flag: false,
     watcher: undefined
@@ -62,7 +63,7 @@ async function startWatcher(testNum: string, eventCode: int|undefined , watchPat
     hilog.info(domain, tag, '%{public}s', 'eventCode get fail');
     return ret;
   }
-  await Utils.msSleep(10);
+  waitForCompletion(async()=> {await Utils.msSleep(10)});
   try {
     ret.watcher = fs.createWatcher(watchPath, eventCode, (data: WatchEvent) => {
       hilog.info(domain, tag, '%{public}s', `${testNum} :{event: ${data.event}, fileName: ${data.fileName}, cookie: ${data.cookie}}`);
@@ -99,7 +100,7 @@ export default function fileIOWatcher() {
 
       try {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_ACCESS'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_ACCESS'), dpath);
         fs.readSync(file.fd, new ArrayBuffer(4096));
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -131,7 +132,7 @@ export default function fileIOWatcher() {
 
       try {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_MODIFY'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_MODIFY'), dpath);
         fs.writeSync(file.fd, FILE_CONTENT);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -162,7 +163,7 @@ export default function fileIOWatcher() {
       expect(res).assertTrue();
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_ATTRIB'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_ATTRIB'), dpath);
         let time = new Date().getTime();
         fs.utimes(fpath,time);
         await Utils.msSleep(WAIT_HALF_SECOND);
@@ -194,7 +195,7 @@ export default function fileIOWatcher() {
 
       try {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_CLOSE_WRITE'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_CLOSE_WRITE'), dpath);
         fs.closeSync(file.fd);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -224,7 +225,7 @@ export default function fileIOWatcher() {
       expect(res).assertTrue();
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_OPEN'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_OPEN'), dpath);
         let file = fs.openSync(fpath, fs.OpenMode.READ_ONLY);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -294,7 +295,7 @@ export default function fileIOWatcher() {
       fs.mkdirSync(dpath);
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_CREATE'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_CREATE'), dpath);
         let file = fs.openSync(fpath, fs.OpenMode.CREATE);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -323,7 +324,7 @@ export default function fileIOWatcher() {
       fs.mkdirSync(dpath);
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_CREATE'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_CREATE'), dpath);
         fs.mkdirSync(ddpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -353,7 +354,7 @@ export default function fileIOWatcher() {
       expect(res).assertTrue();
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_DELETE'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_DELETE'), dpath);
         fs.unlinkSync(fpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -382,7 +383,7 @@ export default function fileIOWatcher() {
       fs.mkdirSync(ddpath);
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_DELETE'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_DELETE'), dpath);
         fs.rmdirSync(ddpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -409,7 +410,7 @@ export default function fileIOWatcher() {
       fs.mkdirSync(dpath);
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_DELETE_SELF'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_DELETE_SELF'), dpath);
         fs.rmdirSync(dpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -435,7 +436,7 @@ export default function fileIOWatcher() {
       fs.mkdirSync(dpath);
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_MOVE_SELF'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_MOVE_SELF'), dpath);
         fs.renameSync(dpath, dpath + 'newd');
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -463,7 +464,7 @@ export default function fileIOWatcher() {
       expect(res).assertTrue();
 
       try {
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_MOVE_SELF'), fpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_MOVE_SELF'), fpath);
         fs.renameSync(fpath, fpath + 'newd');
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
@@ -494,7 +495,7 @@ export default function fileIOWatcher() {
 
       try {
         let file = fs.openSync(fpath, fs.OpenMode.READ_ONLY);
-        let resWatcher = await startWatcher(testNum, watcherEvent.get('IN_CLOSE_NOWRITE'), dpath);
+        let resWatcher = startWatcher(testNum, watcherEvent.get('IN_CLOSE_NOWRITE'), dpath);
         fs.closeSync(file.fd);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();

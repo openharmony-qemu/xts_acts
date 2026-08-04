@@ -78,7 +78,7 @@ export default function List_aspectRatio_width() {
         name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width' + '_01');
       console.info('[SUB_ACE_List_aspectRatio_width_0100]' + Math.round(List01.right - List01.left));
       console.info('[SUB_ACE_List_aspectRatio_width_0100]' + Math.round(List01.bottom - List01.top));
       let list_width: number = Math.round(List01.right - List01.left)
@@ -113,7 +113,7 @@ export default function List_aspectRatio_width() {
         name: 'aspectRatio1', value: '0.5'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width' + '_01');
       console.info('[SUB_ACE_List_aspectRatio_width_0200]' + Math.round(List01.bottom - List01.top));
 
       expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(160))) <= 1).assertTrue();
@@ -137,7 +137,7 @@ export default function List_aspectRatio_width() {
         name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width' + '_01');
       console.info('[SUB_ACE_List_aspectRatio_width_0300]' + Math.round(List01.bottom - List01.top));
 
       expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(160))) <= 1).assertTrue();
@@ -161,7 +161,7 @@ export default function List_aspectRatio_width() {
         name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_width' + '_01');
       let list_width: number = Math.round(List01.right - List01.left)
       let list_height: number = Math.round(List01.bottom - List01.top)
       console.info('[SUB_ACE_List_aspectRatio_width_0400] list_width: ' + list_width);

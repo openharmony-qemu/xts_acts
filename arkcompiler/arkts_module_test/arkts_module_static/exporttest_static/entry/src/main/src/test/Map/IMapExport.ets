@@ -45,11 +45,11 @@ export class GlobalInstance {
     return GlobalInstance.instance;
   }
 
-  public getLoadModel(module: string) {
+  public getLoadModel(module: string):boolean {
     return this.map.get(module) === undefined ? false : true
   }
 
-  public setLoadModel(module: string) {
+  public setLoadModel(module: string):void {
     this.map.set(module, true)
   }
 

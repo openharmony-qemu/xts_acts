@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,17 @@
  */
 
 import wifiManagerTest from "./WifiManagerNopStatic.test";
+import wifiManager from '@ohos.wifiManager';
+
+let iswifisupport: boolean = true;
+try {
+  iswifisupport = wifiManager.isWlanSupported();
+  console.info('[WIFI_List] isWlanSupported result:' + iswifisupport);
+} catch (error) {
+  console.error('[WIFI_List] isWlanSupported get error:' + JSON.stringify(error.code) + JSON.stringify(error.message));
+}
 export default function testsuite() {
-  wifiManagerTest();
+  if(iswifisupport){
+    wifiManagerTest();
+  }
 }

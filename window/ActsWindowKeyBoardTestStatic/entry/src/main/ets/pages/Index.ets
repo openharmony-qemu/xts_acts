@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent, TextInput, TextInputController } from '@ohos.arkui.component'
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 
@@ -20,21 +21,26 @@ import hilog from '@ohos.hilog'
 @Component
 struct MyStateSample {
   @State stateVar: string = 'state var';
+  @State text: string = '';
+  controller: TextInputController = new TextInputController();
   message: string = 'var';
   changeValue() {
     this.stateVar+='~'
   }
   build() {
-    Column(undefined) {
-      Text('Hello World').fontSize(20)
-      Button(this.message).backgroundColor('#FFFF00FF')
-        .onClick((e: ClickEvent) => {
-          hilog.info(0x0000, 'testTag', 'On Click');
-          this.changeValue();
-        })
-      Text(this.stateVar).fontSize(20)
-      Child({stateVar: this.stateVar} as __Options_Child)
-    }
+     Column() {
+        TextInput({ text: this.text, placeholder: 'input your word...', controller: this.controller })
+          .placeholderFont({ size: 14, weight: 400 })
+          .width('95%')
+          .height(40)
+          .margin(20)
+          .fontSize(14)
+          .onChange((value: string) => {
+            this.text = value
+          })
+          .id('textInput')
+      }
+      .width('100%')
   }
 }
 

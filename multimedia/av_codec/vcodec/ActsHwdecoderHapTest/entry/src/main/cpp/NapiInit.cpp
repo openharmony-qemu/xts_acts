@@ -1,10 +1,10 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,338 +12,401 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "ApiTest.h"
-#include "CommonTool.h"
-#include "Func2Test.h"
-#include "FuncTest.h"
-#include "Hwh265Hdr2sdrTest.h"
-#include "StateTest.h"
+
 #include "napi/native_api.h"
+#include "include/ApiTest.h"
+#include "include/Func2Test.h"
+#include "include/FuncTest.h"
+#include "include/StateTest.h"
+#include "include/Hwh265Hdr2sdrTest.h"
+#include <vector>
+#include <functional>
+#include <cstring>
 
-using namespace OHOS::Media;
+using TestFunction = std::function<int()>;
 
-// Common argument and result constants.
-static constexpr int ARG_INDEX = 0;
-static constexpr int ARG_INDEX_1 = 1;
-static constexpr int DEFAULT_ARG = -1;
-static constexpr int RESULT_ERROR = -1;
-
-// Handler count constants for std::array sizes (avoid magic numbers).
-static constexpr size_t HWH265_HDR2SDR_COUNT = 1;
-static constexpr size_t API_TEST_COUNT = 133;
-static constexpr size_t FUNC2_TEST_COUNT = 48;
-static constexpr size_t FUNC_TEST_COUNT = 24;
-static constexpr size_t STATE_TEST_COUNT = 43;
-static constexpr size_t PREPARE_FUNC_COUNT = 4;
-
-using TestHandler = int (*)();
-
-using PrepareFn = void (*)();
-
-int DispatchByCaseNum(int caseNum, const TestHandler* handlers, size_t count)
-{
-    if (caseNum < 0 || caseNum >= count) {
-        return RESULT_ERROR;
-    }
-    return handlers[caseNum]();
-}
-
-int DispatchByCaseNum(int caseNum, const PrepareFn* handlers, size_t count)
-{
-    if (caseNum < 0 || caseNum >= count) {
-        return RESULT_ERROR;
-    }
-    if (handlers[caseNum] != nullptr) {
-        handlers[caseNum]();
-    }
-    return SUCCESS_CODE;
-}
-
-struct GenericAsyncContext {
+struct AsyncTestContext {
     napi_env env;
-    napi_async_work work;
     napi_deferred deferred;
-
-    int32_t caseNum;
+    napi_async_work work;
+    TestFunction func;
     int result;
-
-    const TestHandler* handlers;
-    size_t handlerCount;
 };
 
-static void ExecuteGenericWork(napi_env env, void* data)
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    auto* context = static_cast<GenericAsyncContext*>(data);
-    try {
-        context->result = DispatchByCaseNum(context->caseNum, context->handlers, context->handlerCount);
-    } catch (...) {
-        context->result = RESULT_ERROR;
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
     }
 }
 
-static void CompleteGenericWork(napi_env env, napi_status status, void* data)
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
 {
-    auto* context = static_cast<GenericAsyncContext*>(data);
-
-    napi_value resultValue;
-    napi_create_int32(env, context->result, &resultValue);
-
-    napi_resolve_deferred(env, context->deferred, resultValue);
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
+    } else {
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
+    }
     napi_delete_async_work(env, context->work);
-
     delete context;
 }
 
-static napi_value CreatePrepareFunc(napi_env env, napi_callback_info info, const PrepareFn* handlers, size_t count)
+static napi_value RunTestAsync(napi_env env, TestFunction func,
+                               const char* name)
 {
-    int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-    if (caseNum < 0 || caseNum >= count) {
-        napi_throw_error(env, nullptr, "Invalid case number");
-        return nullptr;
-    }
-    int resultCode = DispatchByCaseNum(caseNum, handlers, count);
-    napi_value result;
-    napi_create_int32(env, resultCode, &result);
-    return result;
-}
-
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_api_prepare_fun = { ApiTest::SetUpTestCase,
-                                                                             nullptr,
-                                                                             ApiTest::SetUp,
-                                                                             ApiTest::TearDown };
-
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_func2_prepare_fun = { Func2Test::SetUpTestCase,
-                                                                               nullptr,
-                                                                               nullptr,
-                                                                               nullptr };
-
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_func_prepare_fun = { FuncTest::SetUpTestCase,
-                                                                              nullptr,
-                                                                              nullptr,
-                                                                              nullptr };
-
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_state_prepare_fun = { nullptr,
-                                                                               nullptr,
-                                                                               StateTest::SetUp,
-                                                                               StateTest::TearDown };
-
-static napi_value CreateAsyncTest(napi_env env,
-                                  napi_callback_info info,
-                                  const TestHandler* handlers,
-                                  size_t handlerCount,
-                                  const char* resourceNameStr)
-{
-    int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-    if (caseNum < 0 || caseNum >= handlerCount) {
-        napi_throw_error(env, nullptr, "Invalid case number");
-        return nullptr;
-    }
     napi_value promise;
-    auto* context = new GenericAsyncContext();
-    context->env = env;
-    context->caseNum = caseNum;
-    context->result = RESULT_ERROR;
-    context->handlers = handlers;
-    context->handlerCount = handlerCount;
-    napi_create_promise(env, &context->deferred, &promise);
+    napi_deferred deferred;
+    napi_create_promise(env, &deferred, &promise);
+    AsyncTestContext* context = new AsyncTestContext{
+        env, deferred, nullptr, func, -1};
     napi_value resourceName;
-    napi_create_string_utf8(env, resourceNameStr, NAPI_AUTO_LENGTH, &resourceName);
-    napi_create_async_work(
-        env, nullptr, resourceName, ExecuteGenericWork, CompleteGenericWork, context, &context->work);
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context, &context->work);
     napi_queue_async_work(env, context->work);
     return promise;
 }
 
-static const std::array<TestHandler, HWH265_HDR2SDR_COUNT> g_hwh265_hdr_Handlers = { HEVC_HW_HDR2SDR_FUNC_002 };
-
-static const std::array<TestHandler, API_TEST_COUNT> g_api_test_Handlers = {
-    VIDEO_HWDEC_ILLEGAL_PARA_0100, VIDEO_HWDEC_ILLEGAL_PARA_0200, VIDEO_HWDEC_ILLEGAL_PARA_3300,
-    VIDEO_HWDEC_ILLEGAL_PARA_1800, VIDEO_HWDEC_ILLEGAL_PARA_0300, VIDEO_HWDEC_ILLEGAL_PARA_0400,
-    VIDEO_HWDEC_ILLEGAL_PARA_0500, VIDEO_HWDEC_ILLEGAL_PARA_1400, VIDEO_HWDEC_ILLEGAL_PARA_5000,
-    VIDEO_HWDEC_ILLEGAL_PARA_5100, VIDEO_HWDEC_ILLEGAL_PARA_0600, VIDEO_HWDEC_ILLEGAL_PARA_0700,
-    VIDEO_HWDEC_ILLEGAL_PARA_0800, VIDEO_HWDEC_ILLEGAL_PARA_0900, VIDEO_HWDEC_ILLEGAL_PARA_1000,
-    VIDEO_HWDEC_ILLEGAL_PARA_1100, VIDEO_HWDEC_ILLEGAL_PARA_4100, VIDEO_HWDEC_ILLEGAL_PARA_1500,
-    VIDEO_HWDEC_ILLEGAL_PARA_1200, VIDEO_HWDEC_ILLEGAL_PARA_1300, VIDEO_HWDEC_ILLEGAL_PARA_1600,
-    VIDEO_HWDEC_ILLEGAL_PARA_1700, VIDEO_HWDEC_ILLEGAL_PARA_2200, VIDEO_HWDEC_ILLEGAL_PARA_2500,
-    VIDEO_HWDEC_ILLEGAL_PARA_2600, VIDEO_HWDEC_ILLEGAL_PARA_2700, VIDEO_HWDEC_ILLEGAL_PARA_2800,
-    VIDEO_HWDEC_ILLEGAL_PARA_2900, VIDEO_HWDEC_ILLEGAL_PARA_3000, VIDEO_HWDEC_ILLEGAL_PARA_3100,
-    VIDEO_HWDEC_ILLEGAL_PARA_3200, VIDEO_HWDEC_API_0100,          VIDEO_HWDEC_API_0200,
-    VIDEO_HWDEC_API_0300,          VIDEO_HWDEC_API_0400,          VIDEO_HWDEC_API_0500,
-    VIDEO_HWDEC_API_0600,          VIDEO_HWDEC_API_0700,          VIDEO_HWDEC_API_0800,
-    VIDEO_HWDEC_API_0900,          VIDEO_HWDEC_API_1000,          VIDEO_HWDEC_API_1100,
-    VIDEO_HWDEC_API_1200,          VIDEO_HWDEC_CAP_API_0100,      VIDEO_HWDEC_CAP_API_0200,
-    VIDEO_HWDEC_CAP_API_0300,      VIDEO_HWDEC_CAP_API_0400,      VIDEO_HWDEC_CAP_API_0500,
-    VIDEO_HWDEC_CAP_API_0600,      VIDEO_HWDEC_CAP_API_0700,      VIDEO_HWDEC_CAP_API_0800,
-    VIDEO_HWDEC_CAP_API_0900,      VIDEO_HWDEC_CAP_API_1000,      VIDEO_HWDEC_CAP_API_3100,
-    VIDEO_HWDEC_CAP_API_3200,      VIDEO_HWDEC_CAP_API_3300,      VIDEO_HWDEC_CAP_API_3400,
-    VIDEO_HWDEC_CAP_API_3500,      VIDEO_HWDEC_CAP_API_3600,      VIDEO_HWDEC_CAP_API_3700,
-    VIDEO_HWDEC_CAP_API_3800,      VIDEO_HWDEC_CAP_API_3900,      VIDEO_HWDEC_CAP_API_4000,
-    VIDEO_HWDEC_CAP_API_4100,      VIDEO_HWDEC_CAP_API_4200,      VIDEO_HWDEC_CAP_API_4300,
-    VIDEO_HWDEC_CAP_API_4400,      VIDEO_HWDEC_CAP_API_4500,      VIDEO_HWDEC_CAP_API_4600,
-    VIDEO_HWDEC_CAP_API_4700,      VIDEO_HWDEC_CAP_API_4800,      VIDEO_HWDEC_CAP_API_4900,
-    VIDEO_HWDEC_CAP_API_5000,      VIDEO_HWDEC_CAP_API_1700,      VIDEO_HWDEC_CAP_API_5100,
-    VIDEO_HWDEC_CAP_API_5200,      VIDEO_HWDEC_CAP_API_5300,      VIDEO_HWDEC_CAP_API_9400,
-    VIDEO_HWDEC_CAP_API_5400,      VIDEO_HWDEC_CAP_API_5500,      VIDEO_HWDEC_CAP_API_5600,
-    VIDEO_HWDEC_CAP_API_5700,      VIDEO_HWDEC_CAP_API_1600,      VIDEO_HWDEC_CAP_API_5800,
-    VIDEO_HWDEC_CAP_API_5900,      VIDEO_HWDEC_CAP_API_6000,      VIDEO_HWDEC_CAP_API_6100,
-    VIDEO_HWDEC_CAP_API_6200,      VIDEO_HWDEC_CAP_API_6300,      VIDEO_HWDEC_CAP_API_6400,
-    VIDEO_HWDEC_CAP_API_6500,      VIDEO_HWDEC_CAP_API_6600,      VIDEO_HWDEC_CAP_API_6700,
-    VIDEO_HWDEC_CAP_API_6800,      VIDEO_HWDEC_CAP_API_6900,      VIDEO_HWDEC_CAP_API_7000,
-    VIDEO_HWDEC_CAP_API_7100,      VIDEO_HWDEC_CAP_API_1200,      VIDEO_HWDEC_CAP_API_7200,
-    VIDEO_HWDEC_CAP_API_7300,      VIDEO_HWDEC_CAP_API_7400,      VIDEO_HWDEC_CAP_API_7500,
-    VIDEO_HWDEC_CAP_API_1300,      VIDEO_HWDEC_CAP_API_7600,      VIDEO_HWDEC_CAP_API_7700,
-    VIDEO_HWDEC_CAP_API_7800,      VIDEO_HWDEC_CAP_API_7900,      VIDEO_HWDEC_CAP_API_8000,
-    VIDEO_HWDEC_CAP_API_1400,      VIDEO_HWDEC_CAP_API_8100,      VIDEO_HWDEC_CAP_API_8200,
-    VIDEO_HWDEC_CAP_API_8300,      VIDEO_HWDEC_ATTIME_API_0010,   VIDEO_DECODE_SYNC_API_0010,
-    VIDEO_DECODE_SYNC_API_0020,    VIDEO_DECODE_SYNC_API_0030,    VIDEO_DECODE_SYNC_API_0040,
-    VIDEO_DECODE_SYNC_API_0050,    VIDEO_DECODE_SYNC_API_0060,    VIDEO_DECODE_SYNC_API_0070,
-    VIDEO_DECODE_SYNC_API_0080,    VIDEO_HWDEC_FORMAT_API_0010,   VIDEO_HWDEC_FORMAT_API_0020,
-    VIDEO_HWDEC_API_ADD_0010,      VIDEO_HWDEC_API_ADD_0020,      VIDEO_HWDEC_API_ADD_0030,
-    VIDEO_HWDEC_API_ADD_0040,      VIDEO_HWDEC_API_ADD_0050,      VIDEO_HWDEC_API_ADD_0060,
-    VIDEO_HWDEC_API_ADD_0070,      VIDEO_HWDEC_API_ADD_0080,      VIDEO_HWDEC_API_ADD_0090,
-    VIDEO_HWDEC_API_ADD_0100
-};
-
-static const std::array<TestHandler, FUNC2_TEST_COUNT> g_func2_test_Handlers = {
-    VIDEO_DECODE_SYNC_FUNC_0010,
-    VIDEO_DECODE_SYNC_FUNC_0020,
-    VIDEO_DECODE_SYNC_FUNC_0030,
-    VIDEO_DECODE_SYNC_FUNC_0040,
-    VIDEO_DECODE_SYNC_FUNC_0050,
-    VIDEO_DECODE_SYNC_FUNC_0060,
-    VIDEO_DECODE_SYNC_FUNC_0070,
-    VIDEO_DECODE_SYNC_FUNC_0080,
-    VIDEO_DECODE_SYNC_FUNC_0090,
-    VIDEO_DECODE_SYNC_FUNC_0100,
-    VIDEO_DECODE_SYNC_FUNC_0110,
-    VIDEO_DECODE_SYNC_FUNC_0120,
-    VIDEO_DECODE_SYNC_FUNC_0130,
-    VIDEO_DECODE_SYNC_FUNC_0140,
-    VIDEO_DECODE_SYNC_FUNC_0150,
-    VIDEO_DECODE_SYNC_FUNC_0160,
-    VIDEO_DECODE_SYNC_FUNC_0170,
-    VIDEO_DECODE_SYNC_HW264_FUNC_0010,
-    VIDEO_DECODE_SYNC_HW264_FUNC_0020,
-    VIDEO_DECODE_SYNC_HW265_FUNC_0010,
-    VIDEO_DECODE_SYNC_HW265_FUNC_0020,
-    VIDEO_DECODE_SYNC_HW265_FUNC_0040,
-    VIDEO_DECODE_SYNC_HW266_FUNC_0010,
-    VIDEO_DECODE_SYNC_HW266_FUNC_0020,
-    VIDEO_DECODE_SYNC_HW266_FUNC_0040,
-    VIDEO_DECODE_SYNC_HW264_LOWLATENCY_FUNC_0010,
-    VIDEO_DECODE_SYNC_HW265_LOWLATENCY_FUNC_0010,
-    VIDEO_DECODE_SYNC_HW266_LOWLATENCY_FUNC_0010,
-    VIDEO_DECODE_H264_BLANK_FRAME_0010,
-    VIDEO_DECODE_H265_BLANK_FRAME_0020,
-    VIDEO_DECODE_H266_BLANK_FRAME_0030,
-    VIDEO_DECODE_LOW_LATENCY_0001,
-    VIDEO_DECODE_LOW_LATENCY_0002,
-    VIDEO_DECODE_LOW_LATENCY_0003,
-    VIDEO_DECODE_LOW_LATENCY_0004,
-    VIDEO_DECODE_LOW_LATENCY_0005,
-    VIDEO_DECODE_LOW_LATENCY_0006,
-    VIDEO_DECODE_LOW_LATENCY_0007,
-    VIDEO_DECODE_LOW_LATENCY_0008,
-    VIDEO_DECODE_LOW_LATENCY_0009,
-    VIDEO_HWDEC_PIXE_FORMAT_0030,
-    VIDEO_DECODE_TRANSFORM_0010,
-    VIDEO_DECODE_TRANSFORM_0020,
-    VIDEO_DECODE_RESOLUTION_0010,
-    VIDEO_DECODE_ANOTHER_0010,
-    VIDEO_CAPABILITY_CONFIG_0010,
-    VIDEO_CAPABILITY_CONFIG_0020,
-    VIDEO_CAPABILITY_CONFIG_0030
-};
-
-static const std::array<TestHandler, FUNC_TEST_COUNT> g_func_test_Handlers = {
-    VIDEO_HWDEC_FUNCTION_0200, VIDEO_HWDEC_FUNCTION_0300, VIDEO_HWDEC_FUNCTION_0400, VIDEO_HWDEC_FUNCTION_0700,
-    VIDEO_HWDEC_FUNCTION_0800, VIDEO_HWDEC_FUNCTION_0900, VIDEO_HWDEC_FUNCTION_1000, VIDEO_HWDEC_FUNCTION_1100,
-    VIDEO_HWDEC_FUNCTION_1200, VIDEO_HWDEC_FUNCTION_1300, VIDEO_HWDEC_FUNCTION_1400, VIDEO_HWDEC_FUNCTION_1600,
-    VIDEO_HWDEC_FUNCTION_1700, SURF_CHANGE_FUNC_001,      SURF_CHANGE_FUNC_002,      SURF_CHANGE_FUNC_003,
-    SURF_CHANGE_FUNC_004,      OUTPUT_DECS_FUNC_001,      OUTPUT_DECS_FUNC_002,      OUTPUT_DECS_FUNC_003,
-    OUTPUT_DECS_FUNC_004,      OUTPUT_DECS_FUNC_005,      OUTPUT_DECS_FUNC_006,      OUTPUT_DECS_FUNC_007
-};
-
-static const std::array<TestHandler, STATE_TEST_COUNT> g_state_test_Handlers = {
-    VIDEO_HWDEC_STATE_0100, VIDEO_HWDEC_STATE_0101, VIDEO_HWDEC_STATE_0200, VIDEO_HWDEC_STATE_0300,
-    VIDEO_HWDEC_STATE_0400, VIDEO_HWDEC_STATE_0500, VIDEO_HWDEC_STATE_0600, VIDEO_HWDEC_STATE_0700,
-    VIDEO_HWDEC_STATE_0800, VIDEO_HWDEC_STATE_0900, VIDEO_HWDEC_STATE_1000, VIDEO_HWDEC_STATE_1100,
-    VIDEO_HWDEC_STATE_1200, VIDEO_HWDEC_STATE_1300, VIDEO_HWDEC_STATE_1400, VIDEO_HWDEC_STATE_1500,
-    VIDEO_HWDEC_STATE_1600, VIDEO_HWDEC_STATE_1700, VIDEO_HWDEC_STATE_1800, VIDEO_HWDEC_STATE_1900,
-    VIDEO_HWDEC_STATE_2000, VIDEO_HWDEC_STATE_2100, VIDEO_HWDEC_STATE_2200, VIDEO_HWDEC_STATE_2300,
-    VIDEO_HWDEC_STATE_2400, VIDEO_HWDEC_STATE_2500, VIDEO_HWDEC_STATE_2600, VIDEO_HWDEC_STATE_2700,
-    VIDEO_HWDEC_STATE_2800, VIDEO_HWDEC_STATE_2900, VIDEO_HWDEC_STATE_3000, VIDEO_HWDEC_STATE_3100,
-    VIDEO_HWDEC_STATE_3200, VIDEO_HWDEC_STATE_3300, VIDEO_HWDEC_STATE_3400, VIDEO_HWDEC_STATE_3500,
-    VIDEO_HWDEC_STATE_3600, VIDEO_HWDEC_STATE_3700, VIDEO_HWDEC_STATE_3800, VIDEO_HWDEC_STATE_3900,
-    VIDEO_HWDEC_STATE_4000, VIDEO_HWDEC_STATE_4100, VIDEO_HWDEC_STATE_4200
-};
-
-inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
-{
-    return { name, nullptr, cb, nullptr, nullptr, nullptr, napi_default, nullptr };
-}
-
-#define DECL_NAPI_DESC(fn) /* NOLINT(G.PRE.02-CPP) */ MakeNapiDesc(#fn, fn)
-
-static napi_value Hwh265_Hdr2sdr_Test(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncTest(
-        env, info, g_hwh265_hdr_Handlers.data(), g_hwh265_hdr_Handlers.size(), "Hwh265_Hdr2sdr_Test");
-}
-
-static napi_value Api_Test(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncTest(env, info, g_api_test_Handlers.data(), g_api_test_Handlers.size(), "Api_Test");
-}
-
-static napi_value Func2_Test(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncTest(env, info, g_func2_test_Handlers.data(), g_func2_test_Handlers.size(), "Func2_Test");
-}
-
-static napi_value Func_Test(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncTest(env, info, g_func_test_Handlers.data(), g_func_test_Handlers.size(), "Func_Test");
-}
-
-static napi_value State_Test(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncTest(env, info, g_state_test_Handlers.data(), g_state_test_Handlers.size(), "State_Test");
-}
-
-static napi_value Api_Test_Prepare(napi_env env, napi_callback_info info)
-{
-    return CreatePrepareFunc(env, info, g_api_prepare_fun.data(), g_api_prepare_fun.size());
-}
-
-static napi_value Func2_Test_Prepare(napi_env env, napi_callback_info info)
-{
-    return CreatePrepareFunc(env, info, g_func2_prepare_fun.data(), g_func2_prepare_fun.size());
-}
-
-static napi_value Func_Test_Prepare(napi_env env, napi_callback_info info)
-{
-    return CreatePrepareFunc(env, info, g_func_prepare_fun.data(), g_func_prepare_fun.size());
-}
-
-static napi_value State_Test_Prepare(napi_env env, napi_callback_info info)
-{
-    return CreatePrepareFunc(env, info, g_state_prepare_fun.data(), g_state_prepare_fun.size());
-}
-
-static const napi_property_descriptor g_audioEncoderDescriptors[] = {
-    DECL_NAPI_DESC(Hwh265_Hdr2sdr_Test), DECL_NAPI_DESC(Api_Test),          DECL_NAPI_DESC(Func2_Test),
-    DECL_NAPI_DESC(Func_Test),           DECL_NAPI_DESC(State_Test),        DECL_NAPI_DESC(Api_Test_Prepare),
-    DECL_NAPI_DESC(Func2_Test_Prepare),  DECL_NAPI_DESC(Func_Test_Prepare), DECL_NAPI_DESC(State_Test_Prepare),
-};
-
 EXTERN_C_START
+
+struct Entry {
+    TestFunction func;
+    const char* name;
+};
+
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+    return RunTestAsync(env, entry->func, entry->name);
+}
+
+static napi_property_descriptor XL(const char* functionName, TestFunction func)
+{
+    auto* entry = new Entry{std::move(func), functionName};
+    return {functionName, nullptr, AsyncWrapper, nullptr, nullptr, nullptr,
+            napi_default, entry};
+}
+
+static void InitPush1(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("HevcHwHdr2sdrFunc002Test", HevcHwHdr2sdrFunc002Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0100Test", VideoHwdecIllegalPara0100Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0200Test", VideoHwdecIllegalPara0200Test));
+    desc.push_back(XL("VideoHwdecIllegalPara3300Test", VideoHwdecIllegalPara3300Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1800Test", VideoHwdecIllegalPara1800Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0300Test", VideoHwdecIllegalPara0300Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0400Test", VideoHwdecIllegalPara0400Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0500Test", VideoHwdecIllegalPara0500Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1400Test", VideoHwdecIllegalPara1400Test));
+    desc.push_back(XL("VideoHwdecIllegalPara5000Test", VideoHwdecIllegalPara5000Test));
+    desc.push_back(XL("VideoHwdecIllegalPara5100Test", VideoHwdecIllegalPara5100Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0600Test", VideoHwdecIllegalPara0600Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0700Test", VideoHwdecIllegalPara0700Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0800Test", VideoHwdecIllegalPara0800Test));
+    desc.push_back(XL("VideoHwdecIllegalPara0900Test", VideoHwdecIllegalPara0900Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1000Test", VideoHwdecIllegalPara1000Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1100Test", VideoHwdecIllegalPara1100Test));
+    desc.push_back(XL("VideoHwdecIllegalPara4100Test", VideoHwdecIllegalPara4100Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1500Test", VideoHwdecIllegalPara1500Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1200Test", VideoHwdecIllegalPara1200Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1300Test", VideoHwdecIllegalPara1300Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1600Test", VideoHwdecIllegalPara1600Test));
+    desc.push_back(XL("VideoHwdecIllegalPara1700Test", VideoHwdecIllegalPara1700Test));
+    desc.push_back(XL("VideoHwdecIllegalPara2200Test", VideoHwdecIllegalPara2200Test));
+    desc.push_back(XL("VideoHwdecIllegalPara2500Test", VideoHwdecIllegalPara2500Test));
+    desc.push_back(XL("VideoHwdecIllegalPara2600Test", VideoHwdecIllegalPara2600Test));
+    desc.push_back(XL("VideoHwdecIllegalPara2700Test", VideoHwdecIllegalPara2700Test));
+    desc.push_back(XL("VideoHwdecIllegalPara2800Test", VideoHwdecIllegalPara2800Test));
+    desc.push_back(XL("VideoHwdecIllegalPara2900Test", VideoHwdecIllegalPara2900Test));
+    desc.push_back(XL("VideoHwdecIllegalPara3000Test", VideoHwdecIllegalPara3000Test));
+    desc.push_back(XL("VideoHwdecIllegalPara3100Test", VideoHwdecIllegalPara3100Test));
+    desc.push_back(XL("VideoHwdecIllegalPara3200Test", VideoHwdecIllegalPara3200Test));
+}
+
+static void InitPush2(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoHwdecApi0100Test", VideoHwdecApi0100Test));
+    desc.push_back(XL("VideoHwdecApi0200Test", VideoHwdecApi0200Test));
+    desc.push_back(XL("VideoHwdecApi0300Test", VideoHwdecApi0300Test));
+    desc.push_back(XL("VideoHwdecApi0400Test", VideoHwdecApi0400Test));
+    desc.push_back(XL("VideoHwdecApi0500Test", VideoHwdecApi0500Test));
+    desc.push_back(XL("VideoHwdecApi0600Test", VideoHwdecApi0600Test));
+    desc.push_back(XL("VideoHwdecApi0700Test", VideoHwdecApi0700Test));
+    desc.push_back(XL("VideoHwdecApi0800Test", VideoHwdecApi0800Test));
+    desc.push_back(XL("VideoHwdecApi0900Test", VideoHwdecApi0900Test));
+    desc.push_back(XL("VideoHwdecApi1000Test", VideoHwdecApi1000Test));
+    desc.push_back(XL("VideoHwdecApi1100Test", VideoHwdecApi1100Test));
+    desc.push_back(XL("VideoHwdecApi1200Test", VideoHwdecApi1200Test));
+    desc.push_back(XL("VideoHwdecCapApi0100Test", VideoHwdecCapApi0100Test));
+    desc.push_back(XL("VideoHwdecCapApi0200Test", VideoHwdecCapApi0200Test));
+    desc.push_back(XL("VideoHwdecCapApi0300Test", VideoHwdecCapApi0300Test));
+    desc.push_back(XL("VideoHwdecCapApi0400Test", VideoHwdecCapApi0400Test));
+    desc.push_back(XL("VideoHwdecCapApi0500Test", VideoHwdecCapApi0500Test));
+    desc.push_back(XL("VideoHwdecCapApi0600Test", VideoHwdecCapApi0600Test));
+    desc.push_back(XL("VideoHwdecCapApi0700Test", VideoHwdecCapApi0700Test));
+    desc.push_back(XL("VideoHwdecCapApi0800Test", VideoHwdecCapApi0800Test));
+    desc.push_back(XL("VideoHwdecCapApi0900Test", VideoHwdecCapApi0900Test));
+    desc.push_back(XL("VideoHwdecCapApi1000Test", VideoHwdecCapApi1000Test));
+    desc.push_back(XL("VideoHwdecCapApi3100Test", VideoHwdecCapApi3100Test));
+    desc.push_back(XL("VideoHwdecCapApi3200Test", VideoHwdecCapApi3200Test));
+    desc.push_back(XL("VideoHwdecCapApi3300Test", VideoHwdecCapApi3300Test));
+    desc.push_back(XL("VideoHwdecCapApi3400Test", VideoHwdecCapApi3400Test));
+    desc.push_back(XL("VideoHwdecCapApi3500Test", VideoHwdecCapApi3500Test));
+    desc.push_back(XL("VideoHwdecCapApi3600Test", VideoHwdecCapApi3600Test));
+    desc.push_back(XL("VideoHwdecCapApi3700Test", VideoHwdecCapApi3700Test));
+    desc.push_back(XL("VideoHwdecCapApi3800Test", VideoHwdecCapApi3800Test));
+    desc.push_back(XL("VideoHwdecCapApi3900Test", VideoHwdecCapApi3900Test));
+    desc.push_back(XL("VideoHwdecCapApi4000Test", VideoHwdecCapApi4000Test));
+}
+
+static void InitPush3(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoHwdecCapApi4100Test", VideoHwdecCapApi4100Test));
+    desc.push_back(XL("VideoHwdecCapApi4200Test", VideoHwdecCapApi4200Test));
+    desc.push_back(XL("VideoHwdecCapApi4300Test", VideoHwdecCapApi4300Test));
+    desc.push_back(XL("VideoHwdecCapApi4400Test", VideoHwdecCapApi4400Test));
+    desc.push_back(XL("VideoHwdecCapApi4500Test", VideoHwdecCapApi4500Test));
+    desc.push_back(XL("VideoHwdecCapApi4600Test", VideoHwdecCapApi4600Test));
+    desc.push_back(XL("VideoHwdecCapApi4700Test", VideoHwdecCapApi4700Test));
+    desc.push_back(XL("VideoHwdecCapApi4800Test", VideoHwdecCapApi4800Test));
+    desc.push_back(XL("VideoHwdecCapApi4900Test", VideoHwdecCapApi4900Test));
+    desc.push_back(XL("VideoHwdecCapApi5000Test", VideoHwdecCapApi5000Test));
+    desc.push_back(XL("VideoHwdecCapApi1700Test", VideoHwdecCapApi1700Test));
+    desc.push_back(XL("VideoHwdecCapApi5100Test", VideoHwdecCapApi5100Test));
+    desc.push_back(XL("VideoHwdecCapApi5200Test", VideoHwdecCapApi5200Test));
+    desc.push_back(XL("VideoHwdecCapApi5300Test", VideoHwdecCapApi5300Test));
+    desc.push_back(XL("VideoHwdecCapApi9400Test", VideoHwdecCapApi9400Test));
+    desc.push_back(XL("VideoHwdecCapApi5400Test", VideoHwdecCapApi5400Test));
+    desc.push_back(XL("VideoHwdecCapApi5500Test", VideoHwdecCapApi5500Test));
+    desc.push_back(XL("VideoHwdecCapApi5600Test", VideoHwdecCapApi5600Test));
+    desc.push_back(XL("VideoHwdecCapApi5700Test", VideoHwdecCapApi5700Test));
+    desc.push_back(XL("VideoHwdecCapApi1600Test", VideoHwdecCapApi1600Test));
+    desc.push_back(XL("VideoHwdecCapApi5800Test", VideoHwdecCapApi5800Test));
+    desc.push_back(XL("VideoHwdecCapApi5900Test", VideoHwdecCapApi5900Test));
+    desc.push_back(XL("VideoHwdecCapApi6000Test", VideoHwdecCapApi6000Test));
+    desc.push_back(XL("VideoHwdecCapApi6100Test", VideoHwdecCapApi6100Test));
+    desc.push_back(XL("VideoHwdecCapApi6200Test", VideoHwdecCapApi6200Test));
+    desc.push_back(XL("VideoHwdecCapApi6300Test", VideoHwdecCapApi6300Test));
+    desc.push_back(XL("VideoHwdecCapApi6400Test", VideoHwdecCapApi6400Test));
+    desc.push_back(XL("VideoHwdecCapApi6500Test", VideoHwdecCapApi6500Test));
+    desc.push_back(XL("VideoHwdecCapApi6600Test", VideoHwdecCapApi6600Test));
+    desc.push_back(XL("VideoHwdecCapApi6700Test", VideoHwdecCapApi6700Test));
+    desc.push_back(XL("VideoHwdecCapApi6800Test", VideoHwdecCapApi6800Test));
+    desc.push_back(XL("VideoHwdecCapApi6900Test", VideoHwdecCapApi6900Test));
+}
+
+static void InitPush4(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoHwdecCapApi7000Test", VideoHwdecCapApi7000Test));
+    desc.push_back(XL("VideoHwdecCapApi7100Test", VideoHwdecCapApi7100Test));
+    desc.push_back(XL("VideoHwdecCapApi1200Test", VideoHwdecCapApi1200Test));
+    desc.push_back(XL("VideoHwdecCapApi7200Test", VideoHwdecCapApi7200Test));
+    desc.push_back(XL("VideoHwdecCapApi7300Test", VideoHwdecCapApi7300Test));
+    desc.push_back(XL("VideoHwdecCapApi7400Test", VideoHwdecCapApi7400Test));
+    desc.push_back(XL("VideoHwdecCapApi7500Test", VideoHwdecCapApi7500Test));
+    desc.push_back(XL("VideoHwdecCapApi1300Test", VideoHwdecCapApi1300Test));
+    desc.push_back(XL("VideoHwdecCapApi7600Test", VideoHwdecCapApi7600Test));
+    desc.push_back(XL("VideoHwdecCapApi7700Test", VideoHwdecCapApi7700Test));
+    desc.push_back(XL("VideoHwdecCapApi7800Test", VideoHwdecCapApi7800Test));
+    desc.push_back(XL("VideoHwdecCapApi7900Test", VideoHwdecCapApi7900Test));
+    desc.push_back(XL("VideoHwdecCapApi8000Test", VideoHwdecCapApi8000Test));
+    desc.push_back(XL("VideoHwdecCapApi1400Test", VideoHwdecCapApi1400Test));
+    desc.push_back(XL("VideoHwdecCapApi8100Test", VideoHwdecCapApi8100Test));
+    desc.push_back(XL("VideoHwdecCapApi8200Test", VideoHwdecCapApi8200Test));
+    desc.push_back(XL("VideoHwdecCapApi8300Test", VideoHwdecCapApi8300Test));
+    desc.push_back(XL("VideoHwdecAttimeApi0010Test", VideoHwdecAttimeApi0010Test));
+    desc.push_back(XL("VideoDecodeSyncApi0010Test", VideoDecodeSyncApi0010Test));
+    desc.push_back(XL("VideoDecodeSyncApi0020Test", VideoDecodeSyncApi0020Test));
+    desc.push_back(XL("VideoDecodeSyncApi0030Test", VideoDecodeSyncApi0030Test));
+    desc.push_back(XL("VideoDecodeSyncApi0040Test", VideoDecodeSyncApi0040Test));
+    desc.push_back(XL("VideoDecodeSyncApi0050Test", VideoDecodeSyncApi0050Test));
+    desc.push_back(XL("VideoDecodeSyncApi0060Test", VideoDecodeSyncApi0060Test));
+    desc.push_back(XL("VideoDecodeSyncApi0070Test", VideoDecodeSyncApi0070Test));
+    desc.push_back(XL("VideoDecodeSyncApi0080Test", VideoDecodeSyncApi0080Test));
+    desc.push_back(XL("VideoHwdecFormatApi0010Test", VideoHwdecFormatApi0010Test));
+    desc.push_back(XL("VideoHwdecFormatApi0020Test", VideoHwdecFormatApi0020Test));
+    desc.push_back(XL("VideoHwdecApiAdd0010Test", VideoHwdecApiAdd0010Test));
+    desc.push_back(XL("VideoHwdecApiAdd0020Test", VideoHwdecApiAdd0020Test));
+    desc.push_back(XL("VideoHwdecApiAdd0030Test", VideoHwdecApiAdd0030Test));
+    desc.push_back(XL("VideoHwdecApiAdd0040Test", VideoHwdecApiAdd0040Test));
+}
+
+static void InitPush5(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoHwdecApiAdd0050Test", VideoHwdecApiAdd0050Test));
+    desc.push_back(XL("VideoHwdecApiAdd0060Test", VideoHwdecApiAdd0060Test));
+    desc.push_back(XL("VideoHwdecApiAdd0070Test", VideoHwdecApiAdd0070Test));
+    desc.push_back(XL("VideoHwdecApiAdd0080Test", VideoHwdecApiAdd0080Test));
+    desc.push_back(XL("VideoHwdecApiAdd0090Test", VideoHwdecApiAdd0090Test));
+    desc.push_back(XL("VideoHwdecApiAdd0100Test", VideoHwdecApiAdd0100Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0010Test", VideoDecodeSyncFunc0010Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0020Test", VideoDecodeSyncFunc0020Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0030Test", VideoDecodeSyncFunc0030Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0040Test", VideoDecodeSyncFunc0040Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0050Test", VideoDecodeSyncFunc0050Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0060Test", VideoDecodeSyncFunc0060Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0070Test", VideoDecodeSyncFunc0070Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0080Test", VideoDecodeSyncFunc0080Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0090Test", VideoDecodeSyncFunc0090Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0100Test", VideoDecodeSyncFunc0100Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0110Test", VideoDecodeSyncFunc0110Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0120Test", VideoDecodeSyncFunc0120Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0130Test", VideoDecodeSyncFunc0130Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0140Test", VideoDecodeSyncFunc0140Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0150Test", VideoDecodeSyncFunc0150Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0160Test", VideoDecodeSyncFunc0160Test));
+    desc.push_back(XL("VideoDecodeSyncFunc0170Test", VideoDecodeSyncFunc0170Test));
+    desc.push_back(XL("VideoDecodeSyncHw264Func0010Test", VideoDecodeSyncHw264Func0010Test));
+    desc.push_back(XL("VideoDecodeSyncHw264Func0020Test", VideoDecodeSyncHw264Func0020Test));
+    desc.push_back(XL("VideoDecodeSyncHw265Func0010Test", VideoDecodeSyncHw265Func0010Test));
+    desc.push_back(XL("VideoDecodeSyncHw265Func0020Test", VideoDecodeSyncHw265Func0020Test));
+    desc.push_back(XL("VideoDecodeSyncHw265Func0040Test", VideoDecodeSyncHw265Func0040Test));
+    desc.push_back(XL("VideoDecodeSyncHw266Func0010Test", VideoDecodeSyncHw266Func0010Test));
+    desc.push_back(XL("VideoDecodeSyncHw266Func0020Test", VideoDecodeSyncHw266Func0020Test));
+    desc.push_back(XL("VideoDecodeSyncHw266Func0040Test", VideoDecodeSyncHw266Func0040Test));
+    desc.push_back(XL("VideoDecodeSyncHw264LowlatencyFunc0010Test", VideoDecodeSyncHw264LowlatencyFunc0010Test));
+}
+
+static void InitPush6(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoDecodeSyncHw265LowlatencyFunc0010Test", VideoDecodeSyncHw265LowlatencyFunc0010Test));
+    desc.push_back(XL("VideoDecodeSyncHw266LowlatencyFunc0010Test", VideoDecodeSyncHw266LowlatencyFunc0010Test));
+    desc.push_back(XL("VideoDecodeH264BlankFrame0010Test", VideoDecodeH264BlankFrame0010Test));
+    desc.push_back(XL("VideoDecodeH265BlankFrame0020Test", VideoDecodeH265BlankFrame0020Test));
+    desc.push_back(XL("VideoDecodeH266BlankFrame0030Test", VideoDecodeH266BlankFrame0030Test));
+    desc.push_back(XL("VideoDecodeLowLatency0001Test", VideoDecodeLowLatency0001Test));
+    desc.push_back(XL("VideoDecodeLowLatency0002Test", VideoDecodeLowLatency0002Test));
+    desc.push_back(XL("VideoDecodeLowLatency0003Test", VideoDecodeLowLatency0003Test));
+    desc.push_back(XL("VideoDecodeLowLatency0004Test", VideoDecodeLowLatency0004Test));
+    desc.push_back(XL("VideoDecodeLowLatency0005Test", VideoDecodeLowLatency0005Test));
+    desc.push_back(XL("VideoDecodeLowLatency0006Test", VideoDecodeLowLatency0006Test));
+    desc.push_back(XL("VideoDecodeLowLatency0007Test", VideoDecodeLowLatency0007Test));
+    desc.push_back(XL("VideoDecodeLowLatency0008Test", VideoDecodeLowLatency0008Test));
+    desc.push_back(XL("VideoDecodeLowLatency0009Test", VideoDecodeLowLatency0009Test));
+    desc.push_back(XL("VideoHwdecPixeFormat0030Test", VideoHwdecPixeFormat0030Test));
+    desc.push_back(XL("VideoDecodeTransform0010Test", VideoDecodeTransform0010Test));
+    desc.push_back(XL("VideoDecodeTransform0020Test", VideoDecodeTransform0020Test));
+    desc.push_back(XL("VideoDecodeResolution0010Test", VideoDecodeResolution0010Test));
+    desc.push_back(XL("VideoDecodeAnother0010Test", VideoDecodeAnother0010Test));
+    desc.push_back(XL("VideoCapabilityConfig0010Test", VideoCapabilityConfig0010Test));
+    desc.push_back(XL("VideoCapabilityConfig0020Test", VideoCapabilityConfig0020Test));
+    desc.push_back(XL("VideoCapabilityConfig0030Test", VideoCapabilityConfig0030Test));
+    desc.push_back(XL("VideoDecodeOrder0100Test", VideoDecodeOrder0100Test));
+    desc.push_back(XL("VideoDecodeOrder0200Test", VideoDecodeOrder0200Test));
+    desc.push_back(XL("VideoDecodeOrder0300Test", VideoDecodeOrder0300Test));
+    desc.push_back(XL("VideoDecodeOrder0400Test", VideoDecodeOrder0400Test));
+    desc.push_back(XL("VideoDecodeOrder0500Test", VideoDecodeOrder0500Test));
+    desc.push_back(XL("VideoHwdecFunction0200Test", VideoHwdecFunction0200Test));
+    desc.push_back(XL("VideoHwdecFunction0300Test", VideoHwdecFunction0300Test));
+    desc.push_back(XL("VideoHwdecFunction0400Test", VideoHwdecFunction0400Test));
+    desc.push_back(XL("VideoHwdecFunction0700Test", VideoHwdecFunction0700Test));
+    desc.push_back(XL("VideoHwdecFunction0800Test", VideoHwdecFunction0800Test));
+}
+
+static void InitPush7(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoHwdecFunction0900Test", VideoHwdecFunction0900Test));
+    desc.push_back(XL("VideoHwdecFunction1000Test", VideoHwdecFunction1000Test));
+    desc.push_back(XL("VideoHwdecFunction1100Test", VideoHwdecFunction1100Test));
+    desc.push_back(XL("VideoHwdecFunction1200Test", VideoHwdecFunction1200Test));
+    desc.push_back(XL("VideoHwdecFunction1300Test", VideoHwdecFunction1300Test));
+    desc.push_back(XL("VideoHwdecFunction1400Test", VideoHwdecFunction1400Test));
+    desc.push_back(XL("VideoHwdecFunction1600Test", VideoHwdecFunction1600Test));
+    desc.push_back(XL("VideoHwdecFunction1700Test", VideoHwdecFunction1700Test));
+    desc.push_back(XL("SurfChangeFunc001Test", SurfChangeFunc001Test));
+    desc.push_back(XL("SurfChangeFunc002Test", SurfChangeFunc002Test));
+    desc.push_back(XL("SurfChangeFunc003Test", SurfChangeFunc003Test));
+    desc.push_back(XL("SurfChangeFunc004Test", SurfChangeFunc004Test));
+    desc.push_back(XL("OutputDecsFunc001Test", OutputDecsFunc001Test));
+    desc.push_back(XL("OutputDecsFunc002Test", OutputDecsFunc002Test));
+    desc.push_back(XL("OutputDecsFunc003Test", OutputDecsFunc003Test));
+    desc.push_back(XL("OutputDecsFunc004Test", OutputDecsFunc004Test));
+    desc.push_back(XL("OutputDecsFunc005Test", OutputDecsFunc005Test));
+    desc.push_back(XL("OutputDecsFunc006Test", OutputDecsFunc006Test));
+    desc.push_back(XL("OutputDecsFunc007Test", OutputDecsFunc007Test));
+    desc.push_back(XL("VideoHwdecState0100Test", VideoHwdecState0100Test));
+    desc.push_back(XL("VideoHwdecState0101Test", VideoHwdecState0101Test));
+    desc.push_back(XL("VideoHwdecState0200Test", VideoHwdecState0200Test));
+    desc.push_back(XL("VideoHwdecState0300Test", VideoHwdecState0300Test));
+    desc.push_back(XL("VideoHwdecState0400Test", VideoHwdecState0400Test));
+    desc.push_back(XL("VideoHwdecState0500Test", VideoHwdecState0500Test));
+    desc.push_back(XL("VideoHwdecState0600Test", VideoHwdecState0600Test));
+    desc.push_back(XL("VideoHwdecState0700Test", VideoHwdecState0700Test));
+    desc.push_back(XL("VideoHwdecState0800Test", VideoHwdecState0800Test));
+    desc.push_back(XL("VideoHwdecState0900Test", VideoHwdecState0900Test));
+    desc.push_back(XL("VideoHwdecState1000Test", VideoHwdecState1000Test));
+    desc.push_back(XL("VideoHwdecState1100Test", VideoHwdecState1100Test));
+    desc.push_back(XL("VideoHwdecState1200Test", VideoHwdecState1200Test));
+}
+
+static void InitPush8(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoHwdecState1300Test", VideoHwdecState1300Test));
+    desc.push_back(XL("VideoHwdecState1400Test", VideoHwdecState1400Test));
+    desc.push_back(XL("VideoHwdecState1500Test", VideoHwdecState1500Test));
+    desc.push_back(XL("VideoHwdecState1600Test", VideoHwdecState1600Test));
+    desc.push_back(XL("VideoHwdecState1700Test", VideoHwdecState1700Test));
+    desc.push_back(XL("VideoHwdecState1800Test", VideoHwdecState1800Test));
+    desc.push_back(XL("VideoHwdecState1900Test", VideoHwdecState1900Test));
+    desc.push_back(XL("VideoHwdecState2000Test", VideoHwdecState2000Test));
+    desc.push_back(XL("VideoHwdecState2100Test", VideoHwdecState2100Test));
+    desc.push_back(XL("VideoHwdecState2200Test", VideoHwdecState2200Test));
+    desc.push_back(XL("VideoHwdecState2300Test", VideoHwdecState2300Test));
+    desc.push_back(XL("VideoHwdecState2400Test", VideoHwdecState2400Test));
+    desc.push_back(XL("VideoHwdecState2500Test", VideoHwdecState2500Test));
+    desc.push_back(XL("VideoHwdecState2600Test", VideoHwdecState2600Test));
+    desc.push_back(XL("VideoHwdecState2700Test", VideoHwdecState2700Test));
+    desc.push_back(XL("VideoHwdecState2800Test", VideoHwdecState2800Test));
+    desc.push_back(XL("VideoHwdecState2900Test", VideoHwdecState2900Test));
+    desc.push_back(XL("VideoHwdecState3000Test", VideoHwdecState3000Test));
+    desc.push_back(XL("VideoHwdecState3100Test", VideoHwdecState3100Test));
+    desc.push_back(XL("VideoHwdecState3200Test", VideoHwdecState3200Test));
+    desc.push_back(XL("VideoHwdecState3300Test", VideoHwdecState3300Test));
+    desc.push_back(XL("VideoHwdecState3400Test", VideoHwdecState3400Test));
+    desc.push_back(XL("VideoHwdecState3500Test", VideoHwdecState3500Test));
+    desc.push_back(XL("VideoHwdecState3600Test", VideoHwdecState3600Test));
+    desc.push_back(XL("VideoHwdecState3700Test", VideoHwdecState3700Test));
+    desc.push_back(XL("VideoHwdecState3800Test", VideoHwdecState3800Test));
+    desc.push_back(XL("VideoHwdecState3900Test", VideoHwdecState3900Test));
+    desc.push_back(XL("VideoHwdecState4000Test", VideoHwdecState4000Test));
+    desc.push_back(XL("VideoHwdecState4100Test", VideoHwdecState4100Test));
+    desc.push_back(XL("VideoHwdecState4200Test", VideoHwdecState4200Test));
+}
+
+static napi_value InitTests(napi_env env, napi_callback_info info)
+{
+    InitApiTest();
+    InitFunc2Test();
+    InitFuncTest();
+    InitStateTest();
+    InitHwdecHdr2sdrTest();
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(env,
-                           exports,
-                           sizeof(g_audioEncoderDescriptors) / sizeof(g_audioEncoderDescriptors[0]),
-                           g_audioEncoderDescriptors);
+    std::vector<napi_property_descriptor> desc;
+    desc.push_back({ "initTests", nullptr, InitTests, nullptr, nullptr, nullptr, napi_default, nullptr });
+    InitPush1(desc);
+    InitPush2(desc);
+    InitPush3(desc);
+    InitPush4(desc);
+    InitPush5(desc);
+    InitPush6(desc);
+    InitPush7(desc);
+    InitPush8(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END

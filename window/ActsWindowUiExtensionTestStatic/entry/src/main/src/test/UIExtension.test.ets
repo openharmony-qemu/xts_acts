@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +33,7 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
-    
+    return new Promise<window.WindowStage>((resolve, reject) => {
         let want: Want = {
             bundleName: "com.example.actswindowtest.static",
             abilityName: 'StartAbility'
@@ -50,10 +51,10 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
-        return windowStageStart;
-    
+        resolve(windowStageStart);
+    })
 }
 async function terminateAbility(caseName: string) {
     let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
@@ -196,7 +197,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -262,7 +263,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -328,7 +329,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -423,7 +424,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -497,7 +498,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -571,7 +572,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -633,7 +634,7 @@ export default function UIExtensionTest(): void {
           expect().assertFail();
           done()
         } catch (error) {
-          console.error(`${caseName} Failed. Cause: ${JSON.stringify(error)}`);
+          console.error(`${caseName} Failed. Cause: ` + error.code + error.message);
           if (error.code === 801) {
             done();
           } else {
@@ -1270,6 +1271,52 @@ export default function UIExtensionTest(): void {
         }
   
       })
+
+    /**
+     * @tc.name   testEnvWindowSizeInUec
+     * @tc.number SUB_WMS_UEC_ENV_WINDOWSIZE_IN_UEC_0100
+     * @tc.desc   testEnvWindowSizeInUec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testEnvWindowSizeInUec', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'testEnvWindowSizeInUec ';
+      console.log(caseName + 'start run');
+      let subWindowClass: window.Window | undefined;
+
+      if (deviceType === '2in1') {
+        try {
+          let driver: Driver = Driver.create();
+          subWindowClass = await windowStage?.createSubWindow('testEnvWindowSizeInUec');
+          await subWindowClass?.setUIContent("pages/WindowTest/EmbeddedComponentEnv");
+          await subWindowClass?.showWindow();
+          await Utils.msSleep(2000);
+          // extensionWindow?.createSubWindowWithOptions
+          let btn = await driver.findComponent(ON.id('testEnv'))
+          console.log(caseName + ' btn : ' + btn);
+          await btn!.click()
+          await Utils.msSleep(1000)
+          // 获取接口返回信息
+          let errorMessage = await driver.findComponent(ON.id('HelloWorld'))
+          let errorMessageText = await errorMessage?.getText()
+          console.log(caseName + 'errorMessageText : ' + errorMessageText);
+          expect(errorMessageText).assertEqual('true')
+          await subWindowClass?.destroyWindow()
+          done();
+        } catch (exception) {
+          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          await subWindowClass?.destroyWindow()
+          expect().assertFail()
+          done()
+        }
+      } else {
+        done()
+      }
+
+
+    })
+
       
     })
 

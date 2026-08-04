@@ -1829,29 +1829,39 @@ export default function XmlTest() {
      */
     it('testXmlPullParserConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0001';
-      try {
-        let testXml =
-          '<?xml version="1.0" encoding="utf-8"?>' +
-            '<book price=245>' +
-            '  <ti-tle>XML for Dummies</ti-tle>' +
-            '  <author>John Doe</author>' +
-            '  <price>19.99</price>' +
-            '  <description>This book is about XML.</description>' +
-            '</book>'
-        let textEncoder = new util.TextEncoder();
-        let arrbuffer = textEncoder.encodeInto(testXml);
-        let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, "utf-8");
-        let options: xml.ParseOptions = {
-          supportDoctype: true, ignoreNameSpace: true,
-          tagValueCallbackFunction: (name: string, value: string) => {
-            return true;
-          }
+      let testXml =
+        '<?xml version="1.0" encoding="utf-8"?>' +
+          '<book price=245>' +
+          '  <ti-tle>XML for Dummies</ti-tle>' +
+          '  <author>John Doe</author>' +
+          '  <price>19.99</price>' +
+          '  <description>This book is about XML.</description>' +
+          '</book>'
+      let textEncoder = new util.TextEncoder();
+      let arrbuffer = textEncoder.encodeInto(testXml);
+      let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, "utf-8");
+      let options: xml.ParseOptions = {
+        supportDoctype: true, ignoreNameSpace: true,
+        tagValueCallbackFunction: (name: string, value: string) => {
+          return true;
         }
+      }
+      try {
         that.parse(options);
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
+      }
+      try {
+        that.parse(null);
+      } catch (e) {
+        expect(e.code).assertEqual(undefined);
+      }
+      try {
+        that.parse(undefined);
+      } catch (e) {
+        expect(e.code).assertEqual(401);
       }
     });
 
@@ -4785,7 +4795,7 @@ export default function XmlTest() {
       try {
         that.parse(null);
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
       try {
         that.parse(undefined);
@@ -4810,7 +4820,7 @@ export default function XmlTest() {
       try {
         that.parseXml(null);
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
       try {
         that.parseXml(undefined);

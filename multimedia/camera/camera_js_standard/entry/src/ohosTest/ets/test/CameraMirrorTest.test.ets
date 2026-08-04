@@ -658,13 +658,19 @@ export default function CameraMirrorTest() {
       if (isEmpty(mPhotoOutput)) {
         console.info('Enter mPhotoOutput == undefined | null')
       }
-
+      mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceIds);
+      if (isEmpty(mPreviewOutput)) {
+        console.info('Enter mPreviewOutput == undefined | null')
+      }
       let isCreateInput = await createInput(0)
       if (isCreateInput) {
         mCameraSession.addInput(mCameraInput)
       }
       if (!isEmpty(mPhotoOutput)) {
         mCameraSession.addOutput(mPhotoOutput)
+      }
+      if (!isEmpty(mPreviewOutput)) {
+        mCameraSession.addOutput(mPreviewOutput)
       }
       await mCameraSession.commitConfig()
       try {

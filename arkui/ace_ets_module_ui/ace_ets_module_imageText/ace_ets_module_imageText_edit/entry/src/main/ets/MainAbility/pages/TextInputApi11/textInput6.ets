@@ -61,7 +61,7 @@ struct TextInputOnEditChange {
         .onCut(() => {
           console.log("onCut method is triggered")
         })
-        .key("onCutText")
+        .key("textInput6_onCutText")
 
       TextInput({ placeholder: "textInput-OnPaste" })
         .width(100)
@@ -76,7 +76,7 @@ struct TextInputOnEditChange {
         .onPaste(() => {
           console.log("onPaste method is triggered")
         })
-        .key("onPasteText")
+        .key("textInput6_onPasteText")
 
       TextInput({ placeholder: "textInput-CopyOption" })
         .width(100)
@@ -89,7 +89,7 @@ struct TextInputOnEditChange {
         .padding(10)
         .textAlign(TextAlign.Center)//设置复制选项时调用
         .copyOption(0)
-        .key("textInputCopyOptionText")
+        .key("textInput6_textInputCopyOptionText")
 
       TextInput({ placeholder: "textInput-ShowPasswordIcon" })
         .type(InputType.Password)
@@ -103,7 +103,7 @@ struct TextInputOnEditChange {
         .padding(10)
         .textAlign(TextAlign.Center)//设置密码显示/隐藏图标时调用
         .showPasswordIcon(true)
-        .key("showPasswordIconText")
+        .key("textInput6_showPasswordIconText")
 
     }.width("100%").height("100%")
   }

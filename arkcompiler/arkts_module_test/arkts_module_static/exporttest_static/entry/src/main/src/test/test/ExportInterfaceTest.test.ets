@@ -29,7 +29,7 @@ import CombinedInterface  from "../Interface/CombinedInterface";
 import { sleep } from '../utils/Utils';
 
 
-export default function ExportInterfaceTest() {
+export default function ExportInterfaceTest():void {
   describe('ExportInterfaceTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

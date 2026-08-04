@@ -147,9 +147,9 @@ it('blankJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info('blankJsunit_static_0500 START');
       await CommonFunc.sleep(1000);
        
-      let text1_rect = await CommonFunc.getComponentRect('text1');
-      let toggle1_rect = await CommonFunc.getComponentRect('toggle1');
-      let bl1_rect = await CommonFunc.getComponentRect('bl1');
+      let text1_rect = CommonFunc.getComponentRect('text1');
+      let toggle1_rect = CommonFunc.getComponentRect('toggle1');
+      let bl1_rect = CommonFunc.getComponentRect('bl1');
       console.info("[blankJsunit_static_0500'] text1_rect is " + JSON.stringify(text1_rect) + "toggle1_rect is " + JSON.stringify(toggle1_rect) + "bl1.rect is " + JSON.stringify(bl1_rect));
       
       expect(bl1_rect.left - bl1_rect.right).assertEqual(0)
@@ -173,8 +173,8 @@ it('blankJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<vo
       let strJson = inspector.getInspectorByKey('blankUIJsunit_blank');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[blankJsunit_static_0600'] component obj is: " + JSON.stringify(obj));
-      let text_rect = await CommonFunc.getComponentRect('text');
-      let toggle_rect = await CommonFunc.getComponentRect('toggle');
+      let text_rect = CommonFunc.getComponentRect('text');
+      let toggle_rect = CommonFunc.getComponentRect('toggle');
       console.info("[blankJsunit_static_0600'] text_rect is " + JSON.stringify(text_rect) + "toggle_rect is " + JSON.stringify(toggle_rect));
       
       let gaps = toggle_rect.left - text_rect.right;

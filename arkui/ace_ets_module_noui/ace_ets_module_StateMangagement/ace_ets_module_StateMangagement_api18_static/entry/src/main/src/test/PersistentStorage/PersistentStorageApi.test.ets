@@ -14,16 +14,7 @@
  * limitations under the License.
  */
  
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
@@ -31,9 +22,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { AppStorage, PersistentStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
-import { PersistentStorage } from '@ohos.arkui.stateManagement';
- 
-export default function PersistentStorageApi() {
+export default function PersistentStorageApi(): void {
   describe('PersistentStorageApi', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");

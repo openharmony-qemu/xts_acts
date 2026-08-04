@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/OnNewParamPage",
     "MainAbility/pages/EnableToolBarAdaptation",
-    "MainAbility/pages/PreferredOrientation"
+    "MainAbility/pages/PreferredOrientation",
+    "MainAbility/pages/SideBarContainer/sideBarWithGesture",
+    "MainAbility/pages/navDestination/navFullScreenOverlay"
   ]
 }

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -537,7 +538,7 @@ export default function type_04Test(): void {
       try {
         const input: FixedArray<double> = [3.14, 1.59, 2.71, 0.618, 1.414];
         const type = Type.of(input);
-        expect(type.toString()).assertEqual('double[]');
+        expect(type.toString()).assertEqual('std.core.Double[]');
       } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -558,7 +559,7 @@ export default function type_04Test(): void {
       try {
         const input: FixedArray<int> = [500, 300, 900, 200];
         const type = Type.of(input);
-        expect(type.toString()).assertEqual('int[]');
+        expect(type.toString()).assertEqual('std.core.Int[]');
       } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -598,7 +599,7 @@ export default function type_04Test(): void {
       try {
         const input: FixedArray<long> = [-9223372036854775808, 0, 9223372036854775807];
         const type = Type.of(input);
-        expect(type.toString()).assertEqual('long[]');
+        expect(type.toString()).assertEqual('std.core.Long[]');
       } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -638,7 +639,7 @@ export default function type_04Test(): void {
       try {
         const input: FixedArray<short> = [5, 3, 9, 2];
         const type = Type.of(input);
-        expect(type.toString()).assertEqual('short[]');
+        expect(type.toString()).assertEqual('std.core.Short[]');
       } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -738,7 +739,7 @@ export default function type_04Test(): void {
       try {
         const input: FixedArray<boolean> = [true, false, true];
         const type = Type.of(input);
-        expect(type.toString()).assertEqual('boolean[]');
+        expect(type.toString()).assertEqual('std.core.Boolean[]');
       } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -758,7 +759,7 @@ export default function type_04Test(): void {
       try {
         const input: FixedArray<byte> = [60, -38, -128];
         const type = Type.of(input);
-        expect(type.toString()).assertEqual("byte[]");
+        expect(type.toString()).assertEqual("std.core.Byte[]");
       } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();

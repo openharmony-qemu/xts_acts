@@ -56,12 +56,12 @@ export default function polygonJsunit() {
       let objNew: ESObject = JSON.parse(strJsonNew);
 
       console.info("testpolygon_001 objNew component  is: " + JSON.stringify(objNew.$attrs.points));
-      expect(px2vp(objNew.$attrs.points[0][0])).assertEqual(0);
-      expect(px2vp(objNew.$attrs.points[0][1])).assertEqual(0);
-      expect(px2vp(objNew.$attrs.points[1][0])).assertEqual(50);
-      expect(px2vp(objNew.$attrs.points[1][1])).assertEqual(100);
-      expect(px2vp(objNew.$attrs.points[2][0])).assertEqual(100);
-      expect(px2vp(objNew.$attrs.points[2][1])).assertEqual(0);
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[0][0]))) - 0 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[0][1]))) - 0 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[1][0])))- 50 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[1][1]))) - 100 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[2][0]))) - 100 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[2][1]))) - 0 <= 1).assertTrue();
       console.info('testpolygon_001 END');
       done();
     });
@@ -77,18 +77,18 @@ export default function polygonJsunit() {
     it('testpolygon_002', Level.LEVEL0, async (done: Function) => {
       console.info('testpolygon_002 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('polygon_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('polygon1');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("testpolygon_002 objNew component  is: " + JSON.stringify(objNew.$attrs.points));
-      expect(px2vp(objNew.$attrs.points[0][0])).assertEqual(1);
-      expect(px2vp(objNew.$attrs.points[0][1])).assertEqual(1);
-      expect(px2vp(objNew.$attrs.points[1][0])).assertEqual(50);
-      expect(px2vp(objNew.$attrs.points[1][1])).assertEqual(100);
-      expect(px2vp(objNew.$attrs.points[2][0])).assertEqual(100);
-      expect(px2vp(objNew.$attrs.points[2][1])).assertEqual(0);
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[0][0]))) - 1 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[0][1]))) - 1 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[1][0])))- 50 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[1][1]))) - 100 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[2][0]))) - 100 <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(objNew.$attrs.points[2][1]))) - 0 <= 1).assertTrue();
       console.info('testpolygon_002 END');
       done();
     });

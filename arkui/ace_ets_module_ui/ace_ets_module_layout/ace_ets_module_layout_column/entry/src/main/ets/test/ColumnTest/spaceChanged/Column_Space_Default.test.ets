@@ -61,10 +61,10 @@ export default function Column_Space_Default() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_Space_Default_011: RectValue = CommonFunc.getComponentRect('Column_Space_Default_011');
-      let Column_Space_Default_012: RectValue = CommonFunc.getComponentRect('Column_Space_Default_012');
-      let Column_Space_Default_013: RectValue = CommonFunc.getComponentRect('Column_Space_Default_013');
-      let Column_Space_Default_01: RectValue = CommonFunc.getComponentRect('Column_Space_Default_01');
+      let Column_Space_Default_011: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_011');
+      let Column_Space_Default_012: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_012');
+      let Column_Space_Default_013: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_013');
+      let Column_Space_Default_01: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_01');
       console.log('assert position')
       expect(Math.abs(Column_Space_Default_011.left - Column_Space_Default_01.left - (Column_Space_Default_01.right - Column_Space_Default_011.right)) <= 1)
         .assertTrue();
@@ -106,10 +106,10 @@ export default function Column_Space_Default() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_Space_Default_011: RectValue = CommonFunc.getComponentRect('Column_Space_Default_011');
-      let Column_Space_Default_012: RectValue = CommonFunc.getComponentRect('Column_Space_Default_012');
-      let Column_Space_Default_013: RectValue = CommonFunc.getComponentRect('Column_Space_Default_013');
-      let Column_Space_Default_01: RectValue = CommonFunc.getComponentRect('Column_Space_Default_01');
+      let Column_Space_Default_011: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_011');
+      let Column_Space_Default_012: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_012');
+      let Column_Space_Default_013: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_013');
+      let Column_Space_Default_01: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_01');
       console.log('assert position')
       expect(Math.abs(Column_Space_Default_011.left - Column_Space_Default_01.left - (Column_Space_Default_01.right - Column_Space_Default_011.right)) <= 1)
         .assertTrue();
@@ -150,10 +150,10 @@ export default function Column_Space_Default() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_Space_Default_021: RectValue = CommonFunc.getComponentRect('Column_Space_Default_021');
-      let Column_Space_Default_022: RectValue = CommonFunc.getComponentRect('Column_Space_Default_022');
-      let Column_Space_Default_023: RectValue = CommonFunc.getComponentRect('Column_Space_Default_023');
-      let Column_Space_Default_02: RectValue = CommonFunc.getComponentRect('Column_Space_Default_02');
+      let Column_Space_Default_021: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_021');
+      let Column_Space_Default_022: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_022');
+      let Column_Space_Default_023: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_023');
+      let Column_Space_Default_02: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_02');
       console.log('assert position')
       expect(Math.abs(Column_Space_Default_021.left - Column_Space_Default_02.left - (Column_Space_Default_02.right - Column_Space_Default_021.right)) <= 1)
         .assertTrue();
@@ -195,10 +195,10 @@ export default function Column_Space_Default() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_Space_Default_021: RectValue = CommonFunc.getComponentRect('Column_Space_Default_021');
-      let Column_Space_Default_022: RectValue = CommonFunc.getComponentRect('Column_Space_Default_022');
-      let Column_Space_Default_023: RectValue = CommonFunc.getComponentRect('Column_Space_Default_023');
-      let Column_Space_Default_02: RectValue = CommonFunc.getComponentRect('Column_Space_Default_02');
+      let Column_Space_Default_021: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_021');
+      let Column_Space_Default_022: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_022');
+      let Column_Space_Default_023: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_023');
+      let Column_Space_Default_02: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_02');
       console.log('assert position')
       expect(Math.abs(Column_Space_Default_021.left - Column_Space_Default_02.left - (Column_Space_Default_02.right - Column_Space_Default_021.right)) <= 1)
         .assertTrue();
@@ -240,10 +240,10 @@ export default function Column_Space_Default() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_Space_Default_011: RectValue = CommonFunc.getComponentRect('Column_Space_Default_011');
-      let Column_Space_Default_012: RectValue = CommonFunc.getComponentRect('Column_Space_Default_012');
-      let Column_Space_Default_013: RectValue = CommonFunc.getComponentRect('Column_Space_Default_013');
-      let Column_Space_Default_01: RectValue = CommonFunc.getComponentRect('Column_Space_Default_01');
+      let Column_Space_Default_011: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_011');
+      let Column_Space_Default_012: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_012');
+      let Column_Space_Default_013: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_013');
+      let Column_Space_Default_01: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_01');
       console.log('assert position')
       expect(Math.abs(Column_Space_Default_011.left - Column_Space_Default_01.left - (Column_Space_Default_01.right - Column_Space_Default_011.right)) <= 1)
         .assertTrue();

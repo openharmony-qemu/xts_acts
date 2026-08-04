@@ -84,7 +84,7 @@ struct Drag2Example {
           .width('25%')
           .height(35)
           .fontSize(16)
-          .key('apple')
+          .key('dragEvent2_apple')
           .textAlign(TextAlign.Center)
           .backgroundColor(0xAFEEEE)
           .visibility(this.appleVisible)
@@ -146,7 +146,7 @@ struct Drag2Example {
               .borderRadius(10)
               .textAlign(TextAlign.Center)
               .backgroundColor(0xAFEEEE)
-          }.key('listItem')
+          }.key('dragEvent2_listItem')
           .onDragStart((event:DragEvent, extraParams?:String|undefined):CustomBuilder => {
             console.log('Ting--onDragStart--ListItem');
             console.log('ListItem onDragStarts, ' + extraParams);

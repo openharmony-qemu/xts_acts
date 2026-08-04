@@ -15,7 +15,9 @@
 
 #include <csignal>
 #include <cstdlib>
+#include <sys/wait.h>
 #include <threads.h>
+#include <unistd.h>
 #include "test.h"
 
 static int g_count = 0;
@@ -23,7 +25,7 @@ const char *SRC = "Hello";
 
 static void ExceptionHandler(int sig)
 {
-    exit(g_tStatus);
+    _exit(g_tStatus);
 }
 
 static int Threadfunc(void *arg)
@@ -102,7 +104,22 @@ void ThrdCreate0200(void)
  */
 void ThrdCreate0300(void)
 {
-    (void)thrd_create(nullptr, Threadfunc, nullptr);
+    pid_t pid = fork();
+    if (pid == -1) {
+        t_error("%s fork failed", __func__);
+    } else if (pid == 0) {
+        (void)thrd_create(nullptr, Threadfunc, nullptr);
+        _exit(0);
+    } else {
+        int status;
+        waitpid(pid, &status, 0);
+        if (WIFSIGNALED(status)) {
+            int sig = WTERMSIG(status);
+            if (sig != SIGSEGV) {
+                t_error("%s ThrdCreate0300 failed: expected SIGSEGV got %d\n", __func__, sig);
+            }
+        }
+    }
 }
 
 static int ThrdCreateTestImpl(int argc, char *argv[])

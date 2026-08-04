@@ -14,7 +14,9 @@
  */
 
 import netWorkSecurityTest from './netWorkSecurity.test'
+import netWorkSecurityVerChainTest from './netWorkSecurityVerChain.test';
 
 export default function testsuite() {
   netWorkSecurityTest();
+  netWorkSecurityVerChainTest();
 }

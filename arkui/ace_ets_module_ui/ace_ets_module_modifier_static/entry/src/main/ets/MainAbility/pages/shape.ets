@@ -13,15 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,Search,Rect, RichEditor,SearchController,ShapeAttribute, Position,Ellipse,LineCapStyle,LineJoinStyle,NavDestination,Shape,Path,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Builder, Search, Rect, RichEditor, SearchController, ShapeAttribute, Position, Ellipse, LineCapStyle, LineJoinStyle, NavDestination, Shape, Path, RichEditorController, Polyline, Progress, RowOptions, Navigation, Polygon, ProgressType, NavPathStack, HorizontalAlign, Menu, MenuItemOptions, FontStyle, MenuItem, Font, Dimension, BorderRadiuses, ListItemGroup, LoadingProgress, Padding, Column, StickyStyle, ImageAnimator, ImageSpan, Alignment, Hyperlink, BreakpointsReference, GridRowDirection, TextOverflow, GridCol, ColumnOptions, Grid, GridItem, Gauge, FormComponent, Visibility, FormDimension, Divider, Counter, DataPanel, DatePicker, BorderImageOption, BorderOptions, AdaptiveColor, BackgroundEffectOptions, BorderStyle, RepeatMode, GradientDirection, Image, Checkbox, Blank, MarkStyle, ResourceColor, CheckboxGroup, Text, Toggle, ToggleType, FlexAlign, Color, Flex, ButtonType, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, GridRow, FontWeight, Axis, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { ShapeModifier } from "@ohos.arkui.modifier";
-
+import { ShapeModifier } from '@ohos.arkui.modifier';
 class CustomModifier extends ShapeModifier {
 
 
@@ -57,7 +52,7 @@ struct ShapeExample {
 
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("shape_changeButton")
 
       Text('basic').fontSize(11).fontColor(0xCCCCCC).width(320)
       // 在Shape的(-2, -2)点绘制一个 300 * 50 带边框的矩形,颜色0x317AF7,边框颜色黑色,边框宽度4,边框间隙20,向左偏移10,线条两端样式为半圆,拐角样式圆角,抗锯齿(默认开启)

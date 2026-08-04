@@ -1,3 +1,4 @@
+'use static';
 import { UIUtils, Binding, MutableBinding, Local } from '@ohos.arkui.stateManagement';
 import { Entry, Column, Text, Button, Builder, ClickEvent, ComponentV2, rememberVariable, MutableVariable } from '@kit.ArkUI';
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,19 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import StartOptions from '@ohos.app.ability.StartOptions'
+import StartOptions from '@ohos.app.ability.StartOptions';
 import contextConstant from '@ohos.app.ability.contextConstant';
 import { CompletionHandlerForAbilityStartCallback, AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 import { Driver, ON } from '@ohos.UiTest';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext | undefined;
@@ -68,7 +68,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.actsbaseerrrocodemethodtest.static");
+      let cmd = "aa start -a EntryAbility -b com.acts.actsbaseerrrocodemethodtest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');

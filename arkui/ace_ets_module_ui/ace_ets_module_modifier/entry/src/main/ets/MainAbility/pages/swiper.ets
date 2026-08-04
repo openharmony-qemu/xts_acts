@@ -73,7 +73,7 @@ struct SwiperExample {
      
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("swiper_changeButton")
     }
     .margin({ top: 5 })
   }

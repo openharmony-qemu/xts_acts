@@ -16,8 +16,9 @@
 #include <dlfcn.h>
 
 #include "test.h"
+#include "lib_path.h"
 
-const char* LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlclose_recursive.so";
+const char* LIB_PATH = LIB_PATH_PREFIX "libdlclose_recursive.so";
 static void* g_handle = NULL;
 
 __attribute__((constructor)) void CtorDlopen()

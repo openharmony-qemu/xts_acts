@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Utils from "../../../../Util.test";
+
 import {
   describe,
   beforeAll,
@@ -23,7 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "../../../../../../../hypium"
+} from "../../../../../../../hypium/index"
 
 class Int1 {
   value: int = 0
@@ -55,15 +58,7 @@ class ChildAB<T extends "a" | "b"> extends AbstractPointAB<T> {}
 class ChildByte<T extends number> extends AbstractPointByte<T> {}
 class ChildShort<T extends number> extends AbstractPointShort<T> {}
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericTypeAliasConstraintTest() {
+export default function GenericTypeAliasConstraintTest(): void {
   describe("GenericTypeAliasConstraintTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -74,7 +69,7 @@ export default function GenericTypeAliasConstraintTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

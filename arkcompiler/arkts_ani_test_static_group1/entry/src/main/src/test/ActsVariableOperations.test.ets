@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -21,7 +22,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function variableOperationsTest() {
+export default function variableOperationsTest(): void {
 
   describe("ActsVariableOperationsTest", (): void => {
     try {

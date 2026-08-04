@@ -27,8 +27,8 @@ export default function MultiSegmentButtonV2PageTest() {
         url: "MainAbility/pages/segmentButtonV2/MultiSegmentButtonV2Page",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("MultiSegmentButtonV2Page" == pages.name)) {
           console.info("get MultiSegmentButtonV2PageTest pages.name:" + JSON.stringify(pages.name));
@@ -57,7 +57,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_001', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_001] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId001'));
       await button.click();
       await driver.delayMs(1000);
@@ -80,7 +80,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_002', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_002] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId002'));
       await button.click();
       await driver.delayMs(1000);
@@ -103,7 +103,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_003', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_003] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId003'));
       await button.click();
       await driver.delayMs(1000);
@@ -126,7 +126,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_004', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_004] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId004'));
       await button.click();
       await driver.delayMs(1000);
@@ -153,7 +153,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_005', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_005] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       let segmentItem = await driver.findComponent(ON.text("a"));
       await segmentItem.click();
       await driver.delayMs(1000);
@@ -176,7 +176,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_006', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_006] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       let segmentItem = await driver.findComponent(ON.text("b"));
       await segmentItem.click();
       await driver.delayMs(1000);
@@ -199,7 +199,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_007', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_007] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       let segmentItem = await driver.findComponent(ON.text("c"));
       await segmentItem.click();
       await driver.delayMs(1000);
@@ -222,7 +222,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_008', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_008] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       let segmentItem = await driver.findComponent(ON.text("d"));
       await segmentItem.click();
       await driver.delayMs(1000);
@@ -245,7 +245,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_009', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_009] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -270,7 +270,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_010', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_010] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -298,7 +298,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_011', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_011] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -314,7 +314,7 @@ export default function MultiSegmentButtonV2PageTest() {
       let jsonOption: string = JSON.stringify(common1.$attrs.backgroundBlurStyle);
 
       expect(jsonOption)
-        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1}}');
+        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1,"blurOption":"[0,0]"}}');
       console.log("[MultiSegmentButtonV2PageTest_011] END");
       done();
     })
@@ -329,7 +329,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_012', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_012] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -342,7 +342,7 @@ export default function MultiSegmentButtonV2PageTest() {
       let jsonOption: string = JSON.stringify(common1.$attrs.backgroundBlurStyle);
 
       expect(jsonOption)
-        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1}}');
+        .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1,"blurOption":"[0,0]"}}');
       console.log("[MultiSegmentButtonV2PageTest_012] END");
       done();
     })
@@ -357,7 +357,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_015', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_022] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -383,7 +383,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_016', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_016] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -409,7 +409,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_017', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_017] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -435,7 +435,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_018', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_018] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();
@@ -461,7 +461,7 @@ export default function MultiSegmentButtonV2PageTest() {
      */
     it('MultiSegmentButtonV2PageTest_019', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_019] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       await driver.delayMs(1000);
 
       let tree: ESObject = await getInspectorTree();

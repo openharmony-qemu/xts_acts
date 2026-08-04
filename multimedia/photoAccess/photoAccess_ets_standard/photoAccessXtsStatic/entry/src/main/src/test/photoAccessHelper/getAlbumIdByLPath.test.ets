@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level, Hypium } from '../../../../hypium'
+import { describe, it, expect, beforeAll, Level, Hypium } from '../../../../hypium/index'
 import {
   sleep,
   getPermission,

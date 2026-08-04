@@ -35,7 +35,12 @@ class UtilsTest{
   static async startAbility(bundleName: string, abilityName: string): Promise<boolean> {
     try {
       if (!UtilsTest.isStartedAbility) {
-        await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+        let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        await abilityDelegator.executeShellCommand(cmd);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
         UtilsTest.isStartedAbility = true;
         await UtilsTest.msSleep(4000);
@@ -50,7 +55,12 @@ class UtilsTest{
 }
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
-    await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+    let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegator.executeShellCommand(cmd);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
     await UtilsTest.msSleep(4000);

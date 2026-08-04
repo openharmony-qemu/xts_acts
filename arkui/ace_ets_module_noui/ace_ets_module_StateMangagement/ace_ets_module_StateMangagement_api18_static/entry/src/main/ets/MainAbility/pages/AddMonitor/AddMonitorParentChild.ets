@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
@@ -28,7 +28,7 @@ struct ParentComponent {
   aboutToAppear(): void {
     this.messageMonitor = UIUtils.addMonitor(() => this.message, this.messageChange, { path: ['ParentComponent'] });
   }
-  messageChange(m: IMonitor) {
+  messageChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} message changed from ${m.value<string>(path)?.before} to ${m.value<string>(path)?.now}`);
       this.parentText = `[addMonitorTest] ${path} message changed from ${m.value<string>(path)?.before} to ${m.value<string>(path)?.now}`
@@ -90,13 +90,13 @@ struct ChildComponent {
     this.childValueMonitor = UIUtils.addMonitor(() => this.childValue, this.childValueChange, { path: ['ChildComponent'] });
     this.childMsgMonitor = UIUtils.addMonitor(() => this.childMsg, this.childMsgChange, { path: ['ChildComponent'] });
   }
-  childValueChange(m: IMonitor) {
+  childValueChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} childValue changed from ${m.value<number>(path)?.before} to ${m.value<number>(path)?.now}`);
     });
   }
 
-  childMsgChange(m: IMonitor) {
+  childMsgChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} childMsg changed from ${m.value<string>(path)?.before} to ${m.value<string>(path)?.now}`);
       this.childText = (`[addMonitorTest] ${path} childMsg changed from ${m.value<string>(path)?.before} to ${m.value<string>(path)?.now}`);

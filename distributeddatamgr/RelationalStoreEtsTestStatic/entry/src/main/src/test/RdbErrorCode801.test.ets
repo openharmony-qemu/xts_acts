@@ -1,3 +1,4 @@
+'use static';
 import {
   describe,
   beforeAll,
@@ -72,7 +73,12 @@ export default function RdbErrorCode801() {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll begin');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       let readOnlyConf: relationalStore.StoreConfig = {

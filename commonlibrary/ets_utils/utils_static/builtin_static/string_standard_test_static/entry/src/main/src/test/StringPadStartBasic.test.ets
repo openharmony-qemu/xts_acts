@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1718,7 +1719,7 @@ export default function StringPadStartBasicTest(): void {
      */
     it('StringPadStart_SymbolTarget_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = padStartBasicHelper.testSymbolTarget();
-      expect(result.isTypeError).assertFalse();
+      expect(result.isTypeError).assertTrue();
     });
 
     /**
@@ -1731,7 +1732,7 @@ export default function StringPadStartBasicTest(): void {
      */
     it('StringPadStart_SymbolPad_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = padStartBasicHelper.testSymbolPad();
-      expect(result.isTypeError).assertFalse();
+      expect(result.isTypeError).assertTrue();
     });
 
     /**

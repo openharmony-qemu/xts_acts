@@ -167,6 +167,8 @@ import RichEditorMenuType from './RichEditorApi13Test/RichEditorMenuType.test';
 import RichEditorStyledStringTest from './RichEditorApi13Test/RichEditorStyledStringTest.test';
 import BarStateTest from './RichEditorApi13Test/barState.test';
 import BarStateModifierTest from './RichEditorApi13Test/barStateModifier.test';
+import EnableHapticFeedbackTest from './RichEditorApi13Test/enableHapticFeedback.test';
+import EnableHapticFeedbackModifierTest from './RichEditorApi13Test/enableHapticFeedbackModifier.test';
 
 import RichEditorOnHoverTest from './RichEditorApi14Test/onHover.test';
 import getRectsForRangeTest from './RichEditorApi14Test/getRectsForRange.test'
@@ -212,6 +214,7 @@ import RichEditorBaseControllerSetStyledPlaceholderTest from './RichEditorApi24T
 import RichEditorHorizontalScrollingTest from './RichEditorApi26Test/RichEditorHorizontalScrolling.test';
 import RichEditorStrokeJoinStyleTest from './RichEditorApi26Test/RichEditorStrokeJoinStyle.test';
 import RichEditorShaderStyleTest from './RichEditorApi26Test/RichEditorShaderStyle.test';
+import RichEditorScrollToVisibleTest from './RichEditorApi26Test/RichEditorScrollToVisible.test';
 
 export default function testsuite() {
   ActsRichEditorTest();
@@ -368,6 +371,8 @@ export default function testsuite() {
   RichEditorStyledStringTest();
   BarStateTest();
   BarStateModifierTest();
+  EnableHapticFeedbackTest();
+  EnableHapticFeedbackModifierTest();
 
   RichEditorOnHoverTest();             // Api14
   getRectsForRangeTest();
@@ -415,4 +420,5 @@ export default function testsuite() {
   RichEditorHorizontalScrollingTest()
   RichEditorStrokeJoinStyleTest()
   RichEditorShaderStyleTest()
+   RichEditorScrollToVisibleTest()
 }

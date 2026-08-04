@@ -631,6 +631,66 @@ export default function PhotoNoPermissionSupp() {
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
         expect(error.code).assertEqual(ErrorCode.No_Permission);
+        expect(error.message).assertEqual('Permission denied');
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTMEDIA_SENDABLE_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_SENDABLE_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_PROMISE_0010
+     * @tc.desc      promise sendable-getBurstAssets-no permission
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("SUB_MULTMEDIA_SENDABLE_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_SENDABLE_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_PROMISE_0010'
+      let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let sendablephAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(context);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let burstKey: string = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+        await sendablephAccessHelper.getBurstAssets(burstKey, fetchOption);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error.message, error.code);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
+        expect(error.message).assertEqual('Permission denied');
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTMEDIA_SENDABLE_CREAT_ASSET_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_SENDABLE_CREAT_ASSET_NO_PERMISSION_PROMISE_0010
+     * @tc.desc      promise sendable-createAsset-no permission
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("SUB_MULTMEDIA_SENDABLE_CREAT_ASSET_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_SENDABLE_CREAT_ASSET_NO_PERMISSION_PROMISE_0010'
+      let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let sendablephAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(context);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'createAssetNoPermission0010'
+        }
+        await sendablephAccessHelper.createAsset(photoType, extension, options);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error.message, error.code);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
+        expect(error.message).assertEqual('Permission denied');
         done();
       }
     })

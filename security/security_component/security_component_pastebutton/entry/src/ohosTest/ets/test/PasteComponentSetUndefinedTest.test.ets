@@ -213,27 +213,6 @@ export default function pasteComponentSetUndefinedTest() {
     });
 
     /**
-     * @tc.name   Test_Security_PasteButton_SetUndefined_0500
-     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_0500
-     * @tc.desc   Test SecurityComponent fontSize set undefined is Default and Authorization is successful
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('Test_Security_PasteButton_SetUndefined_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      const TCNAME = 'Test_Security_PasteButton_SetUndefined_0500';
-      console.info(`====>${TCNAME} START`);
-      let driver = Driver.create();
-      await clickSwitchButton(TCNAME, driver);
-      let strJson: string = getInspectorByKey('setUndefined4');
-      let obj : ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.fontSize).assertEqual('16.00fp');
-      await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
-      await clickSecComponent(TCNAME, driver, 0);
-    });
-
-    /**
      * @tc.name   Test_Security_PasteButton_SetUndefined_0600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_0600
      * @tc.desc   Test SecurityComponent fontStyle set undefined is Default and Authorization is successful

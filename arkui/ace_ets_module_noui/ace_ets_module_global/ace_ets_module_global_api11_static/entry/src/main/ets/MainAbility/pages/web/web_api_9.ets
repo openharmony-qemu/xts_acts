@@ -15,7 +15,7 @@
 //  */
 // import emitter from '@ohos.events.emitter';
 // import  AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-// import { Hypium } from '../../../../../hypium';
+// import { Hypium } from '../../../../../hypium/index';
 // import webview from '@ohos.web.webview';
 // import testsuite from '../../../../src/test/List.test';
 // import {
@@ -155,7 +155,7 @@
 //
 //       //controller: webview.WebviewController = new webview.WebviewController();
 //       Row() {
-//         Button("webTest").key('web2').onClick((e:ClickEvent):void => {
+//         Button("webTest").key('web_api_9_web2').onClick((e:ClickEvent):void => {
 //           console.info("key==>" + this.str);
 //           switch (this.str) {
 //             // add

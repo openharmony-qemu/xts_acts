@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,8 +20,8 @@ import Want from '@ohos.app.ability.Want';
 import formBindingData from '@ohos.application.formBindingData';
 import hilog from '@ohos.hilog';
 
-const tag: string = 'testTag';
-const domain: number = 0xF811;
+const COMMON_TAG: string = 'GetFormsInfo';
+const DOMAIN: number = 0xF811;
 
 let module1Want: Want = {
     deviceId: "",
@@ -119,15 +119,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             formProvider.getFormsInfo(async (err, value) => {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest err: " + JSON.stringify(err));
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest err: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 if (err === null) {
                     expect(err).assertEqual(null);
                     expect(value.length).assertEqual(2);
-                    checkResultArray(name, expectResult, value);
+                    checkResultArray(TAG, expectResult, value);
                 } else if (err.code === ERROR_CODE1) {
                     expect(err.code).assertEqual(ERROR_CODE1);
                 } else if (err.code === ERROR_CODE2) {
@@ -140,7 +140,7 @@ export default function abilityTest() {
                 await sleep(2000);
                 done();
             });
-            console.info("SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100 end");
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
 
         /**
@@ -152,8 +152,8 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName : "module1"
             };
@@ -164,7 +164,7 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
             }
-            console.info(`${name} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
 
         /**
@@ -176,16 +176,16 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             formProvider.getFormsInfo().then( async (value) => {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 expect(value.length).assertEqual(2);
-                checkResultArray(name, expectResult, value);
+                checkResultArray(TAG, expectResult, value);
                 await sleep(2000);
                 done();
             }).catch((err: BusinessError) => {
-                console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest failed err: ${JSON.stringify(err)}`);
                 if (err.code === ERROR_CODE1) {
                     expect(err.code).assertEqual(ERROR_CODE1);
                 } else if (err.code === ERROR_CODE2) {
@@ -198,7 +198,7 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
             })
-            console.info(`${name} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
 
         /**
@@ -210,19 +210,19 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500';
-            console.info(`${name} start`);;
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {};
             formProvider.getFormsInfo(filter, async (err, value) =>  {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest: " + JSON.stringify(err));
-                console.info(`${name}` + "formProvider::GetFormsInfoTest: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest: ${JSON.stringify(value)}`);
                 expect(err).assertEqual(null);
                 expect(value.length).assertEqual(2);
-                checkResultArray(name, expectResult, value);
+                checkResultArray(TAG, expectResult, value);
                 await sleep(2000);
                 done();
             });
-            console.info(`${name} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
 
         /**
@@ -234,19 +234,19 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: ""
             };
             formProvider.getFormsInfo(filter, async (err, value) =>  {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest err: " + JSON.stringify(err));
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest err: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 expect(err).assertEqual(null);
                 expect(value.length).assertEqual(2);
-                checkResultArray(name, expectResult, value);
+                checkResultArray(TAG, expectResult, value);
                 await sleep(2000);
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
                 done();
             });
         });
@@ -260,19 +260,19 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: undefined
             };
             formProvider.getFormsInfo(filter, async (err, value) =>  {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest err: " + JSON.stringify(err));
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest err: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 expect(err).assertEqual(null);
                 expect(value.length).assertEqual(2);
-                checkResultArray(name, expectResult, value);
+                checkResultArray(TAG, expectResult, value);
                 await sleep(2000);
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
                 done();
             });
         });
@@ -286,17 +286,17 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "HelloWorld"
             };
             formProvider.getFormsInfo(filter, (err, value) =>  {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest err: " + JSON.stringify(err));
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest err: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 expect(err).assertEqual(null);
                 expect(value.length).assertEqual(0);
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
                 done();
             });
         });
@@ -310,17 +310,17 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "module1"
             };
             formProvider.getFormsInfo(filter, (err, value) => {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest err: " + JSON.stringify(err));
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest err: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 expect(err).assertEqual(null);
                 expect(value.length).assertEqual(0);
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
                 done();
             });
         });
@@ -334,20 +334,20 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "entry"
             };
             formProvider.getFormsInfo(filter, async (err, value) =>  {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest err: " + JSON.stringify(err));
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest err: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 expect(err).assertEqual(null);
                 expect(value.length).assertEqual(2);
-                checkResultArray(name, expectResult, value);
+                checkResultArray(TAG, expectResult, value);
                 await sleep(2000);
                 done();
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
             });
             
         });
@@ -361,22 +361,22 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {};
             let formProviderGetFormsInfo = async () => {
                 await formProvider.getFormsInfo(filter).then( async (value) => {
-                    console.info(`${name} value:${JSON.stringify(value)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} value: ${JSON.stringify(value)}`);
                     expect(value.length).assertEqual(2);
-                    checkResultArray(name, expectResult, value);
+                    checkResultArray(TAG, expectResult, value);
                     await sleep(2000);
                     done();
                 }).catch((err: BusinessError) => {
-                    console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest failed err: ${JSON.stringify(err)}`);
                     expect().assertFail();
                     done();
                 })
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
             }
             formProviderGetFormsInfo();
             
@@ -391,8 +391,8 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: ""
             };
@@ -400,17 +400,17 @@ export default function abilityTest() {
             let formProviderGetFormsInfo = async () => {
                 try{
                     let value = await formProvider.getFormsInfo(filter);
-                    console.info(`${name} value:${JSON.stringify(value)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} value: ${JSON.stringify(value)}`);
                     expect(value.length).assertEqual(2);
-                    checkResultArray(name, expectResult, value);
+                    checkResultArray(TAG, expectResult, value);
                     await sleep(2000);
                     done()
                 } catch(err) {
-                    console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest failed err: ${JSON.stringify(err)}`);
                     expect().assertFail();
                     done();
                 }
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
             }
 
             formProviderGetFormsInfo();
@@ -426,20 +426,20 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: undefined
             };
             formProvider.getFormsInfo(filter).then( async (value) => {
-                console.info(`${name} value:${JSON.stringify(value)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} value: ${JSON.stringify(value)}`);
                     expect(value.length).assertEqual(2);
-                    checkResultArray(name, expectResult, value);
+                    checkResultArray(TAG, expectResult, value);
                     await sleep(2000);
-                    console.info(`${name} end`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
                     done()
             }).catch((err: BusinessError) => {
-                console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest failed err: ${JSON.stringify(err)}`);
                 expect().assertFail();
                 done();
             })
@@ -454,22 +454,22 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "HelloWorld"
             };
             let formProviderGetFormsInfo = async () => {
                 await formProvider.getFormsInfo(filter).then( async (value) => {
-                    console.info(`${name} value:${JSON.stringify(value)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} value: ${JSON.stringify(value)}`);
                     expect(value.length).assertEqual(0);
                     done();
                 }).catch((err: BusinessError) => {
-                    console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest failed err: ${JSON.stringify(err)}`);
                     expect().assertFail();
                     done();
                 })
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
             }
             formProviderGetFormsInfo();
             
@@ -484,8 +484,8 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "module1"
             };
@@ -494,11 +494,11 @@ export default function abilityTest() {
                     expect(value.length).assertEqual(0);
                     done();
                 }).catch((err: BusinessError) => {
-                    console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest failed err: ${JSON.stringify(err)}`);
                     expect().assertFail();
                     done();
                 })
-                console.info(`${name} end`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
             }
             formProviderGetFormsInfo();
             
@@ -513,23 +513,23 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "entry"
             };
             formProvider.getFormsInfo(filter).then( async (value) => {
-                console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest value: ${JSON.stringify(value)}`);
                 expect(value.length).assertEqual(2);
-                checkResultArray(name, expectResult, value);
+                checkResultArray(TAG, expectResult, value);
                 await sleep(2000);
                 done();
             }).catch((err: BusinessError) => {
-                console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest failed err: ${JSON.stringify(err)}`);
                 expect().assertFail();
                 done();
             })
-            console.info(`${name} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
 		
         /**
@@ -541,14 +541,14 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             let stateInfo: formInfo.FormStateInfo = module1FormStateInfo;
             expect(0).assertEqual(stateInfo.formState);
             expect("com.ohos.st.formsystemhost").assertEqual(stateInfo.want.bundleName);
             expect().not().assertFail();
             done();
-            console.info(`${name} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
 
         /**
@@ -560,24 +560,24 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
          it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0400';
-            console.info(`${name} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0400';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             try {
                 formProvider.getFormsInfo(null, async (err, value) =>  {
-                    console.info(`${name}` + "formProvider::GetFormsInfoTest: " + JSON.stringify(err));
-                    console.info(`${name}` + "formProvider::GetFormsInfoTest: " + JSON.stringify(value));
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest: ${JSON.stringify(err)}`);
+                    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest: ${JSON.stringify(value)}`);
                     expect(err).assertEqual(null);
                     expect(value.length).assertEqual(2);
-                    checkResultArray(name, expectResult, value);
+                    checkResultArray(TAG, expectResult, value);
                     await sleep(2000);
                     done();
                 });
               } catch (error) {
-                console.error(`${name}  formProvider::GetFormsInfoTest catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message})`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
                 expect(error.code).assertEqual(ERROR_CODE1);
                 done();
               }
-            console.info(`${name} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
         });
         /**
              * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200
@@ -588,8 +588,8 @@ export default function abilityTest() {
              * @tc.level  LEVEL0
              */
             it('SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-              const itName = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200';
-              hilog.info(domain, tag, `${itName} start`);
+              let TAG: string = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5200';
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
               try {
                 let formImagesParam: Record<string, number> = {
                   'image': 100
@@ -600,20 +600,20 @@ export default function abilityTest() {
                   'formImages': formImagesParam
                 };
         
-                hilog.info(domain, tag, `${itName} createFormBindingData`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData`);
                 let bindingData = formBindingData.createFormBindingData(createFormBindingDataParam);
-                hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
                 let data = JSON.parse(bindingData.data as string) as Record<string, string | Record<string, number>>;
                 expect(data.name === '21°').assertTrue();
                 expect(data.imgSrc === 'image').assertTrue();
                 expect((data.formImages as Record<string, number>).image === 100).assertTrue();
                 done();
               } catch(error) {
-                hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData fail. error code: ${error?.code}`);
                 expect(error.code).assertEqual(ERROR_CODE1);
                 done();
               }
-              hilog.info(domain, tag, `${itName} end`);
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
             });
 
         /**
@@ -625,20 +625,20 @@ export default function abilityTest() {
              * @tc.level  LEVEL0
              */
         it('SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            const itName = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5300';
-            hilog.info(domain, tag, `${itName} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5300';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             try {
-              hilog.info(domain, tag, `${itName} createFormBindingData`);
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData`);
               let bindingData = formBindingData.createFormBindingData(null);
-              hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
               expect(bindingData === undefined).assertTrue();
               done();
             } catch(error) {
-              hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData fail. error code: ${error?.code}`);
               expect(error.code).assertEqual(ERROR_CODE1);
               done();
             }
-            hilog.info(domain, tag, `${itName} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
           });
 
         /**
@@ -650,35 +650,85 @@ export default function abilityTest() {
              * @tc.level  LEVEL0
              */
         it('SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            const itName = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5400';
-            hilog.info(domain, tag, `${itName} start`);
+            let TAG: string = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FROM_BINDING_DATA_5400';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
             try {
-              hilog.info(domain, tag, `${itName} createFormBindingData`);
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData`);
               let bindingData = formBindingData.createFormBindingData(undefined);
-              hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
               expect(bindingData === undefined).assertTrue();
               done();
             } catch(error) {
-              hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData fail. error code: ${error?.code}`);
               expect(error.code).assertEqual(ERROR_CODE1);
               done();
             }
-            hilog.info(domain, tag, `${itName} end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+          });
+
+        /**
+             * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500
+             * @tc.number SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500
+             * @tc.desc   createFormBindingData with string parameter covered test
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL0
+             */
+        it('SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let TAG: string = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5500';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+            try {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData with string`);
+              let bindingData = formBindingData.createFormBindingData('{"name":"test","value":"21°"}');
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              expect(!!bindingData).assertTrue();
+              done();
+            } catch(error) {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData fail. error code: ${error?.code}`);
+              expect(error.code).assertEqual(ERROR_CODE1);
+              done();
+            }
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+          });
+
+        /**
+             * @tc.name   SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600
+             * @tc.number SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600
+             * @tc.desc   createFormBindingData with empty string parameter covered test
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL0
+             */
+        it('SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let TAG: string = 'SUB_ABILITY_FORM_APPLICATION_CREATE_FORM_BINDING_DATA_5600';
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+            try {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData with empty string`);
+              let bindingData = formBindingData.createFormBindingData('');
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+              expect(!!bindingData).assertTrue();
+              done();
+            } catch(error) {
+              hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} createFormBindingData fail. error code: ${error?.code}`);
+              expect(error.code).assertEqual(ERROR_CODE1);
+              done();
+            }
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
           });
     })
 
-    let checkResultArray = (name: string, expectInfos: Array<formInfo.FormInfo>, result:Array<formInfo.FormInfo>) => {
-        console.info(`${name}` + "formProvider::GetForsInfoTest checkResultArray start");
+    let checkResultArray = (TAG: string, expectInfos: Array<formInfo.FormInfo>, result:Array<formInfo.FormInfo>) => {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetForsInfoTest checkResultArray start`);
         for (let index = 0; index < expectInfos.length; index++) {
-            checkResult(name, expectInfos[index], result[index])
+            checkResult(TAG, expectInfos[index], result[index])
         }
-        console.info(`${name}` + "formProvider::GetForsInfoTest checkResultArray end");
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetForsInfoTest checkResultArray end`);
     }
 
-    let checkResult = (name: string, expectInfo: formInfo.FormInfo, result: formInfo.FormInfo) => {
-        console.info(`${name}` + "GetFormsInfoTest checkResult start");
-        console.info(`${name} expectInfo: ${JSON.stringify(expectInfo)}`);
-        console.info(`${name} result: ${JSON.stringify(result)}`);
+    let checkResult = (TAG: string, expectInfo: formInfo.FormInfo, result: formInfo.FormInfo) => {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} GetFormsInfoTest checkResult start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} expectInfo: ${JSON.stringify(expectInfo)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} result: ${JSON.stringify(result)}`);
         expect(expectInfo.bundleName).assertEqual(result.bundleName);
         expect(expectInfo.abilityName).assertEqual(result.abilityName);
         expect(expectInfo.name).assertEqual(result.name);
@@ -696,6 +746,10 @@ export default function abilityTest() {
         expect(JSON.stringify(expectInfo.supportDimensions)).assertEqual(JSON.stringify(result.supportDimensions));
         expect(JSON.stringify(expectInfo.customizeData)).assertEqual(JSON.stringify(result.customizeData));
         expect(JSON.stringify(expectInfo.supportedShapes)).assertEqual(JSON.stringify(result.supportedShapes));
-        console.info(`${name}` + "formProvider::GetFormsInfoTest end");
+        expect(expectInfo.displayNameId).assertEqual(result.displayNameId);
+        expect(expectInfo.isDynamic).assertEqual(result.isDynamic);
+        expect(expectInfo.transparencyEnabled).assertEqual(result.transparencyEnabled);
+        expect(expectInfo.updateEnabled).assertEqual(result.updateEnabled);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest end`);
     }
 }

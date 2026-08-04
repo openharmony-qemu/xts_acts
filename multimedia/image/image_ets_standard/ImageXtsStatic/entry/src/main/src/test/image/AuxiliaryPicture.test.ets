@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level} from '../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level} from '../../../../hypium/index';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';

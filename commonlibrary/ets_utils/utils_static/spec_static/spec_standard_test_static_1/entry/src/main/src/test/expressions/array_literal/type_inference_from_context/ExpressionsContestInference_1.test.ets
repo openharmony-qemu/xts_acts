@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -24,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "../../../../../../hypium/index";
 
 let u_21: undefined = undefined;
 let n_21: null = null;
@@ -64,15 +67,7 @@ function test_arr4_inf_decl_0(): void {
   expect(arr4_decl_a0[2][2]).assertEqual(2147483647);
 }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function ExpressionsContestInferenceOneTest() {
+export default function ExpressionsContestInferenceOneTest(): void {
   describe("ExpressionsContestInferenceOneTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -83,7 +78,7 @@ export default function ExpressionsContestInferenceOneTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

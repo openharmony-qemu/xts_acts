@@ -47,10 +47,11 @@ export default function showDefaultSelectedIconTest() {
     it('showDefaultSelectedIcon_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0001 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showDefaultSelectedIcon' + '_select');
       console.info('showDefaultSelectedIcon_value_0001' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('false'); 
       console.info('showDefaultSelectedIcon_value_0001 END');
@@ -68,10 +69,11 @@ export default function showDefaultSelectedIconTest() {
     it('showDefaultSelectedIcon_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0002 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showDefaultSelectedIcon' + '_select');
       console.info('showDefaultSelectedIcon_value_0002' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('true');
       console.info('showDefaultSelectedIcon_value_0002 END');
@@ -89,10 +91,11 @@ export default function showDefaultSelectedIconTest() {
     it('showDefaultSelectedIcon_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0003 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showDefaultSelectedIcon' + '_select');
       console.info('showDefaultSelectedIcon_value_0003' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('false');
       console.info('showDefaultSelectedIcon_value_0003 END');
@@ -110,10 +113,11 @@ export default function showDefaultSelectedIconTest() {
     it('showDefaultSelectedIcon_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0004 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showDefaultSelectedIcon' + '_select');
       console.info('showDefaultSelectedIcon_value_0004' + JSON.stringify(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon));
       expect(JSON.parse(selectValue).$attrs.showDefaultSelectedIcon).assertEqual('false');
       console.info('showDefaultSelectedIcon_value_0004 END');

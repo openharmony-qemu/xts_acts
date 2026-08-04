@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,27 +13,14 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  Size,
-  TestType
-} from '../../../hypium';
-import factory from '@ohos.data.distributedKVStore'
-
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
+import factory from '@ohos.data.distributedKVStore';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 const domain = 0xFF00;
 const tag = "TestTag";
@@ -100,7 +88,12 @@ export default function SingleKvStoreCallbackTest() {
       try {
         hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
 
         // await abilityDelegator.startAbility({
         //   bundleName: 'com.example.kvstoreetstest.static',
@@ -256,7 +249,7 @@ export default function SingleKvStoreCallbackTest() {
               } else {
                 console.error('SingleKvStoreGetStringCallbackTest001 get fail' +
                   `, error code is ${err.code}, message is ${err.message}`);
-                expect(err.code === 15100004).assertTrue();
+                expect(err.code == 15100004).assertTrue();
               }
               done();
             });
@@ -477,7 +470,7 @@ export default function SingleKvStoreCallbackTest() {
               } else {
                 console.error('SingleKvStoreGetIntCallbackTest002 get fail' +
                   `, error code is ${err.code}, message is ${err.message}`);
-                expect(err.code === 15100004).assertTrue();
+                expect(err.code == 15100004).assertTrue();
               }
               done();
             })
@@ -535,7 +528,7 @@ export default function SingleKvStoreCallbackTest() {
               } else {
                 console.error('SingleKvStoreGetBoolCallbackTest001 get fail' +
                   `, error code is ${err.code}, message is ${err.message}`);
-                expect(err.code === 15100004).assertTrue();
+                expect(err.code == 15100004).assertTrue();
               }
               done();
             });
@@ -720,7 +713,7 @@ export default function SingleKvStoreCallbackTest() {
               } else {
                 console.error('SingleKvStoreGetFloatCallbackTest001 get fail' +
                   `, error code is ${err.code}, message is ${err.message}`);
-                expect(err.code === 15100004).assertTrue();
+                expect(err.code == 15100004).assertTrue();
               }
               done();
             });
@@ -994,7 +987,7 @@ export default function SingleKvStoreCallbackTest() {
         } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETE_CALLBACK_2700 e' +
             `, error code is ${e.code}, message is ${e.message}`);
-          expect(e.code === 401).assertTrue();
+          expect(e.code == 401).assertTrue();
           done();
         }
       })
@@ -1699,26 +1692,30 @@ export default function SingleKvStoreCallbackTest() {
             console.info('SingleKvStorestartTransactionCallbackTest001 0' + data)
             count++;
           });
-          try {
-            await kvStore!.startTransaction();
+          kvStore!.startTransaction((err: Error | null, data: string[] | undefined) => {
             console.info('SingleKvStorestartTransactionCallbackTest001 startTransaction success');
+            expect(err == undefined).assertTrue();
             let entries = putBatchString(10, 'batch_test_string_key');
             console.info('SingleKvStorestartTransactionCallbackTest001 entries: ' + JSON.stringify(entries));
-            await kvStore!.putBatch(entries);
-            console.info('SingleKvStorestartTransactionCallbackTest001 putBatch success');
-            let keys = Object.keys(entries).slice(5);
-            await kvStore!.deleteBatch(keys);
-            console.info('SingleKvStorestartTransactionCallbackTest001 deleteBatch success');
-            await kvStore!.commit();
-            console.info('SingleKvStorestartTransactionCallbackTest001 commit success');
-            await sleep(500);
-            expect(count == 1).assertTrue();
-            done();
-          } catch (err) {
-            console.error('chain flatten failed: ' + err);
-            expect(null).assertFail();
-            done();
-          }
+            kvStore!.putBatch(entries, (err: Error | null, data: string[] | undefined) => {
+              console.info('SingleKvStorestartTransactionCallbackTest001 putBatch success');
+              expect(err == undefined).assertTrue();
+              let keys = Object.keys(entries).slice(5);
+              kvStore!.deleteBatch(keys, (err: Error | null, data: string[] | undefined) => {
+                console.info('SingleKvStorestartTransactionCallbackTest001 deleteBatch success');
+                expect(err == undefined).assertTrue();
+                kvStore!.commit((err: Error | null, data: string[] | undefined) => {
+                  waitForCompletion(async () => {
+                    console.info('SingleKvStorestartTransactionCallbackTest001 commit success');
+                    expect(err == undefined).assertTrue();
+                    await sleep(500);
+                    expect(count == 1).assertTrue();
+                    done();
+                  })
+                });
+              });
+            });
+          });
         } catch (e) {
           console.error('SingleKvStorestartTransactionCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
@@ -1745,26 +1742,30 @@ export default function SingleKvStoreCallbackTest() {
             console.info('SingleKvStorestartTransactionCallbackTest002 0' + data)
             count++;
           });
-          try {
-            await kvStore!.startTransaction();
+          kvStore!.startTransaction((err: Error | null, data: string[] | undefined) => {
             console.info('SingleKvStorestartTransactionCallbackTest002 startTransaction success');
+            expect(err == undefined).assertTrue();
             let entries = putBatchString(10, 'batch_test_string_key');
             console.info('SingleKvStorestartTransactionCallbackTest002 entries: ' + JSON.stringify(entries));
-            await kvStore!.putBatch(entries);
-            console.info('SingleKvStorestartTransactionCallbackTest002 putBatch success');
-            let keys = Object.keys(entries).slice(5);
-            await kvStore!.deleteBatch(keys);
-            console.info('SingleKvStorestartTransactionCallbackTest002 deleteBatch success');
-            await kvStore!.rollback();
-            console.info('SingleKvStorestartTransactionCallbackTest002 rollback success');
-            await sleep(500);
-            expect(count == 0).assertTrue();
-            done();
-          } catch (err) {
-            console.error('chain flatten failed: ' + err);
-            expect(null).assertFail();
-            done();
-          }
+            kvStore!.putBatch(entries, (err: Error | null, data: string[] | undefined) => {
+              console.info('SingleKvStorestartTransactionCallbackTest002 putBatch success');
+              expect(err == undefined).assertTrue();
+              let keys = Object.keys(entries).slice(5);
+              kvStore!.deleteBatch(keys, (err: Error | null, data: string[] | undefined) => {
+                console.info('SingleKvStorestartTransactionCallbackTest002 deleteBatch success');
+                expect(err == undefined).assertTrue();
+                kvStore!.rollback((err: Error | null, data: string[] | undefined) => {
+                  waitForCompletion(async () => {
+                    console.info('SingleKvStorestartTransactionCallbackTest002 rollback success');
+                    expect(err == undefined).assertTrue();
+                    await sleep(500);
+                    expect(count == 0).assertTrue();
+                    done();
+                  })
+                });
+              });
+            });
+          });
         } catch (e) {
           console.error('SingleKvStorestartTransactionCallbackTest002 e ' +
             `, error code is ${e.code}, message is ${e.message}`);

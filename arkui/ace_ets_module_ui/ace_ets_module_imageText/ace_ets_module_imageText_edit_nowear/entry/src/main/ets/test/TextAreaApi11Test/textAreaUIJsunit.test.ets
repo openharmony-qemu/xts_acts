@@ -230,7 +230,7 @@ export default function textAreaUIJsunit() {
       let text = await driver.findComponent(BY.key('textArea_test'));
       await text.inputText('123');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('change');
+      let strJson = getInspectorByKey('textAreaUI' + '_change');
       let obj: ESObject = JSON.parse(strJson);
       console.info('textAreaUIJsunit_0800 component obj is: ' + obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('123');
@@ -269,7 +269,7 @@ export default function textAreaUIJsunit() {
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(2000);
-      let textIn = await driver.findComponent(BY.key('copy'));
+      let textIn = await driver.findComponent(BY.key('textAreaUI' + '_copy'));
       let txt = await textIn.getText();
       console.info('textAreaUIJsunit_0900 component obj is: ' + txt);
       expect(txt).assertEqual('copy');
@@ -283,7 +283,7 @@ export default function textAreaUIJsunit() {
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(2000);
-      let textPaste = await driver.findComponent(BY.key('paste'));
+      let textPaste = await driver.findComponent(BY.key('textAreaUI' + '_paste'));
       let text1 = await textPaste.getText();
       console.info('textAreaUIJsunit_0900 text1: ' + text1);
       expect(text1).assertEqual('paste');

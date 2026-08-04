@@ -55,6 +55,7 @@
         "MainAbility/pages/Search/SearchPropertiesNullUndefined03Test",
         "MainAbility/pages/SearchApi26/SearchOnWillCopy",
         "MainAbility/pages/SearchApi26/SearchOnWillCut",
-        "MainAbility/pages/SearchApi26/SearchStrokeJoinStyle"
+        "MainAbility/pages/SearchApi26/SearchStrokeJoinStyle",
+        "MainAbility/pages/SearchApi26/SearchShaderStyle"
     ]
 }

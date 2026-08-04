@@ -1,0 +1,13 @@
+/node_modules
+/oh_modules
+/local.properties
+/.idea
+**/build
+/.hvigor
+/hvigorw
+/hvigor/hvigor-wrapper.js
+.cxx
+/.clangd
+/.clang-format
+/.clang-tidy
+**/.test

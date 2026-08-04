@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -109,6 +110,18 @@ interface I{
 class Class_I implements I{
     f!:string
 }
+
+class instantiateA {
+  static $_instantiate(p:int):int{
+    return p
+  }
+}
+class instantiateB extends instantiateA {
+  static $_instantiate(p:string):string{
+    return p
+  }
+}
+
 export default function ClassLateInitizationTest() {
   describe('ClassLateInitizationTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -138,7 +151,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing uninitialized class member
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -155,7 +168,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test closure capturing initialized vs uninitialized class member
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -172,7 +185,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing uninitialized nested class member
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -190,7 +203,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing uninitialized field in subclass
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -207,7 +220,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test assignment and access of class member in subclass
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let a: Base = new Derived();
@@ -221,7 +234,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test initialized vs uninitialized class members
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let a = new Base1("aa");
@@ -240,7 +253,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test ClassCastError when accessing uninitialized generic field
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -257,7 +270,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test ClassCastError when accessing initialized generic field
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const gen = new Generic<string | EmptyClass>();
@@ -278,7 +291,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing missing property on object literal cast to class
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -295,7 +308,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test access of property on object literal cast to class
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let a: Base2 = { g: "aa" };
@@ -308,7 +321,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing method of uninitialized union field
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -330,7 +343,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing uninitialized field via getter method
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -346,7 +359,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test assignment of fields in different classes
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let y = new Base();
@@ -364,7 +377,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing field initialized asynchronously
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -381,7 +394,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing uninitialized array field
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -398,7 +411,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing uninitialized field via parent class
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -415,7 +428,7 @@ export default function ClassLateInitizationTest() {
      * @tc.desc test NullPointerError when accessing uninitialized interface implementation field
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
     it('ClassLateInitizationTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let a = new Class_I()
@@ -426,6 +439,19 @@ export default function ClassLateInitizationTest() {
       }
       a.f = "1"
       expect(a.f).assertEqual("1")
+    });
+
+     /**
+     * @tc.number SUB_CLASS_LATE_INITIZATION_1900
+     * @tc.name ClassLateInitizationTest019
+     * @tc.desc test NullPointerError when accessing uninitialized interface implementation field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL1
+     */
+    it('ClassLateInitizationTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let x = instantiateB.$_instantiate('1')
+      expect(x).assertEqual('1')
     });
 
   });

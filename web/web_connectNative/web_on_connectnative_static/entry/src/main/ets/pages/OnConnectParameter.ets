@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +20,10 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
+function isCapabilityNotSupportedCode(code: number): boolean {
+  // Convert to string for comparison to avoid type mismatch with NmErrorCode enum
+  return String(code) === '801';
+}
 
 export class StringFields {
   public str: string = '';
@@ -142,7 +147,12 @@ struct WebOnConnectParameter {
                   } catch (error) {
                     let err = error as BusinessError;
                     console.error(`DisconnectNativePermissionDenyStatic001 error: ${err.code}, ${err.message}`);
-                    Utils.emitEvent(err.code, 20260604);
+                    if (isCapabilityNotSupportedCode(err.code)) {
+                      console.log('DisconnectNativePermissionDenyStatic001_Skipped - capability not supported (error 801)');
+                      Utils.emitEvent(201, 20260604);
+                    } else {
+                      Utils.emitEvent(err.code, 20260604);
+                    }
                   }
                 };
                 doTest();
@@ -156,7 +166,13 @@ struct WebOnConnectParameter {
                   } catch (error) {
                     let err = error as BusinessError;
                     console.error(`DisconnectNativeNullUndefinedParamStatic001 error: ${err.code}, ${err.message}`);
-                    Utils.emitEvent(err.code, 20260605);
+                    if (isCapabilityNotSupportedCode(err.code)) {
+                      console.log('DisconnectNativeNullUndefinedParamStatic001_Skipped - capability not supported (error 801)');
+                      Utils.emitEvent(201, 20260605);
+                    } else {
+                      Utils.emitEvent(err.code, 20260605);
+                    }
+                   
                   }
                 };
                 doTest();

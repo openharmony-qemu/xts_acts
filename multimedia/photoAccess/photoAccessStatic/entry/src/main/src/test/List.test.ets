@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -69,6 +70,7 @@ import getAlbumChangeRequestTest from "./MediaAlbumChangeRequest/getAlbum.test.e
 import setAlbumNameChangeRequestTest from "./MediaAlbumChangeRequest/setAlbumName.test.ets"
 import registerPhotoChangeTest from "./PhotoAccessHelper/registerPhotoChange.test.ets"
 import setAssetCompatibleCapabilityTest from "./PhotoAccessHelper/setAssetCompatibleCapability.test.ets"
+import quickRequestImageTest from "./MediaAssetManager/quickRequestImage.test.ets"
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -127,4 +129,5 @@ export default function testsuite() {
   setAlbumNameChangeRequestTest();
   registerPhotoChangeTest();
   setAssetCompatibleCapabilityTest();
+  quickRequestImageTest();
 }

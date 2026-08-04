@@ -18,6 +18,11 @@ import saveComponentTest_1 from './SaveComponentTest_1.test';
 import saveComponentTest_2 from './SaveComponentTest_2.test';
 import saveComponentUserCancelTest from './SaveComponentUserCancelTest.test';
 import saveCompCustomizeTest from './SaveCompCustomizeTest.test';
+import accessibilityDefaultFocusTest from './AccessibilityDefaultFocusTest.test';
+import accessibilityNextFocusIdTest from './AccessibilityNextFocusIdTest.test';
+import accessibilityRoleTest from './AccessibilityRoleTest.test';
+import fallbackLineSpacingTest from './FallbackLineSpacingTest.test';
+import fontSizeTest from './FontSizeTest.test';
 
 export default function testsuite() {
   saveComponentUserCancelTest();
@@ -25,4 +30,9 @@ export default function testsuite() {
   saveComponentTest_1();
   saveComponentTest_2();
   saveCompCustomizeTest();
+  accessibilityDefaultFocusTest();
+  accessibilityNextFocusIdTest();
+  accessibilityRoleTest();
+  fallbackLineSpacingTest();
+  fontSizeTest();
 }

@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Driver,
@@ -44,7 +44,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
-export default function ChipGroupItemOptionsPage2Test() {
+export default function ChipGroupItemOptionsPage2Test(): void {
   describe('ChipGroupItemOptionsPage2Test', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipGroupItemOptionsPage2Test beforeEach start");

@@ -3455,6 +3455,171 @@ export default function PhotoTest() {
       }
     })
 
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200
+     * @tc.desc      test OH_CaptureSession_GetColorTintRange api when first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTintRangeWithParamNull(Parameter_Setting.FIRST_PARAMETER_ERROR);
+        console.info(`getColorTintRange, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300
+     * @tc.desc      test OH_CaptureSession_GetColorTintRange api when seconde param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTintRangeWithParamNull(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(`getColorTintRange, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400
+     * @tc.desc      test OH_CaptureSession_GetColorTintRange api when third param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTintRangeWithParamNull(Parameter_Setting.THIRD_PARAMETER_ERROR);
+        console.info(`getColorTintRange, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500
+     * @tc.desc      test OH_CaptureSession_GetColorTint api when first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTint(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(`getColorTint, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600
+     * @tc.desc      test OH_CaptureSession_GetColorTint api when second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTint(Parameter_Setting.THIRD_PARAMETER_ERROR);
+        console.info(`getColorTint, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
     // ===========================================【相机框架】快捷变焦点上报生态开放 ========================================
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100
@@ -3477,7 +3642,7 @@ export default function PhotoTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.getZoomPointInfos(0)
         console.info(`getZoomPointInfos, ret: ${ret}`)
-        if (ret === 7400102) {
+        if (ret === -1) {
           console.info(`${caseName} does not support get zoom point`);
           done();
           return
@@ -3647,7 +3812,7 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
-        if (ret === 7400102) {
+        if (ret === -1) {
           console.info(`${caseName} does not support get zoom point`);
           done();
           return
@@ -3688,7 +3853,7 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
-        if (ret === 7400102) {
+        if (ret === -1) {
           console.info(`${caseName} does not support get zoom point`);
           done();
           return
@@ -3709,5 +3874,6 @@ export default function PhotoTest() {
         done()
       }
     })
+
   })
 }

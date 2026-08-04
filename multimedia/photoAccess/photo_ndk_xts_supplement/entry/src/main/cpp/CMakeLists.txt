@@ -16,7 +16,8 @@ add_library(entry SHARED
     PhotoMainTest.cpp
     OHMediaAssetCreateTest.cpp
     OHMediaAssetManagerRequestTest.cpp
-    MediaAssetManagerCancelRequestTest)
+    MediaAssetManagerCancelRequestTest
+    CFuseTest.cpp)
 
 find_library(
     # Sets the name of the path variable.
@@ -50,6 +51,7 @@ target_link_libraries(entry PUBLIC
     libimage_source_ndk.z.so
     libmedia_asset_manager.so
     libohcamera.so
+    libohfileuri.so
     ${EGL-lib}
     ${GLES-lib}
 )

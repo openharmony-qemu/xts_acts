@@ -724,10 +724,9 @@ function testGetPasswordPolicy() {
     try {
       securityManager.setPasswordPolicy(SELFWANT, PASSWORD_POLICY);
       let result: securityManager.PasswordPolicy = securityManager.getPasswordPolicy(SELFWANT);
-      expect(result !== undefined).assertTrue();
-      expect(result.complexityRegex === PASSWORD_POLICY.complexityRegex);
-      expect(result.validityPeriod === PASSWORD_POLICY.validityPeriod);
-      expect(result.additionalDescription === PASSWORD_POLICY.additionalDescription);
+      expect(result?.complexityRegex === PASSWORD_POLICY.complexityRegex);
+      expect(result?.validityPeriod === PASSWORD_POLICY.validityPeriod);
+      expect(result?.additionalDescription === PASSWORD_POLICY.additionalDescription);
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -831,7 +830,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = await securityManager.installUserCertificate(SELFWANT, CERTIFICATE);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -853,7 +852,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = await securityManager.installUserCertificate(SELFWANT, CERTIFICATE_MAX_ALIAS);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -959,7 +958,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE, INT_VALID_ACCOUNTID);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -1002,7 +1001,7 @@ function testInstallUserCertificate() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE_MAX_ALIAS, INT_VALID_ACCOUNTID);
-      expect(path !== undefined).assertTrue();
+      expect(typeof path).assertEqual('string');
       let res = securityManager.getUserCertificates(SELFWANT, INT_VALID_ACCOUNTID);
       expect(res.length > 0).assertTrue();
       await securityManager.uninstallUserCertificate(SELFWANT, path);
@@ -2187,6 +2186,24 @@ function testGetClipboardPolicyByBundleName() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0900
+   * @tc.desc   test securityManager getAppClipboardPolicy with empty string bundleName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0900", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(SELFWANT, '', CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
 }
 
 function testSetScreenLockDisabledForAccount() {
@@ -2206,10 +2223,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
     }
     done();
@@ -2233,10 +2250,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -2261,10 +2278,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2287,10 +2304,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2313,10 +2330,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0500 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2339,10 +2356,10 @@ function testSetScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_setScreenLockDisabledForAccount_0600 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2367,10 +2384,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
     }
     done();
@@ -2394,10 +2411,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -2422,10 +2439,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2448,10 +2465,10 @@ function testIsScreenLockDisabledForAccount() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     }
     done();
@@ -2478,8 +2495,8 @@ function testIsScreenLockDisabledForAccount() {
       expect(result2).assertFalse();
     } catch (error) {
       console.info(' --- test_isScreenLockDisabledForAccount_0500 error is not expected, actually catch: ' + error.code);
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
         expect(false).assertTrue();
       }
@@ -2511,7 +2528,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(Number(error.code) == 9200001).assertTrue();
     }
     done();
   });
@@ -2530,7 +2547,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(Number(error.code) == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -4432,7 +4449,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let result: securityManager.PasswordPolicy = securityManager.getPasswordPolicy(null);
-        expect(result !== undefined).assertTrue();
+        expect(typeof result.complexityRegex === 'string').assertTrue();
       } catch (error) {
         console.info(' --- getPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
         expect(false).assertTrue();

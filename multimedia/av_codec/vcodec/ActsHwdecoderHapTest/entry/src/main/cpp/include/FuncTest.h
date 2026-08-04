@@ -16,38 +16,33 @@
 #ifndef FUNC_TEST_H
 #define FUNC_TEST_H
 
-namespace OHOS {
-namespace Media {
+#include "napi/native_api.h"
 
-namespace FuncTest {
-void SetUpTestCase();
-}
+int VideoHwdecFunction0200Test();
+int VideoHwdecFunction0300Test();
+int VideoHwdecFunction0400Test();
+int VideoHwdecFunction0700Test();
+int VideoHwdecFunction0800Test();
+int VideoHwdecFunction0900Test();
+int VideoHwdecFunction1000Test();
+int VideoHwdecFunction1100Test();
+int VideoHwdecFunction1200Test();
+int VideoHwdecFunction1300Test();
+int VideoHwdecFunction1400Test();
+int VideoHwdecFunction1600Test();
+int VideoHwdecFunction1700Test();
+int SurfChangeFunc001Test();
+int SurfChangeFunc002Test();
+int SurfChangeFunc003Test();
+int SurfChangeFunc004Test();
+int OutputDecsFunc001Test();
+int OutputDecsFunc002Test();
+int OutputDecsFunc003Test();
+int OutputDecsFunc004Test();
+int OutputDecsFunc005Test();
+int OutputDecsFunc006Test();
+int OutputDecsFunc007Test();
 
-int VIDEO_HWDEC_FUNCTION_0200();
-int VIDEO_HWDEC_FUNCTION_0300();
-int VIDEO_HWDEC_FUNCTION_0400();
-int VIDEO_HWDEC_FUNCTION_0700();
-int VIDEO_HWDEC_FUNCTION_0800();
-int VIDEO_HWDEC_FUNCTION_0900();
-int VIDEO_HWDEC_FUNCTION_1000();
-int VIDEO_HWDEC_FUNCTION_1100();
-int VIDEO_HWDEC_FUNCTION_1200();
-int VIDEO_HWDEC_FUNCTION_1300();
-int VIDEO_HWDEC_FUNCTION_1400();
-int VIDEO_HWDEC_FUNCTION_1600();
-int VIDEO_HWDEC_FUNCTION_1700();
-int SURF_CHANGE_FUNC_001();
-int SURF_CHANGE_FUNC_002();
-int SURF_CHANGE_FUNC_003();
-int SURF_CHANGE_FUNC_004();
-int OUTPUT_DECS_FUNC_001();
-int OUTPUT_DECS_FUNC_002();
-int OUTPUT_DECS_FUNC_003();
-int OUTPUT_DECS_FUNC_004();
-int OUTPUT_DECS_FUNC_005();
-int OUTPUT_DECS_FUNC_006();
-int OUTPUT_DECS_FUNC_007();
-} // namespace Media
-} // namespace OHOS
+void InitFuncTest();
 
 #endif // FUNC_TEST_H

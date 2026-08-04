@@ -100,7 +100,7 @@ export default function circleNewJsunit() {
 it('testcircleNew_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew_static_001 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('circle');
+      let strJson = inspector.getInspectorByKey('circle' + '_circle');
       console.info("[testcircleNew_static_001] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Circle');
@@ -120,7 +120,7 @@ it('testcircleNew_static_001', Level.LEVEL0, async (): Promise<void> => {
 it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew_static_002 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('circle');
+      let strJson = inspector.getInspectorByKey('circle' + '_circle');
       console.info("[testcircleNew_static_002] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Circle');

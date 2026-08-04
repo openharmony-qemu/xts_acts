@@ -28,6 +28,9 @@ add_library(nativerender SHARED
     passThrough/PassThroughTest.cpp
     getSizeLimitation/GetSizeLimitation.cpp
     shouldRecognizerParallelWith/shouldRecognizerParallelWith.cpp
+    arcList/ArcListEventCallbackTest.cpp
+    arcSwiper/ArcSwiperEventCallbackTest.cpp
+    arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.cpp
 )
 
  add_library(nativeNode SHARED 

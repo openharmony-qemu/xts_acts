@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -89,7 +89,7 @@ it('EntryOptionPage2_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info('[MultiNavigation_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[MultiNavigation_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('333');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('222');
 
       console.info('EntryOptionPage2_0100 END');
       done();

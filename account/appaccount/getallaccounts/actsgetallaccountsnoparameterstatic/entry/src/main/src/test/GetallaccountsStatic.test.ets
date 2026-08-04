@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +34,12 @@ export default function ActsGetAllAccountsNoParameterStatic(): void {
     beforeAll(async (): Promise<void> => {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.getallaccountsnoparameter.static");
+      let cmd = "aa start -a EntryAbility -b com.example.getallaccountsnoparameter.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
     });

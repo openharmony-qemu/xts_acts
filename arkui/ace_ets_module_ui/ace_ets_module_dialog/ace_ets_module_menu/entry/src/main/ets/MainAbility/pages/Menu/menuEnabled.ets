@@ -60,7 +60,7 @@ struct menuEnabledDemo {
       }
       .bindMenu(this.MyMenu)
       .width('100%')
-      Text(this.mText).key('text')
+      Text(this.mText).key('menuEnabled_text')
       Button('test').onClick((event: ClickEvent) => {
         this.mText = 'enabled'
       }).key('change')

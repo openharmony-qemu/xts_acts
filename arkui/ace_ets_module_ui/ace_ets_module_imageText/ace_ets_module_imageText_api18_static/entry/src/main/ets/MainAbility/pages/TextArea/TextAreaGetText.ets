@@ -13,25 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  ColumnOptions,
-  Text,
-  TextArea,
-  TextAreaController,
-  ClickEvent,
-  Row,
-  Button,
-  TextAreaController
-} from '@ohos.arkui.component'
-import {
-  State,
-  
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import { Entry, Component, Column, ColumnOptions, Text, TextArea, TextAreaController, ClickEvent, Row, Button } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct TextAreaGetText {

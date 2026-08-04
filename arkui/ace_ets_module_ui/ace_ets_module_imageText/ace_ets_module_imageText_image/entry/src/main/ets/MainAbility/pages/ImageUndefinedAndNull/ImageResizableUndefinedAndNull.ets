@@ -22,6 +22,7 @@ struct imageResizableUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageResizableUndefined')
+            .key('imageResizableUndefined')
             .resizable(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageResizableUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageResizableNull')
+            .key('imageResizableNull')
             .resizable(null)
             .border({ width:2, color: Color.Black })
             .width(150)

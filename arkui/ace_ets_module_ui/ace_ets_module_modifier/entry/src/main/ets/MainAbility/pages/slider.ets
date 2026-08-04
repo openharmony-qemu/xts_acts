@@ -52,7 +52,7 @@ struct SliderTest {
       Column() {
         Button("change value").onClick(() => {
           (this.customModifier as CustomModifier).onChange1();
-        }).key("changeButton")
+        }).key("slider_changeButton")
 
         Slider({
           value: this.inSetValueOne,

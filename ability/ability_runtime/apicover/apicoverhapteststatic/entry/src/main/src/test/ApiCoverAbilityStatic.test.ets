@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,20 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import contextConstant from "@ohos.app.ability.contextConstant";
-import appManager from '@ohos.app.ability.appManager'
-import { ProcessInformation } from 'application.ProcessInformation'
+import contextConstant from '@ohos.app.ability.contextConstant';
+import appManager from '@ohos.app.ability.appManager';
+import { ProcessInformation } from 'application.ProcessInformation';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-import insightIntent from '@ohos.app.ability.insightIntent'
+import insightIntent from '@ohos.app.ability.insightIntent';
 import Want from '@ohos.app.ability.Want';
 import { ElementName } from 'bundleManager.ElementName';
 import rpc from '@ohos.rpc';
-import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import DemoProcess from '../process/AProcess';
 import StaticDemoProcess from '../process/StaticDemoProcess';
@@ -36,8 +36,6 @@ import { ChildProcessArgs } from '@ohos.app.ability.ChildProcessArgs';
 import window from '@ohos.window';
 import startOptions from '@ohos.app.ability.StartOptions';
 import fileIo from '@ohos.file.fs';
-import Want from '@ohos.app.ability.Want';
-
 class ConnectOptions implements common.ConnectOptions {
   public isConnect: boolean = false;
   public isDisConnect: boolean = false;
@@ -85,7 +83,12 @@ export default function ApiCoverStaticTest() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.apicoverhaptest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.apicoverhaptest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');

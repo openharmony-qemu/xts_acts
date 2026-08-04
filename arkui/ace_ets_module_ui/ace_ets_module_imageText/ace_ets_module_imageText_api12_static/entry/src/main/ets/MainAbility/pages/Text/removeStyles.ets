@@ -112,8 +112,8 @@ struct styled_string_demo1 {
           Text('' + this.length).id('lengthId')
           // 显示属性字符串
           Text(undefined, { controller: this.controller1 })
-          Text(undefined, { controller: this.controller2 }).key('mutableStyledString1')
-          Text(undefined, { controller: this.controller3 }).key('mutableStyledString2')
+          Text(undefined, { controller: this.controller2 }).key('removeStyles_mutableStyledString1')
+          Text(undefined, { controller: this.controller3 }).key('removeStyles_mutableStyledString2')
           Button('修改string1的值')
             .onClick((e:ClickEvent) => {
               let result = this.mutableStyledString1.equals(this.styledString2);
@@ -131,7 +131,7 @@ struct styled_string_demo1 {
               .decoration({ type: TextDecorationType.LineThrough })
             ImageSpan($r('app.media.icon'))
           }
-          .key('styledString2')
+          .key('removeStyles_styledString2')
           .fontColor(this.fontColor1)
           .letterSpacing(10)
           .fontSize(10)

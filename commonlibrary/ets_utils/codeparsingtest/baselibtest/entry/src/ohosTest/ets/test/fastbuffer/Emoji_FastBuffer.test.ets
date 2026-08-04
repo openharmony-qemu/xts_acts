@@ -16,6 +16,10 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import buffer from "@ohos.fastbuffer";
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function EmojiFastBufferTest() {
   describe('EmojiFastBufferTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -23,7 +27,8 @@ export default function EmojiFastBufferTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

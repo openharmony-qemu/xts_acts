@@ -23,7 +23,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import {UtilsTest,startAbility} from '../Util.test';
 import { PersistenceV2,AppStorage } from '@kit.ArkUI';
 
-export default function PersistenceV2NotifyOnErrorTest() {
+export default function PersistenceV2NotifyOnErrorTest(): void {
   describe('PersistenceV2NotifyOnErrorTest', () => {
 
     beforeEach(async (): Promise<void> =>  {

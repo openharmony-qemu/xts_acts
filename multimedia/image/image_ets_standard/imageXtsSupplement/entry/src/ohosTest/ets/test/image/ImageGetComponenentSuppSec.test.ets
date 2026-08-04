@@ -270,6 +270,7 @@ async function ImageGetComponent(done: Function, testName: string, callback: (re
       callback(receiver);
       await sleep(1000);
       await releasePhotoSession();
+      await receiver.release();
       done();
     }
   } catch (error) {
@@ -294,6 +295,7 @@ async function sendableGetComponent(done: Function, testName: string, callback: 
       callback(receiver);
       await sleep(1000);
       await releasePhotoSession();
+      await receiver.release();
       done();
     }
   } catch (error) {
@@ -313,7 +315,6 @@ export default function ImageGetComponentSuppSec() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(async () => {
       await sleep(500);

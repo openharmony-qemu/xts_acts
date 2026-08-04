@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -349,7 +349,7 @@ export default function ArrayAt1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayAt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       arr[0] = 100;
       const firstValue = arr.at(0);
       const lastValue = arr.at(-1);
@@ -478,11 +478,11 @@ export default function ArrayAt1Test(): void {
       arr.push(p1, p2);
       const first = arr.at(0);
       const last = arr.at(-1);
-      expect(first != undefined).assertTrue();
-      expect(last != undefined).assertTrue();
       if (first != undefined && last != undefined) {
         expect(first.name).assertEqual('Alice');
         expect(last.name).assertEqual('Bob');
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -986,14 +986,13 @@ export default function ArrayAt1Test(): void {
 
       const firstChild = arr.at(0);
       const lastChild = arr.at(-1);
-
-      expect(firstChild != undefined).assertTrue();
-      expect(lastChild != undefined).assertTrue();
       if (firstChild != undefined && lastChild != undefined) {
         expect(firstChild === child1).assertTrue();
         expect(lastChild === child2).assertTrue();
         expect(firstChild[0]).assertEqual(1);
         expect(lastChild[1]).assertEqual(4);
+      } else {
+        expect().assertFail();
       }
     });
 
@@ -1013,13 +1012,12 @@ export default function ArrayAt1Test(): void {
 
       const first = arr.at(0);
       const second = arr.at(1);
-
-      expect(first != undefined).assertTrue();
-      expect(second != undefined).assertTrue();
       if (first != undefined && second != undefined) {
         expect(first === shared).assertTrue();
         expect(second === shared).assertTrue();
         expect(first === second).assertTrue();
+      } else {
+        expect().assertFail();
       }
     });
 
@@ -1038,9 +1036,10 @@ export default function ArrayAt1Test(): void {
       arr.pushOne(person);
 
       const first = arr.at(0);
-      expect(first != undefined).assertTrue();
       if (first != undefined) {
         first.name = 'After';
+      } else {
+        expect().assertFail();
       }
 
       expect(arr[0].name).assertEqual('After');
@@ -1148,10 +1147,11 @@ export default function ArrayAt1Test(): void {
       arr.pushOne(child);
 
       const firstChild = arr.at(0);
-      expect(firstChild != undefined).assertTrue();
       if (firstChild != undefined) {
         firstChild[0] = 99;
         firstChild.pushOne(3);
+      } else {
+        expect().assertFail();
       }
 
       expect(arr[0][0]).assertEqual(99);

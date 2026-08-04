@@ -1,5 +1,5 @@
-'use static'
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+'use static';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import sleep from './Util.test';
 
 

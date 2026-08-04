@@ -1,4 +1,5 @@
-﻿/**
+'use static';
+/**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';

@@ -104,7 +104,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(0);
+      let result: number = await testNapi.RESET_BITRATE_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -116,7 +116,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0200', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(1);
+      let result: number = await testNapi.RESET_BITRATE_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -128,7 +128,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0300', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(2);
+      let result: number = await testNapi.RESET_BITRATE_003Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -140,7 +140,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0400', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(3);
+      let result: number = await testNapi.RESET_BITRATE_004Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -152,7 +152,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0500', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(4);
+      let result: number = await testNapi.RESET_BITRATE_005Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -164,7 +164,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0600', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(5);
+      let result: number = await testNapi.RESET_BITRATE_006Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -176,7 +176,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0700', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(6);
+      let result: number = await testNapi.RESET_BITRATE_007Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -188,7 +188,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0800', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(7);
+      let result: number = await testNapi.RESET_BITRATE_008Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -200,7 +200,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_0900', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(8);
+      let result: number = await testNapi.RESET_BITRATE_009Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -212,7 +212,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_1000', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(9);
+      let result: number = await testNapi.RESET_BITRATE_010Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -224,7 +224,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_1100', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(10);
+      let result: number = await testNapi.RESET_BITRATE_011Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -236,7 +236,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_BITRATE_1200', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(11);
+      let result: number = await testNapi.RESET_BITRATE_012Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -248,7 +248,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0100', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(12);
+      let result: number = await testNapi.RESET_FRAMERATE_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -260,7 +260,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_1200', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(13);
+      let result: number = await testNapi.RESET_FRAMERATE_012Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -272,7 +272,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_1300', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(14);
+      let result: number = await testNapi.RESET_FRAMERATE_013Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -284,7 +284,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_1400', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(15);
+      let result: number = await testNapi.RESET_FRAMERATE_014Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -296,7 +296,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(16);
+      let result: number = await testNapi.RESET_FRAMERATE_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -308,7 +308,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0300', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(17);
+      let result: number = await testNapi.RESET_FRAMERATE_003Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -320,7 +320,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0400', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(18);
+      let result: number = await testNapi.RESET_FRAMERATE_004Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -332,7 +332,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0500', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(19);
+      let result: number = await testNapi.RESET_FRAMERATE_005Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -344,7 +344,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0600', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(20);
+      let result: number = await testNapi.RESET_FRAMERATE_006Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -356,7 +356,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0700', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(21);
+      let result: number = await testNapi.RESET_FRAMERATE_007Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -368,7 +368,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0800', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(22);
+      let result: number = await testNapi.RESET_FRAMERATE_008Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -380,7 +380,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_0900', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(23);
+      let result: number = await testNapi.RESET_FRAMERATE_009Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -392,7 +392,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_1000', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(24);
+      let result: number = await testNapi.RESET_FRAMERATE_010Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -404,7 +404,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_FRAMERATE_1100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(25);
+      let result: number = await testNapi.RESET_FRAMERATE_011Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -416,7 +416,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(26);
+      let result: number = await testNapi.RESET_QP_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -428,7 +428,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(27);
+      let result: number = await testNapi.RESET_QP_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -440,7 +440,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0300', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(28);
+      let result: number = await testNapi.RESET_QP_003Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -452,7 +452,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0400', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(29);
+      let result: number = await testNapi.RESET_QP_004Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -464,7 +464,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0500', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(30);
+      let result: number = await testNapi.RESET_QP_005Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -476,7 +476,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0600', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(31);
+      let result: number = await testNapi.RESET_QP_006Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -488,7 +488,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0700', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(32);
+      let result: number = await testNapi.RESET_QP_007Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -500,7 +500,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0800', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(33);
+      let result: number = await testNapi.RESET_QP_008Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -512,7 +512,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_0900', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(34);
+      let result: number = await testNapi.RESET_QP_009Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -524,7 +524,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_1000', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(35);
+      let result: number = await testNapi.RESET_QP_010Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -536,7 +536,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_1100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(36);
+      let result: number = await testNapi.RESET_QP_011Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -548,7 +548,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_1200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(37);
+      let result: number = await testNapi.RESET_QP_012Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -560,7 +560,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_1300', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(38);
+      let result: number = await testNapi.RESET_QP_013Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -572,7 +572,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_RESET_QP_1400', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(39);
+      let result: number = await testNapi.RESET_QP_014Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -584,7 +584,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_PROFILE_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(40);
+      let result: number = await testNapi.SET_PROFILE_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -596,7 +596,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_PROFILE_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(41);
+      let result: number = await testNapi.SET_PROFILE_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -608,7 +608,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_PROFILE_0300', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(42);
+      let result: number = await testNapi.SET_PROFILE_003Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -620,7 +620,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_PROFILE_0400', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(43);
+      let result: number = await testNapi.SET_PROFILE_004Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -632,7 +632,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_PROFILE_0500', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(44);
+      let result: number = await testNapi.SET_PROFILE_005Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -644,7 +644,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_RANGE_FLAG_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(45);
+      let result: number = await testNapi.SET_RANGE_FLAG_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -656,7 +656,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_RANGE_FLAG_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(46);
+      let result: number = await testNapi.SET_RANGE_FLAG_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -668,7 +668,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(47);
+      let result: number = await testNapi.SET_COLORSPACE_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -680,7 +680,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_COLORSPACE_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(48);
+      let result: number = await testNapi.SET_COLORSPACE_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -692,7 +692,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_FORCE_IDR_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(49);
+      let result: number = await testNapi.SET_FORCE_IDR_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -704,7 +704,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_SET_FORCE_IDR_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(50);
+      let result: number = await testNapi.SET_FORCE_IDR_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -716,7 +716,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(51);
+      let result: number = await testNapi.COLORSPACE_CONFIG_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -728,7 +728,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(52);
+      let result: number = await testNapi.COLORSPACE_CONFIG_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -740,7 +740,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_0300', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(53);
+      let result: number = await testNapi.COLORSPACE_CONFIG_003Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -752,7 +752,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_0400', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(54);
+      let result: number = await testNapi.COLORSPACE_CONFIG_004Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -764,7 +764,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_0500', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(55);
+      let result: number = await testNapi.COLORSPACE_CONFIG_005Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -776,7 +776,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_0600', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(56);
+      let result: number = await testNapi.COLORSPACE_CONFIG_006Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -788,7 +788,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(57);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -800,7 +800,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(58);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_002Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -812,7 +812,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0300', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(59);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_003Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -824,7 +824,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0400', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(60);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_004Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -836,7 +836,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0500', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(61);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_005Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -848,7 +848,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0600', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(62);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_006Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -860,7 +860,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0700', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(63);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_007Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -872,7 +872,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0800', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(64);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_008Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -884,7 +884,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_0900', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(65);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_009Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -896,7 +896,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_1000', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(66);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_010Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -908,7 +908,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_1100', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(67);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_011Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -920,7 +920,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_COLORSPACE_CONFIG_ADD_1200', Level.LEVEL1, async () => {
-      let result: number = await testNapi.runSetparamTest(68);
+      let result: number = await testNapi.COLORSPACE_CONFIG_ADD_012Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -932,7 +932,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_FRAMENUM_JUDGMENT_0100', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(69);
+      let result: number = await testNapi.FRAMENUM_JUDGMENT_001Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -944,7 +944,7 @@ export default function VideoEncoderSetparamTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_FRAMENUM_JUDGMENT_0200', Level.LEVEL0, async () => {
-      let result: number = await testNapi.runSetparamTest(70);
+      let result: number = await testNapi.FRAMENUM_JUDGMENT_002Test();
       expect(result).assertEqual(0);
     });
   });

@@ -67,18 +67,17 @@ struct Index {
           console.info("key==>" + this.str)
           this.isReceive = -1;
           switch (this.str) {
-
             case "testCloseError001": {
-              try {
-                this.ports = this.controller.createWebMessagePorts(true);
-                this.controller.postMessage('__init_port__', [this.ports[0]], '*');
-                this.ports[1].close();
-                this.ports[1].postMessageEvent("post message from ets to html5");
-                Utils.emitEvent(this.no_error, 114950)
-              } catch (error) {
-                let e: business_error.BusinessError = error as business_error.BusinessError;
-                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 114950)
+              try {	 
+                 this.ports = this.controller.createWebMessagePorts(true);	 
+                 this.controller.postMessage('__init_port__', [this.ports[0]], '*');	 
+                 this.ports[1].close();	 
+                 this.ports[1].postMessageEvent("post message from ets to html5");	 
+                 Utils.emitEvent(this.no_error, 114950)	 
+              } catch (error) {	 
+                 let e: business_error.BusinessError = error as business_error.BusinessError;	 
+                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);	 
+                 Utils.emitEvent(String(e.code), 114950)	 
               }
               break;
             }

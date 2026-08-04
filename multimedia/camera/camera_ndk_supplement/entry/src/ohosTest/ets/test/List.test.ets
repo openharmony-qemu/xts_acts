@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import CameraXtsTest from './CameraXtsTest.test'
 import CameraNoPermissionTest from './CameraNoPermissionTest.test'
 import CameraFunctionTest from './CameraFunctionTest.test';
 import CameraOutTest from './CameraOutTest.test'
+
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function testsuite() {
-  CameraNoPermissionTest();
-  CameraXtsTest();
-  CameraFunctionTest();
-  CameraOutTest();
+  if (cameraDeviceArray.length != 0) {
+    CameraNoPermissionTest();
+    CameraXtsTest();
+    CameraFunctionTest();
+    CameraOutTest();
+  }
 }

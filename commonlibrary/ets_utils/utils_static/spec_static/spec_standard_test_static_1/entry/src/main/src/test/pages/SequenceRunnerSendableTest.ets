@@ -1,3 +1,4 @@
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -122,6 +123,6 @@ export class TestClass {
   }
 }
 
-export const createAddFunction = (a: number, b: number): () => number => {
+export const createAddFunction: (a: number, b: number) => () => number = (a: number, b: number): () => number => {
   return () => a + b;
 };

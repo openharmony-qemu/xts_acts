@@ -35,7 +35,12 @@ class Utils{
   static async startAbility(bundleName: string, abilityName: string): Promise<boolean> {
     try {
       if (!Utils.isStartedAbility) {
-        await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+        let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        await abilityDelegator.executeShellCommand(cmd);
         hilog.info(domain, tag, `startAbility, success`);
         Utils.isStartedAbility = true;
         await Utils.msSleep(4000)

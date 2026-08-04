@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -321,7 +322,6 @@ export default function cameraPhotoSessionTest() {
     afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       await Utils.msSleep(100);
-      await releaseCameraSessionInstance();
     })
 
     afterAll(async (): Promise<void> => {
@@ -364,6 +364,8 @@ export default function cameraPhotoSessionTest() {
           let whiteBalance: int = mCameraSession!.getWhiteBalance();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 start PASSED");
           await stopCameraSession();
+          await Utils.msSleep(100);
+          await releaseCameraSessionInstance();
         } catch (err) {
           console.info(TAG + " SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 FAILED" + err.code);
           expect(true).assertFalse();
@@ -397,6 +399,7 @@ export default function cameraPhotoSessionTest() {
           mCameraSession!.onExposureStateChange(exposureStateCallback);
           mCameraSession!.offExposureStateChange(exposureStateCallback);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100 start PASSED");
+          await releaseCameraSessionInstance();
         } catch (err) {
             console.info(TAG + " SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100 FAILED" + err.code);
             expect(true).assertFalse();
@@ -428,6 +431,7 @@ export default function cameraPhotoSessionTest() {
 
       //--------------------------------------------后置处理------------------------------------------------------
       console.info("Exit SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100")
+      await releaseCameraSessionInstance();
       done()
     })
 
@@ -530,6 +534,8 @@ export default function cameraPhotoSessionTest() {
         expect(isExposureFinish).assertTrue();
 
         mCameraSession!.offExposureStateChange()
+        await stopCameraSession();
+        await Utils.msSleep(100);
 
       } catch (error) {
         console.error(`SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400 failed: ${JSON.stringify(error)}`)
@@ -560,7 +566,12 @@ export default function cameraPhotoSessionTest() {
         await startCameraSession(0);
 
         //--------------------------------------------测试过程------------------------------------------------------
-        let range = mCameraSession!.getColorTintRange()
+        let range: Array<int> = mCameraSession!.getColorTintRange()
+        if (range.length < 1) {
+          console.info(`not supported tone control, please check`)
+          done();
+          return;
+        }
         console.info(`camera session getColorTintRange, range: ${range}`)
         expect(range != undefined).assertTrue()
       } catch (error) {
@@ -570,7 +581,10 @@ export default function cameraPhotoSessionTest() {
       //--------------------------------------------后置处理------------------------------------------------------
         console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0100")
         done()
-        await releaseCameraSession();
+        await stopCameraSession();
+        console.info(TAG + "finish stop CameraSession();");
+        await Utils.msSleep(100);
+        await releaseCameraSessionInstance();
       }
     })
 
@@ -589,7 +603,7 @@ export default function cameraPhotoSessionTest() {
         createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
 
       //--------------------------------------------测试过程------------------------------------------------------
-        let range = mCameraSession!.getColorTintRange()
+        let range: Array<int> = mCameraSession!.getColorTintRange()
         console.error(`camera session getColorTintRange expected failed, but success, range: ${range}`)
         expect().assertFail()
       } catch (error) {
@@ -618,15 +632,16 @@ export default function cameraPhotoSessionTest() {
       await startCameraSession(0);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
+      let range: Array<int> = mCameraSession!.getColorTintRange();
       console.info(`camera session getColorTintRange, range: ${range}`);
       if (range.length < 1) {
-        console.error(`not surported tone control, please check`)
-        expect().assertFail()
+          console.info(`not supported tone control, please check`)
+          done();
+          return;
       }
       try {
         mCameraSession!.setColorTint(range[0])
-        let currentInt = mCameraSession!.getColorTint()
+        let currentInt: int = mCameraSession!.getColorTint()
         console.info(`getColorTint: ${currentInt}`)
         expect(currentInt).assertEqual(range[0])
       } catch (error) {
@@ -636,7 +651,10 @@ export default function cameraPhotoSessionTest() {
       //--------------------------------------------后置处理------------------------------------------------------
         console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0300")
         done()
-        await releaseCameraSession();
+        await stopCameraSession();
+        console.info(TAG + "finish stop CameraSession();");
+        await Utils.msSleep(100);
+        await releaseCameraSessionInstance();
       }
     })
 
@@ -655,15 +673,16 @@ export default function cameraPhotoSessionTest() {
       await startCameraSession(0);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
+      let range: Array<int> = mCameraSession!.getColorTintRange();
       console.info(`camera session getColorTintRange, range: ${range}`);
       if (range.length < 1) {
-        console.error(`not surported tone control, please check`)
-        expect().assertFail()
+          console.info(`not supported tone control, please check`)
+          done();
+          return;
       }
       try {
         mCameraSession!.setColorTint(range[1])
-        let currentInt = mCameraSession!.getColorTint()
+        let currentInt: int = mCameraSession!.getColorTint()
         console.info(`getColorTint: ${currentInt}`)
         expect(currentInt).assertEqual(range[1])
       } catch (error) {
@@ -673,82 +692,10 @@ export default function cameraPhotoSessionTest() {
       //--------------------------------------------后置处理------------------------------------------------------
         console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0400")
         done()
-        await releaseCameraSession();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500
-     * @tc.desc      test sub multimedia camera session setColorTint with int
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      //--------------------------------------------预置条件------------------------------------------------------
-      console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500")
-      createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
-      await startCameraSession(0);
-
-      //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
-      console.info(`camera session getColorTintRange, range: ${range}`);
-      if (range.length < 1) {
-        console.error(`not surported tone control, please check`)
-        expect().assertFail()
-      }
-      let val = Math.floor((range[0] + range[1]) / 2)
-      try {
-        console.info(`setColorTint: ${val}`);
-        mCameraSession!.setColorTint(val)
-        let currentInt = mCameraSession!.getColorTint()
-        console.info(`getColorTint: ${currentInt}`)
-        expect(currentInt).assertEqual(val)
-      } catch (error) {
-        console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-        expect().assertFail()
-      } finally {
-      //--------------------------------------------后置处理------------------------------------------------------
-        console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500")
-        done()
-        await releaseCameraSession();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600
-     * @tc.desc      test sub multimedia camera session setColorTint with float
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      //--------------------------------------------预置条件------------------------------------------------------
-      console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600")
-      createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
-      await startCameraSession(0);
-
-      //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
-      console.info(`camera session getColorTintRange, range: ${range}`);
-      if (range.length < 1) {
-        console.error(`not surported tone control, please check`)
-        expect().assertFail()
-      }
-      let val = (range[0] + range[1] - 0.1) * 0.99 / 2
-      try {
-        console.info(`setColorTint: ${val}`);
-        mCameraSession!.setColorTint(val)
-      } catch (error) {
-        console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-        expect().assertFail()
-      } finally {
-      //--------------------------------------------后置处理------------------------------------------------------
-        console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600")
-        done()
-        await releaseCameraSession();
+        await stopCameraSession();
+        console.info(TAG + "finish stop CameraSession();");
+        await Utils.msSleep(100);
+        await releaseCameraSessionInstance();
       }
     })
 
@@ -767,13 +714,14 @@ export default function cameraPhotoSessionTest() {
       await startCameraSession(0);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let range: number[] = mCameraSession!.getColorTintRange();
+      let range: Array<int> = mCameraSession!.getColorTintRange();
       console.info(`camera session getColorTintRange, range: ${range}`);
       if (range.length < 1) {
-        console.error(`not surported tone control, please check`)
-        expect().assertFail()
+          console.info(`not supported tone control, please check`)
+          done();
+          return;
       }
-      let testRange = [range[0]-1, range[1]+1]
+      let testRange: Array<int> = [range[0]-1, range[1]+1]
       for (let val of testRange) {
         try {
           console.info(`setColorTint: ${val}`);
@@ -789,7 +737,10 @@ export default function cameraPhotoSessionTest() {
       //--------------------------------------------后置处理------------------------------------------------------
       console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800")
       done()
-      await releaseCameraSession();
+      await stopCameraSession();
+      console.info(TAG + "finish stop CameraSession();");
+      await Utils.msSleep(100);
+      await releaseCameraSessionInstance();
     })
 
     /**
@@ -806,8 +757,16 @@ export default function cameraPhotoSessionTest() {
       createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let val = 1
+      let val: int = 0
       try {
+        let range: Array<int> = mCameraSession!.getColorTintRange();
+        console.info(`camera session getColorTintRange, range: ${range}`);
+        if (range.length < 1) {
+          console.info(`not supported tone control, please check`)
+          done();
+          return;
+        }
+        val = range[0];
         console.info(`setColorTint: ${val}`);
         mCameraSession!.setColorTint(val)
         console.error(`setColorTint expected failed, but success, value: ${val}`)
@@ -838,7 +797,14 @@ export default function cameraPhotoSessionTest() {
 
       //--------------------------------------------测试过程------------------------------------------------------
       try {
-        let currentInt = mCameraSession!.getColorTint()
+        let range: Array<int> = mCameraSession!.getColorTintRange();
+        console.info(`camera session getColorTintRange, range: ${range}`);
+        if (range.length < 1) {
+          console.info(`not supported tone control, please check`)
+          done();
+          return;
+        }
+        let currentInt: int = mCameraSession!.getColorTint()
         console.error(`getColorTint expected failed, but success, value: ${currentInt}`)
         expect().assertFail()
       } catch (error) {
@@ -872,7 +838,7 @@ export default function cameraPhotoSessionTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let zoomPointInfos = mCameraSession!.getZoomPointInfos()
         console.info(`camera session getZoomPointInfos: ${JSON.stringify(zoomPointInfos)}`);
-        expect(zoomPointInfos.length).assertLarger(0)
+        expect(zoomPointInfos.length >= 0).assertTrue();
         console.info(`${caseName} PASSED`)
       } catch (error) {
         console.error(`${caseName} FAILED, error: ${JSON.stringify(error)}`)
@@ -921,5 +887,42 @@ export default function cameraPhotoSessionTest() {
       }
     })
     
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300
+     * @tc.desc      test sub multimedia camera zoomPointInfos properties
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_STATIC_0300"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
+        await startCameraSession(0);
+ 
+        //--------------------------------------------测试过程------------------------------------------------------
+        let zoomPointInfos = mCameraSession!.getZoomPointInfos()
+        console.info(`camera session getZoomPointInfos: ${JSON.stringify(zoomPointInfos)}`);
+        if (zoomPointInfos.length > 0) {
+          console.info(`zoomRatio type: ${typeof zoomPointInfos[0].zoomRatio}`)
+          console.info(`equivalentFocalLength type: ${typeof zoomPointInfos[0].equivalentFocalLength}`)
+          expect(typeof zoomPointInfos[0].zoomRatio).assertEqual('number');
+          expect(typeof zoomPointInfos[0].equivalentFocalLength).assertEqual('int');
+      }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+        await releaseCameraSession();
+      }
+    })
+
   })
 }

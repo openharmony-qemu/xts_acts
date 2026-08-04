@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +19,7 @@ import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;

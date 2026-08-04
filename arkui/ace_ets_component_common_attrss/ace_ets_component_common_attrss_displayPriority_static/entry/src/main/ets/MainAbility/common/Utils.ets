@@ -198,9 +198,9 @@ export default class Utils {
     } as RectValue
   }
 
-  static async getComponentByKey(componentKey: string): Promise<jsonx.JsonElement> {
+  static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(2000);
+    waitForCompletion(async ()=>{await Utils.sleep(2000);})
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -220,10 +220,10 @@ export default class Utils {
     return result;
   }
 
-  static async performClick(id: string): Promise<boolean> {
+  static performClick(id: string): boolean {
     console.info('performClick id : ' + id);
     let result = inspector.sendEventByKey(id, 10, '');
-    await Utils.sleep(2000);
+    waitForCompletion(async ()=>{await Utils.sleep(2000);})
     console.info('performClick result : ' + result);
     return result
   }

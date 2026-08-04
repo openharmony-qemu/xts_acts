@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from '../../../../hypium/index'
-import router from '@ohos.router'
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from '../../../../hypium/index';
+import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, Component, ON } from '@ohos.UiTest'
+import { Driver, Component, ON } from '@ohos.UiTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 import { UtilsTest, startAbility } from '../Util.test';
-
 export default function ListSwipeTest() {
   const SUITE: string = 'ListSwipe'
   const waitUiReadyMs: number = 1500

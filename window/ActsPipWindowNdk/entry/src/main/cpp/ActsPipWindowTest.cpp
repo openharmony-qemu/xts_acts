@@ -1727,6 +1727,86 @@ static napi_value TestPipSetParentWindowId(napi_env env, napi_callback_info info
     return result;
 }
 
+static napi_value TestSetAutoStartEnabled(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t mainWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &mainWindowId);
+    OH_LOG_INFO(LOG_APP, "TestSetAutoStartEnabled mainWindowId =%{public}d.", mainWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    OH_PictureInPicture_SetPipMainWindowId(pipConfig, mainWindowId);
+    OH_PictureInPicture_SetPipTemplateType(pipConfig, pipTemplateType);
+    OH_PictureInPicture_SetPipRect(pipConfig, NINE, SIXTEEN);
+    OH_PictureInPicture_SetPipControlGroup(pipConfig, controlGroup, 1);
+    OH_PictureInPicture_SetPipNapiEnv(pipConfig, env);
+    uint32_t controllerId = 0;
+    int32_t res = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    OH_LOG_INFO(LOG_APP, "TestSetAutoStartEnabled res=%{public}d", res);
+    if (res != 0) {
+        napi_create_int32(env, res, &result);
+        return result;
+    }
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    int32_t ret = OH_PictureInPicture_SetAutoStartEnabled(controllerId, true);
+    OH_LOG_INFO(LOG_APP, "TestSetAutoStartEnabled ret=%{public}d", ret);
+    OH_PictureInPicture_DeletePip(controllerId);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestSetAutoStartDisabled(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t mainWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &mainWindowId);
+    OH_LOG_INFO(LOG_APP, "TestSetAutoStartDisabled mainWindowId =%{public}d.", mainWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    OH_PictureInPicture_SetPipMainWindowId(pipConfig, mainWindowId);
+    OH_PictureInPicture_SetPipTemplateType(pipConfig, pipTemplateType);
+    OH_PictureInPicture_SetPipRect(pipConfig, NINE, SIXTEEN);
+    OH_PictureInPicture_SetPipControlGroup(pipConfig, controlGroup, 1);
+    OH_PictureInPicture_SetPipNapiEnv(pipConfig, env);
+    uint32_t controllerId = 0;
+    int32_t res = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    OH_LOG_INFO(LOG_APP, "TestSetAutoStartDisabled res=%{public}d", res);
+    if (res != 0) {
+        napi_create_int32(env, res, &result);
+        return result;
+    }
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    int32_t ret = OH_PictureInPicture_SetAutoStartEnabled(controllerId, false);
+    OH_LOG_INFO(LOG_APP, "TestSetAutoStartDisabled ret=%{public}d", ret);
+    OH_PictureInPicture_DeletePip(controllerId);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value TestSetAutoStartEnabledWithInvalidControllerId(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    uint32_t invalidControllerId = -1;
+    int32_t ret = OH_PictureInPicture_SetAutoStartEnabled(invalidControllerId, true);
+    OH_LOG_INFO(LOG_APP, "TestSetAutoStartEnabledWithInvalidControllerId ret=%{public}d", ret);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 napi_value TestPictureInPicture_PipState_enum(napi_env env, napi_callback_info info)
 {
     if ((env == nullptr) || (info == nullptr)) {
@@ -1807,6 +1887,12 @@ static napi_value pipWindowInit2(napi_env env, napi_value exports)
         { "testPipSetParentWindowIdwithNonExistedWindowId", nullptr, TestPipSetParentWindowIdwithNonExistedWindowId,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testPipSetParentWindowId", nullptr, TestPipSetParentWindowId,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetAutoStartEnabled", nullptr, TestSetAutoStartEnabled,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetAutoStartDisabled", nullptr, TestSetAutoStartDisabled,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetAutoStartEnabledWithInvalidControllerId", nullptr, TestSetAutoStartEnabledWithInvalidControllerId,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

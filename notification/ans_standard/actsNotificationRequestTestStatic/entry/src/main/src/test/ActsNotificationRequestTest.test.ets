@@ -1,3 +1,4 @@
+'use static';
 /**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +40,12 @@ export default function ActsNotificationRequestTest() {
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
+      let cmd = `aa start -a EntryAbility -b ${JSON.stringify(bundle)}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
@@ -69,7 +75,7 @@ export default function ActsNotificationRequestTest() {
             console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
             count++;
             expect(count).assertEqual(1);
-            Utils.msSleep(1000).awaitSync()
+            waitForCompletion(async () => {await Utils.msSleep(1000)})
             done()
           }
         })
@@ -102,7 +108,7 @@ export default function ActsNotificationRequestTest() {
           overlayIcon : pixelMap
         }
         hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case start`);
-        Utils.msSleep(3000).awaitSync()
+        waitForCompletion(async () => {await Utils.msSleep(3000)})
         count = 0;
         try {
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
@@ -115,7 +121,7 @@ export default function ActsNotificationRequestTest() {
               console.info(`${TEST_CASE_NAME} publish success`)
               count++;
               expect(count).assertEqual(1);
-              Utils.msSleep(1000).awaitSync()
+              waitForCompletion(async () => {await Utils.msSleep(1000)})
               done()
             }
             hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case end`);

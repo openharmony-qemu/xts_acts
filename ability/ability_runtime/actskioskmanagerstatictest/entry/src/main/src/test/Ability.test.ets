@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,20 +32,25 @@ const ERROR_CODE16000110: int = 16000110;
 const ERROR_CODE16000113: int = 16000113;
 const ERROR_CODE16000061: int = 16000061;
 
-async function msSleep(count: int) {
-  await Utils.msSleep(count);
+function msSleep(count: int) {
+  waitForCompletion(async ()=> { await Utils.msSleep(count); });
 }
 
 export default function KioskModeStaticTest() {
   describe('KioskModeStaticTest', () => {
     let context: common.UIAbilityContext | undefined;
   
-    beforeAll(async () => {
+    beforeAll(() => { 
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await msSleep(WAIT_TIME2000);
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-      await msSleep(WAIT_TIME2000);
+      msSleep(WAIT_TIME2000);
+      let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;	 
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];	 
+      if(user !== undefined){ 
+          cmd += ' -u ' + user; 
+      } 
+      abilityDelegator.executeShellCommand(cmd);
+      msSleep(WAIT_TIME2000);
       context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll end`);
     })
@@ -106,7 +112,7 @@ export default function KioskModeStaticTest() {
           }
         });
 
-      await msSleep(WAIT_TIME2000);
+      msSleep(WAIT_TIME2000);
       try {
         kioskManager.enterKioskMode(context as common.UIAbilityContext)
           .then(() => {

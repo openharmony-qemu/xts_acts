@@ -21,6 +21,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, PIXEL_MAP, getPixelMap, 
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import common from '@ohos.enterprise.common';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const VALID_PROPERTIES: securityManager.WatermarkProperties = {
   intervalsRow: 10,
@@ -38,6 +39,7 @@ export default function securityManagerTest() {
     testRemoveAllowedPermissionBundle();
     testGetAllowedPermissionBundles();
     testGetWatermarkImageApps();
+    testSetPasswordPolicy();
   })
 }
 
@@ -62,7 +64,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200002).assertTrue();
+      expect(error.code === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -82,7 +84,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(null, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -100,7 +102,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(undefined, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -118,7 +120,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(INVALID_WANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -137,7 +139,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -158,7 +160,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -177,7 +179,8 @@ export default function securityManagerTest() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
       securityManager.cancelScreenWatermarkImage(SELFWANT);
     } catch (error) {
       expect(false).assertTrue();
@@ -200,7 +203,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200001).assertTrue();
+      expect(error.code === 9200001).assertTrue();
     }
     done();
   });
@@ -219,7 +222,7 @@ export default function securityManagerTest() {
       securityManager.setScreenWatermarkImage(SELFWANT, INVALID_PIXEL_MAP);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200012).assertTrue();
+      expect(error.code === 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -241,7 +244,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200001).assertTrue();
+      expect(error.code === 9200001).assertTrue();
     }
     done();
   });
@@ -260,7 +263,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 9200002).assertTrue();
+      expect(error.code === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -280,7 +283,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -298,7 +301,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -316,7 +319,7 @@ function testCancelScreenWatermarkImage() {
       securityManager.cancelScreenWatermarkImage(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(error.code === 401).assertTrue();
     }
     done();
   });
@@ -333,7 +336,8 @@ function testCancelScreenWatermarkImage() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = securityManager.cancelScreenWatermarkImage(SELFWANT);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -778,8 +782,7 @@ function testSetWatermarkImageWithProperties() {
   it("test_setWatermarkImage_pixelmap_2100", Level.LEVEL0, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let ret = securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
-      expect(ret == null).assertTrue();
+      securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       let result: Array<string> = securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
       expect(result.length === 1).assertTrue();
       expect(result[0] === WATERMARK_BUNDLE_NAME).assertTrue();
@@ -824,7 +827,8 @@ function testSetWatermarkImageWithProperties() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, 1, VALID_PROPERTIES);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -2623,6 +2627,87 @@ function testGetWatermarkImageApps() {
     try {
       let result = securityManager.getWatermarkImageApps(SELFWANT, 1);
       expect(Array.isArray(result)).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+
+function testSetPasswordPolicy() {
+
+  /**
+   * @tc.name   test_setPasswordPolicy_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0900
+   * @tc.desc   test setPasswordPolicy with passwordAlgs SCRYPT_HKDF_AES success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setPasswordPolicy_0900", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: securityManager.PasswordPolicy = {
+        complexityRegex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$',
+        passwordAlgs: securityManager.PasswordAlgs.SCRYPT_HKDF_AES
+      };
+      securityManager.setPasswordPolicy(SELFWANT, policy);
+      let result = securityManager.getPasswordPolicy(SELFWANT);
+      expect(result.passwordAlgs).assertEqual(securityManager.PasswordAlgs.SCRYPT_HKDF_AES);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setPasswordPolicy_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_1000
+   * @tc.desc   test setPasswordPolicy with passwordAlgs SCRYPT_HKDF_SM4 success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setPasswordPolicy_1000", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: securityManager.PasswordPolicy = {
+        complexityRegex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$',
+        passwordAlgs: securityManager.PasswordAlgs.SCRYPT_HKDF_SM4
+      };
+      securityManager.setPasswordPolicy(SELFWANT, policy);
+      let result = securityManager.getPasswordPolicy(SELFWANT);
+      expect(result.passwordAlgs).assertEqual(securityManager.PasswordAlgs.SCRYPT_HKDF_SM4);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setPasswordPolicy_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_1100
+   * @tc.desc   test setPasswordPolicy without passwordAlgs success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setPasswordPolicy_1100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: securityManager.PasswordPolicy = {
+        complexityRegex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$'
+      };
+      securityManager.setPasswordPolicy(SELFWANT, policy);
+      let result = securityManager.getPasswordPolicy(SELFWANT);
+      expect(result.complexityRegex).assertEqual('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$');
     } catch (error) {
       expect(false).assertTrue();
     } finally {

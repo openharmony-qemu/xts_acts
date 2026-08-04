@@ -78,7 +78,7 @@ struct WebComponent {
       })
 
       // 使用Web组件加载网页
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .rotateRenderEffect(WebRotateEffect.RESIZE_COVER_EFFECT)
         .width('100%')
         .height('100%')

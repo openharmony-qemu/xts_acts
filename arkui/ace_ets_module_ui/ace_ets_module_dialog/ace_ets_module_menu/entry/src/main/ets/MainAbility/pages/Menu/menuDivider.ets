@@ -70,7 +70,7 @@ struct MenuDividerIndex {
         color: Color.Pink,
         startMargin: { value: 2, unit: LengthUnit.VP},
         endMargin: { value: 2, unit: LengthUnit.VP}})
-        .key('menuItemDividerText')
+        .key('menuDivider_menuItemDividerText')
 
       Menu(){
         MenuItemGroup({ header: '头标' , footer: '尾标' }){
@@ -230,7 +230,7 @@ struct MenuDividerIndex {
         color: Color.Blue,
         startMargin: LengthMetrics.vp(2),
         endMargin: LengthMetrics.vp(2),})
-      .key('menuItemGroupDividerText')
+      .key('menuDivider_menuItemGroupDividerText')
       .subMenuExpandingMode(SubMenuExpandingMode.SIDE_EXPAND)
 
       Menu(){

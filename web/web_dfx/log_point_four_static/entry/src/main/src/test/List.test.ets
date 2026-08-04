@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +16,7 @@
 
 import webInitTest from './WebInitTest.test'
 import webViewInitTest from "./WebInitTest2.test";
+
 
 export default function testsuite() {
     webInitTest();

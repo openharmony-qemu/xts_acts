@@ -15,7 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, Component, ON, Rect } from '@ohos.UiTest';
+import { Component, ON, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

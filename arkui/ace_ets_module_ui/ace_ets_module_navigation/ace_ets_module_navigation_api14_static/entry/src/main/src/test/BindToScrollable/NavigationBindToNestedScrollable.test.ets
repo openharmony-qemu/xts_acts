@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect, Point} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -80,7 +80,9 @@ export default function NavigationBindToNestedScrollable() {
 it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('NavigationBindToNestedScrollable_0100 START');
-      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let uiContext =AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(1000);
 

@@ -13,32 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -195,7 +178,7 @@ it('v1Tov2_static_006', Level.LEVEL0, async (done: () => void): Promise<void> =>
      */
 it('v1Tov2_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_007] START');
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('func_value2'));
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('V1ToV2_func_value2'));
       await CommonFunc.sleep(1000);
       console.info("[v1Tov2_static_007] component obj is: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('hello v1,1,1,null,hello v1,undefined');

@@ -15,19 +15,18 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import text from "@ohos.graphics.text"
+import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import text from '@ohos.graphics.text';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import { UIContext,Router } from '@ohos.arkui.UIContext';
+import { UtilsTest, startAbility } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest,  startAbility} from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -83,7 +82,7 @@ export default function styledStringAddApi() {
       await text.inputText('0');
 
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('styledStringText');
+      let strJson = inspector.getInspectorByKey('styledStringAddApi' + '_styledStringText');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[styledStringAddApi_001] component obj is: " + JSON.stringify(obj));

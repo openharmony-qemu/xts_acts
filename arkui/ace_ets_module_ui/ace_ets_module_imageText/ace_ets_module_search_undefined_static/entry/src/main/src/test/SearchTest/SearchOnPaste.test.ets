@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,13 +37,15 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
-async function doPaste(driver: Driver, componentId: string){
-  let text = await driver.findComponent(ON.id(componentId)) as Component;
-  await text.longClick();
-  await CommonFunc.sleep(500);
-  let selectionMenu = await driver.findComponent(ON.text('粘贴')) as Component;
-  await selectionMenu.click();
-  await CommonFunc.sleep(500);
+function doPaste(driver: Driver, componentId: string){
+  waitForCompletion(async ()=>{
+    let text = await driver.findComponent(ON.id(componentId)) as Component;
+    await text.longClick();
+    await CommonFunc.sleep(500);
+    let selectionMenu = await driver.findComponent(ON.text('粘贴')) as Component;
+    await selectionMenu.click();
+    await CommonFunc.sleep(500);
+  })
 }
 
 
@@ -87,13 +89,13 @@ export default function SearchOnPasteTest() {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await doPaste(driver, 'Search_OnPaste_Undefined0')
+      doPaste(driver, 'Search_OnPaste_Undefined0')
       let pasteValue1 = await driver.findComponent(ON.id('Search_OnPaste_Value0')) as Component;
       let text = await pasteValue1.getText();
       console.info('[SearchOnPasteTest_static_0010] SearchOnPasteUndefined: ' + text);
       expect(text).assertEqual('pasteValue: ');
 
-      await doPaste(driver, 'Search_OnPaste_Dynamic0')
+      doPaste(driver, 'Search_OnPaste_Dynamic0')
       let pasteValue2 = await driver.findComponent(ON.id('Search_OnPaste_Value0')) as Component;
       text = await pasteValue2.getText();
       console.info('[SearchOnPasteTest_static_0010] SearchOnPasteDynamic: ' + text);
@@ -103,7 +105,7 @@ export default function SearchOnPasteTest() {
       await button.click();
       await CommonFunc.sleep(500);
 
-      await doPaste(driver, 'Search_OnPaste_Dynamic0')
+      doPaste(driver, 'Search_OnPaste_Dynamic0')
       let pasteValue3 = await driver.findComponent(ON.id('Search_OnPaste_Value0')) as Component;
       text = await pasteValue3.getText();
       console.info('[SearchOnPasteTest_static_0010] SearchOnPasteDynamic: ' + text);

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
@@ -344,17 +345,21 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-        try {
-          let commonEventSubscriber = await commonEventManager.createSubscriber(subscribeInfo);
-          hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 success1`)
-          if(commonEventSubscriber !== undefined  && commonEventSubscriber !== null){
+        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
+          if (err) {
+            hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 err, error code: ${err.code}, message: ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          } else {
+            hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 success1`)
+            if(commonEventSubscriber !== undefined  && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
               done()
             }
-          await Utils.msSleep(2000);
-          try {
+            waitForCompletion(async () => {await Utils.msSleep(2000);})
+            try {
               commonEventManager.subscribe(subscriber!, (err: BusinessError | null,data:commonEventManager.CommonEventData|undefined) => {
                 if (err) {
                   hilog.info(domain, TAG,`Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 subscribe err, code is ${err.code}, message is ${err.message}`)
@@ -371,8 +376,9 @@ export default function ActsCommonEventManagerTest() {
               let err: BusinessError = error as BusinessError;
               hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 subscribe failed, code is ${err.code}, message is ${err.message}`)
             }
-          count = 0;
-          try {
+
+            count = 0;
+            try {
               commonEventManager.unsubscribe(subscriber!, (err: BusinessError | null) => {
                 if (err) {
                   hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 unsubscribe err, code is ${err.code}, message is ${err.message}`)
@@ -391,11 +397,8 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             }
-        } catch (err) {
-          hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 err, error code: ${err.code}, message: ${err.message}`)
-          expect(false).assertTrue()
-          done()
-        }
+          }
+        })
       } catch (error) {
         let err: BusinessError = error as BusinessError;
         hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 createSubscriber failed, code is ${err.code}, message is ${err.message}`)
@@ -418,7 +421,7 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             }
-            Utils.msSleep(1000).awaitSync()
+            waitForCompletion(async () => {await Utils.msSleep(1000);})
             try {
               commonEventManager.subscribe(subscriber!, (err: BusinessError | null,CommonEventData:commonEventManager.CommonEventData|undefined) => {
                 if (err) {
@@ -440,7 +443,7 @@ export default function ActsCommonEventManagerTest() {
                         hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 unsubscribe_2 success`)
                         count++;
                         expect(count).assertEqual(2);
-                        Utils.msSleep(1000).awaitSync()
+                        waitForCompletion(async () => {await Utils.msSleep(1000);})
                         done()
                       }
                     })
@@ -524,7 +527,7 @@ export default function ActsCommonEventManagerTest() {
                 expect(false).assertTrue()
                 done()
               } else {
-                Utils.msSleep(500).awaitSync()
+                waitForCompletion(async () => {await Utils.msSleep(500)})
                 console.info(TAG+`666: ` + count)
                 subscriber!.setCode(1, (err: BusinessError | null) => {
                   if (err) {
@@ -545,7 +548,7 @@ export default function ActsCommonEventManagerTest() {
                     })
                   }
                 })
-                Utils.msSleep(1000).awaitSync()
+                waitForCompletion(async () => {await Utils.msSleep(1000)})
                 subscriber!.setData('data01', (err: BusinessError | null) => {
                   if (err) {
                     console.info(TAG+`setData_1 err, error code: ${err.code}, message: ${err.message}`)
@@ -565,7 +568,7 @@ export default function ActsCommonEventManagerTest() {
                     })
                   }
                 })
-                Utils.msSleep(500).awaitSync()
+                waitForCompletion(async () => {await Utils.msSleep(500)})
                 count = 0;
                 subscriber!.setCodeAndData(1, 'data01', (err: BusinessError | null) => {
                   if (err) {
@@ -578,7 +581,7 @@ export default function ActsCommonEventManagerTest() {
                     expect(count).assertEqual(1);
                   }
                 })
-                Utils.msSleep(500).awaitSync()
+                waitForCompletion(async () => {await Utils.msSleep(500)})
                 count = 0;
                 subscriber!.getSubscribeInfo((err: BusinessError | null, CommonEventSubscribeInfo) => {
                   if (err) {
@@ -592,7 +595,7 @@ export default function ActsCommonEventManagerTest() {
                   }
                 })
 
-                Utils.msSleep(500).awaitSync()
+                waitForCompletion(async () => {await Utils.msSleep(500)})
                 count = 0;
                 subscriber!.clearAbortCommonEvent((err: BusinessError | null) => {
                   if (err) {
@@ -605,7 +608,7 @@ export default function ActsCommonEventManagerTest() {
                     expect(count).assertEqual(1);
                   }
                 })
-                Utils.msSleep(500).awaitSync()
+                waitForCompletion(async () => {await Utils.msSleep(500)})
                 count = 0;
                 subscriber!.finishCommonEvent((err: BusinessError | null) => {
                   if (err) {
@@ -616,7 +619,7 @@ export default function ActsCommonEventManagerTest() {
                     console.info(TAG+`finishCommonEvent_1 success `)
                     count++;
                     expect(count).assertEqual(1);
-                    Utils.msSleep(200).awaitSync()
+                    waitForCompletion(async () => {await Utils.msSleep(200)})
                     done()
                   }
                 })
@@ -688,7 +691,7 @@ export default function ActsCommonEventManagerTest() {
             }
             count = 0;
             commonEventManager.subscribe(subscriber!, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
-            (async () => {
+            waitForCompletion(async () => {
               if (err) {
                 expect(false).assertTrue()
                 done()
@@ -765,7 +768,7 @@ export default function ActsCommonEventManagerTest() {
                   done()
                 })
               }
-            })().awaitSync()
+            })
             })
           }
         })

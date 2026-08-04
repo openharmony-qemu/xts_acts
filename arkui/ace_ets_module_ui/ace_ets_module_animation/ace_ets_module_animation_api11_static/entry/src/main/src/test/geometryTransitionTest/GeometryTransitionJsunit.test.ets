@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import emitter from '@ohos.events.emitter';

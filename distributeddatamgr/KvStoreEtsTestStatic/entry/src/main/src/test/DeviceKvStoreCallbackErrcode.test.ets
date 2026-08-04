@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,14 +13,11 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
 import factory from '@ohos.data.distributedKVStore';
-import common from "@ohos.app.ability.common";
-import fs from "@ohos.file.fs";
-
-
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
+import fs from '@ohos.file.fs';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -111,7 +109,12 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       try {
         hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         // await abilityDelegator.startAbility({
         //   bundleName: 'com.example.kvstoreetstest.static',
         //   abilityName: 'EntryAbility'
@@ -827,30 +830,33 @@ export default function deviceKvStoreCallbackErrcodeTest(){
         let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
           // await kvStore.getResultSet(localDeviceId, 'key_test_string_2', async (err, result) => {
-          try {
-            let result = await kvStore!.getResultSet(localDeviceId, 'key_test_string_2');
-            console.info(TAG + ' getResultSet success, i=' + i);
-            resultSets.push(result!);
-          } catch (err) {
-            console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                kvStore!.closeResultSet(resultSets[j], (err) => {
-                  if (err == undefined) {
-                    console.info(TAG + ' closeResultSet success, j=' + j);
-                  } else {
-                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+          kvStore!.getResultSet(localDeviceId, 'key_test_string_2', (err: BusinessError | null, result: factory.KVStoreResultSet | undefined) => {
+            waitForCompletion(async () => {
+              if (err == undefined) {
+                console.info(TAG + ' getResultSet success, i=' + i);
+                resultSets.push(result!);
+              } else {
+                console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
+                expect(15100001).assertEqual(err.code);
+                await sleep(1000);
+                for (let j=0; j<9; j++) {
+                  try{
+                    kvStore!.closeResultSet(resultSets[j], (err) => {
+                      if (err == undefined) {
+                        console.info(TAG + ' closeResultSet success, j=' + j);
+                      } else {
+                        console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                      }
+                    })
+                  }catch(er){
+                    console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                   }
-                })
-              }catch(er){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+                }
+                await sleep(2000);
+                done();
               }
-            }
-            await sleep(2000);
-            done();
-          }
+            })
+          });
         }
 
       } catch (e) {
@@ -906,30 +912,34 @@ export default function deviceKvStoreCallbackErrcodeTest(){
         let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
           // await kvStore.getResultSet('key_test_string_2', async (err, result) => {
-          try {
-            let result = await kvStore!.getResultSet('key_test_string_2');
-            console.info(TAG + ' getResultSet success, i=' + i);
-            resultSets.push(result!);
-          } catch (err) {
-            console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                kvStore!.closeResultSet(resultSets[j], (err) => {
-                  if (err == undefined) {
-                    console.info(TAG + ' closeResultSet success, j=' + j);
-                  } else {
-                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+          kvStore!.getResultSet('key_test_string_2', (err: BusinessError | null, result: factory.KVStoreResultSet | undefined) => {
+            waitForCompletion(async () => {
+              if (err == undefined) {
+                console.info(TAG + ' getResultSet success, i=' + i);
+                resultSets.push(result!);
+              } else {
+                console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
+                expect(15100001).assertEqual(err.code);
+                await sleep(1000);
+                for (let j=0; j<9; j++) {
+                  try{
+                    kvStore!.closeResultSet(resultSets[j], (err) => {
+                      if (err == undefined) {
+                        console.info(TAG + ' closeResultSet success, j=' + j);
+                      } else {
+                        console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                      }
+                    })
+                  }catch(er){
+                    console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                   }
-                })
-              }catch(er){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+
+                }
+                await sleep(2000);
+                done();
               }
-            }
-            await sleep(2000);
-            done();
-          }
+            })
+          });
         }
 
       } catch (e) {
@@ -1028,30 +1038,34 @@ export default function deviceKvStoreCallbackErrcodeTest(){
         query.prefixKey("batch_test");
         for (let i=0; i<9; i++) {
           // await kvStore.getResultSet(localDeviceId, query, async (err, result) => {
-          try {
-            let result = await kvStore!.getResultSet(localDeviceId, query);
-            console.info(TAG + ' getResultSet success, i=' + i);
-            resultSets.push(result!);
-          } catch (err) {
-            console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                kvStore!.closeResultSet(resultSets[j], (err) => {
-                  if (err == undefined) {
-                    console.info(TAG + ' closeResultSet success, j=' + j);
-                  } else {
-                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+          kvStore!.getResultSet(localDeviceId, query, (err: BusinessError | null, result: factory.KVStoreResultSet | undefined) => {
+            waitForCompletion(async () => {
+              if (err == undefined) {
+                console.info(TAG + ' getResultSet success, i=' + i);
+                resultSets.push(result!);
+              } else {
+                console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
+                expect(15100001).assertEqual(err.code);
+                await sleep(1000);
+                for (let j=0; j<9; j++) {
+                  try{
+                    kvStore!.closeResultSet(resultSets[j], (err) => {
+                      if (err == undefined) {
+                        console.info(TAG + ' closeResultSet success, j=' + j);
+                      } else {
+                        console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                      }
+                    })
+                  }catch(er){
+                    console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                   }
-                })
-              }catch(er){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+  
+                }
+                await sleep(2000);
+                done();
               }
-            }
-            await sleep(2000);
-            done();
-          }
+            })
+          });
         }
 
       } catch (e) {
@@ -1114,30 +1128,34 @@ export default function deviceKvStoreCallbackErrcodeTest(){
         query.prefixKey("batch_test");
         for (let i=0; i<9; i++) {
           // await kvStore.getResultSet(query, async (err, result) => {
-          try {
-            let result = await kvStore!.getResultSet(query);
-            console.info(TAG + ' getResultSet success, i=' + i);
-            resultSets.push(result!);
-          } catch (err) {
-            console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                kvStore!.closeResultSet(resultSets[j], (err) => {
-                  if (err == undefined) {
-                    console.info(TAG + ' closeResultSet success, j=' + j);
-                  } else {
-                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+          kvStore!.getResultSet(query, (err: BusinessError | null, result: factory.KVStoreResultSet | undefined) => {
+            waitForCompletion(async () => {
+              if (err == undefined) {
+                console.info(TAG + ' getResultSet success, i=' + i);
+                resultSets.push(result!);
+              } else {
+                console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
+                expect(15100001).assertEqual(err.code);
+                await sleep(1000);
+                for (let j=0; j<9; j++) {
+                  try{
+                    kvStore!.closeResultSet(resultSets[j], (err) => {
+                      if (err == undefined) {
+                        console.info(TAG + ' closeResultSet success, j=' + j);
+                      } else {
+                        console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                      }
+                    })
+                  }catch(er){
+                    console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
                   }
-                })
-              }catch(er){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+
+                }
+                await sleep(2000);
+                done();
               }
-            }
-            await sleep(2000);
-            done();
-          }
+            })
+          });
         }
 
       } catch (e) {

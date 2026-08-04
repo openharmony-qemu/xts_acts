@@ -96,7 +96,7 @@ export default function placementJsunit() {
           console.info("placementTest_static_0100 on events_emitter err : " + JSON.stringify(err));
         }
         console.info("placementTest_static_0100 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('placement' + '_button', 10, "")));
         await Utils.sleep(1500);
         console.info("placementTest_static_0100 clickOne result is: " +
         JSON.stringify(inspector.sendEventByKey('image', 10, "")));

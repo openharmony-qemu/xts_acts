@@ -26,6 +26,7 @@ struct DatePickerCanLoop {
         selected: new Date('2024-1-1'),
       })
         .id('datePicker')
+        .key('datePickerCanLoop_datePicker')
         .height('50%')
         .canLoop(this.isLoop)
         .onDateChange((value: Date) => {

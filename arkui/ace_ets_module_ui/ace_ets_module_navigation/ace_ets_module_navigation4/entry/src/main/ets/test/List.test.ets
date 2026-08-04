@@ -36,6 +36,8 @@ import ParticleApiNullUndefinedTest from './Router/ParticleApiNullUndefinedTest.
 import IndicatorComponentNullUndefinedTest from './Router/IndicatorComponentNullUndefinedTest.test'
 import SideBarContainerControlButtonNullUndefinedTest from './Router/SideBarContainerControlButtonNullUndefinedTest.test'
 import StepperItemApiNullUndefinedTest from './Router/StepperItemApiNullUndefinedTest.test'
+import NavScrollEffectOptions from './Navigation/NavScrollEffectOptions.test';
+import configurationNav from './Navigation/configurationNav.test';
 
 export default function testsuite() {
   GetStackSize()
@@ -62,4 +64,6 @@ export default function testsuite() {
   IndicatorComponentNullUndefinedTest()
   SideBarContainerControlButtonNullUndefinedTest()
   StepperItemApiNullUndefinedTest()
+  NavScrollEffectOptions()
+  configurationNav()
 }

@@ -4,7 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Ability.AbilityBase"
+                    "SystemCapability.Ability.AbilityRuntime.FAModel"
                 ]
             }
         ]

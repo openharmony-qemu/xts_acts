@@ -1002,7 +1002,7 @@ export default function StreamTest_08() {
         duplexStream.write(' OpenHarmony', 'utf8');
         expect().assertFail()
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     });
 

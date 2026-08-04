@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -13,20 +14,16 @@
  * limitations under the License.
  */
 
-import {OnFirstContentfulPaintEvent, Visibility,OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import web_webview from '@ohos.web.webview'
-import { BusinessError, RecordData } from '@ohos.base';
+import { OnFirstContentfulPaintEvent, Visibility, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
+import webView from '@ohos.web.webview';
+import { BusinessError, RecordData, Callback } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
 import image from '@ohos.multimedia.image';
-import web_webview from '@ohos.web.webview';
-import  { BusinessError } from '@ohos.base';
-import webView from '@ohos.web.webview';
 import hilog from '@ohos.hilog';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class StringFields {
   str: string = '';
 }

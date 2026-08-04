@@ -80,10 +80,10 @@ it('SUB_ACE_Row_layoutWeight_Default_TEST_static_0100', Level.LEVEL0, async (don
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_Default_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_011');
-      let Row_layoutWeight_Default_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_012');
-      let Row_layoutWeight_Default_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_013');
-      let Row_layoutWeight_Default_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_01');
+      let Row_layoutWeight_Default_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_011');
+      let Row_layoutWeight_Default_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_012');
+      let Row_layoutWeight_Default_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_013');
+      let Row_layoutWeight_Default_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_01');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_Default_011.top - Row_layoutWeight_Default_01.top) - Math.round(Row_layoutWeight_Default_01.bottom - Row_layoutWeight_Default_011.bottom)) <= 1)
         .assertTrue();
@@ -138,10 +138,10 @@ it('SUB_ACE_Row_layoutWeight_Default_TEST_static_0200', Level.LEVEL0, async (don
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_Default_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_011');
-      let Row_layoutWeight_Default_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_012');
-      let Row_layoutWeight_Default_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_013');
-      let Row_layoutWeight_Default_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_01');
+      let Row_layoutWeight_Default_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_011');
+      let Row_layoutWeight_Default_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_012');
+      let Row_layoutWeight_Default_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_013');
+      let Row_layoutWeight_Default_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_Default_011.top - Row_layoutWeight_Default_01.top) - Math.round(Row_layoutWeight_Default_01.bottom - Row_layoutWeight_Default_011.bottom)) <= 1)
@@ -196,10 +196,10 @@ it('SUB_ACE_Row_layoutWeight_Default_TEST_static_0300', Level.LEVEL0, async (don
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_Default_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_011');
-      let Row_layoutWeight_Default_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_012');
-      let Row_layoutWeight_Default_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_013');
-      let Row_layoutWeight_Default_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_01');
+      let Row_layoutWeight_Default_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_011');
+      let Row_layoutWeight_Default_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_012');
+      let Row_layoutWeight_Default_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_013');
+      let Row_layoutWeight_Default_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_Default_011.top - Row_layoutWeight_Default_01.top) - Math.round(Row_layoutWeight_Default_01.bottom - Row_layoutWeight_Default_011.bottom)) <= 1)
@@ -254,10 +254,10 @@ it('SUB_ACE_Row_layoutWeight_Default_TEST_static_0400', Level.LEVEL0, async (don
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_Default_021: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_021');
-      let Row_layoutWeight_Default_022: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_022');
-      let Row_layoutWeight_Default_023: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_023');
-      let Row_layoutWeight_Default_02: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Default_02');
+      let Row_layoutWeight_Default_021: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_021');
+      let Row_layoutWeight_Default_022: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_022');
+      let Row_layoutWeight_Default_023: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_023');
+      let Row_layoutWeight_Default_02: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_Default_02');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_Default_021.top - Row_layoutWeight_Default_02.top) - Math.round(Row_layoutWeight_Default_02.bottom - Row_layoutWeight_Default_021.bottom)) <= 1)

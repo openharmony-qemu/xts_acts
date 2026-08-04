@@ -15,14 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum EnumIntG0: int { A = 5, B = 5 }
 enum ConstEnumIntG0: int { A = 5, B = 5 }
@@ -188,7 +181,7 @@ export default function EnumerationWithExplicitTypeTest07(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {

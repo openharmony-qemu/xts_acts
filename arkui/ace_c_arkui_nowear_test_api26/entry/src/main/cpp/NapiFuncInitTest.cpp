@@ -15,6 +15,8 @@
 #include "common/common.h"
 #include "renderNode/RenderNodeUtilsSetRectShapeOptionValue.cpp"
 #include "renderNode/RenderNodeBlurStyleOptionTest.cpp"
+#include "renderNode/NativeModuleCapiInitErrorCodeTest.cpp"
+#include "renderNode/NodeChildMountPolicyTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -60,6 +62,63 @@ static napi_value Init(napi_env env, napi_value exports)
                 napi_default, nullptr},
         {"TestRenderNodeBlurStyleOption_015", nullptr, TestRenderNodeBlurStyleOption_015, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+        {"TestGetChildMountPolicyInitError001", nullptr, TestGetChildMountPolicyInitError001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeChildrenCountInitError001", nullptr, TestGetRenderNodeChildrenCountInitError001, nullptr,
+                nullptr, nullptr, napi_default, nullptr},
+        {"TestGetRenderNodeAtInitError001", nullptr, TestGetRenderNodeAtInitError001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestSetChildMountPolicy_001", nullptr, TestSetChildMountPolicy_001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestSetChildMountPolicy_002", nullptr, TestSetChildMountPolicy_002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestSetChildMountPolicy_003", nullptr, TestSetChildMountPolicy_003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestSetChildMountPolicy_004", nullptr, TestSetChildMountPolicy_004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetChildMountPolicy_001", nullptr, TestGetChildMountPolicy_001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetChildMountPolicy_002", nullptr, TestGetChildMountPolicy_002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetChildMountPolicy_003", nullptr, TestGetChildMountPolicy_003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetChildMountPolicy_004", nullptr, TestGetChildMountPolicy_004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_001", nullptr, TestInsertRenderNodeAt_001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_002", nullptr, TestInsertRenderNodeAt_002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_003", nullptr, TestInsertRenderNodeAt_003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_004", nullptr, TestInsertRenderNodeAt_004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_005", nullptr, TestInsertRenderNodeAt_005, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_006", nullptr, TestInsertRenderNodeAt_006, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_007", nullptr, TestInsertRenderNodeAt_007, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestInsertRenderNodeAt_008", nullptr, TestInsertRenderNodeAt_008, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeChildrenCount_001", nullptr, TestGetRenderNodeChildrenCount_001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeChildrenCount_002", nullptr, TestGetRenderNodeChildrenCount_002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeChildrenCount_003", nullptr, TestGetRenderNodeChildrenCount_003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeChildrenCount_004", nullptr, TestGetRenderNodeChildrenCount_004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeAt_001", nullptr, TestGetRenderNodeAt_001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeAt_002", nullptr, TestGetRenderNodeAt_002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeAt_003", nullptr, TestGetRenderNodeAt_003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeAt_004", nullptr, TestGetRenderNodeAt_004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeAt_005", nullptr, TestGetRenderNodeAt_005, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

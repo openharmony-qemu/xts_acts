@@ -14,28 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Component,
-  Text,
-  Row,
-  ClickEvent,
-  Column,
-  List,
-  Image,
-  ForEach,
-  Position,
-  Margin,
-  Padding,
-  TextAlign,
-  Color,
-  NavDestination,
-  $r,
-  Padding,
-  Flex,
-  FlexDirection
-} from '@ohos.arkui.component';
+import { Component, Text, Row, ClickEvent, Column, List, Image, ForEach, Position, Margin, Padding, TextAlign, Color, NavDestination, $r, Flex, FlexDirection } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
-
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false

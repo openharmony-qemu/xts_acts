@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,60 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import cert from '@ohos.security.cert';
-import {
-  cert1,
-  cmsSignerTest,
-  cmsSignerWithPasswordTest,
-  damaged_pri,
-  ecc_ca_cert,
-  ecc_enc_p1_pem,
-  ecc_enc_p8_pem,
-  ecc_p256_cert,
-  ecc_p256_pem,
-  expired_cert,
-  expired_pri,
-  mdSpec,
-  private2,
-  rsa_other_cert_1,
-  rsa_other_cert_2,
-  rsa_other_self_sign_cert_zh,
-  rsa_p1_cert_pem,
-  rsa_p1_der,
-  rsa_p1_enc_der,
-  rsa_p1_enc_pem,
-  rsa_p1_pem,
-  rsa_p8_der,
-  rsa_p8_enc_der,
-  rsa_p8_enc_pem, rsa_p8_enc_pem_cert,
-  rsa_p1_enc_pem_zh,
-  rsa_p8_pem,
-  rsa_p8_pem_cert,
-  rsa_p1_pem_cert_zh,
-  rsa_password_is_empty,
-  rsa_password_is_empty_cert,
-  rsa_pri_passwd_len_1,
-  rsa_pri_passwd_len_1_cert,
-  key_usage_enc_cert,
-  key_usage_pri_enc,
-  rsa_bits_1000_pri,
-  rsa_bits_1000_cert,
-  certDataPassword_Pri,
-  certDataPassword,
-  luanma_pri,
-  luanma_cert,
-  rsa_password_is_empty_cert2,
-  privateKeyPasswordDerIsEmpty2
-} from './utils/cms/cms';
+import { cert1, cmsSignerTest, cmsSignerWithPasswordTest, damaged_pri, ecc_ca_cert, ecc_enc_p1_pem, ecc_enc_p8_pem, ecc_p256_cert, ecc_p256_pem, expired_cert, expired_pri, mdSpec, private2, rsa_other_cert_1, rsa_other_cert_2, rsa_other_self_sign_cert_zh, rsa_p1_cert_pem, rsa_p1_der, rsa_p1_enc_der, rsa_p1_enc_pem, rsa_p1_pem, rsa_p8_der, rsa_p8_enc_der, rsa_p8_enc_pem, rsa_p8_enc_pem_cert, rsa_p1_enc_pem_zh, rsa_p8_pem, rsa_p8_pem_cert, rsa_p1_pem_cert_zh, rsa_password_is_empty, rsa_password_is_empty_cert, rsa_pri_passwd_len_1, rsa_pri_passwd_len_1_cert, key_usage_enc_cert, key_usage_pri_enc, rsa_bits_1000_pri, rsa_bits_1000_cert, certDataPassword_Pri, certDataPassword, luanma_pri, luanma_cert, rsa_password_is_empty_cert2, privateKeyPasswordDerIsEmpty2 } from './utils/cms/cms';
 import { stringToUint8Array } from './utils/certificate/p12';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为

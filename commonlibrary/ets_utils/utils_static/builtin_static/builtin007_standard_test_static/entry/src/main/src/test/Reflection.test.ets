@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -311,7 +312,7 @@ export default function reflectionTest(): void {
    const getValidShortType = () => {
    };
 
-    const tag: string = "NullValueTest";
+    const nullValueTag: string = "NullValueTest";
 
     /**
      * @tc.number SUB_REFLECTION_NULLVALUE_SINGLETON_0100
@@ -322,11 +323,11 @@ export default function reflectionTest(): void {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_Singleton_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0001');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0001');
       const firstInstance = NullValue.INSTANCE;
       const secondInstance = NullValue.INSTANCE;
       expect(firstInstance === secondInstance).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0001');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0001');
     });
 
     /**
@@ -338,10 +339,10 @@ export default function reflectionTest(): void {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_GetData_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_0002');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_0002');
       const result = NullValue.INSTANCE.getData();
       expect(result === null).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_0002');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_0002');
     });
 
     /**
@@ -353,11 +354,11 @@ export default function reflectionTest(): void {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_TypeCheck_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_TypeCheck_0003');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_TypeCheck_0003');
       const instance = NullValue.INSTANCE;
       expect(instance instanceof NullValue).assertTrue();
       expect(instance instanceof reflect.Value).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_TypeCheck_0003');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_TypeCheck_0003');
     });
 
     /**
@@ -369,10 +370,10 @@ export default function reflectionTest(): void {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_NullValue_GetData_Type_0005", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Type_0005');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Type_0005');
       const result = NullValue.INSTANCE.getData();
       expect(result === null || result === undefined).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Type_0005');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Type_0005');
     });
 
     /**
@@ -384,11 +385,11 @@ export default function reflectionTest(): void {
     * @tc.type   RELIABILITY
     */
     it("SUB_Reflection_NullValue_Singleton_0006", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0006');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0006');
       const instance1 = NullValue.INSTANCE;
       const instance2 = NullValue.INSTANCE;
       expect(instance1 === instance2).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0006');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0006');
     });
 
     /**
@@ -400,11 +401,11 @@ export default function reflectionTest(): void {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_GetType_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetType_0007');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetType_0007');
       const instance = NullValue.INSTANCE;
       const type = instance.getType();
       expect(type instanceof NullType).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetType_0007');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetType_0007');
     });
 
     /**
@@ -416,12 +417,12 @@ export default function reflectionTest(): void {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_NullValue_GetData_Consistency_0008", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Consistency_0008');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Consistency_0008');
       const instance = NullValue.INSTANCE;
       const result1 = instance.getData();
       const result2 = instance.getData();
       expect(result1 === null && result2 === null).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Consistency_0008');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Consistency_0008');
     });
 
     /**
@@ -433,10 +434,10 @@ export default function reflectionTest(): void {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_NullValue_CompareWithUndefined_0010", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_CompareWithUndefined_0010');
+      console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_NullValue_CompareWithUndefined_0010');
       const result = NullValue.INSTANCE.getData();
       expect(result !== undefined).assertTrue();
-      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_CompareWithUndefined_0010');
+      console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_NullValue_CompareWithUndefined_0010');
     });
 
     const getValidLongType = () => {
@@ -465,11 +466,11 @@ export default function reflectionTest(): void {
    * @tc.type    FUNCTION
    */
   it("SUB_Reflection_ByteValue_OfMethod_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0003');
+    console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0003');
     const testValue: byte = 100;
     const byteValue = ByteValue.of(testValue);
     expect(byteValue instanceof ByteValue).assertTrue();
-    console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0003');
+    console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0003');
   });
 
   /**
@@ -481,12 +482,12 @@ export default function reflectionTest(): void {
    * @tc.type    FUNCTION
    */
   it("SUB_Reflection_ByteValue_OfMethod_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0004');
+    console.log(domain, nullValueTag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0004');
     const maxValue: byte = 127;
     const minValue: byte = -128;
     expect(ByteValue.of(maxValue) instanceof ByteValue).assertTrue();
     expect(ByteValue.of(minValue) instanceof ByteValue).assertTrue();
-    console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0004');
+    console.log(domain, nullValueTag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0004');
   });
 	
   });

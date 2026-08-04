@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -139,7 +140,8 @@ export default function InputDeviceTest() {
         let caseName = "SUB_MMI_Input_Api_InputDevice_0400";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          await inputDevice.getDeviceList().then(async (ids: Array<Int>) => {
+          await inputDevice.getDeviceList().then((ids: Array<Int>) => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
             expect(ids).assertInstanceOf('Array');
             if(ids.length > 0) {
@@ -176,6 +178,7 @@ export default function InputDeviceTest() {
               });
             }
             done();
+          })
           });
         } catch (error) {
           error = error as BusinessError;

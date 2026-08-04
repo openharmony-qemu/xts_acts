@@ -59,9 +59,9 @@ export default function SideBarContainerTypeTest() {
       console.info('[SUB_ACE_SideBarContainerType_0100] START');
       await CommonFunc.sleep(2000);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -92,9 +92,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(sideBarContent_01.left).assertEqual(SideBarContainer_01.left);
@@ -124,9 +124,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(1000);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_011: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_011: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -141,7 +141,7 @@ export default function SideBarContainerTypeTest() {
       // expect(Math.round(sideBarContent_011.right - sideBarContent_011.left)).assertEqual(Math.round(vp2px(700)));
       // console.log("sideBarContent_011.right - sideBarContent_011.left" + (sideBarContent_011.right - sideBarContent_011.left))
 
-      let strJson1 = getInspectorByKey('SideBarContainerType_SideBarContainer_01');
+      let strJson1 = getInspectorByKey('SideBarContainerType' + '_SideBarContainer_01');
 
       await CommonFunc.sleep(1000);
       expect(JSON.parse(strJson1).$attrs.type).assertEqual('SideBarContainerType.OVERLAY');
@@ -169,9 +169,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -186,7 +186,7 @@ export default function SideBarContainerTypeTest() {
       expect(Math.abs(Math.round(sideBarContent_01.right - sideBarContent_01.left) - Math.round(vp2px(400))) <= 1).assertTrue();
       console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
 
-      let strJson1 = getInspectorByKey('SideBarContainerType_SideBarContainer_01');
+      let strJson1 = getInspectorByKey('SideBarContainerType' + '_SideBarContainer_01');
 
       await CommonFunc.sleep(1000);
       expect(JSON.parse(strJson1).$attrs.type).assertEqual('SideBarContainerType.OVERLAY');
@@ -220,9 +220,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -238,7 +238,7 @@ export default function SideBarContainerTypeTest() {
       expect(Math.abs(Math.round(sideBarContent_01.right - sideBarContent_01.left) - Math.round(vp2px(400))) <= 1).assertTrue();
       console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
 
-      let strJson1 = getInspectorByKey('SideBarContainerType_SideBarContainer_01');
+      let strJson1 = getInspectorByKey('SideBarContainerType' + '_SideBarContainer_01');
 
       await CommonFunc.sleep(1000);
       expect(JSON.parse(strJson1).$attrs.type).assertEqual('SideBarContainerType.OVERLAY');
@@ -272,9 +272,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -315,9 +315,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -332,7 +332,7 @@ export default function SideBarContainerTypeTest() {
       expect(Math.abs(Math.round(sideBarContent_01.right - sideBarContent_01.left) - Math.round(vp2px(400))) <= 1).assertTrue();
       console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
 
-      let strJson1 = getInspectorByKey('SideBarContainerType_SideBarContainer_01');
+      let strJson1 = getInspectorByKey('SideBarContainerType' + '_SideBarContainer_01');
 
       await CommonFunc.sleep(1000);
       expect(JSON.parse(strJson1).$attrs.type).assertEqual('SideBarContainerType.OVERLAY');
@@ -364,9 +364,9 @@ export default function SideBarContainerTypeTest() {
     //   globalThis.value.message.notify({name:'maxSideBarWidth', value:300})
     //   await CommonFunc.sleep(500);
     //   console.log("get Initial value")
-    //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-    //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-    //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+    //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+    //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+    //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
     //
     //   console.log("assert position")
     //   expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -407,9 +407,9 @@ export default function SideBarContainerTypeTest() {
     //   globalThis.value.message.notify({name:'maxSideBarWidth', value:300})
     //   await CommonFunc.sleep(500);
     //   console.log("get Initial value")
-    //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-    //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-    //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+    //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+    //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+    //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
     //
     //   console.log("assert position")
     //   expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -455,9 +455,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
 
       console.log("assert width")
@@ -497,9 +497,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert width")
       expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(200))) <= 1).assertTrue();
@@ -539,9 +539,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert width")
       expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(200))) <= 1).assertTrue();
@@ -581,9 +581,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert width")
       expect(Math.abs((SideBar_01.right - SideBar_01.left) - vp2px(270)) <= 1).assertTrue();
@@ -618,9 +618,9 @@ export default function SideBarContainerTypeTest() {
     //   globalThis.value.message.notify({name:'maxSideBarWidth', value:300})
     //   await CommonFunc.sleep(500);
     //   console.log("get Initial value")
-    //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-    //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-    //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+    //   let SideBar_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+    //   let sideBarContent_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+    //   let SideBarContainer_01 :RectValue= CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
     //
     //
     //   console.log("assert width")
@@ -660,9 +660,9 @@ export default function SideBarContainerTypeTest() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
 
       console.log("assert width")
       expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(200))) <= 1).assertTrue();

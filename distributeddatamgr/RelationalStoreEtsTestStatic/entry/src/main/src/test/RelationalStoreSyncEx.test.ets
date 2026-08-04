@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,11 +40,16 @@ let logTag: string = 'rdbSyncFirstLevelTest:  ';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 export default function RelationalStoreSyncExTest(): void {
-    describe('RelationalStoreSyncExTest', () => {
+    describe('RelationalStoreSyncExTest', (): void => {
         beforeAll(async (): Promise<void> => {
             console.info(TAG + 'beforeAll');
             await Utils.msSleep(2000)
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+            let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(10000)
             context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         });

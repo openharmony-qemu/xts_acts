@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON, Component, MatchPattern } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -25,13 +25,15 @@ import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
 import { UtilsTest } from '../Util.test';
 
-export default function ImmersiveStyleTest() {
+export default function ImmersiveStyleTest(): void {
   describe('ImmersiveStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("ImmersiveStyleTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uimaterial/ImmersiveStyleTest',
       }
@@ -60,7 +62,8 @@ export default function ImmersiveStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveStyleTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveStyleTest_0100', Level.LEVEL2, async () => {
+
       console.info('ImmersiveStyleTest_0100 START');
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('ultra_thin'));
@@ -69,7 +72,6 @@ export default function ImmersiveStyleTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0100 END');
-      done();
     });
 
     /**
@@ -80,7 +82,8 @@ export default function ImmersiveStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveStyleTest_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveStyleTest_0200', Level.LEVEL2, async () => {
+
       console.info('ImmersiveStyleTest_0200 START');
       
       expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -90,7 +93,6 @@ export default function ImmersiveStyleTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0200 END');
-      done();
     });
 
     /**
@@ -101,7 +103,8 @@ export default function ImmersiveStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveStyleTest_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveStyleTest_0300', Level.LEVEL2, async () => {
+
       console.info('ImmersiveStyleTest_0300 START');
       expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
 
@@ -111,7 +114,6 @@ export default function ImmersiveStyleTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0300 END');
-      done();
     });
 
     /**
@@ -122,7 +124,8 @@ export default function ImmersiveStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveStyleTest_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveStyleTest_0400', Level.LEVEL2, async () => {
+
       console.info('ImmersiveStyleTest_0400 START');
 
       expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
@@ -133,7 +136,6 @@ export default function ImmersiveStyleTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0400 END');
-      done();
     });
 
     /**
@@ -144,7 +146,8 @@ export default function ImmersiveStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveStyleTest_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveStyleTest_0500', Level.LEVEL2, async () => {
+
       console.info('ImmersiveStyleTest_0500 START');
       expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
 
@@ -154,7 +157,6 @@ export default function ImmersiveStyleTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0500 END');
-      done();
     });
 
     /**
@@ -165,7 +167,8 @@ export default function ImmersiveStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveStyleTest_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveStyleTest_0600', Level.LEVEL2, async () => {
+
       console.info('ImmersiveStyleTest_0600 START');
 
       let material1 = new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THIN });
@@ -189,7 +192,6 @@ export default function ImmersiveStyleTest() {
       console.info('ImmersiveStyleTest_0600 ImmersiveMaterial with ULTRA_THICK created');
 
       console.info('ImmersiveStyleTest_0600 END');
-      done();
     });
 
     /**
@@ -200,7 +202,8 @@ export default function ImmersiveStyleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveStyleTest_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveStyleTest_0700', Level.LEVEL2, async () => {
+
       console.info('ImmersiveStyleTest_0700 START');
 
       let material = new uiMaterial.ImmersiveMaterial();
@@ -212,7 +215,6 @@ export default function ImmersiveStyleTest() {
       console.info('ImmersiveStyleTest_0700 ImmersiveMaterial with empty options created');
 
       console.info('ImmersiveStyleTest_0700 END');
-      done();
     });
   })
 }

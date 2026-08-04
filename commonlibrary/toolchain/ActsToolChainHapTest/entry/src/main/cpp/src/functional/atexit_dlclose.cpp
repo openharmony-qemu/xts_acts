@@ -21,13 +21,14 @@
 #include <cstring>
 #include <cerrno>
 #include "test.h"
+#include "lib_path.h"
 
 typedef void (* ATEXIT_CB)();
 
-#define TEST_DSO "/data/storage/el1/bundle/libs/arm/libatexit_dlclose_dso.so"
+#define TEST_DSO LIB_PATH_PREFIX "libatexit_dlclose_dso.so"
 #define ATEXIT_CB_NAME "atexit_cb"
 #define ATEXIT_WATCHPOINT_NAME "g_watchpoint"
-#define LIBATEXIT_DLCLOSE_DSO_ABSOLUTE_PATH "/data/storage/el1/bundle/libs/arm/libatexit_dlclose_dso.so"
+#define LIBATEXIT_DLCLOSE_DSO_ABSOLUTE_PATH LIB_PATH_PREFIX "libatexit_dlclose_dso.so"
 #define ERROR_PATH_REL_FAILED 1
 #define ERROR_DLOPEN_FAILED 2
 #define ERROR_DLSYM_CB_FAILED 3

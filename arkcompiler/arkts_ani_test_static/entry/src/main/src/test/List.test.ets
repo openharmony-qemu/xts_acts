@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -19,7 +20,7 @@ import globalAndLocalReferencesTest from "./ActsGlobalAndLocalReferences.test.et
 import accessingStaticFieldsTest from "./ActsAccessingStaticFields.test.ets"
 import callingStaticMethodsTest from "./ActsClassCallingStaticMethods.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
     versionInfoTest();
     classOperationsTest();
     globalAndLocalReferencesTest();

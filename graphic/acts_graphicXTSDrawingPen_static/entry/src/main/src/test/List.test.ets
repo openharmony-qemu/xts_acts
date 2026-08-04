@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,7 @@ import penTest from "./Pen.test";
 import penPart2Test from "./PenPart2.test";
 import PenPart3 from './PenPart3.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   penTest();
   penPart2Test();
   PenPart3();

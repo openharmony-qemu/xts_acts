@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +16,18 @@
 
 import workerLocalTest from "./WorkerLocal.test";
 import workerLocalCoverTest from "./WorkerLocalCover.test";
+import builtinsWorkerLocalConstructor1Test from "./BuiltinsWorkerLocalConstructor1Test.test";
+import builtinsWorkerLocalConstructor2Test from "./BuiltinsWorkerLocalConstructor2Test.test";
+import builtinsWorkerLocalDeleteTest from "./BuiltinsWorkerLocalDeleteTest.test";
+import builtinsWorkerLocalGetTest from "./BuiltinsWorkerLocalGetTest.test";
+import builtinsWorkerLocalSetTest from "./BuiltinsWorkerLocalSetTest.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   workerLocalTest();
   workerLocalCoverTest();
+  builtinsWorkerLocalConstructor1Test();
+  builtinsWorkerLocalConstructor2Test();
+  builtinsWorkerLocalDeleteTest();
+  builtinsWorkerLocalGetTest();
+  builtinsWorkerLocalSetTest();
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,7 +61,12 @@ export default function ActsReminderAgentManagerStaticTest() {
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(3000)
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
+      let cmd = `aa start -a EntryAbility -b ${JSON.stringify(bundle)}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(DOMAIN, TAG, '%{public}s', 'beforeAll end');
@@ -104,7 +110,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         let TEST_CASE_NAME = 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001'
         console.info(`${TEST_CASE_NAME} START requestEnableNotification`)
         notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
-          (async () => {
+          waitForCompletion(async () => {
             console.info(`${TEST_CASE_NAME} requestEnableNotification about is ${testAbilityContext}`)
             console.info(`${TEST_CASE_NAME} come in requestEnableNotification`);
             if (err) {
@@ -115,7 +121,7 @@ export default function ActsReminderAgentManagerStaticTest() {
               console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
               await Utils.msSleep(1000)
             }
-          })().awaitSync()
+          })
         })
         await Utils.msSleep(1000)
         let driver = Driver.create()
@@ -780,12 +786,12 @@ export default function ActsReminderAgentManagerStaticTest() {
 
         try {
           reminderAgentManager.publishReminder(calendar).then((reminderId: int) => {
-            (async () => {
+            waitForCompletion(async () => {
               console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise, reminderId = " + reminderId);
               expect(reminderId).assertLarger(0);
               await reminderAgentManager.cancelAllReminders();
               done();
-            })().awaitSync()
+            })
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise err code:" + err.code + " message:" + err.message);
           });
@@ -962,14 +968,14 @@ export default function ActsReminderAgentManagerStaticTest() {
                     console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 deleteExcludeDates promise");
 
                     reminderAgentManager.getExcludeDates(reminderId as int).then((dates3: Array<Date>) => {
-                      (async () => {
+                      waitForCompletion(async () => {
                         console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise length: " + dates3.length);
                         expect(dates3?.length).assertEqual(0);
                         if(reminderId != undefined){
                           await reminderAgentManager.cancelReminder(reminderId as int);
                         }
                         done();
-                      })().awaitSync()
+                      })
                     }).catch((err: Error) => {
                       console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise err code:" + err.code + " message:" + err.message);
                       expect(false).assertTrue();
@@ -1263,12 +1269,12 @@ export default function ActsReminderAgentManagerStaticTest() {
 
         try {
           reminderAgentManager.publishReminder(alarm).then((reminderId: int) => {
-            (async () => {
+            waitForCompletion(async () => {
               console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028 promise, reminderId = " + reminderId);
               expect(reminderId).assertLarger(0);
               await reminderAgentManager.cancelAllReminders();
               done();
-            })().awaitSync()
+            })
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028 promise err code:" + err.code + " message:" + err.message);
           });
@@ -1831,6 +1837,229 @@ export default function ActsReminderAgentManagerStaticTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0900
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0900
+     * @tc.desc   test publishReminder timer with fixedTimeZone TimeZoneType.DEFAULT (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        fixedTimeZone: reminderAgentManager.TimeZoneType.DEFAULT
+      };
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0900 callback err.code is: ' + err.code);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0900 callback reminderId = ' + reminderId);
+            expect(reminderId).assertLarger(0);
+            done();
+          }
+        });
+      } catch (error) {
+        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0900 publishReminder error.code: ' + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1000
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1000
+     * @tc.desc test publishReminder timer with fixedTimeZone TimeZoneType.FIXED_TIME_ZONE (promise)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        fixedTimeZone: reminderAgentManager.TimeZoneType.FIXED_TIME_ZONE
+      };
+
+      try {
+        reminderAgentManager.publishReminder(timer).then((reminderId: int) => {
+          console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1000 promise reminderId = ' + reminderId);
+          expect(reminderId).assertLarger(0);
+          done();
+        }).catch((err: Error) => {
+          console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1000 promise err.code is: ' + err.code);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (error) {
+        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1000 publishReminder error.code: ' + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1100
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1100
+     * @tc.desc   test publishReminder and verify fixedTimeZone TimeZoneType.SYSTEM_TIME_ZONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        fixedTimeZone: reminderAgentManager.TimeZoneType.SYSTEM_TIME_ZONE
+      };
+
+      try {
+        reminderAgentManager.publishReminder(timer).then((reminderId: int) => {
+          console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1100 publishReminder promise reminderId = ' + reminderId);
+          expect(reminderId).assertLarger(0);
+          done();
+        }).catch((err: Error) => {
+          console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1100 publishReminder err.code is: ' + err.code);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (error) {
+        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1100 error.code: ' + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1200
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1200
+     * @tc.desc   test publishReminder timer with notificationRequestProxy normal parameters (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        notificationRequestProxy: {
+          appMessageId: 'test_msg_id_001',
+          isAlertOnce: true
+        }
+      };
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1200 callback err.code is: ' + err.code);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1200 callback reminderId = ' + reminderId);
+            expect(reminderId).assertLarger(0);
+            done();
+          }
+        });
+      } catch (error) {
+        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1200 publishReminder error.code: ' + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1300
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1300
+     * @tc.desc   test publishReminder timer with notificationRequestProxy normal parameters (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        notificationRequestProxy: {
+          appMessageId: 'test_msg_id_002',
+          isAlertOnce: false
+        }
+      };
+
+      try {
+        reminderAgentManager.publishReminder(timer).then((reminderId: int) => {
+          console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1300 promise reminderId = ' + reminderId);
+          expect(reminderId).assertLarger(0);
+          done();
+        }).catch((err: Error) => {
+          console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1300 promise err.code is: ' + err.code);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (error) {
+        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1300 publishReminder error.code: ' + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1400
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1400
+     * @tc.desc   test publishReminder and getAllValidReminders to verify notificationRequestProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        notificationRequestProxy: {
+          appMessageId: 'verify_msg_id',
+          isAlertOnce: true
+        }
+      };
+
+      try {
+        reminderAgentManager.publishReminder(timer).then((reminderId: int) => {
+          console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1400 publishReminder promise reminderId = ' + reminderId);
+          expect(reminderId).assertLarger(0);
+          done();
+        }).catch((err: Error) => {
+          console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1400 publishReminder err.code is: ' + err.code);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (error) {
+        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_1400 error.code: ' + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
     
   })
 }

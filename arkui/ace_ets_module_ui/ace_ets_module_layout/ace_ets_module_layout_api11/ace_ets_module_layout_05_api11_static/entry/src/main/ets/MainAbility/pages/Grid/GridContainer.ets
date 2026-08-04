@@ -1,4 +1,4 @@
-//'use static';
+'use static';
 // /*
 //  * Copyright (c) 2025 Huawei Device Co., Ltd.
 //  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -92,7 +92,7 @@
 //
 //                 .height(50).backgroundColor(0x4682B4).textAlign(TextAlign.Center)
 //             }
-//           }.key('gridContainer')
+//           }.key('GridContainer_gridContainer')
 //           .width('90%')
 //           .alignItems(HorizontalAlign.Start)
 //           .margin(20)

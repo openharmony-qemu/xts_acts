@@ -191,7 +191,7 @@ struct WebEmbedVisibilityChange  {
                 this.userAgentPC = this.browserTabController.getUserAgent();
                 if ((this.userAgentPC).includes("Phone")) {
                   this.isComplete = -1;
-                  this.browserTabController.loadUrl('https://www.baidu.com');
+                  this.browserTabController.loadUrl($rawfile("index.html"));
                   await waitForExist(() => this.isComplete, this.str, 0);
                   this.browserTabController.loadUrl($rawfile('Embed.html'))
                   break;

@@ -52,10 +52,10 @@ export default function CalendarDialogAJsunit() {
     it('CalendarDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CalendarDialogAJsunit_0100 START');
       let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('Calendar_dialog_A'));
+      let button = await driver.findComponent(BY.key('CalendarPickerDialogExits' + '_Calendar_dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('Calendar_dialog_A');
+      let strJson = getInspectorByKey('CalendarPickerDialogExits' + '_Calendar_dialog_A');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[CalendarDialogAJsunit_0100] component obj is: ' + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual('CalendarPickerDialog按esc弹窗逐层退出');

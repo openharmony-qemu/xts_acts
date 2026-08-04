@@ -78,6 +78,7 @@ export default function ListScrollEdgeCallbackJsunit() {
 it('ListScrollEdgeCallbackTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ListScrollEdgeCallbackTest_static_0100 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver1.findComponent(ON.id('ListScrollEdgeCallback01')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);

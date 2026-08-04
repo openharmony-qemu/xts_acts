@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,22 +34,27 @@ async function commitModifyCallback(done: () => void, testNum: string, fetchOps:
     hilog.info(domain, tag, `${testNum} oldTitle: ${oldTitle}`);
     asset.set(photoAccessHelper.PhotoKeys.TITLE, newTitle);
     hilog.info(domain, tag, `${testNum} newTitle: ${newTitle}`);
-    try {
-      await asset.commitModify();
-      const option: photoAccessHelper.FetchOptions =
-        photoFetchOption(testNum, photoAccessHelper.PhotoKeys.URI, uri);
-      const newAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, option);
-      const title: photoAccessHelper.MemberType = newAsset.get(photoAccessHelper.PhotoKeys.TITLE).toString();
-      expect(title).assertEqual(newTitle);
-      asset.set(photoAccessHelper.PhotoKeys.TITLE, oldTitle.toString());
-      await asset.commitModify();
-      done();
-    } catch (err) {
-      hilog.info(domain, tag, `${testNum} err: ${err}`);
-      expect(false).assertTrue();
-      hilog.info(domain, tag, `${testNum} err: ${err}`);
-      done();
-    }
+    asset.commitModify((err: BusinessError | null) => {
+      waitForCompletion(async () => {
+        try {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, `${testNum} err: ${err}`);
+            expect(false).assertTrue();
+          } else {
+            const option: photoAccessHelper.FetchOptions =
+              photoFetchOption(testNum, photoAccessHelper.PhotoKeys.URI, uri);
+            const newAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, option);
+            const title: photoAccessHelper.MemberType = newAsset.get(photoAccessHelper.PhotoKeys.TITLE).toString();
+            expect(title).assertEqual(newTitle);
+            asset.set(photoAccessHelper.PhotoKeys.TITLE, oldTitle.toString());
+            await asset.commitModify();
+          }
+        } catch (error) {
+          hilog.info(domain, tag, `${testNum} error: ${error}`);
+        }
+        done();
+      })
+    })
   } catch (error) {
     hilog.info(domain, tag, `${testNum} failed; error: ${error}`);
     expect(false).assertTrue();

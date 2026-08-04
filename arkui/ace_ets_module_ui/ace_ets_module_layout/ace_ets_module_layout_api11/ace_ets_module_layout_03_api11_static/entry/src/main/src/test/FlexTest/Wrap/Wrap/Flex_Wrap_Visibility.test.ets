@@ -14,24 +14,21 @@
  * limitations under the License.
  */
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../../Util.test';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
-import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector';
-import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext'
+import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
 import { Visibility } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -96,8 +93,8 @@ it('testWrapWrapTextVisibilityNoneOverflow_static', Level.LEVEL0, async () => {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
@@ -148,8 +145,8 @@ it('testWrapWrapTextVisibilityNoneMeet_static', Level.LEVEL0, async () => {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
@@ -200,8 +197,8 @@ it('testWrapWrapTextVisibilityHidden_static', Level.LEVEL0, async () => {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');

@@ -55,7 +55,7 @@ export default function dividerUIJsunit() {
        console.info('dividerUIJsunit_0100 START');
        await CommonFunc.sleep(1000);
        // get the dividerUIJsunit_0100 component and test attribute
-       let strJson = getInspectorByKey('divider');
+       let strJson = getInspectorByKey('dividerUI' + '_divider');
        let obj: ESObject = JSON.parse(strJson);
        console.info("dividerUIJsunit_0100'] component obj is: " + JSON.stringify(obj));
        expect(obj.$attrs.vertical).assertEqual('false');
@@ -86,7 +86,7 @@ export default function dividerUIJsunit() {
       GlobalContext.getContext().getObject<string>('value').message.notify({name:'color',value:'#FFFFFF'})
       await CommonFunc.sleep(200);
       // check the value of changed attribute
-      let strJson = getInspectorByKey('divider');
+      let strJson = getInspectorByKey('dividerUI' + '_divider');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dividerUIJsunit_0200'] component obj is: " + JSON.stringify(obj.$attrs.lineCap));
       expect(obj.$attrs.strokeWidth).assertEqual('30.00vp');
@@ -110,7 +110,7 @@ export default function dividerUIJsunit() {
       GlobalContext.getContext().getObject<LineCapStyle>('value').message.notify({name:'lineCapStyle',value:LineCapStyle.Square})
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
-      let strJson = getInspectorByKey('divider');
+      let strJson = getInspectorByKey('dividerUI' + '_divider');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dividerUIJsunit_0300'] component obj is: " + obj.$attrs.lineCap);
       expect(obj.$attrs.lineCap).assertEqual('SQUARE');
@@ -136,7 +136,7 @@ export default function dividerUIJsunit() {
       //globalThis.value.message.notify({name:'color',value:'#FF'})
       //await CommonFunc.sleep(200);
       // check the value of changed attribute
-      let strJson = getInspectorByKey('divider');
+      let strJson = getInspectorByKey('dividerUI' + '_divider');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.strokeWidth).assertEqual('-30.00vp');
       expect(obj.$attrs.lineCap).assertEqual('BUTT');
@@ -160,7 +160,7 @@ export default function dividerUIJsunit() {
       GlobalContext.getContext().getObject<string>('value').message.notify({name:'widthK',value:'1.0'})
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
-      let strJson = getInspectorByKey('divider');
+      let strJson = getInspectorByKey('dividerUI' + '_divider');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dividerUIJsunit_0500'] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.width).assertEqual('1.00vp')
@@ -183,7 +183,7 @@ export default function dividerUIJsunit() {
       GlobalContext.getContext().getObject<boolean>('value').message.notify({name:'vertical',value:true})
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
-      let strJson = getInspectorByKey('divider');
+      let strJson = getInspectorByKey('dividerUI' + '_divider');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dividerUIJsunit_0600'] component obj is: " + JSON.stringify(obj.$attrs.vertical));
       expect(obj.$attrs.vertical).assertEqual('true');

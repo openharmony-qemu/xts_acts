@@ -75,7 +75,7 @@ export default function backgroundAndSizeSettingJsunit() {
     it('testBackgroundAndSizeSetting_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testBackgroundAndSizeSetting_static_0100 START');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('fontColor');
+      let strJson: string = inspector.getInspectorByKey('backgroundAndSizeSetting' + '_fontColor');
       let obj = JSON.parseJsonElement(strJson);
       console.info("testBackgroundAndSizeSetting_static_0100 component strJson:" + strJson);
       console.info("testBackgroundAndSizeSetting_static_0100 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

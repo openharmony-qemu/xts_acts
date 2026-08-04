@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { stream } from '@kit.ArkTS';
 import { TestReadable, TestWritable, writeSuccess } from './importclass';
 

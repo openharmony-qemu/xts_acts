@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import CameraFunctionTest from './CameraFunctionTest.test';
 import CameraInputTest from './CameraInputTest.test';
 import CameraSessionExposureTest from './CameraSessionExposureTest.test';
@@ -39,38 +42,44 @@ import CameraSessionSystemPressureLevelTest from './CameraSessionSystemPressureT
 import CameraSessionControlCenterTest from './CameraSessionControlCenterTest.test.ets';
 import CameraPhotoSesionProfessionAbilityTest from './CameraPhotoSesionProfessionAbilityTest.test'
 import CameraDevicePropertyTest from './CameraDevicePropertyTest.test'
+import CameraPhotoSesionCaptureWithPhotoSettingExt from './CameraPhotoSesionCaptureWithPhotoSettingExt.test'
 
 let voice = call.hasVoiceCapability()
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
 
 export default function testsuite() {
-  PhotoTest();
-  CameraSessionQualityPrioritizationTest();
-  SessionTest();
-  SecureCameraTest();
-  SecureCameraErrorCodeTest();
-  CameraManagerTest();
-  VideoMirrorTest();
-  CameraSessionMacroTest();
-  CameraPhotoSesionProfessionAbilityTest();
-  CameraDevicePropertyTest();
+  if (cameraDeviceArray.length != 0) {
+    PhotoTest();
+    CameraSessionQualityPrioritizationTest();
+    SessionTest();
+    SecureCameraTest();
+    SecureCameraErrorCodeTest();
+    CameraManagerTest();
+    VideoMirrorTest();
+    CameraSessionMacroTest();
+    CameraPhotoSesionProfessionAbilityTest();
+    CameraDevicePropertyTest();
+    CameraPhotoSesionCaptureWithPhotoSettingExt();
 
-  if (voice){
-    CameraSessionExposureTest();
-    CameraSessionBaseTest();
-    CameraSessionFlashTest();
-    CameraSessionFocusTest();
-    CameraSessionZoomRatioTest();
-    CameraSessionVideoStabilizationTest();
-    CameraImageProcessingTest();
-    CameraErrorCodeUsecaseTest();
-    cameraJSUnitOutput();
-    CameraSessionCameraRotationTest();
-    CameraSessionAutoDeviceSwitchTest();
-    CameraSessionSystemPressureLevelTest();
-    CameraSessionControlCenterTest();
-  }else{
-    CameraFunctionTest();
-    CameraInputTest();
+    if (voice) {
+      CameraSessionExposureTest();
+      CameraSessionBaseTest();
+      CameraSessionFlashTest();
+      CameraSessionFocusTest();
+      CameraSessionZoomRatioTest();
+      CameraSessionVideoStabilizationTest();
+      CameraImageProcessingTest();
+      CameraErrorCodeUsecaseTest();
+      cameraJSUnitOutput();
+      CameraSessionCameraRotationTest();
+      CameraSessionAutoDeviceSwitchTest();
+      CameraSessionSystemPressureLevelTest();
+      CameraSessionControlCenterTest();
+    } else {
+      CameraFunctionTest();
+      CameraInputTest();
+    }
   }
-
 }

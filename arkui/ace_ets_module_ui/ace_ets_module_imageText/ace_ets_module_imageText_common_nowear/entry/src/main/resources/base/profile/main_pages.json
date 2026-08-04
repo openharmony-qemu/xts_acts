@@ -16,6 +16,8 @@
   "MainAbility/pages/StyledString/styledStringChange",
   "MainAbility/pages/MovingPhotoView/MovingPhotoViewApi13",
   "MainAbility/pages/MovingPhotoView/MovingPhotoViewApi18",
-  "MainAbility/pages/Span/SpanOnHoverTest"
+  "MainAbility/pages/Span/SpanOnHoverTest",
+
+  "MainAbility/pages/SelectionMenu/SelectionMenuBackgroundSystemMaterial"
   ]
 }

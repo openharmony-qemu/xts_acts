@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll, } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -30,7 +31,12 @@ export default function RdbStoreSetLocaleTest() {
 //==============================================
         beforeAll(async () => {
             console.info(TAG, "*************Unit Test Begin*************");
-            delegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+            let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+            let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            delegator.executeShellCommand(cmd)
             await Utils.msSleep(5000);
             context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
             console.info(TAG + 'beforeAll')

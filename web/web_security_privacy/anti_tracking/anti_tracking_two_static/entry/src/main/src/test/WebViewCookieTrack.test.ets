@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -46,7 +47,12 @@ export default function ActsAcewebViewCookieTrack() {
           console.log('BusinessError  end')
         });
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.antitrackingtwotest.static')
+        let cmd = 'aa start -a EntryAbility -b com.open.harmony.antitrackingtwotest.static';
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', "Succeed!")
       } catch (error) {
@@ -77,9 +83,26 @@ export default function ActsAcewebViewCookieTrack() {
       done()
     })
     /**
+     * @tc.name        testAddIntelligentTrackingPreventionBypassingListError001
+     * @tc.number      SUB_WEB_ERRORCODE_ADDINTELLIGENTTRACKINGPREVENTIONBYPASSINGLIST_0100
+     * @tc.desc        test addIntelligentTrackingPreventionBypassingList error code 801
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testAddIntelligentTrackingPreventionBypassingListError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testAddIntelligentTrackingPreventionBypassingListError001", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testAddIntelligentTrackingPreventionBypassingListError001", true, 202503301, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
+      await Utils.msSleep(4000);
+      done()
+    })
+    /**
      * @tc.name        testRemoveIntelligentTrackingPreventionBypassingListError001
      * @tc.number      SUB_WEB_ERRORCODE_REMOVEINTELLIGENTTRACKINGPREVENTIONBYPASSINGLIST_0100
-     * @tc.desc        test removeIntelligentTrackingPreventionBypassingList error
+     * @tc.desc        test removeIntelligentTrackingPreventionBypassingList error code 801
      * @tc.size        MEDIUM
      * @tc.type        Function
      * @tc.level       LEVEL0
@@ -87,7 +110,24 @@ export default function ActsAcewebViewCookieTrack() {
     it('testRemoveIntelligentTrackingPreventionBypassingListError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testRemoveIntelligentTrackingPreventionBypassingListError001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testRemoveIntelligentTrackingPreventionBypassingListError001", '401', 202503208, done);
+      Utils.registerEvent("testRemoveIntelligentTrackingPreventionBypassingListError001", true, 202503302, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
+      await Utils.msSleep(4000);
+      done()
+    })
+    /**
+     * @tc.name        testClearIntelligentTrackingPreventionBypassingListError001
+     * @tc.number      SUB_WEB_ERRORCODE_CLEARINTELLIGENTTRACKINGPREVENTIONBYPASSINGLIST_0100
+     * @tc.desc        test clearIntelligentTrackingPreventionBypassingList error code 801
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testClearIntelligentTrackingPreventionBypassingListError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testClearIntelligentTrackingPreventionBypassingListError001", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testClearIntelligentTrackingPreventionBypassingListError001", true, 202503303, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
       await Utils.msSleep(4000);

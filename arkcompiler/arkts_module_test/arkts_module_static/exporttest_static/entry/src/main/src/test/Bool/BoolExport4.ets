@@ -20,7 +20,7 @@ export interface GeneratedObjectLiteralInterface_1 {
   bool1: boolean;
 };
 
-export const appConfig7 = {
+export const appConfig7:GeneratedObjectLiteralInterface_1 = {
   bool1: false,
   bool: true,
 } as GeneratedObjectLiteralInterface_1;

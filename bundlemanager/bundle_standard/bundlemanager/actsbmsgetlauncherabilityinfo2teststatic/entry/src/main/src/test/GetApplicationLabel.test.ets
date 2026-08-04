@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 
 import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
   
 export default function getApplicationLabel(): void {
   describe('getApplicationLabel', (): void => {

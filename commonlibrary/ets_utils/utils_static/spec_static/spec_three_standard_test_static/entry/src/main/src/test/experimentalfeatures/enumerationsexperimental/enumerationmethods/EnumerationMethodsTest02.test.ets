@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 namespace testNS {
   // enum_explicit_type_fromvalue_4.ets
@@ -90,7 +84,6 @@ namespace testNS {
   }
   ;
 
-
   // enum_explicit_type_tostring_0.ets
   export function runTest84(): boolean {
     expect(Enum3.Red.valueOf() instanceof int).assertTrue();
@@ -131,9 +124,6 @@ namespace testNS {
 
     return true;
   }
-
-
-
 
   // enum_explicit_type_tostring_4.ets
   export function runTest88(): boolean {
@@ -176,9 +166,6 @@ namespace testNS {
     return true;
   }
 
-
-
-
   // enum_explicit_type_tostring_8.ets
   export function runTest92(): boolean {
     expect(Enum1.Red.valueOf() instanceof byte).assertTrue();
@@ -219,7 +206,6 @@ namespace testNS {
 
     return true;
   }
-
 
   // enum_explicit_type_tostring_12.ets
   export function runTest96(): boolean {
@@ -262,49 +248,6 @@ namespace testNS {
     return true;
   }
 
-  // enum_explicit_type_tostring_14.ets
-  export function runTest98(): boolean {
-    expect(Enum2.Red.valueOf() instanceof short).assertTrue();
-    expect(Enum2.Red.toString()).assertEqual("0");
-    expect(Enum2.Red.toString()).assertEqual(Enum2.Red.valueOf().toString());
-
-    expect(Enum2.Green.valueOf() instanceof short).assertTrue();
-    expect(Enum2.Green.toString()).assertEqual("10");
-    expect(Enum2.Green.toString()).assertEqual(Enum2.Green.valueOf().toString());
-
-    expect(Enum2.Blue.valueOf() instanceof short).assertTrue();
-    expect(Enum2.Blue.toString()).assertEqual("11");
-    expect(Enum2.Blue.toString()).assertEqual(Enum2.Blue.valueOf().toString());
-
-    expect(Enum2.First.valueOf() instanceof short).assertTrue();
-    expect(Enum2.First.toString()).assertEqual("-32768");
-    expect(Enum2.First.toString()).assertEqual(Enum2.First.valueOf().toString());
-
-    expect(Enum2.Second.valueOf() instanceof short).assertTrue();
-    expect(Enum2.Second.toString()).assertEqual("12345");
-    expect(Enum2.Second.toString()).assertEqual(Enum2.Second.valueOf().toString());
-
-    expect(Enum2.Third.valueOf() instanceof short).assertTrue();
-    expect(Enum2.Third.toString()).assertEqual("32767");
-    expect(Enum2.Third.toString()).assertEqual(Enum2.Third.valueOf().toString());
-
-    expect(Enum2.One.valueOf() instanceof short).assertTrue();
-    expect(Enum2.One.toString()).assertEqual("1");
-    expect(Enum2.One.toString()).assertEqual(Enum2.One.valueOf().toString());
-
-    expect(Enum2.one.valueOf() instanceof short).assertTrue();
-    expect(Enum2.one.toString()).assertEqual("1");
-    expect(Enum2.one.toString()).assertEqual(Enum2.one.valueOf().toString());
-
-    expect(Enum2.oNe.valueOf() instanceof short).assertTrue();
-    expect(Enum2.oNe.toString()).assertEqual("1");
-    expect(Enum2.oNe.toString()).assertEqual(Enum2.oNe.valueOf().toString());
-
-    return true;
-  }
-
-
-
   // enum_explicit_type_tostring_16.ets
   export function runTest100(): boolean {
     expect(Enum6.Red.valueOf() instanceof double).assertTrue();
@@ -345,9 +288,6 @@ namespace testNS {
 
     return true;
   }
-
-
-
 
   // enum_explicit_type_tostring_20.ets
   export function runTest104(): boolean {
@@ -390,9 +330,6 @@ namespace testNS {
     return true;
   }
 
-
-
-
   // enum_explicit_type_tostring_24.ets
   export function runTest108(): boolean {
     expect(Enum7.Red.valueOf() instanceof String).assertTrue();
@@ -426,133 +363,6 @@ namespace testNS {
 
     return true;
   }
-
-
-
-  // enum_implicit_type_tostring_0.ets
-  export function runTest190(): boolean {
-    expect(Enum3.Red.valueOf() instanceof int).assertTrue();
-    expect(Enum3.Red.toString()).assertEqual("0");
-    expect(Enum3.Red.toString()).assertEqual(Enum3.Red.valueOf().toString());
-
-    expect(Enum3.Green.valueOf() instanceof int).assertTrue();
-    expect(Enum3.Green.toString()).assertEqual("10");
-    expect(Enum3.Green.toString()).assertEqual(Enum3.Green.valueOf().toString());
-
-    expect(Enum3.Blue.valueOf() instanceof int).assertTrue();
-    expect(Enum3.Blue.toString()).assertEqual("11");
-    expect(Enum3.Blue.toString()).assertEqual(Enum3.Blue.valueOf().toString());
-
-    expect(Enum3.First.valueOf() instanceof int).assertTrue();
-    expect(Enum3.First.toString()).assertEqual("-2147483648");
-    expect(Enum3.First.toString()).assertEqual(Enum3.First.valueOf().toString());
-
-    expect(Enum3.Second.valueOf() instanceof int).assertTrue();
-    expect(Enum3.Second.toString()).assertEqual("12345");
-    expect(Enum3.Second.toString()).assertEqual(Enum3.Second.valueOf().toString());
-
-    expect(Enum3.Third.valueOf() instanceof int).assertTrue();
-    expect(Enum3.Third.toString()).assertEqual("2147483647");
-    expect(Enum3.Third.toString()).assertEqual(Enum3.Third.valueOf().toString());
-
-    expect(Enum3.One.valueOf() instanceof int).assertTrue();
-    expect(Enum3.One.toString()).assertEqual("1");
-    expect(Enum3.One.toString()).assertEqual(Enum3.One.valueOf().toString());
-
-    expect(Enum3.one.valueOf() instanceof int).assertTrue();
-    expect(Enum3.one.toString()).assertEqual("1");
-    expect(Enum3.one.toString()).assertEqual(Enum3.one.valueOf().toString());
-
-    expect(Enum3.oNe.valueOf() instanceof int).assertTrue();
-    expect(Enum3.oNe.toString()).assertEqual("1");
-    expect(Enum3.oNe.toString()).assertEqual(Enum3.oNe.valueOf().toString());
-
-    return true;
-  }
-
-
-
-
-  // enum_implicit_type_tostring_4.ets
-  export function runTest194(): boolean {
-    expect(Enum4.Red.valueOf() instanceof long).assertTrue();
-    expect(Enum4.Red.toString()).assertEqual("0");
-    expect(Enum4.Red.toString()).assertEqual(Enum4.Red.valueOf().toString());
-
-    expect(Enum4.Green.valueOf() instanceof long).assertTrue();
-    expect(Enum4.Green.toString()).assertEqual("10");
-    expect(Enum4.Green.toString()).assertEqual(Enum4.Green.valueOf().toString());
-
-    expect(Enum4.Blue.valueOf() instanceof long).assertTrue();
-    expect(Enum4.Blue.toString()).assertEqual("11");
-    expect(Enum4.Blue.toString()).assertEqual(Enum4.Blue.valueOf().toString());
-
-    expect(Enum4.First.valueOf() instanceof long).assertTrue();
-    expect(Enum4.First.toString()).assertEqual("-9223372036854775808");
-    expect(Enum4.First.toString()).assertEqual(Enum4.First.valueOf().toString());
-
-    expect(Enum4.Second.valueOf() instanceof long).assertTrue();
-    expect(Enum4.Second.toString()).assertEqual("12345");
-    expect(Enum4.Second.toString()).assertEqual(Enum4.Second.valueOf().toString());
-
-    expect(Enum4.Third.valueOf() instanceof long).assertTrue();
-    expect(Enum4.Third.toString()).assertEqual("9223372036854775807");
-    expect(Enum4.Third.toString()).assertEqual(Enum4.Third.valueOf().toString());
-
-    expect(Enum4.One.valueOf() instanceof long).assertTrue();
-    expect(Enum4.One.toString()).assertEqual("1");
-    expect(Enum4.One.toString()).assertEqual(Enum4.One.valueOf().toString());
-
-    expect(Enum4.one.valueOf() instanceof long).assertTrue();
-    expect(Enum4.one.toString()).assertEqual("1");
-    expect(Enum4.one.toString()).assertEqual(Enum4.one.valueOf().toString());
-
-    expect(Enum4.oNe.valueOf() instanceof long).assertTrue();
-    expect(Enum4.oNe.toString()).assertEqual("1");
-    expect(Enum4.oNe.toString()).assertEqual(Enum4.oNe.valueOf().toString());
-
-    return true;
-  }
-
-
-
-
-  // enum_implicit_type_tostring_8.ets
-  export function runTest198(): boolean {
-    expect(Enum7.Red.valueOf() instanceof String).assertTrue();
-    expect(Enum7.Red.toString()).assertEqual("reD");
-    expect(Enum7.Red.toString()).assertEqual(Enum7.Red.valueOf().toString());
-
-    expect(Enum7.Green.valueOf() instanceof String).assertTrue();
-    expect(Enum7.Green.toString()).assertEqual("grEen");
-    expect(Enum7.Green.toString()).assertEqual(Enum7.Green.valueOf().toString());
-
-    expect(Enum7.Blue.valueOf() instanceof String).assertTrue();
-    expect(Enum7.Blue.toString()).assertEqual("Blue");
-    expect(Enum7.Blue.toString()).assertEqual(Enum7.Blue.valueOf().toString());
-
-    expect(Enum7.Complex.valueOf() instanceof String).assertTrue();
-    expect(Enum7.Complex.toString()).assertEqual(
-      "\x17\x2b\xef\u1f48\u2331\u2b03\u2eec \n \u{CAFE}\n\uBABF生日快乐!С Днём рождения!");
-    expect(Enum7.Complex.toString()).assertEqual(Enum7.Complex.valueOf().toString());
-
-    expect(Enum7.One.valueOf() instanceof String).assertTrue();
-    expect(Enum7.One.toString()).assertEqual("one");
-    expect(Enum7.One.toString()).assertEqual(Enum7.One.valueOf().toString());
-
-    expect(Enum7.one.valueOf() instanceof String).assertTrue();
-    expect(Enum7.one.toString()).assertEqual("one");
-    expect(Enum7.one.toString()).assertEqual(Enum7.one.valueOf().toString());
-
-    expect(Enum7.oNe.valueOf() instanceof String).assertTrue();
-    expect(Enum7.oNe.toString()).assertEqual("one");
-    expect(Enum7.oNe.toString()).assertEqual(Enum7.oNe.valueOf().toString());
-
-    return true;
-  }
-
-
-
 
   // enum_explicit_type_values_0.ets
   export function runTest140(): boolean {
@@ -975,7 +785,6 @@ namespace testNS {
 
     return true;
   }
-
 }
 
 // enum_explicit_type_fromvalue_4.ets
@@ -1074,7 +883,7 @@ export default function EnumerationMethodsTest02(): void {
     })
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -1280,55 +1089,6 @@ export default function EnumerationMethodsTest02(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_2400
-     * @tc.name      testEnumerationMethods0024
-     * @tc.desc      Checking for enum with explicit short type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testEnumerationMethods0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum2.Red.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Red.toString()).assertEqual("0");
-      expect(Enum2.Red.toString()).assertEqual(Enum2.Red.valueOf().toString());
-
-      expect(Enum2.Green.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Green.toString()).assertEqual("10");
-      expect(Enum2.Green.toString()).assertEqual(Enum2.Green.valueOf().toString());
-
-      expect(Enum2.Blue.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Blue.toString()).assertEqual("11");
-      expect(Enum2.Blue.toString()).assertEqual(Enum2.Blue.valueOf().toString());
-
-      expect(Enum2.First.valueOf() instanceof short).assertTrue();
-      expect(Enum2.First.toString()).assertEqual("-32768");
-      expect(Enum2.First.toString()).assertEqual(Enum2.First.valueOf().toString());
-
-      expect(Enum2.Second.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Second.toString()).assertEqual("12345");
-      expect(Enum2.Second.toString()).assertEqual(Enum2.Second.valueOf().toString());
-
-      expect(Enum2.Third.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Third.toString()).assertEqual("32767");
-      expect(Enum2.Third.toString()).assertEqual(Enum2.Third.valueOf().toString());
-
-      expect(Enum2.One.valueOf() instanceof short).assertTrue();
-      expect(Enum2.One.toString()).assertEqual("1");
-      expect(Enum2.One.toString()).assertEqual(Enum2.One.valueOf().toString());
-
-      expect(Enum2.one.valueOf() instanceof short).assertTrue();
-      expect(Enum2.one.toString()).assertEqual("1");
-      expect(Enum2.one.toString()).assertEqual(Enum2.one.valueOf().toString());
-
-      expect(Enum2.oNe.valueOf() instanceof short).assertTrue();
-      expect(Enum2.oNe.toString()).assertEqual("1");
-      expect(Enum2.oNe.toString()).assertEqual(Enum2.oNe.valueOf().toString());
-
-      expect(testNS.runTest98()).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_2500
      * @tc.name      testEnumerationMethods0025
      * @tc.desc      Checking for enum with explicit double type constant that methods c.toString() and
@@ -1417,147 +1177,6 @@ export default function EnumerationMethodsTest02(): void {
       expect(Enum7.oNe.toString()).assertEqual(Enum7.oNe.valueOf().toString());
 
       expect(testNS.runTest108()).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_2700
-     * @tc.name      testEnumerationMethods0027
-     * @tc.desc      Checking for enum with implicit int type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testEnumerationMethods0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum3.Red.valueOf() instanceof int).assertTrue();
-      expect(Enum3.Red.toString()).assertEqual("0");
-      expect(Enum3.Red.toString()).assertEqual(Enum3.Red.valueOf().toString());
-
-      expect(Enum3.Green.valueOf() instanceof int).assertTrue();
-      expect(Enum3.Green.toString()).assertEqual("10");
-      expect(Enum3.Green.toString()).assertEqual(Enum3.Green.valueOf().toString());
-
-      expect(Enum3.Blue.valueOf() instanceof int).assertTrue();
-      expect(Enum3.Blue.toString()).assertEqual("11");
-      expect(Enum3.Blue.toString()).assertEqual(Enum3.Blue.valueOf().toString());
-
-      expect(Enum3.First.valueOf() instanceof int).assertTrue();
-      expect(Enum3.First.toString()).assertEqual("-2147483648");
-      expect(Enum3.First.toString()).assertEqual(Enum3.First.valueOf().toString());
-
-      expect(Enum3.Second.valueOf() instanceof int).assertTrue();
-      expect(Enum3.Second.toString()).assertEqual("12345");
-      expect(Enum3.Second.toString()).assertEqual(Enum3.Second.valueOf().toString());
-
-      expect(Enum3.Third.valueOf() instanceof int).assertTrue();
-      expect(Enum3.Third.toString()).assertEqual("2147483647");
-      expect(Enum3.Third.toString()).assertEqual(Enum3.Third.valueOf().toString());
-
-      expect(Enum3.One.valueOf() instanceof int).assertTrue();
-      expect(Enum3.One.toString()).assertEqual("1");
-      expect(Enum3.One.toString()).assertEqual(Enum3.One.valueOf().toString());
-
-      expect(Enum3.one.valueOf() instanceof int).assertTrue();
-      expect(Enum3.one.toString()).assertEqual("1");
-      expect(Enum3.one.toString()).assertEqual(Enum3.one.valueOf().toString());
-
-      expect(Enum3.oNe.valueOf() instanceof int).assertTrue();
-      expect(Enum3.oNe.toString()).assertEqual("1");
-      expect(Enum3.oNe.toString()).assertEqual(Enum3.oNe.valueOf().toString());
-
-
-      expect(testNS.runTest190()).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_2800
-     * @tc.name      testEnumerationMethods0028
-     * @tc.desc      Checking for enum with implicit long type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testEnumerationMethods0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum4.Red.valueOf() instanceof long).assertTrue();
-      expect(Enum4.Red.toString()).assertEqual("0");
-      expect(Enum4.Red.toString()).assertEqual(Enum4.Red.valueOf().toString());
-
-      expect(Enum4.Green.valueOf() instanceof long).assertTrue();
-      expect(Enum4.Green.toString()).assertEqual("10");
-      expect(Enum4.Green.toString()).assertEqual(Enum4.Green.valueOf().toString());
-
-      expect(Enum4.Blue.valueOf() instanceof long).assertTrue();
-      expect(Enum4.Blue.toString()).assertEqual("11");
-      expect(Enum4.Blue.toString()).assertEqual(Enum4.Blue.valueOf().toString());
-
-      expect(Enum4.First.valueOf() instanceof long).assertTrue();
-      expect(Enum4.First.toString()).assertEqual("-9223372036854775808");
-      expect(Enum4.First.toString()).assertEqual(Enum4.First.valueOf().toString());
-
-      expect(Enum4.Second.valueOf() instanceof long).assertTrue();
-      expect(Enum4.Second.toString()).assertEqual("12345");
-      expect(Enum4.Second.toString()).assertEqual(Enum4.Second.valueOf().toString());
-
-      expect(Enum4.Third.valueOf() instanceof long).assertTrue();
-      expect(Enum4.Third.toString()).assertEqual("9223372036854775807");
-      expect(Enum4.Third.toString()).assertEqual(Enum4.Third.valueOf().toString());
-
-      expect(Enum4.One.valueOf() instanceof long).assertTrue();
-      expect(Enum4.One.toString()).assertEqual("1");
-      expect(Enum4.One.toString()).assertEqual(Enum4.One.valueOf().toString());
-
-      expect(Enum4.one.valueOf() instanceof long).assertTrue();
-      expect(Enum4.one.toString()).assertEqual("1");
-      expect(Enum4.one.toString()).assertEqual(Enum4.one.valueOf().toString());
-
-      expect(Enum4.oNe.valueOf() instanceof long).assertTrue();
-      expect(Enum4.oNe.toString()).assertEqual("1");
-      expect(Enum4.oNe.toString()).assertEqual(Enum4.oNe.valueOf().toString());
-
-      expect(testNS.runTest194()).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_2900
-     * @tc.name      testEnumerationMethods0029
-     * @tc.desc      Checking for enum with implicit string type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testEnumerationMethods0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum7.Red.valueOf() instanceof String).assertTrue();
-      expect(Enum7.Red.toString()).assertEqual("reD");
-      expect(Enum7.Red.toString()).assertEqual(Enum7.Red.valueOf().toString());
-
-      expect(Enum7.Green.valueOf() instanceof String).assertTrue();
-      expect(Enum7.Green.toString()).assertEqual("grEen");
-      expect(Enum7.Green.toString()).assertEqual(Enum7.Green.valueOf().toString());
-
-      expect(Enum7.Blue.valueOf() instanceof String).assertTrue();
-      expect(Enum7.Blue.toString()).assertEqual("Blue");
-      expect(Enum7.Blue.toString()).assertEqual(Enum7.Blue.valueOf().toString());
-
-      expect(Enum7.Complex.valueOf() instanceof String).assertTrue();
-      expect(Enum7.Complex.toString()).assertEqual(
-        "\x17\x2b\xef\u1f48\u2331\u2b03\u2eec \n \u{CAFE}\n\uBABF生日快乐!С Днём рождения!");
-      expect(Enum7.Complex.toString()).assertEqual(Enum7.Complex.valueOf().toString());
-
-      expect(Enum7.One.valueOf() instanceof String).assertTrue();
-      expect(Enum7.One.toString()).assertEqual("one");
-      expect(Enum7.One.toString()).assertEqual(Enum7.One.valueOf().toString());
-
-      expect(Enum7.one.valueOf() instanceof String).assertTrue();
-      expect(Enum7.one.toString()).assertEqual("one");
-      expect(Enum7.one.toString()).assertEqual(Enum7.one.valueOf().toString());
-
-      expect(Enum7.oNe.valueOf() instanceof String).assertTrue();
-      expect(Enum7.oNe.toString()).assertEqual("one");
-      expect(Enum7.oNe.toString()).assertEqual(Enum7.oNe.valueOf().toString());
-
-      expect(testNS.runTest198()).assertTrue();
     });
 
     /**

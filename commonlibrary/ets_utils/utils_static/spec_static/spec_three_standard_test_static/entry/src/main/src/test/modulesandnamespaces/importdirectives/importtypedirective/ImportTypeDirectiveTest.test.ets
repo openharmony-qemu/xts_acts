@@ -15,6 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
+import Utils from '../../../Util.test'
 
 class Class1 {
   f: number = 1;
@@ -26,14 +27,6 @@ class Class2 {
 
 class A {
   constructor() {}
-}
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
 }
 
 export default function ImportTypeDirectiveTest(): void {
@@ -48,7 +41,7 @@ export default function ImportTypeDirectiveTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -94,6 +87,5 @@ export default function ImportTypeDirectiveTest(): void {
       let c: A = new A();
       expect(c instanceof A).assertTrue();
     });
-
   })
 }

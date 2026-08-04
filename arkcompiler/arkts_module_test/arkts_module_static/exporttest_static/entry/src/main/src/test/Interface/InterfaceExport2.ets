@@ -21,7 +21,7 @@ export interface User {
   email: string;
 };
 
-const User2 = {
+const User2:User = {
   name: 'John Doe',
   age: 30,
   email: 'johndoe@example.com'

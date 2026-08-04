@@ -1,5 +1,6 @@
+'use static';
 import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@ohos.arkui.node';
-import { Color,NativeEmbedDataInfo,  Entry, Component, Column, Row, Button, ClickEvent, Web, $rawfile, NativeEmbedTouchInfo, NativeEmbedDataInfo, NativeEmbedParamStatus, EmbedOptions, NativeEmbedParamItem, NativeEmbedParamDataInfo} from '@ohos.arkui.component'
+import { Color,NativeEmbedDataInfo,  Entry, Component, Column, Row, Button, ClickEvent, Web, $rawfile, NativeEmbedTouchInfo, NativeEmbedParamStatus, EmbedOptions, NativeEmbedParamItem, NativeEmbedParamDataInfo} from '@ohos.arkui.component'
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
@@ -10,7 +11,7 @@ import { BusinessError, RecordData } from '@ohos.base'
 import { Driver, ON } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
 import {NativeEmbedVisibilityInfo,NativeEmbedStatus} from '@ohos.arkui.component';
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 

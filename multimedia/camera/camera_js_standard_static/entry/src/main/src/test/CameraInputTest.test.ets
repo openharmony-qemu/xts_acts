@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -393,12 +394,12 @@ let isEmpty08 = (data: BusinessError) => {
           mCameraInput!.onError(mCameraDevicesArray[i], (err: BusinessError) => {
             if (isEmpty08(err)) {
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 err == null || undefined");
-               stopCameraSession().awaitSync()
+               waitForCompletion(async () => {await stopCameraSession();})
               expect().assertFail();
             } else {
               console.info(TAG + "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 Callback SUCCESSFUL");
             }
-             Utils.msSleep(1).awaitSync()
+             waitForCompletion(async () => {await Utils.msSleep(1);})
           })
 
           try {

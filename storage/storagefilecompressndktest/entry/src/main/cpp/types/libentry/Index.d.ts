@@ -1,0 +1,11 @@
+export const archive_compress: (inarg:number) => number;
+export const archive_compress_muti_file: (inarg:number) => number;
+export const archive_compress_cancel: (inarg:number) => number;
+export const archive_decompress_cancel: (inarg:number) => number;
+export const archive_compress_abnormal: (inarg:number) => number;
+export const archive_buffer_test: (inarg:number) => number;
+export const archive_buffer_test_abnormal: (inarg:number) => number;
+export const archive_stream_test: (inarg:number) => number;
+export const archive_stream_zipquit: (inarg:number) => number;
+export const archive_stream_unzipquit: (inarg:number) => number;
+export const archive_stream_test_abnormal: (inarg:number) => number;

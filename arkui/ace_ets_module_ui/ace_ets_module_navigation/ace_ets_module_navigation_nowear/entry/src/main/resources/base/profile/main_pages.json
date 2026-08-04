@@ -4,6 +4,7 @@
         "MainAbility/pages/navigation/EnableToolBarAdaptation",
         "MainAbility/pages/navigation/OnNewParamPage",
         "MainAbility/pages/navigation/PreferredOrientation",
-        "MainAbility/pages/navDestination/navDestinationFullScreenOverlay"
+        "MainAbility/pages/navDestination/navDestinationFullScreenOverlay",
+        "MainAbility/pages/navigation/navigationMaterial"
     ]
 }

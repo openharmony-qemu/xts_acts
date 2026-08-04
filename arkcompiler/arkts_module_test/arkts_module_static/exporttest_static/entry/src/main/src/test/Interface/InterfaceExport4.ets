@@ -21,7 +21,7 @@ export interface User7 {
   email: string;
 };
 
-export const newUser7 = {
+export const newUser7:User7 = {
   name: 'John Doe',
   age: 30,
   email: 'johndoe@example.com'

@@ -31,7 +31,8 @@ import rotateTest from './imageEffectsTest/rotateTest.test';
 import shapeTest from './imageEffectsTest/shapeTest.test';
 import imageEffectsJsunit from './imageEffectsTest/ImageEffectsJsunit.test';
 import transformPointTest from './imageEffectsTest/transformPointTest.test';
-import commonBackgroundBlurStyleJsunit from './imageEffectsTest/common.test3'
+import commonBackgroundBlurStyleJsunit from './imageEffectsTest/common.test3';
+import doubleSidedTest from './imageEffectsTest/doubleSided.test';
 
 export default function testsuite() {
   transformPointTest()
@@ -50,4 +51,5 @@ export default function testsuite() {
   shapeTest()
   imageEffectsJsunit();
   commonBackgroundBlurStyleJsunit()
+  doubleSidedTest()
 }

@@ -13,22 +13,73 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
-import entry from 'libentry.so';
+import testNapi from 'libentry.so';
+import hilog from '@ohos.hilog';
+import fs from '@ohos.file.fs';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
+interface FileCopyInfo {
+  raw: string;
+  target: string;
+}
+
+function getContext(): Context {
+  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+  let context = abilityDelegator.getAppContext();
+  return context;
+}
+
+async function copyRawFileToSandbox(context: Context, rawFileName: string, targetPath: string): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    context.resourceManager.getRawFileContent(rawFileName, (error, buffer) => {
+      if (error) {
+        console.error(`[copyRawFile] ${rawFileName} copy failed: ${error.code}, message: ${error.message}`);
+        reject(error);
+      } else {
+        try {
+          let file = fs.openSync(targetPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+          fs.writeSync(file.fd, buffer.buffer);
+          fs.closeSync(file);
+          console.info(`[copyRawFile] ${rawFileName} copy success to ${targetPath}`);
+          resolve();
+        } catch (e) {
+          console.error(`[copyRawFile] ${rawFileName} write failed: ${JSON.stringify(e)}`);
+          reject(e);
+        }
+      }
+    });
+  });
+}
 
 export default function ApiTest() {
   describe('ApiTest', () => {
-    beforeAll(() => {
-      entry.Api_Test_Prepare(0);
-    })
-    beforeEach(() => {
-      entry.Api_Test_Prepare(2);
-    })
-    afterEach(() => {
-      entry.Api_Test_Prepare(3);
-    })
+    beforeAll(async () => {
+      console.info('ApiTest beforeAll called');
+      try {
+        let context = getContext();
+        let filesDir = context.filesDir;
+        let mediaDir = filesDir + '/media';
+        if (!fs.accessSync(mediaDir)) {
+          fs.mkdirSync(mediaDir);
+        }
+      } catch (error) {
+        console.error(`[beforeAll] Setup failed: ${JSON.stringify(error)}`);
+      }
+      testNapi.initTests();
+      console.info('[beforeAll] initTests completed');
+    });
+
     afterAll(() => {
-      entry.Api_Test_Prepare(1);
-    })
+      console.info('ApiTest afterAll called');
+    });
+
+    beforeEach(() => {
+      console.info('ApiTest beforeEach called');
+    });
+
+    afterEach(() => {
+      console.info('ApiTest afterEach called');
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0100
@@ -38,11 +89,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(0);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0200
@@ -52,11 +102,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(1);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3300
@@ -66,11 +115,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_3300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(2);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_3300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara3300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1800
@@ -80,11 +128,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(3);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0300
@@ -94,11 +141,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(4);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0400
@@ -108,11 +154,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(5);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0500
@@ -122,11 +167,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(6);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1400
@@ -136,11 +180,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(7);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_5000
@@ -150,11 +193,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_5000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(8);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_5000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara5000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_5100
@@ -164,11 +206,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_5100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(9);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_5100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara5100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0600
@@ -178,11 +219,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(10);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0700
@@ -192,11 +232,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(11);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0800
@@ -206,11 +245,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(12);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0900
@@ -220,11 +258,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_0900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(13);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_0900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara0900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1000
@@ -234,11 +271,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(14);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1100
@@ -248,11 +284,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(15);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_4100
@@ -262,11 +297,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_4100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(16);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_4100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara4100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1500
@@ -276,11 +310,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(17);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1200
@@ -290,11 +323,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(18);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1300
@@ -304,11 +336,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(19);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1600
@@ -318,11 +349,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(20);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1700
@@ -332,11 +362,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_1700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(21);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_1700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara1700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2200
@@ -346,11 +375,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_2200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(22);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_2200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara2200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2500
@@ -360,11 +388,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_2500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(23);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_2500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara2500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2600
@@ -374,11 +401,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_2600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(24);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_2600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara2600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2700
@@ -388,11 +414,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_2700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(25);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_2700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara2700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2800
@@ -402,11 +427,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_2800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(26);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_2800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara2800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2900
@@ -416,11 +440,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_2900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(27);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_2900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara2900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3000
@@ -430,11 +453,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_3000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(28);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_3000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara3000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3100
@@ -444,11 +466,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_3100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(29);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_3100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara3100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3200
@@ -458,11 +479,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_ILLEGAL_PARA_3200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(30);
+    it('VIDEO_HWDEC_ILLEGAL_PARA_3200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecIllegalPara3200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0100
@@ -472,11 +492,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(31);
+    it('VIDEO_HWDEC_API_0100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0200
@@ -486,11 +505,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(32);
+    it('VIDEO_HWDEC_API_0200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0300
@@ -500,11 +518,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(33);
+    it('VIDEO_HWDEC_API_0300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0400
@@ -514,11 +531,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(34);
+    it('VIDEO_HWDEC_API_0400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0500
@@ -528,11 +544,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(35);
+    it('VIDEO_HWDEC_API_0500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0600
@@ -542,11 +557,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(36);
+    it('VIDEO_HWDEC_API_0600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0700
@@ -556,11 +570,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(37);
+    it('VIDEO_HWDEC_API_0700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0800
@@ -570,11 +583,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(38);
+    it('VIDEO_HWDEC_API_0800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_0900
@@ -584,11 +596,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_0900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(39);
+    it('VIDEO_HWDEC_API_0900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi0900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_1000
@@ -598,11 +609,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_1000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(40);
+    it('VIDEO_HWDEC_API_1000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi1000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_1100
@@ -612,11 +622,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_1100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(41);
+    it('VIDEO_HWDEC_API_1100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi1100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_1200
@@ -626,11 +635,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_1200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(42);
+    it('VIDEO_HWDEC_API_1200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApi1200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0100
@@ -640,11 +648,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(43);
+    it('VIDEO_HWDEC_CAP_API_0100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0200
@@ -654,11 +661,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(44);
+    it('VIDEO_HWDEC_CAP_API_0200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0300
@@ -668,11 +674,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(45);
+    it('VIDEO_HWDEC_CAP_API_0300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0400
@@ -682,11 +687,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(46);
+    it('VIDEO_HWDEC_CAP_API_0400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0500
@@ -696,11 +700,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(47);
+    it('VIDEO_HWDEC_CAP_API_0500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0600
@@ -710,11 +713,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(48);
+    it('VIDEO_HWDEC_CAP_API_0600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0700
@@ -724,11 +726,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(49);
+    it('VIDEO_HWDEC_CAP_API_0700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0800
@@ -738,11 +739,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(50);
+    it('VIDEO_HWDEC_CAP_API_0800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_0900
@@ -752,11 +752,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_0900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(51);
+    it('VIDEO_HWDEC_CAP_API_0900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi0900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_1000
@@ -766,11 +765,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_1000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(52);
+    it('VIDEO_HWDEC_CAP_API_1000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi1000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3100
@@ -780,11 +778,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(53);
+    it('VIDEO_HWDEC_CAP_API_3100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3200
@@ -794,11 +791,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(54);
+    it('VIDEO_HWDEC_CAP_API_3200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3300
@@ -808,11 +804,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(55);
+    it('VIDEO_HWDEC_CAP_API_3300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3400
@@ -822,11 +817,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(56);
+    it('VIDEO_HWDEC_CAP_API_3400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3500
@@ -836,11 +830,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(57);
+    it('VIDEO_HWDEC_CAP_API_3500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3600
@@ -850,11 +843,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(58);
+    it('VIDEO_HWDEC_CAP_API_3600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3700
@@ -864,11 +856,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(59);
+    it('VIDEO_HWDEC_CAP_API_3700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3800
@@ -878,11 +869,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(60);
+    it('VIDEO_HWDEC_CAP_API_3800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_3900
@@ -892,11 +882,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_3900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(61);
+    it('VIDEO_HWDEC_CAP_API_3900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi3900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4000
@@ -906,11 +895,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(62);
+    it('VIDEO_HWDEC_CAP_API_4000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4100
@@ -920,11 +908,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(63);
+    it('VIDEO_HWDEC_CAP_API_4100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4200
@@ -934,11 +921,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(64);
+    it('VIDEO_HWDEC_CAP_API_4200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4300
@@ -948,11 +934,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(65);
+    it('VIDEO_HWDEC_CAP_API_4300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4400
@@ -962,11 +947,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(66);
+    it('VIDEO_HWDEC_CAP_API_4400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4500
@@ -976,11 +960,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(67);
+    it('VIDEO_HWDEC_CAP_API_4500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4600
@@ -990,11 +973,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(68);
+    it('VIDEO_HWDEC_CAP_API_4600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4700
@@ -1004,11 +986,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(69);
+    it('VIDEO_HWDEC_CAP_API_4700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4800
@@ -1018,11 +999,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(70);
+    it('VIDEO_HWDEC_CAP_API_4800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_4900
@@ -1032,11 +1012,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_4900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(71);
+    it('VIDEO_HWDEC_CAP_API_4900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi4900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5000
@@ -1046,11 +1025,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(72);
+    it('VIDEO_HWDEC_CAP_API_5000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_1700
@@ -1060,11 +1038,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_1700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(73);
+    it('VIDEO_HWDEC_CAP_API_1700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi1700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5100
@@ -1074,11 +1051,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(74);
+    it('VIDEO_HWDEC_CAP_API_5100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5200
@@ -1088,11 +1064,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(75);
+    it('VIDEO_HWDEC_CAP_API_5200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5300
@@ -1102,11 +1077,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(76);
+    it('VIDEO_HWDEC_CAP_API_5300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_9400
@@ -1116,11 +1090,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_9400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(77);
+    it('VIDEO_HWDEC_CAP_API_9400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi9400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5400
@@ -1130,11 +1103,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(78);
+    it('VIDEO_HWDEC_CAP_API_5400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5500
@@ -1144,11 +1116,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(79);
+    it('VIDEO_HWDEC_CAP_API_5500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5600
@@ -1158,11 +1129,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(80);
+    it('VIDEO_HWDEC_CAP_API_5600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5700
@@ -1172,11 +1142,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(81);
+    it('VIDEO_HWDEC_CAP_API_5700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_1600
@@ -1186,11 +1155,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_1600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(82);
+    it('VIDEO_HWDEC_CAP_API_1600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi1600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5800
@@ -1200,11 +1168,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(83);
+    it('VIDEO_HWDEC_CAP_API_5800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_5900
@@ -1214,11 +1181,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_5900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(84);
+    it('VIDEO_HWDEC_CAP_API_5900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi5900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6000
@@ -1228,11 +1194,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(85);
+    it('VIDEO_HWDEC_CAP_API_6000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6100
@@ -1242,11 +1207,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(86);
+    it('VIDEO_HWDEC_CAP_API_6100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6200
@@ -1256,11 +1220,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(87);
+    it('VIDEO_HWDEC_CAP_API_6200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6300
@@ -1270,11 +1233,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(88);
+    it('VIDEO_HWDEC_CAP_API_6300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6400
@@ -1284,11 +1246,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(89);
+    it('VIDEO_HWDEC_CAP_API_6400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6500
@@ -1298,11 +1259,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(90);
+    it('VIDEO_HWDEC_CAP_API_6500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6600
@@ -1312,11 +1272,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(91);
+    it('VIDEO_HWDEC_CAP_API_6600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6700
@@ -1326,11 +1285,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(92);
+    it('VIDEO_HWDEC_CAP_API_6700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6800
@@ -1340,11 +1298,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(93);
+    it('VIDEO_HWDEC_CAP_API_6800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_6900
@@ -1354,11 +1311,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_6900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(94);
+    it('VIDEO_HWDEC_CAP_API_6900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi6900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7000
@@ -1368,11 +1324,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(95);
+    it('VIDEO_HWDEC_CAP_API_7000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7100
@@ -1382,11 +1337,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(96);
+    it('VIDEO_HWDEC_CAP_API_7100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_1200
@@ -1396,11 +1350,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_1200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(97);
+    it('VIDEO_HWDEC_CAP_API_1200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi1200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7200
@@ -1410,11 +1363,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(98);
+    it('VIDEO_HWDEC_CAP_API_7200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7300
@@ -1424,11 +1376,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(99);
+    it('VIDEO_HWDEC_CAP_API_7300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7400
@@ -1438,11 +1389,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(100);
+    it('VIDEO_HWDEC_CAP_API_7400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7500
@@ -1452,11 +1402,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(101);
+    it('VIDEO_HWDEC_CAP_API_7500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7500Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_1300
@@ -1466,11 +1415,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_1300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(102);
+    it('VIDEO_HWDEC_CAP_API_1300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi1300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7600
@@ -1480,11 +1428,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(103);
+    it('VIDEO_HWDEC_CAP_API_7600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7600Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7700
@@ -1494,11 +1441,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7700', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(104);
+    it('VIDEO_HWDEC_CAP_API_7700', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7700Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7800
@@ -1508,11 +1454,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7800', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(105);
+    it('VIDEO_HWDEC_CAP_API_7800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7800Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_7900
@@ -1522,11 +1467,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_7900', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(106);
+    it('VIDEO_HWDEC_CAP_API_7900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi7900Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_8000
@@ -1536,11 +1480,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_8000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(107);
+    it('VIDEO_HWDEC_CAP_API_8000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi8000Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_1400
@@ -1550,11 +1493,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_1400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(108);
+    it('VIDEO_HWDEC_CAP_API_1400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi1400Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_8100
@@ -1564,11 +1506,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_8100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(109);
+    it('VIDEO_HWDEC_CAP_API_8100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi8100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_8200
@@ -1578,11 +1519,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_8200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(110);
+    it('VIDEO_HWDEC_CAP_API_8200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi8200Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_CAP_API_8300
@@ -1592,11 +1532,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_CAP_API_8300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(111);
+    it('VIDEO_HWDEC_CAP_API_8300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecCapApi8300Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_ATTIME_API_0010
@@ -1606,11 +1545,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_HWDEC_ATTIME_API_0010', Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Api_Test(112);
+    it('VIDEO_HWDEC_ATTIME_API_0010', Level.LEVEL1, async () => {
+      let result: number = await testNapi.VideoHwdecAttimeApi0010Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0010
@@ -1620,11 +1558,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0010', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(113);
+    it('VIDEO_DECODE_SYNC_API_0010', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0010Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0020
@@ -1634,11 +1571,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0020', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(114);
+    it('VIDEO_DECODE_SYNC_API_0020', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0020Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0030
@@ -1648,11 +1584,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0030', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(115);
+    it('VIDEO_DECODE_SYNC_API_0030', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0030Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0040
@@ -1662,11 +1597,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0040', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(116);
+    it('VIDEO_DECODE_SYNC_API_0040', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0040Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0050
@@ -1676,11 +1610,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0050', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(117);
+    it('VIDEO_DECODE_SYNC_API_0050', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0050Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0060
@@ -1690,11 +1623,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0060', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(118);
+    it('VIDEO_DECODE_SYNC_API_0060', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0060Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0070
@@ -1704,11 +1636,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0070', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(119);
+    it('VIDEO_DECODE_SYNC_API_0070', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0070Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_DECODE_SYNC_API_0080
@@ -1718,11 +1649,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_SYNC_API_0080', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(120);
+    it('VIDEO_DECODE_SYNC_API_0080', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeSyncApi0080Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FORMAT_API_0010
@@ -1732,11 +1662,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VIDEO_HWDEC_FORMAT_API_0010', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Api_Test(121);
+    it('VIDEO_HWDEC_FORMAT_API_0010', Level.LEVEL0, async () => {
+      let result: number = await testNapi.VideoHwdecFormatApi0010Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_FORMAT_API_0020
@@ -1746,11 +1675,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VIDEO_HWDEC_FORMAT_API_0020', Level.LEVEL0, async (done: Function) => {
-      const result = await entry.Api_Test(122);
+    it('VIDEO_HWDEC_FORMAT_API_0020', Level.LEVEL0, async () => {
+      let result: number = await testNapi.VideoHwdecFormatApi0020Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_ADD_0010
@@ -1760,11 +1688,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_ADD_0010', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(123);
+    it('VIDEO_HWDEC_API_ADD_0010', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0010Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_ADD_0020
@@ -1774,11 +1701,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_ADD_0020', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(124);
+    it('VIDEO_HWDEC_API_ADD_0020', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0020Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_ADD_0030
@@ -1788,11 +1714,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_ADD_0030', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(125);
+    it('VIDEO_HWDEC_API_ADD_0030', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0030Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   VIDEO_HWDEC_API_ADD_0040
@@ -1802,11 +1727,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_HWDEC_API_ADD_0040', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(126);
+    it('VIDEO_HWDEC_API_ADD_0040', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0040Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1000
@@ -1816,11 +1740,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_VIDEO_HWDEC_API_ADD_1000', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(127);
+    it('SUB_VIDEO_HWDEC_API_ADD_1000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0050Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1100
@@ -1830,11 +1753,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_VIDEO_HWDEC_API_ADD_1100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(128);
+    it('SUB_VIDEO_HWDEC_API_ADD_1100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0060Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1200
@@ -1844,11 +1766,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_VIDEO_HWDEC_API_ADD_1200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(129);
+    it('SUB_VIDEO_HWDEC_API_ADD_1200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0070Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1300
@@ -1858,11 +1779,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_VIDEO_HWDEC_API_ADD_1300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(130);
+    it('SUB_VIDEO_HWDEC_API_ADD_1300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0080Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1400
@@ -1872,11 +1792,10 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_VIDEO_HWDEC_API_ADD_1400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(131);
+    it('SUB_VIDEO_HWDEC_API_ADD_1400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0090Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
 
     /**
      * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1500
@@ -1886,10 +1805,9 @@ export default function ApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_VIDEO_HWDEC_API_ADD_1500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(132);
+    it('SUB_VIDEO_HWDEC_API_ADD_1500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoHwdecApiAdd0100Test();
       expect(result).assertEqual(0);
-      done();
-    })
+    });
   })
 }

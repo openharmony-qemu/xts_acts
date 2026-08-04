@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -12,38 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,TextDecorationType,RichEditorImageSpanStyleResult,RichEditorImageSpanResult,
-  Component,
-  Column,
-  Row,
-  Text,
-  ColumnOptions,
-  TouchType,
-  CustomBuilder,
-  DragItemInfo,
-  Color,
-  Button,
-  TouchEvent,
-  Margin,
-  Scroller,
-  GestureRecognizer,
-  PanRecognizer,
-  GestureEvent,
-  ScrollableTargetInfo,
-  Stack,
-  Alignment,
-  Scroll,
-  TextAlign,
-  ForEach,
-  ScrollDirection,
-  BarState,
-  EdgeEffect,
-  GestureControl,
-  PanGesture,
-  GestureRecognizerState,RichEditorController,RichEditor,RichEditorChangeValue,RichEditorTextSpanResult,RichEditorOptions,RichEditorLayoutStyle,LongPressGesture,Direction,RichEditorRange,ClickEvent,$r,LayoutManager,RichEditorOptions,MutableStyledString,TextStyle,StyledString,RichEditorStyledStringController,Resource,ImageAttachment,FontWeight,FontStyle,StyledStringKey,RichEditorStyledStringOptions,TextEditControllerEx,TextMenuItem,TextRange,TextMenuItemId,CopyOptions,RichEditorInsertValue,Builder
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, TextDecorationType, RichEditorImageSpanStyleResult, RichEditorImageSpanResult, Component, Column, Row, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, Button, TouchEvent, Margin, Scroller, GestureRecognizer, PanRecognizer, GestureEvent, ScrollableTargetInfo, Stack, Alignment, Scroll, TextAlign, ForEach, ScrollDirection, BarState, EdgeEffect, GestureControl, PanGesture, GestureRecognizerState, RichEditorController, RichEditor, RichEditorChangeValue, RichEditorTextSpanResult, RichEditorOptions, RichEditorLayoutStyle, LongPressGesture, Direction, RichEditorRange, ClickEvent, $r, LayoutManager, MutableStyledString, TextStyle, StyledString, RichEditorStyledStringController, Resource, ImageAttachment, FontWeight, FontStyle, StyledStringKey, RichEditorStyledStringOptions, TextEditControllerEx, TextMenuItem, TextRange, TextMenuItemId, CopyOptions, RichEditorInsertValue, Builder } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -105,7 +106,7 @@ export default function imagePacking() {
       return isSupportFormat;
     }
 
-    let createPixelMapList = async (done: () => void, picName: string) => {
+    let createPixelMapList = (done: () => void, picName: string) => {
       console.info("createPixelMapList start");
       let imageSourceApi: image.ImageSource | undefined = getImageSourceData(picName);
       let pixelMapList: Array<image.PixelMap> = [];
@@ -115,10 +116,10 @@ export default function imagePacking() {
         done();
       } else {
         try {
-          pixelMapList = await imageSourceApi!.createPixelMapList();
+          waitForCompletion(async () => {pixelMapList = await imageSourceApi!.createPixelMapList();})
           if (pixelMapList != undefined) {
             console.info("createPixelMapList success");
-            await imageSourceApi!.release();
+            waitForCompletion(async () => {await imageSourceApi!.release();})
           } else {
             console.info("createPixelMapList failed");
             expect(false).assertTrue();
@@ -202,7 +203,7 @@ export default function imagePacking() {
       }
     }
 
-    let testPackingForSequencePromise = async (done: () => void, testNum: string, pictureSize: image.Size,
+    let testPackingForSequencePromise = (done: () => void, testNum: string, pictureSize: image.Size,
       packingOptions: image.PackingOptionsForSequence, pixelMapList: Array<image.PixelMap>) => {
       try {
         let globalPacker = image.createImagePacker();
@@ -214,20 +215,20 @@ export default function imagePacking() {
         }
         try {
           let data: ArrayBuffer | undefined;
-          data = await globalPacker!.packToDataFromPixelmapSequence(pixelMapList, packingOptions);
+          waitForCompletion(async () => {data = await globalPacker!.packToDataFromPixelmapSequence(pixelMapList, packingOptions);})
           console.info(`${testNum} testPackingForSequencePromise success`);
-          await globalPacker!.release();
+          waitForCompletion(async () => {await globalPacker!.release();})
           for (let i = 0; i < pixelMapList.length; i++) {
             if (pixelMapList[i] != undefined) {
               console.info(`${testNum} pixelMapList[${i}] release`);
-              await pixelMapList[i].release();
+              waitForCompletion(async () => {await pixelMapList[i].release();})
             } else {
               console.info(`${testNum} pixelMapList[${i}] is undefined`);
               expect().assertFail();
               done();
             }
           }
-          await checkPackingForSequenceResult(data as ArrayBuffer, pictureSize, packingOptions);
+          waitForCompletion(async () => {await checkPackingForSequenceResult(data as ArrayBuffer, pictureSize, packingOptions);})
           done();
         } catch (e1) {
           console.info(`${testNum} testPackingForSequencePromise e1: ` + e1);
@@ -241,7 +242,7 @@ export default function imagePacking() {
       };
     }
 
-    let testPackingForSequencePromiseError = async (done: () => void, testNum: string, pictureSize: image.Size,
+    let testPackingForSequencePromiseError = (done: () => void, testNum: string, pictureSize: image.Size,
       packingOptions: image.PackingOptionsForSequence, pixelMapList: Array<image.PixelMap>) => {
       let globalPacker = image.createImagePacker();
       if (globalPacker == undefined) {
@@ -252,17 +253,17 @@ export default function imagePacking() {
       }
       try {
         let data: ArrayBuffer | undefined;
-        data = await globalPacker!.packToDataFromPixelmapSequence(pixelMapList, packingOptions);
+        waitForCompletion(async () => {data = await globalPacker!.packToDataFromPixelmapSequence(pixelMapList, packingOptions);})
         console.log(`${testNum} testPackingForSequencePromiseError success`);
         expect(false).assertTrue();
         done();
       } catch(error) {
         error = error as BusinessError;
-        await globalPacker!.release();
+        waitForCompletion(async () => {await globalPacker!.release();})
         for (let i = 0; i < pixelMapList.length; i++) {
           if (pixelMapList[i] != undefined) {
             console.info(`${testNum} pixelMapList[${i}] release`);
-            await pixelMapList[i].release();
+            waitForCompletion(async () => {await pixelMapList[i].release();})
           } else {
             console.info(`${testNum} pixelMapList[${i}] is undefined`);
             expect().assertFail();
@@ -373,14 +374,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3,
           delayTimeList: [10, 10, 10],
           disposalTypes: [3, 1, 0],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0100",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0100",
           {width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -399,14 +400,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.png");
+        let pixelMapList = createPixelMapList(done, "test.png");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0200",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0200",
           { width: 6016, height: 3384 }, packingOptions, pixelMapList)
       }
     });
@@ -425,11 +426,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1, delayTimeList: [10], disposalTypes: [3, 2, 3]
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0300",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0300",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -448,11 +449,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.png");
+        let pixelMapList = createPixelMapList(done, "test.png");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10], loopCount: 2
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0400",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0400",
           { width: 6016, height: 3384 }, packingOptions, pixelMapList)
       }
     });
@@ -471,11 +472,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10]
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0500",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0500",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -494,11 +495,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1, delayTimeList: [10, 10, 10], disposalTypes: [3, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0600",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0600",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -517,11 +518,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 5, delayTimeList: [10, 10, 10], disposalTypes: [3, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0700",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0700",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -540,11 +541,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10], disposalTypes: [3, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0800",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0800",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -563,11 +564,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10, 20, 30], disposalTypes: [3, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0900",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_0900",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -586,11 +587,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10], disposalTypes: [3], loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1000",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1000",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -609,11 +610,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10], disposalTypes: [3, 2, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1100",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1100",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -632,14 +633,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.bmp");
+        let pixelMapList = createPixelMapList(done, "test.bmp");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1200",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1200",
           { width: 1399, height: 1042 }, packingOptions, pixelMapList)
       }
     });
@@ -658,14 +659,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.jpg");
+        let pixelMapList = createPixelMapList(done, "test.jpg");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1300",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1300",
           { width: 1446, height: 1476 }, packingOptions, pixelMapList)
       }
     });
@@ -684,14 +685,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.ico");
+        let pixelMapList = createPixelMapList(done, "test.ico");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1400",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1400",
           { width: 64, height: 64 }, packingOptions, pixelMapList)
       }
     });
@@ -710,14 +711,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.svg");
+        let pixelMapList = createPixelMapList(done, "test.svg");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1500",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1500",
           { width: 400, height: 200 }, packingOptions, pixelMapList)
       }
     });
@@ -736,14 +737,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.dng");
+        let pixelMapList = createPixelMapList(done, "test.dng");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1600",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1600",
           { width: 5976, height: 3992 }, packingOptions, pixelMapList)
       }
     });
@@ -762,14 +763,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.jpeg");
+        let pixelMapList = createPixelMapList(done, "test.jpeg");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1700",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1700",
           { width: 3072, height: 4096 }, packingOptions, pixelMapList)
       }
     });
@@ -788,14 +789,14 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "test.webp");
+        let pixelMapList = createPixelMapList(done, "test.webp");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 1,
           delayTimeList: [10],
           disposalTypes: [3],
           loopCount: 5
         };
-        await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1800",
+        testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1800",
           { width: 1212, height: 681 }, packingOptions, pixelMapList)
       }
     });
@@ -819,14 +820,14 @@ export default function imagePacking() {
           console.info("device is not support imageformat heic");
           done();
         } else {
-          let pixelMapList = await createPixelMapList(done, "HDRVividSingleLayer.heic");
+          let pixelMapList = createPixelMapList(done, "HDRVividSingleLayer.heic");
           let packingOptions: image.PackingOptionsForSequence = {
             frameCount: 1,
             delayTimeList: [10],
             disposalTypes: [3],
             loopCount: 5
           };
-          await testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1900",
+          testPackingForSequencePromise(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_STATIC_1900",
             { width: 3840, height: 2160 }, packingOptions, pixelMapList)
         }
       }
@@ -846,11 +847,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 0, delayTimeList: [10, 10, 10], disposalTypes: [3, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0100",
+        testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0100",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -869,11 +870,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [0], disposalTypes: [3, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0200",
+        testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0200",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -892,11 +893,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10], disposalTypes: [3, 4, 5], loopCount: 5
         };
-        await testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0300",
+        testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0300",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -915,11 +916,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10], disposalTypes: [3, 1, 0], loopCount: -1
         };
-        await testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0400",
+        testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0400",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -938,11 +939,11 @@ export default function imagePacking() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let pixelMapList = await createPixelMapList(done, "moving_test.gif");
+        let pixelMapList = createPixelMapList(done, "moving_test.gif");
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10], disposalTypes: [3, 1, 0], loopCount: 65536
         };
-        await testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0500",
+        testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_STATIC_0500",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });
@@ -965,7 +966,7 @@ export default function imagePacking() {
         let packingOptions: image.PackingOptionsForSequence = {
           frameCount: 3, delayTimeList: [10, 10, 10], disposalTypes: [3, 1, 0], loopCount: 5
         };
-        await testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_STATIC_0100",
+        testPackingForSequencePromiseError(done, "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_STATIC_0100",
           { width: 198, height: 202 }, packingOptions, pixelMapList)
       }
     });

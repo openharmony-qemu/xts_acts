@@ -58,6 +58,13 @@ import MenuItemNullTest from './MenuItemNullTest/MenuItemNullTest.test';
 import scrollBarTest from './MenuTest/scrollBar.test.ets';
 import maxHeightTest from './MenuTest/maxHeight.test.ets';
 import targetSpaceTest from './MenuTest/targetSpace.test.ets';
+import MenuSystemMaterialTest from './MenuSystemMaterial/MenuSystemMaterial.test.ets';
+import GridStyleTest from './GridStyle/GridStyle.test.ets';
+import BindContextMenuByIsShowOptionsTest from './bindContextMenuByIsShow/BindContextMenuByIsShowOptions.test.ets';
+import BindContextMenuByIsShowBlurMaskTest from './bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask.test.ets';
+import BindContextMenuByIsShowNullUndefinedTest from './bindContextMenuByIsShow/BindContextMenuByIsShowNullUndefined.test.ets';
+import bindContextMenuByResponseTypeTest from './bindContextMenuTest/bindContextMenuByResponseTypeTest.test';
+import subMenuBuilderTest from './Menu/subMenuBuilderTest.test';
 
 export default function testsuite() {
   openMenuNullUndefinedTest();
@@ -103,4 +110,11 @@ export default function testsuite() {
   scrollBarTest();
   maxHeightTest();
   targetSpaceTest();
+  MenuSystemMaterialTest();
+  GridStyleTest();
+  bindContextMenuByResponseTypeTest();
+  subMenuBuilderTest();
+  BindContextMenuByIsShowOptionsTest();
+  BindContextMenuByIsShowBlurMaskTest();
+  BindContextMenuByIsShowNullUndefinedTest();
 }

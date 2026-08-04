@@ -36,10 +36,12 @@ struct SearchControllerMethodsTest {
               .width('100%')
               .height(50)
               .id('Search_caretPosition_value_null')
+              .key('Search_caretPosition_value_null')
             Search({ placeholder: 'Test caretPosition value undefined', controller: this.controller3 })
               .width('100%')
               .height(50)
               .id('Search_caretPosition_value_undefined')
+              .key('Search_caretPosition_value_undefined')
 
             Button('Test caretPosition')
               .onClick(() => {
@@ -62,11 +64,13 @@ struct SearchControllerMethodsTest {
               .width('100%')
               .height(50)
               .id('Search_setTextSelection_null')
+              .key('Search_setTextSelection_null')
 
             Search({ placeholder: 'Test setTextSelection undefined', controller: this.controller6 })
               .width('100%')
               .height(50)
               .id('Search_setTextSelection_undefined')
+              .key('Search_setTextSelection_undefined')
 
             Button('Test setTextSelection')
               .onClick(() => {

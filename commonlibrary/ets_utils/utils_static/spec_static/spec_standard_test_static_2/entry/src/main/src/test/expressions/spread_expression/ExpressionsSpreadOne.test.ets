@@ -1,3 +1,4 @@
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,15 +25,8 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
 let a2_spex_const_44: [int, int] = [6, 5]
 class A_spex_const_44 {
@@ -332,7 +326,7 @@ function foo_17300(a: int, ...p: Array<byte>): int {
 function foo_17700(a: number, ...p: number[]): number {
   return a + reduce(p, (prev: number, next: number) => prev + next, 0.0)
 }
-function foo_17800(a: number, ...p: FixedArray<F_spex_func_54>): number {
+function foo_17800(a: number, ...p: Array<F_spex_func_54>): number {
   let res = a
   for (let el of p) res += el(res)
   return res
@@ -469,7 +463,7 @@ export default function ExpressionsSpreadOneTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -1369,8 +1363,8 @@ export default function ExpressionsSpreadOneTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadOne0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: FixedArray<F_spex_func_54> = [(p: number) => p * 2, (p: number) => p * 3]
-      let b: FixedArray<F_spex_func_54> = [(p: number) => p * 4, (p: number) => p * 5]
+      let a: Array<F_spex_func_54> = [(p: number) => p * 2, (p: number) => p * 3]
+      let b: Array<F_spex_func_54> = [(p: number) => p * 4, (p: number) => p * 5]
       expect(foo_17800(1.0, ...[...a, ...b])).assertEqual(360.0)
     });
 
@@ -1525,7 +1519,7 @@ export default function ExpressionsSpreadOneTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadOne0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: FixedArray<A_spex_func_74<String>|B_spex_func_74<Long>|C_spex_func_74<Error>|null> = [
+      let a1: Array<A_spex_func_74<String>|B_spex_func_74<Long>|C_spex_func_74<Error>|null> = [
         new A_spex_func_74<String>(),
         new B_spex_func_74<Long>(),
         new C_spex_func_74<Error>()

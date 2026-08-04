@@ -81,7 +81,7 @@ export default function fontWeightJsunit() {
      */
 it('panDirectionText_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panDirectionText_0100 START');
-      let strJson = inspector.getInspectorByKey('panDirection');
+      let strJson = inspector.getInspectorByKey('panDirection_panDirection');
       await Utils.sleep(1000);
       console.info("panDirectionText_0100 component strJson:" + strJson);
       console.info("panDirectionText_0100 component obj is: " +

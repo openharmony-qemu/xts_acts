@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -80,15 +80,15 @@ export default function MultiNavigationTest() {
 it('MultiNavigation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiNavigation_0100 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('setPlaceholderPageId'));
       await (btn1?.click() as Promise<void>)
       console.info('[MultiNavigation_0100] btn1 click');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('homePageId');
       let obj = JSON.parseJsonElement(strJson);
@@ -115,14 +115,14 @@ it('MultiNavigation_static_0200', Level.LEVEL0, async (done: () => void): Promis
       console.info('MultiNavigation_0200 START');
       await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
 
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn1 = await (scrollBar?.scrollSearch(ON.id('switchFullScreenId')) as Promise<Component>);
       await (btn1?.click() as Promise<void>)
       console.info('[MultiNavigation_0200] btn1 click');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('homePageId');
       let obj = JSON.parseJsonElement(strJson);
@@ -147,25 +147,25 @@ it('MultiNavigation_static_0200', Level.LEVEL0, async (done: () => void): Promis
 it('MultiNavigation_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiNavigation_0300 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn1 = await (scrollBar?.scrollSearch(ON.id('pageDetail1Id')) as Promise<Component>);
       await (btn1?.click() as Promise<void>)
       console.info('[MultiNavigation_0300] btn1 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn2 = await driver.findComponent(ON.id('setKeepBottomPageId'));
       await (btn2?.click() as Promise<void>)
       console.info('[MultiNavigation_0300] btn2 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn3 = await driver.findComponent(ON.id('detailPopId'));
       await (btn2?.click() as Promise<void>)
       console.info('[MultiNavigation_0300] btn3 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('detailTextId');
       let obj = JSON.parseJsonElement(strJson);

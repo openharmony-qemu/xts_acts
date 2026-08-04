@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/Preset",
     "MainAbility/pages/actionSheet/actionSheetMode",
     "MainAbility/pages/actionSheet/showActionSheetMode",
     "MainAbility/pages/actionSheet/index",
@@ -33,7 +34,9 @@
     "MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial",
     "MainAbility/pages/dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial",
     "MainAbility/pages/dialogSystemMaterial/ActionSheetOptionsSystemMaterial",
-    "MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage"
+    "MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage",
+    "MainAbility/pages/OpenOrderOverlay/OpenOrderOverlayTestPage",
+    "MainAbility/pages/DialogDisplayMode/DisplayModeInSubWindowTestPage"
 
   ]
 }

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +37,12 @@ export default function ActsCommonEventManagerSupportTest() {
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
+      let cmd = `aa start -a EntryAbility -b ${bundle_name}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
@@ -144,6 +150,7 @@ export default function ActsCommonEventManagerSupportTest() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0500 START`)
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_ADDED.valueOf()).assertEqual('usual.event.PACKAGE_ADDED')
+        expect(commonEventManager.Support.COMMON_EVENT_SKILL_CHANGED.valueOf()).assertEqual('usual.event.SKILL_CHANGED')
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_INSTALLATION_STARTED.valueOf())
           .assertEqual('usual.event.PACKAGE_INSTALLATION_STARTED')
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_REPLACED.valueOf())
@@ -471,6 +478,8 @@ export default function ActsCommonEventManagerSupportTest() {
           .assertEqual('usual.event.data.DISK_BAD_REMOVAL')
         expect(commonEventManager.Support.COMMON_EVENT_DISK_UNMOUNTABLE.valueOf())
           .assertEqual('usual.event.data.DISK_UNMOUNTABLE')
+        expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE.valueOf())
+          .assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
         expect(commonEventManager.Support.COMMON_EVENT_DISK_EJECT.valueOf()).assertEqual('usual.event.data.DISK_EJECT')
         expect(commonEventManager.Support.COMMON_EVENT_VOLUME_REMOVED.valueOf())
           .assertEqual('usual.event.data.VOLUME_REMOVED')

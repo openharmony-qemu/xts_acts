@@ -20,6 +20,8 @@
         "MainAbility/pages/Router/ParticleApiNullUndefined",
         "MainAbility/pages/Router/IndicatorComponentNullUndefined",
         "MainAbility/pages/Router/SideBarContainerControlButtonNullUndefined",
-        "MainAbility/pages/Router/StepperItemApiNullUndefined"
+        "MainAbility/pages/Router/StepperItemApiNullUndefined",
+        "MainAbility/pages/Navigation/NavScrollEffectOptions",
+        "MainAbility/pages/Navigation/configurationNav"
     ]
 }

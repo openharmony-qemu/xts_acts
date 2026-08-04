@@ -105,7 +105,7 @@ struct WebComponent {
 
   build() {
     Column() {
-      Web({ src: 'https://map.baidu.com/', controller: this.browserTabController })
+      Web({ src: $rawfile("index.html"), controller: this.browserTabController })
         .domStorageAccess(true)//开启数据库存储权限
         .databaseAccess(true)//图片加载相关权限
         .imageAccess(true)

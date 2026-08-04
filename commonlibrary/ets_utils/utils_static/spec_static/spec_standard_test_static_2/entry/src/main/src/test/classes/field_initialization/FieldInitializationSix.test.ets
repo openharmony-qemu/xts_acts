@@ -25,16 +25,9 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 class C_F595 {data: int = 0}
   class A_F595 {
@@ -1251,7 +1244,7 @@ export default function FieldInitializationSixTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -1376,7 +1369,7 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: C_F602 = new C_F602()
-      expect(a.field instanceof HandlerNothing_F602).assertTrue()
+      expect(a.field instanceof (() => never)).assertTrue()
       expect(a.field(new B_F602, 7).v).assertEqual(-567)
     })
 
@@ -1390,7 +1383,7 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: C_F603 = new C_F603()
-      expect(a.field instanceof HandlerA_F603).assertTrue()
+      expect(a.field instanceof ((a: Any) => never)).assertTrue()
       expect(a.field(new B_F603, 7).v).assertEqual(13)
     })
 
@@ -1404,7 +1397,7 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: C_F604 = new C_F604()
-      expect(a.field instanceof HandlerAInt_F604).assertTrue()
+      expect(a.field instanceof ((a: Any, b: Any) => never)).assertTrue()
       expect(a.field(new B_F604, 7).v).assertEqual(-20)
     })
 
@@ -1418,7 +1411,7 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: C_F605 = new C_F605()
-      expect(a.field instanceof HandlerNothing_F605).assertTrue()
+      expect(a.field instanceof (() => never)).assertTrue()
       expect(a.field(new B_F605, 7).v).assertEqual(-567)
     })
 
@@ -1432,7 +1425,7 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: C_F606 = new C_F606()
-      expect(a.field instanceof HandlerA_F606).assertTrue()
+      expect(a.field instanceof ((a: Any) => never)).assertTrue()
       expect(a.field(new B_F606, 7).v).assertEqual(13)
     })
 
@@ -1446,7 +1439,7 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: C_F607 = new C_F607()
-      expect(a.field instanceof HandlerAInt_F607).assertTrue()
+      expect(a.field instanceof ((a: Any, b: Any) => never)).assertTrue()
       expect(a.field(new B_F607, 7).v).assertEqual(-20)
     })
 

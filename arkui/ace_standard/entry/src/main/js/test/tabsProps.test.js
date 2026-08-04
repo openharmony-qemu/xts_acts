@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import router from '@system.router';
+import router from '@ohos.router';
 import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
@@ -33,7 +33,7 @@ export default function tabsPropsJsTest() {
             let backToIndexPromise = new Promise((resolve, reject) => {
                 setTimeout(() => {
                     router.back({
-                        uri: 'pages/index/index'
+                        url: 'pages/index/index'
                     });
                     resolve();
                 }, 500);
@@ -57,10 +57,10 @@ export default function tabsPropsJsTest() {
 
             let result;
             let options = {
-                uri: 'pages/tabs/prop/index'
+                url: 'pages/tabs/prop/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push tabsProps page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push tabsProps page error " + JSON.stringify(result));

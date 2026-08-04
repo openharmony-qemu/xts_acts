@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../../hypium/index';
 
 const TAG = 'createPremultipliedPixelMap';
 

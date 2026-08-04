@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -312,6 +313,8 @@ export default function AvPlayerEnumTest() {
       expect(string(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE)).assertEqual('total_loading_bytes');
       expect(string(media.PlaybackMetricsKey.STALLING_COUNT)).assertEqual('stalling_count');
       expect(string(media.PlaybackMetricsKey.TOTAL_STALLING_TIME)).assertEqual('total_stalling_time');
+      expect(string(media.PlaybackMetricsKey.LIP_ASYNC_COUNT)).assertEqual('lip_async_count');
+      expect(string(media.PlaybackMetricsKey.TOTAL_LIP_ASYNC_TIME)).assertEqual('total_lip_async_time');
       done();
     });
 
@@ -325,6 +328,12 @@ export default function AvPlayerEnumTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING)).assertEqual(1);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LIP_ASYNC)).assertEqual(2);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADINGRATE_CHANGE)).assertEqual(3);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADING_ERROR)).assertEqual(4);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_CHANGED)).assertEqual(5);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_DISCONTINUITY)).assertEqual(6);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_AUDIO_ABNORMAL)).assertEqual(7);
       done();
     });
     /**

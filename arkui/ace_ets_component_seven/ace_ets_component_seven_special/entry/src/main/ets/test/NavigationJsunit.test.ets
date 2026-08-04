@@ -37,7 +37,7 @@ export default function navigationJsunit() {
         }
       } catch (err) {
         console.error("push NavigationJsunit page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
       done();
     });

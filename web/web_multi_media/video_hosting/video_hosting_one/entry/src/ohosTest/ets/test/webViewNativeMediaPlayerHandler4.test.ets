@@ -115,8 +115,7 @@ export default function webViewNativeMediaPlayerHandler4() {
      * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSeek20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = "" +
-        ""
+      emitKey = "emitWebViewNativeMediaPlayerSeek20"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
       Utils.registerEvent("testWebViewNativeMediaPlayerSeek20", true, 361040, () => { isReturn = true });

@@ -86,10 +86,10 @@ it('testRowPaddingSatisfy_static_01', Level.LEVEL0, async (done: () => void): Pr
         name: 'padding', value: 15
       });
       await CommonFunc.sleep(3000);
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_Padding_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_Padding_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_Padding_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_Padding_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Padding_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Padding_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Padding_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Padding_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 
@@ -137,10 +137,10 @@ it('testRowPaddingNOSatisfy_static_02', Level.LEVEL0, async (done: () => void): 
         name: 'padding', value: 40
       });
       await CommonFunc.sleep(3000)
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_Padding_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_Padding_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_Padding_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_Padding_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Padding_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Padding_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Padding_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Padding_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));

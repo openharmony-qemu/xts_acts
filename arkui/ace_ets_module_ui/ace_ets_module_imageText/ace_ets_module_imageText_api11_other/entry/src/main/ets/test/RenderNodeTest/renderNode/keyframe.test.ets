@@ -53,10 +53,10 @@ export default function keyframeTest() {
       console.info('keyframeTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('keyframe_1'));
+      let button = await driver.findComponent(ON.id('keyframe' + '_1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('keyframe_0');
+      let strJson = getInspectorByKey('keyframe' + '_0');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[keyframeTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('message:world');

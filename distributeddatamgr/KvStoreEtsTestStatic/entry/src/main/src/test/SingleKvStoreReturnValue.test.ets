@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,7 @@ import {
   TestType,
   Level,
   Size
-} from '../../../hypium';
+} from '../../../hypium/index';
 import factory from '@ohos.data.distributedKVStore';
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -69,7 +70,12 @@ export default function SingleKvStoreReturnValue() {
       try {
         hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
 
         // await abilityDelegator.startAbility({
         //   bundleName: 'com.example.kvstoreetstest.static',
@@ -1237,22 +1243,28 @@ export default function SingleKvStoreReturnValue() {
           }).catch((err: Error) => {
             console.error(TAG+' getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           });
-          try {
-            let data = await kvStoreS4!.getSecurityLevel();
-            expect(data).assertEqual(factory.SecurityLevel.S4);
-            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(async () => {
-            console.info(TAG + '  Succeeded closeKVStore S4');
-            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-            console.info(TAG + '  Succeeded deleteKVStore S4');
-            console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
-            done();
-            done();
-            });
-            done();
-            });
-          } catch (err) {
-            console.error('getSecurityLevel failed: ' + err);
-          }
+          kvStoreS4!.getSecurityLevel((err: BusinessError | null, data: factory.SecurityLevel | undefined) => {
+            waitForCompletion(async () => {
+              console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data!) + ',err=' + err);
+              expect(data).assertEqual(factory.SecurityLevel.S4);
+              await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+                waitForCompletion(async () => {
+                  console.info(TAG + '  Succeeded closeKVStore S4');
+                  await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+                    console.info(TAG + '  Succeeded deleteKVStore S4');
+                    console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
+                    done();
+                  }).catch((err: Error) => {
+                    console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+                    done();
+                  });
+                })
+              }).catch((err: Error) => {
+                console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
+                done();
+              });
+            })
+          });
 
         } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);

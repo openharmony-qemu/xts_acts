@@ -1,3 +1,4 @@
+'use static';
 
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
@@ -25,7 +26,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "../../../hypium";
+} from "../../../hypium/index";
 import relationalStore from '@ohos.data.relationalStore'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
@@ -52,7 +53,12 @@ export default function PerfStatEtsTest() {
   describe('perfStatEtsTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll')
-      delegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      delegator.executeShellCommand(cmd)
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
     })
@@ -305,13 +311,19 @@ export default function PerfStatEtsTest() {
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0010 start *************");
       let observer1 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
-        expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
-        expect(1).assertEqual(SqlExeInfo.sql.length);
+        waitForCompletion(async () => {
+          expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
+          expect(1).assertEqual(SqlExeInfo.sql.length);
+          await Utils.msSleep(2000);
+        })
       };
 
       let observer2 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
-        expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
-        expect(1).assertEqual(SqlExeInfo.sql.length);
+        waitForCompletion(async () => {
+          expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
+          expect(1).assertEqual(SqlExeInfo.sql.length);
+          await Utils.msSleep(2000);
+        })
       };
 
       rdbStore!.onPerfStat(observer1)

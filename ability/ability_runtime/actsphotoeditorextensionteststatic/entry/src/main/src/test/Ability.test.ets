@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,7 +59,7 @@ export default function abilityTest() {
                     hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 globalscribe success`)
                     commonEventManager.subscribe(globalscribe!, (err:BusinessError | null,
                         CommonEventData:commonEventManager.CommonEventData|undefined) => {
-                            (async () => {
+                            waitForCompletion(async () => {
                                 hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 subscribe success`)
                                 if (err) {
                                     hilog.info(DOMAIN_NUMBER, TAG, `subscribe failed! Err.Info ===> + ${err?.code}`)
@@ -88,7 +89,7 @@ export default function abilityTest() {
                                         });
                                     }
                                 }
-                            })().awaitSync()
+                            })
                     })
 
                 }else{
@@ -106,7 +107,12 @@ export default function abilityTest() {
             let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(DOMAIN_NUMBER, TAG, 'beforeAll AbilityDelegator');
             // 1.2 need to subscribe first, then publish.
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsphotoeditorextensiontest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actsphotoeditorextensiontest.static";
+            let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(4000);
 
             setTimeout(async () => {

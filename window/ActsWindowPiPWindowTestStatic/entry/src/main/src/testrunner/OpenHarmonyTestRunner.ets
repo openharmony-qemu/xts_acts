@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -65,6 +66,10 @@ export class OpenHarmonyTestRunner implements TestRunner {
       hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
     }, 5000);
 
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
 
     abilityDelegator.executeShellCommand(cmd,

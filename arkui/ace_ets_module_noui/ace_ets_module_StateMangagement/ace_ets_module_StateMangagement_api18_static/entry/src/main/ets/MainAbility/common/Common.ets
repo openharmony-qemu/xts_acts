@@ -20,7 +20,7 @@ import inspector from '@ohos.arkui.inspector'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export default class CommonFunc {
-  public static FONT_FAMILY = 'Verdana';
+  public static FONT_FAMILY: string = 'Verdana';
   static rect_left: number;
   static rect_top: number;
   static rect_right: number;

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -670,12 +671,16 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let maxVolume = await audioRen!.getMaxStreamVolume();
-        console.info(`${TagFrmwkRender}: Get max stream volume Success! maxVolume: ${maxVolume}`);
-        expect(maxVolume).assertEqual(testConst.OUTPUT_NUMBER_1);
-        try {
-            await audioRen!.setVolume(maxVolume!);
+      audioRen!.getMaxStreamVolume((err: BusinessError<void> | null, maxVolume: number | undefined) => {
+        if (err) {
+          console.error('${TagFrmwkRender} Get max stream volume Fail: ${err}');
+          expect(false).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwkRender}: Get max stream volume Success! maxVolume: ${maxVolume}`);
+          expect(maxVolume).assertEqual(testConst.OUTPUT_NUMBER_1);
+          try {
+            waitForCompletion(async () => {await audioRen!.setVolume(maxVolume!);})
             console.info(`${TagFrmwkRender}:  setVolume to maxVolume Success! maxVolume: ${maxVolume}`);
             done();
           } catch (err) {
@@ -683,11 +688,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
             done();
           }
-      } catch (err_wfcrm669c7) {
-        console.error('${TagFrmwkRender} Get max stream volume Fail: ${err_wfcrm669c7}');
-        expect(false).assertTrue();
-        done();
-      }
+        }
+      })
     });
 
     /**
@@ -811,12 +813,16 @@ export default function audioRendererTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let minVolume = 1.0;
-      try {
-        let minVolume = await audioRen!.getMinStreamVolume();
-        console.info(`${TagFrmwkRender}: Get min stream volume Success! minVolume: ${minVolume}`);
-        expect(minVolume).assertEqual(testConst.OUTPUT_NUMBER_0);
-        try {
-             await audioRen!.setVolume(minVolume!);
+      audioRen!.getMinStreamVolume((err: BusinessError<void> | null, minVolume: number | undefined) => {
+        if (err) {
+          console.error('${TagFrmwkRender} Get min stream volume Fail: ${err}');
+          expect(false).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwkRender}: Get min stream volume Success! minVolume: ${minVolume}`);
+          expect(minVolume).assertEqual(testConst.OUTPUT_NUMBER_0);
+          try {
+             waitForCompletion(async () => {await audioRen!.setVolume(minVolume!);})
             console.info(`${TagFrmwkRender}:  setVolume to minVolume Success! minVolume: ${minVolume}`);
             done();
           } catch (err) {
@@ -824,11 +830,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
             done();
           }
-      } catch (err_wfcrm811c7) {
-        console.error('${TagFrmwkRender} Get min stream volume Fail: ${err_wfcrm811c7}');
-        expect(false).assertTrue();
-        done();
-      }
+        }
+      })
     });
   })
 }

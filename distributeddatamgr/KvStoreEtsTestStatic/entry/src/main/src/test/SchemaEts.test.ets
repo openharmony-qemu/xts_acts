@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
 import ddm from '@ohos.data.distributedKVStore';
-import common from "@ohos.app.ability.common";
-
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
@@ -129,7 +128,12 @@ export default function schemaTest(){
         try {
           hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
           await Utils.msSleep(2000)
-          // abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+          let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd)
           await abilityDelegator.startAbility({
             bundleName: 'com.example.kvstoreetstest.static',
             abilityName: 'EntryAbility'
@@ -299,14 +303,16 @@ export default function schemaTest(){
 
         }
 
-        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then(async (store: ddm.SingleKVStore) => {
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 getKVStore success' + JSON.stringify(options));
-          kvStore = store;
-          expect(store != null).assertTrue();
-          await kvStore!.put("test_key_1", '{"name":1}');
-          await kvStore!.put("test_key_2", '{"name":2}');
-          await kvStore!.put("test_key_3", '{"name":3}');
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 Put success');
+        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+          waitForCompletion(async () => {
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 getKVStore success' + JSON.stringify(options));
+            kvStore = store;
+            expect(store != null).assertTrue();
+            await kvStore!.put("test_key_1", '{"name":1}');
+            await kvStore!.put("test_key_2", '{"name":2}');
+            await kvStore!.put("test_key_3", '{"name":3}');
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 Put success');
+          })
         });
         console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 start Query ...');
         let query = new ddm.Query();
@@ -359,14 +365,16 @@ export default function schemaTest(){
           expect(null).assertFail();
         }
 
-        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then(async (store: ddm.SingleKVStore) => {
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 getKVStore success' + JSON.stringify(options));
-          kvStore = store;
-          expect(store != null).assertTrue();
-          await kvStore!.put("test_key_1", '{"name":1.5}');
-          await kvStore!.put("test_key_2", '{"name":2.5}');
-          await kvStore!.put("test_key_3", '{}');
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 Put success');
+        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+          waitForCompletion(async () => {
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 getKVStore success' + JSON.stringify(options));
+            kvStore = store;
+            expect(store != null).assertTrue();
+            await kvStore!.put("test_key_1", '{"name":1.5}');
+            await kvStore!.put("test_key_2", '{"name":2.5}');
+            await kvStore!.put("test_key_3", '{}');
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 Put success');
+          })
         });
         console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 start Query ...');
 

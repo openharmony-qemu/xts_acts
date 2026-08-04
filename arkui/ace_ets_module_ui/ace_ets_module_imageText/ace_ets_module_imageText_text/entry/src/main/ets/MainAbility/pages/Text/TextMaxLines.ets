@@ -25,6 +25,7 @@ struct TextMaxLines1 {
         .padding(10)
         .width('100%')
         .id('textMaxLines1')
+        .key('textMaxLines1')
         .maxLines(4)
         .lineHeight(10)
         .baselineOffset(10)

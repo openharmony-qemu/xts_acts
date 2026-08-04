@@ -516,5 +516,25 @@ export default function cameraEnumTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_EMOTION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_EMOTION_0100
+     * @tc.desc   assert all EMOTION enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENUM_EMOTION_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG} Emotion.NEUTRAL:${camera.Emotion.NEUTRAL}`);
+      expect(camera.Emotion.NEUTRAL == 0).assertTrue();
+      console.info(`${TAG} Emotion.SADNESS:${camera.Emotion.SADNESS}`);
+      expect(camera.Emotion.SADNESS == 1).assertTrue();
+      console.info(`${TAG} Emotion.SMILE:${camera.Emotion.SMILE}`);
+      expect(camera.Emotion.SMILE == 2).assertTrue();
+      console.info(`${TAG} Emotion.SURPRISE:${camera.Emotion.SURPRISE}`);
+      expect(camera.Emotion.SURPRISE == 3).assertTrue();
+      done();
+    })
+
   })
 }

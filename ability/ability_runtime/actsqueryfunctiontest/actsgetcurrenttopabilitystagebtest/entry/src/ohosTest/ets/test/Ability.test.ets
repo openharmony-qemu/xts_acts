@@ -128,7 +128,12 @@ export default function abilityTest() {
                 });
 
                 if (globalThis.mainAbilityOnBackground) { 
-                    AbilityDelegator.executeShellCommand(`aa start -b com.example.actsgetcurrenttopabilitystagebtest -a MainAbility`); 
+                    let cmd = `aa start -b com.example.actsgetcurrenttopabilitystagebtest -a MainAbility`;
+                    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                    if(user !== undefined){
+                        cmd += ' -u ' + user;
+                    }
+                    AbilityDelegator.executeShellCommand(cmd); 
                     await eventBus.onWait('MainAbility_onForeground'); 
                 }
 

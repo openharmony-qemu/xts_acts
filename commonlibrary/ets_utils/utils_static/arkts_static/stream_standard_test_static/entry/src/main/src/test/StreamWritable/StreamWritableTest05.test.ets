@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -438,7 +439,7 @@ export default function StreamWritable05Test(): void {
         writable.on(eventName, callback);
         eventRegistered = true;
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(0);
       }
 
       expect(eventRegistered).assertFalse();

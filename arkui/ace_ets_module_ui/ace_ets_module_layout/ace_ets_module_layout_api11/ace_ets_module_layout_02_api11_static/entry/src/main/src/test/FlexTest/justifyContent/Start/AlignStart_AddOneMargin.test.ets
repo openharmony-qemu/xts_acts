@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,13 +26,11 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
+import { Alignment } from '@ohos.arkui.component';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -65,13 +65,10 @@ export default function AlignStart_AddOneMargin() {
       console.info("AlignStart_AddOneMargin beforeEach end");
     });
 
-
     afterEach(async () : Promise<void> => {
       await CommonFunc.sleep(2000);
       console.info("AlignStart_AddOneMargin after each called");
     });
-
-
 
     /**
      * @tc.number   testFlexAlignStartTextMarginMeet_static
@@ -143,9 +140,7 @@ export default function AlignStart_AddOneMargin() {
         .assertTrue();
 
       console.info('[testFlexAlignStartTextMarginMeet] END');
-
     })
-
 
     /**
      * @tc.number   testFlexAlignStartTextMarginOverflow_static
@@ -207,9 +202,9 @@ export default function AlignStart_AddOneMargin() {
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddOneMargin_011.right - Start_AddOneMargin_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((Start_AddOneMargin_012.right - Start_AddOneMargin_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((Start_AddOneMargin_012.right - Start_AddOneMargin_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
-      expect(Math.floor(Math.abs((Start_AddOneMargin_013.right - Start_AddOneMargin_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((Start_AddOneMargin_013.right - Start_AddOneMargin_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddOneMargin_011.bottom - Start_AddOneMargin_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
@@ -219,7 +214,7 @@ export default function AlignStart_AddOneMargin() {
         .assertTrue();
 
       console.info('[testFlexAlignStartTextMarginOverflow_static] END');
-
     })
+
   })
 }

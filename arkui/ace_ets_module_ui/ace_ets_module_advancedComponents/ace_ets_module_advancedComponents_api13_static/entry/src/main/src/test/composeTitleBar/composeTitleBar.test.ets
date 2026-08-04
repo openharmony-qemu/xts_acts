@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';

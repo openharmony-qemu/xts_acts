@@ -396,7 +396,7 @@ export default function imagePicturePackThumbnail() {
         expect().assertFail();
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
-        expect(Number(error.code)).assertEqual(ERR_NOT_CARRY_THUMBNAIL);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
       }
       logger.log("Test finished successfully");
       // expect().assertFail(); 
@@ -448,7 +448,7 @@ export default function imagePicturePackThumbnail() {
         expect().assertFail();
       } catch (error) {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
-        expect(Number(error.code)).assertEqual(ERR_NOT_CARRY_THUMBNAIL);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
       }
       done();
     })

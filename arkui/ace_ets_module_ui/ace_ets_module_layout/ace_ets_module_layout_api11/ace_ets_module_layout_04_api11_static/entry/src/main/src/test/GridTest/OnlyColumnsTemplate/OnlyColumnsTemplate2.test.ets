@@ -74,8 +74,8 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate2_static_0100', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate2_GridItem_01');
-      let GridItem_02: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate2_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate2_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate2_GridItem_02');
 
       console.log('assert size')
       expect(Math.abs(GridItem_01.right - GridItem_01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60))) <= 1).assertTrue();

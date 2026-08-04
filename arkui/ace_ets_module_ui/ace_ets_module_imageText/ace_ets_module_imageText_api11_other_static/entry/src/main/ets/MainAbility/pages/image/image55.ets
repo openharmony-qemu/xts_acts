@@ -60,7 +60,7 @@ struct ImageExample {
         .textAlign(this.textAlign)
         .textOverflow({ overflow: this.textOverflow })
         .decoration({ type: this.decoration, color: Color.Red })
-        .key('text')
+        .key('image55_text')
       Image($rawfile('test.png'))
         .key('image')
     }

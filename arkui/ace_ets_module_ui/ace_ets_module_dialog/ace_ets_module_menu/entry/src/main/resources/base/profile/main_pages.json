@@ -46,6 +46,15 @@
     "MainAbility/pages/MenuItemNull/MenuItemNull",
     "MainAbility/pages/Menu/scrollBar",
     "MainAbility/pages/Menu/maxHeight",
-    "MainAbility/pages/Menu/targetSpace"
+    "MainAbility/pages/Menu/targetSpace",
+    "MainAbility/pages/MenuSystemMaterial/MenuSystemMaterialTestPage",
+    "MainAbility/pages/GridStyle/GridStyleTestPage",
+    "MainAbility/pages/bindMenu/bindContextMenuByResponseType",
+    "MainAbility/pages/Menu/subMenuBuilder",
+    "MainAbility/pages/menuBackground/menuBgBlurStyleOpts",
+    "MainAbility/pages/menuBackground/menuBgEffect",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowOptions",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowNullUndefined"
   ]
 }

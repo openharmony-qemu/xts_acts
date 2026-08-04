@@ -277,5 +277,45 @@ int32_t ActsGameDeviceDeviceInfoGetDeviceType02()
     GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetDeviceType(nullptr, &type);
     return static_cast<int32_t>(code);
 }
+
+int32_t ActsGameDeviceDeviceEventGetChangedType03()
+{
+    GameDevice_DeviceEvent *event = CreateDeviceEvent();
+    GameController_ErrorCode code = OH_GameDevice_DeviceEvent_GetChangedType(event, nullptr);
+    DestroyDeviceEvent(event);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceDeviceEventGetDeviceInfo03()
+{
+    GameDevice_DeviceEvent *event = CreateDeviceEvent();
+    GameController_ErrorCode code = OH_GameDevice_DeviceEvent_GetDeviceInfo(event, nullptr);
+    DestroyDeviceEvent(event);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceDeviceInfoGetProduct03()
+{
+    GameDevice_DeviceInfo *deviceInfo = CreateDeviceInfo(DeviceTypeEnum::GAME_PAD);
+    GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetProduct(deviceInfo, nullptr);
+    OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceDeviceInfoGetVersion03()
+{
+    GameDevice_DeviceInfo *deviceInfo = CreateDeviceInfo(DeviceTypeEnum::GAME_PAD);
+    GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetVersion(deviceInfo, nullptr);
+    OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceDeviceInfoGetDeviceType03()
+{
+    GameDevice_DeviceInfo *deviceInfo = CreateDeviceInfo(DeviceTypeEnum::GAME_PAD);
+    GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetDeviceType(deviceInfo, nullptr);
+    OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
+    return static_cast<int32_t>(code);
+}
 } // namespace GameController
 }

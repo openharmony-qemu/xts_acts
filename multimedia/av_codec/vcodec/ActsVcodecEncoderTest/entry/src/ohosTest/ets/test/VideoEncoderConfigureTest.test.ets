@@ -30,7 +30,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_CAPABILITY_1800', Level.LEVEL2, async () => {
       console.info('VideoEncodeHevcCapability1800Test start');
-      let result: number = await testNapi.runConfigureTest(0);
+      let result: number = await testNapi.VideoEncodeHevcCapability1800Test();
       expect(result).assertEqual(0);
     });
 
@@ -44,7 +44,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4000', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability4000Test start');
-      let result: number = await testNapi.runConfigureTest(1);
+      let result: number = await testNapi.VideoEncodeCapability4000Test();
       expect(result).assertEqual(0);
     });
 
@@ -58,7 +58,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4400', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability4400Test start');
-      let result: number = await testNapi.runConfigureTest(2);
+      let result: number = await testNapi.VideoEncodeCapability4400Test();
       expect(result).assertEqual(0);
     });
 
@@ -72,7 +72,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_4400', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability4410Test start');
-      let result: number = await testNapi.runConfigureTest(3);
+      let result: number = await testNapi.VideoEncodeCapability4410Test();
       expect(result).assertEqual(0);
     });
 
@@ -86,7 +86,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4700', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability4700Test start');
-      let result: number = await testNapi.runConfigureTest(4);
+      let result: number = await testNapi.VideoEncodeCapability4700Test();
       expect(result).assertEqual(0);
     });
 
@@ -100,7 +100,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_4700', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability4710Test start');
-      let result: number = await testNapi.runConfigureTest(5);
+      let result: number = await testNapi.VideoEncodeCapability4710Test();
       expect(result).assertEqual(0);
     });
 
@@ -114,7 +114,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_5000', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability5000Test start');
-      let result: number = await testNapi.runConfigureTest(6);
+      let result: number = await testNapi.VideoEncodeCapability5000Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -127,7 +127,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_5000', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability5010Test start');
-      let result: number = await testNapi.runConfigureTest(7);
+      let result: number = await testNapi.VideoEncodeCapability5010Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -140,7 +140,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5100', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability5100Test start');
-      let result: number = await testNapi.runConfigureTest(8);
+      let result: number = await testNapi.VideoEncodeCapability5020Test();
       expect(result).assertEqual(0);
     });
     /**
@@ -153,7 +153,7 @@ export default function VideoEncoderConfigureTest() {
      */
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5200', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability5200Test start');
-      let result: number = await testNapi.runConfigureTest(9);
+      let result: number = await testNapi.VideoEncodeCapability5030Test();
       expect(result).assertEqual(0);
     });
   });

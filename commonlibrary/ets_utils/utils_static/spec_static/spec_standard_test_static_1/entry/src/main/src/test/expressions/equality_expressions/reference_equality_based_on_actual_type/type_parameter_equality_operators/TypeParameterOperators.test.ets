@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -24,15 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../../hypium';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+} from '../../../../../../../hypium/index';
 
 function expectNotEqualTrue<P, Q>(p: P, q: Q, ps: string, qs: string): string {
   return p != q && q != p ? '' : `\n${ps} != ${qs}, expected true, got false`;
@@ -82,7 +77,7 @@ function func_49_1<P>(p: P, q: Object, ps: string, qs: string): string {
   return expectEqualFalse(p, q, ps, qs);
 }
 enum Color { Red, Green = 0, Blue }
-export default function TypeParameterOperatorsTest() {
+export default function TypeParameterOperatorsTest(): void {
   describe("TypeParameterOperatorsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -93,7 +88,7 @@ export default function TypeParameterOperatorsTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import  buffer  from '@ohos.buffer';
+import buffer from '@ohos.buffer';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import { DataBlobMap, externalPemData } from './utils/externalPemData/externalPemData';
 import * as commonUtils from './utils/common/commonUtils';
@@ -45,23 +45,27 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
     it("SUB_Security_CryptoFramework_DataBlobToPem_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let algName: string = "";
       try {
-        for (let data of externalPemData) {
-          algName = (data.algName) as string;
-          let keyPair: cryptoFramework.KeyPair;
-          let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
-          for (let pemData of data.keyPair) {
-            keyPair = await generator.convertPemKey(pemData.pubKey, pemData.priKey);
-            await generator.convertPemKey(null, pemData.priKey);
-            await generator.convertPemKey(pemData.pubKey, null);
-            let keyAgreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
-            let secretA = await keyAgreement.generateSecret(keyPair.priKey, keyPair.pubKey);
-            let secretB = keyAgreement.generateSecretSync(keyPair.priKey, keyPair.pubKey);
-            let ret: boolean = commonUtils.compareDataBlob(secretA, secretB);
-            keyPair.priKey.clearMem();
-            expect(ret).assertTrue();
+        () => {
+          waitForCompletion(async () => {
+          for(let data of externalPemData) {
+            algName = (data.algName) as string;
+            let keyPair: cryptoFramework.KeyPair;
+            let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
+            for (let pemData of data.keyPair) {
+              keyPair = await generator.convertPemKey(pemData.pubKey, pemData.priKey);
+              await generator.convertPemKey(null, pemData.priKey);
+              await generator.convertPemKey(pemData.pubKey, null);
+              let keyAgreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
+              let secretA = await keyAgreement.generateSecret(keyPair.priKey, keyPair.pubKey);
+              let secretB = keyAgreement.generateSecretSync(keyPair.priKey, keyPair.pubKey);
+              let ret: boolean = commonUtils.compareDataBlob(secretA, secretB);
+              keyPair.priKey.clearMem();
+              expect(ret).assertTrue();
+            }
           }
-        }
-        expect(true).assertTrue();
+          expect(true).assertTrue();
+          })
+        }();
       } catch (error) {
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -419,25 +423,29 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
     it("SUB_Security_CryptoFramework_DataBlobToPem_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let algName: string = "DH";
       try {
-        let dataMap: DataBlobMap = new DataBlobMap(false);
-        let data = dataMap.getDataWithArray(algName);
-        let keyPair: cryptoFramework.KeyPair;
-        for (let pemData of data) {
-          if (pemData.algName) {
-            algName = (pemData.algName) as string;
+        () => {
+          waitForCompletion(async () => {
+          let dataMap: DataBlobMap = new DataBlobMap(false);
+          let data = dataMap.getDataWithArray(algName);
+          let keyPair: cryptoFramework.KeyPair;
+          for (let pemData of data) {
+            if (pemData.algName) {
+              algName = (pemData.algName) as string;
+            }
+            let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
+            keyPair = await generator.convertPemKey(pemData.pubKey, pemData.priKey);
+            await generator.convertPemKey(null, pemData.priKey);
+            await generator.convertPemKey(pemData.pubKey, null);
+            let keyAgreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
+            let secretA = await keyAgreement.generateSecret(keyPair.priKey, keyPair.pubKey);
+            let secretB = keyAgreement.generateSecretSync(keyPair.priKey, keyPair.pubKey);
+            let ret: boolean = commonUtils.compareDataBlob(secretA, secretB);
+            keyPair.priKey.clearMem();
+            expect(ret).assertTrue();
           }
-          let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
-          keyPair = await generator.convertPemKey(pemData.pubKey, pemData.priKey);
-          await generator.convertPemKey(null, pemData.priKey);
-          await generator.convertPemKey(pemData.pubKey, null);
-          let keyAgreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
-          let secretA = await keyAgreement.generateSecret(keyPair.priKey, keyPair.pubKey);
-          let secretB = keyAgreement.generateSecretSync(keyPair.priKey, keyPair.pubKey);
-          let ret: boolean = commonUtils.compareDataBlob(secretA, secretB);
-          keyPair.priKey.clearMem();
-          expect(ret).assertTrue();
-        }
-        expect(true).assertTrue();
+          expect(true).assertTrue();
+          })
+        }();
       } catch (error) {
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();

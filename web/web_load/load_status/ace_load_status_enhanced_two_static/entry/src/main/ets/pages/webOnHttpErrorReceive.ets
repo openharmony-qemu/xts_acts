@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -101,7 +102,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               case 'testOnHttpErrorReceive004': {
                 try {
                   this.httpErrorReceive = 0;
-                  this.controller.loadUrl('www.example.com');
+                  this.controller.loadUrl('htt' + 'ps://www.example.com/123');
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60604);
                   }, 4000)

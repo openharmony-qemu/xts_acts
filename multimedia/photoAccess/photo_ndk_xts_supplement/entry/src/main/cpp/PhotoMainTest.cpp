@@ -19,11 +19,13 @@
 #include <string.h>
 #include "OHMediaAssetCreateTest.h"
 #include "MediaAssetManagerCancelRequestTest.h"
+#include "CFuseTest.h"
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
 
 
 napi_property_descriptor desc1[] = {
+    DESCRIPTOR("open", OpenTest),
     DESCRIPTOR("OHMediaAssetChangeRequestCreateTest", OHMediaAssetChangeRequestCreateTest),
     DESCRIPTOR("OHMediaAssetChangeRequestAddResourceWithUriTest", OHMediaAssetChangeRequestAddResourceWithUriTest),
     DESCRIPTOR("TestOhMediaAsset", TestOhMediaAsset),
@@ -32,6 +34,32 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestRequestImageForPath", TestRequestImageForPath),
     DESCRIPTOR("MediaAssetManagerCancelRequestTest", MediaAssetManagerCancelRequestTest),
     DESCRIPTOR("OHMediaAssetManagerQuickRequestImageTest", OHMediaAssetManagerQuickRequestImageTest),
+    DESCRIPTOR("Test_Create_Dir", Test_Create_Dir),
+    DESCRIPTOR("Test_Create_File", Test_Create_File),
+    DESCRIPTOR("Test_Open_Dir", Test_Open_Dir),
+    DESCRIPTOR("Test_Access", Test_Access),
+    DESCRIPTOR("testChmod", Test_Chmod),
+    DESCRIPTOR("testChown", Test_Chown),
+    DESCRIPTOR("testRemoveFile", Test_RemoveFile),
+    DESCRIPTOR("testRemoveDir", Test_RemoveDir),
+    DESCRIPTOR("testRename", Test_Rename),
+    DESCRIPTOR("testDirName", Test_DirName),
+    DESCRIPTOR("testBaseName", Test_BaseName),
+    DESCRIPTOR("testCreate", Test_Create_Api),
+    DESCRIPTOR("testStat", Test_stat),
+    DESCRIPTOR("testFstat", Test_Fstat),
+    DESCRIPTOR("testFsSystemStat", Test_FsSystemStat),
+    DESCRIPTOR("testFtw", Test_Ftw),
+    DESCRIPTOR("testTruncate", Test_Truncate),
+    DESCRIPTOR("testPathConf", Test_PathConf),
+    DESCRIPTOR("Test_OpenReadDir", Test_OpenReadDir),
+    DESCRIPTOR("Test_ReadDir_R", Test_ReadDir_R),
+    DESCRIPTOR("testFallocate", Test_Fallocate),
+    DESCRIPTOR("testFcntl", Test_Fcntl),
+    DESCRIPTOR("testChdir", Test_Chdir),
+    DESCRIPTOR("testDupApi", Test_Dup_Api),
+    DESCRIPTOR("testFsync", Test_Fsync),
+    DESCRIPTOR("Test_scanDir", Test_scanDir),
 };
 
 EXTERN_C_START

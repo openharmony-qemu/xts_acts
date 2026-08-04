@@ -21,6 +21,7 @@ struct TextImageSpan2 {
   build() {
     Column({ space: 100 }) {
       Text(this.flag).id('ImageSpan_onComplete_2')
+      .key('ImageSpan_onComplete_2')
       Text(){
         ImageSpan('data:image/png;base64,iVBORw0KGgoA'+
         'AAANSUhEUgAAACkAAAApCAYAAACoYAD2AAAAGXRFWHRTb2Z0d2'+

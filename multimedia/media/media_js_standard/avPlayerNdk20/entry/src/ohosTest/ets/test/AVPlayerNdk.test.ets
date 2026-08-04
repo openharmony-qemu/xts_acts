@@ -806,6 +806,28 @@ export default function AVPlayerNdkTest() {
         }
       })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_AVPlayerErrorCode0100
+     * @tc.number SUB_MULTIMEIDA_AVPlayerErrorCode0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_AVPlayerErrorCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlayerErrorCode0100 start====");
+          let result: number = avplayer.AVPlayerErrorCode0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlayerErrorCode0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
 
   })
 }

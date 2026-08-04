@@ -15,14 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum ColorIntA0: int { Red, Green, Blue }
 enum ColorIntA1: int { Red, Green, Blue }
@@ -116,7 +109,7 @@ export default function EnumerationWithExplicitTypeTest06(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -138,8 +131,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -170,8 +161,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -230,7 +219,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -261,7 +249,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -292,7 +279,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -320,7 +306,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -351,7 +336,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -382,7 +366,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -410,7 +393,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -441,7 +423,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -472,7 +453,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     Values). The constant which is first and has no explicit value gets zero value.
     A constant that is not the first and has no explicit value takes the value of the
     immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -713,7 +693,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression. A constant that is not the first and has no
     explicit value takes the value of the immediately preceding constant plus one.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -816,7 +795,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression. Qualification by type is mandatory to access
     the enumeration constant, except enumeration constant initialization expressions.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -883,7 +861,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression. Qualification by type is mandatory to access
     the enumeration constant, except enumeration constant initialization expressions.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -949,7 +926,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
      * @tc.desc      The value of an enum constant can be set as follows: * Explicitly to a numeric
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -981,7 +957,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
      * @tc.desc      The value of an enum constant can be set as follows: * Explicitly to a numeric
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1013,7 +988,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
      * @tc.desc      The value of an enum constant can be set as follows: * Explicitly to a numeric
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1045,7 +1019,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
      * @tc.desc      The value of an enum constant can be set as follows: * Explicitly to a numeric
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1077,7 +1050,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
      * @tc.desc      The value of an enum constant can be set as follows: * Explicitly to a numeric
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1100,7 +1072,6 @@ export default function EnumerationWithExplicitTypeTest06(): void {
      * @tc.desc      The value of an enum constant can be set as follows: * Explicitly to a numeric
     constant expression or to a constant expression of type string; or * Implicitly
     by omitting the constant expression.
-
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

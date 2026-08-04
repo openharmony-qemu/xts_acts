@@ -1,3 +1,4 @@
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,15 +25,8 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
 function bar(a: A_this_primary_expression_in_class): A_this_primary_expression_in_class {
   return a;
@@ -151,7 +145,7 @@ class StringContainer_this_generic_interface implements Container_this_generic_i
 }
 
 class Builder_this_generic_method_chain<T> {
-  private value: T
+  private value: T = undefined as T
   public setValue(val: T): Builder_this_generic_method_chain<T> {
     this.value = val
     return this
@@ -343,7 +337,7 @@ export default function ExpressionsThisTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

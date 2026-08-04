@@ -16,19 +16,17 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import CommonTest from "../common/CommonTest"
 import { describe, beforeAll, expect } from '../../../../hypium/index';
-import { UIContext } from "@ohos.arkui.UIContext";
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {UtilsTest} from '../Util.test'
+import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -86,7 +84,7 @@ export default function onDisAppearTest() {
       AppStorage.setOrCreate<boolean>('_isShow', data.testValue.setValue.isShow)
       await Utils.sleep(2000);
       //Get text content,check content is changeDisAppear
-      let compareTextObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.compareTextKey);
+      let compareTextObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.compareTextKey);
       // let strJson = inspector.getInspectorByKey(data.pageConfig.compareTextKey);
       // await Utils.sleep(2000);
       // let compareTextObj =  JSON.parseJsonElement(strJson);

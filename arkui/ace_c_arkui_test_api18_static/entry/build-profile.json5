@@ -15,13 +15,16 @@
 
 {
   "apiType": "stageMode",
-  "arkTSVersion": "1.2",
   "buildOption": {
     "externalNativeOptions": {
       "path": "./src/main/cpp/CMakeLists.txt",
-      "arguments" : "",
-      "cppFlags" : "",
-      "abiFilters" : ["arm64-v8a", "armeabi-v7a", "x86_64"]
+      "arguments": "",
+      "cppFlags": "",
+      "abiFilters": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86_64"
+      ]
     }
   },
   "buildOptionSet": [
@@ -37,14 +40,14 @@
           }
         }
       }
-    },
+    }
   ],
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest",
+      "name": "ohosTest"
     }
   ]
 }

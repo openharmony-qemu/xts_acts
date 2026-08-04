@@ -3419,6 +3419,104 @@ int OhAvPlayerSetPCMOutputCallback()
     delete ndkAVPlayerUser;
     return backParam;
 }
+
+static void AVPlayerPCMProcessorCallbackImpl(OH_AVPlayer *player, OH_AVBuffer *pcmBuffer, void *userData)
+{
+    NdkAVPlayerSetPlaybackRateUser *user = reinterpret_cast<NdkAVPlayerSetPlaybackRateUser *>(userData);
+    if (user == nullptr || player == nullptr) {
+        LOGE("AVPlayerPCMProcessorCallbackImpl user is nullptr");
+        return;
+    }
+}
+
+int OhAvPlayerSetPCMProcessorCallback()
+{
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errCode);
+    OH_AVPlayer_Prepare(player);
+
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    OH_AVPlayer_Play(player);
+    waitAvPlayerStateChange(player, AV_PLAYING);
+
+    // wait for completed
+    int32_t duration;
+    errCode = OH_AVPlayer_GetDuration(player, &duration);
+    LOG("OhAvPlayerSetPCMProcessorCallback GetDuration errCode:%{public}d, duraiton:%{public}d", errCode,
+        duration);
+    std::this_thread::sleep_for(std::chrono::milliseconds(duration));
+    waitAvPlayerStateChange(player, AV_COMPLETED);
+    LOG("OhAvPlayerSetPCMProcessorCallback lastPts %{public}lld", ndkAVPlayerUser->lastPts);
+
+    // check play completed
+    AVPlayerState avState = AV_IDLE;
+    OH_AVPlayer_GetState(player, &avState);
+    if (avState == AV_COMPLETED) {
+        backParam = SUCCESS;
+    }
+
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    return backParam;
+}
+
+int OhAvPlayerSetPCMProcessorMaxLen()
+{
+    int backParam = FAIL;
+    int32_t maxProcessedPCMLen = 5 * 1024 * 1024;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errorCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errorCode);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorMaxLen(player, maxProcessedPCMLen);
+    LOG("OhAvPlayerSetPCMProcessorMaxLen SetPCMProcessorMaxLen errCode:%{public}d", errCode);
+    OH_AVPlayer_Prepare(player);
+
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    OH_AVPlayer_Play(player);
+    waitAvPlayerStateChange(player, AV_PLAYING);
+
+    // wait for completed
+    int32_t duration;
+    errCode = OH_AVPlayer_GetDuration(player, &duration);
+    LOG("OhAvPlayerSetPCMProcessorCallback GetDuration errCode:%{public}d, duraiton:%{public}d", errCode,
+        duration);
+    std::this_thread::sleep_for(std::chrono::milliseconds(duration));
+    waitAvPlayerStateChange(player, AV_COMPLETED);
+    LOG("OhAvPlayerSetPCMProcessorCallback lastPts %{public}lld", ndkAVPlayerUser->lastPts);
+
+    // check play completed
+    AVPlayerState avState = AV_IDLE;
+    OH_AVPlayer_GetState(player, &avState);
+    if (avState == AV_COMPLETED) {
+        backParam = SUCCESS;
+    }
+
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    return backParam;
+}
  
 template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
 {
@@ -3562,6 +3660,321 @@ static napi_value OhAvPlayerSetPCMOutputCallbackWrapperError(napi_env env, napi_
     napi_create_int32(env, backParam, &result);
     return result;
 }
+
+static napi_value OhAvPlayerSetPCMProcessorCallbackWrapper(napi_env env, napi_callback_info info)
+{
+    return CreateAsyncWrapper(env, info, OhAvPlayerSetPCMProcessorCallback);
+}
+
+static napi_value OhAvPlayerSetPCMProcessorCallbackWrapperVal(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    OH_AVPlayer *player = nullptr;
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_INVALID_VAL) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetPCMProcessorCallbackWrapperNotPermit(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayer_Prepare(player);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapper(napi_env env, napi_callback_info info)
+{
+    return CreateAsyncWrapper(env, info, OhAvPlayerSetPCMProcessorMaxLen);
+}
+
+static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperVal(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    int32_t maxProcessedPCMLen = 1 * 1024 * 1024;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errorCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errorCode);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorMaxLen(player, maxProcessedPCMLen);
+    LOG("OhAvPlayerSetPCMProcessorMaxLen SetPCMProcessorMaxLen errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperValErr(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    int32_t maxProcessedPCMLen = 5 * 1024 * 1024 + 1;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errorCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errorCode);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorMaxLen(player, maxProcessedPCMLen);
+    LOG("OhAvPlayerSetPCMProcessorMaxLen SetPCMProcessorMaxLen errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_INVALID_VAL) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperValError(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    int32_t maxProcessedPCMLen = 0;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errorCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errorCode);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorMaxLen(player, maxProcessedPCMLen);
+    LOG("OhAvPlayerSetPCMProcessorMaxLen SetPCMProcessorMaxLen errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_INVALID_VAL) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperNotPermit(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    int32_t maxProcessedPCMLen = 5 * 1024 * 1024;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayer_Prepare(player);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    OH_AVErrCode errorCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errorCode);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorMaxLen(player, maxProcessedPCMLen);
+    LOG("OhAvPlayerSetPCMProcessorMaxLen SetPCMProcessorMaxLen errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetVideoSideOutput(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    EGLDisplay display = nullptr;
+    EGLContext context = nullptr;
+    EGLSurface surface = nullptr;
+    InitGLES(display, context, surface);
+    GLuint textureId = PARAM_0;
+    glGenTextures(ONEVAL, &textureId);
+    OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+    OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+    if (window != nullptr) {
+        OH_AVPlayer *player = OH_AVPlayer_Create();
+        AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+        OH_AVPlayer_SetPlayerCallback(player, cb);
+        waitAvPlayerStateChange(player, AV_IDLE);
+        GetFDSourceInfo(player);
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, window);
+        if (videoOutput != nullptr) {
+            backParam = SUCCESS;
+        }
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayer_ReleaseSync(player);
+        OH_NativeWindow_DestroyNativeWindow(window);
+    }
+    DestroyGLES(display, context, surface);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetVideoSideOutputOne(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(nullptr, nullptr);
+    if (videoOutput == nullptr) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetVideoSideOutputTwo(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player);
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, nullptr);
+    if (videoOutput == nullptr) {
+        backParam = SUCCESS;
+    }
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetVideoSideOutputThree(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    EGLDisplay display = nullptr;
+    EGLContext context = nullptr;
+    EGLSurface surface = nullptr;
+    InitGLES(display, context, surface);
+    GLuint textureId = PARAM_0;
+    glGenTextures(ONEVAL, &textureId);
+    OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+    OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+    if (window != nullptr) {
+        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(nullptr, window);
+        if (videoOutput == nullptr) {
+            backParam = SUCCESS;
+        }
+        OH_NativeWindow_DestroyNativeWindow(window);
+    }
+    DestroyGLES(display, context, surface);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerGetNewestVideoSample(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    EGLDisplay display = nullptr;
+    EGLContext context = nullptr;
+    EGLSurface surface = nullptr;
+    InitGLES(display, context, surface);
+    GLuint textureId = PARAM_0;
+    glGenTextures(ONEVAL, &textureId);
+    OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+    OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+    if (window != nullptr) {
+        OH_AVPlayer *player = OH_AVPlayer_Create();
+        AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+        OH_AVPlayer_SetPlayerCallback(player, cb);
+        waitAvPlayerStateChange(player, AV_IDLE);
+        GetFDSourceInfo(player);
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayer_SetVideoSurface(player, window);
+        OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, window);
+        OH_AVPlayer_Prepare(player);
+        waitAvPlayerStateChange(player, AV_PREPARED);
+        OH_AVPlayer_Play(player);
+        waitAvPlayerStateChange(player, AV_PLAYING);
+        if (videoOutput != nullptr) {
+            OH_VideoOutputResult videoResult = OH_AVPlayerVideoOutput_GetNewestVideoSample(videoOutput);
+            if (videoResult == OH_VIDEO_OUTPUT_OK) {
+                backParam = SUCCESS;
+            }
+        }
+        waitAvPlayerStateChange(player, AV_INITIALIZED);
+        OH_AVPlayer_ReleaseSync(player);
+        OH_NativeWindow_DestroyNativeWindow(window);
+    }
+    DestroyGLES(display, context, surface);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerGetNewestVideoSampleAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_VideoOutputResult videoResult = OH_AVPlayerVideoOutput_GetNewestVideoSample(nullptr);
+    if (videoResult == OH_VIDEO_OUTPUT_NO_IMAGE) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3751,6 +4164,34 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"avPlayerSetPCMOutputCallbackError", nullptr, OhAvPlayerSetPCMOutputCallbackWrapperError, nullptr, nullptr,
             nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorCallback", nullptr, OhAvPlayerSetPCMProcessorCallbackWrapper, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorCallbackVal", nullptr, OhAvPlayerSetPCMProcessorCallbackWrapperVal, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorCallbackNotPermit", nullptr, OhAvPlayerSetPCMProcessorCallbackWrapperNotPermit,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorMaxLen", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapper, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorMaxLenVal", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperVal, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorMaxLenValErr", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperValErr, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorMaxLenValError", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperValError, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorMaxLenNotPermit", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperNotPermit,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetVideoSideOutput", nullptr, OhAvPlayerSetVideoSideOutput, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerSetVideoSideOutputOne", nullptr, OhAvPlayerSetVideoSideOutputOne, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerSetVideoSideOutputTwo", nullptr, OhAvPlayerSetVideoSideOutputTwo, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerSetVideoSideOutputThree", nullptr, OhAvPlayerSetVideoSideOutputThree, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"avPlayerGetNewestVideoSample", nullptr, OhAvPlayerGetNewestVideoSample, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"avPlayerGetNewestVideoSampleAbnormal", nullptr, OhAvPlayerGetNewestVideoSampleAbnormal, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

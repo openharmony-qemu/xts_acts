@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -76,6 +77,23 @@ export default function WebKeyBoardAvoidModeTest() {
       inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
       await Utils.msSleep(3000);
       done()
+    })
+
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SUB_WEB_WEBKEYBOARDAVOIDMODE_0300
+     * @tc.desc   switch to next page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('SwitchNextPageStatic', 10)
+      await Utils.msSleep(1000);
+      inspector.sendEventByKey('webKeyBoardAvoidModeButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
     })
   })
 }

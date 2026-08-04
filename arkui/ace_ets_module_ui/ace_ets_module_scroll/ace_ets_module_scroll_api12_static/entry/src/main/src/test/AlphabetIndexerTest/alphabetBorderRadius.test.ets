@@ -15,30 +15,18 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import { UtilsTest } from '../Util.test'
+import inspector from '@ohos.arkui.inspector';
 import { UtilsTest } from '../Util.test';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -174,6 +162,7 @@ it('alphabetBorderRadiusTest_static_005', Level.LEVEL0, async (done: () => void)
       console.info('[alphabetBorderRadiusTest_static_005] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('layout_indexer'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -203,6 +192,7 @@ it('alphabetBorderRadiusTest_static_006', Level.LEVEL0, async (done: () => void)
       console.info('[alphabetBorderRadiusTest_static_006] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('layout_indexer'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

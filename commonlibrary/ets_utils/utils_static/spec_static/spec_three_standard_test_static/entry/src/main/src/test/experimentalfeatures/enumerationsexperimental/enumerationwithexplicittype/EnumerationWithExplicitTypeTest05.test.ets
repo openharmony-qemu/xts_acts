@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum Enum26: float {
   first = 1.1f,
@@ -154,7 +147,7 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -720,7 +713,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum26.third.valueOf()).assertEqual(1.3f);
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_1700
      * @tc.name      testEnumerationWithExplicitType0101
@@ -741,7 +733,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum27.third.valueOf()).assertEqual(1.1f);
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_1900
      * @tc.name      testEnumerationWithExplicitType0103
@@ -758,7 +749,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum28.first.valueOf()).assertEqual(3.4018235e+38f);
       expect(Enum28.second.valueOf()).assertEqual(3.4028235e+38f);
     });
-
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2100
@@ -779,7 +769,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum29.second.valueOf()).assertEqual(1.234f);
       expect(Enum29.third.valueOf()).assertEqual(0.134f);
     });
-
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2300
@@ -846,6 +835,5 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(v2).assertEqual(-1.2f);
       expect(v3).assertEqual(-42.43f);
     });
-
   })
 }

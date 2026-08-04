@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -134,7 +134,7 @@ export default function ArrayCopyWithin1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0700
      * @tc.name testArrayCopyWithin1007
-     * @tc.desc Verify negative indexes are resolved from the end of the array
+     * @tc.desc Verify negative target/start/end indices are resolved from the end for copyWithin
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

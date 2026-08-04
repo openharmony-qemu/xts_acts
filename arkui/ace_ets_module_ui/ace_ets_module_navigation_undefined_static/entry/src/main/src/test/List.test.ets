@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +29,6 @@ import customNavContentTransitionUndefined from './NavigationTest/customNavConte
 import customNavContentTransitionModifierUndefined from './NavigationTest/customNavContentTransition_ModifierUndefined.test';
 import getParamByNameUndefined from './NavigationTest/getParamByNameUndefined.test';
 import getParamByNameModifierUndefined from './NavigationTest/getParamByName_ModifierUndefined.test';
-// swiperTest
 import indicatorUndefined from './swiperTest/indicatorUndefined.test';
 import indicatorInteractiveUndefined from './swiperTest/indicatorInteractiveUndefined.test';
 import intervalUndefined from './swiperTest/intervalUndefined.test';
@@ -53,8 +53,6 @@ import indexUndefined from './swiperTest/indexUndefined.test';
 import indexModifierUndefined from './swiperTest/index_ModifierUndefined.test';
 import durationUndefined from './swiperTest/durationUndefined.test';
 import durationModifierUndefined from './swiperTest/duration_ModifierUndefined.test';
-import prevMarginUndefined from './swiperTest/prevMarginUndefined.test';
-import prevMarginModifierUndefined from './swiperTest/prevMargin_ModifierUndefined.test';
 import prevMarginUndefined from './swiperTest/prevMarginUndefined.test';
 import prevMarginModifierUndefined from './swiperTest/prevMargin_ModifierUndefined.test';
 import curveUndefined from './swiperTest/curveUndefined.test';
@@ -91,7 +89,6 @@ import onGestureSwipeUndefined from './swiperTest/onGestureSwipeUndefined.test';
 import onGestureSwipeModifierUndefined from './swiperTest/onGestureSwipe_ModifierUndefined.test';
 import customContentTransitionUndefined from './swiperTest/customContentTransitionUndefined.test';
 import customContentTransitionModifierUndefined from './swiperTest/customContentTransition_ModifierUndefined.test';
-
 export default function testsuite() {
   indicatorComponentUndefined()
   indicatorUndefined()

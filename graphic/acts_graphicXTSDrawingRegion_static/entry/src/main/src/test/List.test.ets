@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +15,10 @@
  */
 import DrawingTsRegionTest from "./Region.test";
 import drawingTsRegionPart2Test from "./Region2.test";
+import drawingTsRegionPart3Test from "./Region3.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   DrawingTsRegionTest();
   drawingTsRegionPart2Test();
+  drawingTsRegionPart3Test();
 }

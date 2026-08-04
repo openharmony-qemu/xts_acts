@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,18 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import effectKit from '@ohos.effectKit';
 import image from '@ohos.multimedia.image';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import { testJpg } from '../model/testImg';
-
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -259,8 +258,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
-          let colorPicker: effectKit.ColorPicker = await effectKit.createColorPicker(pixelMap!);
+        await effectKit.createColorPicker(pixelMap!).then(async (colorPicker: effectKit.ColorPicker) => {
           console.info("www data color picker=" + colorPicker);
           await colorPicker.getMainColor().then((color: effectKit.Color) => {
             console.info('www data Succeeded in getting main color.');
@@ -276,11 +274,11 @@ export default function GraphicEffectKitStaticTest() {
             expect().assertFail();
             done();
           })
-        } catch (reason) {
+        }).catch((reason) => {
           console.error("www data effectKitTest_static_0800 error=");
           expect().assertFail();
           done();
-        }
+        })
       })
 
     /**
@@ -919,14 +917,17 @@ export default function GraphicEffectKitStaticTest() {
           pixelFormat: image.PixelMapFormat.BGRA_8888,
           size: { height: 4, width: 6 }
         };
-        let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
-        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
-        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
-        expect(pixelMap.isEditable).assertTrue();
-        expect(pixelMap.isStrideAlignment).assertFalse();
-        let colorPicker = await effectKit.createColorPicker(pixelMap);
-        expect(colorPicker !== undefined).assertTrue();
-        done();
+        image.createPixelMap(color, opts).then(pixelMap => {
+          waitForCompletion(async () => {
+            console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+            console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+            expect(pixelMap.isEditable).assertTrue();
+            expect(pixelMap.isStrideAlignment).assertFalse();
+            let colorPicker = await effectKit.createColorPicker(pixelMap);
+            expect(colorPicker !== undefined).assertTrue();
+            done();
+          })
+        })
       })
 
     /**
@@ -947,14 +948,17 @@ export default function GraphicEffectKitStaticTest() {
           pixelFormat: image.PixelMapFormat.BGRA_8888,
           size: { height: 4, width: 6 }
         };
-        let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
-        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
-        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
-        expect(pixelMap.isEditable).assertFalse();
-        expect(pixelMap.isStrideAlignment).assertFalse();
-        let colorPicker = await effectKit.createColorPicker(pixelMap);
-        expect(colorPicker !== undefined).assertTrue();
-        done();
+        image.createPixelMap(color, opts).then(pixelMap => {
+          waitForCompletion(async () => {
+            console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+            console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+            expect(pixelMap.isEditable).assertFalse();
+            expect(pixelMap.isStrideAlignment).assertFalse();
+            let colorPicker = await effectKit.createColorPicker(pixelMap);
+            expect(colorPicker !== undefined).assertTrue();
+            done();
+          })
+        })
       })
 
     /**
@@ -1033,14 +1037,17 @@ export default function GraphicEffectKitStaticTest() {
           pixelFormat: image.PixelMapFormat.BGRA_8888,
           size: { height: 4, width: 6 }
         };
-        let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
-        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
-        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
-        expect(pixelMap.isEditable).assertTrue();
-        expect(pixelMap.isStrideAlignment).assertFalse();
-        let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
-        expect(colorPicker !== undefined).assertTrue();
-        done();
+        image.createPixelMap(color, opts).then(pixelMap => {
+          waitForCompletion(async () => {
+            console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+            console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+            expect(pixelMap.isEditable).assertTrue();
+            expect(pixelMap.isStrideAlignment).assertFalse();
+            let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
+            expect(colorPicker !== undefined).assertTrue();
+            done();
+          })
+        })
       })
 
     /**
@@ -1061,14 +1068,17 @@ export default function GraphicEffectKitStaticTest() {
           pixelFormat: image.PixelMapFormat.BGRA_8888,
           size: { height: 4, width: 6 }
         };
-        let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
-        console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
-        console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
-        expect(pixelMap.isEditable).assertFalse();
-        expect(pixelMap.isStrideAlignment).assertFalse();
-        let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
-        expect(colorPicker !== undefined).assertTrue();
-        done();
+        image.createPixelMap(color, opts).then(pixelMap => {
+          waitForCompletion(async () => {
+            console.info(msgStr + 'isEditable 111 ', pixelMap.isEditable)
+            console.info(msgStr + 'isEditable 222 ', pixelMap.isStrideAlignment)
+            expect(pixelMap.isEditable).assertFalse();
+            expect(pixelMap.isStrideAlignment).assertFalse();
+            let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
+            expect(colorPicker !== undefined).assertTrue();
+            done();
+          })
+        })
       })
 
     /**

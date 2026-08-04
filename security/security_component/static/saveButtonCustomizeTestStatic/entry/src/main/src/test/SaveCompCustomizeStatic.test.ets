@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,6 +35,8 @@ import {
   Alignment,
   Color,
   Resource,
+  ResourceColor,
+  SymbolRenderingStrategy,
   $r
 } from '@ohos.arkui.component';
 
@@ -463,6 +466,216 @@ export default function saveCompCustomizeStaticTest() {
       console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('iconSize')).assertEqual('20.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Customize_Static_0800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveButton_Customize_Static_0800
+     * @tc.desc   Test SaveComponent attr symbolIconColor set Array<ResourceColor> validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_Customize_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME = 'Test_Security_SaveButton_Customize_Static_0800';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#08';
+      try {
+        let data: Record<string, RecordData> = {
+          'cuIcon': customIcon,
+          'cuText': customText,
+          'symbolIconColor': ['0xff00ff00', '0xffff00ff'],
+          'symbolRenderingStrategy': SymbolRenderingStrategy.MULTIPLE_OPACITY,
+          'symbolFontWeight': FontWeight.Bold
+        }
+        let eventData: events_emitter.EventData = {};
+        eventData.data = data;
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+//      expect(obj.getElement('$attrs').getString('symbolIconColor')).assertEqual('0xff00ff00');
+      expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.MULTIPLE_OPACITY');
+      expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Bold');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Customize_Static_0900
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveButton_Customize_Static_0900
+     * @tc.desc   Test SaveComponent attr symbolFontWeight set number validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_Customize_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME = 'Test_Security_SaveButton_Customize_Static_0900';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#09';
+      try {
+        let data: Record<string, RecordData> = {
+          'cuIcon': customIcon,
+          'cuText': customText,
+          'symbolRenderingStrategy': SymbolRenderingStrategy.SINGLE,
+          'symbolFontWeight': 900
+        }
+        let eventData: events_emitter.EventData = {};
+        eventData.data = data;
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
+      expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('900');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Customize_Static_1000
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveButton_Customize_Static_1000
+     * @tc.desc   Test SaveComponent attr symbolFontWeight set string validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_Customize_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME = 'Test_Security_SaveButton_Customize_Static_1000';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#10';
+      try {
+        let data: Record<string, RecordData> = {
+          'cuIcon': customIcon,
+          'cuText': customText,
+          'symbolRenderingStrategy': SymbolRenderingStrategy.MULTIPLE_COLOR,
+          'symbolFontWeight': 'lighter'
+        }
+        let eventData: events_emitter.EventData = {};
+        eventData.data = data;
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.MULTIPLE_COLOR');
+      expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Lighter');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Customize_Static_1100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveButton_Customize_Static_1100
+     * @tc.desc   Test SaveComponent attr symbolIconColor set empty array and SymbolFontWeight set empty string validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_Customize_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME = 'Test_Security_SaveButton_Customize_Static_1100';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#11';
+      try {
+        let data: Record<string, RecordData> = {
+          'cuIcon': customIcon,
+          'cuText': customText,
+          'symbolIconColor': [],
+          'symbolFontWeight': ''
+        }
+        let eventData: events_emitter.EventData = {};
+        eventData.data = data;
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('symbolIconColor').length).assertEqual(0);
+      expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Lighter');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, customText, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Customize_Static_1200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveButton_Customize_Static_1200
+     * @tc.desc   Test SaveComponent attr symbolFontWeight set resource validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_Customize_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME = 'Test_Security_SaveButton_Customize_Static_1200';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
+      let customText: string = 'Custom.&*#12';
+      try {
+        let data: Record<string, RecordData> = {
+          'cuIcon': customIcon,
+          'cuText': customText,
+          'symbolFontWeight': $r('app.string.FontWeight_Bold')
+        }
+        let eventData: events_emitter.EventData = {};
+        eventData.data = data;
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Lighter');
       await UtilsTest.msSleep(1000);
       sucCallback(TCNAME, done);
       let driver = Driver.create();

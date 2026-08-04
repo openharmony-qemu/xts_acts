@@ -22,6 +22,8 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import { BY, UiDriver } from '@ohos.UiTest';
 import { deviceInfo } from "@kit.BasicServicesKit";
+import { Driver, ON } from '@kit.TestKit';
+import { MatchPattern } from '@ohos.UiTest'
 
 let deviceTypeInfo: string = deviceInfo.deviceType
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -140,9 +142,25 @@ export default function audioFramework() {
 
   describe('audioFramework', () => {
     beforeAll(async () => {
-      sleep(1000);
+      sleep(500);
       await getAudioManager();
       await getVolumeGroupManager();
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          await audioManager.setVolume(audioMedia, maxVolPc);
+      }
+      console.info(`come in driveFn`);
+      let driver = await Driver.create();
+      console.info(`driver is ${JSON.stringify(driver)}`);
+      await sleep(500);
+      let power = await driver?.waitForComponent(ON.text('提高音量', MatchPattern.EQUALS), 2000);
+      await power?.click();
+      await sleep(1000);
       console.info('TestLog: Start Testing AudioFrameworkTest Interfaces');
     })
 
@@ -156,7 +174,7 @@ export default function audioFramework() {
       await sleep(100);
     })
 
-    afterAll(() => {
+    afterAll(async () => {
       console.info(`${TagFrmwk}: afterAll: Test suite-level cleanup condition`);
     })
 
@@ -5304,6 +5322,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let flag: boolean | null = null;
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
@@ -5358,6 +5384,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true);
         let value = await audioManager.isDeviceActive(2);
@@ -5397,6 +5431,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
         flag = true;
       }
@@ -5451,6 +5493,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: Device Test: Callback : setDeviceActive : SPEAKER: Active: Error: ${err.message}`);
@@ -9012,6 +9062,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
         flag = true;
       }
@@ -16189,6 +16247,206 @@ export default function audioFramework() {
     })
 
     /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        await audioRenderer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1000 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        await audioRenderer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1200 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1200 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        await audioRenderer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1200 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1200 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1300 
+    * @tc.number AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1300 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        await audioRenderer.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1300 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIORENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_1300 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioRenderer.release();
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_0100
+    * @tc.desc   getMinVolume - VOICE_CALL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.VOICE_CALL);
+        console.info(`VOICE_CALL getMinVolume : success :${data}`);
+        done();
+      } catch (err) {
+        console.info(`err: ${err.message}, Code: ${err.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_0100
+    * @tc.desc   getVolume - VOICE_CALL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager.getVolume(audio.AudioVolumeType.VOICE_CALL);
+        console.info(`VOICE_CALL getVolume : success :${data}`);
+        done();
+      } catch (err) {
+        console.info(`err: ${err.message}, Code: ${err.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
     * @tc.name   AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_0100 
     * @tc.number AUDIO_AUDIOSTREAMMANAGER_ISFASTPLAYBACKSUPPORTED_0100 
     * @tc.desc   isFastPlaybackSupported
@@ -16369,6 +16627,148 @@ export default function audioFramework() {
       } catch (error) {
         console.info("AUDIO_AUDIOSTREAMMANAGER_ISMULTICHANNELPLAYBACKSUPPORTED_0100 FAIL:" + error.message);
         expect(true).assertFalse();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100 
+    * @tc.number AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100 
+    * @tc.desc   getRecordingManager
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        expect(recordingManager).not().assertNull();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200 
+    * @tc.desc   enableSystemRecordController - true
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_MIC
+        };
+        await recordingManager.enableSystemRecordController(true, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300 
+    * @tc.desc   enableSystemRecordController - false
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_MIC
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400 
+    * @tc.desc   enableSystemRecordController - false SOURCE_TYPE_CAMCORDER
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_CAMCORDER
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500 
+    * @tc.desc   enableSystemRecordController - false SOURCE_TYPE_LIVE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_LIVE
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600 
+    * @tc.desc   enableSystemRecordController - 6800101
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: 999 as audio.SourceType
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
       }
       done();
     })

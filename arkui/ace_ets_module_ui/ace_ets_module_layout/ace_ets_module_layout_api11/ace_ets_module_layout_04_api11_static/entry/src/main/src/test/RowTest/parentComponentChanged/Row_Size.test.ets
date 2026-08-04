@@ -87,10 +87,10 @@ it('testRowSizeBothSatisfy_static_01', Level.LEVEL0, async (done: () => void): P
         name: 'height', value: 200
       });
       await CommonFunc.sleep(3000);
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_Size_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_Size_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_Size_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_Size_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 
@@ -139,10 +139,10 @@ it('testRowSizeWidthNOSatisfy_static_02', Level.LEVEL0, async (done: () => void)
         name: 'height', value: 200
       });
       await CommonFunc.sleep(3000)
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_Size_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_Size_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_Size_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_Size_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 
@@ -188,10 +188,10 @@ it('testRowSizeHeightNOSatisfy_static_03', Level.LEVEL0, async (done: () => void
         name: 'height', value: 100
       });
       await CommonFunc.sleep(3000)
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_Size_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_Size_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_Size_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_Size_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 

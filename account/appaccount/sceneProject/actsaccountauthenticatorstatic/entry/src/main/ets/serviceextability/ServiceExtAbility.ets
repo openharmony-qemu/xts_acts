@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -168,12 +169,12 @@ class MyAuthenticator extends account.Authenticator {
         let appAccountMgr = account.createAppAccountManager();
         hilog.info(0x0000, tag, '====>[Authenticator] start remove ' + JSON.stringify(prop2));
         try {
-          (async () => {
+          waitForCompletion(async () => {
             await appAccountMgr.removeAccount(prop2);
             hilog.info(0x0000, tag, '====>[Authenticator] remove appaccount success');
             callback.onResult(0);
             return;
-          })().awaitSync();
+          });
         } catch (err) {
           hilog.info(0x0000, tag, '====>[Authenticator] removeAccount err: ' + JSON.stringify(err));
         }

@@ -25,6 +25,10 @@
     "MainAbility/pages/timePickerDialog/timePickerDialogBGColor",
     "MainAbility/pages/timePickerDialog/timePickerDialogShadow",
     "MainAbility/pages/timePickerDialog/addEnableCascadeApi",
-    "MainAbility/pages/textPicker/columnWidths"
+    "MainAbility/pages/textPicker/columnWidths",
+    "MainAbility/pages/textPickerDialog/textPickerDialogSystemMaterial",
+    "MainAbility/pages/timePickerDialog/timePickerDialogSystemMaterial",
+    "MainAbility/pages/calendarPickerDialog/calendarPickerDialogSystemMaterial",
+    "MainAbility/pages/datePickerDialog/datePickerDialogSystemMaterial"
   ]
 }

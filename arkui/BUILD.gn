@@ -31,6 +31,7 @@ group("arkui") {
       "ace_c_arkui_test_api23:ActsAceCArkUI23Test",
       "ace_c_arkui_test_api24:ActsAceCArkUI24Test",
       "ace_c_arkui_test_api26:ActsAceCArkUI26Test",
+      "ace_c_arkui_test_api26_systemmaterial:ActsAceCArkUI26SystemMaterialTest",
       "ace_c_arkui_test_parallelize:ActsAceCArkUIParallelizeTest",
       "ActsAceEngineNDK_API20_Test:ActsAceEngineNativeAPI20",
       "ace_c_scroll_crosslanguage:ActsAceCapiScrollCrossTest",
@@ -46,8 +47,8 @@ group("arkui") {
       "ace_js_attribute_api:ActsAceJsApiTest",
       "ace_napi_test:ActsAceNapiEtsTest",
       "ace_napi_test_es:ActsAceNapiEtsEsTest",
+      "ActsNapiTest:ActsAceNapiNewTest",
       "ace_standard_video:ActsAceStandardVideoTest",
-      "libuv:libuvTest",
       "ace_c_accessibility_api_16_static:ActsAceCapiInspector16StaticTest",
       "ace_c_arkui_test_api14_static:ActsAceCArkUI14StaticTest",
       "ace_c_arkui_test_api16_static:ActsAceCArkUI16StaticTest",
@@ -57,6 +58,7 @@ group("arkui") {
       "ace_c_arkui_test_api20_static:ActsAceCArkUI20StaticTest",
       "ace_c_arkui_test_static:ActsAceCArkUIStaticTest",
       "ace_ets_component_apilack_static:ActsAceEtsApiLackStaticTest",
+      "ace_napi_async_test:ActsAceNapiEtsAsyncTest",
     ]
   } else {
     deps = [
@@ -86,6 +88,7 @@ group("arkui") {
       "ace_c_arkui_test_api23:ActsAceCArkUI23Test",
       "ace_c_arkui_test_api24:ActsAceCArkUI24Test",
       "ace_c_arkui_test_api26:ActsAceCArkUI26Test",
+      "ace_c_arkui_test_api26_systemmaterial:ActsAceCArkUI26SystemMaterialTest",
       "ace_c_arkui_test_parallelize:ActsAceCArkUIParallelizeTest",
       "ActsAceEngineNDK_API20_Test:ActsAceEngineNativeAPI20",
       "ace_c_arkui_testwearcrop:ActsAceCArkUIWearCropTest",
@@ -102,6 +105,7 @@ group("arkui") {
       "ace_js_attribute_api:ActsAceJsApiTest",
       "ace_napi_test:ActsAceNapiEtsTest",
       "ace_napi_test_es:ActsAceNapiEtsEsTest",
+      "ActsNapiTest:ActsAceNapiNewTest",
       "ace_standard:ActsAceStandardTest",
       "ace_standard_video:ActsAceStandardVideoTest",
       "ace_c_accessibility_api_16_static:ActsAceCapiInspector16StaticTest",
@@ -119,6 +123,7 @@ group("arkui") {
       "ace_c_arkui_test_static:ActsAceCArkUIStaticTest",
       "ace_c_arkui_testwearcrop_static:ActsAceCArkUIWearCropStaticTest",
       "ace_ets_component_apilack_static:ActsAceEtsApiLackStaticTest",
+      "ace_napi_async_test:ActsAceNapiEtsAsyncTest",
     ]
   }
 }

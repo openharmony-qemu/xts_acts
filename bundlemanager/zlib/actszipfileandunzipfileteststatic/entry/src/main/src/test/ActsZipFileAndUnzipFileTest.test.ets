@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +40,12 @@ export default function ActsZlibTest() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.amsZipfileUnzipfileST.static");
+      let cmd = "aa start -a EntryAbility -b com.example.amsZipfileUnzipfileST.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(3000);
       let dirAll = AppStorage.get<string>("dir");
       if(dirAll) {
@@ -173,27 +179,33 @@ export default function ActsZlibTest() {
       it('Sub_Bms_Zlib_Uncompress_Unusual_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
         let zipDest: string = dir + "/noneexist.zip";
         let unzipdir: string = dir + "/decompressFileInFileNotExist";
-        zlib.decompressFile(zipDest, unzipdir, {
-          strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY}).then(() => {
-          expect().assertFail();
-          done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, 'bmsTestTag',"007 decompress fail: " + JSON.stringify(err));
-          expect(err.code).assertEqual(900001);
-          done();
-        })
-        zlib.decompressFile(zipDest, unzipdir, {
-          strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY
-        }, (err: BusinessError | null): void => {
-          if(err){
-            hilog.info(domain, 'bmsTestTag',"008 decompress fail: " + JSON.stringify(err));
-            expect(err?.code).assertEqual(900001);
-            done();
-          }else{
-            expect().assertFail();
-            done();
-          }
-        })
+        let promiseError: BusinessError | undefined = undefined;
+        try {
+          await zlib.decompressFile(zipDest, unzipdir, {
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY
+          });
+        } catch (error) {
+          promiseError = error as BusinessError;
+          hilog.info(domain, 'bmsTestTag',"007 decompress fail: " + JSON.stringify(promiseError));
+        }
+        expect(promiseError?.code).assertEqual(900001);
+        expect(promiseError?.message).assertEqual(
+          "BusinessError 900001: source file does not exist or cannot be accessed");
+
+        let callbackError = await new Promise<BusinessError | null>((resolve) => {
+          zlib.decompressFile(zipDest, unzipdir, {
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY
+          }, (error: BusinessError | null): void => {
+            resolve(error);
+          });
+        });
+        if (callbackError !== null) {
+          hilog.info(domain, 'bmsTestTag',"008 decompress fail: " + JSON.stringify(callbackError));
+        }
+        expect(callbackError?.code).assertEqual(900001);
+        expect(callbackError?.message).assertEqual(
+          "BusinessError 900001: source file does not exist or cannot be accessed");
+        done();
       })
 
       /**
@@ -236,6 +248,8 @@ export default function ActsZlibTest() {
         }).catch((err: Error): void => {
           hilog.info(domain, 'bmsTestTag',"009 decompress fail: " + JSON.stringify(err));
           expect(err.code).assertEqual(OUTPUT_FILE_INVALID);
+          expect(err.message).assertEqual(
+            "BusinessError 900002: destination path is not an existing directory");
           done();
         })
         zlib.decompressFile(zipDest1, outFile, {
@@ -243,6 +257,8 @@ export default function ActsZlibTest() {
         }, (err: BusinessError | null): void => {
           hilog.info(domain, 'bmsTestTag',"010 decompress fail: " + JSON.stringify(err));
           expect(err?.code).assertEqual(OUTPUT_FILE_INVALID);
+          expect(err?.message).assertEqual(
+            "BusinessError 900002: destination path is not an existing directory");
           done();
         })
         console.info("==================decompressFileOutFileNotExist_static end==================");
@@ -283,6 +299,8 @@ export default function ActsZlibTest() {
         }).catch((err: Error): void => {
           hilog.info(domain, 'bmsTestTag',"011 decompressFileInputNotZipPro fail1: " + JSON.stringify(err));
           expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
+          expect(err.message).assertEqual(
+            "BusinessError 900003: source file is not in ZIP format or is damaged");
         })
       } catch (err) {
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
@@ -418,6 +436,8 @@ export default function ActsZlibTest() {
         zlib.decompressFile(path13, unzipdir1, (err: BusinessError | null): void => {
           hilog.info(domain, 'bmsTestTag',"010 decompress fail: " + JSON.stringify(err));
           expect(err?.code).assertEqual(INPUT_FILE_NOT_ZIP);
+          expect(err?.message).assertEqual(
+            "BusinessError 900003: source file is not in ZIP format or is damaged");
           done();
         })
       } catch (err) {
@@ -461,6 +481,8 @@ export default function ActsZlibTest() {
         zlib.decompressFile(path13, unzipdir1, {}, (err: BusinessError | null): void => {
           hilog.info(domain, 'bmsTestTag',"010 decompress fail: " + JSON.stringify(err));
           expect(err?.code).assertEqual(INPUT_FILE_NOT_ZIP);
+          expect(err?.message).assertEqual(
+            "BusinessError 900003: source file is not in ZIP format or is damaged");
           done();
         })
       } catch (err) {

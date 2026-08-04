@@ -544,5 +544,30 @@ export default function btBleServerNopUiJsunit() {
       }
       done();
     })
+
+     /**
+     * @tc.name testGattConnectError001
+     * @tc.number SUB_BLUETOOTH_BLE_CONNECT_ERROR_0100
+     * @tc.desc 测试 GattClientDevice.connect 方法 - 无权限触发201错误码场景
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     * @co.authored.by.agent
+     */
+    it('testGattConnectError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let device: ble.GattServer = ble.createGattServer();
+        device.connect('00:22:33:44:55:66');
+        expect().assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.info('testGattConnectError001 err: code=' + error.code + ', message=' + error.message);
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(201);
+        }
+      }
+    });
   })
 }

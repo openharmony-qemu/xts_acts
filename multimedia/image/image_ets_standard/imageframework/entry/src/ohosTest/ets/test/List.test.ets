@@ -12,6 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import imagepixelmapmdk from './Imagepixelmapmdk.test'
 import imagereceivermdk from './Imagereceivermdk.test'
 import ImagePackingNDKTest from './ImagePackingNDKTest.test'
@@ -25,18 +28,38 @@ import ImageSourceNativeCodeTest from './ImageSourceNativeCode.test'
 import  ImageEffectErrorCodeTest from  './ImageEffectErrorCode.test'
 import ImageKitErrorCodeTest from './ImageKitErroerCodeTest.test.ets'
 import ImageProcessingTest from './ImageProcessingTest.test.ets'
+
+let testContext: common.UIAbilityContext = AppStorage.get('thisContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
+
 export default function testsuite() {
-  imagepixelmapmdk()
-  imagereceivermdk()
-  ImagePackingNDKTest()
-  imagepicture()
-  imageframework()
-  ImageReceiverNDKTest();
-  ImagePixelMapNDKTest();
-  ImagePackerNativeTest();
-  ImagePackerNativeTest1();
-  ImageSourceNativeCodeTest();
-  ImageEffectErrorCodeTest();
-  ImageKitErrorCodeTest();
-  ImageProcessingTest();
+  if (cameraDeviceArray.length === 0) {
+    imagepixelmapmdk()
+    imagereceivermdk()
+    ImagePackingNDKTest()
+    imagepicture()
+    imageframework()
+    ImageReceiverNDKTest();
+    ImagePixelMapNDKTest();
+    ImagePackerNativeTest1();
+    ImageSourceNativeCodeTest();
+    ImageEffectErrorCodeTest();
+    ImageKitErrorCodeTest();
+    ImageProcessingTest();
+  } else {
+    imagepixelmapmdk()
+    imagereceivermdk()
+    ImagePackingNDKTest()
+    imagepicture()
+    imageframework()
+    ImageReceiverNDKTest();
+    ImagePixelMapNDKTest();
+    ImagePackerNativeTest();
+    ImagePackerNativeTest1();
+    ImageSourceNativeCodeTest();
+    ImageEffectErrorCodeTest();
+    ImageKitErrorCodeTest();
+    ImageProcessingTest();
+  }
 }

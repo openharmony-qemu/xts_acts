@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 
 
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web, ScriptItem, ClickEvent, OnConsoleEvent, SslErrorEvent } from '@ohos.arkui.component';
+import { Entry, Component, Column, Row, Button, ClickEvent, Web, ScriptItem, OnConsoleEvent, SslErrorEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 

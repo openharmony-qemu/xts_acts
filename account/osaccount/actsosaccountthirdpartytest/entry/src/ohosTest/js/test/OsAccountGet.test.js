@@ -23,9 +23,10 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
             console.info("====>afterEach start====");
             var osAccountManager = osaccount.getAccountManager();
             var accounts = await osAccountManager.queryAllCreatedOsAccounts()
+            var foreground_localId = await osAccountManager.getForegroundOsAccountLocalId();
             for (let i = 0; i < accounts.length; i++) {
                 var localId = accounts[i].localId
-                if (localId != 100) {
+                if (localId != 100 && localId != foreground_localId) {
                     await RemoveAccount(localId)
                 }
             }

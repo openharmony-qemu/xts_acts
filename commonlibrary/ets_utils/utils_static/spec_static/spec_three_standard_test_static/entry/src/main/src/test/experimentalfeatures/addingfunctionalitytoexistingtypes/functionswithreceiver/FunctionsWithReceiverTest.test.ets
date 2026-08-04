@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,
   Level, Size, TestType } from '../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 
 class A {}
@@ -61,13 +55,12 @@ function run1(this: DSL1, call1: (this: DSL1) => string): string {
   return call1(this) + '-' + call1(this)
 }
 
-
 export default function FunctionsWithReceiverTest():void{
   describe('FunctionsWithReceiverTest', () => {
     beforeAll(() => {})
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {})
@@ -85,7 +78,6 @@ export default function FunctionsWithReceiverTest():void{
      * @tc.level     Level 2
      */
     it("testFunctionsWithReceiver0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: A = new A()
       let b: B = new B()
       expect(a.f()).assertEqual(1);
@@ -105,7 +97,6 @@ export default function FunctionsWithReceiverTest():void{
      * @tc.level     Level 2
      */
     it("testFunctionsWithReceiver0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: A = new A()
       let b: B = new B()
       expect(f(a)).assertEqual(1);
@@ -125,7 +116,6 @@ export default function FunctionsWithReceiverTest():void{
      * @tc.level     Level 2
      */
     it("testFunctionsWithReceiver0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a1: A1 = new A1()
       let b1: B1 = new B1()
       expect(f2(a1)).assertEqual(1);
@@ -145,7 +135,6 @@ export default function FunctionsWithReceiverTest():void{
      * @tc.level     Level 2
      */
     it("testFunctionsWithReceiver0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let bb: B2 = new B2;
       expect('Call A2: foo').assertEqual(bb.foo());
     });
@@ -161,7 +150,6 @@ export default function FunctionsWithReceiverTest():void{
      * @tc.level     Level 2
      */
     it("testFunctionsWithReceiver0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let dsl = new DSL
       expect('Call A: run-Call A: run').assertEqual(dsl.run((this: DSL) => 'Call A: run'));
     });
@@ -177,14 +165,10 @@ export default function FunctionsWithReceiverTest():void{
      * @tc.level     Level 2
      */
     it("testFunctionsWithReceiver0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let dsl = new DSL1
       let alias = run1
       let tc: TR = (this: DSL1) => 'Call A: run'
       expect('Call A: run-Call A: run').assertEqual(alias(dsl, tc));
     });
-
-
   })
 }
-

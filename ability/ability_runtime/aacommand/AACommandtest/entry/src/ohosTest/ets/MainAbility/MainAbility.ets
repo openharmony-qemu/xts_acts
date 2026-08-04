@@ -49,9 +49,13 @@ export default class MainAbility extends Ability {
 
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
+    let user = abilityDelegatorArguments.parameters["-u"];
 
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0700 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0700 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult1", data.stdResult);
@@ -72,6 +76,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s class ' +
       'AACommandTest#ACTS_AACommand_finish_01_0400 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0400 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_0400 stdResult = ' + data.stdResult);
@@ -93,6 +100,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0100 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0100 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_0100 stdResult = ' + data.stdResult);
@@ -114,6 +124,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s class ' +
       'AACommandTest#ACTS_AACommand_finish_01_0500 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0500 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_0500 stdResult = ' + data.stdResult);
@@ -135,6 +148,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0600 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0600 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_0600 stdResult = ' + data.stdResult);
@@ -156,6 +172,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0900 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0900 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_0900 stdResult = ' + data.stdResult);
@@ -177,6 +196,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_1300 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_1300 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_1300 stdResult = ' + data.stdResult);
@@ -198,6 +220,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_1400 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_1400 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_1400 stdResult = ' + data.stdResult);
@@ -219,6 +244,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_1500 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_1500 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_1500 stdResult = ' + data.stdResult);
@@ -240,6 +268,9 @@ export default class MainAbility extends Ability {
     await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_0300 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0300 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_0300 start err: ' + JSON.stringify(err));
@@ -262,6 +293,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap' +
       ' -s class AACommandTest#ACTS_AACommand_finish_01_1600 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_1600 - executeShellCommand: start ');
       console.log('ACTS_AACommand_finish_01_1600 start err: ' + JSON.stringify(err));

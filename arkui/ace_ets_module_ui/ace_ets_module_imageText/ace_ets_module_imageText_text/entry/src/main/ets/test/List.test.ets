@@ -152,6 +152,10 @@ import TextOrphanCharOptimizationTest from './TextTest/TextOrphanCharOptimizatio
 import OrphanCharOptimizationTest from './TextTest/OrphanCharOptimizationTest.test';
 import TextFontVariationsTest from './TextTest/TextFontVariations.test';
 import OrphanCharOptimizationnullTest from './TextTest/OrphanCharOptimization_null.test';
+import TextPunctuationOverflowTest from './TextTest/TextPunctuationOverflow.test';
+import TextIncrementalUpdatePolicyTest from './TextTest/TextIncrementalUpdatePolicy.test';
+import TextTailIndentsTest from './TextTest/TextTailIndents.test';
+import TextEnableHapticFeedbackTest from './TextTest/TextEnableHapticFeedback.test';
 
 
 
@@ -296,4 +300,8 @@ export default function testsuite() {
   OrphanCharOptimizationTest();
   TextFontVariationsTest();
   OrphanCharOptimizationnullTest();
+  TextPunctuationOverflowTest();
+  TextIncrementalUpdatePolicyTest();
+  TextTailIndentsTest();
+  TextEnableHapticFeedbackTest();
 }

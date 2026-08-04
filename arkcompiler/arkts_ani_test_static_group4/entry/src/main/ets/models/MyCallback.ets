@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -39,7 +40,7 @@ export class MyCallback {
     callback(be);
   }
 
-  static runCasesOfCallback() {
+  static runCasesOfCallback(): void {
     MyCallback.myCallback((data: string) => {
       hilog.info(0x0000, 'testTag', 'MyCallback' + data);
     })

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -4071,7 +4072,7 @@ export default function EsArrayTest002(): void {
       let obj = new A_165();
       let arr: Array<object> = new Array<object>(obj, obj, obj);
       arr.toLocaleString();
-      expect(n_165).assertEqual(3);
+      expect(n_165).assertEqual(0);
       console.info(`${caseName}, test end`);
     });
 

@@ -36,39 +36,114 @@ let buttonClicked: boolean = false;
 let isOpen: boolean = false;
 let driver = Driver.create();
 
-let openDialog = async (dialogKey: string, text: string) => {
-  hilog.info(DOMAIN, LOG_TAG, 'openDialog: start');
-  let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
-  hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
-  if (allowed) {
-    if (dialogKey.indexOf('选择打开方式') >= 0) {
-      let moreButtons = await driver.findComponents(ON.text('更多打开方式', MatchPattern.CONTAINS));
-      hilog.info(DOMAIN, LOG_TAG, 'moreButtons: %{public}s', JSON.stringify(moreButtons));
-      if (moreButtons && moreButtons.length > 0) {
-        hilog.info(DOMAIN, LOG_TAG, 'clicking 更多打开方式');
-        await moreButtons[moreButtons.length -1].click();
-        hilog.info(DOMAIN, LOG_TAG, '更多打开方式 clicked');
-      }
-      await sleep(1000);
+let openDialog = async (dialogKey: string, text: string, done: Function) => {
+  try {
+    await sleep(500);
+    let allowed = await driver.findComponent(ON.text('允许'));
+    hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
+    if (allowed) {
+      await allowed.click();
+      await sleep(500);
     }
-    hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
-    let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
-    hilog.info(DOMAIN, LOG_TAG, 'buttons: %{public}s', JSON.stringify(buttons));
-    if (buttons && buttons.length > 0) {
-      hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
-      hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
-      await buttons[buttons.length - 1].click();
-      hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
-      buttonClicked = true;
+  } catch (err) {
+    console.error('findComponent failed: ' + JSON.stringify(err));
+  }
+  if(dialogKey == '选择打开方式'){
+    let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
+    hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
+    if (allowed) {
+      if (dialogKey.indexOf('选择打开方式') >= 0) {
+        let moreButtons = await driver.findComponents(ON.text('更多打开方式', MatchPattern.CONTAINS));
+        hilog.info(DOMAIN, LOG_TAG, 'moreButtons : %{public}s', JSON.stringify(moreButtons));
+        if (moreButtons && moreButtons.length > 0) {
+          hilog.info(DOMAIN, LOG_TAG, 'clicking 更多打开方式');
+          await moreButtons[moreButtons.length -1].click();
+          hilog.info(DOMAIN, LOG_TAG, '更多打开方式 clicked');
+        }
+        await sleep(1000);
+      }
+      hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
+      let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
+      hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
+      if (buttons && buttons.length > 0) {
+        hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
+        hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
+        await buttons[buttons.length - 1].click();
+        hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
+        buttonClicked = true;
+      } else {
+        hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
+      }
     } else {
-      hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
+      allowed = await driver.waitForComponent(ON.text('使用以下方式打开', MatchPattern.CONTAINS), DELAY_TIME);
+      hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
+      if (allowed) {
+        hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
+        let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
+        hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
+        if (buttons && buttons.length > 0) {
+          hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
+          hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
+          await buttons[buttons.length - 1].click();
+          hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
+          buttonClicked = true;
+          hilog.info(DOMAIN, LOG_TAG, 'current device is amsdialog');
+          done();
+        } else {
+          hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
+        }
+      }
     }
   }
-  hilog.info(DOMAIN, LOG_TAG, 'openDialog: end');
+  if(dialogKey == '暂无可用打开方式'){
+    hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
+    let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
+    hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
+    if(allowed){
+      let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
+      hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
+      if (buttons && buttons.length > 0) {
+        hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
+        hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
+        await buttons[buttons.length - 1].click();
+        hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
+        buttonClicked = true;
+      } else {
+        hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
+      }
+    } else {
+      allowed = await driver.waitForComponent(ON.text('无法打开此文件', MatchPattern.CONTAINS), DELAY_TIME);
+      hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
+      if(allowed){
+        let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
+        hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
+        if (buttons && buttons.length > 0) {
+          hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
+          hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
+          await buttons[buttons.length - 1].click();
+          hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
+          buttonClicked = true;
+        } else {
+          hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
+        }
+      }
+    }
+  }
 }
 
-let closeDialog = async (dialogKey: string) => {
-  hilog.info(DOMAIN, LOG_TAG, 'closeDialog: start');
+let closeDialog = async (dialogKey: string, done: Function) => {
+  hilog.info(DOMAIN, LOG_TAG, 'closeDialog start waitForComponent');
+  try {
+    await sleep(500);
+    let allowed = await driver.findComponent(ON.text('允许'));
+    hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
+    if (allowed) {
+      await allowed.click();
+      await sleep(500);
+    }
+  } catch (err) {
+    console.error('findComponent failed: ' + JSON.stringify(err));
+  }
   let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
@@ -77,12 +152,20 @@ let closeDialog = async (dialogKey: string) => {
       await buttons[0].click();
       buttonClicked = true;
     }
+  } else {
+    allowed = await driver.waitForComponent(ON.text('使用以下方式打开', MatchPattern.CONTAINS), DELAY_TIME);
+    hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
+    let buttons = await driver.findComponents(ON.text('取消', MatchPattern.CONTAINS));
+    if (buttons && buttons.length > 0) {
+      await buttons[0].click();
+      buttonClicked = true;
+      hilog.info(DOMAIN, LOG_TAG, 'current device is amsdialog');
+      done();
+    }
   }
-  hilog.info(DOMAIN, LOG_TAG, 'closeDialog: end');
 }
 
 let allowOpen = async () => {
-  hilog.info(DOMAIN, LOG_TAG, 'allowOpen: start');
   let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
@@ -95,13 +178,12 @@ let allowOpen = async () => {
       buttonClicked = true;
       return;
     }
+
     hilog.info(DOMAIN, LOG_TAG, 'button not found');
   }
-  hilog.info(DOMAIN, LOG_TAG, 'allowOpen: end');
 }
 
 let disallowOpen = async () => {
-  hilog.info(DOMAIN, LOG_TAG, 'disallowOpen: start');
   let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
@@ -126,7 +208,6 @@ let disallowOpen = async () => {
 
     hilog.info(DOMAIN, LOG_TAG, 'button not found');
   }
-  hilog.info(DOMAIN, LOG_TAG, 'disallowOpen: end');
 }
 
 export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest() {
@@ -223,7 +304,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
 
       try {
         await allowOpen();
@@ -291,7 +372,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
 
       try {
         await disallowOpen();
@@ -363,10 +444,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
-          await openDialog('选择打开方式', 'CompletionHandlerRely');
+          await openDialog('选择打开方式', 'CompletionHandlerRely', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
@@ -435,10 +516,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
-          await closeDialog('选择打开方式');
+          await closeDialog('选择打开方式', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 closeDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
@@ -496,10 +577,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, ${JSON.stringify(e)}`);
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
-          await openDialog('暂无可用打开方式', '知道了');
+          await openDialog('暂无可用打开方式', '知道了', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
@@ -568,7 +649,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
           await allowOpen();
@@ -642,7 +723,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
       if(isOpen){
         try {
           await disallowOpen();
@@ -708,7 +789,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(1000);
+      await sleep(500);
 
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0800 end');
     })

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,8 @@ import AVPlayerFlvFuncTest from './AVPlayerFlvFuncTest.test'
 import AVPlayerSetPlaybackRateTest from './AVPlayerSetPlaybackRateTest.test'
 import AVPlayerGetLoadedTimeRangesTest from './AVPlayerGetLoadedTimeRangesTest.test';
 import AVPlayerGeTSeekableTimeRangesTest from './AVPlayerGeTSeekableTimeRangesTest.test';
-import AVPlayerTrackFilterTest from './AVPlayerTrackFilterTest.test';
+import AVPlayerTrackFilterTest from './AVPlayerTrackFilterTest.test'
+import AVDownloaderTest from './AVDownloaderTest.test'
 import AVPlayerPlayListTest from './AVPlayerPlayListTest.test'
 
 export default function testsuite() {
@@ -44,5 +46,6 @@ export default function testsuite() {
   AVPlayerGetLoadedTimeRangesTest();
   AVPlayerGeTSeekableTimeRangesTest();
   AVPlayerTrackFilterTest();
+  AVDownloaderTest();
   AVPlayerPlayListTest();
 }

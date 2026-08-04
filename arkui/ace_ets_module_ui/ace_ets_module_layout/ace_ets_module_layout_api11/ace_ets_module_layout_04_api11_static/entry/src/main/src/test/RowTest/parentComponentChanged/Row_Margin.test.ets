@@ -83,11 +83,11 @@ it('testParentComponentChangedRowMargin_static_01', Level.LEVEL0, async (done: (
         name: 'margin', value: 5
       });
       await CommonFunc.sleep(3000);
-      let Column: RectValue = await CommonFunc.getComponentRect('Column_Row_Margin');
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_Margin_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_Margin_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_Margin_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_Margin_Text3');
+      let Column: RectValue = CommonFunc.getComponentRect('Column_Row_Margin');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Margin_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Margin_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Margin_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Margin_Text3');
 
       console.log('Column rect_value is:' + JSON.stringify(Column));
       console.log('Row rect_value is:' + JSON.stringify(Row));

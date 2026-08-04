@@ -3197,12 +3197,12 @@ ani_boolean test_Class_FindStaticMethodChar_12([[maybe_unused]] ani_env *env, [[
 ani_boolean test_Class_FindStaticMethodChar_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class clsA {};
-    ASSERT_NE(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodChar.A", &clsA), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodChar.A", &clsA), ANI_OK);
     ani_static_method methodA;
-    ASSERT_NE(env->Class_FindStaticMethod(clsA, "funcA", "cc:c", &methodA), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(clsA, "funcA", "cc:c", &methodA), ANI_OK);
 
     ani_class clsB {};
-    ASSERT_NE(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodChar.B", &clsB), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodChar.B", &clsB), ANI_OK);
     ani_static_method methodB;
     ASSERT_EQ(env->Class_FindStaticMethod(clsB, "funcB", "cc:c", &methodB), ANI_OK);
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,26 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import cert from '@ohos.security.cert';
 import util from '@ohos.util';
-import * as certFunc from "./utils/collection/certFunc";
-import {
-  CERT_DATA_PEM,
-  CERT_DATA_PEM_PARAMETERS,
-  EXPECT_RESULT_FALSE,
-  EXPECT_RESULT_TRUE,
-  PEM
-} from './utils/common/commonParam';
-
+import * as certFunc from './utils/collection/certFunc';
+import { CERT_DATA_PEM, CERT_DATA_PEM_PARAMETERS, EXPECT_RESULT_FALSE, EXPECT_RESULT_TRUE, PEM } from './utils/common/commonParam';
 export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
   describe("certFrameworkCertMatchJsAPIFunctionTestUnit", () => {
     let pemCert0: cert.X509Cert | undefined;

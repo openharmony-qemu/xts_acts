@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +19,8 @@ import {
   Text,
   Column,
   ColumnOptions,
+  Row,
+  RowOptions,
   Component,
   Button,
   ClickEvent,
@@ -56,95 +58,128 @@ struct DrawableDescriptorReleaseTest {
     Scroll() {
       Column({ space: 10 } as ColumnOptions) {
         Text('DrawableDescriptor release/isReleased')
-          .fontSize(18)
+          .fontSize(14)
           .fontWeight(FontWeight.Bold)
           .fontColor(0x333333)
 
         this.BuildSectionTitle('1. DrawableDescriptor')
 
-        Button('E2E_001release->isReleased')
-          .id('btnTest001')
-          .onClick((e: ClickEvent) => this.Test001())
-        Text(this.testResult001)
-          .id('txtTestResult001')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->isReleased')
+            .id('btnTest001')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test001())
+          Text(this.testResult001)
+            .id('txtTestResult001')
+            .fontSize(10)
+        }
 
-        Button('E2E_002release->getPixelMap')
-          .id('btnTest002')
-          .onClick((e: ClickEvent) => this.Test002())
-        Text(this.testResult002)
-          .id('txtTestResult002')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->getPixelMap')
+            .id('btnTest002')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test002())
+          Text(this.testResult002)
+            .id('txtTestResult002')
+            .fontSize(10)
+        }
 
-        Button('E2E_003double release')
-          .id('btnTest003')
-          .onClick((e: ClickEvent) => this.Test003())
-        Text(this.testResult003)
-          .id('txtTestResult003')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('double release')
+            .id('btnTest003')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test003())
+          Text(this.testResult003)
+            .id('txtTestResult003')
+            .fontSize(10)
+        }
 
         this.BuildSectionTitle('2. LayeredDrawableDescriptor')
 
-        Button('E2E_004release->getForeground')
-          .id('btnTest004')
-          .onClick((e: ClickEvent) => this.Test004())
-        Text(this.testResult004)
-          .id('txtTestResult004')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->getForeground')
+            .id('btnTest004')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test004())
+          Text(this.testResult004)
+            .id('txtTestResult004')
+            .fontSize(10)
+        }
 
-        Button('E2E_005release->getBackground')
-          .id('btnTest005')
-          .onClick((e: ClickEvent) => this.Test005())
-        Text(this.testResult005)
-          .id('txtTestResult005')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->getBackground')
+            .id('btnTest005')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test005())
+          Text(this.testResult005)
+            .id('txtTestResult005')
+            .fontSize(10)
+        }
 
-        Button('E2E_006release->getMask')
-          .id('btnTest006')
-          .onClick((e: ClickEvent) => this.Test006())
-        Text(this.testResult006)
-          .id('txtTestResult006')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->getMask')
+            .id('btnTest006')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test006())
+          Text(this.testResult006)
+            .id('txtTestResult006')
+            .fontSize(10)
+        }
 
         this.BuildSectionTitle('3. PixelMapDrawableDescriptor')
 
-        Button('E2E_007release->getPixelMap')
-          .id('btnTest007')
-          .onClick((e: ClickEvent) => this.Test007())
-        Text(this.testResult007)
-          .id('txtTestResult007')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->getPixelMap')
+            .id('btnTest007')
+            .height('5%')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test007())
+          Text(this.testResult007)
+            .id('txtTestResult007')
+            .fontSize(10)
+        }
 
         this.BuildSectionTitle('4. AnimatedDrawableDescriptor')
 
-        Button('E2E_008release->getPixelMap')
-          .id('btnTest008')
-          .onClick((e: ClickEvent) => this.Test008())
-        Text(this.testResult008)
-          .id('txtTestResult008')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->getPixelMap')
+            .id('btnTest008')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test008())
+          Text(this.testResult008)
+            .id('txtTestResult008')
+            .fontSize(10)
+        }
 
-        Button('E2E_009release->getController')
-          .id('btnTest009')
-          .onClick((e: ClickEvent) => this.Test009())
-        Text(this.testResult009)
-          .id('txtTestResult009')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->getController')
+            .id('btnTest009')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test009())
+          Text(this.testResult009)
+            .id('txtTestResult009')
+            .fontSize(10)
+        }
 
-        Button('E2E_010release->loadSync')
-          .id('btnTest010')
-          .onClick((e: ClickEvent) => this.Test010())
-        Text(this.testResult010)
-          .id('txtTestResult010')
-          .fontSize(14)
+        Row({ space: 5 } as RowOptions) {
+          Button('release->loadSync')
+            .id('btnTest010')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test010())
+          Text(this.testResult010)
+            .id('txtTestResult010')
+            .fontSize(10)
+        }
 
-        Button('E2E_012double release')
-          .id('btnTest012')
-          .onClick((e: ClickEvent) => this.Test012())
-        Text(this.testResult012)
-          .id('txtTestResult012')
-          .fontSize(14)
-
+        Row({ space: 5 } as RowOptions) {
+          Button('double release')
+            .id('btnTest012')
+            .height('5%')
+            .onClick((e: ClickEvent) => this.Test012())
+          Text(this.testResult012)
+            .id('txtTestResult012')
+            .fontSize(10)
+        }
       }
       .width('80%')
     }
@@ -208,7 +243,7 @@ struct DrawableDescriptorReleaseTest {
       drawable.release();
       try {
         let pixelMapRes = drawable.getPixelMap();
-        if( pixelMapRes === undefined ){
+        if (pixelMapRes === undefined) {
           this.testResult002 = 'PASS: undefined';
         } else {
           this.testResult002 = 'FAIL: pixelMapRes not undefined';
@@ -246,7 +281,7 @@ struct DrawableDescriptorReleaseTest {
       drawable.release();
       try {
         let foregroundRes = drawable.getForeground();
-        if( foregroundRes === undefined ){
+        if (foregroundRes === undefined) {
           this.testResult004 = 'PASS: undefined';
         } else {
           this.testResult004 = 'FAIL: foregroundRes not undefined';
@@ -265,7 +300,7 @@ struct DrawableDescriptorReleaseTest {
       drawable.release();
       try {
         let backgroundRes = drawable.getBackground();
-        if( backgroundRes === undefined ){
+        if (backgroundRes === undefined) {
           this.testResult005 = 'PASS: undefined';
         } else {
           this.testResult005 = 'FAIL: backgroundRes not undefined';
@@ -284,7 +319,7 @@ struct DrawableDescriptorReleaseTest {
       drawable.release();
       try {
         let maskRes = drawable.getMask();
-        if( maskRes === undefined ){
+        if (maskRes === undefined) {
           this.testResult006 = 'PASS: undefined';
         } else {
           this.testResult006 = 'FAIL: maskRes not undefined';
@@ -303,7 +338,7 @@ struct DrawableDescriptorReleaseTest {
       drawable.release();
       try {
         let pixelMapRes1 = drawable.getPixelMap();
-        if( pixelMapRes1 === undefined ){
+        if (pixelMapRes1 === undefined) {
           this.testResult007 = 'PASS: undefined';
         } else {
           this.testResult007 = 'FAIL: pixelMapRes1 not undefined';
@@ -322,7 +357,7 @@ struct DrawableDescriptorReleaseTest {
       drawable.release();
       try {
         let pixelMapRes2 = drawable.getPixelMap();
-        if( pixelMapRes2 === undefined ){
+        if (pixelMapRes2 === undefined) {
           this.testResult008 = 'PASS: undefined';
         } else {
           this.testResult008 = 'FAIL: pixelMapRes2 not undefined';

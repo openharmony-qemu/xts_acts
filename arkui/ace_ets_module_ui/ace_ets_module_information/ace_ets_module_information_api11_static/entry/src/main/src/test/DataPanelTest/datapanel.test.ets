@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -28,8 +28,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import accessibility from '@ohos.accessibility';
-import { Resource, $r, ResourceStr} from '@ohos.arkui.component'
-import common from '@ohos.app.ability.common';
+import { Resource, $r, ResourceStr } from '@ohos.arkui.component';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -68,6 +67,7 @@ export default function datapanelTest() {
           routerInstance.pushUrl(options);
         }
       } catch (err) {
+        expect(false).assertEqual(true);
         console.error("push DataPanel page error " + JSON.stringify(err));
       }
       await CommonFunc.sleep(2000);
@@ -111,7 +111,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -155,7 +155,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -199,7 +199,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -244,7 +244,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0400', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -280,7 +280,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0500', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0500 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -320,7 +320,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0600', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0600 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -364,7 +364,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0700', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0700 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -408,7 +408,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0800', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_0800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_0800 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -504,7 +504,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1000', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1000 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -544,7 +544,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -584,7 +584,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -637,7 +637,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -677,7 +677,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1400', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -717,7 +717,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1500', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1500 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -817,7 +817,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1700', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1700 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -861,7 +861,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1800', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1800 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -905,7 +905,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1900', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_1900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_1900 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -950,7 +950,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2000', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_2000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_2000 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -994,7 +994,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_2100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_2100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1038,7 +1038,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_2200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_2200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1363,7 +1363,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2800', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_2800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_2800 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1399,7 +1399,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2900', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_ValueColors_2900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_ValueColors_2900 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1429,7 +1429,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0100', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1459,7 +1459,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0200', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1489,7 +1489,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0300', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1519,7 +1519,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0400', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1549,7 +1549,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0500', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0500 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1579,7 +1579,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0600', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0600 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1609,7 +1609,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0700', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0700 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1639,7 +1639,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0800', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0800 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1669,7 +1669,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0900', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0900 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1699,7 +1699,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1000', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_1000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_1000 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1729,7 +1729,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1100', Level.LEVEL0, async
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_1100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_1100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1758,7 +1758,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1787,7 +1787,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1816,7 +1816,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1842,10 +1842,11 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0400', Level.LEVEL0, async (done: (
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0400 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
           // expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
+          expect(obj.getElement('$attrs').getString('strokeWidth')).not().assertUndefined();
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1865,6 +1866,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0500', Level.LEVEL0, async (done: (
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_DataPanel_StrokeWidth_0500');
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0500 strJson  :' + JSON.stringify(strJson));
+          expect(strJson).not().assertUndefined();
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0500 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0500 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
@@ -1874,13 +1876,12 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0500', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0500 ERR  ' + JSON.stringify(err));
           done();
         }
       }, 500)
     });
-
 
     /**
      * @tc.number   ArkUX_Stage_DataPanel_StrokeWidth_static_0600
@@ -1894,6 +1895,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0600', Level.LEVEL0, async (done: (
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_DataPanel_StrokeWidth_0600');
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 strJson  :' + JSON.stringify(strJson));
+          expect(strJson).not().assertUndefined();
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
@@ -1903,7 +1905,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0600', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1934,7 +1936,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1963,7 +1965,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1992,7 +1994,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2021,7 +2023,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0400', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2050,7 +2052,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0500', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2079,7 +2081,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0600', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0600 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2108,7 +2110,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0700', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0700 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2137,7 +2139,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0800', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0800 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2166,7 +2168,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0900', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0900 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2195,7 +2197,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1000', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1000 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2224,7 +2226,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2253,7 +2255,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2282,7 +2284,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2311,7 +2313,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1400', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2341,7 +2343,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1500', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1500 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2382,7 +2384,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1600', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1600 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2423,7 +2425,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1700', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1700 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1700 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2464,7 +2466,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1800', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1800 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1800 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2506,7 +2508,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1900', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1900 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1900 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2547,7 +2549,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2300 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2588,7 +2590,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2400', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2400 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2629,7 +2631,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2500', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2500 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2500 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2682,7 +2684,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2600', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2600 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_2600 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2719,7 +2721,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3000', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3000 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3000 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2756,7 +2758,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3100 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2793,7 +2795,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3200 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3200 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -2834,7 +2836,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3300 END ');
           done();
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_DataPanel_TrackShadow_3300 ERR  ' + JSON.stringify(err));
           done();
         }

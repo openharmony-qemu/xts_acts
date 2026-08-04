@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,7 +53,12 @@ export default function abilityManagerStaticTest() {
     it("System_API_Test_Ability_Manager_Static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = 'System_API_Test_Ability_Manager_Static_0400';
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.systemapitest.static");
+      let cmd = "aa start -a EntryAbility -b com.example.systemapitest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       abilityManager.getAbilityRunningInfos()
         .then((data: abilityManager.AbilityRunningInfo[]): void => {

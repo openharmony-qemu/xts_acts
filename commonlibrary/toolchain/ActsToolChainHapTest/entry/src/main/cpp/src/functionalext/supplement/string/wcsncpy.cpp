@@ -37,7 +37,7 @@
 
 static void Handler(int sig)
 {
-    exit(g_tStatus);
+    _exit(g_tStatus);
 }
 
 /**

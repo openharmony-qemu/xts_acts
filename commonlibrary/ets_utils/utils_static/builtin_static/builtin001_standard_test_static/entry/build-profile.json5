@@ -16,8 +16,7 @@
 {
   "apiType": "stageMode",
   "buildOption": {
-    "sourceOption": {
-    }
+    "sourceOption": {}
   },
   "buildOptionSet": [
     {
@@ -32,14 +31,14 @@
           }
         }
       }
-    },
+    }
   ],
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest",
+      "name": "ohosTest"
     }
   ]
 }

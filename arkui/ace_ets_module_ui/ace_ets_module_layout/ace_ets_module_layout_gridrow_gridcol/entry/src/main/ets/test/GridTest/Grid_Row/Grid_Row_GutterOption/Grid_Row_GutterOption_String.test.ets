@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2026 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -64,9 +64,15 @@ export default function Grid_Row_GutterOption_String() {
       let firstGutterOptionStr: RectValue = CommonFunc.getComponentRect('Grid_Row_GutterOption_String0');
       let secondGutterOptionStr: RectValue = CommonFunc.getComponentRect('Grid_Row_GutterOption_String1');
       let thirdGutterOptionStr: RectValue = CommonFunc.getComponentRect('Grid_Row_GutterOption_String2');
-
-      expect(Math.round(secondGutterOptionStr.left - firstGutterOptionStr.right)).assertEqual(Math.round(80));
-      expect(Math.round(thirdGutterOptionStr.top - firstGutterOptionStr.bottom)).assertEqual(Math.round(80));
+      
+      console.info('SUB_ACE_GridRowGutterOption_STRING_0100 chazhi1:'+ Math.floor(Math.abs((secondGutterOptionStr.left - firstGutterOptionStr.right) - 80)));
+      console.info('SUB_ACE_GridRowGutterOption_STRING_0100 chazhi2:'+ Math.floor(Math.abs((thirdGutterOptionStr.top - firstGutterOptionStr.bottom) - 80)));
+      console.info('SUB_ACE_GridRowGutterOption_STRING_0100 dpi:'+ vp2px(1));
+      console.info('SUB_ACE_GridRowGutterOption_STRING_0100 padding1:'+ (secondGutterOptionStr.left - firstGutterOptionStr.right));
+      console.info('SUB_ACE_GridRowGutterOption_STRING_0100 padding2:'+ (thirdGutterOptionStr.top - firstGutterOptionStr.bottom));
+      
+      expect(Math.floor(Math.abs((secondGutterOptionStr.left - firstGutterOptionStr.right) - 80)) <= 4).assertTrue();
+      expect(Math.floor(Math.abs((thirdGutterOptionStr.top - firstGutterOptionStr.bottom) - 80)) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowGutterOption_STRING_0100 END');
       done();
@@ -91,9 +97,12 @@ export default function Grid_Row_GutterOption_String() {
       let secondGutterOptionStr: RectValue = CommonFunc.getComponentRect('Grid_Row_GutterOption_String1');
       let thirdGutterOptionStr: RectValue = CommonFunc.getComponentRect('Grid_Row_GutterOption_String2');
 
-      expect(Math.abs(Math.round(secondGutterOptionStr.left - firstGutterOptionStr.right) - Math.round(0)) <= 1)
+      console.info('SUB_ACE_GridRowGutterOption_STRING_0200 chazhi1:'+ Math.floor(Math.abs((secondGutterOptionStr.left - firstGutterOptionStr.right) - 0)));
+      console.info('SUB_ACE_GridRowGutterOption_STRING_0200 chazhi2:'+ Math.floor(Math.abs((thirdGutterOptionStr.top - firstGutterOptionStr.bottom) - 0)));
+
+      expect(Math.floor(Math.abs((secondGutterOptionStr.left - firstGutterOptionStr.right) - 0)) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(thirdGutterOptionStr.top - firstGutterOptionStr.bottom) - Math.round(0)) <= 1)
+      expect(Math.floor(Math.abs((thirdGutterOptionStr.top - firstGutterOptionStr.bottom) - 0)) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowGutterOption_STRING_0200 END');

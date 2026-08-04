@@ -13,14 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType,Resource, TextPickerAttribute, TextPicker, HorizontalAlign, TextOverflow, AttributeModifier,
-  HorizontalAlign, ColumnOptions} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, Row, ClickEvent, Margin, ButtonType, Resource, TextPickerAttribute, TextPicker, HorizontalAlign, TextOverflow, AttributeModifier, ColumnOptions } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State } from '@ohos.arkui.stateManagement'
-import { LengthMetrics } from '@kit.ArkUI'
-
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { LengthMetrics } from '@kit.ArkUI';
 @Entry
 @Component
 struct TextPickerTextStyleExample {

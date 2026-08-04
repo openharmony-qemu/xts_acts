@@ -60,8 +60,10 @@ import gridItemNullUndefinedTest from './gridItemDefault/gridItemNullUndefined.t
 import columnsTemplateNullUndefined from './LazyVGridLayout/columnsTemplateNullUndefined.test';
 import columnsRowsGapNullUndefined from './LazyVGridLayout/columnsRowsGapNullUndefined.test';
 import onVisibleIndexesChangeTest from './LazyVGridLayout/onVisibleIndexesChangeTest.test';
+import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test';
 import gridEnableEditMode from './gridOptions/gridEnableEditMode.test';
 import gridEditModeOptions from './gridOptions/gridEditModeOptions.test';
+import gridEditModeChange from './gridOptions/gridEditModeChange.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -111,6 +113,8 @@ export default function testsuite() {
   columnsTemplateNullUndefined()
   columnsRowsGapNullUndefined()
   onVisibleIndexesChangeTest()
+  headerFooterStickyGrid()
   gridEnableEditMode()
   gridEditModeOptions()
+  gridEditModeChange()
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,7 +32,7 @@ import { getRandomNumber } from './Util.test';
 import { BusinessError } from '@ohos.base';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 
-export default function penPart2Test() {
+export default function penPart2Test(): void {
   describe('DrawingTsPenPart2Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -780,7 +781,7 @@ export default function penPart2Test() {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setShaderEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
     /**

@@ -13,6 +13,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-export function divideFunc(a: number, b: number) {
+export function divideFunc(a: number, b: number): number {
   return a / b;
 }

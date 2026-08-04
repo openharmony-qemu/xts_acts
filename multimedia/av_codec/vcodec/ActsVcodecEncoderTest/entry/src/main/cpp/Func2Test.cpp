@@ -26,6 +26,7 @@
 #include "avcodec_codec_name.h"
 #include "include/OhosCommonTest.h"
 #include <hilog/log.h>
+#include <napi/native_api.h>
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -177,268 +178,296 @@ bool capConfigCheck(OH_AVCapability *capability, int32_t profile, int32_t level)
     return true;
 }
 
-int VideoEncodeHevcCapability3100Test()
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
+napi_value VideoEncodeHevcCapability3100Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoFrameRateRange(cap, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_GT(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3200Test()
+napi_value VideoEncodeHevcCapability3200Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoFrameRateRangeForSize(cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, nullptr);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        return CreateIntInt32Result(env, 0);
+        TearDown();
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3300Test()
+napi_value VideoEncodeHevcCapability3300Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoFrameRateRangeForSize(cap, 0, DEFAULT_HEIGHT, &range);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3400Test()
+napi_value VideoEncodeHevcCapability3400Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoFrameRateRangeForSize(cap, DEFAULT_WIDTH, 0, &range);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3500Test()
+napi_value VideoEncodeHevcCapability3500Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoFrameRateRangeForSize(cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, &range);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-        ASSERT_GT(range.minVal, 0);
-        ASSERT_GT(range.maxVal, 0);
-        return 0;
+        if (0 >= range.minVal) { return CreateIntInt32Result(env, -1); }
+        if (0 >= range.maxVal) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3600Test()
+napi_value VideoEncodeHevcCapability3600Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, 0, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
-        return 0;
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
+        if (OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, 0, DEFAULT_HEIGHT, FRAME_RATE_30_INT) != false) {
+            return CreateIntInt32Result(env, -1);
+        }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3700Test()
+napi_value VideoEncodeHevcCapability3700Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, DEFAULT_WIDTH, 0, FRAME_RATE_30_INT));
-        return 0;
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
+        if (OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+            cap_hevc, DEFAULT_WIDTH, 0, FRAME_RATE_30_INT) != true) {
+            return CreateIntInt32Result(env, -1);
+        }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3800Test()
+napi_value VideoEncodeHevcCapability3800Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap) {
         OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
             OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-        ASSERT_NE(nullptr, capability);
+        if (capability == nullptr) { return CreateIntInt32Result(env, -1); }
         bool result = OH_AVCapability_AreVideoSizeAndFrameRateSupported(
             capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, 0);
-        ASSERT_EQ(false, result);
-        return 0;
+        if (result != false) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability3900Test()
+napi_value VideoEncodeHevcCapability3900Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
-            cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
-        return 0;
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
+        if (OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+            cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT) != true) {
+            return CreateIntInt32Result(env, -1);
+        }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4000Test()
+napi_value VideoEncodeHevcCapability4000Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         uint32_t pixelFormatNum = 0;
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoSupportedPixelFormats(cap, nullptr, &pixelFormatNum);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4100Test()
+napi_value VideoEncodeHevcCapability4100Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *pixelFormat = nullptr;
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, nullptr);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4200Test()
+napi_value VideoEncodeHevcCapability4200Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *pixelFormat = nullptr;
         uint32_t pixelFormatNum = 0;
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum);
-        ASSERT_NE(nullptr, pixelFormat);
-        ASSERT_GT(pixelFormatNum, 0);
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (pixelFormat == nullptr) { return CreateIntInt32Result(env, -1); }
+        if (pixelFormatNum <= 0) { return CreateIntInt32Result(env, -1); }
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         for (int i = 0; i < pixelFormatNum; i++) {
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-            ASSERT_NE(nullptr, venc_);
+            if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
             format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
+            if (format == nullptr) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
             (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-            ASSERT_GE(pixelFormat[i], 0);
+            if (pixelFormat[i] < 0) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
-            EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+            if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             OH_AVFormat_Destroy(format);
             OH_VideoEncoder_Destroy(venc_);
         }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA + AV_PIXEL_FORMAT_RGBA);
-        EXPECT_EQ(AV_ERR_UNSUPPORT, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_UNSUPPORT) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4300Test()
+napi_value VideoEncodeHevcCapability4300Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         uint32_t profileNum = 0;
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetSupportedProfiles(cap, nullptr, &profileNum);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4400Test()
+napi_value VideoEncodeHevcCapability4400Test(napi_env env, napi_callback_info info)
 {
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *profiles = nullptr;
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetSupportedProfiles(cap, &profiles, nullptr);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4500Test()
+napi_value VideoEncodeHevcCapability4500Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *profiles = nullptr;
         uint32_t profileNum = 0;
-        ASSERT_NE(nullptr, cap);
+        if (cap == nullptr) { return CreateIntInt32Result(env, -1); }
         ret = OH_AVCapability_GetSupportedProfiles(cap, &profiles, &profileNum);
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_NE(nullptr, profiles);
-        ASSERT_GT(profileNum, 0);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (profiles == nullptr) { return CreateIntInt32Result(env, -1); }
+        if (profileNum <= 0) { return CreateIntInt32Result(env, -1); }
         for (int i = 0; i < profileNum; i++) {
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-            ASSERT_NE(nullptr, venc_);
+            if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
             format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
+            if (format == nullptr) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
             (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
             (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-            EXPECT_GE(profiles[i], 0);
+            if (profiles[i] < 0) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, profiles[i]);
             ret = OH_VideoEncoder_Configure(venc_, format);
             if (ret != AV_ERR_OK) {
                 cout << profiles[i] << " profile cant configure" << endl;
             }
-            EXPECT_EQ(AV_ERR_OK, ret);
+            if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             OH_AVFormat_Destroy(format);
             OH_VideoEncoder_Destroy(venc_);
         }
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
@@ -446,455 +475,473 @@ int VideoEncodeHevcCapability4500Test()
         int32_t illegalProfile = HEVC_PROFILE_MAIN_10_HDR10_PLUS + HEVC_PROFILE_MAIN_10_HDR10_PLUS;
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, illegalProfile);
         ret = OH_VideoEncoder_Configure(venc_, format);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4600Test()
+napi_value VideoEncodeHevcCapability4600Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t **levels = nullptr;
         uint32_t levelNum = 0;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, 1, levels, &levelNum);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, 1, levels, &levelNum);
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4700Test()
+napi_value VideoEncodeHevcCapability4700Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         uint32_t levelNum = 0;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, HEVC_PROFILE_MAIN, nullptr, &levelNum);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, HEVC_PROFILE_MAIN, nullptr, &levelNum);
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4800Test()
+napi_value VideoEncodeHevcCapability4800Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *levels = nullptr;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, HEVC_PROFILE_MAIN, &levels, nullptr);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
-        return 0;
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, HEVC_PROFILE_MAIN, &levels, nullptr);
+        if (ret != AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability4900Test()
+napi_value VideoEncodeHevcCapability4900Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *levels = nullptr;
         uint32_t levelNum = 0;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, HEVC_PROFILE_MAIN, &levels, &levelNum);
-        ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_NE(nullptr, levels);
-        ASSERT_GT(levelNum, 0);
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, HEVC_PROFILE_MAIN, &levels, &levelNum);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (levels == nullptr) { return CreateIntInt32Result(env, -1); }
+        if (levelNum <= 0) { return CreateIntInt32Result(env, -1); }
         for (int i = 0; i < levelNum; i++) {
-            ASSERT_GE(levels[i], 0);
+            if (levels[i] < 0) { return CreateIntInt32Result(env, -1); }
         }
-        return 0;
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability5000Test()
+napi_value VideoEncodeHevcCapability5000Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
+    if (cap_hevc) {
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
         int32_t profile = HEVC_PROFILE_MAIN_10_HDR10_PLUS + 1;
         int32_t level = HEVC_LEVEL_62 + 1;
-        ASSERT_NE(true, OH_AVCapability_AreProfileAndLevelSupported(cap, profile, level));
-        return 0;
+        if (OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, profile, level) == true) {
+            return CreateIntInt32Result(env, -1);
+        }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability5100Test()
+napi_value VideoEncodeHevcCapability5100Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, 1));
-        return 0;
+    if (cap_hevc) {
+        if (cap_hevc == nullptr) { return CreateIntInt32Result(env, -1); }
+        if (OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, 1) != true) {
+            return CreateIntInt32Result(env, -1);
+        }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability8700Test()
+napi_value VideoEncodeCapability8700Test(napi_env env, napi_callback_info info)
 {
     const int32_t *pixelFormat = nullptr;
     uint32_t pixelFormatNum = 0;
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap) {
-        ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum));
+        if (OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
         if (pixelFormatNum > 0) {
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-            ASSERT_NE(nullptr, venc_);
+            if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
             format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
+            if (format == nullptr) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
             (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
-            ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+            if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             OH_AVFormat_Destroy(format);
             format = nullptr;
             OH_VideoEncoder_Destroy(venc_);
             venc_ = nullptr;
         }
-        return 0;
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability8800Test()
+napi_value VideoEncodeCapability8800Test(napi_env env, napi_callback_info info)
 {
     const int32_t *pixelFormat = nullptr;
     uint32_t pixelFormatNum = 0;
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap) {
-        ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum));
+        if (OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
         if (pixelFormatNum > 0) {
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-            ASSERT_NE(nullptr, venc_);
+            if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
             format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
+            if (format == nullptr) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
             (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
-            ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+            if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             OH_AVFormat_Destroy(format);
             format = nullptr;
             OH_VideoEncoder_Destroy(venc_);
             venc_ = nullptr;
         }
-        return 0;
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeCapability8900Test()
+napi_value VideoEncodeCapability8900Test(napi_env env, napi_callback_info info)
 {
     const int32_t *pixelFormat = nullptr;
     uint32_t pixelFormatNum = 0;
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    if (cap) {
-        ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum));
-        if (pixelFormatNum > 0) {
-            int64_t min = 1;
-            venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-            ASSERT_NE(nullptr, venc_);
-            format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-            (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-            (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, min);
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
-            if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
-                EXPECT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
-            } else {
-                ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-            }
-            OH_AVFormat_Destroy(format);
-            format = nullptr;
-            OH_VideoEncoder_Destroy(venc_);
-            venc_ = nullptr;
-        }
-        return 0;
-    } else {
-        return 0;
+    if (!cap) {
+        return CreateIntInt32Result(env, 0);
     }
+    if (OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum) != AV_ERR_OK) {
+        return CreateIntInt32Result(env, -1);
+    }
+    if (pixelFormatNum < 0) {
+        TearDown();
+        return CreateIntInt32Result(env, 0);
+    }
+    int64_t min = 1;
+    venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
+    format = OH_AVFormat_Create();
+    if (format == nullptr) { return CreateIntInt32Result(env, -1); }
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+    (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, min);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
+    OH_AVErrCode expected = strcmp(g_codecName, "OMX.hisi.video.encoder.avc") == 0
+        ? AV_ERR_INVALID_VAL : AV_ERR_OK;
+    if (OH_VideoEncoder_Configure(venc_, format) != expected) { return CreateIntInt32Result(env, -1); }
+    OH_AVFormat_Destroy(format);
+    format = nullptr;
+    OH_VideoEncoder_Destroy(venc_);
+    venc_ = nullptr;
+    TearDown();
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeCapability9000Test()
+napi_value VideoEncodeCapability9000Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap) {
         int64_t max = 100000001;
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, max);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
-        return 0;
+        if (OH_VideoEncoder_Configure(venc_, format) !=
+        AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability5500Test()
+napi_value VideoEncodeHevcCapability5500Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21);
         if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
-            EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        } else {
-            ASSERT_EQ(AV_ERR_UNSUPPORT, OH_VideoEncoder_Configure(venc_, format));
+            if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         }
         OH_AVFormat_Destroy(format);
         format = nullptr;
         OH_VideoEncoder_Destroy(venc_);
         venc_ = nullptr;
-        return 0;
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeHevcCapability5600Test()
+napi_value VideoEncodeHevcCapability5600Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
-        EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        OH_AVFormat_Destroy(format);
-        format = nullptr;
-        OH_VideoEncoder_Destroy(venc_);
-        venc_ = nullptr;
-        return 0;
-    } else {
-        return 0;
-    }
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeHevcCapability5700Test()
+napi_value VideoEncodeHevcCapability5700Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (cap_hevc) {
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-            ASSERT_NE(nullptr, venc_);
+            if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
             format = OH_AVFormat_Create();
-            ASSERT_NE(nullptr, format);
+            if (format == nullptr) { return CreateIntInt32Result(env, -1); }
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
             (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA);
-            EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+            if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
             OH_AVFormat_Destroy(format);
             format = nullptr;
             OH_VideoEncoder_Destroy(venc_);
             venc_ = nullptr;
-        return 0;
-    } else {
-        return 0;
-    }
-}
-
-int VideoEncodeHevcCapability5800Test()
-{
-    if (cap) {
-        int64_t min = 1;
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, min);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
-        if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
-            EXPECT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+            TearDown();
+            return CreateIntInt32Result(env, 0);
         } else {
-            ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+            return CreateIntInt32Result(env, 0);
         }
-        OH_AVFormat_Destroy(format);
-        format = nullptr;
-        OH_VideoEncoder_Destroy(venc_);
-        venc_ = nullptr;
-        return 0;
-    } else {
-        return 0;
-    }
 }
 
-int VideoEncodeHevcCapability5900Test()
+napi_value VideoEncodeHevcCapability5800Test(napi_env env, napi_callback_info info)
 {
-    if (cap) {
+    if (!cap_hevc) {
+        return CreateIntInt32Result(env, 0);
+    }
+    int64_t min = 1;
+    venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+    if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
+    format = OH_AVFormat_Create();
+    if (format == nullptr) { return CreateIntInt32Result(env, -1); }
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+    (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, min);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVErrCode expected = strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc") == 0
+        ? AV_ERR_INVALID_VAL : AV_ERR_OK;
+    if (OH_VideoEncoder_Configure(venc_, format) != expected) { return CreateIntInt32Result(env, -1); }
+    OH_AVFormat_Destroy(format);
+    format = nullptr;
+    OH_VideoEncoder_Destroy(venc_);
+    venc_ = nullptr;
+    TearDown();
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoEncodeHevcCapability5900Test(napi_env env, napi_callback_info info)
+{
+    if (cap_hevc) {
         int64_t max = 100000001;
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
         format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
+        if (format == nullptr) { return CreateIntInt32Result(env, -1); }
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, max);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
-        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+        if (OH_VideoEncoder_Configure(venc_, format) !=
+        AV_ERR_INVALID_VAL) { return CreateIntInt32Result(env, -1); }
         OH_AVFormat_Destroy(format);
         format = nullptr;
         OH_VideoEncoder_Destroy(venc_);
         venc_ = nullptr;
-        return 0;
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeSyncFunc0010Test()
+napi_value VideoEncodeSyncFunc0010Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->enbleSyncMode = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, vEncSample->ConfigureVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OPERATE_NOT_PERMIT) { return CreateIntInt32Result(env, -1); }
     }
-    return 0;
+    TearDown();
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0020Test()
+napi_value VideoEncodeSyncFunc0020Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         uint32_t index = 0;
-        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, vEncSample->QueryInputBuffer(index, 0));
+        if (vEncSample->QueryInputBuffer(index, 0) !=
+        AV_ERR_OPERATE_NOT_PERMIT) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
     }
-    return 0;
+    TearDown();
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0030Test()
+napi_value VideoEncodeSyncFunc0030Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         uint32_t index = 0;
-        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, vEncSample->QueryOutputBuffer(index, 0));
+        if (vEncSample->QueryOutputBuffer(index, 0) !=
+        AV_ERR_OPERATE_NOT_PERMIT) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
     }
-    return 0;
+    TearDown();
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0040Test()
+napi_value VideoEncodeSyncFunc0040Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->enbleSyncMode = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         int32_t ret = vEncSample->SetVideoEncoderCallback();
-        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, ret);
-        return 0;
+        if (ret != AV_ERR_OPERATE_NOT_PERMIT) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoEncodeSyncFunc0050Test()
+napi_value VideoEncodeSyncFunc0050Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         int32_t ret = vEncSample->Reset();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->enbleSyncMode = 1;
         ret = vEncSample->ConfigureVideoEncoder();
-        ASSERT_EQ(AV_ERR_OK, ret);
-        return 0;
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0070Test()
+napi_value VideoEncodeSyncFunc0070Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->enbleSyncMode = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         int32_t ret = vEncSample->Flush();
-        ASSERT_EQ(AV_ERR_OK, ret);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         uint32_t index = 0;
         ret = vEncSample->QueryInputBuffer(index, 0);
-        ASSERT_EQ(AV_ERR_INVALID_STATE, ret);
-        return 0;
+        if (ret != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     } else {
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0080Test()
+napi_value VideoEncodeSyncFunc0080Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->enbleSyncMode = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Flush());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Flush() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         uint32_t index = 0;
-        ASSERT_EQ(AV_ERR_INVALID_STATE, vEncSample->QueryOutputBuffer(index, 0));
-        return 0;
+        if (vEncSample->QueryOutputBuffer(index, 0) != AV_ERR_INVALID_STATE) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0090Test()
+napi_value VideoEncodeSyncFunc0090Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
@@ -903,34 +950,38 @@ int VideoEncodeSyncFunc0090Test()
         vEncSample->enbleSyncMode = 1;
         vEncSample->getOutputBufferIndexNoExisted = true;
         vEncSample->noDestroy = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->OpenFile());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->OpenFile() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(true, vEncSample->abnormalIndexValue);
-        return 0;
+        if (vEncSample->abnormalIndexValue != true) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0100Test()
+napi_value VideoEncodeSyncFunc0100Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->enbleSyncMode = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         uint32_t index = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->QueryInputBuffer(index, -1));
-        ASSERT_EQ(nullptr, vEncSample->GetInputBuffer(index+INDEX_OFFSET_100));
+        if (vEncSample->QueryInputBuffer(index, -1) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->GetInputBuffer(index+INDEX_OFFSET_100) != nullptr) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0110Test()
+napi_value VideoEncodeSyncFunc0110Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
@@ -939,17 +990,19 @@ int VideoEncodeSyncFunc0110Test()
         vEncSample->enbleSyncMode = 1;
         vEncSample->getOutputBufferIndexRepeated = true;
         vEncSample->noDestroy = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(true, vEncSample->abnormalIndexValue);
-        return 0;
+        if (vEncSample->abnormalIndexValue != true) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0120Test()
+napi_value VideoEncodeSyncFunc0120Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
@@ -958,18 +1011,20 @@ int VideoEncodeSyncFunc0120Test()
         vEncSample->enbleSyncMode = 1;
         vEncSample->getOutputBufferIndexRepeated = true;
         vEncSample->noDestroy = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->OpenFile());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->OpenFile() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(true, vEncSample->abnormalIndexValue);
-        return 0;
+        if (vEncSample->abnormalIndexValue != true) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0130Test()
+napi_value VideoEncodeSyncFunc0130Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
@@ -978,16 +1033,18 @@ int VideoEncodeSyncFunc0130Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0130.h264";
         vEncSample->enbleSyncMode = 1;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0140Test()
+napi_value VideoEncodeSyncFunc0140Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
@@ -996,16 +1053,18 @@ int VideoEncodeSyncFunc0140Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0140.h264";
         vEncSample->enbleSyncMode = 1;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0150Test()
+napi_value VideoEncodeSyncFunc0150Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName() && OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ)) {
@@ -1014,17 +1073,19 @@ int VideoEncodeSyncFunc0150Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0150.h264";
         vEncSample->enbleSyncMode = 1;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0160Test()
+napi_value VideoEncodeSyncFunc0160Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName() && OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_SQR)) {
@@ -1033,16 +1094,18 @@ int VideoEncodeSyncFunc0160Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0160.h264";
         vEncSample->enbleSyncMode = 1;
         vEncSample->DEFAULT_BITRATE_MODE = SQR;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0210Test()
+napi_value VideoEncodeSyncFunc0210Test(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr && InitAVCCodecName()) {
@@ -1050,18 +1113,20 @@ int VideoEncodeSyncFunc0210Test()
         vEncSample->isGetFormatKey = true;
         vEncSample->avcodecMimeType = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
         vEncSample->isEncoder = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0220Test()
+napi_value VideoEncodeSyncFunc0220Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr &&
@@ -1072,17 +1137,19 @@ int VideoEncodeSyncFunc0220Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0220.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0230Test()
+napi_value VideoEncodeSyncFunc0230Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr &&
@@ -1093,17 +1160,19 @@ int VideoEncodeSyncFunc0230Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0230.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0240Test()
+napi_value VideoEncodeSyncFunc0240Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr &&
@@ -1114,17 +1183,19 @@ int VideoEncodeSyncFunc0240Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0240.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->DEFAULT_BITRATE_MODE = SQR;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0360Test()
+napi_value VideoEncodeSyncFunc0360Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
@@ -1133,17 +1204,19 @@ int VideoEncodeSyncFunc0360Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0360.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->syncInputWaitTime = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0370Test()
+napi_value VideoEncodeSyncFunc0370Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
@@ -1152,17 +1225,19 @@ int VideoEncodeSyncFunc0370Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0370.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->syncInputWaitTime = SYNC_WAIT_TIME_100MS;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0380Test()
+napi_value VideoEncodeSyncFunc0380Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
@@ -1171,17 +1246,19 @@ int VideoEncodeSyncFunc0380Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0380.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->syncOutputWaitTime = 0;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0390Test()
+napi_value VideoEncodeSyncFunc0390Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
@@ -1190,17 +1267,19 @@ int VideoEncodeSyncFunc0390Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0390.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->syncOutputWaitTime = SYNC_WAIT_TIME_100MS;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0400Test()
+napi_value VideoEncodeSyncFunc0400Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
@@ -1209,17 +1288,19 @@ int VideoEncodeSyncFunc0400Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0400.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->queryInputBufferEOS = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFunc0410Test()
+napi_value VideoEncodeSyncFunc0410Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
@@ -1228,22 +1309,24 @@ int VideoEncodeSyncFunc0410Test()
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0410.h265";
         vEncSample->enbleSyncMode = 1;
         vEncSample->queryOutputBufferEOS = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020010Test()
+napi_value VideoEncodeRgba10101020010Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/176_144_rgba1010102.yuv";
@@ -1253,23 +1336,25 @@ int VideoEncodeRgba10101020010Test()
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020020Test()
+napi_value VideoEncodeRgba10101020020Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
@@ -1279,23 +1364,25 @@ int VideoEncodeRgba10101020020Test()
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020030Test()
+napi_value VideoEncodeRgba10101020030Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1920_1080_rgba1010102.yuv";
@@ -1305,23 +1392,25 @@ int VideoEncodeRgba10101020030Test()
         vEncSample->DEFAULT_BITRATE_MODE = SQR;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020040Test()
+napi_value VideoEncodeRgba10101020040Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/4096_4096_rgba1010102.yuv";
@@ -1331,23 +1420,25 @@ int VideoEncodeRgba10101020040Test()
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020110Test()
+napi_value VideoEncodeRgba10101020110Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
@@ -1360,23 +1451,26 @@ int VideoEncodeRgba10101020110Test()
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
         int32_t temporalGopSize = TEMPORAL_GOP_SIZE_8;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize) !=
+        AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020130Test()
+napi_value VideoEncodeRgba10101020130Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
@@ -1390,23 +1484,25 @@ int VideoEncodeRgba10101020130Test()
         vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->ltrParam.useLtrIndex = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020150Test()
+napi_value VideoEncodeRgba10101020150Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
@@ -1416,22 +1512,24 @@ int VideoEncodeRgba10101020150Test()
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
         vEncSample->enbleSyncMode = 1;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020170Test()
+napi_value VideoEncodeRgba10101020170Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
@@ -1439,23 +1537,25 @@ int VideoEncodeRgba10101020170Test()
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
         vEncSample->configMain10 = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount <= AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020180Test()
+napi_value VideoEncodeRgba10101020180Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
@@ -1463,23 +1563,25 @@ int VideoEncodeRgba10101020180Test()
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA;
         vEncSample->configMain10 = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount <= AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeRgba10101020190Test()
+napi_value VideoEncodeRgba10101020190Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName() && ! access("/system/lib64/media/", 0)) {
         if (!IsSupportRgba1010102Format()) {
-            return 0;
+            return CreateIntInt32Result(env, 0);
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
@@ -1487,18 +1589,20 @@ int VideoEncodeRgba10101020190Test()
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = false;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount <= AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeSyncFormat0010Test()
+napi_value VideoEncodeSyncFormat0010Test(napi_env env, napi_callback_info info)
 {
     if (cap != nullptr && !access("/system/lib64/media/", 0)) {
         auto vEncSample = make_shared<VEncAPI11Sample>();
@@ -1507,20 +1611,22 @@ int VideoEncodeSyncFormat0010Test()
         vEncSample->isGetFormatKey = true;
         vEncSample->avcodecMimeType = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
         vEncSample->isEncoder = true;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_LT(1, vEncSample->pixlFormatNum);
-        ASSERT_EQ(0, vEncSample->firstCallBackKey);
-        ASSERT_EQ(0, vEncSample->onStreamChangedKey);
-        return 0;
+        if (vEncSample->pixlFormatNum <= 1) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->firstCallBackKey != 0) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->onStreamChangedKey != 0) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoEncodeAnother0010Test()
+napi_value VideoEncodeAnother0010Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
@@ -1529,95 +1635,144 @@ int VideoEncodeAnother0010Test()
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_30_INT;
-        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         auto vEncSample2 = make_unique<VEncAPI11Sample>();
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->CreateVideoEncoder(g_codecNameHEVC));
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->ConfigureVideoEncoder());
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->SetVideoEncoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->Flush());
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->Stop());
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
-        ASSERT_EQ(AV_ERR_OK, vEncSample2->Reset());
+        if (vEncSample2->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->ConfigureVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->SetVideoEncoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->Flush() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->Stop() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->Start() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample2->Reset() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         vEncSample->WaitForEOS();
-        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-        return 0;
+        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        vEncSample->Release();
+        TearDown();
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoCapabilityConfig0010Test()
+struct AvProfileLevel {
+    int32_t profile;
+    int32_t level;
+};
+
+static bool CheckAllProfileLevels(OH_AVCapability *capability, const AvProfileLevel *cfgs, uint32_t num)
+{
+    for (uint32_t i = 0; i < num; i++) {
+        if (!capConfigCheck(capability, cfgs[i].profile, cfgs[i].level)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+napi_value CapabilityConfig0010(napi_env env, napi_callback_info info)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr) {
         const char *tmpCodecName = OH_AVCapability_GetName(cap);
-        ASSERT_EQ(AV_ERR_OK, SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1));
+        if (SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
         venc_ = OH_VideoEncoder_CreateByName(g_codecName);
-        ASSERT_NE(nullptr, venc_);
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_1));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_1b));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_11));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_12));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_13));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_2));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_21));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_22));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_3));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_31));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_32));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_4));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_41));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_42));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_5));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_BASELINE, AVC_LEVEL_51));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_52));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_6));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_HIGH, AVC_LEVEL_61));
-        ASSERT_TRUE(capConfigCheck(cap, AVC_PROFILE_MAIN, AVC_LEVEL_62));
-        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Destroy(venc_));
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
+        struct AvProfileLevel cfgs[] = {
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_1 },    { AVC_PROFILE_HIGH, AVC_LEVEL_1b },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_11 },      { AVC_PROFILE_BASELINE, AVC_LEVEL_12 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_13 },      { AVC_PROFILE_MAIN, AVC_LEVEL_2 },
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_21 },   { AVC_PROFILE_HIGH, AVC_LEVEL_22 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_3 },       { AVC_PROFILE_BASELINE, AVC_LEVEL_31 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_32 },       { AVC_PROFILE_MAIN, AVC_LEVEL_4 },
+            { AVC_PROFILE_BASELINE, AVC_LEVEL_41 },   { AVC_PROFILE_HIGH, AVC_LEVEL_42 },
+            { AVC_PROFILE_MAIN, AVC_LEVEL_5 },        { AVC_PROFILE_BASELINE, AVC_LEVEL_51 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_52 },       { AVC_PROFILE_MAIN, AVC_LEVEL_6 },
+            { AVC_PROFILE_HIGH, AVC_LEVEL_61 },       { AVC_PROFILE_MAIN, AVC_LEVEL_62 },
+        };
+        if (!CheckAllProfileLevels(cap, cfgs, sizeof(cfgs) / sizeof(cfgs[0]))) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (OH_VideoEncoder_Destroy(venc_) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         venc_ = nullptr;
-        return 0;
+        return CreateIntInt32Result(env, 0);
     } else {
         venc_ = OH_VideoEncoder_CreateByName(nullptr);
-        ASSERT_EQ(nullptr, venc_);
-        return 0;
+        if (venc_ != nullptr) { return CreateIntInt32Result(env, -1); }
+        return CreateIntInt32Result(env, 0);
     }
 }
 
-int VideoCapabilityConfig0020Test()
+napi_value VideoCapabilityConfig0020Test(napi_env env, napi_callback_info info)
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr) {
         const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-        ASSERT_EQ(AV_ERR_OK, SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC),
-            tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1));
+        if (SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC),
+            tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
         venc_ = OH_VideoEncoder_CreateByName(g_codecNameHEVC);
-        ASSERT_NE(nullptr, venc_);
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_1));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_2));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_21));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_3));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_31));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_4));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_41));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_5));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_51));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_52));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_6));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_61));
-        ASSERT_TRUE(capConfigCheck(cap_hevc, HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_62));
-        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Destroy(venc_));
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
+        struct AvProfileLevel hevcCfgs[] = {
+            { HEVC_PROFILE_MAIN, HEVC_LEVEL_1 },                { HEVC_PROFILE_MAIN_10, HEVC_LEVEL_2 },
+            { HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_21 },         { HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_3 },
+            { HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_31 }, { HEVC_PROFILE_MAIN, HEVC_LEVEL_4 },
+            { HEVC_PROFILE_MAIN_10, HEVC_LEVEL_41 },           { HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_5 },
+            { HEVC_PROFILE_MAIN_10_HDR10, HEVC_LEVEL_51 },      { HEVC_PROFILE_MAIN_10_HDR10_PLUS, HEVC_LEVEL_52 },
+            { HEVC_PROFILE_MAIN, HEVC_LEVEL_6 },                { HEVC_PROFILE_MAIN_10, HEVC_LEVEL_61 },
+            { HEVC_PROFILE_MAIN_STILL, HEVC_LEVEL_62 },
+        };
+        if (!CheckAllProfileLevels(cap_hevc, hevcCfgs, sizeof(hevcCfgs) / sizeof(hevcCfgs[0]))) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (OH_VideoEncoder_Destroy(venc_) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         venc_ = nullptr;
-        return 0;
+        return CreateIntInt32Result(env, 0);
     } else {
         venc_ = OH_VideoEncoder_CreateByName(nullptr);
-        ASSERT_EQ(nullptr, venc_);
-        return 0;
+        if (venc_ != nullptr) { return CreateIntInt32Result(env, -1); }
+        return CreateIntInt32Result(env, 0);
     }
+}
+
+napi_value VideoEncoderSetXPS0010Test(napi_env env, napi_callback_info info)
+{
+    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap_hevc != nullptr) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_REPEAT_HEADER_BEFORE_SYNC_FRAMES, 1);
+        if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    }
+    TearDown();
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoEncoderSetXPS0020Test(napi_env env, napi_callback_info info)
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap != nullptr) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        if (venc_ == nullptr) { return CreateIntInt32Result(env, -1); }
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_REPEAT_HEADER_BEFORE_SYNC_FRAMES, 1);
+        if (OH_VideoEncoder_Configure(venc_, format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    }
+    TearDown();
+    return CreateIntInt32Result(env, 0);
 }
 
 void InitFunc2Test()

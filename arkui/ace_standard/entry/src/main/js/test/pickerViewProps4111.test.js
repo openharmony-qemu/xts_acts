@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import router from '@system.router';
+import router from '@ohos.router';
 import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
@@ -30,24 +30,28 @@ export default function pickerViewPropsJsTest4111() {
             })
         }
 
+        async function waitUntilReady(timeout = 35000) {
+            let start = Date.now();
+            while (Date.now() - start < timeout) {
+                if (globalThis.value !== undefined && globalThis.value !== null) {
+                    console.info(`waitUntilReady: page ready after ${Date.now() - start}ms`);
+                    return;
+                }
+                await sleep(100);
+            }
+            console.info(`waitUntilReady: timed out after ${timeout}ms`);
+        }
+
         async function backToIndex() {
             let backToIndexPromise = new Promise((resolve, reject) => {
                 setTimeout(() => {
                     router.back({
-                        uri: 'pages/index/index'
+                        url: 'pages/index/index'
                     });
                     resolve();
                 }, 500);
             })
-            let clearPromise = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    router.clear();
-                    resolve();
-                }, 500);
-            })
-            await backToIndexPromise.then(() => {
-                return clearPromise;
-            })
+            await backToIndexPromise;
         }
 
         /**
@@ -55,19 +59,19 @@ export default function pickerViewPropsJsTest4111() {
          */
         beforeAll(async function(done) {
             console.info('[pickerViewPropsJsTest] before each called')
-
+            globalThis.value = undefined;
             let result;
             let options = {
-                uri: 'pages/pickerView/prop4111/index'
+                url: 'pages/pickerView/prop4111/index'
             }
             try {
-                result = router.push(options)
+                result = router.pushUrl(options)
                 console.info("push pickerViewProps page success " + JSON.stringify(result));
             } catch (err) {
                 console.error("push pickerViewProps page error " + JSON.stringify(result));
             }
-            await sleep(35000)
-            done()
+            await waitUntilReady();
+            done();
         })
 
         /**

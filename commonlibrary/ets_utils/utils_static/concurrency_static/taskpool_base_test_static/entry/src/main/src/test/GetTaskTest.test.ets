@@ -1,6 +1,6 @@
-'use static'
+'use static';
 
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 
 export function sleep(time: int): Promise<number> {
   return new Promise<number>((re, je): void => {
@@ -261,13 +261,13 @@ export default function getTaskTest() {
         let result: boolean = true;
         let eaw2 = new EAWorker()
         eaw2.start()
-        await eaw2.run<void>(() => {
+        eaw2.run<void>(() => {
           let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
           if (task2 == undefined) {
             result = false;
           }
-        })
-        eaw2.quit()
+        }).Await()
+        eaw2.join()
         expect(result).assertFalse()
         done()
       })
@@ -285,27 +285,19 @@ export default function getTaskTest() {
         let result: boolean = true;
         let eaw = new EAWorker()
         eaw.start()
-        let resolver:((value: Any)=>void) | undefined = undefined;
-        let waiter = new Promise<Any>((resolve) => {
-          resolver = resolve;
-        })
-        await eaw.run<void>(() => {
+        eaw.run<void>(() => {
           let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
           let eaw2 = new EAWorker()
           eaw2.start()
-          let p = eaw2.run<void>(() => {
+          eaw2.run<void>(() => {
             let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
             if (task2 == undefined) {
               result = false;
             }
-          })
-          p.then(() => {
-            resolver!(undefined);
-          })
-          eaw2.quit()
-        })
-        await waiter;
-        eaw.quit()
+          }).Await()
+          eaw2.join()
+        }).Await()
+        eaw.join()
         expect(result).assertFalse()
         done()
       })

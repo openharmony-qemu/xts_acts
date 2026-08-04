@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -223,7 +224,7 @@ export default function imageSync() {
       }
     }
 
-    const testCreatePixelMap = async (
+    const testCreatePixelMap = (
       done: () => void,
       testNum: string,
       fileName: string,
@@ -251,7 +252,7 @@ export default function imageSync() {
           } else {
             globalpixelmap = pixelMap;
             let pixelMapInfo: image.ImageInfo | undefined;
-            pixelMapInfo = await pixelMap!.getImageInfo();
+            waitForCompletion(async () => {pixelMapInfo = await pixelMap!.getImageInfo();})
             let pixelColorSpace = pixelMap.getColorSpace().getColorSpaceName();
             let pixelGamma = pixelMap.getColorSpace().getGamma();
             logger.log('pixelmap info:');
@@ -544,7 +545,7 @@ export default function imageSync() {
           desiredColorSpace: csm,
           desiredDynamicRange: image.DecodingDynamicRange.AUTO
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0300", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0300", "test.jpg", decodingOptions);
     });
 
     /**
@@ -599,7 +600,7 @@ export default function imageSync() {
             fitDensity: 240,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0500", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0500", "test.jpg", decodingOptions);
     });
 
     /**
@@ -626,7 +627,7 @@ export default function imageSync() {
             fitDensity: 200,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0600", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0600", "test.jpg", decodingOptions);
     });
 
     /**
@@ -653,7 +654,7 @@ export default function imageSync() {
             fitDensity: 200,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0700", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0700", "test.jpg", decodingOptions);
     });
 
     /**
@@ -680,7 +681,7 @@ export default function imageSync() {
             fitDensity: 150,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800", "test.jpg", decodingOptions);
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900
@@ -716,7 +717,7 @@ export default function imageSync() {
             fitDensity: 150,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900", "test.jpg", decodingOptions);
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000
@@ -742,7 +743,7 @@ export default function imageSync() {
             fitDensity: 100,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000", "test.jpg", decodingOptions);
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100
@@ -768,7 +769,7 @@ export default function imageSync() {
             fitDensity: 100,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100", "test.jpg", decodingOptions);
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200
@@ -788,7 +789,7 @@ export default function imageSync() {
             fitDensity: 50,
             desiredColorSpace: csm
         };
-        await testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200", "test.jpg", decodingOptions);
+        testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200", "test.jpg", decodingOptions);
     });
 
     /**

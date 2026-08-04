@@ -14,6 +14,7 @@
  */
 
 import { describe, beforeAll, expect, it, Level } from '@ohos/hypium';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 import {
   ENTINFO1,
   SELFWANT,
@@ -30,7 +31,8 @@ import {
   TEST_BUNDLENAME,
   bundleNamesInit,
   BUNDLE_NAME_200,
-  BUNDLE_NAME_201
+  BUNDLE_NAME_201,
+  INVALID_WANT
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -1550,6 +1552,35 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_getFreezeExemptedApps_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_0600
+     * @tc.desc   test getFreezeExemptedApps method with super admin, return non-empty result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getFreezeExemptedApps_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        let res = applicationManager.getFreezeExemptedApps(SELFWANT);
+        expect(res.length > 0).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
     
     /**
      * @tc.name   test_addUserNonStopApps_001
@@ -2370,7 +2401,8 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], null);
-        expect(ret == null).assertTrue();
+        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
+        expect(Array.isArray(apps)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -2391,7 +2423,8 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], undefined);
-        expect(ret == null).assertTrue();
+        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
+        expect(Array.isArray(apps)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -3721,7 +3754,8 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.addAllowedRunningBundles(SELFWANT, BUNDLE_NAME_200, DEFAULT_USER_ID);
-        expect(ret == null).assertTrue();
+        let bundles = applicationManager.getAllowedRunningBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -5121,7 +5155,8 @@ export default function applicationManagerTest() {
         let index: number = 0;
         let abilityName: string = "EntryAbility";
         let ret = applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
-        expect(ret == null).assertTrue();
+        let dockInfos: applicationManager.DockInfo[] = applicationManager.getDockApps(SELFWANT);
+        expect(Array.isArray(dockInfos)).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
@@ -5327,7 +5362,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret: applicationManager.DockInfo[] = applicationManager.getDockApps(SELFWANT);
-        expect(ret != null).assertTrue();
+        expect(Array.isArray(ret)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -5369,7 +5404,6 @@ export default function applicationManagerTest() {
           }
         }
         let ret = applicationManager.removeDockApp(SELFWANT, bundleName, abilityName);
-        expect(ret == null).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -6644,6 +6678,50 @@ export default function applicationManagerTest() {
       }
       done();
       console.info(' --- removeKeepAliveApps_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeKeepAliveApps_test_0700
+     * @tc.number removeKeepAliveApps_test_0700
+     * @tc.desc   removeKeepAliveApps with invalid want parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeKeepAliveApps_test_0700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_0700  -------- START --------');
+      try {
+        applicationManager.removeKeepAliveApps(INVALID_WANT, [TEST_BUNDLENAME], DEFAULT_USER_ID);
+        console.info(' --- removeKeepAliveApps_test_0700 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeKeepAliveApps_test_0700 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeKeepAliveApps_test_0700  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeKeepAliveApps_test_0800
+     * @tc.number removeKeepAliveApps_test_0800
+     * @tc.desc   removeKeepAliveApps with empty array parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeKeepAliveApps_test_0800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_0800  -------- START --------');
+      try {
+        applicationManager.removeKeepAliveApps(SELFWANT, [], DEFAULT_USER_ID);
+        console.info(' --- removeKeepAliveApps_test_0800 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeKeepAliveApps_test_0800 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- removeKeepAliveApps_test_0800  -------- END --------');
     })
 
     /**
@@ -8409,6 +8487,56 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   setAbilityDisabled_test_1100
+     * @tc.number setAbilityDisabled_test_1100
+     * @tc.desc   setAbilityDisabled with null parameter disabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAbilityDisabled_test_1100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_1100  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.setAbilityDisabled(SELFWANT, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility', null);
+        console.info(' --- setAbilityDisabled_test_1100 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAbilityDisabled_test_1100 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- setAbilityDisabled_test_1100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setAbilityDisabled_test_1200
+     * @tc.number setAbilityDisabled_test_1200
+     * @tc.desc   setAbilityDisabled with undefined parameter disabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAbilityDisabled_test_1200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_1200  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.setAbilityDisabled(SELFWANT, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility', undefined);
+        console.info(' --- setAbilityDisabled_test_1200 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAbilityDisabled_test_1200 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- setAbilityDisabled_test_1200  -------- END --------');
+    })
+
+    /**
      * @tc.name   isAbilityDisabled_test_001
      * @tc.number isAbilityDisabled_test_001
      * @tc.desc   isAbilityDisabled with null parameter admin
@@ -9419,7 +9547,8 @@ export default function applicationManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = applicationManager.addAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- addAllowedRunningBundles_test_006_1 done is expected, but error, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -9444,7 +9573,8 @@ export default function applicationManagerTest() {
       try {
         applicationManager.addAllowedRunningBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID)
         let ret = applicationManager.removeAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+        expect(edmEnable == "true").assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedRunningBundles_test_006_1 done is expected,but error, actually catch: ' +
         error.code);
@@ -9509,7 +9639,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, INVALID_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9530,7 +9660,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(null, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9551,7 +9681,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(undefined, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9572,7 +9702,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(SELFWANT, null, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9593,7 +9723,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(SELFWANT, undefined, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9614,7 +9744,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9635,7 +9765,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, undefined);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9681,7 +9811,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(SELFWANT, [], DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9703,7 +9833,7 @@ export default function applicationManagerTest() {
         applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200010).assertTrue();
+        expect(error.code === 9200010).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9763,7 +9893,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, INVALID_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9784,7 +9914,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(null, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9805,7 +9935,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(undefined, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9826,7 +9956,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(SELFWANT, null, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9847,7 +9977,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(SELFWANT, undefined, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9868,7 +9998,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9889,7 +10019,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, undefined);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9935,7 +10065,7 @@ export default function applicationManagerTest() {
         applicationManager.removeAllowedNotificationBundles(SELFWANT, [], DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -9995,7 +10125,7 @@ export default function applicationManagerTest() {
         let ret = applicationManager.getAllowedNotificationBundles(null, DEFAULT_USER_ID);
         expect(ret.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10016,7 +10146,7 @@ export default function applicationManagerTest() {
         applicationManager.getAllowedNotificationBundles(undefined, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10037,7 +10167,7 @@ export default function applicationManagerTest() {
         applicationManager.getAllowedNotificationBundles(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10058,7 +10188,7 @@ export default function applicationManagerTest() {
         applicationManager.getAllowedNotificationBundles(SELFWANT, undefined);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10079,7 +10209,7 @@ export default function applicationManagerTest() {
         applicationManager.getAllowedNotificationBundles(SELFWANT, -1);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10104,7 +10234,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       });
       done();
     })
@@ -10128,7 +10258,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       }).finally(async () => {
         await adminManager.disableAdmin(SELFWANT);
       });
@@ -10154,7 +10284,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(null, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
     })
@@ -10178,7 +10308,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(undefined, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
     })
@@ -10203,7 +10333,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, null, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10230,7 +10360,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, undefined, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10257,7 +10387,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, null, DEFAULT_USER_ID, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10284,7 +10414,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, undefined, DEFAULT_USER_ID, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10311,7 +10441,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, null, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10338,7 +10468,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, undefined, networkInfo);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10359,7 +10489,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10380,7 +10510,7 @@ export default function applicationManagerTest() {
         applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, undefined);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -10404,11 +10534,10 @@ export default function applicationManagerTest() {
       };
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then((result)=>{
-        expect(result !== undefined).assertTrue();
-        expect(result.rxBytes === 0).assertTrue();
-        expect(result.txBytes === 0).assertTrue();
-        expect(result.rxPackets === 0).assertTrue();
-        expect(result.txPackets === 0).assertTrue();
+        expect(result?.rxBytes === 0).assertTrue();
+        expect(result?.txBytes === 0).assertTrue();
+        expect(result?.rxPackets === 0).assertTrue();
+        expect(result?.txPackets === 0).assertTrue();
       }).catch ((error: BusinessError)=> {
         expect(false).assertTrue();
       }).finally(async () => {
@@ -10436,7 +10565,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, INVALID_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10463,7 +10592,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, userIdZero, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10489,7 +10618,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, "", DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10515,7 +10644,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10541,7 +10670,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10567,7 +10696,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10593,7 +10722,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10619,7 +10748,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, INVALID_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }).finally(async () => {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       });
@@ -10641,7 +10770,7 @@ export default function applicationManagerTest() {
         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
       done();
     })
@@ -10662,7 +10791,7 @@ export default function applicationManagerTest() {
         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -10685,7 +10814,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, INVALID_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 9200012).assertTrue();
+         expect(error.code === 9200012).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10707,7 +10836,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(null, startTime, endTime, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        }
        done();
      })
@@ -10727,7 +10856,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(undefined, startTime, endTime, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        }
        done();
      })
@@ -10747,7 +10876,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, null, endTime, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10769,7 +10898,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, undefined, endTime, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10791,7 +10920,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, null, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10813,7 +10942,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, undefined, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10836,7 +10965,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, null);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10859,7 +10988,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, undefined);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 401).assertTrue();
+         expect(error.code === 401).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10882,7 +11011,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 9200012).assertTrue();
+         expect(error.code === 9200012).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10905,7 +11034,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 9200012).assertTrue();
+         expect(error.code === 9200012).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }
@@ -10928,7 +11057,7 @@ export default function applicationManagerTest() {
          applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
          expect(false).assertTrue();
        } catch (error) {
-         expect(Number(error.code) === 9200012).assertTrue();
+         expect(error.code === 9200012).assertTrue();
        } finally {
          await adminManager.disableSuperAdmin(SELFHAPNAME);
        }

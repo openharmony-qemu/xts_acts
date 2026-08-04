@@ -16,62 +16,62 @@
 #ifndef FUNC2_TEST_H
 #define FUNC2_TEST_H
 
-namespace OHOS {
-namespace Media {
+#include "napi/native_api.h"
 
-namespace Func2Test {
-void SetUpTestCase();
-}
+int VideoDecodeSyncFunc0010Test();
+int VideoDecodeSyncFunc0020Test();
+int VideoDecodeSyncFunc0030Test();
+int VideoDecodeSyncFunc0040Test();
+int VideoDecodeSyncFunc0050Test();
+int VideoDecodeSyncFunc0060Test();
+int VideoDecodeSyncFunc0070Test();
+int VideoDecodeSyncFunc0080Test();
+int VideoDecodeSyncFunc0090Test();
+int VideoDecodeSyncFunc0100Test();
+int VideoDecodeSyncFunc0110Test();
+int VideoDecodeSyncFunc0120Test();
+int VideoDecodeSyncFunc0130Test();
+int VideoDecodeSyncFunc0140Test();
+int VideoDecodeSyncFunc0150Test();
+int VideoDecodeSyncFunc0160Test();
+int VideoDecodeSyncFunc0170Test();
+int VideoDecodeSyncHw264Func0010Test();
+int VideoDecodeSyncHw264Func0020Test();
+int VideoDecodeSyncHw265Func0010Test();
+int VideoDecodeSyncHw265Func0020Test();
+int VideoDecodeSyncHw265Func0040Test();
+int VideoDecodeSyncHw266Func0010Test();
+int VideoDecodeSyncHw266Func0020Test();
+int VideoDecodeSyncHw266Func0040Test();
+int VideoDecodeSyncHw264LowlatencyFunc0010Test();
+int VideoDecodeSyncHw265LowlatencyFunc0010Test();
+int VideoDecodeSyncHw266LowlatencyFunc0010Test();
+int VideoDecodeH264BlankFrame0010Test();
+int VideoDecodeH265BlankFrame0020Test();
+int VideoDecodeH266BlankFrame0030Test();
+int VideoDecodeLowLatency0001Test();
+int VideoDecodeLowLatency0002Test();
+int VideoDecodeLowLatency0003Test();
+int VideoDecodeLowLatency0004Test();
+int VideoDecodeLowLatency0005Test();
+int VideoDecodeLowLatency0006Test();
+int VideoDecodeLowLatency0007Test();
+int VideoDecodeLowLatency0008Test();
+int VideoDecodeLowLatency0009Test();
+int VideoHwdecPixeFormat0030Test();
+int VideoDecodeTransform0010Test();
+int VideoDecodeTransform0020Test();
+int VideoDecodeResolution0010Test();
+int VideoDecodeAnother0010Test();
+int VideoCapabilityConfig0010Test();
+int VideoCapabilityConfig0020Test();
+int VideoCapabilityConfig0030Test();
+int VideoDecodeOrder0100Test();
+int VideoDecodeOrder0200Test();
+int VideoDecodeOrder0300Test();
+int VideoDecodeOrder0400Test();
+int VideoDecodeOrder0500Test();
 
-int VIDEO_DECODE_SYNC_FUNC_0010();
-int VIDEO_DECODE_SYNC_FUNC_0020();
-int VIDEO_DECODE_SYNC_FUNC_0030();
-int VIDEO_DECODE_SYNC_FUNC_0040();
-int VIDEO_DECODE_SYNC_FUNC_0050();
-int VIDEO_DECODE_SYNC_FUNC_0060();
-int VIDEO_DECODE_SYNC_FUNC_0070();
-int VIDEO_DECODE_SYNC_FUNC_0080();
-int VIDEO_DECODE_SYNC_FUNC_0090();
-int VIDEO_DECODE_SYNC_FUNC_0100();
-int VIDEO_DECODE_SYNC_FUNC_0110();
-int VIDEO_DECODE_SYNC_FUNC_0120();
-int VIDEO_DECODE_SYNC_FUNC_0130();
-int VIDEO_DECODE_SYNC_FUNC_0140();
-int VIDEO_DECODE_SYNC_FUNC_0150();
-int VIDEO_DECODE_SYNC_FUNC_0160();
-int VIDEO_DECODE_SYNC_FUNC_0170();
-int VIDEO_DECODE_SYNC_HW264_FUNC_0010();
-int VIDEO_DECODE_SYNC_HW264_FUNC_0020();
-int VIDEO_DECODE_SYNC_HW265_FUNC_0010();
-int VIDEO_DECODE_SYNC_HW265_FUNC_0020();
-int VIDEO_DECODE_SYNC_HW265_FUNC_0040();
-int VIDEO_DECODE_SYNC_HW266_FUNC_0010();
-int VIDEO_DECODE_SYNC_HW266_FUNC_0020();
-int VIDEO_DECODE_SYNC_HW266_FUNC_0040();
-int VIDEO_DECODE_SYNC_HW264_LOWLATENCY_FUNC_0010();
-int VIDEO_DECODE_SYNC_HW265_LOWLATENCY_FUNC_0010();
-int VIDEO_DECODE_SYNC_HW266_LOWLATENCY_FUNC_0010();
-int VIDEO_DECODE_H264_BLANK_FRAME_0010();
-int VIDEO_DECODE_H265_BLANK_FRAME_0020();
-int VIDEO_DECODE_H266_BLANK_FRAME_0030();
-int VIDEO_DECODE_LOW_LATENCY_0001();
-int VIDEO_DECODE_LOW_LATENCY_0002();
-int VIDEO_DECODE_LOW_LATENCY_0003();
-int VIDEO_DECODE_LOW_LATENCY_0004();
-int VIDEO_DECODE_LOW_LATENCY_0005();
-int VIDEO_DECODE_LOW_LATENCY_0006();
-int VIDEO_DECODE_LOW_LATENCY_0007();
-int VIDEO_DECODE_LOW_LATENCY_0008();
-int VIDEO_DECODE_LOW_LATENCY_0009();
-int VIDEO_HWDEC_PIXE_FORMAT_0030();
-int VIDEO_DECODE_TRANSFORM_0010();
-int VIDEO_DECODE_TRANSFORM_0020();
-int VIDEO_DECODE_RESOLUTION_0010();
-int VIDEO_DECODE_ANOTHER_0010();
-int VIDEO_CAPABILITY_CONFIG_0010();
-int VIDEO_CAPABILITY_CONFIG_0020();
-int VIDEO_CAPABILITY_CONFIG_0030();
-} // namespace Media
-} // namespace OHOS
+void InitFunc2Test();
 
 #endif // FUNC2_TEST_H

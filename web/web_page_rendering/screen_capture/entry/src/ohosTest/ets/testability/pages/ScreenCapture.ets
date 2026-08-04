@@ -135,7 +135,7 @@ struct ScreenCapture {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('indexJru.html'), controller: this.controller })
+      Web({ src: $rawfile('indexJru.html'), controller: this.controller })
         .onScreenCaptureRequest(async (event) => {
           console.log("event : >>>" + event)
           if (event) {

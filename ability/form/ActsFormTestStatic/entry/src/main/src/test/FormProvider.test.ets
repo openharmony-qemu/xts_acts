@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -463,7 +464,7 @@ export default function formProviderTest() {
           bundleName: bundleName,
           abilityName: formAbilityName
         }
-        expect(await Utils.startAbility(
+        expect(Utils.startAbility(
           'EntryAbility',
           bundleName,
         )).assertTrue();
@@ -493,7 +494,7 @@ export default function formProviderTest() {
         let want: Want = {
           deviceId: ''
         }
-        expect(await Utils.startAbility(
+        expect(Utils.startAbility(
           'EntryAbility',
           bundleName,
         )).assertTrue();

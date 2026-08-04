@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -551,7 +552,7 @@ export function avVideoRecorderTestOne() {
       });
       // 错误上报回调函数
       avRecorder.onError((err: BusinessError | null) => {
-        (async () => {
+        waitForCompletion(async () => {
           try {
             console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
             await releaseRecorderPromise(avRecorder, done);
@@ -559,7 +560,7 @@ export function avVideoRecorderTestOne() {
             // 处理错误
             console.error(TAG + 'when error on execute releaseRecorderPromise error message is ' + error);
           }
-        })().awaitSync()
+        })
       });
     };
 
@@ -590,7 +591,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       media.createAVRecorder((error: BusinessError | null, recorder: undefined | media.AVRecorder) => {
         if (recorder != null) {
           let avRecorder = recorder;
@@ -613,7 +614,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       media.createAVRecorder().then((recorder: media.AVRecorder | undefined) => {
         if (recorder != null) {
           let avRecorder = recorder;
@@ -637,7 +638,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setAvRecorderCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -655,7 +656,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setPhotoAssetAvailableCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -681,7 +682,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setOffAvRecorderCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -698,7 +699,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setOffPhotoAssetAvailableCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -717,7 +718,7 @@ export function avVideoRecorderTestOne() {
         let done: () => void = data?.get("done") as (() => void)
         let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
         let recorderTime: number = data?.get("recorderTime") as number
-        commonFun.sleep(1000).awaitSync();
+        waitForCompletion(async()=> {await commonFun.sleep(1000);});
         avRecorder.prepare(avConfig, (err: BusinessError | null) => {
           console.info('case prepare called');
           if (err == null) {
@@ -744,7 +745,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let rotation = 90
       avRecorder.updateRotation(rotation).then(() => {
         console.info('updateRotation success');
@@ -765,7 +766,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.prepare(avConfig).then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
         console.info('prepare success');
@@ -785,7 +786,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.getInputSurface((err: BusinessError | null, surfaceId: undefined | string) => {
         if (err == null) {
           console.info('getInputSurface success');
@@ -807,7 +808,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.getInputSurface().then((surfaceId: string | undefined) => {
         console.info('getInputSurface success');
         videoSurfaceId = surfaceId;
@@ -826,7 +827,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.getAVRecorderConfig().then((config: media.AVRecorderConfig | undefined) => {
         console.info('getAVRecorderConfig success');
         expect(config!!.audioSourceType).assertEqual(avConfig.audioSourceType);
@@ -846,7 +847,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         initCamera(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -875,7 +876,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         startCameraOutput(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -904,7 +905,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         stopCameraOutput(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -920,7 +921,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.start((err: BusinessError | null) => {
         console.info('case start called');
         if (err == null) {
@@ -945,7 +946,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.start().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.STARTED);
         console.info('start success');
@@ -967,7 +968,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.pause((err: BusinessError | null) => {
         console.info('case pause called');
         if (err == null) {
@@ -989,7 +990,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.pause().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PAUSED);
         console.info('pause AVRecorder success');
@@ -1008,7 +1009,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let resumeValue = true;
       avRecorder.resume((err: BusinessError | null) => {
         console.info('case resume called');
@@ -1034,7 +1035,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let resumeValue = true;
       avRecorder.resume().then(() => {
         console.info('resume success');
@@ -1057,7 +1058,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let stopValue = true;
       avRecorder.stop((err: BusinessError | null) => {
         console.info('case stop called');
@@ -1085,7 +1086,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let stopValue = true;
       avRecorder.stop((err: BusinessError | null) => {
         console.info('case stop called');
@@ -1113,7 +1114,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.reset((err: BusinessError | null) => {
         console.info('case reset called');
         if (err == null) {
@@ -1135,7 +1136,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.reset().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.IDLE);
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -1153,7 +1154,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.offAudioCapturerChange()
       avRecorder.release((err: BusinessError | null) => {
         console.info('case release called');
@@ -1175,7 +1176,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.release().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
         console.info('release AVRecorder success');
@@ -1194,7 +1195,7 @@ export function avVideoRecorderTestOne() {
         let done: () => void = data?.get("done") as (() => void)
         let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
         let recorderTime: number = data?.get("recorderTime") as number
-        commonFun.sleep(1000).awaitSync();
+        waitForCompletion(async()=> {await commonFun.sleep(1000);});
         let state: string = avRecorder.state;
         avRecorder.getAvailableEncoder().then((encoderInfo: Array<media.EncoderInfo>) => {
           if (state == commonFun.AV_RECORDER_STATE.RELEASED) {
@@ -1243,7 +1244,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let state: string = avRecorder.state;
       avRecorder
         .getAudioCapturerMaxAmplitude()
@@ -1340,7 +1341,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         releaseCamera(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -1356,7 +1357,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         let state: string = avRecorder.state;
         avRecorder.getAvailableEncoder((err: BusinessError | null, encoderInfo: Array<media.EncoderInfo> | undefined) => {
@@ -1404,7 +1405,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         let state: string = avRecorder.state;
         avRecorder.getAudioCapturerMaxAmplitude((err: BusinessError | null, maxAmplitude: int | undefined) => {
@@ -1472,7 +1473,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let state: string = avRecorder.state;
       avRecorder
         .getCurrentAudioCapturerInfo()
@@ -1523,7 +1524,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         let state: string = avRecorder.state;
         avRecorder.getCurrentAudioCapturerInfo(
@@ -1576,7 +1577,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder!!.setWillMuteWhenInterrupted(true).then(() => {
         console.info('setWillMuteWhenInterrupted success');
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -1596,7 +1597,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder!!.setWillMuteWhenInterrupted(true).then(() => {
         console.info('setWillMuteWhenInterrupted success');
         expect(false).assertEqual(true)
@@ -1616,7 +1617,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      commonFun.sleep(1000).awaitSync();
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder!!.setWillMuteWhenInterrupted(false).then(() => {
         console.info('setWillMuteWhenInterrupted success');
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);

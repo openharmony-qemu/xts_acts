@@ -96,7 +96,7 @@ export default function fontJsunit() {
       let btn = await driver.findComponent(ON.id('getgetFontByName'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(100);
-      let strJson = inspector.getInspectorByKey('fontName');
+      let strJson = inspector.getInspectorByKey('fontAdd' + '_fontName_01');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridColOffsetJsunit_0200] component  strJson:" + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual("HarmonyOS Sans Italic");

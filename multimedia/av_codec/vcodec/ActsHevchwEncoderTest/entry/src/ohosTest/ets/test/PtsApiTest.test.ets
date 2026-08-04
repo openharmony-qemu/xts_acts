@@ -18,98 +18,98 @@ import entry from 'libentry.so';
 export default function PtsApiTest() {
   describe('PtsApiTest.ets', () => {
     beforeAll(() => {
-      entry.Pts_Api_Prepare(0);
+      entry.PtsApi_SetUpTestCase();
     })
     beforeEach(() => {
 
     })
     afterEach(() => {
-      entry.Pts_Api_Prepare(3)
+      entry.PtsApi_TearDown()
     })
     afterAll(() => {
 
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_001
-     * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_001
+     * @tc.name   SUB_VIDEO_HW_ENCODE_PTS_FUNC_00100
+     * @tc.number SUB_VIDEO_HW_ENCODE_PTS_FUNC_00100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_PTS_FUNC_001", Level.LEVEL1, async  (done: Function) => {
-      const result = await entry.Pts_Api_Test(0);
+    it("SUB_VIDEO_HW_ENCODE_PTS_FUNC_00100", Level.LEVEL1, async  (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_PTS_FUNC_001();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_002
-     * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_002
+     * @tc.name   SUB_VIDEO_HW_ENCODE_PTS_FUNC_00200
+     * @tc.number SUB_VIDEO_HW_ENCODE_PTS_FUNC_00200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_PTS_FUNC_002", Level.LEVEL1, async  (done: Function) => {
-      const result = await entry.Pts_Api_Test(1);
+    it("SUB_VIDEO_HW_ENCODE_PTS_FUNC_00200", Level.LEVEL1, async  (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_PTS_FUNC_002();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_003
-     * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_003
+     * @tc.name   SUB_VIDEO_HW_ENCODE_PTS_FUNC_00300
+     * @tc.number SUB_VIDEO_HW_ENCODE_PTS_FUNC_00300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_PTS_FUNC_003", Level.LEVEL1, async  (done: Function) => {
-      const result = await entry.Pts_Api_Test(2);
+    it("SUB_VIDEO_HW_ENCODE_PTS_FUNC_00300", Level.LEVEL1, async  (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_PTS_FUNC_003();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_004
-     * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_004
+     * @tc.name   SUB_VIDEO_HW_ENCODE_PTS_FUNC_00400
+     * @tc.number SUB_VIDEO_HW_ENCODE_PTS_FUNC_00400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_PTS_FUNC_004", Level.LEVEL1, async  (done: Function) => {
-      const result = await entry.Pts_Api_Test(3);
+    it("SUB_VIDEO_HW_ENCODE_PTS_FUNC_00400", Level.LEVEL1, async  (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_PTS_FUNC_004();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_005
-     * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_005
+     * @tc.name   SUB_VIDEO_HW_ENCODE_PTS_FUNC_00500
+     * @tc.number SUB_VIDEO_HW_ENCODE_PTS_FUNC_00500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_PTS_FUNC_005", Level.LEVEL1, async  (done: Function) => {
-      const result = await entry.Pts_Api_Test(4);
+    it("SUB_VIDEO_HW_ENCODE_PTS_FUNC_00500", Level.LEVEL1, async  (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_PTS_FUNC_005();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_006
-     * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_006
+     * @tc.name   SUB_VIDEO_HW_ENCODE_PTS_FUNC_00600
+     * @tc.number SUB_VIDEO_HW_ENCODE_PTS_FUNC_00600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("VIDEO_HW_ENCODE_PTS_FUNC_006", Level.LEVEL1, async  (done: Function) => {
-      const result = await entry.Pts_Api_Test(5);
+    it("SUB_VIDEO_HW_ENCODE_PTS_FUNC_00600", Level.LEVEL1, async  (done: Function) => {
+      const result = await entry.VIDEO_HW_ENCODE_PTS_FUNC_006();
       expect(result).assertEqual(0);
       done();
     })

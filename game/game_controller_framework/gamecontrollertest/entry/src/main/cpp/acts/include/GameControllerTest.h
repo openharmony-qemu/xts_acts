@@ -319,6 +319,54 @@ int32_t ActsGameControllerGamePadAxisEventGetGasAxisValue02();
 int32_t ActsGameControllerGamePadAxisEventGetActionTime01();
 
 int32_t ActsGameControllerGamePadAxisEventGetActionTime02();
+
+int32_t ActsGameDeviceGetAllDeviceInfos02();
+
+int32_t ActsGameDeviceAllDeviceInfosGetCount03();
+
+int32_t ActsGameDeviceAllDeviceInfosGetDeviceInfo06();
+
+int32_t ActsGameDeviceDeviceEventGetChangedType03();
+
+int32_t ActsGameDeviceDeviceEventGetDeviceInfo03();
+
+int32_t ActsGameDeviceDeviceInfoGetProduct03();
+
+int32_t ActsGameDeviceDeviceInfoGetVersion03();
+
+int32_t ActsGameDeviceDeviceInfoGetDeviceType03();
+
+int32_t ActsGameControllerGamePadButtonEventGetButtonAction03();
+
+int32_t ActsGameControllerGamePadButtonEventGetButtonCode03();
+
+int32_t ActsGameControllerGamePadPressedButtonsGetCount03();
+
+int32_t ActsGameControllerGamePadPressedButtonsGetButtonInfo05();
+
+int32_t ActsGameControllerGamePadPressedButtonGetButtonCode03();
+
+int32_t ActsGameControllerGamePadButtonEventGetActionTime03();
+
+int32_t ActsGameControllerGamePadAxisEventGetAxisSourceType03();
+
+int32_t ActsGameControllerGamePadAxisEventGetXAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetYAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetZAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetRZAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetHatXAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetHatYAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetBrakeAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetGasAxisValue03();
+
+int32_t ActsGameControllerGamePadAxisEventGetActionTime03();
 }
 }
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -340,7 +341,7 @@ export default function ArrayList09Test(): void {
         let arrayList = new ArrayList<string>();
         const asciiChars = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
         for (let i: int = 0; i < asciiChars.length; i++) {
-          arrayList.add(asciiChars.charAt(i) as string);
+          arrayList.add(asciiChars.charAt(i).toString());
         }
         let result = "";
         arrayList.forEach((value: string) => {

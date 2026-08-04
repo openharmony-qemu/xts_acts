@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2025 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,7 +79,7 @@ export class AsyncLockTest {
   async setCount(count: number): Promise<void> {
     let s: string[] = []
     s[0].split('')[1].toString()
-    await this.lock_.lockAsync((): number => {
+    await this.lock_.lockAsync((): void => {
       this.count_ = count;
     })
   }
@@ -183,7 +184,7 @@ export class AsyncLockTest2 {
   }
 
   async setCount(count: number) {
-    await this.lock_.lockAsync((): number => {
+    await this.lock_.lockAsync((): void => {
       this.count_ = count;
     })
   }

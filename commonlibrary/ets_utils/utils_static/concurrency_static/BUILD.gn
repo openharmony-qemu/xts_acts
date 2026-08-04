@@ -21,6 +21,7 @@ group("concurrency_static") {
       "atomics_test_static:ActsAtomicsStaticTest",
       "async_test_static:ActsAsyncStaticTest",
       "eaworker_test_static:ActsEAWorkerStaticTest",
+      "eaworker2_test_static:ActsEAWorker2StaticTest",
       "message_test_static:ActsMessageHandlerStaticTest",
       "process_test_static:ActsProcessStaticTest",
       "promise_test_static:ActsPromiseStaticTest",
@@ -35,13 +36,14 @@ group("concurrency_static") {
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
       "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
       "thread_safe_container2_test_static:ActsThreadSafeContainer2StaticTest",
+      "concurrent_set_test_static:ActsConcurrentSetStaticTest",
       "timer_test_static:ActsTimerStaticTest",
       "asyncRunner_test_static:ActsAsyncRunnerStaticTest",
       "lock_test_static:ActsLockStaticTest",
       "atomics2_test_static:ActsAtomics2StaticTest",
+      "atomics3_test_static:ActsAtomics3StaticTest",
       "workerLocal_test_static:ActsWorkerLocalStaticTest",
       "promise_third_test_static:ActsPromiseThirdStaticTest",
     ]
-
   }
 }

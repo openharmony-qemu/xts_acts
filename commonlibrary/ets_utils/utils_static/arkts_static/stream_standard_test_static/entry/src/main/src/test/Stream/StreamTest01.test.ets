@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -282,7 +283,7 @@ class BinaryEndWritable extends stream.Writable {
   }
 }
 class CorkWritable extends stream.Writable {
-  doWrite(chunk: string | Uint8Array | null, encoding: string, callback: Function) {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCbErr(callback, null);
   }
   _write(chunk: string | Uint8Array, encoding: string, callback: Function) {

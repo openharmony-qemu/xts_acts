@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +29,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext | null = null;
 
 function msSleep(count: int) {
-  Utils.msSleep(count).awaitSync();
+  waitForCompletion(async ()=> { await Utils.msSleep(count); });
 }
 
 export default function ApplicationContextGetIsPreloadTest() {
@@ -39,7 +40,12 @@ export default function ApplicationContextGetIsPreloadTest() {
     beforeAll(() => {
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       msSleep(2000);
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b com.example.ispreload`);
+      let cmd = `aa start -a EntryAbility -b com.example.ispreload`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       msSleep(2000);
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
     })

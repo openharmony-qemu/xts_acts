@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -249,8 +250,10 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     if (reason == media.StateChangeReason.BACKGROUND) {
       console.info(`case media.StateChangeReason.BACKGROUND`);
-      avPlayer!!.release().then(() => {
-        }).catch(mediaTestBase.catchCallback).awaitSync();
+      waitForCompletion(async () => {
+        await avPlayer!!.release().then(() => {
+        }).catch(mediaTestBase.catchCallback);
+      });
     }
     console.info(`case state is ${state}`);
     switch (state) {
@@ -289,7 +292,9 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
         } else if (playCnt == 1) {
           expect(avPlayer?.state).assertEqual(PLAYING);
           // step 3: playing -> seek duration/3
-          mediaTestBase.msleepAsync(playTime).awaitSync();
+          waitForCompletion(async () => {
+            await mediaTestBase.msleepAsync(playTime);
+          });
           avPlayer?.seek(avPlayer!!.duration / 3);
         } else if (playCnt == 2) {
           expect(avPlayer?.state).assertEqual(PLAYING);
@@ -403,7 +408,9 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
         }
         if (nowTime > avPlayer!!.duration / 2) {
           avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
-          mediaTestBase.msleepAsync(avPlayer!!.duration - nowTime + playTime).awaitSync();
+          waitForCompletion(async () => {
+            await mediaTestBase.msleepAsync(avPlayer!!.duration - nowTime + playTime);
+          });
         }
         if (avPlayer!!.loop == true) {
           // step 8: playing -> seek duration when loop false
@@ -427,10 +434,12 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
   avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
-    avPlayer!!.release().then(() => {
+    waitForCompletion(async () => {
+      await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
-      }).awaitSync();
+      });
+    });
   });
 }
 
@@ -476,7 +485,7 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
         console.info('playPauseLoopWithCallBack play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         playPauseCount++;
-        mediaTestBase.msleepAsync(playTime).awaitSync()
+        waitForCompletion(async () => {await mediaTestBase.msleepAsync(playTime);})
         if (playPauseCount == 1001) {
           // step 4: playing -> stop -> release
           avPlayer?.stop().then(() => {
@@ -511,14 +520,14 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })().awaitSync()
+    })
   });
 }
 
@@ -548,7 +557,7 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
-    (async () => {
+    waitForCompletion(async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -589,17 +598,17 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
       default:
         break;
     }
-  })().awaitSync()
+  })
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })().awaitSync()
+    })
   });
 }
 
@@ -633,8 +642,8 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
         avPlayer!!.surfaceId = surfaceID;
         console.info('playToCompletedLoop play state is INITIALIZED')
         // step 1: initialized -> prepared -> play
-        preparePromise(avPlayer!).awaitSync()
-        sleep(2000).awaitSync()
+        waitForCompletion(async () => {await preparePromise(avPlayer!);})
+        waitForCompletion(async () => {await sleep(2000);})
         avPlayer?.play()
         break;
       case PLAYING:
@@ -678,14 +687,14 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })().awaitSync()
+    })
   });
 }
 
@@ -785,14 +794,14 @@ async function seekLoopWithoutCallbackLoop(src: string | media.AVFileDescriptor,
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })().awaitSync()
+    })
   });
 }
 
@@ -850,14 +859,14 @@ async function prepareToStopLoop(src: string | media.AVFileDescriptor, avPlayer:
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })().awaitSync()
+    })
   });
 }
 
@@ -924,14 +933,14 @@ async function prepareToResetLoop(src: string | media.AVFileDescriptor, avPlayer
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })().awaitSync()
+    })
   });
 }
 
@@ -948,7 +957,7 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop2 in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
-    (async () => {
+    waitForCompletion(async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -994,17 +1003,17 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
       default:
         break;
     }
-    })().awaitSync()
+    })
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
       avPlayer = null;
       done();
     });
-    })().awaitSync()
+    })
   });
 }
 
@@ -2577,10 +2586,10 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
         console.info('setAVPlayerPlay play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         if (avPlayer && avPlayer.duration > 3000) {
-          mediaTestBase.msleepAsync(3000).awaitSync()
+          waitForCompletion(async () => {await mediaTestBase.msleepAsync(3000);})
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         } else {
-          mediaTestBase.msleepAsync(500).awaitSync()
+          waitForCompletion(async () => {await mediaTestBase.msleepAsync(500);})
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         }
         break;
@@ -2605,14 +2614,14 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })().awaitSync()
+    })
   });
 }
 

@@ -13,24 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import Utils  from "../../../ets/MainAbility/common/Utils";
-import events_emitter from '@ohos.events.emitter'
-import Utils from '../../../ets/MainAbility/common/Utils'
-import { Color, FontWeight,PickerTextStyle } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import events_emitter from '@ohos.events.emitter';
+import { Color, FontWeight, PickerTextStyle } from '@ohos.arkui.component';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -73,7 +71,7 @@ export default function datepicker() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_datePicker_disappearTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
@@ -110,7 +108,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0200', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0200] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.error("[ArkUI_Stage_datePicker_disappearTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
@@ -147,7 +145,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0300', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0300] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF808080');
@@ -184,7 +182,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0400', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0400] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FFFF0000');
@@ -221,7 +219,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0500', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0500] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF008000');
@@ -258,7 +256,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0600', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0600] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
 
         let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
@@ -299,7 +297,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0700', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0700] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
 
         let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
@@ -340,7 +338,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0800', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0800] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
@@ -376,7 +374,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0900', Level.LEVEL1, async 
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0900] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
         expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
@@ -394,7 +392,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0900', Level.LEVEL1, async 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_datePicker_textStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_textStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
@@ -431,7 +429,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0200', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0200] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.error("[ArkUI_Stage_datePicker_textStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
@@ -468,7 +466,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0300', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0300] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_textStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF808080');
@@ -505,7 +503,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0400', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0400] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_textStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF00FF00');
@@ -542,7 +540,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0500', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0500] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datePicker_textStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF008000');
@@ -579,7 +577,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0600', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0600] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
 
         let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
@@ -620,7 +618,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0700', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0700] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
 
         let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
@@ -661,7 +659,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0800', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0800] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
         expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('20.00vp');
@@ -697,7 +695,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0900', Level.LEVEL1, async (done: ()
           console.log("[ArkUI_Stage_datePicker_textStyle_static_0900] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
         expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
@@ -715,7 +713,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0900', Level.LEVEL1, async (done: ()
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_datepicker_selectedTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
@@ -752,7 +750,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0200] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.error("[ArkUI_Stage_datepicker_selectedTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
@@ -789,7 +787,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0300] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF808080');
@@ -826,7 +824,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0400', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0400] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF00FF00');
@@ -863,7 +861,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0500', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0500] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF008000');
@@ -900,7 +898,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0600', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0600] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
 
         let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
@@ -941,7 +939,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0700', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0700] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
 
 	let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
@@ -982,7 +980,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0800', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0800] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
@@ -1018,7 +1016,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0900', Level.LEVEL1, async (
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0900] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = inspector.getInspectorByKey('datePicker');
+        let strJson = inspector.getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj = JSON.parseJsonElement(strJson)
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
         expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');

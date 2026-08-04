@@ -51,6 +51,7 @@ constexpr uint32_t TWO = 2;
 constexpr uint32_t THREE = 3;
 constexpr uint32_t FOUR = 4;
 constexpr uint32_t FIVE = 5;
+constexpr uint32_t BUSINESS_MAX_ROI_COUNT = 6;
 OH_NativeImage* cNativeImage = {};
 OH_NativeImage* pNativeImage = {};
 VEncAPI11Sample* g_encSample = nullptr;
@@ -466,7 +467,7 @@ uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, 
         }
     }
     
-    struct Region region;
+    struct Region region = {};
     struct Region::Rect *rect = new Region::Rect();
     rect->x = 0;
     rect->y = 0;
@@ -822,6 +823,141 @@ int32_t VEncAPI11Sample::SetParameter()
     ret = OH_VideoEncoder_SetParameter(venc_, format);
     OH_AVFormat_Destroy(format);
     return ret;
+}
+
+OH_AVFormat **ParseExtrenalRoiString(const char *externalRoiString, uint32_t *parsedCount)
+{
+    if (externalRoiString == nullptr || parsedCount == nullptr) {
+        OH_LOG_INFO(LOG_APP, "Error: Invalid input parameters");
+        return nullptr;
+    }
+
+    *parsedCount = 0;
+    uint32_t totalCount = 0;
+    OH_AVErrCode ret = OH_VideoMetadata_GetRoiCount(externalRoiString, &totalCount);
+    if (ret != AV_ERR_OK || totalCount == 0) {
+        OH_LOG_INFO(LOG_APP, "No valid ROI configurations found");
+        return nullptr;
+    }
+    uint32_t capacity = (totalCount > BUSINESS_MAX_ROI_COUNT) ? BUSINESS_MAX_ROI_COUNT : totalCount;
+    OH_AVFormat **roiFormats = (OH_AVFormat **)calloc(capacity, sizeof(OH_AVFormat *));
+    if (roiFormats == nullptr) {
+        OH_LOG_INFO(LOG_APP, "Failed to allocate memory for ROI formats");
+        return nullptr;
+    }
+
+    ret = OH_VideoMetadata_ParseRoiString(externalRoiString, roiFormats, capacity, parsedCount);
+    if (ret != AV_ERR_OK || *parsedCount == 0) {
+        OH_LOG_INFO(LOG_APP, "=== onEncInputParam START, index=%{public}d ====", ret);
+        free(roiFormats);
+        return nullptr;
+    }
+    return roiFormats;
+}
+
+OH_AVErrCode ProcessAndAppendSingleRoi(OH_AVFormat *roiFormat, char **finalRoiString)
+{
+    if (roiFormat == nullptr || finalRoiString == nullptr) {
+        return AV_ERR_INVALID_VAL;
+    }
+
+    OH_AVFormat *roiParam = OH_AVFormat_Create();
+    if (roiParam == nullptr) {
+        return AV_ERR_NO_MEMORY;
+    }
+
+    int32_t top = 0;
+    int32_t left = 0;
+    int32_t bottom = 0;
+    int32_t right = 0;
+    OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_TOP, &top);
+    OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_LEFT, &left);
+    OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_BOTTOM, &bottom);
+    OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_RIGHT, &right);
+
+    OH_AVFormat_SetIntValue(roiParam, OH_MD_KEY_VIDEO_METADATA_ROI_TOP, top);
+    OH_AVFormat_SetIntValue(roiParam, OH_MD_KEY_VIDEO_METADATA_ROI_LEFT, left);
+    OH_AVFormat_SetIntValue(roiParam, OH_MD_KEY_VIDEO_METADATA_ROI_BOTTOM, bottom);
+    OH_AVFormat_SetIntValue(roiParam, OH_MD_KEY_VIDEO_METADATA_ROI_RIGHT, right);
+
+    int32_t dqp = 0;
+    if (OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_DELTA_QP, &dqp)) {
+        OH_AVFormat_SetIntValue(roiParam, OH_MD_KEY_VIDEO_METADATA_ROI_DELTA_QP, dqp);
+    }
+
+    int32_t semLabel = 0;
+    if (OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_SEM_LABEL, &semLabel)) {
+        OH_AVFormat_SetIntValue(roiParam, OH_MD_KEY_VIDEO_METADATA_ROI_SEM_LABEL, semLabel);
+    }
+
+    OH_AVErrCode ret = OH_VideoMetadata_AppendRoiString(finalRoiString, roiParam);
+    OH_AVFormat_Destroy(roiParam);
+    return ret;
+}
+
+OH_AVErrCode VEncAPI11Sample::RebuildAndSetRoiToEncoder(OH_AVFormat **roiFormats, uint32_t count)
+{
+    if (roiFormats == nullptr || count == 0 || venc_ == nullptr) {
+        return AV_ERR_INVALID_VAL;
+    }
+
+    char *finalRoiString = nullptr;
+    OH_AVErrCode ret = AV_ERR_OK;
+
+    for (uint32_t i = 0; i < count; i++) {
+        if (roiFormats[i] != nullptr) {
+            ret = ProcessAndAppendSingleRoi(roiFormats[i], &finalRoiString);
+            if (ret != AV_ERR_OK) {
+                break;
+            }
+        }
+    }
+
+    if (ret == AV_ERR_OK && finalRoiString != nullptr) {
+        OH_LOG_INFO(LOG_APP, "=== Successfully rebuilt ROI=%{public}s ====", finalRoiString);
+        OH_AVFormat *encoderParam = OH_AVFormat_Create();
+        OH_AVFormat_SetStringValue(encoderParam, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, finalRoiString);
+        OH_AVErrCode setParamResult = OH_VideoEncoder_SetParameter(venc_, encoderParam);
+        OH_AVFormat_Destroy(encoderParam);
+
+        free(finalRoiString);
+        return setParamResult;
+    }
+    if (finalRoiString != nullptr) {
+        free(finalRoiString);
+    }
+    return ret;
+}
+
+void CleanupParsedRoiFormats(OH_AVFormat **roiFormats, uint32_t capacity)
+{
+    if (roiFormats == nullptr) {
+        return;
+    }
+
+    for (uint32_t i = 0; i < capacity; i++) {
+        if (roiFormats[i] != nullptr) {
+            OH_AVFormat_Destroy(roiFormats[i]);
+            roiFormats[i] = nullptr;
+        }
+    }
+    free(roiFormats);
+}
+
+int32_t VEncAPI11Sample::CompleteRoiWorkflow(const char *externalRoiString)
+{
+    uint32_t parsedCount = 0;
+    OH_AVFormat **roiFormats = ParseExtrenalRoiString(externalRoiString, &parsedCount);
+    OH_LOG_INFO(LOG_APP, "=== Successfully parsedCount=%{public}u", parsedCount);
+    if (roiFormats == nullptr) {
+        OH_LOG_INFO(LOG_APP, "Failed to parse ROI string");
+        return AV_ERR_UNKNOWN;
+    }
+    uint32_t capacity = (parsedCount > BUSINESS_MAX_ROI_COUNT) ? BUSINESS_MAX_ROI_COUNT : parsedCount;
+    OH_AVErrCode result = RebuildAndSetRoiToEncoder(roiFormats, parsedCount);
+
+    CleanupParsedRoiFormats(roiFormats, capacity);
+    return result;
 }
 
 int32_t VEncAPI11Sample::CheckAttrFlag(OH_AVCodecBufferAttr attr)

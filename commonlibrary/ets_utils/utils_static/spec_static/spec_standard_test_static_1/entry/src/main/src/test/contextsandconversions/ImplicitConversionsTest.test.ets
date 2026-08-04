@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ import {
   Size,
   TestType
 } from '../../../../hypium/index';
-
+import Utils from "../Util.test";
 
 class A {
   f: number;
@@ -816,7 +817,6 @@ class A218 {
   fld: string = "";
 }
 
-
 function bytesToFloat(bytes: Uint8Array): number {
   if (bytes.length !== 4) {
     throw new Error("Byte array must be exactly 4 bytes long");
@@ -878,7 +878,6 @@ function longToFloat(longValue: bigint): number {
   return Number(longValue);
 }
 
-
 enum Color1 { Red=100, Green=200, Blue=300 }
 enum Color2 { Red=10, Green=20, Blue=30 }
 enum Color3 { Red=10001, Green=10002, Blue=10003 }
@@ -888,7 +887,6 @@ enum Color6: double { Red = 0.0, Green = 100.0, Blue = 101.0 }
 enum Color7 { Red, Green = 100, Blue }
 enum Color8: long { Red, Green = 0x3434343456565656, Blue }
 enum Color9 { Red = "r", Green = "g", Blue = "b" }
-
 
 function foo(p: number): number { return p; }
 function foo1(p: bigint): bigint { return p; }
@@ -907,8 +905,6 @@ function foo10(p: number): number {
 function foo11(p: string): string {
   return p + "!";
 }
-
-
 
 interface J1 { fld: double }
 interface J2 { fld: double }
@@ -929,15 +925,7 @@ interface J16 { fld: long }
 interface J17 { fld: long }
 interface J18 { fld: long }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function ImplicitConversionsTest() {
+export default function ImplicitConversionsTest(): void {
 
   describe("ImplicitConversionsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -949,7 +937,7 @@ export default function ImplicitConversionsTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -1246,12 +1234,13 @@ export default function ImplicitConversionsTest() {
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_1800
      * @tc.name      testImplicitConversions0018
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from Color to int)
+     * @tc.desc      Assignment / constructor / function call contexts, widening primitive conversion, implicit (from Color to int)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: number;
       let s1: Color = Color.Red;
       d = s1;
@@ -1262,17 +1251,28 @@ export default function ImplicitConversionsTest() {
       let s3: Color = Color.Blue;
       d = s3;
       expect(d).assertEqual(2);
+
+      // Constructor call context
+      expect(new A(s1).f).assertEqual(0);
+      expect(new A(s2).f).assertEqual(1);
+      expect(new A(s3).f).assertEqual(2);
+
+      // Function call context
+      expect(foo(s1)).assertEqual(0);
+      expect(foo(s2)).assertEqual(1);
+      expect(foo(s3)).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_1900
      * @tc.name      testImplicitConversions0019
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from byte to long)
+     * @tc.desc      Assignment / constructor / function call contexts, widening primitive conversion, implicit (from byte to long)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: bigint;
       let s1: number = 0;
       d = BigInt(s1);
@@ -1283,17 +1283,28 @@ export default function ImplicitConversionsTest() {
       let s3: number = 127;
       d = BigInt(s3);
       expect(d).assertEqual(127n);
+
+      // Constructor call context
+      expect(new A1(BigInt(s1)).f).assertEqual(0n);
+      expect(new A1(BigInt(s2)).f).assertEqual(-128n);
+      expect(new A1(BigInt(s3)).f).assertEqual(127n);
+
+      // Function call context
+      expect(foo1(BigInt(s1))).assertEqual(0n);
+      expect(foo1(BigInt(s2))).assertEqual(-128n);
+      expect(foo1(BigInt(s3))).assertEqual(127n);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_2000
      * @tc.name      testImplicitConversions0020
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from Color to long)
+     * @tc.desc      Assignment / constructor / function call contexts, widening primitive conversion, implicit (from Color to long)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: bigint;
       let s1: Color1 = Color1.Red;
       d = BigInt(s1);
@@ -1304,17 +1315,28 @@ export default function ImplicitConversionsTest() {
       let s3: Color1 = Color1.Blue;
       d = BigInt(s3);
       expect(d).assertEqual(300n);
+
+      // Constructor call context
+      expect(new A1(BigInt(s1)).f).assertEqual(100n);
+      expect(new A1(BigInt(s2)).f).assertEqual(200n);
+      expect(new A1(BigInt(s3)).f).assertEqual(300n);
+
+      // Function call context
+      expect(foo1(BigInt(s1))).assertEqual(100n);
+      expect(foo1(BigInt(s2))).assertEqual(200n);
+      expect(foo1(BigInt(s3))).assertEqual(300n);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_2100
      * @tc.name      testImplicitConversions0021
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from Color to float)
+     * @tc.desc      Assignment / constructor / function call contexts, widening primitive conversion, implicit (from Color to float)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: number;
       let s1: Color2 = Color2.Red;
       d = s1;
@@ -1325,17 +1347,28 @@ export default function ImplicitConversionsTest() {
       let s3: Color2 = Color2.Blue;
       d = s3;
       expect(d).assertEqual(30.0);
+
+      // Constructor call context
+      expect(new A(s1).f).assertEqual(10.0);
+      expect(new A(s2).f).assertEqual(20.0);
+      expect(new A(s3).f).assertEqual(30.0);
+
+      // Function call context
+      expect(foo(s1)).assertEqual(10.0);
+      expect(foo(s2)).assertEqual(20.0);
+      expect(foo(s3)).assertEqual(30.0);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_2200
      * @tc.name      testImplicitConversions0022
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from Color to double)
+     * @tc.desc      Assignment / constructor / function call contexts, widening primitive conversion, implicit (from Color to double)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: number;
       let s1: Color3 = Color3.Red;
       d = s1;
@@ -1346,17 +1379,28 @@ export default function ImplicitConversionsTest() {
       let s3: Color3 = Color3.Blue;
       d = s3;
       expect(d).assertEqual(10003.0);
+
+      // Constructor call context
+      expect(new A(s1).f).assertEqual(10001.0);
+      expect(new A(s2).f).assertEqual(10002.0);
+      expect(new A(s3).f).assertEqual(10003.0);
+
+      // Function call context
+      expect(foo(s1)).assertEqual(10001.0);
+      expect(foo(s2)).assertEqual(10002.0);
+      expect(foo(s3)).assertEqual(10003.0);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_2300
      * @tc.name      testImplicitConversions0023
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from Color to number)
+     * @tc.desc      Assignment / constructor / function call contexts, widening primitive conversion, implicit (from Color to number)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: number;
       let s1: Color4 = Color4.Red;
       d = s1;
@@ -1367,17 +1411,28 @@ export default function ImplicitConversionsTest() {
       let s3: Color4 = Color4.Blue;
       d = s3;
       expect(d).assertEqual(20003.0);
+
+      // Constructor call context
+      expect(new A(s1).f).assertEqual(20001.0);
+      expect(new A(s2).f).assertEqual(20002.0);
+      expect(new A(s3).f).assertEqual(20003.0);
+
+      // Function call context
+      expect(foo(s1)).assertEqual(20001.0);
+      expect(foo(s2)).assertEqual(20002.0);
+      expect(foo(s3)).assertEqual(20003.0);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_2400
      * @tc.name      testImplicitConversions0024
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from Color to double)
+     * @tc.desc      Assignment / constructor / function call contexts, widening primitive conversion, implicit (from Color to double)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: number;
       let s1: Color5 = Color5.Red;
       d = s1;
@@ -1388,17 +1443,28 @@ export default function ImplicitConversionsTest() {
       let s3: Color5 = Color5.Blue;
       d = s3;
       expect(d).assertEqual(3000000003.0);
+
+      // Constructor call context
+      expect(new A(s1).f).assertEqual(3000000001.0);
+      expect(new A(s2).f).assertEqual(3000000002.0);
+      expect(new A(s3).f).assertEqual(3000000003.0);
+
+      // Function call context
+      expect(foo(s1)).assertEqual(3000000001.0);
+      expect(foo(s2)).assertEqual(3000000002.0);
+      expect(foo(s3)).assertEqual(3000000003.0);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_2500
      * @tc.name      testImplicitConversions0025
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from byte to float)
+     * @tc.desc      Assignment / constructor contexts, widening primitive conversion, implicit (from byte to float)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: number;
       let s1: number = 0;
       d = s1;
@@ -1409,17 +1475,23 @@ export default function ImplicitConversionsTest() {
       let s3: number = 127;
       d = s3;
       expect(d).assertEqual(127.0);
+
+      // Constructor call context
+      expect(new A(s1).f).assertEqual(0.0);
+      expect(new A(s2).f).assertEqual(-128.0);
+      expect(new A(s3).f).assertEqual(127.0);
     });
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_2600
      * @tc.name      testImplicitConversions0026
-     * @tc.desc      Assignment context, variable, widening primitive conversion, implicit (from short to long)
+     * @tc.desc      Assignment / constructor contexts, widening primitive conversion, implicit (from short to long)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testImplicitConversions0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Assignment context
       let d: bigint;
       let s1: number = 0;
       d = BigInt(s1);
@@ -1430,6 +1502,11 @@ export default function ImplicitConversionsTest() {
       let s3: number = 32767;
       d = BigInt(s3);
       expect(d).assertEqual(32767n);
+
+      // Constructor call context
+      expect(new A1(BigInt(s1)).f).assertEqual(0n);
+      expect(new A1(BigInt(s2)).f).assertEqual(-32768n);
+      expect(new A1(BigInt(s3)).f).assertEqual(32767n);
     });
 
     /**
@@ -1559,142 +1636,6 @@ export default function ImplicitConversionsTest() {
 
     /**
      * @tc.number    SUB_IMPLICIT_CONVERSIONS_3400
-     * @tc.name      testImplicitConversions0034
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from Color to int)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color = Color.Red;
-      expect(new A(s1).f).assertEqual(0);
-      let s2: Color = Color.Green;
-      expect(new A(s2).f).assertEqual(1);
-      let s3: Color = Color.Blue;
-      expect(new A(s3).f).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3500
-     * @tc.name      testImplicitConversions0035
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from byte to long)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: number = 0;
-      expect(new A1(BigInt(s1)).f).assertEqual(0n);
-      let s2: number = -128;
-      expect(new A1(BigInt(s2)).f).assertEqual(-128n);
-      let s3: number = 127;
-      expect(new A1(BigInt(s3)).f).assertEqual(127n);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3600
-     * @tc.name      testImplicitConversions0036
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from Color to long)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color1 = Color1.Red;
-      expect(new A1(BigInt(s1)).f).assertEqual(100n);
-      let s2: Color1 = Color1.Green;
-      expect(new A1(BigInt(s2)).f).assertEqual(200n);
-      let s3: Color1 = Color1.Blue;
-      expect(new A1(BigInt(s3)).f).assertEqual(300n);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3700
-     * @tc.name      testImplicitConversions0037
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from Color to float)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color2 = Color2.Red;
-      expect(new A(s1).f).assertEqual(10.0);
-      let s2: Color2 = Color2.Green;
-      expect(new A(s2).f).assertEqual(20.0);
-      let s3: Color2 = Color2.Blue;
-      expect(new A(s3).f).assertEqual(30.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3800
-     * @tc.name      testImplicitConversions0038
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from Color to double)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color3 = Color3.Red;
-      expect(new A(s1).f).assertEqual(10001.0);
-      let s2: Color3 = Color3.Green;
-      expect(new A(s2).f).assertEqual(10002.0);
-      let s3: Color3 = Color3.Blue;
-      expect(new A(s3).f).assertEqual(10003.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3900
-     * @tc.name      testImplicitConversions0039
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from Color to number)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color4 = Color4.Red;
-      expect(new A(s1).f).assertEqual(20001.0);
-      let s2: Color4 = Color4.Green;
-      expect(new A(s2).f).assertEqual(20002.0);
-      let s3: Color4 = Color4.Blue;
-      expect(new A(s3).f).assertEqual(20003.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4000
-     * @tc.name      testImplicitConversions0040
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from Color to double)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color5 = Color5.Red;
-      expect(new A(s1).f).assertEqual(3000000001.0);
-      let s2: Color5 = Color5.Green;
-      expect(new A(s2).f).assertEqual(3000000002.0);
-      let s3: Color5 = Color5.Blue;
-      expect(new A(s3).f).assertEqual(3000000003.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4100
-     * @tc.name      testImplicitConversions0041
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from byte to float)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: number = 0;
-      expect(new A(s1).f).assertEqual(0.0);
-      let s2: number = -128;
-      expect(new A(s2).f).assertEqual(-128.0);
-      let s3: number = 127;
-      expect(new A(s3).f).assertEqual(127.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4200
      * @tc.name      testImplicitConversions0042
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from byte to double)
      * @tc.size      MediumTest
@@ -1711,7 +1652,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3500
      * @tc.name      testImplicitConversions0043
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from byte to number)
      * @tc.size      MediumTest
@@ -1728,7 +1669,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3600
      * @tc.name      testImplicitConversions0044
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from short to int)
      * @tc.size      MediumTest
@@ -1745,24 +1686,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4500
-     * @tc.name      testImplicitConversions0045
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from short to long)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: number = 0;
-      expect(new A1(BigInt(s1)).f).assertEqual(0n);
-      let s2: number = -32768;
-      expect(new A1(BigInt(s2)).f).assertEqual(-32768n);
-      let s3: number = 32767;
-      expect(new A1(BigInt(s3)).f).assertEqual(32767n);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3700
      * @tc.name      testImplicitConversions0046
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from short to float)
      * @tc.size      MediumTest
@@ -1779,7 +1703,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3800
      * @tc.name      testImplicitConversions0047
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit (from short to double)
      * @tc.size      MediumTest
@@ -1796,14 +1720,14 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_3900
      * @tc.name      testImplicitConversions0048
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from byte to byte)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 模拟 byte 类型入参和返回值
+    it("testImplicitConversions0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0)).assertEqual(0);
       expect(foo(-128)).assertEqual(-128);
       expect(foo(127)).assertEqual(127);
@@ -1812,14 +1736,14 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4000
      * @tc.name      testImplicitConversions0049
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from short to short)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 模拟 short 类型入参和返回值
+    it("testImplicitConversions0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0)).assertEqual(0);
       expect(foo(-32768)).assertEqual(-32768);
       expect(foo(32767)).assertEqual(32767);
@@ -1828,7 +1752,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4100
      * @tc.name      testImplicitConversions0050
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from int to int)
      * @tc.size      MediumTest
@@ -1844,7 +1768,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4200
      * @tc.name      testImplicitConversions0051
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from long to long)
      * @tc.size      MediumTest
@@ -1860,14 +1784,14 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4300
      * @tc.name      testImplicitConversions0052
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from float to float)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 模拟 float 类型入参和返回值
+    it("testImplicitConversions0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(+0.0)).assertEqual(+0.0);
       expect(foo(-0.0)).assertEqual(-0.0);
       expect(foo(3.4028234663852886e38)).assertEqual(3.4028234663852886e38);
@@ -1877,14 +1801,14 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4400
      * @tc.name      testImplicitConversions0053
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from double to double)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 模拟 double 类型入参和返回值
+    it("testImplicitConversions0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0.0)).assertEqual(0.0);
       expect(foo(-0.0)).assertEqual(-0.0);
       expect(foo(3.4028234663852886e38)).assertEqual(3.4028234663852886e38);
@@ -1894,21 +1818,21 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4500
      * @tc.name      testImplicitConversions0054
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from char to char)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 模拟 char 类型（Unicode 编码值）入参和返回值
+    it("testImplicitConversions0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0)).assertEqual(0); // c'\u0000'
       expect(foo(4095)).assertEqual(4095); // c'\u0FFF'
       expect(foo(65535)).assertEqual(65535); // c'\uFFFF'
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4600
      * @tc.name      testImplicitConversions0055
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from float to double)
      * @tc.size      MediumTest
@@ -1916,19 +1840,19 @@ export default function ImplicitConversionsTest() {
      * @tc.level     Level 2
      */
     it("testImplicitConversions0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: number = NaN; // 模拟 Float.NaN
+      let s: number = NaN;
       expect(isNaN(foo(s))).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4700
      * @tc.name      testImplicitConversions0056
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from byte to short)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 目标类型为 short
+    it("testImplicitConversions0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: number = 0;
       expect(foo(s1)).assertEqual(0);
       let s2: number = -128;
@@ -1938,7 +1862,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4800
      * @tc.name      testImplicitConversions0057
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from byte to int)
      * @tc.size      MediumTest
@@ -1955,7 +1879,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_4900
      * @tc.name      testImplicitConversions0058
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from short to number)
      * @tc.size      MediumTest
@@ -1972,7 +1896,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5000
      * @tc.name      testImplicitConversions0059
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from int to long)
      * @tc.size      MediumTest
@@ -1989,7 +1913,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5100
      * @tc.name      testImplicitConversions0060
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from int to double)
      * @tc.size      MediumTest
@@ -2006,7 +1930,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5200
      * @tc.name      testImplicitConversions0061
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from long to double)
      * @tc.size      MediumTest
@@ -2023,7 +1947,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5300
      * @tc.name      testImplicitConversions0062
      * @tc.desc      Call context, function, widening primitive conversion, implicit (from float to double)
      * @tc.size      MediumTest
@@ -2046,126 +1970,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6300
-     * @tc.name      testImplicitConversions0063
-     * @tc.desc      Call context, function, widening primitive conversion, implicit (from Color to int)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color = Color.Red;
-      expect(foo(s1)).assertEqual(0);
-      let s2: Color = Color.Green;
-      expect(foo(s2)).assertEqual(1);
-      let s3: Color = Color.Blue;
-      expect(foo(s3)).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6400
-     * @tc.name      testImplicitConversions0064
-     * @tc.desc      Call context, function, widening primitive conversion, implicit (from byte to long)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: number = 0;
-      expect(foo1(BigInt(s1))).assertEqual(0n);
-      let s2: number = -128;
-      expect(foo1(BigInt(s2))).assertEqual(-128n);
-      let s3: number = 127;
-      expect(foo1(BigInt(s3))).assertEqual(127n);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6500
-     * @tc.name      testImplicitConversions0065
-     * @tc.desc      Call context, function, widening primitive conversion, implicit (from Color to long)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color1 = Color1.Red;
-      expect(foo1(BigInt(s1))).assertEqual(100n);
-      let s2: Color1 = Color1.Green;
-      expect(foo1(BigInt(s2))).assertEqual(200n);
-      let s3: Color1 = Color1.Blue;
-      expect(foo1(BigInt(s3))).assertEqual(300n);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6600
-     * @tc.name      testImplicitConversions0066
-     * @tc.desc      Call context, function, widening primitive conversion, implicit (from Color to float)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color2 = Color2.Red;
-      expect(foo(s1)).assertEqual(10.0);
-      let s2: Color2 = Color2.Green;
-      expect(foo(s2)).assertEqual(20.0);
-      let s3: Color2 = Color2.Blue;
-      expect(foo(s3)).assertEqual(30.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6700
-     * @tc.name      testImplicitConversions0067
-     * @tc.desc      Call context, function, widening primitive conversion, implicit (from Color to double)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color3 = Color3.Red;
-      expect(foo(s1)).assertEqual(10001.0);
-      let s2: Color3 = Color3.Green;
-      expect(foo(s2)).assertEqual(10002.0);
-      let s3: Color3 = Color3.Blue;
-      expect(foo(s3)).assertEqual(10003.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6800
-     * @tc.name      testImplicitConversions0068
-     * @tc.desc      Call context, function, widening primitive conversion, implicit (from Color to number)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color4 = Color4.Red;
-      expect(foo(s1)).assertEqual(20001.0);
-      let s2: Color4 = Color4.Green;
-      expect(foo(s2)).assertEqual(20002.0);
-      let s3: Color4 = Color4.Blue;
-      expect(foo(s3)).assertEqual(20003.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6900
-     * @tc.name      testImplicitConversions0069
-     * @tc.desc      Call context, function, widening primitive conversion, implicit (from Color to double)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Color5 = Color5.Red;
-      expect(foo(s1)).assertEqual(3000000001.0);
-      let s2: Color5 = Color5.Green;
-      expect(foo(s2)).assertEqual(3000000002.0);
-      let s3: Color5 = Color5.Blue;
-      expect(foo(s3)).assertEqual(3000000003.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5400
      * @tc.name      testImplicitConversions0070
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2182,7 +1987,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5500
      * @tc.name      testImplicitConversions0071
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2199,7 +2004,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5600
      * @tc.name      testImplicitConversions0072
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2216,58 +2021,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7300
-     * @tc.name      testImplicitConversions0073
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: byte = 0b0 as byte;
-      expect(new A2(s1).f).assertEqual(0);
-      let s2: byte = Byte.MIN_VALUE;
-      expect(new A2(s2).f).assertEqual(-128);
-      let s3: byte = Byte.MAX_VALUE;
-      expect(new A2(s3).f).assertEqual(127);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7400
-     * @tc.name      testImplicitConversions0074
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: short = 0;
-      expect(new A(s1).f).assertEqual(0.0);
-      let s2: short = Short.MIN_VALUE;
-      expect(new A(s2).f).assertEqual(-32768.0);
-      let s3: short = Short.MAX_VALUE;
-      expect(new A(s3).f).assertEqual(32767.0);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7500
-     * @tc.name      testImplicitConversions0075
-     * @tc.desc      Call context, constructor, widening primitive conversion, implicit
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testImplicitConversions0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: int = 0;
-      expect(new A3(s1).f).assertEqual(0);
-      let s2: int = Int.MIN_VALUE;
-      expect(new A3(s2).f).assertEqual(-2147483648);
-      let s3: int = Int.MAX_VALUE;
-      expect(new A3(s3).f).assertEqual(2147483647);
-    });
-
-    /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5700
      * @tc.name      testImplicitConversions0076
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2284,7 +2038,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5800
      * @tc.name      testImplicitConversions0077
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2301,7 +2055,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_5900
      * @tc.name      testImplicitConversions0078
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2318,7 +2072,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6000
      * @tc.name      testImplicitConversions0079
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2335,7 +2089,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6100
      * @tc.name      testImplicitConversions0080
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2352,7 +2106,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6200
      * @tc.name      testImplicitConversions0081
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2369,7 +2123,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6300
      * @tc.name      testImplicitConversions0082
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2392,7 +2146,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6400
      * @tc.name      testImplicitConversions0083
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2409,7 +2163,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6500
      * @tc.name      testImplicitConversions0084
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2426,7 +2180,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6600
      * @tc.name      testImplicitConversions0085
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2443,7 +2197,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6700
      * @tc.name      testImplicitConversions0086
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2460,7 +2214,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6800
      * @tc.name      testImplicitConversions0087
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2477,7 +2231,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_6900
      * @tc.name      testImplicitConversions0088
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2494,7 +2248,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7000
      * @tc.name      testImplicitConversions0089
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2511,7 +2265,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7100
      * @tc.name      testImplicitConversions0090
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2528,7 +2282,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7200
      * @tc.name      testImplicitConversions0091
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2545,7 +2299,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7300
      * @tc.name      testImplicitConversions0092
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2562,7 +2316,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7400
      * @tc.name      testImplicitConversions0093
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2579,7 +2333,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7500
      * @tc.name      testImplicitConversions0094
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2596,7 +2350,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7600
      * @tc.name      testImplicitConversions0095
      * @tc.desc      Call context, constructor, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2613,7 +2367,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7700
      * @tc.name      testImplicitConversions0096
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2629,7 +2383,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7800
      * @tc.name      testImplicitConversions0097
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2645,7 +2399,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_7900
      * @tc.name      testImplicitConversions0098
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2661,7 +2415,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8000
      * @tc.name      testImplicitConversions0099
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2677,7 +2431,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8100
      * @tc.name      testImplicitConversions0100
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2694,7 +2448,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8200
      * @tc.name      testImplicitConversions0101
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2711,7 +2465,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8300
      * @tc.name      testImplicitConversions0102
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2728,7 +2482,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8400
      * @tc.name      testImplicitConversions0103
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2745,7 +2499,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8500
      * @tc.name      testImplicitConversions0104
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2762,7 +2516,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8600
      * @tc.name      testImplicitConversions0105
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2779,7 +2533,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8700
      * @tc.name      testImplicitConversions0106
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2796,7 +2550,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8800
      * @tc.name      testImplicitConversions0107
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2813,7 +2567,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_8900
      * @tc.name      testImplicitConversions0108
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2830,7 +2584,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_10900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9000
      * @tc.name      testImplicitConversions0109
      * @tc.desc      Call context, function, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2847,7 +2601,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9100
      * @tc.name      testImplicitConversions0110
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2867,7 +2621,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9200
      * @tc.name      testImplicitConversions0111
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2887,7 +2641,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9300
      * @tc.name      testImplicitConversions0112
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2907,7 +2661,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9400
      * @tc.name      testImplicitConversions0113
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2927,7 +2681,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9500
      * @tc.name      testImplicitConversions0114
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2947,7 +2701,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9600
      * @tc.name      testImplicitConversions0115
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2967,7 +2721,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9700
      * @tc.name      testImplicitConversions0116
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -2987,7 +2741,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9800
      * @tc.name      testImplicitConversions0117
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3007,7 +2761,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_9900
      * @tc.name      testImplicitConversions0118
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3027,7 +2781,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_11900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0100
      * @tc.name      testImplicitConversions0119
      * @tc.desc      Composite context, interface field, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3047,7 +2801,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0200
      * @tc.name      testImplicitConversions0120
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3068,7 +2822,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0300
      * @tc.name      testImplicitConversions0121
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3089,7 +2843,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0400
      * @tc.name      testImplicitConversions0122
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3110,7 +2864,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0500
      * @tc.name      testImplicitConversions0123
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3131,7 +2885,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0600
      * @tc.name      testImplicitConversions0124
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3154,7 +2908,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0700
      * @tc.name      testImplicitConversions0125
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3177,7 +2931,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0800
      * @tc.name      testImplicitConversions0126
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3194,7 +2948,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_0900
      * @tc.name      testImplicitConversions0127
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3211,7 +2965,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1000
      * @tc.name      testImplicitConversions0128
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3228,7 +2982,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_12900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1100
      * @tc.name      testImplicitConversions0129
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3245,7 +2999,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1200
      * @tc.name      testImplicitConversions0130
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3262,7 +3016,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1300
      * @tc.name      testImplicitConversions0131
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3279,7 +3033,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1400
      * @tc.name      testImplicitConversions0132
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3296,7 +3050,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1500
      * @tc.name      testImplicitConversions0133
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3313,7 +3067,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1600
      * @tc.name      testImplicitConversions0134
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3330,7 +3084,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1700
      * @tc.name      testImplicitConversions0135
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3347,7 +3101,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1800
      * @tc.name      testImplicitConversions0136
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3364,7 +3118,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_1900
      * @tc.name      testImplicitConversions0137
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3381,7 +3135,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2000
      * @tc.name      testImplicitConversions0138
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3398,7 +3152,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_13900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2100
      * @tc.name      testImplicitConversions0139
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3415,7 +3169,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2200
      * @tc.name      testImplicitConversions0140
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3432,7 +3186,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2300
      * @tc.name      testImplicitConversions0141
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3449,7 +3203,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2400
      * @tc.name      testImplicitConversions0142
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3466,7 +3220,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2500
      * @tc.name      testImplicitConversions0143
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3483,7 +3237,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2600
      * @tc.name      testImplicitConversions0144
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3500,7 +3254,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2700
      * @tc.name      testImplicitConversions0145
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3523,7 +3277,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2800
      * @tc.name      testImplicitConversions0146
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3540,7 +3294,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_2900
      * @tc.name      testImplicitConversions0147
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3557,7 +3311,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3000
      * @tc.name      testImplicitConversions0148
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3574,7 +3328,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_14900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3100
      * @tc.name      testImplicitConversions0149
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3591,7 +3345,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3200
      * @tc.name      testImplicitConversions0150
      * @tc.desc      Declaration context, constant declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3608,7 +3362,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3300
      * @tc.name      testImplicitConversions0151
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3629,7 +3383,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3400
      * @tc.name      testImplicitConversions0152
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3650,7 +3404,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3500
      * @tc.name      testImplicitConversions0153
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3671,7 +3425,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3600
      * @tc.name      testImplicitConversions0154
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3692,7 +3446,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3700
      * @tc.name      testImplicitConversions0155
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3715,7 +3469,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3800
      * @tc.name      testImplicitConversions0156
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3738,7 +3492,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_3900
      * @tc.name      testImplicitConversions0157
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3747,15 +3501,15 @@ export default function ImplicitConversionsTest() {
      */
     it("testImplicitConversions0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a1: A38 = new A38();
-      expect(a1.d.charCodeAt(0)).assertEqual(0);  // 使用 charCodeAt 获取 Unicode 数值
+      expect(a1.d.charCodeAt(0)).assertEqual(0);
       let a2: A39 = new A39();
-      expect(a2.d.charCodeAt(0)).assertEqual(4095); // Unicode 值 0x0FFF
+      expect(a2.d.charCodeAt(0)).assertEqual(4095);
       let a3: A40 = new A40();
-      expect(a3.d.charCodeAt(0)).assertEqual(65535); // Unicode 值 0xFFFF
+      expect(a3.d.charCodeAt(0)).assertEqual(65535);
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4000
      * @tc.name      testImplicitConversions0158
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3768,7 +3522,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4100
      * @tc.name      testImplicitConversions0159
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3785,7 +3539,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4200
      * @tc.name      testImplicitConversions0160
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3802,7 +3556,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4300
      * @tc.name      testImplicitConversions0161
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3819,7 +3573,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4400
      * @tc.name      testImplicitConversions0162
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3836,7 +3590,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4500
      * @tc.name      testImplicitConversions0163
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3853,7 +3607,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4600
      * @tc.name      testImplicitConversions0164
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3870,7 +3624,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4700
      * @tc.name      testImplicitConversions0165
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3887,7 +3641,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4800
      * @tc.name      testImplicitConversions0166
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3904,7 +3658,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_4900
      * @tc.name      testImplicitConversions0167
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3921,7 +3675,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5000
      * @tc.name      testImplicitConversions0168
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3938,7 +3692,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5100
      * @tc.name      testImplicitConversions0169
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3961,7 +3715,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5200
      * @tc.name      testImplicitConversions0170
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3978,7 +3732,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5300
      * @tc.name      testImplicitConversions0171
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -3995,7 +3749,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5400
      * @tc.name      testImplicitConversions0172
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4012,7 +3766,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5500
      * @tc.name      testImplicitConversions0173
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4029,7 +3783,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5600
      * @tc.name      testImplicitConversions0174
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4046,7 +3800,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5700
      * @tc.name      testImplicitConversions0175
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4063,7 +3817,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5800
      * @tc.name      testImplicitConversions0176
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4080,7 +3834,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_5900
      * @tc.name      testImplicitConversions0177
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4097,7 +3851,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6000
      * @tc.name      testImplicitConversions0178
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4114,7 +3868,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6100
      * @tc.name      testImplicitConversions0179
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4131,7 +3885,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6200
      * @tc.name      testImplicitConversions0180
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4148,7 +3902,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6300
      * @tc.name      testImplicitConversions0181
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4165,7 +3919,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6400
      * @tc.name      testImplicitConversions0182
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4182,7 +3936,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6500
      * @tc.name      testImplicitConversions0183
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4199,7 +3953,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6600
      * @tc.name      testImplicitConversions0184
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4216,7 +3970,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6700
      * @tc.name      testImplicitConversions0185
      * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4228,7 +3982,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6800
      * @tc.name      testImplicitConversions0186
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4242,7 +3996,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_6900
      * @tc.name      testImplicitConversions0187
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4256,7 +4010,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7000
      * @tc.name      testImplicitConversions0188
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4270,7 +4024,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7100
      * @tc.name      testImplicitConversions0189
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4284,7 +4038,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7200
      * @tc.name      testImplicitConversions0190
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4298,7 +4052,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7300
      * @tc.name      testImplicitConversions0191
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4312,7 +4066,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7400
      * @tc.name      testImplicitConversions0192
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4326,7 +4080,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7500
      * @tc.name      testImplicitConversions0193
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4340,7 +4094,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7600
      * @tc.name      testImplicitConversions0194
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4354,7 +4108,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7700
      * @tc.name      testImplicitConversions0195
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4368,7 +4122,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7800
      * @tc.name      testImplicitConversions0196
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4385,7 +4139,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_7900
      * @tc.name      testImplicitConversions0197
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4399,7 +4153,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8000
      * @tc.name      testImplicitConversions0198
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4413,7 +4167,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8100
      * @tc.name      testImplicitConversions0199
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4427,7 +4181,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8200
      * @tc.name      testImplicitConversions0200
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4441,7 +4195,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8300
      * @tc.name      testImplicitConversions0201
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4455,7 +4209,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8400
      * @tc.name      testImplicitConversions0202
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4469,7 +4223,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8500
      * @tc.name      testImplicitConversions0203
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4483,7 +4237,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8600
      * @tc.name      testImplicitConversions0204
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4497,7 +4251,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8700
      * @tc.name      testImplicitConversions0205
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4511,7 +4265,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8800
      * @tc.name      testImplicitConversions0206
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4525,7 +4279,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_8900
      * @tc.name      testImplicitConversions0207
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4539,7 +4293,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9000
      * @tc.name      testImplicitConversions0208
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4553,7 +4307,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9100
      * @tc.name      testImplicitConversions0209
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4567,7 +4321,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9200
      * @tc.name      testImplicitConversions0210
      * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4581,7 +4335,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9300
      * @tc.name      testImplicitConversions0211
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4602,7 +4356,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9400
      * @tc.name      testImplicitConversions0212
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4623,7 +4377,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9500
      * @tc.name      testImplicitConversions0213
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4644,7 +4398,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9600
      * @tc.name      testImplicitConversions0214
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4665,7 +4419,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9700
      * @tc.name      testImplicitConversions0215
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4688,7 +4442,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9800
      * @tc.name      testImplicitConversions0216
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4711,7 +4465,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_ONE_9900
      * @tc.name      testImplicitConversions0217
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4728,7 +4482,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0100
      * @tc.name      testImplicitConversions0218
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4742,7 +4496,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0200
      * @tc.name      testImplicitConversions0219
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4762,7 +4516,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0300
      * @tc.name      testImplicitConversions0220
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4782,7 +4536,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0400
      * @tc.name      testImplicitConversions0221
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4802,7 +4556,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0500
      * @tc.name      testImplicitConversions0222
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4822,7 +4576,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0600
      * @tc.name      testImplicitConversions0223
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4842,7 +4596,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0700
      * @tc.name      testImplicitConversions0224
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4862,7 +4616,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0800
      * @tc.name      testImplicitConversions0225
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4882,7 +4636,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_0900
      * @tc.name      testImplicitConversions0226
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4902,7 +4656,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1000
      * @tc.name      testImplicitConversions0227
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4922,7 +4676,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1100
      * @tc.name      testImplicitConversions0228
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4942,7 +4696,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1200
      * @tc.name      testImplicitConversions0229
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4971,7 +4725,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1300
      * @tc.name      testImplicitConversions0230
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -4991,7 +4745,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1400
      * @tc.name      testImplicitConversions0231
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5011,7 +4765,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1500
      * @tc.name      testImplicitConversions0232
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5031,7 +4785,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1600
      * @tc.name      testImplicitConversions0233
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5051,7 +4805,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1700
      * @tc.name      testImplicitConversions0234
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5071,7 +4825,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1800
      * @tc.name      testImplicitConversions0235
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5091,7 +4845,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_1900
      * @tc.name      testImplicitConversions0236
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5111,7 +4865,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2000
      * @tc.name      testImplicitConversions0237
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5131,7 +4885,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2100
      * @tc.name      testImplicitConversions0238
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5151,7 +4905,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2200
      * @tc.name      testImplicitConversions0239
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5171,7 +4925,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2300
      * @tc.name      testImplicitConversions0240
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5191,7 +4945,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2400
      * @tc.name      testImplicitConversions0241
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5211,7 +4965,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2500
      * @tc.name      testImplicitConversions0242
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5231,7 +4985,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2600
      * @tc.name      testImplicitConversions0243
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5251,7 +5005,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2700
      * @tc.name      testImplicitConversions0244
      * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
      * @tc.size      MediumTest
@@ -5271,7 +5025,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2800
      * @tc.name      testImplicitConversions0245
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5295,7 +5049,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_2900
      * @tc.name      testImplicitConversions0246
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5314,7 +5068,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3000
      * @tc.name      testImplicitConversions0247
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5330,7 +5084,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3100
      * @tc.name      testImplicitConversions0248
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5348,7 +5102,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3200
      * @tc.name      testImplicitConversions0249
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5365,7 +5119,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3300
      * @tc.name      testImplicitConversions0250
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5389,7 +5143,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3400
      * @tc.name      testImplicitConversions0251
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5413,7 +5167,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3500
      * @tc.name      testImplicitConversions0252
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5432,7 +5186,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3600
      * @tc.name      testImplicitConversions0253
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5456,7 +5210,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3700
      * @tc.name      testImplicitConversions0254
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5472,7 +5226,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3800
      * @tc.name      testImplicitConversions0255
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5491,7 +5245,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_3900
      * @tc.name      testImplicitConversions0256
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5506,7 +5260,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4000
      * @tc.name      testImplicitConversions0257
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5522,7 +5276,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4100
      * @tc.name      testImplicitConversions0258
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5537,7 +5291,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4200
      * @tc.name      testImplicitConversions0259
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5552,7 +5306,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4300
      * @tc.name      testImplicitConversions0260
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5570,7 +5324,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4400
      * @tc.name      testImplicitConversions0261
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5587,7 +5341,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4500
      * @tc.name      testImplicitConversions0262
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5611,7 +5365,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4600
      * @tc.name      testImplicitConversions0263
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5630,7 +5384,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4700
      * @tc.name      testImplicitConversions0264
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5654,7 +5408,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4800
      * @tc.name      testImplicitConversions0265
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5669,7 +5423,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_4900
      * @tc.name      testImplicitConversions0266
      * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
      * @tc.size      MediumTest
@@ -5688,7 +5442,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5000
      * @tc.name      testImplicitConversions0267
      * @tc.desc      Numeric enumeration conversion to long/number (enum2long_4)
      * @tc.size      MediumTest
@@ -5703,7 +5457,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5100
      * @tc.name      testImplicitConversions0268
      * @tc.desc      Numeric enumeration conversion to number (enum2long_5)
      * @tc.size      MediumTest
@@ -5719,7 +5473,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5200
      * @tc.name      testImplicitConversions0269
      * @tc.desc      Numeric enumeration conversion to long in constructor (enum2long_6)
      * @tc.size      MediumTest
@@ -5734,7 +5488,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5300
      * @tc.name      testImplicitConversions0270
      * @tc.desc      Numeric enumeration conversion in lambda (enum2long_7)
      * @tc.size      MediumTest
@@ -5749,7 +5503,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5400
      * @tc.name      testImplicitConversions0271
      * @tc.desc      Numeric enumeration conversion in composite object (enum2long_8)
      * @tc.size      MediumTest
@@ -5767,7 +5521,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5500
      * @tc.name      testImplicitConversions0272
      * @tc.desc      Numeric enumeration conversion in composite array (enum2long_9)
      * @tc.size      MediumTest
@@ -5784,7 +5538,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5600
      * @tc.name      testImplicitConversions0273
      * @tc.desc      String enumeration conversion in variable/constant declaration (enum2str_0)
      * @tc.size      MediumTest
@@ -5808,7 +5562,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27400
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5700
      * @tc.name      testImplicitConversions0274
      * @tc.desc      String enumeration conversion in variable assignment (enum2str_1)
      * @tc.size      MediumTest
@@ -5827,7 +5581,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27500
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5800
      * @tc.name      testImplicitConversions0275
      * @tc.desc      String enumeration conversion in field declaration (enum2str_2)
      * @tc.size      MediumTest
@@ -5842,7 +5596,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27600
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_5900
      * @tc.name      testImplicitConversions0276
      * @tc.desc      String enumeration conversion in field assignment (enum2str_3)
      * @tc.size      MediumTest
@@ -5861,7 +5615,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27700
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_6000
      * @tc.name      testImplicitConversions0277
      * @tc.desc      String enumeration conversion in function call (enum2str_4)
      * @tc.size      MediumTest
@@ -5876,7 +5630,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27800
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_6100
      * @tc.name      testImplicitConversions0278
      * @tc.desc      String enumeration conversion in method call (enum2str_5)
      * @tc.size      MediumTest
@@ -5892,7 +5646,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27900
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_6200
      * @tc.name      testImplicitConversions0279
      * @tc.desc      String enumeration conversion in constructor call (enum2str_6)
      * @tc.size      MediumTest
@@ -5907,7 +5661,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28000
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_6300
      * @tc.name      testImplicitConversions0280
      * @tc.desc      String enumeration conversion in lambda call (enum2str_7)
      * @tc.size      MediumTest
@@ -5922,7 +5676,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28100
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_6400
      * @tc.name      testImplicitConversions0281
      * @tc.desc      String enumeration conversion in composite object (enum2str_8)
      * @tc.size      MediumTest
@@ -5940,7 +5694,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28200
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_6500
      * @tc.name      testImplicitConversions0282
      * @tc.desc      String enumeration conversion in composite array (enum2str_9)
      * @tc.size      MediumTest
@@ -5959,7 +5713,7 @@ export default function ImplicitConversionsTest() {
     });
 
     /**
-     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28300
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_TWO_6600
      * @tc.name      testImplicitConversions0283
      * @tc.desc      String enumeration conversion to union type (enum2str_10)
      * @tc.size      MediumTest

@@ -22,7 +22,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { GlobalThis } from './Constants';
 import { Context } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { Camera_MediaType, Parameter_Setting } from './Constants';
+import { Camera_MediaType, Parameter_Setting, Camera_ErrorCode } from './Constants';
 
 const TAG = "CameraXts CameraUnitTest: ";
 const CAMERA_INVALID_ARGUMENT = 7400101;
@@ -180,6 +180,71 @@ async function createVideoOutput() {
 export default function cameraJSUnitOutput() {
   describe('cameraJSUnitOutput', () => {
     console.info(TAG + '----------cameraJSUnitOutput begin--------------');
+
+    let startVideoSession = async () => {
+      let ret = cameraObj.initCamera(GlobalThis.getInstance().getValue());
+      if (ret != 0) {
+        console.error(TAG + "cameraObj initCamera FAILED")
+        expect().assertFail();
+      }
+      let cameraInfo = cameraObj.getSupportedCameras();
+      if (isEmpty(cameraInfo)) {
+        console.error(TAG + "Entering GET_CAMERAS FAILED cameraArray is null || undefined");
+        expect().assertFail();
+      }
+      await createVideoOutput();
+      ret = cameraObj.createCameraInput();
+      if (ret) {
+        console.error(TAG + "cameraObj createCameraInput FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.cameraInputOpen();
+      if (ret) {
+        console.error(TAG + "cameraObj cameraInputOpen FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.createPreviewOutput();
+      if (ret) {
+        console.error(TAG + "cameraObj createPreviewOutput FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.createSession();
+      if (ret) {
+        console.error(TAG + "cameraObj createSession FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.sessionBegin();
+      if (ret) {
+        console.error(TAG + "cameraObj sessionBegin FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.sessionAddInput();
+      if (ret) {
+        console.error(TAG + "cameraObj sessionAddInput FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.sessionAddPreviewOutput();
+      if (ret) {
+        console.error(TAG + "cameraObj sessionAddPreviewOutput FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.sessionAddVideoOutput();
+      if (ret) {
+        console.error(TAG + "cameraObj sessionAddVideoOutput FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.sessionCommitConfig();
+      if (ret) {
+        console.error(TAG + "cameraObj sessionCommitConfig FAILED");
+        expect().assertFail();
+      }
+      ret = cameraObj.sessionStart();
+      if (ret) {
+        console.error(TAG + "cameraObj sessionStart FAILED");
+        expect().assertFail();
+      }
+    }
+
     beforeAll(async () => {
       console.info(TAG + 'getImageReceiverSurfaceId');
       await getImageReceiverSurfaceId();
@@ -193,7 +258,7 @@ export default function cameraJSUnitOutput() {
     });
     afterAll(() => {
       closeFd();
-      release();
+      cameraObj.releaseCamera()
       console.info(TAG + 'afterAll case');
     });
     /**
@@ -982,5 +1047,291 @@ export default function cameraJSUnitOutput() {
           expect().assertFail();
       }
  	  });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0100
+     * @tc.name     SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0100
+     * @tc.desc     test sub multimedia camera enum ColorSpaceName
+     * @tc.size     MEDIUMTEST
+     * @tc.type     Function
+     * @tc.level    Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0100', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0100"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        class TestEnumColorSpaceName {
+          static readonly BT2020_LOG_FULL = 0;
+          static readonly BT2020_LOG_LIMIT = 1;
+        }
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let enumVal = cameraObj.getEnumColorSpaceName(TestEnumColorSpaceName.BT2020_LOG_FULL)
+        console.info("ColorSpaceName BT2020_LOG_FULL: ", enumVal)
+        expect(enumVal).assertEqual(27)
+        enumVal = cameraObj.getEnumColorSpaceName(TestEnumColorSpaceName.BT2020_LOG_LIMIT)
+        console.info("ColorSpaceName BT2020_LOG_LIMIT: ", enumVal)
+        expect(enumVal).assertEqual(28)
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+        
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0200
+     * @tc.desc      test sub multimedia camera isLogViewAssistSupported all param ok
+     * @tc.size      MEDIUMTEST
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0200', Level.LEVEL0, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0200"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startVideoSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = cameraObj.isLogViewAssistSupported(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`isLogViewAssistSupported, ret: ${isSupported}`)
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.releaseCamera()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0300
+     * @tc.desc      test sub multimedia camera isLogViewAssistSupported with first param null
+     * @tc.size      MEDIUMTEST
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0300', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0300"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startVideoSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = cameraObj.isLogViewAssistSupported(Parameter_Setting.FIRST_PARAMETER_ERROR)
+        console.info(`isLogViewAssistSupported, ret: ${isSupported}`)
+        expect(isSupported).assertFalse();
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.releaseCamera()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0400
+     * @tc.desc      test sub multimedia camera setLogViewAssistEnable with all param ok
+     * @tc.size      MEDIUMTEST
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0400', Level.LEVEL1, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0400"
+      let CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED = 7400114
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startVideoSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = cameraObj.isLogViewAssistSupported(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`isLogViewAssistSupported, ret: ${isSupported}`)
+        if (isSupported) {
+          let ret = cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, true)
+          console.info(`setLogViewAssist enable, ret: ${ret}`)
+          expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+          ret = cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, false)
+          console.info(`setLogViewAssist disable , ret: ${ret}`)
+          expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        } else {
+          try {
+            cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, true)
+          } catch (err) {
+            console.info(`setLogViewAssist enable, err: ${JSON.stringify(err)}`)
+            expect(err.code == CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
+          }
+          try {
+            cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, false)
+          } catch (err) {
+            console.info(`setLogViewAssist disable, err: ${JSON.stringify(err)}`)
+            expect(err.code == CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
+          }
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.releaseCamera()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0500
+     * @tc.desc      test sub multimedia camera setLogViewAssistEnable with firse param null
+     * @tc.size      MEDIUMTEST
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0500', Level.LEVEL1, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0500"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startVideoSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let ret = cameraObj.setLogViewAssistEnable(Parameter_Setting.FIRST_PARAMETER_ERROR, true)
+        console.info(`setLogViewAssist enable, ret: ${ret}`)
+        expect(ret).assertEqual(Camera_ErrorCode.CAMERA_INVALID_ARGUMENT);
+        ret = cameraObj.setLogViewAssistEnable(Parameter_Setting.FIRST_PARAMETER_ERROR, false)
+        console.info(`setLogViewAssist disable , ret: ${ret}`)
+        expect(ret).assertEqual(Camera_ErrorCode.CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.releaseCamera()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0600
+     * @tc.desc      test sub multimedia camera setLogViewAssistEnable with session not config
+     * @tc.size      MEDIUMTEST
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0600', Level.LEVEL1, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0600"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        cameraObj.getSupportedCameras();
+        await createVideoOutput();
+        cameraObj.createCameraInput();
+        cameraObj.cameraInputOpen();
+        cameraObj.createPreviewOutput();
+        cameraObj.createSession();
+        cameraObj.sessionBegin();
+        cameraObj.sessionAddInput();
+        cameraObj.sessionAddPreviewOutput();
+        cameraObj.sessionAddVideoOutput();
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = cameraObj.isLogViewAssistSupported(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`isLogViewAssistSupported, ret: ${isSupported}`)
+        if (isSupported) {
+          let ret = cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, true)
+          console.info(`setLogViewAssist enable, ret: ${ret}`)
+          expect(ret).assertEqual(Camera_ErrorCode.CAMERA_SESSION_NOT_CONFIG);
+          ret = cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, false)
+          console.info(`setLogViewAssist disable , ret: ${ret}`)
+          expect(ret).assertEqual(Camera_ErrorCode.CAMERA_SESSION_NOT_CONFIG);
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0700
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0700
+     * @tc.desc      test sub multimedia camera setLogViewAssistEnable whit mo session
+     * @tc.size      MEDIUMTEST
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0700', Level.LEVEL1, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_RECORD_LOG_0700"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let ret = cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        if (ret != 0) {
+          console.error(TAG + "cameraObj initCamera FAILED")
+          expect().assertFail();
+        }
+        let cameraInfo = cameraObj.getSupportedCameras();
+        if (isEmpty(cameraInfo)) {
+          console.error(TAG + "Entering GET_CAMERAS FAILED cameraArray is null || undefined");
+          expect().assertFail();
+        }
+        await createVideoOutput();
+        ret = cameraObj.createCameraInput();
+        if (ret) {
+          console.error(TAG + "cameraObj createCameraInput FAILED");
+          expect().assertFail();
+        }
+        ret = cameraObj.cameraInputOpen();
+        if (ret) {
+          console.error(TAG + "cameraObj cameraInputOpen FAILED");
+          expect().assertFail();
+        }
+        ret = cameraObj.createPreviewOutput();
+        if (ret) {
+          console.error(TAG + "cameraObj createPreviewOutput FAILED");
+          expect().assertFail();
+        }
+ 
+        //--------------------------------------------测试过程------------------------------------------------------
+        let isSupported = cameraObj.isLogViewAssistSupported(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`isLogViewAssistSupported, ret: ${isSupported}`)
+        expect(isSupported == false).assertTrue();
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+ 
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
   })
 }

@@ -59,6 +59,8 @@
         "MainAbility/pages/scrollDefault/scrollDefault3",
         "MainAbility/pages/FrameNode/getFrameNodeScroller",
         "MainAbility/pages/FrameNode/scrollerGetFrameNode",
-        "MainAbility/pages/scrollDefault/scrollPropertiesTest"
+        "MainAbility/pages/scrollDefault/scrollPropertiesTest",
+        "MainAbility/pages/ScrollScrollBarHeight",
+        "MainAbility/pages/ScrollBarHeightModifier"
     ]
 }

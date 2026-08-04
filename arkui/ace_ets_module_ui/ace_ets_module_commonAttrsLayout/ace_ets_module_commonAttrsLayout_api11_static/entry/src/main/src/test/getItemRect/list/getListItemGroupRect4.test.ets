@@ -92,7 +92,7 @@ it('getListItemGroupRect4_static_0100', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
-        await CommonFunc.getComponentRect('getListItemGroupRect4_listItemGroup_0') as RectValue;
+        CommonFunc.getComponentRect('getListItemGroupRect4_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -151,7 +151,7 @@ it('getListItemGroupRect4_static_0200', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
-        await CommonFunc.getComponentRect('getListItemGroupRect4_listItemGroup_0') as RectValue;
+        CommonFunc.getComponentRect('getListItemGroupRect4_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -215,7 +215,7 @@ it('getListItemGroupRect4_static_0300', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
-        await CommonFunc.getComponentRect('getListItemGroupRect4_listItemGroup_0') as RectValue;
+        CommonFunc.getComponentRect('getListItemGroupRect4_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);

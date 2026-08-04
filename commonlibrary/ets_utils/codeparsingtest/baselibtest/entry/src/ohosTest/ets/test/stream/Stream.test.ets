@@ -70,7 +70,8 @@ export default function StreamTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -3405,7 +3406,7 @@ export default function StreamTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     })
 

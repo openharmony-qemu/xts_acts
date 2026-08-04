@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2025 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -34,13 +35,21 @@ export function test2(): Promise<string> {
 }
 
 export async function testUI(): Promise<string> {
-  await testUISec()
-  return ''
+  return new Promise<string>((re, je) => {
+    waitForCompletion(async () => {
+      await testUISec()
+      re('')
+    })
+  })
 }
 
 export async function testUI1(): Promise<string> {
-  await testUISec()
-  return ''
+  return new Promise<string>((re, je) => {
+    waitForCompletion(async () => {
+      await testUISec()
+      re('')
+    })
+  })
 }
 
 export class Contexts {

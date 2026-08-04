@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -151,7 +152,12 @@ export default function lifecycleStaticTest() {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.test.lifecycle_crossplatform_xts.static");
+      let cmd = "aa start -a EntryAbility -b com.test.lifecycle_crossplatform_xts.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       uiAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       hilog.info(domain, tag, `uiAbilityContext: ${!!uiAbilityContext!}`);

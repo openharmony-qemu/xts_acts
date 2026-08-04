@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -79,10 +79,10 @@ export default function MultiEntry() {
 it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0100 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
       await (btn1?.click() as Promise<void>)
@@ -116,15 +116,15 @@ it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0200 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('replacePathByNameId'));
       await (btn1?.click() as Promise<void>)
       console.info('[MultiEntry_0200] btn1 click');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
       let strJson: string = inspector.getInspectorByKey('detailTextId');
       let obj = JSON.parseJsonElement(strJson);
@@ -149,10 +149,10 @@ it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0300 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
       await (btn1?.click() as Promise<void>)
@@ -187,10 +187,10 @@ it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0400 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
       await (btn1?.click() as Promise<void>)
@@ -222,10 +222,10 @@ it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0500 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
       await (btn1?.click() as Promise<void>)
@@ -257,10 +257,10 @@ it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0600 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
       await (btn1?.click() as Promise<void>)
@@ -292,10 +292,10 @@ it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
 it('MultiEntry_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('MultiEntry_0700 START');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
       await (btn1?.click() as Promise<void>)

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -89,6 +90,11 @@ let caCert: Uint8Array = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x0
   0x77, 0x34, 0x8f, 0xca, 0xea, 0xcf, 0x3f, 0x31, 0x3e, 0xe3, 0x88, 0xe3, 0x80, 0x49, 0x25, 0xc8,
   0x97, 0xb5, 0x9d, 0x9a, 0x99, 0x4d, 0xb0, 0x3c, 0xf8, 0x4a, 0x00, 0x9b, 0x64, 0xdd, 0x9f, 0x39,
   0x4b, 0xd1, 0x27, 0xd7, 0xb8]);
+
+let maxCertData: Uint8Array = new Uint8Array(caCert.length * 8);
+for (let i = 0; i < 8; i++) {
+  maxCertData.set(caCert, i * caCert.length);
+}
 
 let priEccCredData: Uint8Array = new Uint8Array([
   0x30, 0x82, 0x04, 0x6a, 0x02, 0x01, 0x03, 0x30, 0x82, 0x04, 0x30, 0x06, 0x09, 0x2a, 0x86, 0x48,
@@ -735,6 +741,32 @@ export default function api16CertFuncTestUnit() {
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0020 end');
       done();
-    }); 
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0024
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0024
+     * @tc.desc   certData exceeds 8KB limit for PEM_DER format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0024 start');
+      let certBlob: certManager.CertBlob = {
+        certData: maxCertData,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try {
+        await certManager.installUserTrustedCertificate(certBlob);
+      } catch (error) {
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0024 e.code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0024 end');
+      done();
+    });
+
   })
 }

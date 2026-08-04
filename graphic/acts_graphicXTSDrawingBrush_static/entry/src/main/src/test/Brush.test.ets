@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +21,7 @@ import { getRandomNumber } from './Util.test';
 import { BusinessError } from '@ohos.base';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 
-export default function brushTest() {
+export default function brushTest(): void {
   describe('DrawingTsBrushTest', () => {
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -365,7 +366,7 @@ export default function brushTest() {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
     /**

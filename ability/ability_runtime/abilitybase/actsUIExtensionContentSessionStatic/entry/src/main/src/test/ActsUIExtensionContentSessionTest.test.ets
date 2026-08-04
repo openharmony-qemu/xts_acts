@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,8 +48,8 @@ const ERROR_CODE_401: int = 401;
 const ERROR_CODE_1600050: int = 16000050;
 const TEST_RESULT_KEY: string = 'result';
 
-async function msSleep(count: int) {
-  await Utils.msSleep(count);
+function msSleep(count: int) {
+  waitForCompletion(async ()=> { await Utils.msSleep(count); });
 }
 
 let sub: commonEventManager.CommonEventSubscriber;
@@ -57,12 +58,17 @@ let mpEnable: string = PARAM_FAIL;
 
 export default function ActsUIExtensionContentSessionTest() {
   describe('ActsUIExtensionContentSessionTest', () => {
-    beforeAll(async () => {
+    beforeAll(() => {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await msSleep(WAIT_TIME2000);
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-      await msSleep(WAIT_TIME2000);
+      msSleep(WAIT_TIME2000);
+      let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+        cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
+      msSleep(WAIT_TIME2000);
       
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {

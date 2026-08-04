@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -29,9 +30,6 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { BaseClass, Event } from '../utils/Model';
 
-function assertIllegalLockStateError(e: Error): void {
-  expect(e.name).assertEqual('IllegalLockStateError')
-}
 
 export default function RWLockTest(): void {
   describe('RWLockTest', (): void => {
@@ -51,35 +49,33 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest001';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        await lock.lock()
+        let lock = new RWLock().readLock()
+        lock.lock()
         count++
         lock.unlock()
-        let func = async (): Promise<void> => {
-          await lock.lock()
+        let func = async () => {
+          lock.lock()
           count++
           lock.unlock()
         }
         await func()
-        await new Promise<void>((resolve, reject) => {
-          (async (): Promise<void> => {
-            await lock.lock()
-            count++
-            resolve(undefined)
-          })().catch(reject)
+        await new Promise<void>((resolve) => {
+          lock.lock()
+          count++
+          resolve(undefined)
         }).then(() => {
           lock.unlock()
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<Promise<void>>(async (): Promise<void> => {
-          await lock.lock()
+        eaw.run<void>(() => {
+          lock.lock()
           count++
           lock.unlock()
-        })
+        }).Await()
         eaw.join()
-        setTimeout(async () => {
-          await lock.lock()
+        setTimeout(() => {
+          lock.lock()
           count++
           lock.unlock()
         }, 10)
@@ -104,33 +100,31 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest002';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        await lock.lock()
+        let lock = new RWLock().readLock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
+        let func = async () => {
           count++
           lock.unlock()
         }
         await func()
-        await new Promise<void>((resolve, reject) => {
-          (async (): Promise<void> => {
-            await lock.lock()
-            count++
-            resolve(undefined)
-          })().catch(reject)
+        await new Promise<void>((resolve) => {
+          lock.lock()
+          count++
+          resolve(undefined)
         }).then(() => {
         })
-        await taskpool.execute(async () => {
+        await taskpool.execute(() => {
           count++
           lock.unlock()
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<Promise<void>>(async (): Promise<void> => {
-          await lock.lock()
+        eaw.run<void>(() => {
+          lock.lock()
           count++
-        })
-        eaw.quit()
+        }).Await()
+        eaw.join()
         setTimeout(() => {
           count++
           lock.unlock()
@@ -156,29 +150,29 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest003';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        let lock2 = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        let lock3 = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        let lock4 = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        await lock.lock()
+        let lock = new RWLock().readLock()
+        let lock2 = new RWLock().readLock()
+        let lock3 = new RWLock().readLock()
+        let lock4 = new RWLock().readLock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
-          await lock2.lock()
+        let func = async () => {
+          lock2.lock()
           count++
         }
-        await func()
-        await taskpool.execute(async () => {
+        func()
+        await taskpool.execute(() => {
           count++
           lock.unlock()
-          await lock3.lock()
+          lock3.lock()
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<Promise<void>>(async (): Promise<void> => {
+        eaw.run<void>(() => {
           count++
           lock2.unlock()
-          await lock4.lock()
-        })
+          lock4.lock()
+        }).Await()
         eaw.join()
         await new Promise<void>((resolve) => {
           count++
@@ -209,14 +203,14 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest004';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
+        let lock = new RWLock().readLock()
         for (let i = 0; i < 1000; i++) {
-          await lock.lock()
+          lock.lock()
           count++
           lock.unlock()
         }
-        let func = async (): Promise<void> => {
-          await lock.lock()
+        let func = async () => {
+          lock.lock()
           count++
           lock.unlock()
         }
@@ -240,16 +234,16 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest005';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        await lock.lock()
-        await lock.lock()
+        let lock = new RWLock().readLock()
+        lock.lock()
+        lock.lock()
         lock.unlock()
         lock.unlock()
         try {
           lock.unlock()
         } catch (e) {
           count++
-          assertIllegalLockStateError(e as Error)
+          expect(e.message).assertContain('state is already unlocked')
         }
         console.info(`${tag} test result: ${count}`);
         expect(count).assertEqual(1)
@@ -270,10 +264,10 @@ export default function RWLockTest(): void {
         console.info(`${tag} test start`);
         let count = 0
         let class1 = new BaseClass()
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
+        let lock = new RWLock().readLock()
         for (let i = 0; i < 100; i++) {
-          taskpool.execute(async () => {
-            await lock.lock()
+          taskpool.execute(() => {
+            lock.lock()
             count++
             class1.increaseCount()
             lock.unlock()
@@ -282,18 +276,18 @@ export default function RWLockTest(): void {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          eaw.run<Promise<void>>(async (): Promise<void> => {
-            await lock.lock()
+          eaw.run<void>(() => {
+            lock.lock()
             count++
             class1.increaseCount()
             lock.unlock()
           })
-          eaw.quit()
+          eaw.join()
         }
-        await lock.lock()
+        lock.lock()
         count++
         class1.increaseCount()
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
         }
         await func()
@@ -319,10 +313,10 @@ export default function RWLockTest(): void {
         console.info(`${tag} test start`);
         let count = 0
         let finish = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
+        let lock = new RWLock().readLock()
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(async () => {
-            await lock.lock()
+          taskpool.execute(() => {
+            lock.lock()
             for (let j = 0; j < 1000; j++) {
               count++
             }
@@ -334,19 +328,19 @@ export default function RWLockTest(): void {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          await eaw.run<Promise<void>>(async (): Promise<void> => {
-            await lock.lock()
+          eaw.run<void>(() => {
+            lock.lock()
             for (let j = 0; j < 1000; j++) {
               count++
             }
             lock.unlock()
-          })
-          eaw.quit()
+          }).Await()
+          eaw.join()
           finish++
         }
-        await lock.lock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
         }
         await func()
@@ -373,10 +367,10 @@ export default function RWLockTest(): void {
         console.info(`${tag} test start`);
         let count = 0
         let class1 = new BaseClass()
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
+        let lock = new RWLock().readLock()
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(async () => {
-            await lock.lock()
+          taskpool.execute(() => {
+            lock.lock()
             count++
             class1.increaseCount()
             throw new Error("error")
@@ -390,18 +384,18 @@ export default function RWLockTest(): void {
           eaw.setUncaughtExceptionHandler(() => {
             lock.unlock()
           })
-          eaw.run<Promise<void>>(async (): Promise<void> => {
-            await lock.lock()
+          eaw.run<void>(() => {
+            lock.lock()
             count++
             class1.increaseCount()
             throw new Error("error")
           })
-          eaw.quit()
+          eaw.join()
         }
-        await lock.lock()
+        lock.lock()
         count++
         class1.increaseCount()
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
         }
         await func()
@@ -427,23 +421,23 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest009';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        let lock2 = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        let lock3 = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        await lock.lock()
+        let lock = new RWLock().readLock()
+        let lock2 = new RWLock().readLock()
+        let lock3 = new RWLock().readLock()
+        lock.lock()
         count++
-        await lock2.lock()
+        lock2.lock()
         count++
-        await lock3.lock()
+        lock3.lock()
         count++
         lock.unlock()
         lock2.unlock()
         lock3.unlock()
-        await lock.lock()
+        lock.lock()
         count++
-        await lock2.lock()
+        lock2.lock()
         count++
-        await lock3.lock()
+        lock3.lock()
         count++
         lock3.unlock()
         lock2.unlock()
@@ -466,13 +460,13 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest010';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        let lock2 = new concurrency.stackless.AsyncReadWriteLock().readLock()
+        let lock = new RWLock().readLock()
+        let lock2 = new RWLock().readLock()
         let event1 = new Event()
         let event2 = new Event()
         let class1 = new BaseClass()
-        taskpool.execute(async () => {
-          await lock.lock()
+        taskpool.execute(() => {
+          lock.lock()
           event1.Fire()
           count++
           class1.increaseCount()
@@ -481,8 +475,8 @@ export default function RWLockTest(): void {
         })
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<Promise<void>>(async (): Promise<void> => {
-          await lock2.lock()
+        eaw.run<void>(() => {
+          lock2.lock()
           event2.Fire()
           count++
           class1.increaseCount()
@@ -490,11 +484,11 @@ export default function RWLockTest(): void {
           lock.unlock()
         })
         eaw.join()
-        await lock.lock()
-        await lock2.lock()
+        lock.lock()
+        lock2.lock()
         count++
           class1.increaseCount()
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
           lock2.unlock()
         }
@@ -521,35 +515,33 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest011';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        await lock.lock()
+        let lock = new RWLock().writeLock()
+        lock.lock()
         count++
         lock.unlock()
-        let func = async (): Promise<void> => {
-          await lock.lock()
+        let func = async () => {
+          lock.lock()
           count++
           lock.unlock()
         }
         await func()
-        await new Promise<void>((resolve, reject) => {
-          (async (): Promise<void> => {
-            await lock.lock()
-            count++
-            resolve(undefined)
-          })().catch(reject)
+        await new Promise<void>((resolve) => {
+          lock.lock()
+          count++
+          resolve(undefined)
         }).then(() => {
           lock.unlock()
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<Promise<void>>(async (): Promise<void> => {
-          await lock.lock()
+        eaw.run<void>(() => {
+          lock.lock()
           count++
           lock.unlock()
-        })
+        }).Await()
         eaw.join()
-        setTimeout(async () => {
-          await lock.lock()
+        setTimeout(() => {
+          lock.lock()
           count++
           lock.unlock()
         }, 10)
@@ -574,33 +566,31 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest012';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        await lock.lock()
+        let lock = new RWLock().writeLock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
+        let func = async () => {
           count++
           lock.unlock()
         }
         await func()
-        await new Promise<void>((resolve, reject) => {
-          (async (): Promise<void> => {
-            await lock.lock()
-            count++
-            resolve(undefined)
-          })().catch(reject)
+        await new Promise<void>((resolve) => {
+          lock.lock()
+          count++
+          resolve(undefined)
         }).then(() => {
         })
-        await taskpool.execute(async () => {
+        await taskpool.execute(() => {
           count++
           lock.unlock()
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<Promise<void>>(async (): Promise<void> => {
-          await lock.lock()
+        eaw.run<void>(() => {
+          lock.lock()
           count++
-        })
-        eaw.quit()
+        }).Await()
+        eaw.join()
         setTimeout(() => {
           count++
           lock.unlock()
@@ -626,29 +616,29 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest013';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        let lock2 = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        let lock3 = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        let lock4 = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        await lock.lock()
+        let lock = new RWLock().writeLock()
+        let lock2 = new RWLock().writeLock()
+        let lock3 = new RWLock().writeLock()
+        let lock4 = new RWLock().writeLock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
-          await lock2.lock()
+        let func = async () => {
+          lock2.lock()
           count++
         }
-        await func()
-        await taskpool.execute(async () => {
+        func()
+        await taskpool.execute(() => {
           count++
           lock.unlock()
-          await lock3.lock()
+          lock3.lock()
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<Promise<void>>(async (): Promise<void> => {
+        eaw.run<void>(() => {
           count++
           lock2.unlock()
-          await lock4.lock()
-        })
+          lock4.lock()
+        }).Await()
         eaw.join()
         await new Promise<void>((resolve) => {
           count++
@@ -679,14 +669,14 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest014';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
+        let lock = new RWLock().writeLock()
         for (let i = 0; i < 1000; i++) {
-          await lock.lock()
+          lock.lock()
           count++
           lock.unlock()
         }
-        let func = async (): Promise<void> => {
-          await lock.lock()
+        let func = async () => {
+          lock.lock()
           count++
           lock.unlock()
         }
@@ -710,14 +700,14 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest015';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        await lock.lock()
+        let lock = new RWLock().writeLock()
+        lock.lock()
         lock.unlock()
         try {
           lock.unlock()
         } catch (e) {
           count++
-          assertIllegalLockStateError(e as Error)
+          expect(e.message).assertContain('state is already unlocked')
         }
         console.info(`${tag} test result: ${count}`);
         expect(count).assertEqual(1)
@@ -737,10 +727,10 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest016';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
+        let lock = new RWLock().writeLock()
         for (let i = 0; i < 100; i++) {
-          taskpool.execute(async () => {
-            await lock.lock()
+          taskpool.execute(() => {
+            lock.lock()
             count++
             lock.unlock()
           })
@@ -748,16 +738,16 @@ export default function RWLockTest(): void {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          eaw.run<Promise<void>>(async (): Promise<void> => {
-            await lock.lock()
+          eaw.run<void>(() => {
+            lock.lock()
             count++
             lock.unlock()
           })
-          eaw.quit()
+          eaw.join()
         }
-        await lock.lock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
         }
         await func()
@@ -782,10 +772,10 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest017';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
+        let lock = new RWLock().writeLock()
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(async () => {
-            await lock.lock()
+          taskpool.execute(() => {
+            lock.lock()
             for (let j = 0; j < 1000; j++) {
               count++
             }
@@ -795,18 +785,18 @@ export default function RWLockTest(): void {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          eaw.run<Promise<void>>(async (): Promise<void> => {
-            await lock.lock()
+          eaw.run<void>(() => {
+            lock.lock()
             for (let j = 0; j < 1000; j++) {
               count++
             }
             lock.unlock()
           })
-          eaw.quit()
+          eaw.join()
         }
-        await lock.lock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
         }
         await func()
@@ -832,10 +822,10 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest018';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
+        let lock = new RWLock().writeLock()
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(async () => {
-            await lock.lock()
+          taskpool.execute(() => {
+            lock.lock()
             count++
             throw new Error("error")
           }).finally(() => {
@@ -845,23 +835,19 @@ export default function RWLockTest(): void {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          try {
-            await eaw.run<Promise<void>>(async (): Promise<void> => {
-              await lock.lock()
-              try {
-                count++
-                throw new Error("error")
-              } finally {
-                lock.unlock()
-              }
-            })
-          } catch (e) {
-          }
+          eaw.setUncaughtExceptionHandler(() => {
+            lock.unlock()
+          })
+          eaw.run<void>(() => {
+            lock.lock()
+            count++
+            throw new Error("error")
+          })
           eaw.join()
         }
-        await lock.lock()
+        lock.lock()
         count++
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
         }
         await func()
@@ -887,23 +873,23 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest019';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        let lock2 = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        let lock3 = new concurrency.stackless.AsyncReadWriteLock().writeLock()
-        await lock.lock()
+        let lock = new RWLock().writeLock()
+        let lock2 = new RWLock().writeLock()
+        let lock3 = new RWLock().writeLock()
+        lock.lock()
         count++
-        await lock2.lock()
+        lock2.lock()
         count++
-        await lock3.lock()
+        lock3.lock()
         count++
         lock.unlock()
         lock2.unlock()
         lock3.unlock()
-        await lock.lock()
+        lock.lock()
         count++
-        await lock2.lock()
+        lock2.lock()
         count++
-        await lock3.lock()
+        lock3.lock()
         count++
         lock3.unlock()
         lock2.unlock()
@@ -927,12 +913,12 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest021';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock().readLock()
-        let lock2 = new concurrency.stackless.AsyncReadWriteLock().readLock()
+        let lock = new RWLock().readLock()
+        let lock2 = new RWLock().readLock()
         for (let i = 0; i < 100; i++) {
-          await lock.lock()
+          lock.lock()
         }
-        await taskpool.execute(async () => {
+        await taskpool.execute(() => {
           for (let i = 0; i < 100; i++) {
             count++
             lock.unlock()
@@ -940,20 +926,20 @@ export default function RWLockTest(): void {
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<Promise<void>>(async (): Promise<void> => {
+        eaw.run<void>(() => {
           for (let i = 0; i < 100; i++) {
-            await lock.lock()
+            lock.lock()
           }
-        })
-        eaw.quit()
+        }).Await()
+        eaw.join()
         for (let i = 0; i < 100; i++) {
           count++
           lock.unlock()
         }
-        await lock.lock()
-        await lock2.lock()
+        lock.lock()
+        lock2.lock()
         count++
-        let func = async (): Promise<void> => {
+        let func = async () => {
           lock.unlock()
           lock2.unlock()
         }
@@ -979,17 +965,32 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest022';
         console.info(`${tag} test start`);
         let count = 0
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let rLock = lock.readLock()
         let wLock = lock.writeLock()
-        await wLock.lock()
+        wLock.lock()
+        try {
+          rLock.unlock()
+        } catch (e) {
+          console.log(`TESTCASE ${tag} error1: ` + e);
+          expect(e.message).assertContain('state is already unlocked')
+          count++
+        }
+        wLock.unlock()
+        rLock.lock()
+        try {
+          wLock.unlock()
+        } catch (e) {
+          console.log(`TESTCASE ${tag} error2: ` + e);
+          expect(e.message).assertContain('state is already unlocked')
+          count++
+        }
         rLock.unlock()
-        count++
-        await rLock.lock()
+        wLock.lock()
         wLock.unlock()
-        count++
-        await wLock.lock()
-        wLock.unlock()
+        while (count < 2) {
+          await Utils.msSleep(200)
+        }
         console.info(`${tag} test result: ${count}`);
         expect(count).assertEqual(2)
         Done()
@@ -1008,33 +1009,33 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest023';
         console.info(`${tag} test start`);
         let result = ''
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let rLock = lock.readLock()
         let wLock = lock.writeLock()
-        await wLock.lock()
+        wLock.lock()
         result += '0'
-        taskpool.execute(async () => {
-          await rLock.lock()
+        taskpool.execute(() => {
+          rLock.lock()
           result += '2'
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<void>(() => {
+        eaw.run<void>(() => {
           result += '1'
           wLock.unlock()
         })
-        eaw.quit()
+        eaw.join()
         while (result.indexOf('2') < 0) {
           await Utils.msSleep(100)
         }
         let eaw2 = new EAWorker()
         eaw2.start()
-        await eaw2.run<void>(() => {
+        eaw2.run<void>(() => {
           rLock.unlock()
           result += '3'
-        })
+        }).Await()
         eaw2.join()
-        await wLock.lock()
+        wLock.lock()
         result += '4'
         wLock.unlock()
         console.log(`TESTCASE ${tag} end, result: ` + result);
@@ -1055,45 +1056,47 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest024';
         console.info(`${tag} test start`);
         let result = ''
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let rLock = lock.readLock()
         let wLock = lock.writeLock()
-        await wLock.lock()
+        wLock.lock()
         result += '0'
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(async () => {
-            await rLock.lock()
+          taskpool.execute(() => {
+            rLock.lock()
             result += '1'
           }).finally(() => {
             rLock.unlock()
           })
         }
-        let jobs: Promise<Promise<void>>[] = []
+        let jobs: Job<void>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          workers.push(eaw)
-          jobs.push(eaw.run<Promise<void>>(async (): Promise<void> => {
-            await rLock.lock()
+          jobs.push(eaw.run<void>(() => {
+            rLock.lock()
             result += '1'
           }))
+          workers.push(eaw)
         }
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<void>(() => {
+        eaw.run<void>(() => {
           result += '0'
           wLock.unlock()
         })
-        eaw.quit()
-        await Promise.all(jobs)
+        eaw.join()
+        for (let job of jobs) {
+          job.Await()
+        }
         workers.forEach((worker: EAWorker) => {
-          worker.join()
+          worker.join().Await()
         })
         for (let i = 0; i < 10; i++) {
           rLock.unlock()
         }
-        await wLock.lock()
+        wLock.lock()
         wLock.unlock()
         console.log(`TESTCASE ${tag} end, result: ` + result);
         expect(result.startsWith('0') && result.endsWith('1')).assertEqual(true)
@@ -1114,39 +1117,40 @@ export default function RWLockTest(): void {
         const tag: string = 'RWLockTest025';
         console.info(`${tag} test start`);
         let result = ''
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let rLock = lock.readLock()
         let wLock = lock.writeLock()
         let count = 0
-        await rLock.lock()
+        rLock.lock()
         result += '0'
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(async (index: int) => {
-            await rLock.lock()
+          taskpool.execute((index: int) => {
+            rLock.lock()
             result += String(index)
             rLock.unlock()
-            await wLock.lock()
+            wLock.lock()
             result += '1'
           }, i).finally(() => {
             wLock.unlock()
             count++
           })
         }
-        let jobs: Promise<Promise<void>>[] = []
+        let jobs: Job<void>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          workers.push(eaw)
-          jobs.push(eaw.run<Promise<void>>(async (): Promise<void> => {
-            await rLock.lock()
+          jobs.push(eaw.run<void>(() => {
+            rLock.lock()
             result += '1'
           }))
-          eaw.quit()
+          workers.push(eaw)
         }
-        await Promise.all(jobs)
+        for (let job of jobs) {
+          job.Await()
+        }
         workers.forEach((worker: EAWorker) => {
-          worker.join()
+          worker.join().Await()
         })
         for (let i = 0; i < 10; i++) {
           rLock.unlock()
@@ -1174,52 +1178,54 @@ export default function RWLockTest(): void {
         console.info(`${tag} test start`);
         let class1 = new BaseClass()
         let result = ''
-        let lock = new concurrency.stackless.AsyncReadWriteLock()
+        let lock = new RWLock()
         let rLock = lock.readLock()
         let wLock = lock.writeLock()
 
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(async (index: int) => {
-            await rLock.lock()
+          taskpool.execute((index: int) => {
+            rLock.lock()
             result += String(index)
           }, i).finally(() => {
             rLock.unlock()
             class1.increaseCount()
           })
-          taskpool.execute(async (index: int) => {
-            await wLock.lock()
+          taskpool.execute((index: int) => {
+            wLock.lock()
             result += String(index)
           }, i).finally(() => {
             wLock.unlock()
             class1.increaseCount()
           })
         }
-        let jobs: Promise<Promise<void>>[] = []
+        let jobs: Job<void>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          workers.push(eaw)
-          jobs.push(eaw.run<Promise<void>>(async (index: int): Promise<void> => {
-            await rLock.lock()
+          jobs.push(eaw.run<void>((index: int) => {
+            rLock.lock()
             result += String(index)
             rLock.unlock()
             class1.increaseCount()
           }, i))
+          workers.push(eaw)
           let eaw1 = new EAWorker()
           eaw1.start()
-          workers.push(eaw1)
-          jobs.push(eaw1.run<Promise<void>>(async (index: int): Promise<void> => {
-            await wLock.lock()
+          jobs.push(eaw1.run<void>((index: int) => {
+            wLock.lock()
             result += String(index)
             wLock.unlock()
             class1.increaseCount()
           }, i))
+          workers.push(eaw1)
         }
 
-        await Promise.all(jobs)
+        for (let job of jobs) {
+          job.Await()
+        }
         workers.forEach((worker: EAWorker) => {
-          worker.join()
+          worker.join().Await()
         })
         while (await class1.getCount() < 40) {
           await Utils.msSleep(100)
@@ -1228,5 +1234,6 @@ export default function RWLockTest(): void {
         expect(await class1.getCount()).assertEqual(40)
         Done()
       });
+
   })
 }

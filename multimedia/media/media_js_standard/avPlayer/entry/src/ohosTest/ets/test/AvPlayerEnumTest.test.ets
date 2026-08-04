@@ -102,6 +102,7 @@ export default function AvPlayerEnumTest() {
       expect(media.CodecMimeType.AUDIO_G711MU).assertEqual('audio/g711mu');
       expect(media.CodecMimeType.AUDIO_AMR_NB).assertEqual('audio/3gpp');
       expect(media.CodecMimeType.AUDIO_AMR_WB).assertEqual('audio/amr-wb');
+      expect(media.CodecMimeType.AUDIO_RAW).assertEqual('audio/raw');
       done();
     });
     /**
@@ -302,6 +303,27 @@ export default function AvPlayerEnumTest() {
       expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE).assertEqual('total_loading_bytes');
       expect(media.PlaybackMetricsKey.STALLING_COUNT).assertEqual('stalling_count');
       expect(media.PlaybackMetricsKey.TOTAL_STALLING_TIME).assertEqual('total_stalling_time');
+      expect(media.PlaybackMetricsKey.LIP_ASYNC_COUNT).assertEqual('lip_async_count');
+ 	    expect(media.PlaybackMetricsKey.TOTAL_LIP_ASYNC_TIME).assertEqual('total_lip_async_time');
+      done();
+    });
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1500
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1500
+    * @tc.desc   AVPlayer Enumeration test - AVMetricsEventType
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1500', Level.LEVEL0, async (done: Function) => {
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING).assertEqual(1);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_LIP_ASYNC).assertEqual(2);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_LOADINGRATE_CHANGE).assertEqual(3);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_LOADING_ERROR).assertEqual(4);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_CHANGED).assertEqual(5);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_DISCONTINUITY).assertEqual(6);
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_AUDIO_ABNORMAL).assertEqual(7);
       done();
     });
   })

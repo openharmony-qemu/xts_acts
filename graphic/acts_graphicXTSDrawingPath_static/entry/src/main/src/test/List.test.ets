@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,8 +21,9 @@ import drawingTsPath5Test from "./Path5.test";
 import drawingTsPath6Test from "./Path6.test";
 import drawingTsPath7Test from "./Path7.test";
 import drawingTsPath8Test from "./Path8.test";
+import drawingTsPath9Test from "./Path9.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   drawingTsPathTest();
   drawingTsPath2Test();
   drawingTsPath3Test();
@@ -30,4 +32,5 @@ export default function testsuite() {
   drawingTsPath6Test();
   drawingTsPath7Test();
   drawingTsPath8Test();
+  drawingTsPath9Test();
 }

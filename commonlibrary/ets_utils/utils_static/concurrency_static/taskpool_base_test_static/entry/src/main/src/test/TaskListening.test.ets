@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2 (the 'License');
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 
 
 export function asyncSleep(time: int): Promise<void> {

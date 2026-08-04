@@ -14,8 +14,12 @@
  */
 import RenderNodeUtilsSetRectShapeOptionValueTest from "./renderNode/RenderNodeUtilsSetRectShapeOptionValueTest.test"
 import RenderNodeBlurStyleOptionTest from "./renderNode/RenderNodeBlurStyleOptionTest.test"
+import NativeModuleCapiInitErrorCodeTest from "./renderNode/NativeModuleCapiInitErrorCodeTest.test"
+import NodeChildMountPolicyTest from "./renderNode/NodeChildMountPolicyTest.test"
 
 export default function testsuite() {
-  RenderNodeBlurStyleOptionTest(); // 此条特殊用例请放在首行，勿动
+  NativeModuleCapiInitErrorCodeTest(); // 此条特殊用例请放在首行，勿动
+  RenderNodeBlurStyleOptionTest();     // 此条特殊用例请放在这儿，勿动
   RenderNodeUtilsSetRectShapeOptionValueTest();
+  NodeChildMountPolicyTest();
 }

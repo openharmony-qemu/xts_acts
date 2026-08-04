@@ -261,6 +261,7 @@ export default function VideoOutputBackTest() {
             mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
+            let isStartCallback = false;
             mVideoOutput.start((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG, testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
@@ -269,7 +270,15 @@ export default function VideoOutputBackTest() {
                 console.info(TAG, testName + ' start passed.');
                 expect(true).assertTrue();
               }
+              isStartCallback = true;
             });
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
+              if (isStartCallback) {
+                break;
+              }
+            }
+            expect(isStartCallback).assertTrue();
             console.info(TAG, testName + ' start end.');
             await releaseVideoSession();
           }
@@ -359,6 +368,7 @@ export default function VideoOutputBackTest() {
             mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
+            let isStopCallback = false;
             mVideoOutput.stop((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG, testName + ' failed to stop, err: ' + error.code + ', msg: ' + error.message);
@@ -367,7 +377,15 @@ export default function VideoOutputBackTest() {
                 console.info(TAG, testName + ' stop passed.');
                 expect(true).assertTrue();
               }
+              isStopCallback = true;
             });
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
+              if (isStopCallback) {
+                break;
+              }
+            }
+            expect(isStopCallback).assertTrue();
             console.info(TAG, testName + ' stop end.');
             await releaseVideoSession();
           }
@@ -623,6 +641,7 @@ export default function VideoOutputBackTest() {
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
             console.info(TAG, testName + ' getPhotoSession passed.');
+            let isReleaseCallback = false;
             mVideoOutput.release((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG,
@@ -632,7 +651,15 @@ export default function VideoOutputBackTest() {
                 console.info(TAG, testName + ' release passed.');
                 expect(true).assertTrue();
               }
+              isReleaseCallback = true;
             });
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
+              if (isReleaseCallback) {
+                break;
+              }
+            }
+            expect(isReleaseCallback).assertTrue();
             await mPreviewOutput.release();
             await mVideoSession.release();
             console.info(TAG, testName + ' end.');

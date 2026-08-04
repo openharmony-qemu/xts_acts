@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import relationalStore from '@ohos.data.relationalStore'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import fileio from '@ohos.file.fs'
@@ -87,7 +88,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
   describe('relationalStoreBackupRestorePromiseTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(tag + 'beforeAll')
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
     })

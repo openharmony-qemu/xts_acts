@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,10 +37,10 @@ const ERR_PARAM_INVALID = 12100001;
 
 //Do NOT ALLOW/Prohibit/cancel ---- Both mean Prohibit
 function clickRequest(driver: Driver, name: string): boolean {
-  Utils.msSleep(2000).awaitSync()
+  waitForCompletion(async () => {await Utils.msSleep(2000);})
   try {
     hilog.error(domain, tag, ` 11111111111111111111111 error, ${ JSON.stringify(name) }`);
-    return (async (): Promise<boolean> => {
+    return waitForCompletion<boolean>(async (): Promise<boolean> => {
       let button = await driver.findComponent(ON.text(name));
       await Utils.msSleep(1000);
       if (button !== null) {
@@ -48,7 +49,7 @@ function clickRequest(driver: Driver, name: string): boolean {
         return true;
       }
       return false;
-    })().awaitSync()
+    })
   } catch (error) {
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;
@@ -78,7 +79,12 @@ export default function requestFromUserServicePopStaticTest() {
         hilog.info(domain, tag, 'BusinessError end');
       });
       await Utils.msSleep(1000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.requestFromUserServicePopTest.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.requestFromUserServicePopTest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         await Utils.msSleep(2000)

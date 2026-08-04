@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 
 export class Event {
@@ -9,10 +9,12 @@ export class Event {
   }
 
   public Wait(): boolean {
-    return this.promise.awaitSync();
+    return waitForCompletion<boolean>(() => {
+      return this.promise;
+    });
   }
 
-  public Fire(val: boolean = true): void {
+  public Fire(val: boolean = true) {
     this.resolveFn!(val);
   }
 
@@ -50,16 +52,16 @@ export class CountClass {
   }
 }
 
-export class SharedJob<T> {
+export class SharedJob<T extends Job<void>> {
   private jobs: Array<T>;
 
   constructor(jobs: Array<T>) {
     this.jobs = jobs;
   }
 
-  public async Await() {
+  public Await(): void {
     for (let job of this.jobs) {
-      await job;
+      job.Await();
     }
   }
 }

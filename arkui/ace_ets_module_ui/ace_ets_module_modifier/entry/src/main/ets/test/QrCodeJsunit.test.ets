@@ -107,7 +107,7 @@ export default function qrCodeJsunit() {
     it('test_qrCode_004', Level.LEVEL0, async (done: Function) => {
       console.info('test_qrCode_004 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('qrCode' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

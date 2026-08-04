@@ -131,7 +131,7 @@ struct ImageExample2 {
           .colorFilter(new ColorFilter([2, 4, 5]))
           .overlay('Original', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
           .draggable(this.is_draggable)
-          .key("image1")
+          .key("imageTwo_image1")
         Image($rawfile('bm.jpg'))
           .renderMode(ImageRenderMode.Template)
           .width(100)

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 import drawingTsMatrixTest from "./Matrix.test";
 import drawingTsMatrixPart2Test from "./MatrixPart2.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   drawingTsMatrixTest();
   drawingTsMatrixPart2Test();
 }

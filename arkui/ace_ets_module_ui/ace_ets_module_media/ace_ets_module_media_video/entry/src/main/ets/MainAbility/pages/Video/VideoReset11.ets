@@ -50,22 +50,22 @@ struct VideoReset11 {
           console.log('testTag:' + 'onFinish')
         })
       Row({space:2}) {
-        Text(this.text1).id('VideoReset11_text1')
-        Text(this.text2).id('VideoReset11_text2')
-        Text(this.text3).id('VideoReset11_text3')
+        Text(this.text1).id('VideoReset11_text1').key('VideoReset11_text1')
+        Text(this.text2).id('VideoReset11_text2').key('VideoReset11_text2')
+        Text(this.text3).id('VideoReset11_text3').key('VideoReset11_text3')
       }
 
       Row({space:2}) {
         Button('start').onClick(() => {
           this.controller.start()
         })
-          .id('VideoReset11_start')
+          .id('VideoReset11_start').key('VideoReset11_start')
 
         Button('reset').onClick(() => {
           this.controller.reset()
           console.log('testTag:' + 'reset' )
         })
-          .id('VideoReset11_reset')
+          .id('VideoReset11_reset').key('VideoReset11_reset')
       }
 
       Row({space:2}) {
@@ -73,7 +73,7 @@ struct VideoReset11 {
           .onClick(() => {
           this.autoPlayValue = !this.autoPlayValue
         })
-          .id('VideoReset11_autoPlay')
+          .id('VideoReset11_autoPlay').key('VideoReset11_autoPlay')
       }
 
     }.width('100%')

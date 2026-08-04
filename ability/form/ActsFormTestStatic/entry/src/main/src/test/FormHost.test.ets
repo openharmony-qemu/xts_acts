@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +36,7 @@ export default function formHostTest() {
 
     beforeAll(async () => {
       hilog.info(DOMAIN, TAG, 'Before all, open the test page');
-      await Utils.startAbility(
+      Utils.startAbility(
         'TestFormAbility',
         'com.example.actsformtest.static',
         'testform/pages/XtsFormHost',

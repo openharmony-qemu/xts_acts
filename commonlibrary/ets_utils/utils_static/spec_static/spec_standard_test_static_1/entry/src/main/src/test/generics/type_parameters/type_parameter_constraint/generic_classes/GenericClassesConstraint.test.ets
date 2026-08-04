@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Utils from "../../../../Util.test";
+
 import {
   describe,
   beforeAll,
@@ -23,8 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "../../../../../../../hypium"
-
+} from "../../../../../../../hypium/index"
 
 class Int1 {
   value: int = 0
@@ -62,7 +64,6 @@ class StringClass {
   value: string = ""
 }
 
-// 泛型类定义
 class Point<T extends Int1 | Double1> {}
 
 final class FinalPoint<T extends Int1 | Double1> {}
@@ -107,17 +108,14 @@ class PointString<T extends StringClass> {}
 
 final class FinalPointString<T extends StringClass> {}
 
-// FixedArray 类型定义
 type FixedArray<T> = T[]
 
-// Color 枚举定义
 enum Color {
   Red,
   Green,
   Blue
 }
 
-// 泛型类定义
 class PointVoid<T extends void> {}
 final class FinalPointVoid<T extends void> {}
 
@@ -148,19 +146,15 @@ final class FinalPointIntObject<T extends int, Z extends Object> {}
 class PointObject<T extends Object> {}
 final class FinalPointObject<T extends Object> {}
 
-// 集中定义的类型、接口、类
 class A {
   foo(): number { return 1 }
 }
 
-// 泛型类定义
 
 class PointAny<T> {}
 
 final class FinalPointAny<T> {}
 
-
-// 通用类定义
 class C<T extends A> {
   constructor(i: T) {
     i.foo()
@@ -169,15 +163,7 @@ class C<T extends A> {
 
 let res: number = 0
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericClassesConstraintTest() {
+export default function GenericClassesConstraintTest(): void {
   describe("GenericClassesConstraintTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -188,7 +174,7 @@ export default function GenericClassesConstraintTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

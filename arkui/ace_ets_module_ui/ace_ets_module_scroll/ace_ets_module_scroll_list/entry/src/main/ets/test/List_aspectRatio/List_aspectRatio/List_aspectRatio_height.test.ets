@@ -77,9 +77,9 @@ export default function List_aspectRatio_height() {
         name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height_01');
-      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height_column');
-      let item01 = CommonFunc.getComponentRect('List_aspectRatio_height_001');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_01');
+      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_column');
+      let item01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_001');
       let width: number = column01.right - column01.left;
       let height: number = column01.bottom - column01.top;
 
@@ -107,11 +107,11 @@ export default function List_aspectRatio_height() {
         name: 'aspectRatio1', value: '0.5'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_01');
       let lwidth: number = List01.right - List01.left;
       let lheight: number = List01.bottom - List01.top;
 
-      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height_column');
+      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_column');
       let width: number = column01.right - column01.left;
       let height: number = column01.bottom - column01.top;
 
@@ -136,11 +136,11 @@ export default function List_aspectRatio_height() {
         name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_01');
       let lwidth: number = List01.right - List01.left;
       let lheight: number = List01.bottom - List01.top;
 
-      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height_column');
+      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_column');
       let width: number = column01.right - column01.left;
       let height: number = column01.bottom - column01.top;
 
@@ -165,9 +165,9 @@ export default function List_aspectRatio_height() {
         name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height_01');
-      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height_column');
-      let item01 = CommonFunc.getComponentRect('List_aspectRatio_height_001');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_01');
+      let column01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_column');
+      let item01 = CommonFunc.getComponentRect('List_aspectRatio_height' + '_001');
       let width: number = column01.right - column01.left;
       let height: number = column01.bottom - column01.top;
 

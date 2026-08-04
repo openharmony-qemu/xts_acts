@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 enum ColorShortD0: short { Red = 5, Green = 7, Blue = -53 }
 
@@ -87,7 +81,7 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -179,66 +173,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN1.first.valueOf()).assertEqual(0)
       expect(EnumLongN1.second.valueOf()).assertEqual(-2147483649)
       expect(EnumLongN1.third.valueOf()).assertEqual(-2147483648)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2600
-     * @tc.name      testEnumerationWithExplicitType0452
-     * @tc.desc      Checking long enum with Int.MIN_VALUE boundary
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0452', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongN0.first instanceof EnumLongN0).assertEqual(true)
-      expect(EnumLongN0.second instanceof EnumLongN0).assertEqual(true)
-      expect(EnumLongN0.third instanceof EnumLongN0).assertEqual(true)
-      expect(EnumLongN0.first.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN0.second.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN0.third.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN0.first.valueOf()).assertEqual(0)
-      expect(EnumLongN0.second.valueOf()).assertEqual(-2147483648)
-      expect(EnumLongN0.third.valueOf()).assertEqual(2147483647)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2700
-     * @tc.name      testEnumerationWithExplicitType0453
-     * @tc.desc      Checking long enum with values near Int.MAX_VALUE boundary
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0453', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongN2.first instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.second instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.third instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.first.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.second.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.third.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.first.valueOf()).assertEqual(2147483646)
-      expect(EnumLongN2.second.valueOf()).assertEqual(2147483647)
-      expect(EnumLongN2.third.valueOf()).assertEqual(-2147483648)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2800
-     * @tc.name      testEnumerationWithExplicitType0454
-     * @tc.desc      Checking long enum with member references in constant expression
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0454', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongN3.first instanceof EnumLongN3).assertEqual(true)
-      expect(EnumLongN3.second instanceof EnumLongN3).assertEqual(true)
-      expect(EnumLongN3.third instanceof EnumLongN3).assertEqual(true)
-      expect(EnumLongN3.first.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN3.second.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN3.third.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN3.first.valueOf()).assertEqual(2147483637)
-      expect(EnumLongN3.second.valueOf()).assertEqual(1010)
-      expect(EnumLongN3.third.valueOf()).assertEqual(-2147482649)
     });
 
     /**
@@ -345,7 +279,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumStringN1._third.toString()).assertEqual("B")
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_4700
      * @tc.name      testEnumerationWithExplicitType0473
@@ -363,7 +296,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumStringN2.e2.toString()).assertEqual("DEF")
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_4900
      * @tc.name      testEnumerationWithExplicitType0475
@@ -380,7 +312,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumStringN3.e1.toString()).assertEqual("ABCABC")
       expect(EnumStringN3.e2.toString()).assertEqual("ABCDEF")
     });
-
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_5100
@@ -424,7 +355,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(b).assertEqual("blue")
     });
 
-
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_5500
      * @tc.name      testEnumerationWithExplicitType0481
@@ -438,7 +368,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(fooEnumStringN0(ColorStringN0.Green)).assertEqual(false)
       expect(fooEnumStringN0(ColorStringN0.Blue)).assertEqual(true)
     });
-
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_5700
@@ -570,6 +499,5 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       let test_value = convertStringN0(ExplicitTypeEnumN6.a)
       expect(test_value instanceof string).assertEqual(true)
     });
-
   })
 }

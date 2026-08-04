@@ -46,7 +46,7 @@ export default function showInSubWindowValueTest() {
      */
     it('showInSubWindow_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showInSubWindow_value_0001 START');
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showInSubWindow' + '_select');
       console.info('showInSubWindow_value_0001' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
       expect(JSON.parse(selectValue).$attrs.showInSubWindow).assertEqual('false');
       console.info('showInSubWindow_value_0001 END');
@@ -64,10 +64,12 @@ export default function showInSubWindowValueTest() {
     it('showInSubWindow_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showInSubWindow_value_0002 START');
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showInSubWindowButton'));
+      await Utils.sleep(SLEEP_TIME);
       await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showInSubWindow' + '_select');
       console.info('showInSubWindow_value_0002' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
       expect(JSON.parse(selectValue).$attrs.showInSubWindow).assertEqual('true');
       console.info('showInSubWindow_value_0002 END');
@@ -88,10 +90,12 @@ export default function showInSubWindowValueTest() {
       let showInSubWindowValue = JSON.stringify(JSON.parse(resource).$attrs.content);
       console.log('select_showInSubWindow_0003 sys.string.ohos_id_expand_display为' + showInSubWindowValue);
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showInSubWindowButton'));
+      await Utils.sleep(SLEEP_TIME);
       await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showInSubWindow' + '_select');
       console.info('showInSubWindow_value_0003' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
       if(showInSubWindowValue === '"false"'){
         expect(JSON.parse(selectValue).$attrs.showInSubWindow ).assertEqual('false');
@@ -116,10 +120,12 @@ export default function showInSubWindowValueTest() {
       let showInSubWindowValue = JSON.stringify(JSON.parse(resource).$attrs.content);
       console.log('select_showInSubWindow_0004 sys.string.ohos_id_expand_display为' + showInSubWindowValue);
       let driver: Driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button = await driver.findComponent(ON.id('showInSubWindowButton'));
+      await Utils.sleep(SLEEP_TIME);
       await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
+      let selectValue = getInspectorByKey('showInSubWindow' + '_select');
       console.info('showInSubWindow_value_0004' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
       if(showInSubWindowValue === '"false"'){
         expect(JSON.parse(selectValue).$attrs.showInSubWindow ).assertEqual('false');

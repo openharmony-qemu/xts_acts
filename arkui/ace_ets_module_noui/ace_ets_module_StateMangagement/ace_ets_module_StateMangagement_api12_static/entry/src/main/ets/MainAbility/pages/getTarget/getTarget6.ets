@@ -14,27 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,
-  FlexAlign,ComponentV2,HorizontalAlign
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,Local,Trace,Track,PropRef,UIUtils,
-  StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, FlexAlign, ComponentV2, HorizontalAlign } from '@ohos.arkui.component';
+import { State, Watch, Link, Local, Trace, Track, PropRef, UIUtils, StorageLink, LocalStorage, Observed, ObservedV2 } from '@ohos.arkui.stateManagement';
 //获取代理对象的原始对象后，修改对象，不会触发UI刷新
 @Observed
 export class Message {

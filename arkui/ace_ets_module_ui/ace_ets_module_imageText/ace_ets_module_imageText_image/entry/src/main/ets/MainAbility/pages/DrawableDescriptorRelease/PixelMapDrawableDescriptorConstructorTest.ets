@@ -38,90 +38,85 @@ struct PixelMapDrawableDescriptorConstructorTest {
 
   build() {
     Scroll() {
-      Column({ space: 10 }) {
-        Text('PixelMapDrawableDescriptor构造函数测试')
-          .fontSize(18)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(0x333333)
-
-        this.BuildSectionTitle('1. PixelMap类型参数')
+      Column({ space: 5 }) {
+        // PixelMapDrawableDescriptor构造函数测试
+        // 1. PixelMap类型参数
         Row() {
           Button('构造-PixelMap正常值')
+            .height('5%')
             .id('btnTest001')
             .onClick(async () => await this.Test001())
           Image(this.drawable001)
-            .width(100)
-            .height(100)
+            .width('10%')
+            .height('10%')
             .borderColor(Color.Blue)
             .borderWidth(1)
             .id('imgTest001')
           Text(this.testResult001)
             .id('txtTestResult001')
+            .key('txtTestResult001')
             .fontSize(14)
         }
 
-        this.BuildSectionTitle('2. ResourceStr类型参数')
+        // 2. ResourceStr类型参数
         Row() {
           Button('构造-应用资源$r')
+            .height('5%')
             .id('btnTest002')
             .onClick(() => this.Test002())
           Image(this.drawable002)
-            .width(100)
-            .height(100)
+            .width('10%')
+            .height('10%')
             .borderColor(Color.Blue)
             .borderWidth(1)
             .id('imgTest002')
           Text(this.testResult002)
             .id('txtTestResult002')
+            .key('txtTestResult002')
             .fontSize(14)
         }
 
         Row() {
           Button('构造-系统资源$r')
+            .height('5%')
             .id('btnTest003')
             .onClick(() => this.Test003())
           Image(this.drawable003)
-            .width(100)
-            .height(100)
+            .width('10%')
+            .height('10%')
             .borderColor(Color.Blue)
             .borderWidth(1)
             .id('imgTest003')
           Text(this.testResult003)
             .id('txtTestResult003')
+            .key('txtTestResult003')
             .fontSize(14)
         }
 
-        this.BuildSectionTitle('3. 特殊参数测试')
-
+        // 3. 特殊参数测试
         Row() {
           Button('构造-undefined')
+            .height('5%')
             .id('btnTest006')
             .onClick(() => this.Test006())
           Image(this.drawable006)
-            .width(100)
-            .height(100)
+            .width('10%')
+            .height('10%')
             .borderColor(Color.Blue)
             .borderWidth(1)
             .id('imgTest006')
           Text(this.testResult006)
             .id('txtTestResult006')
+            .key('txtTestResult006')
             .fontSize(14)
         }
       }
       .width('80%')
+      .margin({ top: 30 })
     }
     .width('100%')
     .height('100%')
     .backgroundColor(0xF5F5F5)
-  }
-
-  @Builder
-  BuildSectionTitle(title: string) {
-    Text(title)
-      .fontSize(16)
-      .fontWeight(FontWeight.Medium)
-      .fontColor(Color.Black)
-      .width('100%')
   }
 
   async Test001() {
@@ -150,7 +145,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
 
   Test002() {
     try {
-      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor($r('app.media.tree'));
+      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor($r('app.media.tree') as ESObject);
       this.drawable002 = drawable;
 
       if (drawable && drawable instanceof PixelMapDrawableDescriptor) {
@@ -165,7 +160,8 @@ struct PixelMapDrawableDescriptorConstructorTest {
 
   Test003() {
     try {
-      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor($r('sys.media.ohos_ic_public_more'));
+      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor(
+        $r('sys.media.ohos_ic_public_more') as ESObject);
       this.drawable003 = drawable;
 
       if (drawable && drawable instanceof PixelMapDrawableDescriptor) {

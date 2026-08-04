@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ import {
   Hypium,
   Size,
   TestType
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import { camera } from '@kit.CameraKit';
 import {
   getPermission, resourceName,

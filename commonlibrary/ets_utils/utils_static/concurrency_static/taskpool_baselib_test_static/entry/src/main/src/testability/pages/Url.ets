@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import Url from '@ohos.url';
 import { url } from '@kit.ArkTS';
 import { ArrayList } from '@kit.ArkTS';

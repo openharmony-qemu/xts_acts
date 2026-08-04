@@ -392,7 +392,53 @@ export default function HilogTsTest() {
       }
       hilog.info(domain, tag, 'testHilogTsApiStatic19 end');
     })
+    
+    /**
+     * @tc.name   testHilogTsApiStatic20
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_2000
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic20 start');
+      try{
+        hilog.debug(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.info(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.error(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.warn(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.fatal(domain, "","%{public}s World ", "testHilogTsApiStatic20");
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic20 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic20 end');
+    })
 
+    /**
+     * @tc.name   testHilogTsApiStatic21
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_2100
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic21 start');
+      try{
+        hilog.debug(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.info(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.error(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.warn(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.fatal(domain, tag,"", "testHilogTsApiStatic21");
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic21 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic21 end');
+    })
+    
     /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0100
      * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0100
@@ -657,6 +703,92 @@ export default function HilogTsTest() {
     })
 
     /**
+     * @tc.name   testHilogSetOutputType0600
+     * @tc.number SUB_DFX_DFT_SetOutputType_0600
+     * @tc.desc   setOutputType接口-测试CONSOLE_ONLY枚举值（等于DEFAULT）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputType(hilog.OutputType.CONSOLE_ONLY);
+        hilog.info(0x3200, "testTag", 'console only log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+        expect(hilog.OutputType.CONSOLE_ONLY).assertEqual(0);
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType0600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputType0900
+     * @tc.number SUB_DFX_DFT_SetOutputType_0900
+     * @tc.desc   setOutputType接口-参数规格覆盖：连续调用测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () =>{
+      try {
+        let lastType1 = hilog.setOutputType(hilog.OutputType.DEFAULT);
+        let lastType2 = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
+        let lastType3 = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.setOutputType(hilog.OutputType.DEFAULT);
+        hilog.info(0x3200, "testTag", 'set output type result:%{public}d', lastType1);
+        hilog.info(0x3200, "testTag", 'set output type result:%{public}d', lastType2);
+        hilog.info(0x3200, "testTag", 'set output type result:%{public}d', lastType3);
+        expect(lastType1 >= 0 && lastType1 <= 4).assertTrue();
+        expect(lastType2 >= 0 && lastType2 <= 4).assertTrue();
+        expect(lastType3 >= 0 && lastType3 <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType0900 testTag > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+    
+    /**
+     * @tc.name   testHilogSetOutputType1100
+     * @tc.number SUB_DFX_DFT_SetOutputType_1100
+     * @tc.desc   setOutputType接口-返回值覆盖：验证每个枚举值的返回值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () =>{
+      try {
+        // 设置为DEFAULT，应返回之前的类型
+        hilog.setOutputType(hilog.OutputType.DEFAULT);
+        let lastType1 = hilog.setOutputType(hilog.OutputType.DEFAULT);
+        expect(lastType1).assertEqual(0);
+        
+        // 设置为PRIVATE_SANDBOX_ONLY，应返回DEFAULT
+        let lastType2 = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
+        expect(lastType2).assertEqual(0);
+        
+        // 设置为SHARE_SANDBOX_ONLY，应返回PRIVATE_SANDBOX_ONLY
+        let lastType3 = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        expect(lastType3).assertEqual(1);
+        
+        // 设置为PRIVATE_SANDBOX_WITH_CONSOLE，应返回SHARE_SANDBOX_ONLY
+        let lastType4 = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE);
+        expect(lastType4).assertEqual(2);
+        
+        // 设置为SHARE_SANDBOX_WITH_CONSOLE，应返回PRIVATE_SANDBOX_WITH_CONSOLE
+        let lastType5 = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
+        expect(lastType5).assertEqual(3);
+        
+        // 再次设置为DEFAULT，应返回SHARE_SANDBOX_WITH_CONSOLE
+        let lastType6 = hilog.setOutputType(hilog.OutputType.DEFAULT);
+        expect(lastType6).assertEqual(4);
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType1100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
      * @tc.name   testHilogSetOutputTypeByDomainID0100
      * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0100
      * @tc.desc   hilog的SetOutputTypeByDomainID方法
@@ -734,6 +866,281 @@ export default function HilogTsTest() {
     })
 
     /**
+     * @tc.name   testHilogSetOutputTypeByDomainID0700
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0700
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs包含0值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0x0000, 0x3200], false);
+        hilog.info(0x0000, "testTag", 'domain 0x0000 log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID0700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID0800
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0800
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs取最大边界值0xFFFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0xFFFF], false);
+        hilog.info(0xFFFF, "testTag", 'domain 0xFFFF log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID0800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID0900
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0900
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs包含负数（非法值）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [-1, 1, 2], false);
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID0900 > err code: ${err.code}, err msg: ${err.message}`)
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID1000
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1000
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs超出边界值（0xFFFF+1）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0x10000], false);
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1000 > err code: ${err.code}, err msg: ${err.message}`)
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID1200
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1200
+     * @tc.desc   setOutputTypeByDomainID接口-返回值覆盖：验证返回值类型和范围
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [0x3200], true);
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID1300
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1300
+     * @tc.desc   setOutputTypeByDomainID接口-入参覆盖：空数组
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [], true);
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID1600
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1600
+     * @tc.desc   setOutputTypeByDomainID接口-返回值覆盖：返回值与setOutputType对比
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        // 先用setOutputType设置
+        let lastType1 = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
+        
+        // 再用setOutputTypeByDomainID设置
+        let lastType2 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [0x3200], false);
+        
+        // 验证两个返回值都在合法范围内
+        expect(lastType1 >= 0 && lastType1 <= 4).assertTrue();
+        expect(lastType2 >= 0 && lastType2 <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID1700
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1700
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：isExclude参数不同值的对比
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let domainId = 0x3200;
+        
+        // isExclude=true：指定domainID列表设为DEFAULT，其他设为指定type
+        let lastType1 = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [domainId], true);
+        hilog.info(domainId, "testTag", 'isExclude=true test log');
+        
+        // isExclude=false：指定domainID列表设为指定type，其他设为DEFAULT
+        let lastType2 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [domainId], false);
+        hilog.info(domainId, "testTag", 'isExclude=false test log');
+        
+        expect(lastType1 >= 0 && lastType1 <= 4).assertTrue();
+        expect(lastType2 >= 0 && lastType2 <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID1800
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1800
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs包含十六进制值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0x0001, 0x00FF, 0x0320, 0xFFFF], false);
+        hilog.info(0x0001, "testTag", 'hex domain 0x0001 test log');
+        hilog.info(0x00FF, "testTag", 'hex domain 0x00FF test log');
+        hilog.info(0x0320, "testTag", 'hex domain 0x0320 test log');
+        hilog.info(0xFFFF, "testTag", 'hex domain 0xFFFF test log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID1900
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1900
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs包含十进制值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [1, 255, 800, 65535], false);
+        hilog.info(1, "testTag", 'decimal domain 1 test log');
+        hilog.info(255, "testTag", 'decimal domain 255 test log');
+        hilog.info(800, "testTag", 'decimal domain 800 test log');
+        hilog.info(65535, "testTag", 'decimal domain 65535 test log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1900 > err code: ${err.code}, err msg: ${err.message}`)
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID2000
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_2000
+     * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs包含连续值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let domainIds = [0x3200, 0x3201, 0x3202, 0x3203, 0x3204];
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, domainIds, false);
+        
+        for (let i = 0; i < domainIds.length; i++) {
+          hilog.info(domainIds[i], "testTag", 'continuous domain test log %{public}d', i);
+        }
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID2000 > err code: ${err.code}, err msg: ${err.message}`)
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID2100
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_2100
+     * @tc.desc   getOutputType接口-返回值覆盖：获取所有枚举类型的返回值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        // 设置为DEFAULT，应返回之前的类型
+        hilog.setOutputType(hilog.OutputType.DEFAULT);
+        let lastType1 = hilog.setOutputTypeByDomainID(hilog.OutputType.DEFAULT, [0x0000, 0x3200], false);
+        expect(lastType1).assertEqual(0);
+        
+        // 设置为PRIVATE_SANDBOX_ONLY，应返回DEFAULT
+        let lastType2 = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0x0000, 0x3200], false);
+        expect(lastType2).assertEqual(0);
+        
+        // 设置为SHARE_SANDBOX_ONLY，应返回PRIVATE_SANDBOX_ONLY
+        let lastType3 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [0x0000, 0x3200], false);
+        
+        expect(lastType3).assertEqual(1);
+        
+        // 设置为PRIVATE_SANDBOX_WITH_CONSOLE，应返回SHARE_SANDBOX_ONLY
+        let lastType4 = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE, [0x0000, 0x3200], false);
+        
+        expect(lastType4).assertEqual(2);
+        
+        // 设置为SHARE_SANDBOX_WITH_CONSOLE，应返回PRIVATE_SANDBOX_WITH_CONSOLE
+        let lastType5 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE, [0x0000, 0x3200], false);
+        expect(lastType5).assertEqual(3);
+        
+        // 再次设置为DEFAULT，应返回SHARE_SANDBOX_WITH_CONSOLE
+        let lastType6 = hilog.setOutputTypeByDomainID(hilog.OutputType.CONSOLE_ONLY, [0x0000, 0x3200], false);
+        expect(lastType6).assertEqual(4);
+
+        let lastType7 = hilog.setOutputTypeByDomainID(hilog.OutputType.CONSOLE_ONLY, [0x0000, 0x3200], true);
+        expect(lastType7).assertEqual(0);
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID2100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
      * @tc.name   testHilogGetOutputType0100
      * @tc.number SUB_DFX_DFT_GetOutputType_0100
      * @tc.desc   hilog的GetOutputType方法
@@ -749,6 +1156,87 @@ export default function HilogTsTest() {
         expect(currentType >= 0 && currentType <= 4).assertTrue();
       } catch (err) {
         console.error(`====> testHilogGetOutputType0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetOutputType0200
+     * @tc.number SUB_DFX_DFT_GetOutputType_0200
+     * @tc.desc   getOutputType接口-返回值覆盖：获取所有枚举类型的返回值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetOutputType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.DEFAULT);
+        let type1 = hilog.getOutputType();
+        
+        hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
+        let type2 = hilog.getOutputType();
+        
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        let type3 = hilog.getOutputType();
+        
+        hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE);
+        let type4 = hilog.getOutputType();
+        
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
+        let type5 = hilog.getOutputType();
+        
+        expect(type1).assertEqual(0);
+        expect(type2).assertEqual(1);
+        expect(type3).assertEqual(2);
+        expect(type4).assertEqual(3);
+        expect(type5).assertEqual(4);
+      } catch (err) {
+        console.error(`====> testHilogGetOutputType0200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetOutputType0300
+     * @tc.number SUB_DFX_DFT_GetOutputType_0300
+     * @tc.desc   getOutputType接口-调用覆盖：与setOutputType组合调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */ 
+    it('testHilogGetOutputType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let type1 = hilog.getOutputType();
+        hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
+        let type2 = hilog.getOutputType();
+        expect(type1 >= 0 && type1 <= 4).assertTrue();
+        expect(type2).assertEqual(1);
+      } catch (err) {
+        console.error(`====> testHilogGetOutputType0300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetOutputType0400
+     * @tc.number SUB_DFX_DFT_GetOutputType_0400
+     * @tc.desc   getOutputType接口-连续调用验证一致性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetOutputType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        let type1 = hilog.getOutputType();
+        let type2 = hilog.getOutputType();
+        let type3 = hilog.getOutputType();
+        
+        expect(type1).assertEqual(type2);
+        expect(type2).assertEqual(type3);
+        expect(type3).assertEqual(2);
+      } catch (err) {
+        console.error(`====> testHilogGetOutputType0400 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
       }
     })
@@ -918,6 +1406,75 @@ export default function HilogTsTest() {
         expect(files.length >= 0).assertTrue();
       } catch (err) {
         console.error(`====> testHilogGetLogFile0400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetLogFile0600
+     * @tc.number SUB_DFX_DFT_GetLogFile_0600
+     * @tc.desc   getLogFile接口-参数规格覆盖：边界值测试（1秒）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetLogFile0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'boundary test log');
+        hilog.flush();
+        let files = hilog.getLogFile(1);
+        expect(files.length >= 0).assertTrue();
+        expect(Array.isArray(files)).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetLogFile0600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetLogFile0700
+     * @tc.number SUB_DFX_DFT_GetLogFile_0700
+     * @tc.desc   getLogFile接口-参数规格覆盖：极大值测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetLogFile0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        let maxInt = 2147483647;
+        let files = hilog.getLogFile(maxInt);
+        expect(files.length >= 0).assertTrue();
+        expect(Array.isArray(files)).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetLogFile0700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetLogFile1200
+     * @tc.number SUB_DFX_DFT_GetLogFile_1200
+     * @tc.desc   getLogFile接口-返回值覆盖：验证返回值类型和结构
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetLogFile1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'return type test log');
+        hilog.flush();
+        let files = hilog.getLogFile(10);
+        
+        expect(Array.isArray(files)).assertTrue();
+        if (files.length > 0) {
+          expect(typeof files[0]).assertEqual('string');
+          expect(files[0].length > 0).assertTrue();
+        }
+      } catch (err) {
+        console.error(`====> testHilogGetLogFile1200 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
       }
     })

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -125,10 +126,10 @@ async function testSetPlaybackSpeed(fd: media.AVFileDescriptor, done: () => void
     }
   }).catch(mediaTestBase.catchCallback);
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
       await handleState(state.toString(), operationRecord);
-    })().awaitSync()
+    })
   });
   avPlayer!!.onPlaybackRateDone(callback);
   console.info(`register playbackRateDone`);

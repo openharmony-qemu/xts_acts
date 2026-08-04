@@ -66,7 +66,7 @@ import columnNullUndefinedTest from './Column/ColumnNullUndefined.test';
 import ColumnMatchParentNewFirstTest from './Column/ColumnMatchParentNewFirstTest.test';
 import ColumnMatchParentNewSecondTest from './Column/ColumnMatchParentNewSecondTest.test';
 import ContainerReaderComponentTest from './Column/ContainerReaderComponentTest.test';
-
+import WithEnvDirectionTest from './Column/WithEnvDirectionTest.test';
 
 export default function testsuite() {
   Column_Space()
@@ -123,4 +123,5 @@ export default function testsuite() {
   ColumnMatchParentNewFirstTest()
   ColumnMatchParentNewSecondTest()
   ContainerReaderComponentTest()
+  WithEnvDirectionTest()
 }

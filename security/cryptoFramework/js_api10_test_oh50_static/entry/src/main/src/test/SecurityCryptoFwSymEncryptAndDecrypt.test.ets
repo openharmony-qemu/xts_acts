@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import  buffer  from '@ohos.buffer';
+import buffer from '@ohos.buffer';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import * as commonUtils from './utils/common/commonUtils';
 import * as syncSymEncAndDecUtils from './utils/syncSymEncAndDec/syncSymEncAndDecUtils';
@@ -391,11 +391,11 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
                 algKeyName = Number(keyLen) != 0 ? `${algName}_${keyLen}` : algName + "_128";
               }
               let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algKeyName);
-              let dataCipher: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.tagGcmEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
+              let dataCipher: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
               if (dataCipher.data === null) {
                 throw new Error("[TEST] Data is null.")
               } else {
-                let dataPlainText: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.tagGcmEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
+                let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
                 let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
                 expect(ret).assertTrue();
               }
@@ -444,11 +444,11 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
                 algKeyName = Number(keyLen) != 0 ? `${algName}_${keyLen}` : algName + "_128";
               }
               let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algKeyName);
-              let dataCipher: syncSymEncAndDecUtils.dataCcmSpec = syncSymEncAndDecUtils.tagCcmEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
+              let dataCipher: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
               if (dataCipher.data === null) {
                 throw new Error("[TEST] Data is null.")
               } else {
-                let dataPlainText: syncSymEncAndDecUtils.dataCcmSpec = syncSymEncAndDecUtils.tagCcmEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
+                let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
                 let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
                 expect(ret).assertTrue();
               }
@@ -1196,7 +1196,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         }
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
+        expect(null).assertNull();
       }
       done();
     });
@@ -1314,13 +1314,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let paramSpec: cryptoFramework.GcmParamsSpec = syncSymEncAndDecUtils.genGcmOrCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
         let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
         let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algName);
-        let cipherData1: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
+        let cipherData1: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 16, dataLen, data, paramSpec);
         let decCipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher1.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         let cipherPlainText1: cryptoFramework.DataBlob|null = decCipher1.doFinalSync(cipherData1.data);
 
-        let cipherData2: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
+        let cipherData2: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 32, dataLen, data, paramSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
@@ -1354,13 +1354,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let paramSpec: cryptoFramework.GcmParamsSpec = syncSymEncAndDecUtils.genGcmOrCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
         let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
         let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.createSymKeyPromise(algName);
-        let cipherData1: syncSymEncAndDecUtils.dataGcmSpec = await syncSymEncAndDecUtils.gcmEncOrDecMessagePromise(encAlgName,
+        let cipherData1: syncSymEncAndDecUtils.dataGcmOrCCMSpec = await syncSymEncAndDecUtils.gcmEncOrDecMessagePromise(encAlgName,
           true, symKey, 16, dataLen, data, paramSpec);
         let decCipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         await decCipher1.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         let cipherPlainText1: cryptoFramework.DataBlob|null = await decCipher1.doFinal(cipherData1.data);
 
-        let cipherData2: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
+        let cipherData2: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 32, dataLen, data, paramSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);

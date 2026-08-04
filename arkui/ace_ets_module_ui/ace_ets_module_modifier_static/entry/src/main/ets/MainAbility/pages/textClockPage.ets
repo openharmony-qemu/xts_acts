@@ -13,15 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,Video,Resource,$r,TextArea,TextClockController,FontStyle,TextClockAttribute,FlexAlign,TextClock,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, Video, Resource, $r, TextArea, TextClockController, FontStyle, TextClockAttribute, FlexAlign, TextClock, TextPicker, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { TextClockModifier } from "@ohos.arkui.modifier";
-
+import { TextClockModifier } from '@ohos.arkui.modifier';
 class CustomModifier extends TextClockModifier {
   applyNormalAttribute(instance: TextClockAttribute): void {
     // super.applyNormalAttribute?.(instance);
@@ -54,7 +49,7 @@ struct TextClockPage {
     Column({ space: 5 } as ColumnOptions) {
     Button("change value").onClick((e: ClickEvent) => {
       (this.customModifier as CustomModifier).onChange1();
-    }).key("changeButton")
+    }).key("textClockPage_changeButton")
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Current milliseconds is ' + this.accumulateTime)
         .fontSize(20)

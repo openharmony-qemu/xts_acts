@@ -709,6 +709,7 @@
 #include "customdialog/customdialog_setautocancel_test.cpp"
 #include "customdialog/customdialog_setbackgroundcolor_test.cpp"
 #include "customdialog/customdialog_setcontent_test.cpp"
+#include "customdialog/customdialog_setsystemmaterial_test.cpp"
 #include "customdialog/customdialog_setcontentalignment_test.cpp"
 #include "customdialog/customdialog_setcornerradius_test.cpp"
 #include "customdialog/customdialog_setgridcolumncount_test.cpp"
@@ -735,6 +736,7 @@
 #include "lazyforeach/lazyforeach_settotalnodecount_test.cpp"
 #include "lazyforeach/lazyforeach_setuserdata_test.cpp"
 #include "lazyforeach/lazyforeach_unregistereventreceiver_test.cpp"
+#include "animation/transitioneffect_identity_test.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -5790,6 +5792,32 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testCommonAttrsAnimate004", nullptr, TestCommonAttrsAnimate004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"testTransitionEffectIdentity001", nullptr, TestTransitionEffectIdentity001, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity002", nullptr, TestTransitionEffectIdentity002, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity003", nullptr, TestTransitionEffectIdentity003, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity004", nullptr, TestTransitionEffectIdentity004, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity005", nullptr, TestTransitionEffectIdentity005, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity006", nullptr, TestTransitionEffectIdentity006, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity007", nullptr, TestTransitionEffectIdentity007, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity008", nullptr, TestTransitionEffectIdentity008, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity009", nullptr, TestTransitionEffectIdentity009, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity010", nullptr, TestTransitionEffectIdentity010, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity011", nullptr, TestTransitionEffectIdentity011, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity012", nullptr, TestTransitionEffectIdentity012, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testTransitionEffectIdentity013", nullptr, TestTransitionEffectIdentity013, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
         {"testAnimateOption002", nullptr, TestAnimateOption002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testAnimateOption003", nullptr, TestAnimateOption003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testAnimateOption004", nullptr, TestAnimateOption004, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -7901,6 +7929,24 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"testCustomDialogSetBackgroundColor004", nullptr, TestCustomDialogSetBackgroundColor004, nullptr, nullptr,
          nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial001", nullptr, TestCustomDialogSetSystemMaterial001, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial002", nullptr, TestCustomDialogSetSystemMaterial002, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial003", nullptr, TestCustomDialogSetSystemMaterial003, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial004", nullptr, TestCustomDialogSetSystemMaterial004, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions001", nullptr, TestCustomDialogSetSystemMaterialInOptions001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions002", nullptr, TestCustomDialogSetSystemMaterialInOptions002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions003", nullptr, TestCustomDialogSetSystemMaterialInOptions003,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions004", nullptr, TestCustomDialogSetSystemMaterialInOptions004,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions005", nullptr, TestCustomDialogSetSystemMaterialInOptions005,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCustomDialogSetCornerRadius001", nullptr, TestCustomDialogSetCornerRadius001, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"testCustomDialogSetCornerRadius002", nullptr, TestCustomDialogSetCornerRadius002, nullptr, nullptr,

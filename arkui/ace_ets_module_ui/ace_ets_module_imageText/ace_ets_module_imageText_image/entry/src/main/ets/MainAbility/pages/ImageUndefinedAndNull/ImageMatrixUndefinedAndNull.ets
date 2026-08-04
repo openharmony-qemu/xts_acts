@@ -24,6 +24,7 @@ struct imageMatrixUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageMatrixUndefined')
+            .key('imageMatrixUndefined')
             .objectFit(ImageFit.MATRIX)
             .imageMatrix(undefined)
             .border({ width:2, color: Color.Black })
@@ -36,6 +37,7 @@ struct imageMatrixUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageMatrixNull')
+            .key('imageMatrixNull')
             .objectFit(ImageFit.MATRIX)
             .imageMatrix(null)
             .border({ width:2, color: Color.Black })

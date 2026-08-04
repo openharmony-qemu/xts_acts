@@ -1577,6 +1577,22 @@ export default function AudioSuiteEngineTest() {
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
       done();
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
     
     /**
      * @tc.number      AudioSuiteEngine_DestroyNode_001
@@ -4462,6 +4478,74 @@ export default function AudioSuiteEngineTest() {
       let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100();
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
       console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100
+     * @tc.desc       AUDIOSUITE_PRINTINFO
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200
+     * @tc.number     SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200
+     * @tc.desc       AUDIOSUITE_PRINTINFO
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300
+     * @tc.number     SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300
+     * @tc.desc       AUDIOSUITE_PRINTINFO
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400
+     * @tc.number     SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400
+     * @tc.desc       AUDIOSUITE_PRINTINFO
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400 end ====>');
       done();
     })
   })

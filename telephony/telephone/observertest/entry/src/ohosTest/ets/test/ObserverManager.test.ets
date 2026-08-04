@@ -48,6 +48,13 @@ async function runTestCaseWithJudgeHasSimCard(testCaseName: string, done: Functi
   console.info(`${testCaseName} test end`);
 }
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 export default function observerManagerTest() {
   describe('ObserverManagerTest', () => {
     beforeAll(async (done: Function) => {
@@ -804,19 +811,24 @@ export default function observerManagerTest() {
       try {
         observer.on('cellularDataFlowChange', {
           slotId: 0
-        }, (data: observer.DataFlowType) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
-          ExpectTrue(data == 0 || data == 4);
+        }, (flow: observer.DataFlowType) => {
+          console.info(`${caseName} data ${JSON.stringify(flow)}`);
+          ExpectTrue(flow === data.DataFlowType.DATA_FLOW_TYPE_NONE
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_DOWN
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_UP
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_UP_DOWN
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_DORMANT);
         });
         await data.disableCellularData();
-        done();
+        await sleep(3000);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
-        done();
       }
       await data.enableCellularData();
+      await sleep(3000);
       console.info(`${caseName} test end `);
+      done();
     });
 
 

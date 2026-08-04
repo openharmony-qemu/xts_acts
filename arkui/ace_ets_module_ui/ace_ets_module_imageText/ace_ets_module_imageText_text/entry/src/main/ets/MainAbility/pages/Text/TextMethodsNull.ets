@@ -46,82 +46,96 @@ struct TextMethodsNull {
       // onMarqueeStateChange null test
       Text('Marquee text')
         .id('text_onMarqueeStateChange_null')
+        .key('text_onMarqueeStateChange_null')
         .onMarqueeStateChange(null)
         .height('5%')
 
       // onMarqueeStateChange undefined test
       Text('Marquee text')
         .id('text_onMarqueeStateChange_undefined')
+        .key('text_onMarqueeStateChange_undefined')
         .onMarqueeStateChange(undefined)
         .height('5%')
 
       // bindSelectionMenu spanType null test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_spanType_null')
+        .key('text_bindSelectionMenu_spanType_null')
         .bindSelectionMenu(null, this.CustomMenuBuilder, TextResponseType.LONG_PRESS)
         .height('5%')
 
       // bindSelectionMenu spanType undefined test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_spanType_undefined')
+        .key('text_bindSelectionMenu_spanType_undefined')
         .bindSelectionMenu(undefined, this.CustomMenuBuilder, TextResponseType.LONG_PRESS)
         .height('5%')
 
       // bindSelectionMenu content null test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_content_null')
+        .key('text_bindSelectionMenu_content_null')
         .bindSelectionMenu(TextSpanType.TEXT, null, TextResponseType.LONG_PRESS)
         .height('5%')
 
       // bindSelectionMenu content undefined test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_content_undefined')
+        .key('text_bindSelectionMenu_content_undefined')
         .bindSelectionMenu(TextSpanType.TEXT, undefined, TextResponseType.LONG_PRESS)
         .height('5%')
 
       // bindSelectionMenu responseType null test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_responseType_null')
+        .key('text_bindSelectionMenu_responseType_null')
         .bindSelectionMenu(TextSpanType.TEXT, this.CustomMenuBuilder, null)
         .height('5%')
 
       // bindSelectionMenu responseType undefined test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_responseType_undefined')
+        .key('text_bindSelectionMenu_responseType_undefined')
         .bindSelectionMenu(TextSpanType.TEXT, this.CustomMenuBuilder, undefined)
         .height('5%')
 
       // bindSelectionMenu options null test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_options_null')
+        .key('text_bindSelectionMenu_options_null')
         .bindSelectionMenu(TextSpanType.TEXT, this.CustomMenuBuilder, TextResponseType.LONG_PRESS, null)
         .height('5%')
 
       // bindSelectionMenu options undefined test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_options_undefined')
+        .key('text_bindSelectionMenu_options_undefined')
         .bindSelectionMenu(TextSpanType.TEXT, this.CustomMenuBuilder, TextResponseType.LONG_PRESS, undefined)
         .height('5%')
 
       // setTextSelection selectionStart null test
       Text('Selection text', { controller: this.controller1 })
         .id('text_setTextSelection_start_null')
+        .key('text_setTextSelection_start_null')
         .height('5%')
 
       // setTextSelection selectionStart undefined test
       Text('Selection text', { controller: this.controller2 })
         .id('text_setTextSelection_start_undefined')
+        .key('text_setTextSelection_start_undefined')
         .height('5%')
 
       // bindSelectionMenu all null test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_all_null')
+        .key('text_bindSelectionMenu_all_null')
         .bindSelectionMenu(null, null, null)
         .height('5%')
 
       // bindSelectionMenu all undefined test
       Text('Selection menu text')
         .id('text_bindSelectionMenu_all_undefined')
+        .key('text_bindSelectionMenu_all_undefined')
         .bindSelectionMenu(undefined, undefined, undefined)
         .height('5%')
     }

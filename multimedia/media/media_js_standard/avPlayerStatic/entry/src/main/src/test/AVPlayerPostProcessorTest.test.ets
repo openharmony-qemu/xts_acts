@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -115,10 +116,10 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
   }).catch(mediaTestBase.catchCallback);
 
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
-    (async () => {
+    waitForCompletion(async () => {
       console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
       await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp, done);
-    })().awaitSync()
+    })
   });
   avPlayer!!.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);

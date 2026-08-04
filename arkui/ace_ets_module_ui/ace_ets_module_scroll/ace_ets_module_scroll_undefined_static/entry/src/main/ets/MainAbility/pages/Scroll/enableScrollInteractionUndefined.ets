@@ -1,47 +1,7 @@
-'use static'
-import {
-  Builder,
-  Stack,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Alignment,
-  Tabs,
-  BarPosition,
-  TabContent,
-  NestedScrollMode,
-  Refresh,
-  Button,
-  List,
-  RefreshStatus,
-  ForEach,
-  LazyForEach,
-  ListItemAlign,
-  ListItem,
-  NestedScrollMode,
-  ScrollState,
-  Text,
-  Scroller,
-  TextAlign,
-  BarState,
-  Scroll,
-  Edge,
-  ContentClipMode,
-  CrownSensitivity,
-  EdgeEffect,
-  Color,
-  ClickEvent,
-  Margin,
-  ScrollDirection,
-  ScrollSource,
-  LengthMetrics,
-  FadingEdgeOptions
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { ComponentContent } from '@kit.ArkUI'
-import { FrameNode, UIContext } from '@kit.ArkUI'
-
+'use static';
+import { Builder, Stack, Entry, Component, Column, Row, Alignment, Tabs, BarPosition, TabContent, NestedScrollMode, Refresh, Button, List, RefreshStatus, ForEach, LazyForEach, ListItemAlign, ListItem, ScrollState, Text, Scroller, TextAlign, BarState, Scroll, Edge, ContentClipMode, CrownSensitivity, EdgeEffect, Color, ClickEvent, Margin, ScrollDirection, ScrollSource, LengthMetrics, FadingEdgeOptions } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import { ComponentContent, FrameNode, UIContext } from '@kit.ArkUI';
 @Entry
 @Component
 struct ScrollPage {

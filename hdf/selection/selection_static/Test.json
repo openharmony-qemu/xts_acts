@@ -20,7 +20,8 @@
             "power-shell wakeup",
             "uinput -T -m 300 2700 280 200",
             "power-shell setmode 602",
-            "param set sys.selection.switch on"
+            "param set sys.selection.switch on",
+            "param set sys.selection.app com.acts.selection.function.static/EntryAbility"
         ]
     }]
 }

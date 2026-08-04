@@ -40,6 +40,12 @@ export default function abilityTest2() {
     let context: common.UIAbilityContext;
     let driver = Driver.create();
     let cmdBeforeEach = 'aa start -d 0 -a TestAbility' + ' -b ' + 'com.example.actsterminateselfwithresulttest';
+    let cmdBeforeEach2 = 'aa force-stop com.example.terminateselfwithresulttesthap';
+    let cmdBeforeEach3 = 'aa force-stop com.example.terminateselfwithresulttesthap2';
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmdBeforeEach += ' -u ' + user;
+    }
     beforeAll(async (done: Function) => {
       await sleep(1000);
       context = getContext() as common.UIAbilityContext;
@@ -51,6 +57,8 @@ export default function abilityTest2() {
       done();
     });
     beforeEach(async () => {
+      await delegator.executeShellCommand(cmdBeforeEach2);
+      await delegator.executeShellCommand(cmdBeforeEach3);
       await delegator.executeShellCommand(cmdBeforeEach);
       await sleep(1000);
     });

@@ -108,10 +108,11 @@ export default function DeviceStatusUnitTest() {
             setTimeout(function () {
                 try {
                     p_done = done;
-                    stationary.off("relativeStill", stationary.ActivityEvent.EXIT, pub_callback);
+                    stationary.off("relativeStill", stationary.ActivityEvent.EXIT);
+                    console.log("SUB_MSDP_DeviceStatus_API_Stationary_0200 off success");
                     p_done();
                 } catch (error) {
-                    console.error('error=' + error);
+                    console.error('SUB_MSDP_DeviceStatus_API_Stationary_0200 off error=' + error);
                     expect().assertFail();
                     done();
                 }
@@ -474,8 +475,191 @@ export default function DeviceStatusUnitTest() {
             }, 200);
         })
 
+        /**
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_1400
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_1400
+         * @tc.desc   Stationary on ActivityEvent is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MSDP_DeviceStatus_API_Stationary_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_1400 on start");
+            try {
+                stationary.on("still", null, reportLatencyNs, pub_callback);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_1400 success");
+                expect().assertFail();
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1400 fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
 
+        /**
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_1500
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_1500
+         * @tc.desc   Stationary on ActivityEvent is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MSDP_DeviceStatus_API_Stationary_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_1500 on start");
+            try {
+                stationary.on("still", undefined, reportLatencyNs, pub_callback);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_1500 success");
+                expect().assertFail();
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1500 fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
 
+        /**
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_1600
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_1600
+         * @tc.desc   Stationary on ActivityEvent is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MSDP_DeviceStatus_API_Stationary_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_1600 on start");
+            try {
+                stationary.on("still", 0, reportLatencyNs, pub_callback);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_1600 success");
+                expect().assertFail();
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1600 fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_1700
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_1700
+         * @tc.desc   Stationary off ActivityEvent is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MSDP_DeviceStatus_API_Stationary_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_1700 start");
+            try {
+                stationary.off("still", null, pub_callback);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_1700 success");
+                expect().assertFail();
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1700 fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_1800
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_1800
+         * @tc.desc   Stationary off ActivityEvent is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MSDP_DeviceStatus_API_Stationary_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_1800 start");
+            try {
+                stationary.off("still", undefined, pub_callback);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_1800 success");
+                expect().assertFail();
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1800 fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_1900
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_1900
+         * @tc.desc   Stationary off ActivityEvent is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MSDP_DeviceStatus_API_Stationary_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_1900 start");
+            try {
+                stationary.off("still", 0, pub_callback);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_1900 success");
+                expect().assertFail();
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_1900 fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_2000
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_2000
+         * @tc.desc   Stationary multicallback test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MSDP_DeviceStatus_API_Stationary_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_2000 on start");
+            let callback1 = (data) => {
+                console.log('SUB_MSDP_DeviceStatus_API_Stationary_2000 callback1 data: ' + JSON.stringify(data) + ', data.value:' + data.value);
+                expect(data.value >= -1).assertTrue();
+            }
+            let callback2 = (data) => {
+                console.log('SUB_MSDP_DeviceStatus_API_Stationary_2000 callback2 data: ' + JSON.stringify(data) + ', data.value:' + data.value);
+                expect(data.value >= -1).assertTrue();
+            }
+            try {
+                stationary.on("still", stationary.ActivityEvent.ENTER_EXIT, reportLatencyNs, callback1);
+                stationary.on("still", stationary.ActivityEvent.ENTER_EXIT, reportLatencyNs, callback2);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_2000 on success");
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_2000 on fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect().assertFail();
+                done();
+            }
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_2000 once start");
+            try {
+                stationary.once("still", callback1);
+                stationary.once("still", callback2);
+                console.log("SUB_MSDP_DeviceStatus_API_Stationary_2000 once success");
+                done();
+            } catch (error) {
+                console.info(`SUB_MSDP_DeviceStatus_API_Stationary_2000 once fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                expect().assertFail();
+                done();
+            }
+            console.log("SUB_MSDP_DeviceStatus_API_Stationary_2000 off start");
+            setTimeout(function () {
+                try {
+                    stationary.off("still", stationary.ActivityEvent.ENTER_EXIT, callback1);
+                    stationary.off("still", stationary.ActivityEvent.ENTER_EXIT, callback2);
+                    console.log("SUB_MSDP_DeviceStatus_API_Stationary_2000 off success");
+                    done();
+                } catch (error) {
+                    console.info(`SUB_MSDP_DeviceStatus_API_Stationary_2000 off fail: ${JSON.stringify(error, ['code', 'message'])}`);
+                    expect().assertFail();
+                    done();
+                }
+            }, 200);
+        })
 
     })
 }

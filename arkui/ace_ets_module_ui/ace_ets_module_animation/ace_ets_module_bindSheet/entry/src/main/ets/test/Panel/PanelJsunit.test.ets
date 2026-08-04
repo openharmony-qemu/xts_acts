@@ -65,7 +65,7 @@ export default function panelJsunit() {
     it('panelTest001', Level.LEVEL2, async () => {
       console.info('++++++++++++++++ Panel TestCase 1 START ++++++++++++++++');
       await sleep(1)
-      let strJson = getInspectorByKey('panel');
+      let strJson = getInspectorByKey('Panel_panel');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.$type))

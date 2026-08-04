@@ -53,7 +53,7 @@ export default function CustomDialogLifeTest() {
     it('CustomDialogLife_0001', Level.LEVEL2, async (done: Function) => {
       console.info('CustomDialogLife_0101 START');
       await CommonFunc.sleep(1000);
-      sendEventByKey('CustomDialog',10,"")
+      sendEventByKey('CustomDialogLife' + '_CustomDialog_02', 10, '');
       await CommonFunc.sleep(1000);
       console.info('CustomDialogLife_0101 click after')
       let customDialogFlag1 = getInspectorByKey('customDialogFlag1');

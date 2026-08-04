@@ -86,7 +86,7 @@ it('SUB_ACE_GRID_OnlyRowsTemplate3_static_0300', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_011: RectValue = await CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
+      let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
 
       console.log('assert size')
       expect(Math.round(GridItem_011.right - GridItem_011.left)).assertEqual(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))));
@@ -97,10 +97,10 @@ it('SUB_ACE_GRID_OnlyRowsTemplate3_static_0300', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
       await CommonFunc.sleep(1000);
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate3_static_0300] END');
       done();

@@ -71,7 +71,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0001', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0001] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let btn = await driver.findComponent(ON.id('turn_RouterPushUrlTwo_noParms'));
       await driver.delayMs(waitUiReadyMs);
@@ -95,7 +96,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0002', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0002] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let btn = await driver.findComponent(ON.id('turn_RouterPushUrlTwo_hasParms'));
       await driver.delayMs(waitUiReadyMs);
@@ -119,7 +121,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0003', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0003] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let Length = router.getLength()
       expect("Length = " + Length).assertEqual("Length = 1")
@@ -153,7 +156,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0004', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0004] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let Length = router.getLength()
       expect(Length).assertEqual("1")
@@ -187,7 +191,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0005', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0005] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
       let btn = await scrollBar.scrollSearch(ON.id('turn_RouterPushReplace_noParms'));
       await driver.delayMs(waitUiReadyMs);
@@ -214,7 +219,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0006', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0006] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
       let btn = await scrollBar.scrollSearch(ON.id('turn_RouterPushReplace_hasParms'));
@@ -242,7 +248,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0007', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0007] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
       let btn = await scrollBar.scrollSearch(ON.id('turn_UIRouterPushUrlTwo_noParms'));
@@ -268,7 +275,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0008', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0008] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
       let btn = await scrollBar.scrollSearch(ON.id('turn_UIRouterPushUrlTwo_hasParms'));
@@ -294,7 +302,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0009', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0009] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let Length = router.getLength()
       expect("Length = " + Length).assertEqual("Length = 1")
@@ -330,7 +339,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0010] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let Length = router.getLength()
       expect(Length).assertEqual("1")
@@ -366,7 +376,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0011', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0011] START');
-      let driver = Driver.create();
+     let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
       let btn = await scrollBar.scrollSearch(ON.id('turn_UIRouterPushReplace_noParms'));
       await driver.delayMs(waitUiReadyMs);
@@ -393,7 +404,8 @@ export default function RouterPushUrlJsunit() {
      */
     it('RouterPushUrlJsunit_0012', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0012] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       await driver.delayMs(waitUiReadyMs);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
       let btn = await scrollBar.scrollSearch(ON.id('turn_UIRouterPushReplace_hasParms'));

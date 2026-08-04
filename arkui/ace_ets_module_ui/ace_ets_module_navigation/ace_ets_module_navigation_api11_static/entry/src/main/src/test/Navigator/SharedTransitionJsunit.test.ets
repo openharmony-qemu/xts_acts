@@ -75,7 +75,7 @@ export default function sharedTransitionJsunit() {
      */
 it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sharedTransitionTest_static_0100 START');
-      let strJson = inspector.getInspectorByKey('Navigator');
+      let strJson = inspector.getInspectorByKey('sharedTransition' + '_Navigator');
 
       console.info("sharedTransitionTest_static_0100 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Navigation')
@@ -92,7 +92,7 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
      */
 it('sharedTransitionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sharedTransitionTest_static_0200 START');
-      let strJson = inspector.getInspectorByKey('Navigator');
+      let strJson = inspector.getInspectorByKey('sharedTransition' + '_Navigator');
 
       console.info("sharedTransitionTest_static_0200 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Navigation')
@@ -109,7 +109,7 @@ it('sharedTransitionTest_static_0200', Level.LEVEL0, async (done: () => void): P
      */
 it('sharedTransitionTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sharedTransitionTest_static_0300 START');
-      let strJson = inspector.getInspectorByKey('Navigator');
+      let strJson = inspector.getInspectorByKey('sharedTransition' + '_Navigator');
 
       console.info("sharedTransitionTest_static_0300 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Navigation')
@@ -163,7 +163,7 @@ it('sharedTransitionTest_static_0400', Level.LEVEL0, async (done: () => void): P
       } catch (err) {
         console.info("sharedTransitionTest_static_0400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("sharedTransitionTest_static_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('Navigator', 10, "")));
+      console.info("sharedTransitionTest_static_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('sharedTransition' + '_Navigator', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('sharedTransitionTest_static_0400 END');
       done();

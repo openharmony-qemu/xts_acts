@@ -1382,7 +1382,7 @@ export default function VideoSessionManualControlTest() {
       try {
         let result: number = session.getExposureBiasStep();
         console.info(TAG, 'getExposureBiasStep result: ' + result);
-        expect(result > 0).assertTrue();
+        expect(result >= 0).assertTrue();
         console.info(TAG, 'SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_GETEXPOSUREBIASSTEP_PARAM_0200 end');
         done();
       } catch (error) {

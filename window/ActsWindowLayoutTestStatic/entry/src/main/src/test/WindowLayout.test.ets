@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 // import { MyCallback } from '../models/MyCallback';
 import window from '@ohos.window'
 import { UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage , LocalStorage, ReadonlyEnvKey } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import { ColorMetrics, screenshot } from '@kit.ArkUI';
@@ -39,7 +40,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
     return new Promise<window.WindowStage>((resolve, reject) => {
-        (async () => {
+        waitForCompletion(async () => {
             let want: Want = {
                 bundleName: "com.example.actswindowtest.static",
                 abilityName: 'StartAbility'
@@ -60,7 +61,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
             await Utils.msSleep(1000)
             let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
             resolve(windowStageStart);
-        })().awaitSync()
+        })
     })
 }
 async function terminateAbility(caseName: string) {
@@ -93,6 +94,8 @@ export default function WindowLayoutTest() {
         let driver: Driver = Driver.create();
         let deviceType: string = deviceInfo.deviceType;
         let isSyscapSessionManagerSupported:boolean = false;
+        let displayWidth: number = 0;
+        let displayHeight: number = 0;
 
         console.log(`come in Driver create`);
         beforeAll(() => {
@@ -125,7 +128,9 @@ export default function WindowLayoutTest() {
             isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
             console.info(`brforeAll isSyscapSessionManagerSupported: ${isSyscapSessionManagerSupported}`);
             console.info(`brforeAll deviceType: ${deviceType}`);
-
+            displayWidth = display.getDefaultDisplaySync().width;
+            displayHeight = display.getDefaultDisplaySync().height;
+            console.info(`beforeAll:displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
         })
 
         /**
@@ -525,7 +530,7 @@ export default function WindowLayoutTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testGetGlobalRectErrCode1300002_static_0100')
                 .then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         subWin = data;
                         expect(!!subWin).assertTrue();
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -541,7 +546,7 @@ export default function WindowLayoutTest() {
                             expect(e!.code).assertEqual(1300002);
                             done()
                         }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -664,7 +669,7 @@ export default function WindowLayoutTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testStartMovingPromiseErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         subWin = data;
                         expect(!!subWin).assertTrue();
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -687,7 +692,7 @@ export default function WindowLayoutTest() {
                             expect(false).assertTrue();
                             done()
                         }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -857,7 +862,7 @@ export default function WindowLayoutTest() {
             try {
                 let promise = window.createWindow(config)
                 promise.then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(domain, tag,`${message} succeed createWindow`);
                         let dialogWindowClass:window.Window = data;
                         await data.setUIContent('pages/index2')
@@ -867,20 +872,20 @@ export default function WindowLayoutTest() {
                         try {
                             let promise1 = dialogWindowClass.setSystemAvoidAreaEnabled(true);
                             promise1.then(() => {
-                                (async () => {
+                                waitForCompletion(async () => {
                                     hilog.info(domain, tag,`${message} succeed setSystemAvoidAreaEnabled`);
                                     await dialogWindowClass.destroyWindow();
                                     await Utils.msSleep(1000);
                                     done();
-                                })().awaitSync()
+                                })
                             }).catch((err: Error):PromiseLike<void>|undefined => {
-                                (async () => {
+                                waitForCompletion(async () => {
                                     hilog.error(domain, tag,`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                                     await dialogWindowClass.destroyWindow();
                                     await Utils.msSleep(1000);
                                     expect(err.code).assertEqual(801);
                                     done();
-                                })().awaitSync()
+                                })
                             })
                         }catch (err) {
                             err = err as BusinessError;
@@ -890,7 +895,7 @@ export default function WindowLayoutTest() {
                             expect(false).assertTrue();
                             done();
                         }
-                    })().awaitSync()
+                    })
                 }).catch((err: Error) :PromiseLike<void>|undefined =>{
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
@@ -922,7 +927,7 @@ export default function WindowLayoutTest() {
             try {
                 let promise = window.createWindow(config)
                 promise.then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(domain, tag,`${message} succeed createWindow`);
                         let dialogWindowClass:window.Window = data;
                         await dialogWindowClass.setUIContent('pages/index2')
@@ -948,7 +953,7 @@ export default function WindowLayoutTest() {
                             expect(false).assertTrue();
                             done();
                         }
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
@@ -975,7 +980,7 @@ export default function WindowLayoutTest() {
             try {
                 let promise = windowStage!.createSubWindow(message)
                 promise.then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(domain, tag,`${message} succeed createWindow`);
                         let subWindowClass:window.Window = data;
                         await subWindowClass.setUIContent('pages/index2')
@@ -985,21 +990,21 @@ export default function WindowLayoutTest() {
                         try {
                             let promise1 = subWindowClass.setSystemAvoidAreaEnabled(true);
                             promise1.then(() => {
-                                (async () => {
+                                waitForCompletion(async () => {
                                     hilog.info(domain, tag,`${message} succeed setSystemAvoidAreaEnabled`);
                                     await subWindowClass.destroyWindow();
                                     await Utils.msSleep(1000);
                                     expect(false).assertTrue();
                                     done();
-                                })().awaitSync()
+                                })
                             }).catch((err: Error):PromiseLike<void>|undefined => {
-                                (async () => {
+                                waitForCompletion(async () => {
                                     hilog.error(domain, tag,`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                                     await subWindowClass.destroyWindow();
                                     await Utils.msSleep(1000);
                                     expect(err.code == 801 || err.code ==1300004).assertTrue();
                                     done();
-                                })().awaitSync()
+                                })
                             })
                         }catch (err) {
                             err = err as BusinessError;
@@ -1009,7 +1014,7 @@ export default function WindowLayoutTest() {
                             expect(false).assertTrue();
                             done();
                         }
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
@@ -1041,7 +1046,7 @@ export default function WindowLayoutTest() {
             try {
                 let promise = window.createWindow(config)
                 promise.then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(domain, tag,`${message} succeed createWindow`);
                         let dialogWindowClass = data;
                         await dialogWindowClass.setUIContent('pages/index2')
@@ -1061,7 +1066,7 @@ export default function WindowLayoutTest() {
                             expect(err.code).assertEqual(801);
                             done();
                         }
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
@@ -1088,7 +1093,7 @@ export default function WindowLayoutTest() {
             try {
                 let promise = windowStage!.createSubWindow(message)
                 promise.then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(domain, tag,`${message} succeed createWindow`);
                         let dialogWindowClass = data;
                         await dialogWindowClass.setUIContent('pages/index2')
@@ -1111,7 +1116,7 @@ export default function WindowLayoutTest() {
                             expect(err.code == 801 || err.code ==1300004).assertTrue();
                             done();
                         }
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
@@ -1143,7 +1148,7 @@ export default function WindowLayoutTest() {
             try {
                 let promise = window.createWindow(config)
                 promise.then((data:window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         hilog.info(domain, tag,`${message} succeed createWindow`);
                         let dialogWindowClass = data;
                         await dialogWindowClass.setUIContent("pages/index2")
@@ -1162,7 +1167,7 @@ export default function WindowLayoutTest() {
                             expect(err.code == 801 || err.code ==1300002).assertTrue();
                             done();
                         }
-                    })().awaitSync()
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
@@ -1190,7 +1195,7 @@ export default function WindowLayoutTest() {
             let subWin: window.Window;
             windowStage!.createSubWindow('testGetWindowSystemBarPropertiesErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         subWin = data;
                         expect(!!subWin).assertTrue();
                         hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + data);
@@ -1207,7 +1212,7 @@ export default function WindowLayoutTest() {
                             expect(e.message!=null).assertTrue();
                             done()
                         }
-                    })().awaitSync()
+                    })
                 })
                 .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
@@ -2323,10 +2328,12 @@ export default function WindowLayoutTest() {
                     await subWindowClass.setUIContent('pages/index2');
                     await subWindowClass.showWindow();
                     let displayId:Long|undefined = subWindowClass!.getWindowProperties().displayId;
+                    console.info(`${message} displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
+                   await subWindowClass.resize((displayWidth*0.5).toInt(), (displayHeight*0.5).toInt());
                     let moveConfiguration: window.MoveConfiguration = {
                         displayId: displayId
                     }
-                    let promise = subWindowClass.moveWindowToGlobal(300, 300, moveConfiguration);
+                    let promise = subWindowClass.moveWindowToGlobal((displayWidth*0.3).toInt(), (displayHeight*0.3).toInt(), moveConfiguration);
                     promise.then(async () => {
                         console.info(`${message} succeed in moveWindowToGlobal`);
                     }).catch((err: Error):PromiseLike<void>|undefined => {
@@ -2338,8 +2345,8 @@ export default function WindowLayoutTest() {
                     await Utils.msSleep(1000);
                     let rect = subWindowClass.getWindowProperties().windowRect;
                     console.info(`${message} after moving windowRect:${JSON.stringify(rect)}`);
-                    expect(rect.left).assertEqual(300);
-                    expect(rect.top).assertEqual(300);
+                    expect(rect.left).assertEqual(Math.floor(displayWidth*0.3).toInt());
+                    expect(rect.top).assertEqual(Math.floor(displayHeight*0.3).toInt())
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
@@ -2635,9 +2642,8 @@ export default function WindowLayoutTest() {
                 expect(properties.windowRect.top).assertEqual(1000);
                 done();
             }).catch((err: Error):PromiseLike<void>|undefined => {
-                err === err as BusinessError;
                 if(err!.code !== 801){
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    hilog.error(0x0000, '[ANI]',`${msgStr} Failed to move the window. Cause code: ${err!.code}, message: ${err!.message}` );
                     expect(true).assertFalse();
                     done();
                 }else{
@@ -3194,7 +3200,7 @@ export default function WindowLayoutTest() {
                 await Utils.msSleep(300);
                 try {
                     (win as window.Window).moveWindowTo(300, 300, (err: BusinessError<void>|null):void => {
-                        (async () => {
+                        waitForCompletion(async () => {
                             const errCode: number = err!.code;
                             if (errCode) {
                                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -3209,7 +3215,7 @@ export default function WindowLayoutTest() {
                             expect(properties.windowRect.left).assertEqual(300);
                             expect(properties.windowRect.top).assertEqual(300);
                             done();
-                        })().awaitSync()
+                        })
                     });
                 } catch (exception) {
                     exception === exception as BusinessError;
@@ -3281,7 +3287,7 @@ export default function WindowLayoutTest() {
             await Utils.msSleep(300)
             try {
                 (win as window.Window).resize(500, 1000, (err: BusinessError<void>|null):void => {
-                    (async () => {
+                    waitForCompletion(async () => {
                         const errCode: number = err!.code;
                         if (errCode) {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
@@ -3296,7 +3302,7 @@ export default function WindowLayoutTest() {
                         expect(properties.windowRect.width).assertEqual(500);
                         expect(properties.windowRect.height).assertEqual(1000);
                         done();
-                    })().awaitSync()
+                    })
                 });
             } catch (exception) {
                 exception === exception as BusinessError;
@@ -4849,6 +4855,65 @@ export default function WindowLayoutTest() {
                 }
             })
 
+            /**
+         * @tc.number      SUB_WINDOW_recoverError1300004_static_2600
+         * @tc.name        testRecoverError1300004_static_2600
+         * @tc.desc        recover 1300002 window destroyed test.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('testRecoverError1300004_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testRecoverError1300004_static_2600';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(domain, tag, msgStr + 'begin');
+                 let options: window.SubWindowOptions = {
+                    title: caseName,
+                    decorEnabled: true,
+                    maximizeSupported: true,
+                };
+                try {
+                    let subWin: window.Window = await windowStage!.createSubWindowWithOptions(caseName, options);
+                    expect(!!subWin).assertTrue();
+                    await subWin.setUIContent('pages/Index');
+                    await subWin.showWindow();
+                    hilog.info(domain, tag, msgStr + 'show page');
+                    let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+                        duration: 200,
+                    };
+                    await subWin.maximizeWithOptions()
+                    hilog.info(domain, tag, msgStr + 'maxmized subwindow');
+                    await subWin.recover(snapshotAnimationConfig).then(async () => {
+                        hilog.info(domain, tag, msgStr + 'Succeeded in recovering window from duration=200.');
+                        await subWin.destroyWindow();
+                        hilog.info(domain, tag, msgStr + 'destroyWindow');
+                        expect(false).assertTrue();
+                        done();
+                    }).catch(async (err: Error) => {
+                        await subWin.destroyWindow();
+                        hilog.info(domain, tag, msgStr + 'destroyWindow');
+                        if (err!.code == 1300004) {
+                            hilog.info(domain, tag, msgStr + `The window is not created or destroyed. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code === 1300004).assertTrue();
+                            done();
+                        }else if (!isFreeWindowMode) {
+                            hilog.info(domain, tag, msgStr + `Capability not supported . Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code === 801).assertTrue();
+                            done();
+                        } else {
+                            hilog.error(domain, tag, msgStr + `Failed to recover window. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+                } catch (exception) {
+                    hilog.error(domain, tag, msgStr + `Failed to recover window or destroyWindow. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            })
+
         /**
          * @tc.number      SUB_WINDOW_recoverError1300016_001_static_2300
          * @tc.name        testRecoverError1300016_001_static_2300
@@ -5020,6 +5085,40 @@ export default function WindowLayoutTest() {
                     }
                 }
             })
+
+        /**
+     * @tc.name ReadonlyEnvKeyEnum_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_READONLYENUM_0100
+     * @tc.desc ReadonlyEnvKeyEnum_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('ReadonlyEnvKeyEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName = 'ReadonlyEnvKeyEnum_0100 ';
+      console.info(`${caseName} begin`);
+      try {
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_FOCUSED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_FOCUSED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_DISPLAY_ID ${JSON.stringify(ReadonlyEnvKey.WINDOW_DISPLAY_ID)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY ${JSON.stringify(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)}`)
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_FOCUSED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_DISPLAY_ID != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY != null).assertTrue()
+        done()
+      } catch (exception) {
+        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+    });
 
 
     })

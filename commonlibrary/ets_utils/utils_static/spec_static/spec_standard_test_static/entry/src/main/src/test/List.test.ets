@@ -1,3 +1,4 @@
+'use static';
 import builtinsBlockTest from './BuiltinStatment/BuiltinsBlockTest.test.ets'
 import builtinsBreakTest from './BuiltinStatment/BuiltinsBreakTest.test.ets'
 import builtinsContinueTest from './BuiltinStatment/BuiltinsContinueTest.test.ets'
@@ -43,6 +44,14 @@ import StringOperatorContextsTest from "./contextsandconversions/StringOperatorC
 import optionalChainingTest from "./ChainingOperator/NotEmptyOptional.test";
 import forLoopHeaderSmartCastTest from "./statements/ForLoopHeaderSmartCastTest.test.ets";
 import test2ForLoopCasesTest from "./statements/Test2ForLoopCases.test.ets";
+
+import classAndModuleAugmentationTest from "./ClassAndModuleAugmentation/ClassAndModuleAugmentationTest.test";
+import complexDataTypeMatchingEnhancementTest from "./ComplexDataTypeMatchingEnhancement/ComplexDataTypeMatchingEnhancementTest.test";
+import functionTypeInferenceEnhancementTest from "./FunctionTypeInferenceEnhancement/FunctionTypeInferenceEnhancementTest.test";
+import genericSpecTypeCheckingEnhancementTest from "./GenericSpecTypeCheckingEnhancement/GenericSpecTypeCheckingEnhancementTest.test";
+import classPropertyMappingNormalizationTest from "./ClassPropertyMappingNormalization/ClassPropertyMappingNormalization.test";	 
+import symbolAndSyntaxDisambiguationTest from "./SymbolAndSyntaxDisambiguation/SymbolAndSyntaxDisambiguation.test";
+import ImpliciteExportTest from "./ImplicitExport/ImplicitExportTest.test";
 
 export default function testsuite() {
   builtinsBlockTest();
@@ -91,4 +100,12 @@ export default function testsuite() {
   optionalChainingTest();
   forLoopHeaderSmartCastTest();
   test2ForLoopCasesTest();
+
+  classAndModuleAugmentationTest();
+  complexDataTypeMatchingEnhancementTest();
+  functionTypeInferenceEnhancementTest();
+  genericSpecTypeCheckingEnhancementTest();
+  classPropertyMappingNormalizationTest();	 
+  symbolAndSyntaxDisambiguationTest();
+  ImpliciteExportTest()
 }

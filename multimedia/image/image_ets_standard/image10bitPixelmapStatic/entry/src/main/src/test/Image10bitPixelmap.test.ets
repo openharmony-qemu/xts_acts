@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -391,27 +392,25 @@ export default function image10bitPixelMap() {
             }
           }
         } else {
-          try {
-            await imagePacker.packToFile(pixelMap!, writeFile.fd, packOpt);
-            let err: BusinessError | null = null as BusinessError | null;
-            if (!isSupportHdr) {
-            logger.log(`device not support hdr`);
-            expect(!isSupportHdr).assertTrue();
-            done();
-            } else {
-            if (err && err.code) {
-            logger.log(`packToFile callback error: ` + err.message);
-            expect(false).assertTrue();
-            done();
-            }
-            let ret = await checkPackResult(orgInfo, writeFile.fd, format, packOpt.format, logger);
-            fs.closeSync(writeFile.fd);
-            expect(ret).assertTrue();
-            done();
-            }
-          } catch (err) {
-            console.error('packToFile failed: ' + err);
-          }
+          imagePacker.packToFile(pixelMap!, writeFile.fd, packOpt, (err: BusinessError|null) => {
+            waitForCompletion(async () => {
+              if (!isSupportHdr) {
+                logger.log(`device not support hdr`);
+                expect(!isSupportHdr).assertTrue();
+                done();
+              } else {
+                if (err && err.code) {
+                  logger.log(`packToFile callback error: ` + err.message);
+                  expect(false).assertTrue();
+                  done();
+                }
+                let ret = await checkPackResult(orgInfo, writeFile.fd, format, packOpt.format, logger);
+                fs.closeSync(writeFile.fd);
+                expect(ret).assertTrue();
+                done();
+              }
+            })
+          })
         }
       } catch (error) {
         logger.log("test packToFile error: " + error.message);

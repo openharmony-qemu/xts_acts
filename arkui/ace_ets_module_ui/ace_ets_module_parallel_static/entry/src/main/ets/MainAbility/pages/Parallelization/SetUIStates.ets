@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Entry, Text, Column, Component, Button, ClickEvent, UIContext } from '@ohos.arkui.component'
 import { State, PropRef, Link, Provide, Consume, StorageLink, LocalStorageLink, Observed, ObjectLink } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'

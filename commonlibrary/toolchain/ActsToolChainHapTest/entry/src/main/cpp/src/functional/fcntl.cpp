@@ -23,6 +23,13 @@
 
 #include "functionalext.h"
 
+#ifdef __arm__
+extern "C" off64_t lseek64(int, off64_t, int);
+#define LSEEK64 lseek64
+#else
+#define LSEEK64 lseek
+#endif
+
 static int TestConditionFcntl(bool condition, const char *expr, const char *fmt, ...)
 {
     if (condition) {
@@ -219,7 +226,7 @@ void Fcntl640400(void)
     int ret = write(fd1, write_data, strlen(write_data));
     EXPECT_EQ("fcntl64_0400", ret, (ssize_t)strlen(write_data));
 
-    lseek64(fd2, 0, SEEK_SET);
+    LSEEK64(fd2, 0, SEEK_SET);
     char read_buf[READ_BUF_SIZE] = {0};
     ret = read(fd2, read_buf, sizeof(read_buf) - 1);
     EXPECT_EQ("fcntl64_0400", ret, (ssize_t)strlen(write_data));

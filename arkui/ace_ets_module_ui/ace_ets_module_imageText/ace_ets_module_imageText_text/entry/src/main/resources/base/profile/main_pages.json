@@ -139,6 +139,10 @@
         "MainAbility/pages/Text/TextOrphanCharOptimization",
         "MainAbility/pages/Text/OrphanCharOptimization",
         "MainAbility/pages/Text/OrphanCharOptimization_null",
-        "MainAbility/pages/Text/TextFontVariations"
+        "MainAbility/pages/Text/TextFontVariations",
+        "MainAbility/pages/Text/TextPunctuationOverflow",
+        "MainAbility/pages/Text/TextIncrementalUpdatePolicy",
+        "MainAbility/pages/Text/TextTailIndents",
+        "MainAbility/pages/Text/TextEnableHapticFeedback"
     ]
 }

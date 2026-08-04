@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
+export const ADDR_TEST_BIN_HTTPS: string = "https://httpbin.moyufangge.com/post";
 let httpRequestOptions_string: http.HttpRequestOptions = {
   method: http.RequestMethod.POST,
   header: { "Content-type": "multipart/form-data" },
@@ -548,7 +549,7 @@ export default function HttpMultiFormDataListTest() {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
             httpRequest.request(
-              ADDR_TEST_DOMAIN_HTTPS,
+              ADDR_TEST_BIN_HTTPS,
               {
                 method: http.RequestMethod.POST,
                 header: {
@@ -559,7 +560,7 @@ export default function HttpMultiFormDataListTest() {
                     name: "multiTest",
                     remoteFileName: "xtsRemoteTest",
                     contentType: "image/png",
-                    filePath: "../../resources/base/media/icon.png",
+                    filePath: "invalid_path_that_does_not_exist.png",
                   },
                 ],
               }, (err: BusinessError, data: http.HttpResponse) => {
@@ -605,7 +606,7 @@ export default function HttpMultiFormDataListTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+            httpRequest.request(ADDR_TEST_BIN_HTTPS, {
               method: http.RequestMethod.POST,
               header: {
                 "Content-type": "multipart/form-data",
@@ -615,7 +616,7 @@ export default function HttpMultiFormDataListTest() {
                   name: "multiTest",
                   remoteFileName: "xtsRemoteTest",
                   contentType: "image/png",
-                  filePath: "../../resources/base/media/icon.png",
+                  filePath: "invalid_path_that_does_not_exist.png",
                 },
               ],
             }).then((data: http.HttpResponse) => {

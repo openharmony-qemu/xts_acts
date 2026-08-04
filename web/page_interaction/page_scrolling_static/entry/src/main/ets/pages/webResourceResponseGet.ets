@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -15,7 +16,7 @@
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../hypium';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import webView from '@ohos.web.webview';
 import { Callback } from '@ohos.base'
@@ -143,7 +144,7 @@ struct webResourceResponseGet {
             case 'emitonSwitchNextPage3': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/scrollEvent' })
+              router.pushUrl({ url: 'pages/webViewController' })
             }
           }
         })

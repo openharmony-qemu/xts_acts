@@ -114,13 +114,12 @@ struct Index {
 
               case 'emitActiveWebEngineVersion003': {
                 try {
-                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.M132);
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                    Utils.emitEvent(tmp_result, 20250905);
-                  } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20250905);
-                  }
+                    if(tmp_result === webview.ArkWebEngineVersion.M144 || tmp_result === webview.ArkWebEngineVersion.M132) {
+                      Utils.emitEvent(true, 20250905);
+                    }
+            
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -163,14 +162,12 @@ struct Index {
 
               case 'emitActiveWebEngineVersion006': {
                 try {
-                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersionEvergreen132();
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
                     console.log('emitActiveWebEngineVersion006' + tmp_result);
-                    Utils.emitEvent(tmp_result, 20251219);
-                  } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20251219);
-                  }
+                    if(tmp_result === webview.ArkWebEngineVersion.M144 || tmp_result === webview.ArkWebEngineVersion.M132) {
+                      Utils.emitEvent(true, 20251219);
+                    }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);

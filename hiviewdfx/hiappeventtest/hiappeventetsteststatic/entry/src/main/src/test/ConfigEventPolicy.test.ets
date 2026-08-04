@@ -1692,6 +1692,405 @@ export default function configEventPolicyTest() {
       hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6400 end`);
     })
 
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6500
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6500
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName为true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {useRefinedLogFileName: true}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6500 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6500 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6500 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6600
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6600
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName为false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {useRefinedLogFileName: false}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6600 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6600 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6600 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6700
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6700
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName组合场景1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {pageSwitchLogEnable: true, useRefinedLogFileName: true}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6700 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6700 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6700 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6800
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6800
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName组合场景2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {jsHeapLogtype: "event", useRefinedLogFileName: true}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6800 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6800 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6800 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6900
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6900
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName组合场景3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {jsHeapLogtype: "event_rawheap", useRefinedLogFileName: false}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6900 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6900 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_6900 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7000
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7000
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName组合场景4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event", useRefinedLogFileName: false}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7000 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7000 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7000 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7100
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7100
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName组合场景5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {pageSwitchLogEnable: false, jsHeapLogtype: "event", useRefinedLogFileName: true}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7100 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7100 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7100 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7200
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7200
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName组合场景6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {useRefinedLogFileName: undefined}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7200 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7200 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7200 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7300
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7300
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-useRefinedLogFileName组合场景7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: undefined, useRefinedLogFileName: undefined}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7300 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7300 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7300 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7400
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7400
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置collectMinidump为true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {collectMinidump: true}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7400 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7400 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7400 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7500
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7500
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置collectMinidump为false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {collectMinidump: false}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7500 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7500 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7500 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7600
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7600
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置collectMinidump为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {collectMinidump: undefined}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7600 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7600 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7600 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7700
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7700
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置5个参数都为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: undefined, collectMinidump: undefined}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7700 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7700 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7700 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7800
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7800
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置5个参数都为true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: true, collectMinidump: true}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7800 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7800 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7800 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7900
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7900
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置5个参数都为false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: false, collectMinidump: false}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7900 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7900 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_7900 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8000
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8000
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置仅collectMinidump为false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: true, collectMinidump: false}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8000 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8000 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8000 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8100
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8100
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置仅collectMinidump为true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: false, collectMinidump: true}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8100 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8100 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8100 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8200
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8200
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置仅collectMinidump为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: false, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: false, collectMinidump: undefined}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8200 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8200 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8200 end`);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8300
+     * @tc.number SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8300
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-appCrashPolicy设置仅collectMinidump为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let policy: hiAppEvent.EventPolicy = {appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, logFileCutoffSzBytes: 1024, simplifyVmaPrinting: true, collectMinidump: undefined}};
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8300 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8300 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue()
+        done();
+      });
+      hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8300 end`);
+    })
+
   })
   hilog.info(domain, tag, 'configureTest end');
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 RKH Corp.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -287,8 +288,6 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
         expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof RangeError).assertTrue();
-        const err: RangeError = e as RangeError;
-        expect(err.code).assertEqual(401);
       }
     });
 

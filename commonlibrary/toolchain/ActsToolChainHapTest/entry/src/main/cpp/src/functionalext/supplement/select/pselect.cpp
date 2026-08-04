@@ -60,16 +60,21 @@ void PselectFdset0100(void)
  */
 void PselectNormal0100(void)
 {
+    int pfd[2];
+    int rc = pipe(pfd);
+    EXPECT_EQ("PselectNormal0100", rc, 0);
     fd_set set;
     struct timespec timeout;
     timeout.tv_sec = K_PSELECT_BLOCK_TIMEOUT_SEC;
     timeout.tv_nsec = 0;
     FD_ZERO(&set);
-    FD_SET(STDOUT_FILENO, &set);
+    FD_SET(pfd[1], &set);
 
-    int ret = pselect(STDOUT_FILENO + 1, nullptr, &set, nullptr, &timeout, nullptr);
+    int ret = pselect(pfd[1] + 1, nullptr, &set, nullptr, &timeout, nullptr);
     EXPECT_EQ("PselectNormal0100", ret, K_PSELECT_READY_ONE_FD);
-    EXPECT_TRUE("PselectNormal0100", FD_ISSET(STDOUT_FILENO, &set));
+    EXPECT_TRUE("PselectNormal0100", FD_ISSET(pfd[1], &set));
+    close(pfd[0]);
+    close(pfd[1]);
 }
 
 /**
@@ -119,18 +124,21 @@ void PselectTimeout0100(void)
  */
 void PselectTime64Normal0100(void)
 {
+    int pfd[2];
+    int rc = pipe(pfd);
+    EXPECT_EQ("PselectTime64Normal0100", rc, 0);
     fd_set set;
     struct timespec timeout;
     timeout.tv_sec = K_PSELECT_BLOCK_TIMEOUT_SEC;
     timeout.tv_nsec = 0;
     FD_ZERO(&set);
-    FD_SET(STDOUT_FILENO, &set);
+    FD_SET(pfd[1], &set);
 
-    // Some runtimes do not export internal symbol __pselect_time64.
-    // Use standard pselect for compatibility.
-    int ret = pselect(STDOUT_FILENO + 1, nullptr, &set, nullptr, &timeout, nullptr);
+    int ret = pselect(pfd[1] + 1, nullptr, &set, nullptr, &timeout, nullptr);
     EXPECT_EQ("PselectTime64Normal0100", ret, K_PSELECT_READY_ONE_FD);
-    EXPECT_TRUE("PselectTime64Normal0100", FD_ISSET(STDOUT_FILENO, &set));
+    EXPECT_TRUE("PselectTime64Normal0100", FD_ISSET(pfd[1], &set));
+    close(pfd[0]);
+    close(pfd[1]);
 }
 
 static int PselectTestImpl(void)

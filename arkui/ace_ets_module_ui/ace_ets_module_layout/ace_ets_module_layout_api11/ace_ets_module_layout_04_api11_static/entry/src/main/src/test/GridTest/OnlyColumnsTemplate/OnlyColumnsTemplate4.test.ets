@@ -75,11 +75,11 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: (
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_02: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
       await CommonFunc.sleep(1000);
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart1', value: 5
@@ -96,8 +96,8 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_011: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_022: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
+      let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
 
       console.log('assert size')
@@ -120,11 +120,11 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500', Level.LEVEL0, async (done: (
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500] START');
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_02: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
       await CommonFunc.sleep(1000);
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart1', value: 2
@@ -141,8 +141,8 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let GridItem_011: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_022: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
+      let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
 
       console.log('assert size')

@@ -1,3 +1,4 @@
+'use static';
 import image from '@ohos.multimedia.image';
 import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
 import { WantAgent, wantAgent } from '@kit.AbilityKit';

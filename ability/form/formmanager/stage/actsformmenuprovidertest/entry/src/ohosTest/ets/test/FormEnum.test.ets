@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,22 +18,22 @@ import { it, expect, TestType, Size, Level, describe } from '@ohos/hypium';
 import formInfo from '@ohos.app.form.formInfo'
 import formError from '@ohos.application.formError';
 
-const tag = 'testTag';
-const domain: number = 0xF811;
+const COMMON_TAG = 'FormEnum';
+const DOMAIN = 0xF811;
 
 export default function formEnumTest() {
   describe('formEnumTest', () => {
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100
-     * @tc.desc   form FormLocation enum.
+     * @tc.desc   Verify that the FormLocation enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG:string = 'SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(8).assertEqual(formInfo.FormLocation.STANDBY);
       expect(7).assertEqual(formInfo.FormLocation.AI_SUGGESTION);
       expect(6).assertEqual(formInfo.FormLocation.SCREEN_LOCK);
@@ -43,37 +43,37 @@ export default function formEnumTest() {
       expect(2).assertEqual(formInfo.FormLocation.FORM_MANAGER);
       expect(1).assertEqual(formInfo.FormLocation.FORM_CENTER);
       expect(0).assertEqual(formInfo.FormLocation.DESKTOP);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100
      * @tc.number SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100
-     * @tc.desc   form LaunchReason enum.
+     * @tc.desc   Verify that the LaunchReason enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(3).assertEqual(formInfo.LaunchReason.FORM_SIZE_CHANGE);
       expect(2).assertEqual(formInfo.LaunchReason.FORM_SHARE);
       expect(1).assertEqual(formInfo.LaunchReason.FORM_DEFAULT);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_PARAM_0100
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_PARAM_0100
-     * @tc.desc   form FormParam enum.
+     * @tc.desc   Verify that the FormParam enum key values match expected string mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_PARAM_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_PARAM_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect('ohos.extra.param.key.original_form_id').assertEqual(formInfo.FormParam.ORIGINAL_FORM_KEY );
       expect('ohos.extra.param.key.permission_granted').assertEqual(formInfo.FormParam.FORM_PERMISSION_GRANTED_KEY);
       expect('ohos.extra.param.key.permission_name').assertEqual(formInfo.FormParam.FORM_PERMISSION_NAME_KEY);
@@ -90,124 +90,124 @@ export default function formEnumTest() {
       expect("ohos.extra.param.key.form_name").assertEqual(formInfo.FormParam.NAME_KEY);
       expect("ohos.extra.param.key.form_dimension").assertEqual(formInfo.FormParam.DIMENSION_KEY);
       expect("ohos.extra.param.key.update_form_reason").assertEqual(formInfo.FormParam.UPDATE_FORM_REASON_KEY);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_ERROR_0100
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_ERROR_0100
-     * @tc.desc   form FormError enum.
+     * @tc.desc   Verify that the FormError enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_ERROR_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_ERROR_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(30).assertEqual(formError.FormError.ERR_SYSTEM_RESPONSES_FAILED);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100
      * @tc.number SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100
-     * @tc.desc   form VisibilityType enum.
+     * @tc.desc   Verify that the VisibilityType enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(2).assertEqual(formInfo.VisibilityType.FORM_INVISIBLE);
       expect(1).assertEqual(formInfo.VisibilityType.FORM_VISIBLE);
       expect(0).assertEqual(formInfo.VisibilityType.UNKNOWN);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100
-     * @tc.desc   form FormShape enum.
+     * @tc.desc   Verify that the FormShape enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(2).assertEqual(formInfo.FormShape.CIRCLE);
       expect(1).assertEqual(formInfo.FormShape.RECT);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100
-     * @tc.desc   form FormDimension enum.
+     * @tc.desc   Verify that the FormDimension enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(7).assertEqual(formInfo.FormDimension.DIMENSION_6_4);
       expect(6).assertEqual(formInfo.FormDimension.DIMENSION_1_1);
       expect(4).assertEqual(formInfo.FormDimension.Dimension_4_4);
       expect(3).assertEqual(formInfo.FormDimension.Dimension_2_4);
       expect(2).assertEqual(formInfo.FormDimension.Dimension_2_2);
       expect(1).assertEqual(formInfo.FormDimension.Dimension_1_2);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_STATE_0100
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_STATE_0100
-     * @tc.desc   form FormState enum.
+     * @tc.desc   Verify that the FormState enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_STATE_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_STATE_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(1).assertEqual(formInfo.FormState.READY);
       expect(0).assertEqual(formInfo.FormState.DEFAULT);
       expect(-1).assertEqual(formInfo.FormState.UNKNOWN);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_TYPE_0100
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_TYPE_0100
-     * @tc.desc   form FormType enum.
+     * @tc.desc   Verify that the FormType enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_TYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_TYPE_0100';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_TYPE_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(2).assertEqual(formInfo.FormType.eTS);
       expect(1).assertEqual(formInfo.FormType.JS);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
 
     /**
      * @tc.name   SUB_ABILITY_FORM_FWK_FORM_TYPE_0200
      * @tc.number SUB_ABILITY_FORM_FWK_FORM_TYPE_0200
-     * @tc.desc   Form update reason enum.
+     * @tc.desc   Verify that the FormUpdateReason enum values match expected numeric mappings.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_TYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_TYPE_0200';
-      hilog.info(domain, tag, `${itName} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_TYPE_0200';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       expect(-1).assertEqual(formInfo.FormUpdateReason.UNKNOWN);
       expect(0).assertEqual(formInfo.FormUpdateReason.FORM_NODE_REUSE);
-      hilog.info(domain, tag, `${itName} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })
   })
 }

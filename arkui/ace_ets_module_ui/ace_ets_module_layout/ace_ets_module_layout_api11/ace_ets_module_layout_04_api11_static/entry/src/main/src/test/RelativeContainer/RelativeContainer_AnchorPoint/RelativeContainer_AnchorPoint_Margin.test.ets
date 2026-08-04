@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
@@ -83,11 +83,11 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Margin_TEST_static_0100', Level.LEVEL0
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Margin_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_bt1');
-      let RelativeContainer_AnchorPoint_Margin_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_tx2');
-      let RelativeContainer_AnchorPoint_Margin_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_r1');
-      let RelativeContainer_AnchorPoint_Margin_row1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_row1');
-      let RelativeContainer_AnchorPoint_Margin_row2: RectValue = await CommonFunc.getComponentRect('row_marginTest');
+      let RelativeContainer_AnchorPoint_Margin_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_bt1');
+      let RelativeContainer_AnchorPoint_Margin_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_tx2');
+      let RelativeContainer_AnchorPoint_Margin_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_r1');
+      let RelativeContainer_AnchorPoint_Margin_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_row1');
+      let RelativeContainer_AnchorPoint_Margin_row2: RectValue = CommonFunc.getComponentRect('row_marginTest');
 
       console.log('assert position')
       expect(Math.abs(RelativeContainer_AnchorPoint_Margin_row1.left - RelativeContainer_AnchorPoint_Margin_row2.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();

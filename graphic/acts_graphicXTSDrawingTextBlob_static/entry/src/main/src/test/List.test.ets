@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +15,10 @@
  */
 import textBlobTest from './TextBlob.test';
 import textBlob2Test from './TextBlob2.test';
+import DrawingTsTextBlobPart3Test from './TextBlobPart3.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   textBlobTest();
   textBlob2Test();
+  DrawingTsTextBlobPart3Test();
 }

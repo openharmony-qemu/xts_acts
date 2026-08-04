@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -207,8 +208,8 @@ export default function AttachThreadTest():void {
           const cls = new Foo();
           return cls.test_AttachDetach();
         });
-        const result = await job;
-        await worker.join();
+        const result = await job.Await();
+        worker.join().Await();
         return result;
       });
 
@@ -257,5 +258,141 @@ export default function AttachThreadTest():void {
       expect(result).assertEqual(1);
     });
 
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_1500
+     * @tc.name      testDetachThenGetEnvAndReattach
+     * @tc.desc      GetEnv should fail after Detach, and the same native thread can attach again
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testDetachThenGetEnvAndReattach", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let cls = new Foo();
+      let result = cls.test_Attach_DetachThenGetEnvAndReattach();
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_1600
+     * @tc.name      testAttachCurrentThreadInvalidHighVersion
+     * @tc.desc      AttachCurrentThread with unsupported high version returns ANI_INVALID_VERSION
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testAttachCurrentThreadInvalidHighVersion", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let cls = new Foo();
+      let result = cls.test_Attach_InvalidHighVersion();
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_1700
+     * @tc.name      testAttachCurrentThreadDisableInterop
+     * @tc.desc      AttachCurrentThread with --interop=disable can attach and detach successfully
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testAttachCurrentThreadDisableInterop", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let cls = new Foo();
+      let result = cls.test_Attach_DisableInterop();
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_1800
+     * @tc.name      testAttachFailedStateRecovery
+     * @tc.desc      Failed AttachCurrentThread should not pollute thread attach state
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testAttachFailedStateRecovery", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let cls = new Foo();
+      let result = cls.test_Attach_FailedAttachStateRecovery();
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_1900
+     * @tc.name      testMainManagedThreadAttachShouldFail
+     * @tc.desc      AttachCurrentThread on the main managed thread should return ANI_ERROR
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testMainManagedThreadAttachShouldFail", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let cls = new Foo();
+      let result = cls.test_Attach_CurrentManagedThreadShouldFail();
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_2000
+     * @tc.name      testEAWorkerCurrentThreadAttachShouldFail
+     * @tc.desc      AttachCurrentThread on an EAWorker managed thread should return ANI_ERROR
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it("testEAWorkerCurrentThreadAttachShouldFail", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (): Promise<void> => {
+        const worker = new EAWorker("AttachCurrentManagedThreadWorker");
+        worker.start();
+        const job = worker.run<int>(() => {
+          const cls = new Foo();
+          return cls.test_Attach_CurrentManagedThreadShouldFail();
+        });
+        const result = await job.Await();
+        worker.join().Await();
+        expect(result).assertEqual(1);
+      });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_2100
+     * @tc.name      testTaskPoolCurrentThreadAttachShouldFail
+     * @tc.desc      AttachCurrentThread on a taskpool managed thread should return ANI_ERROR
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it("testTaskPoolCurrentThreadAttachShouldFail", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (): Promise<void> => {
+        const task = new taskpool.Task(() => {
+          const cls = new Foo();
+          return cls.test_Attach_CurrentManagedThreadShouldFail();
+        });
+        const result = (await taskpool.execute(task)) as int;
+        expect(result).assertEqual(1);
+      });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_2200
+     * @tc.name      testConcurrentMainThreadWorkerOverlap
+     * @tc.desc      Main thread and attached native thread call ANI object methods with real overlap
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it("testConcurrentMainThreadWorkerOverlap", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let cls = new Foo();
+      let result = cls.test_ConcurrentMainThreadWorkerOverlap();
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_ANI_ATTACHDETACH_STATIC_2300
+     * @tc.name      testAttachLocalScopeStress
+     * @tc.desc      Long-lived attached native thread repeatedly creates and destroys local scopes
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it("testAttachLocalScopeStress", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let cls = new Foo();
+      let result = cls.test_Attach_LocalScopeStress();
+      expect(result).assertEqual(1);
+    });
   })
 }

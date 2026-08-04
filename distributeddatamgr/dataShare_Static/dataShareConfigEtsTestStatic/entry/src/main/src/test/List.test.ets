@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,9 @@ import dataShareConfigGetTest from './DataShareConfigGetTest.test';
 import dataShareConfigPublishTest from './DataShareConfigPublishTest.test';
 import dataShareConfigSubscribeTest from './DataShareConfigSubscribeTest.test';
 import dataShareConfigUnSubscribeTest from './DataShareConfigUnSubscribeTest.test';
+import dataShareConfigPutValueTest from './DataShareConfigPutValueTest.test';
+import dataShareConfigRemoveValueTest from './DataShareConfigRemoveValueTest.test';
+import dataShareConfigGetValuesTest from './DataShareConfigGetValuesTest.test';
 
 export default function testsuite() {
   dataShareConfigDeleteTest();
@@ -24,4 +28,7 @@ export default function testsuite() {
   dataShareConfigPublishTest();
   dataShareConfigSubscribeTest();
   dataShareConfigUnSubscribeTest();
+  dataShareConfigPutValueTest();
+  dataShareConfigRemoveValueTest();
+  dataShareConfigGetValuesTest();
 }

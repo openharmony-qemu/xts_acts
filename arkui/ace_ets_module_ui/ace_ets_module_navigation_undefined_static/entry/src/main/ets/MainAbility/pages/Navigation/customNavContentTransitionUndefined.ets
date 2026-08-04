@@ -1,80 +1,8 @@
-'use static'
-import { CustomTransition, AnimateCallback } from './CustomNavigationUtils'
-import {
-  NavigationAnimatedTransition,
-  ButtonType,
-  NavDestinationMode,
-  NavPathInfo,
-  TextAlign,
-  ForEach,
-  List,
-  ListItem,
-  HorizontalAlign,
-  NavigationTransitionProxy,
-  NavigationAnimatedTransition,
-  NavContentInfo,
-  Row,
-  NavigationMenuItem,
-  ToolbarItem,
-  NavigationTitleMode,
-  Navigation,
-  NavigationMode,
-  NavigationOperation,
-  NavDestinationContext,
-  NavPathStack,
-  LengthMetrics,
-  DividerMode,
-  DividerStyleOptions,
-  CancelButtonStyle,
-  TextInput,
-  AvoidanceMode,
-  SelectAttribute,
-  AttributeModifier,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Menu,
-  Scroll,
-  Scroller,
-  MenuAttribute,
-  MenuElement,
-  Builder,
-  MenuItem,
-  MenuItemOptions,
-  CustomBuilder,
-  Color,
-  ResponseType,
-  Select,
-  SelectOption,
-  DividerOptions,
-  Font,
-  ResourceColor,
-  Length,
-  Offset,
-  $r,
-  OnSelectCallback,
-  ArrowPosition,
-  FontStyle,
-  FontWeight,
-  MenuAlignType,
-  ControlSize,
-  BlurStyle,
-  Image,
-  Resource,
-  ResourceStr,
-  OptionWidthMode,
-  Dimension,
-  Entry,
-  NavDestination,
-  ColumnOptions
-} from '@ohos.arkui.component'
-import { Provide, State, Observed } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-
+'use static';
+import { CustomTransition, AnimateCallback } from './CustomNavigationUtils';
+import { NavigationAnimatedTransition, ButtonType, NavDestinationMode, NavPathInfo, TextAlign, ForEach, List, ListItem, HorizontalAlign, NavigationTransitionProxy, NavContentInfo, Row, NavigationMenuItem, ToolbarItem, NavigationTitleMode, Navigation, NavigationMode, NavigationOperation, NavDestinationContext, NavPathStack, LengthMetrics, DividerMode, DividerStyleOptions, CancelButtonStyle, TextInput, AvoidanceMode, SelectAttribute, AttributeModifier, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Menu, Scroll, Scroller, MenuAttribute, MenuElement, Builder, MenuItem, MenuItemOptions, CustomBuilder, Color, ResponseType, Select, SelectOption, DividerOptions, Font, ResourceColor, Length, Offset, $r, OnSelectCallback, ArrowPosition, FontStyle, FontWeight, MenuAlignType, ControlSize, BlurStyle, Image, Resource, ResourceStr, OptionWidthMode, Dimension, Entry, NavDestination, ColumnOptions } from '@ohos.arkui.component';
+import { Provide, State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Entry
 @Component
 struct NavigationExample {

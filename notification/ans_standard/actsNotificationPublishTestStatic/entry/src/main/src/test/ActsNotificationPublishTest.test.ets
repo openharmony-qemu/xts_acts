@@ -1,3 +1,4 @@
+'use static';
 /**
 * Copyright (c) 2022-2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,7 +71,12 @@ export default function ActsNotificationPublishTest() {
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
+      let cmd = `aa start -a EntryAbility -b ${bundle_name}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd )
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       wantAgent.getWantAgent(wantAgentInfo).then((data) => {
@@ -116,7 +122,7 @@ export default function ActsNotificationPublishTest() {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2700'
         count = 0;
         notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
-          (async () => {
+          waitForCompletion(async () => {
           if (err) {
             console.info(`Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
             expect(false).assertTrue()
@@ -129,7 +135,7 @@ export default function ActsNotificationPublishTest() {
             console.info("Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification success 1s");
             done()
           }
-          })().awaitSync()
+          })
         })
 
         await Utils.msSleep(1000)

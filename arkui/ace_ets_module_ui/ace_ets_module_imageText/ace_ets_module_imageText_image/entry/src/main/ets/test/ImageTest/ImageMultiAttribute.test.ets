@@ -55,7 +55,7 @@ export default function ImageMultiAttributeTest() {
       console.info('ImageMultiAttributeTest_0100 START');
       await CommonFunc.sleep(1000);
       // get the image component and test attribute
-      let strJson = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageMultiAttributeTest_0100 component obj is: ' + obj.$attrs.renderMode + '--' + obj.$attrs.interpolation + '--' + obj.$attrs.fillColor + '---' +
       obj.$attrs.autoResize + '---' + obj.$attrs.syncLoad + '----' + obj.$attrs.copyOption + '--' + obj.$attrs.colorFilter + '--' + obj.$attrs.draggable);
@@ -88,7 +88,7 @@ export default function ImageMultiAttributeTest() {
         name: 'renderMode', value: ImageRenderMode.Template
       })
       await CommonFunc.sleep(200);
-      let strJson = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageMultiAttributeTest_0200 component obj is: ' + obj.$attrs.renderMode);
       expect(obj.$attrs.renderMode).assertEqual('ImageRenderMode.Template');
@@ -111,7 +111,7 @@ export default function ImageMultiAttributeTest() {
         name: 'renderMode', value: undefined
       })
       await CommonFunc.sleep(200);
-      let strJson = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageMultiAttributeTest_0300 component obj is: ' + obj.$attrs.renderMode);
       expect(obj.$attrs.renderMode).assertEqual('ImageRenderMode.Original');
@@ -134,7 +134,7 @@ export default function ImageMultiAttributeTest() {
         name: 'interpolation', value: ImageInterpolation.Low
       })
       await CommonFunc.sleep(300);
-      let strJson = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageMultiAttributeTest_0300  component obj is: ' + obj.$attrs.interpolation);
       expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
@@ -143,7 +143,7 @@ export default function ImageMultiAttributeTest() {
         name: 'interpolation', value: ImageInterpolation.Medium
       })
       await CommonFunc.sleep(300);
-      let strJson2 = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson2 = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info('ImageMultiAttributeTest_0400  component obj2 is: ' + obj2.$attrs.interpolation);
       expect(obj2.$attrs.interpolation).assertEqual('ImageInterpolation.Medium');
@@ -152,7 +152,7 @@ export default function ImageMultiAttributeTest() {
         name: 'interpolation', value: ImageInterpolation.High
       })
       await CommonFunc.sleep(300);
-      let strJson3 = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson3 = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj3: ESObject = JSON.parse(strJson3);
       console.info('ImageMultiAttributeTest_0400  component obj3 is: ' + obj3.$attrs.interpolation);
       expect(obj3.$attrs.interpolation).assertEqual('ImageInterpolation.High');
@@ -175,7 +175,7 @@ export default function ImageMultiAttributeTest() {
         name: 'interpolation', value: undefined
       })
       await CommonFunc.sleep(200);
-      let strJson = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageMultiAttributeTest_0500  component obj is: ' + obj.$attrs.interpolation);
       expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.None');
@@ -197,7 +197,7 @@ export default function ImageMultiAttributeTest() {
         name: 'fillColor', value: '#FFEEAA'
       })
       await CommonFunc.sleep(200);
-      let strJson = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('imageOneJsunit_0600 component obj is: ' + obj.$attrs.fillColor);
       expect(obj.$attrs.fillColor).assertEqual('#FFFFEEAA');
@@ -206,7 +206,7 @@ export default function ImageMultiAttributeTest() {
         name: 'fillColor', value: 'rgb(238, 130, 238)'
       })
       await CommonFunc.sleep(2000);
-      let strJson2 = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson2 = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info('ImageMultiAttributeTest_0600  component obj2 is: ' + obj2.$attrs.fillColor);
       expect(obj2.$attrs.fillColor).assertEqual('#FFEE82EE');
@@ -215,7 +215,7 @@ export default function ImageMultiAttributeTest() {
         name: 'fillColor', value: Color.Green
       })
       await CommonFunc.sleep(2000);
-      let strJson3 = getInspectorByKey('ImageMultiAttribute_image1');
+      let strJson3 = getInspectorByKey('ImageMultiAttribute' + '_image1');
       let obj3: ESObject = JSON.parse(strJson3);
       console.info('ImageMultiAttributeTest_0600  component obj3 is: ' + obj3.$attrs.fillColor);
       expect(obj3.$attrs.fillColor).assertEqual('#FF008000');

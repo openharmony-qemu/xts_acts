@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '../../../hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '../../../hypium/index';
 import factory from '@ohos.data.distributedKVStore';
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -51,7 +52,12 @@ export default function KVStoreResultSetReturnValue(){
       try {
         hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         // await abilityDelegator.startAbility({
         //   bundleName: 'com.example.kvstoreetstest.static',
         //   abilityName: 'EntryAbility'

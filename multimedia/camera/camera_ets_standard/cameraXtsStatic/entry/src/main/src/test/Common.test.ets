@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +21,7 @@ import { camera } from "@kit.CameraKit";
 import fs from '@ohos.file.fs';
 import Utils from "./Util.test";
 import { Context } from "@kit.ArkUI";
-import { Hypium } from "../../../hypium";
+import { Hypium } from "../../../hypium/index";
 import { hilog } from "@kit.PerformanceAnalysisKit";
 
 const TAG = "cameraXts.common";

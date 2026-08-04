@@ -80,7 +80,7 @@ export default function textTwoJsunit() {
     //   await CommonFunc.sleep(1000);
     //   message.notify({name:'color',value:undefined})
     //   await CommonFunc.sleep(1000);
-    //   let strJson = inspector.getInspectorByKey('text1');
+    //   let strJson = inspector.getInspectorByKey('textTwo' + '_text1');
     //   let obj = JSON.parseJsonElement(strJson);
     //   console.info('textTwoJsunit_static_0100 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
     //   expect(obj.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.None","color":"#FF000000",' +
@@ -98,7 +98,7 @@ export default function textTwoJsunit() {
     //   console.info('imageOneJsunit_0200 START');
     //   await CommonFunc.sleep(500);
     //   // get the image component and test attribute
-    //   let strJson = inspector.getInspectorByKey('text1');
+    //   let strJson = inspector.getInspectorByKey('textTwo' + '_text1');
     //   let obj = JSON.parseJsonElement(strJson);
     //   console.info('textTwoJsunit_static_0200 component obj is: ' + obj.getElement('$attrs').getString('decoration'));
     //   expect(obj.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.LineThrough","color":"#FF000000",' +
@@ -110,7 +110,7 @@ export default function textTwoJsunit() {
     //   await CommonFunc.sleep(1000);
     //   message.notify({name:'color',value:Color.Green})
     //   await CommonFunc.sleep(200);
-    //   let strJson2 = inspector.getInspectorByKey('text1');
+    //   let strJson2 = inspector.getInspectorByKey('textTwo' + '_text1');
     //   let obj2 = JSON.parseJsonElement(strJson2);
     //   console.info('textTwoJsunit_static_0200 component obj2 is: ' + obj2.getElement('$attrs').getString('decoration'));
     //   expect(obj2.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.Overline","color":"#FF008000",' +
@@ -120,7 +120,7 @@ export default function textTwoJsunit() {
     //   await CommonFunc.sleep(1000);
     //   message.notify({name:'color',value:'rgb(238, 130, 238)'})
     //   await CommonFunc.sleep(200);
-    //   let strJson3 = inspector.getInspectorByKey('text1');
+    //   let strJson3 = inspector.getInspectorByKey('textTwo' + '_text1');
     //   let obj3  = JSON.parseJsonElement(strJson3);
     //   console.info('textTwoJsunit_static_0200 component obj3 is: ' + obj3.getElement('$attrs').getString('decoration'));
     //   expect(obj3.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.Underline","color":"#FFEE82EE",' +
@@ -132,7 +132,7 @@ export default function textTwoJsunit() {
     //   message.notify({name:'color',value:'#FFACEEEE'})
     //
     //   await CommonFunc.sleep(2000);
-    //   let strJson4 = inspector.getInspectorByKey('text1');
+    //   let strJson4 = inspector.getInspectorByKey('textTwo' + '_text1');
     //   let obj4  = JSON.parseJsonElement(strJson4);
     //   console.info('textTwoJsunit_static_0200 component obj4 is: ' + obj4.getElement('$attrs').getString('decoration'));
     //   expect(obj4.getElement('$attrs').getString('decoration')).assertEqual('{"type":"TextDecorationType.None","color":"#FFACEEEE",' +
@@ -156,7 +156,7 @@ export default function textTwoJsunit() {
       message.notify({name:'baselineOffset',value:30})
 
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text2');
+      let strJson = inspector.getInspectorByKey('textTwo' + '_text2');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textTwoJsunit_static_0300 component obj is: ' + obj.getElement('$attrs').getString('baselineOffset'));
       expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual('30');
@@ -177,7 +177,7 @@ export default function textTwoJsunit() {
       message.notify({name:'baselineOffset',value:-20})
 
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text2');
+      let strJson = inspector.getInspectorByKey('textTwo' + '_text2');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textTwoJsunit_static_0400 component obj is: ' + obj.getElement('$attrs').getString('baselineOffset'));
       expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual('-20');
@@ -198,7 +198,7 @@ export default function textTwoJsunit() {
       message.notify({name:'letterSpacing',value:4});
 
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('text3');
+      let strJson = inspector.getInspectorByKey('textTwo' + '_text3');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textTwoJsunit_static_0500 component obj is: ' + obj.getElement('$attrs').getString('letterSpacing'));
       expect(obj.getElement('$attrs').getString('letterSpacing')).assertEqual('4.00fp');
@@ -219,7 +219,7 @@ export default function textTwoJsunit() {
       message.notify({name:'letterSpacing',value:-2})
 
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('text3');
+      let strJson = inspector.getInspectorByKey('textTwo' + '_text3');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textTwoJsunit_static_0600 component obj is: ' + obj.getElement('$attrs').getString('letterSpacing'));
       expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual('0');
@@ -240,21 +240,21 @@ export default function textTwoJsunit() {
       message.notify({name:'textCase',value:TextCase.Normal})
 
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text5');
+      let strJson = inspector.getInspectorByKey('textTwo' + '_text5');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textTwoJsunit_static_0700 component obj is: ' + obj.getElement('$attrs').getString('textCase'));
       expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.Normal');
       message.notify({name:'textCase',value:TextCase.LowerCase})
 
       await CommonFunc.sleep(2000);
-      let strJson2 = inspector.getInspectorByKey('text5');
+      let strJson2 = inspector.getInspectorByKey('textTwo' + '_text5');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('textTwoJsunit_static_0700 component obj2 is: ' + obj2.getElement('$attrs').getString('textCase'));
       expect(obj2.getElement('$attrs').getString('textCase')).assertEqual('TextCase.LowerCase');
       message.notify({name:'textCase',value:TextCase.UpperCase})
 
       await CommonFunc.sleep(2000);
-      let strJson3 = inspector.getInspectorByKey('text5');
+      let strJson3 = inspector.getInspectorByKey('textTwo' + '_text5');
       let obj3  = JSON.parseJsonElement(strJson3);
       console.info('textTwoJsunit_static_0700 component obj3 is: ' + obj3.getElement('$attrs').getString('textCase'));
       expect(obj3.getElement('$attrs').getString('textCase')).assertEqual('TextCase.UpperCase');
@@ -275,7 +275,7 @@ export default function textTwoJsunit() {
     //   message.notify({name:'textCase',value:8}) // textCase 没有值为8的成员
     //
     //   await CommonFunc.sleep(2000);
-    //   let strJson = inspector.getInspectorByKey('text5');
+    //   let strJson = inspector.getInspectorByKey('textTwo' + '_text5');
     //   let obj = JSON.parseJsonElement(strJson);
     //   console.info('textTwoJsunit_static_0800 component obj is: ' + obj.getElement('$attrs').getString('testCase'));
     //   expect(obj.getElement('$attrs').getString('textCase')).assertEqual('TextCase.Normal');

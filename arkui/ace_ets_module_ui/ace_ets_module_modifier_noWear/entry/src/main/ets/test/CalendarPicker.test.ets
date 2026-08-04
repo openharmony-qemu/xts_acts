@@ -95,7 +95,7 @@ export default function calendarPickerJsunit() {
     it('ArkUI_Stage_CalendarPicker_attributeModifier_0102', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_CalendarPicker_attributeModifier_0102 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('calendarpicker' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

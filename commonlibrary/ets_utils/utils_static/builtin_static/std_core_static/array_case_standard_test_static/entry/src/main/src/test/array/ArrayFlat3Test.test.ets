@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -158,18 +158,18 @@ export default function ArrayFlat3Test(): void {
       const nested: Array<Array<FlatNoArgItem005>> = [[item1], [item2]];
       const result: Array<FlatNoArgItem005> = nested.flat<FlatNoArgItem005>();
       expect(result.length).assertEqual(2);
-      expect(result[0] != undefined).assertTrue();
-      expect(result[1] != undefined).assertTrue();
       if (result[0] != undefined && result[1] != undefined) {
         expect(result[0].value).assertEqual(1);
         expect(result[1].value).assertEqual(2);
+      }else {
+        expect().assertFail();
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_THREE_0800
      * @tc.name testArrayFlat3008
-     * @tc.desc Verify flat leaves the source array unchanged
+     * @tc.desc Verify flat() leaves the source array unchanged with mixed nesting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -220,7 +220,7 @@ export default function ArrayFlat3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_THREE_1100
      * @tc.name testArrayFlat3011
-     * @tc.desc Verify null and undefined values are preserved
+     * @tc.desc Verify flat() preserves null and undefined in nested arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -236,7 +236,7 @@ export default function ArrayFlat3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_THREE_1200
      * @tc.name testArrayFlat3012
-     * @tc.desc Verify NaN and Infinity values are preserved
+     * @tc.desc Verify flat() preserves NaN, Infinity and -Infinity in nested arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -334,7 +334,7 @@ export default function ArrayFlat3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_THREE_1800
      * @tc.name testArrayFlat3018
-     * @tc.desc Verify flat results can be mapped immediately
+     * @tc.desc Verify flat() results can be mapped immediately with value*2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -366,7 +366,7 @@ export default function ArrayFlat3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_THREE_2000
      * @tc.name testArrayFlat3020
-     * @tc.desc Verify flat and flatMap produce the same expanded sequence
+     * @tc.desc Verify flat() and flatMap produce the same expanded sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -383,7 +383,7 @@ export default function ArrayFlat3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_THREE_2100
      * @tc.name testArrayFlat3021
-     * @tc.desc Verify ReadonlyArray inputs can be flattened
+     * @tc.desc Verify flat() accepts ReadonlyArray-like input [1,[2,3]]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

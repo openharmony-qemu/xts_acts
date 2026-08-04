@@ -14,22 +14,9 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,Image,ImageFit, Scroller,
-  Scroll,FontWeight,TextArea,ScrollState,ScrollSource,
-  ForEach,NodeContainer,Grid,GridItem,
-  Search,Flex,ButtonType,
-  SafeAreaType,ItemAlign,
-  ScrollDirection,FlexAlign,
-  BarState,FlexDirection,Margin,
-  Color,
-  EdgeEffect,HorizontalAlign } from '@ohos.arkui.component'
-import {
-  State,
-  AppStorage
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, Scroller, Scroll, FontWeight, TextArea, ScrollState, ScrollSource, ForEach, NodeContainer, Grid, GridItem, Search, Flex, ButtonType, SafeAreaType, ItemAlign, ScrollDirection, FlexAlign, BarState, FlexDirection, Margin, Color, EdgeEffect, HorizontalAlign } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct Index {

@@ -13,6 +13,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-export const add1 = (a: number, b: number) => {
+export const add1:(a: number, b: number)=>number = (a: number, b: number) => {
   return a + b;
 };

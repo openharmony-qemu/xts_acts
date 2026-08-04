@@ -26,14 +26,7 @@ import {
   Size,
   Level
 } from '../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-    return new Promise<int>((resolve, reject) => {
-        setTimeout(() => {
-            resolve(0);
-        }, time);
-    });
-}
+import Utils from '../../Util.test'
 
 class A1 {
     fld: Object[]
@@ -568,14 +561,14 @@ class B20 extends A28 {
 
 class A29 {
     p1: Array<() => string>|undefined
-    p2: FixedArray<() => number>
+    p2: Array<() => number>
     p3: [string, number]|undefined
     p4: Record<string, number>
     p5: string[]|undefined
 
     constructor(
         p1?: Array<() => string>,
-        p2: FixedArray<() => number> = [],
+        p2: Array<() => number> = [],
         p3?: [string, number],
         p4: Record<string, number> = { '': 0 },
         p5?: string[]
@@ -590,14 +583,14 @@ class A29 {
 
 class A30 {
     p1: Array<() => string>|undefined
-    p2: FixedArray<() => number>
+    p2: Array<() => number>
     p3: [string, number]|undefined
     p4: Record<string, number>
     p5: string[]|undefined
 
     constructor(
         p1?: Array<() => string>,
-        p2: FixedArray<() => number> = [],
+        p2: Array<() => number> = [],
         p3?: [string, number],
         p4: Record<string, number> = { '': 0 },
         p5?: string[]
@@ -616,14 +609,14 @@ class A30 {
 
 class A31 {
     p1: Array<() => string>|undefined
-    p2: FixedArray<() => number>
+    p2: Array<() => number>
     p3: [string, number]|undefined
     p4: Record<string, number>
     p5: string[]|undefined
 
     constructor(
         p1?: Array<() => string>,
-        p2: FixedArray<() => number> = [],
+        p2: Array<() => number> = [],
         p3?: [string, number],
         p4: Record<string, number> = { '': 0 },
         p5?: string[]
@@ -773,7 +766,7 @@ export default function ExplicitConstructorCallTest():void {
             // Presets an action, which is performed before each unit test case starts.
             // The number of execution times is the same as the number of test cases defined by **it**.
             // This API supports only one parameter: preset action function.
-            await sleep(30);
+            await Utils.msSleep(30);
         })
 
         afterEach(() => {

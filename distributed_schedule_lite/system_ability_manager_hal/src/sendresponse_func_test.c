@@ -19,6 +19,8 @@
 #include "securec.h"
 #include "hctest.h"
 #include "samgr_lite.h"
+#include "samgr_maintenance.h"
+
 
 #define OPER_INTERVAL 200    // 200 ms
 #define PRESSURE_BASE 10
@@ -26,7 +28,7 @@
 enum MessageId {
     MSG_NO = 1, // receiver does not send response
     MSG_RT = 2, // receiver send response
-    MSG_FW = 3, // receiver forward message 
+    MSG_FW = 3, // receiver forward message
     MSG_RT_MULTI = 4, // receiver send response
 };
 
@@ -59,43 +61,17 @@ typedef struct ExampleService {
     Identity identity;
 } ExampleService;
 
-static int32 SAMGR_SendRequestProxy(const Identity *identity, const Request *request, Handler handler)
-{
-    return SAMGR_SendRequest(identity, request, handler);
-}
-
 static const char *GetName(Service *service)
 {
     (void)service;
     return "serviceName601";
 }
 
-static BOOL Initialize(Service *service, Identity identity)
-{
-    ExampleService *example = (ExampleService *)service;
-    example->identity = identity;
-    return TRUE;
-}
-
-static BOOL MessageHandle(Service *service, Request *msg)
-{
-    (void)service;
-    (void)msg;
-    return FALSE;
-}
-
-static TaskConfig GetTaskConfig(Service *service)
-{
-    (void)service;
-    TaskConfig config = {LEVEL_HIGH, PRI_ABOVE_NORMAL, 0x800, 20, SHARED_TASK};  // share with broadcast
-    return config;
-}
-
 static ExampleService g_service = {
     .GetName = GetName,
-    .Initialize = Initialize,
-    .MessageHandle = MessageHandle,
-    .GetTaskConfig = GetTaskConfig,
+    .Initialize = SamgrTestDefaultInitialize,
+    .MessageHandle = SamgrTestMessageHandle,
+    .GetTaskConfig = SamgrTestGetTaskConfig,
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
@@ -118,19 +94,6 @@ static const char *FEATURE_GetName03(Feature *feature)
 {
     (void)feature;
     return "featureName603";
-}
-
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity)
-{
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->identity = identity;
-    (void)parent;
-}
-
-static void FEATURE_OnStop(Feature *feature, Identity identity)
-{
-    (void)feature;
-    (void)identity;
 }
 
 static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
@@ -230,13 +193,13 @@ static BOOL FEATURE_OnMessage03(Feature *feature, Request *request)
 
 static DemoFeature g_feature = {
     .GetName = FEATURE_GetName,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
+    .OnInitialize = SamgrTestFeatureOnInitializeId40,
+    .OnStop = SamgrTestFeatureOnStop,
     .OnMessage = FEATURE_OnMessage,
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
-        .SAMGR_SendRequestProxy = SAMGR_SendRequestProxy,
+        .SAMGR_SendRequestProxy = SamgrTestSendRequestProxy,
     },
     .identity = {-1, -1, NULL},
     .featureCalledCount = 0,
@@ -244,13 +207,13 @@ static DemoFeature g_feature = {
 };
 static DemoFeature g_feature02 = {
     .GetName = FEATURE_GetName02,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
+    .OnInitialize = SamgrTestFeatureOnInitializeId40,
+    .OnStop = SamgrTestFeatureOnStop,
     .OnMessage = FEATURE_OnMessage02,
     .ref = 0,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
-        .SAMGR_SendRequestProxy = SAMGR_SendRequestProxy,
+        .SAMGR_SendRequestProxy = SamgrTestSendRequestProxy,
     },
     .identity = {-1, 1, NULL},
     .featureCalledCount = 0,
@@ -258,13 +221,13 @@ static DemoFeature g_feature02 = {
 };
 static DemoFeature g_feature03 = {
     .GetName = FEATURE_GetName03,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
+    .OnInitialize = SamgrTestFeatureOnInitializeId40,
+    .OnStop = SamgrTestFeatureOnStop,
     .OnMessage = FEATURE_OnMessage03,
     .ref = 0,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
-        .SAMGR_SendRequestProxy = SAMGR_SendRequestProxy,
+        .SAMGR_SendRequestProxy = SamgrTestSendRequestProxy,
     },
     .identity = {-1, 2, NULL},
     .featureCalledCount = 0,
@@ -273,63 +236,19 @@ static DemoFeature g_feature03 = {
 
 static void ServiceInit(void)
 {
-    BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    if (result == FALSE) {
-        printf("[hctest]E RegisterService failed \n");
-    }
+    SamgrTestRegisterService((Service *)&g_service);
 }
 SYSEX_SERVICE_INIT(ServiceInit);
 
 static void FeatureInit(void)
 {
-    BOOL result1 = SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName601", GET_IUNKNOWN(g_feature));
-
-    BOOL result2 = SAMGR_GetInstance()->RegisterFeature("serviceName601", (Feature *)&g_feature02);
-    BOOL result3 = SAMGR_GetInstance()->RegisterFeatureApi("serviceName601", "featureName602", 
-                                                           GET_IUNKNOWN(g_feature02));
-
-    BOOL result4 = SAMGR_GetInstance()->RegisterFeature("serviceName601", (Feature *)&g_feature03);
-    BOOL result5 = SAMGR_GetInstance()->RegisterFeatureApi("serviceName601", "featureName603", 
-                                                           GET_IUNKNOWN(g_feature03));
-    if (result1 == FALSE || result2 == FALSE || result3 == FALSE || result4 == FALSE || result5 == FALSE) {
-        printf("[hctest]E failed to register feature or api.\n");
-    }
+    SamgrTestRegisterDefaultFeatureApi("serviceName601", GET_IUNKNOWN(g_feature));
+    SamgrTestRegisterFeature("serviceName601", (Feature *)&g_feature02);
+    SamgrTestRegisterFeatureApi("serviceName601", "featureName602", GET_IUNKNOWN(g_feature02));
+    SamgrTestRegisterFeature("serviceName601", (Feature *)&g_feature03);
+    SamgrTestRegisterFeatureApi("serviceName601", "featureName603", GET_IUNKNOWN(g_feature03));
 }
 SYSEX_FEATURE_INIT(FeatureInit);
-
-static DemoApi *GetIUnknown(const char *serviceName, const char *featureName)
-{
-    DemoApi *demoApi = NULL;
-    IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi(serviceName, featureName);
-    if (iUnknown == NULL) {
-        printf("[hctest]failed to GetFeatureApi.\n");
-        return NULL;
-    }
-    int result = iUnknown->QueryInterface(iUnknown, 0, (void **)&demoApi);
-    if (result == 0 && demoApi != NULL) {
-        return demoApi;
-    } else {
-        printf("[hctest]failed to QueryInterface.\n");
-        return NULL;
-    }
-}
-
-static void ReleaseIUnknown(DemoApi *demoApi)
-{
-    demoApi->Release((IUnknown *)demoApi);
-}
-
-static void DemoHandlerAndCheck(const Request *request, const Response *response)
-{
-    (void)request;
-    (void)response;
-}
-
-static void DemoHandler(const Request *request, const Response *response)
-{
-    (void)request;
-    (void)response;
-}
 
 LITE_TEST_SUIT(test, samgr, SendResponseTestSuite);
 
@@ -347,7 +266,7 @@ static BOOL SendResponseTestSuiteTearDown(void)
     SAMGR_GetInstance()->UnregisterFeature("serviceName601", "featureName603");
     SAMGR_GetInstance()->UnregisterDefaultFeatureApi("serviceName601");
     SAMGR_GetInstance()->UnregisterService("serviceName601");
-    
+
     return TRUE;
 }
 
@@ -361,7 +280,7 @@ static BOOL SendResponseTestSuiteTearDown(void)
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0010, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("serviceName601", "featureName602");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("serviceName601", "featureName602");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -379,13 +298,11 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0010, Function | MediumTes
         TEST_FAIL();
     }
     DemoFeature *feature = GET_OBJECT(iUnknown, DemoFeature, iUnknown);
-    demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, DemoHandlerAndCheck);
+    demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, SamgrTestDefaultHandler);
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
-    free(request.data);
-    request.data = NULL;
-    ReleaseIUnknown(demoApi);
+    demoApi->Release((IUnknown *)demoApi);
 }
 
 /**
@@ -398,7 +315,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0010, Function | MediumTes
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0020, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("serviceName601", "featureName602");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("serviceName601", "featureName602");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -420,9 +337,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0020, Function | MediumTes
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == FALSE, TRUE);
-    free(request.data);
-    request.data = NULL;
-    ReleaseIUnknown(demoApi);
+    demoApi->Release((IUnknown *)demoApi);
 }
 
 /**
@@ -435,7 +350,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0020, Function | MediumTes
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0030, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("serviceName601", "featureName603");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("serviceName601", "featureName603");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -453,13 +368,11 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0030, Function | MediumTes
         TEST_FAIL();
     }
     DemoFeature *feature = GET_OBJECT(iUnknown, DemoFeature, iUnknown);
-    demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, DemoHandler);
+    demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, SamgrTestDefaultHandler);
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
-    free(request.data);
-    request.data = NULL;
-    ReleaseIUnknown(demoApi);
+    demoApi->Release((IUnknown *)demoApi);
 }
 
 /**
@@ -472,7 +385,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0030, Function | MediumTes
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0010, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("serviceName601", "featureName602");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("serviceName601", "featureName602");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -491,14 +404,12 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0010, Function |
     }
     DemoFeature *feature = GET_OBJECT(iUnknown, DemoFeature, iUnknown);
     feature->featureStatus = FALSE;
-    demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, DemoHandlerAndCheck);
+    demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, SamgrTestDefaultHandler);
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
-    free(request.data);
-    request.data = NULL;
 
-    ReleaseIUnknown(demoApi);
+    demoApi->Release((IUnknown *)demoApi);
 }
 
 /**
@@ -511,7 +422,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0010, Function |
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("serviceName601", "featureName602");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("serviceName601", "featureName602");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -533,10 +444,8 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function |
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == FALSE, TRUE);
-    free(request.data);
-    request.data = NULL;
 
-    ReleaseIUnknown(demoApi);
+    demoApi->Release((IUnknown *)demoApi);
 }
 
 RUN_TEST_SUITE(SendResponseTestSuite);

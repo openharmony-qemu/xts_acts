@@ -12,6 +12,10 @@
         "MainAbility/pages/picker/pickerIndicator",
         "MainAbility/pages/picker/pickerIndicatorModifier",
         "MainAbility/pages/picker/UIPickerComponentDisplayedItemCountTest",
-        "MainAbility/pages/picker/UIPickerComponentItemHeightTest"
+        "MainAbility/pages/picker/UIPickerComponentItemHeightTest",
+        "MainAbility/pages/SystemMaterial/calendarPickerDialogSystemMaterial",
+        "MainAbility/pages/SystemMaterial/datePickerDialogSystemMaterial",
+        "MainAbility/pages/SystemMaterial/textPickerDialogSystemMaterial",
+        "MainAbility/pages/SystemMaterial/timePickerDialogSystemMaterial"
     ]
 }

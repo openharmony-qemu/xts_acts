@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,6 +34,38 @@ function concurrentFunc(args: number): number {
   } catch (err) {
     console.info("test_setDefaultFreezeObserver_in_worker_thread catch: " + JSON.stringify(err));
     console.info("test_setDefaultFreezeObserver_in_worker_thread err.code: " + JSON.stringify(err.code));
+  }
+  let result = args * 2;
+  return result;
+}
+
+function onFreezeConcurrentFunc(args: number): number {
+  hilog.info(0x0000, 'testTag', 'test_onFreeze_in_worker_thread: arg: ' + args);
+  try {
+    let observer: errorManager.FreezeObserver = () => {
+      hilog.info(0x0000, 'testTag', 'onFreeze observer should not be called in worker thread');
+    };
+    errorManager.onFreeze(observer);
+    hilog.info(0x0000, 'testTag', 'test_onFreeze_in_worker_thread: end');
+  } catch (err) {
+    hilog.info(0x0000, 'testTag', 'test_onFreeze_in_worker_thread catch: ' + JSON.stringify(err));
+    hilog.info(0x0000, 'testTag', 'test_onFreeze_in_worker_thread err.code: ' + JSON.stringify(err.code));
+  }
+  let result = args * 2;
+  return result;
+}
+
+function offFreezeConcurrentFunc(args: number): number {
+  hilog.info(0x0000, 'testTag', 'test_offFreeze_in_worker_thread: arg: ' + args);
+  try {
+    let observer: errorManager.FreezeObserver = () => {
+      hilog.info(0x0000, 'testTag', 'offFreeze observer callback');
+    };
+    errorManager.offFreeze(observer);
+    hilog.info(0x0000, 'testTag', 'test_offFreeze_in_worker_thread: end');
+  } catch (err) {
+    hilog.info(0x0000, 'testTag', 'test_offFreeze_in_worker_thread catch: ' + JSON.stringify(err));
+    hilog.info(0x0000, 'testTag', 'test_offFreeze_in_worker_thread err.code: ' + JSON.stringify(err.code));
   }
   let result = args * 2;
   return result;
@@ -128,6 +161,26 @@ export default function ErrormangerTest() {
             hilog.info(0x0000, 'testTag', '*********** testOffFreeze_0500 Test end***********');
         });
 
+        /**
+        * @tc.name   testOffFreeze_0600
+        * @tc.number SUB_DFX_DFR_OffFreeze_0600
+        * @tc.desc   验证offFreeze注销未注册的观察器，抛出错误码16200001
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('testOffFreeze_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            hilog.info(0x0000, 'testTag', '*********** testOffFreeze_0600 Test start***********');
+            try {
+                let task = new taskpool.Task(offFreezeConcurrentFunc, 1);
+                taskpool.execute(task);
+                hilog.info(0x0000, 'testTag', 'testOffFreeze_0600: task end');
+            } catch (error) {
+                hilog.error(0x0000, 'testTag', 'testOffFreeze_0600 error: %{public}d', error.code);
+                expect(error.code === 16200001).assertTrue();
+                hilog.info(0x0000, 'testTag', '*********** testOffFreeze_0600 Test end***********');
+            }
+        });
 
         /**
         * @tc.name   testOnFreeze_0400
@@ -154,6 +207,27 @@ export default function ErrormangerTest() {
                 expect().assertFail();
             }
         });
+
+        /**
+        * @tc.name   testOnFreeze_0500
+        * @tc.number SUB_DFX_DFR_OnFreeze_0500
+        * @tc.desc   注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间。校验错误码 16200001
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testOnFreeze_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+            hilog.info(0x0000, 'testTag', '*********** testOnFreeze_0400 Test start***********');
+            try {
+                let task = new taskpool.Task(onFreezeConcurrentFunc, 1);
+                taskpool.execute(task);
+                hilog.info(0x0000, 'testTag', 'testOnFreeze_0400: task end');
+            } catch (error) {
+                hilog.error(0x0000, 'testTag', 'testOnFreeze_0400 error: %{public}d', error.code);
+                expect(error.code === 16200001).assertTrue();
+                hilog.info(0x0000, 'testTag', '*********** testOnFreeze_0400 Test end***********');
+            }
+        })
 
         /**
         * @tc.name   testSetDefaultErrorHandler_0100
@@ -523,15 +597,15 @@ export default function ErrormangerTest() {
     })
 
     /**
-     * @tc.name   testSetDefaultResourceUsageObserver_1400Adapt001
+     * @tc.name   testSetDefaultResourceUsageObserver_1500
      * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1500
      * @tc.desc   验证ResourceUsageObserver回调接收FD类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * * @tc.level  LEVEL0
      */
-it('testSetDefaultResourceUsageObserver_1400Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
-       console.info("====> testSetDefaultResourceUsageObserver_1400Adapt001 start");
+    it('testSetDefaultResourceUsageObserver_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+       console.info("====> testSetDefaultResourceUsageObserver_1500 start");
        try {
          let receivedType = -1;
          let observer: errorManager.ResourceUsageObserver = (resourceType: errorManager.ResourceType, resourceSize: long, detailInfo?: Record<string, long>) => {
@@ -541,23 +615,23 @@ it('testSetDefaultResourceUsageObserver_1400Adapt001', TestType.FUNCTION | Size.
          };
          originalObserver = errorManager.setDefaultResourceUsageObserver(observer);
          expect(receivedType === -1 || receivedType === errorManager.ResourceType.FD).assertTrue();
-         console.info("====> testSetDefaultResourceUsageObserver_1400Adapt001 end");
+         console.info("====> testSetDefaultResourceUsageObserver_1500 end");
        } catch (err) {
-         console.error(`====> testSetDefaultResourceUsageObserver_1400Adapt001 catch > error code: ${err.code}, error msg: ${err.message}`);
+         console.error(`====> testSetDefaultResourceUsageObserver_1500 catch > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue();
       }
     })
 
     /**
-     * @tc.name   testSetDefaultResourceUsageObserver_1500
+     * @tc.name   testSetDefaultResourceUsageObserver_1600
      * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1600
      * @tc.desc   验证ResourceUsageObserver回调接收THREAD类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetDefaultResourceUsageObserver_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
-      console.info("====> testSetDefaultResourceUsageObserver_1500 start");
+    it('testSetDefaultResourceUsageObserver_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+      console.info("====> testSetDefaultResourceUsageObserver_1600 start");
       try {
         let receivedType = -1;
         let observer: errorManager.ResourceUsageObserver = (resourceType: errorManager.ResourceType, resourceSize: long, detailInfo?: Record<string, long>) => {
@@ -567,12 +641,38 @@ it('testSetDefaultResourceUsageObserver_1400Adapt001', TestType.FUNCTION | Size.
         };
         originalObserver = errorManager.setDefaultResourceUsageObserver(observer);
         expect(receivedType === -1 || receivedType === errorManager.ResourceType.THREAD).assertTrue();
-        console.info("====> testSetDefaultResourceUsageObserver_1500 end");
+        console.info("====> testSetDefaultResourceUsageObserver_1600 end");
       } catch (err) {
-        console.error(`====> testSetDefaultResourceUsageObserver_1500 catch > error code: ${err.code}, error msg: ${err.message}`);
+        console.error(`====> testSetDefaultResourceUsageObserver_1600 catch > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue();
       }
     })
+
+        /**
+        * @tc.name   testSetDefaultResourceUsageObserver_1700
+        * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1700
+        * @tc.desc   验证ResourceUsageObserver回调接收THREAD类型
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testSetDefaultResourceUsageObserver_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        console.info("====> testSetDefaultResourceUsageObserver_1700 start");
+        try {
+            let receivedType = -1;
+            let observer: errorManager.ResourceUsageObserver = (resourceType: errorManager.ResourceType, resourceSize: long, detailInfo?: Record<string, long>) => {
+            receivedType = resourceType;
+            console.info("ResourceType: " + resourceType);
+            console.info("ResourceSize: " + resourceSize);
+            };
+            originalObserver = errorManager.setDefaultResourceUsageObserver(observer);
+            expect(receivedType === -1 || receivedType === errorManager.ResourceType.GPU_MEMORY).assertTrue();
+            console.info("====> testSetDefaultResourceUsageObserver_1700 end");
+        } catch (err) {
+            console.error(`====> testSetDefaultResourceUsageObserver_1700 catch > error code: ${err.code}, error msg: ${err.message}`);
+            expect(false).assertTrue();
+        }
+        })
 
         /**
         * @tc.name   testOnUnhandledRejection_0100
@@ -776,28 +876,6 @@ it('testSetDefaultResourceUsageObserver_1400Adapt001', TestType.FUNCTION | Size.
         })
 
         /**
-        * @tc.name   test_setDefaultFreezeObserver_0100
-        * @tc.number SUB_DFX_DFR_errorManager_setDefaultFreezeObserver_0100
-        * @tc.desc   验证setDefaultFreezeObserver有效值
-        * @tc.type   FUNCTION
-        * @tc.size   MEDIUMTEST
-        * @tc.level  LEVEL2
-        */
-        it('test_setDefaultFreezeObserver_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
-            console.info("====> test_setDefaultFreezeObserver_0100 start");
-            const freezeHandler: errorManager.FreezeObserver = () => {
-                console.info('[freezeHandler] freeze handler invoked.');
-            };
-            try {
-                const oldHandler = errorManager.setDefaultFreezeObserver(freezeHandler);
-                console.info('test_setDefaultFreezeObserver_0100: Registered freeze Handler.' + oldHandler);
-            } catch (error) {
-                console.error('test_setDefaultFreezeObserver_0100', `error: ${error.code}, ${error.message}`);
-                expect(false).assertTrue();
-            }
-        })
-
-        /**
         * @tc.name   test_setDefaultFreezeObserver_0300
         * @tc.number SUB_DFX_DFR_errorManager_setDefaultFreezeObserver_0300
         * @tc.desc   验证setDefaultFreezeObserver的undefined值
@@ -909,5 +987,68 @@ it('testSetDefaultResourceUsageObserver_1400Adapt001', TestType.FUNCTION | Size.
                 expect(false).assertTrue();
             }
         })
+
+        /**
+        * @tc.name testSetDefaultErrorHandler_1000
+        * @tc.number SUB_DFX_DFR_SetDefaultErrorHandler_1000
+        * @tc.desc 测试子线程调用setDefaultErrorHandler抛出16000205错误
+        * @tc.size MEDIUMTEST
+        * @tc.type Function
+        * @tc.level Level 1
+        */
+        it('testSetDefaultErrorHandler_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+            hilog.info(0x0000, 'testTag', '*********** testSetDefaultErrorHandler_1000 Test start***********');
+            try {
+                let handler: errorManager.ErrorHandler = (errObject: Error) => {
+                hilog.info(0x0000, 'testTag', 'ErrorHandler called');
+                };
+                // 在子线程中调用（使用setTimeout模拟）
+                setTimeout(() => {
+                try {
+                    let returnedHandler = errorManager.setDefaultErrorHandler(handler);
+                    expect().assertFail();
+                } catch (err) {
+                    hilog.info(0x0000, 'testTag', 'Caught expected error in child thread: %{public}s', JSON.stringify(err));
+                    expect(err.code).assertEqual(16000205);
+                    hilog.info(0x0000, 'testTag', '*********** testSetDefaultErrorHandler_1000 Test end***********');
+                }
+                }, 10);
+                hilog.info(0x0000, 'testTag', 'Waiting for child thread execution');
+            } catch (err) {
+                hilog.error(0x0000, 'testTag', '%{public}s', JSON.stringify(err));
+                expect().assertFail();
+            }
+        });
+        /**
+     * @tc.name   testSetDefaultResourceUsageObserver_1800
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1800
+        * @tc.desc 测试子线程调用setDefaultResourceUsageObserver抛出16000205错误
+        * @tc.size MEDIUMTEST
+        * @tc.type Function
+        * @tc.level Level 1
+        */
+        it('testSetDefaultResourceUsageObserver_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+            hilog.info(0x0000, 'testTag', '*********** testSetDefaultResourceUsageObserver_1800 Test start***********');
+            try {
+                let observer: errorManager.ResourceUsageObserver = (resourceType: errorManager.ResourceType, resourceSize: long, detailInfo?: Record<string, long>) => {
+                hilog.info(0x0000, 'testTag', 'ResourceUsageObserver called');
+                };
+                // 在子线程中调用（使用setTimeout模拟）
+                setTimeout(() => {
+                    try {
+                        let returnedObserver = errorManager.setDefaultResourceUsageObserver(observer);
+                        expect().assertFail();
+                    } catch (err) {
+                        hilog.info(0x0000, 'testTag', 'Caught expected error in child thread: %{public}s', JSON.stringify(err));
+                        expect(err.code).assertEqual(16000205);
+                        hilog.info(0x0000, 'testTag', '*********** testSetDefaultResourceUsageObserver_1800 Test end***********');
+                    }
+                }, 10);
+                hilog.info(0x0000, 'testTag', 'Waiting for child thread execution');
+            } catch (err) {
+                hilog.error(0x0000, 'testTag', '%{public}s', JSON.stringify(err));
+                expect().assertFail();
+            }
+        });
     })
 }

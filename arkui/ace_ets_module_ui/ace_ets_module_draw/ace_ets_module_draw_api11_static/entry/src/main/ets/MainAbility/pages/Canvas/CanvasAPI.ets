@@ -13,29 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  RenderingContextSettings,
-  CanvasRenderingContext2D,
-  ImageBitmap,
-  CanvasPattern,
-  Matrix2D,
-  Scroll,
-  CanvasPattern,
-  Path2D,
-  ColumnOptions,
-  Canvas,
-  CanvasPattern,
-  Margin
-} from '@ohos.arkui.component';
-
+import { Entry, Column, Component, Button, Text, Row, Color, $r, RenderingContextSettings, CanvasRenderingContext2D, ImageBitmap, CanvasPattern, Matrix2D, Scroll, Path2D, ColumnOptions, Canvas, Margin } from '@ohos.arkui.component';
 @Entry
 @Component
 struct CanvasAPI {

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +21,7 @@ import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { Component, Context } from '@kit.ArkUI';
 import Utils from './Util.test';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { expect, Hypium } from '../../../hypium';
+import { expect, Hypium } from '../../../hypium/index';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { common } from '@kit.AbilityKit';
@@ -96,6 +97,16 @@ export async function createUserAlbum(testContext: common.Context, testName: str
     console.error(`Failed to createUserAlbum! error: ${error}`);
   }
 }
+
+export function fetchAllOption(): photoAccessHelper.FetchOptions {
+  const predicates = new dataSharePredicates.DataSharePredicates();
+  const ops: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  return ops;
+}
+
 export function fetchOption(testName: string, key: string, value: string | number): photoAccessHelper.FetchOptions {
   const predicates = new dataSharePredicates.DataSharePredicates();
   predicates.equalTo(key, value);

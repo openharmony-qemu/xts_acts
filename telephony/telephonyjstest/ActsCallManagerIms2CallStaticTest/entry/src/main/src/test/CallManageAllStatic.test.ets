@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2024 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, it, expect, beforeAll, Level, TestType, Size } from '../../../hypium';
+import { describe, it, expect, beforeAll, Level, TestType, Size } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 import call from '@ohos.telephony.call';
 import radio from '@ohos.telephony.radio';

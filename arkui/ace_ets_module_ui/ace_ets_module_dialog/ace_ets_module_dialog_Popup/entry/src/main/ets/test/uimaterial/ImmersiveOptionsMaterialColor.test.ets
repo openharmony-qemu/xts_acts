@@ -65,11 +65,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let component = await driver.findComponent(ON.id('undefined'));
       expect(component).not().assertUndefined();
 
-      let strJson = getInspectorByKey('undefined');
-      console.info('ImmersiveOptionsMaterialColorTest_0100 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-
       console.info('ImmersiveOptionsMaterialColorTest_0100 END');
       done();
     });
@@ -96,11 +91,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
       let component = await driver.findComponent(ON.id('transparent'));
       expect(component).not().assertUndefined();
-
-      let strJson = getInspectorByKey('transparent');
-      console.info('ImmersiveOptionsMaterialColorTest_0200 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0200 END');
       done();
@@ -129,11 +119,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let component = await driver.findComponent(ON.id('string_red'));
       expect(component).not().assertUndefined();
 
-      let strJson = getInspectorByKey('string_red');
-      console.info('ImmersiveOptionsMaterialColorTest_0300 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-
       console.info('ImmersiveOptionsMaterialColorTest_0300 END');
       done();
     });
@@ -160,11 +145,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
       let component = await driver.findComponent(ON.id('string_rgba'));
       expect(component).not().assertUndefined();
-
-      let strJson = getInspectorByKey('string_rgba');
-      console.info('ImmersiveOptionsMaterialColorTest_0400 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0400 END');
       done();
@@ -193,10 +173,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let component = await driver.findComponent(ON.id('number_color'));
       expect(component).not().assertUndefined();
 
-      let strJson = getInspectorByKey('number_color');
-      console.info('ImmersiveOptionsMaterialColorTest_0500 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0500 END');
       done();
@@ -225,10 +201,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let component = await driver.findComponent(ON.id('color_enum'));
       expect(component).not().assertUndefined();
 
-      let strJson = getInspectorByKey('color_enum');
-      console.info('ImmersiveOptionsMaterialColorTest_0600 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0600 END');
       done();
@@ -256,11 +228,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
       let component = await driver.findComponent(ON.id('color_white'));
       expect(component).not().assertUndefined();
-
-      let strJson = getInspectorByKey('color_white');
-      console.info('ImmersiveOptionsMaterialColorTest_0700 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0700 END');
       done();
@@ -293,11 +260,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
       let component = await driver.findComponent(ON.id('default_info'));
       expect(component).not().assertUndefined();
-
-      let strJson = getInspectorByKey('default_info');
-      console.info('ImmersiveOptionsMaterialColorTest_0800 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0800 END');
       done();

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -353,44 +354,22 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIOR_STATIC_0300
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIOR_STATIC_0300
-    * @tc.desc   setAudioSessionBehavior
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIOR_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+     * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300 
+     * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300  
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      expect(behavior).assertEqual(0x00000004);
       try {
         sessionManager!.setAudioSessionBehavior(behavior);
-        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300: setAudioSessionBehavior with DEFALUT: PASS`);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: PASS`);
         done();
       } catch (err) {
-        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300: FAIL :${(err as BusinessError).message}`);
-        expect(false).assertTrue();
-      }
-      done();
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100
-    * @tc.desc   setAudioSessionBehavior
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it("SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
-      try {
-        for(let i = 0;i < 100 ;i++){
-          sessionManager!.setAudioSessionBehavior(behavior);
-        }
-        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100: setAudioSessionBehavior with DEFALUT: PASS`);
-        done();
-      } catch (err) {
-        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100: FAIL :${(err as BusinessError).message}`);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: FAIL :${err.message}`);
         expect(false).assertTrue();
       }
       done();

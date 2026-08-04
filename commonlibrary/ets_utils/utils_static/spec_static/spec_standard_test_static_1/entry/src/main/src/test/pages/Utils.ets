@@ -1,3 +1,4 @@
+﻿'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,7 +48,7 @@ export function update(x: number): number {
 
 let count = 0;
 
-export function shouldContinue() {
+export function shouldContinue(): boolean {
   count++;
   return count <= 3;
 }
@@ -70,7 +71,7 @@ export enum MyColor {
   BLUE = 3,
 }
 
-export function getNumber() {
+export function getNumber(): () => int {
   let num = 5;
   return () => {
     if (num > 0) {

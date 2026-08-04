@@ -15,7 +15,7 @@
  */
 
 import { resourceManager } from '@kit.LocalizationKit';
-import { beforeEach, describe, expect, it, Level, beforeAll } from '../../../../hypium';
+import { beforeEach, describe, expect, it, Level, beforeAll } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import {LibUtil} from '../../../ets/pages/LibUtil'
 import { UtilsTest } from '../Util.test'

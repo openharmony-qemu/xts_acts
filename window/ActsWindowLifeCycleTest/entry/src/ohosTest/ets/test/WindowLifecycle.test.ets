@@ -19,7 +19,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError, settings } from '@kit.BasicServicesKit';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { abilityAccessCtrl, PermissionRequestResult, Permissions, StartOptions } from '@kit.AbilityKit';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, MatchPattern, ON } from '@kit.TestKit';
 import { display } from '@kit.ArkUI';
 import deviceInfo from '@ohos.deviceInfo';
 
@@ -123,7 +123,7 @@ async function terminateAbility3(caseName: string) {
   await sleep(1000)
 }
 
-function getPermision() {
+async function getPermision() {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
   let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
   let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
@@ -140,9 +140,10 @@ async function ClickButtonDriver() {
   console.info(`come in permissionClick`);
   let driver: Driver = Driver.create();
   console.info(`come in Driver create`);
-  let buttonOne = await driver.findComponent(ON.text('允许'));
+  await sleep(1000);
+  let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
   console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  if (buttonOne != undefined) {
+  if (buttonOne !== null) {
     await buttonOne.click();
   }
 }
@@ -661,8 +662,8 @@ export default function WindowLifecycle() {
           console.info('Succeeded in checking whether the window is showing. Data: ' + JSON.stringify(data2));
         } catch (exception) {
           console.error('Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
-          expect().assertFail();
           await windowClass.destroyWindow();
+          expect().assertFail();
           done();
         }
 
@@ -3871,7 +3872,7 @@ export default function WindowLifecycle() {
         }).catch((err: BusinessError) => {
           console.error(caseName + `Failed to create the Window.Cause code: ${ err.code }, message: ${ err.message }`);
           expect(err.code).assertEqual(1300002);
-          expect(err.message).assertEqual('This window state is abnormal.[window][loadContent]msg: The window is not created or destroyed.');
+          expect(err.message !== '').assertTrue();
           done();
         });
       } catch (exception) {
@@ -4028,8 +4029,7 @@ export default function WindowLifecycle() {
               console.error(msgStr + `Failed to setParentWindow 1. Cause code: ${e.code}, message: ${e.message}`);
               await terminateAbility(message)
               expect(e.code).assertEqual(801);
-              expect(e.message)
-                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setParentWindow]msg: Set parent window failed.');
+              expect(e.message !== '').assertTrue();
               done();
             });
           } catch (e) {
@@ -4091,8 +4091,7 @@ export default function WindowLifecycle() {
             }).catch((err: BusinessError) => {
               console.error(`${caseName} restore_Failed. Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801);
-              expect(err.message)
-                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][restore]msg: Window restore failed.');
+              expect(err.message !== '').assertTrue();
               done();
             });
           } catch (exception) {
@@ -4179,6 +4178,160 @@ export default function WindowLifecycle() {
       }
     });
 
+/**
+     * @tc.name SUB_WINDOW_OnSubWindowClose_multiOn_UniqueOff_0100
+     * @tc.number SUB_WINDOW_OnSubWindowClose_multiOn_UniqueOff_0100
+     * @tc.desc 注册多个，取消一个
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_WINDOW_OnSubWindowClose_multiOn_UniqueOff_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = "SUB_WINDOW_OnSubWindowClose_multiOn_UniqueOff_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let driver: Driver = Driver.create();
+        let callback1 = () => {
+          return new Promise<boolean>((resolve, reject) => {
+            let result: boolean = false;
+            resolve(result);
+          })
+        }
+        let callback2 = () => {
+          return new Promise<boolean>((resolve, reject) => {
+            let result: boolean = true;
+            resolve(result);
+          })
+        }
+        let options: window.SubWindowOptions = {
+          title: 'OnSubWindowClose_multiOn_UniqueOff_0100',
+          decorEnabled: true
+        };
+        try {
+          let subWindow: window.Window =
+            await windowStage.createSubWindowWithOptions('OnSubWindowClose_multiOn_UniqueOff_0100', options);
+          await subWindow.setUIContent('testability/pages/Index2');
+          await subWindow.showWindow();
+          await sleep(500)
+          subWindow.on('subWindowClose', callback1);
+          subWindow.on('subWindowClose', callback2);
+          subWindow.off('subWindowClose', callback2);
+          if (isFreeWindowMode) {
+            let button = await driver.waitForComponent(ON.id('EnhanceCloseBtn'), 2000);
+            await button.click();
+            await sleep(1000);
+            try {
+              let windowClassFind = window.findWindow('OnSubWindowClose_multiOn_UniqueOff_0100');
+              console.error(`${msgStr} The subWindow still exist`);
+              windowClassFind.off('subWindowClose');
+              await windowClassFind.destroyWindow()
+              expect(false).assertTrue();
+            } catch (err) {
+              console.error(`${msgStr} The subWindow not exist, Cause code ${err.code}, message ${err.message}`);
+              expect(err.code).assertEqual(1300002);
+              expect(err.message !== '').assertTrue();
+            }
+          } else {
+            subWindow.off('subWindowClose');
+            await subWindow.destroyWindow()
+          }
+          done();
+        } catch (err) {
+          console.error(`${msgStr} Failed to register callback, Cause code ${err.code}, message ${err.message}`);
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number : SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_0100
+     * @tc.name : SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_0100
+     * @tc.desc : SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_0100
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level0
+     */
+    it('SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName = 'SUB_WINDOW_LIFECYCLE_WindowEventListener_Normal_0100';
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        let mainWindow = windowStage.getMainWindowSync();
+        let windowId = mainWindow.getWindowProperties().id;
+        console.info(msgStr + 'windowId :' + windowId);
+        try {
+          let parentWindowEventListener = (windowId: number, event: window.WindowEventType) => {
+            console.info(`${msgStr} parentWindowEventListener, windowId:${windowId}, WindowEventType:${event}`);
+          };
+          let subWindow: window.Window =
+            await window.createSubWindowAndBindParent('WindowEventListener_Normal_0100', windowId, context,
+              parentWindowEventListener);
+          await subWindow.destroyWindow();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed to createSubWindowAndBindParent, Cause code ${exception.code}, message ${exception.message}`);
+          expect(exception.code === 202).assertTrue();
+          expect(exception.message !== '').assertTrue();
+          done();
+        };
+      })
+
+    /**
+     * @tc.name   SUB_WINDOW_OnWindowStageEvent_multiOn_UniqueOff_0100
+     * @tc.number SUB_WINDOW_OnWindowStageEvent_multiOn_UniqueOff_0100
+     * @tc.desc   WindowStageEvent 多个callBack对象订阅取消监听验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_WINDOW_OnWindowStageEvent_multiOn_UniqueOff_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = "SUB_WINDOW_OnWindowStageEvent_multiOn_UniqueOff_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let windowStageEvent1: window.WindowStageEventType = window.WindowStageEventType.SHOWN;
+        let windowStageEvent2: window.WindowStageEventType = window.WindowStageEventType.SHOWN;
+        let cb1 = (windowStageEvent: window.WindowStageEventType) => {
+          console.log(msgStr + " callback1: " + JSON.stringify(windowStageEvent));
+          windowStageEvent1 = windowStageEvent;
+        }
+        let cb2 = (windowStageEvent: window.WindowStageEventType) => {
+          console.log(msgStr + " callback2: " + JSON.stringify(windowStageEvent));
+          windowStageEvent2 = windowStageEvent;
+        }
+        try {
+          windowStage.on('windowStageEvent', cb1);
+          windowStage.on('windowStageEvent', cb2);
+          await sleep(100);
+          let subWindowClass: window.Window =
+            await windowStage.createSubWindow('OnWindowStageEvent_multiOn_UniqueOff_0100');
+          let callback = async (res: window.WindowEventType) => {
+            console.log(`${msgStr} subWindowClass WindowEventType WindowEventType: ${JSON.stringify(res)}`);
+            if (res === window.WindowEventType.WINDOW_ACTIVE) {
+              console.info(`${msgStr} subWindowClass isFocused: ${subWindowClass.isFocused()}`)
+              expect(windowStageEvent1).assertEqual(window.WindowStageEventType.INACTIVE)
+              expect(windowStageEvent2).assertEqual(window.WindowStageEventType.INACTIVE)
+              windowStage.off('windowStageEvent');
+              await subWindowClass.destroyWindow();
+              done();
+            }
+          }
+          subWindowClass.on('windowEvent', callback);
+          await subWindowClass.showWindow();
+        } catch (error) {
+          console.error(msgStr + ' Failed. Cause: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
   })
 

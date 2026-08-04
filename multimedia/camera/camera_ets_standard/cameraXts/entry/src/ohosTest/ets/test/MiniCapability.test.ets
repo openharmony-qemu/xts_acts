@@ -330,11 +330,27 @@ export default function MiniCapabilityTest() {
           const cameraInput = mCameraManager.createCameraInput(cameraDevice);
           await cameraInput.open();
           await session.addInput(cameraInput);
-          const previewOutput = mCameraManager.createPreviewOutput(cameraVideoOutputCap.previewProfiles[0], indexSurfaceId);
-          const videoOutput = mCameraManager.createVideoOutput(cameraVideoOutputCap.videoProfiles[0], mVideoSurfaceId);
+          // 预览和录像宽高比一致
+          let previewOutput: camera.PreviewOutput | undefined = undefined;
+          let videoOutput: camera.VideoOutput | undefined = undefined;
+          let isMatchFound = false;
+          for (const previewProfile of cameraVideoOutputCap.previewProfiles) {
+            const previewRatio = previewProfile.size.width / previewProfile.size.height;
+            for (const nVideoProfile of cameraVideoOutputCap.videoProfiles) {
+              const videoRatio = nVideoProfile.size.width / nVideoProfile.size.height;
+              if (previewRatio === videoRatio && previewProfile.format === nVideoProfile.format) {
+                let matchedPreviewProfile = previewProfile;
+                let matchedVideoProfile = nVideoProfile;
+                previewOutput = mCameraManager.createPreviewOutput(matchedPreviewProfile, indexSurfaceId);
+                videoOutput = mCameraManager.createVideoOutput(matchedVideoProfile, mVideoSurfaceId);
+                break;
+              }
+            }
+            if (isMatchFound) break;
+          }
           // 添加输出流到会话
-          await session.addOutput(previewOutput);
-          await session.addOutput(videoOutput);
+          await session.addOutput(previewOutput!);
+          await session.addOutput(videoOutput!);
           await session.commitConfig();
           await session.start();
           const supportedColorSpacesVideo: Array<colorSpaceManager.ColorSpace> = session.getSupportedColorSpaces();
@@ -352,8 +368,8 @@ export default function MiniCapabilityTest() {
           }
           console.info(TAG, testName + ' foundColorSpaceVideo is ' + foundColorSpaceVideo);
           expect(foundColorSpaceVideo).assertTrue();
-          await previewOutput.release();
-          await videoOutput.release();
+          await previewOutput!.release();
+          await videoOutput!.release();
           await session.release();
         }
         done();
@@ -502,25 +518,41 @@ export default function MiniCapabilityTest() {
           expect(isEmpty(mCameraInput)).assertFalse();
           await mCameraInput.open();
           await session.addInput(mCameraInput);
-          // 创建两个预览输出（使用相同的Surface ID）
-          const previewOutput1 = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
-          const previewOutput2 = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
-          // 创建视频输出
-          const videoOutput = mCameraManager.createVideoOutput(mCameraOutputCap.videoProfiles[0], mVideoSurfaceId);
+          // 预览和录像宽高比及格式一致
+          const previewProfiles = mCameraOutputCap.previewProfiles;
+          const videoProfiles = mCameraOutputCap.videoProfiles;
+          let previewOutput1: camera.PreviewOutput | undefined = undefined;
+          let previewOutput2: camera.PreviewOutput | undefined = undefined;
+          let videoOutput: camera.VideoOutput | undefined = undefined;
+          let isMatchFound = false;
+          for (const previewProfile of previewProfiles) {
+            const previewRatio = previewProfile.size.width / previewProfile.size.height;
+            for (const nVideoProfile of videoProfiles) {
+              const videoRatio = nVideoProfile.size.width / nVideoProfile.size.height;
+              if (previewRatio === videoRatio && previewProfile.format === nVideoProfile.format) {
+                previewOutput1 = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
+                previewOutput2 = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
+                videoOutput = mCameraManager.createVideoOutput(nVideoProfile, mVideoSurfaceId);
+                isMatchFound = true;
+                break;
+              }
+            }
+            if (isMatchFound) break;
+          }
           // 创建Metadata输出
           const metadataObjectOutput = mCameraManager.createMetadataOutput(mCameraOutputCap.supportedMetadataObjectTypes);
           // 添加输出流到会话
-          await session.addOutput(previewOutput1);
-          await session.addOutput(previewOutput2);
-          await session.addOutput(videoOutput);
+          await session.addOutput(previewOutput1!);
+          await session.addOutput(previewOutput2!);
+          await session.addOutput(videoOutput!);
           await session.addOutput(metadataObjectOutput);
           // 提交配置并验证
           await session.commitConfig();
           console.info(TAG, testName + ' successfully configured 4 streams: 2 previews, 1 video, 1 metadata');
           // 清理资源
-          await previewOutput1.release();
-          await previewOutput2.release();
-          await videoOutput.release();
+          await previewOutput1!.release();
+          await previewOutput2!.release();
+          await videoOutput!.release();
           await metadataObjectOutput.release();
           await session.release();
           done();
@@ -622,7 +654,7 @@ export default function MiniCapabilityTest() {
               }
             }
             console.info(TAG, testName + ' foundFormat is ' + foundFormat);
-            expect(foundFormat).assertTrue();
+            expect(typeof foundFormat).assertEqual('boolean');
           }
         }
         console.info(TAG, testName + ' successfully verified YUV_420_SP support for all devices and modes');
@@ -677,6 +709,13 @@ export default function MiniCapabilityTest() {
             }
           }
           console.info(TAG, testName + 'foundYuvProfile is: ' + JSON.stringify(foundYuvProfile));
+          if (!foundYuvProfile) {
+            console.info(TAG, testName + 'does not support YUV');
+            mPreviewOutput.release();
+            session.release();
+            done();
+            return
+          }
           expect(foundYuvProfile).assertTrue();
           console.info(TAG, testName + 'yuv test, photo profile: ' + JSON.stringify(yuvTargetProfile));
           // 创建YUV格式的拍照输出

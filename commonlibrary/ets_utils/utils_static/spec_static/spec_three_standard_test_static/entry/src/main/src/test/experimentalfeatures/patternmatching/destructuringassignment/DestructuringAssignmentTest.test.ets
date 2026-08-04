@@ -14,14 +14,7 @@
  * limitations under the License.
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 let res: number = 0;
 function foo(arg: number): number {
@@ -130,7 +123,7 @@ export default function DestructuringAssignmentTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -158,7 +151,6 @@ export default function DestructuringAssignmentTest(): void {
       [n,s] = [1.5, "str"];
       expect(n).assertEqual(1.5);
       expect(s).assertEqual("str");
-
     });
 
     /**
@@ -218,7 +210,6 @@ export default function DestructuringAssignmentTest(): void {
       ns[1] = "new str";
       expect(ns[0]).assertEqual(2.5);
       expect(ns[1]).assertEqual("new str");
-
     });
 
     /**
@@ -280,7 +271,6 @@ export default function DestructuringAssignmentTest(): void {
       expect(ns[2]).assertEqual(undefined);
       expect(ns[3]).assertEqual(o2);
       expect(ns[4]).assertEqual(4.1);
-
     });
 
     /**
@@ -313,7 +303,6 @@ export default function DestructuringAssignmentTest(): void {
       res1 = 0;
       [] = [foo1(1), foo1(2), foo1(3)];
       expect(res1).assertEqual(3);
-
     });
 
     /**
@@ -334,7 +323,6 @@ export default function DestructuringAssignmentTest(): void {
 
       [n1] = fixed_array();
       expect(n1).assertEqual(1);
-
     });
 
     /**
@@ -356,7 +344,6 @@ export default function DestructuringAssignmentTest(): void {
       [n1, n2] = fixed_array1();
       expect(n1).assertEqual(1);
       expect(n2).assertEqual(2);
-
     });
 
     /**
@@ -402,7 +389,6 @@ export default function DestructuringAssignmentTest(): void {
       expect(n2).assertEqual(2);
       expect(n3).assertEqual(3);
       expect(n4).assertEqual(4);
-
     });
 
     /**
@@ -427,7 +413,6 @@ export default function DestructuringAssignmentTest(): void {
       expect(n3).assertEqual(3);
       expect(n4).assertEqual(4);
       expect(n5).assertEqual(5);
-
     });
 
     /**
@@ -458,7 +443,6 @@ export default function DestructuringAssignmentTest(): void {
       expect(hasThrown).assertEqual(true);
     });
 
-
     /**
      * @tc.number    SUB_DESTRUCTURING_ASSIGNMENT_XTSTEST_1700
      * @tc.name      testDestructuringAssignment0017
@@ -478,9 +462,7 @@ export default function DestructuringAssignmentTest(): void {
       [, n2, , n4, , , , ] = fixed_array6();
       expect(n2).assertEqual(2);
       expect(n4).assertEqual(4);
-
     });
-
 
     /**
      * @tc.number    SUB_DESTRUCTURING_ASSIGNMENT_XTSTEST_2600
@@ -496,7 +478,6 @@ export default function DestructuringAssignmentTest(): void {
       [n,s,,,] = tpl1;
       expect(n).assertEqual(1.5);
       expect(s).assertEqual("str");
-
     });
 
     /**

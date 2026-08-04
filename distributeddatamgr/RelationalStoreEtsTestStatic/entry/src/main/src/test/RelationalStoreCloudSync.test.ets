@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -24,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../hypium';
+} from '../../../hypium/index';
 import relationalStore from '@ohos.data.relationalStore';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
@@ -57,7 +58,12 @@ export default function relationalStoreCloudSyncTest() {
       console.info(tag + 'beforeAll')
       hilog.info(domain, tag, 'beforeAll');
       hilog.info(domain, tag, 'abilityDelegator:' + JSON.stringify(abilityDelegator));
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
       try {

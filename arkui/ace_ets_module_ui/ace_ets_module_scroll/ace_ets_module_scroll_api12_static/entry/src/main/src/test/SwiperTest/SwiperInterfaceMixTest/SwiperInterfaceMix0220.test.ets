@@ -87,6 +87,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220', Level.LEVEL0, 
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220 START");
       await CommonFunc.sleep(3000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperArrow = await driver.findComponent(ON.id("swiperinterfacemix0220"));
       let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
       await driver.fling({

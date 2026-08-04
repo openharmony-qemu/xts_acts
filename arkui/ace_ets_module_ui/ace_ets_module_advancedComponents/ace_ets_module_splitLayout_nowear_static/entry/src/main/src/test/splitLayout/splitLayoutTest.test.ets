@@ -17,7 +17,7 @@
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

@@ -23,25 +23,19 @@ function isIteratorEmpty<T>(iterator: Iterator<T>): boolean {
   return firstResult.done === true;
 }
 
-function sleep(time: number) {
-  return new Promise<void>((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, time)
-  }).then(() => {
-    console.info(`sleep ${time} over...`)
-  })
-}
-
 interface Options {
   type: string,
   endings: string,
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function FastBufferBaseTest1() {
   describe('fastbufferBaseTest1', () => {
     afterEach(async (done: Function) => {
-      await sleep(20);
+      await sleep(50);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.

@@ -1515,6 +1515,7 @@ export default function pasteComponentTest() {
             "borderWid": 0,
             "borderCol": 0xffffffff,
             "borderRad": 0,
+            "buWidth": undefined,
             "left": 12,
             "right": 12,
             "top": 4,
@@ -1532,9 +1533,13 @@ export default function pasteComponentTest() {
             let properties = data.getWindowProperties();
             console.info('Succeeded in obtaining the window properties.width: ' + properties.windowRect.width);
             let window_width = properties.windowRect.width;
+            let button_width = window_width / 2;
             console.info('====>[Test_Security_Button_Paste_1500] properties.windowRect.width is: ' + properties.windowRect.width);
-            let offsetObj:ESObject = {"positionX": `${-window_width / 2}px`};
-            ObjectUtils.assign(eventData.data,offsetObj);
+            let obj:ESObject = {
+              "positionX": `${-window_width / 2}px`,
+              "buWidth": `${button_width}px`
+            };
+            ObjectUtils.assign(eventData.data,obj);
           });
         } catch (error){
           console.error('Failed to obtain the window properties.error.code: ' + error.code)

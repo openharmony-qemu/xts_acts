@@ -30,6 +30,7 @@ function expectTrue(exp: boolean, info: string = ''): void {
     expect(exp).assertTrue();
   } catch (err) {
     console.info(`${info} test failed`);
+    ExpectFail();
   }
 }
 
@@ -197,6 +198,7 @@ function expectEqual(exp: string | number | boolean, assert: string | number | b
     expect(exp).assertEqual(assert);
   } catch (err) {
     console.info(`${info} test failed`);
+    ExpectFail();
   }
 }
 
@@ -644,7 +646,7 @@ export default function SocketErrorCodeTest01() {
         let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
         tls.getSocketFd().then(() => {
           console.info(`${caseName} get success`);
-          expectTrue(true);
+          expect(true).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} get err: ${JSON.stringify(err)}`);
@@ -850,6 +852,9 @@ export default function SocketErrorCodeTest01() {
       try {
         let client: socket.LocalSocket = socket.constructLocalSocketInstance();
         client.on('error', undefined);
+        console.info(`${caseName} error: Expected exception but none was thrown`);
+        expectTrue(false, `${caseName} should throw error 401`);
+        done();
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         expectTrue(Number(err.code) === 401);
@@ -986,27 +991,29 @@ export default function SocketErrorCodeTest01() {
      * @tc.level  LEVEL3
      */
     it('testLocalSocketServerGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testLocalSocketServerListen0100';
+      const caseName: string = 'testLocalSocketServerGetState0100';
       console.info(`${caseName}---Start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-        let sandboxPath: string = getContext().filesDir + '/testSocket_getState'
+        let sandboxPath: string = getContext().filesDir + '/testSocket_getState';
         let listenAddr: socket.LocalAddress = {
           address: sandboxPath
-        }
+        };
         server.listen(listenAddr).then(() => {
           console.log(`${caseName} listen success`);
+          server.getState().then((data: socket.SocketStateBase) => {
+            console.log(`${caseName} getState success: ` + JSON.stringify(data));
+            expect(data.isBound).assertEqual(true);
+            expect(data.isClose).assertEqual(false);
+            expect(data.isConnected).assertEqual(false);
+            done();
+          }).catch((err: Object) => {
+            console.info(`${caseName} getState err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
         }).catch((err: Object) => {
-          console.error("listen fail: " + JSON.stringify(err));
-          ExpectFail();
-          done();
-        })
-        server.getState().then((data: socket.SocketStateBase) => {
-          console.log(`${caseName} getState success: ` + JSON.stringify(data));
-          expectTrue(true);
-          done();
-        }).catch((err: Object) => {
-          console.info(`${caseName} getState err: ${JSON.stringify(err)}`);
+          console.error(`${caseName} listen fail: ${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
@@ -1015,7 +1022,6 @@ export default function SocketErrorCodeTest01() {
         ExpectFail();
         done();
       }
-      console.info(`${caseName} test end`);
     });
 
     /**
@@ -1060,7 +1066,7 @@ export default function SocketErrorCodeTest01() {
           await client.close().catch((err:BusinessError) => {
             console.info('fail to close' + err.code.toString());
           });
-          expectTrue(true);
+          expect(true).assertTrue();
           console.info(`${caseName} test end`);
           done();
         });
@@ -1339,14 +1345,14 @@ export default function SocketErrorCodeTest01() {
         })
           .catch((err: BusinessError) => {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(Number(err.code) === 2301009);
+            expect(Number(err.code) === 2301009).assertTrue();
             console.info(`${caseName}---End`);
             done();
           });
 
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        expectTrue(Number((err as BusinessError).code) === 2301009);
+        expect(Number((err as BusinessError).code) === 2301009).assertTrue();
         console.info(`${caseName}---End`);
         done();
       }
@@ -1389,13 +1395,13 @@ export default function SocketErrorCodeTest01() {
         })
           .catch((err: BusinessError) => {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(Number(err.code) === 2301009);
+            expect(Number(err.code) === 2301009).assertTrue();
             console.info(`${caseName}---End`);
             done();
           });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        expectTrue(Number(err.code) === 2301009);
+        expect(Number(err.code) === 2301009).assertTrue();
         console.info(`${caseName}---End`);
         done();
       }
@@ -1452,32 +1458,23 @@ export default function SocketErrorCodeTest01() {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0400';
       console.info(`${caseName} test start`);
       try {
-        let tcpExtraOptions: socket.TCPExtraOptions = {
-          keepAlive: false,
-          OOBInline: true,
-          TCPNoDelay: true,
-          socketLinger: {
-            on: true, linger: 10
-          },
-          receiveBufferSize: 1000,
-          sendBufferSize: 1000,
-          reuseAddress: true,
-          socketTimeout: 3000
-        };
         let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
         tlsServer.listen(connOpt).then(() => {
           console.log(`${caseName} listen callback success`);
         }).catch((err: BusinessError) => {
           console.log("failed: " + JSON.stringify(err));
+          ExpectFail();
           done();
         });
-        tlsServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
+        tlsServer.setExtraOptions(null, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+            expectTrue(Number(err.code) === 401);
             done();
           }
           else{
             console.log(`${caseName} setExtraOptions success`);
+            ExpectFail();
             done();
           }
         });
@@ -1537,30 +1534,21 @@ export default function SocketErrorCodeTest01() {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0600';
       console.info(`${caseName} test start`);
       try {
-        let tcpExtraOptions: socket.TCPExtraOptions = {
-          keepAlive: false,
-          OOBInline: true,
-          TCPNoDelay: true,
-          socketLinger: {
-            on: true, linger: 10
-          },
-          receiveBufferSize: 1000,
-          sendBufferSize: 1000,
-          reuseAddress: true,
-          socketTimeout: 3000
-        };
         let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
         tlsServer.listen(connOpt).then(() => {
           console.log("listen callback success");
         }).catch((err: BusinessError) => {
           console.log("failed: " + JSON.stringify(err));
+          ExpectFail();
           done();
         });
-        tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
+        tlsServer.setExtraOptions(null).then(() => {
           console.log(`${caseName} setExtraOptions success`);
+          ExpectFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
@@ -1859,7 +1847,7 @@ export default function SocketErrorCodeTest01() {
             }
             localSocketConnection.send(sendOptions).then(() => {
               console.info(`${caseName} localSocketConnection send success`);
-              expectTrue(true);
+              expect(true).assertTrue();
               console.info(`${caseName}---End`);
               done();
             }).catch((err: BusinessError) => {
@@ -2138,9 +2126,9 @@ export default function SocketErrorCodeTest01() {
         })
         server.getState().then((data: socket.SocketStateBase) => {
           console.log(`${caseName} getState success: ` + JSON.stringify(data));
-          expectEqual(data.isBound, true);
-          expectEqual(data.isClose, false);
-          expectEqual(data.isConnected, false);
+          expect(data.isBound).assertEqual(true);
+          expect(data.isClose).assertEqual(false);
+          expect(data.isConnected).assertEqual(false);
           done();
         }).catch((err: Object) => {
           console.info(`${caseName} getState err: ${JSON.stringify(err)}`);
@@ -2152,7 +2140,6 @@ export default function SocketErrorCodeTest01() {
         ExpectFail();
         done();
       }
-      console.info(`${caseName} test end`);
     });
   })
 }

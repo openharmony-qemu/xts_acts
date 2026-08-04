@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Level, TestType, Size,beforeEach } from '../../../hypium';
+import { describe, it, expect, beforeAll, Level, TestType, Size,beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
 import { AsyncCallback, BusinessError, ErrorCallback } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import webSocket from '@ohos.net.webSocket';

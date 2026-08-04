@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -466,7 +467,8 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                     });
                 }
                 for (const eaw of workers) {
-                    eaw.quit();
+                    let j = eaw.join();
+                    j.Await();
                 }
                 await Utils.msSleep(200);
                 expect(concurrentSet.has("Worker 0 error")).assertTrue();
@@ -515,7 +517,8 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                         reject(new Error("EAWorker destruction error"));
                     });
                 });
-                eaw.quit();
+                let job = eaw.join();
+                job.Await();
 
                 await Utils.msSleep(30);
 

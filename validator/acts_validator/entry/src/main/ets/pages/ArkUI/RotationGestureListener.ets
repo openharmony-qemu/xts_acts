@@ -144,7 +144,7 @@ struct RotationGestureExample {
         .width('80%')
         .padding('5%')
         .border({ width: 3 })
-        .margin('5%')
+        .margin('1%')
         .rotate({ angle: this.angle })
         .gesture(
           RotationGesture({ fingers: 2, angle: 5, isFingerCountLimited: false })
@@ -164,7 +164,7 @@ struct RotationGestureExample {
         Button('点击添加监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.addGlobalGestureListener(GestureListenerType.ROTATION,
@@ -175,14 +175,14 @@ struct RotationGestureExample {
         Button('点击移除监听')
           .width('60%')
           .height('10%')
-          .margin('5%')
+          .margin('1%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.removeGlobalGestureListener(GestureListenerType.ROTATION, rotationGesture);
             console.info('aaa --- 移除监听')
           })
       }
-      .height('70%')
+      .height('65%')
       .width('100%')
       .backgroundColor(Color.White)
 

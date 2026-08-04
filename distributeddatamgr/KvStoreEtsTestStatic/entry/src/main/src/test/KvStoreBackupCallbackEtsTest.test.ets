@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import distributedData from '@ohos.data.distributedKVStore';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
@@ -200,17 +201,19 @@ export default function kvStoreBackupCallbackJsunittest() {
     afterEach(async (done: () => void): Promise<void> => {
       console.info(TAG + 'afterEach');
       try { //tmp
-        await publicDeleteBackup(kvStore,files).then(async (data: Array<[string, int]>) => {
-            await (kvManager!.closeKVStore(BUNDLE_NAME, STORE_ID) as Promise<void>).then(async () => {
-              console.info(TAG + 'afterEach closeKVStore success');
-              files = [];
-              done();
-            }).catch((err: Error) => {
-              console.error(TAG + 'afterEach closeKVStore err ' +
-                `, error code is ${err.code}, message is ${err.message}`);
-              expect().assertFail();
-              done();
-            });
+        await publicDeleteBackup(kvStore,files).then((data: Array<[string, int]>) => {
+            waitForCompletion(async () => {
+              await (kvManager!.closeKVStore(BUNDLE_NAME, STORE_ID) as Promise<void>).then(async () => {
+                console.info(TAG + 'afterEach closeKVStore success');
+                files = [];
+                done();
+              }).catch((err: Error) => {
+                console.error(TAG + 'afterEach closeKVStore err ' +
+                  `, error code is ${err.code}, message is ${err.message}`);
+                expect().assertFail();
+                done();
+              });
+            })
           }).catch((err: Error) => {
             console.warn(TAG + 'afterEach closeKVStore warning: ' +
               `code: ${err.code}, message: ${err.message}`);

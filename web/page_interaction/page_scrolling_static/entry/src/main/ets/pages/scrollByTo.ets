@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -94,7 +95,7 @@ struct WebComponent{
             case 'emitonSwitchNextPage1': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/webViewController' })
+              router.pushUrl({ url: 'pages/scrollEvent' })
               console.log('push URL success')
             }
           }

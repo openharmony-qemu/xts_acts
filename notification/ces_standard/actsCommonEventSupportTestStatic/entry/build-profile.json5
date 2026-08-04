@@ -14,9 +14,7 @@
  */
 {
   "apiType": "stageMode",
-  "arkTSVersion": "1.2",
-  "buildOption": {
-  },
+  "buildOption": {},
   "buildOptionSet": [
     {
       "name": "release",
@@ -30,14 +28,14 @@
           }
         }
       }
-    },
+    }
   ],
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest",
+      "name": "ohosTest"
     }
   ]
 }

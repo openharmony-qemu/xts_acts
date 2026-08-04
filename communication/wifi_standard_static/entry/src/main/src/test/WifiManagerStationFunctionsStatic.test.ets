@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,8 +31,13 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       const ABILITY_NAME = 'EntryAbility';
       const BUNDLE_NAME = 'ohos.acts.communication.wifi.wifidevice.static';
+      let cmd = `aa start -a ${ABILITY_NAME} -b ${BUNDLE_NAME}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
       await Utils.openWifi();
-      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(`aa start -a ${ABILITY_NAME} -b ${BUNDLE_NAME}`);
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
       done();
     });
@@ -56,6 +62,8 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       let networkId: int = 500;
       try {
+        //DTS2026071712031因是首条用例，原应用此时未打开页面，导致原用例报错401。现用例有概率打开应用，偶现报错2501000.故等待5s稳定让应用打开页面后再执行用例
+        await Utils.msSleep(5000);
         await wifiManager.removeCandidateConfig(networkId);
         hilog.info(domain, tag, `${caseName} removeCandidateConfig success`);
         expect().assertFail();
@@ -65,7 +73,7 @@ export default function actsWifiManagerFunctionsTest() {
           hilog.info(domain, tag, `${caseName} api is not support`);
           expect(err.code).assertEqual(801);
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(2501000);
         }
       }
       hilog.info(domain, tag, `${caseName} test end`);
@@ -880,7 +888,7 @@ export default function actsWifiManagerFunctionsTest() {
           expect(typeof deviceConfig.bssid === 'string'  || deviceConfig.bssid === undefined ).assertTrue();
           let select_enum: wifiManager.DeviceAddressType | undefined = deviceConfig.bssidType;
           hilog.info(domain, tag, 'getDeviceConfigs result bssidType:' + select_enum);
-          const bssidTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const bssidTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(bssidTypeValues.includes(select_enum)).assertTrue();
           hilog.info(domain, tag, 'getDeviceConfigs result isHiddenSsid:' + deviceConfig.isHiddenSsid);
           expect(typeof deviceConfig.isHiddenSsid === 'boolean').assertTrue();
@@ -1033,7 +1041,7 @@ export default function actsWifiManagerFunctionsTest() {
           expect(typeof deviceConfig.bssid === 'string' || deviceConfig.bssid === undefined ).assertTrue();
           let select_enum: wifiManager.DeviceAddressType | undefined = deviceConfig.bssidType;
           hilog.info(domain, tag, 'getDeviceConfigs result bssidType:' + select_enum);
-          const bssidTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const bssidTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(bssidTypeValues.includes(select_enum)).assertTrue();
           hilog.info(domain, tag, 'getDeviceConfigs result isHiddenSsid:' + deviceConfig.isHiddenSsid);
           expect(typeof deviceConfig.isHiddenSsid === 'boolean').assertTrue();
@@ -3380,6 +3388,47 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
-
+    /**
+     * @tc.number SUB_Communication_WifiManager_ENUM_WifiCapability_0080
+     * @tc.name SUB_Communication_WifiManager_ENUM_WifiCapability_0080
+     * @tc.desc WifiCapability	WIFI_AUTO_ENABLE test.
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_ENUM_WifiCapability_0080", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_Communication_WifiManager_ENUM_WifiCapability_0080";
+      try {
+        let WIFI_AUTO_ENABLE: wifiManager.WifiCapability = wifiManager.WifiCapability.WIFI_AUTO_ENABLE;
+        hilog.info(domain, tag, `${caseName}WIFI_AUTO_ENABLE:` + WIFI_AUTO_ENABLE);
+        expect(WIFI_AUTO_ENABLE).assertEqual(0);
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName}constant WIFI_AUTO_ENABLE get errCode:` + err.code + `,errMessage:` + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
+     * @tc.name SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
+     * @tc.desc Test isWlanSupported 
+     * @tc.size MEDIUMTEST
+     * @tc.type Function
+     * @tc.level LEVEL0
+     */
+    it('SUB_Communication_WiFi_wifiManager_isWlanSupported_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_isWlanSupported_0001';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let iswifisupport: boolean = wifiManager.isWlanSupported();
+        hilog.error(domain, tag, `${caseName} isWlanSupported success`);
+        expect(iswifisupport === true || iswifisupport === false).assertTrue();
+      } catch (err) {
+        console.info(`${caseName} error code: ${err.code},error message: ${err.message}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
   })
 }

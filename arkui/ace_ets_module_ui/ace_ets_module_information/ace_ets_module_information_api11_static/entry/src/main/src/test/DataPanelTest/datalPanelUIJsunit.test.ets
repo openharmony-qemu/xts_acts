@@ -65,7 +65,7 @@ export default function  datalPanelUIJsunit() {
         }
       } catch (err) {
           console.error("push datalPanelUIJsunit page error:" + err);
-	        expect().assertFail();
+	        expect(false).assertEqual(true);
       }
     });
 

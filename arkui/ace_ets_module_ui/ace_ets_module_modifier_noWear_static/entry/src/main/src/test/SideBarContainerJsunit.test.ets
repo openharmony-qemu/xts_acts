@@ -13,36 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix,
-  Rect
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from './Util.test';
-import Utils from "../../ets/MainAbility/common/Utils";
+import Utils from '../../ets/MainAbility/common/Utils';
 import accessibility from '@ohos.accessibility';
-import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
-
 export default function sideBarContainerJsunit() {
   describe('sideBarContainerTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -269,7 +255,7 @@ it('sideBarContainerTest_0011', Level.LEVEL0, async (done: () => void): Promise<
 it('sideBarContainerTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0012 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('sideBarContainer' + '_changeButton'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');

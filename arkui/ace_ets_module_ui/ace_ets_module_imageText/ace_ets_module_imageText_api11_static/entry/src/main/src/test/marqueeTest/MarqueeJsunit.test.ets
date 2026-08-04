@@ -92,7 +92,7 @@ export default function marqueeJsunit() {
       } catch (err) {
         console.info("testMarquee_static_0100 on emitter err : " + JSON.stringify(err));
       }
-      console.info("testMarquee_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("testMarquee_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('marquee' + '_marquee' + '_marquee' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0100 get event state result is: " + JSON.stringify(eventData));
@@ -135,7 +135,7 @@ export default function marqueeJsunit() {
       } catch (err) {
         console.info("testMarquee_static_0200 on emitter err : " + JSON.stringify(err));
       }
-      console.info("testMarquee_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("testMarquee_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('marquee' + '_marquee' + '_marquee' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0200 get event state result is: " + JSON.stringify(eventData));
@@ -178,7 +178,7 @@ export default function marqueeJsunit() {
       } catch (err) {
         console.info("testMarquee_static_0300 on emitter err : " + JSON.stringify(err));
       }
-      console.info("testMarquee_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("testMarquee_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('marquee' + '_marquee' + '_marquee' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0300 get event state result is: " + JSON.stringify(eventData));

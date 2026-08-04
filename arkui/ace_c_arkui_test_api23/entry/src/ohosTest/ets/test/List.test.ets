@@ -62,6 +62,8 @@ import SelectedDragPreviewStyleTextInputTest from './SelectedDragPreviewStyleTes
 import SelectedDragPreviewStyleTextAreaTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextAreaTest.test'
 import SwiperFakeTest from './swiper/SwiperFakeTest.test'
 import TextLayoutManagerTest from './textLayoutManager/TextLayoutManager.test'
+import ContainerPickerDisplayedItemCountTest from './containerPicker/ContainerPickerDisplayedItemCountTest.test'
+import ContainerPickerItemHeightTest from './containerPicker/ContainerPickerItemHeightTest.test'
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
@@ -114,4 +116,6 @@ export default function testsuite() {
   ScrollToVisibleTest();
   SwiperFakeTest();
   TextLayoutManagerTest();
+  ContainerPickerDisplayedItemCountTest();
+  ContainerPickerItemHeightTest();
 }

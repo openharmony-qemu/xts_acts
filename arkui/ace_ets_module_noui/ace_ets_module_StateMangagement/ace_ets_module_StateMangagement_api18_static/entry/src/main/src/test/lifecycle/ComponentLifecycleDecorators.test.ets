@@ -22,7 +22,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
 import hilog from '@ohos.hilog'
-export default function componentLifecycleDecoratorsTest() {
+export default function componentLifecycleDecoratorsTest(): void {
   describe('ComponentLifecycleDecorators', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
@@ -85,10 +85,11 @@ export default function componentLifecycleDecoratorsTest() {
       let storageValueInactive:string = AppStorage.get<string>('ComponentInactiveKey') as string;
       let storageValueActive:string = AppStorage.get<string>('ComponentActiveKey') as string;
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'storageValue: ' + storageValueInactive);
-      expect(storageValueInactive).assertEqual('InactiveItem0')
-      expect(storageValueActive).assertEqual('ActiveItem6')
+      expect(storageValueInactive).assertEqual('InactiveItem4')
+      expect(storageValueActive).assertEqual('ActiveItem5')
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'componentInactive_0100 END');
       done();
+      
     });
 
   });

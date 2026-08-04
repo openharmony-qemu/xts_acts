@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2023-2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,7 +62,12 @@ export class OpenHarmonyTestRunner implements TestRunner {
       }
       hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
     });
-    abilityDelegator.executeShellCommand('aa start -a EntryAbility -b ohos.acts.communication.bluetooth.bluetoothhost.bp.static')
+    let cmd = 'aa start -a EntryAbility -b ohos.acts.communication.bluetooth.bluetoothhost.bp.static';
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    abilityDelegator.executeShellCommand(cmd)
     hilog.info(domain, tag, 'onRun end');
   }
 }

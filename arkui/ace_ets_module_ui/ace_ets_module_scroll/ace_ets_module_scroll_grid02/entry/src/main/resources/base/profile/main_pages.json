@@ -48,7 +48,9 @@
         "MainAbility/pages/LazyVGridLayout/columnsTemplateNullUndefined",
         "MainAbility/pages/LazyVGridLayout/columnsRowsGapNullUndefined",
         "MainAbility/pages/LazyVGridLayout/onVisibleIndexesChangeTest",
+        "MainAbility/pages/LazyVGridLayout/headerFooterStickyGrid",
         "MainAbility/pages/gridOptions/gridEnableEditMode",
-        "MainAbility/pages/gridOptions/gridEditModeOptions"
+        "MainAbility/pages/gridOptions/gridEditModeOptions",
+        "MainAbility/pages/gridOptions/gridEditModeChange"
     ]
 }

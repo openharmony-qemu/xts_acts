@@ -57,13 +57,10 @@ export default function closeCustomDialogByIdNullAndUndefinedTest() {
       console.info('[closeCustomDialogByIdSuccess001] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let scroll: Component = await driver.findComponent(ON.type('Scroll'));
-      
-      let openBtn = await scroll.scrollSearch(ON.id('btnOpenCustomDialogById'));
+      let openBtn = await driver.findComponent(ON.id('btnOpenCustomDialogById'));
       await openBtn.click();
       await CommonFunc.sleep(1000);
-      
-      let closeBtn = await scroll.scrollSearch(ON.id('btnCloseCustomDialogByIdSuccess'));
+      let closeBtn = await driver.findComponent(ON.id('btnCloseCustomDialogByIdSuccess'));
       await closeBtn.click();
       await CommonFunc.sleep(2000);
       
@@ -86,8 +83,7 @@ export default function closeCustomDialogByIdNullAndUndefinedTest() {
       console.info('[closeCustomDialogByIdNull002] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let scroll: Component = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnCloseCustomDialogByIdNull'));
+      let btn = await driver.findComponent(ON.id('btnCloseCustomDialogByIdNull'));
       await btn.click();
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('resultTextCloseById');
@@ -109,8 +105,7 @@ export default function closeCustomDialogByIdNullAndUndefinedTest() {
       console.info('[closeCustomDialogByIdUndefined003] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let scroll: Component = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnCloseCustomDialogByIdUndefined'));
+      let btn = await driver.findComponent(ON.id('btnCloseCustomDialogByIdUndefined'));
       await btn.click();
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('resultTextCloseById');

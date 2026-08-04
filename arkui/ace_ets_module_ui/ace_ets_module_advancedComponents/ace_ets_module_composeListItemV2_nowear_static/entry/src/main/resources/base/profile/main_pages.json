@@ -1,0 +1,10 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/composeListItemV2/composeListItemV2Content",
+    "MainAbility/pages/composeListItemV2/composeListItemV2IconType",
+    "MainAbility/pages/composeListItemV2/composeListItemV2Interaction",
+    "MainAbility/pages/composeListItemV2/composeListItemV2Operate",
+    "MainAbility/pages/composeListItemV2/composeListItemV2OperateOptions"
+  ]
+}

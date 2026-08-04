@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import Utils  from "../../../ets/MainAbility/common/Utils";
-import { RecordData } from '@ohos.base';
+import Utils from '../../../ets/MainAbility/common/Utils';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -103,7 +102,7 @@ it('testsliderMoving0011_static', Level.LEVEL1, async (done: () => void): Promis
           }
         }
         events_emitter.on(event, callback);
-        // console.info("testsliderMoving0011 click result is: " + JSON.stringify(inspector.sendEventByKey('Slider', 10, "")));
+        // console.info("testsliderMoving0011 click result is: " + JSON.stringify(inspector.sendEventByKey('slider2' + '_Slider', 10, "")));
         await Utils.sleep(3000);
       } catch (err) {
         console.info("testsliderMoving0011 on events_emitter err : " + JSON.stringify(err));

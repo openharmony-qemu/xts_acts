@@ -14,31 +14,8 @@
  * limitations under the License.
  */
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-import {
-  Entry,
-  Component,
-  Scroller,
-  ScrollState,
-  ScrollSource,
-  ContentClipMode,
-  Column,
-  ColumnOptions,
-  Text,
-  Button,
-  WaterFlow,
-  LazyForEach,
-  WaterFlow,
-  FlowItem,
-  Padding,
-  ClickEvent,
-  EdgeEffect,
-  BarState,
-  WaterFlowOptions,
-  Edges,
-  Padding
-} from '@ohos.arkui.component';
+import { Entry, Component, Scroller, ScrollState, ScrollSource, ContentClipMode, Column, ColumnOptions, Text, Button, WaterFlow, LazyForEach, FlowItem, Padding, ClickEvent, EdgeEffect, BarState, WaterFlowOptions, Edges } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct clipContentWaterFlowDemo {

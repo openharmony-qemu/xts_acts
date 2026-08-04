@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -3384,6 +3385,257 @@ export default function bluetoothBleTest() {
             await bleScanner!.stopScan().then(() => {
                 hilog.info(domain, tag, 'stopstop bleScanner stopScan success')
             });
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_GattServer_RemoveService_ServiceUuid_Empty_0100
+         * @tc.name subCommunicationBleGattServerRemoveServiceServiceUuidEmpty0100
+         * @tc.desc removeService with empty string serviceUuid test.
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL0
+         */
+        it("subCommunicationBleGattServerRemoveServiceServiceUuidEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "subCommunicationBleGattServerRemoveServiceServiceUuidEmpty0100";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                gattServerDevice!.removeService("");
+                hilog.info(domain, tag, `${caseName} removeService success`);
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect(Number(err.code) === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })        
+
+        /**
+         * @tc.number SUB_Communication_BLE_GattServer_NotifyCharacteristicChanged_Callback_DeviceId_Empty_0100
+         * @tc.name subCommunicationBleGattServerNotifyCharacteristicChangedCallbackDeviceIdEmpty0100
+         * @tc.desc notifyCharacteristicChanged callback with empty string deviceId test.
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL0
+         */
+        it("subCommunicationBleGattServerNotifyCharacteristicChangedCallbackDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "subCommunicationBleGattServerNotifyCharacteristicChangedCallbackDeviceIdEmpty0100";
+            hilog.info(domain, tag, `${caseName} test start`);
+            let arrayBuffer = new ArrayBuffer(8);
+            let notifyCharacteristic: ble.NotifyCharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001821-0000-1000-8000-00805F9B34FB',
+                characteristicValue: arrayBuffer,
+                confirm: false
+            };
+            try {
+                gattServerDevice!.notifyCharacteristicChanged("", notifyCharacteristic, (err) => {
+                    if (err) {
+                        hilog.error(domain, tag, `${caseName} callback errCode:` + err.code + `,errMessage:` + err.message);
+                    } else {
+                        hilog.info(domain, tag, `${caseName} notifyCharacteristicChanged success`);
+                    }
+                });
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                expect(Number(err.code) === 401).assertTrue();
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })        
+
+        /**
+         * @tc.number SUB_Communication_BLE_GattServer_NotifyCharacteristicChanged_Promise_DeviceId_Empty_0100
+         * @tc.name subCommunicationBleGattServerNotifyCharacteristicChangedPromiseDeviceIdEmpty0100
+         * @tc.desc notifyCharacteristicChanged promise with empty string deviceId test.
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL0
+         */
+        it("subCommunicationBleGattServerNotifyCharacteristicChangedPromiseDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "subCommunicationBleGattServerNotifyCharacteristicChangedPromiseDeviceIdEmpty0100";
+            hilog.info(domain, tag, `${caseName} test start`);
+            let arrayBuffer = new ArrayBuffer(8);
+            let notifyCharacteristic: ble.NotifyCharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001821-0000-1000-8000-00805F9B34FB',
+                characteristicValue: arrayBuffer,
+                confirm: false
+            };
+            try {
+                await gattServerDevice!.notifyCharacteristicChanged("", notifyCharacteristic).then(() => {
+                    hilog.info(domain, tag, `${caseName} notifyCharacteristicChanged success`);
+                });
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect(Number(err.code) === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0100
+         * @tc.desc   Test startAdvertising return 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+        */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let manufactureValueBuffer = new Uint8Array(4);
+            manufactureValueBuffer[0] = 1;
+            manufactureValueBuffer[1] = 2;
+            manufactureValueBuffer[2] = 3;
+            manufactureValueBuffer[3] = 4;
+            let serviceValueBuffer = new Uint8Array(4);
+            serviceValueBuffer[0] = 4;
+            serviceValueBuffer[1] = 6;
+            serviceValueBuffer[2] = 7;
+            serviceValueBuffer[3] = 8;
+            let setting: ble.AdvertiseSetting = {
+            interval:32,
+            txPower:1,
+            connectable:true,
+            };
+            let manufactureDataUnit: ble.ManufactureData = {
+                manufactureId:4567,
+                manufactureValue:manufactureValueBuffer.buffer
+            };
+            let serviceDataUnit: ble.ServiceData = {
+                serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+                serviceValue:serviceValueBuffer.buffer
+            };
+            let advData: ble.AdvertiseData = {
+                serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+                manufactureData:[manufactureDataUnit],
+                serviceData:[serviceDataUnit],
+                includeDeviceName:false,
+                includeTxPower:false
+            };
+            let advResponse: ble.AdvertiseData = {
+                serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+                manufactureData:[manufactureDataUnit],
+                serviceData:[serviceDataUnit],
+            };
+            let advertisingParams: ble.AdvertisingParams = {
+                advertisingSettings: setting,
+                advertisingData: advData,
+                advertisingResponse: advResponse,
+                duration: 65540,
+            }
+            let advHandle = 0xFF;
+            try {
+                ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                console.info('[bluetooth_js]startAdvertising promise info1:' + JSON.stringify(outAdvHandle));
+                advHandle = outAdvHandle;
+                console.info('[bluetooth_js]startAdvertising promise info2:'+JSON.stringify(advHandle));
+                });
+            } catch (err) {
+                console.info("startAdvertising 0100 errCode:" + err.code + ",04errMessage:" + err.message);
+                if (err.code == 801) {
+                console.info('[bluetooth_js]api is not support');
+                expect(true).assertTrue();
+                } else {
+                expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            await Utils.msSleep(2000);
+            done();
+        })
+
+        /**
+        * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0200
+        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0200
+        * @tc.desc   Test startAdvertising errorCode 2900010
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let manufactureValueBuffer = new Uint8Array(4);
+            manufactureValueBuffer[0] = 1;
+            manufactureValueBuffer[1] = 2;
+            manufactureValueBuffer[2] = 3;
+            manufactureValueBuffer[3] = 4;
+            let serviceValueBuffer = new Uint8Array(4);
+            serviceValueBuffer[0] = 4;
+            serviceValueBuffer[1] = 6;
+            serviceValueBuffer[2] = 7;
+            serviceValueBuffer[3] = 8;
+            let setting: ble.AdvertiseSetting = {
+            interval:32,
+            txPower:1,
+            connectable:true,
+            };
+            let manufactureDataUnit: ble.ManufactureData = {
+                manufactureId:4567,
+                manufactureValue:manufactureValueBuffer.buffer
+            };
+            let serviceDataUnit: ble.ServiceData = {
+                serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+                serviceValue:serviceValueBuffer.buffer
+            };
+            let advData: ble.AdvertiseData = {
+                serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+                manufactureData:[manufactureDataUnit],
+                serviceData:[serviceDataUnit],
+                includeDeviceName:false,
+                includeTxPower:false
+            };
+            let advResponse: ble.AdvertiseData = {
+                serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+                manufactureData:[manufactureDataUnit],
+                serviceData:[serviceDataUnit],
+            };
+            let advertisingParams: ble.AdvertisingParams = {
+                advertisingSettings: setting,
+                advertisingData: advData,
+                advertisingResponse: advResponse,
+                duration: 0,
+            }
+            try {
+                for (let count = 0; count < 17; count++) {
+                await ble.startAdvertising(advertisingParams);
+                console.info('[bluetooth_js]startAdvertising count:' + count);
+                if (count == 16) {
+                    console.info('[bluetooth_js]startAdvertising count success');
+                    expect().assertFail();
+                }
+                }
+            } catch (err) {
+                console.info("startAdvertising 0200 errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                console.info('[bluetooth_js]api is not support');
+                expect(true).assertTrue();
+                } else {
+                expect(2900010).assertEqual(Number(err.code));
+                }
+            }
+
+            try {
+                ble.stopAdvertising();
+            } catch (err) {
+                console.info("stopAdvertising errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                console.info('[bluetooth_js]api is not support');
+                expect(true).assertTrue();
+                } else {
+                expect().assertFail();
+                }
+            }
             done();
         })
     })

@@ -12,8 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import wifiManager from '@ohos.wifiManager';
 import actsWifiErrorCode201Test from './ActWifiErrorCode201.test.js'
+
+let iswifisupport = true;
+try {
+  iswifisupport = wifiManager.isWlanSupported();
+  console.info('[WIFI_List] isWlanSupported result:' + iswifisupport);
+} catch (error) {
+  console.error('[WIFI_List] isWlanSupported get error:' + JSON.stringify(error.code) + JSON.stringify(error.message));
+}
 export default function testsuite() {
+  if(iswifisupport){
     actsWifiErrorCode201Test()
+  }
 }
 

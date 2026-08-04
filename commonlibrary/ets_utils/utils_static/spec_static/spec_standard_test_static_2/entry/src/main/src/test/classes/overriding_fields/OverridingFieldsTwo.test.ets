@@ -25,16 +25,9 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "../../../../../hypium/index";
+import Utils from '../../Util.test'
 
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 class Base_F199 {
   field: long = Base_F199.init()
@@ -1758,7 +1751,7 @@ export default function OverridingFieldsTwoTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -2358,13 +2351,13 @@ export default function OverridingFieldsTwoTest(): void {
       let a: Derived2_F233 = new Derived2_F233()
       let b: Derived1_F233 = new Derived1_F233()
         let c: Base_F233 = new Base_F233()
-      expect(a.field instanceof HandlerNothing_F233).assertTrue()
+      expect(a.field instanceof (() => never)).assertTrue()
       expect(a.field(new B_F233, 7).v).assertEqual(-567)
       expect((get_result(a, new B_F233, 7)).v).assertEqual(-567)
-      expect(b.field instanceof HandlerA_F233).assertTrue()
+      expect(b.field instanceof ((a: Any) => never)).assertTrue()
       expect(b.field(new B_F233, 7).v).assertEqual(13)
       expect((get_result(b, new B_F233, 7)).v).assertEqual(13)
-      expect(c.field instanceof HandlerAInt_F233).assertTrue()
+      expect(c.field instanceof ((a: Any, b: Any) => never)).assertTrue()
       expect(c.field(new B_F233, 7).v).assertEqual(-20)
       expect((get_result(c, new B_F233, 7)).v).assertEqual(-20)
     })

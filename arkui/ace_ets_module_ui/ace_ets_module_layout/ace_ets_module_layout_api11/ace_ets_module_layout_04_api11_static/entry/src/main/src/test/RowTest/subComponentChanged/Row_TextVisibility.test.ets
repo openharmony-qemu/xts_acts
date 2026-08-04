@@ -80,10 +80,10 @@ it('testRowTextVisibilityNone_static_01', Level.LEVEL0, async (done: () => void)
           name: 'secondTextVisibility', value: Visibility.None
         });
         await CommonFunc.sleep(3000);
-        let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility1');
-        let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility2');
-        let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility3');
-        let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility_Container01');
+        let firstText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility1');
+        let secondText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility2');
+        let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility3');
+        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility_Container01');
         let rowContainerStrJson = inspector.getInspectorByKey('Row_TextVisibility_Container01');
 
        expect(JSON.parseJsonElement(rowContainerStrJson).getString('$type')).assertEqual('Row');
@@ -132,10 +132,10 @@ it('testRowTextVisibilityHidden_static_02', Level.LEVEL0, async (done: () => voi
           name: 'secondTextVisibility', value: Visibility.Hidden
         });
         await CommonFunc.sleep(3000);
-        let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility1');
-        let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility2');
-        let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility3');
-        let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility_Container01');
+        let firstText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility1');
+        let secondText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility2');
+        let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility3');
+        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility_Container01');
         let rowContainerStrJson = inspector.getInspectorByKey('Row_TextVisibility_Container01');
 
        expect(JSON.parseJsonElement(rowContainerStrJson).getString('$type')).assertEqual('Row');
@@ -183,10 +183,10 @@ it('testRowTextVisibilityVisible_static_03', Level.LEVEL0, async (done: () => vo
           name: 'secondTextVisibility', value: Visibility.Visible
         });
         await CommonFunc.sleep(3000);
-        let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility1');
-        let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility2');
-        let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility3');
-        let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextVisibility_Container01');
+        let firstText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility1');
+        let secondText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility2');
+        let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility3');
+        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility_Container01');
         let rowContainerStrJson = inspector.getInspectorByKey('Row_TextVisibility_Container01');
 
        expect(JSON.parseJsonElement(rowContainerStrJson).getString('$type')).assertEqual('Row');

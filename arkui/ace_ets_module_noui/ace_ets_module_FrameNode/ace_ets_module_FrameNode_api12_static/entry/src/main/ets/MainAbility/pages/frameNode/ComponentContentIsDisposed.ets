@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -13,8 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ComponentContent, ReactiveComponentContent } from '@ohos.arkui.node';
-import { Entry, Row, Column, Component, Builder, Text, Button, wrapBuilder, FontWeight, ClickEvent } from '@ohos.arkui.component'
+
+import { ComponentContent, ReactiveComponentContent, RenderNode, ReactiveBuilderNode, FrameNode } from '@ohos.arkui.node';
+import { Entry, Row, Column, Component, Builder, Text, Button,
+  wrapBuilder, FontWeight, ClickEvent, ColumnOptions } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Builder
@@ -31,9 +34,10 @@ function buildText() {
 struct ComponentContentIsDisposed {
   build() {
     Row() {
-      Column() {
+      Column({space:5} as ColumnOptions) {
         Button('ComponentContentIsDisposed')
           .id('btn_componentContent_isDisposed')
+          .height(20)
           .onClick(() => {
             let uiContext = this.getUIContext();
             let componentContent = new ComponentContent(uiContext, wrapBuilder(buildText));
@@ -43,12 +47,40 @@ struct ComponentContentIsDisposed {
           })
         Button('ReactiveComponentContentIsDisposed')
           .id('btn_reactiveComponentContent_isDisposed')
+          .height(20)
           .onClick(() => {
             let uiContext = this.getUIContext();
             let reactiveComponentContent = new ReactiveComponentContent(uiContext, buildText);
             AppStorage.setOrCreate<boolean>('reactiveComponentContentIsDisposed1',reactiveComponentContent.isDisposed());
             reactiveComponentContent.dispose();
+            reactiveComponentContent.recycle();
+            reactiveComponentContent.updateConfiguration();
+            reactiveComponentContent.flushState();
+            reactiveComponentContent.isTransferred();
             AppStorage.setOrCreate<boolean>('reactiveComponentContentIsDisposed2',reactiveComponentContent.isDisposed());
+          })
+        Button('RendNodeIsDisposed')
+          .id('btn_rendNode_isDisposed')
+          .height(20)
+          .onClick(() => {
+            let rendNode = new RenderNode();
+            AppStorage.setOrCreate<boolean>('rendNodeIsDisposed1',rendNode.isDisposed());
+            rendNode.dispose();
+            AppStorage.setOrCreate<boolean>('rendNodeIsDisposed2',rendNode.isDisposed());
+          })
+        Button('ReactiveBuilderNodeIsDisposed')
+          .id('btn_reactiveBuilderNode_isDisposed')
+          .height(20)
+          .onClick(() => {
+            let uiContext = this.getUIContext();
+            let reactiveBuilderNode = new ReactiveBuilderNode(uiContext,{ selfIdealSize: { width: 200, height: 200 } });
+            AppStorage.setOrCreate<boolean>('reactiveBuilderNodeIsDisposed1',reactiveBuilderNode.isDisposed());
+            reactiveBuilderNode.dispose();
+            reactiveBuilderNode.recycle();
+            reactiveBuilderNode.updateConfiguration();
+            reactiveBuilderNode.flushState();
+            AppStorage.setOrCreate<boolean>('reactiveBuilderNodeIsDisposed2',reactiveBuilderNode.isDisposed());
+            AppStorage.setOrCreate<FrameNode|null>('reactiveBuilderNodeGetFrameNode',reactiveBuilderNode.getFrameNode());
           })
       }
       .width('100%')

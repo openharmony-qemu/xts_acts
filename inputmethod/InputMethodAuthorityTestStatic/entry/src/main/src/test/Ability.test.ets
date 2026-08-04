@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +21,6 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
@@ -51,7 +51,12 @@ export default function inputMethodAuthorityJSUnit() {
                 console.info('%{public}s', 'BusinessError  end');
             });
             await Utils.msSleep(2000)
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.inputmethodauthority.test.static")
+            let cmd = "aa start -a EntryAbility -b com.acts.inputmethodauthority.test.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000)
             console.info('%{public}s', 'beforeAll end');
         })

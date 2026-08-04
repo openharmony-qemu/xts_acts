@@ -1,0 +1,117 @@
+/**
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import router from '@ohos.router';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { Component, Driver, ON } from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/common/Common';
+
+export default function DatePickerComponentDateModeTest() {
+  describe('DatePickerComponentDateModeTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info('DatePickerComponentDateModeTest beforeEach start');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/datePickerComponent/DatePickerComponentDateMode',
+      };
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get DatePickerComponentDateModeTest state pages:' + JSON.stringify(pages));
+        if (!('DatePickerComponentDateMode' === pages.name)) {
+          console.info('get DatePickerComponentDateModeTest pages.name:' + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          await CommonFunc.sleep(2500);
+          console.info('push DatePickerComponentDateModeTest page result:' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push DatePickerComponentDateModeTest page error:' + err);
+      }
+      console.info('DatePickerComponentDateModeTest beforeEach end');
+      done();
+    });
+
+    afterEach(() => {
+      console.info('afterEach case');
+    });
+
+    /**
+     * @tc.name   DatePickerComponentDateModeTest_0100
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DATEMODE_PARAM_0100
+     * @tc.desc   Test DatePickerComponent dateOptions.mode default value is DateMode.DATE(0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DatePickerComponentDateModeTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('DatePickerComponentDateModeTest_0100 START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('text_dateMode_value');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('DatePickerComponentDateModeTest_0100 component obj is: ' + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertContain('dateMode: 0');
+      console.info('DatePickerComponentDateModeTest_0100 END');
+      done();
+    });
+
+    /**
+     * @tc.name   DatePickerComponentDateModeTest_0200
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DATEMODE_PARAM_0200
+     * @tc.desc   Test DatePickerComponent dateOptions.mode changes to DateMode.YEAR_AND_MONTH when button clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DatePickerComponentDateModeTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('DatePickerComponentDateModeTest_0200 START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let button: Component = await driver.findComponent(ON.id('button_dateMode_yearAndMonth'));
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('text_dateMode_value');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('DatePickerComponentDateModeTest_0200 component obj is: ' + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertContain('dateMode: 1');
+      console.info('DatePickerComponentDateModeTest_0200 END');
+      done();
+    });
+
+    /**
+     * @tc.name   DatePickerComponentDateModeTest_0300
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DATEMODE_PARAM_0300
+     * @tc.desc   Test DatePickerComponent dateOptions.mode changes to DateMode.MONTH_AND_DAY when button clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DatePickerComponentDateModeTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('DatePickerComponentDateModeTest_0300 START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let button: Component = await driver.findComponent(ON.id('button_dateMode_monthAndDay'));
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('text_dateMode_value');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('DatePickerComponentDateModeTest_0300 component obj is: ' + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertContain('dateMode: 2');
+      console.info('DatePickerComponentDateModeTest_0300 END');
+      done();
+    });
+  });
+}

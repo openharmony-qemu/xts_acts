@@ -169,6 +169,7 @@ export default function windowImmersiveTest() {
     let isFreeWindowMode = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -178,6 +179,8 @@ export default function windowImmersiveTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: ${JSON.stringify(isPCStatus)}`);
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
       isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
@@ -1543,7 +1546,7 @@ export default function windowImmersiveTest() {
         await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
         console.info(`${caseName} Succeeded in setting the status bar to be visible.`);
         await sleep(1000);
-        if(isFreeWindowMode || deviceType == 'wearable' || deviceType == 'tv'){
+        if(isFreeWindowMode || deviceType == 'wearable'){
           expect(flag).assertEqual(0)
           done()
         }else{
@@ -2259,7 +2262,7 @@ export default function windowImmersiveTest() {
         await sleep(100);
         let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
         console.info(`${caseName} Get Window Avoid Area: ${JSON.stringify(avoidArea)}`);
-        if(isFreeWindowMode || deviceType == 'wearable' || deviceType == 'tv'){
+        if(isFreeWindowMode || deviceType == 'wearable' ){
           expect(avoidArea.topRect.height).assertEqual(0);
           done();
         }else{
@@ -5222,7 +5225,11 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+        }else{
+           expect().assertFail();
+        }
         done();
       }
     })
@@ -5261,7 +5268,11 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+        }else{
+           expect().assertFail();
+        }
         done();
       }
     })
@@ -5292,7 +5303,11 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+        }else{
+           expect().assertFail();
+        }
         done();
       }
     })
@@ -5383,7 +5398,11 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+        }else{
+           expect().assertFail();
+        }
         done();
       }
     })
@@ -5413,9 +5432,13 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+        }else{
+           expect().assertFail();
+        }
         done();
-      }
+      } 
     })
 
     /**
@@ -5441,7 +5464,11 @@ export default function windowImmersiveTest() {
         done();
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
+        if(!isSyscapSessionManagerSupported){
+           expect(exception.code).assertEqual(801);
+        }else{
+           expect().assertFail();
+        }
         done();
       }
     })
@@ -5609,6 +5636,54 @@ export default function windowImmersiveTest() {
  	     done();
  	   }
  	 })
+
+   /**
+     * @tc.name   testSetFloatNavigationAvoidAreaEnabledNull
+     * @tc.number SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+     * @tc.desc   SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+     * @tc.type   传入null后报错401
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetFloatNavigationAvoidAreaEnabledNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testSetFloatNavigationAvoidAreaEnabledNull';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(null);
+        console.info(`${caseName} setFloatNavigationAvoidAreaEnabled null.`);
+        await sleep(500);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetFloatNavigationAvoidAreaEnabledUndefined
+     * @tc.number SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+     * @tc.desc   SUB_WINDOW_isFloatNavigationAvoidAreaEnabled_ERRORCODE_0100
+     * @tc.type   传入undefined后报错401
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetFloatNavigationAvoidAreaEnabledUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testSetFloatNavigationAvoidAreaEnabledUndefined';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(undefined);
+        console.info(`${caseName} setFloatNavigationAvoidAreaEnabled undefined.`);
+        await sleep(500);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        done();
+      }
+    })
 
   })
 }

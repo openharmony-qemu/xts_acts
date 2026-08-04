@@ -73,8 +73,8 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0100', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
-      let GridItem_02: RectValue = await CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_02');
 
       console.log('assert position')
       expect(Math.abs(GridItem_01.top - GridItem_02.top) <= 1).assertTrue();
@@ -94,7 +94,7 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0100', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate1_static_0100] END');
@@ -124,7 +124,7 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0200', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
 
       console.log('assert size')
       expect(Math.abs(GridItem_01.right - GridItem_01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
@@ -135,7 +135,7 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0200', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate1_static_0200] END');

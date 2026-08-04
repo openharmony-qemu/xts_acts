@@ -28,9 +28,7 @@ export function test(args:number) {
   while ((Date.now() - t) < 100) {
     continue;
   }
-  let hashMap1: HashMap<string, number> = new HashMap();
-  hashMap1.set('a', args);
-  return hashMap1;
+  return () => {};
 }
 
 @Concurrent

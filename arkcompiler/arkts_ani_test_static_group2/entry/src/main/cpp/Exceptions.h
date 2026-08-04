@@ -252,7 +252,7 @@ ani_int test_Handling_Error_Test1([[maybe_unused]] ani_env *env, [[maybe_unused]
     TestDescribeError(env, func, magicNumber, output);
 
     CheckErrorDescription(output, std::string(MESSAGE_FROM_THROW_ERROR),
-                          {"at std.core.Error.<ctor>", GetTraceLine("throwError")});
+                          {"at escompat.Error.<ctor>", GetTraceLine("throwError")});
     return ANI_TRUE;
 }
 
@@ -265,7 +265,7 @@ ani_int test_Handling_Error_Test2([[maybe_unused]] ani_env *env, [[maybe_unused]
     TestDescribeError(env, func, magicNumber, output);
 
     CheckErrorDescription(output, std::string(MESSAGE_FROM_THROW_ERROR),
-                          {"at std.core.Error.<ctor>", GetTraceLine("throwError"), GetTraceLine("bar"),
+                          {"at escompat.Error.<ctor>", GetTraceLine("throwError"), GetTraceLine("bar"),
                            GetTraceLine("baz"), GetTraceLine("throwErrorNested")});
     return ANI_TRUE;
 }
@@ -309,7 +309,7 @@ ani_int test_Handling_Error_Test3([[maybe_unused]] ani_env *env, [[maybe_unused]
     TestDescribeError(env, func, magicNumber, output);
 
     CheckErrorDescription(output, "Error",
-                          {"at std.core.Error.<ctor>", GetTraceLine("throwToNativeCaller"),
+                          {"at escompat.Error.<ctor>", GetTraceLine("throwToNativeCaller"),
                            GetTraceLine("callThroughNative"), GetTraceLine("throwErrorThroughNative")});
     return ANI_TRUE;
 }
@@ -589,11 +589,11 @@ ani_int test_Handling_Error_28([[maybe_unused]] ani_env *env, [[maybe_unused]] a
 {
     const std::string_view MESSAGE_FROM_THROW_ERROR = "some error message from throwError";
     ani_class errorClass {};
-    ASSERT_EQ(env->FindClass("std.core.Error", &errorClass), ANI_OK);
+    ASSERT_EQ(env->FindClass("escompat.Error", &errorClass), ANI_OK);
     ASSERT_NE(errorClass, nullptr);
 
     ani_method constructor {};
-    ASSERT_EQ(env->Class_FindMethod(errorClass, "<ctor>", "C{std.core.String}C{std.core.ErrorOptions}:", &constructor),
+    ASSERT_EQ(env->Class_FindMethod(errorClass, "<ctor>", "C{std.core.String}C{escompat.ErrorOptions}:", &constructor),
               ANI_OK);
     ASSERT_NE(constructor, nullptr);
 

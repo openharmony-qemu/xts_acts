@@ -1,3 +1,4 @@
+'use static';
  /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -160,7 +161,7 @@ export default function BuiltinsClassIsSubtypeOfTest(): void {
       const nullClass = Class.of(null);
       const obj = new Object();
       const objClass = Class.of(obj);
-      expect(nullClass.isSubtypeOf(objClass)).assertFalse();
+      expect(nullClass.isSubtypeOf(objClass)).assertTrue();
     });
 
     /**

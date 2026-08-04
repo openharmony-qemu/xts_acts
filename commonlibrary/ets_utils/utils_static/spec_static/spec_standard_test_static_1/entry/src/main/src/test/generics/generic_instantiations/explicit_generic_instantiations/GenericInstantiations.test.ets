@@ -1,3 +1,4 @@
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Utils from "../../../Util.test";
+
 import {
   describe,
   beforeAll,
@@ -23,7 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "../../../../../../hypium"
+} from "../../../../../../hypium/index"
 
 class Cls_0<T, U> {
   a: T
@@ -74,7 +77,6 @@ function genericTwoParams<T, U>(p: T, q: U): [T, U] {
   return [p, q]
 }
 
-// 唯一逻辑函数
 function foo_14<T, U>(p: T, q: U): T|U {
   return (p! as object).toString() > (q! as object).toString() ? p : q
 }
@@ -88,13 +90,11 @@ function foo_15<T, U>(p: T, q: U): [Array<T>, Array<U>] {
   return [bar_15(p), bar_15(q)]
 }
 
-// 所有重复空类 → 统一只保留一套
 class BaseClass {}
 class DerivedClass extends BaseClass {}
 class C_17 extends BaseClass {}
 class C_36 extends BaseClass {}
 
-// 泛型约束函数
 function foo_16<T extends U, U extends Object>(p: T, q: U): boolean {
   return p.toString() + q.toString() > ""
 }
@@ -176,15 +176,7 @@ function fooSubtype_30(d1: Derived_30, d2: Base_30): Derived_30 { return d1 }
 
 function foo1_22(): number { return 1 }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericInstantiationsTest() {
+export default function GenericInstantiationsTest(): void {
   describe("GenericInstantiationsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -195,7 +187,7 @@ export default function GenericInstantiationsTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -669,7 +661,7 @@ export default function GenericInstantiationsTest() {
      */
     it("testGenericInstantiations0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = new GenericClass<fooBaseType_30>(fooSubtype_30);
-      expect(cls.a instanceof fooBaseType_30).assertTrue();
+      expect(cls.a instanceof ((d1: Any, d2: Any) => never)).assertTrue();
     })
   });
 }

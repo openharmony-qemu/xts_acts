@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
@@ -83,9 +83,9 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Circular_Dependency_TEST_static_0100',
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Circular_Dependency_row4: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency_row4');
+      let RelativeContainer_AnchorPoint_Circular_Dependency_row4: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency_row4');
 
-      let RelativeContainer_AnchorPoint_Circular_Dependency_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency_r1');
+      let RelativeContainer_AnchorPoint_Circular_Dependency_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency_r1');
 
       console.log('assert position')
 

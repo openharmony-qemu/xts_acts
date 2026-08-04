@@ -16,12 +16,14 @@
 import netfirewalltest from './netfirewall.test';
 import EmptyTest from './Empty.test';
 import netfirewallErroCodeTest from './netfirewallErrorCode.test';
+import TrafficFilterTest from './TrafficFilter.test';
 
 
 export default function testsuite() {
     if (canIUse("SystemCapability.Communication.NetManager.NetFirewall")) {
         netfirewalltest();
         netfirewallErroCodeTest();
+        TrafficFilterTest();
     }
     else {
         EmptyTest();

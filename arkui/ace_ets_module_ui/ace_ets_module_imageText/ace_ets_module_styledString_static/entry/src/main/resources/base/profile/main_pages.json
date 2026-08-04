@@ -2,6 +2,9 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/StyledString/StyledStringIndex",
-    "MainAbility/pages/StyledString/CustomSpanMeasureInfo"
+    "MainAbility/pages/StyledString/CustomSpanMeasureInfo",
+    "MainAbility/pages/StyledString/ParagraphStyleTailIndents",
+    "MainAbility/pages/StyledString/ThicknessScaleTest",
+    "MainAbility/pages/StyledString/EnableMultiTypeTest"
   ]
 }

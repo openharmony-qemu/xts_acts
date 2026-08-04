@@ -13,45 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  SwiperController,
-  Column,
-  Text,
-  LazyForEach,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  DotIndicator,
-  ColumnOptions,
-  Swiper,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  Visibility,
-  ClickEvent,
-  SwiperDisplayMode,
-  SwiperAnimationEvent,
-  Row,
-  RowOptions,
-  Button,
-  Curve,
-  SwiperAnimationEvent,
-  HorizontalAlign,
-  ArrowStyle,
-  SwiperAutoFill,
-  Padding,
-  Indicator,
-  FontWeight,
-  Flex,
-  FlexAlign
-} from '@ohos.arkui.component';
+import { Entry, Component, SwiperController, Column, Text, LazyForEach, Margin, IDataSource, DataChangeListener, DotIndicator, ColumnOptions, Swiper, TextAlign, Color, EdgeEffect, Visibility, ClickEvent, SwiperDisplayMode, SwiperAnimationEvent, Row, RowOptions, Button, Curve, HorizontalAlign, ArrowStyle, SwiperAutoFill, Padding, Indicator, FontWeight, Flex, FlexAlign } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message, GlobalMessage } from '../../common/MessageManager1';
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
-
 export class MyDataSource implements IDataSource<string> {
   private list: string[] = []
   private listener?: DataChangeListener = undefined
@@ -136,7 +102,7 @@ struct SwiperExample {
       //     .itemWidth(2)
       //     .itemHeight(2)
       //     .color(Color.Blue))  //导致页面白屏 注释掉
-      .key('swiper')
+      .key('swiper_swiper')
       .onChange((index: int): void => {
         console.info(index.toString())
         this.onActionCalledThree = true;

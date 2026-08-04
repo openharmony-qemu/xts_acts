@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "../../../hypium";
+} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import data_relationalStore from '@ohos.data.relationalStore'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

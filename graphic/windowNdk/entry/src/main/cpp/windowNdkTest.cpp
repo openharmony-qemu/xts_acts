@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include <dlfcn.h>
+#include <map>
 #include <cstdio>
 #include "napi/native_api.h"
 #include "window_manager/oh_window_comm.h"
@@ -43,6 +45,39 @@
 #define PARAM_1300011 1300011
 #define PARAM_1300012 1300012
 #define PARAM_1300015 1300015
+#define NAPI_ERR_INVALID_PARAM 1300016
+
+#define MAX_DENSITY_CALLBACKS 10
+static napi_ref g_densityCallbackRefs[MAX_DENSITY_CALLBACKS] = {nullptr};
+static napi_env g_densityCallbackEnvs[MAX_DENSITY_CALLBACKS] = {nullptr};
+static int32_t g_densityCallbackWindowIds[MAX_DENSITY_CALLBACKS] = {-1};
+
+static void OnDensityInfoChanged(int32_t windowId, const OH_WindowManager_DensityInfo* info) {
+    for (int i = 0; i < MAX_DENSITY_CALLBACKS; i++){
+        if (g_densityCallbackWindowIds[i] == windowId && g_densityCallbackRefs[i] != nullptr) {
+            napi_handle_scope scope;
+            napi_open_handle_scope(g_densityCallbackEnvs[i], &scope);
+
+            napi_value jsCallback;
+            napi_get_reference_value(g_densityCallbackEnvs[i], g_densityCallbackRefs[i], &jsCallback);
+
+            napi_value jsWindowId;
+            napi_create_int32(g_densityCallbackEnvs[i], windowId, &jsWindowId);
+            
+            napi_value jsInfo;
+            napi_create_int64(g_densityCallbackEnvs[i], reinterpret_cast<int64_t>(info), &jsInfo);
+
+            napi_value argv[2] = {jsWindowId, jsInfo};
+            napi_value result;
+            napi_call_function(g_densityCallbackEnvs[i], jsCallback, nullptr, 2, argv, &result);
+
+            napi_close_handle_scope(g_densityCallbackEnvs[i], scope);
+            return;
+        }
+    }
+}
+
+
 static int keyCode1 = -1;
 static bool filterESC(Input_KeyEvent *event){
     auto keyCode = OH_Input_GetKeyEventKeyCode(event);
@@ -900,6 +935,33 @@ static napi_value TestFrameMetricsGetVsyncTimestampNullptr(napi_env env, napi_ca
     return retCode;
 }
 
+static napi_value TestFrameMetricsGetInputHandlingDurationWithNullDuration(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_WindowManager_FrameMetrics_GetInputHandlingDuration(g_currentMetrics, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetInputHandlingDurationWithNullDuration return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsGetLayoutMeasureDurationWithNullDuration(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(g_currentMetrics, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetLayoutMeasureDurationWithNullDuration return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsGetVsyncTimestampWithNullTimestamp(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_WindowManager_FrameMetrics_GetVsyncTimestamp(g_currentMetrics, nullptr);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetVsyncTimestampWithNullTimestamp return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
 static napi_value TestFrameMetricsIsFirstDrawFrameOK(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -1708,6 +1770,509 @@ napi_value TestWindowManager_ErrorCode_enum(napi_env env, napi_callback_info inf
     return retValue;
 }
 
+static napi_value testDensityInfoGetDefaultDensity(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    const OH_WindowManager_DensityInfo* densityInfo = nullptr;
+    int32_t result = OH_WindowManager_GetDensityInfoCopy(windowId, &densityInfo);
+    
+    if (result != 0 || densityInfo == nullptr) {
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    }
+    
+    float defaultDensity = 0.0f;
+    result = OH_WindowManager_DensityInfo_GetDefaultDensity(densityInfo, &defaultDensity);
+    OH_WindowManager_DensityInfo_Release(densityInfo);
+    
+    napi_value objValue;
+    napi_create_object(env, &objValue);
+    
+    napi_value resultCode;
+    napi_create_int32(env, result, &resultCode);
+    napi_set_named_property(env, objValue, "resultCode", resultCode);
+    
+    napi_value cppDensityValue;
+    napi_create_double(env, defaultDensity, &cppDensityValue);
+    napi_set_named_property(env, objValue, "cppDensity", cppDensityValue);
+    
+    return objValue;
+}
+
+static napi_value testDensityInfoGetDefaultDensityWithNullInfo(napi_env env, napi_callback_info info) {
+    float defaultDensity = 0.0f;
+    int32_t result = OH_WindowManager_DensityInfo_GetDefaultDensity(nullptr, &defaultDensity);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testDensityInfoGetDefaultDensityWithNullDensity(napi_env env, napi_callback_info info) {
+    const OH_WindowManager_DensityInfo* densityInfo = nullptr;
+    int32_t result = OH_WindowManager_DensityInfo_GetDefaultDensity(densityInfo, nullptr);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testDensityInfoGetSystemDensity(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    const OH_WindowManager_DensityInfo* densityInfo = nullptr;
+    int32_t result = OH_WindowManager_GetDensityInfoCopy(windowId, &densityInfo);
+    
+    if (result != 0 || densityInfo == nullptr) {
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    }
+    
+    float systemDensity = 0.0f;
+    result = OH_WindowManager_DensityInfo_GetSystemDensity(densityInfo, &systemDensity);
+    OH_WindowManager_DensityInfo_Release(densityInfo);
+    
+    napi_value objValue;
+    napi_create_object(env, &objValue);
+    
+    napi_value resultCode;
+    napi_create_int32(env, result, &resultCode);
+    napi_set_named_property(env, objValue, "resultCode", resultCode);
+    
+    napi_value cppDensityValue;
+    napi_create_double(env, systemDensity, &cppDensityValue);
+    napi_set_named_property(env, objValue, "cppDensity", cppDensityValue);
+    
+    return objValue;
+}
+
+static napi_value testDensityInfoGetSystemDensityWithNullInfo(napi_env env, napi_callback_info info) {
+    float systemDensity = 0.0f;
+    int32_t result = OH_WindowManager_DensityInfo_GetSystemDensity(nullptr, &systemDensity);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testDensityInfoGetSystemDensityWithNullDensity(napi_env env, napi_callback_info info) {
+    const OH_WindowManager_DensityInfo* densityInfo = nullptr;
+    int32_t result = OH_WindowManager_DensityInfo_GetSystemDensity(densityInfo, nullptr);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testDensityInfoGetCustomDensity(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    const OH_WindowManager_DensityInfo* densityInfo = nullptr;
+    int32_t result = OH_WindowManager_GetDensityInfoCopy(windowId, &densityInfo);
+    
+    if (result != 0 || densityInfo == nullptr) {
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    }
+    
+    float customDensity = 0.0f;
+    result = OH_WindowManager_DensityInfo_GetCustomDensity(densityInfo, &customDensity);
+    OH_WindowManager_DensityInfo_Release(densityInfo);
+    
+    napi_value objValue;
+    napi_create_object(env, &objValue);
+    
+    napi_value resultCode;
+    napi_create_int32(env, result, &resultCode);
+    napi_set_named_property(env, objValue, "resultCode", resultCode);
+    
+    napi_value cppDensityValue;
+    napi_create_double(env, customDensity, &cppDensityValue);
+    napi_set_named_property(env, objValue, "cppDensity", cppDensityValue);
+    
+    return objValue;
+}
+
+static napi_value testDensityInfoGetCustomDensityWithNullInfo(napi_env env, napi_callback_info info) {
+    float customDensity = 0.0f;
+    int32_t result = OH_WindowManager_DensityInfo_GetCustomDensity(nullptr, &customDensity);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testDensityInfoGetCustomDensityWithNullDensity(napi_env env, napi_callback_info info) {
+    const OH_WindowManager_DensityInfo* densityInfo = nullptr;
+    int32_t result = OH_WindowManager_DensityInfo_GetCustomDensity(densityInfo, nullptr);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testGetDensityInfoCopy(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    const OH_WindowManager_DensityInfo* densityInfo = nullptr;
+    int32_t result = OH_WindowManager_GetDensityInfoCopy(windowId, &densityInfo);
+    
+    napi_value objValue;
+    napi_create_object(env, &objValue);
+    
+    napi_value resultCode;
+    napi_create_int32(env, result, &resultCode);
+    napi_set_named_property(env, objValue, "resultCode", resultCode);
+    
+    napi_value infoValue;
+    napi_create_int64(env, reinterpret_cast<int64_t>(densityInfo), &infoValue);
+    napi_set_named_property(env, objValue, "info", infoValue);
+    
+    return objValue;
+}
+
+static napi_value testGetDensityInfoCopyWithNullInfo(napi_env env, napi_callback_info info) {
+    int32_t result = OH_WindowManager_GetDensityInfoCopy(0, nullptr);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testDensityInfoRelease(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int64_t infoPtr;
+    napi_get_value_int64(env, args[0], &infoPtr);
+    
+    const OH_WindowManager_DensityInfo* densityInfo = reinterpret_cast<const OH_WindowManager_DensityInfo*>(infoPtr);
+    int32_t result = OH_WindowManager_DensityInfo_Release(densityInfo);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+static napi_value testDensityInfoReleaseWithNullInfo(napi_env env, napi_callback_info info) {
+    int32_t result = OH_WindowManager_DensityInfo_Release(nullptr);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+constexpr const char* WM_SO_NAME = "libnative_window_manager.so";
+
+using GetDefaultDensityFunc =
+    int32_t (*)(const OH_WindowManager_DensityInfo*, float*);
+using GetSystemDensityFunc =
+    int32_t (*)(const OH_WindowManager_DensityInfo*, float*);
+using GetCustomDensityFunc =
+    int32_t (*)(const OH_WindowManager_DensityInfo*, float*);
+using GetDensityInfoCopyFunc =
+    int32_t (*)(int32_t, OH_WindowManager_DensityInfo**);
+using RegisterDensityInfoChangeCallbackFunc =
+    int32_t (*)(int32_t, OH_WindowManager_DensityInfoCallback);
+using UnregisterDensityInfoChangeCallbackFunc =
+    int32_t (*)(int32_t, OH_WindowManager_DensityInfoCallback);
+using ReleaseDensityInfoFunc =
+    void (*)(OH_WindowManager_DensityInfo*);
+
+struct DensityApi {
+    void* handle = nullptr;
+    GetDefaultDensityFunc getDefaultDensity = nullptr;
+    GetSystemDensityFunc getSystemDensity = nullptr;
+    GetCustomDensityFunc getCustomDensity = nullptr;
+    GetDensityInfoCopyFunc getDensityInfoCopy = nullptr;
+    RegisterDensityInfoChangeCallbackFunc registerCallback = nullptr;
+    UnregisterDensityInfoChangeCallbackFunc unregisterCallback = nullptr;
+    ReleaseDensityInfoFunc releaseDensityInfo = nullptr;
+};
+
+struct DensityInfoData {
+    int32_t windowId = 0;
+    float defaultDensity = 0.0f;
+    float systemDensity = 0.0f;
+    float customDensity = 0.0f;
+};
+
+DensityApi g_densityApi;
+std::mutex g_apiMutex;
+std::mutex g_callbackMutex;
+std::map<int32_t, napi_threadsafe_function> g_tsfnMap;
+
+template<typename T>
+T LoadSymbol(void* handle, const char* symbol)
+{
+    return reinterpret_cast<T>(dlsym(handle, symbol));
+}
+
+bool EnsureDensityApiLoaded()
+{
+    std::lock_guard<std::mutex> lock(g_apiMutex);
+    if (g_densityApi.handle != nullptr) {
+        return g_densityApi.getDefaultDensity != nullptr &&
+            g_densityApi.getSystemDensity != nullptr &&
+            g_densityApi.getCustomDensity != nullptr &&
+            g_densityApi.getDensityInfoCopy != nullptr &&
+            g_densityApi.registerCallback != nullptr &&
+            g_densityApi.unregisterCallback != nullptr &&
+            g_densityApi.releaseDensityInfo != nullptr;
+    }
+
+    g_densityApi.handle = dlopen(WM_SO_NAME, RTLD_NOW);
+    if (g_densityApi.handle == nullptr) {
+        return false;
+    }
+
+    g_densityApi.getDefaultDensity =
+        LoadSymbol<GetDefaultDensityFunc>(g_densityApi.handle, "OH_WindowManager_DensityInfo_GetDefaultDensity");
+    g_densityApi.getSystemDensity =
+        LoadSymbol<GetSystemDensityFunc>(g_densityApi.handle, "OH_WindowManager_DensityInfo_GetSystemDensity");
+    g_densityApi.getCustomDensity =
+        LoadSymbol<GetCustomDensityFunc>(g_densityApi.handle, "OH_WindowManager_DensityInfo_GetCustomDensity");
+    g_densityApi.getDensityInfoCopy =
+        LoadSymbol<GetDensityInfoCopyFunc>(g_densityApi.handle, "OH_WindowManager_GetDensityInfoCopy");
+    g_densityApi.registerCallback =
+        LoadSymbol<RegisterDensityInfoChangeCallbackFunc>(
+            g_densityApi.handle, "OH_WindowManager_RegisterDensityInfoChangeCallback");
+    g_densityApi.unregisterCallback =
+        LoadSymbol<UnregisterDensityInfoChangeCallbackFunc>(
+            g_densityApi.handle, "OH_WindowManager_UnregisterDensityInfoChangeCallback");
+    g_densityApi.releaseDensityInfo =
+        LoadSymbol<ReleaseDensityInfoFunc>(g_densityApi.handle, "OH_WindowManager_DensityInfo_Release");
+
+    return g_densityApi.getDefaultDensity != nullptr &&
+        g_densityApi.getSystemDensity != nullptr &&
+        g_densityApi.getCustomDensity != nullptr &&
+        g_densityApi.getDensityInfoCopy != nullptr &&
+        g_densityApi.registerCallback != nullptr &&
+        g_densityApi.unregisterCallback != nullptr &&
+        g_densityApi.releaseDensityInfo != nullptr;
+}
+
+napi_value CreateInt32(napi_env env, int32_t value)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
+bool GetInt32Arg(napi_env env, napi_value value, int32_t& out)
+{
+    return napi_get_value_int32(env, value, &out) == napi_ok;
+}
+
+void NativeDensityInfoChangedCallback(int32_t windowId, const OH_WindowManager_DensityInfo* densityInfo)
+{
+    if (densityInfo == nullptr || !EnsureDensityApiLoaded()) {
+        return;
+    }
+
+    float defaultDensity = 0.0f;
+    float systemDensity = 0.0f;
+    float customDensity = 0.0f;
+    if (g_densityApi.getDefaultDensity(densityInfo, &defaultDensity) != static_cast<int32_t>(OK) ||
+        g_densityApi.getSystemDensity(densityInfo, &systemDensity) != static_cast<int32_t>(OK) ||
+        g_densityApi.getCustomDensity(densityInfo, &customDensity) != static_cast<int32_t>(OK)) {
+        return;
+    }
+    
+    napi_threadsafe_function tsfn = nullptr;
+    {
+        std::lock_guard<std::mutex> lock(g_callbackMutex);
+        auto iter = g_tsfnMap.find(windowId);
+        if (iter == g_tsfnMap.end()) {
+            return;
+        }
+        tsfn = iter->second;
+    }
+
+    auto* data = new DensityInfoData { windowId, defaultDensity, systemDensity, customDensity };
+    if (napi_call_threadsafe_function(tsfn, data, napi_tsfn_nonblocking) != napi_ok) {
+        delete data;
+    }
+}
+
+napi_value CreateDensityInfoResult(
+    napi_env env, int32_t retCode, float defaultDensity, float systemDensity, float customDensity)
+{
+    napi_value obj = nullptr;
+    napi_value value = nullptr;
+    napi_create_object(env, &obj);
+
+    napi_create_int32(env, retCode, &value);
+    napi_set_named_property(env, obj, "retCode", value);
+
+    napi_create_double(env, defaultDensity, &value);
+    napi_set_named_property(env, obj, "defaultDensity", value);
+
+    napi_create_double(env, systemDensity, &value);
+    napi_set_named_property(env, obj, "systemDensity", value);
+
+    napi_create_double(env, customDensity, &value);
+    napi_set_named_property(env, obj, "customDensity", value);
+    return obj;
+}
+
+void CallJsDensityCallback(napi_env env, napi_value jsCallback, void*, void* data)
+{
+    auto* densityInfo = static_cast<DensityInfoData*>(data);
+    if (densityInfo == nullptr) {
+        return;
+    }
+    if (env == nullptr || jsCallback == nullptr) {
+        delete densityInfo;
+        return;
+    }
+
+    napi_value undefined = nullptr;
+    napi_value argv[2] = { nullptr };
+    napi_get_undefined(env, &undefined);
+    napi_create_int32(env, densityInfo->windowId, &argv[0]);
+    argv[1] = CreateDensityInfoResult(
+        env, static_cast<int32_t>(OK),
+        densityInfo->defaultDensity, densityInfo->systemDensity, densityInfo->customDensity);
+    napi_call_function(env, undefined, jsCallback, 2, argv, nullptr);
+    delete densityInfo;
+}
+
+void ReleaseTsfnLocked(int32_t windowId)
+{
+    auto iter = g_tsfnMap.find(windowId);
+    if (iter == g_tsfnMap.end()) {
+        return;
+    }
+    napi_release_threadsafe_function(iter->second, napi_tsfn_release);
+    g_tsfnMap.erase(iter);
+}
+
+napi_value testRegisterDensityInfoChangeCallback(napi_env env, napi_callback_info info)
+{
+    if (!EnsureDensityApiLoaded()) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED));
+    }
+    size_t argc = 2;
+    napi_value argv[2] = { nullptr };
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    if (argc < 2) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM));
+    }
+    int32_t windowId = 0;
+    if (!GetInt32Arg(env, argv[0], windowId)) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM));
+    }
+
+    napi_valuetype valueType = napi_undefined;
+    napi_typeof(env, argv[1], &valueType);
+    if (valueType != napi_function) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM));
+    }
+
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "DensityInfoCallback", NAPI_AUTO_LENGTH, &resourceName);
+    napi_threadsafe_function tsfn = nullptr;
+    napi_status status = napi_create_threadsafe_function(
+        env, argv[1], nullptr, resourceName, 0, 1, nullptr, nullptr, nullptr, CallJsDensityCallback, &tsfn);
+    if (status != napi_ok || tsfn == nullptr) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL));
+    }
+
+    int32_t ret = g_densityApi.registerCallback(windowId, NativeDensityInfoChangedCallback);
+    if (ret != static_cast<int32_t>(OK)) {
+        napi_release_threadsafe_function(tsfn, napi_tsfn_abort);
+        return CreateInt32(env, ret);
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(g_callbackMutex);
+        ReleaseTsfnLocked(windowId);
+        g_tsfnMap[windowId] = tsfn;
+    }
+    return CreateInt32(env, ret);
+}
+
+static napi_value testRegisterDensityInfoChangeCallbackWithNullCallback(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    int32_t result = OH_WindowManager_RegisterDensityInfoChangeCallback(windowId, nullptr);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
+napi_value testUnregisterDensityInfoChangeCallback(napi_env env, napi_callback_info info)
+{
+    if (!EnsureDensityApiLoaded()) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED));
+    }
+
+    size_t argc = 1;
+    napi_value argv[1] = { nullptr };
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    if (argc < 1) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM));
+    }
+
+    int32_t windowId = 0;
+    if (!GetInt32Arg(env, argv[0], windowId)) {
+        return CreateInt32(env, static_cast<int32_t>(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM));
+    }
+
+    int32_t ret = g_densityApi.unregisterCallback(windowId, NativeDensityInfoChangedCallback);
+    if (ret == static_cast<int32_t>(OK)) {
+        std::lock_guard<std::mutex> lock(g_callbackMutex);
+        ReleaseTsfnLocked(windowId);
+    }
+    return CreateInt32(env, ret);
+}
+
+static napi_value testUnregisterDensityInfoChangeCallbackWithNullCallback(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    int32_t result = OH_WindowManager_UnregisterDensityInfoChangeCallback(windowId, nullptr);
+    
+    napi_value resultValue;
+    napi_create_int32(env, result, &resultValue);
+    return resultValue;
+}
+
 static napi_value injectTouchEventInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -1845,6 +2410,23 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "unregisterFrameMetricsMeasuredCallbackNullptr", nullptr, UnregisterFrameMetricsMeasuredCallbackNullptr,
             nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"testDensityInfoGetDefaultDensity", nullptr, testDensityInfoGetDefaultDensity, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetDefaultDensityWithNullInfo", nullptr, testDensityInfoGetDefaultDensityWithNullInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetDefaultDensityWithNullDensity", nullptr, testDensityInfoGetDefaultDensityWithNullDensity, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetSystemDensity", nullptr, testDensityInfoGetSystemDensity, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetSystemDensityWithNullInfo", nullptr, testDensityInfoGetSystemDensityWithNullInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetSystemDensityWithNullDensity", nullptr, testDensityInfoGetSystemDensityWithNullDensity, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetCustomDensity", nullptr, testDensityInfoGetCustomDensity, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetCustomDensityWithNullInfo", nullptr, testDensityInfoGetCustomDensityWithNullInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoGetCustomDensityWithNullDensity", nullptr, testDensityInfoGetCustomDensityWithNullDensity, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testGetDensityInfoCopy", nullptr, testGetDensityInfoCopy, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testGetDensityInfoCopyWithNullInfo", nullptr, testGetDensityInfoCopyWithNullInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoRelease", nullptr, testDensityInfoRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDensityInfoReleaseWithNullInfo", nullptr, testDensityInfoReleaseWithNullInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testRegisterDensityInfoChangeCallback", nullptr, testRegisterDensityInfoChangeCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testRegisterDensityInfoChangeCallbackWithNullCallback", nullptr, testRegisterDensityInfoChangeCallbackWithNullCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testUnregisterDensityInfoChangeCallback", nullptr, testUnregisterDensityInfoChangeCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testUnregisterDensityInfoChangeCallbackWithNullCallback", nullptr, testUnregisterDensityInfoChangeCallbackWithNullCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
         { "testFrameMetricsIsFirstDrawFrameNullptr", nullptr, TestFrameMetricsIsFirstDrawFrameNullptr,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testFrameMetricsGetInputHandlingDurationNullptr", nullptr, TestFrameMetricsGetInputHandlingDurationNullptr,
@@ -1853,6 +2435,12 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testFrameMetricsGetVsyncTimestampNullptr", nullptr, TestFrameMetricsGetVsyncTimestampNullptr,
             nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetInputHandlingDurationWithNullDuration", nullptr, TestFrameMetricsGetInputHandlingDurationWithNullDuration,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetLayoutMeasureDurationWithNullDuration", nullptr, TestFrameMetricsGetLayoutMeasureDurationWithNullDuration,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetVsyncTimestampWithNullTimestamp", nullptr, TestFrameMetricsGetVsyncTimestampWithNullTimestamp,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testFrameMetricsIsFirstDrawFrameOK", nullptr, TestFrameMetricsIsFirstDrawFrameOK,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testFrameMetricsGetInputHandlingDurationOK", nullptr, TestFrameMetricsGetInputHandlingDurationOK,
@@ -1860,7 +2448,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testFrameMetricsGetLayoutMeasureDurationOK", nullptr, TestFrameMetricsGetLayoutMeasureDurationOK,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testFrameMetricsGetVsyncTimestampOK", nullptr, TestFrameMetricsGetVsyncTimestampOK,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
+            nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

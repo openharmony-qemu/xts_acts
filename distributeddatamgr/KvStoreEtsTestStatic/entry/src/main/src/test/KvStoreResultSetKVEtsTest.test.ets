@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import factory from '@ohos.data.distributedKVStore'
 
 
@@ -54,7 +55,12 @@ export default function KvStoreResultSetTest(){
       try {
         hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         // await abilityDelegator.startAbility({
         //   bundleName: 'com.example.kvstoreetstest.static',
         //   abilityName: 'EntryAbility'
@@ -167,17 +173,19 @@ export default function KvStoreResultSetTest(){
         });
       }
         if (kvManager) {
-          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
-            console.info('afterEach closeKVStore success');
-            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-              console.info('afterEach deleteKVStore success');
-              kvStore = null;
-              resultSet = null;
-              done();
-            }).catch((err: Error) => {
-              console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
-              done();
-            });
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            waitForCompletion(async () => {
+              console.info('afterEach closeKVStore success');
+              await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+                console.info('afterEach deleteKVStore success');
+                kvStore = null;
+                resultSet = null;
+                done();
+              }).catch((err: Error) => {
+                console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+                done();
+              });
+            })
           }).catch((err: Error) => {
             console.error('afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
             done();

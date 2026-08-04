@@ -2669,7 +2669,7 @@ export default function abilityTest() {
         let floatingBallController = await floatingBall.create(config);
         floatingBallController.on('stateChange',onStateChange);
         await floatingBallController.startFloatingBall(startParams);
-        await sleep(200);
+        await sleep(500);
         expect(FloatBallstate).assertEqual(floatingBall.FloatingBallState.STARTED);
         await floatingBallController.stopFloatingBall();
         await sleep(800);
@@ -2720,7 +2720,7 @@ export default function abilityTest() {
         floatingBallController.on('stateChange',callback1);
         floatingBallController.on('stateChange',callback2);
         await floatingBallController.startFloatingBall(startParams);
-        await sleep(200);
+        await sleep(500);
         console.info(CaseName+ ' time1: ' + time);
         expect(time).assertEqual(2);
         floatingBallController.off('stateChange');
@@ -2773,7 +2773,7 @@ export default function abilityTest() {
         floatingBallController.on('stateChange',callback1);
         floatingBallController.on('stateChange',callback2);
         await floatingBallController.startFloatingBall(startParams);
-        await sleep(200);
+        await sleep(500);
         console.info(CaseName+ ' time1: ' + time);
         expect(time).assertEqual(2);
         floatingBallController.off('stateChange',callback1);
@@ -2873,7 +2873,7 @@ export default function abilityTest() {
       try {
         let floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
-        await sleep(200);
+        await sleep(500);
         floatingBallController.on('click',callback1);
         floatingBallController.on('click',callback2);
         //点击
@@ -2938,7 +2938,7 @@ export default function abilityTest() {
       try {
         let floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
-        await sleep(200);
+        await sleep(500);
         floatingBallController.on('click',callback1);
         floatingBallController.on('click',callback2);
         //点击
@@ -2958,7 +2958,7 @@ export default function abilityTest() {
         expect(time).assertEqual(3);
         floatingBallController.off('click');
         await floatingBallController.stopFloatingBall();
-        await sleep(200);
+        await sleep(500);
         done();
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
@@ -3196,7 +3196,7 @@ export default function abilityTest() {
         let Bounds = await  button.getBounds();
         console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
         await driver.click(Bounds.left,Bounds.top);
-        await sleep(200);
+        await sleep(500);
 
         floatingBallController.restoreMainWindow(want).then(() => {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
@@ -3374,21 +3374,21 @@ export default function abilityTest() {
         if (issupportFloatingBall) {
           let floatingBallController = await floatingBall.create(config);
           await floatingBallController.startFloatingBall(startParams);
-          await sleep(200);
+          await sleep(500);
 
           //能查询到floatBall
           let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
           expect(button !== null).assertTrue();
 
           await floatingBallController.setFloatingBallVisibilityInApp(false);
-          await sleep(200);
+          await sleep(500);
           //查不询到floatBall
           button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
           console.info(CaseName+ ' button after set false: ' + button);
           expect(button === null).assertTrue();
 
           await floatingBallController.setFloatingBallVisibilityInApp(true);
-          await sleep(200);
+          await sleep(500);
           //能查到floatBall
           button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
           console.info(CaseName+ ' button after set true: ' + button);
@@ -3433,7 +3433,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering destroy callback.');
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball.');
-        await sleep(200);
+        await sleep(500);
         await floatingBallController.stopFloatingBall();
         console.info(CaseName + ' Succeeded in stopping floating ball.');
         await sleep(500);
@@ -3478,7 +3478,7 @@ export default function abilityTest() {
         floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball.');
-        await sleep(200);
+        await sleep(500);
         floatingBallController.onDestroy(onDestroy);
         console.info(CaseName + ' Succeeded in registering destroy callback 1.');
         floatingBallController.onDestroy(onDestroy);
@@ -3541,7 +3541,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering callback2.');
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball.');
-        await sleep(200);
+        await sleep(500);
         await floatingBallController.stopFloatingBall();
         console.info(CaseName + ' Succeeded in stopping floating ball.');
         await sleep(500);
@@ -3596,7 +3596,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering callback2.');
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball.');
-        await sleep(200);
+        await sleep(500);
         floatingBallController.offDestroy(callback1);
         console.info(CaseName + ' Succeeded in unregistering callback1.');
         await floatingBallController.stopFloatingBall();
@@ -3653,7 +3653,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering callback2.');
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball.');
-        await sleep(200);
+        await sleep(500);
         await floatingBallController.stopFloatingBall();
         console.info(CaseName + ' Succeeded in stopping floating ball.');
         await sleep(500);
@@ -3664,7 +3664,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball again.');
-        await sleep(200);
+        await sleep(500);
         await floatingBallController.stopFloatingBall();
         console.info(CaseName + ' Succeeded in stopping floating ball again.');
         await sleep(500);
@@ -3705,7 +3705,7 @@ export default function abilityTest() {
         floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball.');
-        await sleep(200);
+        await sleep(500);
         floatingBallController.onDestroy(null);
         console.info(CaseName + ' Succeeded in registering null callback.');
         expect(false).assertTrue();
@@ -3759,7 +3759,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering destroy callback.');
         await floatingBallController.startFloatingBall(startParams);
         console.info(CaseName + ' Succeeded in starting floating ball.');
-        await sleep(200);
+        await sleep(500);
         floatingBallController.offDestroy(null);
         console.info(CaseName + ' Succeeded in unregistering null callback.');
         expect(false).assertTrue();
@@ -3900,6 +3900,65 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_setFloatingBallVisibilityInApp_0100
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_VISIBILITY_0100
+     * @tc.desc   test setFloatingBallVisibilityInApp with null and undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setFloatingBallVisibilityInApp_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "test_setFloatingBallVisibilityInApp_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      let floatingBallController: floatingBall.FloatingBallController | undefined;
+      let isSupport = true;
+      try {
+        floatingBallController = await floatingBall.create(config)
+        await floatingBallController.startFloatingBall(startParams);
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === 801 && !isFloatingBallEnabled) {
+          isSupport = false;
+        }
+      }
+
+      if (isSupport) {
+        try {
+          await floatingBallController?.setFloatingBallVisibilityInApp(null);
+          console.info(msgStr + 'Succeeded');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+        }
+        try {
+          await floatingBallController?.setFloatingBallVisibilityInApp(undefined);
+          console.info(msgStr + 'Succeeded2.');
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+          expect(exception.code).assertEqual(1300019);
+          expect(exception.message!=null).assertTrue();
+          await floatingBallController?.stopFloatingBall();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+    /**
      * @tc.name   test_restoreMainWindow_ability
      * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5700
      * @tc.desc   test_restoreMainWindow_ability
@@ -3931,7 +3990,7 @@ export default function abilityTest() {
         let Bounds = await  button.getBounds();
         console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
         await driver.click(Bounds.left,Bounds.top);
-        await sleep(200);
+        await sleep(500);
 
         floatingBallController.restoreMainWindow(want).then(async () => {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');

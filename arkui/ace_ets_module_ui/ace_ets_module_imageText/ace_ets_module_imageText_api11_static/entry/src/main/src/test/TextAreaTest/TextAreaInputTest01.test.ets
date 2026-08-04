@@ -15,20 +15,18 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common'
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -83,7 +81,7 @@ export default function textAreaInputTest() {
     it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
       try {
         if (AppStorage.get<number>("winLeft") == 0) {
-          let driver = Driver.create();
+          let driver = await Driver.create();
           console.info('textAreaInputTest textAreaInputTest_static_0001 START');
           await CommonFunc.sleep(1000);
           let textArea1 = await driver.findComponent(ON.id('textArea1'));
@@ -92,12 +90,26 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(1000);
           await (textArea2?.click() as Promise<void>)
           await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.text('同意'));
+          await CommonFunc.sleep(500);
+          if (button) {
+            await button?.click();
+            await CommonFunc.sleep(1000);
+          }
           await driver.triggerKey(2070);
           await CommonFunc.sleep(1000);
           let button1 = await driver.findComponent(ON.text('下一步'));
-          await CommonFunc.sleep(1000);
-          button1 ? await button1!.click() : null
-          await CommonFunc.sleep(1000);
+          await CommonFunc.sleep(500);
+          if (button1) {
+            await button1?.click();
+            await CommonFunc.sleep(1000);
+          }
+          let button2 = await driver.findComponent(ON.text('完成'));
+          await CommonFunc.sleep(500);
+          if (button2) {
+            await button2?.click();
+            await CommonFunc.sleep(1000);
+          }
 
           await (textArea1?.longClick() as Promise<void>);
           await CommonFunc.sleep(2000);
@@ -107,7 +119,7 @@ export default function textAreaInputTest() {
           console.info('textAreaInputTest_static_0001 全选 success');
           await CommonFunc.sleep(1000);
 
-          textArea1?.dragTo(textArea2!);
+          await textArea1?.dragTo(textArea2!);
           await CommonFunc.sleep(3000);
           console.info('textAreaInputTest_static_0001 dragTo success');
           let button4 = await driver.findComponent(ON.text('取消'));
@@ -128,7 +140,7 @@ export default function textAreaInputTest() {
           button6 ? await button6!.click() : null
           await CommonFunc.sleep(1000);
           console.info('textAreaInputTest_static_0001 2 复制 success');
-          textArea1?.dragTo(textArea2!);
+          await textArea1?.dragTo(textArea2!);
           await CommonFunc.sleep(3000);
           let Text7 = await driver.findComponent(ON.text('长按内容至浮起，可拖拽到底部小艺'));
           if (Text7) {
@@ -137,12 +149,13 @@ export default function textAreaInputTest() {
             button7 ? await button7!.click() : null
           }
           await CommonFunc.sleep(1000);
+          expect(textArea1).not().assertUndefined();
           console.info('textAreaInputTest_static_0001 2 Button success');
         }
         console.info("[textAreaInputTest_static_0001] end");
       } catch (error) {
         console.log("textAreaInputTest_static_0001 " + error)
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

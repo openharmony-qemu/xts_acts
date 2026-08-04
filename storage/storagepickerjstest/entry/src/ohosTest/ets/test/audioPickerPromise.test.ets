@@ -26,6 +26,7 @@ export default function audioPickerPromise(abilityContext: Context) {
       await stopAbility('com.huawei.hmos.filemanager');
       await stopAbility('com.huawei.hms.musicservice');
       await stopAbility('com.ohos.filepicker');
+      await stopAbility('com.ohos.filemanager');
       await sleep(500);
     });
 

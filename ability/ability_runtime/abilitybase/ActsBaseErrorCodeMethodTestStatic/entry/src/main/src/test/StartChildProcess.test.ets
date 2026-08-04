@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, Level, beforeAll, afterEach } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, Level, afterEach } from '../../../hypium/index';
 import hilog from '@ohos.hilog';
 import childProcessManager from '@ohos.app.ability.childProcessManager';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let mpEnable = '';

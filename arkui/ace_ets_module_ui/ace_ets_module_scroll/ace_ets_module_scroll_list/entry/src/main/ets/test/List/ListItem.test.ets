@@ -55,7 +55,7 @@ export default function ListItemJsunit() {
     it('testlist_itemOnSelect0001', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('ListItem');
+      let strJson = getInspectorByKey('List_item' + '_ListItem');
       console.info("[testlist_itemOnSelect0001] component border strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('ListItem');
@@ -75,7 +75,7 @@ export default function ListItemJsunit() {
     it('testlist_itemOnSelect0002', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0002 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('ListItem');
+      let strJson = getInspectorByKey('List_item' + '_ListItem');
       console.info("[testlist_itemOnSelect0002] component border strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('ListItem');
@@ -95,7 +95,7 @@ export default function ListItemJsunit() {
     it('testlist_itemOnSelect0003', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0003 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('ListItem');
+      let strJson = getInspectorByKey('List_item' + '_ListItem');
       console.info("[testlist_itemOnSelect0003] component border strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('ListItem');

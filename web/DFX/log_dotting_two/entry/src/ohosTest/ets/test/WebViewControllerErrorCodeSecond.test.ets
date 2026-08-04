@@ -25,9 +25,7 @@ const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webViewControllerErrorCodeSecond() {
-
   describe('WebViewControllerErrorCodeSecondTestSuite', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/webViewControllerErrorCodeSecond',
@@ -70,6 +68,48 @@ export default function webViewControllerErrorCodeSecond() {
     it('testLoadDataFullParamsError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadDataFullParamsError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testLoadDataFullParamsError001", '17100001', 115560, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
+    })
+
+    /**
+     * @tc.name   testLoadDataFullParamsError002
+     * @tc.number SUB_WEB_ERRORCODE_LOADDATA_0200
+     * @tc.desc   test loadData 401 error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadDataFullParamsError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadDataFullParamsError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testLoadDataFullParamsError002", '401', 115561, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
+    })
+
+    /**
+     * @tc.name   testLoadDataFullParamsError003
+     * @tc.number SUB_WEB_ERRORCODE_LOADDATA_0300
+     * @tc.desc   test loadData 17100002 error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadDataFullParamsError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadDataFullParamsError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testLoadDataFullParamsError003", '17100002', 115562, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
+    })
+
+    /**
+     * @tc.name   testLoadDataFullParamsError004
+     * @tc.number SUB_WEB_ERRORCODE_LOADDATA_0400
+     * @tc.desc   test loadData 17100001 error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLoadDataFullParamsError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testLoadDataFullParamsError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testLoadDataFullParamsError004", '17100001', 115563, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 

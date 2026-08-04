@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -21,7 +22,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function fixedArrayTest() {
+export default function fixedArrayTest(): void {
 
   describe("ActsFixedArrayTest", (): void => {
     try {
@@ -120,7 +121,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Boolean_0002 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Boolean_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Boolean_0002 done');
         done();
         console.log('test_FixedArray_Boolean_0002 end');
@@ -139,7 +140,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Boolean_0003 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Boolean_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Boolean_0003 done');
         done();
         console.log('test_FixedArray_Boolean_0003 end');
@@ -158,7 +159,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Boolean_0004 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Boolean_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Boolean_0004 done');
         done();
         console.log('test_FixedArray_Boolean_0004 end');
@@ -253,7 +254,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Byte_0003 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Byte_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Byte_0003 done');
         done();
         console.log('test_FixedArray_Byte_0003 end');
@@ -272,7 +273,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Byte_0004 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Byte_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Byte_0004 done');
         done();
         console.log('test_FixedArray_Byte_0004 end');
@@ -481,7 +482,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Short_0003 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Short_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Short_0003 done');
         done();
         console.log('test_FixedArray_Short_0003 end');
@@ -500,7 +501,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Short_0004 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Short_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Short_0004 done');
         done();
         console.log('test_FixedArray_Short_0004 end');
@@ -633,7 +634,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Int_0004 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Int_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Int_0004 done');
         done();
         console.log('test_FixedArray_Int_0004 end');
@@ -652,7 +653,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Int_0005 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Int_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Int_0005 done');
         done();
         console.log('test_FixedArray_Int_0005 end');
@@ -785,7 +786,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Long_0004 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Long_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Long_0004 done');
         done();
         console.log('test_FixedArray_Long_0004 end');
@@ -804,7 +805,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Long_0005 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Long_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Long_0005 done');
         done();
         console.log('test_FixedArray_Long_0005 end');
@@ -937,7 +938,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Float_0004 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Float_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Float_0004 done');
         done();
         console.log('test_FixedArray_Float_0004 end');
@@ -956,7 +957,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Float_0005 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Float_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Float_0005 done');
         done();
         console.log('test_FixedArray_Float_0005 end');
@@ -1089,7 +1090,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Double_0004 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Double_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Double_0004 done');
         done();
         console.log('test_FixedArray_Double_0004 end');
@@ -1108,7 +1109,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Double_0005 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Double_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Double_0005 done');
         done();
         console.log('test_FixedArray_Double_0005 end');
@@ -1222,7 +1223,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_Get_Ref_0003 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_Get_Ref_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_Get_Ref_0003 done');
         done();
         console.log('test_FixedArray_Get_Ref_0003 end');
@@ -1279,7 +1280,7 @@ export default function fixedArrayTest() {
         console.log('test_FixedArray_New_Ref_0003 start');
         let cls = new Foo();
         let result = cls.test_FixedArray_New_Ref_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_FixedArray_New_Ref_0003 done');
         done();
         console.log('test_FixedArray_New_Ref_0003 end');

@@ -14,8 +14,8 @@
 * limitations under the License.
 */
 export class ClassType1 {
-  public readonly name = 'ClassType1';
-  public text = '';
+  public readonly name:string = 'ClassType1';
+  public text:string = '';
 
   constructor(text: string) {
     this.text = text;
@@ -23,8 +23,8 @@ export class ClassType1 {
 }
 
 class ClassType2 {
-  public readonly name = 'ClassType2';
-  public text = '';
+  public readonly name:string = 'ClassType2';
+  public text:string = '';
 
   constructor(text: string) {
     this.text = text;
@@ -32,8 +32,8 @@ class ClassType2 {
 }
 
 export class ClassType3 {
-  public readonly name = 'ClassType3';
-  public text = '';
+  public readonly name:string = 'ClassType3';
+  public text:string = '';
 
   constructor(text: string) {
     this.text = text;

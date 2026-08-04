@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -366,7 +367,7 @@ export default function classTest(): void {
             try {
                 let arr: FixedArray<int> = [1, 2, 3];
                 let cls = Class.of(arr).getFixedArrayComponentType();
-                expect(cls!.getName()).assertEqual('i32');
+                expect(cls!.getName()).assertEqual('std.core.Int');
             } catch (err) {
                 console.error(`${TAG} failed: ${err.message}`);
                 expect().assertFail();

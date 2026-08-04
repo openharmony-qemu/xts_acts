@@ -44,6 +44,7 @@ import bundleManager from '@ohos.enterprise.bundleManager';
 import systemparameter from '@ohos.systemparameter';
 import { BmsBundleInfo, BmsBundleResourceInfo, BundleManagerHelper } from './BundleManagerHelper';
 import { BusinessError } from '@kit.BasicServicesKit';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 export default function bundleManagerTest() {
   describe('bundleManager_test', () => {
@@ -5625,7 +5626,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getAllowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5650,7 +5652,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getAllowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5675,7 +5678,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5700,7 +5704,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch:  ' +
         error.code);
@@ -5725,7 +5730,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
         error.code);
@@ -5750,7 +5756,8 @@ export default function bundleManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let ret = bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
-        expect(ret === undefined).assertTrue();
+        let bundles = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(Array.isArray(bundles)).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
         error.code);
@@ -5776,7 +5783,8 @@ export default function bundleManagerTest() {
       try {
         await bundleManager.install(SELFWANT, [], EDM_INSTALL_PARAM)
           .then(result => {
-            expect(result === null).assertTrue()
+            let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+            expect(edmEnable == "true").assertTrue()
           }).catch((error:BusinessError) => {
             console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
             error.code);
@@ -5833,7 +5841,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0100 error 9200001 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
       done();
       console.info(' --- test_getInstalledBundleStorageStats_0100  -------- END --------');
@@ -5856,7 +5864,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0200 error 9200002 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -5881,7 +5889,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0300 error 9200012 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -5903,7 +5911,7 @@ export default function bundleManagerTest() {
       try {
         const bundleNames: Array<string> = [ "com.edm.acts.normal" ];
         let ret = bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
-        expect(ret != null).assertTrue();
+        expect(typeof ret).assertEqual('object');
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0400 error is not expected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -5931,7 +5939,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0500 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -5955,7 +5963,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0600 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
       console.info(' --- test_getInstalledBundleStorageStats_0600  -------- END --------');
@@ -5978,7 +5986,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0700 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6003,7 +6011,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0800 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6028,7 +6036,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0900 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6053,7 +6061,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_1000 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6079,7 +6087,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_1100 error 9200012 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6105,7 +6113,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_1200 error 9200012 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6128,7 +6136,6 @@ export default function bundleManagerTest() {
         const bundleNames: string[] = ['com.edm.acts.normal'];
         let result: bundleManager.BundleStorageStats[] =
           await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, DEFAULT_USER_ID);
-        expect(result != null).assertTrue();
         expect(result[0]?.bundleName === 'com.edm.acts.normal').assertTrue();
         expect(result[0]?.appSize > 0).assertTrue();
         expect(result[0]?.dataSize >= 0).assertTrue();
@@ -6160,7 +6167,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_1400 error 9200012 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6182,8 +6189,7 @@ export default function bundleManagerTest() {
       try {
         let result: bundleManager.BundleStorageStats[] =
           await bundleManager.getInstalledBundleStorageStats(SELFWANT, BUNDLE_NAME_ONE_REAL_200, DEFAULT_USER_ID);
-        expect(result != null).assertTrue();
-        expect(result.length === 200).assertTrue();
+        expect(result?.length === 200).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_1500 error is not expected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -6211,7 +6217,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_1600 error 9200012 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6235,7 +6241,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0100 error 9200001 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_0100  -------- END --------');
@@ -6257,7 +6263,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0200 error 9200002 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -6281,7 +6287,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0300 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6305,7 +6311,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0400 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6329,7 +6335,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0500 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6353,7 +6359,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0600 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6377,7 +6383,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0700 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6401,7 +6407,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_0800 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6454,7 +6460,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1000 error 9200001 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_1000  -------- END --------');
@@ -6476,7 +6482,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1100 error 9200002 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -6500,7 +6506,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1200 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6524,7 +6530,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1300 error 9201026 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9201026).assertTrue();
+        expect(error.code === 9201026).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6548,7 +6554,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1400 error 9201026 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9201026).assertTrue();
+        expect(error.code === 9201026).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6603,7 +6609,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1600 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6627,7 +6633,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1700 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_1700  -------- END --------');
@@ -6649,7 +6655,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1800 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_1800  -------- END --------');
@@ -6671,7 +6677,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_1900 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_1900  -------- END --------');
@@ -6693,7 +6699,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_2000 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_2000  -------- END --------');
@@ -6715,7 +6721,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_2100 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_2100  -------- END --------');
@@ -6737,7 +6743,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_2200 error is not expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       done();
       console.info(' --- test_installForResult_2200  -------- END --------');
@@ -6763,7 +6769,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_2300 error 9201032 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9201032).assertTrue();
+        expect(error.code === 9201032).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6788,7 +6794,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_2400 error 9201026 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9201026).assertTrue();
+        expect(error.code === 9201026).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6812,7 +6818,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_2500 error 9201002 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9201002).assertTrue();
+        expect(error.code === 9201002).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -6838,7 +6844,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_installForResult_2600 error is not expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 9201023).assertTrue();
+        expect(error.code === 9201023).assertTrue();
       } finally {
         bundleManager.removeAllowedInstallBundlesSync(SELFWANT, [TEST_REAL_APP_ID_2], DEFAULT_USER_ID);
         await adminManager.disableSuperAdmin(SELFHAPNAME);

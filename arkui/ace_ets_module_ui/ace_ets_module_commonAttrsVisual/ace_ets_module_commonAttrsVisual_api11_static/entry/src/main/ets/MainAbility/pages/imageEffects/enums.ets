@@ -153,7 +153,7 @@ struct EnumsCancel {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("MiddleText")
+        .key("enums_MiddleText_01")
         .visibility(Visibility.None)
 
       Text("enums-Forward")
@@ -425,7 +425,7 @@ struct EnumsCancel {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("MiddleText")
+        .key("enums_MiddleText_02")
         .visibility(Visibility.None)
 
       Text("enums-Mon")
@@ -591,7 +591,7 @@ struct EnumsCancel {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("ScaleText")
+        .key("enums_ScaleText")
         .hoverEffect(HoverEffect.Scale)
         .visibility(Visibility.None)
 
@@ -608,7 +608,7 @@ struct EnumsCancel {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("HighlightText")
+        .key("enums_HighlightText")
         .hoverEffect(HoverEffect.Highlight)
         .visibility(Visibility.None)
 

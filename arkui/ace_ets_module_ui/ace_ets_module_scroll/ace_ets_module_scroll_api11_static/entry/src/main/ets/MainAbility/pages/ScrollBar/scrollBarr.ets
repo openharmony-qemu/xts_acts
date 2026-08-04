@@ -103,7 +103,7 @@ struct ScrollBarExampler {
             .height(100)
             .borderRadius(10)
             .backgroundColor('#C0C0C0')
-        }.key('scroll').width(30).backgroundColor('#ededed')
+        }.key('scrollBarr_scroll').width(30).backgroundColor('#ededed')
       }
     }
   }

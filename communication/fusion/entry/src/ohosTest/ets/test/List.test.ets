@@ -14,7 +14,14 @@
  */
 
 import fusionAgentTest from './FusionpartnerAgent.test';
+import RangingTest from './FusionRanging.test';
+import manager from '@ohos.nearlink.manager';
 
+let support: boolean = false;
+support = manager.isNearLinkSupported();
 export default function testsuite() {
- 	fusionAgentTest();
+  fusionAgentTest();
+  if(support){
+	RangingTest();
+  }
 }

@@ -15,7 +15,7 @@ limitations under the License.
 
 <div class="container">
     <div class="content-title">
-        <text style="width:60%;height:50px;text-align: center;">屏幕亮度</text>
+        <text style="width:150px;height:50px;text-align: center;font-size:16px;">屏幕亮度</text>
         <input type="button" value="?" class="backBtnHelp" onclick="help" />
     </div>
 
@@ -23,11 +23,11 @@ limitations under the License.
         <text class="content-info"> 当前亮度模式: {{modeType}}</text>
         <text class="content-info"> 设置亮度模式 </text>
         <div class="select-mode">
-            <input type="button" value="手动调" style="width:40%;height:40px;" on:click="setBrightnessMode(0)" />
-            <input type="button" value="自动调" style="width:40%;height:40px;" on:click="setBrightnessMode(1)" />
+            <input type="button" value="手动调" style="width:40%;height:40px;font-size:16px;" on:click="setBrightnessMode(0)" />
+            <input type="button" value="自动调" style="width:40%;height:40px;font-size:16px;" on:click="setBrightnessMode(1)" />
         </div>
         <div class="keep-screen">
-            <text >屏幕常亮：</text>
+            <text style="font-size:16px;width:50%;">屏幕常亮：</text>
             <switch class="keep-screen-switch" checked="{{keepScreen}}" @change="keepScreenChange"></switch>
         </div>
 
@@ -38,8 +38,8 @@ limitations under the License.
     </div>
 
     <div class="bottom-bt">
-        <input type="button" value="pass" class="button" onclick="changeResult(pass)" />
-        <input type="button" value="fail" class="button" onclick="changeResult(fail)" />
+        <input type="button" value="pass" class="button" onclick="changeResultPass" />
+        <input type="button" value="fail" class="button" onclick="changeResultFail" />
         <input type="button" value="返回" class="button" onclick="back" />
     </div>
 </div>

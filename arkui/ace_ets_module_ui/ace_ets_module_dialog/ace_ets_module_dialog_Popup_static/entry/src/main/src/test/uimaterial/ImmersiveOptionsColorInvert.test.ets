@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON, Component, MatchPattern } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -25,13 +25,15 @@ import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
 import { UtilsTest } from '../Util.test';
 
-export default function ImmersiveOptionsColorInvertTest() {
+export default function ImmersiveOptionsColorInvertTest(): void {
   describe('ImmersiveOptionsColorInvertTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("ImmersiveOptionsColorInvertTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uimaterial/ImmersiveOptionsColorInvert',
       }
@@ -60,7 +62,8 @@ export default function ImmersiveOptionsColorInvertTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsColorInvertTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsColorInvertTest_0100', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsColorInvertTest_0100 START');
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('undefined'));
       console.info('ImmersiveOptionsColorInvertTest_0100 strJson: ' + strJson);
@@ -68,7 +71,6 @@ export default function ImmersiveOptionsColorInvertTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsColorInvertTest_0100 END');
-      done();
     });
 
     /**
@@ -79,7 +81,8 @@ export default function ImmersiveOptionsColorInvertTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsColorInvertTest_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsColorInvertTest_0200', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsColorInvertTest_0200 START');
 
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('true'));
@@ -88,7 +91,6 @@ export default function ImmersiveOptionsColorInvertTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsColorInvertTest_0200 END');
-      done();
     });
 
     /**
@@ -99,7 +101,8 @@ export default function ImmersiveOptionsColorInvertTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsColorInvertTest_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsColorInvertTest_0300', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsColorInvertTest_0300 START');
 
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('false'));
@@ -108,7 +111,6 @@ export default function ImmersiveOptionsColorInvertTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsColorInvertTest_0300 END');
-      done();
     });
 
     /**
@@ -119,7 +121,8 @@ export default function ImmersiveOptionsColorInvertTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsColorInvertTest_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsColorInvertTest_0400', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsColorInvertTest_0400 START');
       
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('default'));
@@ -128,7 +131,6 @@ export default function ImmersiveOptionsColorInvertTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsColorInvertTest_0400 END');
-      done();
     });
 
     /**
@@ -139,7 +141,8 @@ export default function ImmersiveOptionsColorInvertTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsColorInvertTest_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsColorInvertTest_0500', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsColorInvertTest_0500 START');
 
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('empty'));
@@ -148,7 +151,6 @@ export default function ImmersiveOptionsColorInvertTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsColorInvertTest_0500 END');
-      done();
     });
   })
 }

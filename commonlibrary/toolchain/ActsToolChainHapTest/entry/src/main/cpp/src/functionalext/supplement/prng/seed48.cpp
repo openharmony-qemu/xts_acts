@@ -32,7 +32,7 @@ unsigned short g_xsp2 = 0x9876;
 
 static void Handler(int sig)
 {
-    exit(T_STATUS);
+    _exit(T_STATUS);
 }
 
 /**

@@ -55,7 +55,7 @@ struct StepperExample {
     Column(){
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("stepperItem_changeButton")
       Stepper({ index: this.currentIndex }) {
         // 第一个步骤页
         StepperItem() {

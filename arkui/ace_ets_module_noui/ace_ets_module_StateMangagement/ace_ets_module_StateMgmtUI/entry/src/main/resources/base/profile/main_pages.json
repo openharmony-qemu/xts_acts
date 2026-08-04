@@ -27,6 +27,8 @@
     "MainAbility/pages/wrap_builder/WrapBuilder0010",
     "MainAbility/pages/wrap_builder/WrapBuilder0020",
     "MainAbility/pages/entry/EntryParams",
+    "MainAbility/pages/entry/EntryParams2",
+    "MainAbility/pages/entry/EntryParamsUndefined",
     "MainAbility/pages/styles/Styles0010",
     "MainAbility/pages/mutableBuilder/MutableBuilder001",
     "MainAbility/pages/lifecycle/LifeCycle0510",

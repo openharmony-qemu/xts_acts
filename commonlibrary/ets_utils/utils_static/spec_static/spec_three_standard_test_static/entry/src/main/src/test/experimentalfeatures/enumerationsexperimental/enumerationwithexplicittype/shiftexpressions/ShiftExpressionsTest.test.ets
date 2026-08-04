@@ -15,15 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
+import Utils from '../../../../Util.test'
 
 enum TypedEnum: byte { A = -4, B = 1, C = -8}
 
@@ -37,7 +29,6 @@ enum TypedEnum4: float { A = -4.0f, B = 1.0f, C = -8.0f}
 
 enum TypedEnum5: double { A = -4.0, B = 1.0, C = -8.0}
 
-
 export default function ShiftExpressionsTest(): void {
   describe('ShiftExpressionsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -50,7 +41,7 @@ export default function ShiftExpressionsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -64,7 +55,6 @@ export default function ShiftExpressionsTest(): void {
       // This API supports only one parameter: clear action function.
     })
 
-
     /**
      * @tc.number    SUB_SHIFT_EXPRESSIONS_XTSTEST_0100
      * @tc.name      testShiftExpressions0001
@@ -76,7 +66,6 @@ export default function ShiftExpressionsTest(): void {
     it("testShiftExpressions0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = TypedEnum.A << TypedEnum.B
       expect(res).assertEqual(TypedEnum.C)
-
     });
 
     /**
@@ -90,7 +79,6 @@ export default function ShiftExpressionsTest(): void {
     it("testShiftExpressions0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = TypedEnum1.A << TypedEnum1.B
       expect(res).assertEqual(TypedEnum1.C)
-
     });
 
     /**
@@ -104,7 +92,6 @@ export default function ShiftExpressionsTest(): void {
     it("testShiftExpressions0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = TypedEnum2.A << TypedEnum2.B
       expect(res).assertEqual(TypedEnum2.C)
-
     });
 
     /**
@@ -118,7 +105,6 @@ export default function ShiftExpressionsTest(): void {
     it("testShiftExpressions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = TypedEnum3.A << TypedEnum3.B
       expect(res).assertEqual(TypedEnum3.C)
-
     });
 
     /**
@@ -132,7 +118,6 @@ export default function ShiftExpressionsTest(): void {
     it("testShiftExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = TypedEnum4.A << TypedEnum4.B
       expect(res).assertEqual(TypedEnum4.C)
-
     });
 
     /**
@@ -146,7 +131,6 @@ export default function ShiftExpressionsTest(): void {
     it("testShiftExpressions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = TypedEnum5.A << TypedEnum5.B
       expect(res).assertEqual(TypedEnum5.C)
-
     });
   })
 }

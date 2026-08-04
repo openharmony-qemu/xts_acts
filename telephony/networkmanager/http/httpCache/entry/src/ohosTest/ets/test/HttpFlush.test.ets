@@ -37,7 +37,10 @@ const ExpectTrue = (n: boolean) => {
 export default function HttpFlushTest() {
   describe('HttpFlushTest', () => {
     let XTS_TEST_HTTP_URL: string = 'http://www.baidu.com/';
-    let XTS_TEST_SECOND_HTTP_URL: string = 'http://httpbin.org/anything';
+    let XTS_TEST_SECOND_HTTP_URL: string = 'http://httpbin.moyufangge.com';
+    let XTS_OS_URL =
+      "https://developer.huawei.com/consumer/cn/";
+
 
     /**
      * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0100
@@ -420,7 +423,7 @@ export default function HttpFlushTest() {
       }
       console.info(`${caseName}---End`);
     });
-    
+
     /**
      * @tc.name   testNetworkMgrHttpHttpResponseCacheFlush0800
      * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Flush_0800
@@ -862,7 +865,7 @@ export default function HttpFlushTest() {
                 ExpectFail();
                 done();
               });
-              httpRequest.request(XTS_TEST_SECOND_HTTP_URL, (err: Error, data: http.HttpResponse) => {
+              httpRequest.request(XTS_OS_URL, (err: Error, data: http.HttpResponse) => {
                 if (err) {
                   console.info(`${caseName} secondRequest fail err : ${JSON.stringify(err)}`);
                   ExpectFail();

@@ -134,7 +134,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
               }
             }
           }
-          //return undefined;
+          return current;
         })
         .parallelGesture(
           PanGesture()

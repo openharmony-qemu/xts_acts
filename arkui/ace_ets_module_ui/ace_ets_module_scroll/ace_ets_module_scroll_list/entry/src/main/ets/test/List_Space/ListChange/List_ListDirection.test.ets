@@ -76,14 +76,14 @@ export default function List_ListDirection() {
     it('testListListDirectionAxisVertical',  Level.LEVEL0, async (done: Function) => {
       console.info('testListListDirectionAxisVertical START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_ListDirection_01');
+      let strJson = getInspectorByKey('List_ListDirection' + '_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_ListDirection_011: RectValue = CommonFunc.getComponentRect('List_ListDirection_011');
-      let List_ListDirection_012: RectValue = CommonFunc.getComponentRect('List_ListDirection_012');
-      let List_ListDirection_013: RectValue = CommonFunc.getComponentRect('List_ListDirection_013');
-      let List_ListDirection_014: RectValue = CommonFunc.getComponentRect('List_ListDirection_014');
-      let List_ListDirection_01: RectValue = CommonFunc.getComponentRect('List_ListDirection_01');
+      let List_ListDirection_011: RectValue = CommonFunc.getComponentRect('List_ListDirection' + '_011');
+      let List_ListDirection_012: RectValue = CommonFunc.getComponentRect('List_ListDirection' + '_012');
+      let List_ListDirection_013: RectValue = CommonFunc.getComponentRect('List_ListDirection' + '_013');
+      let List_ListDirection_014: RectValue = CommonFunc.getComponentRect('List_ListDirection' + '_014');
+      let List_ListDirection_01: RectValue = CommonFunc.getComponentRect('List_ListDirection' + '_01');
       expect(Math.abs(List_ListDirection_011.left - List_ListDirection_01.left) <= 1).assertTrue();
       expect(Math.abs(List_ListDirection_012.left - List_ListDirection_01.left) <= 1).assertTrue();
       expect(Math.abs(List_ListDirection_013.left - List_ListDirection_01.left) <= 1).assertTrue();
@@ -112,7 +112,7 @@ export default function List_ListDirection() {
         Math.round(List_ListDirection_012.left + ((List_ListDirection_012.right - List_ListDirection_012.left) / 2)),
         Math.round(List_ListDirection_012.bottom));
       await CommonFunc.sleep(2000);
-      let List_ListDirection_024: RectValue = CommonFunc.getComponentRect('List_ListDirection_014');
+      let List_ListDirection_024: RectValue = CommonFunc.getComponentRect('List_ListDirection' + '_014');
       expect(Math.abs(List_ListDirection_01.bottom - List_ListDirection_024.bottom - Math.round(vp2px(60))) <= 1).assertTrue();
       console.info('testListListDirectionAxisVertical END');
       done();

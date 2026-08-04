@@ -1,3 +1,4 @@
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,8 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "../../../../../../hypium/index";
+import Utils from '../../../Util.test'
 
 enum int_enum_IntEnum {
     Neg = -1,
@@ -45,14 +47,6 @@ const long_enum_LongEnum: LongEnumInterface = {
   Min: -9223372036854775808,
   Max: 9223372036854775807
 }
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
 export default function ExpressionsUnaryPlus(): void {
   describe("ExpressionsUnaryPlus", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -64,7 +58,7 @@ export default function ExpressionsUnaryPlus(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

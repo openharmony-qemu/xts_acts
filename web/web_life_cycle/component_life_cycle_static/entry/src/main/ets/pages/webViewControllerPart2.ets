@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -13,43 +14,18 @@
  * limitations under the License.
  */
 
-import webview from '@ohos.web.webview'
+import webview from '@ohos.web.webview';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
-import {
-  __memo_context_type,
-  __memo_id_type,
-  State
-} from '@ohos.arkui.stateManagement'
-import {
-  BlurOnKeyboardHideMode,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  KeyEvent,
-  OnAudioStateChangedEvent,
-  OnOverScrollEvent,
-  OnRenderExitedEvent,
-  RenderExitReason,
-  Row,
-  Text,
-  TextAttribute,
-  TouchEvent,
-  Web,
-  WebMediaOptions
-} from '@ohos.arkui.component'
+import { __memo_context_type, __memo_id_type, State } from '@ohos.arkui.stateManagement';
+import { BlurOnKeyboardHideMode, Button, ButtonAttribute, ClickEvent, Column, Component, Entry, KeyEvent, OnAudioStateChangedEvent, OnOverScrollEvent, OnRenderExitedEvent, RenderExitReason, Row, Text, TextAttribute, TouchEvent, Web, WebMediaOptions } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog';
 import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
-import { Hypium } from '../../../hypium';
-import { Callback, RecordData } from '@ohos.base'
+import events_emitter from '@ohos.events.emitter';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Utils.test';
-import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
-
 export class StringFields {
   public str: string = '';
 }

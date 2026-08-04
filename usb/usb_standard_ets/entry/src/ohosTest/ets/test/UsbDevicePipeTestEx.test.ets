@@ -17,6 +17,7 @@ import usbMgr from '@ohos.usbManager';
 import { UiDriver, BY } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import CheckEmptyUtils from './CheckEmptyUtils.js';
+import { isFilteredDevice } from './FilterUtils';
 import parameter from '@ohos.systemparameter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
@@ -163,7 +164,8 @@ function getPipe(testCaseName: string) {
 
 
 function toReleaseInterface(testCaseName: string, conIndex: number, interIndex: number) {
-  gDeviceList = usbMgr.getDevices();
+  let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+  gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
   let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
   let isClaim = usbMgr.releaseInterface(gPipe, tmpInterface);
   console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
@@ -178,7 +180,8 @@ export default function UsbDevicePipeTestEx() {
       console.log(TAG, '*************Usb Unit UsbDevicePipeTestEx Begin*************');
 
       // version > 17  host currentMode = 2 device currentMode = 1
-      gDeviceList = usbMgr.getDevices();
+      let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -190,13 +193,14 @@ export default function UsbDevicePipeTestEx() {
           CheckEmptyUtils.sleep(1000);
         }
         gPipe = usbMgr.connectDevice(gDeviceList[0]);
-        console.info(TAG, 'usb unit connectDevice  gPipe ret : ' + JSON.stringify(gPipe));
+        console.info(TAG, 'usb unit connectDevice gPipe ret : ' + JSON.stringify(gPipe));
       }
     })
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test Ex Case*************');
       try {
-        gDeviceList = usbMgr.getDevices();
+        let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+        gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       } catch (error) {
         console.info(TAG, 'beforeEach catch error : ' + error);
       }

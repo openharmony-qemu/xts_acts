@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -15,20 +16,11 @@
 
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import Utils from './Util.test';
-import { sleep } from '../utils/Model';
-
-async function lockGuardAsync(lock: concurrency.stackless.AsyncMutex, callback: () => void): Promise<void> {
-  await lock.lock();
-  try {
-    callback();
-  } finally {
-    lock.unlock();
-  }
-}
+import { BaseClass, sleep } from '../utils/Model';
 
 export default function MutexLockEnhancedTest(): void {
   describe('MutexLockEnhancedTest', (): void => {
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.msSleep(200);
     })
 
@@ -44,19 +36,19 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedDeadlockCircularWait';
         console.info(`${TAG} test start`);
-        let lockA = new concurrency.stackless.AsyncMutex();
-        let lockB = new concurrency.stackless.AsyncMutex();
+        let lockA = new Mutex();
+        let lockB = new Mutex();
         let result = new AtomicReference<string>('');
         let worker1Completed = new AtomicInt(0);
         let worker2Completed = new AtomicInt(0);
 
         let worker1 = new EAWorker();
         worker1.start();
-        worker1.run<Promise<void>>(async (): Promise<void> => {
-          await lockA.lock();
+        worker1.run<void>(() => {
+          lockA.lock();
           result.exchange(result.load() + '1A');
           lockA.unlock();
-          await lockB.lock();
+          lockB.lock();
           result.exchange(result.load() + '1B');
           lockB.unlock();
           worker1Completed.fetchAdd(1);
@@ -64,11 +56,11 @@ export default function MutexLockEnhancedTest(): void {
 
         let worker2 = new EAWorker();
         worker2.start();
-        worker2.run<Promise<void>>(async (): Promise<void> => {
-          await lockB.lock();
+        worker2.run<void>(() => {
+          lockB.lock();
           result.exchange(result.load() + '2B');
           lockB.unlock();
-          await lockA.lock();
+          lockA.lock();
           result.exchange(result.load() + '2A');
           lockA.unlock();
           worker2Completed.fetchAdd(1);
@@ -101,17 +93,17 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedSelfLock';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let lockCount = new AtomicInt(0);
         let workerCompleted = new AtomicInt(0);
 
-        await lock.lock();
+        lock.lock();
         lockCount.fetchAdd(1);
 
         let worker = new EAWorker();
         worker.start();
-        let job = worker.run<Promise<void>>(async (): Promise<void> => {
-          await lock.lock();
+        let job = worker.run<void>(() => {
+          lock.lock();
           lockCount.fetchAdd(1);
           lock.unlock();
           workerCompleted.fetchAdd(1);
@@ -119,13 +111,13 @@ export default function MutexLockEnhancedTest(): void {
 
         await sleep(200);
         lock.unlock();
-        await job;
+        job.Await();
 
         while (workerCompleted.load() < 1) {
           await sleep(50);
         }
 
-        worker.join();
+        worker.join().Await();
         console.info(`${TAG} lock count: ${lockCount.load()}`);
         expect(lockCount.load()).assertEqual(2);
         expect(workerCompleted.load()).assertEqual(1);
@@ -144,16 +136,16 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedNestedLocks';
         console.info(`${TAG} test start`);
-        let lock1 = new concurrency.stackless.AsyncMutex();
-        let lock2 = new concurrency.stackless.AsyncMutex();
-        let lock3 = new concurrency.stackless.AsyncMutex();
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
+        let lock3 = new Mutex();
         let count = 0;
 
-        await lock1.lock();
+        lock1.lock();
         count++;
-        await lock2.lock();
+        lock2.lock();
         count++;
-        await lock3.lock();
+        lock3.lock();
         count++;
 
         lock3.unlock();
@@ -177,21 +169,21 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedMultiLockDeadlock';
         console.info(`${TAG} test start`);
-        let lockA = new concurrency.stackless.AsyncMutex();
-        let lockB = new concurrency.stackless.AsyncMutex();
-        let lockC = new concurrency.stackless.AsyncMutex();
+        let lockA = new Mutex();
+        let lockB = new Mutex();
+        let lockC = new Mutex();
         let resultCount = new AtomicInt(0);
         let worker1Completed = new AtomicInt(0);
         let worker2Completed = new AtomicInt(0);
 
         let worker1 = new EAWorker();
         worker1.start();
-        worker1.run<Promise<void>>(async (): Promise<void> => {
-          await lockA.lock();
+        worker1.run<void>(() => {
+          lockA.lock();
           lockA.unlock();
-          await lockB.lock();
+          lockB.lock();
           lockB.unlock();
-          await lockC.lock();
+          lockC.lock();
           resultCount.fetchAdd(1);
           lockC.unlock();
           worker1Completed.fetchAdd(1);
@@ -199,12 +191,12 @@ export default function MutexLockEnhancedTest(): void {
 
         let worker2 = new EAWorker();
         worker2.start();
-        worker2.run<Promise<void>>(async (): Promise<void> => {
-          await lockC.lock();
+        worker2.run<void>(() => {
+          lockC.lock();
           lockC.unlock();
-          await lockB.lock();
+          lockB.lock();
           lockB.unlock();
-          await lockA.lock();
+          lockA.lock();
           resultCount.fetchAdd(1);
           lockA.unlock();
           worker2Completed.fetchAdd(1);
@@ -235,10 +227,10 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedDoubleUnlock';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let errorCount = 0;
 
-        await lock.lock();
+        lock.lock();
         lock.unlock();
 
         try {
@@ -265,7 +257,7 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedUnlockWithoutLock';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let errorCount = 0;
 
         try {
@@ -292,10 +284,10 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedStateAfterException';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let count = 0;
 
-        await lock.lock();
+        lock.lock();
         try {
           count++;
           throw new Error("test exception");
@@ -305,7 +297,7 @@ export default function MutexLockEnhancedTest(): void {
           lock.unlock();
         }
 
-        await lock.lock();
+        lock.lock();
         count++;
         lock.unlock();
 
@@ -326,14 +318,14 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedExceptionInWorker';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let count = new AtomicInt(0);
         let exceptionHandled = new AtomicInt(0);
 
         let worker = new EAWorker();
         worker.start();
-        let job = worker.run<Promise<void>>(async (): Promise<void> => {
-          await lock.lock();
+        let job = worker.run<void>(() => {
+          lock.lock();
           try {
             count.fetchAdd(1);
             throw new Error("worker exception");
@@ -343,15 +335,15 @@ export default function MutexLockEnhancedTest(): void {
         });
 
         try {
-          await job;
+          job.Await();
         } catch (e) {
           console.info(`${TAG} worker exception: ${e.message}`);
           exceptionHandled.fetchAdd(1);
         }
 
-        worker.join();
+        worker.join().Await();
 
-        await lock.lock();
+        lock.lock();
         count.fetchAdd(1);
         lock.unlock();
 
@@ -373,11 +365,11 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedEmptyCriticalSection';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let count = 0;
 
         for (let i = 0; i < 100; i++) {
-          await lock.lock();
+          lock.lock();
           lock.unlock();
           count++;
         }
@@ -399,16 +391,16 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedLockGuard';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let count = 0;
 
-        await lockGuardAsync(lock, () => {
+        lock.lockGuard(() => {
           count++;
         });
 
         let exceptionCaught = false;
         try {
-          await lockGuardAsync(lock, () => {
+          lock.lockGuard(() => {
             count++;
             throw new Error("test");
           });
@@ -416,7 +408,7 @@ export default function MutexLockEnhancedTest(): void {
           exceptionCaught = true;
         }
 
-        await lockGuardAsync(lock, () => {
+        lock.lockGuard(() => {
           count++;
         });
 
@@ -438,13 +430,13 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedWithTaskPool';
         console.info(`${TAG} test start`);
-        let lock = new concurrency.stackless.AsyncMutex();
+        let lock = new Mutex();
         let count = new AtomicInt(0);
         let taskCount = 10;
 
         for (let i = 0; i < taskCount; i++) {
-          taskpool.execute(async (): Promise<void> => {
-            await lock.lock();
+          taskpool.execute(() => {
+            lock.lock();
             count.fetchAdd(1);
             lock.unlock();
           });
@@ -471,27 +463,27 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedMultipleLocksSameWorker';
         console.info(`${TAG} test start`);
-        let lock1 = new concurrency.stackless.AsyncMutex();
-        let lock2 = new concurrency.stackless.AsyncMutex();
-        let lock3 = new concurrency.stackless.AsyncMutex();
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
+        let lock3 = new Mutex();
         let result = new AtomicReference<string>('');
 
         let worker = new EAWorker();
         worker.start();
-        let job = worker.run<Promise<void>>(async (): Promise<void> => {
-          await lock1.lock();
+        let job = worker.run<void>(() => {
+          lock1.lock();
           result.exchange(result.load() + '1');
-          await lock2.lock();
+          lock2.lock();
           result.exchange(result.load() + '2');
-          await lock3.lock();
+          lock3.lock();
           result.exchange(result.load() + '3');
           lock3.unlock();
           lock2.unlock();
           lock1.unlock();
         });
 
-        await job;
-        worker.join();
+        job.Await();
+        worker.join().Await();
 
         console.info(`${TAG} result: ${result.load()}`);
         expect(result.load()).assertEqual('123');
@@ -510,22 +502,18 @@ export default function MutexLockEnhancedTest(): void {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'mutexLockEnhancedSequentialLocking';
         console.info(`${TAG} test start`);
-        let locks: concurrency.stackless.AsyncMutex[] = [
-          new concurrency.stackless.AsyncMutex(),
-          new concurrency.stackless.AsyncMutex(),
-          new concurrency.stackless.AsyncMutex()
-        ];
+        let locks: Mutex[] = [new Mutex(), new Mutex(), new Mutex()];
         let count = new AtomicInt(0);
         let workerCount = 5;
 
-        let jobs: Promise<Promise<void>>[] = [];
+        let jobs: Job<void>[] = [];
         for (let i = 0; i < workerCount; i++) {
           let worker = new EAWorker();
           worker.start();
-          let job = worker.run<Promise<void>>(async (): Promise<void> => {
-            await locks[0].lock();
-            await locks[1].lock();
-            await locks[2].lock();
+          let job = worker.run<void>(() => {
+            locks[0].lock();
+            locks[1].lock();
+            locks[2].lock();
             count.fetchAdd(1);
             locks[2].unlock();
             locks[1].unlock();
@@ -535,7 +523,7 @@ export default function MutexLockEnhancedTest(): void {
         }
 
         for (let i = 0; i < workerCount; i++) {
-          await jobs[i];
+          jobs[i].Await();
         }
 
         while (count.load() < workerCount) {

@@ -15,14 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 class C {
   static $_instantiate() { return 'abc' }
@@ -129,7 +122,9 @@ class B_12 {
   static $_instantiate(f: () => B_12, p: number): number { return p + p }
 }
 class C_12 extends B_12 {
-  static $_instantiate(f: () => C_12, p: string): string { return p + p }
+  static $_instantiate(f: () => C_12, p: string): string {
+    return p + p
+  }
 }
 
 class B_13 {
@@ -142,7 +137,9 @@ class C_13 extends B_13 {
   static $_instantiate(f: () => C_13, p: string): string {
     return f().$_instantiate(f, p)
   }
-  $_instantiate(f: () => C_13, p: string): string { return '1' + p }
+  $_instantiate(f: () => C_13, p: string): string {
+    return '1' + p
+  }
 }
 
 class MyError extends Error {}
@@ -238,7 +235,9 @@ class B_23 {
   }
 }
 class C_23 extends B_23 {
-  public static $_instantiate(f: () => C_23, p: number): B_23 { return C_23('' + p) }
+  public static $_instantiate(f: () => C_23, p: number): B_23 {
+    return C_23('' + p)
+  }
 }
 
 class B_24 {
@@ -297,7 +296,7 @@ class C30 {
 }
 
 class C31<T extends String | Number | undefined> {
-  fld: T
+  fld: T = undefined as T
   static $_instantiate(f: () => C31<String>, p: String): C31<String> {
     let x: C31<String> = f()
     x.fld = p
@@ -316,7 +315,7 @@ export default function CallableTypesWithInstantiateMethodTest(): void {
     });
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     });
 
     afterEach(() => {
@@ -777,6 +776,5 @@ it("testCallableTypesWithInstantiateMethod0032", TestType.FUNCTION | Size.MEDIUM
   let y = C31.$_instantiate(() => new C31<number>(), 42);
   expect(y.fld).assertEqual(42);
 });
-
 });
 }

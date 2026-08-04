@@ -49,7 +49,7 @@ struct DatePickerExample01 {
         end: new Date('2200-1-1'),
         selected: this.selectedDate
       })
-        .key('datePicker')
+        .key('datePickerneww_datePicker')
         .id('datePicker')
         .lunar(true)
         .onDateChange((date: Date) => {

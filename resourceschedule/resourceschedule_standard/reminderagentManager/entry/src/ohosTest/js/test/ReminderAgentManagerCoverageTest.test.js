@@ -1767,5 +1767,341 @@ export default function ReminderAgentManagerCoverageTest() {
             }
         })
 
+        /**
+         * @tc.name   publishReminder_callback_emptyWant_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_WANT_EMPTY_001
+         * @tc.desc   test publishReminder want is empty.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("publishReminder_callback_emptyWant_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------reminderRequestAttribute_0007---------------------------');
+            let calendar = {
+                reminderType: 121,
+                dateTime: {
+                    year: 2024,
+                    month: 1,
+                    day: 31,
+                    hour: 10,
+                    minute: 30,
+                    second: 10
+                },
+                repeatMonths: [3],
+                repeatDays: [6, 7],
+                actionButton: [
+                    {
+                        title: "close",
+                        titleResource: 'English',
+                        type: 0,
+                    },
+                    {
+                        title: "snooze",
+                        titleResource: 'English',
+                        type: 1
+                    }
+                ],
+                wantAgent: {
+                    pkgName: "",
+                    abilityName: ""
+                },
+                maxScreenWantAgent: {
+                    pkgName: "",
+                    abilityName: ""
+                },
+                ringDuration: 2,
+                snoozeTimes: 1,
+                timeInterval: 3,
+                title: "this is title",
+                content: "this is content",
+                expiredContent: "this reminder has expired",
+                snoozeContent: "remind later",
+                notificationId: 500,
+                groupId: 'this is groupId',
+                ringChannel: 123
+            }
+            try {
+                reminderAgent.publishReminder(calendar, (err, reminderId) => {
+                    if (err) {
+                        console.info('publishReminder_callback_emptyWant_001 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done(); 
+                    } else {
+                        console.info('publishReminder_callback_emptyWant_001 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.info("publishReminder_callback_emptyWant_001 publishReminder error.code:" + error.code);
+                expect(error.code  == 401).assertTrue();
+                done(); 
+            }
+        })
+
+        /**
+         * @tc.name   removeNotificationSlot_promise_null_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_PROMISE_NULL_001
+         * @tc.desc   test removeNotificationSlot promise with slot null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("removeNotificationSlot_promise_null_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------removeNotificationSlot_promise_null_001---------------------------');
+            try {
+                reminderAgent.removeNotificationSlot(null).then(() => {
+                    console.info('removeNotificationSlot_promise_null_001 promise success');
+                    done();
+                }).catch((err) => {
+                    console.info('removeNotificationSlot_promise_null_001 promise err.code is :' + err.code);
+                    expect(err.code == 401).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("removeNotificationSlot_promise_null_001 error.code:" + error.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   removeNotificationSlot_promise_undefined_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_PROMISE_UNDEFINED_001
+         * @tc.desc   test removeNotificationSlot promise with slot undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("removeNotificationSlot_promise_undefined_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------removeNotificationSlot_promise_undefined_001---------------------------');
+            try {
+                reminderAgent.removeNotificationSlot(undefined).then(() => {
+                    console.info('removeNotificationSlot_promise_undefined_001 promise success');
+                    done();
+                }).catch((err) => {
+                    console.info('removeNotificationSlot_promise_undefined_001 promise err.code is :' + err.code);
+                    expect(err.code == 401).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("removeNotificationSlot_promise_undefined_001 error.code:" + error.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   removeNotificationSlot_callback_null_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_CALLBACK_NULL_001
+         * @tc.desc   test removeNotificationSlot callback with slot null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("removeNotificationSlot_callback_null_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------removeNotificationSlot_callback_null_001---------------------------');
+            try {
+                reminderAgent.removeNotificationSlot(null, (err) => {
+                    if (err) {
+                        console.info('removeNotificationSlot_callback_null_001 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done();
+                    } else {
+                        console.info('removeNotificationSlot_callback_null_001 callback success');
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.info("removeNotificationSlot_callback_null_001 error.code:" + error.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   removeNotificationSlot_callback_undefined_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_CALLBACK_UNDEFINED_001
+         * @tc.desc   test removeNotificationSlot callback with slot undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("removeNotificationSlot_callback_undefined_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------removeNotificationSlot_callback_undefined_001---------------------------');
+            try {
+                reminderAgent.removeNotificationSlot(undefined, (err) => {
+                    if (err) {
+                        console.info('removeNotificationSlot_callback_undefined_001 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done();
+                    } else {
+                        console.info('removeNotificationSlot_callback_undefined_001 callback success');
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.info("removeNotificationSlot_callback_undefined_001 error.code:" + error.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   removeNotificationSlot_promise_out_enum_range_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_PROMISE_OUTENUMRANGE_001
+         * @tc.desc   test removeNotificationSlot promise with slot Out of the enum value range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("removeNotificationSlot_promise_out_enum_range_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------removeNotificationSlot_promise_out_enum_range_001---------------------------');
+            try {
+                reminderAgent.removeNotificationSlot(121).then(() => {
+                    console.info('removeNotificationSlot_promise_out_enum_range_001 promise success');
+                    done();
+                }).catch((err) => {
+                    console.info('removeNotificationSlot_promise_out_enum_range_001 promise err.code is :' + err.code);
+                    expect(err.code == 401).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("removeNotificationSlot_promise_out_enum_range_001 error.code:" + error.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   removeNotificationSlot_callback_out_enum_range_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_CALLBACK_OUTENUMRANGE_001
+         * @tc.desc   test removeNotificationSlot callback with slot Out of the enum value range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("removeNotificationSlot_callback_out_enum_range_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------removeNotificationSlot_callback_out_enum_range_001---------------------------');
+            try {
+                reminderAgent.removeNotificationSlot(121, (err) => {
+                    if (err) {
+                        console.info('removeNotificationSlot_callback_out_enum_range_001 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done();
+                    } else {
+                        console.info('removeNotificationSlot_callback_out_enum_range_001 callback success');
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.info("removeNotificationSlot_callback_out_enum_range_001 error.code:" + error.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   publishReminder_callback_out_enum_range_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_OUT_ENUM_RANGE_0100
+         * @tc.desc   test publishReminder slotType out enum range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("publishReminder_callback_out_enum_range_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------publishReminder_callback_out_enum_range_001---------------------------');   
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                slotType: 121,
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('publishReminder_callback_out_enum_range_001 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done(); 
+                    } else {
+                        console.info('publishReminder_callback_out_enum_range_001 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.info("publishReminder_callback_out_enum_range_001 publishReminder error.code:" + error.code);
+                expect(error.code  == 401).assertTrue();
+                done(); 
+            }
+        })
+
+        /**
+         * @tc.name   publishReminder_callback_out_enum_range_002
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_OUT_ENUM_RANGE_0200
+         * @tc.desc   test publishReminder snoozeSlotType out enum range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("publishReminder_callback_out_enum_range_002", Level.LEVEL0, async function (done) {
+            console.info('----------------------publishReminder_callback_out_enum_range_002---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                snoozeSlotType: 121
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('publishReminder_callback_out_enum_range_002 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done(); 
+                    } else {
+                        console.info('publishReminder_callback_out_enum_range_002 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.info("publishReminder_callback_out_enum_range_002 publishReminder error.code:" + error.code);
+                expect(error.code  == 401).assertTrue();
+                done(); 
+            }
+        })
+
+        /**
+         * @tc.name   publishReminder_callback_out_enum_range_003
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_OUT_ENUM_RANGE_0300
+         * @tc.desc   test publishReminder fixedTimeZone out enum range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("publishReminder_callback_out_enum_range_003", Level.LEVEL0, async function (done) {
+            console.info('----------------------publishReminder_callback_out_enum_range_003---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                fixedTimeZone: 121
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('publishReminder_callback_out_enum_range_003 callback err.code is :' + err.code);
+                        expect(err.code == 401).assertTrue();
+                        done(); 
+                    } else {
+                        console.info('publishReminder_callback_out_enum_range_003 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.info("publishReminder_callback_out_enum_range_003 publishReminder error.code:" + error.code);
+                expect(error.code  == 401).assertTrue();
+                done(); 
+            }
+        })
+
     })
 }

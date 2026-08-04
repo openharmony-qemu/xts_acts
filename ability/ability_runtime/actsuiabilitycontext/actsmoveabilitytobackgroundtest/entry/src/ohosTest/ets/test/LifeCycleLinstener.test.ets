@@ -45,7 +45,12 @@ export default function LifeCycleLinstenerTest() {
         console.log(`afterEach terminateSelf success`);
       }
       if (!globalThis.testAbilityOnForeground) {
-        abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
+        let cmd = "aa start -b com.acts.moveabilitytobgtest -a TestAbility";
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd);
         await eventBus.onWait('TestAbility_onForeground');
       }
       done();
@@ -116,7 +121,12 @@ export default function LifeCycleLinstenerTest() {
           ]);
           console.info(tag + ` backgoundFlag: ` + backgoundFlag);
           expect(backgoundFlag).assertTrue();
-          abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
+          let cmd = "aa start -b com.acts.moveabilitytobgtest -a TestAbility";
+          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd);
           await Promise.all([
             eventBus.onWait('TestAbility_onForeground'),
             eventBus.onWait(`${tag}_onApplicationForeground`),
@@ -210,7 +220,12 @@ export default function LifeCycleLinstenerTest() {
           ])
           TestAbilityContext.moveAbilityToBackground();
           await Promise.all([eventBus.onWait('TestAbility_onBackground')])
-          await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
+          let cmd = "aa start -b com.acts.moveabilitytobgtest -a TestAbility";
+          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          await abilityDelegator.executeShellCommand(cmd);
           await sleep(2000);
           if (forgoundFlag || backgoundFlag){
             console.info(tag + ` off listener fail`);

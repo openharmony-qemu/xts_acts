@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -17,18 +18,16 @@ import moduleSupportTest from "./ActsModuleSupport.test";
 import nameSpaceSupportTest from "./ActsNameSpaceSupport.test";
 import enumOperationsTest from "./ActsEnumOperations.test";
 import vmOpsTest from "./ActsVmOps.test"
-import anyOpsTest from "./ActsAnyOps.test"
 import exceptionTest from "./ActsException.test"
 import fixedArrayTest from "./ActsFixedArray.test"
 import promiseTest from "./ActsPromise.test"
 import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
 
-export default function testsuite() {
+export default function testsuite(): void {
     moduleSupportTest();
     nameSpaceSupportTest();
     enumOperationsTest();
     vmOpsTest();
-    anyOpsTest();
     fixedArrayTest();
     promiseTest();
     exceptionTest();

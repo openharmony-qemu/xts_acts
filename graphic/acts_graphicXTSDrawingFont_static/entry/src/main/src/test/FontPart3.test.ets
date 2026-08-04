@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +31,7 @@ import { getRandomNumber } from './Util.test';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
-export default function fontPart3Test() {
+export default function fontPart3Test(): void {
   describe('DrawingTsFontPart3Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -318,6 +319,8 @@ export default function fontPart3Test() {
 
       try {
         let bounds: common2D.Rect[] | undefined = font.getBounds([]);
+        console.info(msg + ' getBounds [] successed ' );
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getBounds errorCode is:  ${e.code} + errormsg is: ${e.message}`);

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -560,14 +560,14 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2700
      * @tc.name testArrayConstructor2027
-     * @tc.desc Verify default construction differs from passing a single numeric argument
+     * @tc.desc Verify default new Array() differs from Array.create single numeric element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<number>();
-      const sizedArr = new Array<number>(100);
+      const sizedArr = Array.create<number>(1, 100);
       expect(sizedArr.length).assertEqual(1);
       expect(sizedArr[0]).assertEqual(100);
       for (let i = 0; i < sizedArr.length; i++) {
@@ -612,7 +612,7 @@ export default function ArrayConstructor2Test(): void {
         dynamicArr.pushOne(i);
       }
 
-      const fixedArr = new Array<number>(100);
+      const fixedArr = Array.create<number>(1, 100);
       expect(fixedArr.length).assertEqual(1);
       expect(fixedArr[0]).assertEqual(100);
       for (let i = 0; i < fixedArr.length; i++) {
@@ -651,7 +651,6 @@ export default function ArrayConstructor2Test(): void {
     it('testArrayConstructor2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
-      expect(arr.length > 0).assertFalse();
 
       try {
         arr[0];

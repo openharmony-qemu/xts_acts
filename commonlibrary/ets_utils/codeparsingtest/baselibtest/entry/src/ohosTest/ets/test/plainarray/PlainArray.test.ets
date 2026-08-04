@@ -15,6 +15,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { PlainArray } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 class Tmp {
   age: number = 0
 
@@ -30,7 +34,8 @@ export default function PlainArrayTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

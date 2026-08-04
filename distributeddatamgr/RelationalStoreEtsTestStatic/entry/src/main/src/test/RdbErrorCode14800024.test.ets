@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -92,7 +93,12 @@ export default function RdbErrorCode14800024() {
   describe("RdbErrorCode14800024", (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
@@ -168,15 +174,15 @@ export default function RdbErrorCode14800024() {
       try {
         await rdbStore!.backup("dbBackup002.db");
       } catch (e) {
-        e = e as BusinessError;
+       
         expect(e.code).assertEqual(14800024);
       }
 
       try {
         await rdbStore!.attach(context!, STORE_CONFIG, "attachDB");
       } catch(e) {
-        e = e as BusinessError;
-        if (e.code === 14800024) {
+       
+        if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }
       }
@@ -192,7 +198,7 @@ export default function RdbErrorCode14800024() {
       try {
         await rdbStore!.detach("attachDB");
       } catch (e) {
-        if (e.code === 14800024) {
+        if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }
       }
@@ -227,7 +233,7 @@ export default function RdbErrorCode14800024() {
         try {
           await rdbStore!.lockRow(predicates)
         } catch (e) {
-          if (e.code === 14800024) {
+          if (e.code == 14800024) {
             expect(14800024).assertEqual(e.code);
           }
         }
@@ -235,7 +241,7 @@ export default function RdbErrorCode14800024() {
         try {
           await rdbStore!.queryLockedRow(predicates)
         } catch (e) {
-          if (e.code === 14800024) {
+          if (e.code == 14800024) {
             expect(14800024).assertEqual(e.code);
           }
         }
@@ -243,24 +249,23 @@ export default function RdbErrorCode14800024() {
         try {
           await rdbStore!.unlockRow(predicates)
         } catch (e) {
-          if (e.code === 14800024) {
+          if (e.code == 14800024) {
             expect(14800024).assertEqual(e.code);
           }
         }
 
         if (rdbStore!) {
-          try {
-            let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
+          rdbStore!.createTransaction().then((transaction: relationalStore.Transaction) => {
             transaction.execute("DELETE FROM test WHERE data1 = ? OR data2 = ?", [21 as long, 20 as long]).then(() => {
             }).catch((e) => {
               try {
                 transaction.rollback();
               } catch (e) {
-                if (e.code === 14800024) {
+                if (e.code == 14800024) {
                   expect(14800024).assertEqual(e.code);
                 }
               }
-              if (e.code === 14800024) {
+              if (e.code == 14800024) {
                 expect(14800024).assertEqual(e.code);
               }
             });
@@ -285,8 +290,8 @@ export default function RdbErrorCode14800024() {
             }
 
             try {
-              await transaction.batchInsertWithConflictResolution("test", [valueBucket1],
-                              relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+              waitForCompletion(async () => {await transaction.batchInsertWithConflictResolution("test", [valueBucket1],
+                relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);})
             } catch (e) {
               expect(14800024).assertEqual(e.code);
             }
@@ -317,7 +322,7 @@ export default function RdbErrorCode14800024() {
             }
 
             try {
-              await transaction.execute("PRAGMA integrity_check");
+              waitForCompletion(async () => {await transaction.execute("PRAGMA integrity_check");})
             } catch (e) {
               expect(e.code).assertEqual(14800024);
             }
@@ -335,12 +340,14 @@ export default function RdbErrorCode14800024() {
             } catch (e) {
               expect(e.code).assertEqual(14800024);
             }
-          } catch (err) {
+
+
+          }).catch((err) => {
             console.error(`createTransaction faided, code is ${err.code},message is ${err.message}`);
-            if (err.code === 14800024) {
+            if (err.code == 14800024) {
               expect(14800024).assertEqual(err.code);
             }
-          }
+          });
         }
         resultSet.close();
 

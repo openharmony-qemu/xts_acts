@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType, afterAll } from '@ohos/hypium';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 import {
   arrowFunc,
@@ -98,6 +98,11 @@ export class SendableDefaultExpressionOutArrowClass implements ISendable {
 
 export default function sendableClassTest() {
   describe('ActsSendableClassTest', () => {
+    afterAll(async () => {
+      console.info('afterAll called');
+      await new Promise<void>((resolve)=>setTimeout(resolve,100))
+    });
+
     /**
      * @tc.name   testSendableDefaultClass0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_CLASS_0100

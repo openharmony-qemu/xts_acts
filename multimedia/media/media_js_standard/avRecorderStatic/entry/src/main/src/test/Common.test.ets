@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -521,7 +522,7 @@ export default class Commmon {
         case 'started':
           console.info(`case avRecorderWithCallBack is started`)
           expect(avRecorder.state).assertEqual('started');
-          this.sleep(recorderTime).awaitSync()
+          waitForCompletion(async () => {await this.sleep(recorderTime);})
           this.stopCallback(avRecorder);
           break;
         case 'paused':
@@ -1435,7 +1436,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getInputSurfaceTest33 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          this.sleep(recorderTime).awaitSync()
+          waitForCompletion(async () => {await this.sleep(recorderTime);})
           console.info(`case getInputSurfaceTest33 111`)
           this.getInputSurfacePromise(avRecorder)
           console.info(`case getInputSurfaceTest33 222`)
@@ -1482,7 +1483,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getInputSurfaceTest34 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          this.sleep(recorderTime).awaitSync()
+          waitForCompletion(async () => {await this.sleep(recorderTime);})
           this.pausePromise(avRecorder)
           break;
         case 'paused':
@@ -1521,7 +1522,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getInputSurfaceTest35 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      (async () => {
+      waitForCompletion(async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1557,7 +1558,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-      })().awaitSync()
+      })
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1576,7 +1577,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getInputSurfaceTest36 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      (async () => {
+      waitForCompletion(async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1612,7 +1613,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })().awaitSync()
+    })
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1631,7 +1632,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getInputSurfaceTest37 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      (async () => {
+      waitForCompletion(async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case "idle":
@@ -1666,7 +1667,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })().awaitSync()
+    })
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1757,17 +1758,18 @@ export default class Commmon {
     let avRecorderConfig: media.AVRecorderConfig;
     let result = true;
     avRecorder = await this.idle(avRecorder);
-    try {
-      let config = await avRecorder.getAVRecorderConfig();
-      console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback config is ' + JSON.stringify(config));
-      avRecorderConfig = config!!;
+    avRecorder.getAVRecorderConfig((err: BusinessError<void> | null, config: media.AVRecorderConfig | undefined) => {
       console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback called');
+      if (err != null) {
+        console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback err is ' + err.message);
+        result = false;
+      } else {
+        console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback config is ' + JSON.stringify(config));
+        avRecorderConfig = config!!;
+      }
       expect(result).assertEqual(false);
-      await this.releaseDone(avRecorder, done)
-    } catch (err) {
-      console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback err is ' + err.message);
-      result = false;
-    }
+      waitForCompletion(async () => {await this.releaseDone(avRecorder, done)})
+    });
   }
 
   async getAVRecorderConfigTest40(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
@@ -1825,7 +1827,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getAVRecorderConfigTest41 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          this.sleep(recorderTime).awaitSync()
+          waitForCompletion(async () => {await this.sleep(recorderTime);})
           console.info(`case getAVRecorderConfigTest41 111`)
           this.getAVRecorderConfigPromise(avConfig, avRecorder)
           console.info(`case getAVRecorderConfigTest41 222`)
@@ -1872,7 +1874,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getAVRecorderConfigTest42 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          this.sleep(recorderTime).awaitSync()
+          waitForCompletion(async () => {await this.sleep(recorderTime);})
           this.pausePromise(avRecorder)
           break;
         case 'paused':
@@ -1911,7 +1913,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getAVRecorderConfigTest43 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      (async () => {
+      waitForCompletion(async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1947,7 +1949,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })().awaitSync()
+    })
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1966,7 +1968,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getAVRecorderConfigTest44 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      (async () => {
+      waitForCompletion(async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -2002,7 +2004,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })().awaitSync()
+    })
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -2014,7 +2016,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getAVRecorderConfigTest45 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      (async () => {
+      waitForCompletion(async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case "idle":
@@ -2049,7 +2051,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })().awaitSync()
+    })
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -2878,7 +2880,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect(watermarkCount).assertEqual(1);
     } catch (error) {
@@ -2909,7 +2911,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
@@ -2941,7 +2943,7 @@ export default class Commmon {
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
       // 循环调用 addWatermark 6次
       for (let i = 0; i < 6; i++) {
-        const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
+        const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
         console.info(`addWatermark success, times: ${i + 1}, watermarkCount: ${watermarkCount}`);
         expect(watermarkCount).assertEqual(i + 1);
       } 
@@ -2951,49 +2953,92 @@ export default class Commmon {
     }
   }
 
-  async avRecorderAddWatermarkTest(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
-    done: () => void) {
+  async avRecorderAddWatermarkTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
     let result = false;
-    avRecorder = await this.idle(avRecorder);
-    await this.handleWaterMark(avRecorder).then((res) => {
-      console.info('avRecorderAddWatermarkTest res is ' + res);
-      result = true;
-    }).catch((err: Error) => {
-      console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
-      result = false;
-    });
-    expect(result).assertEqual(true);
-    await this.releaseDone(avRecorder, done);
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.handleWaterMark(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
   }
 
-  async avRecorderAddWatermarkTestErrorState(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
-    done: () => void) {
+  async avRecorderAddWatermarkTestErrorState(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
     let result = false;
-    avRecorder = await this.idle(avRecorder);
-    await this.handleWaterMarkErrorState(avRecorder).then((res) => {
-      console.info('avRecorderAddWatermarkTestErrorState res is ' + res);
-      result = true;
-    }).catch((err: Error) => {
-      console.info('avRecorderAddWatermarkTestErrorState failed and catch error is ' + err.message);
-      result = false;
-    });
-    expect(result).assertEqual(true);
-    await this.releaseDone(avRecorder, done);
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        await this.handleWaterMarkErrorState(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
   }
 
-  async avRecorderAddWatermarkTestOutRange(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
-    done: () => void) {
+  async avRecorderAddWatermarkTestOutRange(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
     let result = false;
-    avRecorder = await this.idle(avRecorder);
-    await this.handleWaterMarkOutRange(avRecorder).then((res) => {
-      console.info('avRecorderAddWatermarkTestOutRange res is ' + res);
-      result = true;
-    }).catch((err: Error) => {
-      console.info('avRecorderAddWatermarkTestOutRange failed and catch error is ' + err.message);
-      result = false;
-    });
-    expect(result).assertEqual(true);
-    await this.releaseDone(avRecorder, done);
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.handleWaterMarkOutRange(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
   }
 
   AV_RECORDER_AUDIO_STATE: AudioRecorderState = {

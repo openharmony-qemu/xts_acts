@@ -1,0 +1,193 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
+import Utils from './Utils';
+import isnanfndktest from 'libisnanfndktest.so';
+
+export default function IsnanfNdkTest() {
+  describe('IsnanfNdkTest', () => {
+
+    beforeEach(async () => { await Utils.sleep(50); });
+
+    /**
+     * @tc.name   testIsnanfNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0100
+     * @tc.desc   NaN should return non-zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfNormal001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0200
+     * @tc.desc   Positive infinity should return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfNormal002();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0300
+     * @tc.desc   Negative infinity should return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfNormal003();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0400
+     * @tc.desc   Zero should return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfNormal004();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfNormal005
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0500
+     * @tc.desc   Normal finite value should return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfNormal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfNormal005();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfNormal006
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0600
+     * @tc.desc   Negative finite value should return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfNormal006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfNormal006();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0700
+     * @tc.desc   FLT_MAX should return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfBoundary001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0800
+     * @tc.desc   FLT_MIN should return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfBoundary002();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_0900
+     * @tc.desc   Signaling NaN should return non-zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfAbnormal001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_1000
+     * @tc.desc   Various NaN bit patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsnanfAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfAbnormal002();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_1100
+     * @tc.desc   10000 repeated calls stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testIsnanfStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfStable001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testIsnanfThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNANF_1200
+     * @tc.desc   Multi-thread safety
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testIsnanfThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let resNum: number = isnanfndktest.isnanfThread001();
+      expect(resNum == 1).assertTrue();
+      done();
+    });
+  });
+}

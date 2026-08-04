@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -79,9 +79,9 @@ export default function RouterRecoverable2() {
 it('RouterRecoverable2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('RouterRecoverable2_0100 START');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(2000);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(200);
 
       let btn1 = await driver.findComponent(ON.id('routerBtnId2'));

@@ -96,7 +96,7 @@ struct scroll_testcase {
       .scrollBar(this.scrollBar)
       .scrollBarColor(this.scrollBarColor)
       .scrollBarWidth(this.scrollBarWidth)
-      .key('scroll')
+      .key('ScrollA_scroll')
       .width(400)
       .height(200)
       .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {

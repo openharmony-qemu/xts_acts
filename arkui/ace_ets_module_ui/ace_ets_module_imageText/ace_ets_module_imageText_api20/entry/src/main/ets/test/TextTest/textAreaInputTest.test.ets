@@ -54,16 +54,20 @@ export default function textAreaInputTest() {
      * @tc.level  LEVEL0
      */
     it('textAreaInputTest0001', Level.LEVEL0, async () => {
-      let driver = Driver.create();
-      if (globalThis.winLeft == 0) {
-        console.info('textAreaInputTest textAreaInputTest0001 START');
-        await CommonFunc.sleep(1000);
-        let textArea1 = await driver.findComponent(ON.id('textArea1'));
-        await CommonFunc.sleep(500);
+      console.info('textAreaInputTest textAreaInputTest0001 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
+      let textArea1 = await driver.findComponent(ON.id('textArea1'));
+      await CommonFunc.sleep(500);
+      if (globalThis.winLeft == 0) {        
         let textArea2 = await driver.findComponent(ON.id('textArea2'));
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.text('同意'));
+        await CommonFunc.sleep(1000);
+        await button?.click();
+        await CommonFunc.sleep(1000);
         await driver.triggerKey(2070);
         await CommonFunc.sleep(500);
         let button1 = await driver.findComponent(ON.text('下一步'));
@@ -128,7 +132,7 @@ export default function textAreaInputTest() {
         }
       }
       
-      expect("").assertEqual("");
+      expect(textArea1).not().assertUndefined();
       console.info("[textAreaInputTest0001] end");
     });
   })

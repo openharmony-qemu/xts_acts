@@ -86,8 +86,8 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate5_static_0400', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_02: RectValue = await CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
       console.log('assert space')
       expect(Math.abs(GridItem_02.left - GridItem_01.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue();
@@ -102,7 +102,7 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate5_static_0400', Level.LEVEL0, async (done: (
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate5_static_0400] END');

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,28 +31,38 @@ export default class Utils{
 
   static async openWifi() : Promise<void> {
     let state: boolean = wifiManager.isWifiActive();
+    hilog.info(domain, tag, '当前wifi状态 isWifiActive:' + state);
     if (!state) {
-      hilog.info(domain, tag, 'isWifiActive:' + state);
       wifiManager.enableWifi();
-      await Utils.msSleep(2000);
-      let state1: boolean = wifiManager.isWifiActive();
-      hilog.info(domain, tag, 'after enableWifi isWifiActive:' + state1);
+      for (let i = 0; i <= 200; i++) {
+        if (wifiManager.isWifiActive()) {
+          hilog.info(domain, tag, "WiFi已成功开启");
+          break;
+        }
+        hilog.info(domain, tag, "等待WiFi开启中...");
+        await Utils.msSleep(100);
+      }
     } else {
-      hilog.info(domain, tag, 'isWifiActive:' + state);
+      hilog.info(domain, tag, '无需操作wifi状态 isWifiActive:' + state);
       hilog.info(domain, tag, 'wifi is open');
     }
   }
 
   static async closeWifi() : Promise<void> {
     let state: boolean = wifiManager.isWifiActive();
+    hilog.info(domain, tag, '当前wifi状态 isWifiActive:' + state);
     if (state) {
-      hilog.info(domain, tag, 'isWifiActive:' + state);
       wifiManager.disableWifi();
-      await Utils.msSleep(2000);
-      let state1: boolean = wifiManager.isWifiActive();
-      hilog.info(domain, tag, 'after disableWifi isWifiActive:' + state1);
+      for (let i = 0; i <= 200; i++) {
+        if (!wifiManager.isWifiActive()) {
+          hilog.info(domain, tag, "WiFi已成功关闭");
+          break;
+        }
+        hilog.info(domain, tag, "等待WiFi关闭中...");
+        await Utils.msSleep(100);
+      }
     } else {
-      hilog.info(domain, tag, 'isWifiActive:' + state);
+      hilog.info(domain, tag, '无需操作wifi状态 isWifiActive:' + state);
       hilog.info(domain, tag, 'wifi is close');
     }
   }

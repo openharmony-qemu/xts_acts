@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +15,8 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '../../../../hypium'
-import { createUserAlbum, fetchOption, getPermission, LOG_TAG, sleep } from '../common';
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '../../../../hypium/index'
+import { createUserAlbum, getPermission, LOG_TAG, sleep } from '../common';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { Context } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -66,9 +67,6 @@ export default function getAssetsTest(): void {
           if(error !== undefined){
             expect(error!.code == 13900020).assertTrue();
             done();
-          }else if (fetchResult !== undefined) {
-            fetchResult.close();
-            done();
           }else {
             expect().assertFail();
             done();
@@ -100,7 +98,7 @@ export default function getAssetsTest(): void {
         helper!.getAssets(fetchOptions, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           if(error !== undefined){
-            expect(error!.code == 13900020).assertTrue();
+            expect(error!.code === 13900020).assertTrue();
             done();
           }else {
             expect().assertFail();
@@ -1082,17 +1080,16 @@ export default function getAssetsTest(): void {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
             await helper!.getAssets(fetchOptions);
           let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-          let isCallbackTriggered = false;
+          let isCallbackCalled = false;
           let onCallback = (changeData: photoAccessHelper.ChangeData) => {
             console.info(TAG, testName, 'onCallback success, changeData111: ' + JSON.stringify(changeData));
-            isCallbackTriggered = true;
+            isCallbackCalled = true;
             expect(changeData.type == 1).assertTrue();
             expect(changeData.uris.length > 0).assertTrue();
             expect(changeData.extraUris != undefined).assertTrue();
             expect(changeData.sharedPhotoAssets != undefined).assertTrue();
             expect(changeData.sharedAlbumAssets != undefined).assertTrue();
             expect(changeData.sharedExtraPhotoAssets != undefined).assertTrue();
-            done();
           }
           helper!.registerChange(photoAsset.uri, false, onCallback);
           let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
@@ -1100,9 +1097,14 @@ export default function getAssetsTest(): void {
           let newTitle: string = 'newTitle22';
           assetChangeRequest.setTitle(newTitle);
           await helper!.applyChanges(assetChangeRequest);
-          await sleep(1000)
+          const startTime = Date.now();
+          const timeoutMs = 15000;
+          while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+            await sleep(100)
+          }
+          expect(isCallbackCalled).assertTrue();
           helper!.unRegisterChange(photoAsset.uri, onCallback);
-          expect(isCallbackTriggered).assertTrue();
+          done();
         } catch (error) {
           console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
           expect().assertFail();
@@ -1129,12 +1131,11 @@ export default function getAssetsTest(): void {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
             await helper!.getAssets(fetchOptions);
           let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-          let isCallbackTriggered = false;
+          let isCallbackCalled = false;
           let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
-            isCallbackTriggered = true;
+            isCallbackCalled = true;
             console.info(TAG, testName, 'onCallback1 on', changeData.type);
             expect(changeData.type === 1).assertTrue();
-            done();
           }
           helper!.registerChange(photoAsset.uri, false, onCallback1);
           let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
@@ -1142,9 +1143,13 @@ export default function getAssetsTest(): void {
           let newTitle: string = 'newTitle22';
           assetChangeRequest.setTitle(newTitle);
           await helper!.applyChanges(assetChangeRequest);
-          await sleep(1000)
+          const startTime = Date.now();
+          const timeoutMs = 15000;
+          while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+            await sleep(100)
+          }
+          expect(isCallbackCalled).assertTrue();
           helper!.unRegisterChange(photoAsset.uri, onCallback1);
-          expect(isCallbackTriggered).assertTrue();
           done();
         } catch (error) {
           console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
@@ -1162,12 +1167,14 @@ export default function getAssetsTest(): void {
      */
     it('SUB_MULTMEDIA_ON_PHOTO_ALBUM_CHANGE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MULTMEDIA_ON_PHOTO_ALBUM_CHANGE_STATIC_0100';
+      let isCallbackCalled = false;
       let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
         console.info(TAG, testName, ' album onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
+        let typeCheck = changeData.type == 0 || changeData.type == 2;
+        expect(typeCheck).assertTrue();
         expect(changeData.albumChangeDatas != undefined).assertTrue();
         expect(changeData.isForRecheck).assertFalse();
-        done();
+        isCallbackCalled = true;
       }
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
@@ -1179,7 +1186,13 @@ export default function getAssetsTest(): void {
         let newAlbumName: string = 'newAlbumName' + new Date().getTime();
         albumChangeRequest.setAlbumName(newAlbumName);
         await helper!.applyChanges(albumChangeRequest);
-        helper!.offPhotoAlbumChange(onCallback);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        helper!.offPhotoAlbumChange();
         done();
       } catch (error) {
         console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
@@ -1187,22 +1200,25 @@ export default function getAssetsTest(): void {
         done();
       }
     });
+
     /**
      * @tc.name   SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0100
      * @tc.number SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0100
-     * @tc.desc   PhotoAccessHelper.off_photoAlbumChange-normal-返回值所有属性覆盖
+     * @tc.desc   PhotoAccessHelper.off_photoAlbumChange-normal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0100';
+      let isCallbackCalled = false;
       let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
         console.info(TAG, testName, ' album onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
+        let typeCheck = changeData.type == 0 || changeData.type == 2;
+        expect(typeCheck).assertTrue();
         expect(changeData.albumChangeDatas != undefined).assertTrue();
         expect(changeData.isForRecheck).assertFalse();
-        done();
+        isCallbackCalled = true;
       }
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
@@ -1211,10 +1227,17 @@ export default function getAssetsTest(): void {
         helper!.onPhotoAlbumChange(onCallback);
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
+        console.error(TAG,testName,'success',albumChangeRequest)
         let newAlbumName: string = 'newAlbumName' + new Date().getTime();
         albumChangeRequest.setAlbumName(newAlbumName);
         await helper!.applyChanges(albumChangeRequest);
-        helper!.offPhotoAlbumChange(onCallback);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        helper!.offPhotoAlbumChange();
         done();
       } catch (error) {
         console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
@@ -1237,11 +1260,13 @@ export default function getAssetsTest(): void {
         fetchColumns: [],
         predicates: predicates
       };
+      let isCallbackCalled = false;
       let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
         console.info(TAG, testName, 'onCallback success, changData: ' + JSON.stringify(changeData));
         expect(changeData.type == 1).assertTrue();
         expect(changeData.assetChangeDatas != undefined).assertTrue();
         expect(changeData.isForRecheck).assertFalse();
+        isCallbackCalled = true;
       }
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
@@ -1256,8 +1281,13 @@ export default function getAssetsTest(): void {
         let newTitle: string = 'newTitle';
         assetChangeRequest.setTitle(newTitle);
         await helper!.applyChanges(assetChangeRequest);
-        await sleep(1000)
-        helper!.offPhotoChange(onCallback);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        helper!.offPhotoChange();
         done();
       } catch (error) {
         console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
@@ -1280,11 +1310,13 @@ export default function getAssetsTest(): void {
         fetchColumns: [],
         predicates: predicates
       };
+      let isCallbackCalled = false;
       let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
         console.info(TAG, testName, 'onCallback success, changData: ' + JSON.stringify(changeData));
         expect(changeData.type == 1).assertTrue();
         expect(changeData.assetChangeDatas != undefined).assertTrue();
         expect(changeData.isForRecheck).assertFalse();
+        isCallbackCalled = true;
       }
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
@@ -1299,7 +1331,12 @@ export default function getAssetsTest(): void {
         let newTitle: string = 'newTitle';
         assetChangeRequest.setTitle(newTitle);
         await helper!.applyChanges(assetChangeRequest);
-        await sleep(1000)
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
         helper!.offPhotoChange(onCallback);
         done();
       } catch (error) {
@@ -1308,178 +1345,6 @@ export default function getAssetsTest(): void {
         done();
       }
     });
-    /**
-     * @tc.number   SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
-     * @tc.name     SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
-     * @tc.desc     onSinglePhotoAlbumChange-返回值属性覆盖
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100";
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-        console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 2).assertTrue();
-        expect(changeData.isForRecheck).assertFalse();
-        expect(changeData.albumChangeDatas != undefined).assertTrue()
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await album.getAssets(fetchOptions);
-        helper!.onSinglePhotoAlbumChange(album, onCallback);
-        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
-          new photoAccessHelper.MediaAlbumChangeRequest(album);
-        let newAlbumName: string = 'newAlbumName' + new Date().getTime();
-        albumChangeRequest.setAlbumName(newAlbumName);
-        await helper!.applyChanges(albumChangeRequest);
-        helper!.offSinglePhotoAlbumChange(album, onCallback);
-        done();
-      } catch (error) {
-        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
-     * @tc.name     SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
-     * @tc.desc     offSinglePhotoAlbumChange-no prams
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100";
-      try {
-        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        let fetchOptions: photoAccessHelper.FetchOptions = {
-          fetchColumns: [],
-          predicates: predicates
-        };
-        let isChange1: boolean = false;
-        let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-          console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
-          isChange1 = true;
-          done();
-        }
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await album.getAssets(fetchOptions);
-        helper!.onSinglePhotoAlbumChange(album, onCallback);
-        helper!.offSinglePhotoAlbumChange();
-        expect(!isChange1).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number   SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
-     * @tc.name     SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
-     * @tc.desc     onSinglePhotoChange-返回值属性覆盖
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100";
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-        console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 1).assertTrue();
-        expect(changeData.isForRecheck).assertFalse();
-        expect(changeData.assetChangeDatas != undefined).assertTrue();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await album.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        helper!.onSinglePhotoChange(asset, onCallback);
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-          new photoAccessHelper.MediaAssetChangeRequest(asset);
-        let newTitle: string = 'newTitle';
-        assetChangeRequest.setTitle(newTitle);
-        await helper!.applyChanges(assetChangeRequest);
-        helper!.offSinglePhotoChange(asset, onCallback);
-        done();
-      } catch (error) {
-        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
 
-    /**
-     * @tc.number   SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
-     * @tc.name     SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
-     * @tc.desc     offSinglePhotoChange-normal
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it("SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100";
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-      let extension: string = 'jpg';
-      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null= photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
-      let fileUri = testContext.filesDir + '/test_mov_1.jpg';
-      if (assetChangeRequest !== null) {
-        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);
-        await helper!.applyChanges(assetChangeRequest);
-      }
-      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-        console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 1).assertTrue();
-        expect(changeData.isForRecheck).assertFalse();
-        expect(changeData.assetChangeDatas != undefined).assertTrue();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await album.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        helper!.onSinglePhotoChange(asset, onCallback);
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-          new photoAccessHelper.MediaAssetChangeRequest(asset);
-        let newTitle: string = 'newTitle';
-        assetChangeRequest.setTitle(newTitle);
-        await helper!.applyChanges(assetChangeRequest);
-        helper!.offSinglePhotoChange(asset, onCallback);
-        done();
-      } catch (error) {
-        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
   })
 }

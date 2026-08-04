@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "../../../hypium";
+} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import relationalStore from '@ohos.data.relationalStore'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -52,7 +53,12 @@ export default function RdbPredicatesTest() {
   describe('RdbPredicatesTest', (): void => {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, "beforeAll start");
-      delegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      delegator.executeShellCommand(cmd)
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
       hilog.info(domain, tag, 'beforeAll end');

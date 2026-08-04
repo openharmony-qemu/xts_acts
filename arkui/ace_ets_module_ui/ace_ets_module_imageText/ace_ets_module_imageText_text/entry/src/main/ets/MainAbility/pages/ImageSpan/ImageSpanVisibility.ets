@@ -23,6 +23,7 @@ struct ImageSpanVisibility {
         // 隐藏不参与占位
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_None')
+          .key('ImageSpan_Visibility_None')
           .visibility(Visibility.None)
           .width('90%')
           .height('10%')
@@ -33,6 +34,7 @@ struct ImageSpanVisibility {
         // 隐藏参与占位
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_Hidden')
+          .key('ImageSpan_Visibility_Hidden')
           .visibility(Visibility.Hidden)
           .width('90%')
           .height('10%')
@@ -43,6 +45,7 @@ struct ImageSpanVisibility {
         // 正常显示，组件默认的显示模式
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_Visible')
+          .key('ImageSpan_Visibility_Visible')
           .visibility(Visibility.Visible)
           .width('90%')
           .height('10%')
@@ -53,6 +56,7 @@ struct ImageSpanVisibility {
         // 正常显示
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_default')
+          .key('ImageSpan_Visibility_default')
           .width('90%')
           .height('10%')
       }.borderWidth(1)
@@ -62,6 +66,7 @@ struct ImageSpanVisibility {
         // 正常显示
         ImageSpan($r('app.media.app_icon'))
           .id('ImageSpan_Visibility_undefined')
+          .key('ImageSpan_Visibility_undefined')
           .visibility(undefined)
           .width('90%')
           .height('10%')

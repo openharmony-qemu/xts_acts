@@ -17,6 +17,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import osAccountNdk from 'libosaccountndk.so'
 
 const OS_ACCOUNT_ERR_OK = 0;
+const MAX_FILE_NAME_LEN = 256;
+const DLP_SUFFIX_LEN = 4;
 
 export default function ActsDlpNDK20Test() {
   describe('ActsDlpNDK20Test', () => {
@@ -149,7 +151,7 @@ export default function ActsDlpNDK20Test() {
     /**
      * @tc.name   testOsGetOriginalFileName0100
      * @tc.number SUB_Security_DataSecurity_OsGetOriginalFileName_0100
-     * @tc.desc   test dlp_permission_api
+     * @tc.desc   test dlp_permission_api with fileName "test.txt"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -163,6 +165,70 @@ export default function ActsDlpNDK20Test() {
         done()
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0100 catch err: " + err);
+        expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        done()
+      }
+    })
+    /**
+     * @tc.name   testOsGetOriginalFileName0200
+     * @tc.number SUB_Security_DataSecurity_OsGetOriginalFileName_0200
+     * @tc.desc   test dlp_permission_api with fileName ".dlp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOsGetOriginalFileName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>testOsGetOriginalFileName0200 start====");
+        let result = osAccountNdk.OsGetOriginalFileName0200();
+        console.info("====>testOsGetOriginalFileName0200 result: " + result);
+        expect(result).assertEqual(19100001);
+        done()
+      } catch (err) {
+        console.error("====>testOsGetOriginalFileName0200 catch err: " + err);
+        expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        done()
+      }
+    })
+    /**
+     * @tc.name   testOsGetOriginalFileName0300
+     * @tc.number SUB_Security_DataSecurity_OsGetOriginalFileName_0300
+     * @tc.desc   test dlp_permission_api with fileName+.dlp length 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOsGetOriginalFileName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>testOsGetOriginalFileName0300 start====");
+        let result = osAccountNdk.OsGetOriginalFileName0300();
+        console.info("====>testOsGetOriginalFileName0300 result: " + result);
+        let expectedFileName = 'a'.repeat(MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN);
+        expect(result).assertEqual(expectedFileName);
+        done()
+      } catch (err) {
+        console.error("====>testOsGetOriginalFileName0300 catch err: " + err);
+        expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        done()
+      }
+    })
+    /**
+     * @tc.name   testOsGetOriginalFileName0400
+     * @tc.number SUB_Security_DataSecurity_OsGetOriginalFileName_0400
+     * @tc.desc   test dlp_permission_api with fileName+.dlp length 257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOsGetOriginalFileName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>testOsGetOriginalFileName0400 start====");
+        let result = osAccountNdk.OsGetOriginalFileName0400();
+        console.info("====>testOsGetOriginalFileName0400 result: " + result);
+        expect(result).assertEqual(19100001);
+        done()
+      } catch (err) {
+        console.error("====>testOsGetOriginalFileName0400 catch err: " + err);
         expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         done()
       }

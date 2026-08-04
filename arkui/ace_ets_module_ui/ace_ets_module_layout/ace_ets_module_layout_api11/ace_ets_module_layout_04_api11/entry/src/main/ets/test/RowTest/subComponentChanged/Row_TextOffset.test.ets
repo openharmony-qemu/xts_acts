@@ -69,8 +69,8 @@ export default function row_TextOffsetTest() {
       firstText = CommonFunc.getComponentRect('Row_TextOffset1');
       secondText = CommonFunc.getComponentRect('Row_TextOffset2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextOffset3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextOffset_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextOffset_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextOffset' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextOffset' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 

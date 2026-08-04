@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,9 +54,9 @@ export default class Utils {
     return false;
   }
 
-  static async startAbility(abilityName: string = 'TestFormAbility',
+  static startAbility(abilityName: string = 'TestFormAbility',
                       bundleName: string = 'com.example.helloworld',
-                      uri?: string): Promise<boolean> {
+                      uri?: string): boolean {
     let isSuccessStartAbility: boolean = false;
     try {
       abilityDelegator.startAbility({
@@ -68,7 +69,7 @@ export default class Utils {
         isSuccessStartAbility = true;
       });
       hilog.info(DOMAIN, TAG, 'msSleep 500 start');
-      await Utils.msSleep(500);
+      waitForCompletion(async ()=>{await Utils.msSleep(500);});
       hilog.info(DOMAIN, TAG, 'msSleep 500 end');
     } catch (error) {
       hilog.error(DOMAIN, TAG, `start ${abilityName}-uri:${uri} fail. message: ${error?.message}`);

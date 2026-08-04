@@ -89,13 +89,15 @@ export default function pictureFetchFrame() {
         width: 1920,
         height: 1440
       }
-      mImageGenerator.fetchFrameByTime(timeUs, options, param, async (error: BusinessError) => {
-        if (error) {
-          console.info(TAG + ' Failed to fetch FrameByTime, code: ' + error.code + ', msg: ' + error.message);
-          expect(error.code == 5400106).assertTrue();
+      try {
+        await mImageGenerator.fetchFrameByTime(timeUs, options, param);
+        console.info(TAG + ' fetch FrameByTime success');
+      } catch (error) {
+        if (error.code === 5400106) {
           isSupportedFetchFrameByTime = false;
         }
-      });
+        console.error(TAG + ' Failed to fetch FrameByTime, code: ' + error.code + ', msg: ' + error.message);
+      }
       await mImageGenerator.release();
     }
 

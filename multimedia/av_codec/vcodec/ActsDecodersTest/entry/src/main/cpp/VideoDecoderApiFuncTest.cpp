@@ -878,7 +878,7 @@ int VideoEncCapApi0022()
 int VideoDecCapApi0023()
 {
     uint32_t count = 0;
-    if (access("/system/lib64/media/", 0)) {
+    if (access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
         return 0;
     }
     OH_AVCapability **capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);

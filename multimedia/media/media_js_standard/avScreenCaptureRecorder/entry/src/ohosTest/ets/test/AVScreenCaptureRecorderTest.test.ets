@@ -75,6 +75,8 @@ export default function AVScreenCaptureRecorderTest() {
         mediaTestBase.SETONCALLBACK_EVENT,
         //setMicEnable
         mediaTestBase.SET_MIC_ENABLE_EVENT,
+        //setContentAutoRotation
+ 	      mediaTestBase.SET_CONTENT_AUTO_ROTATION,
         // start recorder
         mediaTestBase.STARTRECORDER_EVENT,
         // skip PrivacyMode
@@ -1277,6 +1279,20 @@ export default function AVScreenCaptureRecorderTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100', Level.LEVEL0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100 start')
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
+        console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
+        expect(isSupportH265).not().assertEqual(0);
+        done();
+        return;
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100 start')
       let mySteps = new Array(
         // create
         mediaTestBase.CREATE_EVENT,
@@ -1432,6 +1448,130 @@ export default function AVScreenCaptureRecorderTest() {
       await mediaTestBase.releaseAVScreenCaptureRecorder(done);
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0700 end')
       done();
-    })        
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0100
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0100', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      await captureRecorder!.setContentAutoRotation(false).then(() => {
+        console.info('avScreenCaptureRecorder setContentAutoRotation success');
+      }).catch((err: BusinessError) => {
+        console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+        expect().assertFail();
+      });
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0100 end');
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0200
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0200
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0200', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0200 start');
+      await mediaTestBase.createAVScreenCaptureRecorder(done);
+      await mediaTestBase.initAVScreenCaptureRecorder(done);
+      await mediaTestBase.startAVScreenCaptureRecorder(done);
+      await mediaTestBase.avScreenCaptureRecorder!.setContentAutoRotation(true).then(() => {
+        console.info('avScreenCaptureRecorder setContentAutoRotation success');
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+
+      await mediaTestBase.stopAVScreenCaptureRecorder(done);
+      await mediaTestBase.releaseAVScreenCaptureRecorder(done);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0200 end');
+      done();
+    })
+
+        /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setContentAutoRotation(null).then(() => {
+        console.info('avScreenCaptureRecorder setContentAutoRotation success');
+        }).catch((err: BusinessError) => {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300 end');
+      done();
+    })
+
+        /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setContentAutoRotation(undefined).then(() => {
+        console.info('avScreenCaptureRecorder setContentAutoRotation success');
+        }).catch((err: BusinessError) => {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400 end');
+      done();
+    })
   })
 }

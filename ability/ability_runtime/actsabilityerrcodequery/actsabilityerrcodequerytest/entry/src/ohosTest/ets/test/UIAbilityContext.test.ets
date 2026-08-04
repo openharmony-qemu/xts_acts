@@ -48,10 +48,10 @@ function generateLargeString(length: number): string {
   return result;
 }
 let TestAbilityContext:common.UIAbilityContext;
-let mpEnable="";
+let mpEnable='';
 let timeout = 3000;
 let monitor: AbilityDelegatorRegistry.AbilityMonitor = {
-  abilityName: "TestAbility",
+  abilityName: 'TestAbility',
   onAbilityCreate: onAbilityCreateCallback
 };
 function onAbilityCreateCallback(data: UIAbility) {
@@ -63,7 +63,7 @@ export default function UIAbilityContext() {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
-      TestAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      TestAbilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable', 'false');
       } catch(err) {
@@ -81,7 +81,12 @@ export default function UIAbilityContext() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
+      let cmd = 'aa start -b com.acts.moveabilitytobgtest -a TestAbility';
+      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       abilityDelegator.waitAbilityMonitor(monitor, timeout, (error: BusinessError, data: UIAbility) => {
         if (error && error.code !== 0) {
           console.info(`waitAbilityMonitor fail, error: ${JSON.stringify(error)}`);
@@ -109,8 +114,8 @@ export default function UIAbilityContext() {
         startupManager.run(undefined).then(() => {
           console.log('StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("StartupTest promise catch error, startParams = "
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('StartupTest promise catch error, startParams = '
             + JSON.stringify(startParams));
         })
       } catch (error) {
@@ -136,7 +141,7 @@ export default function UIAbilityContext() {
         startupManager.run(null).then(() => {
           console.log('StartupTest startupManager run then with null');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
         })
       } catch (error) {
         let errMsg = JSON.stringify(error);
@@ -161,7 +166,7 @@ export default function UIAbilityContext() {
         startupManager.run([]).then(() => {
           console.log('StartupTest startupManager run then with empty array');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
         })
       } catch (error) {
         let errMsg = JSON.stringify(error);
@@ -219,7 +224,7 @@ export default function UIAbilityContext() {
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0300', Level.LEVEL0, async (done: Function) => {
       try {
-        const data = startupManager.getStartupTaskResult("")
+        const data = startupManager.getStartupTaskResult('')
       } catch (error) {
         console.log(`Error occurred while getStartupTaskResult:  ${JSON.stringify(error.code)}`);
         expect(error.code).assertEqual(401);
@@ -277,7 +282,7 @@ export default function UIAbilityContext() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0300', Level.LEVEL0,
       async (done: Function) => {
         try {
-          const data = startupManager.isStartupTaskInitialized("")
+          const data = startupManager.isStartupTaskInitialized('')
         } catch (error) {
           console.log(`Error occurred while isStartupTaskInitialized:  ${JSON.stringify(error.code)}`);
           expect(error.code).assertEqual(401);
@@ -334,7 +339,7 @@ export default function UIAbilityContext() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0300', Level.LEVEL0,
       async (done: Function) => {
         try {
-          const data = startupManager.removeStartupTaskResult("")
+          const data = startupManager.removeStartupTaskResult('')
         } catch (error) {
           console.log(`Error occurred while removeStartupTaskResult:  ${JSON.stringify(error.code)}`);
           expect(error.code).assertEqual(401);
@@ -492,15 +497,15 @@ export default function UIAbilityContext() {
         } else {
           try {
             let info: string =
-              systemParameterEnhance.getSync("persist.sys.abilityms.start_options_with_process_option");
-            console.log("getSync" + JSON.stringify(info));
-            if(info == "true")
+              systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option');
+            console.log('getSync' + JSON.stringify(info));
+            if(info == 'true')
             {
               expect(err.code).assertEqual(16000067);
               done();
             }
           } catch (e) {
-            console.log("getSync unexpected error: " + e);
+            console.log('getSync unexpected error: ' + e);
           }
         }
       });
@@ -542,15 +547,15 @@ export default function UIAbilityContext() {
         } else {
           try {
             let info: string =
-              systemParameterEnhance.getSync("persist.sys.abilityms.start_options_with_process_option");
-            console.log("getSync" + JSON.stringify(info));
-            if (info == "true")
+              systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option');
+            console.log('getSync' + JSON.stringify(info));
+            if (info == 'true')
             {
               expect(err.code).assertEqual(16000067);
               done();
             }
           } catch (e) {
-            console.log("getSync unexpected error: " + e);
+            console.log('getSync unexpected error: ' + e);
           }
         }
       });
@@ -592,15 +597,15 @@ export default function UIAbilityContext() {
         } else {
           try {
             let info: string =
-              systemParameterEnhance.getSync("persist.sys.abilityms.start_options_with_process_option");
-            console.log("getSync" + JSON.stringify(info));
-            if(info == "true")
+              systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option');
+            console.log('getSync' + JSON.stringify(info));
+            if(info == 'true')
             {
               expect(err.code).assertEqual(16000067);
               done();
             }
           } catch (e) {
-            console.log("getSync unexpected error: " + e);
+            console.log('getSync unexpected error: ' + e);
           }
         }
       });
@@ -642,15 +647,15 @@ export default function UIAbilityContext() {
         } else {
           try {
             let info: string =
-              systemParameterEnhance.getSync("persist.sys.abilityms.start_options_with_process_option");
-            console.log("getSync" + JSON.stringify(info));
-            if(info == "true")
+              systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option');
+            console.log('getSync' + JSON.stringify(info));
+            if(info == 'true')
             {
               expect(err.code).assertEqual(16000067);
               done();
             }
           } catch (e) {
-            console.log("getSync unexpected error: " + e);
+            console.log('getSync unexpected error: ' + e);
           }
         }
       });
@@ -800,8 +805,8 @@ export default function UIAbilityContext() {
         await TestAbilityContext.moveAbilityToBackground().then(() => {
           console.log('0100 StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("0100 StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("0100 StartupTest promise catch error, startParams = "
+          console.info('0100 StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('0100 StartupTest promise catch error, startParams = '
           );
         })
         await sleep(2000);
@@ -841,8 +846,8 @@ export default function UIAbilityContext() {
         await TestAbilityContext.moveAbilityToBackground().then(() => {
           console.log('StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("StartupTest promise catch error, startParams = "
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('StartupTest promise catch error, startParams = '
           );
         })
         await sleep(2000);
@@ -885,8 +890,8 @@ export default function UIAbilityContext() {
         await TestAbilityContext.moveAbilityToBackground().then(() => {
           console.log('StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("StartupTest promise catch error, startParams = "
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('StartupTest promise catch error, startParams = '
           );
         })
         await sleep(2000);
@@ -930,8 +935,8 @@ export default function UIAbilityContext() {
         await TestAbilityContext.moveAbilityToBackground().then(() => {
           console.log('StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("StartupTest promise catch error, startParams = "
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('StartupTest promise catch error, startParams = '
           );
         })
         await sleep(2000);
@@ -979,8 +984,8 @@ export default function UIAbilityContext() {
         await TestAbilityContext.moveAbilityToBackground().then(() => {
           console.log('StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("StartupTest promise catch error, startParams = "
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('StartupTest promise catch error, startParams = '
           );
         })
         await sleep(2000);
@@ -1023,8 +1028,8 @@ export default function UIAbilityContext() {
         await TestAbilityContext.moveAbilityToBackground().then(() => {
           console.log('StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("StartupTest promise catch error, startParams = "
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('StartupTest promise catch error, startParams = '
           );
         })
         await sleep(2000);
@@ -1067,8 +1072,8 @@ export default function UIAbilityContext() {
         await TestAbilityContext.moveAbilityToBackground().then(() => {
           console.log('StartupTest startupManager run then, startParams = ');
         }).catch((error: BusinessError) => {
-          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
-          console.info("StartupTest promise catch error, startParams = "
+          console.info('StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('StartupTest promise catch error, startParams = '
           );
         })
         await sleep(2000);
@@ -1350,5 +1355,121 @@ export default function UIAbilityContext() {
          done();
        }
      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0300
+     * @tc.desc   The onBackground callback is called in the background   Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0300', Level.LEVEL0, async (done: Function) => {
+      let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0100`;
+      if (mpEnable === 'true') {
+        await TestAbilityContext.moveAbilityToBackground().then(() => {
+          console.log('0100 StartupTest startupManager run then, startParams = ');
+        }).catch((error: BusinessError) => {
+          console.info('0100 StartupTest promise catch error, error = ' + JSON.stringify(error));
+          console.info('0100 StartupTest promise catch error, startParams = '
+          );
+        })
+        await sleep(2000);
+        await globalThis.context.openAtomicService('12314564456')
+        .then(() => {
+          console.info('openAtomicService succeed');
+          expect().assertFail();
+        })
+        .catch((err: BusinessError) => {
+          console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(16000053);
+        });
+        done();
+      }else if(mpEnable === 'false') {
+        console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
+        done();
+      }else{
+        console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100
+     * @tc.desc   The onBackground callback is called in the background   Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100', Level.LEVEL0, async (done: Function) => {
+      let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100`;
+      if (mpEnable === 'true') {
+        await TestAbilityContext.moveAbilityToBackground().then(() => {
+          console.log('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100, startParams = ');
+        }).catch((error: BusinessError) => {
+          console.info('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100, error = ' + JSON.stringify(error));
+          console.info('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100, startParams = '
+          );
+        })
+        await sleep(2000);
+        try{
+          abilityDelegator.getCurrentTopAbility()
+          .then(() => {
+            console.info('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100 succeed');
+          })
+          .catch((err: BusinessError) => {
+            console.error(`SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100 failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000100);
+            done();
+          });
+        }catch{
+          console.error(`SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0100 catch`);
+          expect().assertFail();
+          done();
+        }
+      }else if(mpEnable === 'false') {
+        console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
+        done();
+      }else{
+        console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200
+     * @tc.desc   The onBackground callback is called in the background   Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200', Level.LEVEL0, async (done: Function) => {
+      let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200`;
+      if (mpEnable === 'true') {
+        await TestAbilityContext.moveAbilityToBackground().then(() => {
+          console.log('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200 then, startParams = ');
+        }).catch((error: BusinessError) => {
+          console.info('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200, error = ' + JSON.stringify(error));
+          console.info('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200, startParams = ');
+        })
+        await sleep(2000);
+        abilityDelegator.getCurrentTopAbility((err, data) => {
+          console.info('SUB_Ability_AbilityRuntime_ErrorCode_getCurrentTopAbility_0200, getCurrentTopAbility = ' + err?.code);
+          expect(err.code).assertEqual(16000100);
+          done();
+        });
+      }else if(mpEnable === 'false') {
+        console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
+        done();
+      }else{
+        console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
+        expect().assertFail();
+        done();
+      }
+    })
    })
 }

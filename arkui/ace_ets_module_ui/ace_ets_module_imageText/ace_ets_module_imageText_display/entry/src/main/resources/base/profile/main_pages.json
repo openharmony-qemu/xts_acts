@@ -5,6 +5,7 @@
 
         "MainAbility/pages/Hyperlink/PreventDefault",
         "MainAbility/pages/Hyperlink/HyperlinkPropertiesNullUndefinedTest",
+        "MainAbility/pages/Hyperlink/HyperlinkModifier",
 
         "MainAbility/pages/Marquee/MarqueeApi",
         "MainAbility/pages/Marquee/MarqueeDynamicSyncSceneType",

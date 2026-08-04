@@ -92,7 +92,7 @@ it('systemRouterTest002_static', Level.LEVEL2, async (done: () => void): Promise
         console.info("[systemRouterTest002_static] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[systemRouterTest002_static] click push button result is: "
-        + JSON.stringify(inspector.sendEventByKey('pushButtonA', 10, "")));
+        + JSON.stringify(inspector.sendEventByKey('systemRouterA_pushButtonA', 10, "")));
       await Utils.sleep(1000);
       routerInstance.back();
       await Utils.sleep(1000);

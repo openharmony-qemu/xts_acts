@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +31,7 @@ import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
 
-export default function textBlob2Test() {
+export default function textBlob2Test(): void {
   describe('DrawingTsTextBlob2Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -66,6 +67,7 @@ export default function textBlob2Test() {
         let points: common2D.Point[] = [];
         drawing.TextBlob.makeFromPosText("drawing", points.length, points, font);
         console.info(msg + ' 1 makeFromString succeeded for empty string');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +
@@ -119,6 +121,7 @@ export default function textBlob2Test() {
         }];
         drawing.TextBlob.makeFromPosText("", points.length, points, font);
         console.info(msg + '4  makeFromString succeeded for empty string');
+        expect().assertFail();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +

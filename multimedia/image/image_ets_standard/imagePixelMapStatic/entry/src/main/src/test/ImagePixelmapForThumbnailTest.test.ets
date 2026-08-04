@@ -1,0 +1,1609 @@
+'use static';
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import hilog from '@ohos.hilog';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAULT, Hypium, Level } from '../../../hypium/index';
+import image from '@ohos.multimedia.image';
+import common from '@ohos.app.ability.common';
+import { initialize } from './AbilityContextHelper.test';
+
+const ERR_NOT_CARRY_THUMBNAIL = 7700303;
+const ERR_GENERATE_THUMBNAIL = 7700305;
+
+class Logger {
+  testNum: string;
+
+  constructor(testNum: string) {
+    this.testNum = testNum;
+  }
+
+  log(msg: string) {
+    hilog.info(0x0000, "imagePixelmap", 'case: %{public}s msg:%{public}s', this.testNum, msg);
+  }
+}
+
+async function getPixelMapForThumbnailTestPool(
+  filePath: string,
+  type: string,
+  decodingOptions: image.DecodingOptionsForThumbnail,
+  exceptWidth: int = 0,
+  exceptHeight: int = 0
+): Promise<boolean> {
+  let pixelMap: image.PixelMap | undefined = undefined;
+  let imageSource = await image!.createImageSource(filePath);
+  try {
+    if (type == "sync") {
+      if (decodingOptions && Object.keys(decodingOptions).length > 0) {
+        pixelMap = imageSource!.createThumbnailSync(decodingOptions);
+      } else {
+        pixelMap = imageSource!.createThumbnailSync();
+      }
+    } else {
+      if (decodingOptions && Object.keys(decodingOptions).length > 0) {
+        pixelMap = await imageSource!.createThumbnail(decodingOptions);
+      } else {
+        pixelMap = await imageSource!.createThumbnail();
+      }
+    }
+
+    if (pixelMap != undefined) {
+      let dstImageInfo = await pixelMap!.getImageInfo();
+      console.log("dstImageInfo is:" + JSON.stringify(dstImageInfo));
+      let ret = (dstImageInfo!.size.width == exceptWidth) &&
+        (dstImageInfo!.size.height == exceptHeight) &&
+        (dstImageInfo!.pixelFormat == image!.PixelMapFormat.RGBA_8888);
+      return ret;
+    } else {
+      console.log("pixelmap is undefined");
+      return false;
+    }
+  } catch (error) {
+    console.log("getPixelMapForThumbnail: create Thumbnail failed, error is: " + JSON.stringify(error));
+    return false
+  }
+}
+
+async function testThumbnailPixelMap(
+  filePath: string,
+  type: string,
+  decodingOptions: image.DecodingOptionsForThumbnail,
+  exceptWidth: int = 0,
+  exceptHeight: int = 0
+): Promise<boolean> {
+  console.info("testThumbnailPixelMap start");
+  let task = new taskpool.Task(getPixelMapForThumbnailTestPool, filePath, type, decodingOptions, exceptWidth, exceptHeight);
+  console.info('taskPool execute task');
+  try {
+    let ret = (await taskpool.execute(task)) as boolean;
+    console.info('taskPool execute ret is ' + ret);
+    return ret;
+  } catch (e) {
+    console.info('taskPool execute error: code: ' + e.code + " message: " + e.message);
+    return false;
+  }
+}
+
+async function getPixelMapForThumbnail(
+
+  filePath: string,
+  type: string,
+  decodingOptions?: image.DecodingOptionsForThumbnail
+): Promise<image.PixelMap | undefined> {
+  let pixelMap: image.PixelMap | undefined = undefined;
+  let imageSource = await image!.createImageSource(filePath);
+  try {
+    if (type == "sync") {
+      if (decodingOptions != undefined) {
+        pixelMap = imageSource!.createThumbnailSync(decodingOptions);
+      } else {
+        pixelMap = imageSource!.createThumbnailSync();
+      }
+    } else {
+      if (decodingOptions != undefined) {
+        pixelMap = await imageSource!.createThumbnail(decodingOptions);
+      } else {
+        pixelMap = await imageSource!.createThumbnail();
+      }
+    }
+  } catch (error) {
+    console.info("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
+    expect().assertFalse();
+  }
+  return pixelMap;
+}
+
+async function testCreateThumbnailErrorCode(
+  type: string,
+  filePath: string,
+  decodingOptions: image.DecodingOptionsForThumbnail,
+  errorCode: int
+) {
+  let imageSource = image!.createImageSource(filePath);
+  try {
+    let pixelMap: image.PixelMap | undefined;
+    if (type == "noSync") {
+      pixelMap = await imageSource!.createThumbnail(decodingOptions);
+    } else {
+      pixelMap = imageSource!.createThumbnailSync(decodingOptions);
+    }
+  } catch (error) {
+    console.info("createThumbnail failed, error code is: " + error.code + " error message is: " + error.message);
+    expect(error.code == errorCode).assertTrue();
+  }
+  await imageSource!.release();
+}
+
+export default function imagePixelMapForThumbnail() {
+  let filesDir: string | undefined | null;
+  let cacheDir: string | undefined | null;
+  let testContext: common.UIAbilityContext;
+  let isSupportHEIFDecode: boolean;
+
+  const JPEG_EXIF_THUMBNAIL = "jpeg_exif_thumbnail.jpg";
+  const JPEG_NO_THUMBNAIL = "jpeg_no_thumbnail.jpg";
+  const HEIF_EXIF_THUMBNAIL = "heif_exif_thumbnail.heic";
+  const HEIF_BOX_THUMBNAIL = "heif_box_thumbnail.heic";
+  const HEIF_NO_THUMBNAIL = "heif_no_thumbnail.heic";
+  const UNSUPPORTED_MIMETYPE = 7700102;
+  const INVALID_PARAMETER = 7700204;
+  const DECODE_FAILED = 7700301;
+  const IMAGE_TO_LARGE = 7700103;
+
+  describe('imagePixelMapForThumbnailStatic', () => {
+    beforeAll(async () => {
+      await initialize();
+      filesDir = Hypium.get('filesDir') as string | undefined | null;
+      cacheDir = Hypium.get('cacheDir') as string | undefined | null;
+      testContext = Hypium.get('context') as common.UIAbilityContext;
+      isSupportHEIFDecode =
+        image!.createImageSource(filesDir + '/' + "test.jpg")!.supportedFormats!.includes("image/heic");
+    })
+
+    afterEach(async () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
+    });
+
+    const getFilePath = (fileName: string) => {
+      const filePath = filesDir + '/' + fileName;
+      return filePath;
+    }
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0100
+     * @tc.desc     1. Call the interface with generateThumbnailIfAbsent = false, maxGeneratedPixelDimension = 1024
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0100");
+      const filePath = getFilePath(JPEG_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: false,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 320, 240);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0200
+     * @tc.desc     1. Call the interface without parameters, generateThumbnailIfAbsent defaults to true, maxGeneratedPixelDimension defaults to 512
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_EXIF_STATIC_0200");
+      const filePath = getFilePath(JPEG_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 320, 240);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0100
+     * @tc.desc     1. Call the interface with generateThumbnailIfAbsent = false, maxGeneratedPixelDimension = 1024
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: false,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 256, 192);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0200
+     * @tc.desc     1. Call the interface without parameters, generateThumbnailIfAbsent defaults to true, maxGeneratedPixelDimension defaults to 512
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_EXIF_STATIC_0200");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 256, 192);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0100
+     * @tc.desc     1. Call the interface with generateThumbnailIfAbsent = false, maxGeneratedPixelDimension = 1024
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_BOX_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: false,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 512, 384);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0200
+     * @tc.desc     1. Call the interface without parameters, generateThumbnailIfAbsent defaults to true, maxGeneratedPixelDimension defaults to 512
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_BOX_STATIC_0200");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_BOX_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 512, 384);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_0100
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0100");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 30
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 23, 30);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 500 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 500
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 375, 500);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 512 (default)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 512
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 384, 512);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 1024 (>512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 768, 1024);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30000 (> original image size)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 30000
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 3072, 4096);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600
+     * @tc.desc     1. Call the interface without maxGeneratedPixelDimension (default 512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 384, 512);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 30
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 30, 17);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 500 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 500
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 500, 282);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 512 (default)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 512
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 512, 288);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 1024 (>512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 664, 374);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30000 (> original image size)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 30000
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 664, 374);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600
+     * @tc.desc     1. Call the interface without maxGeneratedPixelDimension (default 512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 512, 288);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 320, generateThumbnailIfAbsent = false
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320,
+        generateThumbnailIfAbsent: false
+      };
+      let pixelMap: image.PixelMap | undefined = undefined;
+      let imageSource = await image!.createImageSource(filePath);
+      try {
+        pixelMap = imageSource!.createThumbnailSync(decodingOptions);
+      } catch (error) {
+        console.info("create Thumbnail failed, errorcode: " + error.code + " message is: " + error.message);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 320 (generateThumbnailIfAbsent defaults to true)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320
+      };
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 240, 320);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900
+     * @tc.desc     1. Call the interface without parameters (generateThumbnailIfAbsent defaults to true)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "noSync", decodingOptions, 384, 512);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0100
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 0 (invalid value)
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700204 (Invalid parameter)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0100");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 0
+      };
+      let imageSource = image!.createImageSource(filePath);
+      try {
+        await imageSource!.createThumbnail(decodingOptions);
+        done;
+      } catch (error) {
+        console.info("createThumbnail failed, error code is: " + error.code + " error message is: " + error.message);
+        expect(error.code == INVALID_PARAMETER).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0200
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 1 (invalid value)
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700204 (Invalid parameter)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0200");
+      const filePath = getFilePath("300_100.jpg");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 1
+      };
+      await testCreateThumbnailErrorCode("noSync", filePath, decodingOptions, INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0300
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0300
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = -1 (invalid value), generateThumbnailIfAbsent = true
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700204 (Invalid parameter)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0300");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: -1
+      };
+      await testCreateThumbnailErrorCode("noSync", filePath, decodingOptions, INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0400
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0400
+     * @tc.desc     1. Call the interface with unsupported image format (e.g. .ico file)
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700400 (Unsupported image format)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0400");
+      const filePath = getFilePath("test.ico");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 300
+      };
+      await testCreateThumbnailErrorCode("noSync", filePath, decodingOptions, UNSUPPORTED_MIMETYPE);
+      done();
+    })
+
+    /**
+      * @tc.int     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0500
+      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0500
+      * @tc.desc    1. Use an image without thumbnail to Synchronously decode thumbnail 
+      *             2. Set generateThumbnailIfAbsent = true
+      *             3. Return error code:7700305 (ERR_GENERATE_THUMBNAIL)
+      * @tc.size    MediumTest
+      * @tc.type    Functional
+      * @tc.level   Level 1
+      */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_ERROR_STATIC_0500");
+      try {
+        const filePath = getFilePath("generateThumbnailFailed.jpg");
+        let imageSource = image!.createImageSource(filePath);
+        console.info("ImageSource created, file: generateThumbnailFailed.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: true
+        };
+        console.info("Creating thumbnail from imageSource");
+        imageSource!.createThumbnailSync(decodingOptions);
+        console.info("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        console.info(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code == ERR_GENERATE_THUMBNAIL).assertTrue();
+      }
+      console.info("Test finished successfully");
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0100
+     * @tc.desc     1. Call the interface with generateThumbnailIfAbsent = false, maxGeneratedPixelDimension = 1024
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0100");
+      const filePath = getFilePath(JPEG_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: false,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 320, 240);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0200
+     * @tc.desc     1. Call the interface without parameters, generateThumbnailIfAbsent defaults to true, maxGeneratedPixelDimension defaults to 512
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_EXIF_STATIC_0200");
+      const filePath = getFilePath(JPEG_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 320, 240);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0100
+     * @tc.desc     1. Call the interface with generateThumbnailIfAbsent = false, maxGeneratedPixelDimension = 1024
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: false,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 256, 192);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0200
+     * @tc.desc     1. Call the interface without parameters, generateThumbnailIfAbsent defaults to true, maxGeneratedPixelDimension defaults to 512
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_EXIF_STATIC_0200");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 256, 192);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0100
+     * @tc.desc     1. Call the interface with generateThumbnailIfAbsent = false, maxGeneratedPixelDimension = 1024
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_BOX_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: false,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 512, 384);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0200
+     * @tc.desc     1. Call the interface without parameters, generateThumbnailIfAbsent defaults to true, maxGeneratedPixelDimension defaults to 512
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are same as original thumbnail
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_BOX_STATIC_0200");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_BOX_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 512, 384);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0100
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0100");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 30
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 23, 30);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 500 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0200");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 500
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 375, 500);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 512 (default)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0300");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 512
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 384, 512);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 1024 (>512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0400");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 768, 1024);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30000 (> original image size)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0500");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 30000
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 3072, 4096);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600
+     * @tc.desc     1. Call the interface without maxGeneratedPixelDimension (default 512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0600");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 384, 512);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 30
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 30, 17);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 500 (<512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0200");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 500
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 500, 282);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 512 (default)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0300");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 512
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 512, 288);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 1024 (>512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0400");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 1024
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 664, 374);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 30000 (> original image size)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0500");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 30000
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 664, 374);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600
+     * @tc.desc     1. Call the interface without maxGeneratedPixelDimension (default 512)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_HEIF_NO_THUMBNAIL_STATIC_0600");
+      if (!isSupportHEIFDecode) {
+        console.info("device does not support HEIF decode!");
+        done();
+        return;
+      }
+      const filePath = getFilePath(HEIF_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 512, 288);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 320, generateThumbnailIfAbsent = false
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0700");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320,
+        generateThumbnailIfAbsent: false
+      };
+      let pixelMap: image.PixelMap | undefined = undefined;
+      let imageSource = await image!.createImageSource(filePath);
+      try {
+        pixelMap = await imageSource!.createThumbnail(decodingOptions);
+      } catch (error) {
+        console.info("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
+        expect(error.code == ERR_NOT_CARRY_THUMBNAIL).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 320 (generateThumbnailIfAbsent defaults to true)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0800");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320
+      };
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 240, 320);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900
+     * @tc.desc     1. Call the interface without parameters (generateThumbnailIfAbsent defaults to true)
+     *              2. Successfully decode thumbnail, PixelMap object is not null
+     *              3. Call getImageInfo, verify height, width, pixelFormat are as expected
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_JPEG_NO_THUMBNAIL_STATIC_0900");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {};
+      let ret = await testThumbnailPixelMap(filePath, "sync", decodingOptions, 384, 512);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0100
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 0 (invalid value)
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700204 (Invalid parameter)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0100");
+      const filePath = getFilePath(JPEG_EXIF_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 0
+      };
+      await testCreateThumbnailErrorCode("sync", filePath, decodingOptions, INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0200
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 1 (invalid value)
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700204 (Invalid parameter)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0200");
+      const filePath = getFilePath("300_100.jpg");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 1
+      };
+      testCreateThumbnailErrorCode("sync", filePath, decodingOptions, INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0300
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0300
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = -1 (invalid value), generateThumbnailIfAbsent = true
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700204 (Invalid parameter)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0300");
+      const filePath = getFilePath(JPEG_NO_THUMBNAIL);
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: -1
+      };
+      testCreateThumbnailErrorCode("sync", filePath, decodingOptions, INVALID_PARAMETER);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0400
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0400
+     * @tc.desc     1. Call the interface with unsupported image format (e.g. .ico file)
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     *              3. Return error code:7700400 (Unsupported image format)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0400");
+      const filePath = getFilePath("test.ico");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        generateThumbnailIfAbsent: true,
+        maxGeneratedPixelDimension: 300
+      };
+      await testCreateThumbnailErrorCode("sync", filePath, decodingOptions, UNSUPPORTED_MIMETYPE);
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0500
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0500
+     * @tc.desc     1. Use an image without thumbnail to decode thumbnail
+     *              2. Set generateThumbnailIfAbsent = true
+     *              3. Return error code:7700305 (ERR_GENERATE_THUMBNAIL)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0500");
+      try {
+        const filePath = getFilePath("generateThumbnailFailed.jpg");
+        let imageSource = image!.createImageSource(filePath);
+        console.info("ImageSource created, file: generateThumbnailFailed.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: true
+        };
+        console.info("Creating thumbnail from imageSource");
+        await imageSource!.createThumbnail(decodingOptions);
+        console.info("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        console.info(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code == ERR_GENERATE_THUMBNAIL).assertTrue();
+      }
+      console.info("Test finished successfully");
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0600
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0600
+     * @tc.desc     1. Use an image without thumbnail to decode thumbnail
+     *              2. Set generateThumbnailIfAbsent = true
+     *              3. Return error code:7700301 (DECODE_FAILED)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0600");
+      try {
+        const filePath = getFilePath("empty_image.jpg");
+        let imageSource = image!.createImageSource(filePath);
+        console.info("ImageSource created, file: empty_image.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: true
+        };
+        console.info("Creating thumbnail from imageSource");
+        await imageSource!.createThumbnail(decodingOptions);
+        console.info("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        console.info(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code == DECODE_FAILED).assertTrue();
+      }
+      console.info("Test finished successfully");
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0700
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0700
+     * @tc.desc     1. Use an image without thumbnail to decode thumbnail
+     *              2. Set generateThumbnailIfAbsent = true
+     *              3. Return error code:7700301 (DECODE_FAILED)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0700");
+      try {
+        const filePath = getFilePath("empty_image.jpg");
+        let imageSource = image!.createImageSource(filePath);
+        console.info("ImageSource created, file: empty_image.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: true
+        };
+        console.info("Creating thumbnail from imageSource");
+        await imageSource!.createThumbnailSync(decodingOptions);
+        console.info("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        console.info(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code == DECODE_FAILED).assertTrue();
+      }
+      console.info("Test finished successfully");
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0800
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0800
+     * @tc.desc     1. Use an image without thumbnail to decode thumbnail
+     *              2. Set generateThumbnailIfAbsent = true
+     *              3. Return error code:7700103 (IMAGE_TO_LARGE)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_STATIC_0800");
+      try {
+        const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+        let imageSource = image!.createImageSource(filePath);
+        console.info("ImageSource created, file: jpeg_exif_thumbnail_too_large.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: false
+        };
+        console.info("Creating thumbnail from imageSource");
+        await imageSource!.createThumbnail(decodingOptions);
+        console.info("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        console.info(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code == IMAGE_TO_LARGE).assertTrue();
+      }
+      console.info("Test finished successfully");
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0900
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0900
+     * @tc.desc     1. Use an image without thumbnail to decode thumbnail
+     *              2. Set generateThumbnailIfAbsent = true
+     *              3. Return error code:7700103 (IMAGE_TO_LARGE)
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0900");
+      try {
+        console.info("Start test: SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_STATIC_0900");
+        const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+        let imageSource = image!.createImageSource(filePath);
+        console.info("ImageSource created, file: jpeg_exif_thumbnail_too_large.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: false
+        };
+        console.info("Creating thumbnail from imageSource");
+        await imageSource!.createThumbnailSync(decodingOptions);
+        console.info("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        console.info(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code == IMAGE_TO_LARGE).assertTrue();
+      }
+      console.info("Test finished successfully");
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0100
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0100
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 320, generateThumbnailIfAbsent = false
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0100");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320,
+        generateThumbnailIfAbsent: false
+      };
+      const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+      let imageSource = image!.createImageSource(filePath);
+      let pixelMap: image.PixelMap | undefined = undefined;
+      await imageSource!.release();
+      try {
+        pixelMap = await imageSource!.createThumbnail(decodingOptions);
+        expect(pixelMap == undefined).assertTrue();
+      } catch (error) {
+        console.info("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.int      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0200
+     * @tc.name     SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0200
+     * @tc.desc     1. Call the interface with maxGeneratedPixelDimension = 320, generateThumbnailIfAbsent = false
+     *              2. Decode thumbnail failed, PixelMap object is undefined
+     * @tc.size     MediumTest
+     * @tc.type     Functional
+     * @tc.level    Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PROMISE_PIXELMAP_IS_UNDEFINED_STATIC_0200");
+      let decodingOptions: image.DecodingOptionsForThumbnail = {
+        maxGeneratedPixelDimension: 320,
+        generateThumbnailIfAbsent: false
+      };
+      const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+      let imageSource = image!.createImageSource(filePath);
+      let pixelMap: image.PixelMap | undefined = undefined;
+      await imageSource!.release();
+      try {
+        pixelMap = await imageSource!.createThumbnailSync(decodingOptions);
+        expect(pixelMap == undefined).assertTrue();
+      } catch (error) {
+        console.info("create Thumbnail failed, error: code: " + error.code + " message is: " + error.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+  })
+}

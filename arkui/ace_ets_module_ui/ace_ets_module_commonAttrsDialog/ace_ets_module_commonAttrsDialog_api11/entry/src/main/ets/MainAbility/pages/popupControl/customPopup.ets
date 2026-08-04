@@ -29,7 +29,7 @@ struct customPopupExample12 {
   @Builder
   popupBuilder() {
     Row({ space: 2 }) {
-      Text('Custom Popup').fontSize(12).key('Custom_popup')
+      Text('Custom Popup').fontSize(12).key('customPopup_Custom_popup')
     }.width(100).height(50).backgroundColor(Color.White)
   }
 

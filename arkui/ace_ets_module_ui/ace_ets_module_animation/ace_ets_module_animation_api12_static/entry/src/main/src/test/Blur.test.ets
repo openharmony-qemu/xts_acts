@@ -15,7 +15,7 @@
  */
 
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,

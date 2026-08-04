@@ -21,6 +21,7 @@ group("data") {
     "cellular_data_abnormal_nop:ActsCellularDataAbnormalNopTest",
     "datatest:ActsDataHasCardNoNetTest",
     "dataHasDoubleCard:ActsNetworkMgrDataHasDoubleCardTest",
+    "dataNoCard:ActsDataNoCardTest",
 "ActsCellularDataAbnormalNopTestStatic:ActsCellularDataAbnormalNopStaticTest",
 "ActsTelephonyDataHasCardTestStatic:ActsTelephonyDataHasCardStaticTest",
 "ActsTelephonyDataNoCardTestStatic:ActsTelephonyDataNoCardStaticTest",

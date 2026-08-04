@@ -71,6 +71,9 @@ void Localtime0100(void)
  */
 void Localtime640100(void)
 {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
+        return;
+    }
     Localtime64Func localtime64 = reinterpret_cast<Localtime64Func>(dlsym(RTLD_DEFAULT, LOCALTIME64_SYMBOL));
     if (localtime64 == nullptr) {
         t_error("Localtime640100 failed: dlsym __localtime64 failed\n");

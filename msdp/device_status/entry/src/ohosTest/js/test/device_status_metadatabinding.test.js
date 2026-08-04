@@ -396,5 +396,40 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 is end---------------")
       done();
     })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_1700
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_1700
+     * @tc.desc   metadataBinding multicallback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1700 is start---------------")
+      let callback1 = (data) => {
+        console.info('SUB_MSDP_DeviceStatus_API_MetadataBinding_1700 callback1 success, metadata:' + data);
+      }
+      let callback2 = (data) => {
+        console.info('SUB_MSDP_DeviceStatus_API_MetadataBinding_1700 callback2 success, metadata:' + data);
+      }
+      try {
+        metadataBinding.on('operationSubmitMetadata', 'com.example.mydevicestatusapp', callback1);
+        metadataBinding.on('operationSubmitMetadata', 'com.example.mydevicestatusapp', callback2);
+        metadataBinding.off('operationSubmitMetadata', 'com.example.mydevicestatusapp', callback1);
+        metadataBinding.off('operationSubmitMetadata', 'com.example.mydevicestatusapp', callback2);
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1700 success');
+      } catch (error) {
+        console.log('SUB_MSDP_DeviceStatus_API_MetadataBinding_1700 failed catch' + JSON.stringify(error));
+        if(error.code == 32100004) {
+          console.log('The device does not support this API.');
+        } else {
+          expect().assertFail();
+        }
+      }
+      console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1700 is end---------------");
+      done();
+    })
+
   })
 }

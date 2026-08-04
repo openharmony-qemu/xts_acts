@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,25 +14,20 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import cert from '@ohos.security.cert';
 import util from '@ohos.util';
-import * as certPromise from "./utils/certificate/publicCertificatePromise";
-import * as certCallback from "./utils/certificate/publicCertificateCallback";
-import * as certCommon from "./utils/certificate/publicCertificateCommon";
-import {
-  uInt8ArrayToString,
-  uInt8ArrayToShowStr,
-} from "./utils/common/publicDoString";
-
+import * as certPromise from './utils/certificate/publicCertificatePromise';
+import * as certCallback from './utils/certificate/publicCertificateCallback';
+import * as certCommon from './utils/certificate/publicCertificateCommon';
+import { uInt8ArrayToString, uInt8ArrayToShowStr } from './utils/common/publicDoString';
 export default function CertFrameworkFuncTestJSUnit() {
   describe("CertFrameworkFuncTestJSUnit", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

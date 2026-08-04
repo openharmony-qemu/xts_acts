@@ -1,5 +1,5 @@
-'use static'
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+'use static';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import sleep  from './Util.test';
 
 interface typeWait01 {
@@ -59,21 +59,16 @@ export default function atomicsWaitTest() {
       ta[0] = 10; // Actual value
       let finish = false;
       // Run in worker to avoid blocking main thread
-      const result = await new Promise<string>((resolve, reject) => {
+      const result = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = { ta, index: 0, value: 20 } as typeWait01
-        let p = eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
       expect(result).assertEqual('not-equal');
     });
@@ -98,7 +93,7 @@ export default function atomicsWaitTest() {
           let eaw = new EAWorker()
           eaw.start()
           let data = { ta, index: 0, value: 0 } as typeWait01
-          let p = eaw.run<string>((): string => {
+          let job = eaw.run<string>((): string => {
             let res = Atomics.wait(data.ta, data.index as int, data.value as long);
             return res
           })
@@ -107,14 +102,14 @@ export default function atomicsWaitTest() {
           let eaw1 = new EAWorker()
           eaw1.start()
           let data1 = { ta, index: 0 } as typeWait02
-          let result1 = await eaw1.run<number>((): number => {
+          let result1 = eaw1.run<number>((): number => {
             let res = Atomics.notify(data1.ta, data1.index as int, 1);
             return res
-          })
-          eaw1.quit()
+          }).Await()
+          eaw1.join().Await()
 
-          resolve(await p)
-          eaw.quit()
+          resolve(job.Await())
+          eaw.join().Await()
         })()
       })
       const result = await waitResult;
@@ -135,7 +130,7 @@ export default function atomicsWaitTest() {
       ta[0] = 5; // Match expected value
       let finish = false;
 
-      const result = await new Promise<string>((resolve, reject) => {
+      const result = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = {
@@ -144,17 +139,12 @@ export default function atomicsWaitTest() {
           value: 5,
           timeout: 10
         } as typeWait03
-        let p = eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long, data.timeout);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
       expect(result).assertEqual('timed-out');
     });
@@ -173,21 +163,16 @@ export default function atomicsWaitTest() {
       ta[0] = 100n; // Actual value
       let finish = false;
 
-      const result = await new Promise<string>((resolve, reject) => {
+      const result = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = { ta, index: 0, value: 200n } as typeWait04
-        let p = eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as bigint);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
 
       expect(result).assertEqual('not-equal');
@@ -213,7 +198,7 @@ export default function atomicsWaitTest() {
           let eaw = new EAWorker()
           eaw.start()
           let data = { ta, index: 0, value: 0n } as typeWait04
-          let p = eaw.run<string>((): string => {
+          let job = eaw.run<string>((): string => {
             let res = Atomics.wait(data.ta, data.index as int, data.value as bigint);
             return res
           })
@@ -222,14 +207,14 @@ export default function atomicsWaitTest() {
           let eaw1 = new EAWorker()
           eaw1.start()
           let data1 = { ta, index: 0 } as typeWait05
-          let result1 = await eaw1.run<number>((): number => {
+          let result1 = eaw1.run<number>((): number => {
             let res = Atomics.notify(data.ta, data.index as int, 1);
             return res
-          })
-          eaw1.quit()
+          }).Await()
+          eaw1.join().Await()
 
-          resolve(await p)
-          eaw.quit()
+          resolve(job.Await())
+          eaw.join().Await()
         })()
       })
 
@@ -251,7 +236,7 @@ export default function atomicsWaitTest() {
       ta[0] = 50n; // Match expected value
       let finish = false;
 
-      const result = await new Promise<string>((resolve, reject) => {
+      const result = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = {
@@ -260,17 +245,12 @@ export default function atomicsWaitTest() {
           value: 50n,
           timeout: 15
         } as typeWait06
-        let p =eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as bigint, data.timeout);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
       expect(result).assertEqual('timed-out');
     });
@@ -288,24 +268,18 @@ export default function atomicsWaitTest() {
       const ta = new Int32Array(sab); // Invalid typed array type
       let finish = false;
 
-      const errorResult = await new Promise<string>((resolve, reject) => {
+      const errorResult = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = { ta, index: 1, value: 0 } as typeWait01
         eaw.setUncaughtExceptionHandler((e: Error) => {
           resolve(e.message)
         })
-        let p = eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        eaw.join().Await()
       });
       expect(errorResult).assertContain('Index out of bounds');
     });
@@ -324,7 +298,7 @@ export default function atomicsWaitTest() {
       const ta = new Int32Array(sab);
       let finish = false;
 
-      const errorResult = await new Promise<string>((resolve, reject) => {
+      const errorResult = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = {
@@ -333,17 +307,12 @@ export default function atomicsWaitTest() {
           value: 1,
           timeout: 200.4.toInt()
         } as typeWait03
-        let p = eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long, data.timeout);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
       setTimeout(() => {
         Atomics.notify(ta, 0, 1);
@@ -364,7 +333,7 @@ export default function atomicsWaitTest() {
       const ta = new Int32Array(sab);
       let finish = false;
 
-      const errorResult = await new Promise<string>((resolve, reject) => {
+      const errorResult = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = {
@@ -373,17 +342,12 @@ export default function atomicsWaitTest() {
           value: 1,
           timeout: Number.MAX_VALUE.toInt()
         } as typeWait03
-        let p = eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long, data.timeout);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
       setTimeout(() => {
         Atomics.notify(ta, 0, 1);
@@ -404,7 +368,7 @@ export default function atomicsWaitTest() {
       const ta = new Int32Array(sab);
       let finish = false;
 
-      const errorResult = await new Promise<string>((resolve, reject) => {
+      const errorResult = await new Promise<string>((resolve) => {
         let eaw = new EAWorker()
         eaw.start()
         let data = {
@@ -413,17 +377,12 @@ export default function atomicsWaitTest() {
           value: 1,
           timeout: -100
         } as typeWait03
-        let p = eaw.run<string>(() => {
+        let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long, data.timeout);
           return res
-        })
-        p.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-          reject(err);
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
       setTimeout(() => {
         Atomics.notify(ta, 0, 1);
@@ -456,13 +415,9 @@ export default function atomicsWaitTest() {
         let result = eaw.run<string>((): string => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long, data.timeout);
           return res
-        })
-        result.then((workerresult: string): void => {
-          eaw.join()
-          resolve(workerresult);
-        }).catch((err: Error): void => {
-          eaw.join()
-        });
+        }).Await()
+        resolve(result)
+        eaw.join().Await()
       });
       setTimeout(() => {
         Atomics.notify(ta, 0, (Number.MAX_VALUE + 1).toInt());

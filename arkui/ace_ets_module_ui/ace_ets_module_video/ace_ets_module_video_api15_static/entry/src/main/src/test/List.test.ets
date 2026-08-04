@@ -18,11 +18,13 @@
 import VideoEnableShortCutKey from './VideoEnableShortCutKey.test';
 import VideoContentTransitionEffectTest from './VideoContentTransitionEffectTest.test';
 import VideoSupportMoreNumberSpeedStaticTest from './Video/VideoSupportMoreNumberSpeedStaticTest.test';
+import videoControllerAsyncStaticTest from './Video/videoControllerAsyncStaticTest.test';
 
 export default function testsuite() {
 
   VideoEnableShortCutKey();
   VideoContentTransitionEffectTest();
   VideoSupportMoreNumberSpeedStaticTest();
+  videoControllerAsyncStaticTest();
   
 }

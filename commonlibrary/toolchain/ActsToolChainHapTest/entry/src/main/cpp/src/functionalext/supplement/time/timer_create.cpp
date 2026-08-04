@@ -22,6 +22,7 @@
 #include <pthread.h>
 
 #include "test.h"
+#include "lib_path.h"
 #define SIGNUM 40
 #define SLEEPTIME 5
 static int g_count = 0;
@@ -113,7 +114,7 @@ void TimerCreate0300(void)
     struct itimerspec its;
     int ret;
 
-    void* handle = dlopen("/data/storage/el1/bundle/libs/arm/libtls_timer.so", RTLD_LAZY);
+    void* handle = dlopen(LIB_PATH_PREFIX "libtls_timer.so", RTLD_LAZY);
     if (handle == nullptr) {
         t_error("%s dlopen error \n", __func__);
         return;

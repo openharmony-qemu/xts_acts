@@ -39,6 +39,9 @@ static void InitPush1(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoSwdecH265Speed0070Test", VideoSwdecH265Speed0070Test));
     desc.push_back(XL("VideoSwdecH265Speed0080Test", VideoSwdecH265Speed0080Test));
     desc.push_back(XL("VideoSwdecH265Speed0090Test", VideoSwdecH265Speed0090Test));
+    desc.push_back(XL("VideoSwdecH265SurfExpired0010Test", VideoSwdecH265SurfExpired0010Test));
+    desc.push_back(XL("VideoSwdecH265SetMaxInputSize0010Test", VideoSwdecH265SetMaxInputSize0010Test));
+    desc.push_back(XL("VideoSwdecH265GetCropSize0010Test", VideoSwdecH265GetCropSize0010Test));
 }
 
 static napi_value Init(napi_env env, napi_value exports)

@@ -88,6 +88,18 @@ export default function scanTest() {
         hilog.info(DOMAIN, TAG, 'startScannerDiscovery success');
         setTimeout(() => {
           scan.off('scanDeviceFound');
+          try {
+            scan.off('scanDeviceFound', (device: scan.ScannerDevice) => {
+              hilog.info(DOMAIN, TAG, 'off found device: ' + JSON.stringify(device));
+              scannerId = device.scannerId;
+              uniqueId = device.uniqueId;
+            });
+          } catch (err) {
+            let error = err as BusinessError;
+            hilog.error(DOMAIN, TAG, 'off scanDeviceFound failed, code = ' + err.code);
+            expect(error.code).assertEqual(401);
+            done();
+          }
           done();
         }, 500);
       }).catch((err: BusinessError) => {
@@ -360,6 +372,16 @@ export default function scanTest() {
           });
           setTimeout(() => {
             scan.off('scanDeviceSync');
+            try {
+              scan.off('scanDeviceSync', (device: scan.ScannerSyncDevice) => {
+                hilog.info(DOMAIN, TAG, 'off scanDeviceSync event: ' + JSON.stringify(device));
+              });
+            } catch (err) {
+              let error = err as BusinessError;
+              hilog.error(DOMAIN, TAG, 'off scanDeviceSync failed, code = ' + err.code);
+              expect(error.code).assertEqual(401);
+              done();
+            }
             done();
           }, 500);
         } catch (e) {

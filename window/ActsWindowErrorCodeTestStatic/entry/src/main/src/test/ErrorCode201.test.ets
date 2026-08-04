@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,25 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-
 import display from '@ohos.display';
 import floatingBall from '@ohos.window.floatingBall';
-import { BusinessError } from '@ohos.base';
-// import { MyCallback } from '../models/MyCallback';
-import window from '@ohos.window'
+import type { BusinessError, AsyncCallback, Callback } from '@ohos.base';
+import window from '@ohos.window';
 import settings from '@ohos.settings';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
-import StartOptions from '@ohos.app.ability.StartOptions'
+import StartOptions from '@ohos.app.ability.StartOptions';
 import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
-import display from '@ohos.display';
 import { canIUse } from '@internal.full.global';
 import { ImageFit } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -55,7 +52,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        Utils.msSleep(1000).awaitSync()
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -90,7 +87,12 @@ export default function ErrorCode201(): void {
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswindowtest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
@@ -611,20 +613,20 @@ export default function ErrorCode201(): void {
         let windowClass2: window.Window = windowStageStart.getMainWindowSync();
         let res = windowClass2.getWindowProperties()
         window.getVisibleWindowInfo().then((infos: Array<window.WindowInfo>) => {
-            (async () => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag, caseName + 'Succeeded in calling getVisibleWindowInfo.');
             expect(false).assertTrue();
             await terminateAbility(caseName);
             done();
-            })().awaitSync()
+            })
         }).catch((err: Error): PromiseLike<void> | undefined => {
-            (async () => {
+            waitForCompletion(async () => {
             hilog.error(domain, tag,
             caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err.code));
             expect(err.code === 201).assertTrue();
             await terminateAbility(caseName);
             done()
-            })().awaitSync()
+            })
         });
         } catch (err) {
         
@@ -836,7 +838,6 @@ async (done: () => void): Promise<void> => {
   }
 });
 
-
-    })
+})
 
 }

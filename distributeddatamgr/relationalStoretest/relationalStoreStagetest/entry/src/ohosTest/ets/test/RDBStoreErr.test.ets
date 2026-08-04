@@ -182,6 +182,29 @@ export default function RDBStoreErrTest() {
             }
             console.info(TAG + "************* RdbQueryErrTest005 end *************");
         })
+         /**
+         * @tc.name   RdbQueryErrTest006
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbQueryErrTest006
+         * @tc.desc   RdbQueryErrTest005
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('RdbQueryErrTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+            console.info(TAG + "************* RdbQueryErrTest006 start *************");
+            try {
+            let predicates = new dataRdb.RdbPredicates("test");
+            let resultSet: dataRdb.ResultSet | undefined;
+            resultSet = await rdbStore.query(predicates, [])
+            console.info(TAG + " RdbQueryErrTest006 success" + resultSet?.rowCount);
+            expect(resultSet.rowCount).assertEqual(0);
+            resultSet?.close();
+            } catch (err) {
+            console.error(TAG + " RdbQueryErrTest006 failed" + err.code + err.message);
+            expect().assertFail();
+            }
+            console.info(TAG + "************* RdbQueryErrTest006 end *************");
+        })
 
         /**
        * @tc.name   RdbExecuteSqlErrTest001

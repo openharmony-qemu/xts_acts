@@ -57,6 +57,9 @@ static void Mktime0100(void)
  */
 void Mktime640100(void)
 {
+    if (sizeof(time_t) >= TIME_T64_BYTES) {
+        return;
+    }
     Mktime64Func mktime64 = reinterpret_cast<Mktime64Func>(dlsym(RTLD_DEFAULT, MKTIME64_SYMBOL));
     if (mktime64 == nullptr) {
         t_error("Mktime640100 failed: dlsym __mktime64 failed\n");

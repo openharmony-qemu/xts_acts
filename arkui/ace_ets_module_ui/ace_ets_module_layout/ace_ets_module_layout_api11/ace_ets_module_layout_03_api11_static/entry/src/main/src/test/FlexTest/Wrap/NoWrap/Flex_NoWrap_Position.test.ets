@@ -13,24 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../../Util.test';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
-import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector';
-import { Visibility,Position } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog'
+import { Visibility, Position } from '@ohos.arkui.component';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -85,8 +82,8 @@ it('testWrapNoWrapTextPosition_static', Level.LEVEL0, async () => {
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_Position01');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_Position02');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_Position03');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Position_Container01');
-      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Position_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Position' + '_Container01');
+      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Position' + '_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');

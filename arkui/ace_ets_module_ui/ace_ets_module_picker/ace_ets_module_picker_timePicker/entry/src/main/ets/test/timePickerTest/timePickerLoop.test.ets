@@ -57,7 +57,7 @@ export default function timePickerLoopTest() {
       await button.click()
       await Utils.sleep(1000);
 
-      let strJson = getInspectorByKey('timePicker');
+      let strJson = getInspectorByKey('timePickerLoop_timePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info('timePickerLoopTest_001 component obj is: ' + obj.$attrs.loop);
       expect(obj.$attrs.loop).assertEqual('true');
@@ -81,7 +81,7 @@ export default function timePickerLoopTest() {
       await button.click()
       await Utils.sleep(1000);
 
-      let strJson = getInspectorByKey('timePicker');
+      let strJson = getInspectorByKey('timePickerLoop_timePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info('timePickerLoopTest_002 component obj is: ' + obj.$attrs.loop);
       expect(obj.$attrs.loop).assertEqual('false');
@@ -105,7 +105,7 @@ export default function timePickerLoopTest() {
       await button.click()
       await Utils.sleep(1000);
 
-      let strJson = getInspectorByKey('timePicker');
+      let strJson = getInspectorByKey('timePickerLoop_timePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info('timePickerLoopTest_003 component obj is: ' + obj.$attrs.loop);
       expect(obj.$attrs.loop).assertEqual('true');

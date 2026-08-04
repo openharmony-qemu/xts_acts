@@ -154,10 +154,11 @@ export default function DeviceInfoTest() {
                 "0.0.0", "100.0.0", "1.100.0", "1.0.100",
                 
                 // 2. 格式错误
-                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", "",
+                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", "", "26.0 .0", "26.0.0 ",
                 
                 // 3. 带括号的非法用例
                 "5.0.0(100)",   // 括号内超过 99
+                "6.0.0(20) ",   // 括号后还有字符
                 "5.0.0(a)",     // 括号内非数字
                 "5.0.0()",      // 括号内为空
                 // 4. 异常参数
@@ -2010,18 +2011,13 @@ export default function DeviceInfoTest() {
             let deviceTypeInfo = deviceinfo.deviceType;
             console.info('the value of the deviceType is :' + deviceTypeInfo);
 
-            if(deviceTypeInfo == '2in1'){                
-                if (diskSN != "" && diskSN != null && diskSN != undefined) {
-                    console.info('the value of the deviceinfo diskSN is :' + diskSN);
-                    expect(diskSN).assertInstanceOf('String');
-				    done();
-                } else {
-                    console.info('the return value diskSN is null or incorrect.');
-                    expect().assertFail();
-				    done();
-                }
-            }else{
-                expect(diskSN == "").assertTrue();
+            if (diskSN != null && diskSN != undefined) {
+                console.info('the value of the deviceinfo diskSN is :' + diskSN);
+                expect(diskSN).assertInstanceOf('String');
+                done();
+            } else {
+                console.info('the return value diskSN is null or incorrect.');
+                expect().assertFail();
                 done();
             }
             console.info('device_info_test_074 : end');

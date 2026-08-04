@@ -1,0 +1,147 @@
+/**
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { Driver, ON } from '@ohos.UiTest';
+import router from '@ohos.router';
+import Utils from '../Utils';
+
+export default function composeListItemV2Page02Test() {
+  describe('composeListItemV2Page02', () => {
+    beforeEach(async (done: Function) => {
+      console.info('composeListItemV2Page02 beforeEach start');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/composeListItemV2/ComposeListItemV2Page02',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get ComposeListItemV2Page02 state pages: ' + JSON.stringify(pages));
+        if (!('ComposeListItemV2Page02' == pages.name)) {
+          console.info('get ComposeListItemV2Page02 pages.name: ' + JSON.stringify(pages.name));
+          await router.pushUrl(options);
+          await Utils.sleep(2000);
+          console.info('push ComposeListItemV2Page02 page result successful');
+        }
+      } catch (err) {
+        console.error('push ComposeListItemV2Page02 page error: ' + err);
+      }
+      
+      await Utils.sleep(1000);
+      console.info('composeListItemV2Page02 beforeEach end');
+      done();
+    });
+
+    afterEach(async () => {
+      await Utils.sleep(1000);
+      console.info('composeListItemV2Page02 after each called');
+    })
+
+    /**
+     * @tc.number composeListItemV2Page02Test
+     * @tc.name   composeListItemV2Page02Test_0100
+     * @tc.desc   Test ComposeListItemV2 with Button
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('composeListItemV2Page02Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[composeListItemV2Page02Test_0100] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      
+      let buttonSectionText = await driver.findComponent(ON.text('ComposeListItemV2 with Button'));
+      expect(buttonSectionText !== null).assertTrue();
+      
+      let itemWithButton = await driver.findComponent(ON.text('Item with Button'));
+      expect(itemWithButton !== null).assertTrue();
+      
+      let downloadButton = await driver.findComponent(ON.text('Download'));
+      expect(downloadButton !== null).assertTrue();
+      
+      console.info('[composeListItemV2Page02Test_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.number composeListItemV2Page02Test
+     * @tc.name   composeListItemV2Page02Test_0200
+     * @tc.desc   Test ComposeListItemV2 with Description
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('composeListItemV2Page02Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[composeListItemV2Page02Test_0200] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      
+      let descriptionSectionText = await driver.findComponent(ON.text('ComposeListItemV2 with Description'));
+      expect(descriptionSectionText !== null).assertTrue();
+      
+      let userProfileText = await driver.findComponent(ON.text('User Profile'));
+      expect(userProfileText !== null).assertTrue();
+      
+      let descriptionText = await driver.findComponent(ON.text('This is a detailed description of the user profile item'));
+      expect(descriptionText !== null).assertTrue();
+      
+      console.info('[composeListItemV2Page02Test_0200] END');
+      done();
+    });
+
+    /**
+     * @tc.number composeListItemV2Page02Test
+     * @tc.name   composeListItemV2Page02Test_0300
+     * @tc.desc   Test ComposeListItemV2 Complete Example
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('composeListItemV2Page02Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[composeListItemV2Page02Test_0300] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      let completeSectionText = await driver.findComponent(ON.text('ComposeListItemV2 Complete Example'));
+      expect(completeSectionText !== null).assertTrue();
+      let completeItemText = await driver.findComponent(ON.text('Complete Item'));
+      expect(completeItemText !== null).assertTrue();
+      let allFeaturesText = await driver.findComponent(ON.text('All Features'));
+      expect(allFeaturesText !== null).assertTrue();
+      console.info('[composeListItemV2Page02Test_0300] END');
+      done();
+    });
+
+    /**
+     * @tc.number composeListItemV2Page02Test
+     * @tc.name   composeListItemV2Page02Test_0400
+     * @tc.desc   Test ComposeListItemV2 Complete Example
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('composeListItemV2Page02Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[composeListItemV2Page02Test_0400] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      let symbolStyleText = await driver.findComponent(ON.text('operate symbolStyle'));
+      expect(symbolStyleText !== null).assertTrue();
+      let buttonText = await driver.findComponent(ON.text('operate button'));
+      expect(buttonText !== null).assertTrue();
+      console.info('[composeListItemV2Page02Test_0400] END');
+      done();
+    });
+
+  })
+}

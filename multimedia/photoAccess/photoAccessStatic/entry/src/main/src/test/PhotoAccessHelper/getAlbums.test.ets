@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,25 +57,31 @@ export default function getAlbumsTest() {
           subTypes.push(photoAccessHelper.AlbumSubtype.FAVORITE);
           let count = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            try {
-              let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
-              const album =
-                await (fetchResult as photoAccessHelper.FetchResult<photoAccessHelper.Album>).getFirstObject();
-              fetchResult?.close();
-              checkSystemAlbum(testNum, album, subTypes[i]);
-              count++;
-              if (i + 1 === subTypes.length) {
-                expect(count === subTypes.length);
-                done();
-              }
-            } catch (err) {
-              hilog.error(domain, tag,
-                testNum + ' getAlbums failed' + ", err.code:" + err?.code + ", err.message:" + err?.message);
-              expect(false).assertTrue();
-              hilog.info(domain, tag,
-                testNum + ' getAlbums Failed!' + ", err.name:" + err.name + ", err.message:" + err.message);
-              done();
-            }
+            (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i], (err: BusinessError<void> | null,
+              fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
+              waitForCompletion(async () => {
+                try {
+                  if (err?.code !== 0) {
+                    hilog.error(domain, tag,
+                      testNum + ' getAlbums failed' + ", err.code:" + err?.code + ", err.message:" + err?.message);
+                    expect(false).assertTrue();
+                  } else {
+                    const album =
+                      await (fetchResult as photoAccessHelper.FetchResult<photoAccessHelper.Album>).getFirstObject();
+                    fetchResult?.close();
+                    checkSystemAlbum(testNum, album, subTypes[i]);
+                    count++;
+                  }
+                } catch (error) {
+                  hilog.info(domain, tag,
+                    testNum + ' getAlbums Failed!' + ", error.name:" + error.name + ", error.message:" + error.message);
+                }
+                if (i + 1 === subTypes.length) {
+                  expect(count === subTypes.length);
+                  done();
+                }
+              })
+            });
             await Utils.msSleep(50)
           }
         } catch (error) {

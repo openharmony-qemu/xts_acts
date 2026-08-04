@@ -60,6 +60,7 @@ import LineHeightStyleTest from './StyledStringTest/LineHeightStyle.test';
 import LineSpacingStyleTest from './StyledStringTest/LineSpacingStyle.test';
 import StyledStringShaderStyleTest from './StyledString/StyledStringShaderStyle.test';
 import StyledStringStrokeJoinStyleTest from './StyledString/StyledStringStrokeJoinStyle.test';
+import ParagraphStyleTailIndentsTest from './StyledString/ParagraphStyleTailIndents.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -109,4 +110,5 @@ export default function testsuite() {
   LineSpacingStyleTest()
   StyledStringShaderStyleTest()
   StyledStringStrokeJoinStyleTest()
+  ParagraphStyleTailIndentsTest();
 }

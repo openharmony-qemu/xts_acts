@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import sleep from './Util.test';
 
 function assertNear(actual: number, expected: number, delta: number = 1e-10): void {

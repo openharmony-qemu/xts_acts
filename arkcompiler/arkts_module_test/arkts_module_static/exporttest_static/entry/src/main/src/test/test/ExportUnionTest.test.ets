@@ -28,7 +28,7 @@ import { sleep } from '../utils/Utils';
 
 let flag: boolean = false;
 
-export default function exportUnionTest() {
+export default function exportUnionTest():void {
   describe('ExportUnionTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

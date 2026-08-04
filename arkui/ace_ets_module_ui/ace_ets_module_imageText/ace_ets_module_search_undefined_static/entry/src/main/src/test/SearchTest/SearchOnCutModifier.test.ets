@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,13 +37,15 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
-async function doCopy(driver: Driver, componentId: string){
-  let text = await driver.findComponent(ON.id(componentId)) as Component;
-  await text.longClick();
-  await CommonFunc.sleep(500);
-  let selectionMenu = await driver.findComponent(ON.text('剪切')) as Component;
-  await selectionMenu.click();
-  await CommonFunc.sleep(500);
+function doCopy(driver: Driver, componentId: string){
+  waitForCompletion(async ()=>{
+    let text = await driver.findComponent(ON.id(componentId)) as Component;
+    await text.longClick();
+    await CommonFunc.sleep(500);
+    let selectionMenu = await driver.findComponent(ON.text('剪切')) as Component;
+    await selectionMenu.click();
+    await CommonFunc.sleep(500);
+  })
 }
 
 
@@ -87,13 +89,13 @@ export default function SearchOnCutTest() {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await doCopy(driver, 'SearchOnCutModifier')
+      doCopy(driver, 'SearchOnCutModifier')
       let copyValue1 = await driver.findComponent(ON.id('Search_Cut_ValueModifier0')) as Component;
       let text = await copyValue1.getText();
       console.info('[SearchOnCutModifierTest_static_0010] SearchOnCutUndefined: ' + text);
       expect(text).assertEqual('copyValue: ');
 
-      await doCopy(driver, 'SearchOnCutModifier1')
+      doCopy(driver, 'SearchOnCutModifier1')
       let copyValue2 = await driver.findComponent(ON.id('Search_Cut_ValueModifier0')) as Component;
       text = await copyValue2.getText();
       console.info('[SearchOnCutModifierTest_static_0010] SearchOnCutDynamic: ' + text);
@@ -103,7 +105,7 @@ export default function SearchOnCutTest() {
       await button.click();
       await CommonFunc.sleep(500);
 
-      await doCopy(driver, 'SearchOnCutModifier1')
+      doCopy(driver, 'SearchOnCutModifier1')
       let copyValue3 = await driver.findComponent(ON.id('Search_Cut_ValueModifier0')) as Component;
       text = await copyValue3.getText();
       console.info('[SearchOnCutModifierTest_static_0010] SearchOnCutDynamic: ' + text);

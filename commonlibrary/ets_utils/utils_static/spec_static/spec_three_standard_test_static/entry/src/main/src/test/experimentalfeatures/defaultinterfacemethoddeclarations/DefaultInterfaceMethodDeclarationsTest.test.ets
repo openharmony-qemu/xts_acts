@@ -14,17 +14,10 @@
  * limitations under the License.
 */
 
-
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,
   Level, Size, TestType } from '../../../../../hypium/index';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 interface Vehicle {
   getHorsePower(rpm: int, torque: int): int {
@@ -70,7 +63,7 @@ export default function DefaultInterfaceMethodDeclarationsTest() : void{
     beforeAll(() => {})
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {})
@@ -126,8 +119,6 @@ export default function DefaultInterfaceMethodDeclarationsTest() : void{
      */
     it("testDefaultInterfaceMethodDeclarations0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Car().getPwrIndex(1)).assertEqual(1);
-
     });
-
   })
 }

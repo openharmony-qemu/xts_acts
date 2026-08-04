@@ -13,17 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import image from '@ohos.multimedia.image'
+import image from '@ohos.multimedia.image';
 import hilog from '@ohos.hilog';
-import componentSnapshot from '@ohos.arkui.componentSnapshot'
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,
-  ColumnOptions,Scroller,Scroll, Padding, Gauge, ScrollDirection, BarState, Color, EdgeEffect, Row, Builder, Image,
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import componentSnapshot from '@ohos.arkui.componentSnapshot';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, ColumnOptions, Scroller, Scroll, Padding, Gauge, ScrollDirection, BarState, Color, EdgeEffect, Row, Builder, Image } from '@ohos.arkui.component';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 @Entry
 @Component

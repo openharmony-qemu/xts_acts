@@ -37,7 +37,7 @@ import hashMapTest from './hashmap/HashMap.test';
 import arkListTest from './arklist/ArkList.test';
 import arrayListTest from './arraylist/ArrayList.test';
 import xmlTest from './xml/Xml.test';
-import dynamicXmlTest from './xml/DynamicXml';
+import dynamicXmlTest from './xml/DynamicXml.test';
 import convertXmlTest from './convertxml/ConvertXml.test';
 import ConvertXml2Test from './convertxml/ConvertXml2.test';
 import ConvertXml3Test from './convertxml/ConvertXml3.test';
@@ -63,6 +63,10 @@ import fastBuffer2Test from './fastbuffer/FastBuffer2.test';
 import fastBuffer3Test from './fastbuffer/FastBuffer3.test';
 import fastBuffer4Test from './fastbuffer/FastBuffer4.test';
 import Vector1Test from './vector/Vector.test';
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 
 export default function testsuite() {
   buffer1Test();

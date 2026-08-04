@@ -57,7 +57,7 @@ export default function girdContainerJsunit() {
     it('testGirdContainer01', Level.LEVEL0, async (done:Function) => {
       console.info('[testGirdContainer01] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('gridContainer');
+      let strJson: string = getInspectorByKey('gridContainer_gridContainer');
       console.info("[testGirdContainer01] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('GridContainer');
       expect(JSON.parse(strJson).$attrs.constructor.columns).assertEqual('12');
@@ -95,7 +95,7 @@ export default function girdContainerJsunit() {
         console.log("[testGirdContainer02] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('gridContainer');
+      let strJson: string = getInspectorByKey('gridContainer_gridContainer');
       console.info("[testGirdContainer02] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.constructor.sizeType).assertEqual('SizeType.SM');
       console.info('testGirdContainer02 END');

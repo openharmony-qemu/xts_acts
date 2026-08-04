@@ -78,6 +78,7 @@ it('alignItemsGrid_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[alignItemsGrid_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let text_00 = CommonFunc.getComponentRect('default_0');
       let height_0 = text_00.bottom - text_00.top;
       console.info("alignItemsGrid_0100 height_0 is" + height_0);
@@ -106,6 +107,7 @@ it('alignItemsGrid_0200', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[alignItemsGrid_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let text_00 = CommonFunc.getComponentRect('stretch_0');
       let height_0 = text_00.bottom - text_00.top;
       console.info("alignItemsGrid_0200 height_0 is" + height_0);
