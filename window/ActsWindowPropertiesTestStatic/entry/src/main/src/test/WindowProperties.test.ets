@@ -6798,10 +6798,10 @@ export default function WindowPropertiesTest() {
           // 条件2: 检查折痕宽度是否大于高度
           try {
             let defaultDisplay: display.Display = display.getDefaultDisplaySync();
-            let creaseRegion: display.CreaseRegion = defaultDisplay.getLiveCreaseRegion();
+            let creaseRegion: display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
             hilog.info(domain, tag, msgStr + 'creaseRegion: ' + JSON.stringify(creaseRegion));
             if (creaseRegion.creaseRects.length > 0) {
-              let creaseRect: display.CreaseRect = creaseRegion.creaseRects[0];
+              let creaseRect: display.Rect = creaseRegion.creaseRects[0];
               hilog.info(domain, tag, msgStr + 'creaseRect: ' + JSON.stringify(creaseRect));
               isCreaseWidthGreater = creaseRect.width > creaseRect.height;
               hilog.info(domain, tag, msgStr + 'isCreaseWidthGreater: ' + isCreaseWidthGreater);
