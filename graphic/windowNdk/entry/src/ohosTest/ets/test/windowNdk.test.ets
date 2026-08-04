@@ -57,7 +57,7 @@ export default function windowNdk() {
       console.log(`${Tag}:windowId:${windowId} `);
       context = AppStorage.get("context") as common.UIAbilityContext;
       isSystemCapabilitySupport = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(isSystemCapabilitySupport));
+      console.info('beforeAll canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(isSystemCapabilitySupport));
       isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.DEVICE_SHARED);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
