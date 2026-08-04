@@ -50,6 +50,8 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
         executed = true;
       });
       expect(executed).assertFalse();
+      await p1;
+      expect(executed).assertTrue();
 
     });
 
@@ -216,7 +218,13 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
         expect(error instanceof Error).assertTrue();
         expect(error.message).not().assertNull();
       }
-
+      // Verify the lock is released after the callback exception
+      // and can be acquired again.
+      let reacquired: boolean = false;
+      await lock.lockAsync<void>(() => {
+        reacquired = true;
+      });
+      expect(reacquired).assertTrue();
     });
 
     /**

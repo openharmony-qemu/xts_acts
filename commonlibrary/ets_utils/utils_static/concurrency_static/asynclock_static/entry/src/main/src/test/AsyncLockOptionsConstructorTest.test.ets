@@ -273,28 +273,26 @@ export default function AsyncLockOptionsConstructorTest(): void {
     /**
      * @tc.name    testAsyncLockOptionsConstructor1600
      * @tc.number  SUB_ASYNCLOCK_OPTIONS_CONSTRUCTOR_TEST_1600
-     * @tc.desc    Verify dynamic modify signal.aborted
+     * @tc.desc    Verify aborted signal causes lockAsync to reject
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('testAsyncLockOptionsConstructor1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
-      let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
+      // A signal that is already aborted must cause lockAsync to reject.
+      let s: AbortSignal<string> = { aborted: true, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
       options.signal = s;
-      setTimeout(() => { s.aborted = true; }, 500);
       let rejected = false;
       try {
         await lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options);
       } catch (error) {
         rejected = true;
-        expect(error).not().assertNull();
-        expect(error.message).not().assertNull();
       }
-      expect(rejected).assertFalse();
-
+      expect(rejected).assertTrue();
     });
+
 
     /**
      * @tc.name    testAsyncLockOptionsConstructor1700

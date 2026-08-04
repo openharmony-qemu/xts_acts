@@ -306,9 +306,11 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldLock");
       await lock.lockAsync<void>(() => {
-        let state = AsyncLock.query("heldLock");
+        let state = lock.query();
         expect(state.held.length).assertLarger(0);
       });
+      let stateAfter = AsyncLock.query("heldLock");
+      expect(stateAfter.held.length).assertEqual(0);
 
     });
 
@@ -666,7 +668,7 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = AsyncLock.request("callbackQuery");
       await lock.lockAsync<void>(() => {
-        let state = AsyncLock.query("callbackQuery");
+        let state = lock.query();
         expect(state.held.length).assertLarger(0);
       });
 
@@ -683,7 +685,7 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldName");
       await lock.lockAsync<void>(() => {
-        let state = AsyncLock.query("heldName");
+        let state = lock.query();
         if (state.held.length > 0) {
           expect(typeof state.held[0].name).assertEqual("string");
         }
@@ -702,11 +704,13 @@ export default function AsyncLockQueryStaticTest(): void {
      */
     it('testAsyncLockQueryStatic4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldMode");
-      await lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
-      let state = AsyncLock.query("heldMode");
-      if (state.held.length > 0) {
-        expect(state.held[0].mode).assertEqual(AsyncLockMode.EXCLUSIVE);
-      }
+      await lock.lockAsync<void>(() => {
+        let state = lock.query();
+        expect(state.held.length).assertLarger(0);
+        if (state.held.length > 0) {
+          expect(state.held[0].mode).assertEqual(AsyncLockMode.EXCLUSIVE);
+        }
+      }, AsyncLockMode.EXCLUSIVE);
 
     });
 
@@ -721,7 +725,7 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldContext");
       await lock.lockAsync<void>(() => {
-        let state = AsyncLock.query("heldContext");
+        let state = lock.query();
         if (state.held.length > 0) {
           expect(state.held[0].contextId).assertLarger(0);
         }
@@ -775,29 +779,16 @@ export default function AsyncLockQueryStaticTest(): void {
       }
     });
 
+
     /**
      * @tc.name    testAsyncLockQueryStatic4900
      * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4900
-     * @tc.desc    Verify query performance is fast
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = AsyncLock.request("perfQuery");
-      let state = AsyncLock.query("perfQuery");
-      expect(typeof state).assertEqual("object");
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic5000
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_5000
      * @tc.desc    Verify multiple queries performance
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryStatic5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testAsyncLockQueryStatic4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       AsyncLock.request("perf");
       let queryCount: number = 0;
       for (let i = 0; i < 1000; i++) {

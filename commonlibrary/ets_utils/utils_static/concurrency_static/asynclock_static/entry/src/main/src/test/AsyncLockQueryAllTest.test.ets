@@ -17,7 +17,6 @@
 import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 interface GeneratedTypeLiteralInterface_1 {
-  lockName: string;
   held: number;
   pending: number;
 }
@@ -391,8 +390,9 @@ export default function AsyncLockQueryAllTest(): void {
       let allStates = AsyncLock.queryAll();
       let singleState = AsyncLock.query('containedLock');
       expect(allStates.length).assertLarger(0);
-      let found = allStates.some(state => state === singleState);
-      expect(found).assertFalse();
+      let found = allStates.some(state => state.held.length === singleState.held.length &&
+        state.pending.length === singleState.pending.length);
+      expect(found).assertTrue();
     });
 
     /**
@@ -575,11 +575,15 @@ export default function AsyncLockQueryAllTest(): void {
       let monitorLocks: () => Promise<void> = async (): Promise<void> => {
         let states = AsyncLock.queryAll();
         for (let state of states) {
+          capturedStates.push({
+            held: state.held.length,
+            pending: state.pending.length
+          });
         }
       };
       await monitorLocks();
 
-      expect(capturedStates.length).assertEqual(0);
+      expect(capturedStates.length).assertLarger(0);
 
     });
 

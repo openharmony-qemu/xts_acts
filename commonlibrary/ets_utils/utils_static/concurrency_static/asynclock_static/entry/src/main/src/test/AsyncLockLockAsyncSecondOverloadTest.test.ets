@@ -394,6 +394,7 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
         await lock.lockAsync<void>(() => {
           throw new CustomError("custom error");
         }, AsyncLockMode.SHARED);
+        expect().assertFail();
       } catch (error) {
         expect(error instanceof CustomError).assertTrue();
         expect(error.message).not().assertNull();
@@ -436,7 +437,9 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         throw new Error("catch test");
-      }, AsyncLockMode.SHARED).catch((error:Error) => {
+      }, AsyncLockMode.SHARED).then(() => {
+        expect().assertFail();
+      }).catch((error:Error) => {
         expect(error).not().assertNull();
       });
 
@@ -577,7 +580,9 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         throw new Error("catch");
-      }, AsyncLockMode.EXCLUSIVE).catch((error:Error) => {
+      }, AsyncLockMode.EXCLUSIVE).then(() => {
+        expect().assertFail();
+      }).catch((error:Error) => {
         expect(error).not().assertNull();
       });
 

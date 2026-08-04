@@ -430,7 +430,6 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("nonNull");
       expect(lock instanceof AsyncLock).assertTrue();
-      expect(typeof lock).assertEqual("object");
     });
 
     /**
@@ -523,7 +522,8 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let instanceLock = new AsyncLock();
       let staticLock = AsyncLock.request("staticCall");
-      expect(typeof staticLock.query).assertEqual("function");
+      expect(instanceLock === staticLock).assertFalse();
+      expect(staticLock.name).assertEqual("staticCall");
     });
 
     /**
@@ -784,29 +784,16 @@ export default function AsyncLockRequestTest(): void {
       expect(lock1 === lock2).assertTrue();
     });
 
+
     /**
      * @tc.name    testAsyncLockRequest5400
      * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5400
-     * @tc.desc    Verify request execution speed is fast
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockRequest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = AsyncLock.request("performanceTest");
-      let state = AsyncLock.query("performanceTest");
-      expect(typeof state).assertEqual("object");
-    });
-
-    /**
-     * @tc.name    testAsyncLockRequest5500
-     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5500
      * @tc.desc    Verify performance with many different name requests
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockRequest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testAsyncLockRequest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let count: number = 0;
       for (let i = 0; i < 1000; i++) {
         AsyncLock.request("perf_" + i);
@@ -816,14 +803,14 @@ export default function AsyncLockRequestTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockRequest5600
-     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5600
+     * @tc.name    testAsyncLockRequest5500
+     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5500
      * @tc.desc    Verify 1000 requests with same name complete successfully
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockRequest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testAsyncLockRequest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let count: number = 0;
       for (let i = 0; i < 1000; i++) {
         AsyncLock.request("sameName");
@@ -833,40 +820,40 @@ export default function AsyncLockRequestTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockRequest5700
-     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5700
+     * @tc.name    testAsyncLockRequest5600
+     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5600
      * @tc.desc    Verify request does not depend on instance context
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockRequest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testAsyncLockRequest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request("contextTest");
       expect(lock instanceof AsyncLock).assertTrue();
     });
 
     /**
-     * @tc.name    testAsyncLockRequest5800
-     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5800
+     * @tc.name    testAsyncLockRequest5700
+     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5700
      * @tc.desc    Verify request empty lock pool returns empty array
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockRequest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockRequest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let states = AsyncLock.queryAll();
       expect(Array.isArray(states)).assertTrue();
     });
 
     /**
-     * @tc.name    testAsyncLockRequest5900
-     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5900
+     * @tc.name    testAsyncLockRequest5800
+     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5800
      * @tc.desc    Verify request with boolean parameter
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockRequest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockRequest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let lock = AsyncLock.request(true as string);
         expect(lock instanceof AsyncLock).assertTrue();
@@ -877,14 +864,14 @@ export default function AsyncLockRequestTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockRequest6000
-     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_6000
+     * @tc.name    testAsyncLockRequest5900
+     * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5900
      * @tc.desc    Verify request with object parameter
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockRequest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockRequest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let lock = AsyncLock.request({} as string);
         expect(lock instanceof AsyncLock).assertTrue();
