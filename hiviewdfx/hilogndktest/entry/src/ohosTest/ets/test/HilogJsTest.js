@@ -952,6 +952,38 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi51
+     * @tc.number testHilogJsApi51
+     * @tc.desc   hilog isLoggable  undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogJsApi51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+      console.info('testHilogJsApi51 start');
+      const res = hilog.isLoggable(0xfffe, "HILOGTEST", undefined);
+      hilog.info(0x0000, 'testTag', '%{public}s', res);
+      expect(res).assertUndefined()
+      console.info('testHilogJsApi51 end');
+    })
+
+    /**
+     * @tc.name   testHilogJsApi52
+     * @tc.number testHilogJsApi52
+     * @tc.desc   hilog isLoggable  null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogJsApi52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+      console.info('testHilogJsApi51 start');
+      const res = hilog.isLoggable(0xfffe, "HILOGTEST", null);
+      hilog.info(0x0000, 'testTag', '%{public}s', res);
+      expect(res).assertUndefined()
+      console.info('testHilogJsApi51 end');
+    })
+
+    /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_0100
      * @tc.number SUB_DFX_DFT_DefaultLevel_0100
      * @tc.desc   SUB_DFX_DFT_DefaultLevel_0100
@@ -1051,6 +1083,149 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0700
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0700
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setMinLogLevel(null);
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      hilog.info(0x3200, "HILOGTEST", "%{public}s", res)
+      expect(res).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0800
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0800
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setMinLogLevel(undefined);
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0900
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0900
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setMinLogLevel(-1);
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1000
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1000
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setLogLevel(hilog.LogLevel.INFO, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1100
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1100
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setLogLevel(hilog.LogLevel.DEBUG, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1200
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1200
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setLogLevel(hilog.LogLevel.FATAL, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1300
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1300
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setLogLevel(null, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1400
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1400
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setLogLevel(undefined, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1500
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1500
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      hilog.setLogLevel(-1, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1600
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1600
+     * @tc.desc   hilog新增向下调整日志级别接口-使用默认日志级别setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, null)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_1700
      * @tc.number SUB_DFX_DFT_DefaultLevel_1700
      * @tc.desc   hilog新增向下调整日志级别接口-使用默认日志级别setLogLevel
@@ -1097,7 +1272,7 @@ describe('HilogJsTest', function () {
       expect(res).assertEqual(true);
       expect(res1).assertEqual(true);
     })
-    
+
     /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_2400
      * @tc.number SUB_DFX_DFT_DefaultLevel_2400
@@ -1163,7 +1338,39 @@ describe('HilogJsTest', function () {
       expect(res).assertEqual(true);
       console.info('SUB_DFX_DFT_DefaultLevel_2200 end');
     })
-    
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2300
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2300
+     * @tc.desc   hilog新增向下调整日志级别接口-使用默认日志级别setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, undefined)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2500
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2500
+     * @tc.desc   hilog新增向下调整日志级别接口-使用默认日志级别setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, -1)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+
     /**
      * @tc.name   testHilogSetOutputType0100
      * @tc.number SUB_DFX_DFT_SetOutputType_0100
@@ -1175,7 +1382,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputType(hilog.OutputType.DEFAULT);
-        hilog.info(0x0001, "testTag", 'set output type result:%{public}d', lastType);
+        hilog.info(0x3200, "testTag", 'set output type result:%{public}d', lastType);
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1196,7 +1403,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'private sandbox log');
+        hilog.info(0x3200, "testTag", 'private sandbox log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1217,7 +1424,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'share sandbox log');
+        hilog.info(0x3200, "testTag", 'share sandbox log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1238,7 +1445,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE);
-        hilog.info(0x0001, "testTag", 'private sandbox with console log');
+        hilog.info(0x3200, "testTag", 'private sandbox with console log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1259,7 +1466,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
-        hilog.info(0x0001, "testTag", 'share sandbox with console log');
+        hilog.info(0x3200, "testTag", 'share sandbox with console log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1316,7 +1523,7 @@ describe('HilogJsTest', function () {
         expect(false).assertTrue();
       }
     })
-    
+
     /**
      * @tc.name   testHilogSetOutputType1100
      * @tc.number SUB_DFX_DFT_SetOutputType_1100
@@ -1331,27 +1538,27 @@ describe('HilogJsTest', function () {
         hilog.setOutputType(hilog.OutputType.DEFAULT);
         let lastType1 = hilog.setOutputType(hilog.OutputType.DEFAULT);
         expect(lastType1).assertEqual(0);
-        
+
         // 设置为PRIVATE_SANDBOX_ONLY，应返回DEFAULT
         let lastType2 = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
         expect(lastType2).assertEqual(0);
-        
+
         // 设置为SHARE_SANDBOX_ONLY，应返回PRIVATE_SANDBOX_ONLY
         let lastType3 = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
         expect(lastType3).assertEqual(1);
-        
+
         // 设置为PRIVATE_SANDBOX_WITH_CONSOLE，应返回SHARE_SANDBOX_ONLY
         let lastType4 = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE);
         expect(lastType4).assertEqual(2);
-        
+
         // 设置为SHARE_SANDBOX_WITH_CONSOLE，应返回PRIVATE_SANDBOX_WITH_CONSOLE
         let lastType5 = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
         expect(lastType5).assertEqual(3);
-        
+
         // 再次设置为DEFAULT，应返回SHARE_SANDBOX_WITH_CONSOLE
         let lastType6 = hilog.setOutputType(hilog.OutputType.DEFAULT);
         expect(lastType6).assertEqual(4);
-        
+
         done();
       } catch (err) {
         console.error(`====> testHilogSetOutputType1100 > err code: ${err.code}, err msg: ${err.message}`)
@@ -1371,7 +1578,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputTypeByDomainID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [1, 2, 3], false);
-        hilog.info(0x0001, "testTag", 'domain 1 log');
+        hilog.info(0x3200, "testTag", 'domain 1 log');
         hilog.info(0x0002, "testTag", 'domain 2 log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
@@ -1414,7 +1621,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputTypeByDomainID0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [], false);
-        hilog.info(0x0001, "testTag", 'empty domain list log');
+        hilog.info(0x3200, "testTag", 'empty domain list log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1435,7 +1642,7 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputTypeByDomainID0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [1, 100, 1000, 65535], false);
-        hilog.info(0x0001, "testTag", 'multi domain log');
+        hilog.info(0x3200, "testTag", 'multi domain log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1618,18 +1825,18 @@ describe('HilogJsTest', function () {
       try {
         // 先用setOutputType设置
         let lastType1 = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
-        
+
         // 再用setOutputTypeByDomainID设置
         let lastType2 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [0x3200], false);
-        
+
         // 验证两个返回值都在合法范围内
         expect(lastType1 >= 0 && lastType1 <= 4).assertTrue();
         expect(lastType2 >= 0 && lastType2 <= 4).assertTrue();
-        
+
         // 验证返回值类型
         expect(typeof lastType1).assertEqual('number');
         expect(typeof lastType2).assertEqual('number');
-        
+
         done();
       } catch (err) {
         console.error(`====> testHilogSetOutputTypeByDomainID1600 > err code: ${err.code}, err msg: ${err.message}`)
@@ -1649,18 +1856,18 @@ describe('HilogJsTest', function () {
     it('testHilogSetOutputTypeByDomainID1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       try {
         let domainId = 0x3200;
-        
+
         // isExclude=true：指定domainID列表设为DEFAULT，其他设为指定type
         let lastType1 = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [domainId], true);
         hilog.info(domainId, "testTag", 'isExclude=true test log');
-        
+
         // isExclude=false：指定domainID列表设为指定type，其他设为DEFAULT
         let lastType2 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [domainId], false);
         hilog.info(domainId, "testTag", 'isExclude=false test log');
-        
+
         expect(lastType1 >= 0 && lastType1 <= 4).assertTrue();
         expect(lastType2 >= 0 && lastType2 <= 4).assertTrue();
-        
+
         done();
       } catch (err) {
         console.error(`====> testHilogSetOutputTypeByDomainID1700 > err code: ${err.code}, err msg: ${err.message}`)
@@ -1679,8 +1886,8 @@ describe('HilogJsTest', function () {
      */
     it('testHilogSetOutputTypeByDomainID1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       try {
-        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0x0001, 0x00FF, 0x0320, 0xFFFF], false);
-        hilog.info(0x0001, "testTag", 'hex domain 0x0001 test log');
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0x3200, 0x00FF, 0x0320, 0xFFFF], false);
+        hilog.info(0x3200, "testTag", 'hex domain 0x3200 test log');
         hilog.info(0x00FF, "testTag", 'hex domain 0x00FF test log');
         hilog.info(0x0320, "testTag", 'hex domain 0x0320 test log');
         hilog.info(0xFFFF, "testTag", 'hex domain 0xFFFF test log');
@@ -1729,11 +1936,11 @@ describe('HilogJsTest', function () {
       try {
         let domainIds = [0x3200, 0x3201, 0x3202, 0x3203, 0x3204];
         let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, domainIds, false);
-        
+
         for (let i = 0; i < domainIds.length; i++) {
           hilog.info(domainIds[i], "testTag", 'continuous domain test log %{public}d', i);
         }
-        
+
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1757,25 +1964,25 @@ describe('HilogJsTest', function () {
         hilog.setOutputType(hilog.OutputType.DEFAULT);
         let lastType1 = hilog.setOutputTypeByDomainID(hilog.OutputType.DEFAULT, [0x0000, 0x3200], false);
         expect(lastType1).assertEqual(0);
-        
+
         // 设置为PRIVATE_SANDBOX_ONLY，应返回DEFAULT
         let lastType2 = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [0x0000, 0x3200], false);
         expect(lastType2).assertEqual(0);
-        
+
         // 设置为SHARE_SANDBOX_ONLY，应返回PRIVATE_SANDBOX_ONLY
         let lastType3 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [0x0000, 0x3200], false);
-        
+
         expect(lastType3).assertEqual(1);
-        
+
         // 设置为PRIVATE_SANDBOX_WITH_CONSOLE，应返回SHARE_SANDBOX_ONLY
         let lastType4 = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE, [0x0000, 0x3200], false);
-        
+
         expect(lastType4).assertEqual(2);
-        
+
         // 设置为SHARE_SANDBOX_WITH_CONSOLE，应返回PRIVATE_SANDBOX_WITH_CONSOLE
         let lastType5 = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE, [0x0000, 0x3200], false);
         expect(lastType5).assertEqual(3);
-        
+
         // 再次设置为DEFAULT，应返回SHARE_SANDBOX_WITH_CONSOLE
         let lastType6 = hilog.setOutputTypeByDomainID(hilog.OutputType.CONSOLE_ONLY, [0x0000, 0x3200], false);
         expect(lastType6).assertEqual(4);
@@ -1803,7 +2010,7 @@ describe('HilogJsTest', function () {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
         let currentType = hilog.getOutputType();
-        hilog.info(0x0001, "testTag", 'current output type:%{public}d', currentType);
+        hilog.info(0x3200, "testTag", 'current output type:%{public}d', currentType);
         expect(currentType >= 0 && currentType <= 4).assertTrue();
         done();
       } catch (err) {
@@ -1825,19 +2032,19 @@ describe('HilogJsTest', function () {
       try {
         hilog.setOutputType(hilog.OutputType.DEFAULT);
         let type1 = hilog.getOutputType();
-        
+
         hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
         let type2 = hilog.getOutputType();
-        
+
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
         let type3 = hilog.getOutputType();
-        
+
         hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE);
         let type4 = hilog.getOutputType();
-        
+
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
         let type5 = hilog.getOutputType();
-        
+
         expect(type1).assertEqual(0);
         expect(type2).assertEqual(1);
         expect(type3).assertEqual(2);
@@ -1864,7 +2071,7 @@ describe('HilogJsTest', function () {
         let type1 = hilog.getOutputType();
         hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
         let type2 = hilog.getOutputType();
-        
+
         expect(type1 >= 0 && type1 <= 4).assertTrue();
         expect(type2).assertEqual(1);
         done();
@@ -1889,7 +2096,7 @@ describe('HilogJsTest', function () {
         let type1 = hilog.getOutputType();
         let type2 = hilog.getOutputType();
         let type3 = hilog.getOutputType();
-        
+
         expect(type1).assertEqual(type2);
         expect(type2).assertEqual(type3);
         expect(type3).assertEqual(2);
@@ -1913,7 +2120,7 @@ describe('HilogJsTest', function () {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
         let dir = hilog.getOutputDir();
-        hilog.info(0x0001, "testTag", 'sandbox output dir:%{public}s', dir);
+        hilog.info(0x3200, "testTag", 'sandbox output dir:%{public}s', dir);
         expect(dir.length > 0).assertTrue();
         done();
       } catch (err) {
@@ -1936,7 +2143,7 @@ describe('HilogJsTest', function () {
         // 测试默认输出类型时获取目录
         hilog.setOutputType(hilog.OutputType.DEFAULT);
         let dir = hilog.getOutputDir();
-        hilog.info(0x0001, "testTag", 'default output dir:%{public}s', dir);
+        hilog.info(0x3200, "testTag", 'default output dir:%{public}s', dir);
         expect(dir.length == 0).assertTrue();
         done();
       } catch (err) {
@@ -1957,9 +2164,9 @@ describe('HilogJsTest', function () {
     it('testHilogClean0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'log before clean');
+        hilog.info(0x3200, "testTag", 'log before clean');
         hilog.clean();
-        hilog.info(0x0001, "testTag", 'log after clean');
+        hilog.info(0x3200, "testTag", 'log after clean');
         done();
       } catch (err) {
         console.error(`====> testHilogClean0100 > err code: ${err.code}, err msg: ${err.message}`)
@@ -1979,9 +2186,9 @@ describe('HilogJsTest', function () {
     it('testHilogFlush0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'log before flush');
+        hilog.info(0x3200, "testTag", 'log before flush');
         hilog.flush();
-        hilog.info(0x0001, "testTag", 'log after flush');
+        hilog.info(0x3200, "testTag", 'log after flush');
         done();
       } catch (err) {
         console.error(`====> testHilogFlush0100 > err code: ${err.code}, err msg: ${err.message}`)
@@ -2001,10 +2208,10 @@ describe('HilogJsTest', function () {
     it('testHilogGetLogFile0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'test get log file');
+        hilog.info(0x3200, "testTag", 'test get log file');
         hilog.flush();
         let files = hilog.getLogFile(10);
-        hilog.info(0x0001, "testTag", 'log files count:%{public}d', files.length);
+        hilog.info(0x3200, "testTag", 'log files count:%{public}d', files.length);
         expect(files.length >= 0).assertTrue();
         done();
       } catch (err) {
@@ -2026,7 +2233,7 @@ describe('HilogJsTest', function () {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
         let files = hilog.getLogFile(0);
-        hilog.info(0x0001, "testTag", '0 seconds log files count:%{public}d', files.length);
+        hilog.info(0x3200, "testTag", '0 seconds log files count:%{public}d', files.length);
         expect(files.length >= 0).assertTrue();
         done();
       } catch (err) {
@@ -2047,12 +2254,12 @@ describe('HilogJsTest', function () {
     it('testHilogGetLogFile0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
-        hilog.info(0x0001, "testTag", 'long time test log');
+        hilog.info(0x3200, "testTag", 'long time test log');
         hilog.flush();
         let files = hilog.getLogFile(-1);
-        hilog.error(0x0001, 'testTag', 'testHilogGetLogFile0300 xxxxxx%{public}s', files.toString());
+        hilog.error(0x3200, 'testTag', 'testHilogGetLogFile0300 xxxxxx%{public}s', files.toString());
         hilog.error(0x0000, 'testTag', 'testHilogGetLogFile0300 xxxxxx%{public}d', files[0]);
-        hilog.info(0x0001, "testTag", 'testHilogGetLogFile0300 negative seconds log files count:%{public}d', files.length);
+        hilog.info(0x3200, "testTag", 'testHilogGetLogFile0300 negative seconds log files count:%{public}d', files.length);
         expect(files.length == 0).assertTrue();
         done();
       } catch (err) {
@@ -2073,10 +2280,10 @@ describe('HilogJsTest', function () {
     it('testHilogGetLogFile0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'long time test log');
+        hilog.info(0x3200, "testTag", 'long time test log');
         hilog.flush();
         let files = hilog.getLogFile(3600);
-        hilog.info(0x0001, "testTag", 'long time log files count:%{public}d', files.length);
+        hilog.info(0x3200, "testTag", 'long time log files count:%{public}d', files.length);
         expect(files.length >= 0).assertTrue();
         done();
       } catch (err) {
@@ -2097,7 +2304,7 @@ describe('HilogJsTest', function () {
     it('testHilogGetLogFile0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'boundary test log');
+        hilog.info(0x3200, "testTag", 'boundary test log');
         hilog.flush();
         let files = hilog.getLogFile(1);
         expect(files.length >= 0).assertTrue();
@@ -2203,10 +2410,10 @@ describe('HilogJsTest', function () {
     it('testHilogGetLogFile1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       try {
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'return type test log');
+        hilog.info(0x3200, "testTag", 'return type test log');
         hilog.flush();
         let files = hilog.getLogFile(10);
-        
+
         expect(Array.isArray(files)).assertTrue();
         if (files.length > 0) {
           expect(typeof files[0]).assertEqual('string');
@@ -2234,14 +2441,14 @@ describe('HilogJsTest', function () {
         hilog.setOutputType(hilog.OutputType.DEFAULT);
         let files1 = hilog.getLogFile(10);
         expect(files1.length).assertEqual(0);
-        
+
         // SHARE_SANDBOX_ONLY模式：应返回文件列表
         hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
-        hilog.info(0x0001, "testTag", 'different output type test log');
+        hilog.info(0x3200, "testTag", 'different output type test log');
         hilog.flush();
         let files2 = hilog.getLogFile(10);
         expect(files2.length >= 0).assertTrue();
-        
+
         done();
       } catch (err) {
         console.error(`====> testHilogGetLogFile1300 > err code: ${err.code}, err msg: ${err.message}`)
@@ -2261,10 +2468,10 @@ describe('HilogJsTest', function () {
     it('testHilogGetLogFile0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         hilog.setOutputType(null);
-        hilog.info(0x0001, "testTag", 'long time test log');
+        hilog.info(0x3200, "testTag", 'long time test log');
         hilog.flush();
         let files = hilog.getLogFile(3600);
-        hilog.info(0x0001, "testTag", 'long time log files count:%{public}d', files.length);
+        hilog.info(0x3200, "testTag", 'long time log files count:%{public}d', files.length);
         expect(files.length >= 0).assertTrue();
         done();
       } catch (err) {
