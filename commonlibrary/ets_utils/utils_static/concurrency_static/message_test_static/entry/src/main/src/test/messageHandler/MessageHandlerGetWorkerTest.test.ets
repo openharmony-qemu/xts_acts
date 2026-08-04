@@ -1,6 +1,6 @@
-'use static'
+'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -141,29 +141,12 @@ export default function MessageHandlerGetWorkerTest(): void {
     /**
      * @tc.name   MessageHandlerGetWorkerTest0600
      * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_0600
-     * @tc.desc   Verify MessageHandler.getWorker() return value is not null and not undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageHandlerGetWorkerTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        console.info("handle message");
-      });
-
-      let worker: EAWorker = handler.getWorker();
-      expect(worker instanceof EAWorker).assertTrue();
-    })
-
-    /**
-     * @tc.name   MessageHandlerGetWorkerTest0700
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_0700
      * @tc.desc   Verify MessageHandler.getWorker() returns correct instance when EAWorker not started
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         console.info("handle message");
@@ -171,17 +154,20 @@ export default function MessageHandlerGetWorkerTest(): void {
 
       let worker: EAWorker = handler.getWorker();
       expect(worker === eaw).assertTrue();
+      if (eaw.isAlive()) {
+        eaw.quit();
+      }
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest0800
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_0800
+     * @tc.name   MessageHandlerGetWorkerTest0700
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_0700
      * @tc.desc   Verify MessageHandler.getWorker() returns terminated EAWorker after quit()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -201,14 +187,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest0900
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_0900
+     * @tc.name   MessageHandlerGetWorkerTest0800
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_0800
      * @tc.desc   Verify MessageHandler.getWorker() does not throw any exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerGetWorkerTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         console.info("handle message");
@@ -229,30 +215,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1000
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1000
-     * @tc.desc   Verify MessageHandler.getWorker() works correctly in ArkTS1.2 environment
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageHandlerGetWorkerTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        console.info("handle message");
-      });
-      let worker: EAWorker = handler.getWorker();
-      expect(worker instanceof EAWorker).assertTrue();
-    })
-
-    /**
-     * @tc.name   MessageHandlerGetWorkerTest1100
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1100
+     * @tc.name   MessageHandlerGetWorkerTest0900
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_0900
      * @tc.desc   Verify MessageHandler.getWorker() inside EAWorker message handler returns correct EAWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let matchCount: AtomicInt = new AtomicInt(0);
@@ -280,14 +250,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1200
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1200
+     * @tc.name   MessageHandlerGetWorkerTest1000
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1000
      * @tc.desc   Verify MessageHandler.getWorker() inside sendEmptyMessage callback returns correct EAWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let matchCount: AtomicInt = new AtomicInt(0);
@@ -314,14 +284,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1300
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1300
+     * @tc.name   MessageHandlerGetWorkerTest1100
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1100
      * @tc.desc   Verify MessageHandler.getWorker() for MessageHandler created inside EAWorker handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let innerMatchCount: AtomicInt = new AtomicInt(0);
@@ -350,14 +320,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1400
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1400
+     * @tc.name   MessageHandlerGetWorkerTest1200
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1200
      * @tc.desc   Verify concurrent getWorker() calls from multiple EAWorkers return correct instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let matchCount: AtomicInt = new AtomicInt(0);
@@ -400,14 +370,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1500
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1500
+     * @tc.name   MessageHandlerGetWorkerTest1300
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1300
      * @tc.desc   Verify MessageHandler.getWorker() consistency with counting wait for multiple messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let completedCount: AtomicInt = new AtomicInt(0);
@@ -439,14 +409,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1600
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1600
+     * @tc.name   MessageHandlerGetWorkerTest1400
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1400
      * @tc.desc   Verify EAWorker returned by getWorker() can be used to create new MessageHandler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerGetWorkerTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let received: AtomicInt = new AtomicInt(0);
@@ -475,14 +445,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1700
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1700
+     * @tc.name   MessageHandlerGetWorkerTest1500
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1500
      * @tc.desc   Verify MessageHandler.getWorker() returns same EAWorker for each message in batch sending
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let matchCount: AtomicInt = new AtomicInt(0);
@@ -512,14 +482,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1800
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1800
+     * @tc.name   MessageHandlerGetWorkerTest1600
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1600
      * @tc.desc   Verify different MessageHandlers return their respective EAWorkers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerGetWorkerTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -548,14 +518,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest1900
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1900
+     * @tc.name   MessageHandlerGetWorkerTest1700
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1700
      * @tc.desc   Verify MessageHandler.getWorker() in nested MessageHandler scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let outerCount: AtomicInt = new AtomicInt(0);
@@ -605,14 +575,14 @@ export default function MessageHandlerGetWorkerTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerGetWorkerTest2000
-     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_2000
+     * @tc.name   MessageHandlerGetWorkerTest1800
+     * @tc.number SUB_MESSAGE_HANDLER_GET_WORKER_TEST_1800
      * @tc.desc   Verify MessageHandler.getWorker() in multi-level nested MessageHandler scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerGetWorkerTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerGetWorkerTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let level1Count: AtomicInt = new AtomicInt(0);

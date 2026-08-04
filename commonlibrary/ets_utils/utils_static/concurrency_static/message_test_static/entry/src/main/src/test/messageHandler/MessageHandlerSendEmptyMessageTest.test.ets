@@ -1,6 +1,6 @@
-'use static'
+'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -184,33 +184,16 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
       expect(result).assertFalse();
     })
 
+
     /**
      * @tc.name   MessageHandlerSendEmptyMessageTest1000
      * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1000
-     * @tc.desc   Verify MessageHandler.sendEmptyMessage() return value type is boolean
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageHandlerSendEmptyMessageTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let result: boolean = handler.sendEmptyMessage(1);
-      expect(result).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-
-    /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1100
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1100
      * @tc.desc   Verify MessageHandler.sendEmptyMessage() message is processed by handler function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendEmptyMessageTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let received = new AtomicInt(0);
@@ -228,14 +211,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1200
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1200
+     * @tc.name   MessageHandlerSendEmptyMessageTest1100
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1100
      * @tc.desc   Verify MessageHandler.sendEmptyMessage() handler receives correct what value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendEmptyMessageTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let whatValue = new AtomicInt(0);
@@ -253,14 +236,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1300
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1300
+     * @tc.name   MessageHandlerSendEmptyMessageTest1200
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1200
      * @tc.desc   Verify MessageHandler.sendEmptyMessage() message getObject returns undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendEmptyMessageTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let objChecked = new AtomicInt(0);
@@ -281,14 +264,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1400
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1400
+     * @tc.name   MessageHandlerSendEmptyMessageTest1300
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1300
      * @tc.desc   Verify MessageHandler.sendEmptyMessage() multiple messages are all processed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MessageHandlerSendEmptyMessageTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -308,14 +291,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1500
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1500
+     * @tc.name   MessageHandlerSendEmptyMessageTest1400
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1400
      * @tc.desc   Verify MessageHandler.sendEmptyMessage() consecutive calls return true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendEmptyMessageTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -327,14 +310,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1600
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1600
+     * @tc.name   MessageHandlerSendEmptyMessageTest1500
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1500
      * @tc.desc   Verify sendEmptyMessage with hasMessages returns boolean type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendEmptyMessageTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -345,14 +328,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1700
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1700
+     * @tc.name   MessageHandlerSendEmptyMessageTest1600
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1600
      * @tc.desc   Verify MessageHandler.removeMessages() removes sendEmptyMessage message from queue inside callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendEmptyMessageTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -377,14 +360,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1800
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1800
+     * @tc.name   MessageHandlerSendEmptyMessageTest1700
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1700
      * @tc.desc   Verify MessageHandler.sendEmptyMessage() vs sendMessage with empty object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendEmptyMessageTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let emptyMsgCount = new AtomicInt(0);
@@ -408,14 +391,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest1900
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1900
+     * @tc.name   MessageHandlerSendEmptyMessageTest1800
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1800
      * @tc.desc   Verify concurrent sendEmptyMessage calls with AtomicInt counting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -435,14 +418,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2000
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2000
+     * @tc.name   MessageHandlerSendEmptyMessageTest1900
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_1900
      * @tc.desc   Verify sendEmptyMessage called inside handler callback executes correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let innerReceived = new AtomicInt(0);
@@ -464,14 +447,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2100
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2100
+     * @tc.name   MessageHandlerSendEmptyMessageTest2000
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2000
      * @tc.desc   Verify sendEmptyMessage called inside handler callback sends message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let received = new AtomicInt(0);
@@ -491,68 +474,41 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
+     * @tc.name   MessageHandlerSendEmptyMessageTest2100
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2100
+     * @tc.desc   Verify AtomicInt protects shared counter in sendEmptyMessage concurrent scenario
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('MessageHandlerSendEmptyMessageTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      let counter = new AtomicInt(0);
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        counter.fetchAdd(1);
+      }, eaw);
+      for (let i: int = 0; i < 100; i++) {
+        handler.sendEmptyMessage(i);
+      }
+      let waitCount: int = 0;
+      while (counter.load() < 100 && waitCount < 50) {
+        waitCount++;
+        await Utils.msSleep(100);
+      }
+      expect(counter.load()).assertEqual(100);
+      if (eaw.isAlive()) { eaw.quit(); }
+    })
+
+    /**
      * @tc.name   MessageHandlerSendEmptyMessageTest2200
      * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2200
-     * @tc.desc   Verify AsyncLock protects shared counter in sendEmptyMessage concurrent scenario
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageHandlerSendEmptyMessageTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let counter = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        counter.fetchAdd(1);
-      }, eaw);
-      for (let i: int = 0; i < 100; i++) {
-        handler.sendEmptyMessage(i);
-      }
-      let waitCount: int = 0;
-      while (counter.load() < 100 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(counter.load()).assertEqual(100);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2300
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2300
-     * @tc.desc   Verify AtomicInt protects counter in sendEmptyMessage concurrent scenario
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageHandlerSendEmptyMessageTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let counter = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        counter.fetchAdd(1);
-      }, eaw);
-      for (let i: int = 0; i < 100; i++) {
-        handler.sendEmptyMessage(i);
-      }
-      let waitCount: int = 0;
-      while (counter.load() < 100 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(counter.load()).assertEqual(100);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2400
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2400
      * @tc.desc   Verify multiple EAWorkers with separate handlers sendEmptyMessage independently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -581,14 +537,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2500
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2500
+     * @tc.name   MessageHandlerSendEmptyMessageTest2300
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2300
      * @tc.desc   Verify sendEmptyMessage with default identifier -1000000 returns false from hasMessages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendEmptyMessageTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -598,14 +554,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2600
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2600
+     * @tc.name   MessageHandlerSendEmptyMessageTest2400
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2400
      * @tc.desc   Verify sendEmptyMessage followed by removeMessages then sendEmptyMessage again inside callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendEmptyMessageTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -646,14 +602,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2700
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2700
+     * @tc.name   MessageHandlerSendEmptyMessageTest2500
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2500
      * @tc.desc   Verify sendEmptyMessage stress test with 100 messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -676,31 +632,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2800
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2800
-     * @tc.desc   Verify sendEmptyMessage with proper EAWorker lifecycle management
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageHandlerSendEmptyMessageTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let result: boolean = handler.sendEmptyMessage(1);
-      expect(result).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest2900
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2900
+     * @tc.name   MessageHandlerSendEmptyMessageTest2600
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2600
      * @tc.desc   Verify sendEmptyMessage returns false when message queue is full
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -718,14 +657,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     // Communication is handled through MessageHandler instead.
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest3000
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_3000
+     * @tc.name   MessageHandlerSendEmptyMessageTest2700
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2700
      * @tc.desc   Verify AtomicInt store/load synchronizes message status with sendEmptyMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let msgStatus = new AtomicInt(0);
@@ -743,14 +682,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest3100
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_3100
+     * @tc.name   MessageHandlerSendEmptyMessageTest2800
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2800
      * @tc.desc   Verify AtomicInt controls concurrent sendEmptyMessage with atomic counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let sendCounter = new AtomicInt(0);
@@ -777,14 +716,14 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerSendEmptyMessageTest3200
-     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_3200
+     * @tc.name   MessageHandlerSendEmptyMessageTest2900
+     * @tc.number SUB_MESSAGE_HANDLER_SEND_EMPTY_MESSAGE_TEST_2900
      * @tc.desc   Verify nested sendEmptyMessage via onReceiveMessage callback using msg.getTarget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendEmptyMessageTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendEmptyMessageTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let nestedCount = new AtomicInt(0);

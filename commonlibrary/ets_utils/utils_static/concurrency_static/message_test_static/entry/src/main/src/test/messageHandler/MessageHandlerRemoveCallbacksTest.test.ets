@@ -1,6 +1,6 @@
-'use static'
+'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -317,50 +317,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
 
+
     /**
      * @tc.name   MessageHandlerRemoveCallbacksTest1100
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1100
-     * @tc.desc   Verify MessageHandler.removeCallbacks() return value type is boolean
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageHandlerRemoveCallbacksTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let callback = (): void => {};
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(callback, handler));
-        if (handler.removeCallbacks(callback)) {
-          removed.fetchAdd(1);
-        }
-        done.fetchAdd(1);
-      });
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-
-    /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1200
      * @tc.desc   Verify MessageHandler.removeCallbacks() returns false when queue has only what-type messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -373,48 +339,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
 
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1300
-     * @tc.desc   Verify MessageHandler.removeCallbacks() works correctly in ArkTS 1.2 environment
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageHandlerRemoveCallbacksTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let callback = (): void => {};
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(callback, handler));
-        if (handler.removeCallbacks(callback)) {
-          removed.fetchAdd(1);
-        }
-        done.fetchAdd(1);
-      });
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1400
+     * @tc.name   MessageHandlerRemoveCallbacksTest1200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1200
      * @tc.desc   Verify MessageHandler.removeCallbacks() after delay returns true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -441,14 +373,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       if (eaw.isAlive()) { eaw.quit(); }
     })
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1500
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1500
+     * @tc.name   MessageHandlerRemoveCallbacksTest1300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1300
      * @tc.desc   Verify MessageHandler.removeCallbacks() returns false after message already processed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let executed = new AtomicInt(0);
@@ -469,50 +401,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
-    /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1600
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1600
-     * @tc.desc   Verify MessageHandler.removeCallbacks() during message processing returns boolean
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageHandlerRemoveCallbacksTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let callback = (): void => {};
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(callback, handler));
-        if (handler.removeCallbacks(callback)) {
-          removed.fetchAdd(1);
-        }
-        done.fetchAdd(1);
-      });
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1700
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1700
+     * @tc.name   MessageHandlerRemoveCallbacksTest1400
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1400
      * @tc.desc   Verify MessageHandler.removeCallbacks() removes all callbacks sequentially
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -544,14 +442,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1800
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1800
+     * @tc.name   MessageHandlerRemoveCallbacksTest1500
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1500
      * @tc.desc   Verify MessageHandler.removeCallbacks() removes all same callback messages sent multiple times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -579,14 +477,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest1900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1900
+     * @tc.name   MessageHandlerRemoveCallbacksTest1600
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1600
      * @tc.desc   Verify MessageHandler.removeCallbacks() called from EAWorker callback removes message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -614,14 +512,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2000
+     * @tc.name   MessageHandlerRemoveCallbacksTest1700
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1700
      * @tc.desc   Verify MessageHandler.removeCallbacks() after EAWorker stopped returns boolean
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -637,23 +535,21 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           handler.hasCallbacks(callback);
         }
       });
-      let postWait = 0;
-      while (postWait < 50000) {
-        postWait++;
-      }
+      await Utils.msSleep(100);
       let result: boolean = handler.removeCallbacks(callback);
       expect(typeof result).assertEqual('boolean');
+      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2100
+     * @tc.name   MessageHandlerRemoveCallbacksTest1800
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1800
      * @tc.desc   Verify MessageHandler.removeCallbacks() repeated call returns false after first removal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -686,14 +582,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2200
+     * @tc.name   MessageHandlerRemoveCallbacksTest1900
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1900
      * @tc.desc   Verify MessageHandler.removeCallbacks() removes large number of callback messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -723,14 +619,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2300
+     * @tc.name   MessageHandlerRemoveCallbacksTest2000
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2000
      * @tc.desc   Verify MessageHandler.removeCallbacks() after sending many what-type messages returns true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -760,14 +656,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2400
+     * @tc.name   MessageHandlerRemoveCallbacksTest2100
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2100
      * @tc.desc   Verify MessageHandler.removeCallbacks() after queue near full still removes callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -796,14 +692,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2500
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2500
+     * @tc.name   MessageHandlerRemoveCallbacksTest2200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2200
      * @tc.desc   Verify MessageHandler.removeCallbacks() with AtomicInt protecting concurrent remove counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removeCount = new AtomicInt(0);
@@ -831,14 +727,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2600
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2600
+     * @tc.name   MessageHandlerRemoveCallbacksTest2300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2300
      * @tc.desc   Verify MessageHandler.removeCallbacks() removes multiple callbacks with counting wait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removeCount = new AtomicInt(0);
@@ -868,14 +764,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2700
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2700
+     * @tc.name   MessageHandlerRemoveCallbacksTest2400
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2400
      * @tc.desc   Verify MessageHandler.removeCallbacks() inside callback after post removes inner callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -900,14 +796,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2800
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2800
+     * @tc.name   MessageHandlerRemoveCallbacksTest2500
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2500
      * @tc.desc   Verify MessageHandler.removeCallbacks() inside callback removes other posted callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -933,14 +829,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2900
+     * @tc.name   MessageHandlerRemoveCallbacksTest2600
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2600
      * @tc.desc   Verify MessageHandler.removeCallbacks() with multiple EAWorker concurrent remove
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -965,14 +861,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest3000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_3000
+     * @tc.name   MessageHandlerRemoveCallbacksTest2700
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2700
      * @tc.desc   Verify MessageHandler.removeCallbacks() with anonymous function reference returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -983,14 +879,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest3100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_3100
+     * @tc.name   MessageHandlerRemoveCallbacksTest2800
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2800
      * @tc.desc   Verify MessageHandler.removeCallbacks() with closure function reference preserved returns true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -1018,14 +914,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest3200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_3200
+     * @tc.name   MessageHandlerRemoveCallbacksTest2900
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2900
      * @tc.desc   Verify MessageHandler.removeCallbacks() after handler.post removes posted callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);

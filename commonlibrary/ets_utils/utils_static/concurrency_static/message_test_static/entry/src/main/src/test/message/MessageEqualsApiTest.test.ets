@@ -787,29 +787,12 @@ export default function MessageEqualsApiTest(): void {
     /**
      * @tc.name   MessageEqualsApiTest4000
      * @tc.number SUB_MESSAGE_EQUALS_TEST_4000
-     * @tc.desc   Verify Message.equals() reflexivity: msg.equals(msg) returns true
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageEqualsApiTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, "hello", handler);
-      expect(msg.equals(msg)).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageEqualsApiTest4100
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4100
      * @tc.desc   Verify Message.equals() transitivity: a.equals(b) and b.equals(c) implies a.equals(c)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageEqualsApiTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageEqualsApiTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -823,14 +806,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4200
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4200
+     * @tc.name   MessageEqualsApiTest4100
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4100
      * @tc.desc   Verify Message.equals() returns consistent results across multiple invocations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageEqualsApiTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageEqualsApiTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -843,14 +826,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4300
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4300
+     * @tc.name   MessageEqualsApiTest4200
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4200
      * @tc.desc   Verify Message.equals() chain comparison with multiple Message instances
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageEqualsApiTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageEqualsApiTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -867,14 +850,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4400
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4400
+     * @tc.name   MessageEqualsApiTest4300
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4300
      * @tc.desc   Verify Message.equals() thread safety with concurrent handler callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageEqualsApiTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageEqualsApiTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -897,14 +880,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4500
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4500
+     * @tc.name   MessageEqualsApiTest4400
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4400
      * @tc.desc   Verify Message.equals() works correctly inside EAWorker thread via handler callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageEqualsApiTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageEqualsApiTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -919,14 +902,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4600
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4600
+     * @tc.name   MessageEqualsApiTest4500
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4500
      * @tc.desc   Verify Message.equals() with messages on different handlers of same EAWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageEqualsApiTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageEqualsApiTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -946,14 +929,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4700
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4700
+     * @tc.name   MessageEqualsApiTest4600
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4600
      * @tc.desc   Verify Message.equals() with callback messages across different handlers on same EAWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageEqualsApiTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageEqualsApiTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -973,14 +956,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4800
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4800
+     * @tc.name   MessageEqualsApiTest4700
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4700
      * @tc.desc   Verify Message.equals() with large number of Message instances
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageEqualsApiTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageEqualsApiTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1017,14 +1000,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest4900
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_4900
+     * @tc.name   MessageEqualsApiTest4800
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4800
      * @tc.desc   Verify Message.equals() in message queue scenario comparing task messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageEqualsApiTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageEqualsApiTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1035,14 +1018,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest5000
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_5000
+     * @tc.name   MessageEqualsApiTest4900
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_4900
      * @tc.desc   Verify Message.equals() with callback messages representing same task completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageEqualsApiTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageEqualsApiTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1054,14 +1037,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest5100
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_5100
+     * @tc.name   MessageEqualsApiTest5000
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_5000
      * @tc.desc   Verify Message.equals() with messages carrying complex data objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageEqualsApiTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageEqualsApiTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1073,14 +1056,14 @@ export default function MessageEqualsApiTest(): void {
     })
 
     /**
-     * @tc.name   MessageEqualsApiTest5200
-     * @tc.number SUB_MESSAGE_EQUALS_TEST_5200
+     * @tc.name   MessageEqualsApiTest5100
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_5100
      * @tc.desc   Verify Message.equals() for message type filtering with different what values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageEqualsApiTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageEqualsApiTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);

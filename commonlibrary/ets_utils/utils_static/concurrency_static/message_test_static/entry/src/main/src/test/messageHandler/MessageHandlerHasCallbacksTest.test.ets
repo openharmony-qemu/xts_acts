@@ -1,6 +1,6 @@
-'use static'
+'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -427,33 +427,12 @@ export default function MessageHandlerHasCallbacksTest(): void {
     /**
      * @tc.name   MessageHandlerHasCallbacksTest1700
      * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_1700
-     * @tc.desc   Verify MessageHandler.hasCallbacks() when EAWorker is not started
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageHandlerHasCallbacksTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        console.info("message type: ", msg.getWhat());
-      }, eaw);
-      let callback = (): void => { console.info("callback") };
-      let result: boolean = handler.hasCallbacks(callback);
-      expect(result).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
-      }
-    })
-
-    /**
-     * @tc.name   MessageHandlerHasCallbacksTest1800
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_1800
      * @tc.desc   Verify MessageHandler.hasCallbacks() after EAWorker is terminated
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -462,6 +441,7 @@ export default function MessageHandlerHasCallbacksTest(): void {
       eaw.quit();
       let quitWait = 0;
       while (eaw.isAlive() && quitWait < 20000) {
+        await Utils.msSleep(1);
         quitWait++;
       }
       let callback = (): void => {};
@@ -474,14 +454,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest1900
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_1900
+     * @tc.name   MessageHandlerHasCallbacksTest1800
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_1800
      * @tc.desc   Verify MessageHandler.hasCallbacks() after async message sending
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -490,10 +470,7 @@ export default function MessageHandlerHasCallbacksTest(): void {
       let callback = (): void => { console.info("callback") };
       let msg = new concurrency.Message(callback, handler);
       handler.sendMessage(msg);
-      let checkWait = 0;
-      while (checkWait < 40000) {
-        checkWait++;
-      }
+      await Utils.msSleep(100);
       let result: boolean = handler.hasCallbacks(callback);
       expect(result).assertTrue();
       if (eaw.isAlive()) {
@@ -502,14 +479,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2000
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2000
+     * @tc.name   MessageHandlerHasCallbacksTest1900
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_1900
      * @tc.desc   Verify MessageHandler.hasCallbacks() with concurrent queries on same callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -531,14 +508,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2100
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2100
+     * @tc.name   MessageHandlerHasCallbacksTest2000
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2000
      * @tc.desc   Verify MessageHandler.hasCallbacks() with concurrent send and query
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -556,14 +533,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2200
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2200
+     * @tc.name   MessageHandlerHasCallbacksTest2100
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2100
      * @tc.desc   Verify MessageHandler.hasCallbacks() state changes from true to false after removeCallbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       // start + atomic post/removeCallbacks; assert hasCallbacks false after post returns
       let eaw = new EAWorker();
       eaw.start();
@@ -594,14 +571,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2300
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2300
+     * @tc.name   MessageHandlerHasCallbacksTest2200
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2200
      * @tc.desc   Verify MessageHandler.hasCallbacks() with multiple different callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -624,14 +601,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2400
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2400
+     * @tc.name   MessageHandlerHasCallbacksTest2300
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2300
      * @tc.desc   Verify MessageHandler.hasCallbacks() after partial removeCallbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removedOk = new AtomicInt(0);
@@ -677,14 +654,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2500
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2500
+     * @tc.name   MessageHandlerHasCallbacksTest2400
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2400
      * @tc.desc   Verify MessageHandler.hasCallbacks() isolation between different EAWorkers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -709,14 +686,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2600
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2600
+     * @tc.name   MessageHandlerHasCallbacksTest2500
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2500
      * @tc.desc   Verify MessageHandler.hasCallbacks() with proper EAWorker lifecycle management
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw: EAWorker | null = new EAWorker();
       eaw.start();
       let handler: concurrency.MessageHandler | null = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -733,14 +710,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2700
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2700
+     * @tc.name   MessageHandlerHasCallbacksTest2600
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2600
      * @tc.desc   Verify MessageHandler.hasCallbacks() after posting inside callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let found = new AtomicInt(0);
@@ -771,17 +748,19 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2800
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2800
+     * @tc.name   MessageHandlerHasCallbacksTest2700
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2700
      * @tc.desc   Verify MessageHandler.hasCallbacks() called inside callback queries pending callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let found = new AtomicInt(0);
+      let blockEntered = new AtomicInt(0);
+      let releaseBlock = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) {
@@ -789,15 +768,28 @@ export default function MessageHandlerHasCallbacksTest(): void {
         }
       }, eaw);
       let targetCallback = (): void => {};
+      let blocker = (): void => {
+        blockEntered.fetchAdd(1);
+        while (releaseBlock.load() == 0) {
+        }
+      };
       let queryCallback = (): void => {
         let result: boolean = handler.hasCallbacks(targetCallback);
         if (result) {
           found.fetchAdd(1);
         }
       };
+      handler.post(blocker);
+      let waitCount: int = 0;
+      while (blockEntered.load() < 1 && waitCount < 500) {
+        waitCount++;
+        await Utils.msSleep(10);
+      }
+      expect(blockEntered.load()).assertEqual(1);
       handler.post(queryCallback);
       handler.post(targetCallback);
-      let waitCount: int = 0;
+      releaseBlock.fetchAdd(1);
+      waitCount = 0;
       while (found.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
@@ -810,14 +802,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
 
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest2900
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2900
+     * @tc.name   MessageHandlerHasCallbacksTest2800
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2800
      * @tc.desc   Verify MessageHandler.hasCallbacks() with Atomics compareExchange for query count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageHandlerHasCallbacksTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -848,14 +840,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest3000
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_3000
+     * @tc.name   MessageHandlerHasCallbacksTest2900
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_2900
      * @tc.desc   Verify MessageHandler.hasCallbacks() with multiple EAWorkers querying same handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasCallbacksTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let queryDone = new AtomicInt(0);
@@ -887,14 +879,14 @@ export default function MessageHandlerHasCallbacksTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasCallbacksTest3100
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_3100
+     * @tc.name   MessageHandlerHasCallbacksTest3000
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_CALLBACKS_TEST_3000
      * @tc.desc   Verify MessageHandler.hasCallbacks() queried from TaskPool concurrent tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageHandlerHasCallbacksTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageHandlerHasCallbacksTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {

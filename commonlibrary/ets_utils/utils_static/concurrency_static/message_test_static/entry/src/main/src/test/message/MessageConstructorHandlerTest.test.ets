@@ -458,7 +458,7 @@ export default function MessageConstructorHandlerTest(): void {
       let msg1 = new concurrency.Message(messageHandler);
       msg1.sendToTarget();
       let waitCount1 = 0;
-      while (counter.load() < 1 && waitCount1 < 6000) {
+      while (counter.load() < 1 && waitCount1 < 100) {
         waitCount1++;
         await Utils.msSleep(100);
       }
@@ -466,7 +466,7 @@ export default function MessageConstructorHandlerTest(): void {
       let msg2 = new concurrency.Message(messageHandler);
       msg2.sendToTarget();
       let waitCount2 = 0;
-      while (counter.load() < 2 && waitCount2 < 6000) {
+      while (counter.load() < 2 && waitCount2 < 100) {
         waitCount2++;
         await Utils.msSleep(100);
       }
@@ -474,7 +474,7 @@ export default function MessageConstructorHandlerTest(): void {
       let msg3 = new concurrency.Message(messageHandler);
       msg3.sendToTarget();
       let waitCount3 = 0;
-      while (counter.load() < 3 && waitCount3 < 6000) {
+      while (counter.load() < 3 && waitCount3 < 100) {
         waitCount3++;
         await Utils.msSleep(100);
       }
@@ -522,7 +522,7 @@ export default function MessageConstructorHandlerTest(): void {
     /**
      * @tc.name   MessageConstructorHandlerTest2000
      * @tc.number SUB_MESSAGE_CONSTRUCTOR_HANDLER_TEST_2000
-     * @tc.desc   Verify Message creation with retry pattern on failure
+     * @tc.desc   Verify Message creation succeeds with MessageHandler and target is correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3

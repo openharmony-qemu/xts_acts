@@ -468,31 +468,12 @@ export default function MessageConstructorWhatTest(): void {
     /**
      * @tc.name   MessageConstructorWhatTest2300
      * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2300
-     * @tc.desc   Verify Message(what, handler) instanceof concurrency.Message
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageConstructorWhatTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, messageHandler);
-      expect(msg instanceof concurrency.Message).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
-      }
-    })
-
-    /**
-     * @tc.name   MessageConstructorWhatTest2400
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2400
      * @tc.desc   Verify multiple Message instances are independent with different what values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -507,14 +488,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest2500
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2500
+     * @tc.name   MessageConstructorWhatTest2400
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2400
      * @tc.desc   Verify multiple messages processed in order by same handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -539,14 +520,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest2600
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2600
+     * @tc.name   MessageConstructorWhatTest2500
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2500
      * @tc.desc   Verify creating new Message to different handler in callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let secondReceived = new AtomicInt(0);
@@ -571,14 +552,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest2700
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2700
+     * @tc.name   MessageConstructorWhatTest2600
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2600
      * @tc.desc   Verify Message batch creation in loop with AtomicInt counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -597,14 +578,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest2800
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2800
+     * @tc.name   MessageConstructorWhatTest2700
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2700
      * @tc.desc   Verify Message with different MessageHandler instances returns correct target
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
@@ -625,14 +606,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest2900
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2900
+     * @tc.name   MessageConstructorWhatTest2800
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2800
      * @tc.desc   Verify AtomicReference stores and updates Message atomically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -649,14 +630,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3000
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3000
+     * @tc.name   MessageConstructorWhatTest2900
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2900
      * @tc.desc   Verify concurrent Message creation with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -673,14 +654,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3100
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3100
+     * @tc.name   MessageConstructorWhatTest3000
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3000
      * @tc.desc   Verify concurrent Message sending to same handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -708,14 +689,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3200
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3200
+     * @tc.name   MessageConstructorWhatTest3100
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3100
      * @tc.desc   Verify different what values distinguish message types in handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let typeACount = new AtomicInt(0);
@@ -745,14 +726,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3300
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3300
+     * @tc.name   MessageConstructorWhatTest3200
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3200
      * @tc.desc   Verify special identifier values (0, -1, 100) stored correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -768,14 +749,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3400
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3400
+     * @tc.name   MessageConstructorWhatTest3300
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3300
      * @tc.desc   Verify comparison with single-param constructor default what value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -789,14 +770,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3500
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3500
+     * @tc.name   MessageConstructorWhatTest3400
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3400
      * @tc.desc   Verify comparison with three-param constructor getObject result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -810,14 +791,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3600
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3600
+     * @tc.name   MessageConstructorWhatTest3500
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3500
      * @tc.desc   Verify complete message lifecycle from creation to processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let processed = new AtomicInt(0);
@@ -842,14 +823,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3700
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3700
+     * @tc.name   MessageConstructorWhatTest3600
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3600
      * @tc.desc   Verify while-loop wait pattern for concurrent message processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let completedCount = new AtomicInt(0);
@@ -873,14 +854,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3800
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3800
+     * @tc.name   MessageConstructorWhatTest3700
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3700
      * @tc.desc   Verify concurrent message result collection with AtomicInt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let resultCount = new AtomicInt(0);
@@ -903,14 +884,14 @@ export default function MessageConstructorWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatTest3900
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3900
+     * @tc.name   MessageConstructorWhatTest3800
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3800
      * @tc.desc   Verify Message.getTarget() after handler EAWorker terminates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);

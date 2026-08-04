@@ -101,9 +101,12 @@ export default function MessageScenarioThirdTest(): void {
           const message2 = new concurrency.Message(2, obj2, handler);
           handler.sendMessage(message2);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(finalValue).assertEqual(100);
           expect(finalData).assertEqual("test");
@@ -153,9 +156,12 @@ export default function MessageScenarioThirdTest(): void {
             handler.sendMessage(message);
           }
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(processCount).assertEqual(MESSAGE_COUNT);
         } catch (error) {
@@ -215,9 +221,12 @@ export default function MessageScenarioThirdTest(): void {
           const msg4 = new concurrency.Message(handler);
           handler.sendMessage(msg4);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(messageCount).assertEqual(4);
         } catch (error) {
@@ -265,9 +274,12 @@ export default function MessageScenarioThirdTest(): void {
             handler.sendMessage(message);
           }
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedWhat.length).assertEqual(testValues.length);
           for (const val of testValues) {
@@ -313,9 +325,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, "", handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedString).assertEqual("");
         } catch (error) {
@@ -359,9 +374,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, unicodeString, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedString).assertEqual(unicodeString);
         } catch (error) {
@@ -406,9 +424,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, longString, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedLength).assertEqual(5000);
         } catch (error) {
@@ -466,9 +487,12 @@ export default function MessageScenarioThirdTest(): void {
             handler.sendMessage(message);
           }
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(processCount).assertEqual(boundaryValues.length);
         } catch (error) {
@@ -528,9 +552,12 @@ export default function MessageScenarioThirdTest(): void {
           const msg4 = new concurrency.Message(4, obj, handler);
           handler.sendMessage(msg4);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(processCount).assertEqual(4);
         } catch (error) {
@@ -574,9 +601,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, plainObj, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedObj.name).assertEqual("test");
           expect(receivedObj.value).assertEqual(123);
@@ -622,9 +652,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, testArray, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedArray.length).assertEqual(5);
           expect(receivedArray[0]).assertEqual(1);
@@ -673,9 +706,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, testMap, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedMap.size).assertEqual(2);
           expect(receivedMap.get("key1")).assertEqual(100);
@@ -721,9 +757,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, testSet, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedSet.size).assertEqual(3);
           expect(receivedSet.has(10)).assertEqual(true);
@@ -769,9 +808,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, testDate, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedDate.getFullYear()).assertEqual(2025);
           expect(receivedDate.getMonth()).assertEqual(0);
@@ -817,9 +859,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, nullObj, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedNull.isNull).assertEqual(true);
         } catch (error) {
@@ -873,9 +918,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, nestedObj, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedObj.outer.inner.value).assertEqual(999);
           expect(receivedObj.data.length).assertEqual(3);
@@ -920,9 +968,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, emptyObj, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           const keys = Object.keys(receivedObj);
           expect(keys.length).assertEqual(0);
@@ -967,9 +1018,12 @@ export default function MessageScenarioThirdTest(): void {
           const message = new concurrency.Message(1, emptyArray, handler);
           handler.sendMessage(message);
 
-          while (!flag) {
-            await Utils.msSleep(100)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
           }
+          expect(flag).assertTrue();
 
           expect(receivedArray.length).assertEqual(0);
         } catch (error) {

@@ -1,6 +1,6 @@
-'use static'
+'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -252,6 +252,7 @@ export default function MessageHandlerConstructorTest(): void {
       eaw.quit();
       let quitWait = 0;
       while (eaw.isAlive() && quitWait < 20000) {
+        await Utils.msSleep(1);
         quitWait++;
       }
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);

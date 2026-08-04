@@ -1,6 +1,6 @@
-'use static'
+'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -317,6 +317,7 @@ export default function MessageHandlerPostTest(): void {
       eaw.quit();
       let quitWait = 0;
       while (eaw.isAlive() && quitWait < 20000) {
+        await Utils.msSleep(1);
         quitWait++;
       }
       let result: boolean = handler.post((): void => {});
@@ -326,7 +327,7 @@ export default function MessageHandlerPostTest(): void {
     /**
      * @tc.name   MessageHandlerPostTest1500
      * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1500
-     * @tc.desc   Verify MessageHandler.post() returns false when message queue is full
+     * @tc.desc   Verify MessageHandler.post() returns true and accepts multiple empty callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -344,33 +345,16 @@ export default function MessageHandlerPostTest(): void {
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
+
     /**
      * @tc.name   MessageHandlerPostTest1600
      * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1600
-     * @tc.desc   Verify MessageHandler.post() return value type is boolean
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageHandlerPostTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let result: boolean = handler.post((): void => {});
-      expect(result).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-
-    /**
-     * @tc.name   MessageHandlerPostTest1700
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1700
      * @tc.desc   Verify MessageHandler.post() returns true when callback throws synchronous error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -380,14 +364,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest1800
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1800
+     * @tc.name   MessageHandlerPostTest1700
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1700
      * @tc.desc   Verify MessageHandler.post() returns true when async callback throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -398,14 +382,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest1900
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1900
+     * @tc.name   MessageHandlerPostTest1800
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1800
      * @tc.desc   Verify one callback error does not prevent subsequent messages from being processed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let executed = new AtomicInt(0);
@@ -427,14 +411,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2000
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2000
+     * @tc.name   MessageHandlerPostTest1900
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_1900
      * @tc.desc   Verify MessageHandler.post() callback executes asynchronously via EAWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerPostTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerPostTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let executed = new AtomicInt(0);
@@ -453,14 +437,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2100
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2100
+     * @tc.name   MessageHandlerPostTest2000
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2000
      * @tc.desc   Verify MessageHandler.post() during EAWorker running succeeds continuously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerPostTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerPostTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -482,14 +466,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2200
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2200
+     * @tc.name   MessageHandlerPostTest2100
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2100
      * @tc.desc   Verify MessageHandler.post() callback is processed by handler function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerPostTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerPostTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let received = new AtomicInt(0);
@@ -511,14 +495,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2300
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2300
+     * @tc.name   MessageHandlerPostTest2200
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2200
      * @tc.desc   Verify multiple MessageHandler instances with different EAWorkers work independently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerPostTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerPostTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -547,14 +531,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2400
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2400
+     * @tc.name   MessageHandlerPostTest2300
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2300
      * @tc.desc   Verify concurrent MessageHandler.post() calls with AtomicInt counting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -575,14 +559,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2500
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2500
+     * @tc.name   MessageHandlerPostTest2400
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2400
      * @tc.desc   Verify MessageHandler.post() race condition with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -603,14 +587,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2600
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2600
+     * @tc.name   MessageHandlerPostTest2500
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2500
      * @tc.desc   Verify MessageHandler.hasCallbacks() returns true after post()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerPostTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerPostTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -622,14 +606,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2700
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2700
+     * @tc.name   MessageHandlerPostTest2600
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2600
      * @tc.desc   Verify MessageHandler.removeCallbacks() called after post and handler continues working
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerPostTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerPostTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let executed = new AtomicInt(0);
@@ -652,14 +636,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2800
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2800
+     * @tc.name   MessageHandlerPostTest2700
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2700
      * @tc.desc   Verify AsyncLock waits for posted callback completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let executed = new AtomicInt(0);
@@ -678,14 +662,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest2900
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2900
+     * @tc.name   MessageHandlerPostTest2800
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2800
      * @tc.desc   Verify counting wait for all posted callbacks completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -707,14 +691,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3000
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3000
+     * @tc.name   MessageHandlerPostTest2900
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_2900
      * @tc.desc   Verify Promise.all waits for all posted callbacks completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -735,14 +719,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3100
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3100
+     * @tc.name   MessageHandlerPostTest3000
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3000
      * @tc.desc   Verify MessageHandler.post() with proper EAWorker lifecycle management
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw: EAWorker | null = new EAWorker();
       eaw.start();
       let handler: concurrency.MessageHandler | null = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -763,14 +747,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3200
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3200
+     * @tc.name   MessageHandlerPostTest3100
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3100
      * @tc.desc   Verify AsyncLock protects shared variable in posted callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let lock = new AsyncLock();
@@ -786,7 +770,7 @@ export default function MessageHandlerPostTest(): void {
         } as () => void);
       }
       let waitCount: int = 0;
-      while (counter < totalTasks && waitCount < 10000) {
+      while (counter < totalTasks && waitCount < 100) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -795,14 +779,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3300
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3300
+     * @tc.name   MessageHandlerPostTest3200
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3200
      * @tc.desc   Verify AtomicInt protects counter in posted callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -824,14 +808,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3400
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3400
+     * @tc.name   MessageHandlerPostTest3300
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3300
      * @tc.desc   Verify nested post() call inside callback executes inner callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let innerExecuted = new AtomicInt(0);
@@ -852,14 +836,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3500
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3500
+     * @tc.name   MessageHandlerPostTest3400
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3400
      * @tc.desc   Verify multi-level nested post() calls execute in correct depth order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let depth = new AtomicInt(0);
@@ -884,14 +868,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3600
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3600
+     * @tc.name   MessageHandlerPostTest3500
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3500
      * @tc.desc   Verify hasCallbacks() called inside callback finds other posted callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let found = new AtomicInt(0);
@@ -919,14 +903,14 @@ export default function MessageHandlerPostTest(): void {
 
 
     /**
-     * @tc.name   MessageHandlerPostTest3700
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3700
+     * @tc.name   MessageHandlerPostTest3600
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3600
      * @tc.desc   Verify post() called inside handler callback executes correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let executed = new AtomicInt(0);
@@ -947,14 +931,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest3800
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3800
+     * @tc.name   MessageHandlerPostTest3700
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3700
      * @tc.desc   Verify hasCallbacks() called inside handler callback finds posted callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let found = new AtomicInt(0);
@@ -982,14 +966,14 @@ export default function MessageHandlerPostTest(): void {
 
 
     /**
-     * @tc.name   MessageHandlerPostTest3900
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3900
+     * @tc.name   MessageHandlerPostTest3800
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3800
      * @tc.desc   Verify multiple EAWorkers with separate MessageHandlers post concurrently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -1020,14 +1004,14 @@ export default function MessageHandlerPostTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerPostTest4000
-     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_4000
+     * @tc.name   MessageHandlerPostTest3900
+     * @tc.number SUB_MESSAGE_HANDLER_POST_TEST_3900
      * @tc.desc   Verify post() with concurrent multi-handler stress test completes all tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerPostTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerPostTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);

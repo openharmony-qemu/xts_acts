@@ -552,10 +552,10 @@ export default function MessageEqualsBasicTest(): void {
                 }
             });
 
-        /**
-         * @tc.name   MessageEqualsBasicTest1300
+            /**
+             * @tc.name   MessageEqualsBasicTest1300
          * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1300
-         * @tc.desc   Test Message.equals when obj is null or undefined
+         * @tc.desc   Test Message.equals with negative what value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
@@ -563,48 +563,6 @@ export default function MessageEqualsBasicTest(): void {
         it('MessageEqualsBasicTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1300';
-                console.info(`${TAG} test start`);
-                const eaw = new EAWorker();
-                eaw.start();
-
-                try {
-                    const handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-                        // do nothing
-                    }, eaw);
-
-                    const what: int = 1;
-                    const msg1 = new concurrency.Message(what, handler);
-                    const msg2 = new concurrency.Message(what, handler);
-
-                    const result = msg1.equals(msg2);
-                    expect(result).assertTrue();
-                } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
-                    expect(false).assertFail();
-                } finally {
-                    try {
-                        eaw.quit();
-                    } catch (error) {
-                        console.warn(`${TAG} catch quit error: ${error.message}`);
-                    }
-                    console.info(`${TAG} test end`);
-                    done();
-                }
-            });
-
-        /**
-         * @tc.name   MessageEqualsBasicTest1400
-         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1400
-         * @tc.desc   Test Message.equals with negative what value
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('MessageEqualsBasicTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
-                const TAG: string = 'MessageEqualsBasicTest1400';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
                 eaw.start();
@@ -637,16 +595,16 @@ export default function MessageEqualsBasicTest(): void {
             });
 
         /**
-         * @tc.name   MessageEqualsBasicTest1500
-         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1500
+         * @tc.name   MessageEqualsBasicTest1400
+         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1400
          * @tc.desc   Test Message.equals with large what value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('MessageEqualsBasicTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        it('MessageEqualsBasicTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-                const TAG: string = 'MessageEqualsBasicTest1500';
+                const TAG: string = 'MessageEqualsBasicTest1400';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
                 eaw.start();
@@ -679,16 +637,16 @@ export default function MessageEqualsBasicTest(): void {
             });
 
         /**
-         * @tc.name   MessageEqualsBasicTest1600
-         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1600
+         * @tc.name   MessageEqualsBasicTest1500
+         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1500
          * @tc.desc   Test Message.equals with mixed message types returns false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('MessageEqualsBasicTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        it('MessageEqualsBasicTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-                const TAG: string = 'MessageEqualsBasicTest1600';
+                const TAG: string = 'MessageEqualsBasicTest1500';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
                 eaw.start();
@@ -724,16 +682,16 @@ export default function MessageEqualsBasicTest(): void {
             });
 
         /**
-         * @tc.name   MessageEqualsBasicTest1700
-         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1700
+         * @tc.name   MessageEqualsBasicTest1600
+         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1600
          * @tc.desc   Test Message.equals with self comparison
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('MessageEqualsBasicTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        it('MessageEqualsBasicTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
-                const TAG: string = 'MessageEqualsBasicTest1700';
+                const TAG: string = 'MessageEqualsBasicTest1600';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
                 eaw.start();
@@ -764,16 +722,16 @@ export default function MessageEqualsBasicTest(): void {
             });
 
         /**
-         * @tc.name   MessageEqualsBasicTest1800
-         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1800
+         * @tc.name   MessageEqualsBasicTest1700
+         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1700
          * @tc.desc   Test Message.equals with empty string object
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('MessageEqualsBasicTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        it('MessageEqualsBasicTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
-                const TAG: string = 'MessageEqualsBasicTest1800';
+                const TAG: string = 'MessageEqualsBasicTest1700';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
                 eaw.start();
@@ -807,16 +765,16 @@ export default function MessageEqualsBasicTest(): void {
             });
 
         /**
-         * @tc.name   MessageEqualsBasicTest1900
-         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1900
+         * @tc.name   MessageEqualsBasicTest1800
+         * @tc.number SUB_MESSAGE_EQUALS_BASIC_TEST_1800
          * @tc.desc   Test Message.equals with long string object
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('MessageEqualsBasicTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        it('MessageEqualsBasicTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
-                const TAG: string = 'MessageEqualsBasicTest1900';
+                const TAG: string = 'MessageEqualsBasicTest1800';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
                 eaw.start();

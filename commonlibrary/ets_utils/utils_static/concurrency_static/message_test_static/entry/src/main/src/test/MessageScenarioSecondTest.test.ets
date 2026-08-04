@@ -69,10 +69,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
@@ -115,10 +115,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
 
           let message0: concurrency.Message = new concurrency.Message(0, handler);
@@ -185,10 +185,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
 
           let message0: concurrency.Message = new concurrency.Message(0, 'obj', handler);
@@ -255,10 +255,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           let callback: CB | undefined = message.getCallback();
@@ -301,10 +301,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           let callback: CB | undefined = message.getCallback();
@@ -347,10 +347,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
           let callback: CB | undefined = message.getCallback();
@@ -393,10 +393,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let callback: CB = () => {
             console.log(`concurrency.Message callback！`);
@@ -443,10 +443,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -489,10 +489,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -535,10 +535,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -581,10 +581,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
@@ -764,14 +764,14 @@ export default function MessageScenarioSecondTest(): void {
             works[workNum].start();
             while (handlerNum < 2) {
               let handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-                (async () => {
+                waitForCompletion(async () => {
                   await lock.lockAsync(() => {
                     result.push(msg);
                     console.info(`push msg`);
                   })
                   await Sleep(1000);
                   flag = true;
-                })().awaitSync()
+                })
               }, works[workNum]);
               while (messageNum < 5) {
                 let message = new concurrency.Message(messageNum, handler);
@@ -896,10 +896,10 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             firstStarted = true;
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, eaw);
           let messageObj = new concurrency.Message(1, "messageObj", handler);
           let message1 = new concurrency.Message(1, handler);
@@ -1323,7 +1323,11 @@ export default function MessageScenarioSecondTest(): void {
             executed = true;
           }, h);
           expect(h.sendMessage(msg)).assertTrue();
-          await Sleep(200);
+          let waitExec: int = 0;
+          while (!executed && waitExec < 50) {
+            waitExec++;
+            await Utils.msSleep(10);
+          }
           expect(executed).assertTrue();
           let waitRecv: int = 0;
           while (!received && waitRecv < 50) {
@@ -1649,10 +1653,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           let handler1: concurrency.MessageHandler;
           handler1 = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker1);
           let message1 = new concurrency.Message(1, 1, handler1);
           message1.sendToTarget();
@@ -1695,10 +1699,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg1 = new concurrency.Message(0, 1, handler);
           let msg2 = new concurrency.Message(1, 1, handler);
@@ -1750,10 +1754,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(1, 1 as int, handler);
           handler.sendMessage(msg);
@@ -1795,10 +1799,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg);
@@ -1881,10 +1885,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(1, true, handler);
           handler.sendMessage(msg);
@@ -1926,10 +1930,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(1, '1', handler);
           handler.sendMessage(msg);
@@ -1971,10 +1975,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(1, [1, 2], handler);
           handler.sendMessage(msg);
@@ -2017,10 +2021,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(1, obj, handler);
           handler.sendMessage(msg);
@@ -2061,10 +2065,10 @@ export default function MessageScenarioSecondTest(): void {
         try {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg1 = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg1);
@@ -2106,10 +2110,10 @@ export default function MessageScenarioSecondTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -2159,10 +2163,10 @@ export default function MessageScenarioSecondTest(): void {
         }
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -2209,10 +2213,10 @@ export default function MessageScenarioSecondTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -2273,10 +2277,10 @@ export default function MessageScenarioSecondTest(): void {
         };
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async () => {
+            waitForCompletion(async () => {
               await Sleep(1000);
               flag = true;
-            })().awaitSync()
+            })
           }, worker)
           worker.start();
           let msg = new concurrency.Message(handler)
@@ -2323,10 +2327,10 @@ export default function MessageScenarioSecondTest(): void {
         let flag: boolean = false;
         let handlerValue: boolean = false;
         handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-          (async () => {
+          waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
-          })().awaitSync()
+          })
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2388,10 +2392,10 @@ export default function MessageScenarioSecondTest(): void {
           }
         }
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-          (async () => {
+          waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
-          })().awaitSync()
+          })
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2444,10 +2448,10 @@ export default function MessageScenarioSecondTest(): void {
         let handlerValue: boolean = false;
         let time: number = 0;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-          (async () => {
+          waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
-          })().awaitSync()
+          })
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2509,10 +2513,10 @@ export default function MessageScenarioSecondTest(): void {
         let handlerValue: boolean = false;
         let time: number = 0;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-          (async () => {
+          waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
-          })().awaitSync()
+          })
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2573,10 +2577,10 @@ export default function MessageScenarioSecondTest(): void {
         let flag: boolean = false;
         let handlerValue: boolean = false;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-          (async () => {
+          waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
-          })().awaitSync()
+          })
         }, worker)
         let p = () => {
           let a = 1;
@@ -2624,10 +2628,10 @@ export default function MessageScenarioSecondTest(): void {
         const TAG: string = 'MessageTest061';
         let flag: boolean = false;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-          (async () => {
+          waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
-          })().awaitSync()
+          })
         }, worker);
         let p = () => {
           let a = 1;
@@ -2857,7 +2861,7 @@ export default function MessageScenarioSecondTest(): void {
         }
         worker.start();
         try {
-          let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             let cb: (() => void) | undefined = msg.getCallback();
             if (cb !== undefined) { cb(); }
           }, worker);

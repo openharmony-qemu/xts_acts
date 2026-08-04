@@ -1,6 +1,6 @@
-'use static'
+'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -488,31 +488,16 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
       expect(result).assertFalse();
     })
 
+
     /**
      * @tc.name   MessageHandlerRemoveMessagesWhatObjTest1800
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_1800
-     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) returns false when obj matches but what does not match
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageHandlerRemoveMessagesWhatObjTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      handler.sendMessage(new concurrency.Message(1, "test", handler));
-      let result: boolean = handler.removeMessages(2, "test");
-      expect(result).assertFalse();
-    })
-
-
-    /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest1900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_1900
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) second call with same what and obj returns false after first removal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -538,28 +523,28 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2000
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest1900
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_1900
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) returns false when message queue is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let result: boolean = handler.removeMessages(1, "test");
       expect(result).assertFalse();
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2100
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2000
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2000
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) returns false after message has been processed by EAWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let executed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         executed.fetchAdd(1);
@@ -576,14 +561,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2200
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2100
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2100
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) returns true after re-sending message with same what and obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -610,14 +595,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2300
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2200
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) returns false when queue only has callback-type messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let callback = (): void => {};
       handler.sendMessage(new concurrency.Message(callback, handler));
@@ -626,14 +611,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2400
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2300
      * @tc.desc   Verify MessageHandler.removeMessages(-1000000, obj) returns false even when queue has other messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       handler.sendMessage(new concurrency.Message(1, "test1", handler));
       handler.sendMessage(new concurrency.Message(2, "test2", handler));
@@ -642,14 +627,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2500
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2500
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2400
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2400
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with multiple messages removes only matching what and obj combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -677,14 +662,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2600
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2600
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2500
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2500
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with what and obj both unmatched returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       handler.sendMessage(new concurrency.Message(100, "match_obj", handler));
       let result: boolean = handler.removeMessages(200, "other_obj");
@@ -694,14 +679,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
 
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2700
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2700
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2600
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2600
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) parameter type safety - ArkTS prevents invalid types at compile time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -724,14 +709,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2800
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2800
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2700
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2700
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) obj parameter type safety - null and undefined cannot be passed as Object in ArkTS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -757,14 +742,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2900
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2800
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2800
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) returns false when Message created without what identifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let callback = (): void => {};
       handler.sendMessage(new concurrency.Message(callback, handler));
@@ -773,14 +758,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3000
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2900
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2900
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) inside post callback removes message successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -800,14 +785,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3100
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3000
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3000
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) nested call inside handler callback does not deadlock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let nestedDone = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let what: int = msg.getWhat();
@@ -832,14 +817,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3200
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3100
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3100
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with multiple EAWorkers removes messages independently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
@@ -874,14 +859,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3300
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3200
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) concurrent operations produce consistent queue state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -910,14 +895,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3400
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3300
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with AtomicInt counter wait instead of Timer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -941,14 +926,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3500
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3500
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3400
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3400
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) inside handler callback removes other message safely
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let what: int = msg.getWhat();
@@ -973,14 +958,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3600
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3600
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3500
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3500
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with object reference competition in concurrent scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1001,14 +986,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3700
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3700
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3600
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3600
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) multiple removes return correct values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1034,14 +1019,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3800
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3800
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3700
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3700
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) inside handler callback with obj reference matching correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let what: int = msg.getWhat();
@@ -1068,14 +1053,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3900
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3800
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3800
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with different Workers removing same what+obj from different handlers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
@@ -1110,14 +1095,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4000
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3900
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3900
      * @tc.desc   Verify MessageHandler removeMessages complete flow: sendMessage then hasMessages then removeMessages then hasMessages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1141,14 +1126,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4100
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4000
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4000
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) removes all messages with same what and obj at once
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1172,14 +1157,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4200
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4100
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4100
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) only removes messages matching both what and obj, unlike removeMessages(what)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1204,14 +1189,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4300
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4200
      * @tc.desc   Verify MessageHandler.removeMessages(1, obj1) does not affect hasMessages(1, obj2) for different obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1234,14 +1219,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4400
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4300
      * @tc.desc   Verify MessageHandler.removeMessages(1, obj) does not affect hasMessages(2, obj) for different what
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1264,14 +1249,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4500
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4500
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4400
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4400
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) after sending large number of messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
       let removed = new AtomicInt(0);
@@ -1301,14 +1286,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4600
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4600
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4500
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4500
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) works independently for different handlers with different EAWorkers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
@@ -1347,14 +1332,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4700
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4700
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4600
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4600
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with same what different obj multiple messages removes correct combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
       let verified = new AtomicInt(0);
@@ -1385,14 +1370,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4800
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4800
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4700
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4700
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) Worker destruction timing - ensure no pending tasks before quit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
       let executed = new AtomicInt(0);
@@ -1415,14 +1400,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4900
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4800
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4800
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) concurrent remove produces stable queue state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
       let verified = new AtomicInt(0);
@@ -1449,14 +1434,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5000
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4900
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4900
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) removes what+obj messages while keeping callback messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -1483,14 +1468,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5100
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5000
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5000
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) after EAWorker quit and restart returns boolean type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
       let removed = new AtomicInt(0);
@@ -1523,14 +1508,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5200
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5100
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5100
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with different obj types for same what removes correct combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1557,14 +1542,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5300
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5200
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with Map obj returns true when matching by reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -1589,14 +1574,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5400
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5300
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with Set obj returns true when matching by reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {

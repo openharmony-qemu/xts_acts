@@ -206,8 +206,9 @@ export default function MessageSendToTargetTest(): void {
       expect(counter.load()).assertEqual(1);
       eaw.quit();
       let waitCount2 = 0;
-      while (eaw.isAlive() && waitCount2 < 6000) {
+      while (eaw.isAlive() && waitCount2 < 100) {
         waitCount2++;
+        await Utils.msSleep(10);
       }
       let msg2 = new concurrency.Message(2, messageHandler);
       try {
@@ -215,10 +216,7 @@ export default function MessageSendToTargetTest(): void {
       } catch (e) {
         // Expected: error after EAWorker quit
       }
-      let stallCount = 0;
-      while (stallCount < 20000) {
-        stallCount++;
-      }
+      await Utils.msSleep(100);
       expect(counter.load()).assertEqual(1);
     })
 
@@ -592,16 +590,14 @@ export default function MessageSendToTargetTest(): void {
       expect(counter.load()).assertEqual(1);
       eaw.quit();
       let waitCount2 = 0;
-      while (eaw.isAlive() && waitCount2 < 6000) {
+      while (eaw.isAlive() && waitCount2 < 100) {
         waitCount2++;
+        await Utils.msSleep(10);
       }
       let msg2 = new concurrency.Message(2, messageHandler);
       try {
         msg2.sendToTarget();
-        let stallCount = 0;
-        while (stallCount < 20000) {
-          stallCount++;
-        }
+        await Utils.msSleep(100);
         expect(counter.load()).assertEqual(1);
       } catch (e) {
         expect(e instanceof Error).assertTrue();
