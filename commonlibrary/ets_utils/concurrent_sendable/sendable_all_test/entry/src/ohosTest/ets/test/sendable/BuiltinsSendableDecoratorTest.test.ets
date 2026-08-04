@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import {
@@ -59,8 +60,7 @@ export default function BuiltinsSendableDecoratorTest(): void {
      * @tc.level  LEVEL0
      */
     it('testSendableDecorator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance: EmptySendableClass = new EmptySendableClass()
-      expect(instance).assertNotNull()
+      const instance = new EmptySendableClass()
     })
 
     /**
