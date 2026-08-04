@@ -14,36 +14,27 @@
  */
 
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 export default function MenuItemSubMenuBuilder() {
   describe('MenuItemSubMenuBuilder', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] MenuItemSubMenuBuilder beforeEach');
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/menu/MenuItemSubMenuBuilder'
-      };
-      try {
-        router.clear();
-        let pages = router.getState();
-        if (pages.name !== 'MenuItemSubMenuBuilder') {
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
-      } catch (err) {
-        console.error('[ARKUI_DYN] push MenuItemSubMenuBuilder error: ' + err);
-        expect().assertFail();
-      }
+      await DialogApi26TestHelper.openPageIfNeeded('MenuItemSubMenuBuilder', 'MainAbility/pages/menu/MenuItemSubMenuBuilder');
       done();
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(800);
       console.info('[ARKUI_DYN] MenuItemSubMenuBuilder afterEach');
     });
+    afterAll(async () => {
+      await DialogApi26TestHelper.leavePage();
+      console.info('[ARKUI_DYN] MenuItemSubMenuBuilder afterAll');
+    });
+
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0100
@@ -56,7 +47,7 @@ export default function MenuItemSubMenuBuilder() {
     it('SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_submenu_open'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -64,7 +55,7 @@ export default function MenuItemSubMenuBuilder() {
       let node = await driver.findComponent(ON.text('WithSubMenu'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0100 END');
       done();
     });
@@ -80,7 +71,7 @@ export default function MenuItemSubMenuBuilder() {
     it('SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_submenu_open'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -88,7 +79,7 @@ export default function MenuItemSubMenuBuilder() {
       let node = await driver.findComponent(ON.text('WithAltSubMenu'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0200 END');
       done();
     });
@@ -104,7 +95,7 @@ export default function MenuItemSubMenuBuilder() {
     it('SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_submenu_open'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -113,11 +104,11 @@ export default function MenuItemSubMenuBuilder() {
       expect(node !== null).assertTrue();
       let parent = await driver.findComponent(ON.text('WithSubMenu'));
       await parent.longClick();
-      await CommonFunc.sleep(1200);
+      await CommonFunc.sleep(200);
       let sub = await driver.findComponent(ON.text('SubCopy'));
       expect(sub !== null).assertTrue();
       await sub.click();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let label = await driver.findComponent(ON.id('submenu_last_action'));
       let txt = await label.getText();
       expect(txt === 'last=SubCopy').assertTrue();
@@ -136,7 +127,7 @@ export default function MenuItemSubMenuBuilder() {
     it('SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_submenu_open'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -144,7 +135,7 @@ export default function MenuItemSubMenuBuilder() {
       let node = await driver.findComponent(ON.text('PlainItem'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_MenuItemSubMenuBuilder_0400 END');
       done();
     });
