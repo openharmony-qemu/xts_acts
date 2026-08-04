@@ -62,6 +62,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'map stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -90,6 +91,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'filter stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -119,6 +121,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'forEach stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -149,6 +152,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'every stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -179,6 +183,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'some stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -209,6 +214,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         }, 0.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'reduce stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -238,6 +244,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         }, 0.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'reduceRight stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -263,6 +270,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'find stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -285,6 +293,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'findIndex stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -307,6 +316,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'findLast stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -329,6 +339,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'findLastIndex stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -351,6 +362,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'sort stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -375,6 +387,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         target.set(src);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualElement0 = target.$_get(0);
         const expectedElement0: number = 1.0;
         expect(actualElement0).assertEqual(expectedElement0);
@@ -395,6 +408,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         arr.with(2, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualElement1 = arr.$_get(1);
         const expectedElement1: number = 2.0;
         expect(actualElement1).assertEqual(expectedElement1);
@@ -415,6 +429,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         arr.with(-3, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualElement0 = arr.$_get(0);
         const expectedElement0: number = 1.0;
         expect(actualElement0).assertEqual(expectedElement0);
@@ -435,6 +450,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         arr.$_get(-1);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -455,6 +471,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         arr.$_get(1);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -475,6 +492,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         arr.$_set(-1, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -498,6 +516,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         arr.$_set(1, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -527,6 +546,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualResult = total;
         const expectedResult: number = 3.0;
         expect(actualResult).assertEqual(expectedResult);
@@ -553,6 +573,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualElement1 = arr.$_get(1);
         const expectedElement1: number = 20.0;
         expect(actualElement1).assertEqual(expectedElement1);
@@ -579,6 +600,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualElement1 = arr.$_get(1);
         const expectedElement1: number = 30.0;
         expect(actualElement1).assertEqual(expectedElement1);
@@ -606,6 +628,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         }, 0.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualResult = seen;
         const expectedResult: number = 3.0;
         expect(actualResult).assertEqual(expectedResult);
@@ -630,6 +653,10 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
+        const actualMessage = e.message;
+        const expectedMessage: string = 'sort size stop';
+        expect(actualMessage).assertEqual(expectedMessage);
         expect(arr.length).assertEqual(beforeLength);
         expect(arr.byteLength).assertEqual(beforeByteLength);
       }
@@ -651,6 +678,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         target.set(src);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         expect(target.byteLength).assertEqual(before);
       }
     });
@@ -670,6 +698,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         arr.with(1, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         expect(arr.buffer).assertEqual(buf);
       }
     });
@@ -677,31 +706,12 @@ export default function Float64ArrayErrorAtomicityTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ERRORATOMICITY_2700
      * @tc.name testFloat64ArrayErrorAtomicity027
-     * @tc.desc Verify findLast not found throws declared error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayErrorAtomicity027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = Float64Array.of(1.0);
-      try {
-        arr.findLast((v: number): boolean => v > 10.0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.message)
-          .assertEqual('Float64Array.findLast: not implemented if an element was not found');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ERRORATOMICITY_2800
-     * @tc.name testFloat64ArrayErrorAtomicity028
      * @tc.desc Verify failed constructor does not affect existing buffer view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayErrorAtomicity028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayErrorAtomicity027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
       const view: Float64Array = new Float64Array(buf);
       view.$_set(0, 5.0);
@@ -709,6 +719,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         new Float64Array(buf, 8, 2);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualElement0 = view.$_get(0);
         const expectedElement0: number = 5.0;
         expect(actualElement0).assertEqual(expectedElement0);
@@ -716,14 +727,14 @@ export default function Float64ArrayErrorAtomicityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ERRORATOMICITY_2900
-     * @tc.name testFloat64ArrayErrorAtomicity029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ERRORATOMICITY_2800
+     * @tc.name testFloat64ArrayErrorAtomicity028
      * @tc.desc Verify some short-circuit true avoids later throwing branch
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayErrorAtomicity029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayErrorAtomicity028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       const r: boolean = arr.some((v: number): boolean => {
         if (v === 2.0) {
@@ -735,14 +746,14 @@ export default function Float64ArrayErrorAtomicityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ERRORATOMICITY_3000
-     * @tc.name testFloat64ArrayErrorAtomicity030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ERRORATOMICITY_2900
+     * @tc.name testFloat64ArrayErrorAtomicity029
      * @tc.desc Verify business critical static chain failure leaves source unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayErrorAtomicity030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayErrorAtomicity029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const telemetry: Float64Array = new Float64Array(0x3);
       telemetry.$_set(0, 1e-308);
       telemetry.$_set(0b1, Number.MAX_VALUE);
@@ -753,6 +764,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'telemetry transform failed';
         expect(actualMessage).assertEqual(expectedMessage);

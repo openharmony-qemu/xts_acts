@@ -764,7 +764,8 @@ export default function Float64ArrayChainBusinessTest(): void {
       const actualElement0Second = r2.$_get(0);
       const expectedElement0Second: number = 1.0;
       expect(actualElement0Second).assertEqual(expectedElement0Second);
-      expect(arr === r1).assertFalse();
+      const isOriginalResult: boolean = arr === r1;
+      expect(isOriginalResult).assertFalse();
     });
 
     /**
@@ -1725,9 +1726,7 @@ export default function Float64ArrayChainBusinessTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 

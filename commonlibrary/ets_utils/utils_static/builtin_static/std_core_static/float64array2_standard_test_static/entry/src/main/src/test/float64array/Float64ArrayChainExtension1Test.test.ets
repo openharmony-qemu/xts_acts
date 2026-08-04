@@ -1444,9 +1444,7 @@ export default function Float64ArrayChainExtension1Test(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'chain extension error';
         expect(actualMessage).assertEqual(expectedMessage);

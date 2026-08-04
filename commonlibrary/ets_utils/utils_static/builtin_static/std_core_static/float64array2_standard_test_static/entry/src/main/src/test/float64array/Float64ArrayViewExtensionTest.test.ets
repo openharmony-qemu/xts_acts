@@ -498,7 +498,7 @@ export default function Float64ArrayViewExtensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_EXTENSION_0250
      * @tc.name testFloat64ArrayViewExtension025
-     * @tc.desc Verify write via all four views independent
+     * @tc.desc Verify writes via two non-overlapping views are independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -520,7 +520,7 @@ export default function Float64ArrayViewExtensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VIEW_EXTENSION_0260
      * @tc.name testFloat64ArrayViewExtension026
-     * @tc.desc Verify all four views reference the same buffer
+     * @tc.desc Verify two views reference the same buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1429,9 +1429,7 @@ export default function Float64ArrayViewExtensionTest(): void {
         const arr: Float64Array = new Float64Array(buf, -8);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1957,9 +1955,7 @@ export default function Float64ArrayViewExtensionTest(): void {
         const arr: Float64Array = new Float64Array(buf, 3);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

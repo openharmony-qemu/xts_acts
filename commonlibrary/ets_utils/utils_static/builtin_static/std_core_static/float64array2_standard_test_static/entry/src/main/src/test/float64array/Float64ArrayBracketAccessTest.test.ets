@@ -40,9 +40,7 @@ function expectBracketWriteRangeError(arr: Float64Array, index: int, value: numb
     arr[index] = value;
   } catch (e) {
     isThrown = true;
-    const actualName = e.name;
-    const expectedName: string = 'RangeError';
-    expect(actualName).assertEqual(expectedName);
+    expect(e.name).assertEqual('RangeError');
     const actualMessage = e.message;
     const expectedMessage: string = 'invalid index';
     expect(actualMessage).assertEqual(expectedMessage);
@@ -377,9 +375,7 @@ export default function Float64ArrayBracketAccessTest(): void {
         expect(actualResult).assertEqual(expectedResult);
       } catch (e) {
         isThrown = true;
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -405,9 +401,7 @@ export default function Float64ArrayBracketAccessTest(): void {
         expect(actualResult).assertEqual(expectedResult);
       } catch (e) {
         isThrown = true;
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -455,9 +449,7 @@ export default function Float64ArrayBracketAccessTest(): void {
         expect(actualResult).assertEqual(expectedResult);
       } catch (e) {
         isThrown = true;
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1691,9 +1683,7 @@ export default function Float64ArrayBracketAccessTest(): void {
         expect(actualResult).assertEqual(expectedResult);
       } catch (e) {
         isThrown = true;
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1752,9 +1742,7 @@ export default function Float64ArrayBracketAccessTest(): void {
         expect(actualResult).assertEqual(expectedResult);
       } catch (e) {
         isThrown = true;
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1784,9 +1772,7 @@ export default function Float64ArrayBracketAccessTest(): void {
         expect(actualResult).assertEqual(expectedResult);
       } catch (e) {
         isThrown = true;
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1816,9 +1802,7 @@ export default function Float64ArrayBracketAccessTest(): void {
         expect(actualResultSecond).assertEqual(expectedResultSecond);
       } catch (e) {
         isThrown = true;
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);

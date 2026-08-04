@@ -224,7 +224,8 @@ export default function Float64ArrayCoverageTest(): void {
     it('testFloat64ArrayCoverage012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(3.0, 1.0);
       arr.sort();
-      expect(arr.valueOf() === arr).assertTrue();
+      const isSortedArrayOriginal: boolean = arr.valueOf() === arr;
+      expect(isSortedArrayOriginal).assertTrue();
     });
 
     /**
@@ -238,7 +239,8 @@ export default function Float64ArrayCoverageTest(): void {
     it('testFloat64ArrayCoverage013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0);
       arr.fill(0.0);
-      expect(arr.valueOf() === arr).assertTrue();
+      const isFilledArrayOriginal: boolean = arr.valueOf() === arr;
+      expect(isFilledArrayOriginal).assertTrue();
     });
 
     /**
@@ -252,7 +254,8 @@ export default function Float64ArrayCoverageTest(): void {
     it('testFloat64ArrayCoverage014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       arr.copyWithin(0, 2);
-      expect(arr.valueOf() === arr).assertTrue();
+      const isCopyWithinArrayOriginal: boolean = arr.valueOf() === arr;
+      expect(isCopyWithinArrayOriginal).assertTrue();
     });
 
     /**
@@ -266,7 +269,8 @@ export default function Float64ArrayCoverageTest(): void {
     it('testFloat64ArrayCoverage015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const sub: Float64Array = arr.subarray(0, 2);
-      expect(sub.valueOf() === sub).assertTrue();
+      const isSubarrayOriginal: boolean = sub.valueOf() === sub;
+      expect(isSubarrayOriginal).assertTrue();
     });
 
     /**
@@ -280,7 +284,8 @@ export default function Float64ArrayCoverageTest(): void {
     it('testFloat64ArrayCoverage016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const s: Float64Array = arr.slice(0, 2);
-      expect(s.valueOf() === s).assertTrue();
+      const isSliceOriginal: boolean = s.valueOf() === s;
+      expect(isSliceOriginal).assertTrue();
     });
 
     /**
@@ -294,7 +299,8 @@ export default function Float64ArrayCoverageTest(): void {
     it('testFloat64ArrayCoverage017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       arr.reverse();
-      expect(arr.valueOf() === arr).assertTrue();
+      const isReversedArrayOriginal: boolean = arr.valueOf() === arr;
+      expect(isReversedArrayOriginal).assertTrue();
     });
 
     /**
@@ -309,7 +315,8 @@ export default function Float64ArrayCoverageTest(): void {
       const arr: Float64Array = Float64Array.of(3.0, 1.0, 2.0);
       arr.sort();
       arr.fill(0.0);
-      expect(arr.valueOf() === arr).assertTrue();
+      const isChainedArrayOriginal: boolean = arr.valueOf() === arr;
+      expect(isChainedArrayOriginal).assertTrue();
     });
 
     /**
@@ -323,7 +330,8 @@ export default function Float64ArrayCoverageTest(): void {
     it('testFloat64ArrayCoverage019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(2);
       arr.set(0, 5.0);
-      expect(arr.valueOf() === arr).assertTrue();
+      const isSetArrayOriginal: boolean = arr.valueOf() === arr;
+      expect(isSetArrayOriginal).assertTrue();
     });
 
     /**
@@ -338,7 +346,8 @@ export default function Float64ArrayCoverageTest(): void {
       const arr: Float64Array = Float64Array.of(3.0, 1.0, 2.0);
       const sub: Float64Array = arr.subarray(0, 2);
       sub.sort();
-      expect(sub.valueOf() === sub).assertTrue();
+      const isSortedSubarrayOriginal: boolean = sub.valueOf() === sub;
+      expect(isSortedSubarrayOriginal).assertTrue();
     });
 
     /**
@@ -353,7 +362,8 @@ export default function Float64ArrayCoverageTest(): void {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       const s: Float64Array = arr.slice();
       s.fill(0.0);
-      expect(s.valueOf() === s).assertTrue();
+      const isFilledSliceOriginal: boolean = s.valueOf() === s;
+      expect(isFilledSliceOriginal).assertTrue();
     });
 
     /**
@@ -591,9 +601,7 @@ export default function Float64ArrayCoverageTest(): void {
         arr.$_get(0x1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -657,9 +665,7 @@ export default function Float64ArrayCoverageTest(): void {
         arr.$_get(0o77);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -677,9 +683,7 @@ export default function Float64ArrayCoverageTest(): void {
         arr.$_get(0b11111111);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1126,7 +1130,8 @@ export default function Float64ArrayCoverageTest(): void {
       const actualElement0 = r.$_get(0);
       const expectedElement0: number = 5.0;
       expect(actualElement0).assertEqual(expectedElement0);
-      expect(r === arr).assertFalse();
+      const isSameResultArray: boolean = r === arr;
+      expect(isSameResultArray).assertFalse();
     });
 
     /**
@@ -1168,7 +1173,7 @@ export default function Float64ArrayCoverageTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COVERAGE_6900
      * @tc.name testFloat64ArrayCoverage069
-     * @tc.desc Verify toSorted -0 values sorted copy
+     * @tc.desc Verify toSorted preserves negative zero sign in sorted copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1179,6 +1184,7 @@ export default function Float64ArrayCoverageTest(): void {
       const actualElement0 = sorted.$_get(0);
       const expectedElement0: number = 0.0;
       expect(actualElement0).assertEqual(expectedElement0);
+      expect(1.0 / actualElement0).assertEqual(-Infinity);
     });
 
     /**
@@ -1231,7 +1237,8 @@ export default function Float64ArrayCoverageTest(): void {
       const actualElement0 = r.$_get(0);
       const expectedElement0: number = 5.0;
       expect(actualElement0).assertEqual(expectedElement0);
-      expect(r === arr).assertFalse();
+      const isSameReversedArray: boolean = r === arr;
+      expect(isSameReversedArray).assertFalse();
     });
 
     /**
@@ -1248,7 +1255,10 @@ export default function Float64ArrayCoverageTest(): void {
       const actualElement0 = r.$_get(0);
       const expectedElement0: number = 7.0;
       expect(actualElement0).assertEqual(expectedElement0);
-      expect(r === Float64Array.of(7.0)).assertFalse();
+      const isSameSingleElementArray: boolean = r === arr;
+      expect(isSameSingleElementArray).assertFalse();
+      const sharesSingleElementBuffer: boolean = r.buffer === arr.buffer;
+      expect(sharesSingleElementBuffer).assertFalse();
     });
 
     /**
@@ -1268,6 +1278,7 @@ export default function Float64ArrayCoverageTest(): void {
       const actualElement2 = r.$_get(2);
       const expectedElement2: number = 1.0;
       expect(actualElement2).assertEqual(expectedElement2);
+      expect(Number.isNaN(r.$_get(1))).assertTrue();
     });
 
     /**

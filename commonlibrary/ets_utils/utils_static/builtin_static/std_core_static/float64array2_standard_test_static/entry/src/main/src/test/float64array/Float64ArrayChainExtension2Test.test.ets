@@ -37,9 +37,6 @@ export default function Float64ArrayChainExtension2Test(): void {
       await Utils.msSleep(30);
     })
 
-    afterEach((): void => {
-    })
-
     afterAll((): void => {
     })
 
@@ -1048,7 +1045,7 @@ export default function Float64ArrayChainExtension2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CHAIN_EXTENSION_2_5000
      * @tc.name testFloat64ArrayChainExtension2050
-     * @tc.desc Verify sort stability with equal values maintains relative order
+     * @tc.desc Verify sort orders equal numeric values without observable identity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1115,6 +1112,18 @@ export default function Float64ArrayChainExtension2Test(): void {
       const actualElement2 = arr.$_get(2);
       const expectedElement2: number = 0.0;
       expect(actualElement2).assertEqual(expectedElement2);
+      let negativeZeroCount: int = 0;
+      let positiveZeroCount: int = 0;
+      for (let i: int = 1; i <= 2; i++) {
+        if (1.0 / arr.$_get(i) === -Infinity) {
+          negativeZeroCount++;
+        }
+        if (1.0 / arr.$_get(i) === Infinity) {
+          positiveZeroCount++;
+        }
+      }
+      expect(negativeZeroCount).assertEqual(1);
+      expect(positiveZeroCount).assertEqual(1);
       const actualElement3 = arr.$_get(3);
       const expectedElement3: number = 1.0;
       expect(actualElement3).assertEqual(expectedElement3);
@@ -1892,9 +1901,7 @@ export default function Float64ArrayChainExtension2Test(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'chain reduce error';
         expect(actualMessage).assertEqual(expectedMessage);

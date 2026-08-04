@@ -1265,9 +1265,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1290,9 +1288,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1314,9 +1310,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'TypeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -1336,9 +1330,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1358,9 +1350,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1380,9 +1370,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1402,9 +1390,7 @@ export default function Float64ArrayIteratorTest(): void {
         }, 0.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1424,9 +1410,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1446,9 +1430,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1468,9 +1450,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1488,9 +1468,7 @@ export default function Float64ArrayIteratorTest(): void {
         arr.$_get(5);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1508,9 +1486,7 @@ export default function Float64ArrayIteratorTest(): void {
         arr.$_set(10, 99.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1528,9 +1504,7 @@ export default function Float64ArrayIteratorTest(): void {
         arr.set(3, 99.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1549,9 +1523,7 @@ export default function Float64ArrayIteratorTest(): void {
         arr.with(maxIndex, 99.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1589,9 +1561,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
       const actualElement0 = arr.$_get(0);
       const expectedElement0: number = 1.0;
@@ -1617,9 +1587,7 @@ export default function Float64ArrayIteratorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
       const actualElement0 = arr.$_get(0);
       const expectedElement0: number = 1.0;
@@ -1643,9 +1611,7 @@ export default function Float64ArrayIteratorTest(): void {
         const arr: Float64Array = new Float64Array(bigLen);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

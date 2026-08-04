@@ -101,10 +101,13 @@ export default function Float64ArrayMiscellaneousTest(): void {
      */
     it('testFloat64ArrayMiscellaneous004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
+      let calls: int = 0;
       const r = arr.every((v: number, i: int): boolean => {
+        calls++;
         return i > 1;
       });
       expect(r).assertFalse();
+      expect(calls).assertEqual(1);
     });
 
     /**
@@ -222,11 +225,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMiscellaneous011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
+      const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
+      let calls: int = 0;
       const r = arr.some((v: number, i: int): boolean => {
+        calls++;
         return i > 1;
       });
       expect(r).assertTrue();
+      expect(calls).assertEqual(3);
     });
 
     /**
@@ -660,7 +666,7 @@ export default function Float64ArrayMiscellaneousTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3500
      * @tc.name testFloat64ArrayMiscellaneous035
-     * @tc.desc Verify from with mapFn 3 params
+     * @tc.desc Verify from applies mapFn to each source value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -746,6 +752,10 @@ export default function Float64ArrayMiscellaneousTest(): void {
         }, 0.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
+        const actualMessage = e.message;
+        const expectedMessage: string = 'stop';
+        expect(actualMessage).assertEqual(expectedMessage);
         expect(arr.length).assertEqual(fourValue);
       }
     });
@@ -790,6 +800,10 @@ export default function Float64ArrayMiscellaneousTest(): void {
         }, 0.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
+        const actualMessage = e.message;
+        const expectedMessage: string = 'stop';
+        expect(actualMessage).assertEqual(expectedMessage);
         expect(arr.length).assertEqual(fourValue);
       }
     });
@@ -802,7 +816,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       const actualString = arr.join();
@@ -818,7 +831,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       const actualString = arr.join('-');
@@ -834,7 +846,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0]);
       const actualString = arr.toString();
@@ -850,7 +861,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([5.0]);
       const actualString = arr.toString();
@@ -866,7 +876,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       const r: Float64Array = arr.valueOf();
@@ -884,7 +893,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let sumIndex: number = 0;
@@ -906,7 +914,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([5.0, 6.0, 7.0]);
       const r: boolean = arr.some((v: number): boolean => v > 6);
@@ -921,7 +928,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let sum: number = 0;
@@ -941,7 +947,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.map((v: number): number => 5.0);
@@ -964,7 +969,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0]);
       const r: Float64Array = arr.map((v: number): number => NaN);
@@ -982,7 +986,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.filter((v: number): boolean => true);
@@ -999,7 +1002,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.filter((v: number): boolean => false);
@@ -1019,7 +1021,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.filter((v: number, i: int): boolean => i % 2 === 0);
@@ -1042,7 +1043,6 @@ export default function Float64ArrayMiscellaneousTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-
     it('testFloat64ArrayMiscellaneous055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let calls: number = 0;
@@ -1086,7 +1086,7 @@ export default function Float64ArrayMiscellaneousTest(): void {
      */
     it('testFloat64ArrayMiscellaneous057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0]);
-      const r: string = arr.toLocaleString();
+      const r: string = arr.toLocaleString('en-US');
       const actualResult = r;
       const expectedResult: string = '1,2';
       expect(actualResult).assertEqual(expectedResult);

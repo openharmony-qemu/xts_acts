@@ -77,7 +77,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement1Second = second.$_get(1);
       const expectedElement1Second: number = 5.0;
       expect(actualElement1Second).assertEqual(expectedElement1Second);
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesFirstResultBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesFirstResultBuffer).assertFalse();
       const actualLengthThird = source.length;
       const expectedLengthThird: int = 5;
       expect(actualLengthThird).assertEqual(expectedLengthThird);
@@ -120,7 +121,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement1 = second.$_get(1);
       const expectedElement1: number = 40.0;
       expect(actualElement1).assertEqual(expectedElement1);
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesSecondResultBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesSecondResultBuffer).assertFalse();
       const actualElement0Third = source.$_get(0);
       const expectedElement0Third: number = 10.0;
       expect(actualElement0Third).assertEqual(expectedElement0Third);
@@ -155,7 +157,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualResult = secondCalls;
       const expectedResult: number = 0;
       expect(actualResult).assertEqual(expectedResult);
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesFilteredResultBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesFilteredResultBuffer).assertFalse();
       const actualLengthThird = source.length;
       const expectedLengthThird: int = 2;
       expect(actualLengthThird).assertEqual(expectedLengthThird);
@@ -189,7 +192,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement1 = second.$_get(1);
       const expectedElement1: number = 40.0;
       expect(actualElement1).assertEqual(expectedElement1);
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesMappedResultBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesMappedResultBuffer).assertFalse();
       const actualElement1Second = source.$_get(1);
       const expectedElement1Second: number = 20.0;
       expect(actualElement1Second).assertEqual(expectedElement1Second);
@@ -279,8 +283,10 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement2Second = second.$_get(2);
       const expectedElement2Second: number = 40.0;
       expect(actualElement2Second).assertEqual(expectedElement2Second);
-      expect(second.buffer === first.buffer).assertFalse();
-      expect(first.buffer === source.buffer).assertFalse();
+      const sharesSecondChainBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesSecondChainBuffer).assertFalse();
+      const sharesFirstSourceBuffer: boolean = first.buffer === source.buffer;
+      expect(sharesFirstSourceBuffer).assertFalse();
       const actualElement0Third = source.$_get(0);
       const expectedElement0Third: number = 1.0;
       expect(actualElement0Third).assertEqual(expectedElement0Third);
@@ -301,9 +307,7 @@ export default function Float64ArrayReturnChainTest(): void {
         first.with(-1, 88.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -318,7 +322,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement2 = first.$_get(2);
       const expectedElement2: number = 99.0;
       expect(actualElement2).assertEqual(expectedElement2);
-      expect(first.buffer === source.buffer).assertFalse();
+      const sharesFirstSourceBuffer: boolean = first.buffer === source.buffer;
+      expect(sharesFirstSourceBuffer).assertFalse();
       const actualElement1Second = source.$_get(1);
       const expectedElement1Second: number = 20.0;
       expect(actualElement1Second).assertEqual(expectedElement1Second);
@@ -352,8 +357,10 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement2Second = second.$_get(2);
       const expectedElement2Second: number = 3.0;
       expect(actualElement2Second).assertEqual(expectedElement2Second);
-      expect(first.buffer === source.buffer).assertFalse();
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesFirstSourceBuffer: boolean = first.buffer === source.buffer;
+      expect(sharesFirstSourceBuffer).assertFalse();
+      const sharesSecondChainBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesSecondChainBuffer).assertFalse();
       const actualElement0Third = source.$_get(0);
       const expectedElement0Third: number = 3.0;
       expect(actualElement0Third).assertEqual(expectedElement0Third);
@@ -384,8 +391,10 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement2Second = second.$_get(2);
       const expectedElement2Second: number = 3.0;
       expect(actualElement2Second).assertEqual(expectedElement2Second);
-      expect(first.buffer === source.buffer).assertFalse();
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesFirstSourceBuffer: boolean = first.buffer === source.buffer;
+      expect(sharesFirstSourceBuffer).assertFalse();
+      const sharesSecondChainBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesSecondChainBuffer).assertFalse();
       const actualElement0Third = source.$_get(0);
       const expectedElement0Third: number = 1.0;
       expect(actualElement0Third).assertEqual(expectedElement0Third);
@@ -410,7 +419,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualLengthSecond = second.length;
       const expectedLengthSecond: int = 0;
       expect(actualLengthSecond).assertEqual(expectedLengthSecond);
-      expect(second.buffer === source.buffer).assertTrue();
+      const sharesEmptyResultSourceBuffer: boolean = second.buffer === source.buffer;
+      expect(sharesEmptyResultSourceBuffer).assertTrue();
       expect(second.byteOffset).assertEqual(first.byteOffset);
       const actualLengthThird = source.length;
       const expectedLengthThird: int = 4;
@@ -442,7 +452,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement1 = second.$_get(1);
       const expectedElement1: number = 4.0;
       expect(actualElement1).assertEqual(expectedElement1);
-      expect(second.buffer === source.buffer).assertTrue();
+      const sharesMappedSourceBuffer: boolean = second.buffer === source.buffer;
+      expect(sharesMappedSourceBuffer).assertTrue();
       const actualByteOffset = second.byteOffset;
       const expectedByteOffset: int = 16;
       expect(actualByteOffset).assertEqual(expectedByteOffset);
@@ -468,8 +479,10 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement0Second = second.$_get(0);
       const expectedElement0Second: number = 99.0;
       expect(actualElement0Second).assertEqual(expectedElement0Second);
-      expect(first.buffer === source.buffer).assertFalse();
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesFirstSourceBuffer: boolean = first.buffer === source.buffer;
+      expect(sharesFirstSourceBuffer).assertFalse();
+      const sharesSecondChainBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesSecondChainBuffer).assertFalse();
       const actualElement0Third = source.$_get(0);
       const expectedElement0Third: number = 1.0;
       expect(actualElement0Third).assertEqual(expectedElement0Third);
@@ -500,7 +513,7 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualResult = secondIndex;
       const expectedResult: number = 1;
       expect(actualResult).assertEqual(expectedResult);
-      expect(secondArrayIsFirst).assertEqual(true);
+      expect(secondArrayIsFirst).assertTrue();
       const actualElement0 = second.$_get(0);
       const expectedElement0: number = 2.0;
       expect(actualElement0).assertEqual(expectedElement0);
@@ -536,7 +549,7 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualResultSecond = secondValue;
       const expectedResultSecond: number = 13.0;
       expect(actualResultSecond).assertEqual(expectedResultSecond);
-      expect(secondArrayIsFirst).assertEqual(true);
+      expect(secondArrayIsFirst).assertTrue();
       const actualElement0 = second.$_get(0);
       const expectedElement0: number = 22.0;
       expect(actualElement0).assertEqual(expectedElement0);
@@ -562,9 +575,7 @@ export default function Float64ArrayReturnChainTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
       const actualElement0 = first.$_get(0);
       const expectedElement0: number = 2.0;
@@ -594,9 +605,7 @@ export default function Float64ArrayReturnChainTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
       const actualLength = first.length;
       const expectedLength: int = 2;
@@ -662,7 +671,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualByteLength = second.byteLength;
       const expectedByteLength: int = 0;
       expect(actualByteLength).assertEqual(expectedByteLength);
-      expect(second.buffer === first.buffer).assertFalse();
+      const sharesEmptyChainBuffer: boolean = second.buffer === first.buffer;
+      expect(sharesEmptyChainBuffer).assertFalse();
       const actualLengthThird = source.length;
       const expectedLengthThird: int = 3;
       expect(actualLengthThird).assertEqual(expectedLengthThird);
@@ -720,8 +730,10 @@ export default function Float64ArrayReturnChainTest(): void {
       const first: Float64Array = source.copyWithin(1, 0, 2);
       const second: Float64Array = first.copyWithin(2, 0, 2);
 
-      expect(first === source).assertTrue();
-      expect(second === source).assertTrue();
+      const isFirstOriginal: boolean = first === source;
+      expect(isFirstOriginal).assertTrue();
+      const isSecondOriginal: boolean = second === source;
+      expect(isSecondOriginal).assertTrue();
       const actualElement0Seventh = second.$_get(0);
       const expectedElement0Seventh: number = 1.0;
       expect(actualElement0Seventh).assertEqual(expectedElement0Seventh);
@@ -814,7 +826,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement1Third = source.$_get(1);
       const expectedElement1Third: number = 2.0;
       expect(actualElement1Third).assertEqual(expectedElement1Third);
-      expect(filtered.buffer === view.buffer).assertFalse();
+      const sharesFilteredViewBuffer: boolean = filtered.buffer === view.buffer;
+      expect(sharesFilteredViewBuffer).assertFalse();
     });
 
     /**
@@ -840,8 +853,10 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualElement2Fourth = source.$_get(2);
       const expectedElement2Fourth: number = 30.0;
       expect(actualElement2Fourth).assertEqual(expectedElement2Fourth);
-      expect(view.buffer === copy.buffer).assertTrue();
-      expect(view.buffer === source.buffer).assertFalse();
+      const sharesCopyBuffer: boolean = view.buffer === copy.buffer;
+      expect(sharesCopyBuffer).assertTrue();
+      const sharesSourceBuffer: boolean = view.buffer === source.buffer;
+      expect(sharesSourceBuffer).assertFalse();
     });
 
     /**
@@ -932,8 +947,8 @@ export default function Float64ArrayReturnChainTest(): void {
       const actualLengthFourth = empty.length;
       const expectedLengthFourth: int = 0;
       expect(actualLengthFourth).assertEqual(expectedLengthFourth);
-      expect(all).assertEqual(true);
-      expect(any).assertEqual(false);
+      expect(all).assertTrue();
+      expect(any).assertFalse();
       const actualResultThird = callbackCount;
       const expectedResultThird: number = 0;
       expect(actualResultThird).assertEqual(expectedResultThird);

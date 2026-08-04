@@ -284,7 +284,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         }
         return v > 8.0;
       });
-      expect(result).assertEqual(true);
+      expect(result).assertTrue();
       const actualResult = calls;
       const expectedResult: number = 4;
       expect(actualResult).assertEqual(expectedResult);
@@ -308,7 +308,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         }
         return v > 0.0;
       });
-      expect(result).assertEqual(false);
+      expect(result).assertFalse();
       const actualResult = calls;
       const expectedResult: number = 4;
       expect(actualResult).assertEqual(expectedResult);
@@ -491,7 +491,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         }
         return v > 0.0;
       });
-      expect(result).assertEqual(false);
+      expect(result).assertFalse();
       const actualElement2 = alias.$_get(2);
       const expectedElement2: number = -1.0;
       expect(actualElement2).assertEqual(expectedElement2);
@@ -681,7 +681,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         }
         return v === 5.0;
       });
-      expect(result).assertEqual(true);
+      expect(result).assertTrue();
       const actualResult = calls;
       const expectedResult: number = 1;
       expect(actualResult).assertEqual(expectedResult);
@@ -708,7 +708,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         }
         return v === 1.0;
       });
-      expect(result).assertEqual(true);
+      expect(result).assertTrue();
       const actualResult = calls;
       const expectedResult: number = 3;
       expect(actualResult).assertEqual(expectedResult);
@@ -988,9 +988,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'map alias stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1021,9 +1019,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'filter view stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1054,9 +1050,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'forEach source stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1092,9 +1086,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'some alias stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1130,9 +1122,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'reduce alias stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1168,9 +1158,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'reduceRight view stop';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1333,7 +1321,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
       const actualResult = observedOffset;
       const expectedResult: number = 8;
       expect(actualResult).assertEqual(expectedResult);
-      expect(sameBuffer).assertEqual(true);
+      expect(sameBuffer).assertTrue();
       const actualLength = filtered.length;
       const expectedLength: int = 2;
       expect(actualLength).assertEqual(expectedLength);
@@ -1357,8 +1345,8 @@ export default function Float64ArrayCallbackMutationTest(): void {
         sameOffset = source.byteOffset === alias.byteOffset;
         return v;
       });
-      expect(sameBuffer).assertEqual(true);
-      expect(sameOffset).assertEqual(true);
+      expect(sameBuffer).assertTrue();
+      expect(sameOffset).assertTrue();
       const actualLength = mapped.length;
       const expectedLength: int = 3;
       expect(actualLength).assertEqual(expectedLength);
@@ -1570,7 +1558,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         arr.$_set(2, 99.0);
         return false;
       });
-      expect(result).assertEqual(true);
+      expect(result).assertTrue();
       const actualResult = calls;
       const expectedResult: number = 2;
       expect(actualResult).assertEqual(expectedResult);
@@ -1601,7 +1589,7 @@ export default function Float64ArrayCallbackMutationTest(): void {
         arr.$_set(2, 99.0);
         return true;
       });
-      expect(result).assertEqual(false);
+      expect(result).assertFalse();
       const actualResult = calls;
       const expectedResult: number = 2;
       expect(actualResult).assertEqual(expectedResult);
@@ -1908,8 +1896,8 @@ export default function Float64ArrayCallbackMutationTest(): void {
         }
         return v;
       });
-      expect(sameSource).assertEqual(true);
-      expect(sameBuffer).assertEqual(true);
+      expect(sameSource).assertTrue();
+      expect(sameBuffer).assertTrue();
       const actualResult = observedOffset;
       const expectedResult: number = 8;
       expect(actualResult).assertEqual(expectedResult);

@@ -123,7 +123,7 @@ export default function Float64ArrayDimensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_0050
      * @tc.name testFloat64ArrayDimension005
-     * @tc.desc Verify map doubles values in 2000-element array
+     * @tc.desc Verify map multiplies each value by three in 2000-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -626,7 +626,7 @@ export default function Float64ArrayDimensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_0290
      * @tc.name testFloat64ArrayDimension029
-     * @tc.desc Verify toSorted on 10000-element array with compareFn
+     * @tc.desc Verify sort with compareFn on 10000-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1312,7 +1312,7 @@ export default function Float64ArrayDimensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_0660
      * @tc.name testFloat64ArrayDimension066
-     * @tc.desc Verify reduce result underflows when adding subnormals
+     * @tc.desc Verify reduce of two minimum subnormals remains non-zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1422,7 +1422,11 @@ export default function Float64ArrayDimensionTest(): void {
       const lhs: number = arr1.reduce((acc: number, v: number): number => {
         return acc + v;
       });
-      expect(Math.abs(lhs - 0.6000000000000001) < 1e-15).assertTrue();
+      const rhs: number = arr1.$_get(0) + (arr1.$_get(1) + arr1.$_get(2));
+      expect(lhs).assertEqual(0.6000000000000001);
+      expect(rhs).assertEqual(0.6);
+      const hasDifferentPrecision: boolean = lhs === rhs;
+      expect(hasDifferentPrecision).assertFalse();
     });
 
     /**
@@ -1538,7 +1542,7 @@ export default function Float64ArrayDimensionTest(): void {
       const mapped: Float64Array = arr.map((v: number): number => {
         return v / 3.0;
       });
-      expect(Math.abs(mapped.$_get(0) - 0.3333333333333333) < 1e-15).assertTrue();
+      expect(mapped.$_get(0)).assertEqual(0.3333333333333333);
     });
 
     /**
@@ -1585,7 +1589,8 @@ export default function Float64ArrayDimensionTest(): void {
     it('testFloat64ArrayDimension082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, -0.0, 2.0);
       arr.sort();
-      expect(1.0 / arr.$_get(0) === -Infinity).assertTrue();
+      const firstElementHasNegativeZeroSign: boolean = 1.0 / arr.$_get(0) === -Infinity;
+      expect(firstElementHasNegativeZeroSign).assertTrue();
     });
 
     /**
@@ -2407,9 +2412,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(-1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2441,9 +2444,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(Infinity);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2461,9 +2462,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 1, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2481,9 +2480,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 2, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2501,9 +2498,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 3, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2521,9 +2516,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 4, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2541,9 +2534,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 5, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2561,9 +2552,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 6, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2581,9 +2570,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 7, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2601,9 +2588,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 8, 3);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2621,9 +2606,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 0, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2641,9 +2624,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, -8, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2661,9 +2642,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 16, 1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2681,9 +2660,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 0, -1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2701,9 +2678,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 0, Infinity);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2737,9 +2712,7 @@ export default function Float64ArrayDimensionTest(): void {
         new Float64Array(buf, 9, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -2760,7 +2733,7 @@ export default function Float64ArrayDimensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1420
      * @tc.name testFloat64ArrayDimension142
-     * @tc.desc Verify includes finds -0 as distinct value
+     * @tc.desc Verify includes finds -0 by SameValueZero equality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2844,7 +2817,7 @@ export default function Float64ArrayDimensionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DIMENSION_1480
      * @tc.name testFloat64ArrayDimension148
-     * @tc.desc Verify includes -0 in array with both zeros
+     * @tc.desc Verify includes -0 when source contains +0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3121,7 +3094,8 @@ export default function Float64ArrayDimensionTest(): void {
     it('testFloat64ArrayDimension164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(3);
       arr.fill(-0.0);
-      expect(1.0 / arr.$_get(1) === -Infinity).assertTrue();
+      const secondElementHasNegativeZeroSign: boolean = 1.0 / arr.$_get(1) === -Infinity;
+      expect(secondElementHasNegativeZeroSign).assertTrue();
     });
 
     /**

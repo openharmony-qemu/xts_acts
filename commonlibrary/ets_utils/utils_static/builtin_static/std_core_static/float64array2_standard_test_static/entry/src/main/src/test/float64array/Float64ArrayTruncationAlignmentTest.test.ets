@@ -92,9 +92,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
         new Float64Array(2147483647.5);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -149,9 +147,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
         new Float64Array(buf, 15.9);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -293,9 +289,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
         const arr = new Float64Array(buf, 1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -519,7 +513,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_2800
      * @tc.name testFloat64ArrayTruncationAlignment028
-     * @tc.desc Verify $_set 2^53+1 = 9007199254740993 truncates to 9007199254740992
+     * @tc.desc Verify $_set stores the pre-rounded number 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -551,7 +545,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3000
      * @tc.name testFloat64ArrayTruncationAlignment030
-     * @tc.desc Verify $_set 2^53+3 = 9007199254740995 rounds to 9007199254740996
+     * @tc.desc Verify $_set stores the pre-rounded number 9007199254740996
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -583,7 +577,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3200
      * @tc.name testFloat64ArrayTruncationAlignment032
-     * @tc.desc Verify a value above the maximum finite double becomes positive Infinity
+     * @tc.desc Verify $_set stores positive Infinity from an already-overflowed expression
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -599,7 +593,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3300
      * @tc.name testFloat64ArrayTruncationAlignment033
-     * @tc.desc Verify a value below the minimum finite double becomes negative Infinity
+     * @tc.desc Verify $_set stores negative Infinity from an already-overflowed expression
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -615,7 +609,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3400
      * @tc.name testFloat64ArrayTruncationAlignment034
-     * @tc.desc Verify $_set Number.MIN_VALUE is exactly representable (5e-324)
+     * @tc.desc Verify $_set stores the representable Number.MIN_VALUE (5e-324)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -631,7 +625,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3500
      * @tc.name testFloat64ArrayTruncationAlignment035
-     * @tc.desc Verify $_set Number.MIN_VALUE / 2 underflows to +0
+     * @tc.desc Verify $_set stores +0 from an already-underflowed expression
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -647,7 +641,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3600
      * @tc.name testFloat64ArrayTruncationAlignment036
-     * @tc.desc Verify $_set -Number.MIN_VALUE / 2 underflows to -0
+     * @tc.desc Verify $_set stores -0 from an already-underflowed expression
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -663,7 +657,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3700
      * @tc.name testFloat64ArrayTruncationAlignment037
-     * @tc.desc Verify with index 0 truncates 2^53+1 to 9007199254740992
+     * @tc.desc Verify with stores the pre-rounded number 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -682,7 +676,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_3800
      * @tc.name testFloat64ArrayTruncationAlignment038
-     * @tc.desc Verify fill 2^53+1 truncates all elements to 9007199254740992
+     * @tc.desc Verify fill stores the pre-rounded number 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -720,7 +714,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4000
      * @tc.name testFloat64ArrayTruncationAlignment040
-     * @tc.desc Verify set copies 2^53+1 with truncation to 9007199254740992
+     * @tc.desc Verify set copies the pre-rounded number 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -753,7 +747,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_4200
      * @tc.name testFloat64ArrayTruncationAlignment042
-     * @tc.desc Verify of(2^53+1) truncates to 9007199254740992
+     * @tc.desc Verify of stores the pre-rounded number 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -910,7 +904,7 @@ export default function Float64ArrayTruncationAlignmentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TRUNCATION_ALIGNMENT_5200
      * @tc.name testFloat64ArrayTruncationAlignment052
-     * @tc.desc Verify from array 2^53+1 truncates to 9007199254740992
+     * @tc.desc Verify from array stores the pre-rounded number 9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

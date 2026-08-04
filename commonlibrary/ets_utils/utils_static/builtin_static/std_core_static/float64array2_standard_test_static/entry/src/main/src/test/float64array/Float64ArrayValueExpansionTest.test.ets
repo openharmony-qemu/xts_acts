@@ -153,7 +153,8 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualStringSecond = arr.join();
       const expectedStringSecond: string = '3,1,2';
       expect(actualStringSecond).assertEqual(expectedStringSecond);
-      expect(sorted.buffer === arr.buffer).assertFalse();
+      const sharesSortedBuffer: boolean = sorted.buffer === arr.buffer;
+      expect(sharesSortedBuffer).assertFalse();
     });
 
     /**
@@ -174,7 +175,8 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualStringSecond = arr.join();
       const expectedStringSecond: string = '1,2,3';
       expect(actualStringSecond).assertEqual(expectedStringSecond);
-      expect(reversed.buffer === arr.buffer).assertFalse();
+      const sharesReversedBuffer: boolean = reversed.buffer === arr.buffer;
+      expect(sharesReversedBuffer).assertFalse();
     });
 
     /**
@@ -235,7 +237,8 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualStringSecond = arr.join();
       const expectedStringSecond: string = '1,2,3';
       expect(actualStringSecond).assertEqual(expectedStringSecond);
-      expect(replaced.buffer === arr.buffer).assertFalse();
+      const sharesReplacedBuffer: boolean = replaced.buffer === arr.buffer;
+      expect(sharesReplacedBuffer).assertFalse();
     });
 
     /**
@@ -876,6 +879,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'map-batch-error';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -906,6 +910,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'filter-batch-error';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -936,6 +941,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'forEach-batch-error';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -966,6 +972,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'every-batch-error';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -996,6 +1003,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'some-batch-error';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1023,9 +1031,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         target.set(source, 3);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualStringFourth = target.join();
       const expectedStringFourth: string = '1,2,3,4';
@@ -1050,9 +1056,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         target.set(source, -1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualStringFourth = target.join();
       const expectedStringFourth: string = '1,2,3';
@@ -1074,9 +1078,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         target.set(source, 4);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualStringFourth = target.join();
       const expectedStringFourth: string = '1,2,3';
@@ -1098,9 +1100,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         target.set(source, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualStringFourth = target.join();
       const expectedStringFourth: string = '1,2,3,4';
@@ -1125,9 +1125,7 @@ export default function Float64ArrayValueExpansionTest(): void {
         target.set(source, 0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualLength = target.length;
       const expectedLength: int = 0;
@@ -1228,9 +1226,6 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualIndex = arr.indexOf(2.0);
       const expectedIndex: int = 0;
       expect(actualIndex).assertEqual(expectedIndex);
-      const actualIndexSecond = arr.lastIndexOf(2.0);
-      const expectedIndexSecond: int = 2;
-      expect(actualIndexSecond).assertEqual(expectedIndexSecond);
     });
 
     /**
@@ -1246,9 +1241,6 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualIndex = arr.indexOf(5.0);
       const expectedIndex: int = -1;
       expect(actualIndex).assertEqual(expectedIndex);
-      const actualIndexSecond = arr.lastIndexOf(5.0);
-      const expectedIndexSecond: int = -1;
-      expect(actualIndexSecond).assertEqual(expectedIndexSecond);
     });
 
     /**
@@ -1264,9 +1256,6 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualIndex = arr.indexOf(7.0, 1);
       const expectedIndex: int = 2;
       expect(actualIndex).assertEqual(expectedIndex);
-      const actualIndexSecond = arr.lastIndexOf(1.0, 2);
-      const expectedIndexSecond: int = 1;
-      expect(actualIndexSecond).assertEqual(expectedIndexSecond);
     });
 
     /**
@@ -1282,7 +1271,6 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualIndex = arr.indexOf(NaN);
       const expectedIndex: int = -1;
       expect(actualIndex).assertEqual(expectedIndex);
-      expect(arr.includes(NaN)).assertTrue();
     });
 
     /**
@@ -1298,9 +1286,6 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualIndex = arr.indexOf(0.0);
       const expectedIndex: int = 0;
       expect(actualIndex).assertEqual(expectedIndex);
-      const actualIndexSecond = arr.lastIndexOf(-0.0);
-      const expectedIndexSecond: int = 2;
-      expect(actualIndexSecond).assertEqual(expectedIndexSecond);
       const actualElement0 = 1.0 / arr.$_get(0);
       const expectedElement0: number = -Infinity;
       expect(actualElement0).assertEqual(expectedElement0);
@@ -1513,6 +1498,79 @@ export default function Float64ArrayValueExpansionTest(): void {
       const actualElement3 = result.$_get(3);
       const expectedElement3: number = 1.0;
       expect(actualElement3).assertEqual(expectedElement3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUE_EXPANSION_6400
+     * @tc.name testFloat64ArrayValueExpansionTest064
+     * @tc.desc Verify lastIndexOf duplicate returns last matching index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValueExpansionTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array([2.0, 4.0, 2.0]);
+      const actualIndex = arr.lastIndexOf(2.0);
+      const expectedIndex: int = 2;
+      expect(actualIndex).assertEqual(expectedIndex);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUE_EXPANSION_6500
+     * @tc.name testFloat64ArrayValueExpansionTest065
+     * @tc.desc Verify lastIndexOf missing ordinary value returns negative one
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValueExpansionTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array([2.0, 4.0, 6.0]);
+      const actualIndex = arr.lastIndexOf(5.0);
+      const expectedIndex: int = -1;
+      expect(actualIndex).assertEqual(expectedIndex);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUE_EXPANSION_6600
+     * @tc.name testFloat64ArrayValueExpansionTest066
+     * @tc.desc Verify lastIndexOf fromIndex limits the search range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValueExpansionTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array([7.0, 1.0, 7.0, 1.0]);
+      const actualIndex = arr.lastIndexOf(1.0, 2);
+      const expectedIndex: int = 1;
+      expect(actualIndex).assertEqual(expectedIndex);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUE_EXPANSION_6700
+     * @tc.name testFloat64ArrayValueExpansionTest067
+     * @tc.desc Verify includes finds NaN while indexOf does not
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValueExpansionTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array([1.0, NaN, 2.0]);
+      expect(arr.includes(NaN)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUE_EXPANSION_6800
+     * @tc.name testFloat64ArrayValueExpansionTest068
+     * @tc.desc Verify lastIndexOf treats plus and minus zero as equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValueExpansionTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = new Float64Array([-0.0, 1.0, 0.0]);
+      const actualIndex = arr.lastIndexOf(-0.0);
+      const expectedIndex: int = 2;
+      expect(actualIndex).assertEqual(expectedIndex);
     });
   })
 }
