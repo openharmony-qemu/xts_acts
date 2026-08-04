@@ -2946,5 +2946,68 @@ export default function HttpErrorCodeTest() {
         }
         console.info(`${caseName}---End `);
       });
+
+    /**
+     * @tc.name   testValidationCallbackSignature0100
+     * @tc.number SUB_NetworkMgr_Http_ValidationCallback_Signature_0100
+     * @tc.desc   test ValidationCallback signature and behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testValidationCallbackSignature0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testValidationCallbackSignature0100';
+      console.info(`${caseName}---Start`);
+      try {
+        const mockContext: http.ValidationContext = {
+          pemCerts: ['cert1', 'cert2'],
+          x509Certs: [],
+          ip: '',
+          host: ''
+        };
+        const syncCallbackTrue: http.ValidationCallback = (context: http.ValidationContext): boolean => {
+          ExpectTrue(context !== undefined);
+          ExpectTrue(context !== null);
+          ExpectTrue(typeof context === 'object');
+          ExpectTrue(context.pemCerts !== undefined);
+          ExpectTrue(context.x509Certs !== undefined);
+          ExpectTrue(context.ip !== undefined);
+          ExpectTrue(context.host !== undefined);
+          return true;
+        };
+        const syncResultTrue = syncCallbackTrue(mockContext);
+        ExpectTrue(syncResultTrue === true);
+        const syncCallbackFalse: http.ValidationCallback = (context: http.ValidationContext): boolean => {
+          ExpectTrue(context !== undefined);
+          return false;
+        };
+        const syncResultFalse = syncCallbackFalse(mockContext);
+        ExpectTrue(syncResultFalse === false);
+        const asyncCallbackTrue: http.ValidationCallback = async (context: http.ValidationContext): Promise<boolean> => {
+          console.info(`${caseName}: asyncCallbackTrue called with context: ${JSON.stringify(context)}`);
+          ExpectTrue(context !== undefined);
+          console.info(`${caseName}: asyncCallbackTrue returning true`);
+          return true;
+        };
+        const asyncResultTrue = await asyncCallbackTrue(mockContext);
+        ExpectTrue(asyncResultTrue === true);
+        const asyncCallbackFalse: http.ValidationCallback = async (context: http.ValidationContext): Promise<boolean> => {
+          console.info(`${caseName}: asyncCallbackFalse called with context: ${JSON.stringify(context)}`);
+          ExpectTrue(context !== undefined);
+          console.info(`${caseName}: asyncCallbackFalse returning false`);
+          return false;
+        };
+        const asyncResultFalse = await asyncCallbackFalse(mockContext);
+        ExpectTrue(asyncResultFalse === false);
+
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+      }
+    });
+
   });
 }

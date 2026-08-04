@@ -19,7 +19,7 @@ import http from '@ohos.net.http';
 
 const Url1: string = "http://httpbin.moyufangge.com/cookies/set/test_cookie/test_value";
 const Url2: string = "http://httpbin.moyufangge.com/cookies";
-const Url3: string = "http://httpbin.org/cookies";
+const Url3: string = "http://httpbingo.org/cookies";
 
 let ExpectFail = () => {
   try {
