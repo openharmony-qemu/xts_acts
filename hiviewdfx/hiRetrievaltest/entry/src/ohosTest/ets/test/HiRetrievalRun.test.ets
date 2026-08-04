@@ -149,5 +149,59 @@ export default function HiRetrievalRunTest() {
                 expect().assertFail();
             }
         });
+
+        /**
+         * @tc.name   testHilogSetOutputType1200
+         * @tc.number SUB_DFX_DFT_SetOutputType_1200
+         * @tc.desc   setOutputType接口-null入参覆盖
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testHilogSetOutputType1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            try {
+                let lastType = hilog.setOutputType(null);
+                hilog.info(0x3200, "testTag", 'testHilogSetOutputType1200 set output type result:%{public}d', lastType);
+            } catch (err) {
+                console.error(`====> testHilogSetOutputType1200 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+            }
+        });
+
+        /**
+         * @tc.name   testHilogSetOutputType1300
+         * @tc.number SUB_DFX_DFT_SetOutputType_1300
+         * @tc.desc   setOutputType接口-null入参覆盖
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testHilogSetOutputType1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            try {
+                let lastType = hilog.setOutputType(undefined);
+                hilog.info(0x3200, "testTag", 'testHilogSetOutputType1300 set output type result:%{public}d', lastType);
+            } catch (err) {
+                console.error(`====> testHilogSetOutputType1300 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+            }
+        });
+
+        /**
+         * @tc.name   testHilogSetOutputType1400
+         * @tc.number SUB_DFX_DFT_SetOutputType_1400
+         * @tc.desc   setOutputType接口-null入参覆盖
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testHilogSetOutputType1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            try {
+                let lastType = hilog.setOutputType(-1);
+                hilog.info(0x3200, "testTag", 'testHilogSetOutputType1400 set output type result:%{public}d', lastType);
+            } catch (err) {
+                console.error(`====> testHilogSetOutputType1400 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+            }
+        });
     })
 }
