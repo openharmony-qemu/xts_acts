@@ -1966,15 +1966,7 @@ export default function windowPropertiesTest2() {
         } else {
           await on_setWindowShadowEnabled_notSupported();
         }
-      } else if (deviceInfo.deviceType === 'tv') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (deviceInfo.deviceType === 'wearable') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (deviceInfo.deviceType === 'phone') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (deviceInfo.deviceType === 'car') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (isSupport === false){
+      } else {
         await on_setWindowShadowEnabled_notSupported_801();
       }
     });
