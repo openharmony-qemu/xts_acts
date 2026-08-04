@@ -501,9 +501,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0100
      * @tc.name testCallbackWrapperBasicSuccess
      * @tc.desc Test basic async function success conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperBasicSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -522,9 +522,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0200
      * @tc.name testCallbackWrapperReturnNumber
      * @tc.desc Test async function returning number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -543,9 +543,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0300
      * @tc.name testCallbackWrapperReturnObject
      * @tc.desc Test async function returning object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -565,9 +565,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0400
      * @tc.name testCallbackWrapperReturnArray
      * @tc.desc Test async function returning array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -587,9 +587,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0500
      * @tc.name testCallbackWrapperReturnBoolean
      * @tc.desc Test async function returning boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -608,9 +608,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0600
      * @tc.name testCallbackWrapperReturnNull
      * @tc.desc Test async function returning null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -629,9 +629,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0700
      * @tc.name testCallbackWrapperReturnUndefined
      * @tc.desc Test async function returning undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -650,9 +650,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0800
      * @tc.name testCallbackWrapperThrowError
      * @tc.desc Test async function throwing error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -671,9 +671,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_0900
      * @tc.name testCallbackWrapperPromiseResolve
      * @tc.desc Test async function with Promise.resolve()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperPromiseResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -692,9 +692,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1000
      * @tc.name testCallbackWrapperPromiseReject
      * @tc.desc Test async function with Promise.reject()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperPromiseReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -713,9 +713,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1100
      * @tc.name testCallbackWrapperNoReturnValue
      * @tc.desc Test async function with no return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperNoReturnValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -734,9 +734,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1200
      * @tc.name testCallbackWrapperMultiParams
      * @tc.desc Test async function with multiple parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultiParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -755,9 +755,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1300
      * @tc.name testCallbackWrapperAfterGetter
      * @tc.desc Test async method after getter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperAfterGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -781,9 +781,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1400
      * @tc.name testCallbackWrapperAfterSetter
      * @tc.desc Test async method after setter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperAfterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -807,9 +807,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1500
      * @tc.name testCallbackWrapperAfterGetterSetter
      * @tc.desc Test async method after getter and setter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperAfterGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -833,9 +833,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1600
      * @tc.name testCallbackWrapperBeforeGetter
      * @tc.desc Test async method before getter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperBeforeGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -858,9 +858,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1700
      * @tc.name testCallbackWrapperBetweenGetterSetter
      * @tc.desc Test async method between getter and setter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperBetweenGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -885,9 +885,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1800
      * @tc.name testCallbackWrapperMultipleGetterSetter
      * @tc.desc Test async method with multiple getter and setter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultipleGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -950,9 +950,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_1900
      * @tc.name testCallbackWrapperGetterOnly
      * @tc.desc Test async method with getter only
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperGetterOnly', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -975,9 +975,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2000
      * @tc.name testCallbackWrapperObjectLiteral
      * @tc.desc Test async method in object literal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperObjectLiteral', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -996,9 +996,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2100
      * @tc.name testCallbackWrapperObjectLiteralAfterGetter
      * @tc.desc Test async method after getter in object literal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperObjectLiteralAfterGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1017,9 +1017,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2200
      * @tc.name testCallbackWrapperRestParams
      * @tc.desc Test async function with rest parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperRestParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1038,9 +1038,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2300
      * @tc.name testCallbackWrapperRestParamsEmpty
      * @tc.desc Test async function with empty rest parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperRestParamsEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1059,9 +1059,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2400
      * @tc.name testCallbackWrapperStaticMethod
      * @tc.desc Test static async method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperStaticMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1080,9 +1080,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2500
      * @tc.name testCallbackWrapperStaticMethodAfterGetterSetter
      * @tc.desc Test static async method after getter and setter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperStaticMethodAfterGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1101,9 +1101,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2600
      * @tc.name testCallbackWrapperMultipleStaticMethods
      * @tc.desc Test multiple static async methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultipleStaticMethods', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1152,9 +1152,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2700
      * @tc.name testCallbackWrapperInheritedMethod
      * @tc.desc Test inherited async method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperInheritedMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1177,9 +1177,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2800
      * @tc.name testCallbackWrapperOverriddenMethod
      * @tc.desc Test overridden async method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperOverriddenMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1202,9 +1202,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_2900
      * @tc.name testCallbackWrapperMultiLevelInheritance
      * @tc.desc Test multi-level inherited async method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultiLevelInheritance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1227,9 +1227,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3000
      * @tc.name testCallbackWrapperArrowFunction
      * @tc.desc Test async arrow function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1248,9 +1248,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3100
      * @tc.name testCallbackWrapperAssignedFunction
      * @tc.desc Test assigned async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperAssignedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1269,9 +1269,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3200
      * @tc.name testCallbackWrapperAsParameter
      * @tc.desc Test async function passed as parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperAsParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1287,9 +1287,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3300
      * @tc.name testCallbackWrapperReturnedFunction
      * @tc.desc Test async function returned from function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1309,9 +1309,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3400
      * @tc.name testCallbackWrapperIIFE
      * @tc.desc Test IIFE async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperIIFE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1336,9 +1336,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3700
      * @tc.name testCallbackWrapperNumberParam
      * @tc.desc Test number parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackWrapperNumberParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1361,9 +1361,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3800
      * @tc.name testCallbackWrapperStringParam
      * @tc.desc Test string parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackWrapperStringParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1386,9 +1386,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_3900
      * @tc.name testCallbackWrapperObjectParam
      * @tc.desc Test object parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackWrapperObjectParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1412,9 +1412,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_4000
      * @tc.name testCallbackWrapperArrayParam
      * @tc.desc Test array parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackWrapperArrayParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1437,9 +1437,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_4100
      * @tc.name testCallbackWrapperBooleanParam
      * @tc.desc Test boolean parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackWrapperBooleanParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1462,9 +1462,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_4300
      * @tc.name testCallbackWrapperNormalFunction
      * @tc.desc Test normal function (non-async)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackWrapperNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1486,9 +1486,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_4400
      * @tc.name testCallbackWrapperArrowFunctionNonAsync
      * @tc.desc Test arrow function (non-async)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackWrapperArrowFunctionNonAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1514,9 +1514,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_4700
      * @tc.name testCallbackWrapperDefaultParams
      * @tc.desc Test async function with default parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperDefaultParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1535,9 +1535,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_4900
      * @tc.name testCallbackWrapperNestedCallback
      * @tc.desc Test nested callback scenario
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperNestedCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1562,9 +1562,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5000
      * @tc.name testCallbackWrapperWithPromisify
      * @tc.desc Test callbackWrapper with promisify combination
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperWithPromisify', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1583,9 +1583,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5100
      * @tc.name testCallbackWrapperThenable
      * @tc.desc Test async function returning thenable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperThenable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1604,9 +1604,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5200
      * @tc.name testCallbackWrapperPromiseInstance
      * @tc.desc Test async function returning Promise instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperPromiseInstance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1625,9 +1625,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5300
      * @tc.name testCallbackWrapperDelayedResolve
      * @tc.desc Test async function with delayed resolve
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperDelayedResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1646,9 +1646,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5400
      * @tc.name testCallbackWrapperDelayedReject
      * @tc.desc Test async function with delayed reject
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperDelayedReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1667,9 +1667,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5500
      * @tc.name testCallbackWrapperComplexObject
      * @tc.desc Test async function returning complex nested object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperComplexObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1688,9 +1688,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5600
      * @tc.name testCallbackWrapperMultipleCalls
      * @tc.desc Test multiple calls to callbackified function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1724,9 +1724,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5700
      * @tc.name testCallbackWrapperExportedFunction
      * @tc.desc Test exported async function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperExportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1745,9 +1745,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5800
      * @tc.name testCallbackWrapperExportedArrowFunction
      * @tc.desc Test exported async arrow function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperExportedArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1766,9 +1766,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_5900
      * @tc.name testCallbackWrapperExportedClass
      * @tc.desc Test exported class with async methods from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperExportedClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1792,9 +1792,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6000
      * @tc.name testCallbackWrapperDefaultExportedFunction
      * @tc.desc Test default exported async function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperDefaultExportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1813,9 +1813,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6100
      * @tc.name testCallbackWrapperGenericFunction
      * @tc.desc Test generic async function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperGenericFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1835,9 +1835,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6200
      * @tc.name testCallbackWrapperGenericClass
      * @tc.desc Test generic class with async methods from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperGenericClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1860,9 +1860,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6300
      * @tc.name testCallbackWrapperInterfaceImplement
      * @tc.desc Test interface implemented async method from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperInterfaceImplement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1885,9 +1885,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6400
      * @tc.name testCallbackWrapperAbstractDerivedClass
      * @tc.desc Test abstract derived class async method from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperAbstractDerivedClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1911,9 +1911,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6500
      * @tc.name testCallbackWrapperNamespaceFunction
      * @tc.desc Test namespace exported async function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperNamespaceFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1932,9 +1932,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6600
      * @tc.name testCallbackWrapperNamespaceClass
      * @tc.desc Test namespace exported class with async methods from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperNamespaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1958,9 +1958,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6700
      * @tc.name testCallbackWrapperNestedNamespaceFunction
      * @tc.desc Test nested namespace async function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperNestedNamespaceFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1979,9 +1979,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6800
      * @tc.name testCallbackWrapperReexportedFunction
      * @tc.desc Test reexported async function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperReexportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2000,9 +2000,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_6900
      * @tc.name testCallbackWrapperRenamedExportedFunction
      * @tc.desc Test renamed exported async function from module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperRenamedExportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2021,9 +2021,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7000
      * @tc.name testCallbackWrapperJSAsyncFunction
      * @tc.desc Test JS module async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperJSAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2042,9 +2042,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7100
      * @tc.name testCallbackWrapperJSAsyncArrowFunction
      * @tc.desc Test JS module async arrow function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperJSAsyncArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2063,9 +2063,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7200
      * @tc.name testCallbackWrapperJSClass
      * @tc.desc Test JS module class with async methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperJSClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2089,9 +2089,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7300
      * @tc.name testCallbackWrapperTSAsyncFunction
      * @tc.desc Test TS module async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperTSAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2110,9 +2110,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7400
      * @tc.name testCallbackWrapperTSAsyncArrowFunction
      * @tc.desc Test TS module async arrow function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperTSAsyncArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2131,9 +2131,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7500
      * @tc.name testCallbackWrapperTSClass
      * @tc.desc Test TS module class with async methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperTSClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -2157,9 +2157,9 @@ export default function CallbackWrapperTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACKWRAPPER_7600
      * @tc.name testCallbackWrapperDualInterfaceClass
      * @tc.desc Test class implementing dual interfaces with async methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testCallbackWrapperDualInterfaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
