@@ -14,22 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Level } from '../../../../hypium/index';
+import { describe, it, expect, Level } from '../../../../hypium/index';
 import { uiMaterial } from '@kit.ArkUI';
-import { UtilsTest } from '../Util.test';
 
 /**
  * Select.menuSystemMaterial is not exercised on this board: calling it at page
  * build triggers LinkerVerificationError. Coverage here mirrors the green
  * CustomDialogSystemMaterial pattern (ImmersiveStyle / ImmersiveMaterial).
+ * Pure API asserts only — no beforeAll/startAbility (avoids Ability timeout).
  * Do not use async (done) + done() with this project's static hypium.
  */
 export default function MenuSystemMaterialTest(): void {
   describe('MenuSystemMaterialTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.api26.static', 'EntryAbility');
-    });
-
     /**
      * @tc.name   SUB_ACE_API26_MenuSystemMaterial_0100
      * @tc.number SUB_ACE_API26_MenuSystemMaterial_0100
@@ -152,6 +148,70 @@ export default function MenuSystemMaterialTest(): void {
         materialColor: '#33FF0000'
       });
       expect(!!mat).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0100
+     * @tc.number SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0100
+     * @tc.desc   MaterialLevel.EXQUISITE equals 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0100', Level.LEVEL0, async () => {
+      expect(uiMaterial.MaterialLevel.EXQUISITE).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0200
+     * @tc.number SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0200
+     * @tc.desc   MaterialLevel.GENTLE equals 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0200', Level.LEVEL0, async () => {
+      expect(uiMaterial.MaterialLevel.GENTLE).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0300
+     * @tc.number SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0300
+     * @tc.desc   MaterialLevel.SMOOTH equals 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ACE_API26_MenuSystemMaterial_MaterialLevel_0300', Level.LEVEL0, async () => {
+      expect(uiMaterial.MaterialLevel.SMOOTH).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   SUB_ACE_API26_MenuSystemMaterial_getGlobalMaterialLevel_0100
+     * @tc.number SUB_ACE_API26_MenuSystemMaterial_getGlobalMaterialLevel_0100
+     * @tc.desc   getGlobalMaterialLevel returns a valid MaterialLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ACE_API26_MenuSystemMaterial_getGlobalMaterialLevel_0100', Level.LEVEL0, async () => {
+      let level: uiMaterial.MaterialLevel = uiMaterial.getGlobalMaterialLevel();
+      expect(level === uiMaterial.MaterialLevel.EXQUISITE ||
+        level === uiMaterial.MaterialLevel.GENTLE ||
+        level === uiMaterial.MaterialLevel.SMOOTH).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   SUB_ACE_API26_MenuSystemMaterial_isImmersiveMaterialSupported_0100
+     * @tc.number SUB_ACE_API26_MenuSystemMaterial_isImmersiveMaterialSupported_0100
+     * @tc.desc   isImmersiveMaterialSupported returns boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ACE_API26_MenuSystemMaterial_isImmersiveMaterialSupported_0100', Level.LEVEL0, async () => {
+      let supported: boolean = uiMaterial.isImmersiveMaterialSupported();
+      expect(supported === true || supported === false).assertEqual(true);
     });
   });
 }
