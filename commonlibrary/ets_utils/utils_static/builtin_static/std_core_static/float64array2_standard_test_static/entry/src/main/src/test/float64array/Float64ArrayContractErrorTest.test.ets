@@ -57,9 +57,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.$_get(-1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -77,9 +75,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.$_get(3);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -97,9 +93,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.$_set(-1, 99.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -117,9 +111,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.$_set(2, 5.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -333,9 +325,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.set(src);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -354,9 +344,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.set(3, 99.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -381,9 +369,7 @@ export default function Float64ArrayContractErrorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -405,9 +391,7 @@ export default function Float64ArrayContractErrorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -430,9 +414,7 @@ export default function Float64ArrayContractErrorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -455,9 +437,7 @@ export default function Float64ArrayContractErrorTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -480,9 +460,7 @@ export default function Float64ArrayContractErrorTest(): void {
         }, 0.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -500,9 +478,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.findLast((v: number): boolean => v > 10.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -520,9 +496,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.reduce((acc: number, v: number): number => acc + v);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'TypeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -540,9 +514,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.reduceRight((acc: number, v: number): number => acc + v);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'TypeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -576,9 +548,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.with(-1, 99.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -596,9 +566,7 @@ export default function Float64ArrayContractErrorTest(): void {
         arr.with(3, 99.0);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -615,9 +583,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const arr: Float64Array = new Float64Array(-1);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -635,9 +601,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const arr: Float64Array = new Float64Array(buf, 4, 3);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -693,9 +657,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const arr: Float64Array = new Float64Array(buf);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -813,338 +775,12 @@ export default function Float64ArrayContractErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4000
      * @tc.name testFloat64ArrayContractError040
-     * @tc.desc Verify map callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.map((v: number): number => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4100
-     * @tc.name testFloat64ArrayContractError041
-     * @tc.desc Verify filter callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.filter((v: number): boolean => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4200
-     * @tc.name testFloat64ArrayContractError042
-     * @tc.desc Verify forEach callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        arr.forEach((v: number): void => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4300
-     * @tc.name testFloat64ArrayContractError043
-     * @tc.desc Verify some callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.some((v: number): boolean => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4400
-     * @tc.name testFloat64ArrayContractError044
-     * @tc.desc Verify every callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.every((v: number): boolean => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4500
-     * @tc.name testFloat64ArrayContractError045
-     * @tc.desc Verify find callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.find((v: number): boolean => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4600
-     * @tc.name testFloat64ArrayContractError046
-     * @tc.desc Verify findIndex callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.findIndex((v: number): boolean => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4700
-     * @tc.name testFloat64ArrayContractError047
-     * @tc.desc Verify findLast callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.findLast((v: number): boolean => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4800
-     * @tc.name testFloat64ArrayContractError048
-     * @tc.desc Verify findLastIndex callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.findLastIndex((v: number): boolean => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4900
-     * @tc.name testFloat64ArrayContractError049
-     * @tc.desc Verify reduce callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.reduce((acc: number, v: number): number => {
-          called++;
-          throw new Error();
-          return acc + v;
-        }, 0);
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5000
-     * @tc.name testFloat64ArrayContractError050
-     * @tc.desc Verify reduceRight callback throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([1.0, 2.0, 3.0]);
-      try {
-        const r = arr.reduceRight((acc: number, v: number): number => {
-          called++;
-          throw new Error();
-          return acc + v;
-        }, 0);
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5100
-     * @tc.name testFloat64ArrayContractError051
-     * @tc.desc Verify sort comparator throw propagates called=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: number = 0;
-      const arr = new Float64Array([3.0, 1.0, 2.0]);
-      try {
-        arr.sort((a: number, b: number): int => {
-          called++;
-          throw new Error();
-        });
-        expect().assertFail();
-      } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'Error';
-        expect(actualName).assertEqual(expectedName);
-        const actualResult = called;
-        const expectedResult: number = 1;
-        expect(actualResult).assertEqual(expectedResult);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5200
-     * @tc.name testFloat64ArrayContractError052
      * @tc.desc Verify empty array forEach callback not called
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let called: number = 0;
       const arr = new Float64Array([]);
       arr.forEach((v: number): void => {
@@ -1156,14 +792,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5300
-     * @tc.name testFloat64ArrayContractError053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4100
+     * @tc.name testFloat64ArrayContractError041
      * @tc.desc Verify empty array values().next() immediate done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([]);
       const it = arr.values();
       const n = it.next();
@@ -1171,14 +807,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5400
-     * @tc.name testFloat64ArrayContractError054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4200
+     * @tc.name testFloat64ArrayContractError042
      * @tc.desc Verify single element some checks callback index and array arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([7.0]);
       let receivedIndex: int = -1;
       let receivedLength: int = -1;
@@ -1199,14 +835,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5500
-     * @tc.name testFloat64ArrayContractError055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4300
+     * @tc.name testFloat64ArrayContractError043
      * @tc.desc Verify every visits all elements in a multi-element matching array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([5.0, 7.0]);
       let called: int = 0;
       expect(arr.every((v: number): boolean => {
@@ -1219,14 +855,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5600
-     * @tc.name testFloat64ArrayContractError056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4400
+     * @tc.name testFloat64ArrayContractError044
      * @tc.desc Verify single element find matching returns element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([7.0]);
       const r = arr.find((v: number): boolean => {
         return v === 7.0;
@@ -1237,14 +873,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5700
-     * @tc.name testFloat64ArrayContractError057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4500
+     * @tc.name testFloat64ArrayContractError045
      * @tc.desc Verify findIndex returns the first matching index for duplicate values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([7.0, 7.0, 9.0]);
       const r = arr.findIndex((v: number): boolean => {
         return v === 7.0;
@@ -1255,32 +891,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5800
-     * @tc.name testFloat64ArrayContractError058
-     * @tc.desc Verify single element reduce without init returns element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([7.0]);
-      const r = arr.reduce((acc: number, v: number): number => {
-        return acc + v;
-      });
-      const actualResult = r;
-      const expectedResult: number = 7.0;
-      expect(actualResult).assertEqual(expectedResult);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5900
-     * @tc.name testFloat64ArrayContractError059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4600
+     * @tc.name testFloat64ArrayContractError046
      * @tc.desc Verify single element at(0) returns element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([7.0]);
       const actualResult = arr.at(0);
       const expectedResult: number = 7.0;
@@ -1288,14 +906,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6000
-     * @tc.name testFloat64ArrayContractError060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4700
+     * @tc.name testFloat64ArrayContractError047
      * @tc.desc Verify single element at(-1) wraps to element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([7.0]);
       const actualResult = arr.at(-1);
       const expectedResult: number = 7.0;
@@ -1303,14 +921,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6100
-     * @tc.name testFloat64ArrayContractError061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4800
+     * @tc.name testFloat64ArrayContractError048
      * @tc.desc Verify all-same indexOf returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([5.0, 5.0, 5.0]);
       const actualIndex = arr.indexOf(5.0);
       const expectedIndex: int = 0;
@@ -1318,14 +936,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6200
-     * @tc.name testFloat64ArrayContractError062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_4900
+     * @tc.name testFloat64ArrayContractError049
      * @tc.desc Verify all-same lastIndexOf returns last index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([5.0, 5.0, 5.0]);
       const actualIndex = arr.lastIndexOf(5.0);
       const expectedIndex: int = 2;
@@ -1333,14 +951,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6300
-     * @tc.name testFloat64ArrayContractError063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5000
+     * @tc.name testFloat64ArrayContractError050
      * @tc.desc Verify all-same find returns first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([5.0, 5.0, 5.0]);
       const r = arr.find((v: number): boolean => {
         return v === 5.0;
@@ -1351,14 +969,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6400
-     * @tc.name testFloat64ArrayContractError064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5100
+     * @tc.name testFloat64ArrayContractError051
      * @tc.desc Verify all-same some returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([5.0, 5.0, 5.0]);
       expect(arr.some((v: number): boolean => {
         return v > 3.0;
@@ -1366,14 +984,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6500
-     * @tc.name testFloat64ArrayContractError065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5200
+     * @tc.name testFloat64ArrayContractError052
      * @tc.desc Verify all-same sort without comparator leaves unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([5.0, 5.0, 5.0]);
       arr.sort();
       const actualElement0 = arr.$_get(0);
@@ -1385,74 +1003,68 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6600
-     * @tc.name testFloat64ArrayContractError066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5300
+     * @tc.name testFloat64ArrayContractError053
      * @tc.desc Verify byteOffset=2 non-8-multiple throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         const arr = new Float64Array(buf, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6700
-     * @tc.name testFloat64ArrayContractError067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5400
+     * @tc.name testFloat64ArrayContractError054
      * @tc.desc Verify offset+len*8 exceeds buffer throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         const arr = new Float64Array(buf, 0, 3);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6800
-     * @tc.name testFloat64ArrayContractError068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5500
+     * @tc.name testFloat64ArrayContractError055
      * @tc.desc Verify byteOffset=-4 negative throws error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         const arr = new Float64Array(buf, -4);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6900
-     * @tc.name testFloat64ArrayContractError069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5600
+     * @tc.name testFloat64ArrayContractError056
      * @tc.desc Verify forEach callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1462,6 +1074,7 @@ export default function Float64ArrayContractErrorTest(): void {
         })
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'forEach-throws';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1472,14 +1085,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7000
-     * @tc.name testFloat64ArrayContractError070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5700
+     * @tc.name testFloat64ArrayContractError057
      * @tc.desc Verify some callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1489,6 +1102,7 @@ export default function Float64ArrayContractErrorTest(): void {
         })
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'some-throws';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1499,14 +1113,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7100
-     * @tc.name testFloat64ArrayContractError071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5800
+     * @tc.name testFloat64ArrayContractError058
      * @tc.desc Verify every callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1519,6 +1133,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'every-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1526,14 +1141,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7200
-     * @tc.name testFloat64ArrayContractError072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_5900
+     * @tc.name testFloat64ArrayContractError059
      * @tc.desc Verify find callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1546,6 +1161,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'find-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1553,14 +1169,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7300
-     * @tc.name testFloat64ArrayContractError073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6000
+     * @tc.name testFloat64ArrayContractError060
      * @tc.desc Verify findIndex callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1573,6 +1189,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'findIndex-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1580,14 +1197,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7400
-     * @tc.name testFloat64ArrayContractError074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6100
+     * @tc.name testFloat64ArrayContractError061
      * @tc.desc Verify findLast callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1600,6 +1217,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'findLast-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1607,14 +1225,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7500
-     * @tc.name testFloat64ArrayContractError075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6200
+     * @tc.name testFloat64ArrayContractError062
      * @tc.desc Verify findLastIndex callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1627,6 +1245,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'findLastIndex-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1634,14 +1253,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7600
-     * @tc.name testFloat64ArrayContractError076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6300
+     * @tc.name testFloat64ArrayContractError063
      * @tc.desc Verify map callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1654,6 +1273,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'map-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1661,14 +1281,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7700
-     * @tc.name testFloat64ArrayContractError077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6400
+     * @tc.name testFloat64ArrayContractError064
      * @tc.desc Verify filter callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1681,6 +1301,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'filter-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1688,14 +1309,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7800
-     * @tc.name testFloat64ArrayContractError078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6500
+     * @tc.name testFloat64ArrayContractError065
      * @tc.desc Verify reduce callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1708,6 +1329,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'reduce-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1715,14 +1337,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7900
-     * @tc.name testFloat64ArrayContractError079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6600
+     * @tc.name testFloat64ArrayContractError066
      * @tc.desc Verify reduceRight callback error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let called: number = 0;
       try {
@@ -1735,6 +1357,7 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'reduceRight-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       const actualResult = called;
       const expectedResult: number = 1;
@@ -1742,14 +1365,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8000
-     * @tc.name testFloat64ArrayContractError080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6700
+     * @tc.name testFloat64ArrayContractError067
      * @tc.desc Verify sort compare function error propagation with called count 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([3.0, 1.0, 2.0]);
       let called: number = 0;
       try {
@@ -1762,19 +1385,20 @@ export default function Float64ArrayContractErrorTest(): void {
         const actualMessage = e.message;
         const expectedMessage: string = 'sort-throws';
         expect(actualMessage).assertEqual(expectedMessage);
+        expect(e.name).assertEqual('Error');
       }
       expect(called).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8100
-     * @tc.name testFloat64ArrayContractError081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6800
+     * @tc.name testFloat64ArrayContractError068
      * @tc.desc Verify forEach callback error + original array byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const lenBefore: number = arr.length;
       const blBefore: number = arr.byteLength;
@@ -1784,6 +1408,7 @@ export default function Float64ArrayContractErrorTest(): void {
         })
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'boom';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1793,14 +1418,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8200
-     * @tc.name testFloat64ArrayContractError082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_6900
+     * @tc.name testFloat64ArrayContractError069
      * @tc.desc Verify some callback error + original array byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const boBefore: number = arr.byteOffset;
       try {
@@ -1809,6 +1434,7 @@ export default function Float64ArrayContractErrorTest(): void {
         })
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'boom';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1817,14 +1443,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8300
-     * @tc.name testFloat64ArrayContractError083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7000
+     * @tc.name testFloat64ArrayContractError070
      * @tc.desc Verify every callback error + original array buffer reference unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const bufBefore: ArrayBuffer = arr.buffer;
       try {
@@ -1833,6 +1459,7 @@ export default function Float64ArrayContractErrorTest(): void {
         })
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         const actualMessage = e.message;
         const expectedMessage: string = 'boom';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1841,14 +1468,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8400
-     * @tc.name testFloat64ArrayContractError084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7100
+     * @tc.name testFloat64ArrayContractError071
      * @tc.desc Verify reduceRight empty array with initialValue returns initialValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(0);
       const r: number = arr.reduceRight((acc: number, v: number): number => acc + v, 7.0);
       const actualResult = r;
@@ -1857,14 +1484,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8500
-     * @tc.name testFloat64ArrayContractError085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7200
+     * @tc.name testFloat64ArrayContractError072
      * @tc.desc Verify reduceRight single element no initialValue returns that element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([7.0]);
       const r: number = arr.reduceRight((acc: number, v: number): number => acc + v);
       const actualResult = r;
@@ -1873,22 +1500,20 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8600
-     * @tc.name testFloat64ArrayContractError086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7300
+     * @tc.name testFloat64ArrayContractError073
      * @tc.desc Verify nonzero byteOffset plus length exceeding buffer throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         const arr = new Float64Array(buf, 8, 2);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualByteLength = buf.byteLength;
       const expectedByteLength: int = 16;
@@ -1896,22 +1521,20 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_8700
-     * @tc.name testFloat64ArrayContractError087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7400
+     * @tc.name testFloat64ArrayContractError074
      * @tc.desc Verify business buffer validation keeps critical static chain result after RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(0x10);
       try {
         const invalid = new Float64Array(buf, 0x8, 0b10);
         expect().assertFail();
       } catch (e) {
-        const actualName = e.name;
-        const expectedName: string = 'RangeError';
-        expect(actualName).assertEqual(expectedName);
+        expect(e.name).assertEqual('RangeError');
       }
       const report =
         Float64Array.of(1e-308, Number.MAX_VALUE).filter((v: number): boolean => v > 0.0).map((v: number): number => v);
