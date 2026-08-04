@@ -1308,6 +1308,223 @@ napi_value OHVideoOutputGetVideoRotationWithoutDeviceDegreeSupp(napi_env env, na
     return ret;
 }
 
+napi_value TestOHCaptureSessionIsLockFocusTrackingSupported(napi_env env, napi_callback_info info)
+{
+    CreatePhotoSession();
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    ReleasePhotoSession();
+    napi_value result;
+    napi_get_boolean(env, isSupported, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingWhenNotSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    if (!isSupported) {
+        Camera_Point focusPoint = {0.5, 0.5};
+        Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+            ReleasePhotoSession();
+            napi_create_int32(env, ret, &result);
+            return result;
+        }
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTrackingWhenNotSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    if (!isSupported) {
+        Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+        if (ret != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+            ReleasePhotoSession();
+            napi_create_int32(env, ret, &result);
+            return result;
+        }
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, CAMERA_OK, &result);
+    return result;
+}
+
+napi_value TestIsLockFocusTrackingSupportedWithUnconfiguredSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(captureSession);
+    if (isSupported) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsLockFocusTrackingSupported failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+napi_value TestIsLockFocusTrackingSupportedWithNullptr(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool isSupported = OH_CaptureSession_IsLockFocusTrackingSupported(nullptr);
+    if (isSupported) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsLockFocusTrackingSupported failed.");
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingNormalValidPoint(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_UnlockFocusTracking(captureSession);
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingWithNullptr(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(nullptr, focusPoint);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingWithUnconfiguredSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_Point focusPoint = {0.5, 0.5};
+    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_SESSION_NOT_CONFIG) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_Release(captureSession);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingRepeatLock(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ret = OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_LockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_CaptureSession_UnlockFocusTracking(captureSession);
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTracking(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    OH_CaptureSession_LockFocusTracking(captureSession, focusPoint);
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTrackingWithNullptr(napi_env env, napi_callback_info info)
+{
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(nullptr);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestUnlockFocusTrackingWithUnconfiguredSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_SESSION_NOT_CONFIG) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        OH_CaptureSession_Release(captureSession);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestLockFocusTrackingRepeatUnlock(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    CreatePhotoSession();
+    Camera_Point focusPoint = {0.5, 0.5};
+    Camera_ErrorCode ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ret = OH_CaptureSession_UnlockFocusTracking(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnlockFocusTracking failed.");
+        ReleasePhotoSession();
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ReleasePhotoSession();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 napi_value TestOHMetadataObjectExtGetBoundingBox(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
