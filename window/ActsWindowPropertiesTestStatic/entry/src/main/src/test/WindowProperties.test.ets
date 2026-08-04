@@ -33,6 +33,7 @@ import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
 import { canIUse } from '@internal.full.global'
 import { Driver, Point, ON } from '@ohos.UiTest';
+import deviceInfo from '@ohos.deviceInfo';
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -149,7 +150,7 @@ export default function WindowPropertiesTest() {
           hilog.info(domain, tag, msgStr + 'indexButton bounds: ' + JSON.stringify(buttonBounds) + ', click position: (' + clickX + ', ' + clickY + ')');
 
           subWindow = await windowStage!.createSubWindow('subWindow_testTouchable');
-          await subWindow.setUIContent('pages/Index2');
+          await subWindow.setUIContent('pages/index2');
           await Utils.msSleep(500);
 
           await subWindow.moveWindowTo(mainRect.left, mainRect.top);
@@ -6744,6 +6745,159 @@ export default function WindowPropertiesTest() {
         } catch (err) {
           err = err as BusinessError;
           hilog.error(domain, tag, msgStr + 'Failed to create window. Cause: ' + err.code + ', ' + err.message);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_triggerByMaximize_static
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_STATIC_0600
+     * @tc.desc   在满足折叠状态、折痕宽度大于高度的条件下，通过maximizeWithOptions进入桌面模式，通过recover退出桌面模式，验证回调触发（条件4在瀑布模式或展开态最大化时自动满足）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnWindowPostureModeChange_triggerByMaximize_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOnWindowPostureModeChange_triggerByMaximize_static';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        
+        try {
+          let isSupport: boolean = canIUse('SystemCapability.Window.SessionManager');
+          hilog.info(domain, tag, msgStr + 'isSupport: ' + isSupport);
+          if (!isSupport) {
+            hilog.info(domain, tag, msgStr + 'SystemCapability.Window.SessionManager not supported.');
+            done();
+            return;
+          }
+
+          // 只有2in1设备才执行此测试
+          let deviceType: string = deviceInfo.deviceType;
+          hilog.info(domain, tag, msgStr + 'deviceType: ' + deviceType);
+          if (deviceType !== '2in1') {
+            hilog.info(domain, tag, msgStr + 'Device type is not 2in1. Skip test.');
+            done();
+            return;
+          }
+
+          // 检查前置条件
+          let isHalfFolded: boolean = false;
+          let isCreaseWidthGreater: boolean = false;
+
+          // 条件1: 检查折叠状态是否为半折叠
+          try {
+            let foldStatus: display.FoldStatus = display.getFoldStatus();
+            hilog.info(domain, tag, msgStr + 'foldStatus: ' + foldStatus);
+            isHalfFolded = foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED;
+            hilog.info(domain, tag, msgStr + 'isHalfFolded: ' + isHalfFolded);
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getFoldStatus not supported.');
+          }
+
+          // 条件2: 检查折痕宽度是否大于高度
+          try {
+            let defaultDisplay: display.Display = display.getDefaultDisplaySync();
+            let creaseRegion: display.CreaseRegion = defaultDisplay.getLiveCreaseRegion();
+            hilog.info(domain, tag, msgStr + 'creaseRegion: ' + JSON.stringify(creaseRegion));
+            if (creaseRegion.creaseRects.length > 0) {
+              let creaseRect: display.CreaseRect = creaseRegion.creaseRects[0];
+              hilog.info(domain, tag, msgStr + 'creaseRect: ' + JSON.stringify(creaseRect));
+              isCreaseWidthGreater = creaseRect.width > creaseRect.height;
+              hilog.info(domain, tag, msgStr + 'isCreaseWidthGreater: ' + isCreaseWidthGreater);
+            }
+          } catch (e) {
+            hilog.info(domain, tag, msgStr + 'getLiveCreaseRegion not supported.');
+          }
+
+          // 如果满足条件1、2，则继续测试（条件4在瀑布模式或展开态最大化时自动满足）
+          let shouldTestContinue: boolean = isHalfFolded && isCreaseWidthGreater;
+          hilog.info(domain, tag, msgStr + 'shouldTestContinue: ' + shouldTestContinue);
+
+          if (!shouldTestContinue) {
+            hilog.info(domain, tag, msgStr + 'Preconditions not met. Skip test.');
+            done();
+            return;
+          }
+
+          // 记录回调触发的状态
+          let callbackIsInPostureMode: boolean = false;
+          let callbackCount: number = 0;
+
+          // 注册监听
+          const callback: Callback<boolean> = (isInPostureMode: boolean): void => {
+            callbackCount++;
+            callbackIsInPostureMode = isInPostureMode;
+            hilog.info(domain, tag, msgStr + 'callback triggered. Count: ' + callbackCount + ', isInPostureMode: ' + isInPostureMode);
+          };
+
+          win!.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+          hilog.info(domain, tag, msgStr + 'Succeeded in enabling listener.');
+
+          // 使用 maximizeWithOptions 进入最大化模式（满足条件3）
+          try {
+            let maximizeOptions: window.MaximizeOptions = {
+              acrossDisplayPresentation: window.AcrossDisplayPresentation.ENTER_ACROSS_DISPLAY_MODE
+            };
+            hilog.info(domain, tag, msgStr + 'Calling maximizeWithOptions with ENTER_ACROSS_DISPLAY_MODE.');
+            await win!.maximizeWithOptions(maximizeOptions);
+            hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
+            await Utils.msSleep(1000);
+
+            // 验证进入桌面模式后的状态
+            let windowStatus: window.WindowStatusType = win!.getWindowStatus();
+            hilog.info(domain, tag, msgStr + 'windowStatus after maximize: ' + windowStatus);
+            let isFullScreenOrMaximize: boolean = windowStatus === window.WindowStatusType.FULL_SCREEN ||
+              windowStatus === window.WindowStatusType.MAXIMIZE;
+            hilog.info(domain, tag, msgStr + 'isFullScreenOrMaximize: ' + isFullScreenOrMaximize);
+
+            // 如果满足所有条件，断言回调应该为true
+            if (isFullScreenOrMaximize) {
+              hilog.info(domain, tag, msgStr + 'All conditions met. Callback should be true.');
+              await Utils.msSleep(500);
+              hilog.info(domain, tag, msgStr + 'callbackCount: ' + callbackCount + ', callbackIsInPostureMode: ' + callbackIsInPostureMode);
+              // 断言满足所有条件时，回调参数为true
+              expect(callbackIsInPostureMode).assertTrue();
+              hilog.info(domain, tag, msgStr + 'Asserted callbackIsInPostureMode is true when all conditions are met.');
+            }
+
+            // 使用 recover 退出最大化模式（不满足条件3）
+            hilog.info(domain, tag, msgStr + 'Calling recover to exit maximize mode.');
+            await win!.recover();
+            hilog.info(domain, tag, msgStr + 'Succeeded in recovering window.');
+            await Utils.msSleep(1000);
+
+            // 验证退出桌面模式后的状态
+            windowStatus = win!.getWindowStatus();
+            hilog.info(domain, tag, msgStr + 'windowStatus after recover: ' + windowStatus);
+            isFullScreenOrMaximize = windowStatus === window.WindowStatusType.FULL_SCREEN ||
+              windowStatus === window.WindowStatusType.MAXIMIZE;
+            hilog.info(domain, tag, msgStr + 'isFullScreenOrMaximize after recover: ' + isFullScreenOrMaximize);
+
+            // 如果不满足条件3，断言回调应该为false
+            if (!isFullScreenOrMaximize) {
+              hilog.info(domain, tag, msgStr + 'Condition 3 not met. Callback should be false.');
+              await Utils.msSleep(500);
+              hilog.info(domain, tag, msgStr + 'Final callbackCount: ' + callbackCount + ', callbackIsInPostureMode: ' + callbackIsInPostureMode);
+              // 断言不满足条件时，回调参数为false
+              expect(callbackIsInPostureMode).assertFalse();
+              hilog.info(domain, tag, msgStr + 'Asserted callbackIsInPostureMode is false when conditions are not met.');
+            }
+
+            // 取消监听
+            win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+            hilog.info(domain, tag, msgStr + 'Succeeded in disabling listener.');
+            done();
+          } catch (e) {
+            hilog.error(domain, tag, msgStr + 'Exception during maximize/recover. Cause: ' + JSON.stringify(e));
+            win!.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+            expect(false).assertTrue();
+            done();
+          }
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+          expect(false).assertTrue();
           done();
         }
       });
