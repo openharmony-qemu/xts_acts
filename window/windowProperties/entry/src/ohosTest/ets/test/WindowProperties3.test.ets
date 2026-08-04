@@ -2186,5 +2186,145 @@ export default function windowPropertiesTest3() {
         }
       }
     });
+
+    /**
+     * @tc.name   testOnWindowPostureModeChange_triggerByMaximize
+     * @tc.number SUB_WINDOW_ONOFFWINDOWPOSTUREMODECHANGE_FUNCTION_1600
+     * @tc.desc   在满足折叠状态、折痕宽度大于高度的条件下，通过maximizeWithOptions进入桌面模式，通过recover退出桌面模式，验证回调触发（条件4在瀑布模式或展开态最大化时自动满足）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnWindowPostureModeChange_triggerByMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let message = 'testOnWindowPostureModeChange_triggerByMaximize';
+      try {
+        let isSupport = canIUse('SystemCapability.Window.SessionManager');
+        console.info(`${message} isSupport: ${isSupport}`);
+        if (!isSupport || deviceType !== '2in1') {
+          console.info(`${message} SystemCapability.Window.SessionManager not supported.`);
+          done();
+          return;
+        }
+
+        // 检查前置条件
+        let isHalfFolded = false;
+        let isCreaseWidthGreater = false;
+
+        // 条件1: 检查折叠状态是否为半折叠
+        try {
+          let foldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(`${message} foldStatus: ${foldStatus}`);
+          isHalfFolded = foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED;
+          console.info(`${message} isHalfFolded: ${isHalfFolded}`);
+        } catch (e) {
+          console.info(`${message} getFoldStatus not supported.`);
+        }
+
+        // 条件2: 检查折痕宽度是否大于高度
+        try {
+          let defaultDisplay = display.getDefaultDisplaySync();
+          let creaseRegion = defaultDisplay.getLiveCreaseRegion();
+          console.info(`${message} creaseRegion: ${JSON.stringify(creaseRegion)}`);
+          if (creaseRegion.creaseRects.length > 0) {
+            let creaseRect = creaseRegion.creaseRects[0];
+            console.info(`${message} creaseRect: ${JSON.stringify(creaseRect)}`);
+            isCreaseWidthGreater = creaseRect.width > creaseRect.height;
+            console.info(`${message} isCreaseWidthGreater: ${isCreaseWidthGreater}`);
+          }
+        } catch (e) {
+          console.info(`${message} getLiveCreaseRegion not supported.`);
+        }
+
+        // 如果满足条件1、2，则继续测试（条件4在瀑布模式或展开态最大化时自动满足）
+        let shouldTestContinue = isHalfFolded && isCreaseWidthGreater;
+        console.info(`${message} shouldTestContinue: ${shouldTestContinue}`);
+
+        if (!shouldTestContinue) {
+          console.info(`${message} Preconditions not met. Skip test.`);
+          done();
+          return;
+        }
+
+        // 记录回调触发的状态
+        let callbackIsInPostureMode = false;
+        let callbackCount = 0;
+
+        // 注册监听
+        let callback = (isInPostureMode: boolean) => {
+          callbackCount++;
+          callbackIsInPostureMode = isInPostureMode;
+          console.info(`${message} callback triggered. Count: ${callbackCount}, isInPostureMode: ${isInPostureMode}`);
+        };
+
+        mainWindowClass.onWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+        console.info(`${message} Succeeded in enabling listener.`);
+
+        // 使用 maximizeWithOptions 进入最大化模式（满足条件3）
+        try {
+          let maximizeOptions: window.MaximizeOptions = {
+            acrossDisplayPresentation: window.AcrossDisplayPresentation.ENTER_ACROSS_DISPLAY_MODE
+          };
+          console.info(`${message} Calling maximizeWithOptions with ENTER_ACROSS_DISPLAY_MODE.`);
+          await mainWindowClass.maximizeWithOptions(maximizeOptions);
+          console.info(`${message} Succeeded in maximizing window.`);
+          await sleep(1000);
+
+          // 验证进入桌面模式后的状态
+          let windowStatus = mainWindowClass.getWindowStatus();
+          console.info(`${message} windowStatus after maximize: ${windowStatus}`);
+          let isFullScreenOrMaximize = windowStatus === window.WindowStatusType.FULL_SCREEN ||
+            windowStatus === window.WindowStatusType.MAXIMIZE;
+          console.info(`${message} isFullScreenOrMaximize: ${isFullScreenOrMaximize}`);
+
+          // 如果满足所有条件，断言回调应该为true
+          if (isFullScreenOrMaximize) {
+            console.info(`${message} All conditions met. Callback should be true.`);
+            await sleep(500);
+            console.info(`${message} callbackCount: ${callbackCount}, callbackIsInPostureMode: ${callbackIsInPostureMode}`);
+            // 断言满足所有条件时，回调参数为true
+            expect(callbackIsInPostureMode).assertTrue();
+            console.info(`${message} Asserted callbackIsInPostureMode is true when all conditions are met.`);
+          }
+
+          // 使用 recover 退出最大化模式（不满足条件3）
+          console.info(`${message} Calling recover to exit maximize mode.`);
+          await mainWindowClass.recover();
+          console.info(`${message} Succeeded in recovering window.`);
+          await sleep(1000);
+
+          // 验证退出桌面模式后的状态
+          windowStatus = mainWindowClass.getWindowStatus();
+          console.info(`${message} windowStatus after recover: ${windowStatus}`);
+          isFullScreenOrMaximize = windowStatus === window.WindowStatusType.FULL_SCREEN ||
+            windowStatus === window.WindowStatusType.MAXIMIZE;
+          console.info(`${message} isFullScreenOrMaximize after recover: ${isFullScreenOrMaximize}`);
+
+          // 如果不满足条件3，断言回调应该为false
+          if (!isFullScreenOrMaximize) {
+            console.info(`${message} Condition 3 not met. Callback should be false.`);
+            await sleep(500);
+            console.info(`${message} Final callbackCount: ${callbackCount}, callbackIsInPostureMode: ${callbackIsInPostureMode}`);
+            // 断言不满足条件时，回调参数为false
+            expect(callbackIsInPostureMode).assertFalse();
+            console.info(`${message} Asserted callbackIsInPostureMode is false when conditions are not met.`);
+          }
+
+          // 取消监听
+          mainWindowClass.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+          console.info(`${message} Succeeded in disabling listener.`);
+          done();
+        } catch (e) {
+          console.error(`${message} Exception during maximize/recover. Cause: ${JSON.stringify(e)}`);
+          mainWindowClass.offWindowPostureModeChange(window.WindowPostureMode.DESKTOP_MODE, callback);
+          expect().assertFail();
+          done();
+        }
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }
