@@ -1319,9 +1319,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0100
      * @tc.name testBasicCallbackConversion0100
      * @tc.desc Test promisify with BasicCallbackConversion0100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testBasicCallbackConversion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1336,9 +1336,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0120
      * @tc.name testFailCallbackConversion0300
      * @tc.desc Test promisify with FailCallbackConversion0300 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testFailCallbackConversion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1358,9 +1358,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0130
      * @tc.name testMultiParamCallback0400
      * @tc.desc Test promisify with MultiParamCallback0400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMultiParamCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1375,9 +1375,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0140
      * @tc.name testMultiReturnValueCallback0600
      * @tc.desc Test promisify with MultiReturnValueCallback0600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMultiReturnValueCallback0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1392,9 +1392,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0140
      * @tc.name testMultiReturnValueCallback0600
      * @tc.desc Test promisify with RestParamCallback0800 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testRestParamCallback0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1409,9 +1409,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0170
      * @tc.name testObjectParamCallback0900
      * @tc.desc Test promisify with ObjectParamCallback0900 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testObjectParamCallback0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1427,9 +1427,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0180
      * @tc.name testArrayParamCallback1000
      * @tc.desc Test promisify with ArrayParamCallback1000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testArrayParamCallback1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1444,9 +1444,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0190
      * @tc.name testTwoParamCallback1100
      * @tc.desc Test promisify with TwoParamCallback1100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testTwoParamCallback1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1461,9 +1461,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0200
      * @tc.name testThreeParamCallback1200
      * @tc.desc Test promisify with ThreeParamCallback1200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testThreeParamCallback1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1478,9 +1478,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0210
      * @tc.name testMethodBeforeGetter1300
      * @tc.desc Test promisify with MethodBeforeGetter1300 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMethodBeforeGetter1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1498,9 +1498,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0220
      * @tc.name testMethodBeforeSetter1400
      * @tc.desc Test promisify with MethodBeforeSetter1400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMethodBeforeSetter1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1518,9 +1518,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0230
      * @tc.name testMethodAfterGetter1500
      * @tc.desc Test promisify with MethodAfterGetter1500 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMethodAfterGetter1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1538,9 +1538,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0240
      * @tc.name testMethodAfterSetter1600
      * @tc.desc Test promisify with MethodAfterSetter1600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMethodAfterSetter1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1558,9 +1558,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0250
      * @tc.name testMethodAfterGetterSetter1700
      * @tc.desc Test promisify with MethodAfterGetterSetter1700 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMethodAfterGetterSetter1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1578,9 +1578,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0260
      * @tc.name testMethodBetweenGetterSetter1800
      * @tc.desc Test promisify with MethodBetweenGetterSetter1800 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMethodBetweenGetterSetter1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1598,9 +1598,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0270
      * @tc.name testMixedGetterSetterMethods1900
      * @tc.desc Test promisify with MixedGetterSetterMethods1900 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMixedGetterSetterMethods1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1632,9 +1632,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0280
      * @tc.name testObjectLiteralMethod2000
      * @tc.desc Test promisify with ObjectLiteralMethod2000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testObjectLiteralMethod2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1649,9 +1649,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0290
      * @tc.name testObjectLiteralAfterGetter2100
      * @tc.desc Test promisify with ObjectLiteralAfterGetter2100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testObjectLiteralAfterGetter2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1666,9 +1666,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0300
      * @tc.name testObjectLiteralAfterSetter2200
      * @tc.desc Test promisify with ObjectLiteralAfterSetter2200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testObjectLiteralAfterSetter2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1684,9 +1684,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0310
      * @tc.name testStaticMethod2300
      * @tc.desc Test promisify with StaticMethod2300 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testStaticMethod2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1701,9 +1701,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0320
      * @tc.name testStaticMethodAfterGetterSetter2400
      * @tc.desc Test promisify with StaticMethodAfterGetterSetter2400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testStaticMethodAfterGetterSetter2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1719,9 +1719,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0330
      * @tc.name testInheritedMethod2500
      * @tc.desc Test promisify with InheritedMethod2500 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testInheritedMethod2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1739,9 +1739,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0340
      * @tc.name testOverriddenMethod2600
      * @tc.desc Test promisify with OverriddenMethod2600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testOverriddenMethod2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1759,9 +1759,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0350
      * @tc.name testArrowFunction2700
      * @tc.desc Test promisify with ArrowFunction2700 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testArrowFunction2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1776,9 +1776,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0360
      * @tc.name testAssignedFunction2800
      * @tc.desc Test promisify with AssignedFunction2800 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testAssignedFunction2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1793,9 +1793,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0370
      * @tc.name testFunctionAsParam2900
      * @tc.desc Test promisify with FunctionAsParam2900 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testFunctionAsParam2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1810,9 +1810,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0380
      * @tc.name testReturnedFunction3000
      * @tc.desc Test promisify with ReturnedFunction3000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testReturnedFunction3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1828,9 +1828,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0390
      * @tc.name testAsyncFunction3100
      * @tc.desc Test promisify with AsyncFunction3100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testAsyncFunction3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1846,9 +1846,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0400
      * @tc.name testPromiseFunction3200
      * @tc.desc Test promisify with PromiseFunction3200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFunction3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1864,9 +1864,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0410
      * @tc.name testThisBinding4600
      * @tc.desc Test promisify with ThisBinding4600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testThisBinding4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1885,9 +1885,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0420
      * @tc.name testBindAfterPromisify4700
      * @tc.desc Test promisify with BindAfterPromisify4700 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testBindAfterPromisify4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1906,9 +1906,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0430
      * @tc.name testPromiseChain4800
      * @tc.desc Test promisify with PromiseChain4800 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChain4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1929,9 +1929,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0440
      * @tc.name testAsyncAwait4900
      * @tc.desc Test promisify with AsyncAwait4900 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testAsyncAwait4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1950,9 +1950,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0450
      * @tc.name testMultiplePromisify5000
      * @tc.desc Test promisify with MultiplePromisify5000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMultiplePromisify5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1972,9 +1972,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0460
      * @tc.name testNestedCallback5100
      * @tc.desc Test promisify with NestedCallback5100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testNestedCallback5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1989,9 +1989,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0470
      * @tc.name testErrorHandlingChain5200
      * @tc.desc Test promisify with ErrorHandlingChain5200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testErrorHandlingChain5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2015,9 +2015,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0480
      * @tc.name testPromisifyAsParam5400
      * @tc.desc Test promisify with PromisifyAsParam5400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromisifyAsParam5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2033,9 +2033,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0490
      * @tc.name testComputedPropertyMethod5500
      * @tc.desc Test promisify with ComputedPropertyMethod5500 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testComputedPropertyMethod5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2053,9 +2053,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0500
      * @tc.name testCallbackOrder5700
      * @tc.desc Test promisify with CallbackOrder5700 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCallbackOrder5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2071,9 +2071,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0510
      * @tc.name testErrorObjectType5800
      * @tc.desc Test promisify with ErrorObjectType5800 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testErrorObjectType5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2094,9 +2094,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0520
      * @tc.name testCustomErrorFirst5900
      * @tc.desc Test promisify with CustomErrorFirst5900 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCustomErrorFirst5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2121,9 +2121,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0530
      * @tc.name testSpecialCallbackSignature6000
      * @tc.desc Test promisify with SpecialCallbackSignature6000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSpecialCallbackSignature6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2139,9 +2139,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0540
      * @tc.name testSendableClassCallback7100
      * @tc.desc Test promisify with SendableClassCallback7100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableClassCallback7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2160,9 +2160,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0550
      * @tc.name testSendableClassMultiCallback7200
      * @tc.desc Test promisify with SendableClassMultiCallback7200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testSendableClassMultiCallback7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2195,9 +2195,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0560
      * @tc.name testSendableStaticCallback7300
      * @tc.desc Test promisify with SendableStaticCallback7300 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testSendableStaticCallback7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2212,9 +2212,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0570
      * @tc.name testSendableInheritedCallback7400
      * @tc.desc Test promisify with SendableInheritedCallback7400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testSendableInheritedCallback7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2232,9 +2232,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0580
      * @tc.name testSendableOverriddenCallback7500
      * @tc.desc Test promisify with SendableOverriddenCallback7500 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testSendableOverriddenCallback7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2252,9 +2252,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0590
      * @tc.name testSendableGetterSetterCallback7600
      * @tc.desc Test promisify with SendableGetterSetterCallback7600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableGetterSetterCallback7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2285,9 +2285,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0600
      * @tc.name testTaskPoolPromisify7700
      * @tc.desc Test promisify with TaskPoolPromisify7700 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testTaskPoolPromisify7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2307,9 +2307,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0610
      * @tc.name testWorkerPromisify8100
      * @tc.desc Test promisify with WorkerPromisify8100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testWorkerPromisify8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2328,9 +2328,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0620
      * @tc.name testSendableContainerStore8200
      * @tc.desc Test promisify with SendableContainerStore8200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableContainerStore8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2350,9 +2350,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0630
      * @tc.name testSendableComplexCallback8300
      * @tc.desc Test promisify with SendableComplexCallback8300 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableComplexCallback8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2382,9 +2382,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0640
      * @tc.name testSendableDecorator8400
      * @tc.desc Test promisify with SendableDecorator8400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableDecorator8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2404,9 +2404,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0650
      * @tc.name testConcurrentDecorator8500
      * @tc.desc Test promisify with ConcurrentDecorator8500 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testConcurrentDecorator8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2421,9 +2421,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0660
      * @tc.name testSendableNestedClass8600
      * @tc.desc Test promisify with SendableNestedClass8600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableNestedClass8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2441,9 +2441,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0670
      * @tc.name testSendablePrivateField8700
      * @tc.desc Test promisify with SendablePrivateField8700 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendablePrivateField8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2462,9 +2462,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0680
      * @tc.name testSendableReturnType8900
      * @tc.desc Test promisify with SendableReturnType8900 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableReturnType8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2495,9 +2495,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0690
      * @tc.name testSendableErrorHandling9000
      * @tc.desc Test promisify with SendableErrorHandling9000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableErrorHandling9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2521,9 +2521,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0700
      * @tc.name testSendablePromiseChain9100
      * @tc.desc Test promisify with SendablePromiseChain9100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendablePromiseChain9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2549,9 +2549,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0710
      * @tc.name testSendableAsyncAwait9200
      * @tc.desc Test promisify with SendableAsyncAwait9200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableAsyncAwait9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2571,9 +2571,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0720
      * @tc.name testSendableCallbackParamValidation9400
      * @tc.desc Test promisify with SendableCallbackParamValidation9400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableCallbackParamValidation9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2592,9 +2592,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0730
      * @tc.name testSendableConcurrencySafety9500
      * @tc.desc Test promisify with SendableConcurrencySafety9500 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableConcurrencySafety9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (): Promise<void> => {
@@ -2621,9 +2621,9 @@ export default function PromisifyTest(): void {
     //  * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0740
     //  * @tc.name testSendableDynamicPromisify9600
     //  * @tc.desc Test promisify with SendableDynamicPromisify9600 - verify callback to Promise conversion
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level0
+    //  * @tc.size MEDIUMTEST
+    //  * @tc.type FUNCTION
+    //  * @tc.level LEVEL0
     //  */
     // it('testSendableDynamicPromisify9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     //   async (done: Function): Promise<void> => {
@@ -2643,9 +2643,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0750
      * @tc.name testTSCallbackFunction10100
      * @tc.desc Test promisify with TSCallbackFunction10100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testTSCallbackFunction10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2661,9 +2661,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0760
      * @tc.name testTSCallbackClassMethod10200
      * @tc.desc Test promisify with TSCallbackClassMethod10200 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testTSCallbackClassMethod10200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2682,9 +2682,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0770
      * @tc.name testJSCallbackFunction10600
      * @tc.desc Test promisify with JSCallbackFunction10600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testJSCallbackFunction10600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2699,9 +2699,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0780
      * @tc.name testETSTSJSConsistency11100
      * @tc.desc Test promisify with ETSTSJSConsistency11100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testETSTSJSConsistency11100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2716,9 +2716,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0790
      * @tc.name testCrossFileErrorHandling12000
      * @tc.desc Test promisify with CrossFileErrorHandling12000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testCrossFileErrorHandling12000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2739,9 +2739,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0800
      * @tc.name testSendableDecoratorMethod12100
      * @tc.desc Test promisify with SendableDecoratorMethod12100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testSendableDecoratorMethod12100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2760,9 +2760,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0810
      * @tc.name testConcurrentDecoratorMethod12400
      * @tc.desc Test promisify with ConcurrentDecoratorMethod12400 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testConcurrentDecoratorMethod12400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2781,9 +2781,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0820
      * @tc.name testWrapperDecorator15000
      * @tc.desc Test promisify with WrapperDecorator15000 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testWrapperDecorator15000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2803,9 +2803,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0830
      * @tc.name testExportedCallback15100
      * @tc.desc Test promisify with ExportedCallback15100 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testExportedCallback15100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2820,9 +2820,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0840
      * @tc.name testNamespaceImport15600
      * @tc.desc Test promisify with NamespaceImport15600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testNamespaceImport15600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2837,9 +2837,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0850
      * @tc.name testModuleLevelCallback17600
      * @tc.desc Test promisify with ModuleLevelCallback17600 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testModuleLevelCallback17600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2854,9 +2854,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0860
      * @tc.name testMixedImportSource18500
      * @tc.desc Test promisify with MixedImportSource18500 - verify callback to Promise conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testMixedImportSource18500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2871,9 +2871,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_001
      * @tc.name testSyncCallback18600
      * @tc.desc Test promisify with synchronous callback (no async delay)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testSyncCallback18600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2888,9 +2888,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_002
      * @tc.name testCallbackCalledMultipleTimes18700
      * @tc.desc Test promisify when callback is called multiple times (should only resolve once)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testCallbackCalledMultipleTimes18700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -2905,9 +2905,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_003
      * @tc.name testUndefinedParam18800
      * @tc.desc Test promisify with undefined parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testUndefinedParam18800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2922,9 +2922,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_004
      * @tc.name testNullParam18900
      * @tc.desc Test promisify with null parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testNullParam18900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2939,9 +2939,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_005
      * @tc.name testEmptyStringParam19000
      * @tc.desc Test promisify with empty string parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testEmptyStringParam19000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2956,9 +2956,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_006
      * @tc.name testConcurrentCalls19100
      * @tc.desc Test promisify with concurrent calls (10 concurrent)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testConcurrentCalls19100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -2979,9 +2979,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_008
      * @tc.name testErrorFirstNull19300
      * @tc.desc Test promisify when error first parameter is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testErrorFirstNull19300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2996,9 +2996,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_009
      * @tc.name testErrorFirstUndefined19400
      * @tc.desc Test promisify when error first parameter is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testErrorFirstUndefined19400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3014,9 +3014,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_010
      * @tc.name testReturnValueUndefined19500
      * @tc.desc Test promisify when return value is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testReturnValueUndefined19500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3031,9 +3031,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_011
      * @tc.name testBigIntParam19600
      * @tc.desc Test promisify with BigInt parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testBigIntParam19600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -3049,9 +3049,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_012
      * @tc.name testBooleanParam19700
      * @tc.desc Test promisify with boolean parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testBooleanParam19700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3068,9 +3068,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_014
      * @tc.name testArrayBufferParam19900
      * @tc.desc Test promisify with ArrayBuffer parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testArrayBufferParam19900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3086,9 +3086,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_015
      * @tc.name testTypedArrayParam20000
      * @tc.desc Test promisify with TypedArray parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testTypedArrayParam20000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3104,9 +3104,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_016
      * @tc.name testMapParam20100
      * @tc.desc Test promisify with Map parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testMapParam20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3125,9 +3125,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_017
      * @tc.name testSetParam20200
      * @tc.desc Test promisify with Set parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testSetParam20200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3146,9 +3146,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_018
      * @tc.name testPromiseReject20300
      * @tc.desc Test promisify when promise is rejected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseReject20300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3168,9 +3168,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_019
      * @tc.name testChainedPromisify20400
      * @tc.desc Test promisify chaining multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testChainedPromisify20400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3194,9 +3194,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_021
      * @tc.name testRecursionPromisify20600
      * @tc.desc Test promisify with recursive callback calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testRecursionPromisify20600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -3211,9 +3211,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_022
      * @tc.name testZeroDelayCallback20700
      * @tc.desc Test promisify with zero delay setTimeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testZeroDelayCallback20700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3228,9 +3228,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_023
      * @tc.name testLongDelayCallback20800
      * @tc.desc Test promisify with long delay setTimeout (1000ms)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testLongDelayCallback20800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -3245,9 +3245,9 @@ export default function PromisifyTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_024
      * @tc.name testImmediateCallback20900
      * @tc.desc Test promisify with immediate callback (call before return)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
      */
     it('testImmediateCallback20900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
