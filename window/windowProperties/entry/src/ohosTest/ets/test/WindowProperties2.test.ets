@@ -1604,7 +1604,7 @@ export default function windowPropertiesTest2() {
         expect().assertFail();
         done()
       }
-      await sleep(500);
+      await sleep(1000);
       try {
         windowClass!.snapshotIgnorePrivacy().then(async (pixelMap: image.PixelMap) => {
           console.info(msgStr + 'Succeeded in calling snapshotIgnorePrivacy.');
@@ -1966,15 +1966,7 @@ export default function windowPropertiesTest2() {
         } else {
           await on_setWindowShadowEnabled_notSupported();
         }
-      } else if (deviceInfo.deviceType === 'tv') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (deviceInfo.deviceType === 'wearable') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (deviceInfo.deviceType === 'phone') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (deviceInfo.deviceType === 'car') {
-        await on_setWindowShadowEnabled_notSupported_801();
-      } else if (isSupport === false){
+      } else {
         await on_setWindowShadowEnabled_notSupported_801();
       }
     });

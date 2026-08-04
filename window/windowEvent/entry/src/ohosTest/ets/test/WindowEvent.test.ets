@@ -1855,6 +1855,66 @@ export default function windowEventTest() {
       }
     })
 
+    /**
+     * @tc.name   testShiftAppWindowTouchEvent_801
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0100
+     * @tc.desc   验证非自由多窗设备调用shiftAppWindowTouchEvent接口返回801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testShiftAppWindowTouchEvent_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testShiftAppWindowTouchEvent_801';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      // 获取主窗口
+      let mainWindow = windowStage.getMainWindowSync();
+      let mainWindowId = mainWindow.getWindowProperties().id;
+      console.info(caseName + ' mainWindowId: ' + mainWindowId);
+
+      // 创建子窗口
+      let subWindowClass = await windowStage.createSubWindow('testShiftAppWindowTouchEvent_801');
+      console.info(caseName + ' createSubWindow success');
+      
+      try {
+        await subWindowClass.setUIContent('testability/pages/Index1');
+        console.info(caseName + ' setUIContent success');
+        await subWindowClass.showWindow();
+        console.info(caseName + ' showWindow success');
+        await sleep(500);
+
+        // 获取子窗口ID
+        let subWindowId = subWindowClass.getWindowProperties().id;
+        console.info(caseName + ' subWindowId: ' + subWindowId);
+
+        // 调用 shiftAppWindowTouchEvent 接口
+        // 第一个参数：主窗口ID
+        // 第二个参数：子窗口ID
+        // 第三个参数：触摸点ID（传入0）
+        await window.shiftAppWindowTouchEvent(mainWindowId, subWindowId, 0);
+        await subWindowClass.destroyWindow();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        if (subWindowClass){
+          await subWindowClass.destroyWindow();
+        }
+        // 判断设备状态,如果是非自由多窗则断言 801
+        if (!isFreeWindowMode) {
+          expect(err.code).assertEqual(801);
+          console.info(caseName + ' Non-free window mode device, expected error code 801');
+        } else {
+          // 自由多窗模式下,应该成功调用
+          console.info(caseName + ' Free window mode device, shiftAppWindowTouchEvent should succeed');
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
 
   })
 }
