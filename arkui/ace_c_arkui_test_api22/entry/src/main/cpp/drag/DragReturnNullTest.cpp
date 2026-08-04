@@ -18,6 +18,7 @@
 #include <arkui/native_gesture.h>
 #include "drag/DragReturnNullTest.h"
 #include <multimedia/image_framework/image/pixelmap_native.h>
+static ArkUI_GestureInterruptInfo *g_event;
 
 namespace ArkUICapiTest {
 static napi_value Nullptr_OH_ArkUI_CreateDragActionWithContext(napi_env env, napi_callback_info info) {
@@ -44,14 +45,9 @@ static napi_value Nullptr_OH_ArkUI_GestureInterruptInfo_GetGestureEvent(napi_env
 
 static napi_value Nullptr_OH_ArkUI_GestureInterruptInfo_GetRecognizer(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    ArkUI_ParallelInnerGestureEvent_ *event = new ArkUI_ParallelInnerGestureEvent_;
-    event->current = nullptr;
-    event->responseLinkRecognizer = nullptr;
-    event->userData = nullptr;
-    event->count = 0;
-    auto *previewOptions = OH_ArkUI_GestureInterruptInfo_GetRecognizer((ArkUI_GestureInterruptInfo *)event);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetRecognizer", "GetRecognizer ret: %{public}p", previewOptions);      
-    if(previewOptions == PARAM_0)
+    auto *previewOptions = OH_ArkUI_GestureInterruptInfo_GetRecognizer(g_event);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetRecognizer", "GetRecognizer ret: %{public}p", previewOptions);
+    if (previewOptions == PARAM_0)
         ASSERT_EQ_INT(previewOptions, nullptr);
     else
         ASSERT_OBJ_NE(previewOptions, nullptr);
