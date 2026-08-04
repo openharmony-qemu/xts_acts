@@ -13,9 +13,13 @@
  * limitations under the License.
  */
 
-import { DialogPresenter } from '@ohos.arkui.UIContext';
-import dialog, { DialogResult } from '@ohos.arkui.dialog';
-import { ComponentContent, LengthMetrics } from '@kit.ArkUI';
+import {
+  DialogPresenter,
+  DialogResult,
+  ComponentContent,
+  LengthMetrics,
+  dialog,
+} from '@kit.ArkUI';
 
 interface CustomParam {
   text: string;

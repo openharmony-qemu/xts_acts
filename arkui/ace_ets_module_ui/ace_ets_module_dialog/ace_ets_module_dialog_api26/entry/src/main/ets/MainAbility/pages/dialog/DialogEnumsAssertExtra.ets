@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import dialog, {
+import {
   DialogBaseAlignment,
   DialogButtonOrientation,
-} from '@ohos.arkui.dialog';
+  dialog,
+} from '@kit.ArkUI';
 
 @Entry
 @Component

@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 
-import { DialogPresenter } from '@ohos.arkui.UIContext';
-import dialog from '@ohos.arkui.dialog';
+import {
+  DialogPresenter,
+  dialog,
+} from '@kit.ArkUI';
 
 @Entry
 @Component

@@ -13,8 +13,13 @@
  * limitations under the License.
  */
 
-import { DialogPresenter } from '@ohos.arkui.UIContext';
-import { LevelMode, ImmersiveMode, LevelOrder, LengthMetrics } from '@kit.ArkUI';
+import {
+  DialogPresenter,
+  LevelMode,
+  ImmersiveMode,
+  LevelOrder,
+  LengthMetrics,
+} from '@kit.ArkUI';
 import uiMaterial from '@ohos.arkui.uiMaterial';
 
 @Entry
