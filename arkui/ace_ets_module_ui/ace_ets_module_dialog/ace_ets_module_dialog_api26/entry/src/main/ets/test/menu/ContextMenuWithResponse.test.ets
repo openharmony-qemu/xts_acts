@@ -14,36 +14,27 @@
  */
 
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 export default function ContextMenuWithResponse() {
   describe('ContextMenuWithResponse', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] ContextMenuWithResponse beforeEach');
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/menu/ContextMenuWithResponse'
-      };
-      try {
-        router.clear();
-        let pages = router.getState();
-        if (pages.name !== 'ContextMenuWithResponse') {
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
-      } catch (err) {
-        console.error('[ARKUI_DYN] push ContextMenuWithResponse error: ' + err);
-        expect().assertFail();
-      }
+      await DialogApi26TestHelper.openPageIfNeeded('ContextMenuWithResponse', 'MainAbility/pages/menu/ContextMenuWithResponse');
       done();
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(800);
       console.info('[ARKUI_DYN] ContextMenuWithResponse afterEach');
     });
+    afterAll(async () => {
+      await DialogApi26TestHelper.leavePage();
+      console.info('[ARKUI_DYN] ContextMenuWithResponse afterAll');
+    });
+
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0100
@@ -56,7 +47,7 @@ export default function ContextMenuWithResponse() {
     it('SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_with_resp_elements'));
       expect(btn !== null).assertTrue();
       await btn.longClick();
@@ -64,7 +55,7 @@ export default function ContextMenuWithResponse() {
       let node = await driver.findComponent(ON.text('WithCopy'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0100 END');
       done();
     });
@@ -80,7 +71,7 @@ export default function ContextMenuWithResponse() {
     it('SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_with_resp_builder'));
       expect(btn !== null).assertTrue();
       await btn.longClick();
@@ -88,7 +79,7 @@ export default function ContextMenuWithResponse() {
       let node = await driver.findComponent(ON.text('LongPressItem'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0200 END');
       done();
     });
@@ -104,7 +95,7 @@ export default function ContextMenuWithResponse() {
     it('SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_with_resp_options'));
       expect(btn !== null).assertTrue();
       await btn.longClick();
@@ -112,7 +103,7 @@ export default function ContextMenuWithResponse() {
       let node = await driver.findComponent(ON.text('WithDelete'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0300 END');
       done();
     });
@@ -128,7 +119,7 @@ export default function ContextMenuWithResponse() {
     it('SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuWithResponse_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_with_resp_elements'));
       expect(btn !== null).assertTrue();
       await btn.longClick();
@@ -136,7 +127,7 @@ export default function ContextMenuWithResponse() {
       let item = await driver.findComponent(ON.text('WithCopy'));
       expect(item !== null).assertTrue();
       await item.click();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let label = await driver.findComponent(ON.id('with_resp_last_action'));
       let txt = await label.getText();
       expect(txt === 'last=WithCopy').assertTrue();
