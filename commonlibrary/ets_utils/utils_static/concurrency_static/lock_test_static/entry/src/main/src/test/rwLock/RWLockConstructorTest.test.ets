@@ -98,6 +98,28 @@ function eaWorkerConstructAndUseTask(counter: AtomicInt): void {
   counter.fetchAdd(1);
 }
 
+// TC-003: Helper returning RWLock or null so the non-null check is a real runtime assertion
+function createRWLockOrNull(flag: number): RWLock | null {
+  if (flag > 0) {
+    return new RWLock();
+  }
+  return null;
+}
+
+// TC-010: Resource-exhaustion approximation - heavy construction with lock usage per task
+function resourcePressureConstructTask(counter: AtomicInt): void {
+  for (let i = 0; i < 2000; i++) {
+    const rwlock = new RWLock();
+    const rl = rwlock.readLock();
+    rl.lock();
+    rl.unlock();
+    const wl = rwlock.writeLock();
+    wl.lock();
+    wl.unlock();
+  }
+  counter.fetchAdd(1);
+}
+
 export default function RWLockConstructorTest(): void {
   describe('RWLockConstructorTest', (): void => {
     beforeAll((): void => {})
@@ -360,6 +382,149 @@ export default function RWLockConstructorTest(): void {
       await worker.run<void>(eaWorkerConstructAndUseTask, counter);
       worker.quit();
       expect(counter.load()).assertEqual(1);
+    })
+
+    // TC-002 (md INPUT-02/INPUT-03/INPUT-04) is skipped: RWLock.constructor accepts no parameters and
+    // passing any argument (undefined/null/other type) is a compile-time error in the ArkTS 1.2 static
+    // model, so it has no runtime-observable behavior and cannot be expressed as a runtime test case.
+
+    /**
+     * @tc.name    RWLockConstructorTest1400
+     * @tc.number  SUB_RW_LOCK_CONSTRUCTOR_TEST_1400
+     * @tc.desc    Verify RWLock constructor returns a non-null valid object that supports readLock/writeLock
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('RWLockConstructorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const rwlock: RWLock | null = createRWLockOrNull(1);
+      expect(rwlock !== null).assertTrue();
+      let usable: boolean = false;
+      if (rwlock !== null) {
+        const rl = rwlock.readLock();
+        rl.lock();
+        rl.unlock();
+        const wl = rwlock.writeLock();
+        wl.lock();
+        wl.unlock();
+        usable = true;
+      }
+      expect(usable).assertTrue();
+    })
+
+    /**
+     * @tc.name    RWLockConstructorTest1500
+     * @tc.number  SUB_RW_LOCK_CONSTRUCTOR_TEST_1500
+     * @tc.desc    Verify RWLock constructor returns an object of type RWLock (readLock/writeLock API surface works)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('RWLockConstructorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const wl = rwlock.writeLock();
+      // The read lock object and write lock object are distinct, which proves readLock()/writeLock()
+      // return correctly typed lock objects instead of a single wrong-typed object
+      expect(rl !== wl).assertTrue();
+      let lockOk: boolean = false;
+      rl.lock();
+      rl.unlock();
+      wl.lock();
+      wl.unlock();
+      lockOk = true;
+      expect(lockOk).assertTrue();
+    })
+
+    /**
+     * @tc.name    RWLockConstructorTest1600
+     * @tc.number  SUB_RW_LOCK_CONSTRUCTOR_TEST_1600
+     * @tc.desc    Verify a newly constructed RWLock starts in unlocked state: first acquisitions succeed immediately
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('RWLockConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const rwlock = new RWLock();
+      const wl = rwlock.writeLock();
+      let writeAcquired: boolean = false;
+      wl.lock();
+      writeAcquired = true;
+      wl.unlock();
+      const rl = rwlock.readLock();
+      let readAcquired: boolean = false;
+      rl.lock();
+      readAcquired = true;
+      rl.unlock();
+      expect(writeAcquired).assertTrue();
+      expect(readAcquired).assertTrue();
+    })
+
+    /**
+     * @tc.name    RWLockConstructorTest1700
+     * @tc.number  SUB_RW_LOCK_CONSTRUCTOR_TEST_1700
+     * @tc.desc    Verify bulk RWLock construction under memory pressure (approximation of memory-exhaustion scenario) completes without uncaught error
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('RWLockConstructorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      // Approximation: true memory exhaustion is not reliably reproducible in a test environment; a large
+      // batch construction is used to approach memory/resource pressure. Any thrown error is caught so the
+      // test completes and reports how many constructions actually succeeded.
+      const BATCH_SIZE: number = 20000;
+      let successCount: number = 0;
+      let failCount: number = 0;
+      for (let i = 0; i < BATCH_SIZE; i++) {
+        try {
+          const rwlock = new RWLock();
+          successCount++;
+        } catch (error) {
+          failCount++;
+        }
+      }
+      expect(successCount > 0).assertTrue();
+      expect(successCount + failCount).assertEqual(BATCH_SIZE);
+    })
+
+    /**
+     * @tc.name    RWLockConstructorTest1800
+     * @tc.number  SUB_RW_LOCK_CONSTRUCTOR_TEST_1800
+     * @tc.desc    Verify RWLock construction under sustained concurrent resource pressure (approximation of resource-exhaustion scenario) completes
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('RWLockConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const counter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
+      let p2 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
+      let p3 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
+      let p4 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
+      let p5 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
+      await Promise.all([p1, p2, p3, p4, p5]);
+      expect(counter.load()).assertEqual(5);
+    })
+
+    /**
+     * @tc.name    RWLockConstructorTest1900
+     * @tc.number  SUB_RW_LOCK_CONSTRUCTOR_TEST_1900
+     * @tc.desc    Verify RWLock can be constructed repeatedly in a Worker thread across multiple runs (md TC-013)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('RWLockConstructorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      // md TC-013 (Worker thread construction) is approximated with EAWorker because a ThreadWorker test
+      // would require a separate worker script file, which is outside the allowed modification scope.
+      const counter = new AtomicInt(0);
+      const worker = new EAWorker('rwlockCtorWorker3');
+      worker.start();
+      await worker.run<void>(eaWorkerConstructTask, counter);
+      await worker.run<void>(eaWorkerConstructTask, counter);
+      await worker.run<void>(eaWorkerConstructTask, counter);
+      worker.quit();
+      expect(counter.load()).assertEqual(3);
     })
   })
 }

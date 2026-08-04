@@ -100,6 +100,17 @@ function unlockSharedDataReadTask(c: UnlockSharedCounter): void {
   }
 }
 
+// TC-009/TC-014/TC-017: other-thread unlock task; result 1 = unlock succeeded, 2 = threw
+function unlockFromOtherThreadTask(rwlock: RWLock, result: AtomicInt): void {
+  const rl = rwlock.readLock();
+  try {
+    rl.unlock();
+    result.store(1);
+  } catch (e) {
+    result.store(2);
+  }
+}
+
 export default function ReadLockUnlockTest(): void {
   describe('ReadLockUnlockTest', (): void => {
     beforeAll((): void => {})
@@ -331,6 +342,266 @@ export default function ReadLockUnlockTest(): void {
       let p3 = taskpool.execute(new taskpool.Task(unlockSharedDataReadTask, counter));
       await Promise.all([p1, p2, p3]);
       expect(counter.value).assertEqual(50);
+    })
+
+    // ========== RETURN VALUE TESTS - EXTENDED ==========
+
+    /**
+     * @tc.name    ReadLockUnlockTest1200
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1200
+     * @tc.desc    TC-003: Verify ReadLock.unlock() returns void and releases the lock
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('ReadLockUnlockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      rl.lock();
+      // unlock() returns void: verified at compile time by assigning to a void variable
+      let result: void = rl.unlock();
+      // Side effect verification: write lock can be acquired after unlock
+      const wl = rwlock.writeLock();
+      let writerAcquired: boolean = false;
+      try {
+        wl.lock();
+        writerAcquired = true;
+        wl.unlock();
+      } catch (e) {
+        writerAcquired = false;
+      }
+      expect(writerAcquired).assertTrue();
+    })
+
+    // ========== ERROR HANDLING TESTS - EXTENDED ==========
+
+    /**
+     * @tc.name    ReadLockUnlockTest1300
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1300
+     * @tc.desc    TC-009: Verify unlock() from a different thread succeeds on a read lock held by main thread (count-based, no owner check)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockUnlockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const releaseResult = new AtomicInt(0);
+      rl.lock();
+      // Another thread (TaskPool task) releases the read lock held by this thread
+      let p1 = taskpool.execute(new taskpool.Task(unlockFromOtherThreadTask, rwlock, releaseResult));
+      await p1;
+      // Runtime semantics: read lock is count-based without owner tracking, so unlock succeeds (result=1)
+      expect(releaseResult.load()).assertEqual(1);
+      // Read count was released by the other thread; second unlock by this thread throws
+      let secondUnlockThrew: boolean = false;
+      try {
+        rl.unlock();
+      } catch (e) {
+        secondUnlockThrew = true;
+      }
+      expect(secondUnlockThrew).assertTrue();
+    })
+
+    /**
+     * @tc.name    ReadLockUnlockTest1400
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1400
+     * @tc.desc    TC-010: Verify unlock() throws after the lock is fully released (closest semantics of a destroyed lock; no destroy API)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockUnlockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      rl.lock();
+      rl.unlock();
+      // Lock fully released (closest to destroyed state): unlock again throws
+      let threw: boolean = false;
+      try {
+        rl.unlock();
+      } catch (e) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+      // Unlike a truly destroyed lock, the object can still be re-acquired and released
+      let reusable: boolean = false;
+      try {
+        rl.lock();
+        reusable = true;
+        rl.unlock();
+      } catch (e) {
+        reusable = false;
+      }
+      expect(reusable).assertTrue();
+    })
+
+    // ========== CONCURRENCY TESTS - EXTENDED ==========
+
+    /**
+     * @tc.name    ReadLockUnlockTest1500
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1500
+     * @tc.desc    TC-012: Verify multiple lock() calls are released one by one by matching unlock() calls
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('ReadLockUnlockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const times: number = 3;
+      for (let i = 0; i < times; i++) {
+        rl.lock();
+      }
+      // Release locks one by one (read count decrements each time)
+      for (let i = 0; i < times; i++) {
+        rl.unlock();
+      }
+      // Count reached 0: extra unlock throws
+      let extraUnlockThrew: boolean = false;
+      try {
+        rl.unlock();
+      } catch (e) {
+        extraUnlockThrew = true;
+      }
+      expect(extraUnlockThrew).assertTrue();
+      // Count reached 0: write lock can be acquired
+      const wl = rwlock.writeLock();
+      let writerAcquired: boolean = false;
+      try {
+        wl.lock();
+        writerAcquired = true;
+        wl.unlock();
+      } catch (e) {
+        writerAcquired = false;
+      }
+      expect(writerAcquired).assertTrue();
+    })
+
+    /**
+     * @tc.name    ReadLockUnlockTest1600
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1600
+     * @tc.desc    TC-014: Verify thread B (EAWorker) releasing read lock held by thread A succeeds (count-based ownership behavior)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockUnlockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const releaseResult = new AtomicInt(0);
+      const worker = new EAWorker('readLockUnlockOwnership');
+      worker.start();
+      rl.lock();
+      // Thread B (EAWorker) releases the read lock held by thread A (main thread)
+      await worker.run<void>(unlockFromOtherThreadTask, rwlock, releaseResult);
+      // Runtime semantics: read lock does not track the owner, so B's unlock succeeds (result=1)
+      expect(releaseResult.load()).assertEqual(1);
+      // Lock state is not corrupted: main thread can re-acquire and release
+      let reacquired: boolean = false;
+      try {
+        rl.lock();
+        reacquired = true;
+        rl.unlock();
+      } catch (e) {
+        reacquired = false;
+      }
+      expect(reacquired).assertTrue();
+      worker.quit();
+    })
+
+    /**
+     * @tc.name    ReadLockUnlockTest1700
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1700
+     * @tc.desc    TC-015: Verify fast lock/unlock loop (5000 cycles) completes without deadlock or error
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockUnlockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const cycles: number = 5000;
+      for (let i = 0; i < cycles; i++) {
+        rl.lock();
+        rl.unlock();
+      }
+      // After the loop there is no deadlock and the lock is still usable
+      let stillUsable: boolean = false;
+      try {
+        rl.lock();
+        stillUsable = true;
+        rl.unlock();
+      } catch (e) {
+        stillUsable = false;
+      }
+      expect(stillUsable).assertTrue();
+    })
+
+    /**
+     * @tc.name    ReadLockUnlockTest1800
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1800
+     * @tc.desc    TC-017: Verify child thread (EAWorker) unlock() releases a read lock locked by the main thread
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockUnlockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const releaseResult = new AtomicInt(0);
+      const worker = new EAWorker('readLockUnlockChild');
+      worker.start();
+      rl.lock();
+      // Main thread locks, child thread unlocks
+      await worker.run<void>(unlockFromOtherThreadTask, rwlock, releaseResult);
+      // Runtime semantics: count-based read lock allows the child thread to release the main thread's lock (result=1)
+      expect(releaseResult.load()).assertEqual(1);
+      // Read lock has been released by the child thread: write lock can be acquired (state fully restored)
+      const wl = rwlock.writeLock();
+      let writerAcquired: boolean = false;
+      try {
+        wl.lock();
+        writerAcquired = true;
+        wl.unlock();
+      } catch (e) {
+        writerAcquired = false;
+      }
+      expect(writerAcquired).assertTrue();
+      worker.quit();
+    })
+
+    /**
+     * @tc.name    ReadLockUnlockTest1900
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1900
+     * @tc.desc    TC-018: Verify immediate unlock right after lock() works without race error
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockUnlockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      let quickUnlockOk: boolean = false;
+      try {
+        rl.lock();
+        rl.unlock();
+        quickUnlockOk = true;
+      } catch (e) {
+        quickUnlockOk = false;
+      }
+      expect(quickUnlockOk).assertTrue();
+      // After the immediate lock/unlock the count is 0: write lock can be acquired
+      const wl = rwlock.writeLock();
+      let writerAcquired: boolean = false;
+      try {
+        wl.lock();
+        writerAcquired = true;
+        wl.unlock();
+      } catch (e) {
+        writerAcquired = false;
+      }
+      expect(writerAcquired).assertTrue();
     })
   })
 }

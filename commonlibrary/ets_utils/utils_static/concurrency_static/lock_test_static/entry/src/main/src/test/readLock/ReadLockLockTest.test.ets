@@ -147,6 +147,34 @@ function eaWorkerMixedLockTask(a: AtomicInt): void {
   wl.unlock();
 }
 
+// T-CC-011: writer probe task - blocked while read lock count is not zero
+function readLockWriteProbeTask(rwlock: RWLock, writerStart: AtomicInt, writerAcquired: AtomicInt): void {
+  writerStart.store(1);
+  const wl = rwlock.writeLock();
+  wl.lock();
+  try {
+    writerAcquired.store(1);
+  } finally {
+    wl.unlock();
+  }
+}
+
+// T-CC-017: inner task acquires read lock while outer holder keeps the same lock
+function readLockNestedInnerTask(rwlock: RWLock, counter: AtomicInt): void {
+  const rl = rwlock.readLock();
+  rl.lock();
+  try {
+    counter.fetchAdd(1);
+  } finally {
+    rl.unlock();
+  }
+}
+
+// T-ER-001: helper returning an uninitialized (null) ReadLock handle
+function getNullReadLock(): ReadLock | null {
+  return null;
+}
+
 export default function ReadLockLockTest(): void {
   describe('ReadLockLockTest', (): void => {
     beforeAll((): void => {})
@@ -601,6 +629,223 @@ export default function ReadLockLockTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(atomicCounter.load()).assertEqual(10);
+    })
+
+    // ========== ERROR HANDLING TESTS - EXTENDED ==========
+
+    /**
+     * @tc.name    ReadLockLockTest2300
+     * @tc.number  SUB_READ_LOCK_LOCK_TEST_2300
+     * @tc.desc    T-ER-001: Verify calling lock() on an uninitialized (null) ReadLock throws an error
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('ReadLockLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const rl: ReadLock | null = getNullReadLock();
+      let threw: boolean = false;
+      try {
+        rl!.lock();
+      } catch (e) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+    })
+
+    /**
+     * @tc.name    ReadLockLockTest2400
+     * @tc.number  SUB_READ_LOCK_LOCK_TEST_2400
+     * @tc.desc    T-ER-002: Verify ReadLock.lock() re-acquires the lock normally after unlock()
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('ReadLockLockTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      rl.lock();
+      rl.unlock();
+      let reacquired: boolean = false;
+      try {
+        rl.lock();
+        reacquired = true;
+        rl.unlock();
+      } catch (e) {
+        reacquired = false;
+      }
+      expect(reacquired).assertTrue();
+    })
+
+    /**
+     * @tc.name    ReadLockLockTest2500
+     * @tc.number  SUB_READ_LOCK_LOCK_TEST_2500
+     * @tc.desc    T-ER-004: Verify ReadLock stays usable after misuse error (no destroy API, closest semantics)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockLockTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      // No destroy API: simulate an abnormal lock state by unlocking an unheld read lock (throws)
+      let misuseThrew: boolean = false;
+      try {
+        rl.unlock();
+      } catch (e) {
+        misuseThrew = true;
+      }
+      expect(misuseThrew).assertTrue();
+      // Abnormal state does not affect other threads: taskpool thread still acquires the lock
+      const counter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(readLockNestedInnerTask, rwlock, counter));
+      await p1;
+      expect(counter.load()).assertEqual(1);
+      // The lock object itself remains usable
+      let reacquired: boolean = false;
+      try {
+        rl.lock();
+        reacquired = true;
+        rl.unlock();
+      } catch (e) {
+        reacquired = false;
+      }
+      expect(reacquired).assertTrue();
+    })
+
+    // ========== CONCURRENCY TESTS - RELEASE COUNT AND REENTRANCY ==========
+
+    /**
+     * @tc.name    ReadLockLockTest2600
+     * @tc.number  SUB_READ_LOCK_LOCK_TEST_2600
+     * @tc.desc    T-CC-011: Verify read lock count decrements when locks are released one by one; write lock blocked until last release
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockLockTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const writerStart = new AtomicInt(0);
+      const writerAcquired = new AtomicInt(0);
+      // Main thread holds 3 read locks reentrantly (read count = 3)
+      rl.lock();
+      rl.lock();
+      rl.lock();
+      // Writer probe task stays blocked while read count is not zero
+      let writerP = taskpool.execute(new taskpool.Task(readLockWriteProbeTask, rwlock, writerStart, writerAcquired));
+      let waitCycles: number = 0;
+      while (writerStart.load() === 0 && waitCycles < 50) {
+        await Utils.msSleep(100);
+        waitCycles++;
+      }
+      expect(writerStart.load()).assertEqual(1);
+      // Release first two read locks: count decreases but writer is still blocked
+      rl.unlock();
+      rl.unlock();
+      expect(writerAcquired.load()).assertEqual(0);
+      // Release last read lock: count reaches 0 and writer acquires the lock
+      rl.unlock();
+      await writerP;
+      expect(writerAcquired.load()).assertEqual(1);
+    })
+
+    /**
+     * @tc.name    ReadLockLockTest2700
+     * @tc.number  SUB_READ_LOCK_LOCK_TEST_2700
+     * @tc.desc    T-CC-014: Verify large-number reentrant lock does not throw (no explicit reentrancy limit)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockLockTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const reentrantTimes: number = 1000;
+      for (let i = 0; i < reentrantTimes; i++) {
+        rl.lock();
+      }
+      // No explicit reentrancy limit: continuing to lock after large reentrancy does not throw
+      let noLimitError: boolean = false;
+      try {
+        rl.lock();
+        noLimitError = true;
+      } catch (e) {
+        noLimitError = false;
+      }
+      expect(noLimitError).assertTrue();
+      // Release all reentrant locks; extra unlock throws once count reaches 0
+      for (let i = 0; i < reentrantTimes + 1; i++) {
+        rl.unlock();
+      }
+      let extraUnlockThrew: boolean = false;
+      try {
+        rl.unlock();
+      } catch (e) {
+        extraUnlockThrew = true;
+      }
+      expect(extraUnlockThrew).assertTrue();
+    })
+
+    // ========== CONCURRENCY TESTS - NESTED AND HIGH FREQUENCY ==========
+
+    /**
+     * @tc.name    ReadLockLockTest2800
+     * @tc.number  SUB_READ_LOCK_LOCK_TEST_2800
+     * @tc.desc    T-CC-017: Verify inner TaskPool task acquires read lock while outer holder keeps it (read lock shared)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('ReadLockLockTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      // Outer holder (main thread) keeps the read lock
+      rl.lock();
+      // Inner task acquires the same read lock: read locks are shared, so it succeeds
+      const counter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(readLockNestedInnerTask, rwlock, counter));
+      await p1;
+      expect(counter.load()).assertEqual(1);
+      rl.unlock();
+    })
+
+    /**
+     * @tc.name    ReadLockLockTest2900
+     * @tc.number  SUB_READ_LOCK_LOCK_TEST_2900
+     * @tc.desc    T-CC-020: Verify single thread high-frequency lock/unlock cycles (5000) remain stable
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('ReadLockLockTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const cycles: number = 5000;
+      for (let i = 0; i < cycles; i++) {
+        rl.lock();
+        rl.unlock();
+      }
+      // After the high-frequency loop, the lock is still usable without error
+      let stillUsable: boolean = false;
+      try {
+        rl.lock();
+        stillUsable = true;
+        rl.unlock();
+      } catch (e) {
+        stillUsable = false;
+      }
+      expect(stillUsable).assertTrue();
+      // Read count reached 0: write lock can be acquired (no leak)
+      const wl = rwlock.writeLock();
+      let writerAcquired: boolean = false;
+      try {
+        wl.lock();
+        writerAcquired = true;
+        wl.unlock();
+      } catch (e) {
+        writerAcquired = false;
+      }
+      expect(writerAcquired).assertTrue();
     })
   })
 }

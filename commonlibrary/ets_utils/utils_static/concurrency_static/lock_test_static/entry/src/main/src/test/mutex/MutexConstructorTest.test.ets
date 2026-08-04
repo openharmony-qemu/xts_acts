@@ -235,5 +235,39 @@ export default function MutexConstructorTest(): void {
       worker.quit();
       expect(counter.load()).assertEqual(1);
     })
+
+    /**
+     * @tc.name    MutexConstructorTest1000
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_1000
+     * @tc.desc    TC-08: Verify the object returned by the Mutex constructor is of type Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('MutexConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const mutex = new Mutex();
+      expect(mutex instanceof Mutex).assertTrue();
+    })
+
+    /**
+     * @tc.name    MutexConstructorTest1100
+     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_1100
+     * @tc.desc    TC-13: Verify a newly constructed Mutex is initially unlocked and lock() can be acquired immediately
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('MutexConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const mutex = new Mutex();
+      let lockAcquired: boolean = false;
+      try {
+        mutex.lock();
+        lockAcquired = true;
+        mutex.unlock();
+      } catch (e) {
+        lockAcquired = false;
+      }
+      expect(lockAcquired).assertTrue();
+    })
   })
 }

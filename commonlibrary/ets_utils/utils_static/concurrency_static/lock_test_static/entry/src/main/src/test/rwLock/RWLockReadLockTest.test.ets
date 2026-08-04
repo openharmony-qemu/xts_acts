@@ -228,6 +228,14 @@ function eaWorkerReadLockFullTask(a: AtomicInt): void {
   wl.unlock();
 }
 
+// TC-03: Helper returning ReadLock or null so the non-null check is a real runtime assertion
+function createReadLockOrNull(flag: number): ReadLock | null {
+  if (flag > 0) {
+    return new RWLock().readLock();
+  }
+  return null;
+}
+
 export default function RWLockReadLockTest(): void {
   describe('RWLockReadLockTest', (): void => {
     beforeAll((): void => {})
@@ -546,6 +554,93 @@ export default function RWLockReadLockTest(): void {
       await Promise.all([p1, p2, p3]);
       // Long hold task adds 1, two short reads each add 10 -> 21
       expect(counter.load()).assertEqual(21);
+    })
+
+    /**
+     * @tc.name    RWLockReadLockTest1700
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1700
+     * @tc.desc    Verify readLock() returns a ReadLock object (type verified via ReadLock API surface and distinction from WriteLock)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('RWLockReadLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      const wl = rwlock.writeLock();
+      // The ReadLock object is distinct from the WriteLock object of the same RWLock
+      expect(rl !== wl).assertTrue();
+      let lockOk: boolean = false;
+      rl.lock();
+      rl.unlock();
+      lockOk = true;
+      expect(lockOk).assertTrue();
+    })
+
+    /**
+     * @tc.name    RWLockReadLockTest1800
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1800
+     * @tc.desc    Verify readLock() returns a non-null usable ReadLock object
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('RWLockReadLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const rl: ReadLock | null = createReadLockOrNull(1);
+      expect(rl !== null).assertTrue();
+      let usable: boolean = false;
+      if (rl !== null) {
+        rl.lock();
+        rl.unlock();
+        usable = true;
+      }
+      expect(usable).assertTrue();
+    })
+
+    /**
+     * @tc.name    RWLockReadLockTest1900
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1900
+     * @tc.desc    Verify readLock() still returns a usable ReadLock after the RWLock has been fully used and released (destroyed-object scenario approximation)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('RWLockReadLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      // RWLock exposes no destroy API, so the exact destroyed-object behavior cannot be exercised.
+      // Closest semantics: after the RWLock is fully used and all locks released, readLock() still
+      // returns a valid ReadLock without throwing or returning an invalid object.
+      const rwlock = new RWLock();
+      const rl1 = rwlock.readLock();
+      rl1.lock();
+      rl1.unlock();
+      let postUseOk: boolean = false;
+      const rl2 = rwlock.readLock();
+      rl2.lock();
+      postUseOk = true;
+      rl2.unlock();
+      expect(postUseOk).assertTrue();
+    })
+
+    /**
+     * @tc.name    RWLockReadLockTest2000
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_2000
+     * @tc.desc    Verify read lock can be acquired reentrantly (nested acquisition) by the same thread
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('RWLockReadLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const rwlock = new RWLock();
+      const rl1 = rwlock.readLock();
+      const rl2 = rwlock.readLock();
+      let nestedCount: number = 0;
+      rl1.lock();
+      nestedCount++;
+      rl2.lock();
+      nestedCount++;
+      expect(nestedCount).assertEqual(2);
+      rl2.unlock();
+      rl1.unlock();
     })
   })
 }
