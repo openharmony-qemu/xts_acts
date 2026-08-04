@@ -701,9 +701,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0100
      * @tc.name testIsPromisePendingState
      * @tc.desc Test isPromise with PendingState - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromisePendingState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -723,9 +723,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0110
      * @tc.name testIsPromiseFulfilledState
      * @tc.desc Test isPromise with FulfilledState - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseFulfilledState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -744,9 +744,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0120
      * @tc.name testIsPromiseRejectedState
      * @tc.desc Test isPromise with RejectedState - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseRejectedState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -766,9 +766,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0130
      * @tc.name testIsPromiseResolve
      * @tc.desc Test isPromise with Resolve - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -787,9 +787,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0140
      * @tc.name testIsPromiseReject
      * @tc.desc Test isPromise with Reject - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -809,9 +809,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0150
      * @tc.name testIsPromiseAsyncFunction
      * @tc.desc Test isPromise with AsyncFunction - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -830,9 +830,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0160
      * @tc.name testIsPromiseAfterGet
      * @tc.desc Test isPromise with AfterGet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAfterGet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -852,9 +852,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0170
      * @tc.name testIsPromiseAfterSet
      * @tc.desc Test isPromise with AfterSet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAfterSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -874,9 +874,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0180
      * @tc.name testIsPromiseAfterGetSet
      * @tc.desc Test isPromise with AfterGetSet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAfterGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -898,9 +898,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0190
      * @tc.name testIsPromiseBetweenGetSet
      * @tc.desc Test isPromise with BetweenGetSet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseBetweenGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -920,9 +920,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0200
      * @tc.name testIsPromiseMixedGetSet
      * @tc.desc Test isPromise with MixedGetSet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseMixedGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -955,9 +955,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0210
      * @tc.name testIsPromiseNormalMethodAfterGetSet
      * @tc.desc Test isPromise with NormalMethodAfterGetSet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNormalMethodAfterGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -977,9 +977,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0220
      * @tc.name testIsPromiseObjectLiteralAsync
      * @tc.desc Test isPromise with ObjectLiteralAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseObjectLiteralAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -999,9 +999,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0230
      * @tc.name testIsPromiseObjectLiteralGet
      * @tc.desc Test isPromise with ObjectLiteralGet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseObjectLiteralGet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1021,9 +1021,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0240
      * @tc.name testIsPromiseObjectLiteralSet
      * @tc.desc Test isPromise with ObjectLiteralSet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseObjectLiteralSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1043,9 +1043,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0250
      * @tc.name testIsPromiseStaticAsyncMethod
      * @tc.desc Test isPromise with StaticAsyncMethod - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseStaticAsyncMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1064,9 +1064,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0260
      * @tc.name testIsPromiseStaticAsyncAfterGetSet
      * @tc.desc Test isPromise with StaticAsyncAfterGetSet - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseStaticAsyncAfterGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1085,9 +1085,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0270
      * @tc.name testIsPromiseInheritedAsync
      * @tc.desc Test isPromise with InheritedAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseInheritedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1107,9 +1107,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0280
      * @tc.name testIsPromiseOverriddenAsync
      * @tc.desc Test isPromise with OverriddenAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseOverriddenAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1129,9 +1129,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0290
      * @tc.name testIsPromiseArrowFunction
      * @tc.desc Test isPromise with ArrowFunction - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1150,9 +1150,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0300
      * @tc.name testIsPromiseAssignedAsync
      * @tc.desc Test isPromise with AssignedAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAssignedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1171,9 +1171,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0310
      * @tc.name testIsPromiseAsParameter
      * @tc.desc Test isPromise with AsParameter - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAsParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1192,9 +1192,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0320
      * @tc.name testIsPromiseFromFunctionReturn
      * @tc.desc Test isPromise with FromFunctionReturn - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseFromFunctionReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1214,9 +1214,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0330
      * @tc.name testIsPromiseNotFunction
      * @tc.desc Test isPromise with NotFunction - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1234,9 +1234,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0340
      * @tc.name testIsPromiseNotObject
      * @tc.desc Test isPromise with NotObject - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1256,9 +1256,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0350
      * @tc.name testIsPromiseNotArray
      * @tc.desc Test isPromise with NotArray - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1277,9 +1277,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0360
      * @tc.name testIsPromiseNotNumber
      * @tc.desc Test isPromise with NotNumber - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1298,9 +1298,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0370
      * @tc.name testIsPromiseNotString
      * @tc.desc Test isPromise with NotString - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1319,9 +1319,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0380
      * @tc.name testIsPromiseNotBoolean
      * @tc.desc Test isPromise with NotBoolean - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1340,9 +1340,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0390
      * @tc.name testIsPromiseNotThenable
      * @tc.desc Test isPromise with NotThenable - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotThenable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1361,9 +1361,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0400
      * @tc.name testIsPromiseNotClassInstance
      * @tc.desc Test isPromise with NotClassInstance - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotClassInstance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1382,9 +1382,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0410
      * @tc.name testIsPromiseNotArrowFunction
      * @tc.desc Test isPromise with NotArrowFunction - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNotArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1402,9 +1402,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0420
      * @tc.name testIsPromiseNull
      * @tc.desc Test isPromise with Null - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1432,9 +1432,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0430
      * @tc.name testIsPromiseUndefined
      * @tc.desc Test isPromise with Undefined - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1462,9 +1462,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0440
      * @tc.name testIsPromiseGetterValue
      * @tc.desc Test isPromise with GetterValue - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseGetterValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1484,9 +1484,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0450
      * @tc.name testIsPromiseSetterValue
      * @tc.desc Test isPromise with SetterValue - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSetterValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1506,9 +1506,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0460
      * @tc.name testIsPromiseConstructor
      * @tc.desc Test isPromise with Constructor - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseConstructor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1526,9 +1526,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0470
      * @tc.name testIsPromiseMap
      * @tc.desc Test isPromise with Map - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseMap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1548,9 +1548,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0480
      * @tc.name testIsPromiseSet
      * @tc.desc Test isPromise with Set - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1570,9 +1570,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0490
      * @tc.name testIsPromiseDate
      * @tc.desc Test isPromise with Date - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
@@ -1591,9 +1591,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0500
      * @tc.name testIsPromiseThen
      * @tc.desc Test isPromise with Then - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1612,9 +1612,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0510
      * @tc.name testIsPromiseCatch
      * @tc.desc Test isPromise with Catch - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1634,9 +1634,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0520
      * @tc.name testIsPromiseFinally
      * @tc.desc Test isPromise with Finally - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1658,9 +1658,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0530
      * @tc.name testIsPromiseDelayedResolve
      * @tc.desc Test isPromise with DelayedResolve - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDelayedResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1683,9 +1683,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0540
      * @tc.name testIsPromiseMultiLevelThen
      * @tc.desc Test isPromise with MultiLevelThen - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseMultiLevelThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1707,9 +1707,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0550
      * @tc.name testIsPromiseAll
      * @tc.desc Test isPromise with All - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1731,9 +1731,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0560
      * @tc.name testIsPromiseRace
      * @tc.desc Test isPromise with Race - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseRace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1756,9 +1756,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0570
      * @tc.name testIsPromiseAllSettled
      * @tc.desc Test isPromise with AllSettled - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAllSettled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1779,9 +1779,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0580
      * @tc.name testIsPromiseAny
      * @tc.desc Test isPromise with Any - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAny', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1802,9 +1802,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0590
      * @tc.name testIsPromiseAllNested
      * @tc.desc Test isPromise with AllNested - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAllNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1827,9 +1827,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0600
      * @tc.name testIsPromiseRaceNested
      * @tc.desc Test isPromise with RaceNested - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseRaceNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1852,9 +1852,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0610
      * @tc.name testIsPromiseAllThenChain
      * @tc.desc Test isPromise with AllThenChain - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAllThenChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1878,9 +1878,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0620
      * @tc.name testIsPromiseAllEmptyArray
      * @tc.desc Test isPromise with AllEmptyArray - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAllEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1900,9 +1900,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0630
      * @tc.name testIsPromiseRaceEmptyArray
      * @tc.desc Test isPromise with RaceEmptyArray - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseRaceEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1922,9 +1922,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0640
      * @tc.name testIsPromiseAnyEmptyArray
      * @tc.desc Test isPromise with AnyEmptyArray - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAnyEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1944,9 +1944,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0650
      * @tc.name testIsPromiseAllSinglePromise
      * @tc.desc Test isPromise with AllSinglePromise - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAllSinglePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1966,9 +1966,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0660
      * @tc.name testIsPromiseSendableAsyncMethod
      * @tc.desc Test isPromise with SendableAsyncMethod - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableAsyncMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -1988,9 +1988,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0670
      * @tc.name testIsPromiseSendableMultipleMethods
      * @tc.desc Test isPromise with SendableMultipleMethods - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableMultipleMethods', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2020,9 +2020,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0680
      * @tc.name testIsPromiseSendableStaticAsync
      * @tc.desc Test isPromise with SendableStaticAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableStaticAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2041,9 +2041,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0690
      * @tc.name testIsPromiseSendableInherited
      * @tc.desc Test isPromise with SendableInherited - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableInherited', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2063,9 +2063,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0700
      * @tc.name testIsPromiseSendableOverridden
      * @tc.desc Test isPromise with SendableOverridden - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableOverridden', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2085,9 +2085,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0710
      * @tc.name testIsPromiseTaskPoolAsync
      * @tc.desc Test isPromise with TaskPoolAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseTaskPoolAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2107,9 +2107,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0720
      * @tc.name testIsPromiseTaskPoolArrowAsync
      * @tc.desc Test isPromise with TaskPoolArrowAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseTaskPoolArrowAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2129,9 +2129,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0730
      * @tc.name testIsPromiseSendableComplex
      * @tc.desc Test isPromise with SendableComplex - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableComplex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2160,9 +2160,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0740
      * @tc.name testIsPromiseSendableGetterSetterSequence
      * @tc.desc Test isPromise with SendableGetterSetterSequence - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableGetterSetterSequence', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2183,9 +2183,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0750
      * @tc.name testIsPromiseSendableGetterAfter
      * @tc.desc Test isPromise with SendableGetterAfter - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableGetterAfter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2206,9 +2206,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0760
      * @tc.name testIsPromiseSendableSetterAfter
      * @tc.desc Test isPromise with SendableSetterAfter - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableSetterAfter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2229,9 +2229,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0770
      * @tc.name testIsPromiseConcurrentDecorated
      * @tc.desc Test isPromise with ConcurrentDecorated - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseConcurrentDecorated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2250,9 +2250,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0780
      * @tc.name testIsPromiseSendableCollections
      * @tc.desc Test isPromise with SendableCollections - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableCollections', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2275,9 +2275,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0790
      * @tc.name testIsPromiseSendableParameterPass
      * @tc.desc Test isPromise with SendableParameterPass - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableParameterPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2297,9 +2297,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0800
      * @tc.name testIsPromiseSendableVariousReturnTypes
      * @tc.desc Test isPromise with SendableVariousReturnTypes - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableVariousReturnTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2328,9 +2328,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0810
      * @tc.name testIsPromiseSendableDecorator
      * @tc.desc Test isPromise with SendableDecorator - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2350,9 +2350,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0820
      * @tc.name testIsPromiseSendableMultiDecorators
      * @tc.desc Test isPromise with SendableMultiDecorators - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSendableMultiDecorators', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2378,9 +2378,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0830
      * @tc.name testIsPromiseConcurrentDecorator
      * @tc.desc Test isPromise with ConcurrentDecorator - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseConcurrentDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2399,9 +2399,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0840
      * @tc.name testIsPromiseConcurrentStatic
      * @tc.desc Test isPromise with ConcurrentStatic - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseConcurrentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2420,9 +2420,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0850
      * @tc.name testIsPromiseCustomMethodDecorator
      * @tc.desc Test isPromise with CustomMethodDecorator - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseCustomMethodDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2442,9 +2442,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0860
      * @tc.name testIsPromiseAccessorDecorator
      * @tc.desc Test isPromise with AccessorDecorator - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAccessorDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2465,9 +2465,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0870
      * @tc.name testIsPromiseMultiDecoratorStack
      * @tc.desc Test isPromise with MultiDecoratorStack - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseMultiDecoratorStack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2487,9 +2487,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0880
      * @tc.name testIsPromiseNestedDecorator
      * @tc.desc Test isPromise with NestedDecorator - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNestedDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2509,9 +2509,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0890
      * @tc.name testIsPromiseDecoratorInterfaceImpl
      * @tc.desc Test isPromise with DecoratorInterfaceImpl - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDecoratorInterfaceImpl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2531,9 +2531,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0900
      * @tc.name testIsPromiseDecoratorAbstractClass
      * @tc.desc Test isPromise with DecoratorAbstractClass - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDecoratorAbstractClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2553,9 +2553,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0910
      * @tc.name testIsPromiseDecoratorGeneric
      * @tc.desc Test isPromise with DecoratorGeneric - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDecoratorGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2575,9 +2575,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0920
      * @tc.name testIsPromiseLocalAsyncFunction
      * @tc.desc Test isPromise with LocalAsyncFunction - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseLocalAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2596,9 +2596,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0930
      * @tc.name testIsPromiseLocalAsyncArrow
      * @tc.desc Test isPromise with LocalAsyncArrow - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseLocalAsyncArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2617,9 +2617,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0940
      * @tc.name testIsPromiseLocalClassAsync
      * @tc.desc Test isPromise with LocalClassAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseLocalClassAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2639,9 +2639,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0950
      * @tc.name testIsPromiseInlinePromise
      * @tc.desc Test isPromise with InlinePromise - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseInlinePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2662,9 +2662,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0960
      * @tc.name testIsPromiseInlineAsync
      * @tc.desc Test isPromise with InlineAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseInlineAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2684,9 +2684,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0970
      * @tc.name testIsPromiseMixedSources
      * @tc.desc Test isPromise with MixedSources - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseMixedSources', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2716,9 +2716,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0980
      * @tc.name testIsPromiseResolveChained
      * @tc.desc Test isPromise with ResolveChained - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseResolveChained', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2738,9 +2738,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_0990
      * @tc.name testIsPromiseInlineClassPromise
      * @tc.desc Test isPromise with InlineClassPromise - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseInlineClassPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2760,9 +2760,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1000
      * @tc.name testIsPromiseParameterPromise
      * @tc.desc Test isPromise with ParameterPromise - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseParameterPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2782,9 +2782,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1010
      * @tc.name testIsPromiseReturnPromise
      * @tc.desc Test isPromise with ReturnPromise - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2803,9 +2803,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1020
      * @tc.name testIsPromiseArrayPromise
      * @tc.desc Test isPromise with ArrayPromise - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseArrayPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2828,9 +2828,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1030
      * @tc.name testIsPromiseRecursive
      * @tc.desc Test isPromise with Recursive - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseRecursive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2849,9 +2849,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1040
      * @tc.name testIsPromiseFactory
      * @tc.desc Test isPromise with Factory - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseFactory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2870,9 +2870,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1050
      * @tc.name testIsPromiseCallback
      * @tc.desc Test isPromise with Callback - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2891,9 +2891,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1060
      * @tc.name testIsPromiseContextBinding
      * @tc.desc Test isPromise with ContextBinding - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseContextBinding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2913,9 +2913,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1070
      * @tc.name testIsPromiseDynamicCreate
      * @tc.desc Test isPromise with DynamicCreate - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDynamicCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2934,9 +2934,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1080
      * @tc.name testIsPromiseNestedPromise
      * @tc.desc Test isPromise with NestedPromise - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNestedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2960,9 +2960,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1090
      * @tc.name testIsPromiseExportedAsync
      * @tc.desc Test isPromise with ExportedAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseExportedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -2981,9 +2981,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1100
      * @tc.name testIsPromiseExportedArrow
      * @tc.desc Test isPromise with ExportedArrow - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseExportedArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3002,9 +3002,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1110
      * @tc.name testIsPromiseExportedClassAsync
      * @tc.desc Test isPromise with ExportedClassAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseExportedClassAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3024,9 +3024,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1120
      * @tc.name testIsPromiseDefaultExport
      * @tc.desc Test isPromise with DefaultExport - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDefaultExport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3045,9 +3045,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1130
      * @tc.name testIsPromiseExportedGetSetAsync
      * @tc.desc Test isPromise with ExportedGetSetAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseExportedGetSetAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3068,9 +3068,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1140
      * @tc.name testIsPromiseNamespaceAsync
      * @tc.desc Test isPromise with NamespaceAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNamespaceAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3089,9 +3089,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1150
      * @tc.name testIsPromiseNamespaceArrow
      * @tc.desc Test isPromise with NamespaceArrow - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNamespaceArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3110,9 +3110,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1160
      * @tc.name testIsPromiseNamespaceClass
      * @tc.desc Test isPromise with NamespaceClass - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNamespaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3132,9 +3132,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1170
      * @tc.name testIsPromiseNestedNamespace
      * @tc.desc Test isPromise with NestedNamespace - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNestedNamespace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3153,9 +3153,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1180
      * @tc.name testIsPromiseGenericAsync
      * @tc.desc Test isPromise with GenericAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseGenericAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3174,9 +3174,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1190
      * @tc.name testIsPromiseGenericArrow
      * @tc.desc Test isPromise with GenericArrow - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseGenericArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3195,9 +3195,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1200
      * @tc.name testIsPromiseGenericClass
      * @tc.desc Test isPromise with GenericClass - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseGenericClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3217,9 +3217,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1210
      * @tc.name testIsPromiseMultiGeneric
      * @tc.desc Test isPromise with MultiGeneric - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseMultiGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3238,9 +3238,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1220
      * @tc.name testIsPromiseConstrainedGeneric
      * @tc.desc Test isPromise with ConstrainedGeneric - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseConstrainedGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3259,9 +3259,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1230
      * @tc.name testIsPromiseInterfaceImpl
      * @tc.desc Test isPromise with InterfaceImpl - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseInterfaceImpl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3281,9 +3281,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1240
      * @tc.name testIsPromiseInterfaceMethodImpl
      * @tc.desc Test isPromise with InterfaceMethodImpl - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseInterfaceMethodImpl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3303,9 +3303,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1250
      * @tc.name testIsPromiseDefaultParams
      * @tc.desc Test isPromise with DefaultParams - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseDefaultParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3324,9 +3324,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1260
      * @tc.name testIsPromiseOverload
      * @tc.desc Test isPromise with Overload - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseOverload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3346,9 +3346,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1270
      * @tc.name testIsPromiseClassOverload
      * @tc.desc Test isPromise with ClassOverload - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseClassOverload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3370,9 +3370,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1280
      * @tc.name testIsPromiseMixedImport
      * @tc.desc Test isPromise with MixedImport - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseMixedImport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3402,9 +3402,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1290
      * @tc.name testIsPromiseReExportedAsync
      * @tc.desc Test isPromise with ReExportedAsync - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseReExportedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3423,9 +3423,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1300
      * @tc.name testIsPromiseReExportedClass
      * @tc.desc Test isPromise with ReExportedClass - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseReExportedClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3445,9 +3445,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1310
      * @tc.name testIsPromiseSingleThen
      * @tc.desc Test isPromise with SingleThen - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSingleThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3470,9 +3470,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1320
      * @tc.name testIsPromiseThenCatch
      * @tc.desc Test isPromise with ThenCatch - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseThenCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3493,9 +3493,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1330
      * @tc.name testIsPromiseThenFinally
      * @tc.desc Test isPromise with ThenFinally - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseThenFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3518,9 +3518,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1340
      * @tc.name testIsPromiseCatchFinally
      * @tc.desc Test isPromise with CatchFinally - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3543,9 +3543,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1350
      * @tc.name testIsPromiseThenCatchFinally
      * @tc.desc Test isPromise with ThenCatchFinally - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseThenCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3569,9 +3569,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1360
      * @tc.name testIsPromiseAsyncAwaitChain
      * @tc.desc Test isPromise with AsyncAwaitChain - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseAsyncAwaitChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3593,9 +3593,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1370
      * @tc.name testIsPromiseResolveThen
      * @tc.desc Test isPromise with ResolveThen - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseResolveThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3616,9 +3616,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1380
      * @tc.name testIsPromiseNestedUnwrap
      * @tc.desc Test isPromise with NestedUnwrap - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseNestedUnwrap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3641,9 +3641,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1390
      * @tc.name testIsPromiseComplexChain
      * @tc.desc Test isPromise with ComplexChain - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseComplexChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3671,9 +3671,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1400
      * @tc.name testIsPromiseSubclassInstance
      * @tc.desc Test isPromise with SubclassInstance - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassInstance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3693,9 +3693,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1410
      * @tc.name testIsPromiseSubclassResolve
      * @tc.desc Test isPromise with SubclassResolve - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3715,9 +3715,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1420
      * @tc.name testIsPromiseSubclassReject
      * @tc.desc Test isPromise with SubclassReject - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3739,9 +3739,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1430
      * @tc.name testIsPromiseSubclassThen
      * @tc.desc Test isPromise with SubclassThen - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3763,9 +3763,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1440
      * @tc.name testIsPromiseSubclassCatch
      * @tc.desc Test isPromise with SubclassCatch - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3788,9 +3788,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1450
      * @tc.name testIsPromiseSubclassFinally
      * @tc.desc Test isPromise with SubclassFinally - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
@@ -3812,9 +3812,9 @@ export default function isPromiseTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISPROMISE_1460
      * @tc.name testIsPromiseSubclassStatic
      * @tc.desc Test isPromise with SubclassStatic - verify Promise detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {

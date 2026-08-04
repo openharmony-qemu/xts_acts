@@ -174,9 +174,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0100
      * @tc.name testPromiseChainStringPass
      * @tc.desc Test Promise chain with string value passing - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainStringPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -204,9 +204,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0200
      * @tc.name testPromiseChainNumberType
      * @tc.desc Test Promise chain with number type conversion - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNumberType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -234,9 +234,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0300
      * @tc.name testPromiseChainObjectPass
      * @tc.desc Test Promise chain with object value passing - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainObjectPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -269,9 +269,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0400
      * @tc.name testPromiseChainArrayPass
      * @tc.desc Test Promise chain with array value passing - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainArrayPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -302,9 +302,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0500
      * @tc.name testPromiseChainBooleanPass
      * @tc.desc Test Promise chain with boolean value passing - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainBooleanPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -332,9 +332,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0600
      * @tc.name testPromiseChainReturnUndefined
      * @tc.desc Test Promise chain returning undefined - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -363,9 +363,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0700
      * @tc.name testPromiseChainReturnNull
      * @tc.desc Test Promise chain returning null - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainReturnNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -393,9 +393,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0800
      * @tc.name testPromiseChainVoidReturn
      * @tc.desc Test Promise chain with void return (no return statement) - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainVoidReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -421,9 +421,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_0900
      * @tc.name testPromiseChainReturnPromiseResolve
      * @tc.desc Test Promise chain returning Promise.resolve() - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainReturnPromiseResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -447,9 +447,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_1000
      * @tc.name testPromiseChainReturnPromiseReject
      * @tc.desc Test Promise chain returning Promise.reject() - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainReturnPromiseReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -480,9 +480,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_1100
      * @tc.name testPromiseChainReturnPendingPromise
      * @tc.desc Test Promise chain returning pending Promise - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainReturnPendingPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -510,9 +510,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_1200
      * @tc.name testPromiseChainThrowError
      * @tc.desc Test Promise chain throwing Error - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -543,9 +543,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_1300
      * @tc.name testPromiseChainEmptyString
      * @tc.desc Test Promise chain returning empty string - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainEmptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -570,9 +570,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_1400
      * @tc.name testPromiseChainEmptyObject
      * @tc.desc Test Promise chain returning empty object - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainEmptyObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -596,9 +596,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_BASIC_1500
      * @tc.name testPromiseChainEmptyArray
      * @tc.desc Test Promise chain returning empty array - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -622,9 +622,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0100
      * @tc.name testPromiseChainArrowFunction
      * @tc.desc Test Promise chain using arrow functions - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainArrowFunction';
@@ -655,9 +655,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0200
      * @tc.name testPromiseChainNormalFunction
      * @tc.desc Test Promise chain using normal functions - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNormalFunction';
@@ -688,9 +688,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0300
      * @tc.name testPromiseChainMixedFunction
      * @tc.desc Test Promise chain mixing arrow and normal functions - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMixedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMixedFunction';
@@ -721,9 +721,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0400
      * @tc.name testPromiseChainNamedFunction
      * @tc.desc Test Promise chain using named function references - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNamedFunction';
@@ -743,9 +743,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0500
      * @tc.name testPromiseChainCatchArrowFunction
      * @tc.desc Test Promise catch using arrow function - verify error input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCatchArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCatchArrowFunction';
@@ -768,9 +768,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0600
      * @tc.name testPromiseChainCatchNormalFunction
      * @tc.desc Test Promise catch using normal function - verify error input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCatchNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCatchNormalFunction';
@@ -790,9 +790,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0700
      * @tc.name testPromiseChainCatchNamedFunction
      * @tc.desc Test Promise catch using named function reference - verify error input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCatchNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCatchNamedFunction';
@@ -812,9 +812,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0800
      * @tc.name testPromiseChainFinallyArrowFunction
      * @tc.desc Test Promise finally using arrow function - verify execution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainFinallyArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainFinallyArrowFunction';
@@ -839,9 +839,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_0900
      * @tc.name testPromiseChainFinallyNormalFunction
      * @tc.desc Test Promise finally using normal function - verify execution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainFinallyNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainFinallyNormalFunction';
@@ -864,9 +864,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_1000
      * @tc.name testPromiseChainFinallyNamedFunction
      * @tc.desc Test Promise finally using named function reference - verify execution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainFinallyNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainFinallyNamedFunction';
@@ -889,9 +889,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_1100
      * @tc.name testPromiseChainMixedCatchFinally
      * @tc.desc Test Promise chain with mixed function types in catch and finally - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMixedCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMixedCatchFinally';
@@ -924,9 +924,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_FUNC_TYPE_1200
      * @tc.name testPromiseChainComplexFunctionMix
      * @tc.desc Test Promise chain with complex mix of function types - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainComplexFunctionMix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainComplexFunctionMix';
@@ -964,9 +964,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0100
      * @tc.name testPromiseChainThreeLevels
      * @tc.desc Test Promise chain with 3 consecutive then calls - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainThreeLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainThreeLevels';
@@ -993,9 +993,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0200
      * @tc.name testPromiseChainFiveLevels
      * @tc.desc Test Promise chain with 5 consecutive then calls - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainFiveLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainFiveLevels';
@@ -1033,9 +1033,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0300
      * @tc.name testPromiseChainTypeConversion
      * @tc.desc Test Promise chain with type conversion at each level - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainTypeConversion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainTypeConversion';
@@ -1066,9 +1066,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0400
      * @tc.name testPromiseChainThenSuccessCatchSkip
      * @tc.desc Test Promise chain where then succeeds and catch is skipped - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainThenSuccessCatchSkip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainThenSuccessCatchSkip';
@@ -1098,9 +1098,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0500
      * @tc.name testPromiseChainThenFailCatchExecute
      * @tc.desc Test Promise chain where then fails and catch executes - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainThenFailCatchExecute', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainThenFailCatchExecute';
@@ -1127,9 +1127,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0600
      * @tc.name testPromiseChainMultipleThenThenCatch
      * @tc.desc Test Promise chain with multiple then before catch - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMultipleThenThenCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMultipleThenThenCatch';
@@ -1164,9 +1164,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0700
      * @tc.name testPromiseChainSuccessCompleteFlow
      * @tc.desc Test Promise chain with successful complete flow (resolve→then→then→catch(skip)→finally→then) - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainSuccessCompleteFlow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainSuccessCompleteFlow';
@@ -1206,9 +1206,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0800
      * @tc.name testPromiseChainFailCompleteFlow
      * @tc.desc Test Promise chain with failure complete flow (reject→catch→finally→then) - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainFailCompleteFlow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainFailCompleteFlow';
@@ -1239,9 +1239,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0900
      * @tc.name testPromiseChainThenFailCatchRecoverFinally
      * @tc.desc Test Promise chain with then fail, catch recover, and finally - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainThenFailCatchRecoverFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainThenFailCatchRecoverFinally';
@@ -1277,9 +1277,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_1000
      * @tc.name testPromiseChainMultipleCatchFirstCatch
      * @tc.desc Test Promise chain where first catch captures error - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMultipleCatchFirstCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMultipleCatchFirstCatch';
@@ -1310,9 +1310,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_1100
      * @tc.name testPromiseChainCatchThrowNextCatch
      * @tc.desc Test Promise chain where catch throws to next catch - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCatchThrowNextCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCatchThrowNextCatch';
@@ -1339,9 +1339,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_1200
      * @tc.name testPromiseChainCatchRecoverContinue
      * @tc.desc Test Promise chain where catch recovers and chain continues - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCatchRecoverContinue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCatchRecoverContinue';
@@ -1368,9 +1368,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_1300
      * @tc.name testPromiseChainCatchRecoverFinallyContinue
      * @tc.desc Test Promise chain where catch recovers, finally executes, and chain continues - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCatchRecoverFinallyContinue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCatchRecoverFinallyContinue';
@@ -1399,9 +1399,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_1400
      * @tc.name testPromiseChainMultipleRejectRecover
      * @tc.desc Test Promise chain with multiple reject-recover cycles - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMultipleRejectRecover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMultipleRejectRecover';
@@ -1428,9 +1428,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0100
      * @tc.name testPromiseCatchReturnString
      * @tc.desc Test Promise catch returning string value - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseCatchReturnString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseCatchReturnString';
@@ -1457,9 +1457,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0200
      * @tc.name testPromiseCatchReturnUndefined
      * @tc.desc Test Promise catch returning undefined - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseCatchReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseCatchReturnUndefined';
@@ -1486,9 +1486,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0300
      * @tc.name testPromiseCatchReturnPromise
      * @tc.desc Test Promise catch returning Promise - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseCatchReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseCatchReturnPromise';
@@ -1511,9 +1511,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0400
      * @tc.name testPromiseCatchThrowError
      * @tc.desc Test Promise catch throwing new error - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseCatchThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseCatchThrowError';
@@ -1540,9 +1540,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0500
      * @tc.name testPromiseCatchReturnRejectPromise
      * @tc.desc Test Promise catch returning Promise.reject() - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseCatchReturnRejectPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseCatchReturnRejectPromise';
@@ -1569,9 +1569,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0600
      * @tc.name testPromiseCatchNoReturn
      * @tc.desc Test Promise catch with no return statement - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseCatchNoReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseCatchNoReturn';
@@ -1597,9 +1597,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0700
      * @tc.name testPromiseFinallyResolveThen
      * @tc.desc Test Promise finally after resolve and then - verify finally execution and value passing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyResolveThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyResolveThen';
@@ -1628,9 +1628,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0800
      * @tc.name testPromiseFinallyRejectCatch
      * @tc.desc Test Promise finally after reject and catch - verify finally execution and value passing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyRejectCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyRejectCatch';
@@ -1659,9 +1659,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_0900
      * @tc.name testPromiseFinallyNoParameter
      * @tc.desc Test Promise finally receives no parameter - verify no value passed to finally
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyNoParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyNoParameter';
@@ -1682,9 +1682,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_1000
      * @tc.name testPromiseFinallyReturnValueIgnored
      * @tc.desc Test Promise finally returning value is ignored - verify value unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyReturnValueIgnored', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyReturnValueIgnored';
@@ -1706,9 +1706,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_1100
      * @tc.name testPromiseFinallyReturnUndefined
      * @tc.desc Test Promise finally returning undefined - verify value unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyReturnUndefined';
@@ -1730,9 +1730,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_1200
      * @tc.name testPromiseFinallyReturnPromise
      * @tc.desc Test Promise finally returning Promise - verify Promise completes but value unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyReturnPromise';
@@ -1758,9 +1758,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_1300
      * @tc.name testPromiseFinallyThrowError
      * @tc.desc Test Promise finally throwing error - verify error propagates to catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyThrowError';
@@ -1789,9 +1789,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_1400
      * @tc.name testPromiseFinallyReturnRejectPromise
      * @tc.desc Test Promise finally returning Promise.reject() - verify error propagates to catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseFinallyReturnRejectPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseFinallyReturnRejectPromise';
@@ -1813,9 +1813,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_CATCH_FINALLY_1500
      * @tc.name testPromiseCustomErrorCatch
      * @tc.desc Test Promise catch with custom error class - verify error properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseCustomErrorCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseCustomErrorCatch';
@@ -1843,9 +1843,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0100
      * @tc.name testPromiseChainNestedPromise
      * @tc.desc Test Promise chain returning nested Promise - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNestedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNestedPromise';
@@ -1872,9 +1872,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0200
      * @tc.name testPromiseChainDoubleNested
      * @tc.desc Test Promise chain with double nested Promise - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainDoubleNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainDoubleNested';
@@ -1899,9 +1899,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0300
      * @tc.name testPromiseChainNestedErrorHandling
      * @tc.desc Test Promise chain with nested error handling - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNestedErrorHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNestedErrorHandling';
@@ -1928,9 +1928,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0400
      * @tc.name testPromiseChainAsyncFunctionThen
      * @tc.desc Test async function return value passed to then chain - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainAsyncFunctionThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainAsyncFunctionThen';
@@ -1953,9 +1953,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0500
      * @tc.name testPromiseChainAwaitPromiseChain
      * @tc.desc Test await waiting for Promise chain completion - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainAwaitPromiseChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainAwaitPromiseChain';
@@ -1972,9 +1972,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0600
      * @tc.name testPromiseChainNestedThenChain
      * @tc.desc Test nested Promise with inner then chain - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNestedThenChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNestedThenChain';
@@ -2004,9 +2004,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0700
      * @tc.name testPromiseChainValuePenetration
      * @tc.desc Test Promise chain value penetration with undefined callbacks - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainValuePenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainValuePenetration';
@@ -2028,9 +2028,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0800
      * @tc.name testPromiseChainErrorPenetration
      * @tc.desc Test Promise chain error penetration - verify error reaches catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainErrorPenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainErrorPenetration';
@@ -2051,9 +2051,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_0900
      * @tc.name testPromiseChainCreateNewPromise
      * @tc.desc Test Promise chain creating new Promise inside then - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCreateNewPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCreateNewPromise';
@@ -2077,9 +2077,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_1000
      * @tc.name testPromiseChainResolveRejectThen
      * @tc.desc Test Promise.resolve().then() throwing error caught by catch - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainResolveRejectThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainResolveRejectThen';
@@ -2101,9 +2101,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_1100
      * @tc.name testPromiseChainPromiseAllNested
      * @tc.desc Test Promise.all with nested chains - verify each chain value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainPromiseAllNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainPromiseAllNested';
@@ -2135,9 +2135,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NESTED_1200
      * @tc.name testPromiseChainAsyncAwaitInThen
      * @tc.desc Test async/await inside then callback - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainAsyncAwaitInThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainAsyncAwaitInThen';
@@ -2165,9 +2165,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0100
      * @tc.name testPromiseChainMaxValue
      * @tc.desc Test Promise chain returning Number.MAX_VALUE - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMaxValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMaxValue';
@@ -2189,9 +2189,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0200
      * @tc.name testPromiseChainMinValue
      * @tc.desc Test Promise chain returning Number.MIN_VALUE - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMinValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMinValue';
@@ -2213,9 +2213,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0300
      * @tc.name testPromiseChainLongString
      * @tc.desc Test Promise chain returning 10000 character string - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainLongString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainLongString';
@@ -2240,9 +2240,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0400
      * @tc.name testPromiseChainLargeArray
      * @tc.desc Test Promise chain returning 1000 element array - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainLargeArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainLargeArray';
@@ -2271,9 +2271,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0500
      * @tc.name testPromiseChainCircularObject
      * @tc.desc Test Promise chain returning object with circular reference - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainCircularObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainCircularObject';
@@ -2299,9 +2299,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0600
      * @tc.name testPromiseChainDateObject
      * @tc.desc Test Promise chain returning Date object - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainDateObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainDateObject';
@@ -2327,9 +2327,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0700
      * @tc.name testPromiseChainMapObject
      * @tc.desc Test Promise chain returning Map object - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainMapObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainMapObject';
@@ -2357,9 +2357,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0800
      * @tc.name testPromiseChainSetObject
      * @tc.desc Test Promise chain returning Set object - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainSetObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainSetObject';
@@ -2389,9 +2389,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_0900
      * @tc.name testPromiseChainDataProcessing
      * @tc.desc Test Promise chain simulating data processing pipeline - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainDataProcessing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainDataProcessing';
@@ -2423,9 +2423,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1000
      * @tc.name testPromiseChainZeroValue
      * @tc.desc Test Promise chain returning zero value - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainZeroValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainZeroValue';
@@ -2452,9 +2452,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1100
      * @tc.name testPromiseChainNegativeValue
      * @tc.desc Test Promise chain returning negative value - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNegativeValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNegativeValue';
@@ -2477,9 +2477,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1200
      * @tc.name testPromiseChainFalseValue
      * @tc.desc Test Promise chain returning false value - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainFalseValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainFalseValue';
@@ -2506,9 +2506,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1300
      * @tc.name testPromiseChainComplexObject
      * @tc.desc Test Promise chain returning complex nested object - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainComplexObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainComplexObject';
@@ -2536,9 +2536,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SPECIAL_1400
      * @tc.name testPromiseChainUnicodeString
      * @tc.desc Test Promise chain returning Unicode string - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainUnicodeString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainUnicodeString';
@@ -2562,9 +2562,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0100
      * @tc.name testPromiseChainExportedPromiseFunc
      * @tc.desc Test exported Promise chain function from module - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainExportedPromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainExportedPromiseFunc';
@@ -2581,9 +2581,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0200
      * @tc.name testPromiseChainExportedPromiseArrow
      * @tc.desc Test exported Promise chain arrow function from module - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainExportedPromiseArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainExportedPromiseArrow';
@@ -2600,9 +2600,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0300
      * @tc.name testPromiseChainDefaultExportedPromise
      * @tc.desc Test default exported Promise chain function - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainDefaultExportedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainDefaultExportedPromise';
@@ -2619,9 +2619,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0400
      * @tc.name testPromiseChainExportedPromiseClassMethod
      * @tc.desc Test exported Promise chain class method - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainExportedPromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainExportedPromiseClassMethod';
@@ -2640,9 +2640,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_EXPORT_0500
      * @tc.name testPromiseChainExportedMultiplePromiseClass
      * @tc.desc Test exported Promise chain class with multiple methods - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testPromiseChainExportedMultiplePromiseClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainExportedMultiplePromiseClass';
@@ -2666,9 +2666,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NAMESPACE_0100
      * @tc.name testPromiseChainNamespacePromiseFunc
      * @tc.desc Test namespace Promise chain function - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNamespacePromiseFunc';
@@ -2685,9 +2685,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NAMESPACE_0200
      * @tc.name testPromiseChainNamespacePromiseClassMethod
      * @tc.desc Test namespace Promise chain class method - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainNamespacePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainNamespacePromiseClassMethod';
@@ -2706,9 +2706,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_NAMESPACE_0300
      * @tc.name testPromiseChainInnerNamespacePromiseFunc
      * @tc.desc Test inner namespace Promise chain function - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testPromiseChainInnerNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainInnerNamespacePromiseFunc';
@@ -2725,9 +2725,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_INTERFACE_0100
      * @tc.name testPromiseChainInterfacePromiseMethod
      * @tc.desc Test interface Promise chain method - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainInterfacePromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainInterfacePromiseMethod';
@@ -2745,9 +2745,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_INTERFACE_0200
      * @tc.name testPromiseChainAbstractPromiseMethod
      * @tc.desc Test abstract class Promise chain method - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainAbstractPromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainAbstractPromiseMethod';
@@ -2765,9 +2765,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SENDABLE_0100
      * @tc.name testPromiseChainSendablePromiseFunc
      * @tc.desc Test Sendable Promise chain function - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainSendablePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainSendablePromiseFunc';
@@ -2784,9 +2784,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SENDABLE_0200
      * @tc.name testPromiseChainSendablePromiseClassMethod
      * @tc.desc Test Sendable Promise chain class method - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainSendablePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainSendablePromiseClassMethod';
@@ -2805,9 +2805,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_SENDABLE_0300
      * @tc.name testPromiseChainSendableMultiplePromiseClass
      * @tc.desc Test Sendable Promise chain class with multiple methods - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testPromiseChainSendableMultiplePromiseClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainSendableMultiplePromiseClass';
@@ -2831,9 +2831,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_TASKPOOL_0100
      * @tc.name testPromiseChainTaskPoolPromiseFunc
      * @tc.desc Test TaskPool Promise chain function - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainTaskPoolPromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainTaskPoolPromiseFunc';
@@ -2851,9 +2851,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_TASKPOOL_0200
      * @tc.name testPromiseChainTaskPoolAsyncPromise
      * @tc.desc Test TaskPool async Promise chain - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseChainTaskPoolAsyncPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainTaskPoolAsyncPromise';
@@ -2871,9 +2871,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_TASKPOOL_0300
      * @tc.name testPromiseChainTaskPoolPromiseChain
      * @tc.desc Test TaskPool multi-layer Promise chain - verify each layer input parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testPromiseChainTaskPoolPromiseChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseChainTaskPoolPromiseChain';
@@ -2891,9 +2891,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0100
      * @tc.name testPromiseRaceBasic
      * @tc.desc Test Promise.race with basic values - verify fastest Promise wins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseRaceBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseRaceBasic';
@@ -2917,9 +2917,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0200
      * @tc.name testPromiseRaceReject
      * @tc.desc Test Promise.race with rejection - verify first rejection wins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseRaceReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseRaceReject';
@@ -2943,9 +2943,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0300
      * @tc.name testPromiseAllSettledMixed
      * @tc.desc Test Promise.allSettled with mixed results - verify all results captured
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
     it('testPromiseAllSettledMixed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseAllSettledMixed';
@@ -2970,9 +2970,9 @@ export default function promiseChainTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_STATIC_0400
      * @tc.name testPromiseAllSettledAllSuccess
      * @tc.desc Test Promise.allSettled with all success - verify all fulfilled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL1
      */
     it('testPromiseAllSettledAllSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const caseName = 'testPromiseAllSettledAllSuccess';
