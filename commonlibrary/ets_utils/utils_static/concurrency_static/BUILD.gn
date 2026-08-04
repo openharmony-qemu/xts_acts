@@ -44,6 +44,7 @@ group("concurrency_static") {
       "atomics3_test_static:ActsAtomics3StaticTest",
       "workerLocal_test_static:ActsWorkerLocalStaticTest",
       "promise_third_test_static:ActsPromiseThirdStaticTest",
+      "promise_fourth_test_static:ActsPromiseFourthStaticTest",
     ]
   }
 }
