@@ -296,7 +296,7 @@ export default function uint8ClampedArrayFull05Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8_CLAMPED_ARRAY_FULL_FIVE_1500
      * @tc.name testUint8ClampedArrayFullFive015
-     * @tc.desc Verify set offset INT_MAX IndexOutOfBoundsError
+     * @tc.desc Verify set offset INT_MAX RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -308,7 +308,7 @@ export default function uint8ClampedArrayFull05Test(): void {
         dst.set(src, 2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
