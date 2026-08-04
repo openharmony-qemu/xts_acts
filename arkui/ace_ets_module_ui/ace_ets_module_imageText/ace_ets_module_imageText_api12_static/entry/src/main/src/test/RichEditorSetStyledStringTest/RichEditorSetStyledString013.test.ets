@@ -87,7 +87,9 @@ export default function RichEditorSetStyledString013() {
       let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
       await copy.click();
       await CommonFunc.sleep(500);
-
+      await rich.click();
+ 	    await CommonFunc.sleep(500);
+      
       let update_option = await (driver.findComponent(ON.id('update_option')) as Promise<Component>);
       await update_option.click();
       await CommonFunc.sleep(500);

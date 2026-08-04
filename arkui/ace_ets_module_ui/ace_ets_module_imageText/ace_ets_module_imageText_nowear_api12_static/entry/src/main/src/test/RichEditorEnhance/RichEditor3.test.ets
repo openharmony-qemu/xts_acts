@@ -192,7 +192,8 @@ export default function RichEditor3() {
       await CommonFunc.sleep(500);
       await (quanxuan?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-
+ 	    await (richEditor?.click() as Promise<void>)
+      await CommonFunc.sleep(500);
 
         let PSTextAlign = await driver.findComponent(ON.id("PSTextAlign"));
         await CommonFunc.sleep(500);
@@ -256,6 +257,8 @@ export default function RichEditor3() {
       await CommonFunc.sleep(500);
       let getSelection = await driver.findComponent(ON.id("getSelection"));
       await CommonFunc.sleep(500);
+      await (richEditor?.click() as Promise<void>)
+ 	    await CommonFunc.sleep(500);
       await (getSelection?.click() as Promise<void>)
       await CommonFunc.sleep(500);
 
