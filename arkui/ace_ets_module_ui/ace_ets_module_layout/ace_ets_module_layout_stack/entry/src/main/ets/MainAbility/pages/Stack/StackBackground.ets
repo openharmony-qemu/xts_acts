@@ -22,7 +22,7 @@ struct BackgroundIgnoresLayoutSafeAreaEdges {
   @State str : string = '0'
   @Builder
   build() {
-    Column({space: 5}) {
+    Column({space: 3}) {
       Stack() {
         Column()
           .id('ColumnLayoutSafeAreaEdge')
@@ -39,47 +39,47 @@ struct BackgroundIgnoresLayoutSafeAreaEdges {
       .height(100)
       .backgroundColor(Color.Blue)
       .safeAreaPadding(LengthMetrics.vp(50))
-      Row({space:5}){
+      Text(this.str).height(15).id('BackgroundLayoutSafeAreaEdge')
+      Row({space:1}){
         Button('null').onClick(() => {
-           this.layoutSafeArea = null
-          }).width(55).height(25).id('LayoutSafeAreaEdgeNUll')
+          this.layoutSafeArea = null
+        }).width(55).height(15).id('LayoutSafeAreaEdgeNUll')
         Button('undefined').onClick(() => {
           this.layoutSafeArea = undefined
-        }).width(80).height(25).id('LayoutSafeAreaEdgeUndefined')
+        }).width(80).height(15).id('LayoutSafeAreaEdgeUndefined')
         Button('TOP').onClick(() => {
           this.layoutSafeArea = LayoutSafeAreaEdge.TOP
           this.str = LayoutSafeAreaEdge.TOP.toString()
-        }).width(55).height(25).id('LayoutSafeAreaEdgeTop')
+        }).width(55).height(15).id('LayoutSafeAreaEdgeTop')
       }
       Row({space:5}){
         Button('START').onClick(() => {
           this.layoutSafeArea =  LayoutSafeAreaEdge.START
           this.str = LayoutSafeAreaEdge.START.toString()
-        }).width(60).height(25).id('LayoutSafeAreaEdgeStart')
+        }).width(60).height(15).id('LayoutSafeAreaEdgeStart')
         Button('BOTTOM').onClick(() => {
           this.layoutSafeArea = LayoutSafeAreaEdge.BOTTOM
           this.str = LayoutSafeAreaEdge.BOTTOM.toString()
-        }).width(80).height(25).id('LayoutSafeAreaEdgeBottom')
+        }).width(80).height(15).id('LayoutSafeAreaEdgeBottom')
         Button('END').onClick(() => {
           this.layoutSafeArea = LayoutSafeAreaEdge.END
           this.str = LayoutSafeAreaEdge.END.toString()
-        }).width(55).height(25).id('LayoutSafeAreaEdgeEnd')
+        }).width(55).height(15).id('LayoutSafeAreaEdgeEnd')
       }
       Row({space:1}){
         Button('VERTICAL').onClick(() => {
           this.layoutSafeArea =  LayoutSafeAreaEdge.VERTICAL
           this.str = LayoutSafeAreaEdge.VERTICAL.toString()
-        }).width(70).height(25).id('LayoutSafeAreaEdgeVertical')
+        }).width(70).height(15).id('LayoutSafeAreaEdgeVertical')
         Button('HORIZONTAL').onClick(() => {
           this.layoutSafeArea = LayoutSafeAreaEdge.HORIZONTAL
           this.str = LayoutSafeAreaEdge.HORIZONTAL.toString()
-        }).width(80).height(25).id('LayoutSafeAreaEdgeHorizontal')
+        }).width(80).height(15).id('LayoutSafeAreaEdgeHorizontal')
         Button('ALL').onClick(() => {
           this.layoutSafeArea = LayoutSafeAreaEdge.ALL
           this.str = LayoutSafeAreaEdge.ALL.toString()
-        }).width(50).height(25).id('LayoutSafeAreaEdgeAll')
-        Text(this.str).width(10).height(25).id('BackgroundLayoutSafeAreaEdge')
+        }).width(50).height(15).id('LayoutSafeAreaEdgeAll')
       }
-    }.width('100%')
+    }.width('100%').height('100%')
   }
 }

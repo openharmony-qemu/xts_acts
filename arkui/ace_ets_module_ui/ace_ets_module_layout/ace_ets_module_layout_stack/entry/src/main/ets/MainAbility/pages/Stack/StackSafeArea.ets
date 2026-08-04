@@ -41,46 +41,49 @@ struct StackSafeArea {
       .align(Alignment.TopStart)
       .safeAreaPadding(LengthMetrics.vp(25))
 
+      Text(this.str)
+        .id('GetSafeAreaNumber1')
+        .height(15)
+
       Row(){
         Button('SYSTEM')
           .id('SystemButton1')
           .onClick(() => {
             this.layoutSafeAreaType = [LayoutSafeAreaType.SYSTEM]
             this.str = this.layoutSafeAreaType.toString()
-          }).width(55).height(25)
-        
+          }).width(55).height(15)
         Button('NULL1')
           .id('NullButton1')
           .onClick(() => {
             this.layoutSafeAreaType = null
             this.str = this.layoutSafeAreaType+''
-          }).width(55).height(25)
-      }
-      Row(){
+          }).width(55).height(15)
         Button('UNDEFINED1')
           .id('UndefinedButton1')
           .onClick(() => {
             this.layoutSafeAreaType = undefined
             this.str = this.layoutSafeAreaType+''
-          }).width(55).height(25)
+          }).width(55).height(15)
+      }
+      Row(){
         Button('TOP')
           .id('TopButton1')
           .onClick(() => {
             this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.TOP]
             this.str = this.layoutSafeAreaEdge.toString()
-          }).width(55).height(25)
+          }).width(55).height(15)
         Button('BOTTOM')
           .id('BottomButton1')
           .onClick(() => {
             this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.BOTTOM]
             this.str = this.layoutSafeAreaEdge.toString()
-          }).width(55).height(25)
+          }).width(55).height(15)
         Button('START')
           .id('StartButton1')
           .onClick(() => {
             this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.START]
             this.str = this.layoutSafeAreaEdge.toString()
-          }).width(55).height(25)
+          }).width(55).height(15)
       }
       Row(){
         Button('END')
@@ -88,47 +91,40 @@ struct StackSafeArea {
           .onClick(() => {
             this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.END]
             this.str = this.layoutSafeAreaEdge.toString()
-          }).width(55).height(25)
+          }).width(55).height(15)
         Button('VERTICAL')
           .id('VerticalButton1')
           .onClick(() => {
             this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.VERTICAL]
             this.str = this.layoutSafeAreaEdge.toString()
-          }).width(55).height(25)
+          }).width(55).height(15)
         Button('HORIZONTAL')
           .id('HorizontalButton1')
           .onClick(() => {
             this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.HORIZONTAL]
             this.str = this.layoutSafeAreaEdge.toString()
-          }).width(55).height(25)
+          }).width(55).height(15)
+      }
+      Row(){
         Button('ALL2')
           .id('AllButton2')
           .onClick(() => {
             this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.ALL]
             this.str = this.layoutSafeAreaEdge.toString()
-          }).width(55).height(25)
-      }
-      Row(){
+          }).width(55).height(15)
         Button('NULL2')
           .id('NullButton2')
           .onClick(() => {
             this.layoutSafeAreaEdge = null
             this.str = this.layoutSafeAreaEdge+''
-          }).width(55).height(25)
+          }).width(55).height(15)
         Button('UNDEFINED2')
           .id('UndefinedButton2')
           .onClick(() => {
             this.layoutSafeAreaEdge = undefined
             this.str = this.layoutSafeAreaEdge+''
-          }).width(55).height(25)
-        Text(this.str)
-          .id('GetSafeAreaNumber1')
-          .width(75)
-          .height(25)
-        //0 1 2 null undefined 0 1 2 3 4 5 6 null undefined
+          }).width(55).height(15)
       }
-
-
     }
     .width('100%')
     .height('100%')

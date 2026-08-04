@@ -21,25 +21,23 @@ struct StackWrapContent1 {
   @State width1: number = 50
   @State height1: number = 50
   build() {
-    // constraintSize限制宽150 高100
-    Column() {
-    
-      Stack() {
-        Flex().width(this.width1).height(this.height1)
-      }
-      .id('StackWrapContent1')
-      .backgroundColor(Color.Blue)
-      .width(LayoutPolicy.wrapContent)
-      .height(LayoutPolicy.wrapContent)
-    
-      Row() {
-        Button('160_120').onClick(() => {
-          this.width1 = 160
-          this.height1 = 120
-        }).id('StackButton1')
-      }
+    Column(){
+      Column({space:3}) {
+        Stack() {
+          Flex().width(this.width1).height(this.height1)
+        }
+        .id('StackWrapContent1')
+        .backgroundColor(Color.Blue)
+        .width(LayoutPolicy.wrapContent)
+        .height(LayoutPolicy.wrapContent)
 
-    }.width(150).height(100).position({ x: 50, y: 100 })
-
+        Row() {
+          Button('160_120').onClick(() => {
+            this.width1 = 160
+            this.height1 = 120
+          }).id('StackButton1').height(20).width(80)
+        }
+      }.width(150).height(100)
+    }.width('100%').height('100%')
   }
 }
