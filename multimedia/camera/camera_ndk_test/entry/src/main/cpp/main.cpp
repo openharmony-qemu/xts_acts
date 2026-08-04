@@ -3361,13 +3361,16 @@ static napi_value createVideoOutputByIndex(napi_env env, napi_callback_info info
 
 static napi_value createPreviewOutputByIndex(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
     napi_value result;
     napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    Camera_ErrorCode ret = ndkCamera_->CreatePreviewOutputByIndex(index);
+    
+    int32_t enable;
+    napi_get_value_int32(env, args[1], &enable);
+    Camera_ErrorCode ret = ndkCamera_->CreatePreviewOutputByIndex(index, enable);
     napi_create_int32(env, ret, &result);
     return result;
 }

@@ -423,7 +423,7 @@ public:
     Camera_ErrorCode SessionIsMacroSupported(int useCaseCode);
     Camera_ErrorCode SessionEnableMacro(int useCaseCode, bool enable);
     Camera_ErrorCode WhiteBalanceTest(void);
-    Camera_ErrorCode CreatePreviewOutputByIndex(int index);
+    Camera_ErrorCode CreatePreviewOutputByIndex(int index, int useCaseCode);
     Camera_ErrorCode CreateVideoOutputByIndex(char* videoId, int index);
     Camera_ErrorCode MacroStatusChangeTest(void);
     Camera_ErrorCode IsoInfoChangeTest(void);

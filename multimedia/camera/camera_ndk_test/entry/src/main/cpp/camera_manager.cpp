@@ -3816,8 +3816,13 @@ Camera_ErrorCode NDKCamera::WhiteBalanceTest(void)
     return ret_;
 }
 
-Camera_ErrorCode NDKCamera::CreatePreviewOutputByIndex(int index)
+Camera_ErrorCode NDKCamera::CreatePreviewOutputByIndex(int index, int useCaseCode)
 {
+    if (useCaseCode == PARAMETER3_ERROR) {
+        char* nullPreviewSurfaceId = "";
+        ret_ = OH_CameraManager_CreatePreviewOutput(cameraManager_, profile_, nullPreviewSurfaceId, &previewOutput_);
+        return ret_;
+    }
     profile_ = cameraOutputCapability_->previewProfiles[index];
     if (profile_ == nullptr) {
         LOG("ndkXTS Get previewProfiles failed.");

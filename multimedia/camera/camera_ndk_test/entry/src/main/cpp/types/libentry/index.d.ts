@@ -602,7 +602,7 @@ export const getVideoProfiles: () => Array<videoProfile>;
 
 export const createVideoOutputByIndex: (surfaceId: string, index: number) => number;
 
-export const createPreviewOutputByIndex: (index: number) => number;
+export const createPreviewOutputByIndex: (index: number, enable: number) => number;
 
 export const oHTestRegisterFlashStateChangeCallback: (index:number) => number;
 
