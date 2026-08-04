@@ -938,7 +938,8 @@ export default function Float64ArrayProperty2Test(): void {
       const actualLengthThird = sl.length;
       const expectedLengthThird: int = 2;
       expect(actualLengthThird).assertEqual(expectedLengthThird);
-      expect(sl.buffer === arr.buffer).assertFalse();
+      const sharesSliceBuffer: boolean = sl.buffer === arr.buffer;
+      expect(sharesSliceBuffer).assertFalse();
       expect(sl.$_get(0)).assertEqual(2.0);
       expect(sl.$_get(1)).assertEqual(3.0);
     });
@@ -958,7 +959,8 @@ export default function Float64ArrayProperty2Test(): void {
       const expectedLengthThird: int = 0;
       expect(actualLengthThird).assertEqual(expectedLengthThird);
       expect(sl.byteLength).assertEqual(0);
-      expect(sl.buffer === arr.buffer).assertFalse();
+      const sharesEmptySliceBuffer: boolean = sl.buffer === arr.buffer;
+      expect(sharesEmptySliceBuffer).assertFalse();
     });
 
     /**
@@ -1093,7 +1095,7 @@ export default function Float64ArrayProperty2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY2_6700
      * @tc.name testFloat64ArrayProperty2067
-     * @tc.desc Verify $_set(index=length) no-op length unchanged
+     * @tc.desc Verify $_set(index=length) throws invalid index and preserves length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1104,6 +1106,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.$_set(4, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1116,7 +1119,7 @@ export default function Float64ArrayProperty2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY2_6800
      * @tc.name testFloat64ArrayProperty2068
-     * @tc.desc Verify $_set(index>length) no-op byteLength unchanged
+     * @tc.desc Verify $_set(index>length) throws invalid index and preserves byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1128,6 +1131,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.$_set(5, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1140,7 +1144,7 @@ export default function Float64ArrayProperty2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY2_6900
      * @tc.name testFloat64ArrayProperty2069
-     * @tc.desc Verify $_set(negative index) no-op byteOffset unchanged
+     * @tc.desc Verify $_set(negative index) throws invalid index and preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1152,6 +1156,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.$_set(-1, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1164,7 +1169,7 @@ export default function Float64ArrayProperty2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_PROPERTY2_7000
      * @tc.name testFloat64ArrayProperty2070
-     * @tc.desc Verify $_set(large 999999) no-op byteLength unchanged
+     * @tc.desc Verify $_set(large 999999) throws invalid index and preserves byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1176,6 +1181,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.$_set(999999, 9.0);
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
         const actualMessage = e.message;
         const expectedMessage: string = 'invalid index';
         expect(actualMessage).assertEqual(expectedMessage);
@@ -1199,9 +1205,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.set([1.0], 4);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualLengthFourth = arr.length;
       const expectedLengthFourth: int = 4;
@@ -1223,9 +1227,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.set([1.0], 5);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
       expect(arr.byteLength).assertEqual(before);
       expect(arr.$_get(0)).assertEqual(1.0);
@@ -1247,9 +1249,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.set([1.0], -1);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
       expect(arr.buffer).assertEqual(before);
     });
@@ -1268,9 +1268,7 @@ export default function Float64ArrayProperty2Test(): void {
         arr.set([1.0], 999999);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1288,9 +1286,7 @@ export default function Float64ArrayProperty2Test(): void {
         const r = arr.with(4, 9.0);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
       const actualLengthFourth = arr.length;
       const expectedLengthFourth: int = 4;
@@ -1312,9 +1308,7 @@ export default function Float64ArrayProperty2Test(): void {
         const r = arr.with(5, 9.0);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
       expect(arr.byteLength).assertEqual(before);
     });
@@ -1334,9 +1328,7 @@ export default function Float64ArrayProperty2Test(): void {
         const r = arr.with(-5, 9.0);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
       expect(arr.byteOffset).assertEqual(before);
     });
@@ -1356,9 +1348,7 @@ export default function Float64ArrayProperty2Test(): void {
         const r = arr.with(999999, 9.0);
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'RangeError';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('RangeError');
       }
       expect(arr.buffer).assertEqual(before);
     });
@@ -1379,9 +1369,7 @@ export default function Float64ArrayProperty2Test(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'Error';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('Error');
       }
       const actualLengthFourth = arr.length;
       const expectedLengthFourth: int = 4;
@@ -1405,9 +1393,7 @@ export default function Float64ArrayProperty2Test(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'Error';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('Error');
       }
       expect(arr.byteLength).assertEqual(before);
     });
@@ -1429,9 +1415,7 @@ export default function Float64ArrayProperty2Test(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'Error';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('Error');
       }
       expect(arr.buffer).assertEqual(before);
     });
@@ -1453,9 +1437,7 @@ export default function Float64ArrayProperty2Test(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'Error';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('Error');
       }
       expect(arr.byteLength).assertEqual(before);
     });
@@ -1477,9 +1459,7 @@ export default function Float64ArrayProperty2Test(): void {
         });
         expect().assertFail();
       } catch (e) {
-        const actualNameSecond = e.name;
-        const expectedNameSecond: string = 'Error';
-        expect(actualNameSecond).assertEqual(expectedNameSecond);
+        expect(e.name).assertEqual('Error');
       }
       expect(arr.byteLength).assertEqual(before);
     });
@@ -1719,28 +1699,24 @@ export default function Float64ArrayProperty2Test(): void {
      */
     it('testFloat64ArrayProperty2095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(5);
-      try {
-        const actualLengthTenth = arr.length;
-        const expectedLengthTenth: int = 5;
-        expect(actualLengthTenth).assertEqual(expectedLengthTenth);
-        const actualByteLengthNinth = arr.byteLength;
-        const expectedByteLengthNinth: int = 40;
-        expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
-        const actualByteOffsetNinth = arr.byteOffset;
-        const expectedByteOffsetNinth: int = 0;
-        expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
-        const actualBytesPerElementSeventh = arr.BYTES_PER_ELEMENT;
-        const expectedBytesPerElementSeventh: int = 8;
-        expect(actualBytesPerElementSeventh).assertEqual(expectedBytesPerElementSeventh);
-        const actualNameTenth = arr.name;
-        const expectedNameTenth: string = 'Float64Array';
-        expect(actualNameTenth).assertEqual(expectedNameTenth);
-        const actualByteLengthTenth = arr.buffer.byteLength;
-        const expectedByteLengthTenth: int = 40;
-        expect(actualByteLengthTenth).assertEqual(expectedByteLengthTenth);
-      } catch (e) {
-        expect().assertFail();
-      }
+      const actualLengthTenth = arr.length;
+      const expectedLengthTenth: int = 5;
+      expect(actualLengthTenth).assertEqual(expectedLengthTenth);
+      const actualByteLengthNinth = arr.byteLength;
+      const expectedByteLengthNinth: int = 40;
+      expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
+      const actualByteOffsetNinth = arr.byteOffset;
+      const expectedByteOffsetNinth: int = 0;
+      expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
+      const actualBytesPerElementSeventh = arr.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementSeventh: int = 8;
+      expect(actualBytesPerElementSeventh).assertEqual(expectedBytesPerElementSeventh);
+      const actualNameTenth = arr.name;
+      const expectedNameTenth: string = 'Float64Array';
+      expect(actualNameTenth).assertEqual(expectedNameTenth);
+      const actualByteLengthTenth = arr.buffer.byteLength;
+      const expectedByteLengthTenth: int = 40;
+      expect(actualByteLengthTenth).assertEqual(expectedByteLengthTenth);
     });
 
     /**
@@ -1753,25 +1729,21 @@ export default function Float64ArrayProperty2Test(): void {
      */
     it('testFloat64ArrayProperty2096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array();
-      try {
-        const actualLengthTenth = arr.length;
-        const expectedLengthTenth: int = 0;
-        expect(actualLengthTenth).assertEqual(expectedLengthTenth);
-        const actualByteLengthNinth = arr.byteLength;
-        const expectedByteLengthNinth: int = 0;
-        expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
-        const actualByteOffsetNinth = arr.byteOffset;
-        const expectedByteOffsetNinth: int = 0;
-        expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
-        const actualBytesPerElementSeventh = arr.BYTES_PER_ELEMENT;
-        const expectedBytesPerElementSeventh: int = 8;
-        expect(actualBytesPerElementSeventh).assertEqual(expectedBytesPerElementSeventh);
-        const actualNameTenth = arr.name;
-        const expectedNameTenth: string = 'Float64Array';
-        expect(actualNameTenth).assertEqual(expectedNameTenth);
-      } catch (e) {
-        expect().assertFail();
-      }
+      const actualLengthTenth = arr.length;
+      const expectedLengthTenth: int = 0;
+      expect(actualLengthTenth).assertEqual(expectedLengthTenth);
+      const actualByteLengthNinth = arr.byteLength;
+      const expectedByteLengthNinth: int = 0;
+      expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
+      const actualByteOffsetNinth = arr.byteOffset;
+      const expectedByteOffsetNinth: int = 0;
+      expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
+      const actualBytesPerElementSeventh = arr.BYTES_PER_ELEMENT;
+      const expectedBytesPerElementSeventh: int = 8;
+      expect(actualBytesPerElementSeventh).assertEqual(expectedBytesPerElementSeventh);
+      const actualNameTenth = arr.name;
+      const expectedNameTenth: string = 'Float64Array';
+      expect(actualNameTenth).assertEqual(expectedNameTenth);
     });
 
     /**
@@ -1785,19 +1757,15 @@ export default function Float64ArrayProperty2Test(): void {
     it('testFloat64ArrayProperty2097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = new Float64Array(10);
       const child = parent.subarray(5, 8);
-      try {
-        const actualLengthTenth = child.length;
-        const expectedLengthTenth: int = 3;
-        expect(actualLengthTenth).assertEqual(expectedLengthTenth);
-        const actualByteLengthNinth = child.byteLength;
-        const expectedByteLengthNinth: int = 24;
-        expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
-        const actualByteOffsetNinth = child.byteOffset;
-        const expectedByteOffsetNinth: int = 40;
-        expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
-      } catch (e) {
-        expect().assertFail();
-      }
+      const actualLengthTenth = child.length;
+      const expectedLengthTenth: int = 3;
+      expect(actualLengthTenth).assertEqual(expectedLengthTenth);
+      const actualByteLengthNinth = child.byteLength;
+      const expectedByteLengthNinth: int = 24;
+      expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
+      const actualByteOffsetNinth = child.byteOffset;
+      const expectedByteOffsetNinth: int = 40;
+      expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
     });
 
     /**
@@ -1811,19 +1779,15 @@ export default function Float64ArrayProperty2Test(): void {
     it('testFloat64ArrayProperty2098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = new Float64Array(10);
       const sliced = parent.slice(5, 8);
-      try {
-        const actualLengthTenth = sliced.length;
-        const expectedLengthTenth: int = 3;
-        expect(actualLengthTenth).assertEqual(expectedLengthTenth);
-        const actualByteLengthNinth = sliced.byteLength;
-        const expectedByteLengthNinth: int = 24;
-        expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
-        const actualByteOffsetNinth = sliced.byteOffset;
-        const expectedByteOffsetNinth: int = 0;
-        expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
-      } catch (e) {
-        expect().assertFail();
-      }
+      const actualLengthTenth = sliced.length;
+      const expectedLengthTenth: int = 3;
+      expect(actualLengthTenth).assertEqual(expectedLengthTenth);
+      const actualByteLengthNinth = sliced.byteLength;
+      const expectedByteLengthNinth: int = 24;
+      expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
+      const actualByteOffsetNinth = sliced.byteOffset;
+      const expectedByteOffsetNinth: int = 0;
+      expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
     });
 
     /**
@@ -1836,19 +1800,15 @@ export default function Float64ArrayProperty2Test(): void {
      */
     it('testFloat64ArrayProperty2099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(100000);
-      try {
-        const actualLengthTenth = arr.length;
-        const expectedLengthTenth: int = 100000;
-        expect(actualLengthTenth).assertEqual(expectedLengthTenth);
-        const actualByteLengthNinth = arr.byteLength;
-        const expectedByteLengthNinth: int = 800000;
-        expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
-        const actualByteOffsetNinth = arr.byteOffset;
-        const expectedByteOffsetNinth: int = 0;
-        expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
-      } catch (e) {
-        expect().assertFail();
-      }
+      const actualLengthTenth = arr.length;
+      const expectedLengthTenth: int = 100000;
+      expect(actualLengthTenth).assertEqual(expectedLengthTenth);
+      const actualByteLengthNinth = arr.byteLength;
+      const expectedByteLengthNinth: int = 800000;
+      expect(actualByteLengthNinth).assertEqual(expectedByteLengthNinth);
+      const actualByteOffsetNinth = arr.byteOffset;
+      const expectedByteOffsetNinth: int = 0;
+      expect(actualByteOffsetNinth).assertEqual(expectedByteOffsetNinth);
     });
 
   })
