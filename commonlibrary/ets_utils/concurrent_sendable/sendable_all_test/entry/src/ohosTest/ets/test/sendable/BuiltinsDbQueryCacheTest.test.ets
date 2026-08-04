@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -109,27 +109,55 @@ export default function BuiltinsDbQueryCacheTest(): void {
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
       cache = new DatabaseQueryCache(lockArg, cacheArg)
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDbQueryCache0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0100
+     * @tc.desc   Verify testDbQueryCache0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDbQueryCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.set('query_1', 'result_1')
       expect(cache.length()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDbQueryCache0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0200
+     * @tc.desc   Verify testDbQueryCache0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDbQueryCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.set('query_1', 'result_1')
       let value: string | undefined = await cache.get('query_1')
       expect(value).assertEqual('result_1')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDbQueryCache0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0300
+     * @tc.desc   Verify testDbQueryCache0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDbQueryCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.set('query_1', 'result_1')
       expect(cache.has('query_1')).assertTrue()
       expect(cache.has('query_2')).assertFalse()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDbQueryCache0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0400
+     * @tc.desc   Verify testDbQueryCache0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDbQueryCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.set('query_1', 'result_1')
       expect(cache.length()).assertEqual(1)
@@ -138,7 +166,14 @@ export default function BuiltinsDbQueryCacheTest(): void {
       expect(cache.has('query_1')).assertFalse()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDbQueryCache0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0500
+     * @tc.desc   Verify testDbQueryCache0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDbQueryCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.set('query_1', 'result_1')
       await cache.get('query_1')
@@ -146,14 +181,28 @@ export default function BuiltinsDbQueryCacheTest(): void {
       expect(cache.getHitCount()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDbQueryCache0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0600
+     * @tc.desc   Verify testDbQueryCache0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDbQueryCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.get('nonexistent')
       await cache.get('nonexistent2')
       expect(cache.getMissCount()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDbQueryCache0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0700
+     * @tc.desc   Verify testDbQueryCache0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDbQueryCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await cache.set('query_1', 'result_1')
       await cache.get('query_1')
@@ -162,12 +211,26 @@ export default function BuiltinsDbQueryCacheTest(): void {
       expect(cache.getHitRate() > 0).assertTrue()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDbQueryCache0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0800
+     * @tc.desc   Verify testDbQueryCache0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDbQueryCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(cache.capacity()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDbQueryCache0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_0900
+     * @tc.desc   Verify testDbQueryCache0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDbQueryCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const smallLru: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(3)
       smallLru.put('key1', 'value1')
@@ -181,7 +244,14 @@ export default function BuiltinsDbQueryCacheTest(): void {
       expect(smallLru.length).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDbQueryCache1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_1000
+     * @tc.desc   Verify testDbQueryCache1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDbQueryCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const lru: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(3)
       lru.put('key1', 'value1')
@@ -195,7 +265,14 @@ export default function BuiltinsDbQueryCacheTest(): void {
       expect(lru.contains('key4')).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDbQueryCache1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_1100
+     * @tc.desc   Verify testDbQueryCache1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDbQueryCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await cache.set('shared_key', 'shared_value')
       const tasks: taskpool.Task[] = []
@@ -212,7 +289,14 @@ export default function BuiltinsDbQueryCacheTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDbQueryCache1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_1200
+     * @tc.desc   Verify testDbQueryCache1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDbQueryCache1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -230,7 +314,14 @@ export default function BuiltinsDbQueryCacheTest(): void {
       expect(cache.length()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDbQueryCache1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DBQUERYCACHE_TEST_1300
+     * @tc.desc   Verify testDbQueryCache1300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDbQueryCache1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 20; i++) {
         await cache.set(`warmup_${i}`, `data_${i}`)

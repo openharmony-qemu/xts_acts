@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -203,7 +203,14 @@ export default function BuiltinsRateLimiterTest(): void {
       await Utils.sleep(500)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testRateLimiter0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0100
+     * @tc.desc   Verify testRateLimiter0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRateLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const bucket: TokenBucket = await rateLimiterManager.createLimiter('test_bucket', 10, 2)
       expect(bucket.getMaxTokens()).assertEqual(10)
@@ -211,7 +218,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(bucket.getAvailableTokens()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testRateLimiter0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0200
+     * @tc.desc   Verify testRateLimiter0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRateLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const bucket: TokenBucket = await rateLimiterManager.createLimiter('acquire_test', 5, 1)
 
@@ -224,7 +238,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(bucket.getAvailableTokens()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testRateLimiter0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0300
+     * @tc.desc   Verify testRateLimiter0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRateLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const bucket: TokenBucket = await rateLimiterManager.createLimiter('empty_bucket', 2, 0)
 
@@ -235,7 +256,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(result).assertFalse()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testRateLimiter0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0400
+     * @tc.desc   Verify testRateLimiter0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRateLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('integrated_test', 3, 0)
 
@@ -250,7 +278,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(r4).assertFalse()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testRateLimiter0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0500
+     * @tc.desc   Verify testRateLimiter0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRateLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent_limit', 5, 0)
 
@@ -264,7 +299,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRejectedCount('concurrent_limit')).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testRateLimiter0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0600
+     * @tc.desc   Verify testRateLimiter0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRateLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('count_test', 2, 0)
 
@@ -276,13 +318,27 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRejectedCount('count_test')).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testRateLimiter0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0700
+     * @tc.desc   Verify testRateLimiter0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRateLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await rateLimiterManager.tryAcquire('nonexistent')
       expect(result).assertFalse()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testRateLimiter0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0800
+     * @tc.desc   Verify testRateLimiter0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRateLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent3', 3, 0)
 
@@ -295,7 +351,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRequestCount('concurrent3')).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testRateLimiter0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_0900
+     * @tc.desc   Verify testRateLimiter0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRateLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent5', 5, 0)
 
@@ -308,7 +371,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRequestCount('concurrent5')).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testRateLimiter1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_1000
+     * @tc.desc   Verify testRateLimiter1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRateLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent10', 5, 0)
 
@@ -322,7 +392,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRejectedCount('concurrent10')).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testRateLimiter1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_1100
+     * @tc.desc   Verify testRateLimiter1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRateLimiter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const bucket1: TokenBucket = await rateLimiterManager.createLimiter('limiter1', 2, 0)
       const bucket2: TokenBucket = await rateLimiterManager.createLimiter('limiter2', 5, 0)
@@ -337,7 +414,14 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(r2).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testRateLimiter1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATELIMITER_TEST_1200
+     * @tc.desc   Verify testRateLimiter1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRateLimiter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const bucket1: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 10, 1)
       const bucket2: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 20, 2)

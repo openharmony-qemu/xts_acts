@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -132,7 +132,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       await Utils.sleep(500)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceHotUpdate0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0100
+     * @tc.desc   Verify testServiceHotUpdate0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceHotUpdate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       config.set('port', '8080')
@@ -144,7 +151,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(version!.version).assertEqual('1.0.0')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceHotUpdate0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0200
+     * @tc.desc   Verify testServiceHotUpdate0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceHotUpdate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const initialConfig: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('apiApp', '1.0.0', initialConfig)
@@ -157,7 +171,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getVersion('apiApp')!.version).assertEqual('2.0.0')
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testServiceHotUpdate0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0300
+     * @tc.desc   Verify testServiceHotUpdate0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testServiceHotUpdate0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const result: boolean = await hotUpdater.hotUpdate('nonexistent', '2.0.0', config)
@@ -165,7 +186,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(result).assertFalse()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceHotUpdate0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0400
+     * @tc.desc   Verify testServiceHotUpdate0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceHotUpdate0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('rollbackApp', '1.0.0', config)
@@ -177,7 +205,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getVersion('rollbackApp')!.version).assertEqual('1.0.0')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceHotUpdate0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0500
+     * @tc.desc   Verify testServiceHotUpdate0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceHotUpdate0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('configApp', '1.0.0', config)
@@ -188,7 +223,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getVersion('configApp')!.config.get('maxConnections')).assertEqual('100')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceHotUpdate0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0600
+     * @tc.desc   Verify testServiceHotUpdate0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceHotUpdate0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('countApp', '1.0.0', config)
@@ -198,7 +240,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceHotUpdate0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0700
+     * @tc.desc   Verify testServiceHotUpdate0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceHotUpdate0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('concurrentApp', '1.0.0', config)
@@ -212,7 +261,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount() > 1).assertTrue()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceHotUpdate0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0800
+     * @tc.desc   Verify testServiceHotUpdate0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceHotUpdate0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('timeApp', '1.0.0', config)
@@ -225,7 +281,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(updateTime > deployTime).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceHotUpdate0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_0900
+     * @tc.desc   Verify testServiceHotUpdate0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceHotUpdate0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const services: string[] = ['deploy1', 'deploy2', 'deploy3']
@@ -237,7 +300,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceHotUpdate1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_1000
+     * @tc.desc   Verify testServiceHotUpdate1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceHotUpdate1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const services: string[] = []
@@ -252,7 +322,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceHotUpdate1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_1100
+     * @tc.desc   Verify testServiceHotUpdate1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceHotUpdate1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const services: string[] = []
@@ -267,7 +344,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testServiceHotUpdate1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEHOTUPDATE_TEST_1200
+     * @tc.desc   Verify testServiceHotUpdate1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testServiceHotUpdate1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await hotUpdater.rollback('nonexistent', '1.0.0')
       expect(result).assertFalse()

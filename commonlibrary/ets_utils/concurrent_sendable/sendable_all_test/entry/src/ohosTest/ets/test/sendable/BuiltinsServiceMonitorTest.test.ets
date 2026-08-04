@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -106,7 +106,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       await Utils.sleep(500)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceMonitor0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0100
+     * @tc.desc   Verify testServiceMonitor0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceMonitor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('apiService')
 
@@ -115,7 +122,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.status).assertEqual('unknown')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceMonitor0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0200
+     * @tc.desc   Verify testServiceMonitor0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceMonitor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('webService')
       await serviceMonitor.updateHealth('webService', 'healthy', 50)
@@ -125,7 +139,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.responseTime).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceMonitor0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0300
+     * @tc.desc   Verify testServiceMonitor0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceMonitor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('dbService')
       await serviceMonitor.updateHealth('dbService', 'unhealthy', 200)
@@ -135,7 +156,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.errorCount).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceMonitor0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0400
+     * @tc.desc   Verify testServiceMonitor0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceMonitor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('cacheService')
       await serviceMonitor.updateHealth('cacheService', 'degraded', 150)
@@ -144,7 +172,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.status).assertEqual('degraded')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceMonitor0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0500
+     * @tc.desc   Verify testServiceMonitor0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceMonitor0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('errorSvc')
 
@@ -156,7 +191,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.errorCount).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceMonitor0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0600
+     * @tc.desc   Verify testServiceMonitor0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceMonitor0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('timeSvc')
       await serviceMonitor.updateHealth('timeSvc', 'healthy', 75)
@@ -165,7 +207,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.responseTime).assertEqual(75)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testServiceMonitor0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0700
+     * @tc.desc   Verify testServiceMonitor0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testServiceMonitor0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('timeCheckSvc')
       const beforeTime: number = Date.now()
@@ -177,7 +226,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.lastCheckTime <= afterTime).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceMonitor0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0800
+     * @tc.desc   Verify testServiceMonitor0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceMonitor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('concurrentSvc')
 
@@ -190,7 +246,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceMonitor0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_0900
+     * @tc.desc   Verify testServiceMonitor0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceMonitor0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const services: string[] = ['monitor1', 'monitor2', 'monitor3']
       for (const svc of services) {
@@ -205,7 +268,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceMonitor1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_1000
+     * @tc.desc   Verify testServiceMonitor1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceMonitor1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const services: string[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -223,7 +293,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testServiceMonitor1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_1100
+     * @tc.desc   Verify testServiceMonitor1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testServiceMonitor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const services: string[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -241,7 +318,14 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testServiceMonitor1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICEMONITOR_TEST_1200
+     * @tc.desc   Verify testServiceMonitor1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testServiceMonitor1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const health: ServiceHealth | undefined = serviceMonitor.getHealth('nonexistent')
       expect(health === undefined).assertTrue()

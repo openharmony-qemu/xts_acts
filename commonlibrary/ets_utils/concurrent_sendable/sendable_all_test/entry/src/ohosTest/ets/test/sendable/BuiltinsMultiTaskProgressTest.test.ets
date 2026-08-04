@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -149,7 +149,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       await mtp.reset()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMultiTaskProgress0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0100
+     * @tc.desc   Verify testMultiTaskProgress0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMultiTaskProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
@@ -157,7 +164,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskStatus('task_1')).assertEqual('pending')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMultiTaskProgress0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0200
+     * @tc.desc   Verify testMultiTaskProgress0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMultiTaskProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
@@ -166,7 +180,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskStatus('task_1')).assertEqual('running')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMultiTaskProgress0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0300
+     * @tc.desc   Verify testMultiTaskProgress0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMultiTaskProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
@@ -175,7 +196,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskStatus('task_1')).assertEqual('completed')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMultiTaskProgress0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0400
+     * @tc.desc   Verify testMultiTaskProgress0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMultiTaskProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
@@ -183,7 +211,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskStatus('task_1')).assertEqual('failed')
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiTaskProgress0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0500
+     * @tc.desc   Verify testMultiTaskProgress0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiTaskProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await mtp.setTotalTasks(5)
       const tasks: taskpool.Task[] = []
@@ -195,7 +230,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getCompletedCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMultiTaskProgress0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0600
+     * @tc.desc   Verify testMultiTaskProgress0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMultiTaskProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_0')
@@ -207,7 +249,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getOverallProgress()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testMultiTaskProgress0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0700
+     * @tc.desc   Verify testMultiTaskProgress0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMultiTaskProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_0')
@@ -220,7 +269,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getFailedCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testMultiTaskProgress0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0800
+     * @tc.desc   Verify testMultiTaskProgress0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMultiTaskProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(2)
       await mtp.registerTask('task_0')
@@ -229,13 +285,27 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskProgress('task_0')).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testMultiTaskProgress0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_0900
+     * @tc.desc   Verify testMultiTaskProgress0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMultiTaskProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(0)
       expect(await mtp.getOverallProgress()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiTaskProgress1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_1000
+     * @tc.desc   Verify testMultiTaskProgress1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiTaskProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await mtp.setTotalTasks(10)
       const tasks: taskpool.Task[] = []
@@ -248,7 +318,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getOverallProgress()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testMultiTaskProgress1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_1100
+     * @tc.desc   Verify testMultiTaskProgress1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMultiTaskProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(2)
       await mtp.registerTask('task_0')
@@ -257,7 +334,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getOverallProgress()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testMultiTaskProgress1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITASKPROGRESS_TEST_1200
+     * @tc.desc   Verify testMultiTaskProgress1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMultiTaskProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_0')

@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -123,13 +123,27 @@ export default function BuiltinsParallelComputeResultTest(): void {
     beforeEach((): void => {
       collector = new NumericResultCollector(new collections.Array<number>(), new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testParallelComputeResult0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0100
+     * @tc.desc   Verify testParallelComputeResult0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParallelComputeResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       expect(collector.getCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testParallelComputeResult0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0200
+     * @tc.desc   Verify testParallelComputeResult0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParallelComputeResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
@@ -137,7 +151,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getSum()).assertEqual(60)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testParallelComputeResult0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0300
+     * @tc.desc   Verify testParallelComputeResult0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParallelComputeResult0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
@@ -145,7 +166,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getAverage()).assertEqual(20)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testParallelComputeResult0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0400
+     * @tc.desc   Verify testParallelComputeResult0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParallelComputeResult0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(5)
       collector.addValue(15)
@@ -153,7 +181,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getMax()).assertEqual(15)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testParallelComputeResult0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0500
+     * @tc.desc   Verify testParallelComputeResult0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParallelComputeResult0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(5)
       collector.addValue(15)
@@ -161,7 +196,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getMin()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testParallelComputeResult0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0600
+     * @tc.desc   Verify testParallelComputeResult0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testParallelComputeResult0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 100
@@ -181,7 +223,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getCount()).assertEqual(4)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testParallelComputeResult0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0700
+     * @tc.desc   Verify testParallelComputeResult0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testParallelComputeResult0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 100
@@ -204,7 +253,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(shard1 !== undefined).assertTrue()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testParallelComputeResult0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0800
+     * @tc.desc   Verify testParallelComputeResult0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParallelComputeResult0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
@@ -216,7 +272,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(values[2]).assertEqual(30)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testParallelComputeResult0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_0900
+     * @tc.desc   Verify testParallelComputeResult0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParallelComputeResult0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addShardResult('shard_0', 100)
       await collector.addShardResult('shard_1', 200)
@@ -224,7 +287,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getShardResult('shard_1')).assertEqual(200)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testParallelComputeResult1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_1000
+     * @tc.desc   Verify testParallelComputeResult1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testParallelComputeResult1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 10
@@ -249,7 +319,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getCount()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testParallelComputeResult1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_1100
+     * @tc.desc   Verify testParallelComputeResult1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testParallelComputeResult1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addShardResult('shard_0', 100)
       await collector.addShardResult('shard_1', 200)
@@ -258,7 +335,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getAverage()).assertEqual(200)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testParallelComputeResult1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PARALLELCOMPUTERESULT_TEST_1200
+     * @tc.desc   Verify testParallelComputeResult1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testParallelComputeResult1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {

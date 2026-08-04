@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -157,7 +157,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       await Utils.sleep(500)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMetricsCollector0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0100
+     * @tc.desc   Verify testMetricsCollector0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMetricsCollector0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('cpu_usage', 75)
       const metric: MetricsData | undefined = collector.getMetric('cpu_usage')
@@ -167,7 +174,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(metric!.name).assertEqual('cpu_usage')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMetricsCollector0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0200
+     * @tc.desc   Verify testMetricsCollector0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMetricsCollector0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('request_count', 10)
       const result: number = await collector.increment('request_count', 5)
@@ -176,7 +190,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('request_count')!.value).assertEqual(15)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testMetricsCollector0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0300
+     * @tc.desc   Verify testMetricsCollector0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMetricsCollector0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: number = await collector.increment('new_metric', 100)
 
@@ -184,7 +205,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('new_metric')!.value).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMetricsCollector0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0400
+     * @tc.desc   Verify testMetricsCollector0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMetricsCollector0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const metricNames: string[] = ['metricA', 'metricB', 'metricC']
       const tasks: taskpool.Task[] = metricNames.map((name: string): taskpool.Task =>
@@ -196,7 +224,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('metricA')!.value).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMetricsCollector0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0500
+     * @tc.desc   Verify testMetricsCollector0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMetricsCollector0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await collector.record('counter', 0)
 
@@ -209,7 +244,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('counter')!.value).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMetricsCollector0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0600
+     * @tc.desc   Verify testMetricsCollector0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMetricsCollector0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const beforeTime: number = Date.now()
       await collector.record('time_metric', 42)
@@ -220,7 +262,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(metric!.timestamp <= afterTime).assertTrue()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMetricsCollector0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0700
+     * @tc.desc   Verify testMetricsCollector0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMetricsCollector0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('tagged_metric', 88)
 
@@ -234,7 +283,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(metric!.getTag('region')).assertEqual('us-east')
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMetricsCollector0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0800
+     * @tc.desc   Verify testMetricsCollector0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMetricsCollector0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('temp_metric', 100)
       await collector.record('temp_metric2', 200)
@@ -246,7 +302,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMetricsCollector0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_0900
+     * @tc.desc   Verify testMetricsCollector0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMetricsCollector0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
@@ -257,7 +320,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMetricsCollector1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_1000
+     * @tc.desc   Verify testMetricsCollector1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMetricsCollector1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -268,7 +338,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMetricsCollector1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_1100
+     * @tc.desc   Verify testMetricsCollector1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMetricsCollector1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -279,7 +356,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testMetricsCollector1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_1200
+     * @tc.desc   Verify testMetricsCollector1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMetricsCollector1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       await collector.record('overwrite_metric', 10)
       await collector.record('overwrite_metric', 20)
@@ -287,7 +371,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('overwrite_metric')!.value).assertEqual(20)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testMetricsCollector1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICSCOLLECTOR_TEST_1300
+     * @tc.desc   Verify testMetricsCollector1300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMetricsCollector1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('metric1', 1)
       await collector.record('metric2', 2)

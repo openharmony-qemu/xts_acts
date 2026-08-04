@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -123,13 +123,27 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
     beforeEach((): void => {
       collector = new TimeoutResultCollector(new collections.Map<number, string>(), new collections.Map<number, string>(), new collections.Map<number, string>(), new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTimeoutResultCollect0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0100
+     * @tc.desc   Verify testTimeoutResultCollect0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTimeoutResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTimeoutResultCollect0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0200
+     * @tc.desc   Verify testTimeoutResultCollect0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTimeoutResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       await collector.markCompleted(1, 'result_1')
@@ -137,7 +151,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTimeoutResultCollect0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0300
+     * @tc.desc   Verify testTimeoutResultCollect0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTimeoutResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.markTimeout(1)
@@ -145,7 +166,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTimeoutResultCollect0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0400
+     * @tc.desc   Verify testTimeoutResultCollect0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTimeoutResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       const beforeTimeout: number = Date.now()
@@ -159,7 +187,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTimeoutResultCollect0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0500
+     * @tc.desc   Verify testTimeoutResultCollect0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTimeoutResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'quick_task')
       const task = new taskpool.Task(quickTask, 1)
@@ -170,7 +205,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getCompletedResult(1)).assertEqual('result_1')
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTimeoutResultCollect0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0600
+     * @tc.desc   Verify testTimeoutResultCollect0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTimeoutResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       const task = new taskpool.Task(quickTask, 1)
@@ -187,7 +229,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testTimeoutResultCollect0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0700
+     * @tc.desc   Verify testTimeoutResultCollect0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTimeoutResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         collector.addPendingTask(i, `task_${i}`)
@@ -209,7 +258,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getTimeoutCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTimeoutResultCollect0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0800
+     * @tc.desc   Verify testTimeoutResultCollect0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTimeoutResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.addPendingTask(2, 'task_2')
@@ -219,7 +275,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(timeoutIds.length).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTimeoutResultCollect0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_0900
+     * @tc.desc   Verify testTimeoutResultCollect0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTimeoutResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.addPendingTask(2, 'task_2')
@@ -229,7 +292,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(completedIds.length).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTimeoutResultCollect1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_1000
+     * @tc.desc   Verify testTimeoutResultCollect1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTimeoutResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.markTimeout(1)
@@ -238,7 +308,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getCompletedCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTimeoutResultCollect1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_1100
+     * @tc.desc   Verify testTimeoutResultCollect1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTimeoutResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
@@ -246,7 +323,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTimeoutResultCollect1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_1200
+     * @tc.desc   Verify testTimeoutResultCollect1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTimeoutResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
@@ -254,7 +338,14 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testTimeoutResultCollect1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TIMEOUTRESULTCOLLECT_TEST_1300
+     * @tc.desc   Verify testTimeoutResultCollect1300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTimeoutResultCollect1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         collector.addPendingTask(i, `task_${i}`)
