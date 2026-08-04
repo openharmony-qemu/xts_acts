@@ -13,61 +13,55 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect , TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import napitest from 'libnapitest.so';
-// import napitest from 'libentry.so';
 import { taskpool } from '@kit.ArkTS';
 
 export const sleep = (ms: number | undefined) => {
-  return new Promise <void>(resolve => setTimeout(resolve, ms));
+  return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
+
+const TASK_COUNT = 10;
 
 @Concurrent
 function getLastError(): number {
   let value = napitest.napiSerialize();
-  console.info('testExecuteTask value is: ' + value);
   return value;
 }
 
 @Concurrent
 function isError(): boolean {
   let value = napitest.isError(true);
-  console.info('testIsError ret is: ' + value);
   return value;
 }
 
 @Concurrent
 function createError(): number {
   let value = napitest.createError();
-  console.info('testCreateError value is: ' + value);
   return value;
 }
 
 @Concurrent
 function createRangeError(): number {
   let value = napitest.createRangeError();
-  console.info('testCreateRangeError value is: ' + value);
   return value;
 }
 
 @Concurrent
 function isExceptionPending(): number {
   let value = napitest.isExceptionPending();
-  console.info('testIsExceptionPending value is: ' + value);
   return value;
 }
 
 @Concurrent
 function createReference(): number {
-  let value = napitest.createReference();
-  console.info('testCreateReference value is: ' + value);
+  let value = napitest.referenceRefAndUnref();
   return value;
 }
 
 @Concurrent
 function referenceRefAndUnref(): number {
   let value = napitest.referenceRefAndUnref();
-  console.info('testReferenceRefAndUnref value is: ' + value);
   return value;
 }
 
@@ -75,199 +69,168 @@ function referenceRefAndUnref(): number {
 function createArrayAndGetLength(): string {
   let array = [1, 2];
   let value = napitest.createArrayAndGetLength(array);
-  let obj = JSON.stringify(value);
-  console.info('testCreateArrayAndGetLength value is: ' + obj);
-  return obj;
+  return JSON.stringify(value);
 }
 
 @Concurrent
 function createExternal(): number {
   let value = napitest.createExternal();
-  console.info('testCreateExternal value is: ' + value);
   return value;
 }
 
 @Concurrent
 function createExternalArraybuffer(): ArrayBuffer {
   let value = napitest.createExternalArraybuffer();
-  console.info('testCreateExternalArraybuffer value is: ', value);
   return value;
 }
 
 @Concurrent
 function createObject(): Object {
   let value = napitest.createObject();
-  console.info('testCreateObject value is: ', value);
   return value;
 }
 
 @Concurrent
 function createSymbol(): number {
   let value = napitest.createSymbol('symbol');
-  console.info('testCreateSymbol value is: ', value);
   return value;
 }
 
 @Concurrent
 function createTypeArray(): Int32Array {
   let value = napitest.createTypeArray();
-  console.info('testCreateTypeArray value is: ', value);
   return value;
 }
 
 @Concurrent
 function getValueBool(): boolean {
   let value = napitest.getValueBool(false);
-  console.info('testGetValueBool value is: ', value);
   return value;
 }
 
 @Concurrent
 function createAndGetInt32(): number {
   let value = napitest.createAndGetInt32(32);
-  console.info('testCreateAndGetInt32 value is: ', value);
   return value;
 }
 
 @Concurrent
 function createAndGetUInt32(): number {
   let value = napitest.createAndGetUInt32(32);
-  console.info('testCreateAndGetUInt32 value is: ', value);
   return value;
 }
 
 @Concurrent
 function createAndGetInt64(): number {
   let value = napitest.createAndGetInt64(23);
-  console.info('testCreateAndGetInt64 value is: ', value);
   return value;
 }
 
 @Concurrent
 function createDouble(): number {
   let value = napitest.createDouble(24.67);
-  console.info('testCreateDouble value is: ', value);
   return value;
 }
 
 @Concurrent
 function createAndGetStringUtf16(): string {
   let value = napitest.createAndGetStringUtf16('he');
-  console.info('testCreateAndGetStringUtf16 value is: ', value);
   return value;
 }
 
 @Concurrent
 function stringUtf16OfCase(): string {
   let value = napitest.stringUtf16OfCase('abc2r42');
-  console.info('testStringUtf16OfCase value is: ', value);
   return value;
 }
 
 @Concurrent
 function getValueDouble(): number {
   let value = napitest.getValueDouble(24.5);
-  console.info('testValueDouble value is: ', value);
   return value;
 }
 
 @Concurrent
 function getValueExternal(): number {
   let value = napitest.getValueExternal();
-  console.info('testValueExternal value is: ', value);
   return value;
 }
 
 @Concurrent
 function getNull(): number {
   let value = napitest.getNull();
-  console.info('testValueNull value is: ', value);
   return value;
 }
 
 @Concurrent
 function getUndefined(): number {
   let value = napitest.getUndefined();
-  console.info('testGetUndefined value is: ', value);
   return value;
 }
 
 @Concurrent
 function coerceToBool(): boolean {
   let value = napitest.coerceToBool(0);
-  console.info('testCoerceToBool value is: ', value);
   return value;
 }
 
 @Concurrent
 function coerceToNumber(): number {
   let value = napitest.coerceToNumber('12');
-  console.info('testCoerceToNumber value is: ', value);
   return value;
 }
 
 @Concurrent
 function coerceToObject(): string {
   let obj = napitest.coerceToObject([2, 3]);
-  console.info('testCoerceToObject value is: ', obj);
   return JSON.stringify(obj);
 }
 
 @Concurrent
 function coerceToString(): string {
   let value = napitest.coerceToString(123);
-  console.info('testCoerceToString value is: ', value);
   return value;
 }
 
 @Concurrent
 function typeOf(): number {
   let value = napitest.typeOf('test');
-  console.info('testTypeOf value is: ', value);
   return value;
 }
 
 @Concurrent
 function isArray(): number {
   let value = napitest.isArray();
-  console.info('testIsArray value is: ', value);
   return value;
 }
-
 
 @Concurrent
 function strictEquals(): number {
   let value = napitest.strictEquals();
-  console.info('testStrictEquals value is: ', value);
   return value;
 }
-
 
 @Concurrent
 function getPropertyNames(): number {
   let value = napitest.getPropertyNames();
-  console.info('testGetPropertyNames value is: ', value);
   return value;
 }
 
 @Concurrent
 function setProperty(): object {
   let value = napitest.setProperty();
-  console.info('testSetProperty value is: ', value);
   return value;
 }
 
 @Concurrent
 function getProperty(): object {
   let value = napitest.getProperty();
-  console.info('testGetProperty value is: ', value);
   return value;
 }
 
 @Concurrent
 function hasProperty(): number {
   let value = napitest.hasProperty();
-  console.info('testHasProperty value is: ', value);
   return value;
 }
 
@@ -277,10 +240,8 @@ function setAndDeleteProperty(): number {
     name: string,
     age: number
   }
-
   let peop: Person = { name: 'John', age: 30 };
   let value = napitest.setAndDeleteProperty(peop, 'a');
-  console.info('testSetAndDeleteProperty value is: ', value);
   return value;
 }
 
@@ -290,20 +251,17 @@ function hasOwnProperty(): boolean {
     name: string,
     age: number
   }
-
   let peop: Person = {
     name: 'zhangsan',
     age: 18
   };
   let value = napitest.hasOwnProperty(peop, 'name');
-  console.info('testHasOwnProperty value is: ', value);
   return value;
 }
 
 @Concurrent
 function setNamedProperty(): boolean {
   let value = napitest.setNamedProperty([1, 2], "e", false);
-  console.info('testSetNamedProperty value is: ', value);
   return value;
 }
 
@@ -313,13 +271,11 @@ function getNamedProperty(): number {
     name: string,
     age: number
   }
-
   let peop: Person = {
     name: 'zhangsan',
     age: 18
   };
   let value = napitest.getNamedProperty(peop, "name");
-  console.info('testGetNamedProperty value is: ', value);
   return value;
 }
 
@@ -329,195 +285,179 @@ function hasNamedProperty(): boolean {
     name: string,
     age: number
   }
-
   let peop: Person = {
     name: 'zhangsan',
     age: 18
   };
   let value = napitest.hasNamedProperty(peop, "name");
-  console.info('testHasNamedProperty value is: ', value);
   return value;
 }
 
 @Concurrent
 function setElement(): object {
   let value = napitest.setElement();
-  console.info('testSetElement value is: ', value);
   return value;
 }
 
 @Concurrent
 function getElement(): object {
   let value = napitest.getElement();
-  console.info('testGetElement value is: ', value);
   return value;
 }
 
 @Concurrent
 function hasElement(): object {
   let value = napitest.hasElement();
-  console.info('testHasElement value is: ', value);
   return value;
 }
 
 @Concurrent
 function deleteElement(): object {
   let value = napitest.deleteElement();
-  console.info('testDeleteElement value is: ', value);
   return value;
 }
 
 @Concurrent
 function defineProperties(): object {
   let value = napitest.defineProperties();
-  console.info('testDefineProperties value is: ', value);
   return value;
 }
 
 @Concurrent
 function callFunctionNull(): number {
   let value = napitest.callFunctionNull(null);
-  console.info('testCallFunctionNull value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiCreateFunctionFuncNull(): Function {
   let value = napitest.napiCreateFunctionFuncNull();
-  console.info('testNapiCreateFunctionFuncNull value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiGetCbInfo(): number {
   let value = napitest.napiGetCbInfo(12.06);
-  console.info('testNapiGetCbInfo value is: ', value);
   return value;
 }
 
 @Concurrent
 function unwrap(): number {
   let value = napitest.unwrap();
-  console.info('testUnwrap value is: ', value);
   return value;
 }
 
 @Concurrent
 function removeWrap(): number {
   let value = napitest.removeWrap();
-  console.info('testRemoveWrap value is: ', value);
   return value;
 }
 
 @Concurrent
 function getVersion(): number {
   let value = napitest.getVersion();
-  console.info('testGetVersion value is: ', value);
   return value;
 }
 
 @Concurrent
 function createPromise(): number {
   let value = napitest.createPromise();
-  console.info('testCreatePromise value is: ', value);
   return value;
 }
 
 @Concurrent
 function resolveAndRejectDeferred(): number {
   let value = napitest.resolveAndRejectDeferred();
-  console.info('testResolveAndRejectDeferred value is: ', value);
   return value;
 }
 
 @Concurrent
 function isPromise(): number {
   let value = napitest.isPromise();
-  console.info('testIsPromise value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiCreateThreadsafeFunction(): number {
   let value = napitest.napiCreateThreadsafeFunction();
-  console.info('testNapiCreateThreadsafeFunction value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiDeleteSerializationDataTest(): number {
   let value = napitest.napiDeleteSerializationData();
-  console.info('testNapiDeleteSerializationData value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiCallThreadsafeFunction(): number {
   let value = napitest.napiCallThreadsafeFunction();
-  console.info('testNapiCallThreadsafeFunction value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiAnotherThreadSafeTest(): number {
   let value = napitest.ThreadSafeTestNull(() => 666);
-  console.info('testNapiAnotherThreadSafe value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiRefThreadsafeFunction(): number {
   let value = napitest.napiRefthreadSafeFunction();
-  console.info('testNapiRefThreadsafeFunction value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiCreateDate(): number {
   let value = napitest.napiCreateDate();
-  console.info('testNapiCreateDate value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiCreateBigintInt64(): number {
   let value = napitest.napiCreateBigintInt64();
-  console.info('testNapiCreateBigintInt64 value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiCreateBigintUint64(): number {
   let value = napitest.napiCreateBigintUint64();
-  console.info('testNapiCreateBigintUint64 value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiCreateBigintWords(): number {
   let value = napitest.napiCreateBigintWords();
-  console.info('testNapiCreateBigintWords value is: ', value);
   return value;
 }
 
 @Concurrent
 function GetAllPropertyNamesEnvNull(): number {
   let value = napitest.GetAllPropertyNamesEnvNull();
-  console.info('testGetAllPropertyNamesEnvNull value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiSetInstanceData(): number {
   let value = napitest.napiSetInstanceData();
-  console.info('testNapiSetInstanceData value is: ', value);
   return value;
 }
 
 @Concurrent
 function getModuleFileName(): number {
   let value = napitest.getModuleFileName().indexOf(".so");
-  console.info('testGetModuleFileName value is: ', value);
+  return value;
+}
+
+@Concurrent
+function napiSerializeTest(): number {
+  let value = napitest.napiSerialize();
+  return value;
+}
+
+@Concurrent
+function napiDeSerializeTest(): number {
+  let value = napitest.napiDeSerialize();
   return value;
 }
 
@@ -526,66 +466,38 @@ function createAsyncResource(): object {
   let value = napitest.createAsyncResource({
     foo: 'bar'
   }, false);
-  console.info('testCreateAsyncResource value is: ', value);
   return value;
 }
 
 @Concurrent
 function asyncWorkWithQos(): number {
-  let value = napitest.asyncWorkWithQos(1000, (input) => {
-    console.info('asyncWorkWithQos ' + (input * 2));
+  let value = napitest.asyncWorkWithQos(1000, (input: number): number => {
     return input * 2;
   });
-  console.info('testAsyncWorkWithQos value is: ', value);
   return value;
 }
 
 @Concurrent
 function napiRunScriptPathEnvNull(): number | object {
   let value = napitest.napiRunScriptPathEnvNull();
-  console.info('testNapiRunScriptPathEnvNull value is: ', value);
-  return value;
-}
-
-@Concurrent
-function napiLoadModuleTest(): number {
-  let value = napitest.napiLoadModule();
-  console.info('testNapiLoadModule value is: ', value);
   return value;
 }
 
 @Concurrent
 function createObjectWithProperties(): number {
   let value = napitest.createObjectWithProperties();
-  console.info('testCreateObjectWithProperties value is: ', value);
   return value;
 }
 
 @Concurrent
 function createObjectWithNamedProperties(): number {
   let value = napitest.createObjectWithNamedProperties();
-  console.info('testCreateObjectWithNamedProperties value is: ', value);
   return value;
 }
 
 @Concurrent
 function coerceToNativeBindingObjectEnvNull(): string {
   let value = napitest.coerceToNativeBindingObjectEnvNull(null);
-  console.info('testCoerceToNativeBindingObjectEnvNull value is: ', value);
-  return value;
-}
-
-@Concurrent
-function napiSerializeTest(): number {
-  let value = napitest.napiSerialize();
-  console.info('testNapiSerialize value is: ', value);
-  return value;
-}
-
-@Concurrent
-function napiDeSerializeTest(): number {
-  let value = napitest.napiDeSerialize();
-  console.info('testNapiDeSerialize value is: ', value);
   return value;
 }
 
@@ -593,9 +505,10 @@ export default function NapiTaskTest() {
 
   describe('napiTaskTest', () => {
 
-    /**
-     * run after testcase
-     */
+    beforeEach(async () => {
+      await sleep(50);
+    });
+
     afterEach(async () => {
       console.info('[napiTaskTest] after each called')
     });
@@ -611,20 +524,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0001';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getLastError).then((value) => {
-            num++;
-            expect(value).assertEqual(2000);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getLastError));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(2000);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -639,20 +550,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0002';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(isError).then((value) => {
-            num++;
-            expect(value).assertEqual(false);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(isError));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(false);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -667,20 +576,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0003';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createError).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createError));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -695,20 +602,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0004';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createRangeError).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createRangeError));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -723,20 +628,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0005';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(isExceptionPending).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(isExceptionPending));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -751,20 +654,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0006';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createReference).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createReference));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -779,20 +680,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0007';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(referenceRefAndUnref).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(referenceRefAndUnref));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -807,20 +706,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0008';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createArrayAndGetLength).then((value) => {
-            num++;
-            expect(value).assertEqual('[1,2]');
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createArrayAndGetLength));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual('[1,2]');
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -835,20 +732,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0009';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createExternal).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createExternal));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -863,20 +758,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0010';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createExternalArraybuffer).then((value) => {
-            num++;
-            expect(value instanceof ArrayBuffer).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createExternalArraybuffer));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof ArrayBuffer).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -891,20 +784,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0011';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createObject).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createObject));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -919,20 +810,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0012';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createSymbol).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createSymbol));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -947,20 +836,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0013';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createTypeArray).then((value) => {
-            num++;
-            expect(value instanceof Int32Array).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createTypeArray));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Int32Array).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -975,20 +862,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0014';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getValueBool).then((value) => {
-            num++;
-            expect(value).assertFalse();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getValueBool));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertFalse();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1003,20 +888,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0015';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createAndGetInt32).then((value) => {
-            num++;
-            expect(value).assertEqual(32);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createAndGetInt32));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(32);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1031,20 +914,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0016';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createAndGetUInt32).then((value) => {
-            num++;
-            expect(value).assertEqual(32);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createAndGetUInt32));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(32);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1059,20 +940,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0017';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createAndGetInt64).then((value) => {
-            num++;
-            expect(value).assertEqual(23);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createAndGetInt64));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(23);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1087,20 +966,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0018';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createDouble).then((value) => {
-            num++;
-            expect(value).assertEqual(24.67);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createDouble));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(24.67);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1115,20 +992,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0019';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createAndGetStringUtf16).then((value) => {
-            num++;
-            expect(value).assertEqual('he');
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createAndGetStringUtf16));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual('he');
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1143,20 +1018,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0020';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(stringUtf16OfCase).then((value) => {
-            num++;
-            expect(value).assertEqual('abc2');
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(stringUtf16OfCase));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual('abc2');
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1171,20 +1044,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0021';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getValueDouble).then((value) => {
-            num++;
-            expect(value).assertEqual(24.5);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getValueDouble));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(24.5);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1199,20 +1070,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0022';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getValueExternal).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getValueExternal));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1227,20 +1096,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0023';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getNull).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getNull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1255,20 +1122,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0024';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getUndefined).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getUndefined));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1283,20 +1148,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0025';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(coerceToBool).then((value) => {
-            num++;
-            expect(value).assertFalse();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(coerceToBool));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertFalse();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1311,20 +1174,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0026';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(coerceToNumber).then((value) => {
-            num++;
-            expect(value).assertEqual(12);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(coerceToNumber));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(12);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1339,20 +1200,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0027';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(coerceToObject).then((value) => {
-            num++;
-            expect(value).assertEqual('[2,3]');
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(coerceToObject));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual('[2,3]');
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1367,20 +1226,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0028';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(coerceToString).then((value) => {
-            num++;
-            expect(value).assertEqual('123');
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(coerceToString));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual('123');
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1395,20 +1252,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0029';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(typeOf).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(typeOf));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1423,20 +1278,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0030';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(isArray).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(isArray));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1451,20 +1304,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0031';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(strictEquals).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(strictEquals));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1479,20 +1330,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0032';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getPropertyNames).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getPropertyNames));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1507,20 +1356,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0033';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(setProperty).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(setProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1535,20 +1382,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0034';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getProperty).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1563,20 +1408,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0035';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(hasProperty).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(hasProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1591,20 +1434,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0036';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(setAndDeleteProperty).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(setAndDeleteProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1619,20 +1460,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0037';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(hasOwnProperty).then((value) => {
-            num++;
-            expect(value).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(hasOwnProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1647,20 +1486,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0038';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(setNamedProperty).then((value) => {
-            num++;
-            expect(value).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(setNamedProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1675,20 +1512,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0039';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getNamedProperty).then((value) => {
-            num++;
-            expect(value).assertEqual('zhangsan');
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getNamedProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual('zhangsan');
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1703,20 +1538,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0040';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(hasNamedProperty).then((value) => {
-            num++;
-            expect(value).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(hasNamedProperty));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1731,20 +1564,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0041';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(setElement).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(setElement));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1759,20 +1590,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0042';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getElement).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getElement));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1787,20 +1616,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0043';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(hasElement).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(hasElement));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1815,20 +1642,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0044';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(deleteElement).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(deleteElement));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1843,20 +1668,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0045';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(defineProperties).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(defineProperties));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1871,20 +1694,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0046';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(callFunctionNull).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(callFunctionNull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1899,20 +1720,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0047';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiCreateFunctionFuncNull).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiCreateFunctionFuncNull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1927,20 +1746,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0048';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiGetCbInfo).then((value) => {
-            num++;
-            expect(value).assertEqual(12.06);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiGetCbInfo));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(12.06);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1955,20 +1772,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0049';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(unwrap).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(unwrap));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -1983,20 +1798,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0050';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(removeWrap).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(removeWrap));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2011,20 +1824,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0051';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getVersion).then((value) => {
-            num++;
-            expect(value).assertEqual(8);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getVersion));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(8);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2039,20 +1850,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0052';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createPromise).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createPromise));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2067,20 +1876,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0053';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(resolveAndRejectDeferred).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(resolveAndRejectDeferred));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2095,20 +1902,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0054';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(isPromise).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(isPromise));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2123,20 +1928,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0055';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiCreateThreadsafeFunction).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiCreateThreadsafeFunction));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2151,20 +1954,18 @@ export default function NapiTaskTest() {
     it('testNapiDeleteSerializationData0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiDeleteSerializationData0056';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiDeleteSerializationDataTest).then((value) => {
-            num++;
-            expect(value).assertEqual(2000);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiDeleteSerializationDataTest));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(2000);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2179,20 +1980,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0057';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiCallThreadsafeFunction).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiCallThreadsafeFunction));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2207,20 +2006,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0058';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiAnotherThreadSafeTest).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiAnotherThreadSafeTest));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2235,20 +2032,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0059';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiRefThreadsafeFunction).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiRefThreadsafeFunction));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2263,20 +2058,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0060';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiCreateDate).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiCreateDate));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2291,20 +2084,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0061';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiCreateBigintInt64).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiCreateBigintInt64));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2319,20 +2110,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0062';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiCreateBigintUint64).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiCreateBigintUint64));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2347,20 +2136,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0063';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiCreateBigintWords).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiCreateBigintWords));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2375,20 +2162,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0064';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(GetAllPropertyNamesEnvNull).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(GetAllPropertyNamesEnvNull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2403,20 +2188,18 @@ export default function NapiTaskTest() {
     it('testExecuteTask0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0065';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiSetInstanceData).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiSetInstanceData));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2431,20 +2214,18 @@ export default function NapiTaskTest() {
     it('testGetModuleFileName0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testGetModuleFileName0066';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(getModuleFileName).then((value) => {
-            num++;
-            expect(value < 0).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(getModuleFileName));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(Number(value) < 0).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2459,20 +2240,18 @@ export default function NapiTaskTest() {
     it('testCreateAsyncResource0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCreateAsyncResource0067';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createAsyncResource).then((value) => {
-            num++;
-            expect(value instanceof Object).assertTrue();
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createAsyncResource));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value instanceof Object).assertTrue();
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2487,20 +2266,18 @@ export default function NapiTaskTest() {
     it('testAsyncWorkWithQos0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testAsyncWorkWithQos0068';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(asyncWorkWithQos).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(asyncWorkWithQos));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2515,27 +2292,25 @@ export default function NapiTaskTest() {
     it('testNapiRunScriptPathEnvNull0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiRunScriptPathEnvNull0069';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiRunScriptPathEnvNull).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiRunScriptPathEnvNull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiLoadModule0070
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_7000
-     * @tc.desc   NapiTaskTest napiLoadModule
+     * @tc.desc   NapiTaskTest napiLoadModule (main thread only)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2543,20 +2318,12 @@ export default function NapiTaskTest() {
     it('testNapiLoadModule0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiLoadModule0070';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiLoadModuleTest).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
-        }
+        const value = napitest.napiLoadModule();
+        expect(value).assertEqual(0);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2571,20 +2338,18 @@ export default function NapiTaskTest() {
     it('testCreateObjectWithProperties0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCreateObjectWithProperties0071';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createObjectWithProperties).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createObjectWithProperties));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2599,20 +2364,18 @@ export default function NapiTaskTest() {
     it('testCreateObjectWithNamedProperties0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCreateObjectWithNamedProperties0072';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(createObjectWithNamedProperties).then((value) => {
-            num++;
-            expect(value).assertEqual(0);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(createObjectWithNamedProperties));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(0);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2627,20 +2390,18 @@ export default function NapiTaskTest() {
     it('testCoerceToNativeBindingObjectEnvNull0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCoerceToNativeBindingObjectEnvNull0073';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(coerceToNativeBindingObjectEnvNull).then((value) => {
-            num++;
-            expect(value).assertEqual(1);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(coerceToNativeBindingObjectEnvNull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(1);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2655,20 +2416,18 @@ export default function NapiTaskTest() {
     it('testNapiSerialize0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSerialize0074';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiSerializeTest).then((value) => {
-            num++;
-            expect(value).assertEqual(2000);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiSerializeTest));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(2000);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
@@ -2683,20 +2442,18 @@ export default function NapiTaskTest() {
     it('testNapiDeSerialize0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiDeSerialize0075';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiDeSerializeTest).then((value) => {
-            num++;
-            expect(value).assertEqual(2000);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiDeSerializeTest));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(2000);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })

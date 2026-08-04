@@ -13,34 +13,32 @@
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import napitest from 'libnapitest.so';
-// import napitest from 'libentry.so';
 import { taskpool } from '@kit.ArkTS';
 
 export const sleep = (ms: number | undefined) => {
-  return new Promise <void>(resolve => setTimeout(resolve, ms));
+  return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
+
+const TASK_COUNT = 10;
 
 @Concurrent
 function napiIsSendableTest(): boolean {
   let test = [1, 2];
   let value = napitest.NapiIsSendable(test);
-  console.info('testNapiIsSendable value is: ', value);
   return value;
 }
 
 @Concurrent
 function NapiCreateSendableObject(): boolean {
   let value = napitest.NapiCreateSendableObject();
-  console.info('testNapiCreateSendableObject value is: ', value);
   return napitest.NapiIsSendable(value);
 }
 
 @Concurrent
 function NapiCreateSendableArray(): boolean {
   let value = napitest.NapiCreateSendableArray();
-  console.info('testNapiCreateSendableArray value is: ', value);
   let res = value.length == 0;
   return res && napitest.NapiIsSendable(value);
 }
@@ -48,7 +46,6 @@ function NapiCreateSendableArray(): boolean {
 @Concurrent
 function NapiCreateSendableArrayWithLength(): boolean {
   let value = napitest.NapiCreateSendableArrayWithLength();
-  console.info('testNapiCreateSendableArrayWithLength value is: ', value);
   let res = value.length == 1;
   return res && napitest.NapiIsSendable(value);
 }
@@ -56,7 +53,6 @@ function NapiCreateSendableArrayWithLength(): boolean {
 @Concurrent
 function NapiCreateSendableArrayBuffer(): boolean {
   let value = napitest.NapiCreateSendableArrayBuffer();
-  console.info('testNapiCreateSendableArrayBuffer value is: ', value);
   let res = value.byteLength == 1024;
   return res && napitest.NapiIsSendable(value);
 }
@@ -64,7 +60,6 @@ function NapiCreateSendableArrayBuffer(): boolean {
 @Concurrent
 function NapiCreateSendableTypedArray(): boolean {
   let value = napitest.NapiCreateSendableTypedArray();
-  console.info('testNapiCreateSendableTypedArray value is: ', value);
   let res = value.byteLength == 1024;
   return res && napitest.NapiIsSendable(value);
 }
@@ -73,7 +68,6 @@ function NapiCreateSendableTypedArray(): boolean {
 function NapiWrapSendable(): boolean {
   let value = napitest.NapiCreateSendableObject();
   napitest.NapiWrapSendable(value, "data");
-  console.info('testNapiWrapSendable value is: ', value);
   let res1 = napitest.NapiUnwrapSendable(value) == "data";
   let res2 = napitest.NapiRemoveWrapSendable(value) == "data";
   let res3 = napitest.NapiUnwrapSendable(value) == undefined;
@@ -84,7 +78,6 @@ function NapiWrapSendable(): boolean {
 function NapiWrapSendableWithSize(): boolean {
   let value = napitest.NapiCreateSendableObject();
   napitest.NapiWrapSendableWithSize(value, "data");
-  console.info('testNapiWrapSendableWithSize value is: ', value);
   let res1 = napitest.NapiUnwrapSendable(value) == "data";
   let res2 = napitest.NapiRemoveWrapSendable(value) == "data";
   let res3 = napitest.NapiUnwrapSendable(value) == undefined;
@@ -95,11 +88,12 @@ export default function NapiSendableTaskTest() {
 
   describe('napiSendableTaskTest', () => {
 
-    /**
-     * run after testcase
-     */
+    beforeEach(async () => {
+      await sleep(50);
+    });
+
     afterEach(async () => {
-      console.info('[napiTaskSendableTest] after each called')
+      console.info('[napiSendableTaskTest] after each called')
     });
 
     /**
@@ -113,27 +107,25 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0001';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(napiIsSendableTest).then((value) => {
-            num++;
-            expect(value).assertEqual(false);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiIsSendableTest));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(false);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiSendableTask0002
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0200
-     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.desc   NapiTaskTest NapiCreateSendableObject
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -141,27 +133,25 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0002';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(NapiCreateSendableObject).then((value) => {
-            num++;
-            expect(value).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(NapiCreateSendableObject));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiSendableTask0003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0300
-     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.desc   NapiTaskTest NapiCreateSendableArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -169,27 +159,25 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0003';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(NapiCreateSendableArray).then((value) => {
-            num++;
-            expect(value).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(NapiCreateSendableArray));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiSendableTask0004
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0400
-     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.desc   NapiTaskTest NapiCreateSendableArrayWithLength
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -197,27 +185,25 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0004';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(NapiCreateSendableArrayWithLength).then((value) => {
-            num++;
-            expect(value).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(NapiCreateSendableArrayWithLength));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiSendableTask0005
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0500
-     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.desc   NapiTaskTest NapiCreateSendableArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -225,27 +211,25 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0005';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(NapiCreateSendableArrayBuffer).then((value) => {
-            num++;
-            expect(value).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(NapiCreateSendableArrayBuffer));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiSendableTask0006
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0600
-     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.desc   NapiTaskTest NapiCreateSendableTypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -253,27 +237,25 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0006';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(NapiCreateSendableTypedArray).then((value) => {
-            num++;
-            expect(value).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(NapiCreateSendableTypedArray));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiSendableTask0007
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0700
-     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.desc   NapiTaskTest NapiWrapSendable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -281,27 +263,25 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0007';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(NapiWrapSendable).then((value) => {
-            num++;
-            expect(value).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(NapiWrapSendable));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
     /**
      * @tc.name   testNapiSendableTask0008
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0800
-     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.desc   NapiTaskTest NapiWrapSendableWithSize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -309,20 +289,18 @@ export default function NapiSendableTaskTest() {
     it('testNapiSendableTask0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0008';
       console.info(`${caseName} test start`);
-      let num = 0;
       try {
-        for (let i = 0; i < 10; i++) {
-          taskpool.execute(NapiWrapSendableWithSize).then((value) => {
-            num++;
-            expect(value).assertEqual(true);
-          });
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(NapiWrapSendableWithSize));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertEqual(true);
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
-      }
-      while (num < 10) {
-        await sleep(100);
       }
       console.info(`${caseName} test end`);
     })
