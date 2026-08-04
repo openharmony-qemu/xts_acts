@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -154,7 +154,14 @@ export default function BuiltinsPipelineQueueTest(): void {
     beforeEach((): void => {
       pipeline = new PipelineStageQueue(new collections.Array<number>(), new collections.Array<number>(), new collections.Array<number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testPipelineQueue0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PIPELINEQUEUE_TEST_0100
+     * @tc.desc   Verify testPipelineQueue0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPipelineQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pipeline.inputStage1(5)
       expect(await pipeline.getStage1Size()).assertEqual(1)
@@ -175,7 +182,14 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(output[0]).assertEqual(20)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testPipelineQueue0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PIPELINEQUEUE_TEST_0200
+     * @tc.desc   Verify testPipelineQueue0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPipelineQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pipeline.inputStage1(10)
       await pipeline.processStage1()
@@ -186,7 +200,14 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(output[0]).assertEqual(30)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testPipelineQueue0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PIPELINEQUEUE_TEST_0300
+     * @tc.desc   Verify testPipelineQueue0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPipelineQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
@@ -206,7 +227,14 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(await pipeline.getOutputSize()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testPipelineQueue0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PIPELINEQUEUE_TEST_0400
+     * @tc.desc   Verify testPipelineQueue0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPipelineQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         await pipeline.inputStage1(i)
@@ -225,7 +253,14 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(await pipeline.getOutputSize()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testPipelineQueue0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PIPELINEQUEUE_TEST_0500
+     * @tc.desc   Verify testPipelineQueue0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPipelineQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         await pipeline.inputStage1(i)

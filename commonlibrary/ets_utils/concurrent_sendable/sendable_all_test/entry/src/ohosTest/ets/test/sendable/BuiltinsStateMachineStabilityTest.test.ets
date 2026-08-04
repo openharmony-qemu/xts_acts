@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -91,7 +91,14 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       await sm.reset()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineStability0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINESTABILITY_TEST_0100
+     * @tc.desc   Verify testStateMachineStability0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(await sm.transition(1, 0)).assertTrue()
       expect(await sm.getCurrentState()).assertEqual(1)
@@ -100,7 +107,14 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getInvalidTransitionCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineStability0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINESTABILITY_TEST_0200
+     * @tc.desc   Verify testStateMachineStability0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -121,7 +135,14 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getCurrentState()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineStability0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINESTABILITY_TEST_0300
+     * @tc.desc   Verify testStateMachineStability0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineStability0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(await sm.transition(1, 0)).assertTrue()
       expect(await sm.transition(2, 1)).assertTrue()
@@ -130,7 +151,14 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getHistoryCount()).assertEqual(4)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineStability0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINESTABILITY_TEST_0400
+     * @tc.desc   Verify testStateMachineStability0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineStability0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 50; i++) {
         const result: boolean = await sm.transition(1, 99)
@@ -142,7 +170,14 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getInvalidTransitionCount()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineStability0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINESTABILITY_TEST_0500
+     * @tc.desc   Verify testStateMachineStability0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineStability0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const readTasks: taskpool.Task[] = []
       const writeTasks: taskpool.Task[] = []

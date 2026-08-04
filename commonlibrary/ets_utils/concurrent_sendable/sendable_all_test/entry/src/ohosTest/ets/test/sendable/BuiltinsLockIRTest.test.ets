@@ -172,7 +172,14 @@ function readCrossThreadValue(lockObj: CrossThreadLock): number {
 
 export default function BuiltinsLockIRTest(): void {
   describe('BuiltinsLockIRTest', (): void => {
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testLockIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0100
+     * @tc.desc   Verify testLockIR0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLockIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const resource: IRLockResource = new IRLockResource(new ArkTSUtils.locks.AsyncLock())
       const status: number[] = await resource.getLockStatus()
@@ -180,7 +187,14 @@ export default function BuiltinsLockIRTest(): void {
       expect(status[1]).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testLockIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0200
+     * @tc.desc   Verify testLockIR0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLockIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const data: ProtectedData = new ProtectedData(new ArkTSUtils.locks.AsyncLock())
       await data.update(100)
@@ -189,14 +203,28 @@ export default function BuiltinsLockIRTest(): void {
       expect(props[1]).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testLockIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0300
+     * @tc.desc   Verify testLockIR0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLockIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const state: ConditionState = new ConditionState(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
       await state.incrementWait()
       expect(await state.getWaitCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testLockIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0400
+     * @tc.desc   Verify testLockIR0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLockIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const resource1: SharedLockResource = new SharedLockResource(new ArkTSUtils.locks.AsyncLock())
       const resource2: SharedLockResource = new SharedLockResource(new ArkTSUtils.locks.AsyncLock())
@@ -204,7 +232,14 @@ export default function BuiltinsLockIRTest(): void {
       expect(resource2.data_).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLockIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0500
+     * @tc.desc   Verify testLockIR0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLockIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const data: ConcurrentLockData = new ConcurrentLockData(new ArkTSUtils.locks.AsyncLock())
       const promises: Promise<number>[] = []
@@ -215,7 +250,14 @@ export default function BuiltinsLockIRTest(): void {
       expect(await data.getCounter()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLockIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0600
+     * @tc.desc   Verify testLockIR0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLockIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const test: LockPerformanceTest = new LockPerformanceTest(new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {
@@ -224,7 +266,14 @@ export default function BuiltinsLockIRTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testLockIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0700
+     * @tc.desc   Verify testLockIR0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLockIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter: WaitCounter = new WaitCounter(new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 10; i++) {
@@ -233,7 +282,14 @@ export default function BuiltinsLockIRTest(): void {
       expect(await counter.getWaiting()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLockIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOCKIR_TEST_0800
+     * @tc.desc   Verify testLockIR0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLockIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const lockObj: CrossThreadLock = new CrossThreadLock(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []

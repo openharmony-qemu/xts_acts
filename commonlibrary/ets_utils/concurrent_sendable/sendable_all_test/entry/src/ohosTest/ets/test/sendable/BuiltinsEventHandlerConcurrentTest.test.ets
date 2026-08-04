@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -103,7 +103,14 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       await bus.reset()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0100
+     * @tc.desc   Verify testEventHandlerConcurrent0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventHandlerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.registerHandler('click', 'handler_1')
       const count: number = await bus.executeHandlers('click')
@@ -111,7 +118,14 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(await bus.getExecutionCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0200
+     * @tc.desc   Verify testEventHandlerConcurrent0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventHandlerConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.registerHandler('click', 'handler_2')
@@ -119,7 +133,14 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(count).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0300
+     * @tc.desc   Verify testEventHandlerConcurrent0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventHandlerConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.registerHandler('click', 'handler_2')
@@ -131,13 +152,27 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(await bus.getExecutionCount() >= 10).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0400
+     * @tc.desc   Verify testEventHandlerConcurrent0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventHandlerConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const count: number = await bus.executeHandlers('unknown')
       expect(count).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0500
+     * @tc.desc   Verify testEventHandlerConcurrent0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventHandlerConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 10; i++) {
         await bus.registerHandler('click', `handler_${i}`)
@@ -150,7 +185,14 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(await bus.getExecutionCount() >= 30).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0600
+     * @tc.desc   Verify testEventHandlerConcurrent0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventHandlerConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.registerHandler('hover', 'handler_2')
@@ -160,7 +202,14 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(c2).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0700
+     * @tc.desc   Verify testEventHandlerConcurrent0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventHandlerConcurrent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.registerHandler('click', `handler_${i}`)
@@ -173,7 +222,14 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(await bus.getExecutionCount() >= 10).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventHandlerConcurrent0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTHANDLERCONCURRENT_TEST_0800
+     * @tc.desc   Verify testEventHandlerConcurrent0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventHandlerConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.executeHandlers('click')
