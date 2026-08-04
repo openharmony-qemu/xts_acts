@@ -743,7 +743,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest3800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_3800
-     * @tc.desc   Verify Promise.then with AsyncLock synchronization
+     * @tc.desc   Verify Promise.then callbacks accumulate shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -934,7 +934,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest4700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_4700
-     * @tc.desc   Verify Promise.then with AsyncLock concurrent counter
+     * @tc.desc   Verify Promise.then callbacks increment shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -957,7 +957,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest4800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_4800
-     * @tc.desc   Verify Promise.then with AsyncLock for shared data
+     * @tc.desc   Verify Promise.then callbacks update shared data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -980,7 +980,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest4900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_4900
-     * @tc.desc   Verify Promise.then with Atomics compareExchange
+     * @tc.desc   Verify Promise.then callbacks set shared branch variable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1001,7 +1001,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest5000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_5000
-     * @tc.desc   Verify Promise.then with Atomics for timeout race
+     * @tc.desc   Verify Promise.race resolves with earlier timeout branch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1040,7 +1040,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest5200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_5200
-     * @tc.desc   Verify Promise.then with AtomicInt counter 3 iterations
+     * @tc.desc   Verify Promise.then with counter 3 iterations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1061,7 +1061,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest5300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_5300
-     * @tc.desc   Verify Promise.then with AtomicInt counter 5 iterations
+     * @tc.desc   Verify Promise.then with counter 5 iterations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1082,7 +1082,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest5400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_5400
-     * @tc.desc   Verify Promise.then with AtomicInt counter 10 iterations
+     * @tc.desc   Verify Promise.then with counter 10 iterations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1103,7 +1103,7 @@ export default function BuiltinsPromiseThenFirstTest(): void {
     /**
      * @tc.name   PromiseThenFirstTest5500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FIRST_TEST_5500
-     * @tc.desc   Verify Promise.then with Worker thread message counting
+     * @tc.desc   Verify Promise.then callbacks increment shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

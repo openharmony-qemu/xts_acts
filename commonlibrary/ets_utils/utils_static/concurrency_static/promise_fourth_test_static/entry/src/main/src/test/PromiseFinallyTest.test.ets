@@ -1093,7 +1093,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest5300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_5300
-     * @tc.desc   Verify MessageHandler callback nested Promise.finally cleanup
+     * @tc.desc   Verify EAWorker.run callback nested Promise.finally cleanup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1145,7 +1145,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest5500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_5500
-     * @tc.desc   Verify MessageHandler callback nested Promise.finally
+     * @tc.desc   Verify EAWorker.run callback nested Promise.finally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

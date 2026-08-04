@@ -814,7 +814,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4100
-     * @tc.desc   Verify 3 concurrent catch tasks with AtomicInt count
+     * @tc.desc   Verify 3 concurrent catch tasks increment shared count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -835,7 +835,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4200
-     * @tc.desc   Verify 5 concurrent catch tasks with AtomicInt count
+     * @tc.desc   Verify 5 concurrent catch tasks increment shared count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -856,7 +856,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4300
-     * @tc.desc   Verify 10 concurrent catch tasks with AtomicInt count
+     * @tc.desc   Verify 10 concurrent catch tasks increment shared count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -877,7 +877,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4400
-     * @tc.desc   Verify MessageHandler callback nested Promise.catch
+     * @tc.desc   Verify EAWorker.run callback nested Promise.catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -899,7 +899,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4500
-     * @tc.desc   Verify AsyncLock protects catch callback shared variable
+     * @tc.desc   Verify catch callbacks increment shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -920,7 +920,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4600
-     * @tc.desc   Verify MessageHandler catch error recovery
+     * @tc.desc   Verify EAWorker.run callback catch error recovery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -938,7 +938,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4700
-     * @tc.desc   Verify MessageHandler catch then chain
+     * @tc.desc   Verify EAWorker.run callback catch then chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -956,7 +956,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest4800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_4800
-     * @tc.desc   Verify Atomics.compareExchange for catch branch
+     * @tc.desc   Verify catch callbacks set shared branch variable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1029,7 +1029,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest5100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_5100
-     * @tc.desc   Verify catch returns object with Symbol property
+     * @tc.desc   Verify catch returns object with string-keyed properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1146,7 +1146,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest5600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_5600
-     * @tc.desc   MessageHandler callback catch recovery v2
+     * @tc.desc   EAWorker.run callback catch recovery v2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1170,7 +1170,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest5700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_5700
-     * @tc.desc   MessageHandler callback catch then chain v2
+     * @tc.desc   EAWorker.run callback catch then chain v2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1221,7 +1221,7 @@ export default function BuiltinsPromiseCatchSecondTest(): void {
     /**
      * @tc.name   PromiseCatchSecondTest5900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_SECOND_TEST_5900
-     * @tc.desc   MessageHandler callback nested catch equivalence
+     * @tc.desc   EAWorker.run callback nested catch equivalence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

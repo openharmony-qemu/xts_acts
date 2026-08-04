@@ -1130,7 +1130,7 @@ export default function BuiltinsPromiseAnyFirstTest(): void {
     /**
      * @tc.name   PromiseAnyFirstTest5300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_FIRST_TEST_5300
-     * @tc.desc   Verify Promise.any with AtomicInt counter
+     * @tc.desc   Verify Promise.any with shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1671,7 +1671,7 @@ export default function BuiltinsPromiseAnyFirstTest(): void {
     /**
      * @tc.name   PromiseAnyFirstTest7900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_FIRST_TEST_7900
-     * @tc.desc   MessageHandler callback nested Promise.any
+     * @tc.desc   EAWorker.run callback nested Promise.any
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1727,7 +1727,7 @@ export default function BuiltinsPromiseAnyFirstTest(): void {
     /**
      * @tc.name   PromiseAnyFirstTest8100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_FIRST_TEST_8100
-     * @tc.desc   MessageHandler callback nested Promise.any(FixedArray)
+     * @tc.desc   EAWorker.run callback nested Promise.any(FixedArray)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1783,7 +1783,7 @@ export default function BuiltinsPromiseAnyFirstTest(): void {
     /**
      * @tc.name   PromiseAnyFirstTest8300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_FIRST_TEST_8300
-     * @tc.desc   MessageHandler callback nested Promise.any(Set)
+     * @tc.desc   EAWorker.run callback nested Promise.any(Set)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1843,7 +1843,7 @@ export default function BuiltinsPromiseAnyFirstTest(): void {
     /**
      * @tc.name   PromiseAnyFirstTest8500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_FIRST_TEST_8500
-     * @tc.desc   MessageHandler callback nested Promise.any(Set) simple
+     * @tc.desc   EAWorker.run callback nested Promise.any(Set) simple
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

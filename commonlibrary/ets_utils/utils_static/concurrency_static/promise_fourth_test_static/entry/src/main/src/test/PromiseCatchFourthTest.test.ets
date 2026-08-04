@@ -450,7 +450,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest2200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2200
-     * @tc.desc   Verify AsyncLock protects catch callback shared data
+     * @tc.desc   Verify catch callback increments shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -479,7 +479,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest2300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2300
-     * @tc.desc   Verify MessageHandler catch recovery
+     * @tc.desc   Verify EAWorker.run callback catch recovery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -494,7 +494,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest2400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2400
-     * @tc.desc   Verify MessageHandler catch then chain
+     * @tc.desc   Verify EAWorker.run callback catch then chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -511,7 +511,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest2500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2500
-     * @tc.desc   Verify Atomics.compareExchange for catch branch
+     * @tc.desc   Verify catch callbacks set shared branch variable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -864,7 +864,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest4100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_4100
-     * @tc.desc   Verify MessageHandler callback nested catch equivalence
+     * @tc.desc   Verify EAWorker.run callback nested catch equivalence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -965,7 +965,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest4500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_4500
-     * @tc.desc   MessageHandler callback catch recovery
+     * @tc.desc   EAWorker.run callback catch recovery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -989,7 +989,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest4600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_4600
-     * @tc.desc   MessageHandler callback catch then chain
+     * @tc.desc   EAWorker.run callback catch then chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1037,7 +1037,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest4800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_4800
-     * @tc.desc   MessageHandler callback nested Promise.catch
+     * @tc.desc   EAWorker.run callback nested Promise.catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

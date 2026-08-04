@@ -1068,7 +1068,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest5600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_5600
-     * @tc.desc   Verify Promise.then without arguments with AsyncLock SharedData
+     * @tc.desc   Verify Promise.then without arguments updates shared data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1090,7 +1090,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest5700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_5700
-     * @tc.desc   Verify Promise.then without arguments with Worker thread message handling
+     * @tc.desc   Verify Promise.then without arguments propagates value through chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1108,7 +1108,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest5800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_5800
-     * @tc.desc   Verify Promise.then without arguments with AsyncLock shared string
+     * @tc.desc   Verify Promise.then without arguments updates shared string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1131,7 +1131,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest5900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_5900
-     * @tc.desc   Verify Promise.then without arguments with Atomics compareExchange
+     * @tc.desc   Verify Promise.then without arguments sets shared branch variable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1152,7 +1152,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest6000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_6000
-     * @tc.desc   Verify Promise.then without arguments with Atomics timeout race
+     * @tc.desc   Verify Promise.race resolves with earlier timeout branch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1173,7 +1173,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest6100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_6100
-     * @tc.desc   Verify Promise.then without arguments with AtomicInt counter 3 iterations
+     * @tc.desc   Verify Promise.then without arguments with counter 3 iterations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1194,7 +1194,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest6200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_6200
-     * @tc.desc   Verify Promise.then without arguments with AtomicInt counter 5 iterations
+     * @tc.desc   Verify Promise.then without arguments with counter 5 iterations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1215,7 +1215,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest6300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_6300
-     * @tc.desc   Verify Promise.then without arguments with AtomicInt counter 10 iterations
+     * @tc.desc   Verify Promise.then without arguments with counter 10 iterations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1236,7 +1236,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest6400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_6400
-     * @tc.desc   Verify Promise.then without arguments with Worker thread message counting
+     * @tc.desc   Verify Promise.then without arguments callbacks increment shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1425,7 +1425,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest7400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_7400
-     * @tc.desc   Verify MessageHandler callback nested Promise.then chain
+     * @tc.desc   Verify EAWorker.run callback nested Promise.then chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1533,7 +1533,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest7900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_7900
-     * @tc.desc   Verify MessageHandler callback nested parameterless then chain
+     * @tc.desc   Verify EAWorker.run callback nested parameterless then chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1573,7 +1573,7 @@ export default function BuiltinsPromiseThenFourthTest(): void {
     /**
      * @tc.name   PromiseThenFourthTest8100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_FOURTH_TEST_8100
-     * @tc.desc   Verify MessageHandler callback nested Promise.then with parameters
+     * @tc.desc   Verify EAWorker.run callback nested Promise.then with parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

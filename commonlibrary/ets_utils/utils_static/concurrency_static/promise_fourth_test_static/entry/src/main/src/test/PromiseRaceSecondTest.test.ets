@@ -1494,7 +1494,7 @@ export default function BuiltinsPromiseRaceSecondTest(): void {
     /**
      * @tc.name   PromiseRaceSecondTest7700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_SECOND_TEST_7700
-     * @tc.desc   Verify MessageHandler callback nested Promise.race with array
+     * @tc.desc   Verify EAWorker.run callback nested Promise.race with array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1545,7 +1545,7 @@ export default function BuiltinsPromiseRaceSecondTest(): void {
     /**
      * @tc.name   PromiseRaceSecondTest7900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_SECOND_TEST_7900
-     * @tc.desc   Verify MessageHandler callback nested Promise.race with timeout
+     * @tc.desc   Verify EAWorker.run callback nested Promise.race with timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1594,7 +1594,7 @@ export default function BuiltinsPromiseRaceSecondTest(): void {
     /**
      * @tc.name   PromiseRaceSecondTest8100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_SECOND_TEST_8100
-     * @tc.desc   Verify MessageHandler callback nested Promise.race with Set
+     * @tc.desc   Verify EAWorker.run callback nested Promise.race with Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1644,7 +1644,7 @@ export default function BuiltinsPromiseRaceSecondTest(): void {
     /**
      * @tc.name   PromiseRaceSecondTest8300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_SECOND_TEST_8300
-     * @tc.desc   Verify MessageHandler callback nested Promise.race(Set) with timeout
+     * @tc.desc   Verify EAWorker.run callback nested Promise.race(Set) with timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

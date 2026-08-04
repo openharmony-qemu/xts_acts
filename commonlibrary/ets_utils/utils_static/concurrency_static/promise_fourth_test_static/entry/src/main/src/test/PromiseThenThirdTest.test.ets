@@ -717,7 +717,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest3400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_3400
-     * @tc.desc   Verify Promise.then with AsyncLock SharedResult concurrent increment
+     * @tc.desc   Verify Promise.then with SharedResult concurrent increment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -739,7 +739,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest3500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_3500
-     * @tc.desc   Verify Promise.then with Worker thread chaining
+     * @tc.desc   Verify Promise.then with chained transformations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -756,7 +756,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest3600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_3600
-     * @tc.desc   Verify Promise.then with Worker thread message handling
+     * @tc.desc   Verify Promise.then without arguments propagates value through chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -774,7 +774,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest3700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_3700
-     * @tc.desc   Verify Promise.then with Atomics compareExchange
+     * @tc.desc   Verify Promise.then callbacks set shared winner variable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -797,7 +797,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest3800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_3800
-     * @tc.desc   Verify Promise.then with Atomics timeout race
+     * @tc.desc   Verify Promise.race resolves with earlier timeout branch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

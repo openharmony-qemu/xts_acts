@@ -412,7 +412,7 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     /**
      * @tc.name   PromiseAllThirdTest1300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_THIRD_TEST_1300
-     * @tc.desc   Verify MessageHandler callback nested Promise.all
+     * @tc.desc   Verify EAWorker.run callback nested Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -885,7 +885,7 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     /**
      * @tc.name   PromiseAllThirdTest3300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_THIRD_TEST_3300
-     * @tc.desc   Verify Promise.all with AtomicInt counter
+     * @tc.desc   Verify Promise.all with shared counter increments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
