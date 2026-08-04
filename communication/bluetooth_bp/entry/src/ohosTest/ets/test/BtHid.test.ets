@@ -1940,5 +1940,162 @@ describe('btHidTest', () => {
         done();
     })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_NULL_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_NULL_0100
+     * @tc.desc   Test replyReport type is null 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let id: number = 1;
+            let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(null, id, reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect(err.code).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_UNDEFINED_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_UNDEFINED_0100
+     * @tc.desc   Test replyReport type is undefined 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_UNDEFINED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let id: number = 1;
+            let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(undefined, id, reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect(err.code).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_OUTOFRANGE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_OUTOFRANGE_0100
+     * @tc.desc   Test replyReport type is out of enum range 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_OUTOFRANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let id: number = 1;
+            let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(0, id, reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect(err.code).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_OUTOFRANGE_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_OUTOFRANGE_0200
+     * @tc.desc   Test replyReport type is out of enum range 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPLY_TYPE_OUTOFRANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let id: number = 1;
+            let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(4, id, reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect(err.code).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPORTERROR_OUTOFRANGE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPORTERROR_OUTOFRANGE_0100
+     * @tc.desc   Test reportError error is out of enum range 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPORTERROR_OUTOFRANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            hidDevice.reportError(5);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect(err.code).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPORTERROR_OUTOFRANGE_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPORTERROR_OUTOFRANGE_0200
+     * @tc.desc   Test reportError error is out of enum range 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_REPORTERROR_OUTOFRANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            hidDevice.reportError(-1);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect(err.code).assertEqual(401);
+            }
+        }
+        done();
+    })
  })
 }

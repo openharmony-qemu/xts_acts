@@ -1174,5 +1174,394 @@ export default function btBleServiceTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_CHARACTERISTICS_EMPTY_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_CHARACTERISTICS_EMPTY_0100
+     * @tc.desc   Test addService characteristics is empty array api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_CHARACTERISTICS_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001811-0000-1000-8000-00805F9B34FB',
+        isPrimary: true,
+        characteristics: [],
+        includeServices:[]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService characteristics empty failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) == 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_DESCRIPTORS_EMPTY_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_DESCRIPTORS_EMPTY_0100
+     * @tc.desc   Test addService descriptors is empty array api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_DESCRIPTORS_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {
+        serviceUuid: '00001812-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001822-0000-1000-8000-00805F9B34FB',
+        characteristicValue: arrayBufferC, descriptors: []};
+      characteristics[0] = characteristic;
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001812-0000-1000-8000-00805F9B34FB',
+        isPrimary: true,
+        characteristics: characteristics,
+        includeServices:[]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService descriptors empty failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) == 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_INCLUDESERVICES_NONEMPTY_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_INCLUDESERVICES_NONEMPTY_0100
+     * @tc.desc   Test addService includeServices is non-empty array api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_INCLUDESERVICES_NONEMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let descriptors : Array<bluetooth.BLEDescriptor> = [];
+      let arrayBuffer = new ArrayBuffer(8);
+      let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001813-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001823-0000-1000-8000-00805F9B34FB',
+        descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
+      descriptors[0] = descriptor;
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001813-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001823-0000-1000-8000-00805F9B34FB',
+        characteristicValue: arrayBufferC, descriptors:descriptors};
+      characteristics[0] = characteristic;
+      let includeService : bluetooth.GattService = {
+        serviceUuid:'00001814-0000-1000-8000-00805F9B34FB',
+        isPrimary: false,
+        characteristics: [],
+        includeServices: []
+      };
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001813-0000-1000-8000-00805F9B34FB',
+        isPrimary: true,
+        characteristics:characteristics,
+        includeServices:[includeService]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService includeServices nonempty failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_UUID_EMPTY_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_UUID_EMPTY_0100
+     * @tc.desc   Test addService serviceUuid/characteristicUuid/descriptorUuid is empty string api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_UUID_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let descriptors : Array<bluetooth.BLEDescriptor> = [];
+      let arrayBuffer = new ArrayBuffer(8);
+      let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '',
+        characteristicUuid: '',
+        descriptorUuid: '', descriptorValue: arrayBuffer};
+      descriptors[0] = descriptor;
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '',
+        characteristicUuid: '',
+        characteristicValue: arrayBufferC, descriptors:descriptors};
+      characteristics[0] = characteristic;
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'',
+        isPrimary: true,
+        characteristics:characteristics,
+        includeServices:[]
+      };
+      try {
+        gattServer.addService(gattService);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService uuid empty failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect(Number(error.code)).assertEqual(401);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PERMISSIONS_TRUE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PERMISSIONS_TRUE_0100
+     * @tc.desc   Test addService permissions all boolean true api20.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PERMISSIONS_TRUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let permissions : bluetooth.GattPermissions = {
+        read: true, readEncrypted: true, readEncryptedMitm: true,
+        write: true, writeEncrypted: true, writeEncryptedMitm: true,
+        writeSigned: true, writeSignedMitm: true
+      };
+      let descriptors : Array<bluetooth.BLEDescriptor> = [];
+      let arrayBuffer = new ArrayBuffer(8);
+      let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001815-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001825-0000-1000-8000-00805F9B34FB',
+        descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer, permissions: permissions};
+      descriptors[0] = descriptor;
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001815-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001825-0000-1000-8000-00805F9B34FB',
+        characteristicValue: arrayBufferC, descriptors:descriptors, permissions: permissions};
+      characteristics[0] = characteristic;
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001815-0000-1000-8000-00805F9B34FB',
+        isPrimary: true,
+        characteristics:characteristics,
+        includeServices:[]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService permissions true failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PERMISSIONS_FALSE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PERMISSIONS_FALSE_0100
+     * @tc.desc   Test addService permissions all boolean false api20.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PERMISSIONS_FALSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let permissions : bluetooth.GattPermissions = {
+        read: false, readEncrypted: false, readEncryptedMitm: false,
+        write: false, writeEncrypted: false, writeEncryptedMitm: false,
+        writeSigned: false, writeSignedMitm: false
+      };
+      let descriptors : Array<bluetooth.BLEDescriptor> = [];
+      let arrayBuffer = new ArrayBuffer(8);
+      let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001816-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001826-0000-1000-8000-00805F9B34FB',
+        descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer, permissions: permissions};
+      descriptors[0] = descriptor;
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001816-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001826-0000-1000-8000-00805F9B34FB',
+        characteristicValue: arrayBufferC, descriptors:descriptors, permissions: permissions};
+      characteristics[0] = characteristic;
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001816-0000-1000-8000-00805F9B34FB',
+        isPrimary: true,
+        characteristics:characteristics,
+        includeServices:[]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService permissions false failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PROPERTIES_TRUE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PROPERTIES_TRUE_0100
+     * @tc.desc   Test addService properties all boolean true api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PROPERTIES_TRUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let properties : bluetooth.GattProperties = {
+        write: true, writeNoResponse: true, read: true, notify: true, indicate: true,
+        broadcast: true, authenticatedSignedWrite: true, extendedProperties: true
+      };
+      let descriptors : Array<bluetooth.BLEDescriptor> = [];
+      let arrayBuffer = new ArrayBuffer(8);
+      let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001817-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001827-0000-1000-8000-00805F9B34FB',
+        descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
+      descriptors[0] = descriptor;
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001817-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001827-0000-1000-8000-00805F9B34FB',
+        characteristicValue: arrayBufferC, descriptors:descriptors, properties: properties};
+      characteristics[0] = characteristic;
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001817-0000-1000-8000-00805F9B34FB',
+        isPrimary: true,
+        characteristics:characteristics,
+        includeServices:[]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService properties true failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PROPERTIES_FALSE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PROPERTIES_FALSE_0100
+     * @tc.desc   Test addService properties all boolean false api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_PROPERTIES_FALSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let properties : bluetooth.GattProperties = {
+        write: false, writeNoResponse: false, read: false, notify: false, indicate: false,
+        broadcast: false, authenticatedSignedWrite: false, extendedProperties: false
+      };
+      let descriptors : Array<bluetooth.BLEDescriptor> = [];
+      let arrayBuffer = new ArrayBuffer(8);
+      let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001818-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001828-0000-1000-8000-00805F9B34FB',
+        descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
+      descriptors[0] = descriptor;
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001818-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001828-0000-1000-8000-00805F9B34FB',
+        characteristicValue: arrayBufferC, descriptors:descriptors, properties: properties};
+      characteristics[0] = characteristic;
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001818-0000-1000-8000-00805F9B34FB',
+        isPrimary: false,
+        characteristics:characteristics,
+        includeServices:[]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService properties false failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_INCLUDESERVICES_ISPRIMARY_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_INCLUDESERVICES_ISPRIMARY_0100
+     * @tc.desc   Test addService includeServices serviceUuid empty and isPrimary true/false api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_ADD_INCLUDESERVICES_ISPRIMARY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let descriptors : Array<bluetooth.BLEDescriptor> = [];
+      let arrayBuffer = new ArrayBuffer(8);
+      let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001819-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001829-0000-1000-8000-00805F9B34FB',
+        descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
+      descriptors[0] = descriptor;
+      let characteristics : Array<bluetooth.BLECharacteristic> = [];
+      let arrayBufferC = new ArrayBuffer(8);
+      let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001819-0000-1000-8000-00805F9B34FB',
+        characteristicUuid: '00001829-0000-1000-8000-00805F9B34FB',
+        characteristicValue: arrayBufferC, descriptors:descriptors};
+      characteristics[0] = characteristic;
+      let includeServiceTrue : bluetooth.GattService = {
+        serviceUuid:'',
+        isPrimary: true,
+        characteristics: [],
+        includeServices: []
+      };
+      let includeServiceFalse : bluetooth.GattService = {
+        serviceUuid:'',
+        isPrimary: false,
+        characteristics: [],
+        includeServices: []
+      };
+      let gattService : bluetooth.GattService = {
+        serviceUuid:'00001819-0000-1000-8000-00805F9B34FB',
+        isPrimary: true,
+        characteristics:characteristics,
+        includeServices:[includeServiceTrue, includeServiceFalse]
+      };
+      try {
+        gattServer.addService(gattService);
+      } catch (error) {
+        console.error(`[bluetooth_js]AddService includeServices isPrimary failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info('[bluetooth_js]addService is not support');
+          expect(Number(error.code)).assertEqual(801);
+        } else {
+          expect(Number(error.code)).assertEqual(401);
+        }
+      }
+      done();
+    })
   })
 }

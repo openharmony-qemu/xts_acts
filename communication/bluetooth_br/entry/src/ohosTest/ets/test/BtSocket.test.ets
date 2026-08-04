@@ -2371,5 +2371,91 @@ export default function btSocketTest() {
             }
             done();
         })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_TYPE_OUTOFRANGE_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_TYPE_OUTOFRANGE_0100
+         * @tc.desc   Test SppConnect options.type is out of enum range api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_TYPE_OUTOFRANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let sppOption : bluetooth.SppOptions = {
+                    uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    secure: false,
+                    type: 3,
+                };
+                let functionSppConnect = async ()=>{
+                    return new Promise<number>((resolve,reject)=>{
+                        bluetooth.sppConnect('00:11:22:33:44:55', sppOption, (error, number: number) => {
+                            if (error) {
+                                console.info('[bluetooth_js] code is: ' + JSON.stringify(error));
+                                reject(error)
+                            } else {
+                                console.log('[bluetooth_js]sppConnect Number:' + JSON.stringify(number));
+                                resolve(number);
+                            }
+                        });
+                    })
+                }
+                let number = await functionSppConnect();
+                console.info(`sppConnect ${number}`);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_TYPE_OUTOFRANGE_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_TYPE_OUTOFRANGE_0200
+         * @tc.desc   Test SppConnect options.type is out of enum range api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_TYPE_OUTOFRANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let sppOption : bluetooth.SppOptions = {
+                    uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    secure: false,
+                    type: -1
+                };
+                let functionSppConnect = async ()=>{
+                    return new Promise<number>((resolve,reject)=>{
+                        bluetooth.sppConnect('00:11:22:33:44:55', sppOption, (error, number: number) => {
+                            if (error) {
+                                console.info('[bluetooth_js] code is: ' + JSON.stringify(error));
+                                reject(error)
+                            } else {
+                                console.log('[bluetooth_js]sppConnect Number:' + JSON.stringify(number));
+                                resolve(number);
+                            }
+                        });
+                    })
+                }
+                let number = await functionSppConnect();
+                console.info(`sppConnect ${number}`);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801 || error.code == 2900004) {
+                    console.info('[bluetooth_js]sppConnect is not support or profile not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(2900099);
+                }
+            }
+            done();
+        })
     })
 }
