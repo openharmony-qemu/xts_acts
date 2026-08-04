@@ -319,6 +319,8 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowSetGet3DMetadataValueMultipleCalls", nullptr, testNativeWindowSetGet3DMetadataValueMultipleCalls,
      nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowSet3DMetadataValueUnknown", nullptr, testNativeWindowSet3DMetadataValueUnknown,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

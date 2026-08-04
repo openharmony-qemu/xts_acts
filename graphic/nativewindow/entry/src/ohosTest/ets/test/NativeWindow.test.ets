@@ -2116,5 +2116,20 @@ export default function nativeWindowTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+    /**
+     * @tc.name   testNativeWindowSet3DMetadataValueUnknown
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_Set3DMetadataValue_0700
+     * @tc.desc   testNativeWindowSet3DMetadataValueUnknown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowSet3DMetadataValueUnknown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowSet3DMetadataValueUnknown();
+        expect(result).assertEqual(50002000);
+        done();
+      });
   })
 }
