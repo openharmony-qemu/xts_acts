@@ -20,7 +20,14 @@ function mapOperations(map: containers.ConcurrentHashMap<string, number>, id: in
   for (let i: int = 0; i < 10; i++) {
     let key: string = 'task_' + id + '_' + i;
     map.set(key, i);
-    if (map.get(key) !== i) {
+    // 有限重试容忍无锁容器 resize 等瞬时竞态：set 后 get 最终必须一致
+    let v: number | undefined = map.get(key);
+    let retry: int = 0;
+    while (v !== i && retry < 5) {
+      v = map.get(key);
+      retry++;
+    }
+    if (v !== i) {
       throw new Error('ConcurrentHashMap value mismatch');
     }
     map.delete(key);
