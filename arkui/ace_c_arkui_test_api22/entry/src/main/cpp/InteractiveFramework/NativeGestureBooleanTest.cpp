@@ -47,9 +47,13 @@ static napi_value False_OH_ArkUI_GestureInterruptInfo_GetSystemFlag(napi_env env
 
 static napi_value True_OH_ArkUI_GetGestureRecognizerEnabled(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    ArkUI_GestureRecognizer_ *GestureRecognizer_ = new ArkUI_GestureRecognizer_;
-    GestureRecognizer_ ->gesture = (ArkUIGesture_*)1;
-    auto result = OH_ArkUI_GetGestureRecognizerEnabled((ArkUI_GestureRecognizer*)GestureRecognizer_);
+    auto gestureApi = reinterpret_cast<ArkUI_NativeGestureAPI_1 *>(
+        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
+    if (!gestureApi) {
+        return nullptr;
+    }
+    auto GestureRecognizer = gestureApi->createPanGesture(1, ArkUI_GestureDirection::GESTURE_DIRECTION_ALL, 1);
+    auto result = OH_ArkUI_GetGestureRecognizerEnabled((ArkUI_GestureRecognizer*)GestureRecognizer);
     ASSERT_EQ(result, false);
     NAPI_END;
 }
@@ -63,8 +67,13 @@ static napi_value False_OH_ArkUI_GetGestureRecognizerEnabled(napi_env env, napi_
 
 static napi_value True_OH_ArkUI_IsBuiltInGesture(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    ArkUI_GestureRecognizer_ *GestureRecognizer_ = new ArkUI_GestureRecognizer_;
-    auto result = OH_ArkUI_IsBuiltInGesture((ArkUI_GestureRecognizer*)GestureRecognizer_);
+    auto gestureApi = reinterpret_cast<ArkUI_NativeGestureAPI_1 *>(
+        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
+    if (!gestureApi) {
+        return nullptr;
+    }
+    auto GestureRecognizer = gestureApi->createPanGesture(1, ArkUI_GestureDirection::GESTURE_DIRECTION_ALL, 1);
+    auto result = OH_ArkUI_IsBuiltInGesture(GestureRecognizer);
     ASSERT_EQ(result, false);
     NAPI_END;
 }
@@ -78,8 +87,13 @@ static napi_value False_OH_ArkUI_IsBuiltInGesture(napi_env env, napi_callback_in
 
 static napi_value True_OH_ArkUI_IsGestureRecognizerValid(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    ArkUI_GestureRecognizer_ *GestureRecognizer_ = new ArkUI_GestureRecognizer_;
-    auto result = OH_ArkUI_IsGestureRecognizerValid((ArkUI_GestureRecognizer*)GestureRecognizer_);
+    auto gestureApi = reinterpret_cast<ArkUI_NativeGestureAPI_1 *>(
+        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
+    if (!gestureApi) {
+        return nullptr;
+    }
+    auto GestureRecognizer = gestureApi->createPanGesture(1, ArkUI_GestureDirection::GESTURE_DIRECTION_ALL, 1);
+    auto result = OH_ArkUI_IsGestureRecognizerValid(GestureRecognizer);
     ASSERT_EQ(result, false);
     NAPI_END;
 }
