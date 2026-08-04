@@ -25,6 +25,7 @@ interface FilteredDevice {
 const FILTERED_DEVICES: Array<FilteredDevice> = [
   { vendorId: 3034, productId: 33107 },
   { vendorId: 65535, productId: 14131 },
+  { vendorId: 8457, productId: 13361 },
 ];
 
 function isFilteredDevice(device: deviceManager.USBDevice): boolean {
