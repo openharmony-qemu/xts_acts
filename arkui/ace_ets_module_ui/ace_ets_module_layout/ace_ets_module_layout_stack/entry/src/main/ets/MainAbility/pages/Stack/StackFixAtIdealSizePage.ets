@@ -19,14 +19,14 @@ struct StackFixAtIdealSizePage {
   @State width1: number = 50
   @State height1: number = 50
   build() {
-    Column() {
+    Column({space:5}) {
       Button('w=160 h=120').onClick(() => {
         this.width1 = 160
         this.height1 = 120
-      }).key('StackFixAtIdealSizePage_Btn').padding({bottom: 10})
+      }).key('StackFixAtIdealSizePage_Btn').height(15).width(120)
 
-      Column() {
-        Text('fixAtIdealSize')
+      Column({space:5}) {
+        Text('fixAtIdealSize').height(15)
 
         Stack() {
           Flex().width(this.width1).height(this.height1)
