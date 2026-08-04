@@ -110,6 +110,26 @@ export default class DialogApi26TestHelper {
     expect(node !== null).assertTrue();
   }
 
+  /** pressBack only when a known overlay marker is visible; never leave the page blindly. */
+  static async dismissOverlayIfAny(driver: Driver): Promise<void> {
+    let markers: string[] = [
+      'WillDismissTitle', 'CtrlTitle', 'AutoCloseTitle', 'CustomStyleContent',
+      'ComponentContentDialog', 'PresentUpdateContent', 'IsShowA', 'IsShowB', 'IsShowC',
+      'CustomIsShowX'
+    ];
+    for (let i = 0; i < markers.length; i++) {
+      try {
+        let node = await driver.findComponent(ON.text(markers[i]));
+        if (node !== null) {
+          await driver.pressBack();
+          await CommonFunc.sleep(DialogApi26TestHelper.SETTLE_MS);
+          return;
+        }
+      } catch (e) {
+      }
+    }
+  }
+
   static async leavePage(): Promise<void> {
     try {
       let driver = await Driver.create();
