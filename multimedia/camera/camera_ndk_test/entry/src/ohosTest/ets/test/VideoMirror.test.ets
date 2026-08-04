@@ -164,7 +164,7 @@ async function createOutput() {
   }
   console.info(TAG + 'Exit createVideoOutput');
 
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex, Parameter_Setting.ALL_PARAMETER_OK)) {
     console.info(TAG + "createPreviewOutput FAILED");
     expect().assertFail();
   }

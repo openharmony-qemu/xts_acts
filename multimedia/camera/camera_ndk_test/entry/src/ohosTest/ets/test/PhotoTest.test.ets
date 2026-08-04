@@ -505,7 +505,7 @@ function createPreviewOutput() {
       break;
     }
   }
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex, Parameter_Setting.ALL_PARAMETER_OK)) {
     console.info(TAG + "createPreviewOutput FAILED");
     expect().assertFail();
   }
@@ -526,7 +526,7 @@ function createHeifPreviewOutput() {
       break;
     }
   }
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex, Parameter_Setting.ALL_PARAMETER_OK)) {
     console.info(TAG + "createPreviewOutput FAILED");
     expect().assertFail();
   }
