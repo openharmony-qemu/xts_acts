@@ -17,6 +17,7 @@ group("ActsWebMultiMediaTest") {
     deps = [
       "internet_video_playback_eight:ActsAceWebInternetVideoPlaybackEightTest",
       "internet_video_playback_eleven:ActsAceWebInternetVideoPlaybackElevenTest",
+      "internet_video_playback_eleven_static:ActsAceWebInternetVideoPlaybackElevenStaticTest",
       "internet_video_playback_five:ActsAceWebInternetVideoPlaybackFiveTest",
       "internet_video_playback_four:ActsAceWebInternetVideoPlaybackFourTest",
       "internet_video_playback_nine:ActsAceWebInternetVideoPlaybackNineTest",
