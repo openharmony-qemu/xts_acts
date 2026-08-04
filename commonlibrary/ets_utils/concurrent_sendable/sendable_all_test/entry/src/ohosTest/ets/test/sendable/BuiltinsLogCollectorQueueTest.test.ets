@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -104,14 +104,28 @@ export default function BuiltinsLogCollectorQueueTest(): void {
     beforeEach((): void => {
       logQueue = new LogCollectorQueue(new collections.Array<LogEntry>(), new ArkTSUtils.locks.AsyncLock())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testLogCollectorQueue0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0100
+     * @tc.desc   Verify testLogCollectorQueue0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLogCollectorQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'test log', Date.now())
       expect(success).assertTrue()
       expect(await logQueue.size()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testLogCollectorQueue0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0200
+     * @tc.desc   Verify testLogCollectorQueue0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLogCollectorQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await logQueue.enqueue(LogLevel.DEBUG, 'debug log', Date.now())
       await logQueue.enqueue(LogLevel.INFO, 'info log', Date.now())
@@ -120,7 +134,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(4)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testLogCollectorQueue0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0300
+     * @tc.desc   Verify testLogCollectorQueue0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLogCollectorQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -130,7 +151,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLogCollectorQueue0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0400
+     * @tc.desc   Verify testLogCollectorQueue0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLogCollectorQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 100; i++) {
@@ -148,7 +176,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLogCollectorQueue0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0500
+     * @tc.desc   Verify testLogCollectorQueue0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLogCollectorQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
@@ -167,7 +202,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.getTotalEnqueued()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testLogCollectorQueue0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0600
+     * @tc.desc   Verify testLogCollectorQueue0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLogCollectorQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       logQueue.capacity_ = 50
       for (let i = 0; i < 50; i++) {
@@ -178,7 +220,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(success).assertFalse()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLogCollectorQueue0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0700
+     * @tc.desc   Verify testLogCollectorQueue0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLogCollectorQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       logQueue.capacity_ = 10
       for (let i = 0; i < 10; i++) {
@@ -190,7 +239,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(success).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testLogCollectorQueue0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0800
+     * @tc.desc   Verify testLogCollectorQueue0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLogCollectorQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 20; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -200,7 +256,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.getTotalDequeued()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLogCollectorQueue0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_0900
+     * @tc.desc   Verify testLogCollectorQueue0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLogCollectorQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -210,7 +273,14 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.isEmpty()).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testLogCollectorQueue1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LOGCOLLECTORQUEUE_TEST_1000
+     * @tc.desc   Verify testLogCollectorQueue1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLogCollectorQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 50; i++) {

@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -168,20 +168,41 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       await pool.shutdown()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionTimeout0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0100
+     * @tc.desc   Verify testConnectionTimeout0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionTimeout0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       expect(await pool.checkLeak()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionTimeout0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0200
+     * @tc.desc   Verify testConnectionTimeout0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionTimeout0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       expect(await pool.checkLeak()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionTimeout0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0300
+     * @tc.desc   Verify testConnectionTimeout0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionTimeout0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
@@ -189,7 +210,14 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(await pool.checkLeak()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0400
+     * @tc.desc   Verify testConnectionTimeout0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conns: TimeoutConnection[] = []
@@ -204,7 +232,14 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(await pool.checkLeak()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0500
+     * @tc.desc   Verify testConnectionTimeout0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
@@ -213,7 +248,14 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(idle >= 1).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0600
+     * @tc.desc   Verify testConnectionTimeout0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
@@ -222,21 +264,42 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(released >= 1).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0700
+     * @tc.desc   Verify testConnectionTimeout0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const released: number = await pool.releaseIdleConnections(0)
       expect(released).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0800
+     * @tc.desc   Verify testConnectionTimeout0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       expect((conn as TimeoutConnection).lastUsedAt_ > 0).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_0900
+     * @tc.desc   Verify testConnectionTimeout0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       await pool.acquire()
@@ -247,7 +310,14 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(await pool.getLeakedCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_1000
+     * @tc.desc   Verify testConnectionTimeout1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: TimeoutConnection | null = await pool.acquire()
@@ -257,7 +327,14 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(released >= 1).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionTimeout1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONTIMEOUT_TEST_1100
+     * @tc.desc   Verify testConnectionTimeout1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionTimeout1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()

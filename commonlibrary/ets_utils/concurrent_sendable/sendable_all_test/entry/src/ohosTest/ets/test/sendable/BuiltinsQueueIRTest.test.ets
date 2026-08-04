@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -147,7 +147,14 @@ function produceIRTask(v: number): number {
 
 export default function BuiltinsQueueIRTest(): void {
   describe('BuiltinsQueueIRTest', (): void => {
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testQueueIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0100
+     * @tc.desc   Verify testQueueIR0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testQueueIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1024; i++) {
@@ -156,7 +163,14 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getSize()).assertEqual(1024)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0200
+     * @tc.desc   Verify testQueueIR0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
@@ -170,7 +184,14 @@ export default function BuiltinsQueueIRTest(): void {
       expect(lastItem).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0300
+     * @tc.desc   Verify testQueueIR0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pcQueue: ProducerConsumerIRQueue = new ProducerConsumerIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {
@@ -182,7 +203,14 @@ export default function BuiltinsQueueIRTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0400
+     * @tc.desc   Verify testQueueIR0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -204,7 +232,14 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getSize()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0500
+     * @tc.desc   Verify testQueueIR0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let cycle = 0; cycle < 10; cycle++) {
@@ -218,7 +253,14 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getSize()).assertEqual(500)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0600
+     * @tc.desc   Verify testQueueIR0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: ElementIRQueue = new ElementIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       await queue.lock_.lockAsync((): void => {
@@ -230,7 +272,14 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue.getElement(99)).assertEqual(99)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0700
+     * @tc.desc   Verify testQueueIR0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       await queue.enqueue(1)
@@ -240,7 +289,14 @@ export default function BuiltinsQueueIRTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0800
+     * @tc.desc   Verify testQueueIR0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: CapacityIRQueue = new CapacityIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       expect(await queue.getCapacity()).assertEqual(1024)
@@ -252,7 +308,14 @@ export default function BuiltinsQueueIRTest(): void {
       expect(queue.items_.length).assertEqual(1024)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_0900
+     * @tc.desc   Verify testQueueIR0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue1: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       const queue2: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
@@ -262,7 +325,14 @@ export default function BuiltinsQueueIRTest(): void {
       expect(await queue2.getSize()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testQueueIR1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_QUEUEIR_TEST_1000
+     * @tc.desc   Verify testQueueIR1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testQueueIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const queue: CrossThreadIRQueue = new CrossThreadIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       await queue.lock_.lockAsync((): void => {

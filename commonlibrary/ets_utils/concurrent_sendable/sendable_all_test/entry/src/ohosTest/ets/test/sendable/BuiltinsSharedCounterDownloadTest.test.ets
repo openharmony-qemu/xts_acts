@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -104,14 +104,28 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
     beforeEach((): void => {
       progress = new DownloadProgress(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterDownload0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0100
+     * @tc.desc   Verify testSharedCounterDownload0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterDownload0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(1)
       expect(progress.getChunkProgress(0)).assertEqual(0)
       expect(await progress.getTotalProgress()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterDownload0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0200
+     * @tc.desc   Verify testSharedCounterDownload0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterDownload0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(1)
       await progress.updateChunkProgress(0, 50)
@@ -119,7 +133,14 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterDownload0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0300
+     * @tc.desc   Verify testSharedCounterDownload0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterDownload0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(1)
       await progress.updateChunkProgress(0, 100)
@@ -128,7 +149,14 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterDownload0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0400
+     * @tc.desc   Verify testSharedCounterDownload0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterDownload0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(5)
       const tasks: taskpool.Task[] = []
@@ -147,7 +175,14 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.getTotalProgress()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterDownload0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0500
+     * @tc.desc   Verify testSharedCounterDownload0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterDownload0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(10)
       for (let i = 0; i < 10; i++) {
@@ -157,7 +192,14 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterDownload0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0600
+     * @tc.desc   Verify testSharedCounterDownload0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterDownload0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(3)
       const task0 = new taskpool.Task(downloadChunk, 0)
@@ -176,7 +218,14 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(await progress.getCompletedChunks()).assertLargerOrEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterDownload0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0700
+     * @tc.desc   Verify testSharedCounterDownload0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterDownload0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       progress.setTotalChunks(3)
       const task = new taskpool.Task(downloadChunk, 0)
@@ -185,7 +234,14 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
       expect(progress.getChunkProgress(0)).assertLargerOrEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterDownload0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERDOWNLOAD_TEST_0800
+     * @tc.desc   Verify testSharedCounterDownload0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterDownload0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(2)
       await progress.updateChunkProgress(0, 100)

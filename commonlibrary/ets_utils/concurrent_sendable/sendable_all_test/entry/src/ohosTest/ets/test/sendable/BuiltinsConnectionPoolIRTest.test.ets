@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -170,14 +170,28 @@ function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
 
 export default function BuiltinsConnectionPoolIRTest(): void {
   describe('BuiltinsConnectionPoolIRTest', () => {
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionPoolIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0100
+     * @tc.desc   Verify testConnectionPoolIR0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionPoolIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionPoolIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0200
+     * @tc.desc   Verify testConnectionPoolIR0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionPoolIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
@@ -185,7 +199,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getActiveCount()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConnectionPoolIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0300
+     * @tc.desc   Verify testConnectionPoolIR0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConnectionPoolIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
@@ -197,7 +218,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionPoolIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0400
+     * @tc.desc   Verify testConnectionPoolIR0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionPoolIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRFieldPool = new IRFieldPool(new ArkTSUtils.locks.AsyncLock())
       await pool.updateFields()
@@ -206,7 +234,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getField3()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConnectionPoolIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0500
+     * @tc.desc   Verify testConnectionPoolIR0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConnectionPoolIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pool: IRFieldPool = new IRFieldPool(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -219,7 +254,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getField3()).assertEqual(15)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionPoolIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0600
+     * @tc.desc   Verify testConnectionPoolIR0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionPoolIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool1: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       const pool2: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
@@ -229,7 +271,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool2.getActiveCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0700
+     * @tc.desc   Verify testConnectionPoolIR0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
@@ -238,7 +287,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0800
+     * @tc.desc   Verify testConnectionPoolIR0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
@@ -247,7 +303,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(accessCount > 0).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConnectionPoolIR0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_0900
+     * @tc.desc   Verify testConnectionPoolIR0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConnectionPoolIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pool: IRFieldPool = new IRFieldPool(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -260,7 +323,14 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getField3()).assertEqual(30)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolIR1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLIR_TEST_1000
+     * @tc.desc   Verify testConnectionPoolIR1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)

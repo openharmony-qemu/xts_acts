@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -87,14 +87,28 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
     beforeEach((): void => {
       counter = new TaskCompletionCounter()
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0100
+     * @tc.desc   Verify testSharedCounterTaskComplete0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterTaskComplete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(counter.getCompleted()).assertEqual(0)
       expect(counter.getFailed()).assertEqual(0)
       expect(counter.getTotal()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0200
+     * @tc.desc   Verify testSharedCounterTaskComplete0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterTaskComplete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.setTotal(1)
       const task = new taskpool.Task(taskGroupItem, counter)
@@ -102,7 +116,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(result as number).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0300
+     * @tc.desc   Verify testSharedCounterTaskComplete0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterTaskComplete0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let caught: boolean = false
       counter.setTotal(1)
@@ -120,7 +141,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0400
+     * @tc.desc   Verify testSharedCounterTaskComplete0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterTaskComplete0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(3)
       const tasks: taskpool.Task[] = []
@@ -135,7 +163,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0500
+     * @tc.desc   Verify testSharedCounterTaskComplete0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterTaskComplete0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(5)
       const tasks: taskpool.Task[] = []
@@ -150,7 +185,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0600
+     * @tc.desc   Verify testSharedCounterTaskComplete0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterTaskComplete0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(10)
       const tasks: taskpool.Task[] = []
@@ -165,7 +207,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0700
+     * @tc.desc   Verify testSharedCounterTaskComplete0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterTaskComplete0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(100)
       const tasks: taskpool.Task[] = []
@@ -180,7 +229,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(results.length).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0800
+     * @tc.desc   Verify testSharedCounterTaskComplete0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterTaskComplete0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(5)
       const tasks: taskpool.Task[] = []
@@ -208,7 +264,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(failCount).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_0900
+     * @tc.desc   Verify testSharedCounterTaskComplete0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterTaskComplete0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(1)
       const task = new taskpool.Task(sendDataCountTask, counter)
@@ -229,7 +292,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
       expect(counter.getCompleted()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterTaskComplete1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERTASKCOMPLETE_TEST_1000
+     * @tc.desc   Verify testSharedCounterTaskComplete1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterTaskComplete1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       counter.setTotal(5)
       const group = new taskpool.TaskGroup()

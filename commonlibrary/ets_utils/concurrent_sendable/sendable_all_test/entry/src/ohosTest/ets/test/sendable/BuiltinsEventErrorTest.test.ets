@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -121,21 +121,42 @@ export default function BuiltinsEventErrorTest(): void {
       await bus.reset()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventError0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0100
+     * @tc.desc   Verify testEventError0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: string = await bus.publishWithHandler('click', 'data', false)
       expect(result).assertEqual('ok:click')
       expect(await bus.getSuccessCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventError0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0200
+     * @tc.desc   Verify testEventError0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: string = await bus.publishWithHandler('click', 'data', true)
       expect(result).assertEqual('error:click')
       expect(await bus.getErrorCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventError0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0300
+     * @tc.desc   Verify testEventError0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventError0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data_1', false)
       await bus.publishWithHandler('click', 'data_2', true)
@@ -143,13 +164,27 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventError0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0400
+     * @tc.desc   Verify testEventError0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventError0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data', true)
       expect(await bus.getErrorLogLength()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventError0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0500
+     * @tc.desc   Verify testEventError0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventError0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -163,7 +198,14 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorCount() >= 5).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventError0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0600
+     * @tc.desc   Verify testEventError0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventError0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data', true)
       await bus.reset()
@@ -171,14 +213,28 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorLogLength()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventError0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0700
+     * @tc.desc   Verify testEventError0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventError0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       const result: string = await bus.publishWithHandler('click', 'data', false)
       expect(result).assertEqual('ok:click')
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventError0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0800
+     * @tc.desc   Verify testEventError0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventError0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.publishWithHandler('click', `data_${i}`, true)
@@ -187,7 +243,14 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorLogLength()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventError0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_0900
+     * @tc.desc   Verify testEventError0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventError0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -197,7 +260,14 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorCount() >= 10).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventError1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTERROR_TEST_1000
+     * @tc.desc   Verify testEventError1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventError1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data', false)
       await bus.publishWithHandler('hover', 'data', true)

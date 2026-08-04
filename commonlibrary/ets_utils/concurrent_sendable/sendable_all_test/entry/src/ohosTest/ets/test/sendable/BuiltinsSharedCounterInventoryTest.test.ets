@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -86,14 +86,28 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
     beforeEach((): void => {
       inventory = new InventoryCounter()
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterInventory0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0100
+     * @tc.desc   Verify testSharedCounterInventory0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterInventory0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(100)
       expect(inventory.getStock()).assertEqual(100)
       expect(inventory.getSold()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterInventory0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0200
+     * @tc.desc   Verify testSharedCounterInventory0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterInventory0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       const success: boolean = inventory.purchase(1)
@@ -102,7 +116,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterInventory0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0300
+     * @tc.desc   Verify testSharedCounterInventory0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterInventory0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(5)
       const success: boolean = inventory.purchase(10)
@@ -110,7 +131,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getStock()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterInventory0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0400
+     * @tc.desc   Verify testSharedCounterInventory0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterInventory0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       inventory.purchase(3)
@@ -119,7 +147,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterInventory0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0500
+     * @tc.desc   Verify testSharedCounterInventory0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterInventory0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(5)
       const tasks: taskpool.Task[] = []
@@ -142,7 +177,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterInventory0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0600
+     * @tc.desc   Verify testSharedCounterInventory0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterInventory0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(0)
       const tasks: taskpool.Task[] = []
@@ -164,7 +206,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getStock()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterInventory0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0700
+     * @tc.desc   Verify testSharedCounterInventory0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterInventory0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(50)
       const tasks: taskpool.Task[] = []
@@ -187,7 +236,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSharedCounterInventory0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0800
+     * @tc.desc   Verify testSharedCounterInventory0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSharedCounterInventory0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(100)
       const tasks: taskpool.Task[] = []
@@ -209,7 +265,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getStock()).assertLargerOrEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterInventory0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_0900
+     * @tc.desc   Verify testSharedCounterInventory0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterInventory0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       expect(inventory.isInStock()).assertTrue()
@@ -217,7 +280,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.isInStock()).assertFalse()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSharedCounterInventory1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHAREDCOUNTERINVENTORY_TEST_1000
+     * @tc.desc   Verify testSharedCounterInventory1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSharedCounterInventory1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       inventory.purchase(5)

@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -109,7 +109,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       await bus.reset()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0100
+     * @tc.desc   Verify testMultiThreadEvent0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -119,7 +126,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0200
+     * @tc.desc   Verify testMultiThreadEvent0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await bus.subscribe('click', 'handler_1')
       const tasks: taskpool.Task[] = []
@@ -130,7 +144,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getPublishCount() >= 10).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0300
+     * @tc.desc   Verify testMultiThreadEvent0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const subTasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -145,7 +166,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getPublishCount() >= 5).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0400
+     * @tc.desc   Verify testMultiThreadEvent0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const subTasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -157,7 +185,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('hover')).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0500
+     * @tc.desc   Verify testMultiThreadEvent0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 20; i++) {
@@ -168,7 +203,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getQueueLength() >= 20).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0600
+     * @tc.desc   Verify testMultiThreadEvent0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -183,7 +225,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getPublishCount() >= 20).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0700
+     * @tc.desc   Verify testMultiThreadEvent0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 50; i++) {
@@ -193,7 +242,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0800
+     * @tc.desc   Verify testMultiThreadEvent0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -205,7 +261,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getSubscriberCount('event_2') > 0).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_0900
+     * @tc.desc   Verify testMultiThreadEvent0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -215,7 +278,14 @@ export default function BuiltinsMultiThreadEventTest(): void {
       expect(await bus.getQueueLength() >= 10).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testMultiThreadEvent1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREADEVENT_TEST_1000
+     * @tc.desc   Verify testMultiThreadEvent1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMultiThreadEvent1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {

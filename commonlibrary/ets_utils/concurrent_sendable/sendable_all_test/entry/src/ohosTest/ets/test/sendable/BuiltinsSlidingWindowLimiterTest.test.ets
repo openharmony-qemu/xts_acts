@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -198,14 +198,28 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       })
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0100
+     * @tc.desc   Verify testSlidingWindowLimiter0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSlidingWindowLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const limiter: SlidingWindowLimiter = await manager.createLimiter('test_window', 1000, 5)
       expect(limiter.getWindowSize()).assertEqual(1000)
       expect(limiter.getMaxRequests()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0200
+     * @tc.desc   Verify testSlidingWindowLimiter0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSlidingWindowLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.createLimiter('basic_window', 1000, 3)
 
@@ -216,7 +230,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(r2).assertTrue()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0300
+     * @tc.desc   Verify testSlidingWindowLimiter0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSlidingWindowLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.createLimiter('reject_window', 1000, 2)
 
@@ -227,7 +248,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(r3).assertFalse()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0400
+     * @tc.desc   Verify testSlidingWindowLimiter0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSlidingWindowLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.createLimiter('count_window', 1000, 2)
 
@@ -239,7 +267,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalSuccess('count_window')).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0500
+     * @tc.desc   Verify testSlidingWindowLimiter0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSlidingWindowLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('concurrent_window', 1000, 5)
 
@@ -253,13 +288,27 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalSuccess('concurrent_window')).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0600
+     * @tc.desc   Verify testSlidingWindowLimiter0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlidingWindowLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await manager.request('nonexistent')
       expect(result).assertFalse()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0700
+     * @tc.desc   Verify testSlidingWindowLimiter0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSlidingWindowLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('batch3_window', 1000, 3)
 
@@ -272,7 +321,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalRequests('batch3_window')).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0800
+     * @tc.desc   Verify testSlidingWindowLimiter0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSlidingWindowLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('batch5_window', 1000, 5)
 
@@ -285,7 +341,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalRequests('batch5_window')).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testSlidingWindowLimiter0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_0900
+     * @tc.desc   Verify testSlidingWindowLimiter0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSlidingWindowLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('batch10_window', 1000, 5)
 
@@ -299,7 +362,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalSuccess('batch10_window')).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testSlidingWindowLimiter1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDINGWINDOWLIMITER_TEST_1000
+     * @tc.desc   Verify testSlidingWindowLimiter1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlidingWindowLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const limiter1: SlidingWindowLimiter = await manager.createLimiter('idempotent', 1000, 10)
       const limiter2: SlidingWindowLimiter = await manager.createLimiter('idempotent', 2000, 20)

@@ -96,14 +96,28 @@ export default function BuiltinsReadWriteLockTest(): void {
     beforeEach((): void => {
       resource = new ReadWriteResource(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable(), new ArkTSUtils.locks.ConditionVariable())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testReadWriteLock0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0100
+     * @tc.desc   Verify testReadWriteLock0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testReadWriteLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await resource.write(100)
       const value: number = await resource.read()
       expect(value).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testReadWriteLock0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0200
+     * @tc.desc   Verify testReadWriteLock0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testReadWriteLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
@@ -113,7 +127,14 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getWriteCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testReadWriteLock0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0300
+     * @tc.desc   Verify testReadWriteLock0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testReadWriteLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
@@ -124,7 +145,14 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(value >= 0 && value < 10).assertTrue()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testReadWriteLock0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0400
+     * @tc.desc   Verify testReadWriteLock0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testReadWriteLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await resource.write(50)
       const promises: Promise<number>[] = []
@@ -137,7 +165,14 @@ export default function BuiltinsReadWriteLockTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testReadWriteLock0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0500
+     * @tc.desc   Verify testReadWriteLock0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testReadWriteLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await resource.write(100)
       const promises: Promise<number>[] = []
@@ -148,7 +183,14 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getReadCount()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testReadWriteLock0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0600
+     * @tc.desc   Verify testReadWriteLock0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testReadWriteLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await resource.write(0)
       const readTasks: taskpool.Task[] = []
@@ -168,7 +210,14 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getWriteCount()).assertLargerOrEqual(3)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testReadWriteLock0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0700
+     * @tc.desc   Verify testReadWriteLock0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testReadWriteLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let readCompleted: boolean = false
       const writePromise: Promise<void> = resource.write(200)
@@ -181,7 +230,14 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(readCompleted).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testReadWriteLock0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0800
+     * @tc.desc   Verify testReadWriteLock0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testReadWriteLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 5; i++) {
         await resource.write(i * 10)
@@ -192,7 +248,14 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getReadCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testReadWriteLock0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_READWRITELOCK_TEST_0900
+     * @tc.desc   Verify testReadWriteLock0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testReadWriteLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void | number>[] = []
       for (let i = 0; i < 20; i++) {

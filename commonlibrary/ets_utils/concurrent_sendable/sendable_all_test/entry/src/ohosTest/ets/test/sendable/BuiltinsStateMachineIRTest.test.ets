@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -156,7 +156,14 @@ async function transitionIRTask(sm: StableIRStateMachine, ns: number): Promise<v
 
 export default function BuiltinsStateMachineIRTest(): void {
   describe('BuiltinsStateMachineIRTest', () => {
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0100
+     * @tc.desc   Verify testStateMachineIR0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
       const states: number[] = await sm.getIRStates()
@@ -164,14 +171,28 @@ export default function BuiltinsStateMachineIRTest(): void {
       expect(states[1]).assertEqual(-1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0200
+     * @tc.desc   Verify testStateMachineIR0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm: TransitionIRStateMachine = new TransitionIRStateMachine(new ArkTSUtils.locks.AsyncLock())
       await sm.transition(1)
       expect(await sm.getState()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0300
+     * @tc.desc   Verify testStateMachineIR0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm1: SharedHiddenClassStateMachine = new SharedHiddenClassStateMachine(new ArkTSUtils.locks.AsyncLock())
       const sm2: SharedHiddenClassStateMachine = new SharedHiddenClassStateMachine(new ArkTSUtils.locks.AsyncLock())
@@ -179,7 +200,14 @@ export default function BuiltinsStateMachineIRTest(): void {
       expect(sm2.state_).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0400
+     * @tc.desc   Verify testStateMachineIR0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm: ICStateMachine = new ICStateMachine(new ArkTSUtils.locks.AsyncLock())
       for (let i: number = 0; i < 50; i++) {
@@ -187,7 +215,14 @@ export default function BuiltinsStateMachineIRTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0500
+     * @tc.desc   Verify testStateMachineIR0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm: CrossThreadStateMachine = new CrossThreadStateMachine(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -204,7 +239,14 @@ export default function BuiltinsStateMachineIRTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0600
+     * @tc.desc   Verify testStateMachineIR0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm: HistoryIRStateMachine = new HistoryIRStateMachine(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       await sm.lock_.lockAsync((): void => {
@@ -215,7 +257,14 @@ export default function BuiltinsStateMachineIRTest(): void {
       expect(sm.history_.length).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0700
+     * @tc.desc   Verify testStateMachineIR0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm: StableIRStateMachine = new StableIRStateMachine(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -231,7 +280,14 @@ export default function BuiltinsStateMachineIRTest(): void {
       expect(finalState).assertLargerOrEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testStateMachineIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_STATEMACHINEIR_TEST_0800
+     * @tc.desc   Verify testStateMachineIR0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testStateMachineIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm: BoundaryStateMachine = new BoundaryStateMachine(new ArkTSUtils.locks.AsyncLock())
       const props: number[] = await sm.getIRProperties()

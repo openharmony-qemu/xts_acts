@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -124,7 +124,14 @@ function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
 
 export default function BuiltinsProgressIRTest(): void {
   describe('BuiltinsProgressIRTest', () => {
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testProgressIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0100
+     * @tc.desc   Verify testProgressIR0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testProgressIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -132,7 +139,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getAccessCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testProgressIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0200
+     * @tc.desc   Verify testProgressIR0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testProgressIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -141,7 +155,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getProgress()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testProgressIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0300
+     * @tc.desc   Verify testProgressIR0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testProgressIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -156,7 +177,14 @@ export default function BuiltinsProgressIRTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testProgressIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0400
+     * @tc.desc   Verify testProgressIR0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testProgressIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.updateFields()
@@ -165,7 +193,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testProgressIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0500
+     * @tc.desc   Verify testProgressIR0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testProgressIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -178,7 +213,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(15)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testProgressIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0600
+     * @tc.desc   Verify testProgressIR0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testProgressIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker1: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       const tracker2: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
@@ -190,7 +232,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker2.getProgress()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testProgressIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0700
+     * @tc.desc   Verify testProgressIR0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgressIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
@@ -201,7 +250,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testProgressIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0800
+     * @tc.desc   Verify testProgressIR0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgressIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(50)
@@ -212,7 +268,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testProgressIR0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_0900
+     * @tc.desc   Verify testProgressIR0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testProgressIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -225,7 +288,14 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(30)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testProgressIR1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROGRESSIR_TEST_1000
+     * @tc.desc   Verify testProgressIR1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgressIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)

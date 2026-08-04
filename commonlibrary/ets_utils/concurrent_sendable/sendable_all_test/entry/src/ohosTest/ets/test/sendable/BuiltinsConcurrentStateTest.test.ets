@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -120,7 +120,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       await stateMachine.reset()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0100
+     * @tc.desc   Verify testConcurrentState0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -132,7 +139,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0200
+     * @tc.desc   Verify testConcurrentState0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 50; i++) {
@@ -144,7 +158,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL3 */
+    /**
+     * @tc.name   testConcurrentState0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0300
+     * @tc.desc   Verify testConcurrentState0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testConcurrentState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 100; i++) {
@@ -161,7 +182,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(allSame).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0400
+     * @tc.desc   Verify testConcurrentState0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -178,7 +206,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.ACTIVE)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConcurrentState0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0500
+     * @tc.desc   Verify testConcurrentState0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConcurrentState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 10; i++) {
         await stateMachine.transition(SimpleState.ACTIVE)
@@ -189,7 +224,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getHistoryCount()).assertEqual(30)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0600
+     * @tc.desc   Verify testConcurrentState0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const readTasks: taskpool.Task[] = []
       const writeTasks: taskpool.Task[] = []
@@ -209,7 +251,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(finalState === SimpleState.IDLE || finalState === SimpleState.ACTIVE).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0700
+     * @tc.desc   Verify testConcurrentState0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await stateMachine.transition(SimpleState.STOPPED)
       let successCount: number = 0
@@ -223,7 +272,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.STOPPED)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0800
+     * @tc.desc   Verify testConcurrentState0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 100; i++) {
         await stateMachine.transition(SimpleState.ACTIVE)
@@ -233,7 +289,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getHistoryCount()).assertEqual(200)
     })
 
-    /** @tc.level  LEVEL3 */
+    /**
+     * @tc.name   testConcurrentState0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_0900
+     * @tc.desc   Verify testConcurrentState0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testConcurrentState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       for (let i: number = 0; i < 1000; i++) {
         await stateMachine.transition(SimpleState.ACTIVE)
@@ -243,7 +306,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getTransitionCount()).assertEqual(3000)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_1000
+     * @tc.desc   Verify testConcurrentState1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm1: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
       const sm2: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
@@ -275,7 +345,14 @@ export default function BuiltinsConcurrentStateTest(): void {
       await sm3.reset()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConcurrentState1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENTSTATE_TEST_1100
+     * @tc.desc   Verify testConcurrentState1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConcurrentState1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await stateMachine.transition(SimpleState.ACTIVE)
       await stateMachine.transition(SimpleState.PAUSED)

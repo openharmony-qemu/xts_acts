@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -131,27 +131,55 @@ export default function BuiltinsEventSubscribeTest(): void {
       await bus.reset()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventSubscribe0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0100
+     * @tc.desc   Verify testEventSubscribe0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventSubscribe0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventSubscribe0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0200
+     * @tc.desc   Verify testEventSubscribe0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventSubscribe0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
       expect(await bus.getSubscriberCount('click')).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventSubscribe0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0300
+     * @tc.desc   Verify testEventSubscribe0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventSubscribe0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.unsubscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventSubscribe0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0400
+     * @tc.desc   Verify testEventSubscribe0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventSubscribe0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
@@ -159,12 +187,26 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventSubscribe0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0500
+     * @tc.desc   Verify testEventSubscribe0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventSubscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await bus.getSubscriberCount('unknown')).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventSubscribe0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0600
+     * @tc.desc   Verify testEventSubscribe0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventSubscribe0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('hover', 'handler_2')
@@ -172,13 +214,27 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('hover')).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventSubscribe0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0700
+     * @tc.desc   Verify testEventSubscribe0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventSubscribe0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.unsubscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventSubscribe0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0800
+     * @tc.desc   Verify testEventSubscribe0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventSubscribe0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void>[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -188,7 +244,14 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventSubscribe0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_0900
+     * @tc.desc   Verify testEventSubscribe0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventSubscribe0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.subscribe('click', `handler_${i}`)
@@ -197,7 +260,14 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventSubscribe1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTSUBSCRIBE_TEST_1000
+     * @tc.desc   Verify testEventSubscribe1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventSubscribe1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_1')

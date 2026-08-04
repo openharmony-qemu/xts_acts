@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -123,7 +123,14 @@ export default function BuiltinsEventPublishTest(): void {
       await bus.reset()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventPublish0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0100
+     * @tc.desc   Verify testEventPublish0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventPublish0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       const count: number = await bus.publish('click', 'test_data')
@@ -131,7 +138,14 @@ export default function BuiltinsEventPublishTest(): void {
       expect(await bus.getQueueLength()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventPublish0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0200
+     * @tc.desc   Verify testEventPublish0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventPublish0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
@@ -139,14 +153,28 @@ export default function BuiltinsEventPublishTest(): void {
       expect(count).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventPublish0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0300
+     * @tc.desc   Verify testEventPublish0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventPublish0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const count: number = await bus.publish('click', 'test_data')
       expect(count).assertEqual(0)
       expect(await bus.getQueueLength()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventPublish0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0400
+     * @tc.desc   Verify testEventPublish0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventPublish0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.publish('click', 'data_1')
       await bus.publish('click', 'data_2')
@@ -154,7 +182,14 @@ export default function BuiltinsEventPublishTest(): void {
       expect(await bus.getQueueLength()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testEventPublish0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0500
+     * @tc.desc   Verify testEventPublish0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEventPublish0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('hover', 'handler_2')
@@ -164,7 +199,14 @@ export default function BuiltinsEventPublishTest(): void {
       expect(c2).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventPublish0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0600
+     * @tc.desc   Verify testEventPublish0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventPublish0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await bus.subscribe('click', 'handler_1')
       const tasks: taskpool.Task[] = []
@@ -175,7 +217,14 @@ export default function BuiltinsEventPublishTest(): void {
       expect(await bus.getPublishCount() >= 10).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testEventPublish0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0700
+     * @tc.desc   Verify testEventPublish0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testEventPublish0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
@@ -187,7 +236,14 @@ export default function BuiltinsEventPublishTest(): void {
       expect(await bus.getPublishCount() >= 5).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventPublish0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0800
+     * @tc.desc   Verify testEventPublish0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventPublish0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 10; i++) {
         await bus.publish('click', `data_${i}`)
@@ -196,7 +252,14 @@ export default function BuiltinsEventPublishTest(): void {
       expect(await bus.getQueueLength()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventPublish0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_0900
+     * @tc.desc   Verify testEventPublish0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventPublish0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publish('click', 'data')
       await bus.reset()
@@ -204,7 +267,14 @@ export default function BuiltinsEventPublishTest(): void {
       expect(await bus.getQueueLength()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testEventPublish1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_EVENTPUBLISH_TEST_1000
+     * @tc.desc   Verify testEventPublish1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventPublish1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.publish('click', '')
