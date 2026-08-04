@@ -23,6 +23,9 @@
 #include "common/log_common.h"
 #include <vector>
 
+#undef LOG_DOMAIN
+#define LOG_DOMAIN 0xD003200
+#define LOG_TAG "NativeBuf"
 
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
@@ -612,4 +615,64 @@ napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info)
     }
     napi_create_int32(env, NUMBER_0, &result);
     return result;
+}
+
+static napi_value SetColorSpaceAndVerify(napi_env env, OH_NativeBuffer_ColorSpace colorSpace,
+    const char *tag)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config nativeBufferConfig = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
+    if (nativeBuffer == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "%{public}s alloc failed", tag);
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t ret = OH_NativeBuffer_SetColorSpace(nativeBuffer, colorSpace);
+    if (ret == NATIVE_ERROR_UNSUPPORTED) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "%{public}s unsupported, treat as ok", tag);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
+        return result;
+    }
+    if (ret != NATIVE_ERROR_OK) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "%{public}s SetColorSpace failed: %{public}d", tag, ret);
+        napi_create_int32(env, ret, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    OH_NativeBuffer_ColorSpace getColorSpace;
+    ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &getColorSpace);
+    if (ret != NATIVE_ERROR_OK) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "%{public}s GetColorSpace failed: %{public}d", tag, ret);
+        napi_create_int32(env, ret, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    if (getColorSpace != colorSpace) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "%{public}s color mismatch: %{public}d", tag,
+            static_cast<int>(getColorSpace));
+        napi_create_int32(env, FAIL, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "%{public}s success", tag);
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+
+napi_value OHNativeBufferSetColorSpaceBt2020LogFull(napi_env env, napi_callback_info info)
+{
+    return SetColorSpaceAndVerify(env, OH_COLORSPACE_BT2020_LOG_FULL, "Bt2020LogFull");
+}
+
+napi_value OHNativeBufferSetColorSpaceBt2020LogLimit(napi_env env, napi_callback_info info)
+{
+    return SetColorSpaceAndVerify(env, OH_COLORSPACE_BT2020_LOG_LIMIT, "Bt2020LogLimit");
 }
