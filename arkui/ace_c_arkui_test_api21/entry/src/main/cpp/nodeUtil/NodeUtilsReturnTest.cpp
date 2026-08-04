@@ -49,15 +49,15 @@ static void OnEventReceive(ArkUI_NodeCustomEvent* event)
                      "height == %{public}d",
                      OH_ArkUI_DrawContext_GetSize(drawContext).width,
                      OH_ArkUI_DrawContext_GetSize(drawContext).height);
-        
+        ArkUI_NumberValue background_color_value[] = { { .u32 = COLOR_GREEN } };
+        ArkUI_AttributeItem background_color_item = { background_color_value,
+            sizeof(background_color_value) / sizeof(ArkUI_NumberValue) };
+        nodeAPI->setAttribute(nodeHandler, NODE_BACKGROUND_COLOR, &background_color_item);
         auto x = OH_ArkUI_NodeCustomEvent_GetPositionInLayout(event).x;
         auto y = OH_ArkUI_NodeCustomEvent_GetPositionInLayout(event).y;
         auto width = OH_ArkUI_DrawContext_GetSize(drawContext).width;
         auto height = OH_ArkUI_DrawContext_GetSize(drawContext).height;
         if (x < 0 && y >=0 && width > 0 && height > 0) {
-            ArkUI_NumberValue background_color_value[] = { { .u32 = COLOR_GREEN } };
-            ArkUI_AttributeItem background_color_item = { background_color_value,
-                sizeof(background_color_value) / sizeof(ArkUI_NumberValue) };
             nodeAPI->setAttribute(nodeHandler, NODE_BACKGROUND_COLOR, &background_color_item);
         }
     }
