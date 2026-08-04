@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -109,7 +109,14 @@ export default function BuiltinsBatchProgressTest(): void {
       await tracker.reset()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testBatchProgress0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0100
+     * @tc.desc   Verify testBatchProgress0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBatchProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(10)
       expect(await tracker.getPercentage()).assertEqual(0)
@@ -117,7 +124,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getTotal()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testBatchProgress0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0200
+     * @tc.desc   Verify testBatchProgress0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBatchProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(10)
       const p1: number = await tracker.increment()
@@ -127,7 +141,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getCurrent()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testBatchProgress0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0300
+     * @tc.desc   Verify testBatchProgress0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBatchProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(10)
       for (let i: number = 0; i < 5; i++) {
@@ -137,7 +158,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getCurrent()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testBatchProgress0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0400
+     * @tc.desc   Verify testBatchProgress0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBatchProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(5)
       for (let i: number = 0; i < 5; i++) {
@@ -147,7 +175,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testBatchProgress0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0500
+     * @tc.desc   Verify testBatchProgress0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBatchProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotal(10)
       for (let i: number = 0; i < 15; i++) {
@@ -157,13 +192,27 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getCurrent()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testBatchProgress0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0600
+     * @tc.desc   Verify testBatchProgress0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBatchProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotal(0)
       expect(await tracker.getPercentage()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testBatchProgress0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0700
+     * @tc.desc   Verify testBatchProgress0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBatchProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(1)
       expect(await tracker.getPercentage()).assertEqual(0)
@@ -172,7 +221,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testBatchProgress0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0800
+     * @tc.desc   Verify testBatchProgress0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testBatchProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await tracker.setTotal(5)
       const tasks: taskpool.Task[] = []
@@ -185,7 +241,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testBatchProgress0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_0900
+     * @tc.desc   Verify testBatchProgress0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testBatchProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await tracker.setTotal(20)
       const tasks: taskpool.Task[] = []
@@ -197,7 +260,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getPercentage()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testBatchProgress1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_1000
+     * @tc.desc   Verify testBatchProgress1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBatchProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotal(5)
       for (let i: number = 0; i < 5; i++) {
@@ -214,7 +284,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getPercentage()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testBatchProgress1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_1100
+     * @tc.desc   Verify testBatchProgress1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBatchProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.reset()
       expect(await tracker.getPercentage()).assertEqual(0)
@@ -222,7 +299,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getPercentage()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL3 */
+    /**
+     * @tc.name   testBatchProgress1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCHPROGRESS_TEST_1200
+     * @tc.desc   Verify testBatchProgress1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBatchProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await tracker.setTotal(100)
       const tasks: taskpool.Task[] = []

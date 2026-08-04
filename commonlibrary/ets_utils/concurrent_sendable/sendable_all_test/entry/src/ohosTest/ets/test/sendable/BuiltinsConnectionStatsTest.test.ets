@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -159,21 +159,42 @@ export default function BuiltinsConnectionStatsTest(): void {
       await pool.shutdown()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionStats0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0100
+     * @tc.desc   Verify testConnectionStats0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionStats0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       expect(await pool.getTotalCreated()).assertEqual(3)
       expect(await pool.getTotalAcquired()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionStats0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0200
+     * @tc.desc   Verify testConnectionStats0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionStats0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       await pool.acquire()
       expect(await pool.getTotalAcquired()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionStats0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0300
+     * @tc.desc   Verify testConnectionStats0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionStats0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn: StatsConnection | null = await pool.acquire()
@@ -181,7 +202,14 @@ export default function BuiltinsConnectionStatsTest(): void {
       expect(await pool.getTotalReleased()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionStats0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0400
+     * @tc.desc   Verify testConnectionStats0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionStats0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       await pool.acquire()
@@ -190,14 +218,28 @@ export default function BuiltinsConnectionStatsTest(): void {
       expect(await pool.getTotalRejected()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionStats0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0500
+     * @tc.desc   Verify testConnectionStats0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionStats0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       expect(await pool.getActiveCount()).assertEqual(3)
       expect(await pool.getIdleCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionStats0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0600
+     * @tc.desc   Verify testConnectionStats0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionStats0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       await pool.acquire()
@@ -205,7 +247,14 @@ export default function BuiltinsConnectionStatsTest(): void {
       expect(await pool.getIdleCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionStats0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0700
+     * @tc.desc   Verify testConnectionStats0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionStats0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       await pool.acquire()
@@ -214,13 +263,27 @@ export default function BuiltinsConnectionStatsTest(): void {
       expect(await pool.getUtilizationRate()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionStats0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0800
+     * @tc.desc   Verify testConnectionStats0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionStats0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       expect(await pool.getUtilizationRate()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionStats0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_0900
+     * @tc.desc   Verify testConnectionStats0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionStats0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       await pool.acquire()
@@ -228,7 +291,14 @@ export default function BuiltinsConnectionStatsTest(): void {
       expect(rate >= 0 && rate <= 100).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionStats1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_1000
+     * @tc.desc   Verify testConnectionStats1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionStats1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       for (let i: number = 0; i < 5; i++) {
@@ -241,13 +311,27 @@ export default function BuiltinsConnectionStatsTest(): void {
       expect(await pool.getTotalReleased()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionStats1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_1100
+     * @tc.desc   Verify testConnectionStats1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionStats1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(0)
       expect(await pool.getUtilizationRate()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionStats1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONSTATS_TEST_1200
+     * @tc.desc   Verify testConnectionStats1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionStats1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn1: StatsConnection | null = await pool.acquire()

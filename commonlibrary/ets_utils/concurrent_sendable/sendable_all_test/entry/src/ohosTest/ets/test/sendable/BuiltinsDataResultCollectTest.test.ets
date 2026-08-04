@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -84,27 +84,55 @@ export default function BuiltinsDataResultCollectTest(): void {
     beforeEach((): void => {
       collector = new DataResultCollector(new collections.Array<string>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDataResultCollect0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0100
+     * @tc.desc   Verify testDataResultCollect0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDataResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addResult(1, 'result_1')
       expect(collector.getResultCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDataResultCollect0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0200
+     * @tc.desc   Verify testDataResultCollect0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDataResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addResult(1, 'result_1')
       await collector.addResult(2, 'result_2')
       expect(collector.getResultCount()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDataResultCollect0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0300
+     * @tc.desc   Verify testDataResultCollect0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDataResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addResult(1, 'test_data')
       const result: string = collector.getResultByIndex(0)
       expect(result).assertEqual('test_data')
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDataResultCollect0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0400
+     * @tc.desc   Verify testDataResultCollect0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDataResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
@@ -120,7 +148,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDataResultCollect0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0500
+     * @tc.desc   Verify testDataResultCollect0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDataResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -140,7 +175,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(taskIds.length).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDataResultCollect0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0600
+     * @tc.desc   Verify testDataResultCollect0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDataResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -157,7 +199,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDataResultCollect0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0700
+     * @tc.desc   Verify testDataResultCollect0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDataResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 50; i++) {
@@ -179,7 +228,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDataResultCollect0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0800
+     * @tc.desc   Verify testDataResultCollect0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDataResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task = new taskpool.Task(processData, 1, 'test')
       const result: Object = await taskpool.execute(task)
@@ -189,7 +245,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(res).assertContain('processed_test_1')
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataResultCollect0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_0900
+     * @tc.desc   Verify testDataResultCollect0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const receivedData: string[] = []
       const task = new taskpool.Task(triggerNestedData)
@@ -205,7 +268,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(receivedData[0]).assertEqual('trigger')
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDataResultCollect1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_1000
+     * @tc.desc   Verify testDataResultCollect1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDataResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const nestedPromises: Promise<Object>[] = []
       const task = new taskpool.Task(triggerNestedData)
@@ -227,7 +297,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataResultCollect1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_1100
+     * @tc.desc   Verify testDataResultCollect1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 5; i++) {
         await collector.addResult(i, `sequential_${i}`)
@@ -238,7 +315,14 @@ export default function BuiltinsDataResultCollectTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataResultCollect1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATARESULTCOLLECT_TEST_1200
+     * @tc.desc   Verify testDataResultCollect1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addResult(1, 'result_1')
       await collector.addResult(2, 'result_2')

@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -118,14 +118,28 @@ export default function BuiltinsDataProcessProgressTest(): void {
       await dp.reset()
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDataProcessProgress0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0100
+     * @tc.desc   Verify testDataProcessProgress0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDataProcessProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       expect(await dp.getPercentage()).assertEqual(0)
       expect(await dp.getProcessedRows()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDataProcessProgress0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0200
+     * @tc.desc   Verify testDataProcessProgress0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDataProcessProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       const p: number = await dp.addProcessedRows(50)
@@ -133,7 +147,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getProcessedRows()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testDataProcessProgress0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0300
+     * @tc.desc   Verify testDataProcessProgress0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDataProcessProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(100)
@@ -141,7 +162,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataProcessProgress0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0400
+     * @tc.desc   Verify testDataProcessProgress0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataProcessProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(150)
@@ -149,7 +177,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getPercentage()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataProcessProgress0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0500
+     * @tc.desc   Verify testDataProcessProgress0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataProcessProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(80)
@@ -158,7 +193,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDataProcessProgress0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0600
+     * @tc.desc   Verify testDataProcessProgress0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDataProcessProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await dp.setTotalRows(50)
       const tasks: taskpool.Task[] = []
@@ -170,7 +212,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getPercentage()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testDataProcessProgress0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0700
+     * @tc.desc   Verify testDataProcessProgress0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDataProcessProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await dp.setTotalRows(100)
       const tasks: taskpool.Task[] = []
@@ -182,7 +231,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.isCompleted()).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataProcessProgress0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0800
+     * @tc.desc   Verify testDataProcessProgress0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataProcessProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(50)
@@ -192,13 +248,27 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataProcessProgress0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_0900
+     * @tc.desc   Verify testDataProcessProgress0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataProcessProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(0)
       expect(await dp.getPercentage()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataProcessProgress1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_1000
+     * @tc.desc   Verify testDataProcessProgress1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataProcessProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(30)
@@ -207,7 +277,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(3)
     })
 
-    /** @tc.level  LEVEL3 */
+    /**
+     * @tc.name   testDataProcessProgress1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_1100
+     * @tc.desc   Verify testDataProcessProgress1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDataProcessProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await dp.setTotalRows(100)
       const tasks: taskpool.Task[] = []
@@ -218,7 +295,14 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getProcessedRows()).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testDataProcessProgress1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DATAPROCESSPROGRESS_TEST_1200
+     * @tc.desc   Verify testDataProcessProgress1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDataProcessProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(100)

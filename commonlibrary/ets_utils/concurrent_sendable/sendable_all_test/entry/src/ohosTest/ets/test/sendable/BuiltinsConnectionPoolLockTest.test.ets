@@ -128,13 +128,27 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       pool = new ConnectionPool(new collections.Array<boolean>(), new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
       await pool.initialize(5)
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionPoolLock0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0100
+     * @tc.desc   Verify testConnectionPoolLock0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionPoolLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await pool.getTotalCount()).assertEqual(5)
       expect(await pool.getAvailableCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionPoolLock0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0200
+     * @tc.desc   Verify testConnectionPoolLock0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionPoolLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const connId: number = await pool.acquire()
       expect(connId >= 0).assertTrue()
@@ -142,7 +156,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(await pool.getAvailableCount()).assertEqual(4)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testConnectionPoolLock0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0300
+     * @tc.desc   Verify testConnectionPoolLock0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConnectionPoolLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const connId: number = await pool.acquire()
       expect(await pool.getAvailableCount()).assertEqual(4)
@@ -151,7 +172,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(await pool.isInUse(connId)).assertFalse()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolLock0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0400
+     * @tc.desc   Verify testConnectionPoolLock0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const conn1: number = await pool.acquire()
       const conn2: number = await pool.acquire()
@@ -160,7 +188,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(await pool.getAvailableCount()).assertEqual(4)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolLock0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0500
+     * @tc.desc   Verify testConnectionPoolLock0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const connIds: number[] = []
       for (let i = 0; i < 5; i++) {
@@ -179,7 +214,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(acquireCompleted).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolLock0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0600
+     * @tc.desc   Verify testConnectionPoolLock0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const connIds: number[] = []
       for (let i = 0; i < 5; i++) {
@@ -200,7 +242,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(acquiredConnId >= 0).assertTrue()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolLock0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0700
+     * @tc.desc   Verify testConnectionPoolLock0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<number>[] = []
       for (let i = 0; i < 5; i++) {
@@ -215,7 +264,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(await pool.getAvailableCount()).assertEqual(5)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolLock0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0800
+     * @tc.desc   Verify testConnectionPoolLock0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await pool.getAcquireCount()).assertEqual(0)
       expect(await pool.getReleaseCount()).assertEqual(0)
@@ -225,7 +281,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(await pool.getReleaseCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testConnectionPoolLock0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_0900
+     * @tc.desc   Verify testConnectionPoolLock0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectionPoolLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const conn1: number = await pool.acquire()
       await pool.release(conn1)
@@ -234,7 +297,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(await pool.getAvailableCount()).assertEqual(4)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConnectionPoolLock1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_1000
+     * @tc.desc   Verify testConnectionPoolLock1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConnectionPoolLock1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
@@ -247,7 +317,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(await pool.getAcquireCount()).assertLargerOrEqual(3)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConnectionPoolLock1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_1100
+     * @tc.desc   Verify testConnectionPoolLock1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConnectionPoolLock1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const connIds: number[] = []
       for (let round = 0; round < 3; round++) {
@@ -266,7 +343,14 @@ export default function BuiltinsConnectionPoolLockTest(): void {
       expect(acquireCount).assertEqual(releaseCount)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testConnectionPoolLock1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONNECTIONPOOLLOCK_TEST_1200
+     * @tc.desc   Verify testConnectionPoolLock1200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConnectionPoolLock1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const notifications: Object[] = []
       const task: taskpool.Task = new taskpool.Task(connectionNotifyTask)

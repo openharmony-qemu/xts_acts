@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -93,13 +93,27 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
     beforeEach((): void => {
       queue = new TaskDispatchQueue(new collections.Array<number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTaskDispatchQueue0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0100
+     * @tc.desc   Verify testTaskDispatchQueue0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTaskDispatchQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.enqueue(1)
       expect(await queue.getPendingSize()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTaskDispatchQueue0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0200
+     * @tc.desc   Verify testTaskDispatchQueue0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTaskDispatchQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.enqueue(1)
       const taskId: number | undefined = await queue.dequeue()
@@ -107,13 +121,27 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL0 */
+    /**
+     * @tc.name   testTaskDispatchQueue0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0300
+     * @tc.desc   Verify testTaskDispatchQueue0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTaskDispatchQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await queue.isPendingEmpty()).assertTrue()
       expect(await queue.getPendingSize()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTaskDispatchQueue0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0400
+     * @tc.desc   Verify testTaskDispatchQueue0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTaskDispatchQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.enqueue(i)
@@ -121,7 +149,14 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(10)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTaskDispatchQueue0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0500
+     * @tc.desc   Verify testTaskDispatchQueue0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTaskDispatchQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 50; i++) {
         await queue.enqueue(i)
@@ -129,7 +164,14 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testTaskDispatchQueue0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0600
+     * @tc.desc   Verify testTaskDispatchQueue0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTaskDispatchQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.enqueue(i)
@@ -141,7 +183,14 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.isPendingEmpty()).assertTrue()
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testTaskDispatchQueue0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0700
+     * @tc.desc   Verify testTaskDispatchQueue0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTaskDispatchQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
@@ -158,7 +207,14 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testTaskDispatchQueue0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0800
+     * @tc.desc   Verify testTaskDispatchQueue0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTaskDispatchQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.enqueue(i)
@@ -182,7 +238,14 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getProcessedSize()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testTaskDispatchQueue0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_0900
+     * @tc.desc   Verify testTaskDispatchQueue0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTaskDispatchQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const producerTasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -208,7 +271,14 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getProcessedSize()).assertLargerOrEqual(1)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testTaskDispatchQueue1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_1000
+     * @tc.desc   Verify testTaskDispatchQueue1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTaskDispatchQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const iterations: number = 100
       const enqueuePromises: Promise<void>[] = []
@@ -226,7 +296,14 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
       expect(await queue.getPendingSize()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testTaskDispatchQueue1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKDISPATCHQUEUE_TEST_1100
+     * @tc.desc   Verify testTaskDispatchQueue1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTaskDispatchQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await queue.enqueue(1)
       await queue.enqueue(2)

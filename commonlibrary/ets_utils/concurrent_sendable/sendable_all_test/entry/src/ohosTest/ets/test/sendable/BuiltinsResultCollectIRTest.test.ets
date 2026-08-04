@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -156,7 +156,14 @@ function computeResult(id: number): number {
 
 export default function BuiltinsResultCollectIRTest(): void {
   describe('BuiltinsResultCollectIRTest', (): void => {
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0100
+     * @tc.desc   Verify testResultCollectIR0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>())
       collector.total_ = 100
@@ -164,7 +171,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(stats[0]).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0200
+     * @tc.desc   Verify testResultCollectIR0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: LargeResultCollector = new LargeResultCollector(new collections.Map<number, string>())
       for (let i = 0; i < 1025; i++) {
@@ -173,7 +187,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.size).assertEqual(1025)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testResultCollectIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0300
+     * @tc.desc   Verify testResultCollectIR0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testResultCollectIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const collector: IRConsistentCollector = new IRConsistentCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -191,7 +212,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.count_).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0400
+     * @tc.desc   Verify testResultCollectIR0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: StatsCollector = new StatsCollector()
       for (let i = 0; i < 50; i++) {
@@ -200,7 +228,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.getSuccessCount()).assertEqual(50)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0500
+     * @tc.desc   Verify testResultCollectIR0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: ArrayResultCollector = new ArrayResultCollector(new collections.Array<number>())
       for (let i = 0; i < 100; i++) {
@@ -209,7 +244,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.length).assertEqual(100)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0600
+     * @tc.desc   Verify testResultCollectIR0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector1: SharedResultCollector = new SharedResultCollector()
       const collector2: SharedResultCollector = new SharedResultCollector()
@@ -218,7 +260,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector1.total_).assertEqual(collector2.total_)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testResultCollectIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0700
+     * @tc.desc   Verify testResultCollectIR0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testResultCollectIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const collector: StableResultCollector = new StableResultCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
@@ -236,7 +285,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.size).assertEqual(256)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0800
+     * @tc.desc   Verify testResultCollectIR0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: BoundaryCollector = new BoundaryCollector(new collections.Map<string, number>())
       for (let i = 0; i < 1024; i++) {
@@ -245,7 +301,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.size).assertEqual(1024)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_0900
+     * @tc.desc   Verify testResultCollectIR0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: BoundaryCollector = new BoundaryCollector(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
@@ -256,7 +319,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       expect(collector.results_.get('result_1024')).assertEqual(1024)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testResultCollectIR1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_1000
+     * @tc.desc   Verify testResultCollectIR1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testResultCollectIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const collector: CrossThreadCollector = new CrossThreadCollector()
       const tasks: taskpool.Task[] = []
@@ -273,7 +343,14 @@ export default function BuiltinsResultCollectIRTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testResultCollectIR1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RESULTCOLLECTIR_TEST_1100
+     * @tc.desc   Verify testResultCollectIR1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testResultCollectIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: TimestampCollector = new TimestampCollector()
       const start: number = collector.getStartTime()

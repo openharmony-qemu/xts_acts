@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -143,13 +143,27 @@ export default function BuiltinsOrderStateMachineTest(): void {
       await orderSM.reset()
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testOrderStateMachine0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0100
+     * @tc.desc   Verify testOrderStateMachine0100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOrderStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
       expect(await orderSM.getHistoryCount()).assertEqual(0)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testOrderStateMachine0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0200
+     * @tc.desc   Verify testOrderStateMachine0200 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOrderStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result: boolean = await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit order')
       expect(result).assertTrue()
@@ -158,7 +172,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(1)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testOrderStateMachine0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0300
+     * @tc.desc   Verify testOrderStateMachine0300 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOrderStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')).assertTrue()
       expect(await orderSM.transition(OrderState.PAID, 'pay')).assertTrue()
@@ -168,7 +189,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(4)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testOrderStateMachine0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0400
+     * @tc.desc   Verify testOrderStateMachine0400 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOrderStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       const result: boolean = await orderSM.transition(OrderState.CANCELLED, 'user cancel')
@@ -177,7 +205,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(2)
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testOrderStateMachine0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0500
+     * @tc.desc   Verify testOrderStateMachine0500 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOrderStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.PAID, 'pay')
@@ -186,14 +221,28 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.REFUNDED)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testOrderStateMachine0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0600
+     * @tc.desc   Verify testOrderStateMachine0600 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOrderStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result: boolean = await orderSM.transition(OrderState.PAID, 'skip payment')
       expect(result).assertFalse()
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testOrderStateMachine0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0700
+     * @tc.desc   Verify testOrderStateMachine0700 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOrderStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.PAID, 'pay')
@@ -204,7 +253,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.DELIVERED)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testOrderStateMachine0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0800
+     * @tc.desc   Verify testOrderStateMachine0800 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOrderStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.CANCELLED, 'cancel')
@@ -213,7 +269,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CANCELLED)
     })
 
-    /** @tc.level  LEVEL2 */
+    /**
+     * @tc.name   testOrderStateMachine0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_0900
+     * @tc.desc   Verify testOrderStateMachine0900 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOrderStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       const tasks: taskpool.Task[] = []
@@ -230,7 +293,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testOrderStateMachine1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_1000
+     * @tc.desc   Verify testOrderStateMachine1000 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOrderStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'user submit order')
       await orderSM.transition(OrderState.PAID, 'alipay payment')
@@ -244,7 +314,14 @@ export default function BuiltinsOrderStateMachineTest(): void {
       }
     })
 
-    /** @tc.level  LEVEL1 */
+    /**
+     * @tc.name   testOrderStateMachine1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ORDERSTATEMACHINE_TEST_1100
+     * @tc.desc   Verify testOrderStateMachine1100 behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOrderStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'step1')
       await orderSM.transition(OrderState.PAID, 'step2')
