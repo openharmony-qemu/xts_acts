@@ -87,7 +87,7 @@ export default function navigationMaterial() {
       await CommonFunc.sleep(1000);
       let tree: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
-        .$children[1]
+        .$children[3]
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[3]
@@ -118,7 +118,7 @@ export default function navigationMaterial() {
       await CommonFunc.sleep(1000);
       let tree: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
-        .$children[1]
+        .$children[5]
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[5]
@@ -149,7 +149,7 @@ export default function navigationMaterial() {
       await CommonFunc.sleep(1000);
       let tree: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
-        .$children[1]
+        .$children[7]
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[7]
