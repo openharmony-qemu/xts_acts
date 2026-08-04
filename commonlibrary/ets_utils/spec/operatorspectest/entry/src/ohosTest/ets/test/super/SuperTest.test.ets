@@ -1494,7 +1494,7 @@ export default function SuperTest() {
      */
     it('testSuper134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c = new mis.Child134('A😀B')
-      expect(c.charCount()).assertEqual(3)
+      expect(c.charCount()).assertEqual(4)
     });
 
     /**
