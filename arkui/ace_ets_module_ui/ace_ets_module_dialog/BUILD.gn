@@ -24,7 +24,9 @@ group("ActsAceEtsModuleDialogTest") {
       # "ace_ets_module_dialog_api18:ActsAceEtsModuleDialogApi18Test",
       # "ace_ets_module_dialog_api19:ActsAceEtsModuleDialogApi19Test",
       # "ace_ets_module_dialog_api20:ActsAceEtsModuleDialogApi20Test",
-      "ace_ets_module_dialog_api26:ActsAceEtsModuleDialogApi26Test",
+      # CI prebuilts/ohos-sdk 仍无 DialogPresenter/@ohos.arkui.dialog（本地 DevEco SDK 有≠CI）。
+      # SDK 合入 CI 后再恢复；勿仅凭本地编过就放开。
+      # "ace_ets_module_dialog_api26:ActsAceEtsModuleDialogApi26Test",
       "ace_ets_module_dialog_button:ActsAceEtsModuleDialogButtonTest",
       "ace_ets_module_dialog_toggle:ActsAceEtsModuleDialogToggleTest",
       "ace_ets_module_dialog_radio:ActsAceEtsModuleDialogRadioTest",
@@ -54,7 +56,9 @@ group("ActsAceEtsModuleDialogTest") {
       # "ace_ets_module_dialog_api18:ActsAceEtsModuleDialogApi18Test",
       # "ace_ets_module_dialog_api19:ActsAceEtsModuleDialogApi19Test",
       # "ace_ets_module_dialog_api20:ActsAceEtsModuleDialogApi20Test",
-      "ace_ets_module_dialog_api26:ActsAceEtsModuleDialogApi26Test",
+      # CI prebuilts/ohos-sdk 仍无 DialogPresenter/@ohos.arkui.dialog（本地 DevEco SDK 有≠CI）。
+      # SDK 合入 CI 后再恢复；勿仅凭本地编过就放开。
+      # "ace_ets_module_dialog_api26:ActsAceEtsModuleDialogApi26Test",
       "ace_ets_module_dialog_api23_static:ActsAceEtsModuleDialogApi23StaticTest",
       "ace_ets_module_dialog_nowear_api11:ActsAceEtsModuleDialogNoWearApi11Test",
       "ace_ets_module_dialog_nowear_api12:ActsAceEtsModuleDialogNoWearApi12Test",
