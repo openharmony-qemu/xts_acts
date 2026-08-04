@@ -31,7 +31,7 @@ async function ensureModelLoaded(modelData: Uint8Array | ArrayBuffer): Promise<m
     context.cpu.precisionMode = 'enforce_fp32';
 
     let buffer: ArrayBuffer = modelData instanceof Uint8Array ? 
-        modelData.buffer.slice(modelData,byteOffset, modelData.byteOffset + modelData.byteLength) : modelData as ArrayBuffer;
+        modelData.buffer.slice(modelData.byteOffset, modelData.byteOffset + modelData.byteLength) : modelData as ArrayBuffer;
     let model: mindSporeLite.Model = await mindSporeLite.loadModelFromBuffer(buffer, context);
 
     g_msLiteModel = model;

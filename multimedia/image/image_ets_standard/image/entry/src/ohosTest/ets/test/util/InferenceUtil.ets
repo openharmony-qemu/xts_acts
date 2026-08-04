@@ -18,14 +18,14 @@ export function clearModelBufferCache(): void {
     hilog.info(DOMAIN, TAG, '%{public}s', 'MS_LITE_LOG: model buffer cache cleared');
 }
 
-export interfasce inferenceResult {
+export interface InferenceResult {
     flower: number;
     normal: number;
     predictedClass: string;
     confidence: number;
 }
 
-function releaseImageResources(imageSource: image.ImageSource | undefined, pixelmap: image.PixelMap | undefined, file: fileIo.File | undefined): void {
+function releaseImageResources(imageSource: image.ImageSource | undefined, pixelMap: image.PixelMap | undefined, file: fileIo.File | undefined): void {
     try{
         if(pixelMap !== undefined){
             pixelMap.release();
@@ -51,8 +51,8 @@ function releaseImageResources(imageSource: image.ImageSource | undefined, pixel
     }
 }
 
-export async function inferenceImage(imageUri: string, modelName: string, context: Context | undefined): Promise<inferenceResult> {
-    let inferenceResult: inferenceResult = {
+export async function inferenceImage(imageUri: string, modelName: string, context: Context | undefined): Promise<InferenceResult> {
+    let inferenceResult: InferenceResult = {
         flower: 0,
         normal: 0,
         predictedClass: '',
@@ -67,7 +67,7 @@ export async function inferenceImage(imageUri: string, modelName: string, contex
     }
     let file: fileIo.File | undefined;
     let imageSource: image.ImageSource | undefined;
-    let pixelmap: image.PixelMap | undefined;
+    let pixelMap: image.PixelMap | undefined;
 
     try{
         let modelBuffer: Uint8Array;
@@ -94,7 +94,7 @@ export async function inferenceImage(imageUri: string, modelName: string, contex
         };
         try{
             pixelMap = await imageSource.createPixelMap(decodeOptions);
-            let info = await pixelMap.getImageInfo();
+            let info: image.ImageInfo = await pixelMap.getImageInfo();
             hilog.info(DOMAIN, TAG, '%{public}s', `MS_LITE_LOG: decoded size: (${info.size.width},${info.size.height}), pixelFormat: ${info.pixelFormat}`);
             if(info.size.width === 0 || info.size.height === 0) {
             hilog.error(DOMAIN, TAG, '%{public}s', `MS_LITE_ERR: decoded failed`);
@@ -105,7 +105,7 @@ export async function inferenceImage(imageUri: string, modelName: string, contex
             releaseImageResources(imageSource, undefined, file);
             return inferenceResult;
         }
-        let pixelMapInfo = await pixelMap.getImageInfo();
+        let pixelMapInfo: image.ImageInfo = await pixelMap.getImageInfo();
         let readBuffer = new ArrayBuffer(MODEL_INPUT_SIZE * MODEL_INPUT_SIZE * 4);
         await pixelMap.readPixelsToBuffer(readBuffer);
         hilog.info(DOMAIN, TAG, '%{public}s', `MS_LITE_LOG: readBuffer byteLength: ${readBuffer.byteLength}`);
