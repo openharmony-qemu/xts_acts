@@ -13,16 +13,21 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level, beforeEach } from '@ohos/hypium';
 import { worker } from '@kit.ArkTS';
+import napitest from 'libnapitest.so';
 
 export const sleep = (ms: number | undefined) => {
-  return new Promise <void>(resolve => setTimeout(resolve, ms));
+  return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
 
 export default function NapiWorkerTest() {
 
   describe('napiWorkerTest', () => {
+    beforeEach(async () => {
+      await sleep(50);
+    });
+
     /**
      * @tc.name   testNapiWorker0001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0100
@@ -33,37 +38,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0001';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getLastError');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(2000);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getLastError');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(2000);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0002
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0200
@@ -73,38 +74,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0002';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('isError');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(false);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
+      const caseName = 'testNapiWorker0002';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('isError');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(false);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0300
@@ -115,37 +112,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0003';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createError');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(0);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createError');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0004
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0400
@@ -156,37 +149,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0004';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createRangeError');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(0);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createRangeError');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0005
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0500
@@ -197,37 +186,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0005';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('isExceptionPending');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(0);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('isExceptionPending');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0006
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0600
@@ -238,37 +223,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0006';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createReference');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(0);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createReference');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0007
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0700
@@ -279,37 +260,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0007';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('referenceRefAndUnref');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(0);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('referenceRefAndUnref');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0008
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0800
@@ -320,37 +297,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0008';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createArrayAndGetLength');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual('[1,2]');
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createArrayAndGetLength');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual('[1,2]');
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0009
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_0900
@@ -361,37 +334,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0009';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createExternal');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(0);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createExternal');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0010
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1000
@@ -402,37 +371,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0010';
-      console.info(`${caseName} test start`);
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createExternalArraybuffer');
-        await new Promise<void>((resolve, reject) => {
-          myWorker.onmessage = (e) => {
-            console.log(`${caseName} result: ` + JSON.stringify(e));
-            try {
-              expect(e.data).assertEqual(true);
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              myWorker.terminate();
-            }
-          };
-          myWorker.onexit = (code) => {
-            console.log(`${caseName} main onexit code: ` + code);
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createExternalArraybuffer');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
             resolve();
-          };
-          myWorker.onerror = (e) => {
-            console.error(`${caseName} worker error: ` + JSON.stringify(e));
-            reject(e);
-          };
-        });
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0011
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1100
@@ -442,30 +407,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0011';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createObject');
+      const caseName = 'testNapiWorker0011';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createObject');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0012
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1200
@@ -475,30 +444,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0012';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createSymbol');
+      const caseName = 'testNapiWorker0012';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createSymbol');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0013
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1300
@@ -508,30 +481,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0013';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createTypeArray');
+      const caseName = 'testNapiWorker0013';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createTypeArray');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0014
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1400
@@ -541,30 +518,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0014';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getValueBool');
+      const caseName = 'testNapiWorker0014';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getValueBool');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertFalse();
+          try {
+            expect(e.data).assertFalse();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0015
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1500
@@ -574,30 +555,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0015';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createAndGetInt32');
+      const caseName = 'testNapiWorker0015';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createAndGetInt32');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(32);
+          try {
+            expect(e.data).assertEqual(32);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0016
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1600
@@ -607,30 +592,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0016';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createAndGetUInt32');
+      const caseName = 'testNapiWorker0016';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createAndGetUInt32');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(32);
+          try {
+            expect(e.data).assertEqual(32);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0017
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1700
@@ -640,30 +629,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0017';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createAndGetInt64');
+      const caseName = 'testNapiWorker0017';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createAndGetInt64');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(23);
+          try {
+            expect(e.data).assertEqual(23);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0018
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1800
@@ -673,30 +666,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0018';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createDouble');
+      const caseName = 'testNapiWorker0018';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createDouble');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(24.67);
+          try {
+            expect(e.data).assertEqual(24.67);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0019
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_1900
@@ -706,30 +703,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0019';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createAndGetStringUtf16');
+      const caseName = 'testNapiWorker0019';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createAndGetStringUtf16');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual('he');
+          try {
+            expect(e.data).assertEqual('he');
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0020
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2000
@@ -739,30 +740,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0020';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('stringUtf16OfCase');
+      const caseName = 'testNapiWorker0020';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('stringUtf16OfCase');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual('abc2');
+          try {
+            expect(e.data).assertEqual('abc2');
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0021
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2100
@@ -772,30 +777,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0021';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getValueDouble');
+      const caseName = 'testNapiWorker0021';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getValueDouble');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(24.5);
+          try {
+            expect(e.data).assertEqual(24.5);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0022
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2200
@@ -805,30 +814,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0022';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getValueExternal');
+      const caseName = 'testNapiWorker0022';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getValueExternal');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0023
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2300
@@ -838,30 +851,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0023';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getNull');
+      const caseName = 'testNapiWorker0023';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getNull');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0024
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2400
@@ -871,30 +888,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0024';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getUndefined');
+      const caseName = 'testNapiWorker0024';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getUndefined');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0025
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2500
@@ -904,30 +925,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0025';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('coerceToBool');
+      const caseName = 'testNapiWorker0025';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('coerceToBool');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertFalse();
+          try {
+            expect(e.data).assertFalse();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0026
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2600
@@ -937,30 +962,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0026';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('coerceToNumber');
+      const caseName = 'testNapiWorker0026';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('coerceToNumber');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(12);
+          try {
+            expect(e.data).assertEqual(12);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-    })
+          reject(e);
+        };
+      });
+    });
+
     /**
      * @tc.name   testNapiWorker0027
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2700
@@ -970,30 +999,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0027';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('coerceToObject');
+      const caseName = 'testNapiWorker0027';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('coerceToObject');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual('[2,3]');
+          try {
+            expect(e.data).assertEqual('[2,3]');
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0028
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2800
@@ -1003,30 +1036,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0028';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('coerceToString');
+      const caseName = 'testNapiWorker0028';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('coerceToString');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual('123');
+          try {
+            expect(e.data).assertEqual('123');
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0029
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_2900
@@ -1036,30 +1073,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0029';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('typeOf');
+      const caseName = 'testNapiWorker0029';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('typeOf');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0030
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3000
@@ -1069,30 +1110,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0030';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('isArray');
+      const caseName = 'testNapiWorker0030';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('isArray');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0031
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3100
@@ -1102,30 +1147,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0031';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('strictEquals');
+      const caseName = 'testNapiWorker0031';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('strictEquals');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0032
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3200
@@ -1135,30 +1184,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0032';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getPropertyNames');
+      const caseName = 'testNapiWorker0032';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getPropertyNames');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0033
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3300
@@ -1168,30 +1221,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0033';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('setProperty');
+      const caseName = 'testNapiWorker0033';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('setProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0034
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3400
@@ -1201,30 +1258,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0034';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getProperty');
+      const caseName = 'testNapiWorker0034';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0035
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3500
@@ -1234,30 +1295,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0035';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('hasProperty');
+      const caseName = 'testNapiWorker0035';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('hasProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0036
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3600
@@ -1267,30 +1332,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0036';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('setAndDeleteProperty');
+      const caseName = 'testNapiWorker0036';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('setAndDeleteProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0037
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3700
@@ -1300,30 +1369,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0037';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('hasOwnProperty');
+      const caseName = 'testNapiWorker0037';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('hasOwnProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0038
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3800
@@ -1333,30 +1406,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0038';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('setNamedProperty');
+      const caseName = 'testNapiWorker0038';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('setNamedProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0039
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_3900
@@ -1366,30 +1443,34 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName: string = 'testNapiWorker0039';
-      console.info(`${caseName} test start`);
-      let state: boolean = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getNamedProperty');
+      const caseName = 'testNapiWorker0039';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getNamedProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual('zhangsan');
+          try {
+            expect(e.data).assertEqual('zhangsan');
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0040
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4000
@@ -1400,29 +1481,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0040';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('hasNamedProperty');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('hasNamedProperty');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0041
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4100
@@ -1433,29 +1518,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0041';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('setElement');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('setElement');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0042
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4200
@@ -1466,29 +1555,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0042';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getElement');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getElement');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0043
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4300
@@ -1499,29 +1592,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0043';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('hasElement');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('hasElement');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0044
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4400
@@ -1532,29 +1629,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0044';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('deleteElement');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('deleteElement');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0045
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4500
@@ -1565,29 +1666,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0045';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('defineProperties');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('defineProperties');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          try {
+            expect(e.data).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0046
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4600
@@ -1598,29 +1703,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0046';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('callFunctionNull');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('callFunctionNull');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0047
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4700
@@ -1631,29 +1740,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0047';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiCreateFunctionFuncNull');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiCreateFunctionFuncNull');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0048
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4800
@@ -1664,29 +1777,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0048';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiGetCbInfo');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiGetCbInfo');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(12.06);
+          try {
+            expect(e.data).assertEqual(12.06);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0049
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_4900
@@ -1697,29 +1814,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0049';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('unwrap');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('unwrap');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0050
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5000
@@ -1730,29 +1851,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0050';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('removeWrap');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('removeWrap');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0051
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5100
@@ -1763,29 +1888,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0051';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getVersion');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getVersion');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(8);
+          try {
+            expect(e.data).assertEqual(8);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0052
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5200
@@ -1796,29 +1925,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0052';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createPromise');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createPromise');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0053
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5300
@@ -1829,29 +1962,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0053';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('resolveAndRejectDeferred');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('resolveAndRejectDeferred');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0054
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5400
@@ -1862,29 +1999,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0054';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('isPromise');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('isPromise');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0055
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5500
@@ -1895,29 +2036,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0055';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiCreateThreadsafeFunction');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiCreateThreadsafeFunction');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0056
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5600
@@ -1928,29 +2073,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0056';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiDeleteSerializationDataTest');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiDeleteSerializationDataTest');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(2000);
+          try {
+            expect(e.data).assertEqual(2000);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0057
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5700
@@ -1961,29 +2110,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0057';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiCallThreadsafeFunction');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiCallThreadsafeFunction');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0058
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5800
@@ -1994,29 +2147,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0058';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiAnotherThreadSafeTest');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiAnotherThreadSafeTest');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0059
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_5900
@@ -2027,29 +2184,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0059';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiRefThreadsafeFunction');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiRefThreadsafeFunction');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0060
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_6000
@@ -2060,28 +2221,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0060';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiCreateDate');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiCreateDate');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2094,28 +2258,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0061';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiCreateBigintInt64');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiCreateBigintInt64');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2128,28 +2295,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0062';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiCreateBigintUint64');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiCreateBigintUint64');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2162,28 +2332,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0063';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiCreateBigintWords');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiCreateBigintWords');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2196,28 +2369,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0064';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('GetAllPropertyNamesEnvNull');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('GetAllPropertyNamesEnvNull');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2230,28 +2406,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0065';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiSetInstanceData');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiSetInstanceData');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2264,28 +2443,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0066';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('getModuleFileName');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('getModuleFileName');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data < 0).assertTrue();
+          try {
+            expect(Number(e.data) < 0).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2298,28 +2480,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0067';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createAsyncResource');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createAsyncResource');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data instanceof Object).assertTrue();
+          try {
+            expect(e.data instanceof Object).assertTrue();
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2332,28 +2517,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0068';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('asyncWorkWithQos');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('asyncWorkWithQos');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2366,29 +2554,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0069';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiRunScriptPathEnvNull');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiRunScriptPathEnvNull');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiWorker0070
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_7000
@@ -2398,29 +2590,8 @@ export default function NapiWorkerTest() {
      * @tc.level  LEVEL1
      */
     it('testNapiWorker0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const caseName = 'testNapiWorker0070';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiLoadModuleTest');
-        myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
-          myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+      const value = napitest.napiLoadModule();
+      expect(value).assertEqual(0);
     });
 
     /**
@@ -2433,28 +2604,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0071';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createObjectWithProperties');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createObjectWithProperties');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2467,28 +2641,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0072';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('createObjectWithNamedProperties');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('createObjectWithNamedProperties');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(0);
+          try {
+            expect(e.data).assertEqual(0);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2501,28 +2678,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0073';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('coerceToNativeBindingObjectEnvNull');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('coerceToNativeBindingObjectEnvNull');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(1);
+          try {
+            expect(e.data).assertEqual(1);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2535,28 +2715,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0074';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiSerializeTest');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiSerializeTest');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(2000);
+          try {
+            expect(e.data).assertEqual(2000);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2569,29 +2752,33 @@ export default function NapiWorkerTest() {
      */
     it('testNapiWorker0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorker0075';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiDeSerializeTest');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiDeSerializeTest');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(2000);
+          try {
+            expect(e.data).assertEqual(2000);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
+
     /**
      * @tc.name   testNapiSendableWorker0001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_WORKER_0100
@@ -2602,28 +2789,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0001';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('napiIsSendableTest');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiIsSendableTest');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(false);
+          try {
+            expect(e.data).assertEqual(false);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2636,28 +2826,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0002';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('NapiCreateSendableObject');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('NapiCreateSendableObject');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2670,28 +2863,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0003';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('NapiCreateSendableArray');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('NapiCreateSendableArray');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2704,28 +2900,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0004';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('NapiCreateSendableArrayWithLength');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('NapiCreateSendableArrayWithLength');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2738,28 +2937,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0005';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('NapiCreateSendableArrayBuffer');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('NapiCreateSendableArrayBuffer');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2772,28 +2974,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0006';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('NapiCreateSendableTypedArray');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('NapiCreateSendableTypedArray');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2806,28 +3011,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0007';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('NapiWrapSendable');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('NapiWrapSendable');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
 
     /**
@@ -2840,28 +3048,31 @@ export default function NapiWorkerTest() {
      */
     it('testNapiSendableWorker0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiSendableWorker0008';
-      console.info(`${caseName} test start`);
-      let state = false;
-      try {
-        const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
-        myWorker.postMessage('NapiWrapSendableWithSize');
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('NapiWrapSendableWithSize');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
         myWorker.onmessage = (e) => {
-          console.log(`${caseName} result: ` + JSON.stringify(e));
-          expect(e.data).assertEqual(true);
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
           myWorker.terminate();
-        }
-        myWorker.onexit = (code) => {
-          console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-          state = true;
-        }
-        while (!state) {
-          await sleep(100);
-        }
-      } catch (error) {
-        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
+          reject(e);
+        };
+      });
     });
   })
 }
