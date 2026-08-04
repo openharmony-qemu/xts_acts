@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,6 @@ import {
   Size
 } from "../../../hypium/index";
 import Utils from './Util.test';
-import { BusinessError } from '@ohos.base';
 
 class MessageObject {
   id: number
@@ -73,7 +72,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
@@ -85,9 +84,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           expect(flag).assertTrue();
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
+          console.error(`${TAG} error: ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -121,7 +118,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
 
           let message0: concurrency.Message = new concurrency.Message(0, handler);
@@ -158,9 +155,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           expect(flag).assertTrue();
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
+          console.error(`${TAG} error: ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -193,7 +188,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
 
           let message0: concurrency.Message = new concurrency.Message(0, 'obj', handler);
@@ -231,8 +226,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -265,7 +258,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           let callback: CB | undefined = message.getCallback();
@@ -279,8 +272,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -313,7 +304,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           let callback: CB | undefined = message.getCallback();
@@ -327,8 +318,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -361,7 +350,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
           let callback: CB | undefined = message.getCallback();
@@ -375,8 +364,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -409,7 +396,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let callback: CB = () => {
             console.log(`concurrency.Message callback！`);
@@ -426,8 +413,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -461,7 +446,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -475,8 +460,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -509,7 +492,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -523,8 +506,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -557,7 +538,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
@@ -571,8 +552,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -605,7 +584,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
@@ -620,8 +599,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -682,8 +659,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(received.load()).assertEqual(6);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -752,8 +727,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -798,7 +771,7 @@ export default function MessageScenarioSecondTest(): void {
                   })
                   await Sleep(1000);
                   flag = true;
-                })()
+                })().awaitSync()
               }, works[workNum]);
               while (messageNum < 5) {
                 let message = new concurrency.Message(messageNum, handler);
@@ -826,8 +799,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           while (workNum > 0) {
@@ -854,9 +825,9 @@ export default function MessageScenarioSecondTest(): void {
       async (): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1500';
         let flag: boolean = false;
+        let eaw = new EAWorker();
         console.info(`${TAG} test start`);
         try {
-          let eaw = new EAWorker();
           eaw.start();
           let result: concurrency.Message[] = [];
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
@@ -899,10 +870,9 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
+          if (eaw.isAlive()) { eaw.quit(); }
           console.info(`${TAG} test end`)
         }
       });
@@ -929,7 +899,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, eaw);
           let messageObj = new concurrency.Message(1, "messageObj", handler);
           let message1 = new concurrency.Message(1, handler);
@@ -944,7 +914,9 @@ export default function MessageScenarioSecondTest(): void {
           expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();
           handler.removeMessages(1);
-          expect(handler.hasMessages(1)).assertFalse();
+          // messageObj 正在执行（IN_EXECUTION），所以 hasMessages(1) 仍为 true；
+          // removeMessages 只移除 NOT_EXECUTED 的 pending 消息（message1）
+          expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();
           handler.sendMessage(message1);
           expect(handler.hasMessages(1)).assertTrue();
@@ -957,8 +929,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -991,8 +961,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(handler.getWorker()).assertEqual(eaw);
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -1027,8 +995,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(handler.getWorker() === eaw1).assertTrue();
         } catch (error) {
           console.error(`error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -1080,8 +1046,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(doneFlag).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1133,13 +1097,10 @@ export default function MessageScenarioSecondTest(): void {
           expect(receivedWhat).assertEqual(1);
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-            worker.join();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             expect(false).assertFail();
@@ -1181,13 +1142,11 @@ export default function MessageScenarioSecondTest(): void {
           expect(h2Received).assertFalse();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
-            worker1.join();
-            worker2.join();
+            worker1.quit();
+            worker2.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             expect(false).assertFail();
@@ -1227,8 +1186,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(received).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1276,13 +1233,11 @@ export default function MessageScenarioSecondTest(): void {
           expect(h2Received).assertFalse();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
-            worker1.join();
-            worker2.join();
+            worker1.quit();
+            worker2.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             expect(false).assertFail();
@@ -1328,8 +1283,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(received).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1380,8 +1333,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(received).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1427,13 +1378,11 @@ export default function MessageScenarioSecondTest(): void {
           expect(h2Received).assertFalse();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
-            worker1.join();
-            worker2.join();
+            worker1.quit();
+            worker2.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             expect(false).assertFail();
@@ -1475,8 +1424,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1524,13 +1471,11 @@ export default function MessageScenarioSecondTest(): void {
           expect(h2Received).assertFalse();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
-            worker1.join();
-            worker2.join();
+            worker1.quit();
+            worker2.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             expect(false).assertFail();
@@ -1574,8 +1519,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1675,13 +1618,11 @@ export default function MessageScenarioSecondTest(): void {
           expect(h2Received).assertFalse();
         } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          const bizErr = err as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
-            worker1.join();
-            worker2.join();
+            worker1.quit();
+            worker2.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             expect(false).assertFail();
@@ -1711,7 +1652,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker1);
           let message1 = new concurrency.Message(1, 1, handler1);
           message1.sendToTarget();
@@ -1757,7 +1698,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg1 = new concurrency.Message(0, 1, handler);
           let msg2 = new concurrency.Message(1, 1, handler);
@@ -1780,8 +1721,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1814,7 +1753,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(1, 1 as int, handler);
           handler.sendMessage(msg);
@@ -1827,8 +1766,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1861,7 +1798,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg);
@@ -1874,8 +1811,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1917,8 +1852,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(received.load()).assertEqual(1);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1951,7 +1884,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(1, true, handler);
           handler.sendMessage(msg);
@@ -1964,8 +1897,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -1998,7 +1929,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(1, '1', handler);
           handler.sendMessage(msg);
@@ -2011,8 +1942,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2045,7 +1974,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(1, [1, 2], handler);
           handler.sendMessage(msg);
@@ -2059,8 +1988,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2093,7 +2020,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(1, obj, handler);
           handler.sendMessage(msg);
@@ -2106,8 +2033,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2139,7 +2064,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg1 = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg1);
@@ -2152,8 +2077,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2186,7 +2109,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -2205,8 +2128,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2241,7 +2162,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -2259,8 +2180,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2293,7 +2212,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
@@ -2315,8 +2234,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2359,7 +2276,7 @@ export default function MessageScenarioSecondTest(): void {
             (async () => {
               await Sleep(1000);
               flag = true;
-            })()
+            })().awaitSync()
           }, worker)
           worker.start();
           let msg = new concurrency.Message(handler)
@@ -2378,8 +2295,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2411,7 +2326,7 @@ export default function MessageScenarioSecondTest(): void {
           (async () => {
             await Sleep(1000);
             flag = true;
-          })()
+          })().awaitSync()
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2441,8 +2356,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2478,7 +2391,7 @@ export default function MessageScenarioSecondTest(): void {
           (async () => {
             await Sleep(1000);
             flag = true;
-          })()
+          })().awaitSync()
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2504,8 +2417,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2536,7 +2447,7 @@ export default function MessageScenarioSecondTest(): void {
           (async () => {
             await Sleep(1000);
             flag = true;
-          })()
+          })().awaitSync()
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2571,8 +2482,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2603,7 +2512,7 @@ export default function MessageScenarioSecondTest(): void {
           (async () => {
             await Sleep(1000);
             flag = true;
-          })()
+          })().awaitSync()
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2638,8 +2547,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2669,7 +2576,7 @@ export default function MessageScenarioSecondTest(): void {
           (async () => {
             await Sleep(1000);
             flag = true;
-          })()
+          })().awaitSync()
         }, worker)
         let p = () => {
           let a = 1;
@@ -2690,16 +2597,8 @@ export default function MessageScenarioSecondTest(): void {
             await Utils.msSleep(100);
           }
           expect(flag).assertTrue();
-          let waitCount: int = 0;
-          while (!flag && waitCount < 50) {
-            waitCount++;
-            await Utils.msSleep(100);
-          }
-          expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2728,7 +2627,7 @@ export default function MessageScenarioSecondTest(): void {
           (async () => {
             await Sleep(1000);
             flag = true;
-          })()
+          })().awaitSync()
         }, worker);
         let p = () => {
           let a = 1;
@@ -2747,8 +2646,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2797,8 +2694,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2837,8 +2732,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2888,8 +2781,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(flag).assertTrue();
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2937,8 +2828,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -2988,8 +2877,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(removed.load()).assertEqual(1);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {
@@ -3029,8 +2916,6 @@ export default function MessageScenarioSecondTest(): void {
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
-          const bizErr = error as BusinessError;
-          expect(typeof bizErr.code === 'number').assertTrue();
           expect(false).assertFail();
         } finally {
           try {

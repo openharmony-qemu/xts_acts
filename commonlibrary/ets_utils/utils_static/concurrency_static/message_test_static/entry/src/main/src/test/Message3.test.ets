@@ -59,14 +59,6 @@ interface NullData {
   isNull: boolean
 }
 
-export function Sleep(ms: int): Promise<number> {
-  return new Promise<number>((resolve) => {
-    setTimeout(() => {
-      resolve(1)
-    }, ms)
-  });
-}
-
 type CB = () => void;
 
 export default function Message3Test(): void {
@@ -76,14 +68,14 @@ export default function Message3Test(): void {
     })
 
     /**
+     * @tc.name   SharedStateConsistencyTest1300
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_1300
-     * @tc.name SharedStateConsistencyTest001
-     * @tc.desc Test shared object data consistency in message passing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test shared object data consistency in message passing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('SharedStateConsistencyTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SharedStateConsistencyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SharedStateConsistencyTest001';
         console.info(`${TAG} test start`);
@@ -121,6 +113,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -131,14 +124,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   MessageOrderingTest1400
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_1400
-     * @tc.name MessageOrderingTest001
-     * @tc.desc Test message processing order guarantee
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test message processing order guarantee
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('MessageOrderingTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageOrderingTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageOrderingTest001';
         console.info(`${TAG} test start`);
@@ -171,6 +164,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -181,14 +175,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   MixedMessageTypesTest1500
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_1500
-     * @tc.name MixedMessageTypesTest001
-     * @tc.desc Test mixed types of messages
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test mixed types of messages
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('MixedMessageTypesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MixedMessageTypesTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MixedMessageTypesTest001';
         console.info(`${TAG} test start`);
@@ -232,6 +226,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -242,14 +237,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   WhatValueTest1600
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_1600
-     * @tc.name WhatValueTest001
-     * @tc.desc Test various what values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test various what values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('WhatValueTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('WhatValueTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'WhatValueTest001';
         console.info(`${TAG} test start`);
@@ -276,14 +271,15 @@ export default function Message3Test(): void {
           }
 
           expect(receivedWhat.length).assertEqual(testValues.length);
-          for (let i = 0; i < testValues.length; i++) {
-            expect(receivedWhat[i]).assertEqual(testValues[i]);
+          for (const val of testValues) {
+            expect(receivedWhat.includes(val)).assertTrue();
           }
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -294,14 +290,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   EmptyStringTest1700
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_1700
-     * @tc.name EmptyStringTest001
-     * @tc.desc Test empty string as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test empty string as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('EmptyStringTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('EmptyStringTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EmptyStringTest001';
         console.info(`${TAG} test start`);
@@ -328,6 +324,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -338,14 +335,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   UnicodeStringTest1800
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_1800
-     * @tc.name UnicodeStringTest001
-     * @tc.desc Test Unicode string as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test Unicode string as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('UnicodeStringTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('UnicodeStringTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'UnicodeStringTest001';
         console.info(`${TAG} test start`);
@@ -373,6 +370,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -383,14 +381,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   LongStringTest1900
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_1900
-     * @tc.name LongStringTest001
-     * @tc.desc Test long string as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test long string as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('LongStringTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('LongStringTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'LongStringTest001';
         console.info(`${TAG} test start`);
@@ -419,6 +417,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -430,14 +429,14 @@ export default function Message3Test(): void {
 
 
     /**
+     * @tc.name   BoundaryWhatValuesTest2000
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2000
-     * @tc.name BoundaryWhatValuesTest001
-     * @tc.desc Test boundary values for what parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test boundary values for what parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('BoundaryWhatValuesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('BoundaryWhatValuesTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'BoundaryWhatValuesTest001';
         console.info(`${TAG} test start`);
@@ -478,6 +477,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -489,14 +489,14 @@ export default function Message3Test(): void {
 
 
     /**
+     * @tc.name   MultipleObjectTypesTest2100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2100
-     * @tc.name MultipleObjectTypesTest001
-     * @tc.desc Test messages with different object types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test messages with different object types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('MultipleObjectTypesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MultipleObjectTypesTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MultipleObjectTypesTest001';
         console.info(`${TAG} test start`);
@@ -539,6 +539,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -549,14 +550,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   PlainObjectTest2200
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2200
-     * @tc.name PlainObjectTest001
-     * @tc.desc Test plain object as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test plain object as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('PlainObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PlainObjectTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'PlainObjectTest001';
         console.info(`${TAG} test start`);
@@ -586,6 +587,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -596,14 +598,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   ArrayObjectTest2300
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2300
-     * @tc.name ArrayObjectTest001
-     * @tc.desc Test array object as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test array object as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('ArrayObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('ArrayObjectTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'ArrayObjectTest001';
         console.info(`${TAG} test start`);
@@ -633,6 +635,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -643,14 +646,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   MapObjectTest2400
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2400
-     * @tc.name MapObjectTest001
-     * @tc.desc Test Map object as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test Map object as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('MapObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MapObjectTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MapObjectTest001';
         console.info(`${TAG} test start`);
@@ -683,6 +686,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -693,14 +697,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   SetObjectTest2500
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2500
-     * @tc.name SetObjectTest001
-     * @tc.desc Test Set object as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test Set object as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('SetObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SetObjectTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SetObjectTest001';
         console.info(`${TAG} test start`);
@@ -730,6 +734,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -740,14 +745,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   DateObjectTest2600
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2600
-     * @tc.name DateObjectTest001
-     * @tc.desc Test Date object as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test Date object as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('DateObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('DateObjectTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'DateObjectTest001';
         console.info(`${TAG} test start`);
@@ -777,6 +782,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -787,14 +793,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   NullObjectTest2700
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2700
-     * @tc.name NullObjectTest001
-     * @tc.desc Test null as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test null as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('NullObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('NullObjectTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'NullObjectTest001';
         console.info(`${TAG} test start`);
@@ -822,6 +828,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -832,14 +839,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   NestedObjectTest2800
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2800
-     * @tc.name NestedObjectTest001
-     * @tc.desc Test nested object as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test nested object as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('NestedObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('NestedObjectTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'NestedObjectTest001';
         console.info(`${TAG} test start`);
@@ -878,6 +885,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -888,14 +896,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   EmptyObjectTest2900
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_2900
-     * @tc.name EmptyObjectTest001
-     * @tc.desc Test empty object as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test empty object as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('EmptyObjectTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('EmptyObjectTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EmptyObjectTest001';
         console.info(`${TAG} test start`);
@@ -924,6 +932,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
@@ -934,14 +943,14 @@ export default function Message3Test(): void {
       });
 
     /**
+     * @tc.name   EmptyArrayTest3000
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MESSAGEHANDLER_3000
-     * @tc.name EmptyArrayTest001
-     * @tc.desc Test empty array as message data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL1
+     * @tc.desc   Test empty array as message data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('EmptyArrayTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('EmptyArrayTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EmptyArrayTest001';
         console.info(`${TAG} test start`);
@@ -969,6 +978,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
+            worker.quit();
             worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);

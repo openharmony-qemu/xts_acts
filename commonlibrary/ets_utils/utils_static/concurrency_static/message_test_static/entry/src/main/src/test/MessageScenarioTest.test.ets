@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0100
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0100
-     * @tc.desc   Verify MessageScenarioTest0100
+     * @tc.desc   Verify MessageHandler sendMessage with what Message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -98,7 +98,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0200
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0200
-     * @tc.desc   Verify MessageScenarioTest0200
+     * @tc.desc   Verify MessageHandler sendMessage with object Message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -158,7 +158,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0300
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0300
-     * @tc.desc   Verify MessageScenarioTest0300
+     * @tc.desc   Verify MessageHandler sendMessage with callback Message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -203,7 +203,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0400
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0400
-     * @tc.desc   Verify MessageScenarioTest0400
+     * @tc.desc   Verify MessageHandler hasMessages after sendMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -247,7 +247,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0500
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0500
-     * @tc.desc   Verify MessageScenarioTest0500
+     * @tc.desc   Verify MessageHandler removeMessages after sendMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -297,7 +297,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0600
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0600
-     * @tc.desc   Verify MessageScenarioTest0600
+     * @tc.desc   Verify Message sendToTarget delivers to handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -351,7 +351,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0700
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0700
-     * @tc.desc   Verify MessageScenarioTest0700
+     * @tc.desc   Verify Message getWhat returns constructed what
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -403,7 +403,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0800
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0800
-     * @tc.desc   Verify MessageScenarioTest0800
+     * @tc.desc   Verify Message getObject returns constructed object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -446,7 +446,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest0900
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_0900
-     * @tc.desc   Verify MessageScenarioTest0900
+     * @tc.desc   Verify Message getCallback returns constructed callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -495,7 +495,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1000
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1000
-     * @tc.desc   Verify MessageScenarioTest1000
+     * @tc.desc   Verify Message getTarget returns bound MessageHandler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -539,7 +539,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1100
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1100
-     * @tc.desc   Verify MessageScenarioTest1100
+     * @tc.desc   Verify Message equals for identical messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -585,7 +585,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1200
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1200
-     * @tc.desc   Verify MessageScenarioTest1200
+     * @tc.desc   Verify MessageHandler post callback execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -622,7 +622,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1300
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1300
-     * @tc.desc   Verify MessageScenarioTest1300
+     * @tc.desc   Verify MessageHandler sendEmptyMessage delivery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -654,7 +654,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1400
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1400
-     * @tc.desc   Verify MessageScenarioTest1400
+     * @tc.desc   Verify MessageHandler concurrent multi-message delivery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -705,7 +705,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1500
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1500
-     * @tc.desc   Verify MessageScenarioTest1500
+     * @tc.desc   Verify MessageHandler removeCallbacks clears pending posts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -755,7 +755,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1600
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1600
-     * @tc.desc   Verify MessageScenarioTest1600
+     * @tc.desc   Verify MessageHandler hasCallbacks for pending posts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -801,7 +801,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1700
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1700
-     * @tc.desc   Verify MessageScenarioTest1700
+     * @tc.desc   Verify MessageHandler getWorker returns bound EAWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -852,7 +852,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1800
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1800
-     * @tc.desc   Verify MessageScenarioTest1800
+     * @tc.desc   Verify MessageHandler quit path after message handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -903,7 +903,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest1900
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_1900
-     * @tc.desc   Verify MessageScenarioTest1900
+     * @tc.desc   Verify Message.sendToTarget scenario for case 1900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -954,7 +954,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2000
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2000
-     * @tc.desc   Verify MessageScenarioTest2000
+     * @tc.desc   Verify Message.sendToTarget scenario for case 2000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1005,7 +1005,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2100
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2100
-     * @tc.desc   Verify MessageScenarioTest2100
+     * @tc.desc   Verify MessageHandler callback queue scenario for case 2100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1052,7 +1052,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2200
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2200
-     * @tc.desc   Verify MessageScenarioTest2200
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 2200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1093,7 +1093,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2300
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2300
-     * @tc.desc   Verify MessageScenarioTest2300
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 2300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1114,8 +1114,24 @@ export default function MessageScenarioTest(): void {
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
-          handler.sendMessage(message);
-          expect(handler.removeMessages(1)).assertEqual(true);
+          let blockEntered = new AtomicInt(0);
+          let releaseBlock = new AtomicInt(0);
+          handler.post((): void => {
+            blockEntered.fetchAdd(1);
+            while (releaseBlock.load() == 0) {
+            }
+          });
+          try {
+            let waitB: int = 0;
+            while (blockEntered.load() < 1 && waitB < 50) {
+              waitB++;
+              await Utils.msSleep(10);
+            }
+            handler.sendMessage(message);
+            expect(handler.removeMessages(1)).assertEqual(true);
+          } finally {
+            releaseBlock.fetchAdd(1);
+          }
           expect(flag).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
@@ -1134,7 +1150,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2400
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2400
-     * @tc.desc   Verify MessageScenarioTest2400
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 2400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1160,7 +1176,7 @@ export default function MessageScenarioTest(): void {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join()
+          worker.quit()
           done();
         }
       });
@@ -1168,7 +1184,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2500
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2500
-     * @tc.desc   Verify MessageScenarioTest2500
+     * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 2500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1224,7 +1240,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2600
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2600
-     * @tc.desc   Verify MessageScenarioTest2600
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 2600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1263,7 +1279,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2700
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2700
-     * @tc.desc   Verify MessageScenarioTest2700
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 2700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1304,7 +1320,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2800
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2800
-     * @tc.desc   Verify MessageScenarioTest2800
+     * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 2800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1339,8 +1355,24 @@ export default function MessageScenarioTest(): void {
             await Utils.msSleep(10);
           }
           let message = new concurrency.Message(1, messageObject, handler)
-          handler.sendMessage(message);
-          expect(handler.removeMessages(1)).assertEqual(true);
+          let blockEntered = new AtomicInt(0);
+          let releaseBlock = new AtomicInt(0);
+          handler.post((): void => {
+            blockEntered.fetchAdd(1);
+            while (releaseBlock.load() == 0) {
+            }
+          });
+          try {
+            let waitB: int = 0;
+            while (blockEntered.load() < 1 && waitB < 50) {
+              waitB++;
+              await Utils.msSleep(10);
+            }
+            handler.sendMessage(message);
+            expect(handler.removeMessages(1)).assertEqual(true);
+          } finally {
+            releaseBlock.fetchAdd(1);
+          }
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1358,7 +1390,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest2900
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_2900
-     * @tc.desc   Verify MessageScenarioTest2900
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 2900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1404,7 +1436,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3000
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3000
-     * @tc.desc   Verify MessageScenarioTest3000
+     * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 3000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1458,7 +1490,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3100
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3100
-     * @tc.desc   Verify MessageScenarioTest3100
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1504,7 +1536,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3200
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3200
-     * @tc.desc   Verify MessageScenarioTest3200
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1545,7 +1577,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3300
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3300
-     * @tc.desc   Verify MessageScenarioTest3300
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1589,7 +1621,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3400
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3400
-     * @tc.desc   Verify MessageScenarioTest3400
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1634,7 +1666,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3500
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3500
-     * @tc.desc   Verify MessageScenarioTest3500
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1678,7 +1710,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3600
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3600
-     * @tc.desc   Verify MessageScenarioTest3600
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1723,7 +1755,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3700
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3700
-     * @tc.desc   Verify MessageScenarioTest3700
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1764,7 +1796,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3800
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3800
-     * @tc.desc   Verify MessageScenarioTest3800
+     * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 3800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1801,8 +1833,24 @@ export default function MessageScenarioTest(): void {
             await Utils.msSleep(10);
           }
           let message = new concurrency.Message(1, messageObject, handler)
-          handler.sendMessage(message);
-          expect(handler.removeMessages(1, messageObject)).assertEqual(true);
+          let blockEntered = new AtomicInt(0);
+          let releaseBlock = new AtomicInt(0);
+          handler.post((): void => {
+            blockEntered.fetchAdd(1);
+            while (releaseBlock.load() == 0) {
+            }
+          });
+          try {
+            let waitB: int = 0;
+            while (blockEntered.load() < 1 && waitB < 50) {
+              waitB++;
+              await Utils.msSleep(10);
+            }
+            handler.sendMessage(message);
+            expect(handler.removeMessages(1, messageObject)).assertEqual(true);
+          } finally {
+            releaseBlock.fetchAdd(1);
+          }
           expect(flag).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
@@ -1821,7 +1869,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest3900
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_3900
-     * @tc.desc   Verify MessageScenarioTest3900
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 3900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1861,7 +1909,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4000
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4000
-     * @tc.desc   Verify MessageScenarioTest4000
+     * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 4000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1918,7 +1966,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4100
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4100
-     * @tc.desc   Verify MessageScenarioTest4100
+     * @tc.desc   Verify MessageHandler removeMessages scenario for case 4100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1958,7 +2006,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4200
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4200
-     * @tc.desc   Verify MessageScenarioTest4200
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1997,7 +2045,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4300
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4300
-     * @tc.desc   Verify MessageScenarioTest4300
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2040,7 +2088,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4400
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4400
-     * @tc.desc   Verify MessageScenarioTest4400
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2083,7 +2131,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4500
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4500
-     * @tc.desc   Verify MessageScenarioTest4500
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2104,8 +2152,24 @@ export default function MessageScenarioTest(): void {
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
-          handler.sendMessage(message);
-          expect(handler.hasMessages(1)).assertEqual(true);
+          let blockEntered = new AtomicInt(0);
+          let releaseBlock = new AtomicInt(0);
+          handler.post((): void => {
+            blockEntered.fetchAdd(1);
+            while (releaseBlock.load() == 0) {
+            }
+          });
+          try {
+            let waitB: int = 0;
+            while (blockEntered.load() < 1 && waitB < 50) {
+              waitB++;
+              await Utils.msSleep(10);
+            }
+            handler.sendMessage(message);
+            expect(handler.hasMessages(1)).assertEqual(true);
+          } finally {
+            releaseBlock.fetchAdd(1);
+          }
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -2126,7 +2190,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4600
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4600
-     * @tc.desc   Verify MessageScenarioTest4600
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2169,7 +2233,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4700
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4700
-     * @tc.desc   Verify MessageScenarioTest4700
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2212,7 +2276,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4800
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4800
-     * @tc.desc   Verify MessageScenarioTest4800
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2256,7 +2320,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest4900
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_4900
-     * @tc.desc   Verify MessageScenarioTest4900
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 4900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2300,7 +2364,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5000
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5000
-     * @tc.desc   Verify MessageScenarioTest5000
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 5000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2344,7 +2408,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5100
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5100
-     * @tc.desc   Verify MessageScenarioTest5100
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 5100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2366,8 +2430,24 @@ export default function MessageScenarioTest(): void {
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
-          handler.sendMessage(message);
-          expect(handler.hasMessages(1, messageObject)).assertEqual(true);
+          let blockEntered = new AtomicInt(0);
+          let releaseBlock = new AtomicInt(0);
+          handler.post((): void => {
+            blockEntered.fetchAdd(1);
+            while (releaseBlock.load() == 0) {
+            }
+          });
+          try {
+            let waitB: int = 0;
+            while (blockEntered.load() < 1 && waitB < 50) {
+              waitB++;
+              await Utils.msSleep(10);
+            }
+            handler.sendMessage(message);
+            expect(handler.hasMessages(1, messageObject)).assertEqual(true);
+          } finally {
+            releaseBlock.fetchAdd(1);
+          }
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -2388,7 +2468,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5200
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5200
-     * @tc.desc   Verify MessageScenarioTest5200
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 5200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2432,7 +2512,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5300
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5300
-     * @tc.desc   Verify MessageScenarioTest5300
+     * @tc.desc   Verify MessageHandler hasMessages scenario for case 5300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2477,7 +2557,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5400
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5400
-     * @tc.desc   Verify MessageScenarioTest5400
+     * @tc.desc   Verify Message.sendToTarget scenario for case 5400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2515,7 +2595,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5500
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5500
-     * @tc.desc   Verify MessageScenarioTest5500
+     * @tc.desc   Verify Message.sendToTarget scenario for case 5500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2553,7 +2633,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5600
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5600
-     * @tc.desc   Verify MessageScenarioTest5600
+     * @tc.desc   Verify Message.sendToTarget scenario for case 5600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2591,7 +2671,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5700
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5700
-     * @tc.desc   Verify MessageScenarioTest5700
+     * @tc.desc   Verify Message.sendToTarget scenario for case 5700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2630,7 +2710,7 @@ export default function MessageScenarioTest(): void {
     /**
      * @tc.name   MessageScenarioTest5800
      * @tc.number SUB_MESSAGE_SCENARIO_TEST_5800
-     * @tc.desc   Verify MessageScenarioTest5800
+     * @tc.desc   Verify MessageHandler sendMessage scenario for case 5800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

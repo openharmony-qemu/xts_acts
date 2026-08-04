@@ -26,7 +26,7 @@ import MessageConstructorCallbackTest from './message/MessageConstructorCallback
 import MessageConstructorHandlerTest from './message/MessageConstructorHandlerTest.test';
 import MessageConstructorWhatObjTest from './message/MessageConstructorWhatObjTest.test';
 import MessageConstructorWhatTest from './message/MessageConstructorWhatTest.test';
-import MessageEqualsApiTest from './message/MessageEqualsTest.test';
+import MessageEqualsApiTest from './message/MessageEqualsApiTest.test';
 import MessageGetCallbackTest from './message/MessageGetCallbackTest.test';
 import MessageGetObjectTest from './message/MessageGetObjectTest.test';
 import MessageGetTargetTest from './message/MessageGetTargetTest.test';

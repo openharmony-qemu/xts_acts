@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,12 +25,12 @@ export default function MessageEqualsTest(): void {
     describe("MessageEqualsTest", (): void => {
 
         /**
+         * @tc.name   testEqualsWithSameHandlerAndWhat
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_BASIC_0100
-         * @tc.name testEqualsWithSameHandlerAndWhat
-         * @tc.desc Test Message.equals with same handler and what value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level0
+         * @tc.desc   Test Message.equals with same handler and what value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testEqualsWithSameHandlerAndWhat", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -65,12 +65,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithSameHandlerWhatAndObj
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_BASIC_0200
-         * @tc.name testEqualsWithSameHandlerWhatAndObj
-         * @tc.desc Test Message.equals with same handler, what and obj
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level0
+         * @tc.desc   Test Message.equals with same handler, what and obj
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testEqualsWithSameHandlerWhatAndObj", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -106,12 +106,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithDifferentHandler
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_BASIC_0300
-         * @tc.name testEqualsWithDifferentHandler
-         * @tc.desc Test Message.equals with different handlers returns false
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level0
+         * @tc.desc   Test Message.equals with different handlers returns false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testEqualsWithDifferentHandler", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -153,12 +153,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithDifferentWhat
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_BASIC_0400
-         * @tc.name testEqualsWithDifferentWhat
-         * @tc.desc Test Message.equals with different what values returns false
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level0
+         * @tc.desc   Test Message.equals with different what values returns false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testEqualsWithDifferentWhat", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -192,12 +192,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithDifferentObj
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_BASIC_0500
-         * @tc.name testEqualsWithDifferentObj
-         * @tc.desc Test Message.equals with different obj values returns false
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level0
+         * @tc.desc   Test Message.equals with different obj values returns false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testEqualsWithDifferentObj", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
@@ -232,12 +232,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithSameCallback
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_CALLBACK_0100
-         * @tc.name testEqualsWithSameCallback
-         * @tc.desc Test Message.equals with same callback function
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with same callback function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithSameCallback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -275,12 +275,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithDifferentCallback
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_CALLBACK_0200
-         * @tc.name testEqualsWithDifferentCallback
-         * @tc.desc Test Message.equals with different callback functions returns false
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with different callback functions returns false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithDifferentCallback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -322,12 +322,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithDefaultConstructor
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_DEFAULT_0100
-         * @tc.name testEqualsWithDefaultConstructor
-         * @tc.desc Test Message.equals with default constructor (no what and obj)
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with default constructor (no what and obj)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithDefaultConstructor", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -361,12 +361,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithNumberObj
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_TYPE_0100
-         * @tc.name testEqualsWithNumberObj
-         * @tc.desc Test Message.equals with number object
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with number object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithNumberObj", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -402,12 +402,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithBooleanObj
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_TYPE_0200
-         * @tc.name testEqualsWithBooleanObj
-         * @tc.desc Test Message.equals with boolean object
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with boolean object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithBooleanObj", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -443,12 +443,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithCustomObject
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_COMPLEX_0100
-         * @tc.name testEqualsWithCustomObject
-         * @tc.desc Test Message.equals with custom object
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   Test Message.equals with custom object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testEqualsWithCustomObject", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithArrayObject
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_COMPLEX_0200
-         * @tc.name testEqualsWithArrayObject
-         * @tc.desc Test Message.equals with array object
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   Test Message.equals with array object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testEqualsWithArrayObject", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -528,12 +528,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithNullObj
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_EDGE_0100
-         * @tc.name testEqualsWithNullObj
-         * @tc.desc Test Message.equals when obj is null or undefined
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   Test Message.equals when obj is null or undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testEqualsWithNullObj", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -568,12 +568,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithNegativeWhat
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_EDGE_0200
-         * @tc.name testEqualsWithNegativeWhat
-         * @tc.desc Test Message.equals with negative what value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   Test Message.equals with negative what value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testEqualsWithNegativeWhat", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -608,12 +608,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithLargeWhat
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_EDGE_0300
-         * @tc.name testEqualsWithLargeWhat
-         * @tc.desc Test Message.equals with large what value
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   Test Message.equals with large what value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testEqualsWithLargeWhat", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -648,12 +648,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsMixedTypes
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_MIXED_0100
-         * @tc.name testEqualsMixedTypes
-         * @tc.desc Test Message.equals with mixed message types returns false
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   Test Message.equals with mixed message types returns false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testEqualsMixedTypes", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -691,12 +691,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithSelf
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_SELF_0100
-         * @tc.name testEqualsWithSelf
-         * @tc.desc Test Message.equals with self comparison
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with self comparison
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithSelf", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -729,12 +729,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithEmptyString
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_STRING_0100
-         * @tc.name testEqualsWithEmptyString
-         * @tc.desc Test Message.equals with empty string object
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with empty string object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithEmptyString", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -770,12 +770,12 @@ export default function MessageEqualsTest(): void {
             });
 
         /**
+         * @tc.name   testEqualsWithLongString
          * @tc.number SUB_COMMONLIBRARY_MESSAGE_EQUALS_STRING_0200
-         * @tc.name testEqualsWithLongString
-         * @tc.desc Test Message.equals with long string object
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level1
+         * @tc.desc   Test Message.equals with long string object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testEqualsWithLongString", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
