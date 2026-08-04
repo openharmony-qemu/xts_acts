@@ -52,7 +52,7 @@ import Log from '../../common/Log';
 import { RecordData } from '@ohos.base';
 
 
-Environment.envProp("accessibilityEnabled", "default")
+// Environment.envProp("accessibilityEnabled", "default")
 PersistentStorage.persistProp("highScore", 0)
 const TAG = 'ets_apiLack_add';
 
@@ -133,6 +133,7 @@ struct Common_ts_ets_apiStaticClear {
         .key("EnvPropText")
         .onClick((e: ClickEvent) => {
           let enable: boolean | null | undefined = AppStorage.get<boolean | null>("accessibilityEnabled");
+          console.info("enable1===========",enable)
           try {
             let backData: emitter.EventData = {
               data: {

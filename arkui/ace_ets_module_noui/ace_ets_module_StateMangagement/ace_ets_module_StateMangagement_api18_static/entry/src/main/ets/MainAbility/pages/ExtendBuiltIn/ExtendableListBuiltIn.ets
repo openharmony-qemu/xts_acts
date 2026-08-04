@@ -55,7 +55,7 @@ struct ExtendableListBuiltIn {
 
   build() {
     // 调用扩展组件
-    MyList({ space: 10 } as ListOptions) {
+    MyList() {
       ForEach(this.arr, (item: string) => {
         ListItem() {
           Text(item.toString())
