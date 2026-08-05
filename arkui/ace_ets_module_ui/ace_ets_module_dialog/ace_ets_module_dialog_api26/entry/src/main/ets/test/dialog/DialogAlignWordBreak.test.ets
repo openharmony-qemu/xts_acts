@@ -13,42 +13,31 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 export default function DialogAlignWordBreak() {
   describe('DialogAlignWordBreak', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogAlignWordBreak beforeEach');
-      let options: router.RouterOptions = { url: 'MainAbility/pages/dialog/DialogAlignWordBreak' };
-      try {
-        router.clear();
-        let pages = router.getState();
-        if (pages.name !== 'DialogAlignWordBreak') {
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
-      } catch (err) {
-        console.error('[ARKUI_DYN] push DialogAlignWordBreak error: ' + err);
-        expect().assertFail();
-      }
+      await DialogApi26TestHelper.openPageIfNeeded('DialogAlignWordBreak', 'MainAbility/pages/dialog/DialogAlignWordBreak');
       done();
     });
+
     afterEach(async () => {
-      await CommonFunc.sleep(700);
-      try {
-        let driver = await Driver.create();
-        await driver.pressBack();
-      } catch (e) {
-        console.info('[ARKUI_DYN] pressBack skip');
-      }
+      console.info('[ARKUI_DYN] DialogAlignWordBreak afterEach');
     });
+
+    afterAll(async () => {
+      await DialogApi26TestHelper.leavePage();
+      console.info('[ARKUI_DYN] DialogAlignWordBreak afterAll');
+    });
+
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0100
      * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0100
-     * @tc.desc alignment TOP wordBreak NORMAL
+     * @tc.desc DialogAlignWordBreak matrix scan (9 steps)
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level 2
@@ -56,253 +45,53 @@ export default function DialogAlignWordBreak() {
     it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_top_normal'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWTOP_NORMAL'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_TOP_NORMAL'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_TOP_NORMAL') >= 0).assertTrue();
+
+      // step 1: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0100
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_top_normal');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWTOP_NORMAL');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_TOP_NORMAL');
+
+      // step 2: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0200
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_top_break_all');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWTOP_BREAK_ALL');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_TOP_BREAK_ALL');
+
+      // step 3: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0300
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_top_break_word');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWTOP_BREAK_WORD');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_TOP_BREAK_WORD');
+
+      // step 4: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0400
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_center_normal');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWCENTER_NORMAL');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_CENTER_NORMAL');
+
+      // step 5: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0500
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_center_break_all');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWCENTER_BREAK_ALL');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_CENTER_BREAK_ALL');
+
+      // step 6: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0600
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_center_break_word');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWCENTER_BREAK_WORD');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_CENTER_BREAK_WORD');
+
+      // step 7: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0700
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_bottom_normal');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWBOTTOM_NORMAL');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_BOTTOM_NORMAL');
+
+      // step 8: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0800
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_bottom_break_all');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWBOTTOM_BREAK_ALL');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_BOTTOM_BREAK_ALL');
+
+      // step 9: SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0900
+      await DialogApi26TestHelper.clickId(driver, 'btn_aw_bottom_break_word');
+      await DialogApi26TestHelper.expectTextVisible(driver, 'AWBOTTOM_BREAK_WORD');
+      await DialogApi26TestHelper.dismissByText(driver, 'OK_BOTTOM_BREAK_WORD');
+
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0100 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0200
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0200
-     * @tc.desc alignment TOP wordBreak BREAK_ALL
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0200', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0200 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_top_break_all'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWTOP_BREAK_ALL'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_TOP_BREAK_ALL'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_TOP_BREAK_ALL') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0200 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0300
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0300
-     * @tc.desc alignment TOP wordBreak BREAK_WORD
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0300', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0300 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_top_break_word'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWTOP_BREAK_WORD'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_TOP_BREAK_WORD'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_TOP_BREAK_WORD') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0300 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0400
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0400
-     * @tc.desc alignment CENTER wordBreak NORMAL
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0400', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0400 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_center_normal'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWCENTER_NORMAL'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_CENTER_NORMAL'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_CENTER_NORMAL') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0400 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0500
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0500
-     * @tc.desc alignment CENTER wordBreak BREAK_ALL
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0500', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0500 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_center_break_all'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWCENTER_BREAK_ALL'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_CENTER_BREAK_ALL'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_CENTER_BREAK_ALL') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0500 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0600
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0600
-     * @tc.desc alignment CENTER wordBreak BREAK_WORD
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0600', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0600 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_center_break_word'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWCENTER_BREAK_WORD'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_CENTER_BREAK_WORD'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_CENTER_BREAK_WORD') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0600 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0700
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0700
-     * @tc.desc alignment BOTTOM wordBreak NORMAL
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0700', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0700 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_bottom_normal'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWBOTTOM_NORMAL'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_BOTTOM_NORMAL'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_BOTTOM_NORMAL') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0700 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0800
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0800
-     * @tc.desc alignment BOTTOM wordBreak BREAK_ALL
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0800', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0800 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_bottom_break_all'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWBOTTOM_BREAK_ALL'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_BOTTOM_BREAK_ALL'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_BOTTOM_BREAK_ALL') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0800 END');
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0900
-     * @tc.name SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0900
-     * @tc.desc alignment BOTTOM wordBreak BREAK_WORD
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level 2
-     */
-    it('SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0900', Level.LEVEL2, async (done: Function) => {
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0900 START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(600);
-      let btn = await driver.waitForComponent(ON.id('btn_aw_bottom_break_word'), 5000);
-      expect(btn !== null).assertTrue();
-      await btn.click();
-      await CommonFunc.sleep(1200);
-      let node = await driver.waitForComponent(ON.text('AWBOTTOM_BREAK_WORD'), 3000);
-      expect(node !== null).assertTrue();
-      let actBtn = await driver.waitForComponent(ON.text('OK_BOTTOM_BREAK_WORD'), 3000);
-      expect(actBtn !== null).assertTrue();
-      await actBtn.click();
-      await CommonFunc.sleep(700);
-      let label = await driver.findComponent(ON.id('align_wb_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('act_BOTTOM_BREAK_WORD') >= 0).assertTrue();
-      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogAlignWordBreak_0900 END');
       done();
     });
 

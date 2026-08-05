@@ -14,36 +14,27 @@
  */
 
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 export default function PopupOptionsLevelMode() {
   describe('PopupOptionsLevelMode', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] PopupOptionsLevelMode beforeEach');
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/popup/PopupOptionsLevelMode'
-      };
-      try {
-        router.clear();
-        let pages = router.getState();
-        if (pages.name !== 'PopupOptionsLevelMode') {
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
-      } catch (err) {
-        console.error('[ARKUI_DYN] push PopupOptionsLevelMode error: ' + err);
-        expect().assertFail();
-      }
+      await DialogApi26TestHelper.openPageIfNeeded('PopupOptionsLevelMode', 'MainAbility/pages/popup/PopupOptionsLevelMode');
       done();
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(800);
       console.info('[ARKUI_DYN] PopupOptionsLevelMode afterEach');
     });
+    afterAll(async () => {
+      await DialogApi26TestHelper.leavePage();
+      console.info('[ARKUI_DYN] PopupOptionsLevelMode afterAll');
+    });
+
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0100
@@ -56,7 +47,7 @@ export default function PopupOptionsLevelMode() {
     it('SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_popup_level_default'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -64,7 +55,7 @@ export default function PopupOptionsLevelMode() {
       let node = await driver.findComponent(ON.text('PopupOptions levelMode default'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0100 END');
       done();
     });
@@ -80,7 +71,7 @@ export default function PopupOptionsLevelMode() {
     it('SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_popup_level_overlay'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -88,7 +79,7 @@ export default function PopupOptionsLevelMode() {
       let node = await driver.findComponent(ON.text('PopupOptions levelMode OVERLAY'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0200 END');
       done();
     });
@@ -104,7 +95,7 @@ export default function PopupOptionsLevelMode() {
     it('SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_popup_level_embedded'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -112,7 +103,7 @@ export default function PopupOptionsLevelMode() {
       let node = await driver.findComponent(ON.text('PopupOptions levelMode EMBEDDED'));
       expect(node !== null).assertTrue();
       await driver.pressBack();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0300 END');
       done();
     });
@@ -128,7 +119,7 @@ export default function PopupOptionsLevelMode() {
     it('SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_popup_level_embedded_nav'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -139,7 +130,7 @@ export default function PopupOptionsLevelMode() {
       await go.click();
       await CommonFunc.sleep(1000);
       await driver.pressBack();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupOptionsLevelMode_0400 END');
       done();
     });

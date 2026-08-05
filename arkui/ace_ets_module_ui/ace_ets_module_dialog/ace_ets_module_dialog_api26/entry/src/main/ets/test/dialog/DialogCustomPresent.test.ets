@@ -13,40 +13,37 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 export default function DialogCustomPresent() {
   describe('DialogCustomPresent', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogCustomPresent beforeEach');
-      let options: router.RouterOptions = { url: 'MainAbility/pages/dialog/DialogCustomPresent' };
-      try {
-        router.clear();
-        let pages = router.getState();
-        if (pages.name !== 'DialogCustomPresent') {
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
-      } catch (err) {
-        console.error('[ARKUI_DYN] push DialogCustomPresent error: ' + err);
-        expect().assertFail();
-      }
+      await DialogApi26TestHelper.openPageIfNeeded('DialogCustomPresent', 'MainAbility/pages/dialog/DialogCustomPresent');
       done();
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(500);
+      let driver = await Driver.create();
       try {
-        let driver = await Driver.create();
-        await driver.pressBack();
-        await CommonFunc.sleep(300);
+        let dismiss = await driver.findComponent(ON.id('btn_custom_dismiss'));
+        if (dismiss !== null) {
+          await dismiss.click();
+          await CommonFunc.sleep(300);
+        }
       } catch (e) {
-        console.info('[ARKUI_DYN] pressBack skip');
       }
+      await DialogApi26TestHelper.dismissOverlayIfAny(driver);
+      console.info('[ARKUI_DYN] afterEach');
     });
+    afterAll(async () => {
+      await DialogApi26TestHelper.leavePage();
+      console.info('[ARKUI_DYN] DialogCustomPresent afterAll');
+    });
+
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogCustomPresent_0100
@@ -59,7 +56,7 @@ export default function DialogCustomPresent() {
     it('SUB_ArkUI_DialogApi26_DialogCustomPresent_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_custom_style_true'));
       await btn.click();
       await CommonFunc.sleep(1500);
@@ -70,7 +67,7 @@ export default function DialogCustomPresent() {
       expect(node !== null).assertTrue();
       let dismiss = await driver.findComponent(ON.id('btn_custom_dismiss'));
       await dismiss.click();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0100 END');
       done();
     });
@@ -86,7 +83,7 @@ export default function DialogCustomPresent() {
     it('SUB_ArkUI_DialogApi26_DialogCustomPresent_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_custom_content'));
       await btn.click();
       await CommonFunc.sleep(1500);
@@ -94,7 +91,7 @@ export default function DialogCustomPresent() {
       expect(node !== null).assertTrue();
       let dismiss = await driver.findComponent(ON.id('btn_custom_dismiss'));
       await dismiss.click();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(500);
       let label = await driver.findComponent(ON.id('custom_present_action'));
       let txt = await label.getText();
       expect(txt.indexOf('dismissed') >= 0 || txt.indexOf('contentOpened') >= 0).assertTrue();
@@ -113,18 +110,29 @@ export default function DialogCustomPresent() {
     it('SUB_ArkUI_DialogApi26_DialogCustomPresent_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.waitForComponent(ON.id('btn_custom_present_update'), 5000);
       expect(btn !== null).assertTrue();
+      await DialogApi26TestHelper.dismissOverlayIfAny(driver);
       await btn.click();
-      await CommonFunc.sleep(2000);
-      let label = await driver.findComponent(ON.id('custom_present_action'));
-      let txt = await label.getText();
-      expect(txt.indexOf('updated') >= 0).assertTrue();
+      // present+update is async; wait for action text
+      let updated = false;
+      for (let i = 0; i < 10; i++) {
+        await CommonFunc.sleep(300);
+        let label = await driver.findComponent(ON.id('custom_present_action'));
+        if (label !== null) {
+          let txt = await label.getText();
+          if (txt.indexOf('updated') >= 0) {
+            updated = true;
+            break;
+          }
+        }
+      }
+      expect(updated).assertTrue();
       let dismiss = await driver.waitForComponent(ON.id('btn_custom_dismiss'), 3000);
       if (dismiss !== null) {
         await dismiss.click();
-        await CommonFunc.sleep(500);
+        await CommonFunc.sleep(200);
       }
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0300 END');
       done();
@@ -141,7 +149,7 @@ export default function DialogCustomPresent() {
     it('SUB_ArkUI_DialogApi26_DialogCustomPresent_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.waitForComponent(ON.id('btn_custom_size'), 5000);
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -169,7 +177,7 @@ export default function DialogCustomPresent() {
     it('SUB_ArkUI_DialogApi26_DialogCustomPresent_0500', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0500 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.waitForComponent(ON.id('btn_custom_border'), 5000);
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -197,7 +205,7 @@ export default function DialogCustomPresent() {
     it('SUB_ArkUI_DialogApi26_DialogCustomPresent_0600', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogCustomPresent_0600 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.waitForComponent(ON.id('btn_custom_flags'), 5000);
       expect(btn !== null).assertTrue();
       await btn.click();

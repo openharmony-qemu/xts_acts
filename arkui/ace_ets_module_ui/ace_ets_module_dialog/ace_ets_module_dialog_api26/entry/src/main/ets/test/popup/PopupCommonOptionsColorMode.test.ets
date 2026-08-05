@@ -14,36 +14,27 @@
  */
 
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import router from '@ohos.router';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 export default function PopupCommonOptionsColorMode() {
   describe('PopupCommonOptionsColorMode', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] PopupCommonOptionsColorMode beforeEach');
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/popup/PopupCommonOptionsColorMode'
-      };
-      try {
-        router.clear();
-        let pages = router.getState();
-        if (pages.name !== 'PopupCommonOptionsColorMode') {
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
-      } catch (err) {
-        console.error('[ARKUI_DYN] push PopupCommonOptionsColorMode error: ' + err);
-        expect().assertFail();
-      }
+      await DialogApi26TestHelper.openPageIfNeeded('PopupCommonOptionsColorMode', 'MainAbility/pages/popup/PopupCommonOptionsColorMode');
       done();
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(800);
       console.info('[ARKUI_DYN] PopupCommonOptionsColorMode afterEach');
     });
+    afterAll(async () => {
+      await DialogApi26TestHelper.leavePage();
+      console.info('[ARKUI_DYN] PopupCommonOptionsColorMode afterAll');
+    });
+
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0100
@@ -56,7 +47,7 @@ export default function PopupCommonOptionsColorMode() {
     it('SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_common_color_follow_system'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -66,7 +57,7 @@ export default function PopupCommonOptionsColorMode() {
       let closeBtn = await driver.findComponent(ON.id('popup_common_color_close'));
       expect(closeBtn !== null).assertTrue();
       await closeBtn.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0100 END');
       done();
     });
@@ -82,7 +73,7 @@ export default function PopupCommonOptionsColorMode() {
     it('SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_common_color_follow_target'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -91,7 +82,7 @@ export default function PopupCommonOptionsColorMode() {
       expect(node !== null).assertTrue();
       let closeBtn = await driver.findComponent(ON.id('popup_common_color_close'));
       await closeBtn.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0200 END');
       done();
     });
@@ -107,7 +98,7 @@ export default function PopupCommonOptionsColorMode() {
     it('SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
+      await CommonFunc.sleep(200);
       let btn = await driver.findComponent(ON.id('btn_common_color_combined'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -116,7 +107,7 @@ export default function PopupCommonOptionsColorMode() {
       expect(node !== null).assertTrue();
       let closeBtn = await driver.findComponent(ON.id('popup_common_color_close'));
       await closeBtn.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(200);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_PopupCommonOptionsColorMode_0300 END');
       done();
     });
