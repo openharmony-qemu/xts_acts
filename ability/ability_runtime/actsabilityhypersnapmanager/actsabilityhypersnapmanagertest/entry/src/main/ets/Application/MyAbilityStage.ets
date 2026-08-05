@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2023 Huawei Device Co., Ltd.
+* Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -13,10 +13,18 @@
 * limitations under the License.
 */
 
-import AbilityStage from "@ohos.app.ability.AbilityStage"
+import AbilityStage from '@ohos.app.ability.AbilityStage'
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
     console.info('MyAbilityStageMonitor onCreate');
+    globalThis.abilityStageContext = this.context;
+    AppStorage.setOrCreate<string>('onCreateMain', 'onCreate');
   }
+
+  async onAboutToCreateAbilityAsync(): Promise<void> {
+    console.info('MyAbilityStage onAboutToCreateAbility');
+    AppStorage.setOrCreate<string>('onAboutToCreateAbilityAsync', 'onAboutToCreateAbilityAsync');
+  }
+  
 }
