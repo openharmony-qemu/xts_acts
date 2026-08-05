@@ -51,7 +51,7 @@ struct SwiperGestureHandler1 {
         Column()
           .id('SwiperGestureHandlerColumn')
           .gestureModifier(this.modifier)
-          .width("90%")
+          .width('60%')
           .height("80%")
           .backgroundColor(Color.Blue)
       }
