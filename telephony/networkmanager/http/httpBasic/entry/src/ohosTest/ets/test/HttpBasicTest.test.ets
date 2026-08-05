@@ -16,14 +16,6 @@
 import netHttp from '@ohos.net.http';
 import { describe, expect, it, TestType, Size, Level  } from '@ohos/hypium';
 import {BusinessError} from '@ohos.base';
-import {
-  URL_USER_AGENT,
-  URL_GET,
-  URL_POST,
-  URL_PUT,
-  URL_COOKIES,
-  URL_ENCODE
-} from './Config.test';
 
 const ExpectFail = () => {
   try {
@@ -57,7 +49,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request(URL_USER_AGENT).then((data) =>{
+        http.request("https://httpbin.org/user-agent").then((data) =>{
           console.info(`${caseName} get data.responseCode is: `+ JSON.stringify(data.responseCode));
           console.info(`${caseName} get data.result is: `+ JSON.stringify(data));
           http.destroy();
@@ -89,7 +81,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request(URL_GET ,{
+        http.request("https://httpbin.org/get" ,{
           method: netHttp.RequestMethod.GET,
           extraData: "MineMine",
           header: { 'Content-Type': 'application/json' }
@@ -98,7 +90,7 @@ export default function HttpBasicTest() {
           ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
           console.info(`${caseName} get data is: ` + JSON.stringify(data));
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("content-type") != -1);
+            ExpectTrue(data.result.toString().search("Content-Type") != -1);
             ExpectTrue(data.result.toString().search("application/json") != -1);
           }
           done();
@@ -129,7 +121,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request(URL_POST, {
+        http.request("https://httpbin.org/post", {
           method: netHttp.RequestMethod.POST,
           extraData: "MineMine"
         }).then((data) =>{
@@ -162,7 +154,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request(URL_PUT, {
+        http.request("https://httpbin.org/put", {
           method: netHttp.RequestMethod.PUT,
           extraData: "MineMine"
         }).then((data) => {
@@ -194,7 +186,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request(URL_COOKIES).then( (data) =>{
+        http.request("https://httpbin.org/cookies/set/name/value").then( (data) =>{
           console.info(`${caseName} request get data is: `+ JSON.stringify(data));
           http.destroy();
           ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
@@ -225,8 +217,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request(URL_ENCODE, {
-          method: netHttp.RequestMethod.POST,
+        http.request("https://httpbin.org/response-headers?key1=val1&key2=val2", {
           extraData: {
             "name1": "mine1",
             "name2": "mine2",

@@ -14,7 +14,7 @@
  */
 
 import Utils from '../../test/Utils';
-import {URL, URL3} from '../../test/Config.test';
+import { BASIC_AUTH_BACKUP_URL } from '../../test/Config.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 
@@ -59,7 +59,7 @@ struct httpAuthHandlerEnhanced {
           switch (this.str) {
             case 'emitHttpAuthHandlerConfirmFalse': {
               try {
-                this.controller.loadUrl(URL);
+                this.controller.loadUrl(BASIC_AUTH_BACKUP_URL);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 2025102107)
