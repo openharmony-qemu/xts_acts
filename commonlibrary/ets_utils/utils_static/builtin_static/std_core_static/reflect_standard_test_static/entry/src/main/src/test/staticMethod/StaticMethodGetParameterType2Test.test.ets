@@ -1887,3 +1887,227 @@ export default function StaticMethodGetParameterType2Test(): void {
       expect(m1!.getParameterType(0)!.getName()).assertEqual('std.core.Array');
       expect(m2!.getParameterType(0)!.getName()).assertEqual('std.core.Array');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_8500
+     * @tc.name testStaticMethodGetParameterType2_085
+     * @tc.desc Verify getParameterType() for NestedFixedArrayPTClass.processMatrix: param 0 is Int[][]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<NestedFixedArrayPTClass>();
+      let method = cls.getStaticMethod('processMatrix');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParameterType(0)!.getName()).assertEqual('std.core.Int[][]');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_8600
+     * @tc.name testStaticMethodGetParameterType2_086
+     * @tc.desc Verify getParameterType() for TripleNestedPTClass.process3D: param 0 is Int[][][]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TripleNestedPTClass>();
+      let method = cls.getStaticMethod('process3D');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParameterType(0)!.getName()).assertEqual('std.core.Int[][][]');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_8700
+     * @tc.name testStaticMethodGetParameterType2_087
+     * @tc.desc Verify getParametersNum() for EmptyBodyPTClass: single method returns 0 params
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EmptyBodyPTClass>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(1);
+      expect(methods[0].getParametersNum()).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_8800
+     * @tc.name testStaticMethodGetParameterType2_088
+     * @tc.desc Verify getParametersNum() for MultiEmptyBodyPTClass: 3 methods all return 0 params
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MultiEmptyBodyPTClass>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(3);
+      for (let i: int = 0; i < methods.length; i++) {
+        expect(methods[i].getParametersNum()).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_8900
+     * @tc.name testStaticMethodGetParameterType2_089
+     * @tc.desc Verify getParameterType() for SpecialNamePTClass: specialGet param0=i32, specialSet params are i32
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SpecialNamePTClass>();
+      let m1 = cls.getStaticMethod('specialGet');
+      let m2 = cls.getStaticMethod('specialSet');
+      expect(m1!.getParameterType(0)!.getName()).assertEqual('i32');
+      expect(m2!.getParameterType(0)!.getName()).assertEqual('i32');
+      expect(m2!.getParameterType(1)!.getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9000
+     * @tc.name testStaticMethodGetParameterType2_090
+     * @tc.desc Verify getParameterType() for FinalMethodPTClass2: methodA 0 params, methodB param0=i32
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<FinalMethodPTClass2>();
+      let m1 = cls.getStaticMethod('methodA');
+      let m2 = cls.getStaticMethod('methodB');
+      expect(m1!.getParametersNum()).assertEqual(0);
+      expect(m2!.getParameterType(0)!.getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9100
+     * @tc.name testStaticMethodGetParameterType2_091
+     * @tc.desc Verify getParametersNum() for EnumOwnerPTClass.getValue: 0 params
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EnumOwnerPTClass>();
+      let method = cls.getStaticMethod('getValue');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParametersNum()).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9200
+     * @tc.name testStaticMethodGetParameterType2_092
+     * @tc.desc Verify getParametersNum() for ConflictChildPTClass.run: 0 params
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ConflictChildPTClass>();
+      let method = cls.getStaticMethod('run');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParametersNum()).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9300
+     * @tc.name testStaticMethodGetParameterType2_093
+     * @tc.desc Verify getParameterType(0) on single-parameter method returns correct type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<BasicTypeParamClass>();
+      let method = cls.getStaticMethod('processInt');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParametersNum()).assertEqual(1);
+      expect(method!.getParameterType(0)!.getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9400
+     * @tc.name testStaticMethodGetParameterType2_094
+     * @tc.desc Verify getParameterType on IntStrBool method returns correct types for i32, String, u1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<HeavyOverloadParamTypeClass>();
+      let method = cls.getStaticMethod('processIntStrBool');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParameterType(0)!.getName()).assertEqual('i32');
+      expect(method!.getParameterType(1)!.getName()).assertEqual('std.core.String');
+      expect(method!.getParameterType(2)!.getName()).assertEqual('u1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9500
+     * @tc.name testStaticMethodGetParameterType2_095
+     * @tc.desc Verify getStaticMethod with empty param types resolves zero-arg overload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<HeavyOverloadParamTypeClass>();
+      let method = cls.getStaticMethod('processNoArg');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParametersNum()).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9600
+     * @tc.name testStaticMethodGetParameterType2_096
+     * @tc.desc Verify getStaticMethod with int param type resolves single-int overload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<HeavyOverloadParamTypeClass>();
+      let method = cls.getStaticMethod('processInt');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParameterType(0)!.getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9700
+     * @tc.name testStaticMethodGetParameterType2_097
+     * @tc.desc Verify getStaticMethod with string+int param types resolves two-param overload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<HeavyOverloadParamTypeClass>();
+      let method = cls.getStaticMethod('processStringInt');
+      expect(method !== undefined).assertTrue();
+      expect(method!.getParameterType(0)!.getName()).assertEqual('std.core.String');
+      expect(method!.getParameterType(1)!.getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_TWO_9800
+     * @tc.name testStaticMethodGetParameterType2_098
+     * @tc.desc Verify getStaticMethods on dual-method class returns length 2 with distinct params
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterType2_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OverloadReturnPTClass>();
+      let m1 = cls.getStaticMethod('computeNoArg');
+      let m2 = cls.getStaticMethod('computeOneArg');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+    });
+
+  });
+}
