@@ -4351,9 +4351,10 @@ export default function AVPlayerLocalTest() {
             setSource(avPlayer, fileDescriptor);
             adsController = await media.createAVAdsController(avPlayer);
             adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
-            adsController?.onAdsEventListenerLoadingError((adsId: string, reason: BusinessError) => {
-              console.error(`Ads loading failed, adsId: ${adsId}, reason: ${reason.message}`);
-            });
+            let callback: media.OnAdsEventLoadingErrorHandle = (adsId: string, reason: BusinessError) => {
+              console.info(`SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0600 callback adsId: ${adsId}, reason: ${reason}`);
+            };
+            adsController?.onAdsEventListenerLoadingError(callback);
           }
           if (err != null) {
             console.info(`case createAVPlayer error, errMessage is ${err.message}`);
@@ -4446,9 +4447,10 @@ export default function AVPlayerLocalTest() {
             setSource(avPlayer, fileDescriptor);
             adsController = await media.createAVAdsController(avPlayer);
             adMediaSource = media.createMediaSourceWithUrl(AD_SOURCE);
-            adsController?.onAdsListenerAdsStarted((adsId: string, duration: number) => {
-              console.error(`Ads started, adsId: ${adsId}, duration: ${duration}ms`);
-            });
+            let callback: media.OnAdsEventAdsStartedHandle = (adsId: string, duration: number) => {
+              console.info(`SUB_MULTIMEDIA_MEDIA_AVPLAYER_ADS_0700 callback adsId: ${adsId}, duration: ${duration}`);
+            };
+            adsController?.onAdsListenerAdsStarted(callback);
           }
           if (err != null) {
             console.info(`case createAVPlayer error, errMessage is ${err.message}`);

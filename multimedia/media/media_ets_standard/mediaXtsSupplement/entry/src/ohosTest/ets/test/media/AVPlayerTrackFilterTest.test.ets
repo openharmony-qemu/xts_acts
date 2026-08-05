@@ -748,5 +748,179 @@ export default function AVPlayerTrackFilterTest() {
       console.info(TAG, testName, "AVPlayer fdSrc set successfully");
       done();
     })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1400
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1400
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1400';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully state: " + avPlayer.state);
+      let filterConfig: media.TrackSelectionFilter = {
+        preferredVideoMimeTypes: [],
+        preferredAudioMimeTypes: [],
+      }
+      await avPlayer.setTrackSelectionFilter(filterConfig).then(async () => {
+        let filter = await avPlayer.getTrackSelectionFilter();
+        console.info(TAG, testName + ` getTrackSelectionFilter success: ` + JSON.stringify(filter));
+        expect(Object.keys(filter).length == 0).assertTrue();
+        await avPlayer.release();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect().assertFail();
+        avPlayer.release();
+      });
+      console.info(TAG, testName, "AVPlayer fdSrc set successfully");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1500
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1500
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1500';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully state: " + avPlayer.state);
+      let filterConfig: media.TrackSelectionFilter = {
+        preferredVideoMimeTypes: [""],
+        preferredAudioMimeTypes: [""],
+      }
+      await avPlayer.setTrackSelectionFilter(filterConfig).then(async () => {
+        let filter = await avPlayer.getTrackSelectionFilter();
+        console.info(TAG, testName + ` getTrackSelectionFilter success: ` + JSON.stringify(filter));
+        expect(Object.keys(filter).length == 2).assertTrue();
+        expect(assertArrayEqual(filter.preferredVideoMimeTypes!, [""])).assertTrue();
+        expect(assertArrayEqual(filter.preferredAudioMimeTypes!, [""])).assertTrue();
+        await avPlayer.release();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect().assertFail();
+        avPlayer.release();
+      });
+      console.info(TAG, testName, "AVPlayer fdSrc set successfully");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1600
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1600
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1600';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully state: " + avPlayer.state);
+      let filterConfig: media.TrackSelectionFilter = {
+        preferredAudioLanguages: [],
+        preferredSubtitleLanguages: [],
+      }
+      await avPlayer.setTrackSelectionFilter(filterConfig).then(async () => {
+        let filter = await avPlayer.getTrackSelectionFilter();
+        console.info(TAG, testName + ` getTrackSelectionFilter success: ` + JSON.stringify(filter));
+        expect(Object.keys(filter).length == 0).assertTrue();
+        await avPlayer.release();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect().assertFail();
+        avPlayer.release();
+      });
+      console.info(TAG, testName, "AVPlayer fdSrc set successfully");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1700
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1700
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1700';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully state: " + avPlayer.state);
+      let filterConfig: media.TrackSelectionFilter = {
+        preferredAudioLanguages: [""],
+        preferredSubtitleLanguages: [""],
+      }
+      await avPlayer.setTrackSelectionFilter(filterConfig).then(async () => {
+        let filter = await avPlayer.getTrackSelectionFilter();
+        console.info(TAG, testName + ` getTrackSelectionFilter success: ` + JSON.stringify(filter));
+        expect(Object.keys(filter).length == 2).assertTrue();
+        expect(assertArrayEqual(filter.preferredAudioLanguages!, [""])).assertTrue();
+        expect(assertArrayEqual(filter.preferredSubtitleLanguages!, [""])).assertTrue();
+        await avPlayer.release();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect().assertFail();
+        avPlayer.release();
+      });
+      console.info(TAG, testName, "AVPlayer fdSrc set successfully");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1800
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1800
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1800';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully state: " + avPlayer.state);
+      await avPlayer.setTrackSelectionFilter(null).then(async () => {
+        console.info(TAG, testName + ` setTrackSelectionFilter done`);
+        expect().assertFail();
+        await avPlayer.release();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect(error.code == 401).assertTrue();
+        avPlayer.release();
+      });
+      console.info(TAG, testName, "AVPlayer fdSrc set successfully");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1900
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1900
+     * @tc.desc   AVPlayer_setTrackSelectionFilter
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1900', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AVPLAYER_SETTRACKSELECTIONFILTER_1900';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully state: " + avPlayer.state);
+      await avPlayer.setTrackSelectionFilter(undefined).then(async () => {
+        console.info(TAG, testName + ` setTrackSelectionFilter done`);
+        expect().assertFail();
+        await avPlayer.release();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ` setTrackSelectionFilter failed: ` + JSON.stringify(error));
+        expect(error.code == 401).assertTrue();
+        avPlayer.release();
+      });
+      console.info(TAG, testName, "AVPlayer fdSrc set successfully");
+      done();
+    })
   })
 }
