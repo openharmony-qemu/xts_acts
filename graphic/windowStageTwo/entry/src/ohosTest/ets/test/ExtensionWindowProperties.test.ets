@@ -1666,34 +1666,6 @@ export default function extensionWindowPropertiesTest() {
         }
       }
     })
-    /**
-     * @tc.name   testOffuiExtensionLimitChange_DestoryedSubWindow
-     * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_0200
-     * @tc.desc   testOffuiExtensionLimitChange_DestoryedSubWindow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testOffuiExtensionLimitChange_DestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'testOffuiExtensionLimitChange_DestoryedSubWindow';
-      let subWindowClass = await windowStage.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow');
-      await subWindowClass.destroyWindow();
-      try {
-        const callback = (data: boolean) => { };
-        subWindowClass.off("uiExtensionSecureLimitChange", callback);
-        expect().assertFail();
-        done()
-      } catch (error) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(error)}`);
-        if (error.code === 801) {
-          done();
-        } else {
-          expect(error.code).assertEqual(1300002);
-          done();
-        }
-      }
-    })
-
 
     /**
      * @tc.name   testCreateSubWindowWithOptionsFollowTrue

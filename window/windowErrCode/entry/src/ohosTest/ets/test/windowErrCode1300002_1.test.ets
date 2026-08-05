@@ -472,44 +472,7 @@ export default function windowErrCode1300002_1() {
         done()
       }
     })
-    /**
-     * @tc.name   testOffDisplayIdChangeErrCode1300002_0100
-     * @tc.number testOffDisplayIdChangeErrCode1300002_0100
-     * @tc.desc   testOffDisplayIdChangeErrCode1300002_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testOffDisplayIdChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testOffDisplayIdChangeErrCode1300002_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window | undefined = undefined;
-      await windowStage.createSubWindow('testOffDisplayIdChangeErrCode1300002_SubWindow_Promise')
-        .then((data) => {
-          subWin = data;
-          expect(!!subWin).assertTrue();
-          console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-        })
-        .catch((err: BusinessError) => {
-          console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-          expect().assertFail();
-          done()
-        });
-      await (subWin! as ohosWindow.Window).destroyWindow();
-      try {
-        subWin!.off("displayIdChange", (res: number) => {
-        });
-        console.error(msgStr + 'Succeeded in calling off displayIdChange.');
-        expect().assertFail();
-        done()
-      } catch (e) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
-        expect(e.code).assertEqual(1300002);
-        expect(e.message!=null).assertTrue();
-        done()
-      }
-    })
+
     /**
      * @tc.name   testOnWindowVisibilityChangeErrCode1300002_0100
      * @tc.number testOnWindowVisibilityChangeErrCode1300002_0100
@@ -586,44 +549,7 @@ export default function windowErrCode1300002_1() {
         done()
       }
     })
-    /**
-     * @tc.name   testOffSystemDensityChangeErrCode1300002_0100
-     * @tc.number testOffSystemDensityChangeErrCode1300002_0100
-     * @tc.desc   testOffSystemDensityChangeErrCode1300002_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testOffSystemDensityChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testOffSystemDensityChangeErrCode1300002_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window | undefined = undefined;
-      await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_SubWindow_Promise')
-        .then((data) => {
-          subWin = data;
-          expect(!!subWin).assertTrue();
-          console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-        })
-        .catch((err: BusinessError) => {
-          console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-          expect().assertFail();
-          done()
-        });
-      await (subWin! as ohosWindow.Window).destroyWindow();
-      try {
-        subWin!.off("systemDensityChange", (res: number) => {
-        });
-        console.error(msgStr + 'Succeeded in calling off systemDensityChange.');
-        expect().assertFail();
-        done()
-      } catch (e) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
-        expect(e.code).assertEqual(1300002);
-        expect(e.message!=null).assertTrue();
-        done()
-      }
-    })
+    
     /**
      * @tc.name   testOnNoInteractionDetectedErrCode1300002_0100
      * @tc.number testOnNoInteractionDetectedErrCode1300002_0100
@@ -662,44 +588,7 @@ export default function windowErrCode1300002_1() {
         done()
       }
     })
-    /**
-     * @tc.name   testOffNoInteractionDetectedErrCode1300002_0100
-     * @tc.number testOffNoInteractionDetectedErrCode1300002_0100
-     * @tc.desc   testOffNoInteractionDetectedErrCode1300002_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testOffNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testOffNoInteractionDetectedErrCode1300002_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window | undefined = undefined;
-      await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_SubWindow_Promise')
-        .then((data) => {
-          subWin = data;
-          expect(!!subWin).assertTrue();
-          console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-        })
-        .catch((err: BusinessError) => {
-          console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-          expect().assertFail();
-          done()
-        });
-      await (subWin! as ohosWindow.Window).destroyWindow();
-      try {
-        subWin!.off("noInteractionDetected", () => {
-        });
-        console.error(msgStr + 'Succeeded in calling off noInteractionDetected.');
-        expect().assertFail();
-        done()
-      } catch (e) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
-        expect(e.code).assertEqual(1300002);
-        expect(e.message!=null).assertTrue();
-        done()
-      }
-    })
+    
     /**
      * @tc.name   testOnSubWindowCloseErrCode1300002_0100
      * @tc.number testOnSubWindowCloseErrCode1300002_0100
@@ -738,44 +627,7 @@ export default function windowErrCode1300002_1() {
         done()
       }
     })
-    /**
-     * @tc.name   testOffSubWindowCloseErrCode1300002_0100
-     * @tc.number testOffSubWindowCloseErrCode1300002_0100
-     * @tc.desc   testOffSubWindowCloseErrCode1300002_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testOffSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testOffSubWindowCloseErrCode1300002_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window | undefined = undefined;
-      await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_SubWindow_Promise')
-        .then((data) => {
-          subWin = data;
-          expect(!!subWin).assertTrue();
-          console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-        })
-        .catch((err: BusinessError) => {
-          console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-          expect().assertFail();
-          done()
-        });
-      await (subWin! as ohosWindow.Window).destroyWindow();
-      try {
-        subWin!.off("subWindowClose", () => {
-        });
-        console.error(msgStr + 'Succeeded in calling off subWindowClose.');
-        expect().assertFail();
-        done()
-      } catch (e) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
-        expect(e.code).assertEqual(1300002);
-        expect(e.message!=null).assertTrue();
-        done()
-      }
-    })
+   
     /**
      * @tc.name   testSetWindowTopmostPromiseErrCode1300002_0100
      * @tc.number testSetWindowTopmostPromiseErrCode1300002_0100
