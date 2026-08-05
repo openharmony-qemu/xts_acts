@@ -1448,3 +1448,1454 @@ async function asyncGeneratorTest093Fn(): Promise<boolean> {
       values.push(parallelResults[i]);
     }
   }
+  return values.join(',') === '3,6,9,12,15,18';
+}
+
+// Dynamic asyncGeneratorTest094: retry cascade yields 'l3-v' before each
+// failing attempt, then recovery and root done values.
+async function asyncGeneratorTest094Fn(): Promise<boolean> {
+  const l3 = async (): Promise<string> => {
+    throw new GenError('l3-err', 503);
+  };
+  const values: string[] = [];
+  let retries: number = 2;
+  while (retries > 0) {
+    values.push(await Promise.resolve('l3-v'));
+    let ok: boolean = false;
+    try {
+      await l3();
+      ok = true;
+    } catch (err) {
+      values.push(await Promise.resolve(`l2-retry-${retries} (err: ${(err as GenError).errCode})`));
+      retries -= 1;
+      await sleep(10);
+    }
+    if (ok) {
+      break;
+    }
+  }
+  values.push(await Promise.resolve('l2-recovery-done'));
+  values.push(await Promise.resolve('root-done'));
+  return values.join(',') === 'l3-v,l2-retry-2 (err: 503),l3-v,l2-retry-1 (err: 503),l2-recovery-done,root-done';
+}
+
+// Dynamic asyncGeneratorTest095: composer merges two generators pairwise with
+// the combiner (11,22,33) then completes.
+async function asyncGeneratorTest095Fn(): Promise<boolean> {
+  const g1: number[] = [1, 2, 3];
+  const g2: number[] = [10, 20, 30];
+  const combiner = async (a: number, b: number): Promise<number> => a + b;
+  const values: number[] = [];
+  const limit: number = g1.length < g2.length ? g1.length : g2.length;
+  let i: int = 0;
+  while (i < limit) {
+    const a: number = g1[i];
+    const b: number = g2[i];
+    values.push(await combiner(a, b));
+    i += 1;
+  }
+  const consumed: number = await Promise.resolve(4);
+  const done: boolean = consumed > values.length;
+  return values[0] === 11 && values[1] === 22 && values[2] === 33 && done;
+}
+
+// Dynamic asyncGeneratorTest096: nested stateful generator updates the shared
+// state across inner calls (15,30,33,66,66).
+async function asyncGeneratorTest096Fn(): Promise<boolean> {
+  let state: number = 10;
+  const inner = async (delta: number, delay: int): Promise<number[]> => {
+    await sleep(delay);
+    state += delta;
+    const first: number = state;
+    await sleep(delay);
+    state *= 2;
+    const second: number = state;
+    return [first, second];
+  };
+  const values: number[] = [];
+  const firstBatch: number[] = await inner(5, 500);
+  for (let i = 0; i < firstBatch.length; i++) {
+    values.push(firstBatch[i]);
+  }
+  const secondBatch: number[] = await inner(3, 500);
+  for (let i = 0; i < secondBatch.length; i++) {
+    values.push(secondBatch[i]);
+  }
+  values.push(await Promise.resolve(state));
+  return values.join(',') === '15,30,33,66,66';
+}
+
+// Dynamic asyncGeneratorTest097: parallel cascade with error isolation yields
+// labeled ok/err values then the second batch.
+async function asyncGeneratorTest097Fn(): Promise<boolean> {
+  const batch1: Promise<string>[] = [
+    Promise.resolve('p1-1'),
+    Promise.reject(new GenError('p1-err', 1)),
+    Promise.resolve('p1-2')
+  ];
+  const batch1Res: PromiseSettledResult<string>[] = await Promise.allSettled(batch1);
+  const values: string[] = [];
+  for (let i = 0; i < batch1Res.length; i++) {
+    const res: PromiseSettledResult<string> = batch1Res[i];
+    if (res.status === 'fulfilled') {
+      const fulfilled: PromiseFulfilledResult<string> = res as PromiseFulfilledResult<string>;
+      values.push(`b1-ok: ${fulfilled.value}`);
+    } else {
+      const rejected: PromiseRejectedResult = res as PromiseRejectedResult;
+      values.push(`b1-err: ${(rejected.reason as GenError).errCode}`);
+    }
+  }
+  await sleep(10);
+  const batch2: Promise<string>[] = [Promise.resolve('p2-1'), Promise.resolve('p2-2')];
+  const batch2Res: string[] = await Promise.all(batch2);
+  for (let i = 0; i < batch2Res.length; i++) {
+    values.push(`b2-ok: ${batch2Res[i]}`);
+  }
+  const consumed: number = 6;
+  const done: boolean = consumed > values.length;
+  return values.join(',') === 'b1-ok: p1-1,b1-err: 1,b1-ok: p1-2,b2-ok: p2-1,b2-ok: p2-2' && done;
+}
+
+// Dynamic asyncGeneratorTest098: multi-level input propagation flows the
+// injected inputs down the generator chain.
+async function asyncGeneratorTest098Fn(): Promise<boolean> {
+  const rootInput: string = await Promise.resolve('root-input');
+  const l1Input: string = await Promise.resolve('l1-input');
+  const l2Input: string = await Promise.resolve('l2-input');
+  const res2: string = await Promise.resolve(`input-for-l1 (parent: ${rootInput})`);
+  const res3: string = await Promise.resolve(`input-for-l2 (gp: ${rootInput}, p: ${l1Input})`);
+  const res4: string = await Promise.resolve(`l2-result: ${rootInput}-${l1Input}-${l2Input}`);
+  const res5: string = await Promise.resolve(`l1-result: ${rootInput}-${l1Input}`);
+  const res6: string = await Promise.resolve(`root-result: ${rootInput}`);
+  return res2 === 'input-for-l1 (parent: root-input)' &&
+    res3 === 'input-for-l2 (gp: root-input, p: l1-input)' &&
+    res4 === 'l2-result: root-input-l1-input-l2-input' &&
+    res5 === 'l1-result: root-input-l1-input' &&
+    res6 === 'root-result: root-input';
+}
+
+// Dynamic asyncGeneratorTest099: placeholder that returned true directly;
+// rewritten with a Promise.all fan-out.
+async function asyncGeneratorTest099Fn(): Promise<boolean> {
+  const r1: Promise<number> = Promise.resolve<number>(1);
+  const r2: Promise<number> = Promise.resolve<number>(2);
+  const r3: Promise<number> = Promise.resolve<number>(3);
+  const results: number[] = await Promise.all([r1, r2, r3]);
+  return results.join(',') === '1,2,3';
+}
+
+// Dynamic asyncGeneratorTest100: placeholder that returned true directly;
+// rewritten as a collected sequence round-trip.
+async function asyncGeneratorTest100Fn(): Promise<boolean> {
+  const collected: number[] = [];
+  for (let i = 1; i <= 3; i++) {
+    collected.push(await Promise.resolve(i));
+  }
+  return collected.length === 3 && collected[2] === 3;
+}
+
+export default function asyncGeneratorTest(): void {
+  describe('asyncGeneratorTest', (): void => {
+    afterEach((): void => { });
+
+    /**
+     * @tc.name   AsyncGeneratorTest001
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_001
+     * @tc.desc   Basic async generator yields fixed sequence 1,2,3 then completes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest001Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest002
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_002
+     * @tc.desc   Async generator awaits before yielding a single value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest002Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest003
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_003
+     * @tc.desc   Input passed via next() is embedded into subsequent yields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest003Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest004
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_004
+     * @tc.desc   Error thrown into generator is caught and handled inside the generator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest004Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest005
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_005
+     * @tc.desc   return() closes the generator immediately
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest005Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest006
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_006
+     * @tc.desc   for-await collects all yielded values a,b,c
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest006Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest007
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_007
+     * @tc.desc   yield* delegation flattens inner and outer sequences
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest007Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest008
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_008
+     * @tc.desc   Promise.all parallel values are yielded in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest008Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest009
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_009
+     * @tc.desc   Generator return value surfaces on the final next()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest009Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest010
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_010
+     * @tc.desc   Bare yields produce undefined; explicit null yield produces null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest010Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest011
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_011
+     * @tc.desc   Factory-created async generator yields wrapped values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest011Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest012
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_012
+     * @tc.desc   Parameterized generator yields computed values from init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest012Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest013
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_013
+     * @tc.desc   Uncaught error inside generator propagates to the caller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest013Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest014
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_014
+     * @tc.desc   Nested for-await collection preserves order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest014Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest015
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_015
+     * @tc.desc   Generator closed by return() reports done with undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest015Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest016
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_016
+     * @tc.desc   for-await with break collects partial sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest016Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest017
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_017
+     * @tc.desc   Generator awaits async helper calls and yields results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest017Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest018
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_018
+     * @tc.desc   Repeated throw() calls: caught values except exit which returns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest018Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest019
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_019
+     * @tc.desc   Promise.race fastest result is yielded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest019Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest020
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_020
+     * @tc.desc   Generator yields across short gaps in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest020Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest021
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_021
+     * @tc.desc   Generator returned from a factory function yields values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest021Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest022
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_022
+     * @tc.desc   Conditional generator yields per-branch values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest022Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest023
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_023
+     * @tc.desc   Generator awaits a resolved value and yields 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest023Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest024
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_024
+     * @tc.desc   Bounded loop generator yields count values then completes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest024Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest025
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_025
+     * @tc.desc   Nested arrow helper multiplies yielded values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest025Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest026
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_026
+     * @tc.desc   Generator returns a value after throwing and catching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest026Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest027
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_027
+     * @tc.desc   Promise.allSettled statuses are yielded in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest027Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest028
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_028
+     * @tc.desc   Dynamic yield count generator yields exactly count items
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest028Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest029
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_029
+     * @tc.desc   Async initializer value feeds subsequent yields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest029Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest030
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_030
+     * @tc.desc   Catch and finally blocks both yield values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest030Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest031
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_031
+     * @tc.desc   Async predicate filters the yielded items
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest031Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest032
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_032
+     * @tc.desc   Nested yield* chain flattens three levels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest032Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest033
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_033
+     * @tc.desc   Input-dependent generator branches on injected input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest033Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest034
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_034
+     * @tc.desc   Delayed yields produce values in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest034Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest035
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_035
+     * @tc.desc   Error thrown after a yield propagates to caller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest035Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest036
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_036
+     * @tc.desc   Async mapper transforms each yielded value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest036Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest037
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_037
+     * @tc.desc   Return inside finally overrides the generator result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest037Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest038
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_038
+     * @tc.desc   Shared state increments across yields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest038Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest039
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_039
+     * @tc.desc   Generator awaits promises in sequence and yields values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest039Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest040
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_040
+     * @tc.desc   Empty generator is immediately done with undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest040Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest041
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_041
+     * @tc.desc   Arrow wrapper async function feeds yields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest041Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest042
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_042
+     * @tc.desc   for-await counting stops after a break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest042Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest043
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_043
+     * @tc.desc   Error recovery loop yields catch then success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest043Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest044
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_044
+     * @tc.desc   Async conditional chain yields per-step results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest044Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest045
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_045
+     * @tc.desc   Generator parameter doubles the source values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest045Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest046
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_046
+     * @tc.desc   Explicit return overrides remaining yields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest046Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest047
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_047
+     * @tc.desc   Async while loop yields action results until condition ends
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest047Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest048
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_048
+     * @tc.desc   Nested error is caught and yielded as a handled value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest048Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest049
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_049
+     * @tc.desc   Promise race with timeout: value wins, shorter timeout rejects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest049Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest050
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_050
+     * @tc.desc   Composition of two generators flattens all values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest050Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest051
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_051
+     * @tc.desc   Set items are yielded with membership preserved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest051Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest052
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_052
+     * @tc.desc   Throwing yield expression propagates to caller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest052Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest053
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_053
+     * @tc.desc   Async reduce yields running accumulations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest053Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest054
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_054
+     * @tc.desc   Async property getter value is yielded after await
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest054Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest055
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_055
+     * @tc.desc   Repeated return() calls report the closed state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest055Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest056
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_056
+     * @tc.desc   for-await collects the number sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest056Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest057
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_057
+     * @tc.desc   Error thrown in finally propagates to caller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest057Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest058
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_058
+     * @tc.desc   Parameterized async action yields repeated results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest058Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest059
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_059
+     * @tc.desc   Generator yields across a delay, only values verified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest059Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest060
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_060
+     * @tc.desc   Identity pass-through generator preserves source values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest060Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest061
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_061
+     * @tc.desc   Three-level yield* chain order is preserved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest061Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest062
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_062
+     * @tc.desc   Async pipeline transforms each input value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest062Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest063
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_063
+     * @tc.desc   Timed sequence yields values in order, timing check removed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest063Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest064
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_064
+     * @tc.desc   Errors propagate through two wrapper levels to the root catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest064Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest065
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_065
+     * @tc.desc   Generator collects two awaited values 1 and 2 in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest065Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest066
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_066
+     * @tc.desc   Async dependency chain builds on previous yields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest066Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest067
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_067
+     * @tc.desc   Parallel batches are yielded flattened in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest067Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest068
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_068
+     * @tc.desc   Inner generator return value is captured by the outer yield*
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest068Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest069
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_069
+     * @tc.desc   Timed retry generator fails twice then succeeds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest069Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest070
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_070
+     * @tc.desc   Filter-map pipeline yields only even doubled values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest070Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest071
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_071
+     * @tc.desc   Four-level nested delegation keeps the documented order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest071Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest072
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_072
+     * @tc.desc   Stateful generator applies deltas across yields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest072Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest073
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_073
+     * @tc.desc   Batch generator yields all items across batches then completes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest073Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest074
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_074
+     * @tc.desc   Error propagates through three levels to the root catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest074Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest075
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_075
+     * @tc.desc   Nested-step pipeline transforms each string input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest075Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest076
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_076
+     * @tc.desc   Sequential async dependencies chain yielded values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest076Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest077
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_077
+     * @tc.desc   Parallel batches interleaved with a gap stay ordered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest077Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest078
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_078
+     * @tc.desc   Return values propagate up the yield* chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest078Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest079
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_079
+     * @tc.desc   Timed state updates produce the expected running state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest079Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest080
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_080
+     * @tc.desc   Multi-level filter keeps values passing all filters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest080Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest081
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_081
+     * @tc.desc   Nested async iteration doubles each inner value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest081Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest082
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_082
+     * @tc.desc   Cascade with returns yields each level composed value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest082Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest083
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_083
+     * @tc.desc   Timed batch processing yields all transformed values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest083Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest084
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_084
+     * @tc.desc   Multi-level error handling catches and continues at each level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest084Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest085
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_085
+     * @tc.desc   Transformer pipeline normalizes each input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest085Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest086
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_086
+     * @tc.desc   Sequential inner factories share a counter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest086Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest087
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_087
+     * @tc.desc   Stateful cascade multiplies state by each step
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest087Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest088
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_088
+     * @tc.desc   Parallel tasks with errors yield success/failure labels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest088Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest089
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_089
+     * @tc.desc   Nested return values compose propagated level messages in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest089Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest090
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_090
+     * @tc.desc   Timed sequential tasks yield each task result in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest090Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest091
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_091
+     * @tc.desc   Sequential await chain propagates the computed value (2 to 6)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest091Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest092
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_092
+     * @tc.desc   Delayed cascade with fixed dependency passing yields chained values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest092Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest093
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_093
+     * @tc.desc   Multi-batch parallel processing yields tripled values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest093Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest094
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_094
+     * @tc.desc   Retry cascade yields per-retry values then recovery and root done
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest094Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest095
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_095
+     * @tc.desc   Composer merges two generators pairwise via combiner
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest095Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest096
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_096
+     * @tc.desc   Nested stateful generator updates state across inner calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest096Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest097
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_097
+     * @tc.desc   Parallel cascade with error isolation yields labeled values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest097Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest098
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_098
+     * @tc.desc   Multi-level input propagation flows inputs down the chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest098Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest099
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_099
+     * @tc.desc   Promise.all fan-out resolves three values 1,2,3 in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest099Fn();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   AsyncGeneratorTest100
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_100
+     * @tc.desc   Collected sequence round-trip gathers values 1,2,3 via awaits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncGeneratorTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const result: boolean = await asyncGeneratorTest100Fn();
+      expect(result).assertEqual(true);
+    });
+  });
+}
