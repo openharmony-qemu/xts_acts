@@ -18,6 +18,13 @@ import networkSecurity from '@ohos.net.networkSecurity';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import fs from '@ohos.file.fs';
 import { util } from '@kit.ArkTS';
+
+// 定义无效证书Blob类型用于测试
+interface InvalidCertBlob {
+  type: number | null | string | undefined;
+  data: string;
+}
+
 // 真实的自签名证书（使用 OpenSSL 生成）
 const REAL_SELF_SIGNED_CERT = `-----BEGIN CERTIFICATE-----
 MIIDwzCCAqugAwIBAgIUco4n2M+UmbUdOEgQj2MqDGF3l3YwDQYJKoZIhvcNAQEL
