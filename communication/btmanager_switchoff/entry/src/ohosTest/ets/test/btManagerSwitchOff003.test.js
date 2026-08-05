@@ -2799,8 +2799,8 @@ export default function btManagerError003Test() {
                         expect(err.code).assertEqual(2900003);
                     }
                 }
-                done();
             }
+            done();
         })
     })
 }
