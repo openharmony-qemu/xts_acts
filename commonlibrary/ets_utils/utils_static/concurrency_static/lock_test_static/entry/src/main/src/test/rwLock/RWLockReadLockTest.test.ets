@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -182,17 +182,29 @@ function readLockReadWriteMixedTask(a: AtomicInt): void {
   wl.unlock();
 }
 
-// TC-23: Long-held read lock (5+ seconds via busy-wait)
+// TC-23: Long-held read lock (500 ms busy-wait)
 function readLockLongHoldTask(a: AtomicInt): void {
   const rl = gReadLockRWLock.readLock();
   rl.lock();
-  // Busy-wait approximately 5 seconds
+  // Busy-wait approximately 500 milliseconds
   const startTime: number = Date.now();
   while (Date.now() - startTime < 500) {
     // spin
   }
   rl.unlock();
   a.fetchAdd(1);
+}
+
+// TC-10: Reader holds the read lock, signals readiness, then sets value while holding
+function readLockBlockingHolderTask(c: ReadLockSharedCounter, holderReady: AtomicInt): void {
+  const rl = gReadLockRWLock.readLock();
+  rl.lock();
+  try {
+    holderReady.fetchAdd(1);
+    c.value = 100;
+  } finally {
+    rl.unlock();
+  }
 }
 
 // TC-23: Short read while another holds long
@@ -228,22 +240,12 @@ function eaWorkerReadLockFullTask(a: AtomicInt): void {
   wl.unlock();
 }
 
-// TC-03: Helper returning ReadLock or null so the non-null check is a real runtime assertion
-function createReadLockOrNull(flag: number): ReadLock | null {
-  if (flag > 0) {
-    return new RWLock().readLock();
-  }
-  return null;
-}
-
 export default function RWLockReadLockTest(): void {
   describe('RWLockReadLockTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     // ========== INPUT TESTS ==========
 
@@ -312,11 +314,20 @@ export default function RWLockReadLockTest(): void {
      */
     it('RWLockReadLockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new ReadLockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(readLockReaderHolderTask, counter));
+      const holderReady = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(readLockBlockingHolderTask, counter, holderReady));
+      // Wait until the reader actually holds the read lock before starting the writer (bounded poll).
+      let waitCycles: number = 0;
+      while (holderReady.load() === 0 && waitCycles < 50) {
+        await Utils.msSleep(100);
+        waitCycles++;
+      }
+      expect(holderReady.load()).assertEqual(1);
       let p2 = taskpool.execute(new taskpool.Task(readLockWriterTask, counter));
       await Promise.all([p1, p2]);
-      // Reader sets 100, writer adds 50; final value depends on execution order (100 or 150)
-      expect(counter.value).assertLargerOrEqual(100);
+      // The reader set 100 while holding the read lock; the writer was blocked until the
+      // reader released, then added 50, so the final value is deterministically 150.
+      expect(counter.value).assertEqual(150);
     })
 
     /**
@@ -504,17 +515,25 @@ export default function RWLockReadLockTest(): void {
     it('RWLockReadLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
-      rl.lock();
-      // Intentionally not calling rl.unlock() to test unreleased read lock
-      // Verify: write lock acquisition is blocked while read lock is held
-      const wl = rwlock.writeLock();
+      let readHeld: boolean = false;
       let writeAcquired: boolean = false;
-      // Write lock should not be acquirable while read lock is held
-      // Clean up: release the read lock so the test does not leak
-      rl.unlock();
+      rl.lock();
+      try {
+        // Intentionally hold the read lock without an immediate unlock.
+        readHeld = true;
+      } finally {
+        // Clean up: release the read lock so the test does not leak.
+        rl.unlock();
+      }
+      // After the read lock is released the write lock must be acquirable.
+      const wl = rwlock.writeLock();
       wl.lock();
-      writeAcquired = true;
-      wl.unlock();
+      try {
+        writeAcquired = true;
+      } finally {
+        wl.unlock();
+      }
+      expect(readHeld).assertTrue();
       expect(writeAcquired).assertTrue();
     })
 
@@ -539,7 +558,7 @@ export default function RWLockReadLockTest(): void {
     /**
      * @tc.name    RWLockReadLockTest1600
      * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1600
-     * @tc.desc    Verify read lock stability when held for 5+ seconds: other readers can still operate concurrently
+     * @tc.desc    Verify read lock stability when held for an extended period (500 ms): other readers can still operate concurrently
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -567,14 +586,12 @@ export default function RWLockReadLockTest(): void {
     it('RWLockReadLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
-      const wl = rwlock.writeLock();
-      // The ReadLock object is distinct from the WriteLock object of the same RWLock
-      expect(rl !== wl).assertTrue();
-      let lockOk: boolean = false;
+      // A ReadLock supports shared acquisition: two read holds coexist without blocking
+      rl.lock();
       rl.lock();
       rl.unlock();
-      lockOk = true;
-      expect(lockOk).assertTrue();
+      rl.unlock();
+      expect(rwlock.readLock() === rl).assertTrue();
     })
 
     /**
@@ -586,13 +603,14 @@ export default function RWLockReadLockTest(): void {
      * @tc.level   LEVEL0
      */
     it('RWLockReadLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const rl: ReadLock | null = createReadLockOrNull(1);
-      expect(rl !== null).assertTrue();
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
       let usable: boolean = false;
-      if (rl !== null) {
-        rl.lock();
-        rl.unlock();
+      rl.lock();
+      try {
         usable = true;
+      } finally {
+        rl.unlock();
       }
       expect(usable).assertTrue();
     })
@@ -616,8 +634,11 @@ export default function RWLockReadLockTest(): void {
       let postUseOk: boolean = false;
       const rl2 = rwlock.readLock();
       rl2.lock();
-      postUseOk = true;
-      rl2.unlock();
+      try {
+        postUseOk = true;
+      } finally {
+        rl2.unlock();
+      }
       expect(postUseOk).assertTrue();
     })
 

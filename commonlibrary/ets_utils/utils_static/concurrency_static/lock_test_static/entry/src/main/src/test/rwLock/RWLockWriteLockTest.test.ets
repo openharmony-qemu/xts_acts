@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -193,14 +193,6 @@ function eaWorkerWriteLockBasicTask(a: AtomicInt): void {
   }
 }
 
-// TC-RET-001: Helper returning WriteLock or null so the non-null check is a real runtime assertion
-function createWriteLockOrNull(flag: number): WriteLock | null {
-  if (flag > 0) {
-    return new RWLock().writeLock();
-  }
-  return null;
-}
-
 // TC-CONC-006: Sequential write lock reuse (same-thread nested reentrancy is implementation-dependent)
 function writeLockSequentialReuseTask(counter: AtomicInt): void {
   const rwlock = new RWLock();
@@ -217,7 +209,7 @@ class WriteLockOrderData {
   order: Array<number> = [];
 }
 
-function writeLockOrderedAcquireTask(rwlock: RWLock, data: WriteLockOrderData, value: number): void {
+function writeLockOrderedAcquireTask(rwlock: RWLock, data: WriteLockOrderData, value: int): void {
   const wl = rwlock.writeLock();
   wl.lock();
   try {
@@ -263,9 +255,7 @@ export default function RWLockWriteLockTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     // ========== INPUT TESTS ==========
 
@@ -344,10 +334,16 @@ export default function RWLockWriteLockTest(): void {
       const rwlock = new RWLock();
       const wl = rwlock.writeLock();
       let state: number = 0;
+      let lockOk: boolean = false;
       wl.lock();
-      state = 42;
+      try {
+        state = 42;
+        lockOk = true;
+      } finally {
+        wl.unlock();
+      }
+      expect(lockOk).assertTrue();
       expect(state).assertEqual(42);
-      wl.unlock();
     })
 
     /**
@@ -372,28 +368,12 @@ export default function RWLockWriteLockTest(): void {
     /**
      * @tc.name    RWLockWriteLockTest0600
      * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0600
-     * @tc.desc    Verify write lock blocks other write locks: holder sets value, waiter increments after release
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('RWLockWriteLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter = new WriteLockSharedCounter();
-      await taskpool.execute(new taskpool.Task(writeLockHolderTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(writeLockWaiterTask, counter));
-      await p2;
-      expect(counter.value).assertEqual(2);
-    })
-
-    /**
-     * @tc.name    RWLockWriteLockTest0700
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0700
      * @tc.desc    Verify write lock blocks read locks: writer sets value, reader increments after release
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockWriteSetTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(writeLockReadWaiterTask, counter));
@@ -402,14 +382,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest0800
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0800
+     * @tc.name    RWLockWriteLockTest0700
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0700
      * @tc.desc    Verify read lock blocks write lock: reader sets value, writer adds after release
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockReadHolderTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(writeLockWriteAddTask, counter));
@@ -418,14 +398,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest0900
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0900
+     * @tc.name    RWLockWriteLockTest0800
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0800
      * @tc.desc    Verify same thread can call writeLock() multiple times and each call returns the same singleton WriteLock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('RWLockWriteLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const rwlock = new RWLock();
       const wl1 = rwlock.writeLock();
       wl1.lock();
@@ -435,14 +415,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1000
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1000
+     * @tc.name    RWLockWriteLockTest0900
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0900
      * @tc.desc    Verify multiple RWLock instances can hold write locks independently without interference
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const rwlock1 = new RWLock();
       const rwlock2 = new RWLock();
       const atomicA = new AtomicInt(0);
@@ -459,14 +439,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1100
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1100
+     * @tc.name    RWLockWriteLockTest1000
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1000
      * @tc.desc    Verify RWLock object can be shared across threads and writeLock() works correctly
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockWriteLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('RWLockWriteLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const rwlock = new RWLock();
       const counter = new WriteLockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(writeLockCrossThreadTask, rwlock, counter));
@@ -477,14 +457,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1200
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1200
+     * @tc.name    RWLockWriteLockTest1100
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1100
      * @tc.desc    Verify high-concurrency writeLock with 20 threads maintains data integrity
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockWriteLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockWriteLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
@@ -513,14 +493,14 @@ export default function RWLockWriteLockTest(): void {
 
 
     /**
-     * @tc.name    RWLockWriteLockTest1300
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1300
+     * @tc.name    RWLockWriteLockTest1200
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1200
      * @tc.desc    Verify write lock is properly released after exception in try-finally block
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('RWLockWriteLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const rwlock = new RWLock();
       let exceptionCaught: boolean = false;
       const wl = rwlock.writeLock();
@@ -528,9 +508,7 @@ export default function RWLockWriteLockTest(): void {
       try {
         throw new Error('simulated error');
       } catch (e) {
-        if (e instanceof Error) {
-          exceptionCaught = true;
-        }
+        exceptionCaught = true;
       } finally {
         wl.unlock();
       }
@@ -542,14 +520,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1400
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1400
+     * @tc.name    RWLockWriteLockTest1300
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1300
      * @tc.desc    Verify writeLock() works correctly with async/await pattern
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockAsyncCompatibleTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(writeLockAsyncCompatibleTask, atomicCounter));
@@ -559,14 +537,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1500
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1500
+     * @tc.name    RWLockWriteLockTest1400
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1400
      * @tc.desc    Verify high-frequency writeLock() calls do not cause resource exhaustion or system errors
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockWriteLockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockWriteLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockHighFreqTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(writeLockHighFreqTask, atomicCounter));
@@ -578,14 +556,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1600
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1600
+     * @tc.name    RWLockWriteLockTest1500
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1500
      * @tc.desc    Verify writeLock() operates correctly under concurrent system load
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockWriteLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockWriteLockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockConcurrentLoadTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(writeLockConcurrentLoadTask, atomicCounter));
@@ -602,14 +580,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1700
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1700
+     * @tc.name    RWLockWriteLockTest1600
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1600
      * @tc.desc    Verify writeLock() can be used in EAWorker thread
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const atomicCounter = new AtomicInt(0);
       const worker = new EAWorker('writeLockEAWkr1');
       worker.start();
@@ -619,14 +597,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1800
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1800
+     * @tc.name    RWLockWriteLockTest1700
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1700
      * @tc.desc    Verify writeLock() returns WriteLock that holds lock protecting critical section across multiple threads
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockWriteLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('RWLockWriteLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new WriteLockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
@@ -647,29 +625,47 @@ export default function RWLockWriteLockTest(): void {
     // runtime-observable behavior and cannot be expressed as a runtime test case.
 
     /**
-     * @tc.name    RWLockWriteLockTest1900
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1900
+     * @tc.name    RWLockWriteLockTest1800
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1800
      * @tc.desc    Verify writeLock() returns a non-null usable WriteLock object
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockWriteLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const wl: WriteLock | null = createWriteLockOrNull(1);
-      expect(wl !== null).assertTrue();
+    it('RWLockWriteLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const rwlock = new RWLock();
+      const wl = rwlock.writeLock();
       let usable: boolean = false;
-      if (wl !== null) {
-        wl.lock();
-        wl.unlock();
+      wl.lock();
+      try {
         usable = true;
+      } finally {
+        wl.unlock();
       }
       expect(usable).assertTrue();
     })
 
     /**
+     * @tc.name    RWLockWriteLockTest1900
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1900
+     * @tc.desc    Verify writeLock() returns a WriteLock object (type verified via WriteLock API surface and distinction from ReadLock)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('RWLockWriteLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const rwlock = new RWLock();
+      const wl = rwlock.writeLock();
+      // A WriteLock provides exclusive acquisition: lock/unlock round-trip succeeds
+      wl.lock();
+      wl.unlock();
+      expect(rwlock.writeLock() === wl).assertTrue();
+    })
+
+    /**
      * @tc.name    RWLockWriteLockTest2000
      * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2000
-     * @tc.desc    Verify writeLock() returns a WriteLock object (type verified via WriteLock API surface and distinction from ReadLock)
+     * @tc.desc    Verify a freshly obtained WriteLock starts in unlocked state: first lock() succeeds immediately
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -677,43 +673,25 @@ export default function RWLockWriteLockTest(): void {
     it('RWLockWriteLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const rwlock = new RWLock();
       const wl = rwlock.writeLock();
-      const rl = rwlock.readLock();
-      // The WriteLock object is distinct from the ReadLock object of the same RWLock
-      expect(wl !== rl).assertTrue();
-      let lockOk: boolean = false;
+      let acquired: boolean = false;
       wl.lock();
-      wl.unlock();
-      lockOk = true;
-      expect(lockOk).assertTrue();
+      try {
+        acquired = true;
+      } finally {
+        wl.unlock();
+      }
+      expect(acquired).assertTrue();
     })
 
     /**
      * @tc.name    RWLockWriteLockTest2100
      * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2100
-     * @tc.desc    Verify a freshly obtained WriteLock starts in unlocked state: first lock() succeeds immediately
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('RWLockWriteLockTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const rwlock = new RWLock();
-      const wl = rwlock.writeLock();
-      let acquired: boolean = false;
-      wl.lock();
-      acquired = true;
-      wl.unlock();
-      expect(acquired).assertTrue();
-    })
-
-    /**
-     * @tc.name    RWLockWriteLockTest2200
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2200
      * @tc.desc    Verify writeLock() still returns a usable WriteLock after the RWLock has been fully used and released (destroyed-object scenario approximation)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockWriteLockTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('RWLockWriteLockTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       // RWLock exposes no destroy API, so the exact destroyed-object behavior cannot be exercised.
       // Closest semantics: after the RWLock is fully used and all locks released, writeLock() still
       // returns a valid WriteLock without throwing or returning an invalid object.
@@ -724,20 +702,23 @@ export default function RWLockWriteLockTest(): void {
       let postUseOk: boolean = false;
       const wl2 = rwlock.writeLock();
       wl2.lock();
-      postUseOk = true;
-      wl2.unlock();
+      try {
+        postUseOk = true;
+      } finally {
+        wl2.unlock();
+      }
       expect(postUseOk).assertTrue();
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2300
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2300
+     * @tc.name    RWLockWriteLockTest2200
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2200
      * @tc.desc    Verify write lock sequential lock-unlock reuse (same-thread nested reentrancy is implementation-dependent and not exercised to avoid deadlock)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockSequentialReuseTask, counter));
       await p1;
@@ -745,14 +726,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2400
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2400
+     * @tc.name    RWLockWriteLockTest2300
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2300
      * @tc.desc    Verify multiple write lock waiters acquire one at a time and all complete (approximate fairness verification)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const rwlock = new RWLock();
       const data = new WriteLockOrderData();
       let p1 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, data, 10));
@@ -772,14 +753,14 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2500
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2500
+     * @tc.name    RWLockWriteLockTest2400
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2400
      * @tc.desc    Verify write lock acquisition behavior when a waiting task is cancelled (approximation of thread interruption/cancellation)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockWriteLockTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockWriteLockTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       const data = new WriteLockCancelData();
@@ -788,14 +769,22 @@ export default function RWLockWriteLockTest(): void {
       await Utils.msSleep(50);
       const waiter = new taskpool.Task(writeLockCancelledWaiterTask, rwlock, data, counter);
       let cancelThrew: boolean = false;
+      let waiterPromise: Promise<Any> | null = null;
       try {
-        taskpool.execute(waiter);
+        waiterPromise = taskpool.execute(waiter);
         taskpool.cancel(waiter);
       } catch (error) {
         // The waiter was already executing (blocked on the write lock) so cancellation is not applicable
         cancelThrew = true;
       }
       await holderPromise;
+      if (waiterPromise !== null) {
+        try {
+          await waiterPromise;
+        } catch (e) {
+          // Expected when the waiter was cancelled before execution
+        }
+      }
       let settleStart: number = Date.now();
       while (!data.ran && Date.now() - settleStart < 1000) {
         await Utils.msSleep(100);

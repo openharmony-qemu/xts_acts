@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class RWLockCtorSharedCounter {
   value: number = 0;
@@ -59,13 +58,10 @@ function concurrentConstructTask(counter: AtomicInt): void {
 
 // CONC-09: Stress construction - construct many RWLock objects in a single task
 function stressConstructTask(counter: AtomicInt): void {
-  let success: boolean = true;
   for (let i = 0; i < 100; i++) {
     const rwlock = new RWLock();
   }
-  if (success) {
-    counter.fetchAdd(1);
-  }
+  counter.fetchAdd(1);
 }
 
 // CONC-10: Lifecycle test - construct, use, and release
@@ -98,14 +94,6 @@ function eaWorkerConstructAndUseTask(counter: AtomicInt): void {
   counter.fetchAdd(1);
 }
 
-// TC-003: Helper returning RWLock or null so the non-null check is a real runtime assertion
-function createRWLockOrNull(flag: number): RWLock | null {
-  if (flag > 0) {
-    return new RWLock();
-  }
-  return null;
-}
-
 // TC-010: Resource-exhaustion approximation - heavy construction with lock usage per task
 function resourcePressureConstructTask(counter: AtomicInt): void {
   for (let i = 0; i < 2000; i++) {
@@ -125,9 +113,7 @@ export default function RWLockConstructorTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     // ========== INPUT TESTS ==========
 
@@ -397,18 +383,15 @@ export default function RWLockConstructorTest(): void {
      * @tc.level   LEVEL0
      */
     it('RWLockConstructorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const rwlock: RWLock | null = createRWLockOrNull(1);
-      expect(rwlock !== null).assertTrue();
+      const rwlock = new RWLock();
       let usable: boolean = false;
-      if (rwlock !== null) {
-        const rl = rwlock.readLock();
-        rl.lock();
-        rl.unlock();
-        const wl = rwlock.writeLock();
-        wl.lock();
-        wl.unlock();
-        usable = true;
-      }
+      const rl = rwlock.readLock();
+      rl.lock();
+      rl.unlock();
+      const wl = rwlock.writeLock();
+      wl.lock();
+      wl.unlock();
+      usable = true;
       expect(usable).assertTrue();
     })
 
@@ -424,16 +407,17 @@ export default function RWLockConstructorTest(): void {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
       const wl = rwlock.writeLock();
-      // The read lock object and write lock object are distinct, which proves readLock()/writeLock()
-      // return correctly typed lock objects instead of a single wrong-typed object
-      expect(rl !== wl).assertTrue();
-      let lockOk: boolean = false;
+      // ReadLock is shared: nested read acquisition does not block
+      rl.lock();
       rl.lock();
       rl.unlock();
+      rl.unlock();
+      // WriteLock acquires exclusively once all reads are released
       wl.lock();
       wl.unlock();
-      lockOk = true;
-      expect(lockOk).assertTrue();
+      // readLock()/writeLock() return the correct singleton lock objects
+      expect(rwlock.readLock() === rl).assertTrue();
+      expect(rwlock.writeLock() === wl).assertTrue();
     })
 
     /**
@@ -449,13 +433,19 @@ export default function RWLockConstructorTest(): void {
       const wl = rwlock.writeLock();
       let writeAcquired: boolean = false;
       wl.lock();
-      writeAcquired = true;
-      wl.unlock();
+      try {
+        writeAcquired = true;
+      } finally {
+        wl.unlock();
+      }
       const rl = rwlock.readLock();
       let readAcquired: boolean = false;
       rl.lock();
-      readAcquired = true;
-      rl.unlock();
+      try {
+        readAcquired = true;
+      } finally {
+        rl.unlock();
+      }
       expect(writeAcquired).assertTrue();
       expect(readAcquired).assertTrue();
     })
@@ -475,16 +465,27 @@ export default function RWLockConstructorTest(): void {
       const BATCH_SIZE: number = 20000;
       let successCount: number = 0;
       let failCount: number = 0;
+      let sampled: RWLock | null = null;
       for (let i = 0; i < BATCH_SIZE; i++) {
         try {
           const rwlock = new RWLock();
+          if (i === BATCH_SIZE - 1) {
+            sampled = rwlock;
+          }
           successCount++;
         } catch (error) {
           failCount++;
         }
       }
-      expect(successCount > 0).assertTrue();
-      expect(successCount + failCount).assertEqual(BATCH_SIZE);
+      expect(successCount).assertEqual(BATCH_SIZE);
+      expect(failCount).assertEqual(0);
+      // The last constructed instance remains fully usable after the batch
+      if (sampled !== null) {
+        const wl = sampled.writeLock();
+        wl.lock();
+        wl.unlock();
+        expect(sampled.writeLock() === wl).assertTrue();
+      }
     })
 
     /**

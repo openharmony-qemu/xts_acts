@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class MutexCtorSharedCounter {
   value: number = 0;
@@ -73,9 +72,7 @@ export default function MutexConstructorTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    MutexConstructorTest0100
@@ -88,7 +85,17 @@ export default function MutexConstructorTest(): void {
     it('MutexConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mutex1 = new Mutex();
       const mutex2 = new Mutex();
-      expect(mutex1 !== mutex2).assertTrue();
+      // Each constructed instance is an independent lock: holding one does not block the other.
+      mutex1.lock();
+      let secondAcquired: boolean = false;
+      mutex2.lock();
+      try {
+        secondAcquired = true;
+      } finally {
+        mutex2.unlock();
+      }
+      mutex1.unlock();
+      expect(secondAcquired).assertTrue();
     })
 
     /**
@@ -115,7 +122,7 @@ export default function MutexConstructorTest(): void {
     /**
      * @tc.name    MutexConstructorTest0300
      * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_0300
-     * @tc.desc    Verify repeated construction on same variable allows GC of old objects
+     * @tc.desc    Verify repeated construction and lock/unlock cycles on a reassigned variable remain stable
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -239,14 +246,21 @@ export default function MutexConstructorTest(): void {
     /**
      * @tc.name    MutexConstructorTest1000
      * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_1000
-     * @tc.desc    TC-08: Verify the object returned by the Mutex constructor is of type Mutex
+     * @tc.desc    TC-08: Verify the object returned by the Mutex constructor supports the Mutex lock/unlock API surface
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('MutexConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const mutex = new Mutex();
-      expect(mutex instanceof Mutex).assertTrue();
+      let usable: boolean = false;
+      mutex.lock();
+      try {
+        usable = true;
+      } finally {
+        mutex.unlock();
+      }
+      expect(usable).assertTrue();
     })
 
     /**

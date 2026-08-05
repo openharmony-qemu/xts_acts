@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -116,9 +116,7 @@ export default function ReadLockUnlockTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     // ========== INPUT TESTS ==========
 
@@ -495,6 +493,13 @@ export default function ReadLockUnlockTest(): void {
       rl.lock();
       // Thread B (EAWorker) releases the read lock held by thread A (main thread)
       await worker.run<void>(unlockFromOtherThreadTask, rwlock, releaseResult);
+      // run<void> on a synchronous task may resolve before the worker stores the result;
+      // bounded-poll until the store becomes visible (same pattern as WriteLockUnlockTest0800)
+      let tries1600: number = 0;
+      while (releaseResult.load() === 0 && tries1600 < 50) {
+        await Utils.msSleep(100);
+        tries1600++;
+      }
       // Runtime semantics: read lock does not track the owner, so B's unlock succeeds (result=1)
       expect(releaseResult.load()).assertEqual(1);
       // Lock state is not corrupted: main thread can re-acquire and release
@@ -555,6 +560,13 @@ export default function ReadLockUnlockTest(): void {
       rl.lock();
       // Main thread locks, child thread unlocks
       await worker.run<void>(unlockFromOtherThreadTask, rwlock, releaseResult);
+      // run<void> on a synchronous task may resolve before the worker stores the result;
+      // bounded-poll until the store becomes visible (same pattern as WriteLockUnlockTest0800)
+      let tries1800: number = 0;
+      while (releaseResult.load() === 0 && tries1800 < 50) {
+        await Utils.msSleep(100);
+        tries1800++;
+      }
       // Runtime semantics: count-based read lock allows the child thread to release the main thread's lock (result=1)
       expect(releaseResult.load()).assertEqual(1);
       // Read lock has been released by the child thread: write lock can be acquired (state fully restored)

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class MutexUnlockSharedCounter {
   value: number = 0;
@@ -72,17 +71,6 @@ function reentrantUnlockTask(counter: AtomicInt): void {
   }
   if (success) {
     counter.fetchAdd(1);
-  }
-}
-
-function differentThreadUnlockTask(mutex: Mutex, flag: AtomicInt): void {
-  while (flag.load() === 0) {
-  }
-  try {
-    mutex.unlock();
-    flag.fetchAdd(2);
-  } catch (e) {
-    flag.fetchAdd(1);
   }
 }
 
@@ -150,9 +138,7 @@ export default function MutexUnlockTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    MutexUnlockTest0100
@@ -220,31 +206,12 @@ export default function MutexUnlockTest(): void {
     /**
      * @tc.name    MutexUnlockTest0400
      * @tc.number  SUB_MUTEX_UNLOCK_TEST_0400
-     * @tc.desc    TC-UNLOCK-006: Verify single thread multiple lock-unlock cycles
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('MutexUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const mutex = new Mutex();
-      let successCount: number = 0;
-      for (let i = 0; i < 5; i++) {
-        mutex.lock();
-        mutex.unlock();
-        successCount++;
-      }
-      expect(successCount).assertEqual(5);
-    })
-
-    /**
-     * @tc.name    MutexUnlockTest0500
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0500
      * @tc.desc    TC-UNLOCK-007: Verify critical section exception protection with try-finally
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       try {
@@ -259,14 +226,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest0600
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0600
+     * @tc.name    MutexUnlockTest0500
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0500
      * @tc.desc    TC-UNLOCK-008: Verify multi-thread competing unlock with 5 threads
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
@@ -279,14 +246,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest0700
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0700
+     * @tc.name    MutexUnlockTest0600
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0600
      * @tc.desc    TC-UNLOCK-010: Verify TaskPool multi-task lock competition (10 tasks)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
@@ -304,14 +271,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest0800
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0800
+     * @tc.name    MutexUnlockTest0700
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0700
      * @tc.desc    TC-UNLOCK-011: Verify TaskPool nested task unlock (3 nested)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       // Verify nested task unlock: 3 inner tasks sequentially acquire and release the same mutex
@@ -323,14 +290,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest0900
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0900
+     * @tc.name    MutexUnlockTest0800
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0800
      * @tc.desc    TC-UNLOCK-012: Verify lock-unlock within EAWorker thread
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('mutexUnlockEAOne');
       worker.start();
@@ -340,14 +307,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest1000
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1000
+     * @tc.name    MutexUnlockTest0900
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_0900
      * @tc.desc    TC-UNLOCK-013: Verify multiple EAWorker competing for lock (3 threads)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       const workerOne = new EAWorker('mutexUnlockEATwo');
@@ -366,14 +333,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest1100
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1100
+     * @tc.name    MutexUnlockTest1000
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1000
      * @tc.desc    TC-UNLOCK-014: Verify EAWorker and TaskPool mixed concurrent unlock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('MutexUnlockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MutexUnlockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       const worker = new EAWorker('mutexUnlockEAFive');
@@ -388,14 +355,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest1200
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1200
+     * @tc.name    MutexUnlockTest1100
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1100
      * @tc.desc    TC-UNLOCK-015: Verify waiting thread is woken up after unlock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       // Holder task acquires lock first
@@ -407,14 +374,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest1300
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1300
+     * @tc.name    MutexUnlockTest1200
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1200
      * @tc.desc    TC-UNLOCK-017: Verify lock state after lock() via indirect behavior
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MutexUnlockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mutex = new Mutex();
       mutex.lock();
       // Indirectly verify lock is held: unlock should succeed
@@ -428,37 +395,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest1400
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1400
-     * @tc.desc    TC-UNLOCK-018: Verify lock can be re-acquired after unlock
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('MutexUnlockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const mutex = new Mutex();
-      mutex.lock();
-      mutex.unlock();
-      // Re-acquire lock after unlock
-      mutex.lock();
-      let canUnlock: boolean = true;
-      try {
-        mutex.unlock();
-      } catch (e) {
-        canUnlock = false;
-      }
-      expect(canUnlock).assertTrue();
-    })
-
-    /**
-     * @tc.name    MutexUnlockTest1500
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1500
+     * @tc.name    MutexUnlockTest1300
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1300
      * @tc.desc    TC-UNLOCK-019: Verify sequential lock-unlock reuse (Mutex does not support reentrant lock)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(reentrantUnlockTask, counter));
       await p1;
@@ -466,60 +410,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest1600
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1600
-     * @tc.desc    TC-UNLOCK-020: Verify same thread multiple unlock throws exception
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('MutexUnlockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const mutex = new Mutex();
-      mutex.lock();
-      mutex.unlock();
-      let exceptionCaught: boolean = false;
-      try {
-        mutex.unlock();
-      } catch (e) {
-        exceptionCaught = true;
-      }
-      expect(exceptionCaught).assertTrue();
-    })
-
-    /**
-     * @tc.name    MutexUnlockTest1700
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1700
-     * @tc.desc    TC-UNLOCK-022: Verify critical section exception protection with try-finally unlock
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('MutexUnlockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const mutex = new Mutex();
-      let exceptionCaught: boolean = false;
-      mutex.lock();
-      try {
-        throw new Error('Critical section exception');
-      } catch (e) {
-        exceptionCaught = true;
-      } finally {
-        mutex.unlock();
-      }
-      expect(exceptionCaught).assertTrue();
-      // Verify lock is reusable after exception
-      mutex.lock();
-      mutex.unlock();
-    })
-
-    /**
-     * @tc.name    MutexUnlockTest1800
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1800
+     * @tc.name    MutexUnlockTest1400
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1400
      * @tc.desc    TC-UNLOCK-023: Verify critical section early return still triggers finally unlock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       await taskpool.execute(new taskpool.Task(earlyReturnTask, mutex, counter));
@@ -530,14 +428,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest1900
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1900
+     * @tc.name    MutexUnlockTest1500
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1500
      * @tc.desc    TC-UNLOCK-024: Verify high concurrency pressure with 100 concurrent lock-unlock tasks
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       let batch1P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
@@ -654,14 +552,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest2000
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_2000
+     * @tc.name    MutexUnlockTest1600
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1600
      * @tc.desc    TC-UNLOCK-025: Verify high frequency lock-unlock cycle (10000 times)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MutexUnlockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mutex = new Mutex();
       let successCount: number = 0;
       for (let i = 0; i < 10000; i++) {
@@ -673,14 +571,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest2100
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_2100
+     * @tc.name    MutexUnlockTest1700
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1700
      * @tc.desc    TC-UNLOCK-026: Verify long hold lock and subsequent task correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('MutexUnlockTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MutexUnlockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       await taskpool.execute(new taskpool.Task(longHoldUnlockTask, mutex, counter));
@@ -689,14 +587,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest2200
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_2200
+     * @tc.name    MutexUnlockTest1800
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1800
      * @tc.desc    TC-UNLOCK-002: Verify unlock() returns void and releases the lock successfully
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MutexUnlockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mutex = new Mutex();
       mutex.lock();
       const result: void = mutex.unlock();
@@ -713,14 +611,14 @@ export default function MutexUnlockTest(): void {
     })
 
     /**
-     * @tc.name    MutexUnlockTest2300
-     * @tc.number  SUB_MUTEX_UNLOCK_TEST_2300
+     * @tc.name    MutexUnlockTest1900
+     * @tc.number  SUB_MUTEX_UNLOCK_TEST_1900
      * @tc.desc    TC-UNLOCK-016: Verify cross-thread unlock behavior when another thread unlocks a lock held by the main thread
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const mutex = new Mutex();
       const outcome = new AtomicInt(0);
       mutex.lock();

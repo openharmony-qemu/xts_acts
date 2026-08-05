@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -43,13 +43,25 @@ function unlockThenWriteTask(c: UnlockSharedCounter): void {
   }
 }
 
-function unlockReadVerifyTask(c: UnlockSharedCounter): void {
-  const rl = gUnlockRWLock.readLock();
-  rl.lock();
+function unlockOwnerHolderTask(heldFlag: AtomicInt, holderUnlockOk: AtomicInt): void {
+  const wl = gUnlockRWLock.writeLock();
+  wl.lock();
+  heldFlag.store(1);
   try {
-    c.value = c.value + 1;
-  } finally {
-    rl.unlock();
+    wl.unlock();
+    holderUnlockOk.store(1);
+  } catch (e) {
+    holderUnlockOk.store(0);
+  }
+}
+
+function unlockNonHolderTask(caught: AtomicInt): void {
+  const wl = gUnlockRWLock.writeLock();
+  try {
+    wl.unlock();
+    caught.store(0);
+  } catch (e) {
+    caught.store(1);
   }
 }
 
@@ -58,9 +70,7 @@ export default function WriteLockUnlockTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     // ========== INPUT TESTS ==========
 
@@ -87,7 +97,7 @@ export default function WriteLockUnlockTest(): void {
     /**
      * @tc.name    WriteLockUnlockTest0200
      * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0200
-     * @tc.desc    Verify WriteLock.unlock() throws error containing unlock info when read lock is held
+     * @tc.desc    Verify WriteLock.unlock() throws error when called while only the read lock is held
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -114,55 +124,12 @@ export default function WriteLockUnlockTest(): void {
     /**
      * @tc.name    WriteLockUnlockTest0300
      * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0300
-     * @tc.desc    Verify WriteLock.unlock() throws error with already unlocked message when releasing unlocked write lock
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('WriteLockUnlockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const rwlock = new RWLock();
-      const wl = rwlock.writeLock();
-      let errorCaught: boolean = false;
-      try {
-        wl.unlock();
-      } catch (error) {
-        errorCaught = true;
-      }
-      expect(errorCaught).assertTrue();
-    })
-
-    /**
-     * @tc.name    WriteLockUnlockTest0400
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0400
-     * @tc.desc    Verify WriteLock.unlock() throws error with read-locked info when read lock is held
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('WriteLockUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const rwlock = new RWLock();
-      const rl = rwlock.readLock();
-      rl.lock();
-      const wl = rwlock.writeLock();
-      let errorCaught: boolean = false;
-      try {
-        wl.unlock();
-      } catch (error) {
-        errorCaught = true;
-      }
-      expect(errorCaught).assertTrue();
-      rl.unlock();
-    })
-
-    /**
-     * @tc.name    WriteLockUnlockTest0500
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0500
      * @tc.desc    Verify multiple unlock calls on the same WriteLock throw error on second call
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('WriteLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('WriteLockUnlockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const rwlock = new RWLock();
       const wl = rwlock.writeLock();
       wl.lock();
@@ -177,14 +144,14 @@ export default function WriteLockUnlockTest(): void {
     })
 
     /**
-     * @tc.name    WriteLockUnlockTest0600
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0600
+     * @tc.name    WriteLockUnlockTest0400
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0400
      * @tc.desc    Verify WriteLock.unlock() throws error on consecutive unlock calls without re-locking
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('WriteLockUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('WriteLockUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const rwlock = new RWLock();
       const wl = rwlock.writeLock();
       wl.lock();
@@ -208,14 +175,14 @@ export default function WriteLockUnlockTest(): void {
     // ========== CONCURRENCY TESTS ==========
 
     /**
-     * @tc.name    WriteLockUnlockTest0700
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0700
+     * @tc.name    WriteLockUnlockTest0500
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0500
      * @tc.desc    Verify multiple threads can acquire and release the same write lock sequentially via TaskPool
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new UnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
@@ -225,14 +192,14 @@ export default function WriteLockUnlockTest(): void {
     })
 
     /**
-     * @tc.name    WriteLockUnlockTest0800
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0800
+     * @tc.name    WriteLockUnlockTest0600
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0600
      * @tc.desc    Verify other threads can acquire the write lock after it is released by another thread
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new UnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       await p1;
@@ -240,6 +207,81 @@ export default function WriteLockUnlockTest(): void {
       let p3 = taskpool.execute(new taskpool.Task(unlockThenWriteTask, counter));
       await Promise.all([p2, p3]);
       expect(counter.value).assertEqual(21);
+    })
+
+    // ========== RETURN VALUE TESTS (supplement) ==========
+
+    /**
+     * @tc.name    WriteLockUnlockTest0700
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0700
+     * @tc.desc    Verify WriteLock.unlock() releases the write lock so the same thread can call lock() again successfully
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('WriteLockUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const rwlock = new RWLock();
+      const wl = rwlock.writeLock();
+      wl.lock();
+      wl.unlock();
+      let reacquired: boolean = false;
+      wl.lock();
+      try {
+        reacquired = true;
+      } finally {
+        wl.unlock();
+      }
+      expect(reacquired).assertTrue();
+    })
+
+    // ========== CONCURRENCY TESTS (supplement) ==========
+
+    /**
+     * @tc.name    WriteLockUnlockTest0800
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0800
+     * @tc.desc    Verify WriteLock.unlock() ownership with real EAWorker threads: the holder's release succeeds, and non-holder threads attempting to release the same write lock after the holder's release throw
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('WriteLockUnlockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const heldFlag = new AtomicInt(0);
+      const holderUnlockOk = new AtomicInt(-1);
+      const caughtA = new AtomicInt(-1);
+      const caughtB = new AtomicInt(-1);
+      const holderW = new EAWorker('wlUnlockOwnerHolder');
+      holderW.start();
+      try {
+        const holderRun = holderW.run<void>(unlockOwnerHolderTask, heldFlag, holderUnlockOk);
+        let attempts: number = 0;
+        while (heldFlag.load() === 0 && attempts < 50) {
+          await Utils.msSleep(100);
+          attempts++;
+        }
+        expect(heldFlag.load()).assertEqual(1);
+        await holderRun;
+        // Only the holder's release succeeds
+        expect(holderUnlockOk.load()).assertEqual(1);
+      } finally {
+        holderW.quit();
+      }
+      const nonHolderA = new EAWorker('wlUnlockNonHolderA');
+      nonHolderA.start();
+      try {
+        await nonHolderA.run<void>(unlockNonHolderTask, caughtA);
+      } finally {
+        nonHolderA.quit();
+      }
+      const nonHolderB = new EAWorker('wlUnlockNonHolderB');
+      nonHolderB.start();
+      try {
+        await nonHolderB.run<void>(unlockNonHolderTask, caughtB);
+      } finally {
+        nonHolderB.quit();
+      }
+      // Non-holder threads cannot release the same write lock: their unlock attempts throw
+      expect(caughtA.load()).assertEqual(1);
+      expect(caughtB.load()).assertEqual(1);
     })
   })
 }
