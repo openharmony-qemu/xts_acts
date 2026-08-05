@@ -1298,3 +1298,1275 @@ export default function IsSharedArrayBufferTest(): void {
 
         const type: util.types = new util.types();
         expect(type.isAnyArrayBuffer(arr[0])).assertTrue();
+        const mapBuffer: ArrayBuffer | undefined = map.get('buffer');
+        if (mapBuffer !== undefined) {
+          expect(type.isAnyArrayBuffer(mapBuffer)).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_4500
+     * @tc.name testIsSharedArrayBufferDynamicProp
+     * @tc.desc 静态等价：对象字段持有 ArrayBuffer 的缓冲识别（索引签名禁用，改为显式类型化持有类）
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testIsSharedArrayBufferDynamicProp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testIsSharedArrayBufferDynamicProp';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(16);
+        const obj: DynamicBufferHolder = createDynamicBufferHolder(ab);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(obj.buffer)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_4600
+     * @tc.name testIsSharedArrayBufferPrototype
+     * @tc.desc 静态等价：ArrayBuffer 实例属性 byteLength 与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testIsSharedArrayBufferPrototype', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testIsSharedArrayBufferPrototype';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(16);
+        expect(ab.byteLength).assertEqual(16);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_4700
+     * @tc.name testIsSharedArrayBufferMultiThreadSimulate
+     * @tc.desc 静态等价：ArrayBuffer 上 Atomics 多操作模拟（store/add/load）
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testIsSharedArrayBufferMultiThreadSimulate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testIsSharedArrayBufferMultiThreadSimulate';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(16);
+        const view: Int32Array = new Int32Array(ab);
+
+        Atomics.store(view, 0, 100);
+        const value1: number = Atomics.load(view, 0);
+        Atomics.add(view, 0, 50);
+        const value2: number = Atomics.load(view, 0);
+
+        expect(value1).assertEqual(100);
+        expect(value2).assertEqual(150);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_4800
+     * @tc.name testIsSharedArrayBufferSliceReturn
+     * @tc.desc 静态等价：ArrayBuffer slice 产物字节数与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testIsSharedArrayBufferSliceReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testIsSharedArrayBufferSliceReturn';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(32);
+        const slice1: ArrayBuffer = ab.slice(0, 16);
+        const slice2: ArrayBuffer = ab.slice(16);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(slice1)).assertTrue();
+        expect(type.isAnyArrayBuffer(slice2)).assertTrue();
+        expect(slice1.byteLength).assertEqual(16);
+        expect(slice2.byteLength).assertEqual(16);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_4900
+     * @tc.name testIsSharedArrayBufferCompoundView
+     * @tc.desc 静态等价：同一 ArrayBuffer 的复合 TypedArray 视图（偏移/长度）共享底层缓冲
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testIsSharedArrayBufferCompoundView', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testIsSharedArrayBufferCompoundView';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(24);
+        const int32View: Int32Array = new Int32Array(ab, 0, 2);
+        const float64View: Float64Array = new Float64Array(ab, 8, 2);
+
+        int32View[0] = 42;
+        float64View[0] = 3.14;
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(int32View.buffer)).assertTrue();
+        expect(type.isAnyArrayBuffer(float64View.buffer)).assertTrue();
+        expect(int32View.buffer === float64View.buffer).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_5000
+     * @tc.name testIsSharedArrayBufferLengthValidation
+     * @tc.desc 静态等价：多尺寸 ArrayBuffer 的字节数校验与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testIsSharedArrayBufferLengthValidation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testIsSharedArrayBufferLengthValidation';
+        console.info(`${caseName} test start`);
+
+        const sizes: number[] = [0, 1, 8, 16, 32, 64, 128, 256, 512, 1024];
+        const type: util.types = new util.types();
+
+        for (let i: int = 0; i < sizes.length; i++) {
+          const ab: ArrayBuffer = new ArrayBuffer(sizes[i]);
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          expect(ab.byteLength).assertEqual(sizes[i]);
+        }
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0100
+     * @tc.name testClassBufferProperty
+     * @tc.desc 静态等价（原 Sendable 类属性）：普通类 size 属性与 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferProperty';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSizeClass = new BufferSizeClass(32);
+        expect(instance.getBufferInfo()).assertEqual(32);
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0200
+     * @tc.name testClassBufferMethod
+     * @tc.desc 静态等价（原 Sendable 类方法）：普通类方法计算结果驱动的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferMethod';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSizeClass = new BufferSizeClass(16);
+        const size: int = instance.createBufferInfo();
+        expect(size).assertEqual(32);
+
+        const ab: ArrayBuffer = new ArrayBuffer(size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0300
+     * @tc.name testClassBufferSingleton
+     * @tc.desc 静态等价（原 Sendable 静态单例）：普通类静态单例驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferSingleton', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferSingleton';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSingleton = BufferSingleton.getInstance();
+        const size: int = instance.getSize();
+        expect(size).assertEqual(16);
+
+        const ab: ArrayBuffer = new ArrayBuffer(size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0400
+     * @tc.name testClassBufferInheritance
+     * @tc.desc 静态等价（原 Sendable 继承）：普通类继承方法驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferInheritance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferInheritance';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSizeDerived = new BufferSizeDerived();
+        expect(instance.getBufferSize()).assertEqual(16);
+        expect(instance.getDerivedSize()).assertEqual(32);
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.getDerivedSize());
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0500
+     * @tc.name testClassBufferOverride
+     * @tc.desc 静态等价（原 Sendable 覆写）：普通类覆写字段后计算结果驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferOverride', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferOverride';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSizeDerived = new BufferSizeDerived();
+        instance.multiplier = 4;
+        expect(instance.getDerivedSize()).assertEqual(64);
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.getDerivedSize());
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0600
+     * @tc.name testTaskPoolPassArrayBufferSize
+     * @tc.desc 静态等价（原 TaskPool 传参）：普通顶层函数经 TaskPool 创建 ArrayBuffer 返回字节数
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolPassArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolPassArrayBufferSize';
+        console.info(`${caseName} test start`);
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 64);
+        const result: int = await taskpool.execute(task) as int;
+        expect(result).assertEqual(64);
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0700
+     * @tc.name testTaskPoolSumArrayBufferSizes
+     * @tc.desc 静态等价（原 TaskPool 返回）：普通顶层函数经 TaskPool 累加尺寸并驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolSumArrayBufferSizes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolSumArrayBufferSizes';
+        console.info(`${caseName} test start`);
+
+        const sizes: number[] = [];
+        sizes.push(16);
+        sizes.push(32);
+        sizes.push(64);
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolSumBufferSizes, sizes);
+        const result: int = await taskpool.execute(task) as int;
+        expect(result).assertEqual(112);
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0800
+     * @tc.name testTaskPoolParallelBufferTasks
+     * @tc.desc 静态等价（原 TaskPool 并发访问）：两个并行任务分别创建 ArrayBuffer 返回字节数
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolParallelBufferTasks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolParallelBufferTasks';
+        console.info(`${caseName} test start`);
+
+        const task1: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 32);
+        const task2: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 64);
+
+        const results: int[] = await Promise.all([
+          taskpool.execute(task1) as Promise<int>,
+          taskpool.execute(task2) as Promise<int>
+        ]);
+
+        expect(results[0]).assertEqual(32);
+        expect(results[1]).assertEqual(64);
+
+        const ab1: ArrayBuffer = new ArrayBuffer(results[0]);
+        const ab2: ArrayBuffer = new ArrayBuffer(results[1]);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab1)).assertTrue();
+        expect(type.isAnyArrayBuffer(ab2)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_0900
+     * @tc.name testTaskPoolSharedArrayBufferAtomicWrite
+     * @tc.desc 静态等价（原 Worker 模拟）：ArrayBuffer 上 Atomics 原子写，并经 TaskPool 往返尺寸
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolSharedArrayBufferAtomicWrite', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolSharedArrayBufferAtomicWrite';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(128);
+        const view: Int32Array = new Int32Array(ab);
+        Atomics.store(view, 0, 42);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(Atomics.load(view, 0)).assertEqual(42);
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, ab.byteLength);
+        const result: int = await taskpool.execute(task) as int;
+        expect(result).assertEqual(128);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1000
+     * @tc.name testTaskPoolShareArrayBufferSize
+     * @tc.desc 静态等价（原 Worker postMessage 模拟）：ArrayBuffer 字节长度作为 TaskPool 任务入参并校验任务返回
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolShareArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolShareArrayBufferSize';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(256);
+        const size: int = ab.byteLength;
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, size);
+        const result: int = await taskpool.execute(task) as int;
+        expect(result).assertEqual(256);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1100
+     * @tc.name testTaskPoolReturnArrayBufferSize
+     * @tc.desc 静态等价（原 Worker 返回模拟）：TaskPool 累加尺寸结果驱动 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolReturnArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolReturnArrayBufferSize';
+        console.info(`${caseName} test start`);
+
+        const sizes: number[] = [];
+        sizes.push(64);
+        sizes.push(128);
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolSumBufferSizes, sizes);
+        const result: int = await taskpool.execute(task) as int;
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(192);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1200
+     * @tc.name testClassSharedArrayBufferAtomics
+     * @tc.desc 静态等价（原 EAWorker 类模拟）：普通类尺寸驱动的 ArrayBuffer Atomics 读写与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassSharedArrayBufferAtomics', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassSharedArrayBufferAtomics';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSizeClass = new BufferSizeClass(64);
+        const size: int = instance.getBufferInfo();
+
+        const ab: ArrayBuffer = new ArrayBuffer(size);
+        const view: Int32Array = new Int32Array(ab);
+        Atomics.store(view, 0, 100);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(Atomics.load(view, 0)).assertEqual(100);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1300
+     * @tc.name testSharedArrayBufferDualViews
+     * @tc.desc 静态等价（原 EAWorker 内存共享模拟）：同一 ArrayBuffer 双视图（Atomics + 直接写）共享
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testSharedArrayBufferDualViews', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testSharedArrayBufferDualViews';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(1024);
+        const view1: Int32Array = new Int32Array(ab);
+        const view2: Float64Array = new Float64Array(ab);
+
+        Atomics.store(view1, 0, 42);
+        expect(Atomics.load(view1, 0)).assertEqual(42);
+
+        view2[0] = 3.14;
+        expect(view2[0]).assertEqual(3.14);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(view1.buffer)).assertTrue();
+        expect(view1.buffer === view2.buffer).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1400
+     * @tc.name testTaskPoolCrossThreadShare
+     * @tc.desc 静态等价（原 EAWorker 跨线程模拟）：TaskPool 任务内创建 ArrayBuffer 并回传字节数，主线程重建缓冲并识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolCrossThreadShare', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolCrossThreadShare';
+        console.info(`${caseName} test start`);
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 512);
+        const result: int = await taskpool.execute(task) as int;
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(512);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1500
+     * @tc.name testClassBufferGetterSetter
+     * @tc.desc 静态等价（原 Sendable getter/setter）：普通类 getter/setter 驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferGetterSetter';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferGetterSetter = new BufferGetterSetter();
+        instance.size = 128;
+
+        const size: int = instance.getBufferSize();
+        expect(size).assertEqual(128);
+
+        const ab: ArrayBuffer = new ArrayBuffer(size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1600
+     * @tc.name testTaskPoolMethodArrayBufferSize
+     * @tc.desc 静态等价（原 @Concurrent 方法）：普通顶层函数经 TaskPool 创建 ArrayBuffer 返回字节数
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testTaskPoolMethodArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testTaskPoolMethodArrayBufferSize';
+        console.info(`${caseName} test start`);
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 256);
+        const result: int = await taskpool.execute(task) as int;
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1700
+     * @tc.name testClassBufferCollectionTask
+     * @tc.desc 静态等价（原 Sendable 集合）：普通容器类尺寸集合经 TaskPool 累加
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferCollectionTask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testClassBufferCollectionTask';
+        console.info(`${caseName} test start`);
+
+        const container: BufferSizeContainer = new BufferSizeContainer();
+        container.addBuffer(16);
+        container.addBuffer(32);
+        container.addBuffer(64);
+
+        expect(container.getBufferCount()).assertEqual(3);
+
+        const task: taskpool.Task = new taskpool.Task(taskPoolSumBufferSizes, container.buffers);
+        const result: int = await taskpool.execute(task) as int;
+        expect(result).assertEqual(112);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1800
+     * @tc.name testClassBufferNested
+     * @tc.desc 静态等价（原 Sendable 嵌套类）：普通容器类与内部类组合驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferNested';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSizeContainer = new BufferSizeContainer();
+        const inner: BufferSizeClass = new BufferSizeClass(64);
+
+        instance.addBuffer(inner.size);
+        expect(instance.buffers.length).assertEqual(1);
+
+        const ab: ArrayBuffer = new ArrayBuffer(inner.getBufferInfo());
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_1900
+     * @tc.name testClassBufferPrivateField
+     * @tc.desc 静态等价（原 Sendable 私有字段）：普通类私有字段经 getter/setter 驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferPrivateField', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferPrivateField';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferGetterSetter = new BufferGetterSetter();
+        instance.size = 32;
+
+        expect(instance.size).assertEqual(32);
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_SENDABLE_2000
+     * @tc.name testClassBufferDefaultValue
+     * @tc.desc 静态等价（原 Sendable 默认值）：普通类默认 size 驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassBufferDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testClassBufferDefaultValue';
+        console.info(`${caseName} test start`);
+
+        const instance: BufferSizeClass = new BufferSizeClass(16);
+        expect(instance.size).assertEqual(16);
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+  });
+
+  // 跨文件 export/reexport 静态等价段（原 TS 模块测试改为 .ets 模块；JS 互操作不迁移）
+  describe('IsSharedArrayBufferCrossFileTest', (): void => {
+    beforeAll((): void => {
+      console.info('beforeAll called');
+    });
+
+    beforeEach((): void => {
+    });
+
+    afterEach((): void => {
+      console.info('afterEach called');
+    });
+
+    afterAll((): void => {
+      console.info('afterAll called');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_0100
+     * @tc.name testCreateArrayBufferFromModule
+     * @tc.desc 静态等价（原 TS 模块函数）：跨文件模块函数创建 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testCreateArrayBufferFromModule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testCreateArrayBufferFromModule';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = createArrayBufferTS(16);
+        const type: util.types = new util.types();
+        const result: boolean = type.isAnyArrayBuffer(ab);
+        expect(result).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_0200
+     * @tc.name testModuleReturnArrayBufferMethod
+     * @tc.desc 静态等价（原 TS 方法）：跨文件模块方法返回 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testModuleReturnArrayBufferMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testModuleReturnArrayBufferMethod';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = getArrayBufferMethodTS();
+        const type: util.types = new util.types();
+        const result: boolean = type.isAnyArrayBuffer(ab);
+        expect(result).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_0300
+     * @tc.name testModuleClassGetterSetter
+     * @tc.desc 静态等价（原 TS 类 getter/setter）：跨文件模块类 getter/setter 返回 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testModuleClassGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testModuleClassGetterSetter';
+        console.info(`${caseName} test start`);
+
+        const instance: ArrayBufferClassTS = new ArrayBufferClassTS();
+        instance.data = 32;
+        const ab: ArrayBuffer = instance.getMethodAfterGetSet();
+        const type: util.types = new util.types();
+        const result: boolean = type.isAnyArrayBuffer(ab);
+        expect(result).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_0400
+     * @tc.name testModuleStaticMethod
+     * @tc.desc 静态等价（原 TS 静态方法）：跨文件模块静态方法返回 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testModuleStaticMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testModuleStaticMethod';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = ArrayBufferStaticTS.getArrayBuffer();
+        const type: util.types = new util.types();
+        const result: boolean = type.isAnyArrayBuffer(ab);
+        expect(result).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_0500
+     * @tc.name testModuleInheritance
+     * @tc.desc 静态等价（原 TS 继承）：跨文件模块函数创建 ArrayBuffer 的字节数与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testModuleInheritance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testModuleInheritance';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = createArrayBufferTS(64);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1100
+     * @tc.name testEtsImportModule
+     * @tc.desc 静态等价（原 ETS 导入 TS）：ETS 文件导入跨文件 .ets 模块，字节数一致性校验
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testEtsImportModule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testEtsImportModule';
+        console.info(`${caseName} test start`);
+
+        const abModule: ArrayBuffer = createArrayBufferTS(32);
+        const abLocal: ArrayBuffer = new ArrayBuffer(32);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(abModule)).assertTrue();
+        expect(type.isAnyArrayBuffer(abLocal)).assertTrue();
+        expect(abModule.byteLength).assertEqual(abLocal.byteLength);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1300
+     * @tc.name testMixedSourceFiles
+     * @tc.desc 静态等价（原 ETS+TS+JS 混合）：本地与两个跨文件模块来源的 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testMixedSourceFiles', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testMixedSourceFiles';
+        console.info(`${caseName} test start`);
+
+        const abLocal: ArrayBuffer = new ArrayBuffer(16);
+        const abModule1: ArrayBuffer = createArrayBufferTS(16);
+        const abModule2: ArrayBuffer = exportedArrayBufferFunc(16);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(abLocal)).assertTrue();
+        expect(type.isAnyArrayBuffer(abModule1)).assertTrue();
+        expect(type.isAnyArrayBuffer(abModule2)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1400
+     * @tc.name testCrossFileTypeConsistency
+     * @tc.desc 静态等价（原跨文件类型一致性）：多来源 ArrayBuffer 字节数与缓冲识别一致性
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testCrossFileTypeConsistency', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testCrossFileTypeConsistency';
+        console.info(`${caseName} test start`);
+
+        const abLocal: ArrayBuffer = new ArrayBuffer(64);
+        const abModule1: ArrayBuffer = createArrayBufferTS(64);
+        const abModule2: ArrayBuffer = exportedArrayBufferFunc(64);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(abLocal)).assertTrue();
+        expect(type.isAnyArrayBuffer(abModule1)).assertTrue();
+        expect(type.isAnyArrayBuffer(abModule2)).assertTrue();
+        expect(abLocal.byteLength).assertEqual(64);
+        expect(abModule1.byteLength).assertEqual(64);
+        expect(abModule2.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1500
+     * @tc.name testModuleExportArrayBuffer
+     * @tc.desc 静态等价（原模块导出）：跨文件模块函数导出创建 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testModuleExportArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testModuleExportArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = createArrayBufferTS(128);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1600
+     * @tc.name testModuleImportArrayBuffer
+     * @tc.desc 静态等价（原模块导入）：两个跨文件模块来源的 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testModuleImportArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testModuleImportArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const abModule1: ArrayBuffer = createArrayBufferTS(32);
+        const abModule2: ArrayBuffer = exportedArrayBufferFunc(32);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(abModule1)).assertTrue();
+        expect(type.isAnyArrayBuffer(abModule2)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1700
+     * @tc.name testReExportArrayBuffer
+     * @tc.desc 静态等价（原 re-export）：跨文件 reexport 模块与源导出模块的 ArrayBuffer 同一性
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testReExportArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testReExportArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = createArrayBufferTS(64);
+        const sliced: ArrayBuffer = ab.slice(0, 32);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(type.isAnyArrayBuffer(sliced)).assertTrue();
+        expect(type.isAnyArrayBuffer(reExportedArrayBuffer)).assertTrue();
+        expect(reExportedArrayBuffer === exportedArrayBuffer).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1900
+     * @tc.name testDefaultExport
+     * @tc.desc 静态等价（原 default export）：跨文件模块默认导出 ArrayBuffer 的字节数与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testDefaultExport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testDefaultExport';
+        console.info(`${caseName} test start`);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(defaultArrayBuffer)).assertTrue();
+        expect(defaultArrayBuffer.byteLength).assertEqual(32);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_EXPORT_0100
+     * @tc.name testExportedArrayBufferConst
+     * @tc.desc 静态等价（原导出常量）：跨文件模块导出常量 ArrayBuffer 的字节数与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testExportedArrayBufferConst', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testExportedArrayBufferConst';
+        console.info(`${caseName} test start`);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(exportedArrayBuffer)).assertTrue();
+        expect(exportedArrayBuffer.byteLength).assertEqual(16);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_EXPORT_0200
+     * @tc.name testExportedArrayBufferFunc
+     * @tc.desc 静态等价（原导出函数）：跨文件模块导出函数创建 ArrayBuffer 的字节数与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testExportedArrayBufferFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testExportedArrayBufferFunc';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = exportedArrayBufferFunc(32);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(32);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_EXPORT_0300
+     * @tc.name testExportedArrayBufferClassGetterSetter
+     * @tc.desc 静态等价（原导出类 getter/setter）：跨文件模块导出类 getter/setter 返回 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testExportedArrayBufferClassGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testExportedArrayBufferClassGetterSetter';
+        console.info(`${caseName} test start`);
+
+        const instance: ExportedArrayBufferClass = new ExportedArrayBufferClass();
+        instance.data = 64;
+        const ab: ArrayBuffer = instance.getBuffer();
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_EXPORT_0400
+     * @tc.name testExportedArrayBufferClassDefaultBuffer
+     * @tc.desc 静态等价（原导出类默认缓冲）：跨文件模块导出类默认 ArrayBuffer 的字节数与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testExportedArrayBufferClassDefaultBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testExportedArrayBufferClassDefaultBuffer';
+        console.info(`${caseName} test start`);
+
+        const instance: ExportedArrayBufferClass = new ExportedArrayBufferClass();
+        const ab: ArrayBuffer = instance.getBuffer();
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(16);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_EXPORT_0500
+     * @tc.name testReExportedArrayBuffer
+     * @tc.desc 静态等价（原 re-exported 常量）：跨文件 reexport 常量与源导出常量的同一性
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testReExportedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testReExportedArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(reExportedArrayBuffer)).assertTrue();
+        expect(reExportedArrayBuffer.byteLength).assertEqual(16);
+        expect(reExportedArrayBuffer === exportedArrayBuffer).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+  });
+
+  // 静态等价段（原 @Sendable/@Concurrent 装饰器用例，装饰器为动态专属，
+  // 可表达测试点改写为普通类 + TaskPool 普通顶层函数）
+  describe('IsSharedArrayBufferDecoratorStaticTest', (): void => {
+    beforeAll((): void => {
+      console.info('beforeAll called');
+    });
+
+    beforeEach((): void => {
+    });
+
+    afterEach((): void => {
+      console.info('afterEach called');
+    });
+
+    afterAll((): void => {
+      console.info('afterAll called');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0100
+     * @tc.name testDecoratorBufferClassProperty
+     * @tc.desc 静态等价（原 @Sendable 类属性）：普通类 size 属性驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testDecoratorBufferClassProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testDecoratorBufferClassProperty';
+        console.info(`${caseName} test start`);
+
+        const instance: DecoratorBufferSizeClass = new DecoratorBufferSizeClass();
+        const size: int = instance.getBufferSize();
+
+        const ab: ArrayBuffer = new ArrayBuffer(size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0200
+     * @tc.name testDecoratorBufferClassMethod
+     * @tc.desc 静态等价（原 @Sendable 类方法）：普通类方法结果驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testDecoratorBufferClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testDecoratorBufferClassMethod';
+        console.info(`${caseName} test start`);
+
+        const instance: DecoratorBufferSizeClass = new DecoratorBufferSizeClass();
+        instance.size = 32;
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.getBufferSize());
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(32);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0300
+     * @tc.name testDecoratorBufferClassGetterSetter
+     * @tc.desc 静态等价（原 @Sendable get/set）：普通类 getter/setter 驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testDecoratorBufferClassGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testDecoratorBufferClassGetterSetter';
+        console.info(`${caseName} test start`);
+
+        const instance: DecoratorBufferGetterSetter = new DecoratorBufferGetterSetter();
+        instance.size = 64;
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.getBufferSize());
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0400
+     * @tc.name testConcurrentTaskPoolBufferFunc
+     * @tc.desc 静态等价（原 @Concurrent 方法）：普通顶层函数经 TaskPool 创建 ArrayBuffer 返回字节数
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testConcurrentTaskPoolBufferFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testConcurrentTaskPoolBufferFunc';
+        console.info(`${caseName} test start`);
+
+        const task: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, 128);
+        const result: int = await taskpool.execute(task) as int;
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0500
+     * @tc.name testConcurrentTaskPoolSumFunc
+     * @tc.desc 静态等价（原 @Concurrent 静态方法）：普通顶层函数经 TaskPool 累加尺寸并驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testConcurrentTaskPoolSumFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testConcurrentTaskPoolSumFunc';
+        console.info(`${caseName} test start`);
+
+        const sizes: number[] = [];
+        sizes.push(16);
+        sizes.push(32);
+        sizes.push(64);
+
+        const task: taskpool.Task = new taskpool.Task(concurrentSumBufferSizes, sizes);
+        const result: int = await taskpool.execute(task) as int;
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0600
+     * @tc.name testConcurrentTaskPoolParallel
+     * @tc.desc 静态等价（原 @Concurrent TaskPool 场景）：两个并行任务创建 ArrayBuffer 返回字节数
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testConcurrentTaskPoolParallel', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testConcurrentTaskPoolParallel';
+        console.info(`${caseName} test start`);
+
+        const task1: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, 32);
+        const task2: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, 64);
+
+        const results: int[] = await Promise.all([
+          taskpool.execute(task1) as Promise<int>,
+          taskpool.execute(task2) as Promise<int>
+        ]);
+
+        const ab1: ArrayBuffer = new ArrayBuffer(results[0]);
+        const ab2: ArrayBuffer = new ArrayBuffer(results[1]);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab1)).assertTrue();
+        expect(type.isAnyArrayBuffer(ab2)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_2100
+     * @tc.name testClassAndTaskPoolCombination
+     * @tc.desc 静态等价（原 @Sendable + @Concurrent 组合）：普通类结果驱动 TaskPool 创建 ArrayBuffer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testClassAndTaskPoolCombination', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        const caseName = 'testClassAndTaskPoolCombination';
+        console.info(`${caseName} test start`);
+
+        const instance: DecoratorBufferSizeClass = new DecoratorBufferSizeClass();
+        const size: int = instance.getBufferSize();
+
+        const task: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, size);
+        const result: int = await taskpool.execute(task) as int;
+
+        const ab: ArrayBuffer = new ArrayBuffer(result);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+  });
+}
