@@ -15,8 +15,10 @@
 
 import webViewControllerResumeAllTimers from './WebViewControllerResumeAllTimers.test';
 import EnableWebAVSession from './EnableWebAVSession.test';
+import EnableMediaNetworkProxy from './EnableMediaNetworkProxy.test';
 
 export default function testsuite() {
      webViewControllerResumeAllTimers()
      EnableWebAVSession()
+     EnableMediaNetworkProxy()
 }
