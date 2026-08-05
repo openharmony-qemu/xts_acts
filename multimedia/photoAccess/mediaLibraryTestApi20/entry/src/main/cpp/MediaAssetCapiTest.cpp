@@ -212,16 +212,9 @@ static void HandleRequestContentWithBuffer(OH_MovingPhoto *movingPhoto)
     uint8_t *contentBuffer = nullptr;
     contentBuffer = new uint8_t[size];
     const uint8_t **buffer = const_cast<const uint8_t **>(&contentBuffer);
-    static const int maxRetryTimes = 5;
-    const int sessionStartWaitSeconds = 1;
-    for (int i = 0; i < maxRetryTimes; i++) {
-        g_requestContentWithBufferOk = OH_MovingPhoto_RequestContentWithBuffer(
-            movingPhoto, resourceType, buffer, &size);
-        std::this_thread::sleep_for(std::chrono::seconds(sessionStartWaitSeconds));
-        if (g_requestContentWithBufferOk == 0) {
-            break;
-        }
-    }
+    const int sessionStartWaitSeconds = 5;
+    std::this_thread::sleep_for(std::chrono::seconds(sessionStartWaitSeconds));
+    g_requestContentWithBufferOk = OH_MovingPhoto_RequestContentWithBuffer(movingPhoto, resourceType, buffer, &size);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",
                  "OH_MovingPhoto_RequestContentWithBuffer g_requestContentWithBufferOk :%{public}d",
                  g_requestContentWithBufferOk);
