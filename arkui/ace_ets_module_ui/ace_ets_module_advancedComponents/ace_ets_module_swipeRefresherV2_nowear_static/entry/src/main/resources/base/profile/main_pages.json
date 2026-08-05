@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/swipeRefresherV2/swipeRefresherV2Page"
+    "MainAbility/pages/swipeRefresherV2/swipeRefresherV2Page",
+    "MainAbility/pages/swipeRefresherV2/SwipeRefresherV2ContentIsLoading"
   ]
 }
