@@ -170,7 +170,7 @@ export default function windowKeyBorad() {
         mainWindow.on('keyboardWillShow', callback);
         await sleep(1000);
         if( deviceType ==='2in1'){
-          console.info(`${caseName} on keyboardWillShow succeed,deviceType: ${JSON.stringify(deviceType),can not show}`);
+          console.info(`${caseName} on keyboardWillShow succeed,deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
@@ -347,7 +347,7 @@ export default function windowKeyBorad() {
         mainWindow.on('keyboardWillHide', callback);
         await sleep(1000);
         if( deviceType ==='2in1'){
-          console.info(`${caseName} on keyboardWillHide succeed,  deviceType: ${JSON.stringify(deviceType),can not show}`);
+          console.info(`${caseName} on keyboardWillHide succeed,  deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
@@ -445,7 +445,7 @@ export default function windowKeyBorad() {
         
         await sleep(1000);
         if( deviceType ==='2in1'){
-          console.info(`${caseName} on keyboardDidShow succeed,  deviceType: ${JSON.stringify(deviceType),can not show}`);
+          console.info(`${caseName} on keyboardDidShow succeed,  deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
@@ -515,7 +515,7 @@ export default function windowKeyBorad() {
         mainWindow.on('keyboardDidHide', callback);
         await sleep(1000);
         if( deviceType ==='2in1'){
-          console.info(`${caseName} on keyboardDidHide succeed, deviceType: ${JSON.stringify(deviceType),can not show}`);
+          console.info(`${caseName} on keyboardDidHide succeed, deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
