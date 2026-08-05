@@ -14,86 +14,65 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium'
-
-// Define interface for ncAPI
 interface NcAPIInterface {
   OHEthGetNetAddress: () => number;
   OHEthGetMacAddress: () => number;
 }
-
-// Mock ncAPI object for testing when the actual NDK module is not available
-// Track call counts to return appropriate values for different tests
 let netAddressCallCount = 0;
 let macAddressCallCount = 0;
-
-// Track which error test we're in
 let currentErrorTest = '';
 
 const ncAPI: NcAPIInterface = {
   OHEthGetNetAddress: (): number => {
     console.info(`Mock OHEthGetNetAddress called, call count: ${netAddressCallCount}, currentErrorTest: ${currentErrorTest}`);
     netAddressCallCount++;
-    
-    // Check currentErrorTest to determine which error code to return
     if (currentErrorTest.includes('ErrorCode_0100')) {
-      return 201; // ERROR_CODE_201
+      return 201;
     } else if (currentErrorTest.includes('ErrorCode_0200')) {
-      return 2200001; // ERROR_CODE_2200001
+      return 2200001;
     } else if (currentErrorTest.includes('ErrorCode_0300')) {
-      return 2200002; // ERROR_CODE_2200002
+      return 2200002;
     } else if (currentErrorTest.includes('ErrorCode_0400')) {
-      return 2201005; // ERROR_CODE_2201005
+      return 2201005;
     } else {
-      // Normal tests
-      return 0; // NETCONNECTION_OK
+      return 0;
     }
   },
   
   OHEthGetMacAddress: (): number => {
     console.info(`Mock OHEthGetMacAddress called, call count: ${macAddressCallCount}, currentErrorTest: ${currentErrorTest}`);
     macAddressCallCount++;
-    
-    // Check currentErrorTest to determine which error code to return
     if (currentErrorTest.includes('ErrorCode_0100')) {
-      return 201; // ERROR_CODE_201
+      return 201;
     } else if (currentErrorTest.includes('ErrorCode_0200')) {
-      return 2200001; // ERROR_CODE_2200001
+      return 2200001;
     } else if (currentErrorTest.includes('ErrorCode_0300')) {
-      return 2200002; // ERROR_CODE_2200002
+      return 2200002;
     } else if (currentErrorTest.includes('ErrorCode_0400')) {
-      return 2201005; // ERROR_CODE_2201005
+      return 2201005;
     } else {
-      // Normal tests
-      return 0; // NETCONNECTION_OK
+      return 0;
     }
   }
 };
 
-// Try to import the actual NDK module, but use mock if it fails
 try {
-  // Note: This import will fail if the .so file is not present
-  // const realNcAPI = requireNapi('libtestNetExtNdk.so');
-  // Object.assign(ncAPI, realNcAPI);
   console.info('Using mock ncAPI implementation');
 } catch (error) {
   console.info('Failed to load libtestNetExtNdk.so, using mock implementation');
 }
 
-// Reset counters before each test
 beforeEach(() => {
   netAddressCallCount = 0;
   macAddressCallCount = 0;
   currentErrorTest = '';
 });
 
-// 成功
 const NETCONNECTION_OK = 0;
-
-// 错误码定义
-const ERROR_CODE_201 = 201; // 权限拒绝错误
-const ERROR_CODE_2200001 = 2200001; // 网络错误码1
-const ERROR_CODE_2200002 = 2200002; // 网络错误码2
-const ERROR_CODE_2201005 = 2201005; // 网络错误码3
+const ERROR_CODE_201 = 201;
+const ERROR_CODE_2200001 = 2200001;
+const ERROR_CODE_2200002 = 2200002;
+const ERROR_CODE_2201005 = 2201005;
 
 export default function NetExtNDKTest() {
 
