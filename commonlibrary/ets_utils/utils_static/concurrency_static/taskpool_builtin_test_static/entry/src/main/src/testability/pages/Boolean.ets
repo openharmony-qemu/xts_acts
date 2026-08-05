@@ -1,21 +1,7 @@
 'use static';
-/*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 
-export function testBooleanConstructor(): void {
+export function testBooleanConstructor() {
   let TAG='testBooleanConstructor'
   try {
     let result = new Boolean(0);
@@ -31,7 +17,7 @@ export function testBooleanConstructor(): void {
 
 
 
-export function testBoolean(): void {
+export function testBoolean() {
   let TAG='testBooleanConstructor'
   try {
     let value = true;
@@ -47,7 +33,7 @@ export function testBoolean(): void {
 }
 
 
-export function testBooleanprototypetoString(): void {
+export function testBooleanprototypetoString() {
   let TAG='testBooleanprototypetoString'
   try {
     let boolean1:boolean = false;
@@ -63,7 +49,7 @@ export function testBooleanprototypetoString(): void {
 }
 
 
-export function testBooleanPrototypeValueOf(): void {
+export function testBooleanPrototypeValueOf() {
   let TAG='testBooleanPrototypeValueOf'
   try {
     let flag1 = new Boolean(0);
@@ -82,7 +68,7 @@ export function testBooleanPrototypeValueOf(): void {
 // 1. 字面量 true   → 对应 SUB_BOOLEAN_LITERAL_TEST_0100
 // -----------------------------------------------------------
 
-export function testBoolLiteralTrue(): void {
+export function testBoolLiteralTrue() {
   const TAG = 'testBoolLiteralTrue';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest0100';
@@ -101,7 +87,7 @@ export function testBoolLiteralTrue(): void {
 // 2. 字面量 false  → 对应 SUB_BOOLEAN_LITERAL_TEST_0200
 // -----------------------------------------------------------
 
-export function testBoolLiteralFalse(): void {
+export function testBoolLiteralFalse() {
   const TAG = 'testBoolLiteralFalse';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest0200';
@@ -120,7 +106,7 @@ export function testBoolLiteralFalse(): void {
 // 3. 逻辑非 !       → 对应 SUB_BOOLEAN_LITERAL_TEST_0300
 // -----------------------------------------------------------
 
-export function testBoolNot(): void {
+export function testBoolNot() {
   const TAG = 'testBoolNot';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest0300';
@@ -140,7 +126,7 @@ export function testBoolNot(): void {
 // 4. 逻辑与 &&      → 对应 SUB_BOOLEAN_LITERAL_TEST_0400
 // -----------------------------------------------------------
 
-export function testBoolAnd(): void {
+export function testBoolAnd() {
   const TAG = 'testBoolAnd';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest0400';
@@ -161,7 +147,7 @@ export function testBoolAnd(): void {
 // 5. 逻辑或 ||      → 对应 SUB_BOOLEAN_LITERAL_TEST_0500
 // -----------------------------------------------------------
 
-export function testBoolOr(): void {
+export function testBoolOr() {
   const TAG = 'testBoolOr';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest0500';
@@ -182,7 +168,7 @@ export function testBoolOr(): void {
 // 6. if 条件判断    → 对应 SUB_BOOLEAN_LITERAL_TEST_0600
 // -----------------------------------------------------------
 
-export function testBoolIf(): void {
+export function testBoolIf() {
   const TAG = 'testBoolIf';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest0600';
@@ -204,7 +190,7 @@ export function testBoolIf(): void {
 // 7. 数组遍历/存在 true → 对应 SUB_BOOLEAN_LITERAL_TEST_0900
 // -----------------------------------------------------------
 
-export function testBoolArraySome(): void {
+export function testBoolArraySome() {
   const TAG = 'testBoolArraySome';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest0900';
@@ -230,7 +216,7 @@ export function testBoolArraySome(): void {
 // 8. 比较运算产生布尔 → 对应 SUB_BOOLEAN_LITERAL_TEST_1300
 // -----------------------------------------------------------
 
-export function testBoolCompare(): void {
+export function testBoolCompare() {
   const TAG = 'testBoolCompare';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest1300';
@@ -250,7 +236,7 @@ export function testBoolCompare(): void {
 // 9. 三目运算          → 对应 SUB_BOOLEAN_LITERAL_TEST_1100
 // -----------------------------------------------------------
 
-export function testBoolTernary(): void {
+export function testBoolTernary() {
   const TAG = 'testBoolTernary';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest1100';
@@ -270,7 +256,7 @@ export function testBoolTernary(): void {
 // 10. 复合布尔表达式   → 对应 SUB_BOOLEAN_LITERAL_TEST_3000
 // -----------------------------------------------------------
 
-export function testBoolComplex(): void {
+export function testBoolComplex() {
   const TAG = 'testBoolComplex';
   try {
     const caseName = 'BuiltinsBooleanLiteralTest3000';

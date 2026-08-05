@@ -1,18 +1,4 @@
 'use static';
-/*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 interface GeneratedObjectLiteralInterface_1 {
   theme: string;
@@ -41,7 +27,7 @@ class Pair<T1, T2> {
   getValue1(): T1 { return this.v1; }
   getValue2(): T2 { return this.v2; }
 }
-export function testMultiGeneric(): void {
+export function testMultiGeneric() {
   const TAG = 'testMultiGeneric';
   try {
     const caseName = 'builtinsGenericsActTest1000';
@@ -74,7 +60,7 @@ class Box1<T extends Animal> {
   constructor(v: T) { this.value = v; }
   getValue(): T { return this.value; }
 }
-export function testGenericConstraint(): void {
+export function testGenericConstraint() {
   const TAG = 'testGenericConstraint';
   try {
     const caseName = 'builtinsGenericsActTest1100';
@@ -99,7 +85,7 @@ class DataStorage<T = string> {
   getData(): T { return this.data; }
   setData(newData: T): void { this.data = newData; }
 }
-export function testGenericDefaultClass(): void {
+export function testGenericDefaultClass() {
   const TAG = 'testGenericDefaultClass';
   try {
     const caseName = 'builtinsGenericsDefaultTest0100';
@@ -142,7 +128,7 @@ class G1<T = string[]> {
     return (this.value as string).indexOf(item);
   }
 }
-export function builtinsGenericsFormatTest(): void {
+export function builtinsGenericsFormatTest() {
   const TAG = 'builtinsGenericsFormatTest';
   try {
     const caseName = 'builtinsGenericsFormatTest';

@@ -1,20 +1,6 @@
 'use static';
-/*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-export function testError(): void {
+export function testError() {
   const TAG = 'testError';
   try {
     throw new Error('Whoops!');
@@ -29,7 +15,7 @@ export function testError(): void {
 }
 
 
-export function testRangeError(): void {
+export function testRangeError() {
   const TAG = 'testRangeError';
   try {
     throw new RangeError('It is a RangeError');
@@ -44,7 +30,7 @@ export function testRangeError(): void {
 }
 
 
-export function testReferenceError(): void {
+export function testReferenceError() {
   const TAG = 'testReferenceError';
   try {
     throw new ReferenceError('message err');
@@ -59,7 +45,7 @@ export function testReferenceError(): void {
 }
 
 
-export function testTypeError(): void {
+export function testTypeError() {
   const TAG = 'testTypeError';
   try {
     throw new TypeError('message err');
@@ -74,7 +60,7 @@ export function testTypeError(): void {
 }
 
 
-export function testAggregateError(): void {
+export function testAggregateError() {
   const TAG = 'testAggregateError';
   try {
     throw new AggregateError([new Error('some error')], 'Hello');
@@ -89,7 +75,7 @@ export function testAggregateError(): void {
 }
 
 
-export function testURIError(): void {
+export function testURIError() {
   const TAG = 'testURIError';
   try {
     throw new URIError('abc');
@@ -104,7 +90,7 @@ export function testURIError(): void {
 }
 
 
-export function testSyntaxError(): void {
+export function testSyntaxError() {
   const TAG = 'testSyntaxError';
   try {
     throw new SyntaxError('test');
@@ -119,7 +105,7 @@ export function testSyntaxError(): void {
 }
 
 
-export function testEvalError(): void {
+export function testEvalError() {
   const TAG = 'testEvalError';
   try {
     throw new EvalError('test');

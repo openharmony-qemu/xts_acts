@@ -1,20 +1,6 @@
 'use static';
-/*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-export function builtinsNumberConstructorTest0200(): void {
+export function builtinsNumberConstructorTest0200() {
   let TAG='builtinsNumberConstructorTest0200'
   try {
     let numObj = new Number();
@@ -29,7 +15,7 @@ export function builtinsNumberConstructorTest0200(): void {
 }
 
 
-export function builtinsNumberIsFiniteTest0100(): void {
+export function builtinsNumberIsFiniteTest0100() {
   let TAG='builtinsNumberIsFiniteTest0100'
   try {
     const num = Number.isFinite(0);
@@ -44,7 +30,7 @@ export function builtinsNumberIsFiniteTest0100(): void {
 }
 
 
-export function builtinsNumberIsIntegerTest0100(): void {
+export function builtinsNumberIsIntegerTest0100() {
   let TAG='builtinsNumberIsIntegerTest0100'
   try {
     const num = Number.isInteger(0);
@@ -58,7 +44,7 @@ export function builtinsNumberIsIntegerTest0100(): void {
   }
 }
 
-export function builtinsNumberIsSafeIntegerTest0100(): void {
+export function builtinsNumberIsSafeIntegerTest0100() {
   let TAG='builtinsNumberIsSafeIntegerTest0100'
   try {
     const num = Number.isSafeInteger(3);
@@ -72,7 +58,7 @@ export function builtinsNumberIsSafeIntegerTest0100(): void {
   }
 }
 
-export function builtinsNumberParseTest0100(): void {
+export function builtinsNumberParseTest0100() {
   let TAG='builtinsNumberParseTest0100'
   try {
     const num = Number.parseFloat('3');
@@ -87,7 +73,7 @@ export function builtinsNumberParseTest0100(): void {
 }
 
 
-export function builtinsNumberPropertyTest0100(): void {
+export function builtinsNumberPropertyTest0100() {
   let TAG='builtinsNumberPropertyTest0100'
   try {
     const num1 = Number.EPSILON;
@@ -102,7 +88,7 @@ export function builtinsNumberPropertyTest0100(): void {
 }
 
 
-export function builtinsNumberPrototypeTest0100(): void {
+export function builtinsNumberPrototypeTest0100() {
   let TAG='builtinsNumberPrototypeTest0100'
   try {
     const num = 77.1234;

@@ -1,22 +1,8 @@
 'use static';
-/*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 /* ---------- 1. String.fromCharCode ---------- */
 
-export function testFromCharCode(): void {
+export function testFromCharCode() {
   const TAG = 'testFromCharCode';
   try {
     const res = String.fromCharCode(65, 66, 67);
@@ -31,7 +17,7 @@ export function testFromCharCode(): void {
 
 /* ---------- 2. String.fromCodePoint ---------- */
 
-export function testFromCodePoint(): void {
+export function testFromCodePoint() {
   const TAG = 'testFromCodePoint';
   try {
     const res = String.fromCodePoint(65, 90);
@@ -46,7 +32,7 @@ export function testFromCodePoint(): void {
 
 /* ---------- 5. charCodeAt ---------- */
 
-export function testCharCodeAt(): void {
+export function testCharCodeAt() {
   const TAG = 'testCharCodeAt';
   try {
     const res = 'ABC'.charCodeAt(0);
@@ -61,7 +47,7 @@ export function testCharCodeAt(): void {
 
 /* ---------- 6. codePointAt ---------- */
 
-export function testCodePointAt(): void {
+export function testCodePointAt() {
   const TAG = 'testCodePointAt';
   try {
     const res = '😍'.codePointAt(0);
@@ -76,7 +62,7 @@ export function testCodePointAt(): void {
 
 /* ---------- 7. concat ---------- */
 
-export function testConcat(): void {
+export function testConcat() {
   const TAG = 'testConcat';
   try {
     const res = 'Hello'.concat('World');
@@ -91,7 +77,7 @@ export function testConcat(): void {
 
 /* ---------- 8. endsWith ---------- */
 
-export function testEndsWith(): void {
+export function testEndsWith() {
   const TAG = 'testEndsWith';
   try {
     const res = 'my hello world'.endsWith('world');
@@ -106,7 +92,7 @@ export function testEndsWith(): void {
 
 /* ---------- 9. includes ---------- */
 
-export function testIncludes(): void {
+export function testIncludes() {
   const TAG = 'testIncludes';
   try {
     const res = 'Hello World'.includes('World');
@@ -121,7 +107,7 @@ export function testIncludes(): void {
 
 /* ---------- 10. indexOf ---------- */
 
-export function testIndexOf(): void {
+export function testIndexOf() {
   const TAG = 'testIndexOf';
   try {
     const res = 'hello world'.indexOf('world');
@@ -136,7 +122,7 @@ export function testIndexOf(): void {
 
 /* ---------- 11. lastIndexOf ---------- */
 
-export function testLastIndexOf(): void {
+export function testLastIndexOf() {
   const TAG = 'testLastIndexOf';
   try {
     const res = 'HelloWorld'.lastIndexOf('World');
@@ -151,7 +137,7 @@ export function testLastIndexOf(): void {
 
 /* ---------- 12. matchAll ---------- */
 
-export function testMatchAll(): void {
+export function testMatchAll() {
   const TAG = 'testMatchAll';
   try {
     const str = 'test1test2';
@@ -168,7 +154,7 @@ export function testMatchAll(): void {
 
 /* ---------- 13. normalize ---------- */
 
-export function testNormalize(): void {
+export function testNormalize() {
   const TAG = 'testNormalize';
   try {
     const res = '\u00F1'.normalize('NFD').length;
@@ -183,7 +169,7 @@ export function testNormalize(): void {
 
 /* ---------- 14. padEnd ---------- */
 
-export function testPadEnd(): void {
+export function testPadEnd() {
   const TAG = 'testPadEnd';
   try {
     const res = 'Breaded Mushrooms'.padEnd(25, '.');
@@ -198,7 +184,7 @@ export function testPadEnd(): void {
 
 /* ---------- 15. padStart ---------- */
 
-export function testPadStart(): void {
+export function testPadStart() {
   const TAG = 'testPadStart';
   try {
     const res = '5'.padStart(2, '0');
@@ -213,7 +199,7 @@ export function testPadStart(): void {
 
 /* ---------- 16. repeat ---------- */
 
-export function testRepeat(): void {
+export function testRepeat() {
   const TAG = 'testRepeat';
   try {
     const res = '1'.repeat(3);
@@ -228,7 +214,7 @@ export function testRepeat(): void {
 
 /* ---------- 17. replace ---------- */
 
-export function testReplace(): void {
+export function testReplace() {
   const TAG = 'testReplace';
   try {
     const res = '1'.replace('1', '2');
@@ -243,7 +229,7 @@ export function testReplace(): void {
 
 /* ---------- 18. replaceAll ---------- */
 
-export function testReplaceAll(): void {
+export function testReplaceAll() {
   const TAG = 'testReplaceAll';
   try {
     const res = '123321'.replaceAll('1', '2');
@@ -258,7 +244,7 @@ export function testReplaceAll(): void {
 
 /* ---------- 19. search ---------- */
 
-export function testSearch(): void {
+export function testSearch() {
   const TAG = 'testSearch';
   try {
     const paragraph = 'I think Ruth\'s dog is cuter than your dog!';
@@ -275,7 +261,7 @@ export function testSearch(): void {
 
 /* ---------- 20. slice ---------- */
 
-export function testSlice(): void {
+export function testSlice() {
   const TAG = 'testSlice';
   try {
     const res = 'Brave new world'.slice(-4);
@@ -290,7 +276,7 @@ export function testSlice(): void {
 
 /* ---------- 21. split ---------- */
 
-export function testSplit(): void {
+export function testSplit() {
   const TAG = 'testSplit';
   try {
     const res = 'a b c'.split(' ')[1];
@@ -305,7 +291,7 @@ export function testSplit(): void {
 
 /* ---------- 22. startsWith ---------- */
 
-export function testStartsWith(): void {
+export function testStartsWith() {
   const TAG = 'testStartsWith';
   try {
     const res = 'Saturday night'.startsWith('Sat');
@@ -320,7 +306,7 @@ export function testStartsWith(): void {
 
 /* ---------- 23. substring ---------- */
 
-export function testSubstring(): void {
+export function testSubstring() {
   const TAG = 'testSubstring';
   try {
     const res = 'Mozilla'.substring(1, 3);
@@ -335,7 +321,7 @@ export function testSubstring(): void {
 
 /* ---------- 24. toLocaleLowerCase ---------- */
 
-export function testToLocaleLowerCase(): void {
+export function testToLocaleLowerCase() {
   const TAG = 'testToLocaleLowerCase';
   try {
     const res = 'İstanbul'.toLocaleLowerCase('en-US');
@@ -350,7 +336,7 @@ export function testToLocaleLowerCase(): void {
 
 /* ---------- 25. toLocaleUpperCase ---------- */
 
-export function testToLocaleUpperCase(): void {
+export function testToLocaleUpperCase() {
   const TAG = 'testToLocaleUpperCase';
   try {
     const res = 'istanbul'.toLocaleUpperCase('en-US');
@@ -365,7 +351,7 @@ export function testToLocaleUpperCase(): void {
 
 /* ---------- 26. toLowerCase ---------- */
 
-export function testToLowerCase(): void {
+export function testToLowerCase() {
   const TAG = 'testToLowerCase';
   try {
     const res = 'ABC'.toLowerCase();
@@ -380,7 +366,7 @@ export function testToLowerCase(): void {
 
 /* ---------- 27. toString ---------- */
 
-export function testToString(): void {
+export function testToString() {
   const TAG = 'testToString';
   try {
     const res = 'foo';
@@ -395,7 +381,7 @@ export function testToString(): void {
 
 /* ---------- 28. toUpperCase ---------- */
 
-export function testToUpperCase(): void {
+export function testToUpperCase() {
   const TAG = 'testToUpperCase';
   try {
     const res = 'abc'.toUpperCase();
@@ -410,7 +396,7 @@ export function testToUpperCase(): void {
 
 /* ---------- 29. trim ---------- */
 
-export function testTrim(): void {
+export function testTrim() {
   const TAG = 'testTrim';
   try {
     const res = '  abc  '.trim();
@@ -425,7 +411,7 @@ export function testTrim(): void {
 
 /* ---------- 30. trimEnd ---------- */
 
-export function testTrimEnd(): void {
+export function testTrimEnd() {
   const TAG = 'testTrimEnd';
   try {
     const res = '  abc  '.trimEnd();
@@ -440,7 +426,7 @@ export function testTrimEnd(): void {
 
 /* ---------- 31. trimStart ---------- */
 
-export function testTrimStart(): void {
+export function testTrimStart() {
   const TAG = 'testTrimStart';
   try {
     const res = '  abc  '.trimStart();
@@ -455,7 +441,7 @@ export function testTrimStart(): void {
 
 /* ---------- 32. valueOf ---------- */
 
-export function testValueOf(): void {
+export function testValueOf() {
   const TAG = 'testValueOf';
   try {
     const res:string = 'foo';
@@ -470,7 +456,7 @@ export function testValueOf(): void {
 
 // 3500 - indexOf 测试
 
-export function testStringIndexOf3500(): boolean {
+export function testStringIndexOf3500() {
   const TAG = 'testStringIndexOf3500';
   try {
     const str = 'brie, pepper jack, cheddar';
@@ -487,7 +473,7 @@ export function testStringIndexOf3500(): boolean {
 
 // 4300 - lastIndexOf 测试
 
-export function testStringLastIndexOf4300(): boolean {
+export function testStringLastIndexOf4300() {
   const TAG = 'testStringLastIndexOf4300';
   try {
     const str = 'canal';
@@ -504,7 +490,7 @@ export function testStringLastIndexOf4300(): boolean {
 
 // 6600 - localeCompare 测试
 
-export function testStringLocaleCompare6600(): boolean {
+export function testStringLocaleCompare6600() {
   const TAG = 'testStringLocaleCompare6600';
   try {
     const str = 'Banana';

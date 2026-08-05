@@ -1,20 +1,6 @@
 'use static';
-/*
- * Copyright (c) 2026 RKH Corp.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-export function testWeakSetConstructor1(): void {
+export function testWeakSetConstructor1() {
   let TAG = 'testWeakSetConstructor1'
   try {
     const ws = new WeakSet<number>();
@@ -30,7 +16,7 @@ export function testWeakSetConstructor1(): void {
 
 interface GeneratedObjectLiteralInterface_1 {}
 
-export function testWeakSetAdd1(): void {
+export function testWeakSetAdd1() {
   let TAG = 'testWeakSetAdd1'
   try {
     const weakset = new WeakSet<GeneratedObjectLiteralInterface_1>();
@@ -47,7 +33,7 @@ export function testWeakSetAdd1(): void {
 }
 
 
-export function testWeakSetHas1(): void {
+export function testWeakSetHas1() {
   let TAG = 'testWeakSetHas1'
   try {
     const weakset = new WeakSet<GeneratedObjectLiteralInterface_1>();
@@ -64,7 +50,7 @@ export function testWeakSetHas1(): void {
 }
 
 
-export function testWeakSetDelete1(): void {
+export function testWeakSetDelete1() {
   let TAG = 'testWeakSetDelete1'
   try {
     const weakset = new WeakSet<GeneratedObjectLiteralInterface_1>();
@@ -82,7 +68,7 @@ export function testWeakSetDelete1(): void {
 }
 
 
-export function testWeakRefConstructor1(): void {
+export function testWeakRefConstructor1() {
   let TAG = 'testWeakRefConstructor1'
   try {
     let ret = new WeakRef<Object>(new Object());
@@ -96,7 +82,7 @@ export function testWeakRefConstructor1(): void {
 }
 
 
-export function testWeakRefDeref(): void {
+export function testWeakRefDeref() {
   let TAG = 'testWeakRefDeref'
   try {
     let ret = new WeakRef<Object>(new Object());
@@ -112,7 +98,7 @@ export function testWeakRefDeref(): void {
 }
 
 
-export function testWeakMapSetGet1(): void {
+export function testWeakMapSetGet1() {
   let TAG = 'testWeakMapSetGet1'
   try {
     let weakMap: WeakMap<object, number> = new WeakMap<object, number>();
@@ -129,7 +115,7 @@ export function testWeakMapSetGet1(): void {
 }
 
 
-export function testWeakMapSymbolIterator(): void {
+export function testWeakMapSymbolIterator() {
   let TAG = 'testWeakMapSymbolIterator'
   try {
     let arr = [1, 2, 3];
@@ -145,7 +131,7 @@ export function testWeakMapSymbolIterator(): void {
 }
 
 
-export function testWeakMapDelete1(): void {
+export function testWeakMapDelete1() {
   let TAG = 'testWeakMapDelete1'
   try {
     const weakMap1 = new WeakMap<Object, number>();
@@ -163,7 +149,7 @@ export function testWeakMapDelete1(): void {
 
 interface GeneratedObjectLiteralInterface_4 {}
 
-export function testWeakMapGet1(): void {
+export function testWeakMapGet1() {
   let TAG = 'testWeakMapGet1'
   try {
     let weakMap = new WeakMap<object, string>();
@@ -181,7 +167,7 @@ export function testWeakMapGet1(): void {
 }
 
 
-export function testWeakMapHas1(): void {
+export function testWeakMapHas1() {
   let TAG = 'testWeakMapHas1'
   try {
     let weakMap: WeakMap<object, string> = new WeakMap<object, string>();
@@ -196,7 +182,7 @@ export function testWeakMapHas1(): void {
 }
 
 
-export function testWeakMapSet1(): void {
+export function testWeakMapSet1() {
   let TAG = 'testWeakMapSet1'
   try {
     const weakMap1: WeakMap<object, String> = new WeakMap<object, String>();
@@ -213,7 +199,7 @@ export function testWeakMapSet1(): void {
 }
 
 
-export function testSetAdd1(): void {
+export function testSetAdd1() {
   let TAG = 'testSetAdd1'
   try {
     const odds = new Set<string>(['a', 'b']);
@@ -229,7 +215,7 @@ export function testSetAdd1(): void {
 }
 
 
-export function testSetClear1(): void {
+export function testSetClear1() {
   let TAG = 'testSetClear1'
   try {
     const odds = new Set<int>([1, 2, 3, 4]);
@@ -245,7 +231,7 @@ export function testSetClear1(): void {
 }
 
 
-export function testSetDelete1(): void {
+export function testSetDelete1() {
   let TAG = 'testSetDelete1'
   try {
     const odds = new Set<int>([1, 2, 3]);
@@ -261,7 +247,7 @@ export function testSetDelete1(): void {
 }
 
 
-export function testSetEntries1(): void {
+export function testSetEntries1() {
   let TAG = 'testSetEntries1'
   try {
     const odds = new Set<int>([1, 3, 5, 7, 9]);
@@ -279,7 +265,7 @@ export function testSetEntries1(): void {
 }
 
 
-export function testSetHas1(): void {
+export function testSetHas1() {
   let TAG = 'testSetHas1'
   try {
     const set1 = new Set<int>([1, 2, 3]);
@@ -294,7 +280,7 @@ export function testSetHas1(): void {
 }
 
 
-export function testSetKeys1(): void {
+export function testSetKeys1() {
   let TAG = 'testSetKeys1'
   try {
     let mySet = new Set<string>(['apple', 'banana', 'cat']);
@@ -317,7 +303,7 @@ export function testSetKeys1(): void {
 }
 
 
-export function testRegExpExec1(): void {
+export function testRegExpExec1() {
   let TAG = 'testRegExpExec1'
   try {
     const regex1 = new RegExp('foo*', 'g');
@@ -340,7 +326,7 @@ export function testRegExpExec1(): void {
 }
 
 
-export function testRegExpExecWithGroups1(): void {
+export function testRegExpExecWithGroups1() {
   let TAG = 'testRegExpExecWithGroups1'
   try {
     const re: RegExp = new RegExp("quick\\s(?<color>brown).+?(jumps)", "gi");
@@ -355,7 +341,7 @@ export function testRegExpExecWithGroups1(): void {
 }
 
 
-export function testRegExpExecWithCapture1(): void {
+export function testRegExpExecWithCapture1() {
   let TAG = 'testRegExpExecWithCapture1'
   try {
     const matches = new RegExp("(hello \\S+)").exec('This is a hello world!');
@@ -369,7 +355,7 @@ export function testRegExpExecWithCapture1(): void {
 }
 
 
-export function testRegExpTest1(): void {
+export function testRegExpTest1() {
   let TAG = 'testRegExpTest1'
   try {
     const str = 'table football';
@@ -385,7 +371,7 @@ export function testRegExpTest1(): void {
 }
 
 
-export function testRegExpTestGlobal1(): void {
+export function testRegExpTestGlobal1() {
   let TAG = 'testRegExpTestGlobal1'
   try {
     const regex = new RegExp("foo", "g");
@@ -402,7 +388,7 @@ export function testRegExpTestGlobal1(): void {
 }
 
 
-export function testRegExpToString1(): void {
+export function testRegExpToString1() {
   let TAG = 'testRegExpToString1'
   try {
     const regex = new RegExp('a+b+c');
@@ -417,7 +403,7 @@ export function testRegExpToString1(): void {
 }
 
 
-export function testRegExpToStringWithFlags1(): void {
+export function testRegExpToStringWithFlags1() {
   let TAG = 'testRegExpToStringWithFlags1'
   try {
     const regex = new RegExp('bar', 'g');
@@ -432,7 +418,7 @@ export function testRegExpToStringWithFlags1(): void {
 }
 
 
-export function testPromiseResolve1(): void {
+export function testPromiseResolve1() {
   let TAG = 'testPromiseResolve1'
   try {
     let array: string[] = [];
@@ -450,7 +436,7 @@ export function testPromiseResolve1(): void {
 }
 
 
-export function testPromiseReject1(): void {
+export function testPromiseReject1() {
   let TAG = 'testPromiseReject1'
   try {
     let array: string[] = [];
@@ -468,7 +454,7 @@ export function testPromiseReject1(): void {
 }
 
 
-export function testPromiseConstructor1(): void {
+export function testPromiseConstructor1() {
   let TAG = 'testPromiseConstructor1'
   try {
     const p1: Promise<string> = new Promise<string>((resolve, reject) => {
@@ -482,7 +468,7 @@ export function testPromiseConstructor1(): void {
 }
 
 
-export function testPromiseStaticResolve1(): void {
+export function testPromiseStaticResolve1() {
   let TAG = 'testPromiseStaticResolve1'
   try {
     const p = Promise.resolve('test');
@@ -494,7 +480,7 @@ export function testPromiseStaticResolve1(): void {
 }
 
 
-export function testPromiseStaticReject1(): void {
+export function testPromiseStaticReject1() {
   let TAG = 'testPromiseStaticReject1'
   try {
     const p = Promise.reject(Error('error'));
@@ -506,7 +492,7 @@ export function testPromiseStaticReject1(): void {
 }
 
 
-export function testPromiseAll1(): void {
+export function testPromiseAll1() {
   let TAG = 'testPromiseAll1'
   try {
     const p1 = Promise.resolve(1);
@@ -522,7 +508,7 @@ export function testPromiseAll1(): void {
 }
 
 
-export function testPromiseRace1(): void {
+export function testPromiseRace1() {
   let TAG = 'testPromiseRace1'
   try {
     const p1 = Promise.resolve(1);
@@ -538,7 +524,7 @@ export function testPromiseRace1(): void {
 interface GeneratedObjectLiteralInterface_8 {}
 
 
-export function testObjectConstructor1(): void {
+export function testObjectConstructor1() {
   let TAG = 'testObjectConstructor1'
   try {
     const obj = new Object();
@@ -557,7 +543,7 @@ interface GeneratedObjectLiteralInterface_6 {
 }
 
 
-export function testObjectGetOwnPropertyNames1(): void {
+export function testObjectGetOwnPropertyNames1() {
   let TAG = 'testObjectGetOwnPropertyNames1'
   try {
     const object1: GeneratedObjectLiteralInterface_6 = {
@@ -576,7 +562,7 @@ export function testObjectGetOwnPropertyNames1(): void {
 }
 
 
-export function testNumberToExponential1(): void {
+export function testNumberToExponential1() {
   let TAG = 'testNumberToExponential1'
   try {
     const num: number = 123456;
@@ -591,7 +577,7 @@ export function testNumberToExponential1(): void {
 }
 
 
-export function testNumberToFixed1(): void {
+export function testNumberToFixed1() {
   let TAG = 'testNumberToFixed1'
   try {
     const num = 2.34;
@@ -606,7 +592,7 @@ export function testNumberToFixed1(): void {
 }
 
 
-export function testNumberToPrecision1(): void {
+export function testNumberToPrecision1() {
   let TAG = 'testNumberToPrecision1'
   try {
     const num = 123.456;
@@ -621,7 +607,7 @@ export function testNumberToPrecision1(): void {
 }
 
 
-export function testNumberToString1(): void {
+export function testNumberToString1() {
   let TAG = 'testNumberToString1'
   try {
     const num: int = 233;
@@ -636,7 +622,7 @@ export function testNumberToString1(): void {
 }
 
 
-export function testNumberValueOf1(): void {
+export function testNumberValueOf1() {
   let TAG = 'testNumberValueOf1'
   try {
     const num = new Number(42);
@@ -651,7 +637,7 @@ export function testNumberValueOf1(): void {
 }
 
 
-export function testNumberIsFinite1(): void {
+export function testNumberIsFinite1() {
   let TAG = 'testNumberIsFinite1'
   try {
     const result1 = Number.isFinite(42);
@@ -666,7 +652,7 @@ export function testNumberIsFinite1(): void {
 }
 
 
-export function testNumberIsInteger1(): void {
+export function testNumberIsInteger1() {
   let TAG = 'testNumberIsInteger1'
   try {
     const result1 = Number.isInteger(42);
@@ -681,7 +667,7 @@ export function testNumberIsInteger1(): void {
 }
 
 
-export function testNumberIsNaN1(): void {
+export function testNumberIsNaN1() {
   let TAG = 'testNumberIsNaN1'
   try {
     const result1 = Number.isNaN(NaN);
@@ -701,7 +687,7 @@ interface GeneratedObjectLiteralInterface_7 {
   age: number;
 }
 
-export function testJsonParse1(): void {
+export function testJsonParse1() {
   let TAG = 'testJsonParse1'
   try {
     const jsonText = '{"name":"John","age":30}';
@@ -717,7 +703,7 @@ export function testJsonParse1(): void {
 }
 
 
-export function testJsonStringify1(): void {
+export function testJsonStringify1() {
   let TAG = 'testJsonStringify1'
   try {
     const obj: GeneratedObjectLiteralInterface_7 = { name: 'John', age: 30 };
@@ -732,7 +718,7 @@ export function testJsonStringify1(): void {
 }
 
 
-export function testMapSet1(): void {
+export function testMapSet1() {
   let TAG = 'testMapSet1'
   try {
     const map = new Map<string, string>();
@@ -747,7 +733,7 @@ export function testMapSet1(): void {
 }
 
 
-export function testMapGet1(): void {
+export function testMapGet1() {
   let TAG = 'testMapGet1'
   try {
     const map = new Map<string, string>();
@@ -763,7 +749,7 @@ export function testMapGet1(): void {
 }
 
 
-export function testMapHas1(): void {
+export function testMapHas1() {
   let TAG = 'testMapHas1'
   try {
     const map = new Map<string, string>();
@@ -778,7 +764,7 @@ export function testMapHas1(): void {
 }
 
 
-export function testMapDelete1(): void {
+export function testMapDelete1() {
   let TAG = 'testMapDelete1'
   try {
     const map = new Map<string, string>();
@@ -794,7 +780,7 @@ export function testMapDelete1(): void {
 }
 
 
-export function testMapClear1(): void {
+export function testMapClear1() {
   let TAG = 'testMapClear1'
   try {
     const map = new Map<string, string>();
@@ -811,7 +797,7 @@ export function testMapClear1(): void {
 }
 
 
-export function testMapSize1(): void {
+export function testMapSize1() {
   let TAG = 'testMapSize1'
   try {
     const map = new Map<string, string>();
@@ -827,7 +813,7 @@ export function testMapSize1(): void {
 }
 
 
-export function testMapEntries1(): void {
+export function testMapEntries1() {
   let TAG = 'testMapEntries1'
   try {
     const map = new Map<string, string>();
@@ -844,7 +830,7 @@ export function testMapEntries1(): void {
 }
 
 
-export function testMapKeys1(): void {
+export function testMapKeys1() {
   let TAG = 'testMapKeys1'
   try {
     const map = new Map<string, string>();
@@ -861,7 +847,7 @@ export function testMapKeys1(): void {
 }
 
 
-export function testLocaleConstructor1(): void {
+export function testLocaleConstructor1() {
   let TAG = 'testLocaleConstructor1'
   try {
     const locale = new Intl.Locale('en-US');
@@ -875,7 +861,7 @@ export function testLocaleConstructor1(): void {
 }
 
 
-export function testLocaleToString1(): void {
+export function testLocaleToString1() {
   let TAG = 'testLocaleToString1'
   try {
     const locale = new Intl.Locale('fr-Latn-FR', {
@@ -892,7 +878,7 @@ export function testLocaleToString1(): void {
 }
 
 
-export function testLocaleBaseName1(): void {
+export function testLocaleBaseName1() {
   let TAG = 'testLocaleBaseName1'
   try {
     const locale = new Intl.Locale('fr-Latn-FR', {
@@ -908,7 +894,7 @@ export function testLocaleBaseName1(): void {
 }
 
 
-export function testLocaleLanguage1(): void {
+export function testLocaleLanguage1() {
   let TAG = 'testLocaleLanguage1'
   try {
     const locale = new Intl.Locale('en-Latn-US');
@@ -922,7 +908,7 @@ export function testLocaleLanguage1(): void {
 }
 
 
-export function testLocaleRegion1(): void {
+export function testLocaleRegion1() {
   let TAG = 'testLocaleRegion1'
   try {
     const locale = new Intl.Locale('en-Latn-US');
@@ -936,7 +922,7 @@ export function testLocaleRegion1(): void {
 }
 
 
-export function testLocaleScript1(): void {
+export function testLocaleScript1() {
   let TAG = 'testLocaleScript1'
   try {
     const locale = new Intl.Locale('en-Latn-US');
@@ -950,7 +936,7 @@ export function testLocaleScript1(): void {
 }
 
 
-export function testLocaleCalendar1(): void {
+export function testLocaleCalendar1() {
   let TAG = 'testLocaleCalendar1'
   try {
     const locale = new Intl.Locale('fr-FR-u-ca-buddhist');
@@ -964,7 +950,7 @@ export function testLocaleCalendar1(): void {
 }
 
 
-export function testLocaleHourCycle1(): void {
+export function testLocaleHourCycle1() {
   let TAG = 'testLocaleHourCycle1'
   try {
     const locale = new Intl.Locale('en-US', {
