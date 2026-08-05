@@ -147,7 +147,8 @@ export default function APIPreDragStatusTest() {
       await obj.click();
       await CommonFunc.sleep(2000);
       let obj1 = await scrollBar.scrollSearch(ON.id('APIPreDragStatusColumn'));
-      await obj1.longClick();
+      let point = await obj1.getBoundsCenter();
+      await driver.longClickAt({ x: point.x, y: point.y, displayId: 0 }, 2000);
       await CommonFunc.sleep(2000);
 
       let text2 = getInspectorByKey('APIPreDragStatusText04');
