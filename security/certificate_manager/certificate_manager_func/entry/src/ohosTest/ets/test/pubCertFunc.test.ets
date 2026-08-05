@@ -108,11 +108,11 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
   describe('certManagerPubCertJsAPIFunctionTestUnit', () => {
     beforeAll( async() => {
 	  let dirver = Driver.create();
-      let button1 = dirver.findComponent(ON.text("确定")) ?? undefined;
+      let button1 = await dirver.findComponent(ON.text("确定")) ?? undefined;
       if (button1 !== undefined) {
         await button1.click();
       }
-      let button2 = dirver.findComponent(ON.text("不添加")) ?? undefined;
+      let button2 = await dirver.findComponent(ON.text("不添加")) ?? undefined;
       if (button2 !== undefined) {
         await button2.click();
       }
