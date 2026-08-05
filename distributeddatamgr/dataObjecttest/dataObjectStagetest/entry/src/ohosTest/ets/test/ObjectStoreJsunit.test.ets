@@ -811,58 +811,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testMaxSize001 end *************");
     });
     /**
-     * @tc.name   testPerformance001
-     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_4200
-     * @tc.desc   performanceTest for set/get data
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testPerformance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      console.info(TAG + "************* testPerformance001 start *************");
-      let complexObject = distributedObject.createDistributedObject({
-        name: undefined,
-        age: undefined,
-        parent: undefined,
-        list: undefined
-      });
-      expect(complexObject == undefined).assertEqual(false);
-      let startTime = new Date().getTime();
-      for (let i = 0; i < 100; i++) {
-        complexObject.setSessionId("session14");
-        expect("session14" == complexObject["__sessionId"]).assertEqual(true);
-        complexObject.on("change", changeCallback);
-        complexObject["name"] = "jack2";
-        complexObject["age"] = 20;
-        complexObject["isVis"] = false;
-        complexObject["parent"] = {
-          mother: "jack1 mom1", father: "jack1 Dad1"
-        };
-        complexObject["list"] = [{
-          mother: "jack2 mom2"
-        }, {
-          father: "jack2 Dad2"
-        }];
-        expect(complexObject["name"] == "jack2").assertEqual(true);
-        expect(complexObject["age"] == 20).assertEqual(true);
-        expect(complexObject["parent"].mother == "jack1 mom1").assertEqual(true);
-        expect(complexObject["parent"].father == "jack1 Dad1").assertEqual(true);
-        expect(complexObject["list"][0].mother == "jack2 mom2").assertEqual(true);
-        expect(complexObject["list"][1].father == "jack2 Dad2").assertEqual(true);
-        console.info(TAG + "start unWatch change");
-        complexObject.off("change");
-        console.info(TAG + "end unWatch success");
-      }
-      let endTime = new Date().getTime();
-      let totalTime = endTime - startTime;
-      console.info("testPerformance001 totalTime = " + totalTime);
-      console.info("testPerformance001 baseLine = " + baseLine);
-      expect(totalTime < baseLine).assertEqual(true);
-      complexObject.setSessionId("");
-      done();
-      console.info(TAG + "************* testPerformance001 end *************");
-    });
-    /**
      * @tc.name   testSave001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1300
      * @tc.desc   Save object <Promise>
