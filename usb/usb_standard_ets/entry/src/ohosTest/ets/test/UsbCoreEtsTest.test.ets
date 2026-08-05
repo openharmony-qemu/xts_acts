@@ -153,8 +153,7 @@ export default function UsbCoreEtsTest() {
     it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testGetDevices002 begin');
       if (!isDeviceConnected) {
-        let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-        let res = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
+        let res = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
         console.info(TAG, 'usb case getDevices ret length: ' + res.length);
         expect(res.length).assertEqual(0);
         done();
