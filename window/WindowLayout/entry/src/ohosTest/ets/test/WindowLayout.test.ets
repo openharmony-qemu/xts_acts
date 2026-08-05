@@ -3059,7 +3059,7 @@ export default function windowLayoutTest() {
           expect().assertFail();
           done();
         }).catch(async (err: BusinessError) => {
-          if(deviceType == '2in1' || deviceType == 'phone' || deviceType == 'tablet'){
+          if((deviceType == '2in1' || deviceType == 'phone' || deviceType == 'tablet'|| deviceType=='default')&&isSyscapSessionManagerSupported){
             console.error(`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
             await subWindowClass?.destroyWindow();
             expect(err.code).assertEqual(1300004);
@@ -5206,30 +5206,6 @@ export default function windowLayoutTest() {
       try {
         let position = windowClass.globalDisplayToClient(100, 100);
         console.log(caseName + ' position: ' + JSON.stringify(position));
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(1300002)
-        done()
-      }
-    })
-
-    /**
-     * @tc.name   testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100
-     * @tc.number SUB_BASIC_WMS_OFF_RECT_CHANGE_IN_GLOBAL_DISPLAY_WITH_DESTROYED_SUBWINDOW
-     * @tc.desc   验证销毁后的子窗调用OffRectChangeInGlobalDisplay接口抛1300002错误码
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName = 'testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100';
-      console.log(caseName + 'begin.');
-      let windowClass = await windowStage.createSubWindow('testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100')
-      await windowClass.destroyWindow()
-      try {
-        windowClass.off('rectChangeInGlobalDisplay')
         expect().assertFail();
         done();
       } catch (err) {

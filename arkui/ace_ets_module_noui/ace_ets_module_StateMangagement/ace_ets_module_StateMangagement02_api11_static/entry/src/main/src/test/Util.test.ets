@@ -45,8 +45,7 @@ class UtilsTest{
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(():void => {
-        resolve
-        (0)
+        resolve(0)
       }, count)
     })
   }
@@ -62,7 +61,7 @@ class UtilsTest{
         await abilityDelegator.executeShellCommand(cmd);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
         UtilsTest.isStartedAbility = true;
-        await UtilsTest.msSleep(4000);
+        await UtilsTest.msSleep(4000)
       }
       return true;
     } catch(error) {

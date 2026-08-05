@@ -73,10 +73,12 @@ export default function richEditorApi71() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor7');
-
+      let richEditor = await driver.findComponent(ON.id('RichEditor7'));
+      await CommonFunc.sleep(300);
+      let point = await richEditor.getBoundsCenter();
+      await CommonFunc.sleep(300);
       await driver.mouseLongClick({
-        x:Math.round(richEditor.left) + 300, y: Math.round(richEditor.top) + 300
+        x:Math.round(point.x), y: Math.round(point.y)
       }, MouseButton.MOUSE_BUTTON_LEFT)
       await CommonFunc.sleep(2000);
       let text1 = getInspectorByKey('richEditorApi7_text1');

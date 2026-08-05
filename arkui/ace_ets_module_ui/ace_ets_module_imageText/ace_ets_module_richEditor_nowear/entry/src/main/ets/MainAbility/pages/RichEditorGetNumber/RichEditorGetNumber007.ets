@@ -37,7 +37,7 @@ struct RichEditorGetNumber007 {
         .borderColor(Color.Green)
         .onReady(() => {
           for (let index = 0; index < 3; index++) {
-            this.controller.addTextSpan('testDemoLine',
+            this.controller.addTextSpan('testDemo\n',
               {
                 style:
                 {

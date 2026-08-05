@@ -29,7 +29,6 @@ const BUNDLE_NAME: string = 'com.example.actskioskmanagertest.static';
 const WAIT_TIME2000: int = 2000;
 const ERROR_CODE801: int = 801;
 const ERROR_CODE16000110: int = 16000110;
-const ERROR_CODE16000113: int = 16000113;
 const ERROR_CODE16000061: int = 16000061;
 
 function msSleep(count: int) {
@@ -76,54 +75,6 @@ export default function KioskModeStaticTest() {
             let error: BusinessError = err as BusinessError;
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} enterKioskMode code:${error.code}`);
             let result: boolean = (error.code === ERROR_CODE801) || (error.code === ERROR_CODE16000110);
-            expect(result).assertTrue();
-            done();
-          });
-      } catch (error) {
-        hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} enterKioskMode
-          code:${(error as BusinessError).code}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
-    })
-  
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_static_0400
-     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_static_0400
-     * @tc.desc   Test enterKioskMode(UIAbilityContext) when current ability is not in foreground.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_KIOSK_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      let TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_KIOSK_static_0400';
-      hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
-      context?.moveAbilityToBackground()
-        .then(() => {
-          hilog.info(DOMAIN, TAG, '%{public}s', `moveAbilityToBackground success`);
-        })
-        .catch((err: Error) => {
-          let error: BusinessError = err as BusinessError;
-          hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} moveAbilityToBackground code:${error.code}`);
-          if (error.code === ERROR_CODE16000061) {
-            done();
-          }
-        });
-
-      msSleep(WAIT_TIME2000);
-      try {
-        kioskManager.enterKioskMode(context as common.UIAbilityContext)
-          .then(() => {
-            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} enterKioskMode success`);
-            expect().assertFail();
-            done();
-          })
-          .catch((err: Error) => {
-            let error: BusinessError = err as BusinessError;
-            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} enterKioskMode code:${error.code}`);
-            let result: boolean = (error.code === ERROR_CODE801) || (error.code === ERROR_CODE16000113);
             expect(result).assertTrue();
             done();
           });

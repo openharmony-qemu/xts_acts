@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import * as commonParameter from './utils/common/common_parameter';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import { openCertificateManagerDialogTest } from './utils/common/common_function';
 
 function createUnit8Array(len: number){
@@ -105,7 +106,16 @@ let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa
 
 export default function certManagerPubCertJsAPIFunctionTestUnit() {
   describe('certManagerPubCertJsAPIFunctionTestUnit', () => {
-    beforeAll(() => {
+    beforeAll( async() => {
+	  let dirver = Driver.create();
+      let button1 = await dirver.findComponent(ON.text("确定")) ?? undefined;
+      if (button1 !== undefined) {
+        await button1.click();
+      }
+      let button2 = await dirver.findComponent(ON.text("不添加")) ?? undefined;
+      if (button2 !== undefined) {
+        await button2.click();
+      }
     });
     beforeEach(async () => {
     });
@@ -1258,6 +1268,37 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           } else {
             expect(error.code).assertEqual(401);
             expect(error.message).assertEqual("check argv vaild and init faild");
+          }
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0070
+     * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0070
+     * @tc.desc   certificateScope is invalid value 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0070: started ");
+      const context :common.Context = GlobalContext.getContext();
+      let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+      try {
+        await certManagerDialog.openInstallCertificateDialog(null, certificateType, 3, caCert)
+        expect(false).assertTrue()
+      } catch (err) {
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(err.code).assertEqual(801);
+        } else {
+          if (err.code == 29700004) {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0070: e.code " + err.code);
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0070: e.code " + err.code);
+            expect(err.code).assertEqual(401);
           }
         }
       }

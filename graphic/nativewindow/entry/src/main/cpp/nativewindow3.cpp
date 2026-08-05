@@ -1539,6 +1539,30 @@ napi_value testNativeWindowSetGet3DMetadataValueMultipleCalls(napi_env env, napi
     return result;
 }
 
+napi_value testNativeWindowSet3DMetadataValueUnknown(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    uint8_t setMetadata = static_cast<uint8_t>(OH_VIDEO_DIM_TYPE_BUTT);
+    // 1. set接口返回NATIVE_ERROR_UNKNOWN
+    int32_t errorCode = OH_NativeWindow_Set3DMetadataValue(
+        nativeWindow, static_cast<OH_NativeBuffer_3D_MetadataKey>(OH_VIDEO_DIM_TYPE),
+        sizeof(OH_VIDEO_DIM_TYPE), &setMetadata);
+    LOGE("Set3DMetadataValue errorCode = %{public}d", errorCode);
+    if (errorCode != NATIVE_ERROR_UNKNOWN) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    napi_create_int32(env, errorCode, &result);
+    return result;
+}
+
 napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;

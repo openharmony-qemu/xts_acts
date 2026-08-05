@@ -656,7 +656,7 @@ export default function bluetoothBleTest() {
             } catch (err) {
                 console.error("errCode:" + err.code + ",errMessage:" + err.message);
                 BleScanner.off("BLEDeviceFind", onReceiveEvents);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -694,7 +694,7 @@ export default function bluetoothBleTest() {
                 });
             } catch (err) {
                 console.error("errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -1261,7 +1261,7 @@ export default function bluetoothBleTest() {
                     console.info('[bt_arkts]getConnectedState is not support');
                     expect(Number(error.code) == 801).assertTrue();
                 } else {
-                    console.info('[bt_arkts]error code is 2900009');
+                    console.info('[bt_arkts]error code is 2900099');
                     expect(Number(error.code)).assertEqual(2900099);
                 }
             }
@@ -2692,7 +2692,7 @@ export default function bluetoothBleTest() {
                 expect().assertFail();
             } catch (err) {
                 console.error("errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -2716,7 +2716,7 @@ export default function bluetoothBleTest() {
                 expect().assertFail();
             } catch (err) {
                 console.error("errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -2740,7 +2740,7 @@ export default function bluetoothBleTest() {
                 expect().assertFail();
             } catch (err) {
                 console.error("errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -2764,7 +2764,7 @@ export default function bluetoothBleTest() {
                 expect().assertFail();
             } catch (err) {
                 console.error("errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -2821,7 +2821,7 @@ export default function bluetoothBleTest() {
             } catch (err) {
                 console.error("isExtended errCode:" + err.code + ",errMessage:" + err.message);
                 BleScanner.off("BLEDeviceFind", onReceiveEvents);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -2876,7 +2876,7 @@ export default function bluetoothBleTest() {
             } catch (err) {
                 console.error("errCode:" + err.code + ",errMessage:" + err.message);
                 BleScanner.off("BLEDeviceFind", onReceiveEvents);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -2901,7 +2901,7 @@ export default function bluetoothBleTest() {
                 console.info("removeAllServices success")
             } catch (err) {
                 console.error("removeAllServices error，errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801 || err.code == 2900009) {
+                if (err.code == 801 || err.code == 2900099) {
                     console.info('[bluetooth_js]removeAllServices is not support or removeAllServices as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
@@ -3036,6 +3036,205 @@ export default function bluetoothBleTest() {
                     expect(err.code).assertEqual(801);
                 } else {
                     expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0100
+         * @tc.desc Test getConnectedBLEDevices profile is null api21
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let devices = bluetooth.getConnectedBLEDevices(null);
+                console.info("[bluetooth_js]getConnectedBLEDevices null: " + JSON.stringify(devices));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getConnectedBLEDevices null errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0200
+         * @tc.desc Test getConnectedBLEDevices profile is undefined api21
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let devices = bluetooth.getConnectedBLEDevices(undefined);
+                console.info("[bluetooth_js]getConnectedBLEDevices undefined: " + JSON.stringify(devices));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getConnectedBLEDevices undefined errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0300
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0300
+         * @tc.desc Test getConnectedBLEDevices profile is out of enum range api21
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let devices = bluetooth.getConnectedBLEDevices(0);
+                console.info("[bluetooth_js]getConnectedBLEDevices 0: " + JSON.stringify(devices));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getConnectedBLEDevices 0 errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0400
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0400
+         * @tc.desc Test getConnectedBLEDevices profile is out of enum range api21
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let devices = bluetooth.getConnectedBLEDevices(4);
+                console.info("[bluetooth_js]getConnectedBLEDevices 4: " + JSON.stringify(devices));
+                expect().assertFail();
+            } catch (err) {
+                console.error("getConnectedBLEDevices 4 errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0100
+         * @tc.desc Test updateConnectionParam param is null api22
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await device.updateConnectionParam(null);
+                console.info('[bt_arkts]updateConnectionParam null success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]device updateConnectionParam null is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts] device updateConnectionParam is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0200
+         * @tc.desc Test updateConnectionParam param is undefined api22
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await device.updateConnectionParam(undefined);
+                console.info('[bt_arkts]updateConnectionParam undefined success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]device updateConnectionParam undefined is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts] device updateConnectionParam is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0300
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0300
+         * @tc.desc Test updateConnectionParam param is out of enum range api22
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await device.updateConnectionParam(0);
+                console.info('[bt_arkts]updateConnectionParam 0 success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]device updateConnectionParam 0 is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts] device updateConnectionParam is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0400
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0400
+         * @tc.desc Test updateConnectionParam param is out of enum range api22
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await device.updateConnectionParam(4);
+                console.info('[bt_arkts]updateConnectionParam 4 success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]device updateConnectionParam 4 is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts] device updateConnectionParam is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
                 }
             }
             done();

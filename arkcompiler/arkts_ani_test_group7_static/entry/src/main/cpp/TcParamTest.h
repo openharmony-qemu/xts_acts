@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -156,15 +156,15 @@ ani_int test_ParamProcessArray(ani_env *env, ani_object object, ani_array arr)
     }
     return stringCount + numberCount;
 }
-ani_int test_ParamSumFixedIntArray(ani_env *env, ani_object object, ani_fixedarray_int arr)
+ani_int test_ParamSumFixedIntArray(ani_env *env, ani_object object, ani_valuearray_int arr)
 {
     (void)object;
     ani_size length = 0;
-    env->FixedArray_GetLength(arr, &length);
+    env->ValueArray_GetLength(arr, &length);
     ani_int sum = 0;
     for (ani_size i = 0; i < length; i++) {
         ani_int value = 0;
-        env->FixedArray_GetRegion_Int(arr, i, 1, &value);
+        env->ValueArray_GetRegion_Int(arr, i, 1, &value);
         sum += value;
     }
     return sum;

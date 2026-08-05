@@ -47,15 +47,5 @@ struct ArkUI_GestureInterruptInfo_ {
 };
 
 struct ArkUIGesture_;
-
-struct ArkUI_GestureRecognizer_ {
-    int32_t type = -1;
-    ArkUIGesture_* gesture = nullptr;
-    void* extraData = nullptr;
-    void* attachNode = nullptr;
-    bool capi = true;
-    void* recognizer = nullptr;
-    ArkUIGestureEventTargetInfo_ targetInfo = {};
-};
 }
 #endif // ACE_C_ARKUI_TEST_API22_DRAG_RETURN_NULL_H

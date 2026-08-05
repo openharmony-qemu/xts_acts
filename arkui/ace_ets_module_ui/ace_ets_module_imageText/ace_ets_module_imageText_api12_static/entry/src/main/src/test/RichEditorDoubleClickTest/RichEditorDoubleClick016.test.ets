@@ -76,37 +76,27 @@ export default function RichEditorDoubleClick016() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorDoubleClick016')) as Promise<Component>);
       await CommonFunc.sleep(500);
-      let pointCenter = await rich.getBoundsCenter();
-      await CommonFunc.sleep(500);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(500);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      // 点击复制避免changeOrientation被遮挡
-      try{
-        let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
-        await copy.click();
-      }catch(e){}
+      // 自点击避免changeOrientation被遮挡
+      await rich.click()
       await CommonFunc.sleep(500);
       let changeOrientation = await (driver.findComponent(ON.id('changeOrientation')) as Promise<Component>);
       await changeOrientation.click();
       await CommonFunc.sleep(1500);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(500);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      // 点击复制避免changeOrientation被遮挡
-      let copy1 = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
-      await copy1.click();
+      // 自点击避免changeOrientation被遮挡
+      await rich.click()
       await CommonFunc.sleep(500);
       await changeOrientation.click();
       await CommonFunc.sleep(1500);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -318,16 +318,16 @@ ani_double test_SumArray2(ani_env *env, ani_object object, ani_array arr)
 {
     return test_SumArray(env, object, arr);
 }
-ani_int test_ProcessFixed(ani_env *env, ani_object object, ani_fixedarray_int arr)
+ani_int test_SumIntValueArray(ani_env *env, ani_object object, ani_valuearray_int arr)
 {
     (void)object;
     ani_size length = 0;
-    ani_status status = env->FixedArray_GetLength(arr, &length);
+    ani_status status = env->ValueArray_GetLength(arr, &length);
     if (status != ANI_OK) {
         return -1;
     }
     std::vector<ani_int> values(length);
-    status = env->FixedArray_GetRegion_Int(arr, 0, length, values.data());
+    status = env->ValueArray_GetRegion_Int(arr, 0, length, values.data());
     if (status != ANI_OK) {
         return -1;
     }
@@ -337,7 +337,7 @@ ani_int test_ProcessFixed(ani_env *env, ani_object object, ani_fixedarray_int ar
     }
     return sum;
 }
-ani_int test_ProcessNested(ani_env *env, ani_object object, ani_fixedarray_ref arr)
+ani_int test_ProcessNested(ani_env *env, ani_object object, ani_fixedarray arr)
 {
     ani_size outerLength = 0;
     ani_status status = env->FixedArray_GetLength(arr, &outerLength);
@@ -347,11 +347,11 @@ ani_int test_ProcessNested(ani_env *env, ani_object object, ani_fixedarray_ref a
     ani_int total = 0;
     for (ani_size i = 0; i < outerLength; i++) {
         ani_ref innerRef {};
-        status = env->FixedArray_Get_Ref(arr, i, &innerRef);
+        status = env->FixedArray_Get(arr, i, &innerRef);
         if (status != ANI_OK || innerRef == nullptr) {
             return -1;
         }
-        total += test_ProcessFixed(env, object, static_cast<ani_fixedarray_int>(innerRef));
+        total += test_SumIntValueArray(env, object, static_cast<ani_valuearray_int>(innerRef));
     }
     return total;
 }

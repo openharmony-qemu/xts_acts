@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -336,22 +336,22 @@ ani_double test_TypeSumArray(ani_env *env, ani_object object, ani_array array)
     }
     return sum;
 }
-ani_int test_SumFixedArray(ani_env *env, ani_object object, ani_fixedarray_int array)
+ani_int test_SumFixedArray(ani_env *env, ani_object object, ani_valuearray_int array)
 {
     (void)object;
     if (env == nullptr || array == nullptr) {
         return 0;
     }
     ani_size length = 0;
-    ani_status status = env->FixedArray_GetLength(array, &length);
-    if (!AssertEqMsg(status, ANI_OK, "FixedArray_GetLength failed")) {
+    ani_status status = env->ValueArray_GetLength(array, &length);
+    if (!AssertEqMsg(status, ANI_OK, "ValueArray_GetLength failed")) {
         return 0;
     }
     ani_int sum = 0;
     for (ani_size i = 0; i < length; i++) {
         ani_int value = 0;
-        status = env->FixedArray_GetRegion_Int(array, i, 1, &value);
-        if (!AssertEqMsg(status, ANI_OK, "FixedArray_GetRegion_Int failed")) {
+        status = env->ValueArray_GetRegion_Int(array, i, 1, &value);
+        if (!AssertEqMsg(status, ANI_OK, "ValueArray_GetRegion_Int failed")) {
         return sum;
     }
         sum += value;

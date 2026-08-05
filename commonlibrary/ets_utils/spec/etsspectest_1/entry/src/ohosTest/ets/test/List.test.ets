@@ -1,4 +1,3 @@
-
 import ClassDeclarationTest from './class/classDeclaration/ClassDeclarationTest.test';
 import ClassTypeTest from './class/classType/ClassTypeTest.test';
 import ClassInstantiationTest from './class/classInstantiation/ClassInstantiationTest.test';
@@ -63,6 +62,39 @@ import ThisKeywordTest from "./this_keyword/ThisKeywordTest.test";
 
 //the_basics
 import TypesTest from "./the_basics/TypesTest.test";
+
+//decorator_annotation
+import AnnotationArraysTest from "./decorator_annotation/arkts_annotation/AnnotationArrays/AnnotationArraysTest.test";
+import AnnotationDeclarationTest
+  from "./decorator_annotation/arkts_annotation/AnnotationDeclaration/AnnotationDeclarationTest.test";
+import AnnotationEnumFieldsTest
+  from "./decorator_annotation/arkts_annotation/AnnotationEnumFields/AnnotationEnumFieldsTest.test";
+import AnnotationFieldTypesTest
+  from "./decorator_annotation/arkts_annotation/AnnotationFieldTypes/AnnotationFieldTypesTest.test";
+import AnnotationInheritanceTest
+  from "./decorator_annotation/arkts_annotation/AnnotationInheritance/AnnotationInheritanceTest.test";
+import AnnotationRepeatabilityTest
+  from "./decorator_annotation/arkts_annotation/AnnotationRepeatability/AnnotationRepeatabilityTest.test";
+import AnnotationUsageTargetsTest
+  from "./decorator_annotation/arkts_annotation/AnnotationUsageTargets/AnnotationUsageTargetsTest.test";
+import ClassDecoratorTest from "./decorator_annotation/ts_style_decorator/ClassDecorator/ClassDecoratorTest.test";
+import DecoratorExecutionOrderTest
+  from "./decorator_annotation/ts_style_decorator/DecoratorExecutionOrder/DecoratorExecutionOrderTest.test";
+import DecoratorFactoryTest1
+  from "./decorator_annotation/ts_style_decorator/DecoratorFactory/DecoratorFactoryTest1.test";
+import DecoratorFactoryTest2
+  from "./decorator_annotation/ts_style_decorator/DecoratorFactory/DecoratorFactoryTest2.test";
+import DecoratorModuleScopeTest
+  from "./decorator_annotation/ts_style_decorator/DecoratorModuleScope/DecoratorModuleScopeTest.test";
+import DecoratorSyntaxTest from "./decorator_annotation/ts_style_decorator/DecoratorSyntax/DecoratorSyntaxTest.test";
+import DecoratorWithClassFeaturesTest
+  from "./decorator_annotation/ts_style_decorator/DecoratorWithClassFeatures/DecoratorWithClassFeaturesTest.test";
+import MethodDecoratorPart02Test
+  from "./decorator_annotation/ts_style_decorator/MethodDecorator/MethodDecoratorPart02.test";
+import MethodDecoratorPart03Test
+  from "./decorator_annotation/ts_style_decorator/MethodDecorator/MethodDecoratorPart03.test";
+import PropertyDecoratorTest
+  from "./decorator_annotation/ts_style_decorator/PropertyDecorator/PropertyDecoratorTest.test";
 
 export default function testsuite() {
   ClassDeclarationTest();
@@ -130,4 +162,24 @@ export default function testsuite() {
 
   //the_basics
   TypesTest();
+
+  //decorator_annotation
+  AnnotationArraysTest();
+  AnnotationDeclarationTest();
+  AnnotationEnumFieldsTest();
+  AnnotationFieldTypesTest();
+  AnnotationInheritanceTest();
+  AnnotationRepeatabilityTest();
+  AnnotationUsageTargetsTest();
+
+  ClassDecoratorTest();
+  DecoratorExecutionOrderTest();
+  DecoratorFactoryTest1();
+  DecoratorFactoryTest2();
+  DecoratorModuleScopeTest();
+  DecoratorSyntaxTest();
+  DecoratorWithClassFeaturesTest();
+  MethodDecoratorPart02Test();
+  MethodDecoratorPart03Test();
+  PropertyDecoratorTest();
 }

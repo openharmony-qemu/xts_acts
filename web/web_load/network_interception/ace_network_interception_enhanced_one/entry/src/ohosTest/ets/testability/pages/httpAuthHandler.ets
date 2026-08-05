@@ -17,7 +17,8 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
-import { URL4, URL, HTTP_AUTH_USER, HTTP_AUTH_PASSWORD } from '../../test/Config.test'
+import { URL4, BASIC_AUTH_PRIMARY_URL, BASIC_AUTH_BACKUP_URL, BASIC_AUTH_PRIMARY_USER,
+  BASIC_AUTH_PRIMARY_PASS, BASIC_AUTH_BACKUP_USER, BASIC_AUTH_BACKUP_PASS } from '../../test/Config.test'
 import image from '@ohos.multimedia.image';
 const EVENT_ID_SET_EIMIT_KEY = 142015;
 
@@ -43,6 +44,8 @@ struct httpAuthHandler {
   no_error: string = "no error happened"
   @State isHttpAuthInfoSavedReturnTrueStr: string = 'false'
   @State isHttpAuthInfoSavedReturnTrue: boolean = false
+  @State isUsingBackupBasicAuthUrl: boolean = false
+  @State pendingBasicAuthFallback: boolean = false
 
 
   onPageShow() {
@@ -67,6 +70,42 @@ struct httpAuthHandler {
       }
     }
   }
+
+  private resetBasicAuthUrlState(): void {
+    this.isUsingBackupBasicAuthUrl = false
+    this.pendingBasicAuthFallback = false
+  }
+
+  private loadPrimaryBasicAuthUrl(): void {
+    this.resetBasicAuthUrlState()
+    this.pendingBasicAuthFallback = true
+    this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL)
+  }
+
+  private loadBackupBasicAuthUrl(): void {
+    if (this.isUsingBackupBasicAuthUrl) {
+      return
+    }
+    console.info('[HttpAuthHandler] primary basic auth url failed, try backup url')
+    this.isUsingBackupBasicAuthUrl = true
+    this.pendingBasicAuthFallback = false
+    this.controller.loadUrl(BASIC_AUTH_BACKUP_URL)
+  }
+
+  private getBasicAuthUserName(): string {
+    return this.isUsingBackupBasicAuthUrl ? BASIC_AUTH_BACKUP_USER : BASIC_AUTH_PRIMARY_USER
+  }
+
+  private getBasicAuthPassword(): string {
+    return this.isUsingBackupBasicAuthUrl ? BASIC_AUTH_BACKUP_PASS : BASIC_AUTH_PRIMARY_PASS
+  }
+
+  private handleBasicAuthHttpError(responseCode: number): void {
+    if (responseCode === 503 && this.pendingBasicAuthFallback && !this.isUsingBackupBasicAuthUrl) {
+      this.loadBackupBasicAuthUrl()
+    }
+  }
+
   private jsObj: JsProxyObject = {
     test: (res: object) => {
       Utils.emitEvent(String(res), 102);
@@ -93,9 +132,10 @@ struct httpAuthHandler {
               try {
                 this.HttpAuthHandlerCallBack = 'confirm'
                 this.HttpAuthHandlerConfirmCallBack = false
-                this.controller.loadUrl(URL)
+                this.loadPrimaryBasicAuthUrl()
                 await Utils.waitForExist(()=>this.isConfirm, this.str, 1);
                 this.isConfirm = -1;
+                this.pendingBasicAuthFallback = false
                 Utils.emitEvent(this.HttpAuthHandlerConfirmCallBack, 142035)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -109,11 +149,12 @@ struct httpAuthHandler {
                 this.Http_Error_Code = 0
                 this.HttpAuthHandlerCallBack = 'cancel'
                 this.HttpAuthHandlerCancelCallBack = false
-                this.controller.loadUrl(URL)
+                this.loadPrimaryBasicAuthUrl()
                 await Utils.waitForExist(()=>this.isCancel, this.str, 1);
                 await Utils.waitForExist(()=>this.isCode, this.str, 1);
                 this.isCancel = -1;
                 this.isCode = -1;
+                this.pendingBasicAuthFallback = false
                 Utils.emitEvent(this.Http_Error_Code, 142025)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -127,10 +168,11 @@ struct httpAuthHandler {
                 console.info("key==>testHttpAuthHandlerIsHttpAuthInfoSaved001")
                 this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSaved'
                 this.HttpAuthHandlerCancelCallBack = false
-                this.controller.loadUrl(URL)
+                this.loadPrimaryBasicAuthUrl()
                 console.info("key==>loadUrltestHttpAuthHandlerIsHttpAuthInfoSaved001")
                 await Utils.waitForExist(()=>this.isSave, this.str, 1);
                 this.isSave = -1;
+                this.pendingBasicAuthFallback = false
                 Utils.emitEvent(this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack, 142045)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -178,17 +220,21 @@ struct httpAuthHandler {
         .onHttpAuthRequest((event) => {
           if (event) {
             if (this.HttpAuthHandlerCallBack == 'confirm') {
-              this.HttpAuthHandlerConfirmCallBack = event.handler.confirm(HTTP_AUTH_USER, HTTP_AUTH_PASSWORD)
+              this.pendingBasicAuthFallback = false
+              this.HttpAuthHandlerConfirmCallBack =
+                event.handler.confirm(this.getBasicAuthUserName(), this.getBasicAuthPassword())
               this.HttpAuthHandlerCallBack = ''
               this.isConfirm = 1;
             }
             if (this.HttpAuthHandlerCallBack == 'cancel') {
+              this.pendingBasicAuthFallback = false
               event.handler.cancel()
               this.HttpAuthHandlerCancelCallBack = true
               this.HttpAuthHandlerCallBack = ''
               this.isCancel = 1;
             }
             if (this.HttpAuthHandlerCallBack == 'isHttpAuthInfoSaved') {
+              this.pendingBasicAuthFallback = false
               this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack = event.handler.isHttpAuthInfoSaved()
               this.HttpAuthHandlerCallBack = ''
               this.isSave = 1;
@@ -210,8 +256,10 @@ struct httpAuthHandler {
         })
         .onHttpErrorReceive((event) => {
           if (event) {
+            let responseCode = event.response.getResponseCode()
+            this.handleBasicAuthHttpError(responseCode)
             if (this.HttpAuthHandlerCancelCallBack == true) {
-              this.Http_Error_Code = event.response.getResponseCode()
+              this.Http_Error_Code = responseCode
               this.HttpAuthHandlerCancelCallBack = false
               this.isCode = 1;
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,6 +25,7 @@
 #include "TcMtTest.h"
 #include "TcArrayTest.h"
 #include "TcFixedArrayTest.h"
+#include "TcValueArrayTest.h"
 #include "TcArrayBufferTest.h"
 #include "TcEnumTest.h"
 #include "TcErrorCodeTest.h"
@@ -254,10 +255,10 @@ std::array createInstanceMethods = {
         reinterpret_cast<void *>(test_CreateStringByObjectNew)},
     ani_native_function{"test_CreateStringByUtf8", "C{std.core.String}:C{std.core.String}",
         reinterpret_cast<void *>(test_CreateStringByUtf8)},
-    ani_native_function{"test_CreateFixedArrayByObjectNew", ":",
-        reinterpret_cast<void *>(test_CreateFixedArrayByObjectNew)},
-    ani_native_function{"test_CreateFixedArrayBySpecialApi", ":i",
-        reinterpret_cast<void *>(test_CreateFixedArrayBySpecialApi)},
+    ani_native_function{"test_CreateValueArrayByObjectNew", ":",
+        reinterpret_cast<void *>(test_CreateValueArrayByObjectNew)},
+    ani_native_function{"test_CreateValueArrayBySpecialApi", ":i",
+        reinterpret_cast<void *>(test_CreateValueArrayBySpecialApi)},
     ani_native_function{"test_CreateEnumItemByName", ":C{std.core.String}",
         reinterpret_cast<void *>(test_CreateEnumItemByName)},
     ani_native_function{"test_CreateEnumItemIntValue", ":i",
@@ -478,46 +479,48 @@ std::array arrayInstanceMethods = {
         reinterpret_cast<void *>(test_ArrayCheckMatrix)},
 };
 std::array fixedArrayInstanceMethods = {
-    ani_native_function{"test_FixedArrayDifferentTypes", ":z",
-        reinterpret_cast<void *>(test_FixedArrayDifferentTypes)},
-    ani_native_function{"test_FixedArrayTypeMismatch", ":z",
-        reinterpret_cast<void *>(test_FixedArrayTypeMismatch)},
-    ani_native_function{"test_FixedArrayRefString", ":A{C{std.core.String}}",
-        reinterpret_cast<void *>(test_FixedArrayRefString)},
-    ani_native_function{"test_CheckFixedArrayRefString", "A{C{std.core.String}}:z",
-        reinterpret_cast<void *>(test_CheckFixedArrayRefString)},
-    ani_native_function{"test_FixedArrayGetPartialRegion", ":z",
-        reinterpret_cast<void *>(test_FixedArrayGetPartialRegion)},
-    ani_native_function{"test_FixedArraySetPartialRegion", ":z",
-        reinterpret_cast<void *>(test_FixedArraySetPartialRegion)},
-    ani_native_function{"test_FixedArrayRegionOutOfRange", ":z",
-        reinterpret_cast<void *>(test_FixedArrayRegionOutOfRange)},
-    ani_native_function{"test_FixedArrayGetSize", ":i",
-        reinterpret_cast<void *>(test_FixedArrayGetSize)},
-    ani_native_function{"test_FixedArrayElementAccess", ":z",
-        reinterpret_cast<void *>(test_FixedArrayElementAccess)},
+    ani_native_function{"test_FixedArrayString", ":A{C{std.core.String}}",
+        reinterpret_cast<void *>(test_FixedArrayString)},
+    ani_native_function{"test_CheckFixedArrayString", "A{C{std.core.String}}:z",
+        reinterpret_cast<void *>(test_CheckFixedArrayString)},
     ani_native_function{"test_FixedArrayObjectRefs", ":A{C{std.core.Object}}",
         reinterpret_cast<void *>(test_FixedArrayObjectRefs)},
     ani_native_function{"test_CheckFixedArrayObjectRefs", "A{C{std.core.Object}}:z",
         reinterpret_cast<void *>(test_CheckFixedArrayObjectRefs)},
-    ani_native_function{"test_FixedArrayLargeArray", "i:z",
-        reinterpret_cast<void *>(test_FixedArrayLargeArray)},
-    ani_native_function{"test_FixedArrayGetRegionNullBuffer", ":z",
-        reinterpret_cast<void *>(test_FixedArrayGetRegionNullBuffer)},
-    ani_native_function{"test_FixedArraySetRegionNullBuffer", ":z",
-        reinterpret_cast<void *>(test_FixedArraySetRegionNullBuffer)},
-    ani_native_function{"test_FixedArrayWrongRegionApi", ":z",
-        reinterpret_cast<void *>(test_FixedArrayWrongRegionApi)},
-    ani_native_function{"test_FixedArraySaveLocalRef", ":z",
-        reinterpret_cast<void *>(test_FixedArraySaveLocalRef)},
-    ani_native_function{"test_FixedArrayUseSavedLocalRef", ":z",
-        reinterpret_cast<void *>(test_FixedArrayUseSavedLocalRef)},
-    ani_native_function{"test_FixedArraySaveGlobalRef", ":z",
-        reinterpret_cast<void *>(test_FixedArraySaveGlobalRef)},
-    ani_native_function{"test_FixedArrayUseGlobalRef", ":z",
-        reinterpret_cast<void *>(test_FixedArrayUseGlobalRef)},
-    ani_native_function{"test_FixedArrayDeleteGlobalRef", ":z",
-        reinterpret_cast<void *>(test_FixedArrayDeleteGlobalRef)},
+};
+std::array valueArrayInstanceMethods = {
+    ani_native_function{"test_ValueArrayDifferentTypes", ":z",
+        reinterpret_cast<void *>(test_ValueArrayDifferentTypes)},
+    ani_native_function{"test_ValueArrayTypeMismatch", ":z",
+        reinterpret_cast<void *>(test_ValueArrayTypeMismatch)},
+    ani_native_function{"test_ValueArrayGetPartialRegion", ":z",
+        reinterpret_cast<void *>(test_ValueArrayGetPartialRegion)},
+    ani_native_function{"test_ValueArraySetPartialRegion", ":z",
+        reinterpret_cast<void *>(test_ValueArraySetPartialRegion)},
+    ani_native_function{"test_ValueArrayRegionOutOfRange", ":z",
+        reinterpret_cast<void *>(test_ValueArrayRegionOutOfRange)},
+    ani_native_function{"test_ValueArrayGetSize", ":i",
+        reinterpret_cast<void *>(test_ValueArrayGetSize)},
+    ani_native_function{"test_ValueArrayElementAccess", ":z",
+        reinterpret_cast<void *>(test_ValueArrayElementAccess)},
+    ani_native_function{"test_ValueArrayLargeArray", "i:z",
+        reinterpret_cast<void *>(test_ValueArrayLargeArray)},
+    ani_native_function{"test_ValueArrayGetRegionNullBuffer", ":z",
+        reinterpret_cast<void *>(test_ValueArrayGetRegionNullBuffer)},
+    ani_native_function{"test_ValueArraySetRegionNullBuffer", ":z",
+        reinterpret_cast<void *>(test_ValueArraySetRegionNullBuffer)},
+    ani_native_function{"test_ValueArrayWrongRegionApi", ":z",
+        reinterpret_cast<void *>(test_ValueArrayWrongRegionApi)},
+    ani_native_function{"test_ValueArraySaveLocalRef", ":z",
+        reinterpret_cast<void *>(test_ValueArraySaveLocalRef)},
+    ani_native_function{"test_ValueArrayUseSavedLocalRef", ":z",
+        reinterpret_cast<void *>(test_ValueArrayUseSavedLocalRef)},
+    ani_native_function{"test_ValueArraySaveGlobalRef", ":z",
+        reinterpret_cast<void *>(test_ValueArraySaveGlobalRef)},
+    ani_native_function{"test_ValueArrayUseGlobalRef", ":z",
+        reinterpret_cast<void *>(test_ValueArrayUseGlobalRef)},
+    ani_native_function{"test_ValueArrayDeleteGlobalRef", ":z",
+        reinterpret_cast<void *>(test_ValueArrayDeleteGlobalRef)},
 };
 std::array arrayBufferInstanceMethods = {
     ani_native_function{"test_ArrayBufferReadUint32", "C{std.core.ArrayBuffer}:i",
@@ -940,6 +943,10 @@ static ani_status BindArrayAndEnumCases(ani_env *env, ani_class cls)
     }
     status = BindInstanceMethods(env, cls, fixedArrayInstanceMethods.data(), fixedArrayInstanceMethods.size());
     if (!AssertEqMsg(status, ANI_OK, "Bind fixedArrayInstanceMethods failed")) {
+        return status;
+    }
+    status = BindInstanceMethods(env, cls, valueArrayInstanceMethods.data(), valueArrayInstanceMethods.size());
+    if (!AssertEqMsg(status, ANI_OK, "Bind valueArrayInstanceMethods failed")) {
         return status;
     }
     status = BindInstanceMethods(env, cls, arrayBufferInstanceMethods.data(), arrayBufferInstanceMethods.size());

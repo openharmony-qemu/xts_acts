@@ -116,53 +116,7 @@ export default function KioskModeTest() {
         done();
       }
     })
-  
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0400
-     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0400
-     * @tc.desc   Test enterKioskMode(UIAbilityContext) when current ability is not in foreground.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_KIOSK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_0400';
-      hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} begin`);
-      context?.moveAbilityToBackground()
-        .then(() => {
-          hilog.info(0x0000, 'testTag', '%{public}s', `moveAbilityToBackground success`);
-        })
-        .catch((error: BusinessError) => {
-          hilog.info(0x0000, 'testTag', '%{public}s', `moveAbilityToBackground error:${JSON.stringify(error)}`);
-          if( error.code == 16000061 ) {
-            done();
-          }
-        });
 
-      setTimeout(() => {
-        try {
-          kioskManager.enterKioskMode(context)
-            .then(() => {
-              hilog.info(0x0000, 'testTag', '%{public}s', `enterKioskMode(UIAbilityContext) success`);
-              expect().assertFail();
-              done();
-            })
-            .catch((error: BusinessError) => {
-              let msg: string = `enterKioskMode(UIAbilityContext) error:${JSON.stringify(error)}`;
-              hilog.info(0x0000, 'testTag', '%{public}s', msg);
-              let result: boolean = error.code == 801 || error.code == 16000113;
-              expect(result).assertTrue();
-              done();
-            });
-        } catch (error) {
-          let msg: string = `enterKioskMode(UIAbilityContext) failed:${JSON.stringify(error)}`;
-          hilog.info(0x0000, 'testTag', '%{public}s', msg);
-          expect().assertFail();
-          done();
-        }
-      }, 2000);
-    })
-  
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0800
      * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0800

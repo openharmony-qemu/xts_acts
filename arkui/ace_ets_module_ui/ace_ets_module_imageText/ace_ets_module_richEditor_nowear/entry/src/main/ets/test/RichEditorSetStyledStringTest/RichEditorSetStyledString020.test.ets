@@ -75,6 +75,8 @@ export default function RichEditorSetStyledString020() {
       await CommonFunc.sleep(500);
       await imageTop.click();
       await CommonFunc.sleep(500);
+      await imageTop.click();
+      await CommonFunc.sleep(500);
       await driver.click(getBounds.left + 210, getBounds.top + 40);
       await CommonFunc.sleep(500);
       let onClickFlag = await driver.findComponent(ON.id('onClickFlag'));

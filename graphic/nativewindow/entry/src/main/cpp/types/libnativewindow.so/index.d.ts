@@ -150,4 +150,7 @@ export const testNativeWindowSet3DMetadataValueAbnormal: () => number;
 export const testNativeWindowGet3DMetadataValueNull: () => number;
 export const testNativeWindowGet3DMetadataValueAbnormal: () => number;
 export const testNativeWindowSetGet3DMetadataValueMultipleCalls: () => number;
+export const testNativeWindowSet3DMetadataValueUnknown: () => number;
+
+
 

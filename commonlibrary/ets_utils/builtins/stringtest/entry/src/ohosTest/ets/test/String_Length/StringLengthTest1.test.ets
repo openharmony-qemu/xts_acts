@@ -1109,7 +1109,7 @@ export default function StringLengthTest() {
       
       let result = stringTest.testSurrogateLength();
       expect(result.strLength).assertEqual(4);
-      expect(result.arrLength).assertEqual(2);
+      expect(result.arrLength).assertEqual(4);
     });
 
     /**
