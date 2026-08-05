@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,10 +77,10 @@ ani_boolean test_CheckOptionalBasicAndRef(ani_env *env, ani_object object)
     ani_tc_mangling::ResetOptionalBasicState();
     return result ? ANI_TRUE : ANI_FALSE;
 }
-void test_RestLog(ani_env *env, ani_object object, ani_string prefix, ani_fixedarray_int args)
+void test_RestLog(ani_env *env, ani_object object, ani_string prefix, ani_valuearray_int args)
 {
     std::string prefixValue = ani_tc_mangling::ManglingStringToStd(env, prefix);
-    ani_int sum = test_ProcessFixed(env, object, args);
+    ani_int sum = test_SumIntValueArray(env, object, args);
     ani_tc_mangling::g_restLogOk =
         (prefixValue == "nums" && sum == ani_tc_mangling::MANGLING_REST_EXPECTED_SUM);
 }
@@ -168,7 +168,7 @@ ani_int test_AddWrongSignature(ani_env *env, ani_object object, ani_double a, an
     (void)object;
     return static_cast<ani_int>(a + b);
 }
-ani_int test_ProcessMatrix(ani_env *env, ani_object object, ani_fixedarray_ref matrix)
+ani_int test_ProcessMatrix(ani_env *env, ani_object object, ani_fixedarray matrix)
 {
     return test_ProcessNested(env, object, matrix);
 }

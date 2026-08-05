@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,11 +28,11 @@ constexpr const char *CREATE_STATUS_CLASS = "entry.src.main.src.ets.Index.Create
 constexpr const char *CREATE_ARRAYBUFFER_CLASS = "std.core.ArrayBuffer";
 constexpr const char *CREATE_STRING_CLASS = "std.core.String";
 constexpr const char *CREATE_DOUBLE_CLASS = "std.core.Double";
-constexpr const char *CREATE_FIXEDARRAY_INT_DESC = "A{i}";
-constexpr ani_int CREATE_FIXEDARRAY_SIZE = 3;
-constexpr ani_int CREATE_FIXEDARRAY_VALUE_ONE = 1;
-constexpr ani_int CREATE_FIXEDARRAY_VALUE_TWO = 2;
-constexpr ani_int CREATE_FIXEDARRAY_VALUE_THREE = 3;
+constexpr const char *CREATE_VALUEARRAY_INT_DESC = "A{i}";
+constexpr ani_int CREATE_ARRAY_SIZE = 3;
+constexpr ani_int CREATE_VALUEARRAY_VALUE_ONE = 1;
+constexpr ani_int CREATE_VALUEARRAY_VALUE_TWO = 2;
+constexpr ani_int CREATE_VALUEARRAY_VALUE_THREE = 3;
 constexpr ani_size CREATE_INDEX_ZERO = 0;
 constexpr ani_size CREATE_INDEX_ONE = 1;
 constexpr ani_size CREATE_INDEX_TWO = 2;
@@ -302,30 +302,30 @@ ani_string test_CreateStringByUtf8(ani_env *env, ani_object object, ani_string v
     std::string text = ani_tc_create::CreateStringToStd(env, value);
     return ani_tc_create::CreateStdToString(env, text);
 }
-void test_CreateFixedArrayByObjectNew(ani_env *env, ani_object object)
+void test_CreateValueArrayByObjectNew(ani_env *env, ani_object object)
 {
     (void)object;
     ani_class cls {};
-    env->FindClass(ani_tc_create::CREATE_FIXEDARRAY_INT_DESC, &cls);
+    env->FindClass(ani_tc_create::CREATE_VALUEARRAY_INT_DESC, &cls);
     ani_method ctor {};
     env->Class_FindMethod(cls, "<ctor>", "i:", &ctor);
     ani_object result {};
-    ani_status status = env->Object_New(cls, ctor, &result, ani_tc_create::CREATE_FIXEDARRAY_SIZE);
-    std::cout << "Object_New FixedArray<int> status: " << status << std::endl;
+    ani_status status = env->Object_New(cls, ctor, &result, ani_tc_create::CREATE_ARRAY_SIZE);
+    std::cout << "Object_New ValueArray<int> status: " << status << std::endl;
 }
-ani_int test_CreateFixedArrayBySpecialApi(ani_env *env, ani_object object)
+ani_int test_CreateValueArrayBySpecialApi(ani_env *env, ani_object object)
 {
     (void)object;
-    ani_fixedarray_int array {};
-    env->FixedArray_New_Int(ani_tc_create::CREATE_FIXEDARRAY_SIZE, &array);
-    ani_int values[ani_tc_create::CREATE_FIXEDARRAY_SIZE] = {
-        ani_tc_create::CREATE_FIXEDARRAY_VALUE_ONE,
-        ani_tc_create::CREATE_FIXEDARRAY_VALUE_TWO,
-        ani_tc_create::CREATE_FIXEDARRAY_VALUE_THREE
+    ani_valuearray_int array {};
+    env->ValueArray_New_Int(ani_tc_create::CREATE_ARRAY_SIZE, &array);
+    ani_int values[ani_tc_create::CREATE_ARRAY_SIZE] = {
+        ani_tc_create::CREATE_VALUEARRAY_VALUE_ONE,
+        ani_tc_create::CREATE_VALUEARRAY_VALUE_TWO,
+        ani_tc_create::CREATE_VALUEARRAY_VALUE_THREE
     };
-    env->FixedArray_SetRegion_Int(array, 0, ani_tc_create::CREATE_FIXEDARRAY_SIZE, values);
-    ani_int out[ani_tc_create::CREATE_FIXEDARRAY_SIZE] = {};
-    env->FixedArray_GetRegion_Int(array, 0, ani_tc_create::CREATE_FIXEDARRAY_SIZE, out);
+    env->ValueArray_SetRegion_Int(array, 0, ani_tc_create::CREATE_ARRAY_SIZE, values);
+    ani_int out[ani_tc_create::CREATE_ARRAY_SIZE] = {};
+    env->ValueArray_GetRegion_Int(array, 0, ani_tc_create::CREATE_ARRAY_SIZE, out);
     return out[ani_tc_create::CREATE_INDEX_ZERO] +
     out[ani_tc_create::CREATE_INDEX_ONE] +
     out[ani_tc_create::CREATE_INDEX_TWO];

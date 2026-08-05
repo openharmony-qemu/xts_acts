@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -125,15 +125,15 @@ export default function TcCreateTest(): void {
     /**
      * @tc.number SUB_TC_CREATE_TEST_0900
      * @tc.name testTcCreate0009
-     * @tc.desc Verify that FixedArray Object_New path is exercised and the special FixedArray API succeeds.
+     * @tc.desc Verify that ValueArray Object_New path is exercised and the special ValueArray API succeeds.
      * @tc.size MEDIUM
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
     it("testTcCreate0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let cls = new Foo();
-      cls.test_CreateFixedArrayByObjectNew();
-      expect(cls.test_CreateFixedArrayBySpecialApi()).assertEqual(6);
+      cls.test_CreateValueArrayByObjectNew();
+      expect(cls.test_CreateValueArrayBySpecialApi()).assertEqual(6);
     });
 
     /**

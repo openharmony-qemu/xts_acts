@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,6 +25,7 @@ import TcAsyncTest from "./TcAsyncTest.test";
 import TcMtTest from "./TcMtTest.test";
 import TcArrayTest from "./TcArrayTest.test";
 import TcFixedArrayTest from "./TcFixedArrayTest.test";
+import TcValueArrayTest from "./TcValueArrayTest.test";
 import TcArrayBufferTest from "./TcArrayBufferTest.test";
 import TcEnumTest from "./TcEnumTest.test";
 import TcErrorCodeTest from "./TcErrorCodeTest.test";
@@ -52,6 +53,7 @@ export default function testsuite() :void{
   TcMtTest();
   TcArrayTest();
   TcFixedArrayTest();
+  TcValueArrayTest();
   TcArrayBufferTest();
   TcEnumTest();
   TcErrorCodeTest();

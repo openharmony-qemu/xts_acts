@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -339,8 +339,8 @@ export class Foo {
   native test_AddBigInt(a: bigint, b: bigint): bigint;
   native test_SumArray(arr: number[]): number;
   native test_SumArray2(arr: Array<number>): number;
-  native test_ProcessFixed(arr: FixedArray<int>): int;
-  native test_ProcessNested(arr: FixedArray<FixedArray<int>>): int;
+  native test_SumIntValueArray(arr: ValueArray<int>): int;
+  native test_ProcessNested(arr: FixedArray<ValueArray<int>>): int;
   native test_ProcessUnion(u: string | number | undefined): string;
   native test_ComplexOptional(a: int, b?: int, c?: string, d?: A): void;
   native test_CheckComplexOptional(): boolean;
@@ -361,7 +361,7 @@ export class Foo {
   native test_CheckDoNothingAgain(): boolean;
   native test_UseMyClass(c: MyClass): void;
   native test_CheckUseMyClass(): boolean;
-  native test_ProcessMatrix(mat: FixedArray<FixedArray<int>>): int;
+  native test_ProcessMatrix(mat: FixedArray<ValueArray<int>>): int;
   native test_UpdateUser(partial: Partial<User>): void;
   native test_CheckUpdateUser(): boolean;
   native test_IsPositive(num: int): boolean;
@@ -405,8 +405,8 @@ export class Foo {
   native test_CreateAbstractFail(): void;
   native test_CreateStringByObjectNew(): void;
   native test_CreateStringByUtf8(value: string): string;
-  native test_CreateFixedArrayByObjectNew(): void;
-  native test_CreateFixedArrayBySpecialApi(): int;
+  native test_CreateValueArrayByObjectNew(): void;
+  native test_CreateValueArrayBySpecialApi(): int;
   native test_CreateEnumItemByName(): string;
   native test_CreateEnumItemIntValue(): int;
   native test_CreateGetByteLength(length: int): int;
@@ -503,26 +503,26 @@ export class Foo {
   native test_ArrayTraverseSum(): int;
   native test_ArrayCreateMatrix(): Array<object>;
   native test_ArrayCheckMatrix(matrix: Array<object>): boolean;
-  native test_FixedArrayDifferentTypes(): boolean;
-  native test_FixedArrayTypeMismatch(): boolean;
-  native test_FixedArrayRefString(): FixedArray<string>;
-  native test_CheckFixedArrayRefString(array: FixedArray<string>): boolean;
-  native test_FixedArrayGetPartialRegion(): boolean;
-  native test_FixedArraySetPartialRegion(): boolean;
-  native test_FixedArrayRegionOutOfRange(): boolean;
-  native test_FixedArrayGetSize(): int;
-  native test_FixedArrayElementAccess(): boolean;
+  native test_FixedArrayString(): FixedArray<string>;
+  native test_CheckFixedArrayString(array: FixedArray<string>): boolean;
   native test_FixedArrayObjectRefs(): FixedArray<object>;
   native test_CheckFixedArrayObjectRefs(array: FixedArray<object>): boolean;
-  native test_FixedArrayLargeArray(length: int): boolean;
-  native test_FixedArrayGetRegionNullBuffer(): boolean;
-  native test_FixedArraySetRegionNullBuffer(): boolean;
-  native test_FixedArrayWrongRegionApi(): boolean;
-  native test_FixedArraySaveLocalRef(): boolean;
-  native test_FixedArrayUseSavedLocalRef(): boolean;
-  native test_FixedArraySaveGlobalRef(): boolean;
-  native test_FixedArrayUseGlobalRef(): boolean;
-  native test_FixedArrayDeleteGlobalRef(): boolean;
+  native test_ValueArrayDifferentTypes(): boolean;
+  native test_ValueArrayTypeMismatch(): boolean;
+  native test_ValueArrayGetPartialRegion(): boolean;
+  native test_ValueArraySetPartialRegion(): boolean;
+  native test_ValueArrayRegionOutOfRange(): boolean;
+  native test_ValueArrayGetSize(): int;
+  native test_ValueArrayElementAccess(): boolean;
+  native test_ValueArrayLargeArray(length: int): boolean;
+  native test_ValueArrayGetRegionNullBuffer(): boolean;
+  native test_ValueArraySetRegionNullBuffer(): boolean;
+  native test_ValueArrayWrongRegionApi(): boolean;
+  native test_ValueArraySaveLocalRef(): boolean;
+  native test_ValueArrayUseSavedLocalRef(): boolean;
+  native test_ValueArraySaveGlobalRef(): boolean;
+  native test_ValueArrayUseGlobalRef(): boolean;
+  native test_ValueArrayDeleteGlobalRef(): boolean;
   native test_ArrayBufferReadUint32(buffer: ArrayBuffer): int;
   native test_ArrayBufferModifyUint32(buffer: ArrayBuffer): void;
   native test_ArrayBufferGetSize(buffer: ArrayBuffer): int;
