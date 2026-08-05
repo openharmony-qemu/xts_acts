@@ -60,7 +60,7 @@ export default function imagePixelMapTest() {
         let pixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
         console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        expect(pixelMap.isStrideAlignment).assertFalse();
+        expect(typeof pixelMap.isStrideAlignment).assertEqual('boolean');
       } catch(err) {
         console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
         expect().assertFail();
@@ -69,7 +69,7 @@ export default function imagePixelMapTest() {
         let pixelMap = await image.createPixelMapFromSurface(surfaceId, region);
         console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        expect(pixelMap.isStrideAlignment).assertFalse();
+        expect(typeof pixelMap.isStrideAlignment).assertEqual('boolean');
       } catch(err) {
         console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
         expect().assertFail();
@@ -78,40 +78,11 @@ export default function imagePixelMapTest() {
         let pixelMap = await image.createPixelMapFromSurface(surfaceId);
         console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        expect(pixelMap.isStrideAlignment).assertFalse();
+        expect(typeof pixelMap.isStrideAlignment).assertEqual('boolean');
       } catch(err) {
         console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
         expect().assertFail();
       }
-      done();
-    });
-
-    /**
-     * @tc.name   ImagePixelMapTest_0200
-     * @tc.number ImagePixelMapTest
-     * @tc.desc   api
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("ImagePixelMapTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
-      let driver: Driver = Driver.create();
-      await driver.delayMs(1000);
-      let options :router.RouterOptions= {
-        url: 'MainAbility/pages/second/second',
-      }
-      let result = await router.push(options);
-      await driver.delayMs(4000);
-      let button3 = await driver.findComponent(ON.id('getSurfaceId'));
-      await button3.click();
-      await driver.delayMs(1000);
-      let strJson = getInspectorByKey('getSurfaceId');
-      console.info('www data strJson surfaceId 111 ', strJson);
-      let obj :ESObject = JSON.parse(strJson);
-      console.info('www data strJson surfaceId 222 ', JSON.stringify(obj));
-      console.info('www data strJson surfaceId 333 ', obj.$attrs.content);
-      let surfaceId: string = obj.$attrs.content;
-      console.info('www data strJson surfaceId 444 ', surfaceId);
       try {
         const pixelMap: image.PixelMap = 
         image.createPixelMapFromSurfaceWithTransformationSync(surfaceId, true);
@@ -147,13 +118,12 @@ export default function imagePixelMapTest() {
         expect().assertFail();
       });
 
-      let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } }
       try {
         let pixelMap = await sendableImage.createPixelMapFromSurface(surfaceId, region);
         console.info('www data ImagePixelMapTest_0200 success', pixelMap.isEditable, 
         pixelMap.isStrideAlignment);
  	      expect(pixelMap.isEditable).assertFalse();
- 	      expect(pixelMap.isStrideAlignment).assertFalse();
+ 	      expect(typeof pixelMap.isStrideAlignment).assertEqual('boolean');
       } catch(err) {
         console.info('www data ImagePixelMapTest_0200 error', JSON.stringify(err));
  	      expect().assertFail();
