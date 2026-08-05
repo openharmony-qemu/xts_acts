@@ -648,7 +648,7 @@ export default function RWLockWriteLockTest(): void {
     /**
      * @tc.name    RWLockWriteLockTest1900
      * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1900
-     * @tc.desc    Verify writeLock() returns a WriteLock object (type verified via WriteLock API surface and distinction from ReadLock)
+     * @tc.desc    Verify writeLock() returns a reusable WriteLock object that supports exclusive locking
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0

@@ -398,7 +398,7 @@ export default function RWLockConstructorTest(): void {
     /**
      * @tc.name    RWLockConstructorTest1500
      * @tc.number  SUB_RW_LOCK_CONSTRUCTOR_TEST_1500
-     * @tc.desc    Verify RWLock constructor returns an object of type RWLock (readLock/writeLock API surface works)
+     * @tc.desc    Verify an RWLock instance provides usable read and write lock objects
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0

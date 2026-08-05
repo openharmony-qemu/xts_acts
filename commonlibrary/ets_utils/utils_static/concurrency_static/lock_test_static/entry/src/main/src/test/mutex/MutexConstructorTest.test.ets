@@ -246,7 +246,7 @@ export default function MutexConstructorTest(): void {
     /**
      * @tc.name    MutexConstructorTest1000
      * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_1000
-     * @tc.desc    TC-08: Verify the object returned by the Mutex constructor supports the Mutex lock/unlock API surface
+     * @tc.desc    TC-08: Verify a Mutex instance supports lock and unlock operations
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0

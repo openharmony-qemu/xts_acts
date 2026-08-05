@@ -578,7 +578,7 @@ export default function RWLockReadLockTest(): void {
     /**
      * @tc.name    RWLockReadLockTest1700
      * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1700
-     * @tc.desc    Verify readLock() returns a ReadLock object (type verified via ReadLock API surface and distinction from WriteLock)
+     * @tc.desc    Verify readLock() returns a reusable ReadLock object that supports shared locking
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
