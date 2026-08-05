@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class ConnectionPool {
   connections: string[] = ['conn1', 'conn2', 'conn3', 'conn4', 'conn5'];
@@ -318,9 +317,7 @@ export default function LockDesignResourcePoolConnectionTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockDesignResourcePoolConnectionTest0100
@@ -369,13 +366,14 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       await Promise.all([t1, t2, t3, t4]);
       expect(counter.load()).assertEqual(4);
       expect(pool.connections.length).assertEqual(7);
-      expect(pool.expandCount >= 1).assertTrue();
+      // Capacity grows 3 -> 5 -> 7, so expansion happens exactly twice.
+      expect(pool.expandCount).assertEqual(2);
     })
 
     /**
      * @tc.name    LockDesignResourcePoolConnectionTest0300
      * @tc.number  SUB_LOCK_DESIGN_RESOURCE_POOL_CONNECTION_TEST_0300
-     * @tc.desc    Verify timeout recycle with 5 concurrent tasks using Mutex
+     * @tc.desc    Verify acquire-recycle cycle with 5 concurrent tasks using Mutex
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -577,13 +575,15 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       let t8 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
       await Promise.all([t1, t2, t3, t4, t5, t6, t7, t8]);
       expect(counter.load()).assertEqual(8);
-      expect(queue.accepted + queue.rejected).assertEqual(8);
+      // Serialized by the mutex: capacity 5 accepts the first 5 tasks and rejects the remaining 3.
+      expect(queue.accepted).assertEqual(5);
+      expect(queue.rejected).assertEqual(3);
     })
 
     /**
      * @tc.name    LockDesignResourcePoolConnectionTest1200
      * @tc.number  SUB_LOCK_DESIGN_RESOURCE_POOL_CONNECTION_TEST_1200
-     * @tc.desc    Verify task timeout with enqueue then process phases using Mutex
+     * @tc.desc    Verify enqueue then process phases with 3 producer and 3 consumer tasks using Mutex
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2

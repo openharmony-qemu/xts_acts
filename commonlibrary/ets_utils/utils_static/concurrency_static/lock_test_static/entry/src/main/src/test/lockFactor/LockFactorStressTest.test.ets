@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class StressSharedData {
   buffer: number[] = [];
@@ -230,9 +229,7 @@ export default function LockFactorStressTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockFactorStressTest0100
@@ -571,12 +568,16 @@ export default function LockFactorStressTest(): void {
           mutex.unlock();
         }
       });
+      let executeFailed: boolean = false;
       try {
         await taskpool.execute(task);
       } catch (e) {
         // Expected exception
+        executeFailed = true;
       }
-      expect(counter.load()).assertLargerOrEqual(1);
+      expect(executeFailed).assertTrue();
+      // The task incremented once before throwing; the failure callback incremented once more.
+      expect(counter.load()).assertEqual(2);
       // Verify lock is usable
       mutex.lock();
       mutex.unlock();
@@ -622,11 +623,13 @@ export default function LockFactorStressTest(): void {
       for (let i = 0; i < 100; i++) {
         mutexes.push(new Mutex());
       }
+      let completed: number = 0;
       for (let i = 0; i < mutexes.length; i++) {
         mutexes[i].lock();
         mutexes[i].unlock();
+        completed++;
       }
-      expect(mutexes.length).assertEqual(100);
+      expect(completed).assertEqual(100);
     })
 
     /**
@@ -642,6 +645,7 @@ export default function LockFactorStressTest(): void {
       for (let i = 0; i < 100; i++) {
         rwlocks.push(new RWLock());
       }
+      let completed: number = 0;
       for (let i = 0; i < rwlocks.length; i++) {
         const readLock = rwlocks[i].readLock();
         readLock.lock();
@@ -649,8 +653,9 @@ export default function LockFactorStressTest(): void {
         const writeLock = rwlocks[i].writeLock();
         writeLock.lock();
         writeLock.unlock();
+        completed++;
       }
-      expect(rwlocks.length).assertEqual(100);
+      expect(completed).assertEqual(100);
     })
 
     /**
@@ -734,9 +739,13 @@ export default function LockFactorStressTest(): void {
      */
     it('LockFactorStressTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mutex = new Mutex();
+      let active: boolean = false;
       mutex.lock();
-      let active: boolean = true;
-      mutex.unlock();
+      try {
+        active = true;
+      } finally {
+        mutex.unlock();
+      }
       expect(active).assertTrue();
     })
 

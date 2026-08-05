@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,14 +17,189 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium'
 import Utils from '../Util.test'
 
+// === Module-level helpers for combo scenarios (8300-9700) ===
+
+// Sleep helper usable inside worker/task coroutines.
+function lockComboSleep(ms: int): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    setTimeout((): void => {
+      resolve(undefined)
+    }, ms)
+  })
+}
+
+// #6: Task that attempts WriteLock acquisition while a ReadLock is held elsewhere.
+function lockComboWriteAttemptTask(rwLock: RWLock, done: AtomicInt): int {
+  let wl: WriteLock = rwLock.writeLock()
+  wl.lock()
+  done.store(1)
+  wl.unlock()
+  return 1
+}
+
+// #7: Worker coroutine holds WriteLock until the host signals release.
+async function lockComboWriterHoldTask(rwLock: RWLock, held: AtomicInt, release: AtomicInt): Promise<void> {
+  let wl: WriteLock = rwLock.writeLock()
+  wl.lock()
+  held.store(1)
+  while (release.load() === 0) {
+    await lockComboSleep(100)
+  }
+  wl.unlock()
+}
+
+// #7: Task that attempts ReadLock acquisition while a WriteLock is held elsewhere.
+function lockComboReadAttemptTask(rwLock: RWLock, got: AtomicInt): int {
+  let rl: ReadLock = rwLock.readLock()
+  rl.lock()
+  got.store(1)
+  rl.unlock()
+  return 1
+}
+
+// #28: Worker task that waits for the Mutex held by the host.
+function lockComboNestWaitTask(mutex: Mutex, done: AtomicInt): void {
+  mutex.lock()
+  done.store(1)
+  mutex.unlock()
+}
+
+// #29/#30: Worker coroutine holds Mutex until the host signals release.
+async function lockComboHoldTask(mutex: Mutex, held: AtomicInt, release: AtomicInt): Promise<void> {
+  mutex.lock()
+  held.store(1)
+  while (release.load() === 0) {
+    await lockComboSleep(100)
+  }
+  mutex.unlock()
+}
+
+// #29: Task representing the host-side lock attempt while a Worker holds the Mutex.
+function lockComboAttemptTask(mutex: Mutex, got: AtomicInt): int {
+  mutex.lock()
+  got.store(1)
+  mutex.unlock()
+  return 1
+}
+
+// #30: Second worker task waiting for the Mutex held by the first worker.
+function lockComboWaitTask(mutex: Mutex, done: AtomicInt): void {
+  mutex.lock()
+  done.store(1)
+  mutex.unlock()
+}
+
+// #37/#82: Task that sends data back to trigger the onReceiveData callback.
+function lockComboSendDataTask(idx: int): int {
+  taskpool.Task.sendData(idx)
+  return idx
+}
+
+// #73: Task competing for a single Mutex 100 times.
+function lockComboContentionTask(mutex: Mutex, counter: AtomicInt): int {
+  for (let i: int = 0; i < 100; i++) {
+    mutex.lock()
+    counter.fetchAdd(1)
+    mutex.unlock()
+  }
+  return 1
+}
+
+// #21: Task acquiring two distinct Mutex instances in nested order to protect a shared counter.
+function lockComboNestedMutexTask(mA: Mutex, mB: Mutex, counter: AtomicInt): int {
+  mA.lock()
+  mB.lock()
+  try {
+    counter.fetchAdd(1)
+  } finally {
+    mB.unlock()
+    mA.unlock()
+  }
+  return 1
+}
+
+// #23: Task acquiring WriteLocks of two distinct RWLock instances in nested order.
+function lockComboNestedWriteLockTask(w1: WriteLock, w2: WriteLock, counter: AtomicInt): int {
+  w1.lock()
+  w2.lock()
+  try {
+    counter.fetchAdd(1)
+  } finally {
+    w2.unlock()
+    w1.unlock()
+  }
+  return 1
+}
+
+// #77/#78/#79: Build a payload of approximately blocks*1000 characters.
+function lockComboBuildPayload(blocks: int): string {
+  let block: string = '0123456789'
+  let chunk: string = ''
+  for (let i: int = 0; i < 100; i++) {
+    chunk += block
+  }
+  let chunks: string[] = []
+  for (let i: int = 0; i < blocks; i++) {
+    chunks.push(chunk)
+  }
+  return chunks.join('')
+}
+
+// #77/#79: Integrity checksum of a big payload.
+function lockComboChecksum(s: string): int {
+  let sum: int = 0
+  for (let i: int = 0; i < s.length; i++) {
+    sum += s.charCodeAt(i)
+  }
+  return sum
+}
+
+// #77: Transfer a big payload to a task and verify it under Mutex protection.
+function lockComboBigDataTransferTask(mutex: Mutex, payload: string, len: AtomicInt, sum: AtomicInt): int {
+  mutex.lock()
+  len.store(payload.length)
+  sum.store(lockComboChecksum(payload))
+  mutex.unlock()
+  return payload.length
+}
+
+// #78: Writer task that appends a chunk to shared big data under WriteLock.
+function lockComboWriteBigDataTask(rwLock: RWLock, data: string[], chunk: string, expectedLen: int, ok: AtomicInt): int {
+  let wl: WriteLock = rwLock.writeLock()
+  wl.lock()
+  data[0] = data[0] + chunk
+  if (data[0].length === expectedLen) {
+    ok.store(1)
+  }
+  wl.unlock()
+  return data[0].length
+}
+
+// #78: Reader task that reads shared big data length under ReadLock.
+function lockComboReadBigDataTask(rwLock: RWLock, data: string[], expectedLen: int, observed: AtomicInt): int {
+  let rl: ReadLock = rwLock.readLock()
+  rl.lock()
+  observed.store(data[0].length)
+  rl.unlock()
+  return data[0].length
+}
+
+// #79: Verify one big payload under its own Mutex and record success.
+function lockComboBigDataVerifyTask(mutex: Mutex, payload: string, expectedLen: int, expectedSum: int, ok: AtomicInt): int {
+  mutex.lock()
+  if (payload.length === expectedLen && lockComboChecksum(payload) === expectedSum) {
+    ok.fetchAdd(1)
+  }
+  mutex.unlock()
+  return payload.length
+}
+
 export default function LockComboTest(): void {
   describe('LockComboTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     // === Section 1.1: Mutex + RWLock Combination (0100-0500) ===
 
@@ -62,11 +237,15 @@ export default function LockComboTest(): void {
       let rwLock: RWLock = new RWLock()
       mutex.lock()
       let writeLock: WriteLock = rwLock.writeLock()
+      let nestedDone: boolean = false
       writeLock.lock()
-      let value: int = 42
-      writeLock.unlock()
+      try {
+        nestedDone = true
+      } finally {
+        writeLock.unlock()
+      }
       mutex.unlock()
-      expect(value).assertEqual(42)
+      expect(nestedDone).assertTrue()
     })
 
     /**
@@ -82,11 +261,15 @@ export default function LockComboTest(): void {
       let readLock: ReadLock = rwLock.readLock()
       let mutex: Mutex = new Mutex()
       readLock.lock()
+      let nestedDone: boolean = false
       mutex.lock()
-      let result: string = 'protected'
-      mutex.unlock()
+      try {
+        nestedDone = true
+      } finally {
+        mutex.unlock()
+      }
       readLock.unlock()
-      expect(result).assertEqual('protected')
+      expect(nestedDone).assertTrue()
     })
 
     /**
@@ -101,14 +284,16 @@ export default function LockComboTest(): void {
       let mutex: Mutex = new Mutex()
       let rwLock: RWLock = new RWLock()
       let readLock: ReadLock = rwLock.readLock()
+      let completed: boolean = false
       mutex.lock()
       readLock.lock()
-      let step: int = 1
-      mutex.unlock()
-      step = 2
-      readLock.unlock()
-      step = 3
-      expect(step).assertEqual(3)
+      try {
+        completed = true
+      } finally {
+        mutex.unlock()
+        readLock.unlock()
+      }
+      expect(completed).assertTrue()
     })
 
     /**
@@ -121,15 +306,24 @@ export default function LockComboTest(): void {
      */
     it('LockComboTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
+      let mutexDone: boolean = false
       mutex.lock()
-      let val: int = 10
-      mutex.unlock()
+      try {
+        mutexDone = true
+      } finally {
+        mutex.unlock()
+      }
       let rwLock: RWLock = new RWLock()
       let writeLock: WriteLock = rwLock.writeLock()
+      let writeDone: boolean = false
       writeLock.lock()
-      val = 20
-      writeLock.unlock()
-      expect(val).assertEqual(20)
+      try {
+        writeDone = true
+      } finally {
+        writeLock.unlock()
+      }
+      expect(mutexDone).assertTrue()
+      expect(writeDone).assertTrue()
     })
 
     // === Section 1.2: ReadLock + WriteLock Combination (0600-1000) ===
@@ -147,11 +341,19 @@ export default function LockComboTest(): void {
       let readLock: ReadLock = rwLock.readLock()
       let writeLock: WriteLock = rwLock.writeLock()
       readLock.lock()
-      let readLocked: boolean = true
-      readLock.unlock()
+      let readLocked: boolean = false
+      try {
+        readLocked = true
+      } finally {
+        readLock.unlock()
+      }
       writeLock.lock()
-      let writeLocked: boolean = true
-      writeLock.unlock()
+      let writeLocked: boolean = false
+      try {
+        writeLocked = true
+      } finally {
+        writeLock.unlock()
+      }
       expect(readLocked).assertTrue()
       expect(writeLocked).assertTrue()
     })
@@ -177,8 +379,11 @@ export default function LockComboTest(): void {
       let writeDone: boolean = false
       let wl: WriteLock = rwLock.writeLock()
       wl.lock()
-      writeDone = true
-      wl.unlock()
+      try {
+        writeDone = true
+      } finally {
+        wl.unlock()
+      }
       expect(readCount).assertEqual(5)
       expect(writeDone).assertTrue()
     })
@@ -196,11 +401,15 @@ export default function LockComboTest(): void {
       let rl1: ReadLock = rwLock.readLock()
       let rl2: ReadLock = rwLock.readLock()
       rl1.lock()
+      let shared: boolean = false
       rl2.lock()
-      let sharedValue: int = 55
-      rl2.unlock()
-      rl1.unlock()
-      expect(sharedValue).assertEqual(55)
+      try {
+        shared = true
+      } finally {
+        rl2.unlock()
+        rl1.unlock()
+      }
+      expect(shared).assertTrue()
     })
 
     /**
@@ -215,13 +424,22 @@ export default function LockComboTest(): void {
       let rwLock: RWLock = new RWLock()
       let wl1: WriteLock = rwLock.writeLock()
       wl1.lock()
-      let value: int = 77
-      wl1.unlock()
+      let firstDone: boolean = false
+      try {
+        firstDone = true
+      } finally {
+        wl1.unlock()
+      }
       let wl2: WriteLock = rwLock.writeLock()
       wl2.lock()
-      value = 88
-      wl2.unlock()
-      expect(value).assertEqual(88)
+      let secondDone: boolean = false
+      try {
+        secondDone = true
+      } finally {
+        wl2.unlock()
+      }
+      expect(firstDone).assertTrue()
+      expect(secondDone).assertTrue()
     })
 
     // === Section 2.1: Multi-EAWorker Concurrent Lock Contention (1100-1600) ===
@@ -330,9 +548,15 @@ export default function LockComboTest(): void {
     it('LockComboTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       let sharedVal: int = 0
+      let lockDone: boolean = false
       mutex.lock()
-      sharedVal = 999
-      mutex.unlock()
+      try {
+        sharedVal = 999
+        lockDone = true
+      } finally {
+        mutex.unlock()
+      }
+      expect(lockDone).assertTrue()
       expect(sharedVal).assertEqual(999)
     })
 
@@ -430,7 +654,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest1900
      * @tc.number  SUB_LOCK_COMBO_TEST_1900
-     * @tc.desc    Verify Mutex lock/unlock within task callback safety
+     * @tc.desc    Verify Mutex lock/unlock around a taskpool task execution
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -443,8 +667,11 @@ export default function LockComboTest(): void {
       })
       await taskpool.execute(task)
       mutex.lock()
-      callbackExecuted = true
-      mutex.unlock()
+      try {
+        callbackExecuted = true
+      } finally {
+        mutex.unlock()
+      }
       expect(callbackExecuted).assertTrue()
     })
 
@@ -461,11 +688,19 @@ export default function LockComboTest(): void {
     it('LockComboTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       mutex.lock()
-      let locked: boolean = true
-      mutex.unlock()
+      let locked: boolean = false
+      try {
+        locked = true
+      } finally {
+        mutex.unlock()
+      }
       mutex.lock()
-      let relocked: boolean = true
-      mutex.unlock()
+      let relocked: boolean = false
+      try {
+        relocked = true
+      } finally {
+        mutex.unlock()
+      }
       expect(locked).assertTrue()
       expect(relocked).assertTrue()
     })
@@ -483,11 +718,15 @@ export default function LockComboTest(): void {
       let outerRl: ReadLock = rwLock.readLock()
       let innerRl: ReadLock = rwLock.readLock()
       outerRl.lock()
+      let nestedDone: boolean = false
       innerRl.lock()
-      let value: int = 33
-      innerRl.unlock()
-      outerRl.unlock()
-      expect(value).assertEqual(33)
+      try {
+        nestedDone = true
+      } finally {
+        innerRl.unlock()
+        outerRl.unlock()
+      }
+      expect(nestedDone).assertTrue()
     })
 
 
@@ -504,11 +743,15 @@ export default function LockComboTest(): void {
       let rwLock: RWLock = new RWLock()
       let rl: ReadLock = rwLock.readLock()
       mutex.lock()
+      let nestedDone: boolean = false
       rl.lock()
-      let value: int = 55
-      rl.unlock()
-      mutex.unlock()
-      expect(value).assertEqual(55)
+      try {
+        nestedDone = true
+      } finally {
+        rl.unlock()
+        mutex.unlock()
+      }
+      expect(nestedDone).assertTrue()
     })
 
     /**
@@ -524,11 +767,15 @@ export default function LockComboTest(): void {
       let rwLock: RWLock = new RWLock()
       let wl: WriteLock = rwLock.writeLock()
       mutex.lock()
+      let nestedDone: boolean = false
       wl.lock()
-      let value: int = 66
-      wl.unlock()
-      mutex.unlock()
-      expect(value).assertEqual(66)
+      try {
+        nestedDone = true
+      } finally {
+        wl.unlock()
+        mutex.unlock()
+      }
+      expect(nestedDone).assertTrue()
     })
 
     /**
@@ -544,11 +791,15 @@ export default function LockComboTest(): void {
       let rl: ReadLock = rwLock.readLock()
       let mutex: Mutex = new Mutex()
       rl.lock()
+      let nestedDone: boolean = false
       mutex.lock()
-      let value: int = 77
-      mutex.unlock()
-      rl.unlock()
-      expect(value).assertEqual(77)
+      try {
+        nestedDone = true
+      } finally {
+        mutex.unlock()
+        rl.unlock()
+      }
+      expect(nestedDone).assertTrue()
     })
 
     /**
@@ -564,11 +815,15 @@ export default function LockComboTest(): void {
       let wl: WriteLock = rwLock.writeLock()
       let mutex: Mutex = new Mutex()
       wl.lock()
+      let nestedDone: boolean = false
       mutex.lock()
-      let value: int = 88
-      mutex.unlock()
-      wl.unlock()
-      expect(value).assertEqual(88)
+      try {
+        nestedDone = true
+      } finally {
+        mutex.unlock()
+        wl.unlock()
+      }
+      expect(nestedDone).assertTrue()
     })
 
     // === Section 3.2: Multi-thread Lock Nesting (2800-3200) ===
@@ -586,15 +841,13 @@ export default function LockComboTest(): void {
       let order: string[] = []
       mutex.lock()
       order.push('main_locked')
-      let delayDone: boolean = false
-      let waitCount: int = 0
-      setTimeout((): void => { delayDone = true }, 10)
-      while (!delayDone && waitCount < 200) { waitCount++ }
+      await lockComboSleep(10)
       order.push('waited')
       order.push('main_unlocking')
       mutex.unlock()
       expect(order.length).assertEqual(3)
       expect(order[0]).assertEqual('main_locked')
+      expect(order[1]).assertEqual('waited')
     })
 
     /**
@@ -611,10 +864,7 @@ export default function LockComboTest(): void {
       let mainProceeded: boolean = false
       mutex.lock()
       taskLocked = true
-      let delayDone: boolean = false
-      let waitCount: int = 0
-      setTimeout((): void => { delayDone = true }, 10)
-      while (!delayDone && waitCount < 200) { waitCount++ }
+      await lockComboSleep(10)
       mutex.unlock()
       mutex.lock()
       mainProceeded = true
@@ -635,11 +885,18 @@ export default function LockComboTest(): void {
       let mutex: Mutex = new Mutex()
       let order: int[] = []
       mutex.lock()
-      order.push(1)
-      mutex.unlock()
+      try {
+        order.push(1)
+      } finally {
+        mutex.unlock()
+      }
       mutex.lock()
-      order.push(2)
-      mutex.unlock()
+      try {
+        order.push(2)
+      } finally {
+        mutex.unlock()
+      }
+      expect(order.length).assertEqual(2)
       expect(order[0]).assertEqual(1)
       expect(order[1]).assertEqual(2)
     })
@@ -663,8 +920,12 @@ export default function LockComboTest(): void {
       }
       mutex.unlock()
       mutex.lock()
-      let recovered: boolean = true
-      mutex.unlock()
+      let recovered: boolean = false
+      try {
+        recovered = true
+      } finally {
+        mutex.unlock()
+      }
       expect(innerThrew).assertTrue()
       expect(recovered).assertTrue()
     })
@@ -685,8 +946,12 @@ export default function LockComboTest(): void {
       innerMutex.unlock()
       outerMutex.unlock()
       outerMutex.lock()
-      let outerWorks: boolean = true
-      outerMutex.unlock()
+      let outerWorks: boolean = false
+      try {
+        outerWorks = true
+      } finally {
+        outerMutex.unlock()
+      }
       expect(outerWorks).assertTrue()
     })
 
@@ -706,12 +971,16 @@ export default function LockComboTest(): void {
       let m3: Mutex = new Mutex()
       m1.lock()
       m2.lock()
+      let deepDone: boolean = false
       m3.lock()
-      let deepValue: int = 333
-      m3.unlock()
-      m2.unlock()
-      m1.unlock()
-      expect(deepValue).assertEqual(333)
+      try {
+        deepDone = true
+      } finally {
+        m3.unlock()
+        m2.unlock()
+        m1.unlock()
+      }
+      expect(deepDone).assertTrue()
     })
 
     /**
@@ -825,10 +1094,14 @@ export default function LockComboTest(): void {
         return 42
       })
       let result: int = await taskpool.execute(task) as int
+      let lockDone: boolean = false
       mutex.lock()
-      let successCallbackDone: boolean = true
-      mutex.unlock()
-      expect(successCallbackDone).assertTrue()
+      try {
+        lockDone = true
+      } finally {
+        mutex.unlock()
+      }
+      expect(lockDone).assertTrue()
       expect(result).assertEqual(42)
     })
 
@@ -915,10 +1188,14 @@ export default function LockComboTest(): void {
         return 'protected_data'
       })
       let result: string = await taskpool.execute(task) as string
+      let lockDone: boolean = false
       mutex.lock()
-      let received: boolean = true
-      mutex.unlock()
-      expect(received).assertTrue()
+      try {
+        lockDone = true
+      } finally {
+        mutex.unlock()
+      }
+      expect(lockDone).assertTrue()
       expect(result).assertEqual('protected_data')
     })
 
@@ -957,9 +1234,13 @@ export default function LockComboTest(): void {
         return 'first'
       })
       await taskpool.execute(task)
+      let nestedReceived: boolean = false
       mutex.lock()
-      let nestedReceived: boolean = true
-      mutex.unlock()
+      try {
+        nestedReceived = true
+      } finally {
+        mutex.unlock()
+      }
       expect(nestedReceived).assertTrue()
     })
 
@@ -977,9 +1258,13 @@ export default function LockComboTest(): void {
         return 'trigger'
       })
       await taskpool.execute(task)
+      let triggeredAndLocked: boolean = false
       mutex.lock()
-      let triggeredAndLocked: boolean = true
-      mutex.unlock()
+      try {
+        triggeredAndLocked = true
+      } finally {
+        mutex.unlock()
+      }
       expect(triggeredAndLocked).assertTrue()
     })
 
@@ -988,27 +1273,30 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest4400
      * @tc.number  SUB_LOCK_COMBO_TEST_4400
-     * @tc.desc    Verify lock usage within simulated timer callback
+     * @tc.desc    Verify lock usage after a simulated async timer delay
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('LockComboTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let mutex: Mutex = new Mutex()
-      let timerCompleted: boolean = false
-      let waitCount: int = 0
-      setTimeout((): void => { timerCompleted = true }, 10)
-      while (!timerCompleted && waitCount < 200) { waitCount++ }
+      await lockComboSleep(10)
+      let timerCompleted: boolean = true
+      let lockOk: boolean = false
       mutex.lock()
-      let callbackResult: int = 47
-      mutex.unlock()
-      expect(callbackResult).assertEqual(47)
+      try {
+        lockOk = true
+      } finally {
+        mutex.unlock()
+      }
+      expect(timerCompleted).assertTrue()
+      expect(lockOk).assertTrue()
     })
 
     /**
      * @tc.name    LockComboTest4500
      * @tc.number  SUB_LOCK_COMBO_TEST_4500
-     * @tc.desc    Verify lock usage within message handler callback correctness
+     * @tc.desc    Verify lock-protected state update in a simulated message handling flow
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1017,8 +1305,11 @@ export default function LockComboTest(): void {
       let mutex: Mutex = new Mutex()
       let messageHandled: boolean = false
       mutex.lock()
-      messageHandled = true
-      mutex.unlock()
+      try {
+        messageHandled = true
+      } finally {
+        mutex.unlock()
+      }
       expect(messageHandled).assertTrue()
     })
 
@@ -1414,9 +1705,13 @@ export default function LockComboTest(): void {
       let mutex: Mutex = new Mutex()
       mutex.lock()
       mutex.unlock()
-      let lockAvailable: boolean = true
+      let lockAvailable: boolean = false
       mutex.lock()
-      mutex.unlock()
+      try {
+        lockAvailable = true
+      } finally {
+        mutex.unlock()
+      }
       expect(lockAvailable).assertTrue()
     })
 
@@ -1437,8 +1732,11 @@ export default function LockComboTest(): void {
         retryCount++
       }
       mutex.lock()
-      acquired = true
-      mutex.unlock()
+      try {
+        acquired = true
+      } finally {
+        mutex.unlock()
+      }
       expect(acquired).assertTrue()
       expect(retryCount).assertEqual(maxRetries)
     })
@@ -1456,12 +1754,19 @@ export default function LockComboTest(): void {
       let readFirst: boolean = false
       let rl: ReadLock = rwLock.readLock()
       rl.lock()
-      readFirst = true
-      rl.unlock()
+      try {
+        readFirst = true
+      } finally {
+        rl.unlock()
+      }
       let wl: WriteLock = rwLock.writeLock()
       wl.lock()
-      let writeAfterRead: boolean = true
-      wl.unlock()
+      let writeAfterRead: boolean = false
+      try {
+        writeAfterRead = true
+      } finally {
+        wl.unlock()
+      }
       expect(readFirst).assertTrue()
       expect(writeAfterRead).assertTrue()
     })
@@ -1680,9 +1985,14 @@ export default function LockComboTest(): void {
       } catch (e) {
         errorCaught = true
       }
+      expect(errorCaught).assertTrue()
       mutex.lock()
-      let works: boolean = true
-      mutex.unlock()
+      let works: boolean = false
+      try {
+        works = true
+      } finally {
+        mutex.unlock()
+      }
       expect(works).assertTrue()
     })
 
@@ -1703,9 +2013,14 @@ export default function LockComboTest(): void {
       } catch (e) {
         errorCaught = true
       }
+      expect(errorCaught).assertTrue()
       rl.lock()
-      let works: boolean = true
-      rl.unlock()
+      let works: boolean = false
+      try {
+        works = true
+      } finally {
+        rl.unlock()
+      }
       expect(works).assertTrue()
     })
 
@@ -1726,8 +2041,12 @@ export default function LockComboTest(): void {
         mutex.unlock()
       }
       mutex.lock()
-      let lockRecovered: boolean = true
-      mutex.unlock()
+      let lockRecovered: boolean = false
+      try {
+        lockRecovered = true
+      } finally {
+        mutex.unlock()
+      }
       expect(lockRecovered).assertTrue()
     })
 
@@ -1750,8 +2069,12 @@ export default function LockComboTest(): void {
       }
       mutex.unlock()
       mutex.lock()
-      let lockOk: boolean = true
-      mutex.unlock()
+      let lockOk: boolean = false
+      try {
+        lockOk = true
+      } finally {
+        mutex.unlock()
+      }
       expect(exceptionCaught).assertTrue()
       expect(lockOk).assertTrue()
     })
@@ -1778,8 +2101,12 @@ export default function LockComboTest(): void {
       innerMutex.unlock()
       outerMutex.unlock()
       outerMutex.lock()
-      let recovered: boolean = true
-      outerMutex.unlock()
+      let recovered: boolean = false
+      try {
+        recovered = true
+      } finally {
+        outerMutex.unlock()
+      }
       expect(innerError).assertTrue()
       expect(recovered).assertTrue()
     })
@@ -1796,12 +2123,14 @@ export default function LockComboTest(): void {
      */
     it('LockComboTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let count: int = 100
+      let completed: int = 0
       for (let i: int = 0; i < count; i++) {
         let m: Mutex = new Mutex()
         m.lock()
         m.unlock()
+        completed++
       }
-      expect(count).assertEqual(100)
+      expect(completed).assertEqual(count)
     })
 
     /**
@@ -1814,6 +2143,7 @@ export default function LockComboTest(): void {
      */
     it('LockComboTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let count: int = 100
+      let completed: int = 0
       for (let i: int = 0; i < count; i++) {
         let rw: RWLock = new RWLock()
         let rl: ReadLock = rw.readLock()
@@ -1822,8 +2152,9 @@ export default function LockComboTest(): void {
         let wl: WriteLock = rw.writeLock()
         wl.lock()
         wl.unlock()
+        completed++
       }
-      expect(count).assertEqual(100)
+      expect(completed).assertEqual(count)
     })
 
     /**
@@ -1837,14 +2168,15 @@ export default function LockComboTest(): void {
     it('LockComboTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       mutex.lock()
-      let active: boolean = true
       mutex.unlock()
-      active = false
+      let reacquired: boolean = false
       mutex.lock()
-      active = true
-      mutex.unlock()
-      active = false
-      expect(active).assertFalse()
+      try {
+        reacquired = true
+      } finally {
+        mutex.unlock()
+      }
+      expect(reacquired).assertTrue()
     })
 
     // === Section 7.3: Boundary Condition Stability (8500-8700) ===
@@ -1859,8 +2191,15 @@ export default function LockComboTest(): void {
      */
     it('LockComboTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
-      let unused: boolean = true
-      expect(unused).assertTrue()
+      // A Mutex created without immediate use remains fully usable later.
+      let usable: boolean = false
+      mutex.lock()
+      try {
+        usable = true
+      } finally {
+        mutex.unlock()
+      }
+      expect(usable).assertTrue()
     })
 
     /**
@@ -1881,10 +2220,14 @@ export default function LockComboTest(): void {
       rl1.lock()
       rl2.lock()
       rl3.lock()
-      let allLocked: boolean = true
-      rl3.unlock()
-      rl2.unlock()
-      rl1.unlock()
+      let allLocked: boolean = false
+      try {
+        allLocked = true
+      } finally {
+        rl3.unlock()
+        rl2.unlock()
+        rl1.unlock()
+      }
       expect(allLocked).assertTrue()
     })
 
@@ -1899,9 +2242,443 @@ export default function LockComboTest(): void {
     it('LockComboTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let errorCaught: boolean = false
       let validMutex: Mutex = new Mutex()
-      validMutex.lock()
-      validMutex.unlock()
+      try {
+        validMutex.lock()
+        validMutex.unlock()
+      } catch (e) {
+        errorCaught = true
+      }
       expect(errorCaught).assertFalse()
+    })
+
+    // === Section 8: Missing Combo Scenarios (8300-9700) ===
+
+    /**
+     * @tc.name    LockComboTest8300
+     * @tc.number  SUB_LOCK_COMBO_TEST_8300
+     * @tc.desc    Verify read lock to write lock upgrade attempt blocks writer while reader holds (deadlock detection without hang)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockComboTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      // Same-coroutine read->write upgrade is unsupported: WriteLock waits for all readers, including itself.
+      // Cross-coroutine observable behavior: writer stays blocked until the reader releases.
+      let rwLock: RWLock = new RWLock()
+      let rl: ReadLock = rwLock.readLock()
+      rl.lock()
+      let done: AtomicInt = new AtomicInt(0)
+      let p = taskpool.execute(new taskpool.Task(lockComboWriteAttemptTask, rwLock, done))
+      await Utils.msSleep(300)
+      expect(done.load()).assertEqual(0)
+      rl.unlock()
+      await p
+      expect(done.load()).assertEqual(1)
+    })
+
+    /**
+     * @tc.name    LockComboTest8400
+     * @tc.number  SUB_LOCK_COMBO_TEST_8400
+     * @tc.desc    Verify write lock to read lock transition blocks readers until writer releases (downgrade handoff)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockComboTest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      // Same-coroutine write->read downgrade is unsupported: ReadLock.lock() suspends while WriteLock is held by the
+      // same coroutine, so WriteLock.unlock() is unreachable. Cross-coroutine handoff is validated instead.
+      let rwLock: RWLock = new RWLock()
+      let held: AtomicInt = new AtomicInt(0)
+      let release: AtomicInt = new AtomicInt(0)
+      let rGot: AtomicInt = new AtomicInt(0)
+      let worker: EAWorker = new EAWorker('lockComboDowngrade')
+      worker.start()
+      try {
+        let pW = worker.run<Promise<void>>(lockComboWriterHoldTask, rwLock, held, release)
+        let tries: int = 0
+        while (held.load() === 0 && tries < 50) {
+          await Utils.msSleep(100)
+          tries++
+        }
+        expect(held.load()).assertEqual(1)
+        let pR = taskpool.execute(new taskpool.Task(lockComboReadAttemptTask, rwLock, rGot))
+        try {
+          await Utils.msSleep(300)
+          expect(rGot.load()).assertEqual(0)
+        } finally {
+          release.store(1)
+        }
+        await pW.Await()
+        await pR
+        expect(rGot.load()).assertEqual(1)
+      } finally {
+        worker.quit()
+      }
+    })
+
+    /**
+     * @tc.name    LockComboTest8500
+     * @tc.number  SUB_LOCK_COMBO_TEST_8500
+     * @tc.desc    Verify same-thread true nesting of two distinct Mutex instances (lock A then lock B)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockComboTest8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let mutexA: Mutex = new Mutex()
+      let mutexB: Mutex = new Mutex()
+      let counter: AtomicInt = new AtomicInt(0)
+      let taskCount: int = 10
+      let promises: Promise<Any>[] = []
+      for (let i: int = 0; i < taskCount; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockComboNestedMutexTask, mutexA, mutexB, counter)))
+      }
+      await Promise.all<Any>(promises)
+      // Nested locking keeps the shared counter consistent under concurrency
+      expect(counter.load()).assertEqual(taskCount)
+    })
+
+    /**
+     * @tc.name    LockComboTest8600
+     * @tc.number  SUB_LOCK_COMBO_TEST_8600
+     * @tc.desc    Verify true nesting of WriteLocks from two distinct RWLock instances
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockComboTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let rw1: RWLock = new RWLock()
+      let rw2: RWLock = new RWLock()
+      let counter: AtomicInt = new AtomicInt(0)
+      let taskCount: int = 10
+      let promises: Promise<Any>[] = []
+      for (let i: int = 0; i < taskCount; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockComboNestedWriteLockTask, rw1.writeLock(), rw2.writeLock(), counter)))
+      }
+      await Promise.all<Any>(promises)
+      // Nested write locks keep the shared counter consistent under concurrency
+      expect(counter.load()).assertEqual(taskCount)
+    })
+
+    /**
+     * @tc.name    LockComboTest8700
+     * @tc.number  SUB_LOCK_COMBO_TEST_8700
+     * @tc.desc    Verify cross-thread nesting: worker waits for Mutex held by main thread, then acquires after release
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockComboTest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let mutex: Mutex = new Mutex()
+      let done: AtomicInt = new AtomicInt(0)
+      mutex.lock()
+      let worker: EAWorker = new EAWorker('lockComboNest28')
+      worker.start()
+      try {
+        let job = worker.run<void>(lockComboNestWaitTask, mutex, done)
+        try {
+          await Utils.msSleep(300)
+          expect(done.load()).assertEqual(0)
+        } finally {
+          mutex.unlock()
+        }
+        job.Await()
+        expect(done.load()).assertEqual(1)
+      } finally {
+        worker.quit()
+      }
+    })
+
+    /**
+     * @tc.name    LockComboTest8800
+     * @tc.number  SUB_LOCK_COMBO_TEST_8800
+     * @tc.desc    Verify reverse cross-thread nesting: worker holds Mutex, host-side attempt blocks until worker releases
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockComboTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let mutex: Mutex = new Mutex()
+      let held: AtomicInt = new AtomicInt(0)
+      let release: AtomicInt = new AtomicInt(0)
+      let mainGot: AtomicInt = new AtomicInt(0)
+      let worker: EAWorker = new EAWorker('lockComboNest29')
+      worker.start()
+      try {
+        let pW = worker.run<Promise<void>>(lockComboHoldTask, mutex, held, release)
+        let tries: int = 0
+        while (held.load() === 0 && tries < 50) {
+          await Utils.msSleep(100)
+          tries++
+        }
+        expect(held.load()).assertEqual(1)
+        let pM = taskpool.execute(new taskpool.Task(lockComboAttemptTask, mutex, mainGot))
+        try {
+          await Utils.msSleep(300)
+          expect(mainGot.load()).assertEqual(0)
+        } finally {
+          release.store(1)
+        }
+        await pW.Await()
+        await pM
+        expect(mainGot.load()).assertEqual(1)
+      } finally {
+        worker.quit()
+      }
+    })
+
+    /**
+     * @tc.name    LockComboTest8900
+     * @tc.number  SUB_LOCK_COMBO_TEST_8900
+     * @tc.desc    Verify multi-worker nesting on the same Mutex: worker2 waits while worker1 holds, acquires after release
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockComboTest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let mutex: Mutex = new Mutex()
+      let w1Held: AtomicInt = new AtomicInt(0)
+      let releaseW1: AtomicInt = new AtomicInt(0)
+      let w2Done: AtomicInt = new AtomicInt(0)
+      let w1: EAWorker = new EAWorker('lockComboNest30a')
+      w1.start()
+      try {
+        let p1 = w1.run<Promise<void>>(lockComboHoldTask, mutex, w1Held, releaseW1)
+        let tries: int = 0
+        while (w1Held.load() === 0 && tries < 50) {
+          await Utils.msSleep(100)
+          tries++
+        }
+        expect(w1Held.load()).assertEqual(1)
+        let w2: EAWorker = new EAWorker('lockComboNest30b')
+        w2.start()
+        try {
+          let p2 = w2.run<void>(lockComboWaitTask, mutex, w2Done)
+          try {
+            await Utils.msSleep(300)
+            expect(w2Done.load()).assertEqual(0)
+          } finally {
+            releaseW1.store(1)
+          }
+          await p1.Await()
+          p2.Await()
+          expect(w2Done.load()).assertEqual(1)
+        } finally {
+          w2.quit()
+        }
+      } finally {
+        w1.quit()
+      }
+    })
+
+    /**
+     * @tc.name    LockComboTest9000
+     * @tc.number  SUB_LOCK_COMBO_TEST_9000
+     * @tc.desc    Verify Mutex lock/unlock safety inside taskpool onReceiveData callback
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockComboTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let mutex: Mutex = new Mutex()
+      let callbackCount: AtomicInt = new AtomicInt(0)
+      let task: taskpool.Task = new taskpool.Task(lockComboSendDataTask, 1)
+      task.onReceiveData((): void => {
+        mutex.lock()
+        callbackCount.fetchAdd(1)
+        mutex.unlock()
+      })
+      let result: int = await taskpool.execute(task) as int
+      expect(result).assertEqual(1)
+      expect(callbackCount.load()).assertEqual(1)
+    })
+
+    /**
+     * @tc.name    LockComboTest9100
+     * @tc.number  SUB_LOCK_COMBO_TEST_9100
+     * @tc.desc    Verify periodic timer task increments shared state under Mutex protection with correct final count
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockComboTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let mutex: Mutex = new Mutex()
+      let counter: int = 0
+      let tickCount: int = 0
+      let expectedTicks: int = 5
+      let done: boolean = false
+      let timerId: int = 0
+      timerId = setInterval((): void => {
+        mutex.lock()
+        counter++
+        tickCount++
+        mutex.unlock()
+        if (tickCount >= expectedTicks) {
+          clearInterval(timerId)
+          done = true
+        }
+      }, 100)
+      try {
+        let waitTries: int = 0
+        while (!done && waitTries < 60) {
+          await Utils.msSleep(100)
+          waitTries++
+        }
+        expect(done).assertTrue()
+        expect(counter).assertEqual(expectedTicks)
+      } finally {
+        clearInterval(timerId)
+      }
+    })
+
+    /**
+     * @tc.name    LockComboTest9200
+     * @tc.number  SUB_LOCK_COMBO_TEST_9200
+     * @tc.desc    Verify Mutex concurrency: 10 tasks each performing 100 locked increments
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('LockComboTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let mutex: Mutex = new Mutex()
+      let counter: AtomicInt = new AtomicInt(0)
+      let taskCount: int = 10
+      let promises: Promise<Any>[] = []
+      for (let i: int = 0; i < taskCount; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockComboContentionTask, mutex, counter)))
+      }
+      await Promise.all<Any>(promises)
+      expect(counter.load()).assertEqual(taskCount * 100)
+    })
+
+    /**
+     * @tc.name    LockComboTest9300
+     * @tc.number  SUB_LOCK_COMBO_TEST_9300
+     * @tc.desc    Verify Mutex protects 1MB-level big data transfer with integrity assertions
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('LockComboTest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let mutex: Mutex = new Mutex()
+      let payload: string = lockComboBuildPayload(1050)
+      let expectedLen: int = payload.length
+      let expectedSum: int = lockComboChecksum(payload)
+      expect(expectedLen).assertEqual(1050000)
+      let len: AtomicInt = new AtomicInt(0)
+      let sum: AtomicInt = new AtomicInt(0)
+      let result: int = await taskpool.execute(new taskpool.Task(lockComboBigDataTransferTask, mutex, payload, len, sum)) as int
+      expect(result).assertEqual(expectedLen)
+      expect(len.load()).assertEqual(expectedLen)
+      expect(sum.load()).assertEqual(expectedSum)
+      expect(lockComboChecksum(payload)).assertEqual(expectedSum)
+    })
+
+    /**
+     * @tc.name    LockComboTest9400
+     * @tc.number  SUB_LOCK_COMBO_TEST_9400
+     * @tc.desc    Verify RWLock protects 1MB-level big data write under WriteLock and read under ReadLock
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('LockComboTest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let rwLock: RWLock = new RWLock()
+      let data: string[] = [lockComboBuildPayload(525)]
+      let chunk: string = lockComboBuildPayload(525)
+      let expectedLen: int = data[0].length + chunk.length
+      let ok: AtomicInt = new AtomicInt(0)
+      let observed: AtomicInt = new AtomicInt(0)
+      let written: int = await taskpool.execute(new taskpool.Task(lockComboWriteBigDataTask, rwLock, data, chunk, expectedLen, ok)) as int
+      expect(written).assertEqual(expectedLen)
+      expect(ok.load()).assertEqual(1)
+      await taskpool.execute(new taskpool.Task(lockComboReadBigDataTask, rwLock, data, expectedLen, observed))
+      expect(observed.load()).assertEqual(expectedLen)
+      expect(data[0].length).assertEqual(expectedLen)
+    })
+
+    /**
+     * @tc.name    LockComboTest9500
+     * @tc.number  SUB_LOCK_COMBO_TEST_9500
+     * @tc.desc    Verify multiple big data chunks concurrently transferred under separate Mutex instances
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('LockComboTest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let taskCount: int = 5
+      let mutexes: Mutex[] = []
+      let payloads: string[] = []
+      let checksums: int[] = []
+      for (let i: int = 0; i < taskCount; i++) {
+        mutexes.push(new Mutex())
+        let p: string = lockComboBuildPayload(210)
+        payloads.push(p)
+        checksums.push(lockComboChecksum(p))
+      }
+      let ok: AtomicInt = new AtomicInt(0)
+      let promises: Promise<Any>[] = []
+      for (let i: int = 0; i < taskCount; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockComboBigDataVerifyTask, mutexes[i], payloads[i], payloads[i].length, checksums[i], ok)))
+      }
+      await Promise.all<Any>(promises)
+      expect(ok.load()).assertEqual(taskCount)
+    })
+
+    /**
+     * @tc.name    LockComboTest9600
+     * @tc.number  SUB_LOCK_COMBO_TEST_9600
+     * @tc.desc    Verify RWLock sustained read/write lock rounds for long-running stability
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('LockComboTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      let rwLock: RWLock = new RWLock()
+      let readCount: int = 0
+      let writeCount: int = 0
+      let rounds: int = 500
+      let perRound: int = 100
+      for (let r: int = 0; r < rounds; r++) {
+        let rl: ReadLock = rwLock.readLock()
+        for (let i: int = 0; i < perRound; i++) {
+          rl.lock()
+          readCount++
+          rl.unlock()
+        }
+        let wl: WriteLock = rwLock.writeLock()
+        for (let i: int = 0; i < perRound; i++) {
+          wl.lock()
+          writeCount++
+          wl.unlock()
+        }
+      }
+      expect(readCount).assertEqual(rounds * perRound)
+      expect(writeCount).assertEqual(rounds * perRound)
+    })
+
+    /**
+     * @tc.name    LockComboTest9700
+     * @tc.number  SUB_LOCK_COMBO_TEST_9700
+     * @tc.desc    Verify sustained taskpool onReceiveData callbacks using Mutex for long-running callback stability
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('LockComboTest9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let mutex: Mutex = new Mutex()
+      let callbackCount: AtomicInt = new AtomicInt(0)
+      let rounds: int = 20
+      for (let i: int = 0; i < rounds; i++) {
+        let task: taskpool.Task = new taskpool.Task(lockComboSendDataTask, i)
+        task.onReceiveData((): void => {
+          mutex.lock()
+          callbackCount.fetchAdd(1)
+          mutex.unlock()
+        })
+        await taskpool.execute(task)
+      }
+      expect(callbackCount.load()).assertEqual(rounds)
     })
   })
 }

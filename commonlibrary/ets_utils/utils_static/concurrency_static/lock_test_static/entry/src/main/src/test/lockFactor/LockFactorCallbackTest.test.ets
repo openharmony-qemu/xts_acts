@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class CallbackSharedCounter {
   value: number = 0;
@@ -207,9 +206,7 @@ export default function LockFactorCallbackTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockFactorCallbackTest0100
@@ -304,11 +301,14 @@ export default function LockFactorCallbackTest(): void {
           mutex.unlock();
         }
       });
+      let executeFailed: boolean = false;
       try {
         await taskpool.execute(task);
       } catch (e) {
         // Expected exception from failed task
+        executeFailed = true;
       }
+      expect(executeFailed).assertTrue();
       expect(counter.load()).assertEqual(1);
     })
 
@@ -536,7 +536,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest1400
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1400
-     * @tc.desc    TC-045: Verify Worker MessageHandler callback lock correctness
+     * @tc.desc    TC-045: Verify EAWorker message-style callback lock correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -560,7 +560,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest1500
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1500
-     * @tc.desc    TC-046: Verify Worker exception callback lock safety
+     * @tc.desc    TC-046: Verify EAWorker exception callback lock safety
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -585,7 +585,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest1600
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1600
-     * @tc.desc    TC-047: Verify Worker multi-callback concurrent lock contention
+     * @tc.desc    TC-047: Verify EAWorker multi-callback concurrent lock contention
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -607,7 +607,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest1700
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1700
-     * @tc.desc    TC-048: Verify MessageHandler constructor callback lock safety
+     * @tc.desc    TC-048: Verify EAWorker callback construction lock safety
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -631,7 +631,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest1800
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1800
-     * @tc.desc    TC-049: Verify handler.sendMessage with lock protection before and after sending
+     * @tc.desc    TC-049: Verify EAWorker run with lock protection before and after execution
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -655,7 +655,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest1900
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1900
-     * @tc.desc    TC-050: Verify message.getObject with lock protection for data access
+     * @tc.desc    TC-050: Verify EAWorker data access with lock protection
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -679,7 +679,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest2000
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_2000
-     * @tc.desc    TC-051: Verify MessageHandler multi-message concurrent lock contention
+     * @tc.desc    TC-051: Verify taskpool multi-task concurrent lock contention
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -697,7 +697,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest2100
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_2100
-     * @tc.desc    TC-052: Verify MessageHandler exception message lock state handling
+     * @tc.desc    TC-052: Verify EAWorker exception flow lock state handling
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -721,7 +721,7 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest2200
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_2200
-     * @tc.desc    TC-053: Verify MessageHandler nested message lock correctness
+     * @tc.desc    TC-053: Verify EAWorker nested execution lock correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2

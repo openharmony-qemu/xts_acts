@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,18 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class LockFactorSharedCounter {
   value: number = 0;
+}
+
+// TC-004: Mixed read-write lock contention shared stats (Sendable counters)
+class MixedRWStats {
+  activeReaders: AtomicInt = new AtomicInt(0);
+  maxConcurrentReaders: AtomicInt = new AtomicInt(0);
+  activeWriters: AtomicInt = new AtomicInt(0);
+  readWithWriter: AtomicInt = new AtomicInt(0);
+  writeWithReaders: AtomicInt = new AtomicInt(0);
 }
 
 // TC-001: Mutex multi-thread contention task
@@ -129,14 +137,53 @@ function callbackLockTask(mutex: Mutex, counter: AtomicInt): void {
   }
 }
 
+// TC-004: Read task competing with writers on the same RWLock
+function mixedReadTask(rwlock: RWLock, stats: MixedRWStats, counter: AtomicInt): void {
+  const readLock = rwlock.readLock();
+  readLock.lock();
+  try {
+    if (stats.activeWriters.load() > 0) {
+      stats.readWithWriter.fetchAdd(1);
+    }
+    let prev: int = stats.activeReaders.fetchAdd(1);
+    let cur: int = prev + 1;
+    if (cur > stats.maxConcurrentReaders.load()) {
+      stats.maxConcurrentReaders.store(cur);
+    }
+    stats.activeReaders.fetchSub(1);
+    counter.fetchAdd(1);
+  } finally {
+    readLock.unlock();
+  }
+}
+
+// TC-004: Write task competing with readers on the same RWLock
+function mixedWriteTask(rwlock: RWLock, stats: MixedRWStats, counter: AtomicInt): void {
+  const writeLock = rwlock.writeLock();
+  writeLock.lock();
+  try {
+    if (stats.activeReaders.load() > 0) {
+      stats.writeWithReaders.fetchAdd(1);
+    }
+    stats.activeWriters.fetchAdd(1);
+    // Widen the critical section so readers and writers interleave
+    let sum: number = 0;
+    for (let i = 0; i < 100000; i++) {
+      sum = sum + i;
+    }
+    stats.activeWriters.fetchSub(1);
+    counter.fetchAdd(1);
+  } finally {
+    writeLock.unlock();
+  }
+}
+
 export default function LockFactorConcurrentTest(): void {
   describe('LockFactorConcurrentTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockFactorConcurrentTest0100
@@ -357,6 +404,38 @@ export default function LockFactorConcurrentTest(): void {
       });
       await taskpool.execute(task);
       expect(counter.load()).assertEqual(1);
+    })
+
+    /**
+     * @tc.name    LockFactorConcurrentTest1000
+     * @tc.number  SUB_LOCK_FACTOR_CONCURRENT_TEST_1000
+     * @tc.desc    TC-004: Verify mixed read-write lock contention with 5 readers and 5 writers competing for the same RWLock
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockFactorConcurrentTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const rwlock = new RWLock();
+      const stats = new MixedRWStats();
+      const counter = new AtomicInt(0);
+      let r1 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
+      let r2 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
+      let r3 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
+      let r4 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
+      let r5 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
+      let w1 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
+      let w2 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
+      let w3 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
+      let w4 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
+      let w5 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
+      await Promise.all([r1, r2, r3, r4, r5, w1, w2, w3, w4, w5]);
+      expect(counter.load()).assertEqual(10);
+      expect(stats.activeReaders.load()).assertEqual(0);
+      expect(stats.activeWriters.load()).assertEqual(0);
+      expect(stats.writeWithReaders.load()).assertEqual(0);
+      expect(stats.readWithWriter.load()).assertEqual(0);
+      // Reader/writer exclusion is verified by the zero cross-presence counters above.
+      // Reader-reader overlap depends on scheduling and is not asserted deterministically.
     })
   })
 }

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class ProducerConsumerQueue {
   items: number[] = [];
@@ -249,9 +248,7 @@ export default function LockDesignProducerConsumerTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockDesignProducerConsumerTest0100
@@ -425,7 +422,8 @@ export default function LockDesignProducerConsumerTest(): void {
       await Promise.all([t1, t2, t3, t4, t5, t6, t7, t8]);
       expect(counter.load()).assertEqual(8);
       expect(data.items.length).assertEqual(8);
-      expect(data.capacity >= 8).assertTrue();
+      // Capacity doubles from 5 to 10 exactly once when the 6th item is pushed.
+      expect(data.capacity).assertEqual(10);
     })
 
     /**

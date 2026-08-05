@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 class NestingSharedCounter {
   value: number = 0;
@@ -327,14 +326,12 @@ export default function LockFactorNestingTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockFactorNestingTest0100
      * @tc.number  SUB_LOCK_FACTOR_NESTING_TEST_0100
-     * @tc.desc    TC-011: Verify Mutex nested Mutex deadlock detection - same mutex reentrant lock triggers error
+     * @tc.desc    TC-011: Verify Mutex nested Mutex - two different mutexes can be acquired in nested order
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -784,7 +781,7 @@ export default function LockFactorNestingTest(): void {
     /**
      * @tc.name    LockFactorNestingTest1900
      * @tc.number  SUB_LOCK_FACTOR_NESTING_TEST_1900
-     * @tc.desc    TC-030: Verify nested lock performance impact - nesting level performance within reasonable range
+     * @tc.desc    TC-030: Verify nested lock stability - 100 nested lock/unlock cycles complete correctly
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
@@ -799,7 +796,7 @@ export default function LockFactorNestingTest(): void {
     /**
      * @tc.name    LockFactorNestingTest2000
      * @tc.number  SUB_LOCK_FACTOR_NESTING_TEST_2000
-     * @tc.desc    TC-031: Verify nested lock memory consumption - creating and releasing nested locks has reasonable memory usage
+     * @tc.desc    TC-031: Verify nested lock stability - creating and releasing nested locks 50 times completes correctly
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
@@ -813,7 +810,7 @@ export default function LockFactorNestingTest(): void {
     /**
      * @tc.name    LockFactorNestingTest2100
      * @tc.number  SUB_LOCK_FACTOR_NESTING_TEST_2100
-     * @tc.desc    TC-022: Verify nested lock timeout - inner lock wait does not affect outer lock correctness
+     * @tc.desc    TC-032: Verify nested lock timeout - inner lock wait does not affect outer lock correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2

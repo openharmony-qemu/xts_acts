@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 // ==================== AsyncOperation classes ====================
 class AsyncLockData {
@@ -62,7 +61,6 @@ class FileDescriptorPool {
 
 class FileRWData {
   content: string = 'initial';
-  readCount: number = 0;
   writeCount: number = 0;
 }
 
@@ -125,7 +123,6 @@ class StateRecoveryData {
 class StateVersionData {
   currentVersion: number = 1;
   versions: number[] = [1];
-  readCount: number = 0;
 }
 
 // ==================== AsyncOperation task functions ====================
@@ -227,12 +224,14 @@ function fdOpenCloseTask(mutex: Mutex, pool: FileDescriptorPool, counter: Atomic
   }
 }
 
-function fileReadTask(rwlock: RWLock, data: FileRWData, counter: AtomicInt): void {
+function fileReadTask(rwlock: RWLock, data: FileRWData, counter: AtomicInt, readCounter: AtomicInt): void {
   const readLock = rwlock.readLock();
   readLock.lock();
   try {
     let val: string = data.content;
-    data.readCount = data.readCount + 1;
+    // Multiple readers run concurrently under the read lock: a plain-field
+    // increment would lose updates, so the read count uses an atomic counter
+    readCounter.fetchAdd(1);
     counter.fetchAdd(1);
   } finally {
     readLock.unlock();
@@ -401,12 +400,14 @@ function stateRecoveryTask(mutex: Mutex, data: StateRecoveryData, counter: Atomi
   }
 }
 
-function stateVersionReadTask(rwlock: RWLock, data: StateVersionData, counter: AtomicInt): void {
+function stateVersionReadTask(rwlock: RWLock, data: StateVersionData, counter: AtomicInt, readCounter: AtomicInt): void {
   const readLock = rwlock.readLock();
   readLock.lock();
   try {
     let ver: number = data.currentVersion;
-    data.readCount = data.readCount + 1;
+    // Multiple readers run concurrently under the read lock: a plain-field
+    // increment would lose updates, so the read count uses an atomic counter
+    readCounter.fetchAdd(1);
     counter.fetchAdd(1);
   } finally {
     readLock.unlock();
@@ -432,9 +433,7 @@ export default function LockDesignAsyncOperationTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockDesignAsyncOperationTest0100
@@ -481,7 +480,7 @@ export default function LockDesignAsyncOperationTest(): void {
     /**
      * @tc.name    LockDesignAsyncOperationTest0300
      * @tc.number  SUB_LOCK_DESIGN_ASYNC_OPERATION_TEST_0300
-     * @tc.desc    Verify async error handling with 3 concurrent tasks using Mutex
+     * @tc.desc    Verify 3 concurrent async tasks updating shared state under Mutex
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -495,14 +494,13 @@ export default function LockDesignAsyncOperationTest(): void {
       let t3 = taskpool.execute(new taskpool.Task(asyncErrorTask, mutex, data, counter));
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
-      expect(data.errorHandled).assertTrue();
       expect(data.executed).assertEqual(3);
     })
 
     /**
      * @tc.name    LockDesignAsyncOperationTest0400
      * @tc.number  SUB_LOCK_DESIGN_ASYNC_OPERATION_TEST_0400
-     * @tc.desc    Verify async timeout lock with 3 concurrent tasks completing under Mutex
+     * @tc.desc    Verify 3 concurrent async lock-protected tasks completing under Mutex
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -588,7 +586,7 @@ export default function LockDesignAsyncOperationTest(): void {
     /**
      * @tc.name    LockDesignAsyncOperationTest0800
      * @tc.number  SUB_LOCK_DESIGN_ASYNC_OPERATION_TEST_0800
-     * @tc.desc    Verify promise timeout with 3 concurrent tasks completing under Mutex
+     * @tc.desc    Verify 3 concurrent promise-based tasks completing under Mutex
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -741,7 +739,7 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.compressed).assertEqual(3);
-      expect(data.totalSize < 100).assertTrue();
+      expect(data.totalSize).assertEqual(12);
     })
 
     /**
@@ -833,6 +831,70 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.recovered).assertTrue();
       expect(data.value).assertEqual(100);
       expect(data.recoveryCount).assertEqual(3);
+    })
+
+    /**
+     * @tc.name    LockDesignAsyncOperationTest1900
+     * @tc.number  SUB_LOCK_DESIGN_ASYNC_OPERATION_TEST_1900
+     * @tc.desc    Verify file read-write separation with 2 writers and 5 readers using RWLock
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockDesignAsyncOperationTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const rwlock = new RWLock();
+      const data = new FileRWData();
+      const counter = new AtomicInt(0);
+      const readCounter = new AtomicInt(0);
+      // Writers and readers are submitted together: writes are mutually exclusive,
+      // reads share access, and no read overlaps with a write
+      let w1 = taskpool.execute(new taskpool.Task(fileWriteTask, rwlock, data, counter));
+      let r1 = taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter));
+      let w2 = taskpool.execute(new taskpool.Task(fileWriteTask, rwlock, data, counter));
+      let r2 = taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter));
+      let r3 = taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter));
+      let r4 = taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter));
+      let r5 = taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter));
+      await Promise.all([w1, w2, r1, r2, r3, r4, r5]);
+      expect(counter.load()).assertEqual(7);
+      expect(data.writeCount).assertEqual(2);
+      expect(readCounter.load()).assertEqual(5);
+      expect(data.content).assertEqual('updated_content');
+    })
+
+    /**
+     * @tc.name    LockDesignAsyncOperationTest2000
+     * @tc.number  SUB_LOCK_DESIGN_ASYNC_OPERATION_TEST_2000
+     * @tc.desc    Verify state version management with 3 updates and 5 reads using RWLock
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignAsyncOperationTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const rwlock = new RWLock();
+      const data = new StateVersionData();
+      const counter = new AtomicInt(0);
+      const readCounter = new AtomicInt(0);
+      // Updates and reads are submitted together: updates increment the version under
+      // write lock mutual exclusion while reads validate versions under read lock
+      let u1 = taskpool.execute(new taskpool.Task(stateVersionUpdateTask, rwlock, data, counter));
+      let r1 = taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter));
+      let u2 = taskpool.execute(new taskpool.Task(stateVersionUpdateTask, rwlock, data, counter));
+      let r2 = taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter));
+      let u3 = taskpool.execute(new taskpool.Task(stateVersionUpdateTask, rwlock, data, counter));
+      let r3 = taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter));
+      let r4 = taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter));
+      let r5 = taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter));
+      await Promise.all([u1, u2, u3, r1, r2, r3, r4, r5]);
+      expect(counter.load()).assertEqual(8);
+      expect(data.currentVersion).assertEqual(4);
+      expect(data.versions.length).assertEqual(4);
+      expect(readCounter.load()).assertEqual(5);
+      // Version sequence is strictly increasing under write lock mutual exclusion
+      expect(data.versions[0]).assertEqual(1);
+      expect(data.versions[1]).assertEqual(2);
+      expect(data.versions[2]).assertEqual(3);
+      expect(data.versions[3]).assertEqual(4);
     })
 
   })

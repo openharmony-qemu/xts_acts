@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import Utils from '../Util.test';
 
 // ==================== DistributedLockProcess classes ====================
 class SharedLockData {
@@ -168,18 +167,17 @@ function dynamicTimeoutTask(mutex: Mutex, data: DynamicTimeoutData, counter: Ato
 }
 
 function retryLimitTask(mutex: Mutex, data: RetryLimitData, counter: AtomicInt): void {
-  if (data.retries < data.maxRetries) {
-    data.retries = data.retries + 1;
-    mutex.lock();
-    try {
+  mutex.lock();
+  try {
+    if (data.retries < data.maxRetries) {
+      data.retries = data.retries + 1;
       data.completed = data.completed + 1;
-      counter.fetchAdd(1);
-    } finally {
-      mutex.unlock();
+    } else {
+      data.aborted = data.aborted + 1;
     }
-  } else {
-    data.aborted = data.aborted + 1;
     counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
   }
 }
 
@@ -246,9 +244,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(100);
-    })
+    afterAll((): void => {})
 
     /**
      * @tc.name    LockDesignDistributedLockProcessTest0100
@@ -297,7 +293,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
     /**
      * @tc.name    LockDesignDistributedLockProcessTest0300
      * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0300
-     * @tc.desc    Verify lock timeout handling with 5 concurrent tasks performing loop operations
+     * @tc.desc    Verify 5 concurrent tasks performing loop operations complete under Mutex
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -336,7 +332,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
     /**
      * @tc.name    LockDesignDistributedLockProcessTest0500
      * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0500
-     * @tc.desc    Verify simple lock timeout with 5 concurrent tasks completing under Mutex
+     * @tc.desc    Verify 5 concurrent tasks completing under Mutex with a shared completion counter
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -397,7 +393,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
-      expect(data.timeout >= 100).assertTrue();
+      // The 4th and 5th serialized tasks each double the timeout field: 100 -> 200 -> 400.
+      expect(data.timeout).assertEqual(400);
     })
 
     /**
@@ -419,6 +416,9 @@ export default function LockDesignDistributedLockProcessTest(): void {
       let t5 = taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter));
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
+      // Serialized by the mutex: the first 3 tasks complete, the remaining 2 abort.
+      expect(data.completed).assertEqual(3);
+      expect(data.aborted).assertEqual(2);
     })
 
     /**
@@ -509,7 +509,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
-      expect(data.priority >= 5).assertTrue();
+      // The last 2 serialized tasks each increment the priority field: 5 -> 6 -> 7.
+      expect(data.priority).assertEqual(7);
     })
   })
 }
