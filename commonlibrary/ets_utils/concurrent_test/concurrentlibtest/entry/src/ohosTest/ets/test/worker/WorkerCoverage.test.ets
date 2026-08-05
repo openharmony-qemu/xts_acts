@@ -17,7 +17,11 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { worker } from '@kit.ArkTS';
 import { Sleep } from '../utils/utils';
 import { TestObj } from '../utils/workerCommon';
-
+export function sleep(time: number) {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time)
+  })
+}
 export default function workerCoverageTest() {
   describe('WorkerCoverageTest', () => {
 
@@ -2281,5 +2285,277 @@ export default function workerCoverageTest() {
           done();
         }
       });
+    // ==================== Section 4: Worker 10200004 (worker instance is not running) ====================
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement024
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0124
+     * @tc.desc   ThreadWorker on() and once() throw 10200004 when worker is not running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
+      let terminated = false;
+      workerInstance.terminate();
+      workerInstance.onexit = () => {
+        terminated = true;
+      };
+      while (!terminated) {
+        await sleep(100);
+      }
+      await sleep(200);
+      try {
+        workerInstance.on("message", () => {
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200004);
+      }
+      try {
+        workerInstance.once("message", () => {
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200004);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement025
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0125
+     * @tc.desc   ThreadWorker addEventListener() and dispatchEvent() throw 10200004 when worker is not running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
+      let terminated = false;
+      workerInstance.terminate();
+      workerInstance.onexit = () => {
+        terminated = true;
+      };
+      while (!terminated) {
+        await sleep(100);
+      }
+      await sleep(200);
+      try {
+        workerInstance.addEventListener("message", () => {
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200004);
+      }
+      try {
+        workerInstance.dispatchEvent({ type: "message", timeStamp: 0 });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200004);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement026
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0126
+     * @tc.desc   ThreadWorker removeEventListener() and postMessageWithSharedSendable() throw 10200004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
+      let terminated = false;
+      workerInstance.terminate();
+      workerInstance.onexit = () => {
+        terminated = true;
+      };
+      while (!terminated) {
+        await sleep(100);
+      }
+      await sleep(200);
+      try {
+        workerInstance.removeEventListener("message");
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200004);
+      }
+      try {
+        workerInstance.postMessageWithSharedSendable({});
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200004);
+      }
+    });
+
+    // ==================== Section 5: Return value coverage ====================
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement029
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0129
+     * @tc.desc   ThreadWorker on() subscribe multiple callbacks and verify called in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
+      let callOrder: string[] = [];
+      let callback1 = () => {
+        callOrder.push('callback1');
+      };
+      let callback2 = () => {
+        callOrder.push('callback2');
+      };
+      let callback3 = () => {
+        callOrder.push('callback3');
+      };
+      workerInstance.on("message", callback1);
+      workerInstance.on("message", callback2);
+      workerInstance.on("message", callback3);
+      workerInstance.dispatchEvent({ type: "message", timeStamp: 0 })
+
+      while (callOrder.length < 3) {
+        await sleep(100);
+      }
+      let finish = false;
+      workerInstance.terminate();
+      workerInstance.onexit = () => {
+        finish = true;
+      };
+      while (!finish) {
+        await sleep(100);
+      }
+      expect(callOrder[0]).assertEqual('callback1');
+      expect(callOrder[1]).assertEqual('callback2');
+      expect(callOrder[2]).assertEqual('callback3');
+    });
+    /**
+     * @tc.name   concurrencyCoveredSupplement031
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0131
+     * @tc.desc   EventTarget dispatchEvent and removeEventListener input param coverage: null, undefined, empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
+      let finish = false;
+      try {
+        workerInstance.dispatchEvent(null);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        workerInstance.dispatchEvent(undefined);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        workerInstance.removeEventListener("");
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        workerInstance.removeEventListener(null);
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        workerInstance.removeEventListener(undefined);
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      workerInstance.terminate();
+      workerInstance.onexit = () => {
+        finish = true;
+      };
+      while (!finish) {
+        await sleep(100);
+      }
+      expect(finish).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement036
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0136
+     * @tc.desc   ThreadWorker once() subscribe multiple callbacks and verify called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
+      let callOrder: string[] = [];
+      let callback1 = () => {
+        callOrder.push('callback1');
+      };
+      let callback2 = () => {
+        callOrder.push('callback2');
+      };
+      let callback3 = () => {
+        callOrder.push('callback3');
+      };
+      workerInstance.once("message", callback1);
+      workerInstance.once("message", callback2);
+      workerInstance.once("message", callback3);
+      workerInstance.dispatchEvent({ type: "message", timeStamp: 0 })
+
+      while (callOrder.length < 3) {
+        await sleep(100);
+      }
+      let finish = false;
+      workerInstance.terminate();
+      workerInstance.onexit = () => {
+        finish = true;
+      };
+      while (!finish) {
+        await sleep(100);
+      }
+      expect(callOrder[0]).assertEqual('callback1');
+      expect(callOrder[1]).assertEqual('callback2');
+      expect(callOrder[2]).assertEqual('callback3');
+    });
+    /**
+     * @tc.name   concurrencyCoveredSupplement030
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0130
+     * @tc.desc   EventTarget addEventListener input param coverage: empty string, null, undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
+      let finish = false;
+      try {
+        workerInstance.addEventListener("", () => {
+        });
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        workerInstance.addEventListener(null, () => {
+        });
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        workerInstance.addEventListener(undefined, () => {
+        });
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      workerInstance.terminate();
+      workerInstance.onexit = () => {
+        finish = true;
+      };
+      while (!finish) {
+        await sleep(100);
+      }
+      expect(finish).assertEqual(true);
+    });
   });
 }

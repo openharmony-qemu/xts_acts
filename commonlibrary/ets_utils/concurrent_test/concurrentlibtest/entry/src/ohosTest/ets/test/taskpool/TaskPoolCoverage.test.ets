@@ -55,6 +55,46 @@ function promiseTask(arg: number): Promise<number> {
   });
 }
 
+function nonConcurrentFunc(args: number): number {
+  return args;
+}
+
+@Concurrent
+function concurrentFunc(args: number): number {
+  return args;
+}
+export function sleep(time: number) {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time)
+  })
+}
+@Concurrent
+function send2(arg: number): number {
+  try {
+    let arr = []
+    let arr1 = [1, 2, 3]
+    taskpool.Task.sendData(arr)
+    taskpool.Task.sendData(arr1)
+  } catch (error) {
+  }
+  return arg * 2;
+}
+
+@Concurrent
+function concurrentNoArg(): number {
+  return 42;
+}
+
+@Concurrent
+function concurrentMultiArg(a: number, b: number, c: number): number {
+  return a + b + c;
+}
+
+@Concurrent
+function concurrentNullArg(args: number | null | undefined): number | null | undefined {
+  return args;
+}
+
 export default function taskPoolCoverageTest() {
   describe('TaskPoolCoverageTest', () => {
 
@@ -873,9 +913,101 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
+/**
+     * @tc.name   testExecuteDelayedWithNullDelayTime
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_001
+     * @tc.desc   Test taskpool.executeDelayed with null delayTime parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteDelayedWithNullDelayTime', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let tag = "testExecuteDelayedWithNullDelayTime"
+        console.log(`${tag} test start.`)
+        const task = new taskpool.Task(simpleFunc, 1);
+        try {
+          await taskpool.executeDelayed(null, task);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   testExecuteDelayedWithUndefinedDelayTime
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_002
+     * @tc.desc   Test taskpool.executeDelayed with undefined delayTime parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteDelayedWithUndefinedDelayTime', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let tag = "testExecuteDelayedWithUndefinedDelayTime"
+        console.log(`${tag} test start.`)
+        const task = new taskpool.Task(simpleFunc, 1);
+        try {
+          await taskpool.executeDelayed(undefined, task);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   testExecuteDelayedWithNullTask
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_003
+     * @tc.desc   Test taskpool.executeDelayed with null task parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteDelayedWithNullTask', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let tag = "testExecuteDelayedWithNullTask"
+        console.log(`${tag} test start.`)
+        try {
+          await taskpool.executeDelayed(100, null);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   testExecuteDelayedWithUndefinedTask
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_004
+     * @tc.desc   Test taskpool.executeDelayed with undefined task parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteDelayedWithUndefinedTask', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let tag = "testExecuteDelayedWithUndefinedTask"
+        console.log(`${tag} test start.`)
+        try {
+          await taskpool.executeDelayed(100, undefined);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
+    
+
     /**
      * @tc.name   testExecuteDelayedWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_001
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_007
      * @tc.desc   Test taskpool.executeDelayed with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -920,9 +1052,99 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
+/**
+     * @tc.name   testExecutePeriodicallyWithNullPeriod
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_001
+     * @tc.desc   Test taskpool.executePeriodically with null period parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecutePeriodicallyWithNullPeriod', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      (done: Function) => {
+        let tag = "testExecutePeriodicallyWithNullPeriod"
+        console.log(`${tag} test start.`)
+        const task = new taskpool.Task(simpleFunc, 1);
+        try {
+          taskpool.executePeriodically(null, task);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   testExecutePeriodicallyWithUndefinedPeriod
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_002
+     * @tc.desc   Test taskpool.executePeriodically with undefined period parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecutePeriodicallyWithUndefinedPeriod', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      (done: Function) => {
+        let tag = "testExecutePeriodicallyWithUndefinedPeriod"
+        console.log(`${tag} test start.`)
+        const task = new taskpool.Task(simpleFunc, 1);
+        try {
+          taskpool.executePeriodically(undefined, task);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   testExecutePeriodicallyWithNullTask
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_003
+     * @tc.desc   Test taskpool.executePeriodically with null task parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecutePeriodicallyWithNullTask', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      (done: Function) => {
+        let tag = "testExecutePeriodicallyWithNullTask"
+        console.log(`${tag} test start.`)
+        try {
+          taskpool.executePeriodically(100, null);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   testExecutePeriodicallyWithUndefinedTask
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_004
+     * @tc.desc   Test taskpool.executePeriodically with undefined task parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecutePeriodicallyWithUndefinedTask', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      (done: Function) => {
+        let tag = "testExecutePeriodicallyWithUndefinedTask"
+        console.log(`${tag} test start.`)
+        try {
+          taskpool.executePeriodically(100, undefined);
+          expect().assertFail();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          expect(error.code).assertEqual(401);
+        }
+        done();
+      });
+
     /**
      * @tc.name   testExecutePeriodicallyWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_001
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_005
      * @tc.desc   Test taskpool.executePeriodically with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1371,7 +1593,7 @@ export default function taskPoolCoverageTest() {
       }
     });
 
-    /**
+/**
      * @tc.name   testGetTaskById
      * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_RETURN_001
      * @tc.desc   Test taskpool.getTask by taskId.
@@ -1388,6 +1610,66 @@ export default function taskPoolCoverageTest() {
       if (foundTask !== undefined) {
         expect(foundTask.taskId).assertEqual(taskId);
       }
+      done();
+    });
+
+    /**
+     * @tc.name   testGetTaskWithEmptyName
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_PARAM_001
+     * @tc.desc   Test taskpool.getTask with empty taskName parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetTaskWithEmptyName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      const task = new taskpool.Task("testTask", simpleFunc, 1);
+      const taskId = task.taskId;
+      await taskpool.execute(task);
+      const foundTask = taskpool.getTask(taskId, "");
+      expect(foundTask === undefined).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testGetTaskWithNullName
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_PARAM_002
+     * @tc.desc   Test taskpool.getTask with null taskName parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetTaskWithNullName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let tag = "testGetTaskWithNullName"
+      console.log(`${tag} test start.`)
+      const task = new taskpool.Task("testTask", simpleFunc, 1);
+      const taskId = task.taskId;
+      await taskpool.execute(task);
+      try {
+        taskpool.getTask(taskId, null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${tag} test catch: ${error.code}`)
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testGetTaskWithUndefinedName
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_PARAM_003
+     * @tc.desc   Test taskpool.getTask with undefined taskName parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetTaskWithUndefinedName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let tag = "testGetTaskWithUndefinedName"
+      console.log(`${tag} test start.`)
+      const task = new taskpool.Task("testTask", simpleFunc, 1);
+      const taskId = task.taskId;
+      await taskpool.execute(task);
+      const foundTask = taskpool.getTask(taskId, undefined);
+      expect(foundTask !== undefined).assertTrue();
       done();
     });
 
@@ -1499,7 +1781,7 @@ export default function taskPoolCoverageTest() {
         console.log(`${tag} test start.`);
         const runner = new taskpool.AsyncRunner(1);
         try {
-          runner.execute(undefined);
+          runner.execute(undefined, taskpool.Priority.IDLE);
           expect().assertFail();
         } catch (error) {
           console.log(`${tag} catch error.code: ${error.code}`);
@@ -1548,7 +1830,7 @@ export default function taskPoolCoverageTest() {
         done();
       });
 
-    /**
+/**
      * @tc.name   testAsyncRunnerExecuteWithEmptyName
      * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_RETURN_0101
      * @tc.desc   test AsyncRunner.execute with Promise task (return type not declared)
@@ -1566,5 +1848,479 @@ export default function taskPoolCoverageTest() {
         expect(result).assertEqual(200);
         done()
       });
+
+    /**
+     * @tc.name   testAsyncRunnerExecuteWithMEDIUM
+     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_EXECUTE_PRIORITY_001
+     * @tc.desc   test AsyncRunner.execute with MEDIUM priority
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAsyncRunnerExecuteWithMEDIUM', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const tag = "testAsyncRunnerExecuteWithMEDIUM";
+        console.log(`${tag} test start.`);
+        const runner = new taskpool.AsyncRunner(1);
+        const task = new taskpool.Task(simpleFunc, 5);
+        let result = await runner.execute(task, taskpool.Priority.MEDIUM);
+        expect(result).assertEqual(10);
+        console.log(`${tag} test end.`);
+        done();
+      });
+
+    /**
+     * @tc.name   testAsyncRunnerExecuteWithLOW
+     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_EXECUTE_PRIORITY_002
+     * @tc.desc   test AsyncRunner.execute with LOW priority
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAsyncRunnerExecuteWithLOW', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const tag = "testAsyncRunnerExecuteWithLOW";
+        console.log(`${tag} test start.`);
+        const runner = new taskpool.AsyncRunner(1);
+        const task = new taskpool.Task(simpleFunc, 5);
+        let result = await runner.execute(task, taskpool.Priority.LOW);
+        expect(result).assertEqual(10);
+        console.log(`${tag} test end.`);
+        done();
+      });
+    // ==================== Section 7: Taskpool input param spec coverage ====================
+
+    /**
+     * @tc.name   testTaskConstructorWithEmptyArguments
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0140
+     * @tc.desc   Test Task constructor with empty arguments array.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskConstructorWithEmptyArguments', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let arr: Object[] = []
+        const task = new taskpool.Task(concurrentNoArg, ...arr);
+        task.arguments = [];
+        const result = await taskpool.execute(task);
+        expect(result).assertEqual(42);
+        done();
+      });
+
+    /**
+     * @tc.name   testTaskConstructorWithNonEmptyArguments
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0141
+     * @tc.desc   Test Task constructor with non-empty arguments array.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskConstructorWithNonEmptyArguments', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let arr = [1, 2, 3]
+        const task = new taskpool.Task(concurrentMultiArg, ...arr);
+        const result = await taskpool.execute(task);
+        expect(result).assertEqual(6);
+        done();
+      });
+
+    /**
+     * @tc.name   testTaskSendDataWithEmptyAndNonEmptyArguments
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0143
+     * @tc.desc   Test Task.sendData with empty and non-empty arguments via @Concurrent function.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let task = new taskpool.Task(send2, 2);
+      let result: number[][] = []
+      task.onReceiveData((res: number[]) => {
+        result.push(res)
+      })
+      await taskpool.execute(task);
+      while (result.length < 1) {
+        await sleep(100)
+      }
+
+      expect(result[0]).assertDeepEquals([]);
+      expect(result[1]).assertDeepEquals([1, 2, 3]);
+    });
+
+    /**
+     * @tc.name   testTaskAddDependencyWithEmptyAndNonEmptyArguments
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0144
+     * @tc.desc   Test Task.addDependency and removeDependency with empty and non-empty arguments.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskAddDependencyWithEmptyAndNonEmptyArguments', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const task1 = new taskpool.Task(concurrentNoArg);
+        const task2 = new taskpool.Task(concurrentNoArg);
+        let tasks = []
+        try {
+          task1.addDependency(...tasks);
+        } catch (e) {
+          expect(e.code).assertEqual(401);
+        }
+        let tasks1 = [task2]
+        task1.addDependency(...tasks1);
+        await taskpool.execute(task2);
+        const result = await taskpool.execute(task1);
+        expect(result).assertEqual(42);
+        try {
+          let tasks = []
+          task1.removeDependency(...tasks);
+        } catch (e) {
+        }
+        try {
+          let tasks = [task2]
+          task1.removeDependency(...tasks);
+        } catch (e) {
+        }
+        done();
+      });
+    /**
+     * @tc.name   testTaskRemoveDependencyWithEmptyAndNonEmptyArguments
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1144
+     * @tc.desc   Test Task.addDependency and removeDependency with empty and non-empty arguments.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskRemoveDependencyWithEmptyAndNonEmptyArguments', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const task1 = new taskpool.Task(concurrentNoArg);
+        const task2 = new taskpool.Task(concurrentNoArg);
+        let tasks = []
+        try {
+          task1.removeDependency(...tasks);
+        } catch (e) {
+          expect(e.code).assertEqual(401);
+        }
+        let tasks1 = [task2]
+        task1.addDependency(...tasks1);
+        task1.removeDependency(...tasks1);
+        await taskpool.execute(task2);
+        const result = await taskpool.execute(task1);
+        expect(result).assertEqual(42);
+        done();
+      });
+
+    /**
+     * @tc.name   testTaskGroupAddTaskWithEmptyArguments2
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0145
+     * @tc.desc   Test TaskGroup.addTask with empty arguments and execute with empty arguments.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskGroupAddTaskWithEmptyArguments2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let args = [1, 2, 3];
+        const group = new taskpool.TaskGroup();
+        group.addTask(concurrentMultiArg, ...args);
+        const results = await taskpool.execute(group);
+        expect(results.length).assertEqual(1);
+        const task2 = new taskpool.Task(concurrentNoArg);
+        const result2 = await taskpool.execute(task2);
+        expect(result2).assertEqual(42);
+        done();
+      });
+
+    /**
+     * @tc.name   testExecutePeriodicallyWithNullUndefinedAndOutOfRangePriority
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0146
+     * @tc.desc   Test executePeriodically with null, undefined, and out-of-range priority.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecutePeriodicallyWithNullUndefinedAndOutOfRangePriority',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: Function) => {
+        const task = new taskpool.Task(concurrentNoArg);
+        try {
+          taskpool.executePeriodically(100, task, null);
+          try {
+            taskpool.cancel(task);
+          } catch (e) {
+          }
+        } catch (e) {
+          expect(e.code).assertEqual(401);
+        }
+        try {
+          taskpool.executePeriodically(100, task, undefined);
+          try {
+            taskpool.cancel(task);
+          } catch (e) {
+          }
+        } catch (e) {
+        }
+        try {
+          taskpool.executePeriodically(100, task, 99 as taskpool.Priority);
+          try {
+            taskpool.cancel(task);
+          } catch (e) {
+          }
+        } catch (e) {
+          expect(e.code).assertEqual(401);
+        }
+        done();
+      });
+    // ==================== Section 3: Taskpool 10200014 (function not marked as concurrent) ====================
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement018
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0118
+     * @tc.desc   Task constructor(func, args) throws 10200014 when func is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let task = new taskpool.Task(fun, 100);
+          taskpool.execute(task)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement019
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0119
+     * @tc.desc   Task constructor(name, func, args) throws 10200014 when func is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let task = new taskpool.Task('testTask', fun, 100);
+          taskpool.execute(task)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement020
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0120
+     * @tc.desc   GenericsTask constructor(func, args) throws 10200014 when func is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let task = new taskpool.GenericsTask<[number], number>(fun, 1);
+          taskpool.execute(task)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement021
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0121
+     * @tc.desc   GenericsTask constructor(name, func, args) throws 10200014 when func is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let task = new taskpool.GenericsTask<[number], number>('testGenericTask', func1, 1);
+          taskpool.execute(task)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement022
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0122
+     * @tc.desc   taskpool.execute(func, args) throws 10200014 when func is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          taskpool.execute(fun, 100)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement023
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0123
+     * @tc.desc   taskpool.execute<A,R>(func, args) throws 10200014 when func is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          taskpool.execute<[number], number>(fun, 100)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement032
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0132
+     * @tc.desc   taskpool.execute(task: Task, priority?) throws 10200014 when task.function is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let task = new taskpool.Task('testTask', fun, 100);
+          taskpool.execute(task, taskpool.Priority.HIGH)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement033
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0133
+     * @tc.desc   taskpool.execute<A,R>(task: GenericsTask, priority?) throws 10200014 when task.function is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let task = new taskpool.GenericsTask<[number], number>(fun, 1);
+          taskpool.execute<[number], number>(task, taskpool.Priority.HIGH)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement034
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0134
+     * @tc.desc   taskpool.execute(task: Task, configs: Configs) throws 10200014 when task.function is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let task = new taskpool.Task(fun, 100);
+          taskpool.execute(task, { priority: taskpool.Priority.HIGH, timeout: 1000 })
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+
+    /**
+     * @tc.name   concurrencyCoveredSupplement035
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0135
+     * @tc.desc   taskpool.execute<A,R>(task: GenericsTask, configs: Configs) throws 10200014 when task.function is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let task = new taskpool.GenericsTask<[number], number>(fun, 1);
+          taskpool.execute<[number], number>(task, { priority: taskpool.Priority.HIGH, timeout: 1000 })
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
+    /**
+     * @tc.name   concurrencyCoveredSupplement0352
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0235
+     * @tc.desc   taskpool.execute<A,R>(task: GenericsTask, configs: Configs) throws 10200014 when task.function is not @Concurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('concurrencyCoveredSupplement0352', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let func = nonConcurrentFunc;
+        let execute = (func1: (v: number) => number) => {
+          let fun = func1
+          let group = new taskpool.TaskGroup();
+          group.addTask(fun,1)
+          taskpool.execute(group)
+        }
+        execute(func)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200014);
+      }
+    });
   });
 }
