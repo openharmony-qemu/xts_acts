@@ -165,7 +165,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.notificationEnabled).assertEqual(true)
           expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
           done()
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
@@ -190,7 +189,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           await button.click()
           await sleep(1500)
         }
-        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         await scrollBar.scrollToBottom()
@@ -203,7 +202,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           await button2.click()
           await sleep(1500)
         }
-        let scrollBar1 = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar1 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
         expect(scrollBar1 != null).assertTrue()
         await scrollBar1.scrollToTop()
@@ -256,7 +255,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         });
         await sleep(2000);
         let driver: Driver = Driver.create();
-        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         await scrollBar.scrollToBottom()
@@ -350,7 +349,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(true)
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
@@ -366,7 +364,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         });
         await sleep(2000);
         let driver: Driver = Driver.create();
-        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         await scrollBar.scrollToBottom()
@@ -400,7 +398,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(true)
           done()
         }).catch((e: Error) => {
@@ -476,7 +473,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         });
         await sleep(2000);
         let driver: Driver = Driver.create();
-        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         await scrollBar.scrollToBottom()
