@@ -30,9 +30,9 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { BaseClass, CountClass, Event, SharedJob, sleep } from '../utils/Model';
 
-export let concurrentNum: number = 1
+export let concurrentNum = 1
 
-export let currentWorker: EAWorker | undefined = EAWorker.current()
+export let currentWorker = EAWorker.current()
 
 export default function CombLockTest(): void {
   describe('CombLockTest', (): void => {
