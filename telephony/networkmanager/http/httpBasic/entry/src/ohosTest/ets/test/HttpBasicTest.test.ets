@@ -98,7 +98,7 @@ export default function HttpBasicTest() {
           ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
           console.info(`${caseName} get data is: ` + JSON.stringify(data));
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("Content-Type") != -1);
+            ExpectTrue(data.result.toString().search("content-type") != -1);
             ExpectTrue(data.result.toString().search("application/json") != -1);
           }
           done();
@@ -226,6 +226,7 @@ export default function HttpBasicTest() {
       try {
         let http = netHttp.createHttp();
         http.request(URL_ENCODE, {
+          method: netHttp.RequestMethod.POST,
           extraData: {
             "name1": "mine1",
             "name2": "mine2",
