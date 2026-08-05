@@ -26,7 +26,7 @@ namespace ArkUICapiTest {
 
 ArkUI_NativeNodeAPI_1* RequirementPanGestureTest::nodeAPI = nullptr;
 
-static void SetSwipeEnabled(ArkUI_NativeNodeAPI_1 *nodeApi, ArkUI_NodeHandle swiper, bool enabled) 
+static void SetSwipeEnabled(ArkUI_NativeNodeAPI_1 *nodeApi, ArkUI_NodeHandle swiper, bool enabled)
 {
     ArkUI_NumberValue value[] = {{.i32 = enabled ? 0 : 1}};
     ArkUI_AttributeItem item = {.value = value, .size = 1};
