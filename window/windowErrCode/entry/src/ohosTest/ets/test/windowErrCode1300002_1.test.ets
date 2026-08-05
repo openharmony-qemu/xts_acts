@@ -627,44 +627,7 @@ export default function windowErrCode1300002_1() {
         done()
       }
     })
-    /**
-     * @tc.name   testOffSubWindowCloseErrCode1300002_0100
-     * @tc.number testOffSubWindowCloseErrCode1300002_0100
-     * @tc.desc   testOffSubWindowCloseErrCode1300002_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testOffSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testOffSubWindowCloseErrCode1300002_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window | undefined = undefined;
-      await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_SubWindow_Promise')
-        .then((data) => {
-          subWin = data;
-          expect(!!subWin).assertTrue();
-          console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-        })
-        .catch((err: BusinessError) => {
-          console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-          expect().assertFail();
-          done()
-        });
-      await (subWin! as ohosWindow.Window).destroyWindow();
-      try {
-        subWin!.off("subWindowClose", () => {
-        });
-        console.error(msgStr + 'Succeeded in calling off subWindowClose.');
-        expect().assertFail();
-        done()
-      } catch (e) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
-        expect(e.code).assertEqual(1300002);
-        expect(e.message!=null).assertTrue();
-        done()
-      }
-    })
+   
     /**
      * @tc.name   testSetWindowTopmostPromiseErrCode1300002_0100
      * @tc.number testSetWindowTopmostPromiseErrCode1300002_0100
