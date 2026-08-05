@@ -16,7 +16,7 @@
 import cameraObj from 'libentry.so';
 import deviceInfo from '@ohos.deviceInfo';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { GlobalThis } from './Constants';
+import { GlobalThis, Parameter_Setting } from './Constants';
 import fs from '@ohos.file.fs';
 import featureAbility from '@ohos.ability.featureAbility'
 import media from '@ohos.multimedia.media';
@@ -164,7 +164,7 @@ async function createOutput() {
   }
   console.info(TAG + 'Exit createVideoOutput');
 
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex, Parameter_Setting.ALL_PARAMETER_OK)) {
     console.info(TAG + "createPreviewOutput FAILED");
     expect().assertFail();
   }

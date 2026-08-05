@@ -423,7 +423,7 @@ public:
     Camera_ErrorCode SessionIsMacroSupported(int useCaseCode);
     Camera_ErrorCode SessionEnableMacro(int useCaseCode, bool enable);
     Camera_ErrorCode WhiteBalanceTest(void);
-    Camera_ErrorCode CreatePreviewOutputByIndex(int index);
+    Camera_ErrorCode CreatePreviewOutputByIndex(int index, int useCaseCode);
     Camera_ErrorCode CreateVideoOutputByIndex(char* videoId, int index);
     Camera_ErrorCode MacroStatusChangeTest(void);
     Camera_ErrorCode IsoInfoChangeTest(void);
@@ -488,10 +488,15 @@ public:
     bool WaitForExposureFinish();
     // colorTint
     Camera_ErrorCode GetColorTintRange();
+    Camera_ErrorCode GetColorTintRangeWithParamNull(int useCaseCode);
     Camera_ErrorCode SetColorTint(int useCaseCode);
     Camera_ErrorCode GetColorTint(int useCaseCode);
     int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
+	
+    // log view assist
+    bool IsLogViewAssistSupported(int useCaseCode);
+    Camera_ErrorCode SetLogViewAssist(int useCaseCode, bool enable);
 
     Camera_ErrorCode CreatePhotoCaptureSettingExt(int useCaseCode);
     Camera_ErrorCode DestroyPhotoCaptureSettingExt(int useCaseCode);

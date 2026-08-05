@@ -3816,8 +3816,13 @@ Camera_ErrorCode NDKCamera::WhiteBalanceTest(void)
     return ret_;
 }
 
-Camera_ErrorCode NDKCamera::CreatePreviewOutputByIndex(int index)
+Camera_ErrorCode NDKCamera::CreatePreviewOutputByIndex(int index, int useCaseCode)
 {
+    if (useCaseCode == PARAMETER3_ERROR) {
+        char* nullPreviewSurfaceId = "";
+        ret_ = OH_CameraManager_CreatePreviewOutput(cameraManager_, profile_, nullPreviewSurfaceId, &previewOutput_);
+        return ret_;
+    }
     profile_ = cameraOutputCapability_->previewProfiles[index];
     if (profile_ == nullptr) {
         LOG("ndkXTS Get previewProfiles failed.");
@@ -4545,6 +4550,28 @@ Camera_ErrorCode NDKCamera::GetColorTintRange()
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::GetColorTintRangeWithParamNull(int32_t useCaseCode)
+{
+    LOG("GetColorTintRange useCaseCode: %{public}d", useCaseCode);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, &g_minTint, &g_maxTint);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTintRange(nullptr, &g_minTint, &g_maxTint);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, nullptr, &g_maxTint);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, &g_minTint, nullptr);
+    }
+    
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetColorTintRange failed. %{public}d", ret_);
+    } else {
+        LOG("OH_CaptureSession_GetColorTintRange success. %{public}d", ret_);
+    }
+    return ret_;
+}
+
+
 Camera_ErrorCode NDKCamera::SetColorTint(int useCaseCode)
 {
     uint32_t colorTint;
@@ -4582,6 +4609,10 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
             LOG("set: %d, get: %d", colorTint, g_currentTint);
             ret_ = static_cast<Camera_ErrorCode>(-1);
         };
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTint(nullptr, &g_currentTint);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetColorTint(captureSession_, nullptr);
     }
 
     if (ret_ != CAMERA_OK) {
@@ -4640,6 +4671,36 @@ Camera_ErrorCode NDKCamera::DeleteZoomPointInfo(int useCaseCode)
     }
     return ret_;
 }
+
+bool NDKCamera::IsLogViewAssistSupported(int useCaseCode)
+{
+    LOG("IsLogViewAssistSupported useCaseCode: %d", useCaseCode);
+    bool isLogViewAssistSupported;
+    if (useCaseCode == PARAMETER_OK) {
+        isLogViewAssistSupported = OH_PreviewOutput_IsLogViewAssistSupported(previewOutput_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        isLogViewAssistSupported = OH_PreviewOutput_IsLogViewAssistSupported(nullptr);
+    }
+
+    LOG("OH_PreviewOutput_IsLogViewAssistSupported ret: %d", isLogViewAssistSupported);
+    return isLogViewAssistSupported;
+}
+
+Camera_ErrorCode NDKCamera::SetLogViewAssist(int useCaseCode, bool isEnable)
+{
+    LOG("SetLogViewAssist useCaseCode: %d", useCaseCode);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PreviewOutput_SetLogViewAssistEnable(previewOutput_, isEnable);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PreviewOutput_SetLogViewAssistEnable(nullptr, isEnable);
+    }
+
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PreviewOutput_SetLogViewAssistEnable failed.");
+    }
+    return ret_;
+}
+
 
 Camera_ErrorCode NDKCamera::CreatePhotoCaptureSettingExt(int useCaseCode)
 {

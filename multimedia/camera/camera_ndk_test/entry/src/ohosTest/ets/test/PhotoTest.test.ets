@@ -505,7 +505,7 @@ function createPreviewOutput() {
       break;
     }
   }
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex, Parameter_Setting.ALL_PARAMETER_OK)) {
     console.info(TAG + "createPreviewOutput FAILED");
     expect().assertFail();
   }
@@ -526,7 +526,7 @@ function createHeifPreviewOutput() {
       break;
     }
   }
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex, Parameter_Setting.ALL_PARAMETER_OK)) {
     console.info(TAG + "createPreviewOutput FAILED");
     expect().assertFail();
   }
@@ -3450,6 +3450,171 @@ export default function PhotoTest() {
         expect().assertFail()
       } finally {
         //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200
+     * @tc.desc      test OH_CaptureSession_GetColorTintRange api when first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1200"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTintRangeWithParamNull(Parameter_Setting.FIRST_PARAMETER_ERROR);
+        console.info(`getColorTintRange, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300
+     * @tc.desc      test OH_CaptureSession_GetColorTintRange api when seconde param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1300"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTintRangeWithParamNull(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(`getColorTintRange, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400
+     * @tc.desc      test OH_CaptureSession_GetColorTintRange api when third param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1400"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTintRangeWithParamNull(Parameter_Setting.THIRD_PARAMETER_ERROR);
+        console.info(`getColorTintRange, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500
+     * @tc.desc      test OH_CaptureSession_GetColorTint api when first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1500"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTint(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(`getColorTint, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600
+     * @tc.desc      test OH_CaptureSession_GetColorTint api when second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1600"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+
+        //--------------------------------------------process------------------------------------------------------
+        let ret = cameraObj.getColorTint(Parameter_Setting.THIRD_PARAMETER_ERROR);
+        console.info(`getColorTint, ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
       }

@@ -602,7 +602,7 @@ export const getVideoProfiles: () => Array<videoProfile>;
 
 export const createVideoOutputByIndex: (surfaceId: string, index: number) => number;
 
-export const createPreviewOutputByIndex: (index: number) => number;
+export const createPreviewOutputByIndex: (index: number, enable: number) => number;
 
 export const oHTestRegisterFlashStateChangeCallback: (index:number) => number;
 
@@ -681,6 +681,8 @@ export const waitForExposureFinish: () => boolean;
 
 export const getColorTintRange: () => number;
 
+export const getColorTintRangeWithParamNull: (index: number) => number;
+
 export const setColorTint: (index: number) => number;
 
 export const getColorTint: (index: number) => number;
@@ -688,6 +690,12 @@ export const getColorTint: (index: number) => number;
 export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
+
+export const getEnumColorSpaceName: (index: number) => number;
+
+export const isLogViewAssistSupported: (index: number) => boolean;
+
+export const setLogViewAssistEnable: (index: number, enable: boolean) => number;
 
 export const createPhotoCaptureSettingExt: (index: number) => number;
 
