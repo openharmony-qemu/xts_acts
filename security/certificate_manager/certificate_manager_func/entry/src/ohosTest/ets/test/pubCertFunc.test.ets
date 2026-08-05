@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import * as commonParameter from './utils/common/common_parameter';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import { openCertificateManagerDialogTest } from './utils/common/common_function';
 
 function createUnit8Array(len: number){
@@ -105,7 +106,16 @@ let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa
 
 export default function certManagerPubCertJsAPIFunctionTestUnit() {
   describe('certManagerPubCertJsAPIFunctionTestUnit', () => {
-    beforeAll(() => {
+    beforeAll( async() => {
+	  let dirver = Driver.create();
+      let button1 = dirver.findComponent(ON.text("确定")) ?? undefined;
+      if (button1 !== undefined) {
+        await button1.click();
+      }
+      let button2 = dirver.findComponent(ON.text("不添加")) ?? undefined;
+      if (button2 !== undefined) {
+        await button2.click();
+      }
     });
     beforeEach(async () => {
     });
