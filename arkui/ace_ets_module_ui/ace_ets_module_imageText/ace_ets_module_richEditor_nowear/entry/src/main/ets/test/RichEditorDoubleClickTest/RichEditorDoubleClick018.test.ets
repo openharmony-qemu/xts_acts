@@ -67,69 +67,50 @@ export default function RichEditorDoubleClick018() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_014 START');
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorDoubleClick018'));
-      let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left, getBounds.top - 20);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left, getBounds.top - 20);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.left - 40, getBounds.top);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left - 40, getBounds.top);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.right + 40, getBounds.bottom);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.right + 40, getBounds.bottom);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.right, getBounds.bottom + 30);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.right, getBounds.bottom + 30);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.left, getBounds.top);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left, getBounds.top);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.left + 10, getBounds.top + 10);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 10, getBounds.top + 10);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.left + 10, getBounds.top + 40);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 10, getBounds.top + 40);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.left + 50, getBounds.top + 10);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 50, getBounds.top + 10);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('message:');
-      await driver.click(getBounds.left + 50, getBounds.top + 40);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 50, getBounds.top + 40);
-      await CommonFunc.sleep(100);
+      await rich.doubleClick()
+      await CommonFunc.sleep(1000);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');

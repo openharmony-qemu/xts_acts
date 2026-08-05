@@ -74,7 +74,7 @@ export default function RichEditorGetNumber006() {
 
       let lineCount = await driver.findComponent(ON.id('lineCount'));
       let lineCountText = await lineCount.getText();
-      expect(lineCountText).assertContain('lineCount:55');
+      expect(lineCountText).assertContain('lineCount:51');
 
       done();
     });

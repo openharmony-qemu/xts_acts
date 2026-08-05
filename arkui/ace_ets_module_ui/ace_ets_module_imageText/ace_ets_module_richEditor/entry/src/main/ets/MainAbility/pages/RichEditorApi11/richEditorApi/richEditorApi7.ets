@@ -24,6 +24,7 @@ struct richEditorApi7 {
   build() {
     Scroll() {
       Column() {
+        Text('' + this.text1).key('richEditorApi7_text1')
         RichEditor(this.options)
           .onReady(() => {
             this.controller.addTextSpan('Area1\n', {
@@ -39,7 +40,7 @@ struct richEditorApi7 {
                 }
               },
               paragraphStyle: {
-                textAlign: TextAlign.Start,
+                textAlign: TextAlign.Center,
                 leadingMargin: 18
               }
             })
@@ -47,9 +48,9 @@ struct richEditorApi7 {
           .borderWidth(1)
           .borderColor(Color.Green)
           .width("100%")
-          .height(400)
+          .maxLines(1)
           .key('RichEditor7')
-        Text('' + this.text1).key('richEditorApi7_text1')
+
 
       }.borderWidth(1).borderColor(Color.Red)
     }
