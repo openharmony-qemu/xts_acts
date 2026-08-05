@@ -16,6 +16,14 @@
 import netHttp from '@ohos.net.http';
 import { describe, expect, it, TestType, Size, Level  } from '@ohos/hypium';
 import {BusinessError} from '@ohos.base';
+import {
+  URL_USER_AGENT,
+  URL_GET,
+  URL_POST,
+  URL_PUT,
+  URL_COOKIES,
+  URL_ENCODE
+} from './Config.test';
 
 const ExpectFail = () => {
   try {
@@ -49,7 +57,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request("https://httpbin.org/user-agent").then((data) =>{
+        http.request(URL_USER_AGENT).then((data) =>{
           console.info(`${caseName} get data.responseCode is: `+ JSON.stringify(data.responseCode));
           console.info(`${caseName} get data.result is: `+ JSON.stringify(data));
           http.destroy();
@@ -81,7 +89,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request("https://httpbin.org/get" ,{
+        http.request(URL_GET ,{
           method: netHttp.RequestMethod.GET,
           extraData: "MineMine",
           header: { 'Content-Type': 'application/json' }
@@ -121,7 +129,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request("https://httpbin.org/post", {
+        http.request(URL_POST, {
           method: netHttp.RequestMethod.POST,
           extraData: "MineMine"
         }).then((data) =>{
@@ -154,7 +162,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request("https://httpbin.org/put", {
+        http.request(URL_PUT, {
           method: netHttp.RequestMethod.PUT,
           extraData: "MineMine"
         }).then((data) => {
@@ -186,7 +194,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request("https://httpbin.org/cookies/set/name/value").then( (data) =>{
+        http.request(URL_COOKIES).then( (data) =>{
           console.info(`${caseName} request get data is: `+ JSON.stringify(data));
           http.destroy();
           ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
@@ -217,7 +225,7 @@ export default function HttpBasicTest() {
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
-        http.request("https://httpbin.org/response-headers?key1=val1&key2=val2", {
+        http.request(URL_ENCODE, {
           extraData: {
             "name1": "mine1",
             "name2": "mine2",

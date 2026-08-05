@@ -14,4 +14,7 @@
 */
 
 export let EXAMPLE_HTTPS: string = "https://www.example.com"
-export let DOWNLOAD_URL: string = "https://httpbin.org/bytes/1024"
+export let DOWNLOAD_URL_HTTPBIN: string = "https://httpbin.org/bytes/1024"
+export let DOWNLOAD_URL_BACKUP_EVILTESTER: string = "https://testpages.eviltester.com/favicons/favicon-32x32.png"
+export let DOWNLOAD_URL_BACKUP_POSTMAN: string = "https://postman-echo.com/bytes/1024"
+export let DOWNLOAD_URL: string = DOWNLOAD_URL_BACKUP_POSTMAN

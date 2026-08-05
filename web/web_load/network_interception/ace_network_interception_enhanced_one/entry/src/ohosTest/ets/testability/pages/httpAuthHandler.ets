@@ -17,7 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
-import { URL4 } from '../../test/Config.test'
+import { URL4, URL, HTTP_AUTH_USER, HTTP_AUTH_PASSWORD } from '../../test/Config.test'
 import image from '@ohos.multimedia.image';
 const EVENT_ID_SET_EIMIT_KEY = 142015;
 
@@ -93,7 +93,7 @@ struct httpAuthHandler {
               try {
                 this.HttpAuthHandlerCallBack = 'confirm'
                 this.HttpAuthHandlerConfirmCallBack = false
-                this.controller.loadUrl("http://httpbin.org/basic-auth/2222/3333")
+                this.controller.loadUrl(URL)
                 await Utils.waitForExist(()=>this.isConfirm, this.str, 1);
                 this.isConfirm = -1;
                 Utils.emitEvent(this.HttpAuthHandlerConfirmCallBack, 142035)
@@ -109,7 +109,7 @@ struct httpAuthHandler {
                 this.Http_Error_Code = 0
                 this.HttpAuthHandlerCallBack = 'cancel'
                 this.HttpAuthHandlerCancelCallBack = false
-                this.controller.loadUrl("http://httpbin.org/basic-auth/2222/3333")
+                this.controller.loadUrl(URL)
                 await Utils.waitForExist(()=>this.isCancel, this.str, 1);
                 await Utils.waitForExist(()=>this.isCode, this.str, 1);
                 this.isCancel = -1;
@@ -127,7 +127,7 @@ struct httpAuthHandler {
                 console.info("key==>testHttpAuthHandlerIsHttpAuthInfoSaved001")
                 this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSaved'
                 this.HttpAuthHandlerCancelCallBack = false
-                this.controller.loadUrl("http://httpbin.org/basic-auth/2222/3333")
+                this.controller.loadUrl(URL)
                 console.info("key==>loadUrltestHttpAuthHandlerIsHttpAuthInfoSaved001")
                 await Utils.waitForExist(()=>this.isSave, this.str, 1);
                 this.isSave = -1;
@@ -178,7 +178,7 @@ struct httpAuthHandler {
         .onHttpAuthRequest((event) => {
           if (event) {
             if (this.HttpAuthHandlerCallBack == 'confirm') {
-              this.HttpAuthHandlerConfirmCallBack = event.handler.confirm('2222', '3333')
+              this.HttpAuthHandlerConfirmCallBack = event.handler.confirm(HTTP_AUTH_USER, HTTP_AUTH_PASSWORD)
               this.HttpAuthHandlerCallBack = ''
               this.isConfirm = 1;
             }
