@@ -15,12 +15,18 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
+import { ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
 class InventoryCounter {
   public stock_: number = 0
   public sold_: number = 0
+  public lock_: ArkTSUtils.locks.AsyncLock
+
+  constructor(lock: ArkTSUtils.locks.AsyncLock) {
+    this.lock_ = lock
+  }
 
   setStock(total: number): void {
     this.stock_ = total
@@ -44,6 +50,15 @@ class InventoryCounter {
     return false
   }
 
+  purchaseOneAtomic(): boolean {
+    if (this.stock_ > 0) {
+      this.stock_--
+      this.sold_++
+      return true
+    }
+    return false
+  }
+
   refund(quantity: number): void {
     this.stock_ += quantity
     this.sold_ -= quantity
@@ -60,23 +75,17 @@ class InventoryCounter {
 }
 
 @Concurrent
-function purchaseOne(inventory: InventoryCounter): boolean {
-  if (inventory.stock_ > 0) {
-    inventory.stock_--
-    inventory.sold_++
-    return true
-  }
-  return false
+async function purchaseOne(inventory: InventoryCounter): Promise<boolean> {
+  return await inventory.lock_.lockAsync((): boolean => {
+    return inventory.purchaseOneAtomic()
+  })
 }
 
 @Concurrent
-function purchaseQuantity(inventory: InventoryCounter, quantity: number): boolean {
-  if (inventory.stock_ >= quantity) {
-    inventory.stock_ -= quantity
-    inventory.sold_ += quantity
-    return true
-  }
-  return false
+async function purchaseQuantity(inventory: InventoryCounter, quantity: number): Promise<boolean> {
+  return await inventory.lock_.lockAsync((): boolean => {
+    return inventory.purchase(quantity)
+  })
 }
 
 export default function BuiltinsSharedCounterInventoryTest(): void {
@@ -84,7 +93,7 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
     let inventory: InventoryCounter
 
     beforeEach((): void => {
-      inventory = new InventoryCounter()
+      inventory = new InventoryCounter(new ArkTSUtils.locks.AsyncLock())
     })
     /**
      * @tc.name   testSharedCounterInventory0100
