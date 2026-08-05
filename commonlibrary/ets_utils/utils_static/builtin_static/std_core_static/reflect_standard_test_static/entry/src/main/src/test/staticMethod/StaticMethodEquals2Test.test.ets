@@ -1887,3 +1887,657 @@ export default function StaticMethodEquals2Test(): void {
       expect(m2 !== undefined).assertTrue();
       expect(m1!.equals(m2!)).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0760
+     * @tc.name testStaticMethodEquals2_076
+     * @tc.desc Verify equals() for MultiResizableEqClass.mergeArrays: multi-resizable method equals(self) true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<MultiResizableEqClass>();
+      let cls2 = Class.from<MultiResizableEqClass>();
+      let m1 = cls1.getStaticMethod('mergeArrays');
+      let m2 = cls2.getStaticMethod('mergeArrays');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0770
+     * @tc.name testStaticMethodEquals2_077
+     * @tc.desc Verify equals() for MixedArrayEqClass.complexProcess: mixed array method equals(self) true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<MixedArrayEqClass>();
+      let cls2 = Class.from<MixedArrayEqClass>();
+      let m1 = cls1.getStaticMethod('complexProcess');
+      let m2 = cls2.getStaticMethod('complexProcess');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0780
+     * @tc.name testStaticMethodEquals2_078
+     * @tc.desc Verify equals() for MixedMethodTypesEqClass: methods with different return types are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixedMethodTypesEqClass>();
+      let m1 = cls.getStaticMethod('alpha');
+      let m2 = cls.getStaticMethod('beta');
+      let m3 = cls.getStaticMethod('gamma');
+      let m4 = cls.getStaticMethod('delta');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
+      expect(m4 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+      expect(m1!.equals(m3!)).assertFalse();
+      expect(m1!.equals(m4!)).assertFalse();
+      expect(m2!.equals(m3!)).assertFalse();
+      expect(m2!.equals(m4!)).assertFalse();
+      expect(m3!.equals(m4!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0790
+     * @tc.name testStaticMethodEquals2_079
+     * @tc.desc Verify equals() for sibling classes SiblingAEq/SiblingBEq.shared: methods from different classes are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<SiblingAEq>();
+      let cls2 = Class.from<SiblingBEq>();
+      let m1 = cls1.getStaticMethod('shared');
+      let m2 = cls2.getStaticMethod('shared');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0800
+     * @tc.name testStaticMethodEquals2_080
+     * @tc.desc Verify equals() for OverloadReturnEqClass overloads: methods with different params are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<OverloadReturnEqClass>();
+      let m1 = cls1.getStaticMethod('computeNoArg');
+      let m2 = cls1.getStaticMethod('computeOneArg');
+      let m3 = cls1.getStaticMethod('computeTwoArgs');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+      expect(m1!.equals(m3!)).assertFalse();
+      expect(m2!.equals(m3!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0810
+     * @tc.name testStaticMethodEquals2_081
+     * @tc.desc Verify equals() for MixedOverloadEqClass: overloads with different param types are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixedOverloadEqClass>();
+      let m1 = cls.getStaticMethod('processInt');
+      let m2 = cls.getStaticMethod('processString');
+      let m3 = cls.getStaticMethod('processBool');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+      expect(m1!.equals(m3!)).assertFalse();
+      expect(m2!.equals(m3!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0820
+     * @tc.name testStaticMethodEquals2_082
+     * @tc.desc Verify equals() for ResizableArrayEqClass: getStaticMethods pairwise returns false for distinct methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ResizableArrayEqClass>();
+      let methods = cls.getStaticMethods();
+      for (let i: int = 0; i < methods.length; i++) {
+        for (let j: int = i + 1; j < methods.length; j++) {
+          expect(methods[i].equals(methods[j])).assertFalse();
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0830
+     * @tc.name testStaticMethodEquals2_083
+     * @tc.desc Verify equals() for FinalMethodEqClass: different methods in same class are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<FinalMethodEqClass>();
+      let m1 = cls.getStaticMethod('methodA');
+      let m2 = cls.getStaticMethod('methodB');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0840
+     * @tc.name testStaticMethodEquals2_084
+     * @tc.desc Verify equals() for NamedMethodEqClass: special-named methods (get/set/invoke) are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<NamedMethodEqClass>();
+      let m1 = cls.getStaticMethod('specialGet');
+      let m2 = cls.getStaticMethod('specialSet');
+      let m3 = cls.getStaticMethod('specialInvoke');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+      expect(m1!.equals(m3!)).assertFalse();
+      expect(m2!.equals(m3!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0850
+     * @tc.name testStaticMethodEquals2_085
+     * @tc.desc Verify equals() for GenericClassEqClass<string>: methods with generic class owner are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<GenericClassEqClass<string>>();
+      let m1 = cls.getStaticMethod('methodString');
+      let m2 = cls.getStaticMethod('methodIntBool');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0860
+     * @tc.name testStaticMethodEquals2_086
+     * @tc.desc Verify equals() for InterfaceImplEqClass: interface method vs class-only method are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<InterfaceImplEqClass>();
+      let m1 = cls.getStaticMethod('interfaceMethod');
+      let m2 = cls.getStaticMethod('classOnlyMethod');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0870
+     * @tc.name testStaticMethodEquals2_087
+     * @tc.desc Verify equals() for EmptyBodyEqClass: getStaticMethods returns 1 method, self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EmptyBodyEqClass>();
+      let methods = cls.getStaticMethods();
+      let method = cls.getStaticMethod('emptyMethod');
+      expect(methods.length).assertEqual(1);
+      expect(method !== undefined).assertTrue();
+      expect(methods[0].equals(method!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0880
+     * @tc.name testStaticMethodEquals2_088
+     * @tc.desc Verify equals() for NestedFixedArrayEqClass.processMatrix: nested fixed array method equals(self) true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<NestedFixedArrayEqClass>();
+      let cls2 = Class.from<NestedFixedArrayEqClass>();
+      let method1 = cls1.getStaticMethod('processMatrix');
+      let method2 = cls2.getStaticMethod('processMatrix');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
+      expect(method1!.equals(method2!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0890
+     * @tc.name testStaticMethodEquals2_089
+     * @tc.desc Verify equals() for TripleNestedEqClass.process3D: triple nested array method equals(self) true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<TripleNestedEqClass>();
+      let cls2 = Class.from<TripleNestedEqClass>();
+      let method1 = cls1.getStaticMethod('process3D');
+      let method2 = cls2.getStaticMethod('process3D');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
+      expect(method1!.equals(method2!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0900
+     * @tc.name testStaticMethodEquals2_090
+     * @tc.desc Verify equals() for MixedNestedEqClass.complexMethod: mixed nested array method equals(self) true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<MixedNestedEqClass>();
+      let cls2 = Class.from<MixedNestedEqClass>();
+      let method1 = cls1.getStaticMethod('complexMethod');
+      let method2 = cls2.getStaticMethod('complexMethod');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
+      expect(method1!.equals(method2!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0910
+     * @tc.name testStaticMethodEquals2_091
+     * @tc.desc Verify equals() for ConflictChildEqClass.run: conflict child method equals(self) true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<ConflictChildEqClass>();
+      let cls2 = Class.from<ConflictChildEqClass>();
+      let m1 = cls1.getStaticMethod('run');
+      let m2 = cls2.getStaticMethod('run');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0920
+     * @tc.name testStaticMethodEquals2_092
+     * @tc.desc Verify equals() for OverloadConflictEqClass: different overloads are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OverloadConflictEqClass>();
+      let m1 = cls.getStaticMethod('process');
+      let m2 = cls.getStaticMethod('processWithInt');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+    });
+
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0930
+     * @tc.name testStaticMethodEquals2_093
+     * @tc.desc Verify equals() for ResizableReturnEqClass: self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ResizableReturnEqClass>();
+      let methods = cls.getStaticMethods();
+      let method = cls.getStaticMethod('getFlags');
+      expect(methods.length).assertEqual(1);
+      expect(method !== undefined).assertTrue();
+      expect(methods[0].equals(method!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0940
+     * @tc.name testStaticMethodEquals2_094
+     * @tc.desc Verify equals() for MultiResizableEqClass: self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testStaticMethodEquals2_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MultiResizableEqClass>();
+      let methods = cls.getStaticMethods();
+      let method = cls.getStaticMethod('mergeArrays');
+      expect(methods.length).assertEqual(1);
+      expect(method !== undefined).assertTrue();
+      expect(methods[0].equals(method!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0950
+     * @tc.name testStaticMethodEquals2_095
+     * @tc.desc Verify equals() for MixedArrayEqClass: self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixedArrayEqClass>();
+      let methods = cls.getStaticMethods();
+      let method = cls.getStaticMethod('complexProcess');
+      expect(methods.length).assertEqual(1);
+      expect(method !== undefined).assertTrue();
+      expect(methods[0].equals(method!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0960
+     * @tc.name testStaticMethodEquals2_096
+     * @tc.desc Verify equals() for MixedMethodTypesEqClass: all 4 methods self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<MixedMethodTypesEqClass>();
+      let cls2 = Class.from<MixedMethodTypesEqClass>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      expect(methods1.length).assertEqual(4);
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0970
+     * @tc.name testStaticMethodEquals2_097
+     * @tc.desc Verify equals() for SiblingAEq.shared: self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<SiblingAEq>();
+      let cls2 = Class.from<SiblingAEq>();
+      let m1 = cls1.getStaticMethod('shared');
+      let m2 = cls2.getStaticMethod('shared');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0980
+     * @tc.name testStaticMethodEquals2_098
+     * @tc.desc Verify equals() for OverloadReturnEqClass: all overloaded methods self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<OverloadReturnEqClass>();
+      let cls2 = Class.from<OverloadReturnEqClass>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_0990
+     * @tc.name testStaticMethodEquals2_099
+     * @tc.desc Verify equals() for MixedOverloadEqClass: all overloaded methods self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<MixedOverloadEqClass>();
+      let cls2 = Class.from<MixedOverloadEqClass>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1000
+     * @tc.name testStaticMethodEquals2_100
+     * @tc.desc Verify equals() for cross-class methods CrossClassEqA/B/C.process: all cross-class pairwise returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<CrossClassEqA>();
+      let cls2 = Class.from<CrossClassEqB>();
+      let cls3 = Class.from<CrossClassEqC>();
+      let m1 = cls1.getStaticMethod('process');
+      let m2 = cls2.getStaticMethod('process');
+      let m3 = cls3.getStaticMethod('process');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
+      expect(m1!.equals(m2!)).assertFalse();
+      expect(m2!.equals(m3!)).assertFalse();
+      expect(m1!.equals(m3!)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1010
+     * @tc.name testStaticMethodEquals2_101
+     * @tc.desc Verify equals() for FinalMethodEqClass: all methods self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<FinalMethodEqClass>();
+      let cls2 = Class.from<FinalMethodEqClass>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1020
+     * @tc.name testStaticMethodEquals2_102
+     * @tc.desc Verify equals() for NamedMethodEqClass: all special-named methods self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<NamedMethodEqClass>();
+      let cls2 = Class.from<NamedMethodEqClass>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1030
+     * @tc.name testStaticMethodEquals2_103
+     * @tc.desc Verify equals() for GenericClassEqClass: all methods self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<GenericClassEqClass<string>>();
+      let cls2 = Class.from<GenericClassEqClass<string>>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1040
+     * @tc.name testStaticMethodEquals2_104
+     * @tc.desc Verify equals() for InterfaceImplEqClass: all methods self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<InterfaceImplEqClass>();
+      let cls2 = Class.from<InterfaceImplEqClass>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1050
+     * @tc.name testStaticMethodEquals2_105
+     * @tc.desc Verify equals() for MultiEmptyBodyEqClass: multiple empty methods pairwise not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MultiEmptyBodyEqClass>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(3);
+      for (let i: int = 0; i < methods.length; i++) {
+        for (let j: int = i + 1; j < methods.length; j++) {
+          expect(methods[i].equals(methods[j])).assertFalse();
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1060
+     * @tc.name testStaticMethodEquals2_106
+     * @tc.desc Verify getStaticMethod with very long nonexistent name returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<BaseSingleMethodClass>();
+      let method = cls.getStaticMethod('a_very_long_nonexistent_method_name_xyz123abc');
+      expect(method === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1070
+     * @tc.name testStaticMethodEquals2_107
+     * @tc.desc Verify equals for all pairs in HeavyOverloadEqClass 6 methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<HeavyOverloadEqClass>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(6);
+      for (let i: int = 0; i < methods.length; i++) {
+        for (let j: int = i + 1; j < methods.length; j++) {
+          expect(methods[i].equals(methods[j])).assertFalse();
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1080
+     * @tc.name testStaticMethodEquals2_108
+     * @tc.desc Verify equals for all pairs in MultiEmptyBodyEqClass returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = Class.from<MultiEmptyBodyEqClass>();
+      let cls2 = Class.from<MultiEmptyBodyEqClass>();
+      let methods1 = cls1.getStaticMethods();
+      let methods2 = cls2.getStaticMethods();
+      expect(methods1.length).assertEqual(3);
+      for (let i: int = 0; i < methods1.length; i++) {
+        expect(methods1[i].equals(methods2[i])).assertTrue();
+        for (let j: int = i + 1; j < methods1.length; j++) {
+          expect(methods1[i].equals(methods1[j])).assertFalse();
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1090
+     * @tc.name testStaticMethodEquals2_109
+     * @tc.desc [equals] Verify getStaticMethods on HeavyOverloadEqClass finds at least one method with 1 param
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<HeavyOverloadEqClass>();
+      let methods = cls.getStaticMethods();
+      let found: boolean = false;
+      for (let i: int = 0; i < methods.length; i++) {
+        if (methods[i].getParametersNum() === 1) {
+          found = true;
+          break;
+        }
+      }
+      expect(found).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_TWO_1100
+     * @tc.name testStaticMethodEquals2_110
+     * @tc.desc [equals] Verify getStaticMethods on single-method class returns length 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals2_110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<BaseSingleMethodClass>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(1);
+      let method = cls.getStaticMethod('process');
+      expect(method !== undefined).assertTrue();
+      expect(methods[0].equals(method!)).assertTrue();
+    });
+  });
+}
