@@ -610,6 +610,50 @@ export default function ActsAccountErrCode() {
             }  
         });
 
+        /**
+         * @tc.name   ActsAccountErrCode_1630
+         * @tc.number ActsAccountErrCode_1630
+         * @tc.desc   test the type of parameters does not match(isAccessible为null)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('ActsAccountErrCode_1630', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("====>ActsAccountErrCode_1630 start====");
+            var appAccountManager = account.createAppAccountManager();
+            console.info("====>ActsAccountErrCode_1630 creat finish====");
+            try {
+                appAccountManager.setAppAccess("test_name", "test_owner", null);
+            } catch(err) {
+                console.info("====>ActsAccountErrCode_1630 setAppAccess catch err:" + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+                console.info("====>ActsAccountErrCode_1630 end====");
+                done();
+            }  
+        });
+
+        /**
+         * @tc.name   ActsAccountErrCode_1640
+         * @tc.number ActsAccountErrCode_1640
+         * @tc.desc   test the type of parameters does not match(isAccessible为undefined)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('ActsAccountErrCode_1640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("====>ActsAccountErrCode_1640 start====");
+            var appAccountManager = account.createAppAccountManager();
+            console.info("====>ActsAccountErrCode_1640 creat finish====");
+            try {
+                appAccountManager.setAppAccess("test_name", "test_owner", undefined);
+            } catch(err) {
+                console.info("====>ActsAccountErrCode_1640 setAppAccess catch err:" + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+                console.info("====>ActsAccountErrCode_1640 end====");
+                done();
+            }  
+        });
+
         //checkDataSyncEnabled
         /**
          * @tc.name   ActsAccountErrCode_1700

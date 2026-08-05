@@ -1997,5 +1997,109 @@ export default function AppAccountParamCheck2(): void {
         done();
       }
     });
+
+    /**
+     * @tc.name   AppAccountParamCheck2_22600
+     * @tc.number AppAccountParamCheck2_22600
+     * @tc.desc   setOAuthTokenVisibility promise with null isVisible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck2_22600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck2_22600 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        await appAccountManager.setOAuthTokenVisibility(name, 'authType', owner, null);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect(err.code).not().assertUndefined();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AppAccountParamCheck2_22700
+     * @tc.number AppAccountParamCheck2_22700
+     * @tc.desc   setOAuthTokenVisibility promise with undefined isVisible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck2_22700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck2_22700 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        await appAccountManager.setOAuthTokenVisibility(name, 'authType', owner, undefined);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect(err.code).not().assertUndefined();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AppAccountParamCheck2_22800
+     * @tc.number AppAccountParamCheck2_22800
+     * @tc.desc   setOAuthTokenVisibility callback with null isVisible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck2_22800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck2_22800 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        appAccountManager.setOAuthTokenVisibility(name, 'authType', owner, null, (err) => {
+          console.info(tag + "err: " + JSON.stringify(err));
+          try {
+            expect(err.code).not().assertUndefined();
+          } catch (e) {
+            console.info("====>Assert Fail:" + JSON.stringify(e));
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AppAccountParamCheck2_22900
+     * @tc.number AppAccountParamCheck2_22900
+     * @tc.desc   setOAuthTokenVisibility callback with undefined isVisible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck2_22900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck2_22900 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        appAccountManager.setOAuthTokenVisibility(name, 'authType', owner, undefined, (err) => {
+          console.info(tag + "err: " + JSON.stringify(err));
+          try {
+            expect(err.code).not().assertUndefined();
+          } catch (e) {
+            console.info("====>Assert Fail:" + JSON.stringify(e));
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }

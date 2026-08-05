@@ -3196,7 +3196,7 @@ export default function ActsAccountOAuthToken() {
             	var appAccountManager = account.createAppAccountManager();
             	appAccountManager.getAuthenticatorCallback("test_sessionId").then((databack)=>{
                     console.info("====>ActsAccountOAuthToken_9200 getAuthenticatorCallback data:" + JSON.stringify(databack))
-                    expect(databack).assertEqual(undefined);
+                    expect().assertFail();
                     done();
             	}).catch((err)=>{
                     console.info("====>ActsAccountOAuthToken_9200 getAuthenticatorCallback err:" + JSON.stringify(err));
