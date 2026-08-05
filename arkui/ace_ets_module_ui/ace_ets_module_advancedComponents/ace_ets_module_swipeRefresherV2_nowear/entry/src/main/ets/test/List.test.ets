@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,11 @@
  */
 
 import swipeRefresherV2PageTest from './swipeRefresherV2/SwipeRefresherV2Page.test';
+import SwipeRefresherV2ContentIsLoadingTest from './swipeRefresherV2/SwipeRefresherV2ContentIsLoadingTest.test';
 
 export default function testsuite() {
+
   swipeRefresherV2PageTest();
+  SwipeRefresherV2ContentIsLoadingTest();
+
 }
