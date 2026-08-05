@@ -82,27 +82,33 @@ struct Second {
 
             case "emitDatabaseAccessTrue": {
               this.databaseAccess = true;
-              this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
-                if (res) {
-                  console.log("getDataResult==>" + res.toString());
-                  Utils.emitEvent(res, 161000);
-                }
-              });
-
+              this.isPageEnd = -1;
+              this.webviewCtl.refresh();
+              this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
+              setTimeout(() => {
+                this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
+                  if (res) {
+                    console.log("getDataResult==>" + res.toString());
+                    Utils.emitEvent(res, 161000);
+                  }
+                });
+              }, 2000);
               break;
             }
 
             case "emitDatabaseAccessFalse": {
               this.databaseAccess = false;
+              this.isPageEnd = -1;
               this.webviewCtl.refresh();
               this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
-              this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
-                if (res) {
-                  console.log("getDataResult==>" + res.toString());
-                  Utils.emitEvent(res, 161001);
-                }
-              });
-
+              setTimeout(() => {
+                this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
+                  if (res) {
+                    console.log("getDataResult==>" + res.toString());
+                    Utils.emitEvent(res, 161001);
+                  }
+                });
+              }, 2000);
               break;
             }
 
@@ -346,6 +352,10 @@ struct Second {
         .enableWebAVSession(this.enableWebAVSession)
         .fileAccess(this.fileAccess)
         .forceDisplayScrollBar(this.forceDisplayScrollBar)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 0;
+        })
     }
 
   }
