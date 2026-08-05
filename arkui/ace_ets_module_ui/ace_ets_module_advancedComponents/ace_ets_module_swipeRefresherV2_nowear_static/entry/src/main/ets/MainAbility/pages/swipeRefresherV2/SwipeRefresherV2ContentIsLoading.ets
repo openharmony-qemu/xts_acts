@@ -22,7 +22,7 @@ import { ResourceStr } from '@ohos.arkui.component';
 
 @Entry
 @ComponentV2
-struct SwipeRefresherV2ContentTextIsLoading {
+struct SwipeRefresherV2ContentIsLoading {
   @Local isLoading: boolean = false;
   @Local contentText: ResourceStr = 'Loading...';
 
@@ -40,14 +40,6 @@ struct SwipeRefresherV2ContentTextIsLoading {
           .id('swipeRefresherV2_component')
           .width('100%')
           .height(100)
-
-        SwipeRefresherV2({
-          isLoading: this.isLoading,
-          content: undefined
-        })
-          .id('swipeRefresherContentV2Undefined')
-          .width('100%')
-          .height(40)
 
         Column() {
           Text('isLoading Property Test')
