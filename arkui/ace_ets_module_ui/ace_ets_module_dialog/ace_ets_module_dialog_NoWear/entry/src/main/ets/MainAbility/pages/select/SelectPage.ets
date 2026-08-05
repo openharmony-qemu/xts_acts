@@ -81,14 +81,14 @@ struct SelectPage {
 
   build() {
     Column() {
-      Text('indexValue:' + this.indexValue).fontSize(18).margin(15).key('SelectPage_indexValue')
+      Text('indexValue:' + this.indexValue).fontSize(18).margin(15).key('indexValue')
       Select([{ value: this.optionValue, icon: this.icon },
               { value: 'bbb', icon: "/resources/base/media/star_1.png" },
               { value: 'ccc', icon: "/resources/base/media/star_1.png" }])
         .selected(this.selected)
         .value(this.selectValue)
         .font(this.selectFont)
-        .key('SelectPage_select')
+        .key('select')
         .fontColor(this.fontColor)
         .selectedOptionBgColor(this.selectedOptionBgColor)
         .selectedOptionFont(this.selectedOptionFont)
