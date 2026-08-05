@@ -137,6 +137,12 @@ export class KeyboardControllerNew {
   public isLandscape(): boolean {
     let orientation: display.Orientation = 0;
     try {
+      let height = display.getDefaultDisplaySync()?.height;
+      let width = display.getDefaultDisplaySync()?.width;
+      console.info(TAG + `====>display.height: ${height},display.width: ${width}`);
+      if (height !== width) {
+        return height < width;
+      };
       orientation = display.getDefaultDisplaySync()?.orientation;
       console.info(TAG + `====>getOrientation : ${orientation}`);
     } catch (err) {
