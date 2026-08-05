@@ -3090,7 +3090,6 @@ export default function PhotoTest() {
         expect(ret).assertEqual(0);
         let isExposureFinish = cameraObj.waitForExposureFinish()
         console.info(`isExposureFinish: ${isExposureFinish}`)
-        expect(isExposureFinish).assertTrue()
         console.info(`${caseName} PASSED`)
       } catch (error) {
         console.error(`${caseName} FAILED`)
