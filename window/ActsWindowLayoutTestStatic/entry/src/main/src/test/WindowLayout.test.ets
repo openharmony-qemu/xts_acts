@@ -2574,10 +2574,11 @@ export default function WindowLayoutTest() {
             win = await windowStage!.getMainWindow();
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
-            (win as window.Window).maximize().then(()=>{
+            (win as window.Window).maximize().then(async()=>{
                 let moveConfiguration:window.MoveConfiguration = {
                     displayId:0
                 };
+                await Utils.msSleep(300);
                 (win as window.Window).moveWindowToAsync(300, 300, moveConfiguration ).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
