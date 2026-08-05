@@ -1,0 +1,131 @@
+'use static'
+/*
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  Entry, Component, Column, Row, Button, ClickEvent, Web, Text, $rawfile
+} from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
+import events_emitter from '@ohos.events.emitter';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
+import Utils from '../../src/test/Util.test';
+
+export class StringFields {
+  public str: string = '';
+}
+
+@Entry
+@Component
+struct EnableMediaNetworkProxy {
+  controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
+  stringObj: StringFields = new StringFields();
+  /** Docs: default off when unset; cases cover true/false/null/undefined. */
+  @State proxy: boolean | null | undefined = false;
+  @State statusResult: string = '';
+
+  aboutToAppear() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 132860,
+      priority: events_emitter.EventPriority.LOW
+    };
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  private valueChangeCallBack: Callback<events_emitter.EventData> =
+    (eventData: events_emitter.EventData): void => {
+      if (eventData != null) {
+        const data = eventData.data as Record<string, RecordData>;
+        if (data != null && data['ACTION'] != null) {
+          this.stringObj.str = String(data['ACTION']);
+        }
+      }
+    };
+
+  private setProxy(enabled: boolean | null | undefined): string {
+    try {
+      this.proxy = enabled;
+      console.info(`enableMediaNetworkProxy proxy=${String(this.proxy)}`);
+      if (enabled === null) {
+        return 'null';
+      }
+      if (enabled === undefined) {
+        return 'undefined';
+      }
+      return enabled ? 'true' : 'false';
+    } catch (error) {
+      let err: BusinessError = error as BusinessError;
+      console.error(`ErrorCode: ${err.code}, Message: ${err.message}`);
+      return `error_${err.code}`;
+    }
+  }
+
+  private replyOk(payload: string) {
+    this.statusResult = payload;
+    Utils.emitEvent(payload, 132870);
+  }
+
+  private runCase() {
+    switch (this.stringObj.str) {
+      case 'enableMediaNetworkProxyTrue': {
+        this.replyOk(this.setProxy(true));
+        break;
+      }
+      case 'enableMediaNetworkProxyFalse': {
+        this.replyOk(this.setProxy(false));
+        break;
+      }
+      case 'enableMediaNetworkProxyToggle': {
+        this.setProxy(true);
+        this.replyOk(this.setProxy(false));
+        break;
+      }
+      case 'enableMediaNetworkProxyNull': {
+        this.replyOk(this.setProxy(null));
+        break;
+      }
+      case 'enableMediaNetworkProxyUndefined': {
+        this.replyOk(this.setProxy(undefined));
+        break;
+      }
+      default: {
+        this.replyOk('unknown');
+        break;
+      }
+    }
+  }
+
+  build() {
+    Column() {
+      Row() {
+        Button('web test').key('EnableMediaNetworkProxy_Button').onClick((event: ClickEvent) => {
+          console.info('key==>' + this.stringObj.str);
+          this.runCase();
+        })
+      }
+      Text(this.statusResult.length > 0 ? this.statusResult : 'enableMediaNetworkProxy')
+        .fontSize(14)
+        .id('textContent')
+      Web({ src: $rawfile('common_index.html'), controller: this.controller })
+        .javaScriptAccess(true)
+        .domStorageAccess(true)
+        .mediaPlayGestureAccess(true)
+        .enableMediaNetworkProxy(this.proxy as boolean)
+        .onPageEnd(() => {
+          console.info('EnableMediaNetworkProxy onPageEnd');
+        })
+    }
+  }
+}
