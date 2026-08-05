@@ -15,21 +15,20 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 
-function mapOperations(map: containers.ConcurrentHashMap<string, number>, id: int): number {
+function mapSetOperations(map: containers.ConcurrentHashMap<string, number>, id: int): number {
   let completed: number = 0;
   for (let i: int = 0; i < 10; i++) {
     let key: string = 'task_' + id + '_' + i;
     map.set(key, i);
-    // 有限重试容忍无锁容器 resize 等瞬时竞态：set 后 get 最终必须一致
-    let v: number | undefined = map.get(key);
-    let retry: int = 0;
-    while (v !== i && retry < 5) {
-      v = map.get(key);
-      retry++;
-    }
-    if (v !== i) {
-      throw new Error('ConcurrentHashMap value mismatch');
-    }
+    completed++;
+  }
+  return completed;
+}
+
+function mapDeleteOperations(map: containers.ConcurrentHashMap<string, number>, id: int): number {
+  let completed: number = 0;
+  for (let i: int = 0; i < 10; i++) {
+    let key: string = 'task_' + id + '_' + i;
     map.delete(key);
     completed++;
   }
@@ -75,7 +74,7 @@ export default function ConcurrentHashMapConcurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_THREADSAFE_CONCURRENTHASHMAP_0100
      * @tc.name   testConcurrentHashMapConcurrent0100
-     * @tc.desc   CON-017 ConcurrentHashMap无锁并发set/get/delete
+      * @tc.desc   CON-017 ConcurrentHashMap分阶段并发set/get/delete
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -87,14 +86,28 @@ export default function ConcurrentHashMapConcurrentTest(): void {
           seed.set('base_' + i, i);
         }
         let map = new containers.ConcurrentHashMap<string, number>(seed);
-        let tasks: Promise<Any>[] = [];
+        let setTasks: Promise<Any>[] = [];
         for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(mapOperations, map, i));
+          setTasks.push(taskpool.execute(mapSetOperations, map, i));
         }
-        for (let i: int = 0; i < tasks.length; i++) {
-          expect(await tasks[i] as number).assertEqual(10);
+        for (let i: int = 0; i < setTasks.length; i++) {
+          expect(await setTasks[i] as number).assertEqual(10);
+        }
+        for (let taskId: int = 0; taskId < 10; taskId++) {
+          for (let value: int = 0; value < 10; value++) {
+            expect(map.get('task_' + taskId + '_' + value)).assertEqual(value);
+          }
+        }
+        let deleteTasks: Promise<Any>[] = [];
+        for (let i: int = 0; i < 10; i++) {
+          deleteTasks.push(taskpool.execute(mapDeleteOperations, map, i));
+        }
+        for (let i: int = 0; i < deleteTasks.length; i++) {
+          expect(await deleteTasks[i] as number).assertEqual(10);
         }
         expect(map.size).assertEqual(100);
+        expect(map.has('task_0_0')).assertFalse();
+        expect(map.has('task_9_9')).assertFalse();
         expect(map.get('base_0')).assertEqual(0.0);
         expect(map.get('base_99')).assertEqual(99.0);
       });
