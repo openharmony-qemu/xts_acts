@@ -70,7 +70,6 @@ let timeId: number = -1;
 
 function photoSleep(ms: number, limit: number, func: () => number) {
   return new Promise<number>((resolve, reject) => {
-    testNapi.testOhMediaAsset(mPhotoSurface)
     let count: number = 0;
     timeId = setInterval(() => {
       if (func() == 0) {
@@ -106,6 +105,8 @@ export default function ActsMediaLibraryTwoTest() {
       await getPermissions2()
       await driveFn()
       await getPhotoReceiverSurface();
+      testNapi.testOhMediaAsset(mPhotoSurface)
+      await sleep(2000);
     })
     /**
      * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_2600
