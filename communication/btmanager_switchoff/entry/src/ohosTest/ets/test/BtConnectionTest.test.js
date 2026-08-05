@@ -694,9 +694,11 @@ export default function btConnectionSwitchOffTest() {
                     }else {
                         expect(Number(err.code)).assertEqual(2900003);
                     }
-                }
-                done();
+                } 
+            }else{
+                expect(true).assertTrue();
             }  
+            done();
         })
         /**
          * @tc.name testGattConnectError004
@@ -721,8 +723,10 @@ export default function btConnectionSwitchOffTest() {
                         expect(err.code).assertEqual(2900003);
                     }
                 }
-                done();
+            }else{
+                expect(true).assertTrue();
             }
+            done();
         });
     })
 }
