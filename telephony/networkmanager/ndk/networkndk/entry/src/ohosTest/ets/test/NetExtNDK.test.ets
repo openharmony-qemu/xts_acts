@@ -14,10 +14,12 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium'
+
 interface NcAPIInterface {
   OHEthGetNetAddress: () => number;
   OHEthGetMacAddress: () => number;
 }
+
 let netAddressCallCount = 0;
 let macAddressCallCount = 0;
 let currentErrorTest = '';
@@ -26,6 +28,7 @@ const ncAPI: NcAPIInterface = {
   OHEthGetNetAddress: (): number => {
     console.info(`Mock OHEthGetNetAddress called, call count: ${netAddressCallCount}, currentErrorTest: ${currentErrorTest}`);
     netAddressCallCount++;
+    
     if (currentErrorTest.includes('ErrorCode_0100')) {
       return 201;
     } else if (currentErrorTest.includes('ErrorCode_0200')) {
@@ -42,6 +45,7 @@ const ncAPI: NcAPIInterface = {
   OHEthGetMacAddress: (): number => {
     console.info(`Mock OHEthGetMacAddress called, call count: ${macAddressCallCount}, currentErrorTest: ${currentErrorTest}`);
     macAddressCallCount++;
+    
     if (currentErrorTest.includes('ErrorCode_0100')) {
       return 201;
     } else if (currentErrorTest.includes('ErrorCode_0200')) {
@@ -68,7 +72,10 @@ beforeEach(() => {
   currentErrorTest = '';
 });
 
+// 成功
 const NETCONNECTION_OK = 0;
+
+// 错误码定义
 const ERROR_CODE_201 = 201;
 const ERROR_CODE_2200001 = 2200001;
 const ERROR_CODE_2200002 = 2200002;
@@ -180,11 +187,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetMacAddress_ErrorCode_0100', 0, async (done: Function) => {
     console.info(`testOHEthGetMacAddress_ErrorCode_0100 start`);
-    currentErrorTest = 'ErrorCode_0100';
-    let re: number = ncAPI.OHEthGetMacAddress();
-    console.info(`testOHEthGetMacAddress_ErrorCode_0100 result ${re}`);
-    expect(re == ERROR_CODE_201).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0100';
+      let re: number = ncAPI.OHEthGetMacAddress();
+      console.info(`testOHEthGetMacAddress_ErrorCode_0100 result ${re}`);
+      expect(re == ERROR_CODE_201).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
@@ -198,11 +208,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetNetAddress_ErrorCode_0100', 0, async (done: Function) => {
     console.info(`testOHEthGetNetAddress_ErrorCode_0100 start`);
-    currentErrorTest = 'ErrorCode_0100';
-    let re: number = ncAPI.OHEthGetNetAddress();
-    console.info(`testOHEthGetNetAddress_ErrorCode_0100 result ${re}`);
-    expect(re == ERROR_CODE_201).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0100';
+      let re: number = ncAPI.OHEthGetNetAddress();
+      console.info(`testOHEthGetNetAddress_ErrorCode_0100 result ${re}`);
+      expect(re == ERROR_CODE_201).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
@@ -216,11 +229,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetMacAddress_ErrorCode_0200', 0, async (done: Function) => {
     console.info(`testOHEthGetMacAddress_ErrorCode_0200 start`);
-    currentErrorTest = 'ErrorCode_0200';
-    let re: number = ncAPI.OHEthGetMacAddress();
-    console.info(`testOHEthGetMacAddress_ErrorCode_0200 result ${re}`);
-    expect(re == ERROR_CODE_2200001).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0200';
+      let re: number = ncAPI.OHEthGetMacAddress();
+      console.info(`testOHEthGetMacAddress_ErrorCode_0200 result ${re}`);
+      expect(re == ERROR_CODE_2200001).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
@@ -234,11 +250,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetNetAddress_ErrorCode_0200', 0, async (done: Function) => {
     console.info(`testOHEthGetNetAddress_ErrorCode_0200 start`);
-    currentErrorTest = 'ErrorCode_0200';
-    let re: number = ncAPI.OHEthGetNetAddress();
-    console.info(`testOHEthGetNetAddress_ErrorCode_0200 result ${re}`);
-    expect(re == ERROR_CODE_2200001).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0200';
+      let re: number = ncAPI.OHEthGetNetAddress();
+      console.info(`testOHEthGetNetAddress_ErrorCode_0200 result ${re}`);
+      expect(re == ERROR_CODE_2200001).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
@@ -252,11 +271,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetMacAddress_ErrorCode_0300', 0, async (done: Function) => {
     console.info(`testOHEthGetMacAddress_ErrorCode_0300 start`);
-    currentErrorTest = 'ErrorCode_0300';
-    let re: number = ncAPI.OHEthGetMacAddress();
-    console.info(`testOHEthGetMacAddress_ErrorCode_0300 result ${re}`);
-    expect(re == ERROR_CODE_2200002).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0300';
+      let re: number = ncAPI.OHEthGetMacAddress();
+      console.info(`testOHEthGetMacAddress_ErrorCode_0300 result ${re}`);
+      expect(re == ERROR_CODE_2200002).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
@@ -270,11 +292,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetNetAddress_ErrorCode_0300', 0, async (done: Function) => {
     console.info(`testOHEthGetNetAddress_ErrorCode_0300 start`);
-    currentErrorTest = 'ErrorCode_0300';
-    let re: number = ncAPI.OHEthGetNetAddress();
-    console.info(`testOHEthGetNetAddress_ErrorCode_0300 result ${re}`);
-    expect(re == ERROR_CODE_2200002).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0300';
+      let re: number = ncAPI.OHEthGetNetAddress();
+      console.info(`testOHEthGetNetAddress_ErrorCode_0300 result ${re}`);
+      expect(re == ERROR_CODE_2200002).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
@@ -288,11 +313,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetMacAddress_ErrorCode_0400', 0, async (done: Function) => {
     console.info(`testOHEthGetMacAddress_ErrorCode_0400 start`);
-    currentErrorTest = 'ErrorCode_0400';
-    let re: number = ncAPI.OHEthGetMacAddress();
-    console.info(`testOHEthGetMacAddress_ErrorCode_0400 result ${re}`);
-    expect(re == ERROR_CODE_2201005).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0400';
+      let re: number = ncAPI.OHEthGetMacAddress();
+      console.info(`testOHEthGetMacAddress_ErrorCode_0400 result ${re}`);
+      expect(re == ERROR_CODE_2201005).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
@@ -306,11 +334,14 @@ describe('NetExtNDKTest', () => {
    */
   it('testOHEthGetNetAddress_ErrorCode_0400', 0, async (done: Function) => {
     console.info(`testOHEthGetNetAddress_ErrorCode_0400 start`);
-    currentErrorTest = 'ErrorCode_0400';
-    let re: number = ncAPI.OHEthGetNetAddress();
-    console.info(`testOHEthGetNetAddress_ErrorCode_0400 result ${re}`);
-    expect(re == ERROR_CODE_2201005).assertTrue();
-    currentErrorTest = '';
+    try {
+      currentErrorTest = 'ErrorCode_0400';
+      let re: number = ncAPI.OHEthGetNetAddress();
+      console.info(`testOHEthGetNetAddress_ErrorCode_0400 result ${re}`);
+      expect(re == ERROR_CODE_2201005).assertTrue();
+    } finally {
+      currentErrorTest = '';
+    }
     done();
   });
 
