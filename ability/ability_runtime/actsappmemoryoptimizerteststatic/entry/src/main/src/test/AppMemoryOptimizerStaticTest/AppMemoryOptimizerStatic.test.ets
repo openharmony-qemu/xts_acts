@@ -270,6 +270,28 @@ export default function AppMemoryOptimizerStatic() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictFilePages_1200
+     * @tc.number SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictFilePages_1200
+     * @tc.desc   Call evictFilePages with empty.expect error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictFilePages_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const itName: string = 'SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictFilePages_1200'
+      hilog.info(domain,tag, itName  + 'it begin');
+      try {
+        await appMemoryOptimizer.evictFilePages([]);
+        expect().assertFail();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        hilog.info(domain, tag,itName + 'failed code:'+ e?.code+ 'message:'+ e?.message);
+        expect(e.code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
     * @tc.name   SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0100
     * @tc.number SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0100
     * @tc.desc   Call evictModuleFilePages with the entry module name, whose memory_optimizer.json
@@ -311,6 +333,30 @@ export default function AppMemoryOptimizerStatic() {
         let e: BusinessError = err as BusinessError;
         hilog.info(domain, tag,itName + 'failed code:' +e?.code + 'message:' +e?.message);
         expect(e.code).assertEqual(ERROR_CODE_CONFIG_PARSE);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400
+    * @tc.number SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400
+    * @tc.desc   Call evictModuleFilePages with empty, which has no
+    *            memory_optimizer.json under rawfile, expect error code 401
+    *            (failed to parse configuration file).
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400', Level.LEVEL1, async (done: () => void): Promise<void> =>  {
+      const itName: string = 'SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400';
+      hilog.info(domain,tag, itName  + 'it begin');
+      try {
+        await appMemoryOptimizer.evictModuleFilePages([]);
+        expect().assertFail();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        hilog.info(domain, tag,itName + 'failed code:' +e?.code + 'message:' +e?.message);
+        expect(e.code).assertEqual(401);
       }
       done();
     })
