@@ -16,7 +16,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import Utils from '../../MainAbility/common/Utils';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
 
@@ -28,12 +27,12 @@ export default function SelectJsunit() {
         url: 'MainAbility/pages/select/SelectPage',
       }
       try {
+        router.clear();
         let pages = router.getState();
         console.info("get SelectJsunit state pages: " + JSON.stringify(pages));
-        if (pages.name !== 'SelectPage') {
-          router.clear();
+        if (!("SelectPage" == pages.name)) {
           console.info("get SelectJsunit state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
+          let result = await router.push(options);
           await CommonFunc.sleep(2000);
           console.info("push SelectJsunit success: " + JSON.stringify(result));
         }
@@ -44,18 +43,18 @@ export default function SelectJsunit() {
       done();
     });
     /**
-     * @tc.number    SelectJsunit_0100
-     * @tc.name      SelectJsunit_0100
-     * @tc.desc      createActionSheetToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SelectJsunit_0100
+     * @tc.number SelectJsunit_0100
+     * @tc.desc   createActionSheetToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SelectJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Select component
       console.info('[SelectJsunit_0100] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('SelectPage' + '_select');
+      let strJson = getInspectorByKey('select');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectJsunit_0100] component obj is: " + JSON.stringify(obj));
       console.info("[SelectJsunit_0100] selected: " + JSON.stringify(obj.$attrs.selected));
@@ -79,7 +78,7 @@ export default function SelectJsunit() {
       expect(obj.$attrs.optionFont).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
       expect(obj.$attrs.optionFontColor).assertEqual('#FFFF0000');
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('SelectPage' + '_indexValue');
+      let strJson1 = getInspectorByKey('indexValue');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[SelectJsunit_0300] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('indexValue:0');
@@ -87,12 +86,12 @@ export default function SelectJsunit() {
       done();
     });
     /**
-     * @tc.number    SelectJsunit_0200
-     * @tc.name      SelectJsunit_0200
-     * @tc.desc      createActionSheetToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SelectJsunit_0200
+     * @tc.number SelectJsunit_0200
+     * @tc.desc   createActionSheetToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SelectJsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component select
@@ -119,7 +118,7 @@ export default function SelectJsunit() {
       await CommonFunc.sleep(500);
 
       // Get the propoties value of the select component
-      let strJson = getInspectorByKey('SelectPage' + '_select');
+      let strJson = getInspectorByKey('select');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.selected).assertEqual('2');
@@ -143,28 +142,33 @@ export default function SelectJsunit() {
       done();
     });
     /**
-     * @tc.number    SelectJsunit_0300
-     * @tc.name      SelectJsunit_0300
-     * @tc.desc      createActionSheetToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SelectJsunit_0300
+     * @tc.number SelectJsunit_0300
+     * @tc.desc   createActionSheetToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SelectJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Verify the functions of the select component
       console.info('[SelectJsunit_0300] START');
-      await CommonFunc.sleep(2000);
-      await Utils.openSelectMenu('SelectPage_select', 2000);
 
-      let driver = await Driver.create();
-      let menuPt = Utils.getSelectMenuItemPoint('SelectPage_select', 1);
-      await driver.click(menuPt.x, menuPt.y);
+      // Verify the click function of the select component
+      let driver = await UiDriver.create()
+      let textComponent1 = await driver.findComponent(BY.key('select'));
+      await textComponent1.click()
       await CommonFunc.sleep(1000);
-      let obj1: ESObject = JSON.parse(getInspectorByKey('SelectPage' + '_indexValue'));
+
+      // Verify the onSelect function of the select component
+      let textMenuComponent = await driver.findComponent(BY.text('bbb'));
+      await textMenuComponent.click()
+      await CommonFunc.sleep(1000);
+      let strJson1 = getInspectorByKey('indexValue');
+      let obj1: ESObject = JSON.parse(strJson1);
       console.info("[SelectJsunit_0300] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('indexValue:1');
 
-      let strJson = getInspectorByKey('SelectPage' + '_select');
+      let strJson = getInspectorByKey('select');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectJsunit_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.value).assertEqual('bbb');
