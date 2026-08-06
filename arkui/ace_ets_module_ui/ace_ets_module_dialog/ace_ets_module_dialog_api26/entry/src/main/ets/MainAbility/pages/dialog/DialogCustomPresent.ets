@@ -23,6 +23,7 @@ import {
 
 interface CustomParam {
   text: string;
+  onClose?: () => void;
 }
 
 @Builder
@@ -34,6 +35,11 @@ function buildCustomDialog(param: CustomParam) {
       .id('custom_dialog_text')
     Button('CustomClose')
       .id('custom_dialog_close')
+      .onClick(() => {
+        if (param.onClose !== undefined) {
+          param.onClose();
+        }
+      })
   }
   .padding(16)
   .backgroundColor(Color.White)
@@ -46,9 +52,40 @@ struct DialogCustomPresent {
   @State dialogId: number = -1;
   @State lastError: string = 'none';
   contentNode: ComponentContent<CustomParam> | null = null;
+  /** Track every present() id so dismiss can close stacked non-modal dialogs. */
+  private openDialogIds: number[] = [];
 
   private presenter(): DialogPresenter {
     return this.getUIContext().getDialogPresenter();
+  }
+
+  private rememberDialog(id: number): void {
+    this.dialogId = id;
+    if (id >= 0) {
+      this.openDialogIds.push(id);
+    }
+  }
+
+  private async dismissAllOpen(): Promise<void> {
+    let ids = this.openDialogIds.slice();
+    this.openDialogIds = [];
+    this.dialogId = -1;
+    for (let i = ids.length - 1; i >= 0; i--) {
+      try {
+        await this.presenter().dismiss(ids[i]);
+      } catch (err) {
+      }
+    }
+    this.lastAction = 'dismissed';
+  }
+
+  private makeParam(text: string): CustomParam {
+    return {
+      text: text,
+      onClose: (): void => {
+        void this.dismissAllOpen();
+      }
+    };
   }
 
   build() {
@@ -57,12 +94,22 @@ struct DialogCustomPresent {
       Text('action=' + this.lastAction).id('custom_present_action')
       Text('dialogId=' + this.dialogId).id('custom_present_dialog_id')
       Text('error=' + this.lastError).id('custom_present_error')
+      // Keep dismiss above dialog body so UiTest click is not eaten by overlay.
+      Button('dismiss by id')
+        .id('btn_custom_dismiss')
+        .onClick(async () => {
+          try {
+            await this.dismissAllOpen();
+          } catch (err) {
+            this.lastError = String(err);
+          }
+        })
       Button('customStyle ComponentContent')
         .id('btn_custom_style_true')
         .onClick(async () => {
           this.lastError = 'none';
           try {
-            let param: CustomParam = { text: 'CustomStyleContent' };
+            let param: CustomParam = this.makeParam('CustomStyleContent');
             this.contentNode = new ComponentContent(this.getUIContext(),
               wrapBuilder<[CustomParam]>(buildCustomDialog), param);
             let opts: dialog.DialogCustomOptions = {
@@ -78,7 +125,7 @@ struct DialogCustomPresent {
               keyboardAvoidDistance: LengthMetrics.vp(8)
             };
             let result: DialogResult = await this.presenter().present(this.contentNode, opts);
-            this.dialogId = result.dialogId;
+            this.rememberDialog(result.dialogId);
             this.lastAction = 'customOpened';
           } catch (err) {
             this.lastError = String(err);
@@ -90,7 +137,7 @@ struct DialogCustomPresent {
         .onClick(async () => {
           this.lastError = 'none';
           try {
-            let param: CustomParam = { text: 'ComponentContentDialog' };
+            let param: CustomParam = this.makeParam('ComponentContentDialog');
             this.contentNode = new ComponentContent(this.getUIContext(),
               wrapBuilder<[CustomParam]>(buildCustomDialog), param);
             let opts: dialog.DialogCustomOptions = {
@@ -103,23 +150,11 @@ struct DialogCustomPresent {
               autoCancel: true
             };
             let result: DialogResult = await this.presenter().present(this.contentNode, opts);
-            this.dialogId = result.dialogId;
+            this.rememberDialog(result.dialogId);
             this.lastAction = 'contentOpened';
           } catch (err) {
             this.lastError = String(err);
             this.lastAction = 'error';
-          }
-        })
-      Button('dismiss by id')
-        .id('btn_custom_dismiss')
-        .onClick(async () => {
-          try {
-            if (this.dialogId >= 0) {
-              await this.presenter().dismiss(this.dialogId);
-              this.lastAction = 'dismissed';
-            }
-          } catch (err) {
-            this.lastError = String(err);
           }
         })
       Button('update options')
@@ -144,7 +179,7 @@ struct DialogCustomPresent {
         .onClick(async () => {
           this.lastError = 'none';
           try {
-            let param: CustomParam = { text: 'PresentUpdateContent' };
+            let param: CustomParam = this.makeParam('PresentUpdateContent');
             this.contentNode = new ComponentContent(this.getUIContext(),
               wrapBuilder<[CustomParam]>(buildCustomDialog), param);
             let opts: dialog.DialogCustomOptions = {
@@ -155,7 +190,7 @@ struct DialogCustomPresent {
               isModal: false
             };
             let result: DialogResult = await this.presenter().present(this.contentNode, opts);
-            this.dialogId = result.dialogId;
+            this.rememberDialog(result.dialogId);
             let upd: dialog.DialogBaseOptions = {
               backgroundColor: '#E3F2FD',
               borderWidth: 2,
@@ -173,7 +208,7 @@ struct DialogCustomPresent {
         .onClick(async () => {
           this.lastError = 'none';
           try {
-            let param: CustomParam = { text: 'CustomSizeContent' };
+            let param: CustomParam = this.makeParam('CustomSizeContent');
             this.contentNode = new ComponentContent(this.getUIContext(),
               wrapBuilder<[CustomParam]>(buildCustomDialog), param);
             let opts: dialog.DialogCustomOptions = {
@@ -185,7 +220,7 @@ struct DialogCustomPresent {
               isModal: false
             };
             let result: DialogResult = await this.presenter().present(this.contentNode, opts);
-            this.dialogId = result.dialogId;
+            this.rememberDialog(result.dialogId);
             this.lastAction = 'sizeOpened';
           } catch (err) {
             this.lastError = String(err);
@@ -196,7 +231,7 @@ struct DialogCustomPresent {
         .onClick(async () => {
           this.lastError = 'none';
           try {
-            let param: CustomParam = { text: 'CustomBorderContent' };
+            let param: CustomParam = this.makeParam('CustomBorderContent');
             this.contentNode = new ComponentContent(this.getUIContext(),
               wrapBuilder<[CustomParam]>(buildCustomDialog), param);
             let opts: dialog.DialogCustomOptions = {
@@ -208,7 +243,7 @@ struct DialogCustomPresent {
               isModal: false
             };
             let result: DialogResult = await this.presenter().present(this.contentNode, opts);
-            this.dialogId = result.dialogId;
+            this.rememberDialog(result.dialogId);
             this.lastAction = 'borderOpened';
           } catch (err) {
             this.lastError = String(err);
@@ -219,18 +254,18 @@ struct DialogCustomPresent {
         .onClick(async () => {
           this.lastError = 'none';
           try {
-            let param: CustomParam = { text: 'CustomFlagsContent' };
+            let param: CustomParam = this.makeParam('CustomFlagsContent');
             this.contentNode = new ComponentContent(this.getUIContext(),
               wrapBuilder<[CustomParam]>(buildCustomDialog), param);
             let opts: dialog.DialogCustomOptions = {
               customStyle: false,
-              autoCancel: false,
+              autoCancel: true,
               focusable: true,
               isModal: false,
               backgroundColor: Color.White
             };
             let result: DialogResult = await this.presenter().present(this.contentNode, opts);
-            this.dialogId = result.dialogId;
+            this.rememberDialog(result.dialogId);
             this.lastAction = 'flagsOpened';
           } catch (err) {
             this.lastError = String(err);
@@ -240,6 +275,5 @@ struct DialogCustomPresent {
     .width('100%')
     .height('100%')
     .padding(16)
-    .justifyContent(FlexAlign.Center)
   }
 }

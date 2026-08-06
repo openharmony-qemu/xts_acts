@@ -22,10 +22,14 @@ export default function DialogEnumsAssert() {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogEnumsAssert beforeEach');
       await DialogApi26TestHelper.openPageIfNeeded('DialogEnumsAssert', 'MainAbility/pages/dialog/DialogEnumsAssert');
+      let driver = await Driver.create();
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
       done();
     });
 
     afterEach(async () => {
+      let driver = await Driver.create();
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
       console.info('[ARKUI_DYN] DialogEnumsAssert afterEach');
     });
 
@@ -89,38 +93,32 @@ export default function DialogEnumsAssert() {
       await DialogApi26TestHelper.clickId(driver, 'btn_enum_state_0');
       let label_btn_enum_state_0 = await driver.findComponent(ON.id('enums_result'));
       let txt_btn_enum_state_0 = await label_btn_enum_state_0.getText();
-      expect(txt_btn_enum_state_0.indexOf('PASS:') >= 0).assertTrue();
-      expect(txt_btn_enum_state_0.indexOf('UNINITIALIZED') >= 0).assertTrue();
+      expect(txt_btn_enum_state_0.indexOf('PASS:UNINITIALIZED') >= 0).assertTrue();
 
       await DialogApi26TestHelper.clickId(driver, 'btn_enum_state_1');
       let label_btn_enum_state_1 = await driver.findComponent(ON.id('enums_result'));
       let txt_btn_enum_state_1 = await label_btn_enum_state_1.getText();
-      expect(txt_btn_enum_state_1.indexOf('PASS:') >= 0).assertTrue();
-      expect(txt_btn_enum_state_1.indexOf('INITIALIZED') >= 0).assertTrue();
+      expect(txt_btn_enum_state_1.indexOf('PASS:INITIALIZED') >= 0).assertTrue();
 
       await DialogApi26TestHelper.clickId(driver, 'btn_enum_state_2');
       let label_btn_enum_state_2 = await driver.findComponent(ON.id('enums_result'));
       let txt_btn_enum_state_2 = await label_btn_enum_state_2.getText();
-      expect(txt_btn_enum_state_2.indexOf('PASS:') >= 0).assertTrue();
-      expect(txt_btn_enum_state_2.indexOf('APPEARING') >= 0).assertTrue();
+      expect(txt_btn_enum_state_2.indexOf('PASS:APPEARING') >= 0).assertTrue();
 
       await DialogApi26TestHelper.clickId(driver, 'btn_enum_state_3');
       let label_btn_enum_state_3 = await driver.findComponent(ON.id('enums_result'));
       let txt_btn_enum_state_3 = await label_btn_enum_state_3.getText();
-      expect(txt_btn_enum_state_3.indexOf('PASS:') >= 0).assertTrue();
-      expect(txt_btn_enum_state_3.indexOf('APPEARED') >= 0).assertTrue();
+      expect(txt_btn_enum_state_3.indexOf('PASS:APPEARED') >= 0).assertTrue();
 
       await DialogApi26TestHelper.clickId(driver, 'btn_enum_state_4');
       let label_btn_enum_state_4 = await driver.findComponent(ON.id('enums_result'));
       let txt_btn_enum_state_4 = await label_btn_enum_state_4.getText();
-      expect(txt_btn_enum_state_4.indexOf('PASS:') >= 0).assertTrue();
-      expect(txt_btn_enum_state_4.indexOf('DISAPPEARING') >= 0).assertTrue();
+      expect(txt_btn_enum_state_4.indexOf('PASS:DISAPPEARING') >= 0).assertTrue();
 
       await DialogApi26TestHelper.clickId(driver, 'btn_enum_state_5');
       let label_btn_enum_state_5 = await driver.findComponent(ON.id('enums_result'));
       let txt_btn_enum_state_5 = await label_btn_enum_state_5.getText();
-      expect(txt_btn_enum_state_5.indexOf('PASS:') >= 0).assertTrue();
-      expect(txt_btn_enum_state_5.indexOf('DISAPPEARED') >= 0).assertTrue();
+      expect(txt_btn_enum_state_5.indexOf('PASS:DISAPPEARED') >= 0).assertTrue();
 
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogEnumsAssert_0500 END');
       done();

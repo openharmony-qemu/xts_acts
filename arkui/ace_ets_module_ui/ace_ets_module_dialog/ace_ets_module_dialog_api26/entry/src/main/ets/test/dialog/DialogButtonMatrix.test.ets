@@ -22,10 +22,14 @@ export default function DialogButtonMatrix() {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogButtonMatrix beforeEach');
       await DialogApi26TestHelper.openPageIfNeeded('DialogButtonMatrix', 'MainAbility/pages/dialog/DialogButtonMatrix');
+      let driver = await Driver.create();
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
       done();
     });
 
     afterEach(async () => {
+      let driver = await Driver.create();
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
       console.info('[ARKUI_DYN] DialogButtonMatrix afterEach');
     });
 
