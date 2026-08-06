@@ -29,16 +29,6 @@ let isDeviceConnected: boolean = true;
 let testParam: TransferTestParam;
 const TAG = "[UsbApiDeprecatedEtsTest]";
 
-interface FilteredDevice {
-  vendorId: number;
-  productId: number;
-}
-
-const FILTERED_DEVICES: Array<FilteredDevice> = [
-  { vendorId: 3034, productId: 33107 },
-  { vendorId: 65535, productId: 14131 },
-];
-
 interface TransferTestParam {
   config: usb.USBConfig;
   device: usb.USBDevice;
@@ -61,13 +51,6 @@ function deviceConnected() {
   console.info(TAG, "Test USB device is not connected");
   return false;
 }
-
-function isFilteredDevice(device: usb.USBDevice): boolean {
-  return FILTERED_DEVICES.some(item =>
-    device.vendorId === item.vendorId && device.productId === item.productId
-  );
-}
-
 
 async function driveFn() {
   console.info('**************driveFn**************');
@@ -312,7 +295,7 @@ export default function UsbApiDeprecatedEtsTest() {
     it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testGetDevices002 begin');
       if (!isDeviceConnected) {
-        let res = usb.getDevices().filter(device => !isFilteredDevice(device));
+        let res = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
         console.info(TAG, 'usb case getDevices ret length: ' + res.length);
         expect(res.length).assertEqual(0);
         done();
