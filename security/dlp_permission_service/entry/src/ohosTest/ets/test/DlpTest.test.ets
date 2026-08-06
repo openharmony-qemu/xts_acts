@@ -3866,7 +3866,7 @@ export default function dlpTest() {
         if (isDevBoard === true) {
           try {
             let pluginId: number = dlpPermission.DlpConnManager.registerPlugin(new DataCapsulePlugin()) ?? undefined;
-            consloe.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
+            console.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
             expect(pluginId !== undefined);
           } catch (err) {
             console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
@@ -3875,7 +3875,7 @@ export default function dlpTest() {
         } else {
           try {
             let pluginId: number = dlpPermission.DlpConnManager.registerPlugin(new DataCapsulePlugin());
-            consloe.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
+            console.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
             expect(false).assertTrue();
           } catch (err) {
             console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
