@@ -12,8 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// ArrayOperation.test.ets null和undefined在环境中不支持，注释了12个用例
-// 操作方法组（12个）：push, pop, unshift, shift, splice, slice, fill, copyWithin, sort, reverse, extendTo, shrinkTo
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';

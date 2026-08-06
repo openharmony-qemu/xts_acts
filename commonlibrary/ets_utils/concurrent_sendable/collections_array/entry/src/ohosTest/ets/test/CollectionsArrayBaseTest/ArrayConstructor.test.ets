@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// ArrayConstructor.test.ets  因为undefined 和 null 在环境中不支持 注释10个用例
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';

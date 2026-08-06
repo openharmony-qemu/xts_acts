@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// ArrayAnnotation.test.ets 有两个实现不了，null和undefined环境不支持 注释两个用例
 
 import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
