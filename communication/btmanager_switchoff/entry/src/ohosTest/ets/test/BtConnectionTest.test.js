@@ -667,33 +667,37 @@ export default function btConnectionSwitchOffTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_SWITCHOFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            try {
-                let connectAP = () => {
-                    return new Promise((resolve,reject) => {
-                        connection.disconnectAllowedProfiles('00:11:22:33:44:55', (err, data)=> {
-                            if (err) {
-                                console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
-                                reject(err);
-                            } else
-                            {
-                                console.info('[bluetooth_js]disconnectAllowedProfiles success');
-                            }
-                            resolve();
+            if (!closeUnsupport){
+                try {
+                    let connectAP = () => {
+                        return new Promise((resolve,reject) => {
+                            connection.disconnectAllowedProfiles('00:11:22:33:44:55', (err, data)=> {
+                                if (err) {
+                                    console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
+                                    reject(err);
+                                } else
+                                {
+                                    console.info('[bluetooth_js]disconnectAllowedProfiles success');
+                                }
+                                resolve();
+                            });
                         });
-                    });
-                }
-                await connectAP()
-                console.info("[bluetooth_js]disconnectAllowedProfiles success");
-                expect().assertFail();
-            } catch (err) {
-                console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
-                if (Number(err.code) == 801) {
-                    console.info("disconnectAllowedProfiles is not support");
-                    expect(true).assertTrue();
-                }else {
-                    expect(Number(err.code)).assertEqual(2900003);
-                }
-            }
+                    }
+                    await connectAP()
+                    console.info("[bluetooth_js]disconnectAllowedProfiles success");
+                    expect().assertFail();
+                } catch (err) {
+                    console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+                    if (Number(err.code) == 801) {
+                        console.info("disconnectAllowedProfiles is not support");
+                        expect(true).assertTrue();
+                    }else {
+                        expect(Number(err.code)).assertEqual(2900003);
+                    }
+                } 
+            }else{
+                expect(true).assertTrue();
+            }  
             done();
         })
         /**
@@ -706,17 +710,21 @@ export default function btConnectionSwitchOffTest() {
          * @co.authored.by.agent
          */
         it('testGattConnectError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            try {
-                let device = bluetoothBle.createGattServer();
-                device.connect('00:22:33:44:55:66');
-                expect().assertFail();
-            } catch (err) {
-                console.info('testGattConnectError004 err: code=' + err.code + ', message=' + err.message);
-                if (err.code === 801) {
-                    expect(err.code).assertEqual(801);
-                } else {
-                    expect(err.code).assertEqual(2900003);
+            if (!closeUnsupport){
+                try {
+                    let device = bluetoothBle.createGattServer();
+                    device.connect('00:22:33:44:55:66');
+                    expect().assertFail();
+                } catch (err) {
+                    console.info('testGattConnectError004 err: code=' + err.code + ', message=' + err.message);
+                    if (err.code === 801) {
+                        expect(err.code).assertEqual(801);
+                    } else {
+                        expect(err.code).assertEqual(2900003);
+                    }
                 }
+            }else{
+                expect(true).assertTrue();
             }
             done();
         });

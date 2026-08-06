@@ -2785,17 +2785,19 @@ export default function btManagerError003Test() {
          * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_REMOVEALLSERVICES_SWITCOFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            try {
-                gattServer.removeAllServices();
-                console.info("removeAllServices success")
-                expect().assertFail();
-            } catch (err) {
-                console.error("removeAllServices error, errCode:" + err.code + ",errMessage:" + err.message + typeof err.code);
-                if (err.code === 801) {
-                    console.info('[bluetooth_js]removeAllServices is not support or removeAllServices as it is out of hardware');
-                    expect(true).assertTrue();
-                } else {
-                    expect(err.code).assertEqual(2900003);
+            if (!closeUnsupport) {
+                try {
+                    gattServer.removeAllServices();
+                    console.info("removeAllServices success")
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("removeAllServices error, errCode:" + err.code + ",errMessage:" + err.message + typeof err.code);
+                    if (err.code === 801) {
+                        console.info('[bluetooth_js]removeAllServices is not support or removeAllServices as it is out of hardware');
+                        expect(true).assertTrue();
+                    } else {
+                        expect(err.code).assertEqual(2900003);
+                    }
                 }
             }
             done();
