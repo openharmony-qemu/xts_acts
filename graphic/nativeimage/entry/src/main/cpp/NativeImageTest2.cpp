@@ -375,7 +375,7 @@ napi_value OHNativeImageReleaseTextImageMultipleCalls(napi_env env, napi_callbac
     OH_NativeImage *imageArray[10] = {nullptr};
     for (int i = 0; i < count; ++i) {
         InitEGLEnv();
-        GLuint textureId;
+        GLuint textureId = i;
         glGenTextures(PARAM_1, &textureId);
         imageArray[i] = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_2D, true);
         if (imageArray[i] == nullptr) {
@@ -398,8 +398,6 @@ napi_value OHNativeImageReleaseTextImageMultipleCalls(napi_env env, napi_callbac
         OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
         OH_NativeImage_UpdateSurfaceImage(imageArray[i]);
         OH_NativeImage_ReleaseTextImage(imageArray[i]);
-        OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
-        OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     }
     for (int i = 0; i < count; ++i) {
         if (imageArray[i] != nullptr) {
