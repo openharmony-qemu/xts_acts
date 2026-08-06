@@ -41,12 +41,12 @@ import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltIn
  
  
 export default function testsuite() {
+  ExtendableListBuiltInTest();
+  ExtendableListBuiltInUndefinedTest();
   EntryParamsTest();
   EntryParams2Test();
-  ExtendableListBuiltInTest();
   EntryOptionPage();
   EntryOptionPage2();
-  ExtendableListBuiltInUndefinedTest();
   ExtendableListItemBuiltInTest();
   ExtendableListItemBuiltInUndefinedTest();
   ExtendableButtonBuiltInTest();
