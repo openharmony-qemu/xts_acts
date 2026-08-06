@@ -224,6 +224,8 @@ export const adjustHeifIdx: (idx: number) => number;
 
 export const createPhotoOutput: (surfaceId: string) => number;
 
+export const createXdrawPhotoOutput: (surfaceId: string) => number;
+
 export const createHeifPhotoOutput: (surfaceId: string, idx: number) => number;
 
 export const createVideoOutput: (surfaceId: string) => number;
@@ -670,6 +672,8 @@ export const oHCaptureSessionUnregisterExposureStateChangeCallback: () => number
 export const oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession: () => number;
  
 export const oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession: () => number;
+
+export const oHCaptureSessionTestRAWCaptureZoomRatioRange: () => number;
 
 export const getEnumExposureState: (index: number) => number;
 
