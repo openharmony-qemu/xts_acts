@@ -53,6 +53,26 @@ struct Second {
   @State enableWebAVSession: boolean | undefined = true;
   @State fileAccess: boolean | undefined = true;
   @State forceDisplayScrollBar: boolean | undefined = true;
+  @State pendingDatabaseAccessEventId: number = 0;
+
+  private loadDatabaseAccessPage(enableAccess: boolean, eventId: number): void {
+    this.databaseAccess = enableAccess;
+    this.pendingDatabaseAccessEventId = eventId;
+    this.isPageEnd = -1;
+    setTimeout(() => {
+      this.webviewCtl.refresh();
+      this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
+    }, 300);
+  }
+
+  private emitDatabaseAccessResult(eventId: number): void {
+    this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
+      if (res) {
+        console.log("getDataResult==>" + res.toString());
+        Utils.emitEvent(res, eventId);
+      }
+    });
+  }
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -81,34 +101,12 @@ struct Second {
           switch (this.stringObj.str) {
 
             case "emitDatabaseAccessTrue": {
-              this.databaseAccess = true;
-              this.isPageEnd = -1;
-              this.webviewCtl.refresh();
-              this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
-              setTimeout(() => {
-                this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
-                  if (res) {
-                    console.log("getDataResult==>" + res.toString());
-                    Utils.emitEvent(res, 161000);
-                  }
-                });
-              }, 2000);
+              this.loadDatabaseAccessPage(true, 161000);
               break;
             }
 
             case "emitDatabaseAccessFalse": {
-              this.databaseAccess = false;
-              this.isPageEnd = -1;
-              this.webviewCtl.refresh();
-              this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
-              setTimeout(() => {
-                this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
-                  if (res) {
-                    console.log("getDataResult==>" + res.toString());
-                    Utils.emitEvent(res, 161001);
-                  }
-                });
-              }, 2000);
+              this.loadDatabaseAccessPage(false, 161001);
               break;
             }
 
@@ -355,6 +353,12 @@ struct Second {
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 0;
+          if (this.pendingDatabaseAccessEventId > 0 &&
+            event.url.includes('databaseAccess.html')) {
+            const eventId = this.pendingDatabaseAccessEventId;
+            this.pendingDatabaseAccessEventId = 0;
+            this.emitDatabaseAccessResult(eventId);
+          }
         })
     }
 

@@ -9,17 +9,11 @@
 <body>
     <div id="status"></div>
     <script>
-        let res = '';
-        try {
-            if (openDatabase) {
-                res = 'openDatabase';
-            }
-        } catch (e) {
-            console.log('err:' + e);
-            res = 'openDatabase is undefined';
-        }
         function getDataResult() {
-            return res;
+            if (typeof openDatabase !== 'undefined') {
+                return 'openDatabase';
+            }
+            return '';
         }
     </script>
 </body>
