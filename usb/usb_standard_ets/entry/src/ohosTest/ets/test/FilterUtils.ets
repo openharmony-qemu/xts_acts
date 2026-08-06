@@ -20,7 +20,6 @@ interface DeviceFilter {
 const FILTERED_DEVICES: DeviceFilter[] = [
   { vendorId: 3034, productId: 33107 },
   { vendorId: 65535, productId: 14131 },
-  { vendorId: 8457, productId: 13361 },
 ];
 
 export function isFilteredDevice(vendorId: number, productId: number): boolean {
