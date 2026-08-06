@@ -40,6 +40,17 @@ export default function UserAuthIcon() {
       abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'beforeAll end');
+	  let driver = Driver.create();
+	  //去除充电框影响
+      let button2 = await driver.findComponent(ON.text("确定")) ?? undefined;
+      if (button2 !== undefined) {
+        await button2.click();
+      }
+	  //去除添加桌面影响
+      let button1 = await driver.findComponent(ON.text("添加")) ?? undefined;
+      if (button1 !== undefined) {
+        await button1.click();
+      }
     })
 
     /**

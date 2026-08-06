@@ -19,9 +19,17 @@ import { Driver,ON } from '@ohos.UiTest';
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
+    beforeAll( async() => {
+	  //去除充电框影响
+      let button2 = await driver.findComponent(ON.text("确定")) ?? undefined;
+      if (button2 !== undefined) {
+        await button2.click();
+      }
+	  //去除添加桌面影响
+      let button1 = await driver.findComponent(ON.text("添加")) ?? undefined;
+      if (button1 !== undefined) {
+        await button1.click();
+      }
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
