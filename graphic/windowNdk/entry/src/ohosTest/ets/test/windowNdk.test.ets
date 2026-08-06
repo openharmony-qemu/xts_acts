@@ -45,6 +45,7 @@ export default function windowNdk() {
     let isTypeFloatNavigationVisible : boolean = false;
     let isNavigationIndicatorVisible : boolean = false;
     let isFreeWindowMode = false;
+    let isSystemCapabilitySupport = false;
     const WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED = 801;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
@@ -55,6 +56,8 @@ export default function windowNdk() {
       windowId = WindowClass.getWindowProperties().id;
       console.log(`${Tag}:windowId:${windowId} `);
       context = AppStorage.get("context") as common.UIAbilityContext;
+      isSystemCapabilitySupport = canIUse("SystemCapability.Window.SessionManager");
+      console.info('beforeAll canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(isSystemCapabilitySupport));
       isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.DEVICE_SHARED);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
@@ -693,7 +696,8 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if (deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet' ){
+      console.info(`${caseName} flag: ${flag}`);
+      if (deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet' || (deviceType == 'default'&& isSystemCapabilitySupport == true)){
          WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -724,7 +728,8 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'){
+      console.info(`${caseName} flag: ${flag}`);
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -757,7 +762,8 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'){
+      console.info(`${caseName} flag: ${flag}`);
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -1819,8 +1825,9 @@ export default function windowNdk() {
       await sleep(100);
       let result2 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result2: ${result2}`);
+      console.info(`${caseName} flag: ${flag}`);
       await sleep(200);
-      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false)) {
+      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false) || deviceType === 'tv'|| (deviceType == 'default'&& isSystemCapabilitySupport == true)) {
         expect(result2).assertEqual(0);
         expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
