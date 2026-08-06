@@ -21,9 +21,10 @@ export default function documentpcPickerPromise(abilityContext: Context) {
   describe("documentpcPickerPromise", () => {
     afterEach(async () => {
       await sleep(500);
-      await startAbility('ohos.acts.storage.picker', 'TestAbility');
+      await startAbility('ohos.acts.storage.pcpicker', 'TestAbility');
       await sleep(500);
       await stopAbility('com.ohos.filepicker');
+      await stopAbility('com.ohos.filemanager');
       await sleep(500);
     })
 

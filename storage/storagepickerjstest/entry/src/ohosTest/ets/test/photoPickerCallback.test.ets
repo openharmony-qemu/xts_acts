@@ -28,6 +28,7 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await stopAbility('com.ohos.filepicker');
       await stopAbility('com.huawei.hmos.photos');
       await stopAbility('com.ohos.photos');
+      await stopAbility('com.ohos.filemanager');
       await sleep(500);
     });
 
