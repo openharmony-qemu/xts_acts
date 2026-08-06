@@ -379,7 +379,6 @@ async function setZoomRatioPhoto(done: Function, testName: string, index: number
       await sleep(SLEEP_TIME_500);
       if (isEmpty(zoomRatioRange) || (!isEmpty(zoomRatioRange) && zoomRatioRange[0] == zoomRatioRange[1])) {
         console.info(TAG, testName + ' no supported zoomRatioRange.');
-        done();
       } else {
         console.info(TAG, testName + ' zoomRatioRange: ' + zoomRatioRange);
         await sleep(SLEEP_TIME_500);
@@ -431,7 +430,6 @@ async function setZoomRatioVideo(done: Function, testName: string, index: number
         await sleep(SLEEP_TIME_500);
         if (isEmpty(zoomRatioRange)) {
           console.info(TAG, testName + ' no supported zoomRatioRange.');
-          done();
         } else {
           console.info(TAG, testName + ' zoomRatioRange: ' + zoomRatioRange);
           await sleep(SLEEP_TIME_500);
@@ -487,7 +485,6 @@ async function getZoomRatioRangePhotoPreConfig(done: Function, testName: string,
       let zoomRatioRange = mPhotoSession.getZoomRatioRange();
       if (isEmpty(zoomRatioRange)) {
         console.info(TAG, testName + ' no supported zoomRatioRange.');
-        done();
       } else {
         console.info(TAG, testName + ' photo mode, status: ' + zoomRatioRange);
         expect(isEmpty(zoomRatioRange)).assertFalse();
@@ -533,7 +530,6 @@ async function getZoomRatioRangeVideoPreConfig(done: Function, testName: string,
       let zoomRatioRange = mVideoSession.getZoomRatioRange();
       if (isEmpty(zoomRatioRange)) {
         console.info(TAG, testName + ' no supported zoomRatioRange.');
-        done();
       } else {
         console.info(TAG, testName + ' video mode, status: ' + zoomRatioRange);
         expect(isEmpty(zoomRatioRange)).assertFalse();
@@ -578,7 +574,6 @@ async function setZoomRatioPhotoPreConfig(done: Function, testName: string, inde
       let zoomRatioRange = mPhotoSession.getZoomRatioRange();
       if (isEmpty(zoomRatioRange)) {
         console.info(TAG, testName + ' no supported zoomRatioRange.');
-        done();
       } else {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
@@ -633,7 +628,6 @@ async function setZoomRatioVideoPreConfig(done: Function, testName: string, inde
       let zoomRatioRange = mVideoSession.getZoomRatioRange();
       if (isEmpty(zoomRatioRange)) {
         console.info(TAG, testName + ' no supported zoomRatioRange.');
-        done();
       } else {
         let zoomRatio = mVideoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
@@ -678,7 +672,6 @@ async function setZoomRatioPhotoAbnormal(done: Function, testName: string) {
       let zoomRatioRange = mPhotoSession.getZoomRatioRange();
       if (isEmpty(zoomRatioRange)) {
         console.info(TAG, testName + ' no supported zoomRatioRange.');
-        done();
       } else {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
@@ -726,7 +719,6 @@ async function setZoomRatioVideoAbnormal(done: Function, testName: string) {
         let zoomRatioRange = mVideoSession.getZoomRatioRange();
         if (isEmpty(zoomRatioRange)) {
           console.info(TAG, testName + ' no supported zoomRatioRange.');
-          done();
         } else {
           let zoomRatio = mVideoSession.getZoomRatio();
           console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
@@ -846,7 +838,6 @@ export default function CameraSessionZoomBackTest() {
           let zoomRatioRange = mPhotoSession.getZoomRatioRange();
           if (isEmpty(zoomRatioRange)) {
             console.info(TAG, testName + ' no supported zoomRatioRange.');
-            done();
           } else {
             console.info(TAG, testName + ' photo mode, status: ' + zoomRatioRange);
             expect(true).assertTrue();
@@ -896,7 +887,6 @@ export default function CameraSessionZoomBackTest() {
             let zoomRatioRange = mVideoSession.getZoomRatioRange();
             if (isEmpty(zoomRatioRange)) {
               console.info(TAG, testName + ' no supported zoomRatioRange.');
-              done();
             } else {
               console.info(TAG, testName + ' video mode, status: ' + zoomRatioRange);
               expect(true).assertTrue();
