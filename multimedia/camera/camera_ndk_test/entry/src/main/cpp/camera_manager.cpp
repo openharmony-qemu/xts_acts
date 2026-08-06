@@ -715,7 +715,6 @@ Camera_ErrorCode NDKCamera::CreateXdrawPhotoOutput(char* photoSurfaceId)
     return ret_;
 }
 
-
 Camera_ErrorCode NDKCamera::CreateVideoOutput(char* videoId)
 {
     LOG("ndkXTS CreateVideoOutput start.");
