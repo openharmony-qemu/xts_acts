@@ -83,8 +83,8 @@ int SUBAIMindSporeTrainUpdateWeights0001()
     OHPrintf("==========Model RunStep==========\n");
     status = OH_AI_RunStep(model, nullptr, nullptr);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -165,8 +165,8 @@ int SUBAIMindSporeTrainUpdateWeights0002()
             std::cout << "fc3.bias:" << inputData[0] << std::endl;
         }
     }
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：更新权重tensor name错误
@@ -204,8 +204,8 @@ int SUBAIMindSporeTrainUpdateWeights0003()
     OH_AI_TensorHandleArray updateWeights = { 1, vecInputs.data() };
     status = OH_AI_ModelUpdateWeights(model, updateWeights);
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：更新权重tensor type错误
@@ -243,8 +243,8 @@ int SUBAIMindSporeTrainUpdateWeights0004()
     OH_AI_TensorHandleArray updateWeights = { 1, vecInputs.data() };
     status = OH_AI_ModelUpdateWeights(model, updateWeights);
     ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：更新权重tensor name全部错误
@@ -288,8 +288,8 @@ int SUBAIMindSporeTrainUpdateWeights0005()
     OHPrintf("==========OH_AI_TrainModel updateWeights==========\n");
     status = OH_AI_ModelUpdateWeights(model, { featureMaps.size(), featureMaps.data() });
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 void RunStepErrorCodeTest()
@@ -313,8 +313,8 @@ void RunStepErrorCodeTest()
     ASSERT_EQ(status02, OH_AI_STATUS_LITE_PARAM_INVALID);
     auto status03 = OH_AI_ModelSetLearningRate(model01, 1000.0f);
     ASSERT_EQ(status03, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context01);
     OH_AI_ModelDestroy(&model01);
+    OH_AI_ContextDestroy(&context01);
 }
 // 异常场景：更新权重tensor name错误一个
 /**
@@ -359,8 +359,8 @@ int SUBAIMindSporeTrainUpdateWeights0006()
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     auto status01 = OH_AI_ModelUpdateWeights(nullptr, { featureMaps.size(), featureMaps.data() });
     ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     RunStepErrorCodeTest();
     return OH_AI_STATUS_SUCCESS;
 }
@@ -405,8 +405,8 @@ int SUBAIMindSporeTrainSetLearningRate0001()
     OHPrintf("==========Model RunStep==========\n");
     status = OH_AI_RunStep(model, nullptr, nullptr);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：设置学习率值为1000.0
@@ -454,8 +454,8 @@ int SUBAIMindSporeTrainSetLearningRate0002()
     OHPrintf("==========Model RunStep==========\n");
     status = OH_AI_RunStep(model, nullptr, nullptr);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 void SetupVirtualBatchErrorCodeTest()
@@ -478,8 +478,8 @@ void SetupVirtualBatchErrorCodeTest()
     auto status = OH_AI_ModelSetupVirtualBatch(
         model, setupVirtualBatchArg1, setupVirtualBatchArg2, setupVirtualBatchArg3);
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
 }
 // 正常场景：设置虚拟batch_size为2
 /**
@@ -536,8 +536,8 @@ int SUBAIMindSporeTrainSetupVirtualBatch0001()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     SetupVirtualBatchErrorCodeTest();
     return OH_AI_STATUS_SUCCESS;
 }
@@ -614,8 +614,8 @@ int SUBAIMindSporeTrainSetOptimizationLevel0001()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -642,8 +642,8 @@ int SUBAIMindSporeTrainTrainCfg0001()
     ASSERT_NE(trainCfg, nullptr);
     OH_AI_TrainCfgDestroy(&trainCfg);
     ASSERT_EQ(trainCfg, nullptr);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：设置存在的损失函数名
@@ -702,8 +702,8 @@ int SUBAIMindSporeTrainTrainCfg0002()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：设置不存在的损失函数名
@@ -737,8 +737,8 @@ int SUBAIMindSporeTrainTrainCfg0003()
     auto status = OH_AI_TrainModelBuildFromFile(
         model, FilePath("lenet_train.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：设置损失函数名个数大于num
@@ -772,8 +772,8 @@ int SUBAIMindSporeTrainTrainCfg0004()
     auto status = OH_AI_TrainModelBuildFromFile(
         model, FilePath("lenet_train.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：通过buffer加载模型，执行1轮训练并对比精度
@@ -813,8 +813,8 @@ int SUBAIMindSporeTrainModelBuild0001()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, true, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：加载模型buffer为空
@@ -848,8 +848,8 @@ int SUBAIMindSporeTrainModelBuild0002()
     ASSERT_EQ(status02, OH_AI_STATUS_LITE_ERROR);
     auto status03 = OH_AI_TrainModelBuild(model, graphBuf, size, OH_AI_MODELTYPE_INVALID, context, trainCfg);
     ASSERT_EQ(status03, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：加载模型文件路径不存在
@@ -876,8 +876,8 @@ int SUBAIMindSporeTrainModelBuild0003()
     auto status = OH_AI_TrainModelBuildFromFile(
         model, FilePath("not_exist/lenet_train.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：加载模型文件路径为空
@@ -908,8 +908,8 @@ int SUBAIMindSporeTrainModelBuild0004()
     auto status03 = OH_AI_TrainModelBuildFromFile(
         model, FilePath("lenet_train.ms").c_str(), OH_AI_MODELTYPE_INVALID, context, trainCfg);
     ASSERT_EQ(status03, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：加载模型文件路径为错误文件
@@ -936,8 +936,8 @@ int SUBAIMindSporeTrainModelBuild0005()
     auto status = OH_AI_TrainModelBuildFromFile(
         model, FilePath("lenet_train_0.input").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：训练model导出推理图后对比精度
@@ -977,8 +977,8 @@ int SUBAIMindSporeTrainExportModel0001()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：quantization_type为OH_AI_WEIGHT_QUANT
@@ -1018,8 +1018,8 @@ int SUBAIMindSporeTrainExportModel0002()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：quantization_type为OH_AI_FULL_QUANT
@@ -1059,8 +1059,8 @@ int SUBAIMindSporeTrainExportModel0003()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：quantization_type为OH_AI_UNKNOWN_QUANT_TYPE
@@ -1105,8 +1105,8 @@ int SUBAIMindSporeTrainExportModel0004()
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：export_inference_only为false
@@ -1144,8 +1144,8 @@ int SUBAIMindSporeTrainExportModel0005()
     OHPrintf("==========ModelTrain==========\n");
     ModelTrainOptions options2 = ModelTrainOptions("lenet_train_train");
     ModelTrain(model2, context2, options2);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：export_inference_only为false，再指定output_tensor_name
@@ -1190,8 +1190,8 @@ int SUBAIMindSporeTrainExportModel0006()
     OHPrintf("==========ModelTrain==========\n");
     ModelTrainOptions options2 = ModelTrainOptions("lenet_train_train");
     ModelTrain(model2, context2, options2);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：OH_AI_MODELTYPE_INVALID
@@ -1219,8 +1219,8 @@ int SUBAIMindSporeTrainExportModel0007()
     auto status = OH_AI_ExportModel(
         model, OH_AI_MODELTYPE_INVALID, FilePath("lenet_train_infer.ms").c_str(), OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：指定导出不存在的output_tensor_name
@@ -1255,8 +1255,8 @@ int SUBAIMindSporeTrainExportModel0008()
                                     outputTensorName,
                                     1);
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：output_tensor_name的个数与num不一致
@@ -1291,8 +1291,8 @@ int SUBAIMindSporeTrainExportModel0009()
                                     outputTensorName,
                                     0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：model_file文件路径不存在
@@ -1325,8 +1325,8 @@ int SUBAIMindSporeTrainExportModel0010()
                                     nullptr,
                                     0);
     ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：model_file路径为空
@@ -1353,8 +1353,8 @@ int SUBAIMindSporeTrainExportModel0011()
     OHPrintf("==========OH_AI_ExportModel==========\n");
     auto status = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "", OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：model_file路径为文件夹
@@ -1382,8 +1382,8 @@ int SUBAIMindSporeTrainExportModel0012()
     auto status = OH_AI_ExportModel(
         model, OH_AI_MODELTYPE_MINDIR, ActsMindSporeConstants::FILES_DIR.c_str(), OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：OH_AI_ModelGetTrainMode
@@ -1422,8 +1422,8 @@ int SUBAIMindSporeTrainExportModel0013()
     auto train_mode_02 = OH_AI_ModelGetTrainMode(model);
     ASSERT_EQ(train_mode_02, true);
     OHPrintf("=========OH_AI_ModelDestroy===========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     OHPrintf("=========OH_AI_ModelDestroy End===========\n");
     OHPrintf("==========error code==========\n");
     OHPrintf("==========Init Context==========\n");
@@ -1440,8 +1440,8 @@ int SUBAIMindSporeTrainExportModel0013()
     ASSERT_EQ(ret01, OH_AI_STATUS_SUCCESS);
     auto status02 = OH_AI_ModelSetTrainMode(model01, true);
     ASSERT_EQ(status02, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context01);
     OH_AI_ModelDestroy(&model01);
+    OH_AI_ContextDestroy(&context01);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：OH_AI_ExportModelBuffer
@@ -1496,11 +1496,11 @@ int SUBAIMindSporeTrainExportModel0014()
     OHPrintf("=========CompareResult===========\n");
     CompareResult(outputs, "lenet_train_infer");
     OHPrintf("=========model01 context and Model destroy===========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     OHPrintf("=========model01 context and Model destroy End and model02 context and Model destroy===========\n");
-    OH_AI_ContextDestroy(&context2);
     OH_AI_ModelDestroy(&model2);
+    OH_AI_ContextDestroy(&context2);
     OHPrintf("=========model02 context and Model destroy End===========\n");
     return OH_AI_STATUS_SUCCESS;
 }
@@ -1544,8 +1544,8 @@ int SUBAIMindSporeTrainExportWeights0001()
     status = OH_AI_ExportWeightsCollaborateWithMicro(
         model, OH_AI_MODELTYPE_MINDIR, FilePath("xiaoyi_train_codegen_net1_fp32.bin").c_str(), true, false, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1687,8 +1687,8 @@ int SUBAIMindSporeTrainExportWeights0002()
                           CHANGEBLE_WEIGHTS_NAMES.size(),
                           "xiaoyi_train_codegen_net2.bin",
                           "xiaoyi_train_codegen_net2_fp32.bin");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：weight_file文件路径不存在
@@ -1745,8 +1745,8 @@ int SUBAIMindSporeTrainExportWeights0003()
                                                      setChangebleWeightsName,
                                                      changebleWeightsName.size());
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：weight_file路径为空
@@ -1798,8 +1798,8 @@ int SUBAIMindSporeTrainExportWeights0004()
     status = OH_AI_ExportWeightsCollaborateWithMicro(
         model, OH_AI_MODELTYPE_MINDIR, "", true, true, setChangebleWeightsName, changebleWeightsName.size());
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：weight_file路径为文件夹
@@ -1856,8 +1856,8 @@ int SUBAIMindSporeTrainExportWeights0005()
                                                      setChangebleWeightsName,
                                                      changebleWeightsName.size());
     ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 // 异常场景：is_inference为false
@@ -1910,8 +1910,8 @@ int SUBAIMindSporeTrainExportWeights0006()
         nullptr, OH_AI_MODELTYPE_MINDIR, FilePath("xiaoyi_train_codegen_net1.bin").c_str(),
         false, true, setChangebleWeightsName, changebleWeightsName.size());
     ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 } // namespace MindSpore
