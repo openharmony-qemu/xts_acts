@@ -53,9 +53,9 @@ struct Second {
   @State enableWebAVSession: boolean | undefined = true;
   @State fileAccess: boolean | undefined = true;
   @State forceDisplayScrollBar: boolean | undefined = true;
-  @State pendingDatabaseAccessEventId: number = 0;
+  @State pendingDatabaseAccessEventId: Long = 0;
 
-  private loadDatabaseAccessPage(enableAccess: boolean, eventId: number): void {
+  private loadDatabaseAccessPage(enableAccess: boolean, eventId: Long): void {
     this.databaseAccess = enableAccess;
     this.pendingDatabaseAccessEventId = eventId;
     this.isPageEnd = -1;
@@ -63,15 +63,6 @@ struct Second {
       this.webviewCtl.refresh();
       this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
     }, 300);
-  }
-
-  private emitDatabaseAccessResult(eventId: number): void {
-    this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
-      if (res) {
-        console.log("getDataResult==>" + res.toString());
-        Utils.emitEvent(res, eventId);
-      }
-    });
   }
 
   aboutToAppear() {
@@ -355,9 +346,14 @@ struct Second {
           this.isPageEnd = 0;
           if (this.pendingDatabaseAccessEventId > 0 &&
             event.url.includes('databaseAccess.html')) {
-            const eventId = this.pendingDatabaseAccessEventId;
+            const eventId: Long = this.pendingDatabaseAccessEventId;
             this.pendingDatabaseAccessEventId = 0;
-            this.emitDatabaseAccessResult(eventId);
+            this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
+              if (res) {
+                console.log("getDataResult==>" + res.toString());
+                Utils.emitEvent(res, eventId);
+              }
+            });
           }
         })
     }
