@@ -75,7 +75,7 @@ struct Second {
             case "onHttpErrorReceive": {
               this.onHttpErrorReceiveResult = false;
               this.webviewCtl.refresh();
-              this.webviewCtl.loadUrl("https://www.example.com/123");
+              this.webviewCtl.loadUrl("https://postman-echo.com/status/404");
               setTimeout(() => {
                 Utils.emitEvent(this.onHttpErrorReceiveResult, 2024120991)
               }, 6000)
