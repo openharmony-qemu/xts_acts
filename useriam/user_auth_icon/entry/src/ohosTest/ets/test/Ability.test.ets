@@ -20,15 +20,16 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll( async() => {
+	  let driver = Driver.create();
 	  //去除充电框影响
-      let button2 = await driver.findComponent(ON.text("确定")) ?? undefined;
-      if (button2 !== undefined) {
-        await button2.click();
-      }
-	  //去除添加桌面影响
-      let button1 = await driver.findComponent(ON.text("添加")) ?? undefined;
+      let button1 = await driver.findComponent(ON.text("确定")) ?? undefined;
       if (button1 !== undefined) {
         await button1.click();
+      }
+	  //去除添加桌面影响
+      let button2 = await driver.findComponent(ON.text("添加")) ?? undefined;
+      if (button2 !== undefined) {
+        await button2.click();
       }
     })
     beforeEach(() => {
