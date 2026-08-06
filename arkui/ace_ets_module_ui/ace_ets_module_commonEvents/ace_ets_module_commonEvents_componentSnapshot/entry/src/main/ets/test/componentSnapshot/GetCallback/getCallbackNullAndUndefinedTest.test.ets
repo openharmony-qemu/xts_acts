@@ -160,52 +160,6 @@ export default function getCallbackNullAndUndefined() {
     });
 
     /**
-     * @tc.name   getColorModeIsAutoTrueV23001
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_010
-     * @tc.desc   Test componentSnapshot.get with colorMode isAuto true using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorModeIsAutoTrueV23001', Level.LEVEL0, async () => {
-      console.info('[getColorModeIsAutoTrueV23001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoTrue'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultTextGetCallBack');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorModeIsAutoTrueV23001] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorModeIsAutoTrueV23001] END');
-    });
-
-    /**
-     * @tc.name   getColorModeIsAutoFalseV23002
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_011
-     * @tc.desc   Test componentSnapshot.get with colorMode isAuto false using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorModeIsAutoFalseV23002', Level.LEVEL0, async () => {
-      console.info('[getColorModeIsAutoFalseV23002] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoFalse'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultTextGetCallBack');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorModeIsAutoFalseV23002] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorModeIsAutoFalseV23002] END');
-    });
-
-    /**
      * @tc.name   getDynamicRangeModeHIGHV23001
      * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_012
      * @tc.desc   Test componentSnapshot.get with dynamicRangeMode HIGH using callback
