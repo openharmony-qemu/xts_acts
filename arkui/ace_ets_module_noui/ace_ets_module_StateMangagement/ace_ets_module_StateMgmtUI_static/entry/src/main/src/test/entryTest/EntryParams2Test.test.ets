@@ -74,7 +74,7 @@ export default function EntryParams2Test() {
     it('EntryParams2Test_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EntryParams2Test_0100] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("EntryParams2_btn2"));
       await (btn?.click() as Promise<void>);

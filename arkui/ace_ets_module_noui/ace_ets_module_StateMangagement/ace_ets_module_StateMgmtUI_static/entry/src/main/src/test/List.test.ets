@@ -16,9 +16,53 @@
  
 import EntryParamsTest from './entryTest/EntryParamsTest.test';
 import EntryParams2Test from './entryTest/EntryParams2Test.test';
+import EntryOptionPage from './entryTest/EntryOptionPage.test'
+import EntryOptionPage2 from './entryTest/EntryOptionPage2.test'
+import componentLifecycleDecoratorsTest from './lifecycle/ComponentLifecycleDecorators.test';
+import reuseComponentLifecycleTest from './lifecycle/ReuseComponentLifecycle.test';
+import reuseV2ComponentLifecycleTest from './lifecycle/ReuseV2ComponentLifecycle.test';
+import ExtendableButtonBuiltInTest from './ExtendBuiltIn/ExtendableButtonBuiltInTest.test';
+import ExtendableColumnBuiltInTest from './ExtendBuiltIn/ExtendableColumnBuiltInTest.test';
+import ExtendableGridBuiltInTest from './ExtendBuiltIn/ExtendableGridBuiltInTest.test';
+import ExtendableGridBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableGridBuiltInUndefinedTest.test';
+import ExtendableGridItemBuiltInTest from './ExtendBuiltIn/ExtendableGridItemBuiltInTest.test';
+import ExtendableGridItemBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableGridItemBuiltInUndefinedTest.test';
+import ExtendableImageBuiltInTest from './ExtendBuiltIn/ExtendableImageBuiltInTest.test';
+import ExtendableListBuiltInTest from './ExtendBuiltIn/ExtendableListBuiltInTest.test';
+import ExtendableListBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableListBuiltInUndefinedTest.test';
+import ExtendableListItemBuiltInTest from './ExtendBuiltIn/ExtendableListItemBuiltInTest.test';
+import ExtendableListItemBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableListItemBuiltInUndefinedTest.test';
+import ExtendableRelativeContainerBuiltInTest from './ExtendBuiltIn/ExtendableRelativeContainerBuiltInTest.test';
+import ExtendableRowBuiltInTest from './ExtendBuiltIn/ExtendableRowBuiltInTest.test';
+import ExtendableStackBuiltInTest from './ExtendBuiltIn/ExtendableStackBuiltInTest.test';
+import ExtendableStackBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableStackBuiltInUndefinedTest.test';
+import ExtendableTextBuiltInTest from './ExtendBuiltIn/ExtendableTextBuiltInTest.test';
+import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltInTest.test';
  
  
 export default function testsuite() {
   EntryParamsTest();
   EntryParams2Test();
+  ExtendableListBuiltInTest();
+  EntryOptionPage();
+  EntryOptionPage2();
+  ExtendableListBuiltInUndefinedTest();
+  ExtendableListItemBuiltInTest();
+  ExtendableListItemBuiltInUndefinedTest();
+  ExtendableButtonBuiltInTest();
+  ExtendableColumnBuiltInTest();
+  ExtendableGridBuiltInTest();
+  ExtendableGridBuiltInUndefinedTest();
+  ExtendableGridItemBuiltInTest();
+  ExtendableGridItemBuiltInUndefinedTest();
+  ExtendableImageBuiltInTest();
+  ExtendableRelativeContainerBuiltInTest();
+  ExtendableRowBuiltInTest();
+  ExtendableStackBuiltInTest();
+  ExtendableStackBuiltInUndefinedTest();
+  ExtendableTextBuiltInTest();
+  ExtendableToggleBuiltInTest();
+  componentLifecycleDecoratorsTest();
+  reuseComponentLifecycleTest();
+  reuseV2ComponentLifecycleTest();
 }

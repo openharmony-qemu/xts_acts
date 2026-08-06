@@ -1,0 +1,15 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Reusable/repeatReusableFalse",
+    "MainAbility/pages/Reusable/repeatReusableTrue",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenMakeObserved",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenMakeObservedFalse",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenObservedAndObjectlink",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenObservedBuiltIn",
+    "MainAbility/pages/uiutils/GlobalReusePool",
+    "MainAbility/pages/uiutils/GlobalReusePool002",
+    "MainAbility/pages/uiutils/GlobalReusePool003",
+    "MainAbility/pages/uiutils/GlobalReusePool004"
+  ]
+}
