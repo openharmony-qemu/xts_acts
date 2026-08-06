@@ -3785,6 +3785,15 @@ static napi_value OHCameraTestLogicCamDevs(napi_env env, napi_callback_info info
     return result;
 }
 
+static napi_value OHCaptureSessionTestRAWCaptureZoomRatioRange(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestGetRAWCaptureZoomRatioRange();
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 static napi_value DeleteConstituentCameraDevices(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -4428,7 +4437,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"oHCameraManagerSetSceneMode", nullptr, OHCameraManagerSetSceneMode, nullptr, nullptr, nullptr, napi_default,
             nullptr},
-
+        { "oHCaptureSessionTestRAWCaptureZoomRatioRange", nullptr, OHCaptureSessionTestRAWCaptureZoomRatioRange, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
         { "getCameraDevices", nullptr, GetCameraDevices, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "oHCaptureSessionTestPhyAptNullSession", nullptr, OHCaptureSessionTestPhyAptNullSession, nullptr, nullptr,
             nullptr, napi_default, nullptr },
