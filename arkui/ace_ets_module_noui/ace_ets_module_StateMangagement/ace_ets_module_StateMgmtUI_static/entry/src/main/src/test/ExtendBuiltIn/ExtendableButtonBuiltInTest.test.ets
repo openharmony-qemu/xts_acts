@@ -34,7 +34,7 @@ export default function ExtendableButtonBuiltInTest() {
   describe('ExtendableButtonBuiltInTest', () => {
     beforeAll(async (): Promise<void> => {
 
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.StateMgmtUI.static", "EntryAbility")
 
     })
     beforeEach(async (): Promise<void> => {

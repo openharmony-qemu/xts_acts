@@ -33,7 +33,7 @@ import { BusinessError } from '@ohos.base';
 export default function ExtendableListItemBuiltInUndefinedTest() {
   describe('ExtendableListItemBuiltInUndefinedTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.StateMgmtUI.static", "EntryAbility")
     })
     beforeEach(async (): Promise<void> => {
       console.info("ExtendableListItemBuiltInUndefinedTest beforeEach start");

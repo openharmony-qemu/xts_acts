@@ -28,7 +28,7 @@ import hilog from '@ohos.hilog'
 export default function reuseV2ComponentLifecycleTest(): void {
   describe('reuseV2ComponentLifecycleTest', () => {
     beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.StateMgmtUI.static", "EntryAbility");
       await UtilsTest.msSleep(1000);
       console.info("beforeAll case");
     });
