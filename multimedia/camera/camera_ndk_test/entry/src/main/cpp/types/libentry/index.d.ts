@@ -224,6 +224,8 @@ export const adjustHeifIdx: (idx: number) => number;
 
 export const createPhotoOutput: (surfaceId: string) => number;
 
+export const createXdrawPhotoOutput: (surfaceId: string) => number;
+
 export const createHeifPhotoOutput: (surfaceId: string, idx: number) => number;
 
 export const createVideoOutput: (surfaceId: string) => number;

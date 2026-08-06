@@ -688,6 +688,33 @@ Camera_ErrorCode NDKCamera::CreateHeifPhotoOutput(char* photoSurfaceId, int idx)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::CreateXdrawPhotoOutput(char* photoSurfaceId)
+{
+    LOG("ndkXTS CreateXdrawPhotoOutput start.");
+    for (decltype(cameraOutputCapability_->photoProfilesSize) i = 0;
+            i< cameraOutputCapability_->photoProfilesSize; i++) {
+        if (cameraOutputCapability_->photoProfiles[i]->format == CAMERA_FORMAT_DNG_XDRAW) {
+            profile_ = cameraOutputCapability_->photoProfiles[i];
+            break;
+        }
+    }
+    LOG("ndkXTS CreateXdrawPhotoOutput photoProfiles start.");
+    if (profile_ == nullptr) {
+        LOG("ndkXTS Get photoProfiles failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    if (photoSurfaceId == nullptr) {
+        LOG("ndkXTS CreateXdrawPhotoOutput failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    LOG("ndkXTS CreateXdrawPhotoOutput start.");
+    ret_ = OH_CameraManager_CreatePhotoOutput(cameraManager_, profile_, photoSurfaceId, &photoOutput_);
+    PhotoOutputRegisterCallback();
+
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::CreateVideoOutput(char* videoId)
 {
     LOG("ndkXTS CreateVideoOutput start.");
