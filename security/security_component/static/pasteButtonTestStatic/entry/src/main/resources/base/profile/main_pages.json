@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/pasteButton",
+    "pages/pasteButton_1",
     "pages/pasteButtonScenario",
     "pages/pasteButtonSetUndefined"
   ]
