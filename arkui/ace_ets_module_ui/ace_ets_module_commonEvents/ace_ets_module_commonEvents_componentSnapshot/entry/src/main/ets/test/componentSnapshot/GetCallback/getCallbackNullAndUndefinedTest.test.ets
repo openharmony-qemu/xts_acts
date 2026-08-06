@@ -60,7 +60,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnIdEmpty'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getIdEmptyV10001] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -83,7 +83,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsNull'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getOptionsNullV12001] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -106,7 +106,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsUndefined'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getOptionsUndefinedV12002] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -129,7 +129,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitTrue'));
       await button.click();
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWaitTrueV12003] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -152,57 +152,11 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitFalse'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWaitFalseV12004] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
       console.info('[getWaitFalseV12004] END');
-    });
-
-    /**
-     * @tc.name   getColorSpaceSRGBV23001
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_008
-     * @tc.desc   Test componentSnapshot.get with colorSpace SRGB using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpaceSRGBV23001', Level.LEVEL0, async () => {
-      console.info('[getColorSpaceSRGBV23001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace4'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpaceSRGBV23001] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpaceSRGBV23001] END');
-    });
-
-    /**
-     * @tc.name   getColorSpaceDISPLAYP3V23002
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_009
-     * @tc.desc   Test componentSnapshot.get with colorSpace DISPLAY_P3 using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpaceDISPLAYP3V23002', Level.LEVEL0, async () => {
-      console.info('[getColorSpaceDISPLAYP3V23002] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace3'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpaceDISPLAYP3V23002] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpaceDISPLAYP3V23002] END');
     });
 
     /**
@@ -221,7 +175,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoTrue'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getColorModeIsAutoTrueV23001] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -244,7 +198,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getColorModeIsAutoFalseV23002] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -267,7 +221,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrHIGH'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getDynamicRangeModeHIGHV23001] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -290,7 +244,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrCONSTRAINT'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getDynamicRangeModeCONSTRAINTV23002] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -313,7 +267,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrSTANDARD'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getDynamicRangeModeSTANDARDV23003] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -336,7 +290,7 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoTrue'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getDynamicRangeModeIsAutoTrueV23004] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -359,356 +313,12 @@ export default function getCallbackNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetCallBack');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getDynamicRangeModeIsAutoFalseV23005] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
       console.info('[getDynamicRangeModeIsAutoFalseV23005] END');
     });
 
-    /**
-     * @tc.name   getColorSpace13V23003
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_017
-     * @tc.desc   Test componentSnapshot.get with colorSpace ADOBE_RGB_1998_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace13V23003', Level.LEVEL0, async () => {
-      console.info('[getColorSpace13V23003] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace13'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace13V23003] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace13V23003] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace14V23004
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_018
-     * @tc.desc   Test componentSnapshot.get with colorSpace DISPLAY_P3_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace14V23004', Level.LEVEL0, async () => {
-      console.info('[getColorSpace14V23004] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace14'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace14V23004] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace14V23004] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace15V23005
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_019
-     * @tc.desc   Test componentSnapshot.get with colorSpace SRGB_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace15V23005', Level.LEVEL0, async () => {
-      console.info('[getColorSpace15V23005] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace15'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace15V23005] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace15V23005] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace16V23006
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_020
-     * @tc.desc   Test componentSnapshot.get with colorSpace BT709_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace16V23006', Level.LEVEL0, async () => {
-      console.info('[getColorSpace16V23006] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace16'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace16V23006] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace16V23006] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace17V23007
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_021
-     * @tc.desc   Test componentSnapshot.get with colorSpace BT601_EBU_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace17V23007', Level.LEVEL0, async () => {
-      console.info('[getColorSpace17V23007] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace17'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace17V23007] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace17V23007] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace18V23008
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_022
-     * @tc.desc   Test componentSnapshot.get with colorSpace BT601_SMPTE_C_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace18V23008', Level.LEVEL0, async () => {
-      console.info('[getColorSpace18V23008] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace18'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace18V23008] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace18V23008] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace19V23009
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_023
-     * @tc.desc   Test componentSnapshot.get with colorSpace BT2020_HLG_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace19V23009', Level.LEVEL0, async () => {
-      console.info('[getColorSpace19V23009] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace19'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace19V23009] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace19V23009] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace20V23010
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_024
-     * @tc.desc   Test componentSnapshot.get with colorSpace BT2020_PQ_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace20V23010', Level.LEVEL0, async () => {
-      console.info('[getColorSpace20V23010] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace20'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace20V23010] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace20V23010] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace21V23011
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_025
-     * @tc.desc   Test componentSnapshot.get with colorSpace P3_HLG_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace21V23011', Level.LEVEL0, async () => {
-      console.info('[getColorSpace21V23011] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace21'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace21V23011] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace21V23011] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace22V23012
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_026
-     * @tc.desc   Test componentSnapshot.get with colorSpace P3_PQ_LIMIT using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace22V23012', Level.LEVEL0, async () => {
-      console.info('[getColorSpace22V23012] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace22'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace22V23012] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace22V23012] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace23V23013
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_027
-     * @tc.desc   Test componentSnapshot.get with colorSpace LINEAR_P3 using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace23V23013', Level.LEVEL0, async () => {
-      console.info('[getColorSpace23V23013] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace23'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace23V23013] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace23V23013] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace24V23014
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_028
-     * @tc.desc   Test componentSnapshot.get with colorSpace LINEAR_SRGB using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace24V23014', Level.LEVEL0, async () => {
-      console.info('[getColorSpace24V23014] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace24'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace24V23014] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace24V23014] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace25V23015
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_029
-     * @tc.desc   Test componentSnapshot.get with colorSpace LINEAR_BT2020 using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace25V23015', Level.LEVEL0, async () => {
-      console.info('[getColorSpace25V23015] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace25'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace25V23015] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace25V23015] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace26V23016
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_030
-     * @tc.desc   Test componentSnapshot.get with colorSpace H_LOG using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace26V23016', Level.LEVEL0, async () => {
-      console.info('[getColorSpace26V23016] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace26'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace26V23016] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace26V23016] END');
-    });
-
-    /**
-     * @tc.name   getColorSpace27V23017
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GET_PARAM_031
-     * @tc.desc   Test componentSnapshot.get with colorSpace DISPLAY_BT2020_SRGB using callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getColorSpace27V23017', Level.LEVEL0, async () => {
-      console.info('[getColorSpace27V23017] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace27'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getColorSpace27V23017] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getColorSpace27V23017] END');
-    });
   })
 }

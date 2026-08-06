@@ -60,7 +60,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsNull'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdOptionsNullV15003] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -83,7 +83,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsUndefined'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdOptionsUndefinedV15004] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -106,7 +106,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace0'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdColorSpaceUNKNOWNV23001] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -129,7 +129,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace3'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdColorSpaceDISPLAYP3V23004] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -152,7 +152,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace4'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdColorSpaceSRGBV23005] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -175,7 +175,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoTrue'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdColorModeIsAutoTrueV23014] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -198,7 +198,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdColorModeIsAutoFalseV23015] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -221,7 +221,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrHIGH'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdDynamicRangeModeHIGHV23016] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -244,7 +244,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrCONSTRAINT'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdDynamicRangeModeCONSTRAINTV23017] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -267,7 +267,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrSTANDARD'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdDynamicRangeModeSTANDARDV23018] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -290,7 +290,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoTrue'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdDynamicRangeModeIsAutoTrueV23019] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -313,7 +313,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdDynamicRangeModeIsAutoFalseV23020] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -336,7 +336,7 @@ export default function getSyncWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace14'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSyncWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getSyncWithUniqueIdColorSpaceDISPLAYP3LIMITV23022] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');

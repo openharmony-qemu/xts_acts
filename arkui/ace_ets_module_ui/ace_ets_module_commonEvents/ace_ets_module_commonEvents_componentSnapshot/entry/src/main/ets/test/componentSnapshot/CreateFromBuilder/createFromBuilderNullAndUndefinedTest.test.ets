@@ -58,7 +58,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDelayNull'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[delayNullV10003] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -81,7 +81,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDelayUndefined'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[delayUndefinedV10004] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -104,7 +104,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnCheckTrue'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[checkImageStatusTrueV10005] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -127,7 +127,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnCheckFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[checkImageStatusFalseV10006] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -150,7 +150,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsNull'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[optionsNullV10007] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -173,7 +173,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsUndefined'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[optionsUndefinedV10008] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -196,7 +196,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitTrue'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[waitTrueV10009] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -219,7 +219,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[waitFalseV10010] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -242,7 +242,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorModeIsAutoFalseV10012] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -265,7 +265,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrHIGH'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeHIGHV10013] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -288,7 +288,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrCONSTRAINT'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeCONSTRAINTV10014] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -311,7 +311,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrSTANDARD'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeSTANDARDV10015] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -334,7 +334,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeIsAutoFalseV10017] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -357,7 +357,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace0'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace0V10018] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -380,7 +380,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace1V10019] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -403,7 +403,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace2'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace2V10020] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -426,7 +426,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace3'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace3V10021] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -449,7 +449,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace4'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace4V10022] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -472,7 +472,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace5'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace5V10023] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -495,7 +495,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace6'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace6V10024] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -518,7 +518,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace7'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace7V10025] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -541,7 +541,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace8'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace8V10026] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -564,7 +564,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace9'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace9V10027] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -587,7 +587,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace10'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace10V10028] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -610,7 +610,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace11'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace11V10029] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -633,7 +633,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace12'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace12V10030] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -656,7 +656,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace13'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace13V10031] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -679,7 +679,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace14'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace14V10032] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -702,7 +702,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace15'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace15V10033] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -725,7 +725,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace16'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace16V10034] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -748,7 +748,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace17'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace17V10035] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -771,7 +771,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace18'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace18V10036] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -794,7 +794,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace19'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace19V10037] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -817,7 +817,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace20'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace20V10038] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -840,7 +840,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace21'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace21V10039] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -863,7 +863,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace22'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace22V10040] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -886,7 +886,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace23'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace23V10041] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -909,7 +909,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace24'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace24V10042] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -932,7 +932,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace25'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace25V10043] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -955,7 +955,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace26'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace26V10044] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -978,7 +978,7 @@ export default function createFromBuilderNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace27'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextCreateFromBuilder');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace27V10045] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
