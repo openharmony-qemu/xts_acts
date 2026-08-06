@@ -30,7 +30,8 @@ struct selectMenuBackgroundEffectDemo {
     '4.点击按钮"绿"，再点击最上方select组件\n' +
     '预期结果：\n' + '1.弹出的菜单背景颜色为透明色\n' + '2.弹出的菜单背景颜色为透明色\n' +
     '3.弹出的菜单背景颜色为带透明度和模糊度的紫色\n' + '4.弹出的菜单背景颜色为不透明绿色\n' +
-    '注：手机和手表的系统颜色有差异，测试手表时，颜色偏黑为正常现象\n'
+    '注：手机和手表的系统颜色有差异，测试手表时，颜色偏黑为正常现象,点击“空”按钮操作，若上一次操作为设置不带透明度的纯色，' +
+    '会继承上一次的背景色，若上一次操作为设置带透明度的，点击“空”按钮，组件背景色会回到透明状态\n'
   @State radiusNum: number | undefined | null = undefined
   @State saturationNum: number | undefined | null = undefined
   @State brightnessNum: number | undefined | null = undefined
@@ -134,6 +135,7 @@ struct selectMenuBackgroundEffectDemo {
         Scroll() {
           Column({ space: 5 }) {
           Select([{ value: 'aaa'}])
+            .background(Color.Pink)
             .menuBackgroundEffect({
               radius: this.radiusNum,
               saturation: this.saturationNum,
@@ -181,7 +183,7 @@ struct selectMenuBackgroundEffectDemo {
                   this.policyNum = BlurStyleActivePolicy.ALWAYS_INACTIVE;
                   this.inactiveColorNum = Color.Green;
                 })
-            }
+            }.margin({top:'40vp'})
           }.width('100%')
         }
       }.height('80%')

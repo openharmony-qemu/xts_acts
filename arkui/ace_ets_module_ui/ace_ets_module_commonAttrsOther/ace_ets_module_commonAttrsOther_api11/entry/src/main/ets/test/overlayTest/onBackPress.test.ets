@@ -59,15 +59,17 @@ export default function onBackPress() {
       console.info('[onBackPress_0100] START');
       await CommonFunc.sleep(1000);
       let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
       let buttonT = await driver.findComponent(ON.id('testT'));
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await buttonT.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       let buttonS = await driver.findComponent(ON.id('show'));
       await buttonS.click();
+      await CommonFunc.sleep(1500);
       let buttonClose = await driver.findComponent(ON.text('关闭'));
       expect(buttonClose).not().assertUndefined();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await buttonClose.click();
       console.info('[onBackPress_0100] END');
       done();
@@ -86,15 +88,17 @@ export default function onBackPress() {
       
       await CommonFunc.sleep(2000);
       let driver = await Driver.create()
+      await CommonFunc.sleep(2000);
       let buttonF = await driver.findComponent(ON.id('testF'));
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await buttonF.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       let buttonS = await driver.findComponent(ON.id('show'));
       await buttonS.click();
+      await CommonFunc.sleep(1500);
       let buttonClose = await driver.findComponent(ON.text('关闭'));
       expect(buttonClose).not().assertUndefined();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await buttonClose.click();
       console.info('onBackPress_0200 END');
       done();
@@ -112,15 +116,17 @@ export default function onBackPress() {
       console.info('[overLayJsunit_0300] START');
       await CommonFunc.sleep(2000);
       let driver = await Driver.create()
+      await CommonFunc.sleep(2000);
       let buttonU = await driver.findComponent(ON.id('testU'));
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await buttonU.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       let buttonS = await driver.findComponent(ON.id('show'));
       await buttonS.click();
+      await CommonFunc.sleep(1500);
       let buttonClose = await driver.findComponent(ON.text('关闭'));
       expect(buttonClose).not().assertUndefined();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
       await buttonClose.click();
       console.info('overLayJsunit_0300 END');
       done();
