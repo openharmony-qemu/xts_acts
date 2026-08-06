@@ -64,7 +64,8 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
       await helperInstance.release();
       expect(true).assertFail();
       return false;
-    } else if (cameras.length < testCameraId + 1) {
+    } else if (cameras.length < testCameraId + 1) {  //判断单前需要测试的相机数量是否已经测完（当前测试序号是否大于相机总数）
+      console.info(`${testNum} this camera number is end, cameras.length is ${cameras.length}`)
       return true;
     }
     const beforePhotoTotalNum = await getAllPhotoAssetsCount();
@@ -90,6 +91,7 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
           await addOutputIntoSession(session, previewOutPut);
           await addOutputIntoSession(session, photoOutput);
           await commitSessionConfig(session);
+          console.info(`${testNum} commitSessionConfig is finish`);
           setImageColorSpace(session, true);
           onPreviewOutputFrameStart(previewOutPut!);
           await startSession(session);
@@ -100,7 +102,18 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
           let zoomRatio: number;
           let findZoomRatioRange: boolean;
           let zoomRatioRange = getSuppotredZoomRatioRange(session);
-          if (zoomRatioRange != undefined && zoomRatioRange.length == 3) {
+          if (zoomRatioRange != undefined) {
+            if (zoomRatioRange.length < testZoomRatioRange + 1) {  //判断单前需要测试的放大焦距是否已经测完（当前测试序号是否大于需要测试总数）
+              console.info(`${testNum} this camera zoom number is end, zoomRatioRange.length is ${zoomRatioRange.length}`);
+              await stopSession(session);
+              console.info(`${testNum} stopSession is finish`);
+              await releaseInPutStream(cameraInput);
+              await releaseOutPutStream(previewOutPut);
+              await releaseOutPutStream(photoOutput);
+              console.info(`releaseStream is finish`);
+              await releaseSession(session);
+              return true;
+            }
             findZoomRatioRange = true
             zoomRatio = zoomRatioRange[testZoomRatioRange];
             setZoomRatioRange(session, zoomRatioRange!, zoomRatio, testCameraId);
