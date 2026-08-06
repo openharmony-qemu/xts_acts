@@ -477,6 +477,284 @@ export default function actsWifiManagerEventTest() {
               }
               done();
         })
+    /**
+     * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0001
+     * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0001
+     * @tc.desc   Test wifiStateChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Communication_WiFi_Event_Test_ADD_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let wifiStateChangeCallback = result => {
+          console.info("[wifi_test]wifiStateChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiStateChange", wifiStateChangeCallback);
+          await sleep(1000);
+          wifiMg.off("wifiStateChange");
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0002
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0002
+       * @tc.desc   Test wifiConnectionChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let wifiConnectionChangeCallback = result => {
+          console.info("[wifi_test]wifiConnectionChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiConnectionChange", wifiConnectionChangeCallback);
+          await sleep(1000);
+          wifiMg.off("wifiConnectionChange");
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0003
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0003
+       * @tc.desc   Test wifiScanStateChange  callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let wifiScanStateChangeCallback = result => {
+          console.info("[wifi_test]wifiScanStateChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiScanStateChange", wifiScanStateChangeCallback);
+          await sleep(1000);
+          wifiMg.off("wifiScanStateChange");
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0004
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0004
+       * @tc.desc   Test wifiRssiChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let wifiRssiChangeCallback = result => {
+          console.info("[wifi_test]wifiRssiChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiRssiChange", wifiRssiChangeCallback);
+          await sleep(1000);
+          wifiMg.off("wifiRssiChange");
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0005
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0005
+       * @tc.desc   Test hotspotStateChange api.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let hotspotState = "hotspotStateChange";
+        let hotspotStateChangeCallback = result => {
+          console.info("[wifi_test]hotspotStateChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("hotspotStateChange", hotspotStateChangeCallback);
+          await sleep(1000);
+          wifiMg.off("hotspotStateChange");
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0006
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0006
+       * @tc.desc   Test wifiStateChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        let wifiStateChangeCallback1 = result => {
+          console.info("[wifi_test]wifiStateChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiStateChangeCallback2 = result => {
+          console.info("[wifi_test]wifiStateChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiStateChangeCallback3 = result => {
+          console.info("[wifi_test]wifiStateChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiStateChange", wifiStateChangeCallback1);
+          wifiMg.on("wifiStateChange", wifiStateChangeCallback2);
+          wifiMg.on("wifiStateChange", wifiStateChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("wifiStateChange", wifiStateChangeCallback3);
+          wifiMg.off("wifiStateChange", wifiStateChangeCallback2);
+          wifiMg.off("wifiStateChange", wifiStateChangeCallback1);
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0007
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0007
+       * @tc.desc   Test wifiConnectionChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        let wifiConnectionChangeCallback1 = result => {
+          console.info("[wifi_test]wifiConnectionChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiConnectionChangeCallback2 = result => {
+          console.info("[wifi_test]wifiConnectionChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiConnectionChangeCallback3 = result => {
+          console.info("[wifi_test]wifiConnectionChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiConnectionChange", wifiConnectionChangeCallback1);
+          wifiMg.on("wifiConnectionChange", wifiConnectionChangeCallback2);
+          wifiMg.on("wifiConnectionChange", wifiConnectionChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("wifiConnectionChange", wifiConnectionChangeCallback3);
+          wifiMg.off("wifiConnectionChange", wifiConnectionChangeCallback2);
+          wifiMg.off("wifiConnectionChange", wifiConnectionChangeCallback1);
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0008
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0008
+       * @tc.desc   Test wifiScanStateChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        let wifiScanStateChangeCallback1 = result => {
+          console.info("[wifi_test]wifiScanStateChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiScanStateChangeCallback2 = result => {
+          console.info("[wifi_test]wifiScanStateChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiScanStateChangeCallback3 = result => {
+          console.info("[wifi_test]wifiScanStateChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiScanStateChange", wifiScanStateChangeCallback1);
+          wifiMg.on("wifiScanStateChange", wifiScanStateChangeCallback2);
+          wifiMg.on("wifiScanStateChange", wifiScanStateChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("wifiScanStateChange", wifiScanStateChangeCallback3);
+          wifiMg.off("wifiScanStateChange", wifiScanStateChangeCallback2);
+          wifiMg.off("wifiScanStateChange", wifiScanStateChangeCallback1);
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0009
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0009
+       * @tc.desc   Test wifiRssiChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        let wifiRssiChangeCallback1 = result => {
+          console.info("[wifi_test]wifiRssiChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiRssiChangeCallback2 = result => {
+          console.info("[wifi_test]wifiRssiChange callback, result: " + JSON.stringify(result));
+        }
+        let wifiRssiChangeCallback3 = result => {
+          console.info("[wifi_test]wifiRssiChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("wifiRssiChange", wifiRssiChangeCallback1);
+          wifiMg.on("wifiRssiChange", wifiRssiChangeCallback2);
+          wifiMg.on("wifiRssiChange", wifiRssiChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("wifiRssiChange", wifiRssiChangeCallback3);
+          wifiMg.off("wifiRssiChange", wifiRssiChangeCallback2);
+          wifiMg.off("wifiRssiChange", wifiRssiChangeCallback1);
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0010
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0010
+       * @tc.desc   Test hotspotStateChange api.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        let hotspotStateChangeCallback1 = result => {
+          console.info("[wifi_test]hotspotStateChange callback, result: " + JSON.stringify(result));
+        }
+        let hotspotStateChangeCallback2 = result => {
+          console.info("[wifi_test]hotspotStateChange callback, result: " + JSON.stringify(result));
+        }
+        let hotspotStateChangeCallback3 = result => {
+          console.info("[wifi_test]hotspotStateChange callback, result: " + JSON.stringify(result));
+        }
+        try {
+          wifiMg.on("hotspotStateChange", hotspotStateChangeCallback1);
+          wifiMg.on("hotspotStateChange", hotspotStateChangeCallback2);
+          wifiMg.on("hotspotStateChange", hotspotStateChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("hotspotStateChange", hotspotStateChangeCallback3);
+          wifiMg.off("hotspotStateChange", hotspotStateChangeCallback2);
+          wifiMg.off("hotspotStateChange", hotspotStateChangeCallback1);
+        }catch(error){
+          console.info("[wifi_test] error: " + JSON.stringify(error.code) + JSON.stringify(error.message));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
         console.log("*************[wifi_test] start wifi js unit test end*************");
     })
 }
