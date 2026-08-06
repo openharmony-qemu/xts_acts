@@ -19,6 +19,34 @@ import CollectionsArrayCombinationThirdTest from './CollectionsArrayCombinationT
 import CollectionsArrayCombinationFourthTest from './CollectionsArrayCombinationFourthTest.test';
 import CollectionsArraySupplementTest from './CollectionsArraySupplementTest.test';
 
+import arrayConstructorSuite from './CollectionsArrayBaseTest/ArrayConstructor.test';
+import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test';
+import arrayQuerySuite from './CollectionsArrayBaseTest/ArrayQuery.test';
+import arrayOperationSuite from './CollectionsArrayBaseTest/ArrayOperation.test';
+import arrayTransformSuite from './CollectionsArrayBaseTest/ArrayTransform.test';
+// import arrayErrorSuite from './CollectionsArrayBaseTest/ArrayError.test';
+import arrayInheritanceSuite from './CollectionsArrayBaseTest/ArrayInheritance.test';
+import arrayAnnotationSuite from './CollectionsArrayBaseTest/ArrayAnnotation.test';
+import arrayConcurrentSuite from './CollectionsArrayBaseTest/ArrayConcurrent.test';
+
+import arrayConcurrentCreateFromTest from './CollectionsArrayConcurrentTest/ArrayConcurrentCreateFromTest.test';
+import arrayConcurrentDataTypeTest from './CollectionsArrayConcurrentTest/ArrayConcurrentDataTypeTest.test';
+import arrayConcurrentFillCopyWithinTest from './CollectionsArrayConcurrentTest/ArrayConcurrentFillCopyWithinTest.test';
+import arrayConcurrentForEachModifyTest from './CollectionsArrayConcurrentTest/ArrayConcurrentForEachModifyTest.test';
+import arrayConcurrentForEachTest from './CollectionsArrayConcurrentTest/ArrayConcurrentForEachTest.test';
+import arrayConcurrentIteratorModifyTest from './CollectionsArrayConcurrentTest/ArrayConcurrentIteratorModifyTest.test';
+import arrayConcurrentIteratorsTest from './CollectionsArrayConcurrentTest/ArrayConcurrentIteratorsTest.test';
+import arrayConcurrentLargeArrayTest from './CollectionsArrayConcurrentTest/ArrayConcurrentLargeArrayTest.test';
+import arrayConcurrentLockTest from './CollectionsArrayConcurrentTest/ArrayConcurrentLockTest.test';
+import arrayConcurrentNoLockTest from './CollectionsArrayConcurrentTest/ArrayConcurrentNoLockTest.test';
+import arrayConcurrentPushPopTest from './CollectionsArrayConcurrentTest/ArrayConcurrentPushPopTest.test';
+import arrayConcurrentQueryFindTest from './CollectionsArrayConcurrentTest/ArrayConcurrentQueryFindTest.test';
+import arrayConcurrentQueryIndexOfTest from './CollectionsArrayConcurrentTest/ArrayConcurrentQueryIndexOfTest.test';
+import arrayConcurrentSendableDataTest from './CollectionsArrayConcurrentTest/ArrayConcurrentSendableDataTest.test';
+import arrayConcurrentSortReverseTest from './CollectionsArrayConcurrentTest/ArrayConcurrentSortReverseTest.test';
+import arrayConcurrentSpliceTest from './CollectionsArrayConcurrentTest/ArrayConcurrentSpliceTest.test';
+import arrayConcurrentTraverseModifyTest from './CollectionsArrayConcurrentTest/ArrayConcurrentTraverseModifyTest.test';
+import arrayConcurrentUnshiftShiftTest from './CollectionsArrayConcurrentTest/ArrayConcurrentUnshiftShiftTest.test';
 export default function testsuite() {
   CollectionsArrayCombinationTest();
   CollectionsArrayCombinationSecondTest();
@@ -26,5 +54,32 @@ export default function testsuite() {
   CollectionsArrayCombinationFourthTest();
   CollectionsArraySupplementTest();
   
+  arrayConstructorSuite();
+  arrayTraversalSuite();
+  arrayQuerySuite();
+  arrayOperationSuite();
+  arrayTransformSuite();
+  // arrayErrorSuite();
+  arrayInheritanceSuite();
+  arrayAnnotationSuite();
+  arrayConcurrentSuite();
+  arrayConcurrentCreateFromTest();
+  arrayConcurrentDataTypeTest();
+  arrayConcurrentFillCopyWithinTest();
+  arrayConcurrentForEachModifyTest();
+  arrayConcurrentForEachTest();
+  arrayConcurrentIteratorModifyTest();
+  arrayConcurrentIteratorsTest();
+  arrayConcurrentLargeArrayTest();
+  arrayConcurrentLockTest();
+  arrayConcurrentNoLockTest();
+  arrayConcurrentPushPopTest();
+  arrayConcurrentQueryFindTest();
+  arrayConcurrentQueryIndexOfTest();
+  arrayConcurrentSendableDataTest();
+  arrayConcurrentSortReverseTest();
+  arrayConcurrentSpliceTest();
+  arrayConcurrentTraverseModifyTest();
+  arrayConcurrentUnshiftShiftTest();
 };
 
