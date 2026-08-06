@@ -897,5 +897,31 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.versions[3]).assertEqual(4);
     })
 
+    /**
+     * @tc.name    LockDesignAsyncOperationTest2100
+     * @tc.number  SUB_LOCK_DESIGN_ASYNC_OPERATION_TEST_2100
+     * @tc.desc    Verify concurrent file access tracking with 5 tasks using Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockDesignAsyncOperationTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const mutex = new Mutex();
+      const data = new FileAccessData();
+      const counter = new AtomicInt(0);
+      // 5 tasks record file accesses concurrently: Mutex serializes the
+      // read-modify-write on accessCount so no update is lost and
+      // lastAccess always equals the final access count
+      let t1 = taskpool.execute(new taskpool.Task(fileAccessTask, mutex, data, counter));
+      let t2 = taskpool.execute(new taskpool.Task(fileAccessTask, mutex, data, counter));
+      let t3 = taskpool.execute(new taskpool.Task(fileAccessTask, mutex, data, counter));
+      let t4 = taskpool.execute(new taskpool.Task(fileAccessTask, mutex, data, counter));
+      let t5 = taskpool.execute(new taskpool.Task(fileAccessTask, mutex, data, counter));
+      await Promise.all([t1, t2, t3, t4, t5]);
+      expect(counter.load()).assertEqual(5);
+      expect(data.accessCount).assertEqual(5);
+      expect(data.lastAccess).assertEqual(5);
+    })
+
   })
 }
