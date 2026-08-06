@@ -1079,5 +1079,69 @@ export default function effectKitBTest() {
         })
       })
 
+    /**
+     * @tc.name    blur_InvalidTileMode_001
+     * @tc.number  SUB_GRAPHIC_Filter_blur_InvalidTileMode_001
+     * @tc.desc    Test blur with invalid tileMode (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('blur_InvalidTileMode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          const pixels: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          const pixelMap = await image.createPixelMapFromPixels(pixels, options);
+          const filter = effectKit.createEffect(pixelMap);
+          filter.blur(1, -1);
+          console.info('www data blur_InvalidTileMode_001 success ');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data blur_InvalidTileMode_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    blur_InvalidTileMode_002
+     * @tc.number  SUB_GRAPHIC_Filter_blur_InvalidTileMode_002
+     * @tc.desc    Test blur with invalid tileMode (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('blur_InvalidTileMode_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          const pixels: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          const pixelMap = await image.createPixelMapFromPixels(pixels, options);
+          const filter = effectKit.createEffect(pixelMap);
+          filter.blur(1, 9999);
+          console.info('www data blur_InvalidTileMode_002 success ');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data blur_InvalidTileMode_002 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }
