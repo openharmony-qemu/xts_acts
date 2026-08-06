@@ -26,6 +26,13 @@ namespace ArkUICapiTest {
 
 ArkUI_NativeNodeAPI_1* RequirementPanGestureTest::nodeAPI = nullptr;
 
+static void SetSwipeEnabled(ArkUI_NativeNodeAPI_1 *nodeApi, ArkUI_NodeHandle swiper, bool enabled)
+{
+    ArkUI_NumberValue value[] = {{.i32 = enabled ? 0 : 1}};
+    ArkUI_AttributeItem item = {.value = value, .size = 1};
+    nodeApi->setAttribute(swiper, NODE_SWIPER_DISABLE_SWIPE, &item);
+}
+
 static void OnEventGesture(ArkUI_GestureEvent* event, void* extraParams)
 {
     auto swipe = OH_ArkUI_GestureEvent_GetNode(event);
@@ -55,6 +62,7 @@ static auto CreateSwiperNodeToFirstRequirement(ArkUI_NativeGestureAPI_1* gesture
     auto panGesture = gestureAPI->createPanGesture(1, GESTURE_DIRECTION_ALL, 5);
     gestureAPI->setGestureEventTarget(panGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(swiper->GetComponent(), panGesture, NORMAL, NORMAL_GESTURE_MASK);
+    SetSwipeEnabled(RequirementPanGestureTest::nodeAPI, swiper->GetComponent(), false);
     return swiper;
 }
 
@@ -76,6 +84,7 @@ static auto CreateSwiperNodeToSecondRequirement(ArkUI_NativeGestureAPI_1* gestur
     auto panGesture = gestureAPI->createPanGesture(1, GESTURE_DIRECTION_ALL, 5);
     gestureAPI->setGestureEventTarget(panGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(swiper->GetComponent(), panGesture, NORMAL, NORMAL_GESTURE_MASK);
+    SetSwipeEnabled(RequirementPanGestureTest::nodeAPI, swiper->GetComponent(), false);
     return swiper;
 }
 static void createGesture(ArkUI_NativeGestureAPI_1* gestureAPI, ArkUI_NodeHandle columnP1, ArkUI_NodeHandle columnP2)
