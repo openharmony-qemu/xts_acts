@@ -56,9 +56,9 @@ function spliceBgColor(sysColor: Resource, sysColor1: Resource) {
   let resourceColor = context?.resourceManager.getColorSync(sysColor.id)
   let resourceColor1 = context?.resourceManager.getDouble(sysColor1.id)
   let numColor1 = Math.round(resourceColor1! * 255)
-  console.info("resourceColor is: " + JSON.stringify(resourceColor?.toString(16) ?? ''));
+  console.info("resourceColor is: " + JSON.stringify(resourceColor?.toInt().toString(16) ?? ''));
   console.info("numColor1 is: " + JSON.stringify(numColor1 ?? ''));
-  let newArgb: string = '#' + numColor1?.toString(16).toUpperCase() + resourceColor?.toString(16).toUpperCase().slice(2)
+  let newArgb: string = '#' + numColor1?.toString(16).toUpperCase() + resourceColor?.toInt().toString(16).toUpperCase().slice(2)
   return newArgb;
 }
 
