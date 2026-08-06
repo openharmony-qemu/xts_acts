@@ -40,7 +40,7 @@ export default function BuiltinsWorkerIntegrationTest(): void {
 
     /**
      * @tc.name   testWorkerIntegration0100
-     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTEGRATION_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTEGRATION_TEST_0100
      * @tc.desc   Verify Worker concurrent write to shared data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -51,6 +51,80 @@ export default function BuiltinsWorkerIntegrationTest(): void {
         await sharedData.increment()
       }
       expect(await sharedData.getValue()).assertEqual(5)
+    })
+
+    /**
+     * @tc.name   testWorkerIntegration0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTEGRATION_TEST_0200
+     * @tc.desc   Verify Worker receives string message and echoes ack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWorkerIntegration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      workerInstance = new worker.ThreadWorker(WORKER_PATH)
+      const result: string = await new Promise<string>((resolve: Function): void => {
+        workerInstance!.onmessage = (e: MessageEvents): void => {
+          resolve(e.data as string)
+        }
+        workerInstance!.onerror = (): void => {
+          resolve('')
+        }
+        workerInstance!.postMessage('ping')
+      })
+      expect(result).assertEqual('ack_ping')
+    })
+
+    /**
+     * @tc.name   testWorkerIntegration0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTEGRATION_TEST_0300
+     * @tc.desc   Verify Worker increments shared Sendable data via message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWorkerIntegration0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      workerInstance = new worker.ThreadWorker(WORKER_PATH)
+      const result: number = await new Promise<number>((resolve: Function): void => {
+        workerInstance!.onmessage = (e: MessageEvents): void => {
+          resolve(e.data as number)
+        }
+        workerInstance!.onerror = (): void => {
+          resolve(-1)
+        }
+        workerInstance!.postMessageWithSharedSendable(sharedData)
+      })
+      expect(result).assertEqual(1)
+      expect(await sharedData.getValue()).assertEqual(1)
+    })
+
+    /**
+     * @tc.name   testWorkerIntegration0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTEGRATION_TEST_0400
+     * @tc.desc   Verify Worker handles multiple sequential messages correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWorkerIntegration0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      workerInstance = new worker.ThreadWorker(WORKER_PATH)
+      const results: string[] = []
+      for (let i: number = 0; i < 3; i++) {
+        const msg: string = `seq_${i}`
+        const result: string = await new Promise<string>((resolve: Function): void => {
+          workerInstance!.onmessage = (e: MessageEvents): void => {
+            resolve(e.data as string)
+          }
+          workerInstance!.onerror = (): void => {
+            resolve('')
+          }
+          workerInstance!.postMessage(msg)
+        })
+        results.push(result)
+      }
+      expect(results[0]).assertEqual('ack_seq_0')
+      expect(results[1]).assertEqual('ack_seq_1')
+      expect(results[2]).assertEqual('ack_seq_2')
     })
   })
 }

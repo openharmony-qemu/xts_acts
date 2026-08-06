@@ -13,21 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect } from '@ohos/hypium'
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { worker, MessageEvents, collections } from '@kit.ArkTS'
 import { SharedConfigForWorker, WorkerConfigData } from '../../../workers/sendable'
 import Utils from '../utils'
 
 const WORKER_PATH = '../../workers/config_worker.ets'
-
-function createWorkerConfigPromise(workerInstance: worker.ThreadWorker, cmd: WorkerConfigData): Promise<WorkerConfigData> {
-  return new Promise<WorkerConfigData>((resolve: Function): void => {
-    workerInstance.onmessage = (e: MessageEvents): void => {
-      resolve(e.data as WorkerConfigData)
-    }
-    workerInstance.postMessageWithSharedSendable(cmd)
-  })
-}
 
 export default function BuiltinsWorkerConfigTest(): void {
   describe('BuiltinsWorkerConfigTest', (): void => {
@@ -43,6 +34,65 @@ export default function BuiltinsWorkerConfigTest(): void {
         workerList[i].terminate()
       }
       workerList = []
+    })
+
+    it('testWorkerConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+      workerList.push(workerInstance)
+      const cmd: WorkerConfigData = new WorkerConfigData()
+      cmd.action_ = 'set'
+      cmd.key_ = 'theme'
+      cmd.value_ = 'dark'
+      const result: SharedConfigForWorker = await new Promise<SharedConfigForWorker>((resolve: Function): void => {
+        workerInstance.onmessage = (e: MessageEvents): void => {
+          resolve(e.data as SharedConfigForWorker)
+        }
+        workerInstance.onerror = (): void => {
+          resolve(configManager)
+        }
+        workerInstance.postMessageWithSharedSendable(cmd)
+      })
+      expect(result.get('theme')).assertEqual('dark')
+    })
+
+    it('testWorkerConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+      workerList.push(workerInstance)
+      const cmd: WorkerConfigData = new WorkerConfigData()
+      cmd.action_ = 'set'
+      cmd.key_ = 'language'
+      cmd.value_ = 'zh_CN'
+      const result: SharedConfigForWorker = await new Promise<SharedConfigForWorker>((resolve: Function): void => {
+        workerInstance.onmessage = (e: MessageEvents): void => {
+          resolve(e.data as SharedConfigForWorker)
+        }
+        workerInstance.onerror = (): void => {
+          resolve(configManager)
+        }
+        workerInstance.postMessageWithSharedSendable(cmd)
+      })
+      expect(result.get('language')).assertEqual('zh_CN')
+      expect(result.version_).assertEqual(1)
+    })
+
+    it('testWorkerConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+      workerList.push(workerInstance)
+      const cmd: WorkerConfigData = new WorkerConfigData()
+      cmd.action_ = 'set'
+      cmd.key_ = 'font_size'
+      cmd.value_ = '16'
+      const result: SharedConfigForWorker = await new Promise<SharedConfigForWorker>((resolve: Function): void => {
+        workerInstance.onmessage = (e: MessageEvents): void => {
+          resolve(e.data as SharedConfigForWorker)
+        }
+        workerInstance.onerror = (): void => {
+          resolve(configManager)
+        }
+        workerInstance.postMessageWithSharedSendable(cmd)
+      })
+      expect(result.get('font_size')).assertEqual('16')
+      expect(result.get('nonexistent_key')).assertEqual(undefined)
     })
   })
 }
