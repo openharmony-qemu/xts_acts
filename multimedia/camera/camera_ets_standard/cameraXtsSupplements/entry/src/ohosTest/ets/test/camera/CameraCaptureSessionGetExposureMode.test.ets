@@ -249,7 +249,7 @@ export default function cameraCaptureSessionTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001', Level.LEVEL2, async (done: Function) => {
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001', 0, (res?: number, errCode?: number) => {
+      await captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001', 0, (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect(res).assertEqual(0);
         }
@@ -268,7 +268,7 @@ export default function cameraCaptureSessionTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002', Level.LEVEL2, async (done: Function) => {
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002', 1, (res?: number, errCode?: number) => {
+      await captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002', 1, (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect(res).assertEqual(1);
         }
@@ -288,7 +288,7 @@ export default function cameraCaptureSessionTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004', Level.LEVEL2, async (done: Function) => {
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004', -1, (res?: number, errCode?: number) => {
+      await captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004', -1, (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect().assertFail();
         }
@@ -308,7 +308,7 @@ export default function cameraCaptureSessionTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue( camera.ExposureMode);
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005', maxEnum+1, (res?: number, errCode?: number) => {
+      await captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005', maxEnum+1, (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect().assertFail();
         }
@@ -327,7 +327,7 @@ export default function cameraCaptureSessionTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006', Level.LEVEL2, async (done: Function) => {
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006', 123456, (res?: number, errCode?: number) => {
+      await captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006', 123456, (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect().assertFail();
         }
@@ -346,7 +346,7 @@ export default function cameraCaptureSessionTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007', Level.LEVEL2, async (done: Function) => {
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007', AppStorage.get('test'), (res?: number, errCode?: number) => {
+      await captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007', AppStorage.get('test'), (res?: number, errCode?: number) => {
         if (res != undefined) {
           expect(res == 0).assertTrue();
         }
