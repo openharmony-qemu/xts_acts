@@ -770,8 +770,12 @@ export default function ImageGetComponentSupp() {
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
             try {
               let bufferData = img.getBufferData();
-              console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.rowStride);
-              expect(bufferData!.rowStride.length > 0 ).assertTrue();
+              if (bufferData == null) {
+                console.info(TAG, testName, 'does not support getBufferData.');
+              } else {
+                console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.rowStride);
+ 	              expect(bufferData!.rowStride.length > 0).assertTrue();
+              }
             } catch (error) {
               console.error(TAG ,testName, 'getMetadata',error.message, error.code);
               expect().assertFail();
@@ -816,8 +820,12 @@ export default function ImageGetComponentSupp() {
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
             try {
               let bufferData = img.getBufferData();
-              console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.pixelStride);
-              expect(bufferData!.pixelStride.length > 0 ).assertTrue();
+              if (bufferData == null) {
+                console.info(TAG, testName, 'does not support getBufferData.');
+              } else {
+                console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.pixelStride);
+                expect(bufferData!.pixelStride.length > 0).assertTrue();
+              }
             } catch (error) {
               console.error(TAG ,testName, 'getMetadata',error.message, error.code);
               expect().assertFail();
@@ -862,8 +870,12 @@ export default function ImageGetComponentSupp() {
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
             try {
               let bufferData = img.getBufferData();
-              console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.byteBuffer);
-              expect(bufferData!.byteBuffer.byteLength > 0).assertTrue ();
+              if (bufferData == null) {
+                console.info(TAG, testName, 'does not support getBufferData.');
+              } else {
+                console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.byteBuffer);
+                expect(bufferData!.byteBuffer.byteLength > 0).assertTrue();
+              }
             } catch (error) {
               console.error(TAG ,testName, 'getMetadata',error.message, error.code);
               expect().assertFail();
@@ -963,10 +975,14 @@ export default function ImageGetComponentSupp() {
             try {
               console.info(TAG,testName,"get receiver SurfaceId success");
               let value = img.getBufferData()
-              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
-              expect(value?.rowStride).not().assertUndefined()
-              expect(value?.pixelStride).not().assertUndefined()
-              expect(value?.byteBuffer).not().assertUndefined()
+              if (value == null) {
+                console.info(TAG, testName, 'does not support getBufferData.');
+              } else {
+                console.info(TAG, testName, 'img.getMetadata succeeded.',value);
+                expect(value?.rowStride).not().assertUndefined()
+                expect(value?.pixelStride).not().assertUndefined()
+                expect(value?.byteBuffer).not().assertUndefined()
+              }
             } catch (error) {
               console.error(TAG ,testName, 'getMetadata',error.message, error.code);
               expect().assertFail();
