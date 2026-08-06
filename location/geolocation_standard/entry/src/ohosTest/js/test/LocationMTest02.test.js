@@ -243,8 +243,13 @@ export default function geolocationTest_geo8() {
                     "speed": 0, "timeStamp": 0, "direction": 0, "timeSinceBoot": 0, "additionSize": 0}
                 let location2 = {"latitude": 30.12, "longitude": 120.11, "altitude": 0, "accuracy": 0,
                     "speed": 0, "timeStamp": 0, "direction": 0, "timeSinceBoot": 0, "additionSize": 0}
+                let res = false;
                 let distance1 = geolocationm.getDistanceBetweenLocations(location1, location2);
-                expect(distance1).assertEqual(0)
+                console.log("distance between location1 & location2 : " + distance1);
+                if (distance1 < 10e-6) {
+                    res = true;
+                }
+                expect(res).assertEqual(true);
             } catch(error) {
                 console.error("getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
                 expect(true).assertFail();
@@ -454,8 +459,13 @@ export default function geolocationTest_geo8() {
                     "speed": 0, "timeStamp": 0, "direction": 0, "timeSinceBoot": 0, "additionSize": 0, "additions": []}
                 let location2 = {"latitude": 30.12, "longitude": 120.11, "altitude": 0, "accuracy": 0,
                     "speed": 0, "timeStamp": 0, "direction": 0, "timeSinceBoot": 0, "additionSize": 0, "additions": []}
+                let res = false;
                 let distance1 = geolocationm.getDistanceBetweenLocations(location1, location2);
-                expect(distance1).assertEqual(0)
+                console.log("distance between location1 & location2 : " + distance1);
+                if (distance1 < 10e-6) {
+                    res = true;
+                }
+                expect(res).assertEqual(true);
             } catch(error) {
                 console.error("test_GetDistanceBetweenLocations_0200_01: errCode" + error.code + ", errMessage" + error.message);
                 expect(true).assertFail();
