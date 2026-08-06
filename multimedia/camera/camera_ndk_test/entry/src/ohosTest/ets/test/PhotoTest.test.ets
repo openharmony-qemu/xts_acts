@@ -540,6 +540,11 @@ function createPhotoOutput() {
   }
 }
 
+function createXdrawPhotoOutput() {
+  let mPhotoOutput = cameraObj.createXdrawPhotoOutput(mPhotoSurface);
+  return mPhotoOutput;
+}
+
 function createHeifPhotoOutput(i: number) {
   let mPhotoOutput = cameraObj.createHeifPhotoOutput(mPhotoSurface, i);
   return mPhotoOutput;
@@ -2843,6 +2848,27 @@ export default function PhotoTest() {
       captureSessionstart();
       let ret = cameraObj.oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession();
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+       * @tc.name   testOHCameraWithXDRAW0100
+       * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraWithXDRAW0100
+       * @tc.desc   Test xdraw in normal condition.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+    it('testOHCameraWithXDRAW0100', Level.LEVEL0, () => {
+        captureSessionstart();
+        if(createXdrawPhotoOutput()){
+          addPhotoOutput();
+          sessionCommitConfig();
+          let ret = cameraObj.oHCaptureSessionTestRAWCaptureZoomRatioRange();
+          if (ret != 0) {
+            console.info(TAG + "testOHCameraWithXDRAW0100 FAILED");
+            expect().assertFail();
+          }
+        }
     })
 
     // ===========================================================【相机框架】支持Touch锁定曝光========================================================

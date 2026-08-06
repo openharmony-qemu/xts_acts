@@ -1176,13 +1176,13 @@ export default function cameraJSUnitOutput() {
             cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, true)
           } catch (err) {
             console.info(`setLogViewAssist enable, err: ${JSON.stringify(err)}`)
-            expect(err.code == CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
+            expect(err.code === CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
           }
           try {
             cameraObj.setLogViewAssistEnable(Parameter_Setting.ALL_PARAMETER_OK, false)
           } catch (err) {
             console.info(`setLogViewAssist disable, err: ${JSON.stringify(err)}`)
-            expect(err.code == CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
+            expect(err.code === CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED).assertTrue()
           }
         }
         console.info(`${caseName} PASSED`)
