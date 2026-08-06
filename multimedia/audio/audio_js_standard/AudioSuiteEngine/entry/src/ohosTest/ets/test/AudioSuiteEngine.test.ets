@@ -4245,6 +4245,40 @@ export default function AudioSuiteEngineTest() {
     })
 
     /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100
+     * @tc.desc       AudioConverter notinitialized.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100
+     * @tc.desc       AudioConverter too small.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100 end ====>');
+      done();
+    })
+
+    /**
      * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100
      * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100
      * @tc.desc       AudioConverter setInputCallback.

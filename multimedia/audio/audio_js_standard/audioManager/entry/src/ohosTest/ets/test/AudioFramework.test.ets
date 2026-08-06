@@ -16630,5 +16630,339 @@ export default function audioFramework() {
       }
       done();
     })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100 
+    * @tc.number AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100 
+    * @tc.desc   getRecordingManager
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        expect(recordingManager).not().assertNull();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_GRTRECORDINGMANAGER_0100 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200 
+    * @tc.desc   enableSystemRecordController - true
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_MIC
+        };
+        await recordingManager.enableSystemRecordController(true, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0200 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300 
+    * @tc.desc   enableSystemRecordController - false
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_MIC
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0300 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400 
+    * @tc.desc   enableSystemRecordController - false SOURCE_TYPE_CAMCORDER
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_CAMCORDER
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0400 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500 
+    * @tc.desc   enableSystemRecordController - false SOURCE_TYPE_LIVE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_LIVE
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0500 FAIL:" + error.message + error.code);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600 
+    * @tc.desc   enableSystemRecordController - 6800101
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: 999 as audio.SourceType
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0600 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0700 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0700 
+    * @tc.desc   enableSystemRecordController - null
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        await recordingManager.enableSystemRecordController(null, null);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0700 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0800 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0800 
+    * @tc.desc   enableSystemRecordController - undefined
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        await recordingManager.enableSystemRecordController(undefined, undefined);
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0800 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0900 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0900 
+    * @tc.desc   enableSystemRecordController - SOURCE_TYPE_INVALID
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_INVALID
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_0900 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1000 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1000 
+    * @tc.desc   enableSystemRecordController - SOURCE_TYPE_VOICE_RECOGNITION
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1000 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1100 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1100 
+    * @tc.desc   enableSystemRecordController - SOURCE_TYPE_PLAYBACK_CAPTURE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1100 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1200 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1200 
+    * @tc.desc   enableSystemRecordController - SOURCE_TYPE_VOICE_COMMUNICATION
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1200 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1300 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1300 
+    * @tc.desc   enableSystemRecordController - SOURCE_TYPE_VOICE_MESSAGE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1300 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1400 
+    * @tc.number AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1400 
+    * @tc.desc   enableSystemRecordController - SOURCE_TYPE_UNPROCESSED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let recordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
+        let systemRecordControllerConfig: audio.SystemRecordControllerConfig = {
+          sourceType: audio.SourceType.SOURCE_TYPE_UNPROCESSED
+        };
+        await recordingManager.enableSystemRecordController(false, systemRecordControllerConfig);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info("AUDIO_AUDIOMANAGER_ENABLESYSTEMRECORDCONTROLLER_1400 FAIL:" + error.message + error.code);
+        expect(error.code).assertEqual(6800101);
+      }
+      done();
+    })
   })
 }
