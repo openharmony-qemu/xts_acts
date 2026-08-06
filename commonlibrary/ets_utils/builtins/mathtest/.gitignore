@@ -1,0 +1,56 @@
+# Package dependencies
+node_modules/
+oh_modules/
+
+# DevEco Studio and local SDK configuration
+.idea/
+*.iml
+local.properties
+oh-package-lock.json5
+entry/oh-package-lock.json5
+
+# Hvigor and module build outputs
+.hvigor/
+build/
+out/
+.preview/
+.test/
+
+# Native build outputs and generated tooling files
+.cxx/
+.externalNativeBuild/
+.clangd
+.clang-format
+.clang-tidy
+compile_commands.json
+
+# Test and coverage outputs
+coverage/
+test-results/
+reports/
+/error.txt
+/filter_ohos_test_log_failures.py
+/full_test_log.txt
+
+# Generated packages and native binaries
+*.hap
+*.hsp
+*.har
+*.app
+*.so
+.codex/
+
+# Local signing material
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+
+
+# OS and temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp

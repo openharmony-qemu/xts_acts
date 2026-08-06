@@ -38,6 +38,7 @@ group("builtins") {
       "jsontest:ActsJsonTest",
       "cachecombotest:ActsCacheComboTest",
       "object2test:ActsObject2Test",
+      "mathtest:ActsMathTest",
     ]
   }
 }
