@@ -20,7 +20,7 @@ import CheckEmptyUtils from './CheckEmptyUtils.js';
 import EventConstants from './EventConstants.js';
 import parameter from '@ohos.systemparameter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-
+import { isFilteredDevice } from './FilterUtils';
 
 let gDeviceList: Array<usb.USBDevice>;
 let gPipe: usb.USBDevicePipe;
@@ -51,7 +51,6 @@ function deviceConnected() {
   console.info(TAG, "Test USB device is not connected");
   return false;
 }
-
 
 async function driveFn() {
   console.info('**************driveFn**************');
@@ -197,7 +196,7 @@ async function callControlTransferEx(pip: usb.USBDevicePipe, controlParam: usb.U
 }
 
 function toReleaseInterface(testCaseName: string, conIndex: number, interIndex: number) {
-  gDeviceList = usb.getDevices();
+  gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
   let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
   let isClaim = usb.releaseInterface(gPipe, tmpInterface);
   console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
@@ -225,7 +224,7 @@ export default function UsbApiDeprecatedEtsTest() {
 
       // version > 17  host currentMode = 2 device currentMode = 1
       try {
-        gDeviceList = usb.getDevices();
+        gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
         console.info(TAG, 'beforeAll: usb case gDeviceList return: ' + gDeviceList);
         isDeviceConnected = deviceConnected();
         if (isDeviceConnected) {
@@ -246,7 +245,7 @@ export default function UsbApiDeprecatedEtsTest() {
 
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test  Case*************');
-      gDeviceList = usb.getDevices();
+      gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));
@@ -296,7 +295,7 @@ export default function UsbApiDeprecatedEtsTest() {
     it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testGetDevices002 begin');
       if (!isDeviceConnected) {
-        let res = usb.getDevices();
+        let res = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
         console.info(TAG, 'usb case getDevices ret length: ' + res.length);
         expect(res.length).assertEqual(0);
         done();
@@ -305,6 +304,7 @@ export default function UsbApiDeprecatedEtsTest() {
         return;
       }
     })
+
 
     /**
      * @tc.name   testHasRight001
