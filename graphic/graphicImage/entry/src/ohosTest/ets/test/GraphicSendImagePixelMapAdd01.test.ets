@@ -1031,5 +1031,247 @@ export default function GraphicSendImagePixelMapAdd01() {
         }
       })
 
+    /**
+     * @tc.name    sendableImage_createPixelMap_InvalidSrcPixelFormat_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMap_InvalidSrcPixelFormat_001
+     * @tc.desc    Test sendableImage.createPixelMap with invalid srcPixelFormat (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMap_InvalidSrcPixelFormat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: -1,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          await sendableImage.createPixelMap(colors, options);
+          console.info('www data sendableImage_createPixelMap_InvalidSrcPixelFormat_001 success');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMap_InvalidSrcPixelFormat_001 error ' + err);
+          expect(Number(err) == 62980096).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    sendableImage_createPixelMap_InvalidPixelFormat_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMap_InvalidPixelFormat_001
+     * @tc.desc    Test sendableImage.createPixelMap with invalid pixelFormat (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMap_InvalidPixelFormat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: -1,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          await sendableImage.createPixelMap(colors, options);
+          console.info('www data sendableImage_createPixelMap_InvalidPixelFormat_001 success');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMap_InvalidPixelFormat_001 error ' + err);
+          expect(Number(err) == 62980096).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    sendableImage_createPixelMap_InvalidAlphaType_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMap_InvalidAlphaType_001
+     * @tc.desc    Test sendableImage.createPixelMap with invalid alphaType (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMap_InvalidAlphaType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: -1,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          await sendableImage.createPixelMap(colors, options);
+          console.info('www data sendableImage_createPixelMap_InvalidAlphaType_001 success');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMap_InvalidAlphaType_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    sendableImage_createPixelMap_InvalidScaleMode_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMap_InvalidScaleMode_001
+     * @tc.desc    Test sendableImage.createPixelMap with invalid scaleMode (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMap_InvalidScaleMode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: -1
+          };
+          await sendableImage.createPixelMap(colors, options);
+          console.info('www data sendableImage_createPixelMap_InvalidScaleMode_001 success');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMap_InvalidScaleMode_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    sendableImage_createPixelMapSync_InvalidSrcPixelFormat_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMapSync_InvalidSrcPixelFormat_001
+     * @tc.desc    Test sendableImage.createPixelMapSync with invalid srcPixelFormat (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMapSync_InvalidSrcPixelFormat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: -1,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          sendableImage.createPixelMapSync(colors, options);
+          console.info('www data sendableImage_createPixelMapSync_InvalidSrcPixelFormat_001 success');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMapSync_InvalidSrcPixelFormat_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    sendableImage_createPixelMapSync_InvalidPixelFormat_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMapSync_InvalidPixelFormat_001
+     * @tc.desc    Test sendableImage.createPixelMapSync with invalid pixelFormat (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMapSync_InvalidPixelFormat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: -1,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          sendableImage.createPixelMapSync(colors, options);
+          console.info('www data sendableImage_createPixelMapSync_InvalidPixelFormat_001 success');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMapSync_InvalidPixelFormat_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    sendableImage_createPixelMapSync_InvalidAlphaType_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMapSync_InvalidAlphaType_001
+     * @tc.desc    Test sendableImage.createPixelMapSync with invalid alphaType (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMapSync_InvalidAlphaType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: -1,
+            scaleMode: image.ScaleMode.FIT_TARGET_SIZE
+          };
+          sendableImage.createPixelMapSync(colors, options);
+          console.info('www data sendableImage_createPixelMapSync_InvalidAlphaType_001 success');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMapSync_InvalidAlphaType_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    sendableImage_createPixelMapSync_InvalidScaleMode_001
+     * @tc.number  SUB_GRAPHIC_SendableImage_createPixelMapSync_InvalidScaleMode_001
+     * @tc.desc    Test sendableImage.createPixelMapSync with invalid scaleMode (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('sendableImage_createPixelMapSync_InvalidScaleMode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const colors: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+          const options: image.InitializationOptions = {
+            size: { width: 4, height: 4 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            alphaType: image.AlphaType.PREMUL,
+            scaleMode: -1
+          };
+          sendableImage.createPixelMapSync(colors, options);
+          console.info('www data sendableImage_createPixelMapSync_InvalidScaleMode_001 success');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data sendableImage_createPixelMapSync_InvalidScaleMode_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+      
   })
 }
