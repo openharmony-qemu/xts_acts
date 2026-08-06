@@ -15,6 +15,7 @@
 export const GetLocalDeviceNameErrorCodeOK: ()=> number;
 export const FisrtGetLocalDeviceNameErrorCode401: ()=> number;
 export const SecondGetLocalDeviceNameErrorCode401: ()=> number;
+export const ThirdGetLocalDeviceNameErrorCode401: ()=> number;
 export const GetLocalDeviceNameCErrorCodeOK: ()=> number;
 export const FirstGetLocalDeviceNameCErrorCode401: ()=> number;
 export const SecondGetLocalDeviceNameCErrorCode401: ()=> number;
