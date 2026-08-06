@@ -396,8 +396,8 @@ napi_value ModelUpdateWeightsTest_001(napi_env env, napi_callback_info info)
     auto status = OH_AI_ModelUpdateWeights(model, update_weights);
     auto status2 = OH_AI_ModelSetTrainMode(model, true);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, status == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -411,8 +411,8 @@ napi_value ModelGetTrainModeTest_001(napi_env env, napi_callback_info info)
     OH_AI_ModelHandle model = OH_AI_ModelCreate();
     auto status = OH_AI_ModelSetTrainMode(model, false);
     auto train_mode = OH_AI_ModelGetTrainMode(model);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, train_mode == false ? 0 : 1, &retValue);
     return retValue;
 }
@@ -438,8 +438,8 @@ napi_value ModelSetTrainModeTest_001(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
     auto status = OH_AI_ModelSetTrainMode(model, true);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, status == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -465,8 +465,8 @@ napi_value ModelSetupVirtualBatchTest_001(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
     auto status = OH_AI_ModelSetupVirtualBatch(model, 2, -1.0f, -1.0f);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, status == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -656,8 +656,8 @@ napi_value ExportModelTest_001(napi_env env, napi_callback_info info)
     auto ret = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "/data/storage/el2/base/files/lenet_train_infer.ms",
                                  OH_AI_NO_QUANT, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", ret);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -706,8 +706,8 @@ napi_value ExportModelBufferTest_001(napi_env env, napi_callback_info info)
     auto status = OH_AI_ExportModelBuffer(model, OH_AI_MODELTYPE_MINDIR,
                                           &modelData1, &dataSize, OH_AI_NO_QUANT, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, status == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -755,8 +755,8 @@ napi_value ExportWeightsCollaborateTest_001(napi_env env, napi_callback_info inf
                                                           "/data/storage/el2/base/files/xiaoyi_train_codegen_net1.bin",
                                                           true, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, status == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -773,8 +773,8 @@ napi_value ModelLoadConfigTest_001(napi_env env, napi_callback_info info)
     const char* validConfigPath = "/data/storage/el2/base/files/ml_face_isface.config";
     OH_AI_Status status = OH_AI_ModelLoadConfig(model, validConfigPath);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", status);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, status == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -822,8 +822,8 @@ napi_value QuantizationTypeTest_001(napi_env env, napi_callback_info info)
     auto ret = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "/data/storage/el2/base/files/lenet_train_infer.ms",
                                  quantization_type, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", ret);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -871,8 +871,8 @@ napi_value QuantizationTypeTest_002(napi_env env, napi_callback_info info)
     auto ret = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "/data/storage/el2/base/files/lenet_train_infer.ms",
                                  quantization_type, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", ret);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -920,8 +920,8 @@ napi_value QuantizationTypeTest_003(napi_env env, napi_callback_info info)
     auto ret = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "/data/storage/el2/base/files/lenet_train_infer.ms",
                                  quantization_type, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", ret);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }
@@ -969,8 +969,8 @@ napi_value QuantizationTypeTest_004(napi_env env, napi_callback_info info)
     auto ret = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "/data/storage/el2/base/files/lenet_train_infer.ms",
                                  quantization_type, true, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "111111111111111111", "model: %{public}d", ret);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, ret == OH_AI_STATUS_SUCCESS ? 0 : 1, &retValue);
     return retValue;
 }

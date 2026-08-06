@@ -134,8 +134,8 @@ int SUBAIMindSporeAIPP0001()
     if (predictRet != OH_AI_STATUS_LITE_AIPP_NOT_SUPPORTED) {
         ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     }
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -181,8 +181,8 @@ int SUBAIMindSporeAIPP0002()
     if (predictRet != OH_AI_STATUS_LITE_AIPP_NOT_SUPPORTED) {
         ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     }
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -224,8 +224,8 @@ int SUBAIMindSporeAIPP0003()
     OH_AI_Status predictRet =
         OH_AI_ModelPredictWithConfig(nullptr, inTensorArray, &outputs, predictConfig, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -265,8 +265,8 @@ int SUBAIMindSporeAIPP0004()
     OH_AI_Status predictRet =
         OH_AI_ModelPredictWithConfig(model, inTensorArray, &outputs, predictConfig, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -321,8 +321,8 @@ int SUBAIMindSporeAIPP0005()
     OH_AI_Status predictRet =
         OH_AI_ModelPredictWithConfig(model, inTensorArray, &outputs, predictConfig, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_INPUT_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -358,8 +358,8 @@ int SUBAIMindSporeAIPP0006()
     OH_AI_Status predictRet =
         OH_AI_ModelPredictWithConfig(model, inTensorArray, &outputs, predictConfig, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -443,8 +443,8 @@ int SUBAIMindSporeAIPP0007()
     if (predictRet != OH_AI_STATUS_LITE_AIPP_NOT_SUPPORTED) {
         ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     }
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -488,8 +488,8 @@ int SUBAIMindSporeAIPP0008()
     if (predictRet != OH_AI_STATUS_LITE_AIPP_NOT_SUPPORTED) {
         ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     }
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -517,8 +517,8 @@ int SUBAIMindSporeAIPP0009()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -556,8 +556,8 @@ int SUBAIMindSporeAIPP0010()
     if (predictRet != OH_AI_STATUS_LITE_AIPP_NOT_SUPPORTED) {
         ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_AIPP_INFER_ERROR);
     }
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 } // namespace MindSpore
