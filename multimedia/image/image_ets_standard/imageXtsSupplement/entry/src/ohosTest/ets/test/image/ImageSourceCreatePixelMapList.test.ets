@@ -1311,11 +1311,11 @@ export default function ImageSourceCreatePixelMapListSupp() {
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
         let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
-        if (pixelmap != undefined) {	 
-          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);	 
-          expect(pixelmap!=undefined).assertTrue();	 
-        } else { 
-          console.error(TAG,testName,`Failed to create pixelMap object `); 
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
           // 蓝区 SurfaceBuffer 不支持 ASTC_4x4 格式，预期为undefined
           expect(pixelmap == undefined).assertTrue();
         }
