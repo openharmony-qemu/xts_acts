@@ -1905,5 +1905,111 @@ export default function AppAccountParamCheck(): void {
         done();
       }
     });
+
+    /**
+     * @tc.name   AppAccountParamCheck_7600
+     * @tc.number AppAccountParamCheck_7600
+     * @tc.desc   setAppAccountSyncEnable promise isEnable with null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck_7600 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        await appAccountManager.setAppAccountSyncEnable('test_null', null);
+        console.info(tag + "run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect(err.code).not().assertUndefined();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AppAccountParamCheck_7700
+     * @tc.number AppAccountParamCheck_7700
+     * @tc.desc   setAppAccountSyncEnable promise isEnable with undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck_7700 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        await appAccountManager.setAppAccountSyncEnable('test_undefined', undefined);
+        console.info(tag + "run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect(err.code).not().assertUndefined();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AppAccountParamCheck_7800
+     * @tc.number AppAccountParamCheck_7800
+     * @tc.desc   setAppAccountSyncEnable callback isEnable with null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck_7800 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        appAccountManager.setAppAccountSyncEnable('test_null', null, (err) => {
+          console.info(tag + "err: " + JSON.stringify(err));
+          try {
+            expect(err.code).not().assertUndefined();
+          } catch (e) {
+            console.info("====>Assert Fail:" + JSON.stringify(e));
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AppAccountParamCheck_7900
+     * @tc.number AppAccountParamCheck_7900
+     * @tc.desc   setAppAccountSyncEnable callback isEnable with undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck_7900 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        appAccountManager.setAppAccountSyncEnable('test_undefined', undefined, (err) => {
+          console.info(tag + "err: " + JSON.stringify(err));
+          try {
+            expect(err.code).not().assertUndefined();
+          } catch (e) {
+            console.info("====>Assert Fail:" + JSON.stringify(e));
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }

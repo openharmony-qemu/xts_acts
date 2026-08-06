@@ -1891,5 +1891,53 @@ export default function AppAccountParamCheck3(): void {
         done();
       }
     });
+
+    /**
+     * @tc.name   AppAccountParamCheck3_30100
+     * @tc.number AppAccountParamCheck3_30100
+     * @tc.desc   setAuthTokenVisibility promise with null isVisible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck3_30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck3_30100 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        await appAccountManager.setAuthTokenVisibility(name, 'authType', owner, null);
+        console.info("====>run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect(err.code).not().assertUndefined();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AppAccountParamCheck3_30200
+     * @tc.number AppAccountParamCheck3_30200
+     * @tc.desc   setAuthTokenVisibility promise with undefined isVisible.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamCheck3_30200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamCheck3_30200 "
+      console.info(tag + "start====");
+      let appAccountManager = account.createAppAccountManager();
+      try {
+        await appAccountManager.setAuthTokenVisibility(name, 'authType', owner, undefined);
+        console.info("====>run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect(err.code).not().assertUndefined();
+        done();
+      }
+    });
   });
 }
