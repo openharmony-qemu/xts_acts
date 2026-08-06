@@ -2026,5 +2026,110 @@ export default function nativeWindowTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+    /**
+     * @tc.name   testNativeWindowSetGet3DMetadataValueNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_SetGet3DMetadataValue_0100
+     * @tc.desc   testNativeWindowSetGet3DMetadataValueNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeWindowSetGet3DMetadataValueNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowSetGet3DMetadataValueNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowSet3DMetadataValueNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_SetGet3DMetadataValue_0200
+     * @tc.desc   testNativeWindowSet3DMetadataValueNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowSet3DMetadataValueNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowSet3DMetadataValueNull();
+        expect(result).assertEqual(40001000);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowSet3DMetadataValueAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_SetGet3DMetadataValue_0300
+     * @tc.desc   testNativeWindowSet3DMetadataValueAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowSet3DMetadataValueAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowSet3DMetadataValueAbnormal();
+        expect(result).assertEqual(40001000);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowGet3DMetadataValueNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_SetGet3DMetadataValue_0400
+     * @tc.desc   testNativeWindowGet3DMetadataValueNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowGet3DMetadataValueNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowGet3DMetadataValueNull();
+        expect(result).assertEqual(40001000);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowGet3DMetadataValueAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_SetGet3DMetadataValue_0500
+     * @tc.desc   testNativeWindowGet3DMetadataValueAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowGet3DMetadataValueAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowGet3DMetadataValueAbnormal();
+        expect(result).assertEqual(50102000);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowSetGet3DMetadataValueMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_SetGet3DMetadataValue_0600
+     * @tc.desc   testNativeWindowSetGet3DMetadataValueMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowSetGet3DMetadataValueMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowSetGet3DMetadataValueMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowSet3DMetadataValueUnknown
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_Set3DMetadataValue_0700
+     * @tc.desc   testNativeWindowSet3DMetadataValueUnknown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowSet3DMetadataValueUnknown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowSet3DMetadataValueUnknown();
+        expect(result).assertEqual(50002000);
+        done();
+      });
   })
 }

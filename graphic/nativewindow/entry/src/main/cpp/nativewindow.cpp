@@ -307,6 +307,20 @@ napi_property_descriptor desc[] = {
      testNativeWindowNativeWindowFlushBufferAbnormalRegion, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight", nullptr,
      testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowSetGet3DMetadataValueNormal", nullptr, testNativeWindowSetGet3DMetadataValueNormal, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowSet3DMetadataValueNull", nullptr, testNativeWindowSet3DMetadataValueNull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeWindowSet3DMetadataValueAbnormal", nullptr, testNativeWindowSet3DMetadataValueAbnormal, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowGet3DMetadataValueNull", nullptr, testNativeWindowGet3DMetadataValueNull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeWindowGet3DMetadataValueAbnormal", nullptr, testNativeWindowGet3DMetadataValueAbnormal, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowSetGet3DMetadataValueMultipleCalls", nullptr, testNativeWindowSetGet3DMetadataValueMultipleCalls,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowSet3DMetadataValueUnknown", nullptr, testNativeWindowSet3DMetadataValueUnknown,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START
