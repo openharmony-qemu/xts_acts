@@ -34,7 +34,7 @@ struct CreateFromBuilderNullAndUndefined {
         .textAlign(TextAlign.Center)
 
       Text(this.result)
-        .id('resultText')
+        .id('resultTextCreateFromBuilder')
         .width('100%')
         .height('5%')
         .backgroundColor('#FFCCCCCC')

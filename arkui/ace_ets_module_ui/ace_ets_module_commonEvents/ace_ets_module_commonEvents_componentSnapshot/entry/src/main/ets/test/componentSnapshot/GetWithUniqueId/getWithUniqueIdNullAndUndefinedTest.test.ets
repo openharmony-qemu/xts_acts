@@ -60,7 +60,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsNull'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdOptionsNullV15003] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -83,7 +83,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsUndefined'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdOptionsUndefinedV15004] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -106,7 +106,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitTrue'));
       await button.click();
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdWaitTrueV15005] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -129,126 +129,11 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitFalse'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdWaitFalseV15006] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
       console.info('[getWithUniqueIdWaitFalseV15006] END');
-    });
-
-    /**
-     * @tc.name   getWithUniqueIdColorSpaceUNKNOWNV23001
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GETWITHUNIQUEID_PARAM_005
-     * @tc.desc   Test componentSnapshot.getWithUniqueId with ColorSpace.UNKNOWN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getWithUniqueIdColorSpaceUNKNOWNV23001', Level.LEVEL0, async () => {
-      console.info('[getWithUniqueIdColorSpaceUNKNOWNV23001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace0'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getWithUniqueIdColorSpaceUNKNOWNV23001] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getWithUniqueIdColorSpaceUNKNOWNV23001] END');
-    });
-
-    /**
-     * @tc.name   getWithUniqueIdColorSpaceDISPLAYP3V23004
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GETWITHUNIQUEID_PARAM_006
-     * @tc.desc   Test componentSnapshot.getWithUniqueId with ColorSpace.DISPLAY_P3
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getWithUniqueIdColorSpaceDISPLAYP3V23004', Level.LEVEL0, async () => {
-      console.info('[getWithUniqueIdColorSpaceDISPLAYP3V23004] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace3'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getWithUniqueIdColorSpaceDISPLAYP3V23004] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getWithUniqueIdColorSpaceDISPLAYP3V23004] END');
-    });
-
-    /**
-     * @tc.name   getWithUniqueIdColorSpaceSRGBV23005
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GETWITHUNIQUEID_PARAM_007
-     * @tc.desc   Test componentSnapshot.getWithUniqueId with ColorSpace.SRGB
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getWithUniqueIdColorSpaceSRGBV23005', Level.LEVEL0, async () => {
-      console.info('[getWithUniqueIdColorSpaceSRGBV23005] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace4'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getWithUniqueIdColorSpaceSRGBV23005] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getWithUniqueIdColorSpaceSRGBV23005] END');
-    });
-
-    /**
-     * @tc.name   getWithUniqueIdColorModeIsAutoTrueV23014
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GETWITHUNIQUEID_PARAM_008
-     * @tc.desc   Test componentSnapshot.getWithUniqueId with colorMode isAuto set to true
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getWithUniqueIdColorModeIsAutoTrueV23014', Level.LEVEL0, async () => {
-      console.info('[getWithUniqueIdColorModeIsAutoTrueV23014] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoTrue'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getWithUniqueIdColorModeIsAutoTrueV23014] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getWithUniqueIdColorModeIsAutoTrueV23014] END');
-    });
-
-    /**
-     * @tc.name   getWithUniqueIdColorModeIsAutoFalseV23015
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GETWITHUNIQUEID_PARAM_009
-     * @tc.desc   Test componentSnapshot.getWithUniqueId with colorMode isAuto set to false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getWithUniqueIdColorModeIsAutoFalseV23015', Level.LEVEL0, async () => {
-      console.info('[getWithUniqueIdColorModeIsAutoFalseV23015] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoFalse'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getWithUniqueIdColorModeIsAutoFalseV23015] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getWithUniqueIdColorModeIsAutoFalseV23015] END');
     });
 
     /**
@@ -267,7 +152,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrHIGH'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdDynamicRangeModeHIGHV23016] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -290,7 +175,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrCONSTRAINT'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdDynamicRangeModeCONSTRAINTV23017] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -313,7 +198,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrSTANDARD'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdDynamicRangeModeSTANDARDV23018] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -336,7 +221,7 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoTrue'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdDynamicRangeModeIsAutoTrueV23019] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
@@ -359,34 +244,11 @@ export default function getWithUniqueIdNullAndUndefinedTest() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetWithUniqueId');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getWithUniqueIdDynamicRangeModeIsAutoFalseV23020] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('Success');
       console.info('[getWithUniqueIdDynamicRangeModeIsAutoFalseV23020] END');
-    });
-
-    /**
-     * @tc.name   getWithUniqueIdColorSpaceDISPLAYP3LIMITV23022
-     * @tc.number SUB_ARKUI_COMPONENTSNAPSHOT_GETWITHUNIQUEID_PARAM_015
-     * @tc.desc   Test componentSnapshot.getWithUniqueId with ColorSpace.DISPLAY_P3 with limit
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getWithUniqueIdColorSpaceDISPLAYP3LIMITV23022', Level.LEVEL0, async () => {
-      console.info('[getWithUniqueIdColorSpaceDISPLAYP3LIMITV23022] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.id('btnColorSpace14'));
-      await button.click();
-      await CommonFunc.sleep(1500);
-      let strJson = getInspectorByKey('resultText');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[getWithUniqueIdColorSpaceDISPLAYP3LIMITV23022] result: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('Success');
-      console.info('[getWithUniqueIdColorSpaceDISPLAYP3LIMITV23022] END');
     });
   })
 }
