@@ -28,8 +28,8 @@ struct selectMenuBackgroundBlurStyleOptionsDemo {
     '2.点击按钮"空"，再点击最上方select组件\n' +
     '3.点击按钮"蓝"，再点击最上方select组件\n' +
     '预期结果：\n' + '1.弹出的菜单背景颜色为透明色\n' + '2.弹出的菜单背景颜色为透明色\n' +
-    '3.弹出的菜单背景颜色为不透明蓝色\n' 
-    + '注：手机和手表的系统颜色有差异，测试手表时，颜色偏黑为正常现象,点击“空”按钮操作，若上一次操作为设置不带透明度的纯色，' +
+    '3.弹出的菜单背景颜色为不透明蓝色\n' + 
+    '注：手机和手表的系统颜色有差异，测试手表时，颜色偏黑为正常现象,点击“空”按钮操作，若上一次操作为设置不带透明度的纯色，' +
     '会继承上一次的背景色，若上一次操作为设置带透明度的，点击“空”按钮，组件背景色会回到透明状态\n'
   @State colorModeNum: ThemeColorMode | undefined | null = undefined
   @State scaleNum: number | undefined | null = undefined
