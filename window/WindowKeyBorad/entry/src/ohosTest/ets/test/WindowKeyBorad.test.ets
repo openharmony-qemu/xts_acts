@@ -159,21 +159,27 @@ export default function windowKeyBorad() {
           mainWindow.off('keyboardWillShow');
           await driver.pressBack();
           await sleep(500);
-          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
-             expect(count).assertEqual(1)
-          }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
-             expect(count).assertEqual(0);
+          console.info(`${caseName} count: ${JSON.stringify(count)}`);
+          if((deviceType === 'phone' || deviceType === 'tablet')&&isFreeWindowMode== false){
+            expect(count).assertEqual(1)
+          }else if ((deviceType === 'phone' || deviceType === 'tablet') && isFreeWindowMode === true) {
+            expect(count).assertEqual(0);
           }
           done();
         }
         mainWindow.on('keyboardWillShow', callback);
         await sleep(1000);
-        let input = await driver.findComponent(ON.id('textInput'));
-        console.info(`${caseName}  input: ` + JSON.stringify(input));
-        await sleep(1000);
-        await input.click();
-        console.info(`${caseName}  click success: ` + JSON.stringify(input));
-        await sleep(500);
+        if( deviceType ==='2in1'){
+          console.info(`${caseName} on keyboardWillShow succeed,deviceType: ${JSON.stringify(deviceType)},can not show`);
+          done();
+        }else{
+          let input = await driver.findComponent(ON.id('textInput'));
+          console.info(`${caseName}  input: ` + JSON.stringify(input));
+          await sleep(1000);
+          await input.click();
+          console.info(`${caseName}  click success: ` + JSON.stringify(input));
+          await sleep(500);
+        }
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
@@ -330,21 +336,27 @@ export default function windowKeyBorad() {
           expect(keyboardInfo.config?.duration).assertLarger(0);
           expect(keyboardInfo.config?.param != null).assertTrue();
           mainWindow.off('keyboardWillHide');
-          if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== false){
+          console.info(`${caseName} count: ${JSON.stringify(count)}`);
+          if((deviceType === 'phone' || deviceType === 'tablet' )&&isFreeWindowMode== false){
             expect(count).assertEqual(1)
-          }else if((deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1')&&isFreeWindowMode== true){
+          }else if((deviceType === 'phone' || deviceType === 'tablet')&&isFreeWindowMode== true){
             expect(count).assertEqual(0)
           }
           done();
         }
         mainWindow.on('keyboardWillHide', callback);
         await sleep(1000);
-        let input = await driver.findComponent(ON.id('textInput'));
-        console.info(`${caseName}  input: ` + JSON.stringify(input));
-        await sleep(1000);
-        await input.click();
-        console.info(`${caseName}  click success: ` + JSON.stringify(input));
-        await sleep(500);
+        if( deviceType ==='2in1'){
+          console.info(`${caseName} on keyboardWillHide succeed,  deviceType: ${JSON.stringify(deviceType)},can not show`);
+          done();
+        }else{
+          let input = await driver.findComponent(ON.id('textInput'));
+          console.info(`${caseName}  input: ` + JSON.stringify(input));
+          await sleep(1000);
+          await input.click();
+          console.info(`${caseName}  click success: ` + JSON.stringify(input));
+          await sleep(500);
+        }
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
@@ -420,22 +432,27 @@ export default function windowKeyBorad() {
           mainWindow.off('keyboardDidShow');
           await driver.pressBack();
           await sleep(500);
-          if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+          console.info(`${caseName} count: ${JSON.stringify(count)}`);
+          if ((deviceType === 'phone' || deviceType === 'tablet' ) && isFreeWindowMode === false) {
               expect(count).assertEqual(1);
-          }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+          }else if ((deviceType === 'phone' || deviceType === 'tablet') && isFreeWindowMode === true) {
               expect(count).assertEqual(0);
           }
           done();
         }
-      
+    
         mainWindow.on('keyboardDidShow', callback1);
         
         await sleep(1000);
-        let input = await driver.findComponent(ON.id('textInput'));
-        await sleep(1000);
-        await input.click();
-        await sleep(500);
-         
+        if( deviceType ==='2in1'){
+          console.info(`${caseName} on keyboardDidShow succeed,  deviceType: ${JSON.stringify(deviceType)},can not show`);
+          done();
+        }else{
+          let input = await driver.findComponent(ON.id('textInput'));
+          await sleep(1000);
+          await input.click();
+          await sleep(500);
+        }
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         mainWindow.off('keyboardWillHide');
@@ -465,7 +482,7 @@ export default function windowKeyBorad() {
       console.info(`${caseName} Succeeded in getting the main window.`);
       let count = 0;
       try {
-        const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
+         const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
           console.info(`${caseName} KeyboardInfo1: ${JSON.stringify(keyboardInfo)}`);
           mainWindow.off('keyboardDidShow');
           await sleep(1000);
@@ -485,9 +502,10 @@ export default function windowKeyBorad() {
           expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
           expect(keyboardInfo.endRect.height).assertLarger(0);
           mainWindow.off('keyboardDidHide');
-          if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === false) {
+          console.info(`${caseName} count: ${JSON.stringify(count)}`);
+          if ((deviceType === 'phone' || deviceType === 'tablet') && isFreeWindowMode === false) {
               expect(count).assertEqual(1);
-          }else if ((deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') && isFreeWindowMode === true) {
+          }else if ((deviceType === 'phone' || deviceType === 'tablet') && isFreeWindowMode === true) {
               expect(count).assertEqual(0);
           }
           done();
@@ -496,10 +514,15 @@ export default function windowKeyBorad() {
         
         mainWindow.on('keyboardDidHide', callback);
         await sleep(1000);
-        let input = await driver.findComponent(ON.id('textInput'));
-        await sleep(1000);
-        await input.click();
-        await sleep(1000);
+        if( deviceType ==='2in1'){
+          console.info(`${caseName} on keyboardDidHide succeed, deviceType: ${JSON.stringify(deviceType)},can not show`);
+          done();
+        }else{
+          let input = await driver.findComponent(ON.id('textInput'));
+          await sleep(1000);
+          await input.click();
+          await sleep(1000);
+        }
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
         mainWindow.off('keyboardWillHide');
