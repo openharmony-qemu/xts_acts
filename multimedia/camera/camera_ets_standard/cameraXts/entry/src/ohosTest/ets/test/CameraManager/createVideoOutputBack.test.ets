@@ -130,7 +130,7 @@ function createVideoOutput(done: Function, testName: string, surfaceId: string) 
             expect(isEmpty(cameraOutputCapability)).assertFalse();
             console.info(TAG, testName + ' camera : ' + i + ', mode: ' + sceneMode.NORMAL_VIDEO + ', output cap: ' +
             JSON.stringify(cameraOutputCapability));
-            let videoOutput = mCameraManager.createVideoOutput(cameraOutputCapability.videoProfiles[i], surfaceId);
+            let videoOutput = mCameraManager.createVideoOutput(cameraOutputCapability.videoProfiles[0], surfaceId);
             console.info(TAG, testName + ' videoOutput: ' + JSON.stringify(videoOutput));
             expect(isEmpty(videoOutput)).assertFalse();
           }
