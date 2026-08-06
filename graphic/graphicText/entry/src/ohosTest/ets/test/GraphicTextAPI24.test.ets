@@ -822,5 +822,273 @@ export default function GraphicTextAPI24() {
         done();
       })
 
+    /**
+     * @tc.name    getRectsForRange_InvalidWidthStyle_001
+     * @tc.number  SUB_GRAPHIC_Paragraph_getRectsForRange_InvalidWidthStyle_001
+     * @tc.desc    Test getRectsForRange with invalid widthStyle (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('getRectsForRange_InvalidWidthStyle_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          const range: text.Range = { start: 0, end: 1 };
+          let rects = paragraph.getRectsForRange(range, -1, text.RectHeightStyle.TIGHT);
+          console.info('www data getRectsForRange_InvalidWidthStyle_001 success ', JSON.stringify(rects));
+          expect(rects[0].rect.bottom).assertEqual(23);
+          expect(rects[0].direction).assertEqual(text.TextDirection.LTR);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getRectsForRange_InvalidWidthStyle_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    getRectsForRange_InvalidWidthStyle_002
+     * @tc.number  SUB_GRAPHIC_Paragraph_getRectsForRange_InvalidWidthStyle_002
+     * @tc.desc    Test getRectsForRange with invalid widthStyle (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('getRectsForRange_InvalidWidthStyle_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          const range: text.Range = { start: 0, end: 1 };
+          let rects = paragraph.getRectsForRange(range, 9999, text.RectHeightStyle.TIGHT);
+          console.info('www data getRectsForRange_InvalidWidthStyle_002 success ', JSON.stringify(rects));
+          expect(rects[0].rect.bottom).assertEqual(23);
+          expect(rects[0].direction).assertEqual(text.TextDirection.LTR);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getRectsForRange_InvalidWidthStyle_002 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    getRectsForRange_InvalidHeightStyle_001
+     * @tc.number  SUB_GRAPHIC_Paragraph_getRectsForRange_InvalidHeightStyle_001
+     * @tc.desc    Test getRectsForRange with invalid heightStyle (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('getRectsForRange_InvalidHeightStyle_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          const range: text.Range = { start: 0, end: 1 };
+          let rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, -1);
+          console.info('www data getRectsForRange_InvalidHeightStyle_001 success ', JSON.stringify(rects));
+          expect(rects[0].rect.bottom).assertEqual(23);
+          expect(rects[0].direction).assertEqual(text.TextDirection.LTR);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getRectsForRange_InvalidHeightStyle_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    getRectsForRange_InvalidHeightStyle_002
+     * @tc.number  SUB_GRAPHIC_Paragraph_getRectsForRange_InvalidHeightStyle_002
+     * @tc.desc    Test getRectsForRange with invalid heightStyle (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('getRectsForRange_InvalidHeightStyle_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          const range: text.Range = { start: 0, end: 1 };
+          let rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, 9999);
+          console.info('www data getRectsForRange_InvalidHeightStyle_002 success ', JSON.stringify(rects));
+          expect(rects[0].rect.bottom).assertEqual(23);
+          expect(rects[0].direction).assertEqual(text.TextDirection.LTR);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data getRectsForRange_InvalidHeightStyle_002 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    addPlaceholder_InvalidAlign_001
+     * @tc.number  SUB_GRAPHIC_ParagraphBuilder_addPlaceholder_InvalidAlign_001
+     * @tc.desc    Test addPlaceholder with invalid align (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('addPlaceholder_InvalidAlign_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          paragraphBuilder.addPlaceholder({
+            width: 50,
+            height: 50,
+            align: -1,
+            baseline: text.TextBaseline.ALPHABETIC,
+            baselineOffset: 0
+          });
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          console.info('www data addPlaceholder_InvalidAlign_001 success ');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data addPlaceholder_InvalidAlign_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    addPlaceholder_InvalidAlign_002
+     * @tc.number  SUB_GRAPHIC_ParagraphBuilder_addPlaceholder_InvalidAlign_002
+     * @tc.desc    Test addPlaceholder with invalid align (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('addPlaceholder_InvalidAlign_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          paragraphBuilder.addPlaceholder({
+            width: 50,
+            height: 50,
+            align: 9999,
+            baseline: text.TextBaseline.ALPHABETIC,
+            baselineOffset: 0
+          });
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          console.info('www data addPlaceholder_InvalidAlign_002 success ');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data addPlaceholder_InvalidAlign_002 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    addPlaceholder_InvalidBaseline_001
+     * @tc.number  SUB_GRAPHIC_ParagraphBuilder_addPlaceholder_InvalidBaseline_001
+     * @tc.desc    Test addPlaceholder with invalid baseline (-1)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('addPlaceholder_InvalidBaseline_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          paragraphBuilder.addPlaceholder({
+            width: 50,
+            height: 50,
+            align: text.PlaceholderAlignment.OFFSET_AT_BASELINE,
+            baseline: -1,
+            baselineOffset: 0
+          });
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          console.info('www data addPlaceholder_InvalidBaseline_001 success ');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data addPlaceholder_InvalidBaseline_001 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name    addPlaceholder_InvalidBaseline_002
+     * @tc.number  SUB_GRAPHIC_ParagraphBuilder_addPlaceholder_InvalidBaseline_002
+     * @tc.desc    Test addPlaceholder with invalid baseline (9999)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('addPlaceholder_InvalidBaseline_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fontCollection = text.FontCollection.getLocalInstance();
+          const myTextStyle: text.TextStyle = { fontSize: 20 };
+          const myParagraphStyle: text.ParagraphStyle = { textStyle: myTextStyle };
+          const paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText("test");
+          paragraphBuilder.addPlaceholder({
+            width: 50,
+            height: 50,
+            align: text.PlaceholderAlignment.OFFSET_AT_BASELINE,
+            baseline: 9999,
+            baselineOffset: 0
+          });
+          const paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(600);
+          console.info('www data addPlaceholder_InvalidBaseline_002 success ');
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.info('www data addPlaceholder_InvalidBaseline_002 error ' + err.code);
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }

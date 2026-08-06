@@ -31,8 +31,8 @@ import GraphicImageCreatePixelMap03 from './GraphicImageCreatePixelMap03.test'
 import GraphicImageCreatePixelMap04 from './GraphicImageCreatePixelMap04.test'
 import GraphicImagePixelMap1 from './GraphicImagePixelMap1.test';
 import GraphicImagePixelMap2 from './GraphicImagePixelMap2.test';
-import GraphicImagePixelMap3 from './GraphicImagePixelMap2.test';
-import GraphicImagePixelMap4 from './GraphicImagePixelMap2.test';
+import GraphicImagePixelMap3 from './GraphicImagePixelMap3.test';
+import GraphicImagePixelMap4 from './GraphicImagePixelMap4.test';
 import GraphicImagePixelMap5 from './GraphicImagePixelMap5.test';
 import GraphicSendImagePixelMapAdd02 from './GraphicSendImagePixelMapAdd02.test';
 import GraphicImageCreatePixelMap05 from './GraphicImageCreatePixelMap05.test';
