@@ -673,6 +673,8 @@ export const oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession: 
  
 export const oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession: () => number;
 
+export const oHCaptureSessionTestRAWCaptureZoomRatioRange: () => number;
+
 export const getEnumExposureState: (index: number) => number;
 
 export const sessionRegisterExposureStateChangeCallback: (index:number) => number;

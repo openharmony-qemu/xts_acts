@@ -4374,6 +4374,14 @@ Camera_ErrorCode NDKCamera::TestLogicCamDevs()
         &cameras_[cameraDeviceIndex_], &data, &size);
 }
 
+Camera_ErrorCode NDKCamera::TestGetRAWCaptureZoomRatioRange()
+{
+    float minZoom;
+    float maxZoom;
+    Camera_ErrorCode ret = OH_CaptureSession_GetRAWCaptureZoomRatioRange(captureSession_, &minZoom, &maxZoom);
+    return ret;
+}
+
 Camera_ErrorCode NDKCamera::DeleteConstituentCameraDevices(int useCaseCode)
 {
     LOG("DeleteConstituentCameraDevices begin.");
