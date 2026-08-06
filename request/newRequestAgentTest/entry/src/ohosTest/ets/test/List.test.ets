@@ -15,8 +15,10 @@
 
 import requestSupplementalDownTest from './RequestSupplementalDownload.test';
 import requestSupplementalUploadTest from './RequestSupplementalUpload.test';
+import requestSupplementalCacheDownloadTest from './RequestSupplementalCacheDownload.test';
 
 export default function testsuite() {
   requestSupplementalUploadTest();
   requestSupplementalDownTest();
+  requestSupplementalCacheDownloadTest();
 }
