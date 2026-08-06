@@ -1183,7 +1183,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnRegisterCustomDnsResolver_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnRegisterCustomDnsResolver(CASE_INDEX_1);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
 
@@ -1197,7 +1197,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnRegisterCustomDnsResolver_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnRegisterCustomDnsResolver(CASE_INDEX_2);
-      expect(re).assertEqual(ERROR_CODE_401);
+      expect(re).assertEqual(401);
       done();
     });
 
@@ -1211,7 +1211,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnRegisterCustomDnsResolver_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnRegisterCustomDnsResolver(CASE_INDEX_3);
-      expect(re).assertEqual(ERROR_CODE_2101008);
+      expect(re).assertEqual(2101008);
       done();
     });
 
@@ -1225,7 +1225,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnRegisterCustomDnsResolver_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnRegisterCustomDnsResolver(CASE_INDEX_4);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
 
@@ -1239,7 +1239,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnRegisterCustomDnsResolver_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnRegisterCustomDnsResolver(CASE_INDEX_5);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
 
@@ -1253,7 +1253,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnUnregisterCustomDnsResolver_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnUnregisterCustomDnsResolver(CASE_INDEX_1);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
 
@@ -1267,7 +1267,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnUnregisterCustomDnsResolver_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnUnregisterCustomDnsResolver(CASE_INDEX_2);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
 
@@ -1281,7 +1281,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnUnregisterCustomDnsResolver_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnUnregisterCustomDnsResolver(CASE_INDEX_3);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
 
@@ -1295,7 +1295,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnUnregisterCustomDnsResolver_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnUnregisterCustomDnsResolver(CASE_INDEX_4);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
 
@@ -1309,7 +1309,7 @@ export default function NetConnectionNDKTest() {
      */
     it('testOHNetConnUnregisterCustomDnsResolver_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnUnregisterCustomDnsResolver(CASE_INDEX_5);
-      expect(re).assertEqual(NETCONNECTION_OK);
+      expect(re).assertEqual(0);
       done();
     });
     
