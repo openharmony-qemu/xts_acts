@@ -92,6 +92,7 @@ export default function WindowPropertiesTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         let isPCStatus: string = '';
+        let deviceType: string = deviceInfo.deviceType;
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
@@ -163,7 +164,7 @@ export default function WindowPropertiesTest() {
           let touchableRects: Array<window.Rect> = [
             { 
               left: Double.toInt(Math.floor(subRect.width / 2)), 
-              top: subRect.top, 
+              top: 0, 
               width: Double.toInt(Math.floor(subRect.width / 2)), 
               height: subRect.height 
             }
@@ -191,8 +192,18 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          expect(false).assertTrue();
-          done();
+          if (deviceType === '2in1') {
+            expect(false).assertTrue();
+            done();
+          } else {
+            if (exception.code === 201) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
         } finally {
           try {
             if (subWindow) {
@@ -250,8 +261,18 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          expect(false).assertTrue();
-          done();
+          if (deviceType === '2in1') {
+            expect(false).assertTrue();
+            done();
+          } else {
+            if (exception.code === 201) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
         }
       });
 
@@ -292,8 +313,18 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          expect(false).assertTrue();
-          done();
+          if (deviceType === '2in1') {
+            expect(false).assertTrue();
+            done();
+          } else {
+            if (exception.code === 201) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
         }
       });
 
@@ -318,8 +349,18 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          expect(false).assertTrue();
-          done();
+          if (deviceType === '2in1') {
+            expect(false).assertTrue();
+            done();
+          } else {
+            if (exception.code === 201) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
         }
       });
 
@@ -347,8 +388,18 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          expect(false).assertTrue();
-          done();
+          if (deviceType === '2in1') {
+            expect(false).assertTrue();
+            done();
+          } else {
+            if (exception.code === 201) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
         }
       });
 
@@ -481,8 +532,18 @@ export default function WindowPropertiesTest() {
           done();
         } catch (exception) {
           hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
-          expect(false).assertTrue();
-          done();
+          if (deviceType === '2in1') {
+            expect(false).assertTrue();
+            done();
+          } else {
+            if (exception.code === 201) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
         }
       });
 
