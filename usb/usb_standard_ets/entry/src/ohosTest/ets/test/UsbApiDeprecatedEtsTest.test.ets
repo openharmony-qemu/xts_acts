@@ -196,7 +196,7 @@ async function callControlTransferEx(pip: usb.USBDevicePipe, controlParam: usb.U
 }
 
 function toReleaseInterface(testCaseName: string, conIndex: number, interIndex: number) {
-  gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device));
+  gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
   let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
   let isClaim = usb.releaseInterface(gPipe, tmpInterface);
   console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
@@ -224,7 +224,7 @@ export default function UsbApiDeprecatedEtsTest() {
 
       // version > 17  host currentMode = 2 device currentMode = 1
       try {
-        gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device));
+        gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
         console.info(TAG, 'beforeAll: usb case gDeviceList return: ' + gDeviceList);
         isDeviceConnected = deviceConnected();
         if (isDeviceConnected) {
@@ -245,7 +245,7 @@ export default function UsbApiDeprecatedEtsTest() {
 
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test  Case*************');
-      gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device));
+      gDeviceList = usb.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));
