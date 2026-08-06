@@ -16,7 +16,7 @@ import { expect, describe, it, afterEach, Level  } from '@ohos/hypium';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import hilog from '@ohos.hilog';
-const distance = 500;
+const distance = 400;
 const SLEEP_TIME = 1000;
 const SLEEP_TIME_2000 = 2000;
 const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
@@ -44,6 +44,7 @@ export default function SwipeErrorTest(){
       await Utils.pushPage(`list/${PAGE_TAG}`);
       await Utils.sleep(SLEEP_TIME);
       let driver = await Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let button1 = await driver.findComponent(ON.text('expandList'));
       await button1.click();
       await Utils.sleep(SLEEP_TIME);
@@ -89,7 +90,8 @@ export default function SwipeErrorTest(){
       let PAGE_TAG = 'swipeErrorTest';
       await Utils.pushPage(`list/${PAGE_TAG}`);
       await Utils.sleep(SLEEP_TIME);
-      let driver: Driver = Driver.create();
+      let driver = await Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let btn6 = await driver.findComponent(ON.id('nullptr'));
       await btn6.click();
       await Utils.sleep(SLEEP_TIME);
@@ -116,7 +118,8 @@ export default function SwipeErrorTest(){
       let PAGE_TAG = 'swipeErrorTest';
       await Utils.pushPage(`list/${PAGE_TAG}`);
       await Utils.sleep(SLEEP_TIME);
-      let driver: Driver = Driver.create();
+      let driver = await Driver.create();
+      await Utils.sleep(SLEEP_TIME);
       let btn6 = await driver.findComponent(ON.id('column'));
       await btn6.click();
       await Utils.sleep(SLEEP_TIME);
