@@ -28,7 +28,7 @@ struct UIContextGetNullAndUndefined {
         .textAlign(TextAlign.Center)
 
       Text(this.result)
-        .id('resultText')
+        .id('resultTextGet')
         .width('100%')
         .height('5%')
         .backgroundColor('#FFCCCCCC')

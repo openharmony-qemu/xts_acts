@@ -46,7 +46,7 @@ struct GetWithUniqueIdNullAndUndefined {
         .textAlign(TextAlign.Center)
 
       Text(this.result)
-        .id('resultText')
+        .id('resultTextGetWithUniqueId')
         .width('100%')
         .height('5%')
         .backgroundColor('#FFCCCCCC')

@@ -58,7 +58,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnIdEmpty'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getIdEmptyV10001] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -81,7 +81,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsNull'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[optionsNullV10004] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -104,7 +104,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnOptionsUndefined'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[optionsUndefinedV10005] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -127,7 +127,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitTrue'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[waitTrueV10006] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -150,7 +150,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnWaitFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[waitFalseV10007] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -173,7 +173,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace0'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace0V10008] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -196,7 +196,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace1V10009] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -219,7 +219,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace2'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace2V10010] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -242,7 +242,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace3'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace3V10011] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -265,7 +265,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace4'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace4V10012] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -288,7 +288,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace5'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace5V10013] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -311,7 +311,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace6'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace6V10014] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -334,7 +334,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace7'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace7V10015] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -357,7 +357,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace8'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace8V10016] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -380,7 +380,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace9'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace9V10017] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -403,7 +403,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace10'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace10V10018] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -426,7 +426,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace11'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace11V10019] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -449,7 +449,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace12'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace12V10020] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -472,7 +472,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoTrue'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorModeIsAutoTrueV10021] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -495,7 +495,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorModeIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorModeIsAutoFalseV10022] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -518,7 +518,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrHIGH'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeHIGHV10023] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -541,7 +541,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrCONSTRAINT'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeCONSTRAINTV10024] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -564,7 +564,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrSTANDARD'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeSTANDARDV10025] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -587,7 +587,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoTrue'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeIsAutoTrueV10026] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -610,7 +610,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnDrIsAutoFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[dynamicRangeModeIsAutoFalseV10027] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -633,7 +633,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace13'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace13V10028] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -656,7 +656,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace14'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace14V10029] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -679,7 +679,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace15'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace15V10030] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -702,7 +702,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace16'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace16V10031] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -725,7 +725,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace17'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace17V10032] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -748,7 +748,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace18'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace18V10033] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -771,7 +771,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace19'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace19V10034] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -794,7 +794,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace20'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace20V10035] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -817,7 +817,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace21'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace21V10036] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -840,7 +840,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace22'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace22V10037] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -863,7 +863,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace23'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace23V10038] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -886,7 +886,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace24'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace24V10039] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -909,7 +909,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace25'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace25V10040] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -932,7 +932,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace26'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace26V10041] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
@@ -955,7 +955,7 @@ export default function getSyncNullAndUndefined() {
       let button = await scrollBar.scrollSearch(ON.id('btnColorSpace27'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('resultText');
+      let strJson = getInspectorByKey('resultTextGetSync1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[colorSpace27V10042] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Success');
