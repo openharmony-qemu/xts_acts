@@ -94,9 +94,9 @@ export default function DlpEnterpriseServiceTest() {
         try {
           let code = dlpPermission.PluginCmd.CMD_BASE_INSTALL_PLUGIN;
           let message = "libosaccountndk.so"
-          let result = await dlpPermission.processPluginCommand(code, message);
+          let result = await dlpPermission.processPluginCommand(code, message) ?? undefined;
           console.info("SUB_SECURITY_DLP_processPluginCommand_0100:Call processPluginCommand success");
-          expect(true).assertTrue();
+          expect(result != undefined).assertTrue();
         } catch (err) {
           console.info("SUB_SECURITY_DLP_processPluginCommand_0100:Call processPluginCommand failed", err.code,
             err.message);
@@ -435,6 +435,67 @@ export default function DlpEnterpriseServiceTest() {
         expect(dlpPermission.PluginCmd.CMD_BASE_QUERY_TRANSPARENT_CRYPTO_STATUS).assertEqual(0x1005);
         expect(dlpPermission.PluginCmd.CMD_EVENT_REPORT_COMMON).assertEqual(0x2001);
         console.info(curTag, "PluginCmd enum values verified successfully");
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_SECURITY_DLP_processPluginCommand_1500
+     * @tc.number Test_processPluginCommand_015
+     * @tc.desc   call interface processPluginCommand with message length is 4096 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_SECURITY_DLP_processPluginCommand_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let curTag = TAG + "Test_processPluginCommand_015";
+        console.info(curTag, "start");
+        try {
+          let code = dlpPermission.PluginCmd.CMD_BASE_INSTALL_PLUGIN;
+          let message = generateString(4096);
+          let result = await dlpPermission.processPluginCommand(code, message);
+          console.info(curTag, "Call processPluginCommand success");
+          expect(true).assertTrue();
+        } catch (err) {
+          console.info(curTag, "Call processPluginCommand failed", err.code, err.message);
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 19100025) {
+            expect(err.code).assertEqual(19100025);
+          } else {
+            expect(false).assertTrue();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_SECURITY_DLP_processPluginCommand_1600
+     * @tc.number Test_processPluginCommand_016
+     * @tc.desc   call interface processPluginCommand with message length is 4097 bytes, return 19100011 or 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_SECURITY_DLP_processPluginCommand_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let curTag = TAG + "Test_processPluginCommand_016";
+        console.info(curTag, "start");
+        try {
+          let code = dlpPermission.PluginCmd.CMD_BASE_INSTALL_PLUGIN;
+          let message = generateString(4097);
+          let result = await dlpPermission.processPluginCommand(code, message);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.info(curTag, "Call processPluginCommand failed", err.code, err.message);
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 19100011) {
+            expect(err.code).assertEqual(19100011);
+          } else {
+            expect(false).assertTrue();
+          }
+        }
         done();
       })
   })

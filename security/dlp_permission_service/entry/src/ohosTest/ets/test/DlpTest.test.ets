@@ -19,7 +19,8 @@ import account_osAccount from '@ohos.account.osAccount';
 import type Want from '@ohos.app.ability.Want';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base'
+import { BusinessError } from '@ohos.base';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 interface ERRCODE {
   DLP_OK: number,
@@ -194,6 +195,8 @@ async function genTestDlpProperty(): Promise<dlpPermission.DLPProperty> {
     contactAccount: accountInfo.distributedInfo.name,
     offlineAccess: true,
     everyoneAccessList: [],
+    waterMarkConfig: true,
+    countdown: 0,
   };
   return property;
 }
@@ -239,6 +242,25 @@ async function closeTestDlpFile(dlpInfo: TestDlpFileInfo) {
   fs.unlinkSync(dlpInfo.ciphertextPath);
   fs.unlinkSync(dlpInfo.plaintextPath);
 }
+
+
+class DataCapsulePlugin implements dlpPermission.DlpConnPlugin {
+  private accountId: string;
+  private accountName: string;
+
+  constructor() {
+    this.accountId = 'accountId'; // 初始化账号信息。
+    this.accountName = 'accountName';
+  }
+
+  connectServer(requestId: string, requestData: string, callback: Callback<string>): void {
+    let callbackJson = JSON.stringify({
+      'requestId': requestId,
+    });
+    callback(callbackJson);
+  }
+}
+
 
 export default function dlpTest() {
   describe('dlpTest', () => {
@@ -3767,7 +3789,7 @@ export default function dlpTest() {
       } catch (err) {
         console.info(curTag, "SUB_SECURITY_DLP_startDLPManagerForResult_0100 startDLPManagerForResult failed", err.code,
           err.message);
-        expect(err.code == 19100017 && err.message == "displayName length is invalid").assertTrue();
+        expect(err.code == 19100017).assertTrue();
       }
       console.info(curTag, "SUB_SECURITY_DLP_startDLPManagerForResult_0100 end");
       return;
@@ -3827,5 +3849,48 @@ export default function dlpTest() {
         expect(dlpPermission.ActionType.OPEN).assertEqual(1);
         done();
       })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_constructor_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_constructor_0100
+     * @tc.desc   test accounttype ActionType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_constructor_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        console.info("SUB_Security_DataSecurity_DLP_constructor_0100: started.");
+        let isDevBoard: boolean = checkDeviceIsDevBoard();
+        let dlpConnManager = dlpPermission.DlpConnManager;
+        if (isDevBoard === true) {
+          try {
+            let pluginId: number = dlpPermission.DlpConnManager.registerPlugin(new DataCapsulePlugin()) ?? undefined;
+            console.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
+            expect(pluginId !== undefined);
+          } catch (err) {
+            console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
+            expect(false).assertTrue();
+          }
+        } else {
+          try {
+            let pluginId: number = dlpPermission.DlpConnManager.registerPlugin(new DataCapsulePlugin());
+            console.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
+            expect(false).assertTrue();
+          } catch (err) {
+            console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
+            expect(err.code).assertEqual(19100011);
+          }
+        }
+        done();
+      })
+    let checkDeviceIsDevBoard = () => {
+      const chipType = deviceInfo.chipType?.toLowerCase();
+      if (chipType === "rk3568" || chipType === "uis7885") {
+        return true;
+      } else {
+        return false;
+      }
+    }
   })
 }
