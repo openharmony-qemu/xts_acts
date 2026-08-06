@@ -34,6 +34,15 @@ import UintByteClampedArrayMethodTest from './uintArray/UintByteClampedArrayMeth
 import UintByteClampedArrayConcurrentTest from './uintArray/UintByteClampedArrayConcurrentTest.test'
 import UintShortArrayTest from './uintArray/UintShortArrayTest.test'
 import UintIntArrayTest from './uintArray/UintIntArrayTest.test'
+import sendableLruCacheBasicTest from './SendableLruCacheBase/SendableLruCacheBasicTypes.test';
+import sendableLruCacheBoundaryTest from './SendableLruCacheBase/SendableLruCacheBoundaryCases.test';
+import sendableLruCacheCompositeTest from './SendableLruCacheBase/SendableLruCacheComplexTypes.test';
+import sendableLruCacheErrorTest from './SendableLruCacheBase/SendableLruCacheError.test';
+import sendableLruCacheSendableTest from './SendableLruCacheBase/SendableLruCacheSendableSpecial.test';
+import sendableLruCacheSpecialTest from './SendableLruCacheBase/SendableLruCacheSpecial.test';
+import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
+import collectionsConcatArrayTest from './CollectionsConcatArrayTest/CollectionsConcatArray.test';
+
 export default function testsuite(): void {
   StressStabilityComboTest()
   BitVectorTest()
@@ -56,4 +65,13 @@ export default function testsuite(): void {
   UintByteClampedArrayConcurrentTest()
   UintShortArrayTest()
   UintIntArrayTest()
+  
+  sendableLruCacheBasicTest();
+  sendableLruCacheBoundaryTest();
+  sendableLruCacheCompositeTest();
+  sendableLruCacheErrorTest();
+  sendableLruCacheSendableTest();
+  sendableLruCacheSpecialTest();
+  sendableLruCacheConcurrentTest();
+  collectionsConcatArrayTest();
 }
