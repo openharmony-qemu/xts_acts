@@ -98,8 +98,8 @@ int SUBAIMindSporeModelCreate0001()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -131,10 +131,10 @@ int SUBAIMindSporeModelCreate0002()
         OH_AI_ModelBuildFromFile(model2, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context2);
     ASSERT_EQ(buildRet2, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
-    OH_AI_ContextDestroy(&context2);
     OH_AI_ModelDestroy(&model);
     OH_AI_ModelDestroy(&model2);
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ContextDestroy(&context2);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -160,8 +160,8 @@ int SUBAIMindSporeModelCreate0003()
             OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
         ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
         OHPrintf("==========OH_AI_ModelDestroy==========\n");
-        OH_AI_ContextDestroy(&context);
         OH_AI_ModelDestroy(&model);
+        OH_AI_ContextDestroy(&context);
     }
     return OH_AI_STATUS_SUCCESS;
 }
@@ -187,9 +187,9 @@ int SUBAIMindSporeModelCreate0005()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
+    OH_AI_ModelDestroy(&model);
+    OH_AI_ModelDestroy(&model);
     OH_AI_ContextDestroy(&context);
-    OH_AI_ModelDestroy(&model);
-    OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -217,8 +217,8 @@ int SUBAIMindSporeModelCreate0006()
     OH_AI_Status buildRet = OH_AI_ModelBuild(model, modelBuf, size, OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
     delete[] modelBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -255,9 +255,9 @@ int SUBAIMindSporeModelCreate0007()
     ASSERT_EQ(buildRet2, OH_AI_STATUS_LITE_MODEL_REBUILD);
     delete[] modelBuf;
     delete[] modelBuf2;
+    OH_AI_ModelDestroy(&model);
     OH_AI_ContextDestroy(&context);
     OH_AI_ContextDestroy(&context2);
-    OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -313,8 +313,8 @@ int SUBAIMindSporeModelCreate0009()
     OH_AI_Status buildRet = OH_AI_ModelBuild(model, nullptr, 0, OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_NULLPTR);
     delete[] modelBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -343,8 +343,8 @@ int SUBAIMindSporeModelCreate0010()
     OH_AI_Status buildRet = OH_AI_ModelBuild(model, modelBuf, size, OH_AI_MODELTYPE_INVALID, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_PARAM_INVALID);
     delete[] modelBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -373,8 +373,8 @@ int SUBAIMindSporeModelCreate0011()
     OH_AI_Status buildRet = OH_AI_ModelBuild(model, modelBuf, size, OH_AI_MODELTYPE_MINDIR, nullptr);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_NULLPTR);
     delete[] modelBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -403,8 +403,8 @@ int SUBAIMindSporeModelCreate0012()
     OH_AI_Status buildRet = OH_AI_ModelBuild(model, modelBuf, 1, OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_ERROR);
     delete[] modelBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -452,8 +452,8 @@ int SUBAIMindSporeModelCreate0014()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, ActsMindSporeConstants::FILES_DIR.c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -478,8 +478,8 @@ int SUBAIMindSporeModelCreate0015()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_INVALID, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -504,8 +504,8 @@ int SUBAIMindSporeModelCreate0016()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, nullptr);
     ASSERT_EQ(buildRet, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -529,8 +529,8 @@ int SUBAIMindSporeModelCreate0017()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -560,9 +560,9 @@ int SUBAIMindSporeModelCreate0018()
     OH_AI_Status buildRet2 = OH_AI_ModelBuildFromFile(
         model, FilePath("aiy_vision_classifier_plants_V1_3.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context2);
     ASSERT_EQ(buildRet2, OH_AI_STATUS_LITE_MODEL_REBUILD);
+    OH_AI_ModelDestroy(&model);
     OH_AI_ContextDestroy(&context);
     OH_AI_ContextDestroy(&context2);
-    OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -595,8 +595,8 @@ int SUBAIMindSporeModelCreate0019()
     OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(nullptr, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -628,8 +628,8 @@ int SUBAIMindSporeModelCreate0020()
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     OHPrintf("==========predictRet==========%d\n", predictRet);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -670,9 +670,9 @@ int SUBAIMindSporeModelCreate0021()
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inTensorArray, &outputs, nullptr, nullptr);
     std::cout << predictRet << std::endl;
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_INPUT_TENSOR_ERROR);
+    OH_AI_ModelDestroy(&model);
     OH_AI_ContextDestroy(&context);
     OH_AI_TensorDestroy(&tensor);
-    OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -709,8 +709,8 @@ int SUBAIMindSporeModelCreate0022()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("=========CompareResult===========\n");
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -740,8 +740,8 @@ int SUBAIMindSporeModelCreate0027()
     OH_AI_ShapeInfo shapeInfos[] = { { 4, { 1, 3, 48, 48 } } };
     OH_AI_Status resizeRet = OH_AI_ModelResize(model, inputs, shapeInfos, inputs.handle_num);
     ASSERT_EQ(resizeRet, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -771,8 +771,8 @@ int SUBAIMindSporeModelCreate0028()
     OH_AI_ShapeInfo shapeInfos[] = { { 4, { 1, 112, 112, 3 } } };
     OH_AI_Status resizeRet = OH_AI_ModelResize(model, inputs, shapeInfos, inputs.handle_num);
     ASSERT_EQ(resizeRet, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -807,8 +807,8 @@ int SUBAIMindSporeModelCreate0029()
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs, "ml_face_isface");
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -845,8 +845,8 @@ int SUBAIMindSporeModelCreate0030()
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs, "ml_face_isface");
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -899,8 +899,8 @@ int SUBAIMindSporeModelCreate0032()
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs, "ml_face_isface");
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -938,8 +938,8 @@ int SUBAIMindSporeModelCreate0033()
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs2, "ml_face_isface");
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -994,8 +994,8 @@ int SUBAIMindSporeModelCreate0035()
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs, "ml_face_isface");
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1039,8 +1039,8 @@ int SUBAIMindSporeModelCreate0037()
     OH_AI_TensorHandle tensor = OH_AI_ModelGetInputByTensorName(model, "aaa");
     ASSERT_EQ(tensor, nullptr);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1080,8 +1080,8 @@ int SUBAIMindSporeModelCreate0038()
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs, "ml_face_isface");
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1129,8 +1129,8 @@ int SUBAIMindSporeModelCreate0040()
     OH_AI_TensorHandle tensor = OH_AI_ModelGetOutputByTensorName(model, "aaa");
     ASSERT_EQ(tensor, nullptr);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1159,9 +1159,9 @@ int SUBAIMindSporeModelCreate0041()
         model2, FilePath("aiy_vision_classifier_plants_V1_3.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet2, OH_AI_STATUS_LITE_PARAM_INVALID);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     OH_AI_ModelDestroy(&model2);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1293,8 +1293,8 @@ int SUBAIMindSporeModelLoadConfig0001()
     OHPrintf("==========CompareResult==========\n");
     CompareResult(outputs, "ml_face_isface");
     // 资源释放
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1319,8 +1319,8 @@ int SUBAIMindSporeModelLoadConfig0002()
     OH_AI_Status loadStatus01 = OH_AI_ModelLoadConfig(nullptr, FilePath("ml_face_isface.config").c_str());
     std::cout << "loadStatus01 is " << loadStatus01 << std::endl;
     ASSERT_EQ(loadStatus01, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1344,8 +1344,8 @@ int SUBAIMindSporeModelLoadConfig0003()
     // 修正：同时断言非SUCCESS和非NULLPTR，确保错误被检测
     ASSERT_NE(loadStatus, OH_AI_STATUS_SUCCESS);
     ASSERT_NE(loadStatus, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1367,8 +1367,8 @@ int SUBAIMindSporeModelLoadConfig0004()
     OH_AI_Status loadStatus = OH_AI_ModelLoadConfig(model, FilePath("invalid_content.config").c_str()); // 内容无效
     std::cout << "loadStatus is " << loadStatus << std::endl;
     ASSERT_EQ(loadStatus, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 

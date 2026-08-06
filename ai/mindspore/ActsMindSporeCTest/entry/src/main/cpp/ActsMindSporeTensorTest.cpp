@@ -154,8 +154,8 @@ int SUBAIMindSporeTensorCreate0005()
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs, "ml_face_isface");
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -215,8 +215,8 @@ int SUBAIMindSporeTensorCreate0006()
         ASSERT_EQ(result, true);
     }
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -308,8 +308,8 @@ int SUBAIMindSporeTensorCreate0008()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context2 = OH_AI_ContextCreate();
     OH_AI_ModelHandle model2 = OH_AI_ModelCreate();
@@ -341,8 +341,8 @@ int SUBAIMindSporeTensorCreate0008()
         ASSERT_EQ(result, true);
     }
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context2);
     OH_AI_ModelDestroy(&model2);
+    OH_AI_ContextDestroy(&context2);
     return OH_AI_STATUS_SUCCESS;
 }
 

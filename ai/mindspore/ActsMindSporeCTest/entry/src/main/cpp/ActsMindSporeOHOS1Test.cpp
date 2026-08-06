@@ -188,8 +188,8 @@ int OHOSContextCPU0005()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -315,8 +315,8 @@ int OHOSContextCPU0009()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -640,8 +640,8 @@ int OHOSContextCPU0020()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -668,8 +668,8 @@ int OHOSContextNPU0002()
     OHPrintf("==========Create model==========\n");
     OH_AI_ModelHandle model = OH_AI_ModelCreate();
     ASSERT_NE(model, nullptr);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -723,8 +723,8 @@ int OHOSModelBuild0002()
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
     delete[] imageBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -750,8 +750,8 @@ int OHOSModelBuild0003()
     OH_AI_Status ret = OH_AI_ModelBuild(model, nullptr, 0, OH_AI_MODELTYPE_MINDIR, context);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -783,8 +783,8 @@ int OHOSModelBuild0004()
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_INPUT_PARAM_INVALID);
     delete[] graphBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -811,8 +811,8 @@ int OHOSModelBuild0005()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.input").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -838,8 +838,8 @@ int OHOSModelBuild0006()
     OH_AI_Status ret = OH_AI_ModelBuildFromFile(model, "", OH_AI_MODELTYPE_MINDIR, context);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -866,8 +866,8 @@ int OHOSModelBuild0007()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_INVALID, context);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -894,8 +894,8 @@ int OHOSModelBuild0008()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, nullptr);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_NULLPTR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -946,8 +946,8 @@ int OHOSModelBuild0009()
                                         false);
         ASSERT_EQ(result, true);
     }
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1009,8 +1009,8 @@ int OHOSModelResize0002()
     OHPrintf("==========Model Predict==========\n");
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1045,8 +1045,8 @@ int OHOSModelResize0003()
     ret = OH_AI_ModelResize(model, inputs, &shapeInfos, inputs.handle_num);
     OHPrintf("==========Resizes return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1081,8 +1081,8 @@ int OHOSModelResize0004()
     ret = OH_AI_ModelResize(model, inputs, &shapeInfos, inputs.handle_num);
     OHPrintf("==========Resizes return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_PARAM_INVALID);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1117,8 +1117,8 @@ int OHOSModelResize0005()
     ret = OH_AI_ModelResize(model, inputs, &shapeInfos, inputs.handle_num);
     OHPrintf("==========Resizes return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1210,8 +1210,8 @@ int OHOSModelPredict0003()
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     OHPrintf("==========Model Predict return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1283,8 +1283,8 @@ int OHOSModelGetInputByTensorName0001()
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
     delete[] imageBuf;
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1314,8 +1314,8 @@ int OHOSModelGetInputByTensorName0002()
     OHPrintf("==========GetInputs==========\n");
     OH_AI_TensorHandle tensor = OH_AI_ModelGetInputByTensorName(model, "aaa");
     ASSERT_EQ(tensor, nullptr);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1368,8 +1368,8 @@ int OHOSModelGetOutputByTensorName0001()
                                     ActsMindSporeValues::DEFAULT_TOLERANCE,
                                     false);
     ASSERT_EQ(result, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1407,8 +1407,8 @@ int OHOSModelGetOutputByTensorName0002()
     OHPrintf("==========GetOutput==========\n");
     OH_AI_TensorHandle tensor = OH_AI_ModelGetOutputByTensorName(model, "aaa");
     ASSERT_EQ(tensor, nullptr);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1449,8 +1449,8 @@ int OHOSTensorCreate0001()
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 

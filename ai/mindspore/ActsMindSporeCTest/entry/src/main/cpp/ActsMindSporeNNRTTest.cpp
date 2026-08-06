@@ -157,8 +157,8 @@ int SUBAIMindSporeCPUCopyFree0002()
     DestroyTensorArray(&inTensorArray);
     DestroyTensorArray(&outTensorArray);
     OHPrintf("==========ContextDestroy and ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -202,8 +202,8 @@ int SUBAIMindSporeCPUCopyFree0003()
     DestroyTensorArray(&inTensorArray);
     DestroyTensorArray(&outTensorArray);
     OHPrintf("==========ContextDestroy and ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -238,8 +238,8 @@ int SUBAIMindSporeCPUCopyFree0004()
     DestroyTensorArray(&inTensorArray);
     DestroyTensorArray(&outTensorArray);
     OHPrintf("==========ContextDestroy and ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -264,8 +264,8 @@ int SUBAIMindSporeCPUCopyFree0001()
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     RunMSLiteModel(model, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -301,8 +301,8 @@ int SUBAIMindSporeNNRTCopyFree0001()
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -332,8 +332,8 @@ int SUBAIMindSporeNNRTCopyFree0002()
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     RunMSLiteModel(model, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -374,8 +374,8 @@ int SUBAIMindSporeNNRTCopyFree0003()
         inTensorArray.handle_list[i] = inTensor;
     }
     DestroyTensorArray(&inTensorArray);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -408,8 +408,8 @@ int SUBAIMindSporeNNRTCopyFree0004()
     FillInputsData(inputs, "ml_face_isface", true);
     OH_AI_TensorHandleArray outputs = OH_AI_ModelGetOutputs(model);
     PredictLoopAndCompare(model, inputs, outputs, "ml_face_isface", ActsMindSporeValues::DEFAULT_PREDICT_LOOP);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -448,8 +448,8 @@ int SUBAIMindSporeNNRTCopyFree0005()
     DestroyTensorArray(&inTensorArray);
     DestroyTensorArray(&outTensorArray);
     OHPrintf("==========ContextDestroy and ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -490,8 +490,8 @@ int SUBAIMindSporeNNRTCopyFree0006()
     DestroyTensorArray(&inTensorArray);
     DestroyTensorArray(&outTensorArray);
     OHPrintf("==========ContextDestroy and ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -531,8 +531,8 @@ int SUBAIMindSporeNNRTCopyFree0007()
     DestroyTensorArray(&inTensorArray);
     DestroyTensorArray(&outTensorArray);
     OHPrintf("==========ContextDestroy and ModelDestroy==========\n");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -586,8 +586,8 @@ int SUBAIMindSporeHIAIOfflineModel0004()
     OH_AI_Status ret2 =
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.om.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret2, OH_AI_STATUS_LITE_MODEL_REBUILD);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -619,8 +619,8 @@ int SUBAIMindSporeHIAIOfflineModel0005()
     OH_AI_TensorHandleArray outputs = {0, nullptr};
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -647,8 +647,8 @@ int SUBAIMindSporeHIAIOfflineModel0006()
     OH_AI_Status ret =
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -706,8 +706,8 @@ int SUBAIMindSporeHIAIOfflineModel0007()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -763,8 +763,8 @@ int SUBAIMindSporeHIAIOfflineModel0008()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -812,8 +812,8 @@ int SUBAIMindSporeHIAIOfflineModel0009()
     OH_AI_Status ret =
         OH_AI_ModelBuildFromFile(model, FilePath("test_model.om.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -861,8 +861,8 @@ int SUBAIMindSporeHIAIOfflineModel0010()
     OH_AI_Status ret =
         OH_AI_ModelBuildFromFile(model, FilePath("test_model.om.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -920,8 +920,8 @@ int SUBAIMindSporeHIAIOfflineModel0011()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -979,8 +979,8 @@ int SUBAIMindSporeHIAIOfflineModel0012()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1038,8 +1038,8 @@ int SUBAIMindSporeHIAIOfflineModel0013()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1097,8 +1097,8 @@ int SUBAIMindSporeHIAIOfflineModel0014()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1156,8 +1156,8 @@ int SUBAIMindSporeHIAIOfflineModel0015()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1213,8 +1213,8 @@ int SUBAIMindSporeHIAIOfflineModel0016()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "test_model", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1262,8 +1262,8 @@ int SUBAIMindSporeHIAIOfflineModel0017()
     OH_AI_Status ret =
         OH_AI_ModelBuildFromFile(model, FilePath("test_model.om.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1311,8 +1311,8 @@ int SUBAIMindSporeHIAIOfflineModel0018()
     OH_AI_Status ret =
         OH_AI_ModelBuildFromFile(model, FilePath("test_model.om.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1370,8 +1370,8 @@ int SUBAIMindSporeNNRTCache0001()
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1425,8 +1425,8 @@ int SUBAIMindSporeNNRTCache0002()
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1489,8 +1489,8 @@ int SUBAIMindSporeNNRTCache0003()
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     CompareResult(
         outputs, "ml_ocr_cn", ActsMindSporeValues::DEFAULT_TOLERANCE, ActsMindSporeValues::DEFAULT_TOLERANCE, true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     OHPrintf("==========GetInputs2==========\n");
     OH_AI_TensorHandleArray inputs2 = OH_AI_ModelGetInputs(model2);
     ASSERT_NE(inputs2.handle_list, nullptr);
@@ -1504,8 +1504,8 @@ int SUBAIMindSporeNNRTCache0003()
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   true);
-    OH_AI_ContextDestroy(&context2);
     OH_AI_ModelDestroy(&model2);
+    OH_AI_ContextDestroy(&context2);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1547,8 +1547,8 @@ int SUBAIMindSporeNNRTCache0004()
     OH_AI_Status ret =
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1589,8 +1589,8 @@ int SUBAIMindSporeNNRTCache0005()
     OH_AI_Status ret =
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(ret, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1658,8 +1658,8 @@ int SUBAIMindSporeNNRTCache0006()
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   ActsMindSporeValues::DEFAULT_TOLERANCE,
                   true);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     OHPrintf("==========GetInputs2==========\n");
     OH_AI_TensorHandleArray inputs2 = OH_AI_ModelGetInputs(model2);
     ASSERT_NE(inputs2.handle_list, nullptr);
@@ -1668,8 +1668,8 @@ int SUBAIMindSporeNNRTCache0006()
     OH_AI_TensorHandleArray outputs2 = {0, nullptr};
     OH_AI_Status predictRet2 = OH_AI_ModelPredict(model2, inputs2, &outputs2, nullptr, nullptr);
     ASSERT_EQ(predictRet2, OH_AI_STATUS_LITE_ERROR);
-    OH_AI_ContextDestroy(&context2);
     OH_AI_ModelDestroy(&model2);
+    OH_AI_ContextDestroy(&context2);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1706,8 +1706,8 @@ int OHOSNNRT0001()
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1744,8 +1744,8 @@ int OHOSNNRT0002()
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1782,8 +1782,8 @@ int OHOSNNRT0003()
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1824,8 +1824,8 @@ int OHOSNNRT0005()
     ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     CompareResult(outputs, "ml_face_isface");
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
 }
 

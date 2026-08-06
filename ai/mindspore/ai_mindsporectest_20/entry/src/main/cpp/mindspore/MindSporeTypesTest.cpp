@@ -108,8 +108,8 @@ napi_value ModelTypetest_001(napi_env env, napi_callback_info info)
     OH_AI_ModelType model_type = OH_AI_MODELTYPE_INVALID;
     auto ret1 = OH_AI_TrainModelBuildFromFile(model, graphPath, model_type, context, train_cfg);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "11111111111111111111111", "ret: %{public}d", ret1);
-    OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
     napi_create_int32(env, ret1 == OH_AI_STATUS_LITE_PARAM_INVALID ? 0 : 1, &retValue);
     return retValue;
 }
