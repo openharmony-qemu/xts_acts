@@ -413,12 +413,12 @@ void ModelPredict(OH_AI_ModelHandle model, OH_AI_ContextHandle context, ModelPre
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("=========CompareResult===========\n");
     CompareResult(outputs, modelPredictOptions.modelName);
-    OHPrintf("=========OH_AI_ContextDestroy===========\n");
-    OH_AI_ContextDestroy(&context);
-    OHPrintf("=========OH_AI_ContextDestroy End===========\n");
     OHPrintf("=========OH_AI_ModelDestroy===========\n");
     OH_AI_ModelDestroy(&model);
     OHPrintf("=========OH_AI_ModelDestroy End===========\n");
+    OHPrintf("=========OH_AI_ContextDestroy===========\n");
+    OH_AI_ContextDestroy(&context);
+    OHPrintf("=========OH_AI_ContextDestroy End===========\n");
 }
 
 // model build and predict
