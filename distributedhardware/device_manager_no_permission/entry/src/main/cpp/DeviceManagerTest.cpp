@@ -33,8 +33,7 @@ static napi_value GetLocalDeviceNameErrorCodeOK(napi_env env, napi_callback_info
     }
     napi_value retValue;
     int32_t confirmResult;
-    if (result == DM_ERR_FAILED || result == DM_ERR_OBTAIN_SERVICE || result == DM_ERR_OBTAIN_BUNDLE_NAME
-        || result == ERR_PERMISSION_ERROR || result == ERR_INVALID_PARAMETER) {
+    if (result == ERR_PERMISSION_ERROR) {
         confirmResult = CONFIRM_RESULT_ONE;
     } else if (result == ERR_OK) {
         confirmResult = ERR_OK;
@@ -85,6 +84,88 @@ static napi_value SecondGetLocalDeviceNameErrorCode401(napi_env env, napi_callba
     napi_create_int32(env, confirmResult, &retValue);
     return retValue;
 }
+static napi_value GetLocalDeviceNameCErrorCodeOK(napi_env env, napi_callback_info info)
+{
+    char *localDeviceName = nullptr;
+    unsigned int len = 256;
+    int32_t result = OH_DeviceManager_GetLocalDeviceNameC(&localDeviceName, &len);
+    if (result == ERR_OK && localDeviceName != nullptr) {
+        delete [] localDeviceName;
+        localDeviceName = nullptr;
+    }
+    napi_value retValue;
+    int32_t confirmResult;
+    if (result == ERR_PERMISSION_ERROR) {
+        confirmResult = CONFIRM_RESULT_ONE;
+    } else if (result == ERR_OK) {
+        confirmResult = ERR_OK;
+    } else {
+        confirmResult = CONFIRM_RESULT_TOW;
+    }
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+
+static napi_value FirstGetLocalDeviceNameCErrorCode401(napi_env env, napi_callback_info info)
+{
+    char *localDeviceName = nullptr;
+    unsigned int len = 256;
+    int32_t result = OH_DeviceManager_GetLocalDeviceNameC(nullptr, &len);
+    if (result == ERR_OK && localDeviceName != nullptr) {
+        delete [] localDeviceName;
+        localDeviceName = nullptr;
+    }
+    napi_value retValue;
+    int32_t confirmResult = ERR_OK;
+    if (result == ERR_INVALID_PARAMETER) {
+        confirmResult = ERR_OK;
+    } else {
+        confirmResult = CONFIRM_RESULT_ONE;
+    }
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+
+static napi_value SecondGetLocalDeviceNameCErrorCode401(napi_env env, napi_callback_info info)
+{
+    char arr[] = "Hello, World!";
+    char *localDeviceName = arr;
+    unsigned int len = 256;
+    int32_t result = OH_DeviceManager_GetLocalDeviceNameC(&localDeviceName, &len);
+    if (result == ERR_OK && localDeviceName != nullptr) {
+        delete [] localDeviceName;
+        localDeviceName = nullptr;
+    }
+    napi_value retValue;
+    int32_t confirmResult = ERR_OK;
+    if (result == ERR_INVALID_PARAMETER) {
+        confirmResult = ERR_OK;
+    } else {
+        confirmResult = CONFIRM_RESULT_ONE;
+    }
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+
+static napi_value ThirdGetLocalDeviceNameCErrorCode401(napi_env env, napi_callback_info info)
+{
+    char *localDeviceName = nullptr;
+    int32_t result = OH_DeviceManager_GetLocalDeviceNameC(&localDeviceName, nullptr);
+    if (result == ERR_OK && localDeviceName != nullptr) {
+        delete [] localDeviceName;
+        localDeviceName = nullptr;
+    }
+    napi_value retValue;
+    int32_t confirmResult = ERR_OK;
+    if (result == ERR_INVALID_PARAMETER) {
+        confirmResult = ERR_OK;
+    } else {
+        confirmResult = CONFIRM_RESULT_ONE;
+    }
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -94,6 +175,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"FisrtGetLocalDeviceNameErrorCode401", nullptr, FisrtGetLocalDeviceNameErrorCode401, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"SecondGetLocalDeviceNameErrorCode401", nullptr, SecondGetLocalDeviceNameErrorCode401, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"GetLocalDeviceNameCErrorCodeOK", nullptr, GetLocalDeviceNameCErrorCodeOK, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"FirstGetLocalDeviceNameCErrorCode401", nullptr, FirstGetLocalDeviceNameCErrorCode401, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"SecondGetLocalDeviceNameCErrorCode401", nullptr, SecondGetLocalDeviceNameCErrorCode401, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"ThirdGetLocalDeviceNameCErrorCode401", nullptr, ThirdGetLocalDeviceNameCErrorCode401, nullptr, nullptr,
          nullptr, napi_default, nullptr},
     };
 
