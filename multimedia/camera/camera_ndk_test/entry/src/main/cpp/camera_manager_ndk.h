@@ -474,7 +474,7 @@ public:
     Camera_ErrorCode TestLogicCamDevsNullData();
     Camera_ErrorCode TestLogicCamDevsNullSize();
     Camera_ErrorCode TestLogicCamDevs();
-   Camera_ErrorCode TestGetRAWCaptureZoomRatioRange();
+    Camera_ErrorCode TestGetRAWCaptureZoomRatioRange();
     Camera_ErrorCode DeleteConstituentCameraDevices(int useCaseCode);
     Camera_ErrorCode GetLensFocalLength(int useCaseCode);
     Camera_ErrorCode GetMinimumFocusDistance(int useCaseCode);
