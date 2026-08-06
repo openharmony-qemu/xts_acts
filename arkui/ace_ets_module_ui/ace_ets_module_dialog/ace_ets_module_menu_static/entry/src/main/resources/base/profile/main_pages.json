@@ -22,6 +22,9 @@
     "MainAbility/pages/bindContextMenu/ContextMenuMaxHeight",
     "MainAbility/pages/GridStyle/GridStyleTestPage",
     "MainAbility/pages/bindContextMenu/BindMenuWithResponse",
-    "MainAbility/pages/bindContextMenu/BindContextMenuResponseType"
+    "MainAbility/pages/bindContextMenu/BindContextMenuResponseType",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowOptions",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowNullUndefined"
   ]
 }

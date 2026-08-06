@@ -7980,3 +7980,17 @@ export const testCustomDialogSetSystemMaterialInOptions002: () => number;
 export const testCustomDialogSetSystemMaterialInOptions003: () => number;
 export const testCustomDialogSetSystemMaterialInOptions004: () => number;
 export const testCustomDialogSetSystemMaterialInOptions005: () => number;
+
+export const testTransitionEffectIdentity001: () => number;
+export const testTransitionEffectIdentity002: () => number;
+export const testTransitionEffectIdentity003: () => number;
+export const testTransitionEffectIdentity004: () => number;
+export const testTransitionEffectIdentity005: () => number;
+export const testTransitionEffectIdentity006: () => number;
+export const testTransitionEffectIdentity007: () => number;
+export const testTransitionEffectIdentity008: () => number;
+export const testTransitionEffectIdentity009: () => number;
+export const testTransitionEffectIdentity010: () => number;
+export const testTransitionEffectIdentity011: () => number;
+export const testTransitionEffectIdentity012: () => number;
+export const testTransitionEffectIdentity013: () => number;

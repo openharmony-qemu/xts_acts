@@ -1,0 +1,27 @@
+{
+    "description": "Configuration for hjunit demo Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "900000",
+        "bundle-name": "com.arkui.ace.dialog.api26",
+        "module-name": "entry_test",
+        "shell-timeout": "900000",
+        "testcase-timeout": "180000"
+    },
+    "kits": [{
+        "test-file-name": [
+            "ActsAceEtsModuleDialogApi26Test.hap",
+            "ActsAceEtsModuleDialogApi26TestMain.hap"
+        ],
+        "type": "AppInstallKit",
+        "cleanup-apps": true
+    },{
+        "type": "ShellKit",
+        "run-command": [
+            "power-shell wakeup",
+            "uinput -T -m 300 2700 280 200",
+            "power-shell setmode 602",
+            "power-shell timeout -o 864000000"
+        ]
+    }]
+}

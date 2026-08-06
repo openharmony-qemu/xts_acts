@@ -27,6 +27,7 @@ import PopupCommonOptionsLevelModeTest from './popupLevelMode/PopupCommonOptions
 import CustomPopupOptionsLevelModeTest from './popupLevelMode/CustomPopupOptionsLevelModeTest.test';
 import BaseDialogOptionsDisplayModeInSubWindowTest from
   './dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow.test';
+import MaterialLevelTest from './uimaterial/MaterialLevelTest.test';
 
 export default function testsuite(): void {
   PopupOptionsSystemMaterialTest();
@@ -41,4 +42,5 @@ export default function testsuite(): void {
   PopupCommonOptionsLevelModeTest();
   CustomPopupOptionsLevelModeTest();
   BaseDialogOptionsDisplayModeInSubWindowTest();
+  MaterialLevelTest();
 }

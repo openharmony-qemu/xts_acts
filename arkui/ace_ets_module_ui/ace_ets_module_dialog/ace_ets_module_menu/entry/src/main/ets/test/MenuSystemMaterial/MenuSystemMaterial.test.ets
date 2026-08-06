@@ -237,6 +237,85 @@ export default function MenuSystemMaterialTest() {
     });
 
     /**
+     * @tc.name   MenuSystemMaterialTest_MaterialLevel_0100
+     * @tc.number SUB_ARKUI_API_MenuSystemMaterial_MaterialLevel_0100
+     * @tc.desc   Test MaterialLevel.EXQUISITE enum value equals 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MenuSystemMaterialTest_MaterialLevel_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('MenuSystemMaterialTest_MaterialLevel_0100 START');
+      expect(uiMaterial.MaterialLevel.EXQUISITE).assertEqual(0);
+      console.info('MaterialLevel.EXQUISITE = ' + uiMaterial.MaterialLevel.EXQUISITE);
+      done();
+    });
+
+    /**
+     * @tc.name   MenuSystemMaterialTest_MaterialLevel_0200
+     * @tc.number SUB_ARKUI_API_MenuSystemMaterial_MaterialLevel_0200
+     * @tc.desc   Test MaterialLevel.GENTLE enum value equals 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MenuSystemMaterialTest_MaterialLevel_0200', Level.LEVEL0, async (done: Function) => {
+      console.info('MenuSystemMaterialTest_MaterialLevel_0200 START');
+      expect(uiMaterial.MaterialLevel.GENTLE).assertEqual(1);
+      console.info('MaterialLevel.GENTLE = ' + uiMaterial.MaterialLevel.GENTLE);
+      done();
+    });
+
+    /**
+     * @tc.name   MenuSystemMaterialTest_MaterialLevel_0300
+     * @tc.number SUB_ARKUI_API_MenuSystemMaterial_MaterialLevel_0300
+     * @tc.desc   Test MaterialLevel.SMOOTH enum value equals 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MenuSystemMaterialTest_MaterialLevel_0300', Level.LEVEL0, async (done: Function) => {
+      console.info('MenuSystemMaterialTest_MaterialLevel_0300 START');
+      expect(uiMaterial.MaterialLevel.SMOOTH).assertEqual(2);
+      console.info('MaterialLevel.SMOOTH = ' + uiMaterial.MaterialLevel.SMOOTH);
+      done();
+    });
+
+    /**
+     * @tc.name   MenuSystemMaterialTest_getGlobalMaterialLevel_0100
+     * @tc.number SUB_ARKUI_API_MenuSystemMaterial_getGlobalMaterialLevel_0100
+     * @tc.desc   Test getGlobalMaterialLevel returns a valid MaterialLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MenuSystemMaterialTest_getGlobalMaterialLevel_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('MenuSystemMaterialTest_getGlobalMaterialLevel_0100 START');
+      let level: uiMaterial.MaterialLevel = uiMaterial.getGlobalMaterialLevel();
+      console.info('getGlobalMaterialLevel = ' + level);
+      expect(level === uiMaterial.MaterialLevel.EXQUISITE ||
+        level === uiMaterial.MaterialLevel.GENTLE ||
+        level === uiMaterial.MaterialLevel.SMOOTH).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   MenuSystemMaterialTest_isImmersiveMaterialSupported_0100
+     * @tc.number SUB_ARKUI_API_MenuSystemMaterial_isImmersiveMaterialSupported_0100
+     * @tc.desc   Test isImmersiveMaterialSupported returns boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MenuSystemMaterialTest_isImmersiveMaterialSupported_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('MenuSystemMaterialTest_isImmersiveMaterialSupported_0100 START');
+      let supported: boolean = uiMaterial.isImmersiveMaterialSupported();
+      console.info('isImmersiveMaterialSupported = ' + supported);
+      expect(supported === true || supported === false).assertTrue();
+      done();
+    });
+
+    /**
      * @tc.name   MenuSystemMaterialTest_Select_0100
      * @tc.number SUB_ARKUI_API_MenuSystemMaterial_Select_0100
      * @tc.desc   Test Select with menuSystemMaterial ULTRA_THIN style
