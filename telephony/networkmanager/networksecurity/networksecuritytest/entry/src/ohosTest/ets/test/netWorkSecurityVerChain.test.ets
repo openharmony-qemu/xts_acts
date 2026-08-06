@@ -18,6 +18,13 @@ import networkSecurity from '@ohos.net.networkSecurity';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import fs from '@ohos.file.fs';
 import { util } from '@kit.ArkTS';
+
+// 定义无效证书Blob类型用于测试
+interface InvalidCertBlob {
+  type: number | null | string | undefined;
+  data: string;
+}
+
 // 真实的自签名证书（使用 OpenSSL 生成）
 const REAL_SELF_SIGNED_CERT = `-----BEGIN CERTIFICATE-----
 MIIDwzCCAqugAwIBAgIUco4n2M+UmbUdOEgQj2MqDGF3l3YwDQYJKoZIhvcNAQEL
@@ -2805,6 +2812,198 @@ export default function netWorkSecurityTest() {
         }).catch((error: BusinessError) => {
           console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
           expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code}`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_TypeInvalid_0100
+     * @tc.desc   Test verifyCertChain interface second parameter caCert's type property with invalid enum value -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0100';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+        ];
+        const caCert: InvalidCertBlob = {
+          type: -1,
+          data: ROOT_CA_CERT
+        };
+        expectTrue(caCert.type === -1, `${caseName} caCert.type should be -1`);
+        networkSecurity.verifyCertChain(certs, caCert as networkSecurity.CertBlob, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded unexpectedly`);
+          expectFalse(true, `${caseName} verifyCertChain should have failed with invalid type -1`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code} for type -1`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_TypeInvalid_0200
+     * @tc.desc   Test verifyCertChain interface second parameter caCert's type property with invalid enum value 999
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0200';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+        ];
+        const caCert: InvalidCertBlob = {
+          type: 999,
+          data: ROOT_CA_CERT
+        };
+        expectTrue(caCert.type === 999, `${caseName} caCert.type should be 999`);
+        networkSecurity.verifyCertChain(certs, caCert as networkSecurity.CertBlob, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded unexpectedly`);
+          expectFalse(true, `${caseName} verifyCertChain should have failed with invalid type 999`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code} for type 999`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0300
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_TypeInvalid_0300
+     * @tc.desc   Test verifyCertChain interface second parameter caCert's type property with invalid enum value null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0300';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+        ];
+        const caCert: InvalidCertBlob = {
+          type: null,
+          data: ROOT_CA_CERT
+        };
+        expectTrue(caCert.type === null, `${caseName} caCert.type should be null`);
+        networkSecurity.verifyCertChain(certs, caCert as networkSecurity.CertBlob, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with null type`);
+          expectTrue(Array.isArray(result), `${caseName} verifyCertChain should return array`);
+          expectTrue(result.length > 0, `${caseName} verifyCertChain should return non-empty array`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code} for null type`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0400
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_TypeInvalid_0400
+     * @tc.desc   Test verifyCertChain interface second parameter caCert's type property with invalid enum value undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0400';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+        ];
+        const caCert: InvalidCertBlob = {
+          type: undefined,
+          data: ROOT_CA_CERT
+        };
+        expectTrue(caCert.type === undefined, `${caseName} caCert.type should be undefined`);
+        networkSecurity.verifyCertChain(certs, caCert as networkSecurity.CertBlob, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with undefined type`);
+          expectTrue(Array.isArray(result), `${caseName} verifyCertChain should return array`);
+          expectTrue(result.length > 0, `${caseName} verifyCertChain should return non-empty array`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code} for undefined type`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${err}`);
+        expectFalse(true, `${caseName} unexpected exception: ${err}`);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0500
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_TypeInvalid_0500
+     * @tc.desc   Test verifyCertChain interface second parameter caCert's type property with invalid enum value string "INVALID_TYPE"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChainTypeInvalid0500';
+      console.info(`${caseName} test start`);
+      try {
+        const certs: networkSecurity.CertBlob[] = [
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+          { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+        ];
+        const caCert: InvalidCertBlob = {
+          type: "INVALID_TYPE",
+          data: ROOT_CA_CERT
+        };
+        expectTrue(caCert.type === "INVALID_TYPE", `${caseName} caCert.type should be "INVALID_TYPE"`);
+        networkSecurity.verifyCertChain(certs, caCert as networkSecurity.CertBlob, 'chain.test.com').then((result: networkSecurity.CertBlob[]) => {
+          console.info(`${caseName} verifyCertChain succeeded with string type`);
+          expectTrue(Array.isArray(result), `${caseName} verifyCertChain should return array`);
+          expectTrue(result.length > 0, `${caseName} verifyCertChain should return non-empty array`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} verifyCertChain failed with code: ${error.code}, message: ${error.message}`);
+          expectTrue(error.code !== 0, `${caseName} verifyCertChain returned error code ${error.code} for invalid string type`);
           done();
         });
       } catch (err) {
