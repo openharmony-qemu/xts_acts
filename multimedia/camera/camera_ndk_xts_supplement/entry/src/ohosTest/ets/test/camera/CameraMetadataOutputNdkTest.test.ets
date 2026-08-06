@@ -553,7 +553,7 @@ export default function CameraMetadataOutputNdkTest() {
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_IS_LOCK_FOCUS_TRACKED_0100', Level.LEVEL0, async () => {
+    it('SUB_MULTIMEDIA_OH_METADATA_IS_LOCK_FOCUS_TRACKED_0100', Level.LEVEL0, async () => {
       let result = cameraObj.TestRegisterMetadataCallbackNormal();
       console.info(TAG, result);
       await sleep(COMMON_WAIT_DURATION)
@@ -655,7 +655,7 @@ export default function CameraMetadataOutputNdkTest() {
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_MULTIMEDIA_OH_METADATA_GET_PITCH_ANGLE_0100', Level.LEVEL0, async () => {
+    it('SUB_MULTIMEDIA_OH_METADATA_GET_METADATA_OBJECT_TYPE_0100', Level.LEVEL0, async () => {
       let result = cameraObj.TestRegisterMetadataCallbackNormal();
       console.info(TAG, result);
       await sleep(COMMON_WAIT_DURATION)
@@ -672,7 +672,7 @@ export default function CameraMetadataOutputNdkTest() {
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_MULTIMEDIA_OH_METADATA_GET_PITCH_ANGLE_0100', Level.LEVEL0, async () => {
+    it('SUB_MULTIMEDIA_OH_METADATA_GET_LEFT_EYE_BOUNDING_BOX_0100', Level.LEVEL0, async () => {
       let result = cameraObj.TestRegisterMetadataCallbackNormal();
       console.info(TAG, result);
       await sleep(COMMON_WAIT_DURATION)

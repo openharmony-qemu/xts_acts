@@ -398,6 +398,25 @@ static napi_value CreatePhotoOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value CreateXdrawPhotoOutput(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    size_t typeLen = 0;
+    char* surfaceId = nullptr;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
+    surfaceId = new char[typeLen + 1];
+    napi_get_value_string_utf8(env, args[0], surfaceId, typeLen + 1, &typeLen);
+    Camera_ErrorCode ret = ndkCamera_->CreateXdrawPhotoOutput(surfaceId);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value CreateHeifPhotoOutput(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -4193,6 +4212,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "createPreviewOutput", nullptr, CreatePreviewOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createPhotoOutput", nullptr, CreatePhotoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createHeifPhotoOutput", nullptr, CreateHeifPhotoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "createXdrawPhotoOutput", nullptr, CreateXdrawPhotoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "adjustHeifIdx", nullptr, AdjustHeifIdx, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createVideoOutput", nullptr, CreateVideoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createMetadataOutput", nullptr, CreateMetadataOutput, nullptr, nullptr, nullptr, napi_default, nullptr },

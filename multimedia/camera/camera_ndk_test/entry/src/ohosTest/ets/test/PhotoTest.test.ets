@@ -540,6 +540,11 @@ function createPhotoOutput() {
   }
 }
 
+function createXdrawPhotoOutput() {
+  let mPhotoOutput = cameraObj.createXdrawPhotoOutput(mPhotoSurface);
+  return mPhotoOutput;
+}
+
 function createHeifPhotoOutput(i: number) {
   let mPhotoOutput = cameraObj.createHeifPhotoOutput(mPhotoSurface, i);
   return mPhotoOutput;

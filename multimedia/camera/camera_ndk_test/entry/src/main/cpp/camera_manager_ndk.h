@@ -193,6 +193,7 @@ public:
     Camera_ErrorCode CreatePreviewOutput(void);
     Camera_ErrorCode CreateDeferredPreviewOutput(void);
     Camera_ErrorCode CreatePhotoOutput(char* photoSurfaceId);
+    Camera_ErrorCode CreateXdrawPhotoOutput(char* photoSurfaceId);
     Camera_ErrorCode CreateHeifPhotoOutput(char* photoSurfaceId, int idx);
     int AdjustHeifIdx(int idx);
     Camera_ErrorCode CreateVideoOutput(char* videoId);
