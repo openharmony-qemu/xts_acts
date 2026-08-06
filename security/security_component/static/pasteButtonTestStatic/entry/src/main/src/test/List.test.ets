@@ -17,9 +17,11 @@
 import pasteComponentStaticTest from './PasteComponentStatic.test';
 import pasteComponentScenarioStaticTest from './PasteComponentScenarioStatic.test';
 import pasteComponentSetUndefinedStaticTest from  './PasteComponentSetUndefinedStatic.test';
+import pasteComponentStaticTest_1 from  './PasteComponentStaticTest_1.test';
 
 export default function testsuite() {
   pasteComponentStaticTest();
   pasteComponentScenarioStaticTest();
   pasteComponentSetUndefinedStaticTest();
+  pasteComponentStaticTest_1();
 }
