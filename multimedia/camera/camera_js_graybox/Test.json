@@ -5,8 +5,8 @@
         "test-timeout": "99999999",
         "bundle-name": "ohos.actsGrayBoxCamera.test",
         "module-name": "entry_test",
-        "shell-timeout": "99999999",
-        "testcase-timeout": "99999999"
+        "shell-timeout": "39999999",
+        "testcase-timeout": "9999999"
     },
     "kits": [
         {

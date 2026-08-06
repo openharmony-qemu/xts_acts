@@ -84,7 +84,8 @@ async function cameraVideoRecordTest(testNum: string, testCameraId: number,
       await helper.release();
       expect(true).assertFail();
       return false;
-    } else if (cameras.length < testCameraId + 1) {
+    } else if (cameras.length < testCameraId + 1) {  //判断单前需要测试的相机数量是否已经测完（当前测试序号是否大于相机总数）
+      console.info(`${testNum} this camera number is end, cameras.length is ${cameras.length}`)
       return true;
     }
     const beforeVideoNum = await getAllPhotoAssetsCount();
@@ -123,6 +124,7 @@ async function cameraVideoRecordTest(testNum: string, testCameraId: number,
           cameraInput = createCameraInput(cameraManager, camreId);
           previewOutPut = createVideoPreviewOutputFromProFile(cameraManager, previewProfile);
           await openCamera(cameraInput);
+          console.info(`${testNum} openCamera is finish`);
           await addInputIntoSession(session, cameraInput);
           await addOutputIntoSession(session, previewOutPut);
           await addOutputIntoSession(session, videoOutput);
@@ -134,7 +136,7 @@ async function cameraVideoRecordTest(testNum: string, testCameraId: number,
           await commitSessionConfig(session);
           // 更新视频旋转角度
           let rotation = await getVideoRotation(videoOutput)
-          console.info(`videoRotation: ${rotation}`)
+          console.info(`${testNum} videoRotation: ${rotation}`);
           avRecoder.updateRotation(rotation)
           let videoStabilizationModes = getSupportedVideoStabilizationMode(session);
           // 遍历防抖模式
@@ -156,7 +158,18 @@ async function cameraVideoRecordTest(testNum: string, testCameraId: number,
           captureVideoTotalNum++;
           let zoomRatio: number;
           let findZoomRatioRange: boolean;
-          if (zoomRatioRange != undefined  && zoomRatioRange.length == 3) {
+          if (zoomRatioRange != undefined) {
+            if (zoomRatioRange.length < testZoomRatioRange + 1) {  //判断单前需要测试的放大焦距是否已经测完（当前测试序号是否大于需要测试总数）
+              console.info(`${testNum} this camera zoom number is end, zoomRatioRange.length is ${zoomRatioRange.length}`);
+              await stopSession(session);
+              console.info(`${testNum} stopSession is finish`);
+              await releaseInPutStream(cameraInput);
+              await releaseOutPutStream(previewOutPut);
+              await releaseOutPutStream(videoOutput);
+              console.info(`releaseStream is finish`);
+              await releaseSession(session);
+              return true;
+            }
             findZoomRatioRange = true;
             zoomRatio = zoomRatioRange[testZoomRatioRange];
             setZoomRatioRange(session, zoomRatioRange!, zoomRatio);
@@ -174,6 +187,7 @@ async function cameraVideoRecordTest(testNum: string, testCameraId: number,
           //恢复过程
           offPreviewOutputFrameStart(previewOutPut!);
           await stopSession(session);
+          console.info(`${testNum} stopSession is finish`);
           await releaseInPutStream(cameraInput);
           await releaseOutPutStream(previewOutPut);
           await releaseOutPutStream(videoOutput);
