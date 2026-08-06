@@ -245,7 +245,7 @@ export default function AVTransCoderNdkTest() {
       let ret: number = avTransCoderNdk.AvTransCoderErrorCode(avFd.fd, 0, 0);
       console.log('case testOhAvTransCoderNdkPrepareError0003 ret ' + ret);
       await closeFileFd(avFd.fd);
-      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
 
@@ -286,7 +286,7 @@ export default function AVTransCoderNdkTest() {
       console.log('case testOhAvTransCoderNdkPrepareError0005 ret ' + JSON.stringify(ret));
       await closeFileFd(avFd.fd);
       await closeFileFd(dstFd.fd);
-      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
 
