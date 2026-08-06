@@ -24,11 +24,9 @@ import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test'
 import arrayQuerySuite from './CollectionsArrayBaseTest/ArrayQuery.test';
 import arrayOperationSuite from './CollectionsArrayBaseTest/ArrayOperation.test';
 import arrayTransformSuite from './CollectionsArrayBaseTest/ArrayTransform.test';
-// import arrayErrorSuite from './CollectionsArrayBaseTest/ArrayError.test';
 import arrayInheritanceSuite from './CollectionsArrayBaseTest/ArrayInheritance.test';
 import arrayAnnotationSuite from './CollectionsArrayBaseTest/ArrayAnnotation.test';
 import arrayConcurrentSuite from './CollectionsArrayBaseTest/ArrayConcurrent.test';
-
 import arrayConcurrentCreateFromTest from './CollectionsArrayConcurrentTest/ArrayConcurrentCreateFromTest.test';
 import arrayConcurrentDataTypeTest from './CollectionsArrayConcurrentTest/ArrayConcurrentDataTypeTest.test';
 import arrayConcurrentFillCopyWithinTest from './CollectionsArrayConcurrentTest/ArrayConcurrentFillCopyWithinTest.test';
@@ -59,7 +57,6 @@ export default function testsuite() {
   arrayQuerySuite();
   arrayOperationSuite();
   arrayTransformSuite();
-  // arrayErrorSuite();
   arrayInheritanceSuite();
   arrayAnnotationSuite();
   arrayConcurrentSuite();
