@@ -29,7 +29,6 @@ import { Hypium } from '../../../hypium/index';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';
-import { HTTP_AUTH_URL, HTTP_AUTH_USER, HTTP_AUTH_PASSWORD } from '../../src/test/Config.test';
 
 export class StringFields {
   public str: string = '';
@@ -80,13 +79,15 @@ struct httpAuthHandler {
             case 'testHttpAuthHandlerConfirm001': {
               try {
                 this.HttpAuthHandlerCallBack = 'confirm'
-                this.controller.loadUrl(HTTP_AUTH_URL)
+                this.controller.loadUrl('http://httpbin.org/basic-auth/admin/123456')
                 setTimeout(() => {
                   Utils.emitEvent(this.HttpAuthHandlerConfirmCallBack, 32040)
                 }, 3000)
 
               } catch (error) {
-                console.error(`loadUrl failed: ${JSON.stringify(error)}`);
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 32040)
               }
               break;
             }
@@ -101,7 +102,9 @@ struct httpAuthHandler {
                 }, 5000)
 
               } catch (error) {
-                console.error(`loadUrl failed: ${JSON.stringify(error)}`);
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 32041)
               }
               break;
             }
@@ -109,13 +112,15 @@ struct httpAuthHandler {
             case 'testHttpAuthHandlerIsHttpAuthInfoSaved001': {
               try {
                 this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSaved'
-                this.controller.loadUrl(HTTP_AUTH_URL)
+                this.controller.loadUrl('http://httpbin.org/basic-auth/admin/123456')
                 setTimeout(() => {
                   Utils.emitEvent(this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack, 32042)
                 }, 3000)
 
               } catch (error) {
-                console.error(`loadUrl failed: ${JSON.stringify(error)}`);
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 32042)
               }
               break;
             }
@@ -135,7 +140,7 @@ struct httpAuthHandler {
         .onHttpAuthRequest((event) => {
           if (event) {
             if (this.HttpAuthHandlerCallBack == 'confirm') {
-              this.HttpAuthHandlerConfirmCallBack = event.handler.confirm(HTTP_AUTH_USER, HTTP_AUTH_PASSWORD)
+              this.HttpAuthHandlerConfirmCallBack = event.handler.confirm('2222', '3333')
               this.HttpAuthHandlerCallBack = ''
             }
             if (this.HttpAuthHandlerCallBack == 'cancel') {
