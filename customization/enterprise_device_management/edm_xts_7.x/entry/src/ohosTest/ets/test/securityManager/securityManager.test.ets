@@ -21,6 +21,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, PIXEL_MAP, getPixelMap, 
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import common from '@ohos.enterprise.common';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const VALID_PROPERTIES: securityManager.WatermarkProperties = {
   intervalsRow: 10,
@@ -178,7 +179,8 @@ export default function securityManagerTest() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
       securityManager.cancelScreenWatermarkImage(SELFWANT);
     } catch (error) {
       expect(false).assertTrue();
@@ -334,7 +336,8 @@ function testCancelScreenWatermarkImage() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = securityManager.cancelScreenWatermarkImage(SELFWANT);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -779,8 +782,7 @@ function testSetWatermarkImageWithProperties() {
   it("test_setWatermarkImage_pixelmap_2100", Level.LEVEL0, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let ret = securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
-      expect(ret == null).assertTrue();
+      securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       let result: Array<string> = securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
       expect(result.length === 1).assertTrue();
       expect(result[0] === WATERMARK_BUNDLE_NAME).assertTrue();
@@ -825,7 +827,8 @@ function testSetWatermarkImageWithProperties() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, 1, VALID_PROPERTIES);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {

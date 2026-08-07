@@ -19,6 +19,7 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
 import adminManager from '@ohos.enterprise.adminManager';
 import deviceControl from '@ohos.enterprise.deviceControl';
 import restrictions from '@ohos.enterprise.restrictions';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const LOCK_SCREEN: string = "lockScreen";
 const OPERATE_DEVICE: string = "operateDevice";
@@ -82,7 +83,8 @@ function testOperateDevice() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let ret = deviceControl.operateDevice(SELFWANT, LOCK_SCREEN);
-      expect(ret == null).assertTrue();
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {

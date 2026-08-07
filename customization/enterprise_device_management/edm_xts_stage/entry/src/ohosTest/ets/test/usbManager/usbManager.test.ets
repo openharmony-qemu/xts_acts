@@ -104,7 +104,7 @@ function testAddAllowedUsbDevices() {
       expect(ret.length == devices.length).assertTrue();
       usbManager.removeAllowedUsbDevices(SELFWANT, ret);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -138,7 +138,7 @@ function testAddAllowedUsbDevices() {
       let result: Array<usbManager.UsbDeviceId> = usbManager.getAllowedUsbDevices(SELFWANT);
       expect(result.length == 0).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -168,7 +168,7 @@ function testAddAllowedUsbDevices() {
         let ret: Array<usbManager.UsbDeviceId> = usbManager.getAllowedUsbDevices(SELFWANT);
         expect(ret.length == 1000).assertTrue();
       } catch (error) {
-        expect(error == null).assertTrue();
+        expect(false).assertTrue();
       }
 
       try {
@@ -1146,7 +1146,7 @@ function testSetUsbStorageDeviceAccessPolicy() {
       let getPolicy: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);;
       expect(getPolicy == usbManager.UsbPolicy.DISABLED).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1329,7 +1329,7 @@ function testAddDisallowedUsbDevices() {
       let result: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(result.length == 0).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1355,7 +1355,7 @@ function testAddDisallowedUsbDevices() {
       expect(ret.length == devices.length).assertTrue();
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1390,7 +1390,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret1);
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret2);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1427,7 +1427,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret1);
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret2);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1454,7 +1454,7 @@ function testAddDisallowedUsbDevices() {
       expect(ret.length == devices.length).assertTrue();
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1585,7 +1585,7 @@ function testAddDisallowedUsbDevices() {
       let ret1: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret1.length == DISALLOWED_USB_DEVICES_MAX_SIZE).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     }
     try {
       let devices2: Array<usbManager.UsbDeviceType> =
@@ -1785,7 +1785,7 @@ function testAddDisallowedUsbDevices() {
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == 1).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1811,7 +1811,7 @@ function testAddDisallowedUsbDevices() {
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == 1).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1917,7 +1917,7 @@ function testRemoveDisallowedUsbDevices() {
       expect(ret.length == (addDevices.length - devices.length)).assertTrue();
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1951,7 +1951,7 @@ function testRemoveDisallowedUsbDevices() {
       expect(ret.length == (addDevices.length - devices.length)).assertTrue();
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1993,7 +1993,7 @@ function testRemoveDisallowedUsbDevices() {
       let ret2: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret2.length == (addDevices.length - devices1.length - devices2.length)).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2036,7 +2036,7 @@ function testRemoveDisallowedUsbDevices() {
       let ret2: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret2.length == (addDevices.length - devices1.length - devices2.length + 1)).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2068,7 +2068,7 @@ function testRemoveDisallowedUsbDevices() {
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == addDevices.length).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2093,7 +2093,7 @@ function testRemoveDisallowedUsbDevices() {
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == 0).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2119,7 +2119,7 @@ function testRemoveDisallowedUsbDevices() {
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == 0).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
