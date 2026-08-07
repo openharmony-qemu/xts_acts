@@ -49,6 +49,14 @@ let videoConfig: media.AVRecorderConfig = {
   rotation: 0
 }
 
+async function sleep(ms: number): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('');
+    }, ms);
+  });
+}
+
 async function getVideoSurfaceID() {
 const mContext: Context = getContext();
   console.info(TAG + 'start getVideoSurfaceID ' + videoSurfaceId);
@@ -229,7 +237,8 @@ export default function VideoTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(() => {
+    afterEach(async () => {
+      await sleep(500);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.

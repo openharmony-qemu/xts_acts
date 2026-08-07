@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import cameraObj from 'libentry.so'
-import { driveFn, getPermission, } from '../CameraCommon.test';
+import { driveFn, getPermission, sleep } from '../CameraCommon.test';
 import { indexSurfaceId } from '../../testability/pages/Index';
 
 const CAMERA_OPERATION_NOT_ALLOWED = 7400102;
@@ -32,10 +32,12 @@ export default function CameraFunctionErrorTest() {
       await driveFn();
       console.info(TAG + 'beforeAll case', indexSurfaceId);
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
+      await sleep(500);
       console.info('afterEach case');
     });
     afterAll(() => {

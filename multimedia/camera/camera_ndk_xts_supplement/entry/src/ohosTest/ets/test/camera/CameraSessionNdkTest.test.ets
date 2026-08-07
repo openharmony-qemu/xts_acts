@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import cameraObj from 'libentry.so'
-import { driveFn, getPermission, } from '../CameraCommon.test';
+import { driveFn, getPermission, sleep } from '../CameraCommon.test';
 import { indexSurfaceId } from '../../testability/pages/Index';
 
 const EFFECT_SUCCESS = 0;
@@ -43,10 +43,12 @@ export default function CameraFunctionTest() {
       let result = cameraObj.initWithSurface(indexSurfaceId);
       console.info(TAG, result)
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
+      await sleep(500);
       console.info('afterEach case');
     });
     afterAll(() => {
