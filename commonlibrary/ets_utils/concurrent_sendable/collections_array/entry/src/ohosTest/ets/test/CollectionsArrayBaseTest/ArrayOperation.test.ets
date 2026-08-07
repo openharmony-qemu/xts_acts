@@ -12,8 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// ArrayOperation.test.ets
+// 栈/队列操作方法组（4个）：push, pop, unshift, shift
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,
@@ -29,6 +31,12 @@ import { TestHelper } from './test_utils/TestHelper';
 
 export default function suite() {
   describe('ArrayOperationTests', () => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     // ==================== 基础操作测试 ====================
 
     /**
@@ -71,156 +79,6 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_0300
-     * @tc.name testArrayOperation0003
-     * @tc.desc Verify that splice deletes and inserts elements correctly.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0003';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-      expect(arr.splice(2, 2).length).assertEqual(2);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_0400
-     * @tc.name testArrayOperation0004
-     * @tc.desc Verify that slice returns a new Array with the specified range of elements.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0004';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-      expect(arr.slice(1, 4).length).assertEqual(3);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_0500
-     * @tc.name testArrayOperation0005
-     * @tc.desc Verify that fill fills all elements with the specified value.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0005';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
-      arr.fill(0);
-      expect(arr[0]).assertEqual(0);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_0600
-     * @tc.name testArrayOperation0006
-     * @tc.desc Verify that copyWithin copies elements within the Array.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0006';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-      arr.copyWithin(0, 3);
-      expect(arr[0]).assertEqual(4);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_0700
-     * @tc.name testArrayOperation0007
-     * @tc.desc Verify that sort sorts elements in ascending order by default.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0007';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(5, 2, 4, 1, 3);
-      arr.sort();
-      expect(arr[0]).assertEqual(1);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_0800
-     * @tc.name testArrayOperation0008
-     * @tc.desc Verify that reverse reverses the order of elements in place.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0008';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
-      arr.reverse();
-      expect(arr[0]).assertEqual(3);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_0900
-     * @tc.name testArrayOperation0009
-     * @tc.desc Verify that extendTo extends the Array to the specified length with the fill value.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0009';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2);
-      arr.extendTo(5, 0);
-      expect(arr.length).assertEqual(5);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1000
-     * @tc.name testArrayOperation0010
-     * @tc.desc Verify that shrinkTo shrinks the Array to the specified length.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0010';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-      arr.shrinkTo(3);
-      expect(arr.length).assertEqual(3);
-
-      console.info(`${caseName}, test end`);
-    });
-
     // ==================== 正交操作测试：number 类型 ====================
 
     /**
@@ -239,17 +97,18 @@ export default function suite() {
       for (let i = 0; i < numberValues.length; i++) {
         let item: NumberTestValue = numberValues[i];
         let arr: collections.Array<number> = new collections.Array<number>();
-        expect(arr.unshift(item.value)).assertEqual(1);
-        let shifted: number = arr.shift() as number;
+        arr.push(item.value);
+        let popped: number | undefined = arr.pop();
         if (item.id === 'number_nan') {
-          expect(Number.isNaN(shifted)).assertTrue();
+          expect(Number.isNaN(popped as number)).assertTrue();
         } else {
-          expect(shifted).assertEqual(item.value);
+          expect(popped).assertEqual(item.value);
         }
       }
 
       console.info(`${caseName}, test end`);
     });
+
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1200
      * @tc.name testArrayOperation0012
@@ -266,238 +125,12 @@ export default function suite() {
       for (let i = 0; i < numberValues.length; i++) {
         let item: NumberTestValue = numberValues[i];
         let arr: collections.Array<number> = new collections.Array<number>();
-        expect(arr.unshift(item.value)).assertEqual(1);
-        let shifted: number = arr.shift() as number;
+        arr.unshift(item.value);
+        let shifted: number | undefined = arr.shift();
         if (item.id === 'number_nan') {
-          expect(Number.isNaN(shifted)).assertTrue();
+          expect(Number.isNaN(shifted as number)).assertTrue();
         } else {
           expect(shifted).assertEqual(item.value);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1300
-     * @tc.name testArrayOperation0013
-     * @tc.desc Verify splice with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0013';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(item.value);
-        arr.push(item.value);
-        let removed: collections.Array<number> = arr.splice(1, 1);
-        expect(removed.length).assertEqual(1);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1400
-     * @tc.name testArrayOperation0014
-     * @tc.desc Verify slice with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0014';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(item.value);
-        let sliced: collections.Array<number> = arr.slice(0, 1);
-        expect(sliced.length).assertEqual(1);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1500
-     * @tc.name testArrayOperation0015
-     * @tc.desc Verify fill with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0015';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(1);
-        arr.push(2);
-        arr.fill(item.value);
-        if (item.id === 'number_nan') {
-          expect(Number.isNaN(arr[0])).assertTrue();
-        } else {
-          expect(arr[0]).assertEqual(item.value);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1600
-     * @tc.name testArrayOperation0016
-     * @tc.desc Verify copyWithin with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0016';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(item.value);
-        arr.push(0);
-        arr.push(0);
-        arr.copyWithin(1, 0);
-        if (item.id === 'number_nan') {
-          expect(Number.isNaN(arr[1])).assertTrue();
-        } else {
-          expect(arr[1]).assertEqual(item.value);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1700
-     * @tc.name testArrayOperation0017
-     * @tc.desc Verify sort with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0017';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        // 跳过 NaN，因为 NaN 排序无意义
-        if (item.id === 'number_nan') {
-          continue;
-        }
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(item.value);
-        arr.push(0);
-        arr.sort((a: number, b: number) => a - b);
-        expect(arr.length).assertEqual(2);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1800
-     * @tc.name testArrayOperation0018
-     * @tc.desc Verify reverse with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0018';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(item.value);
-        arr.push(0);
-        arr.reverse();
-        if (item.id === 'number_nan') {
-          expect(Number.isNaN(arr[1])).assertTrue();
-        } else {
-          expect(arr[0]).assertEqual(0);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_1900
-     * @tc.name testArrayOperation0019
-     * @tc.desc Verify extendTo with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0019';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(1);
-        arr.extendTo(3, item.value);
-        expect(arr.length).assertEqual(3);
-        if (item.id === 'number_nan') {
-          expect(Number.isNaN(arr[2])).assertTrue();
-        } else {
-          expect(arr[2]).assertEqual(item.value);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2000
-     * @tc.name testArrayOperation0020
-     * @tc.desc Verify shrinkTo with all number test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0020';
-      console.info(`${caseName}, test start`);
-
-      let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
-      for (let i = 0; i < numberValues.length; i++) {
-        let item: NumberTestValue = numberValues[i];
-        let arr: collections.Array<number> = new collections.Array<number>();
-        arr.push(item.value);
-        arr.push(0);
-        arr.push(0);
-        arr.shrinkTo(1);
-        expect(arr.length).assertEqual(1);
-        if (item.id === 'number_nan') {
-          expect(Number.isNaN(arr[0])).assertTrue();
-        } else {
-          expect(arr[0]).assertEqual(item.value);
         }
       }
 
@@ -552,209 +185,6 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2300
-     * @tc.name testArrayOperation0023
-     * @tc.desc Verify splice with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0023';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push(item.value);
-        arr.push(item.value);
-        let removed: collections.Array<string> = arr.splice(1, 1);
-        expect(removed.length).assertEqual(1);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2400
-     * @tc.name testArrayOperation0024
-     * @tc.desc Verify slice with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0024';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push(item.value);
-        let sliced: collections.Array<string> = arr.slice(0, 1);
-        expect(sliced.length).assertEqual(1);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2500
-     * @tc.name testArrayOperation0025
-     * @tc.desc Verify fill with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0025';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push('a');
-        arr.push('b');
-        arr.fill(item.value);
-        expect(arr[0]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2600
-     * @tc.name testArrayOperation0026
-     * @tc.desc Verify copyWithin with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0026';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push(item.value);
-        arr.push('x');
-        arr.push('x');
-        arr.copyWithin(1, 0);
-        expect(arr[1]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2700
-     * @tc.name testArrayOperation0027
-     * @tc.desc Verify sort with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0027';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push(item.value);
-        arr.push('aaa');
-        arr.sort();
-        expect(arr.length).assertEqual(2);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2800
-     * @tc.name testArrayOperation0028
-     * @tc.desc Verify reverse with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0028';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push(item.value);
-        arr.push('x');
-        arr.reverse();
-        expect(arr[0]).assertEqual('x');
-        expect(arr[1]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_2900
-     * @tc.name testArrayOperation0029
-     * @tc.desc Verify extendTo with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0029';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push('a');
-        arr.extendTo(3, item.value);
-        expect(arr.length).assertEqual(3);
-        expect(arr[2]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3000
-     * @tc.name testArrayOperation0030
-     * @tc.desc Verify shrinkTo with all string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0030';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>();
-        arr.push(item.value);
-        arr.push('x');
-        arr.push('x');
-        arr.shrinkTo(1);
-        expect(arr.length).assertEqual(1);
-        expect(arr[0]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
     // ==================== 正交操作测试：boolean 类型 ====================
 
     /**
@@ -802,212 +232,6 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3300
-     * @tc.name testArrayOperation0033
-     * @tc.desc Verify splice with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0033';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(item.value);
-        arr.push(item.value);
-        let removed: collections.Array<boolean> = arr.splice(1, 1);
-        expect(removed.length).assertEqual(1);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3400
-     * @tc.name testArrayOperation0034
-     * @tc.desc Verify slice with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0034';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(item.value);
-        let sliced: collections.Array<boolean> = arr.slice(0, 1);
-        expect(sliced.length).assertEqual(1);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3500
-     * @tc.name testArrayOperation0035
-     * @tc.desc Verify fill with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0035';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(true);
-        arr.push(true);
-        arr.fill(item.value);
-        expect(arr[0]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3600
-     * @tc.name testArrayOperation0036
-     * @tc.desc Verify copyWithin with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0036';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(item.value);
-        arr.push(false);
-        arr.push(false);
-        arr.copyWithin(1, 0);
-        expect(arr[1]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3700
-     * @tc.name testArrayOperation0037
-     * @tc.desc Verify sort with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0037';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(item.value);
-        arr.push(false);
-        arr.sort();
-        expect(arr.length).assertEqual(2);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3800
-     * @tc.name testArrayOperation0038
-     * @tc.desc Verify reverse with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0038';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(item.value);
-        arr.push(!item.value);
-        arr.reverse();
-        expect(arr.length).assertEqual(2);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_3900
-     * @tc.name testArrayOperation0039
-     * @tc.desc Verify extendTo with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0039';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(true);
-        arr.extendTo(3, item.value);
-        expect(arr.length).assertEqual(3);
-        expect(arr[2]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4000
-     * @tc.name testArrayOperation0040
-     * @tc.desc Verify shrinkTo with all boolean test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0040';
-      console.info(`${caseName}, test start`);
-
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>();
-        arr.push(item.value);
-        arr.push(false);
-        arr.push(false);
-        arr.shrinkTo(1);
-        expect(arr.length).assertEqual(1);
-        expect(arr[0]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    // ==================== 正交操作测试：Sendable 对象类型 ====================
-    // 注意：undefined_value 和 null_value 因 ArkTS 编译器限制无法直接传递，
-    // 已在 TestDataFactory 中注释。以下测试覆盖其余 34 个 ISendable 兼容的测试值。
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4100
@@ -1059,224 +283,6 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4300
-     * @tc.name testArrayOperation0043
-     * @tc.desc Verify splice with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0043';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          arr.push(item.value);
-          let removed: collections.Array<lang.ISendable> = arr.splice(1, 1);
-          expect(removed.length).assertEqual(1);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4400
-     * @tc.name testArrayOperation0044
-     * @tc.desc Verify slice with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0044';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          let sliced: collections.Array<lang.ISendable> = arr.slice(0, 1);
-          expect(sliced.length).assertEqual(1);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4500
-     * @tc.name testArrayOperation0045
-     * @tc.desc Verify fill with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0045';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          arr.push(item.value);
-          arr.fill(item.value);
-          expect(arr[0] === item.value).assertTrue();
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4600
-     * @tc.name testArrayOperation0046
-     * @tc.desc Verify copyWithin with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0046';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          arr.push(item.value);
-          arr.push(item.value);
-          arr.copyWithin(1, 0);
-          expect(arr[1] === item.value).assertTrue();
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4700
-     * @tc.name testArrayOperation0047
-     * @tc.desc Verify sort with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0047';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i: number = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          arr.push(item.value);
-          arr.sort();
-          expect(arr.length).assertEqual(2);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4800
-     * @tc.name testArrayOperation0048
-     * @tc.desc Verify reverse with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0048';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i: number = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          arr.push(item.value);
-          arr.reverse();
-          expect(arr.length).assertEqual(2);
-          expect(arr[0] === item.value).assertTrue();
-          expect(arr[1] === item.value).assertTrue();
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_4900
-     * @tc.name testArrayOperation0049
-     * @tc.desc Verify extendTo with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0049';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i: number = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          arr.extendTo(3, item.value);
-          expect(arr.length).assertEqual(3);
-          expect(arr[2] === item.value).assertTrue();
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_5000
-     * @tc.name testArrayOperation0050
-     * @tc.desc Verify shrinkTo with all Sendable object test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0050';
-      console.info(`${caseName}, test start`);
-
-      let allValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i: number = 0; i < allValues.length; i++) {
-        let item: TestValueItem = allValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-          arr.push(item.value);
-          arr.push(item.value);
-          arr.push(item.value);
-          arr.shrinkTo(1);
-          expect(arr.length).assertEqual(1);
-          expect(arr[0] === item.value).assertTrue();
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
     // ==================== 参数变体测试 ====================
 
     /**
@@ -1324,76 +330,6 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_5300
-     * @tc.name testArrayOperation0053
-     * @tc.desc Verify splice without deleteCount (removes all from start to end).
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0053';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-      let removed: collections.Array<number> = arr.splice(2);
-      expect(arr.length).assertEqual(2);
-      expect(removed.length).assertEqual(3);
-      expect(removed[0]).assertEqual(3);
-      expect(removed[1]).assertEqual(4);
-      expect(removed[2]).assertEqual(5);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_5400
-     * @tc.name testArrayOperation0054
-     * @tc.desc Verify splice with insert items.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0054';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 5, 6);
-      let removed: collections.Array<number> = arr.splice(2, 0, 3, 4);
-      expect(arr.length).assertEqual(6);
-      expect(removed.length).assertEqual(0);
-      expect(arr[0]).assertEqual(1);
-      expect(arr[1]).assertEqual(2);
-      expect(arr[2]).assertEqual(3);
-      expect(arr[3]).assertEqual(4);
-      expect(arr[4]).assertEqual(5);
-      expect(arr[5]).assertEqual(6);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_5500
-     * @tc.name testArrayOperation0055
-     * @tc.desc Verify [index] operator does not support negative index.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayOperation0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayOperation0055';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(10, 20, 30);
-      // 正向验证：正索引正常
-      expect(arr[0]).assertEqual(10);
-      // 验证 at 支持负索引
-      expect(arr.at(-1)).assertEqual(30);
-      // 验证 [index] 不支持负索引（编译期限制，此处验证 at 可用即可）
-
-      console.info(`${caseName}, test end`);
-    });
     // ==================== unshift/shift 补充测试 ====================
 
     /**
@@ -1499,8 +435,6 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    // ==================== boolean unshift/shift 补充测试 ====================
-
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_6000
      * @tc.name testArrayOperation0060
@@ -1549,8 +483,8 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
+
     // ==================== push/pop 补充测试 ====================
-    // 以下测试从 ArrayTraversal.test.ets 迁移至此，归属操作方法组
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_6200
@@ -1831,6 +765,180 @@ export default function suite() {
           expect(arr.length).assertEqual(0);
         }
       }
+
+      console.info(`${caseName}, test end`);
+    });
+
+    // ==================== undefined/null 操作测试 ====================
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_7300
+     * @tc.name testArrayOperation0073
+     * @tc.desc Verify push with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0073';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>();
+      let len: number = arr.push(undefined);
+      expect(len).assertEqual(1);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_7400
+     * @tc.name testArrayOperation0074
+     * @tc.desc Verify push with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0074';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>();
+      let len: number = arr.push(null);
+      expect(len).assertEqual(1);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_7500
+     * @tc.name testArrayOperation0075
+     * @tc.desc Verify pop with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0075';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let popped: lang.ISendable | null | undefined = arr.pop();
+      expect(popped).assertEqual(undefined);
+      expect(arr.length).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_7600
+     * @tc.name testArrayOperation0076
+     * @tc.desc Verify pop with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0076';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let popped: lang.ISendable | null | undefined = arr.pop();
+      expect(popped).assertEqual(null);
+      expect(arr.length).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_7700
+     * @tc.name testArrayOperation0077
+     * @tc.desc Verify unshift with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0077';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>();
+      let len: number = arr.unshift(undefined);
+      expect(len).assertEqual(1);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_7800
+     * @tc.name testArrayOperation0078
+     * @tc.desc Verify unshift with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0078';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>();
+      let len: number = arr.unshift(null);
+      expect(len).assertEqual(1);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_7900
+     * @tc.name testArrayOperation0079
+     * @tc.desc Verify shift with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0079';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let shifted: lang.ISendable | null | undefined = arr.shift();
+      expect(shifted).assertEqual(undefined);
+      expect(arr.length).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_OPERATION_8000
+     * @tc.name testArrayOperation0080
+     * @tc.desc Verify shift with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayOperation0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayOperation0080';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let shifted: lang.ISendable | null | undefined = arr.shift();
+      expect(shifted).assertEqual(null);
+      expect(arr.length).assertEqual(0);
 
       console.info(`${caseName}, test end`);
     });

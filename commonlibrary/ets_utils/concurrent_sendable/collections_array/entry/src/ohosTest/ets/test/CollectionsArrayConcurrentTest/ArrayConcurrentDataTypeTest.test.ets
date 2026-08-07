@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
@@ -63,6 +63,12 @@ async function undefinedPushTask(arr: collections.Array<number | undefined>,
 
 export default function arrayConcurrentDataTypeTest(): void {
   describe("arrayConcurrentDataTypeTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_DATATYPE_0100
      * @tc.name      testArrayConcurrentStringForEach0001

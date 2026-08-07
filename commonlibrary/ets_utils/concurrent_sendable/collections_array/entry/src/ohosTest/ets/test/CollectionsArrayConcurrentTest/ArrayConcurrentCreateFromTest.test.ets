@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
 
 @Concurrent
@@ -36,6 +36,12 @@ async function fromIterableTask(source: collections.Array<number>): Promise<numb
 
 export default function arrayConcurrentCreateFromTest(): void {
   describe("arrayConcurrentCreateFromTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CREATE_0100
      * @tc.name      testArrayConcurrentCreate0001

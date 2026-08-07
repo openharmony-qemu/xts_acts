@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
@@ -45,6 +45,12 @@ async function lockedCopyWithinTask(arr: collections.Array<number>, target: numb
 
 export default function arrayConcurrentFillCopyWithinTest(): void {
   describe("arrayConcurrentFillCopyWithinTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_FILL_0100
      * @tc.name      testArrayConcurrentFill0001
