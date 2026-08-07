@@ -135,11 +135,20 @@ export default function HttpUsingProtocolTest() {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0400';
       console.info(`${caseName}---start`);
       try {
-        expect(http.HttpProtocol.HTTP1_1).assertEqual(0);
-        expect(http.HttpProtocol.HTTP2).assertEqual(1);
-        done();
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com", {
+          usingProtocol: http.HttpProtocol.HTTP1_1
+        }).then((data)=> {
+          console.info(`${caseName} data: ` + JSON.stringify(data));
+          ExpectTrue(data.responseCode == 200);
+          expect(http.HttpProtocol.HTTP1_1).assertEqual(0);
+          expect(http.HttpProtocol.HTTP2).assertEqual(1);
+          httpRequest.destroy();
+          console.info(`${caseName}---end`);
+          done();
+        });
       } catch (error) {
-        console.info(`${caseName} catch fail, err: ${JSON.stringify(error)}`);
+        console.info(`${caseName} httpsRequest fail, err: ${JSON.stringify(error)}`);
         ExpectFail();
         console.info(`${caseName}---end`);
         done();
@@ -158,10 +167,19 @@ export default function HttpUsingProtocolTest() {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0500';
       console.info(`${caseName}---start`);
       try {
-        expect(http.HttpDataType.STRING).assertEqual(0);
-        expect(http.HttpDataType.OBJECT).assertEqual(1);
-        expect(http.HttpDataType.ARRAY_BUFFER).assertEqual(2);
-        done();
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com", {
+          usingProtocol: http.HttpProtocol.HTTP2
+        }).then((data)=> {
+          console.info(`${caseName} data: ` + JSON.stringify(data));
+          ExpectTrue(data.responseCode == 200);
+          expect(http.HttpDataType.STRING).assertEqual(0);
+          expect(http.HttpDataType.OBJECT).assertEqual(1);
+          expect(http.HttpDataType.ARRAY_BUFFER).assertEqual(2);
+          httpRequest.destroy();
+          console.info(`${caseName}---end`);
+          done();
+        });
       } catch (error) {
         console.info(`${caseName} httpsRequest fail, err: ${JSON.stringify(error)}`);
         ExpectFail();
