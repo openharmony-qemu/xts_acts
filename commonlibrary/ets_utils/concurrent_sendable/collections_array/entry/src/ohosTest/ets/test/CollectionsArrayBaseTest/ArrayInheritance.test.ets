@@ -12,8 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// ArrayInheritance.test.ets
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 
 @Sendable
@@ -37,6 +38,12 @@ class MyArray<T extends lang.ISendable | null> extends collections.Array<T> {
 
 export default function suite() {
   describe('ArrayInheritanceTests', () => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_INHERITANCE_0100
      * @tc.name testArrayInheritance0001

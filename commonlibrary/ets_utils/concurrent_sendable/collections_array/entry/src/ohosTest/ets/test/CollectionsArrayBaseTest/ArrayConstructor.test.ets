@@ -12,8 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// ArrayConstructor.test.ets
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import {
   BasicTypeTestData,
@@ -29,6 +30,12 @@ import {
 
 export default function suite() {
   describe('ArrayConstructorTests', () => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     // ==================== 基础构造测试 ====================
 
     /**
@@ -538,10 +545,6 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    // ==================== 正交构造测试：Sendable 对象类型 ====================
-    // 注意：undefined_value 和 null_value 因 ArkTS 限制（arkts-sendable-as-expr）
-    // 无法作为 ISendable 直接传递，已在 TestDataFactory 中注释掉原始值写法。
-    // 此处分 5 个测试（test0021-0025）覆盖其余 34 个 ISendable 测试值。
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_2100
@@ -669,9 +672,7 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
-    // ==================== undefined/null 构造测试（暂不支持） ====================
-    // 注意：以下测试因 collections.Array 不支持 undefined 和 null 作为元素类型，暂时注释
-    // 待后续环境支持后再启用
+    // ==================== undefined/null 构造测试 ====================
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_2600
@@ -681,15 +682,17 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0026';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<undefined> = new collections.Array<undefined>();
-    //   expect(arr.length).assertEqual(0);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0026';
+      console.info(`${caseName}, test start`);
+
+      // 使用联合类型支持 undefined
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>();
+      expect(arr.length).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_2700
@@ -699,15 +702,17 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0027';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<null> = new collections.Array<null>();
-    //   expect(arr.length).assertEqual(0);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0027';
+      console.info(`${caseName}, test start`);
+
+      // 使用联合类型支持 null
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>();
+      expect(arr.length).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_2800
@@ -717,16 +722,17 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0028';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<undefined> = new collections.Array<undefined>(undefined);
-    //   expect(arr.length).assertEqual(1);
-    //   expect(arr[0]).assertEqual(undefined);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0028';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_2900
@@ -736,16 +742,17 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0029';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<null> = new collections.Array<null>(null);
-    //   expect(arr.length).assertEqual(1);
-    //   expect(arr[0]).assertEqual(null);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0029';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_3000
@@ -755,17 +762,18 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0030';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<undefined> = new collections.Array<undefined>(undefined, undefined);
-    //   expect(arr.length).assertEqual(2);
-    //   expect(arr[0]).assertEqual(undefined);
-    //   expect(arr[1]).assertEqual(undefined);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0030';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined, undefined);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(undefined);
+      expect(arr[1]).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_3100
@@ -775,17 +783,18 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0031';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<null> = new collections.Array<null>(null, null);
-    //   expect(arr.length).assertEqual(2);
-    //   expect(arr[0]).assertEqual(null);
-    //   expect(arr[1]).assertEqual(null);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0031';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null, null);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(null);
+      expect(arr[1]).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_3200
@@ -795,18 +804,19 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0032';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<undefined> = collections.Array.create<undefined>(3, undefined);
-    //   expect(arr.length).assertEqual(3);
-    //   expect(arr[0]).assertEqual(undefined);
-    //   expect(arr[1]).assertEqual(undefined);
-    //   expect(arr[2]).assertEqual(undefined);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0032';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        collections.Array.create<lang.ISendable | null | undefined>(3, undefined);
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(undefined);
+      expect(arr[1]).assertEqual(undefined);
+      expect(arr[2]).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_3300
@@ -816,18 +826,19 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0033';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<null> = collections.Array.create<null>(3, null);
-    //   expect(arr.length).assertEqual(3);
-    //   expect(arr[0]).assertEqual(null);
-    //   expect(arr[1]).assertEqual(null);
-    //   expect(arr[2]).assertEqual(null);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0033';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        collections.Array.create<lang.ISendable | null | undefined>(3, null);
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(null);
+      expect(arr[1]).assertEqual(null);
+      expect(arr[2]).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_3400
@@ -837,18 +848,19 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0034';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let nativeArr: undefined[] = [];
-    //   nativeArr[0] = undefined;
-    //   let arr: collections.Array<undefined> = collections.Array.from<undefined>(nativeArr);
-    //   expect(arr.length).assertEqual(1);
-    //   expect(arr[0]).assertEqual(undefined);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0034';
+      console.info(`${caseName}, test start`);
+
+      let nativeArr: (lang.ISendable | null | undefined)[] = [];
+      nativeArr[0] = undefined;
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        collections.Array.from<lang.ISendable | null | undefined>(nativeArr);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONSTRUCTOR_3500
@@ -858,17 +870,18 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayConstructor0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayConstructor0035';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let nativeArr: null[] = [];
-    //   nativeArr[0] = null;
-    //   let arr: collections.Array<null> = collections.Array.from<null>(nativeArr);
-    //   expect(arr.length).assertEqual(1);
-    //   expect(arr[0]).assertEqual(null);
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayConstructor0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayConstructor0035';
+      console.info(`${caseName}, test start`);
+
+      let nativeArr: (lang.ISendable | null | undefined)[] = [];
+      nativeArr[0] = null;
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        collections.Array.from<lang.ISendable | null | undefined>(nativeArr);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
   });
 }

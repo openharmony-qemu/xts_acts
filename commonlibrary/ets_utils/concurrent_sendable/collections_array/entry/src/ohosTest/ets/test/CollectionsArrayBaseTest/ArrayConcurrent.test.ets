@@ -12,8 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// ArrayConcurrent.test.ets 5.3 注解测试中 @Concurrent装饰验证 的需求
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections} from '@kit.ArkTS';
 import { taskpool } from '@kit.ArkTS';
 import { NumberWrapper } from './test_data/TestDataFactory';
@@ -65,6 +67,12 @@ function processArrayFilter(arr: collections.Array<number>): collections.Array<n
 
 export default function suite() {
   describe('ArrayConcurrentTests', () => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_CONCURRENT_0100
      * @tc.name testArrayConcurrent0001

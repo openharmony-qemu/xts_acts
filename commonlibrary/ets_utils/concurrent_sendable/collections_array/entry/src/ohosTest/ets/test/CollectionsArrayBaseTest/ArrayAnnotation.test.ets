@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
+// ArrayAnnotation.test.ets object、Function 纯非 Sendable，编译器直接拦截注释1个用例
+
+import { describe, it, beforeEach, TestType, Size, Level, expect } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import { ArkTSUtils } from '@kit.ArkTS';
 import {
@@ -27,6 +29,12 @@ import { TestHelper } from './test_utils/TestHelper';
 
 export default function suite() {
   describe('ArrayAnnotationTests', () => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_ANNO_0100
      * @tc.name testArrayAnnotation0001
@@ -212,23 +220,33 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    // it('testArrayAnnotation0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayAnnotation0009';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
-    //   arr.push(null);
-    //   expect(arr.length).assertEqual(1);
-    //   expect(arr[0]).assertEqual(null);
-    //
-    //   arr.push(undefined);
-    //   expect(arr.length).assertEqual(2);
-    //   expect(arr[1]).assertEqual(undefined);
-    //
-    //   expect(ArkTSUtils.isSendable(arr)).assertTrue();
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
+    it('testArrayAnnotation0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayAnnotation0009';
+      console.info(`${caseName}, test start`);
+
+      // 使用联合类型 ISendable | null | undefined
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>();
+
+
+      arr.push(null);
+
+      arr.push(undefined);
+
+      arr.push(new SendableClassBasic());
+
+      expect(arr.length).assertEqual(3);
+
+      expect(arr[0]).assertEqual(null);
+
+      expect(arr[1]).assertEqual(undefined);
+
+      expect(arr[2] instanceof SendableClassBasic).assertTrue();
+      expect(ArkTSUtils.isSendable(arr)).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_ANNO_1000
      * @tc.name testArrayAnnotation0010

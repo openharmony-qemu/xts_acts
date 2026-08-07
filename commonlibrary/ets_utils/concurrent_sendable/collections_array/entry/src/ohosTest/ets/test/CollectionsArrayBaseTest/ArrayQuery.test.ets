@@ -12,8 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// ArrayQuery.test.ets
+// 查询方法组（8个）：at, indexOf, lastIndexOf, includes, find, findIndex, some, every
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,
@@ -29,6 +31,12 @@ import { TestHelper } from './test_utils/TestHelper';
 
 export default function suite() {
   describe('ArrayQueryTests', () => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     // ==================== 基础查询测试 ====================
 
     /**
@@ -542,10 +550,6 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    // ==================== 正交查询测试：ISendable 类型 ====================
-    // 注意：undefined_value 和 null_value 因 ArkTS 编译器限制（arkts-sendable-as-expr）
-    // 无法作为 ISendable 直接传递，已在 TestDataFactory 中注释。
-    // 以下测试覆盖其余 34 个 ISendable 兼容的测试值。
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_2300
@@ -1116,6 +1120,322 @@ export default function suite() {
           expect(arr.lastIndexOf(item.value)).assertEqual(1);
         }
       }
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_4800
+     * @tc.name testArrayQuery0048
+     * @tc.desc Verify at with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0048';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      expect(arr.at(0)).assertEqual(undefined);
+      expect(arr.at(10) === null || arr.at(10) === undefined).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_4900
+     * @tc.name testArrayQuery0049
+     * @tc.desc Verify at with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0049';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      expect(arr.at(0)).assertEqual(null);
+      expect(arr.at(10) === null || arr.at(10) === undefined).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5000
+     * @tc.name testArrayQuery0050
+     * @tc.desc  Verify indexOf with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+
+    it('testArrayQuery0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0050';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let index: number = arr.indexOf(undefined);
+      expect(index).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5100
+     * @tc.name testArrayQuery0051
+     * @tc.desc Verify indexOf with null value .
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+
+    it('testArrayQuery0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0051';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let index: number = arr.indexOf(null);
+      expect(index).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5200
+     * @tc.name testArrayQuery0052
+     * @tc.desc Verify includes with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0052';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      expect(arr.includes(undefined)).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5300
+     * @tc.name testArrayQuery0053
+     * @tc.desc  Verify includes with null value .
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+
+    it('testArrayQuery0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0053';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      expect(arr.includes(null)).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5400
+     * @tc.name testArrayQuery0054
+     * @tc.desc Verify find with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0054';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let found: lang.ISendable | null | undefined = arr.find(
+        (element: lang.ISendable | null | undefined): boolean => element === undefined
+      );
+      expect(found).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5500
+     * @tc.name testArrayQuery0055
+     * @tc.desc Verify find with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0055';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let found: lang.ISendable | null | undefined = arr.find(
+        (element: lang.ISendable | null | undefined): boolean => element === null
+      );
+      expect(found).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5600
+     * @tc.name testArrayQuery0056
+     * @tc.desc Verify some with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0056';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      expect(arr.some((element: lang.ISendable | null | undefined): boolean => element === undefined)).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5700
+     * @tc.name testArrayQuery0057
+     * @tc.desc Verify some with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0057';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      expect(arr.some((element: lang.ISendable | null | undefined): boolean => element === null)).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5800
+     * @tc.name testArrayQuery0058
+     * @tc.desc Verify every with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0058';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      expect(arr.every((element: lang.ISendable | null | undefined): boolean => element === undefined)).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_5900
+     * @tc.name testArrayQuery0059
+     * @tc.desc Verify every with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0059';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      expect(arr.every((element: lang.ISendable | null | undefined): boolean => element === null)).assertTrue();
+
+      console.info(`${caseName}, test end`);
+    });
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_6000
+     * @tc.name testArrayQuery0060
+     * @tc.desc Verify lastIndexOf with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0060';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined, undefined);
+      expect(arr.lastIndexOf(undefined)).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_6100
+     * @tc.name testArrayQuery0061
+     * @tc.desc Verify lastIndexOf with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0061';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null, null);
+      expect(arr.lastIndexOf(null)).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_6200
+     * @tc.name testArrayQuery0062
+     * @tc.desc Verify findIndex with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0062';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      expect(arr.findIndex((element: lang.ISendable | null | undefined):
+        boolean => element === undefined)).assertEqual(0);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_QUERY_6300
+     * @tc.name testArrayQuery0063
+     * @tc.desc Verify findIndex with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayQuery0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayQuery0063';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      expect(arr.findIndex((element: lang.ISendable | null | undefined): boolean => element === null)).assertEqual(0);
 
       console.info(`${caseName}, test end`);
     });
