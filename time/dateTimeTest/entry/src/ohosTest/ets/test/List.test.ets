@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import systemDateTimeJsunit from './systemDateTimeJsunit.test';
-import systemDateTimeSync from './systemDateTimeSync.test';
+import systemDateTimeJsunit from './SystemDateTimeJsunit.test';
+import systemDateTimeSync from './SystemDateTimeSync.test';
+import systemTimeJsunit from './SystemTimeJsunit.test';
 
 export default function testsuite() {
   systemDateTimeJsunit();
   systemDateTimeSync();
+  systemTimeJsunit();
 }

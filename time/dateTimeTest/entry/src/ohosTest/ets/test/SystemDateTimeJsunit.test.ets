@@ -59,15 +59,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getCurrentTime_JS_API_0002", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0002 start----------------");
-      await systemDateTime.getCurrentTime(false).then((data) => {
+      try {
+        let data = await systemDateTime.getCurrentTime(false);
         console.info('====>SUB_systemDateTime_getCurrentTime_JS_API_0002 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getCurrentTime_JS_API_0002 fail: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0002 end------------");
     });
 
@@ -81,15 +82,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getCurrentTime_JS_API_0003", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0003 start----------------");
-      await systemDateTime.getCurrentTime().then((data) => {
+      try {
+        let data = await systemDateTime.getCurrentTime();
         console.info('====>SUB_systemDateTime_getCurrentTime_JS_API_0003 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getCurrentTime_JS_API_0003 fail: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0003 end------------");
     });
 
@@ -159,15 +161,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getCurrentTime_JS_API_0006", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0006 start----------------");
-      await systemDateTime.getCurrentTime(true).then((data) => {
+      try {
+        let data = await systemDateTime.getCurrentTime(true);
         console.info('====>SUB_systemDateTime_getCurrentTime_JS_API_0006 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getCurrentTime_JS_API_0006 fail: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0006 end------------");
     });
 
@@ -209,15 +212,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getRealActiveTime_JS_API_0002", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0002 start----------------");
-      await systemDateTime.getRealActiveTime(false).then((data) => {
+      try {
+        let data = await systemDateTime.getRealActiveTime(false);
         console.log('SUB_systemDateTime_getRealActiveTime_JS_API_0002 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getRealActiveTime_JS_API_0002 err: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0002 end------------");
     });
 
@@ -231,15 +235,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getRealActiveTime_JS_API_0003", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0003 start----------------");
-      await systemDateTime.getRealActiveTime().then((data) => {
+      try {
+        let data = await systemDateTime.getRealActiveTime();
         console.log('SUB_systemDateTime_getRealActiveTime_JS_API_0003 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getRealActiveTime_JS_API_0003 err: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0003 end------------");
     });
 
@@ -309,15 +314,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getRealActiveTime_JS_API_0006", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0006 start----------------");
-      await systemDateTime.getRealActiveTime(true).then((data) => {
+      try {
+        let data = await systemDateTime.getRealActiveTime(true);
         console.log('SUB_systemDateTime_getRealActiveTime_JS_API_0006 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getRealActiveTime_JS_API_0006 err: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0006 end------------");
     });
 
@@ -359,15 +365,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getRealTime_JS_API_0002", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0002 start----------------");
-      await systemDateTime.getRealTime(false).then((data) => {
+      try {
+        let data = await systemDateTime.getRealTime(false);
         console.info('====>SUB_systemDateTime_getRealTime_JS_API_0002 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getRealTime_JS_API_0002 err: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0002 end------------");
     });
 
@@ -381,15 +388,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getRealTime_JS_API_0003", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0003 start----------------");
-      await systemDateTime.getRealTime().then((data) => {
+      try {
+        let data = await systemDateTime.getRealTime();
         console.info('====>SUB_systemDateTime_getRealTime_JS_API_0003 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getRealTime_JS_API_0003 err: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0003 end------------");
     });
 
@@ -459,15 +467,16 @@ export default function systemDateTimeJsunit() {
      */
     it("SUB_systemDateTime_getRealTime_JS_API_0006", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0006 start----------------");
-      await systemDateTime.getRealTime(true).then((data) => {
+      try {
+        let data = await systemDateTime.getRealTime(true);
         console.info('====>SUB_systemDateTime_getRealTime_JS_API_0006 success data : ' + JSON.stringify(data));
         expect(data != null).assertEqual(true);
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.error('====>SUB_systemDateTime_getRealTime_JS_API_0006 err: ' + JSON.stringify(error));
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0006 end------------");
     });
 
@@ -481,15 +490,16 @@ export default function systemDateTimeJsunit() {
      */
     it('SUB_systemDateTime_getDate_JS_API_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_systemDateTime_getDate_JS_API_0100 start");
-      await systemDateTime.getDate().then((data) => {
+      try {
+        let data = await systemDateTime.getDate();
         console.info("====>SUB_systemDateTime_getDate_JS_API_0100 getDate: " + data);
         expect(data != null).assertTrue();
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.info("====>SUB_systemDateTime_getDate_JS_API_0100 getDate fail: " + error);
         expect().assertFail();
         done();
-      })
+      }
       console.info("====>SUB_systemDateTime_getDate_JS_API_0100 end");
 
     });
@@ -533,15 +543,16 @@ export default function systemDateTimeJsunit() {
      */
     it('SUB_systemDateTime_getTimezone_JS_API_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_systemDateTime_getTimezone_JS_API_0100 start");
-      await systemDateTime.getTimezone().then( data => {
+      try {
+        let data = await systemDateTime.getTimezone();
         console.info("====>SUB_systemDateTime_getTimezone_JS_API_0100 getTimezone success: " + data);
         expect(data != null).assertTrue();
         done();
-      }).catch((error: BusinessError) => {
+      } catch (error) {
         console.info("====>SUB_systemDateTime_getTimezone_JS_API_0100 getTimezone fail: " + error);
         expect().assertFail();
         done();
-      });
+      }
       console.info("====>SUB_systemDateTime_getTimezone_JS_API_0100 end");
     });
 
@@ -571,6 +582,324 @@ export default function systemDateTimeJsunit() {
         }
       })
       console.info("====>SUB_systemDateTime_getTimezone_JS_API_0200 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0100
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0100
+     * @tc.desc   Test getCurrentTime callback with isNano null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getCurrentTime_JS_API_0100", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0100 start----------------");
+      try {
+        let isNano: boolean | null = null;
+        systemDateTime.getCurrentTime(isNano, (error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data != null).assertEqual(true);
+          }
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0100 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0200
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0200
+     * @tc.desc   Test getCurrentTime callback with isNano undefined, expect success (undefined coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getCurrentTime_JS_API_0200", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0200 start----------------");
+      try {
+        let isNano: boolean | undefined = undefined;
+        systemDateTime.getCurrentTime(isNano, (error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data != null).assertEqual(true);
+          }
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0200 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0300
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0300
+     * @tc.desc   Test getCurrentTime promise with isNano null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getCurrentTime_JS_API_0300", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0300 start----------------");
+      try {
+        let isNano: boolean | null = null;
+        await systemDateTime.getCurrentTime(isNano).then((data) => {
+          expect(data != null).assertEqual(true);
+          done();
+        }).catch((error: BusinessError) => {
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0300 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0400
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0400
+     * @tc.desc   Test getCurrentTime promise with isNano undefined, expect success (default false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getCurrentTime_JS_API_0400", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0400 start----------------");
+      try {
+        let isNano: boolean | undefined = undefined;
+        await systemDateTime.getCurrentTime(isNano).then((data) => {
+          expect(data != null).assertEqual(true);
+          done();
+        }).catch((error: BusinessError) => {
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0400 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0100
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0100
+     * @tc.desc   Test getRealActiveTime callback with isNano null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealActiveTime_JS_API_0100", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0100 start----------------");
+      try {
+        let isNano: boolean | null = null;
+        systemDateTime.getRealActiveTime(isNano, (error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data != null).assertEqual(true);
+          }
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0100 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0200
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0200
+     * @tc.desc   Test getRealActiveTime callback with isNano undefined, expect success (undefined coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealActiveTime_JS_API_0200", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0200 start----------------");
+      try {
+        let isNano: boolean | undefined = undefined;
+        systemDateTime.getRealActiveTime(isNano, (error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data != null).assertEqual(true);
+          }
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0200 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0300
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0300
+     * @tc.desc   Test getRealActiveTime promise with isNano null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealActiveTime_JS_API_0300", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0300 start----------------");
+      try {
+        let isNano: boolean | null = null;
+        await systemDateTime.getRealActiveTime(isNano).then((data) => {
+          expect(data != null).assertEqual(true);
+          done();
+        }).catch((error: BusinessError) => {
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0300 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0400
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0400
+     * @tc.desc   Test getRealActiveTime promise with isNano undefined, expect success (default false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealActiveTime_JS_API_0400", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0400 start----------------");
+      try {
+        let isNano: boolean | undefined = undefined;
+        await systemDateTime.getRealActiveTime(isNano).then((data) => {
+          expect(data != null).assertEqual(true);
+          done();
+        }).catch((error: BusinessError) => {
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0400 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0100
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0100
+     * @tc.desc   Test getRealTime callback with isNano null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealTime_JS_API_0100", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0100 start----------------");
+      try {
+        let isNano: boolean | null = null;
+        systemDateTime.getRealTime(isNano, (error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data != null).assertEqual(true);
+          }
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0100 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0200
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0200
+     * @tc.desc   Test getRealTime callback with isNano undefined, expect success (undefined coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealTime_JS_API_0200", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0200 start----------------");
+      try {
+        let isNano: boolean | undefined = undefined;
+        systemDateTime.getRealTime(isNano, (error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data != null).assertEqual(true);
+          }
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0200 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0300
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0300
+     * @tc.desc   Test getRealTime promise with isNano null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealTime_JS_API_0300", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0300 start----------------");
+      try {
+        let isNano: boolean | null = null;
+        await systemDateTime.getRealTime(isNano).then((data) => {
+          expect(data != null).assertEqual(true);
+          done();
+        }).catch((error: BusinessError) => {
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0300 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0400
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0400
+     * @tc.desc   Test getRealTime promise with isNano undefined, expect success (default false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getRealTime_JS_API_0400", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0400 start----------------");
+      try {
+        let isNano: boolean | undefined = undefined;
+        await systemDateTime.getRealTime(isNano).then((data) => {
+          expect(data != null).assertEqual(true);
+          done();
+        }).catch((error: BusinessError) => {
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0400 end-----------------");
     });
 
   });
