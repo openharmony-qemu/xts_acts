@@ -147,8 +147,6 @@ int32_t VideoSample::InputFunc()
         if (fenceFd > 0) {
             close(fenceFd);
         }
-        OH_NativeBuffer* nativeBuffer = nullptr;
-        OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
         OH_NativeWindow_NativeWindowFlushBuffer(inWindow_, ohNativeWindowBuffer, -1, region_);
     }
     return 0;
