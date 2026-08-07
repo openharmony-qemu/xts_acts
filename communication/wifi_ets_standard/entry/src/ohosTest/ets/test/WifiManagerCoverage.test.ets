@@ -2051,13 +2051,60 @@ export default function wifiManagerCoverage() {
         if (scanInfolist.length > 0) {
           let scanInfo = scanInfolist[0];
           console.log(`${caseName} create scanInfo success `, JSON.stringify(scanInfo));
-          expect(typeof scanInfo.bssidType).assertEqual('number');
-          expect(typeof scanInfo.centerFrequency0).assertEqual('number');
-          expect(typeof scanInfo.centerFrequency1).assertEqual('number');
+          console.info(`${caseName} getScanInfoList ssid:` + scanInfo.ssid + `, type: ` + typeof scanInfo.ssid);
+          expect(typeof scanInfo.ssid === `string`).assertTrue();
+          console.info(`${caseName} getScanInfoList bssid:` + scanInfo.bssid + `, type: ` + typeof scanInfo.bssid);
+          expect(typeof scanInfo.bssid === `string`).assertTrue();
+          console.info(`${caseName} getScanInfoList bssidType:` + scanInfo.bssidType + `, type: ` + typeof scanInfo.bssidType);
+          const enumvalue_DeviceAddressType: number[] = [wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          expect(enumvalue_DeviceAddressType.includes(scanInfo.bssidType)).assertTrue();
+          console.info(`${caseName} getScanInfoList capabilities:` + scanInfo.capabilities + `, type: ` + typeof scanInfo.capabilities);
+          expect(typeof scanInfo.capabilities === `string`).assertTrue();
+          console.info(`${caseName} getScanInfoList securityType:` + scanInfo.securityType + `, type: ` + typeof scanInfo.securityType);
+          const enumvalue_WifiSecurityType: number[] = [
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_INVALID,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_SAE,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_EAP,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_EAP_SUITE_B,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OWE,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WAPI_CERT,
+            wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WAPI_PSK,
+          ];
+          expect(enumvalue_WifiSecurityType.includes(scanInfo.securityType)).assertTrue();
+          console.info(`${caseName} getScanInfoList rssi:` + scanInfo.rssi + `, type: ` + typeof scanInfo.rssi);
+          expect(typeof scanInfo.rssi === `number`).assertTrue();
+          console.info(`${caseName} getScanInfoList band:` + scanInfo.band + `, type: ` + typeof scanInfo.band);
+          expect(typeof scanInfo.band === `number`).assertTrue();
+          console.info(`${caseName} getScanInfoList frequency:` + scanInfo.frequency + `, type: ` + typeof scanInfo.frequency);
+          expect(typeof scanInfo.frequency === `number`).assertTrue();
+          console.info(`${caseName} getScanInfoList channelWidth:` + scanInfo.channelWidth + `, type: ` + typeof scanInfo.channelWidth);
+          expect(typeof scanInfo.channelWidth === `number`).assertTrue();
+          console.info(`${caseName} getScanInfoList centerFrequency0:` + scanInfo.centerFrequency0 + `, type: ` + typeof scanInfo.centerFrequency0);
+          expect(typeof scanInfo.centerFrequency0 === `number`).assertTrue();
+          console.info(`${caseName} getScanInfoList centerFrequency1:` + scanInfo.centerFrequency1 + `, type: ` + typeof scanInfo.centerFrequency1);
+          expect(typeof scanInfo.centerFrequency1 === `number`).assertTrue();
+          console.info(`${caseName} getScanInfoList infoElems:` + JSON.stringify(scanInfo.infoElems) + `, type: ` + typeof scanInfo.infoElems);
           expect(Array.isArray(scanInfo.infoElems)).assertTrue();
-          expect(typeof scanInfo.bssidType).assertEqual('number');
-          expect(typeof scanInfo.supportedWifiCategory).assertEqual('number');
-          expect(typeof scanInfo.isHiLinkNetwork).assertEqual('boolean');
+          let wifiInfoElem: wifiManager.WifiInfoElem = scanInfo.infoElems[0];
+          console.info(`${caseName} getScanInfoList infoElems [0] wifiInfoElem eid:` + JSON.stringify(wifiInfoElem.eid) + `, type: ` + typeof wifiInfoElem.eid);
+          expect(typeof wifiInfoElem.eid).assertEqual('number');
+          console.info(`${caseName} getScanInfoList infoElems [0] wifiInfoElem content:` + JSON.stringify(wifiInfoElem.content) + `, type: ` + typeof wifiInfoElem.content);
+          console.info(`${caseName} getScanInfoList timestamp:` + scanInfo.timestamp + `, type: ` + typeof scanInfo.timestamp);
+          expect(typeof scanInfo.timestamp === `number`).assertTrue();
+          console.info(`${caseName} getScanInfoList supportedWifiCategory:` + scanInfo.supportedWifiCategory + `, type: ` + typeof scanInfo.supportedWifiCategory);
+          const enumvalue_WifiCategory: number[] = [
+            wifiManager.WifiCategory.DEFAULT,
+            wifiManager.WifiCategory.WIFI6,
+            wifiManager.WifiCategory.WIFI6_PLUS,
+            wifiManager.WifiCategory.WIFI7,
+            wifiManager.WifiCategory.WIFI7_PLUS,
+          ];
+          expect(enumvalue_WifiCategory.includes(scanInfo.supportedWifiCategory)).assertTrue();
+          console.info(`${caseName} getScanInfoList isHiLinkNetwork:` + scanInfo.isHiLinkNetwork + `, type: ` + typeof scanInfo.isHiLinkNetwork);
+          expect(typeof scanInfo.isHiLinkNetwork === `boolean`).assertTrue();
         }else{
           //当环境内无wifi或者热点时，获取列表长度为0
           expect(scanInfolist.length === 0).assertTrue();

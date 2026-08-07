@@ -401,6 +401,329 @@ export default function actsWifiManagerEventTest() {
 	        }
 	        done();
         })
+     /**
+      * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0001
+      * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0001
+      * @tc.desc   Test p2pStateChange callback
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pStateChangeCallback = result => {
+            console.info("[wifi_test]p2pStateChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pStateChange", p2pStateChangeCallback);
+          await sleep(1000);
+          wifiMg.off("p2pStateChange");
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0002
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0002
+       * @tc.desc   Test p2pConnectionChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pConnectionChangeCallback = result => {
+            console.info("[wifi_test]p2pConnectionChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pConnectionChange", p2pConnectionChangeCallback);
+          await sleep(1000);
+          wifiMg.off("p2pConnectionChange");
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0003
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0003
+       * @tc.desc   Test p2pDeviceChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pDeviceChangeCallback = result => {
+            console.info("[wifi_test]p2pDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pDeviceChange", p2pDeviceChangeCallback);
+          await sleep(1000);
+          wifiMg.off("p2pDeviceChange");
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0004
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0004
+       * @tc.desc   Test p2pPeerDeviceChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pPeerDeviceChangeCallback = result => {
+            console.info("[wifi_test]p2pPeerDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pPeerDeviceChange", p2pPeerDeviceChangeCallback);
+          await sleep(1000);
+          wifiMg.off("p2pPeerDeviceChange");
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0005
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0005
+       * @tc.desc   Test p2pPersistentGroupChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let p2pPersistentGroupChangeCallback = () => {
+          console.info("[wifi_test]p2pPersistentGroupChange callback, result: " + JSON.stringify(result));
+        }
+        wifiMg.on("p2pPersistentGroupChange", p2pPersistentGroupChangeCallback);
+        await sleep(1000);
+        wifiMg.off("p2pPersistentGroupChange");
+        done();
+      })
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0006
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0006
+       * @tc.desc   Test p2pDiscoveryChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pDiscoveryChangeCallback = result => {
+            console.info("[wifi_test]p2pDiscoveryChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pDiscoveryChange", p2pDiscoveryChangeCallback);
+          await sleep(1000);
+          wifiMg.off("p2pDiscoveryChange");
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0007
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0007
+       * @tc.desc   Test p2pStateChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pStateChangeCallback1 = result => {
+            console.info("[wifi_test]p2pStateChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pStateChangeCallback2 = result => {
+            console.info("[wifi_test]p2pStateChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pStateChangeCallback3 = result => {
+            console.info("[wifi_test]p2pStateChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pStateChange", p2pStateChangeCallback1);
+          wifiMg.on("p2pStateChange", p2pStateChangeCallback2);
+          wifiMg.on("p2pStateChange", p2pStateChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("p2pStateChange", p2pStateChangeCallback3);
+          wifiMg.off("p2pStateChange", p2pStateChangeCallback2);
+          wifiMg.off("p2pStateChange", p2pStateChangeCallback1);
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0008
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0008
+       * @tc.desc   Test p2pConnectionChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pConnectionChangeCallback1 = result => {
+            console.info("[wifi_test]p2pConnectionChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pConnectionChangeCallback2 = result => {
+            console.info("[wifi_test]p2pConnectionChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pConnectionChangeCallback3 = result => {
+            console.info("[wifi_test]p2pConnectionChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pConnectionChange", p2pConnectionChangeCallback1);
+          wifiMg.on("p2pConnectionChange", p2pConnectionChangeCallback2);
+          wifiMg.on("p2pConnectionChange", p2pConnectionChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("p2pConnectionChange", p2pConnectionChangeCallback3);
+          wifiMg.off("p2pConnectionChange", p2pConnectionChangeCallback2);
+          wifiMg.off("p2pConnectionChange", p2pConnectionChangeCallback1);
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0009
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0009
+       * @tc.desc   Test p2pDeviceChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pDeviceChangeCallback1 = result => {
+            console.info("[wifi_test]p2pDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pDeviceChangeCallback2 = result => {
+            console.info("[wifi_test]p2pDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pDeviceChangeCallback3 = result => {
+            console.info("[wifi_test]p2pDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pDeviceChange", p2pDeviceChangeCallback1);
+          wifiMg.on("p2pDeviceChange", p2pDeviceChangeCallback2);
+          wifiMg.on("p2pDeviceChange", p2pDeviceChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("p2pDeviceChange", p2pDeviceChangeCallback3);
+          wifiMg.off("p2pDeviceChange", p2pDeviceChangeCallback2);
+          wifiMg.off("p2pDeviceChange", p2pDeviceChangeCallback1);
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0010
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0010
+       * @tc.desc   Test p2pPeerDeviceChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pPeerDeviceChangeCallback1 = result => {
+            console.info("[wifi_test]p2pPeerDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pPeerDeviceChangeCallback2 = result => {
+            console.info("[wifi_test]p2pPeerDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pPeerDeviceChangeCallback3 = result => {
+            console.info("[wifi_test]p2pPeerDeviceChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pPeerDeviceChange", p2pPeerDeviceChangeCallback1);
+          wifiMg.on("p2pPeerDeviceChange", p2pPeerDeviceChangeCallback2);
+          wifiMg.on("p2pPeerDeviceChange", p2pPeerDeviceChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("p2pPeerDeviceChange", p2pPeerDeviceChangeCallback3);
+          wifiMg.off("p2pPeerDeviceChange", p2pPeerDeviceChangeCallback2);
+          wifiMg.off("p2pPeerDeviceChange", p2pPeerDeviceChangeCallback1);
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0011
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0011
+       * @tc.desc   Test p2pPersistentGroupChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let p2pPersistentGroupChangeCallback1 = () => {
+          console.info("[wifi_test]p2pPersistentGroupChange callback, result: " + JSON.stringify(result));
+        }
+        let p2pPersistentGroupChangeCallback2 = () => {
+          console.info("[wifi_test]p2pPersistentGroupChange callback, result: " + JSON.stringify(result));
+        }
+        let p2pPersistentGroupChangeCallback3 = () => {
+          console.info("[wifi_test]p2pPersistentGroupChange callback, result: " + JSON.stringify(result));
+        }
+        wifiMg.on("p2pPersistentGroupChange", p2pPersistentGroupChangeCallback1);
+        wifiMg.on("p2pPersistentGroupChange", p2pPersistentGroupChangeCallback2);
+        wifiMg.on("p2pPersistentGroupChange", p2pPersistentGroupChangeCallback3);
+        await sleep(1000);
+        wifiMg.off("p2pPersistentGroupChange", p2pPersistentGroupChangeCallback3);
+        wifiMg.off("p2pPersistentGroupChange", p2pPersistentGroupChangeCallback2);
+        wifiMg.off("p2pPersistentGroupChange", p2pPersistentGroupChangeCallback1);
+        done();
+      })
+  
+      /**
+       * @tc.name   SUB_Communication_WiFi_Event_Test_ADD_0012
+       * @tc.number SUB_Communication_WiFi_Event_Test_ADD_0012
+       * @tc.desc   Test p2pDiscoveryChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Communication_WiFi_Event_Test_ADD_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+          let p2pDiscoveryChangeCallback1 = result => {
+            console.info("[wifi_test]p2pDiscoveryChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pDiscoveryChangeCallback2 = result => {
+            console.info("[wifi_test]p2pDiscoveryChange callback, result: " + JSON.stringify(result));
+          }
+          let p2pDiscoveryChangeCallback3 = result => {
+            console.info("[wifi_test]p2pDiscoveryChange callback, result: " + JSON.stringify(result));
+          }
+          wifiMg.on("p2pDiscoveryChange", p2pDiscoveryChangeCallback1);
+          wifiMg.on("p2pDiscoveryChange", p2pDiscoveryChangeCallback2);
+          wifiMg.on("p2pDiscoveryChange", p2pDiscoveryChangeCallback3);
+          await sleep(1000);
+          wifiMg.off("p2pDiscoveryChange", p2pDiscoveryChangeCallback3);
+          wifiMg.off("p2pDiscoveryChange", p2pDiscoveryChangeCallback2);
+          wifiMg.off("p2pDiscoveryChange", p2pDiscoveryChangeCallback1);
+        }catch(error){
+          console.error("failed:" + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(801);
+        }
+        done();
+      })
         console.log("*************[wifi_test] start wifi js unit test end*************");
     })
 }

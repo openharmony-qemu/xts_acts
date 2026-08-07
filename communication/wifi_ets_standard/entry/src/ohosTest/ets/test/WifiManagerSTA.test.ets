@@ -114,8 +114,8 @@ export default function wifiSta() {
           await wifiMg.removeCandidateConfig(networkId);
           console.info(`afterEach removeCandidateConfig promise success`);
         }
-      }catch{
-        console.info(`afterEach not need removeCandidateConfig `);
+      }catch(err){
+        console.info(`afterEach not need removeCandidateConfig ` + err.code + err.message);
       }
       console.info('afterEach end');
       done();
