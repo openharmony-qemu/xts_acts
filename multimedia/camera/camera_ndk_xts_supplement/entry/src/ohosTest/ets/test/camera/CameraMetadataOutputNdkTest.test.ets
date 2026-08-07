@@ -31,10 +31,12 @@ export default function CameraMetadataOutputNdkTest() {
       let result = cameraObj.initWithSurface(indexSurfaceId);
       console.info(TAG, result)
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
+      await sleep(500);
       console.info('afterEach case');
     });
     afterAll(() => {

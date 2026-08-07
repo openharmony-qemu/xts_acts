@@ -45,12 +45,13 @@ export default function CameraNdkTest() {
       let result = cameraObj.initWithSurfaces(indexSurfaceId);
       console.info(TAG, result)
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(200);
+      await sleep(500);
     });
     afterAll(() => {
       console.info('afterAll case');
