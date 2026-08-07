@@ -12,214 +12,120 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include <iostream>
-#include <string>
-#include  <multimedia/player_framework/native_avcodec_videodecoder.h>
-#include  <multimedia/player_framework/native_averrors.h>
-#include "VideodecApi11SampleTest.h"
-#include  <multimedia/player_framework/native_avcodec_base.h>
-#include <multimedia/player_framework/native_avcapability.h>
-#include <multimedia/player_framework/native_avformat.h>
-#include "include/VideodecApi11SampleTest.h"
-#include <include/FuncTest.h>
+#include <memory>
 #include <unistd.h>
-
-#ifdef SUPPORT_DRM
-#include <native_mediakeysession.h>
-#include <native_mediakeysystem.h>
-#endif
-
-#define MAX_THREAD 16
+#include <multimedia/player_framework/native_avcapability.h>
+#include <multimedia/player_framework/native_avcodec_base.h>
+#include <multimedia/player_framework/native_avcodec_videodecoder.h>
+#include <multimedia/player_framework/native_averrors.h>
+#include <multimedia/player_framework/native_avformat.h>
+#include "include/FuncTest.h"
+#include "include/VideodecApi11SampleTest.h"
 
 using namespace std;
 using namespace OHOS;
 using namespace OHOS::Media;
 
-namespace OHOS {
-namespace Media {
-constexpr uint32_t THIRTY = 30;
-constexpr uint32_t DEFAULT_WIDTHVALUE = 1920;
-constexpr uint32_t DEFAULT_HEIGHTVALUE = 1080;
-class Mpeg4SwdecFuncNdkTest {
-public:
-    static void SetUpTestCase();
-    static void TearDownTestCase();
-    void InputFunc();
-    void OutputFunc();
-    void Release();
-    int32_t Stop();
-};
-
-namespace {
-static OH_AVCapability *cap_mpeg4 = nullptr;
+static OH_AVCapability* g_capMpeg4 = nullptr;
 static string g_codecNameMpeg4 = "";
-} // namespace
 
-static const char *INP_DIR_1080_30 = "/data/storage/el2/base/haps/entry_test/files/mpeg4_main@level4_1920x1080_30.m4v";
+static const char* INP_DIR_1080_30 =
+    "/data/storage/el2/base/haps/entry_test/files/mpeg4_main@level4_1920x1080_30.m4v";
+static const int MPEG4_DEFAULT_WIDTH = 1920;
+static const int MPEG4_DEFAULT_HEIGHT = 1080;
+static const int MPEG4_DEFAULT_FRAME_RATE = 30;
 
-void SetUpTestCase()
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
 {
-    if (cap_mpeg4 == nullptr) {
-        cap_mpeg4 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4_PART2, false, SOFTWARE);
-        if (cap_mpeg4 != nullptr) {
-            g_codecNameMpeg4 = OH_AVCapability_GetName(cap_mpeg4);
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
+static void InitMpeg4Capability()
+{
+    if (g_capMpeg4 == nullptr) {
+        g_capMpeg4 = OH_AVCodec_GetCapabilityByCategory(
+            OH_AVCODEC_MIMETYPE_VIDEO_MPEG4_PART2, false, SOFTWARE);
+        if (g_capMpeg4 != nullptr) {
+            g_codecNameMpeg4 = OH_AVCapability_GetName(g_capMpeg4);
             cout << "g_codecNameMpeg4: " << g_codecNameMpeg4 << endl;
         }
     }
 }
 
-void Mpeg4SwdecFuncNdkTest::TearDownTestCase() {}
-
-/**
- * @tc.name   VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010
- * @tc.number VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-int VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010()
+void InitMpeg4Test()
 {
-    SetUpTestCase();
-    if (cap_mpeg4 == nullptr) {
-        return 0;
-    }
-    if (cap_mpeg4 != nullptr) {
-        auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_1080_30;
-        vDecSample->defaultWidth = DEFAULT_WIDTHVALUE;
-        vDecSample->defaultHeight = DEFAULT_HEIGHTVALUE;
-        vDecSample->defaultFrameRate = THIRTY;
-        vDecSample->enbleSyncMode = 1;
-        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-        if (AV_ERR_OK != vDecSample -> CreateVideoDecoder(g_codecNameMpeg4)) {
-            return -1;
-        }
-        if (AV_ERR_OK != vDecSample -> ConfigureVideoDecoder()) {
-            return -1;
-        }
-        if (AV_ERR_OK != vDecSample -> StartSyncVideoDecoder()) {
-            return -1;
-        }
-        vDecSample->WaitForEOS();
-        if (vDecSample -> errCount != 0) {
-            return -1;
-        }
-    }
-    return 0;
+    InitMpeg4Capability();
 }
 
-/**
- * @tc.name   VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020
- * @tc.number VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-int VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020()
+static void SetSampleCommonAttr(const shared_ptr<VDecAPI11Sample>& sample, uint32_t pixelFormat)
 {
-    SetUpTestCase();
-    if (cap_mpeg4 == nullptr) {
-        return 0;
-    }
-    if (cap_mpeg4 != nullptr) {
-        auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_1080_30;
-        vDecSample->defaultWidth = DEFAULT_WIDTHVALUE;
-        vDecSample->defaultHeight = DEFAULT_HEIGHTVALUE;
-        vDecSample->defaultFrameRate = THIRTY;
-        vDecSample->enbleSyncMode = 1;
-        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
-        if (AV_ERR_OK != vDecSample->CreateVideoDecoder(g_codecNameMpeg4)) {
-            return -1;
-        }
-        if (AV_ERR_OK != vDecSample->ConfigureVideoDecoder()) {
-            return -1;
-        }
-        if (AV_ERR_OK != vDecSample->StartSyncVideoDecoder()) {
-            return -1;
-        }
-        vDecSample->WaitForEOS();
-        if (vDecSample -> errCount!=0) {
-            return -1;
-        }
-    }
-    return 0;
+    sample->inpDir = INP_DIR_1080_30;
+    sample->defaultWidth = MPEG4_DEFAULT_WIDTH;
+    sample->defaultHeight = MPEG4_DEFAULT_HEIGHT;
+    sample->defaultFrameRate = MPEG4_DEFAULT_FRAME_RATE;
+    sample->enbleSyncMode = 1;
+    sample->defualtPixelFormat = pixelFormat;
 }
 
-/**
- * @tc.name   VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040
- * @tc.number VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-int VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040()
+static napi_value RunSyncMpeg4DecodeTest(napi_env env, uint32_t pixelFormat)
 {
-    SetUpTestCase();
-    if (cap_mpeg4 == nullptr) {
-        return 0;
+    InitMpeg4Capability();
+    if (g_capMpeg4 == nullptr) { return CreateIntInt32Result(env, 0); }
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    SetSampleCommonAttr(vDecSample, pixelFormat);
+    if (vDecSample->CreateVideoDecoder(g_codecNameMpeg4) != AV_ERR_OK) {
+        return CreateIntInt32Result(env, -1);
     }
-    if (cap_mpeg4 != nullptr) {
-        auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->inpDir = INP_DIR_1080_30;
-        vDecSample->defaultWidth = DEFAULT_WIDTHVALUE;
-        vDecSample->defaultHeight = DEFAULT_HEIGHTVALUE;
-        vDecSample->defaultFrameRate = THIRTY;
-        vDecSample->enbleSyncMode = 1;
-        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_RGBA;
-        if (AV_ERR_OK != vDecSample -> CreateVideoDecoder(g_codecNameMpeg4)) {
-            return -1;
-        }
-        if (AV_ERR_OK != vDecSample -> ConfigureVideoDecoder()) {
-            return -1;
-        }
-        if (AV_ERR_OK != vDecSample -> StartSyncVideoDecoder()) {
-            return -1;
-        }
-        vDecSample->WaitForEOS();
-        if (vDecSample->errCount!=0) {
-            return -1;
-        }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
+        return CreateIntInt32Result(env, -1);
     }
-    return 0;
+    if (vDecSample->StartSyncVideoDecoder() != AV_ERR_OK) {
+        return CreateIntInt32Result(env, -1);
+    }
+    vDecSample->WaitForEOS();
+    if (vDecSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
-/**
- * @tc.name   VIDEO_MPEG4SWDEC_BLANK_FRAME_0010
- * @tc.number VIDEO_MPEG4SWDEC_BLANK_FRAME_0010
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-int VIDEO_MPEG4SWDEC_BLANK_FRAME_0010()
+napi_value VideoDecodeSyncSwMpeg4Func00100Test(napi_env env, napi_callback_info info)
 {
-    SetUpTestCase();
-    if (cap_mpeg4 == nullptr) {
-        return 0;
-    }
-    if (cap_mpeg4 != nullptr) {
-        if (!access("/system/lib64/media/", 0)) {
-            auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->inpDir = INP_DIR_1080_30;
-            vDecSample->defaultWidth = DEFAULT_WIDTHVALUE;
-            vDecSample->defaultHeight = DEFAULT_HEIGHTVALUE;
-            vDecSample->defaultFrameRate = THIRTY;
-            vDecSample->enbleBlankFrame = 1;
-            vDecSample->sfOutput = false;
-            if (AV_ERR_OK != vDecSample -> RunVideoDec(g_codecNameMpeg4)) {
-                return -1;
-            }
-            vDecSample->WaitForEOS();
-            if (vDecSample -> errCount!=0) {
-                return -1;
-            }
-        }
-    }
-    return 0;
+    (void)info;
+    return RunSyncMpeg4DecodeTest(env, AV_PIXEL_FORMAT_NV12);
 }
-}   // namespace Media
-}   // namespace OHOS
+
+napi_value VideoDecodeSyncSwMpeg4Func00200Test(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    return RunSyncMpeg4DecodeTest(env, AV_PIXEL_FORMAT_NV21);
+}
+
+napi_value VideoDecodeSyncSwMpeg4Func00400Test(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    return RunSyncMpeg4DecodeTest(env, AV_PIXEL_FORMAT_RGBA);
+}
+
+napi_value VideoMpeg4SwdecBlankFrame00100Test(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    InitMpeg4Capability();
+    if (g_capMpeg4 == nullptr) { return CreateIntInt32Result(env, 0); }
+    if (access("/system/lib64/media/", 0) != 0) { return CreateIntInt32Result(env, 0); }
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    vDecSample->inpDir = INP_DIR_1080_30;
+    vDecSample->defaultWidth = MPEG4_DEFAULT_WIDTH;
+    vDecSample->defaultHeight = MPEG4_DEFAULT_HEIGHT;
+    vDecSample->defaultFrameRate = MPEG4_DEFAULT_FRAME_RATE;
+    vDecSample->enbleBlankFrame = 1;
+    vDecSample->sfOutput = false;
+    if (vDecSample->RunVideoDec(g_codecNameMpeg4) != AV_ERR_OK) {
+        return CreateIntInt32Result(env, -1);
+    }
+    vDecSample->WaitForEOS();
+    if (vDecSample->errCount != 0) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
+}

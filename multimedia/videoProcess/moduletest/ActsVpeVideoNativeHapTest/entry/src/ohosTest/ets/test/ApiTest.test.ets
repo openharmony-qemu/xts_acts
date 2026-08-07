@@ -21,887 +21,888 @@ export default function VpeVideoApiTest() {
     afterEach(() => {
       entry.TearDown();
     })
+
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0010
-     * @tc.number VPE_VIDEO_API_TEST_0010
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00100
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0010', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(0);
+    it('SUB_VPE_VIDEO_API_TEST_00100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0020
-     * @tc.number VPE_VIDEO_API_TEST_0020
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00200
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0020', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(1);
+    it('SUB_VPE_VIDEO_API_TEST_00200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0030
-     * @tc.number VPE_VIDEO_API_TEST_0030
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00300
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0030', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(2);
+    it('SUB_VPE_VIDEO_API_TEST_00300', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0040
-     * @tc.number VPE_VIDEO_API_TEST_0040
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00400
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0040', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(3);
+    it('SUB_VPE_VIDEO_API_TEST_00400', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00400();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0050
-     * @tc.number VPE_VIDEO_API_TEST_0050
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00500
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0050', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(4);
+    it('SUB_VPE_VIDEO_API_TEST_00500', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00500();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0060
-     * @tc.number VPE_VIDEO_API_TEST_0060
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00600
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0060', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(5);
+    it('SUB_VPE_VIDEO_API_TEST_00600', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00600();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0070
-     * @tc.number VPE_VIDEO_API_TEST_0070
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00700
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0070', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(6);
+    it('SUB_VPE_VIDEO_API_TEST_00700', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00700();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0080
-     * @tc.number VPE_VIDEO_API_TEST_0080
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00800
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0080', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(7);
+    it('SUB_VPE_VIDEO_API_TEST_00800', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00800();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0090
-     * @tc.number VPE_VIDEO_API_TEST_0090
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_00900
+     * @tc.number SUB_VPE_VIDEO_API_TEST_00900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0090', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(8);
+    it('SUB_VPE_VIDEO_API_TEST_00900', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest00900();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0100
-     * @tc.number VPE_VIDEO_API_TEST_0100
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01000
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0100', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(9);
+    it('SUB_VPE_VIDEO_API_TEST_01000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01000();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0110
-     * @tc.number VPE_VIDEO_API_TEST_0110
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01100
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0110', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(10);
+    it('SUB_VPE_VIDEO_API_TEST_01100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0120
-     * @tc.number VPE_VIDEO_API_TEST_0120
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01200
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0120', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(11);
+    it('SUB_VPE_VIDEO_API_TEST_01200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0130
-     * @tc.number VPE_VIDEO_API_TEST_0130
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01300
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0130', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(12);
+    it('SUB_VPE_VIDEO_API_TEST_01300', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0140
-     * @tc.number VPE_VIDEO_API_TEST_0140
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01400
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0140', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(13);
+    it('SUB_VPE_VIDEO_API_TEST_01400', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01400();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0150
-     * @tc.number VPE_VIDEO_API_TEST_0150
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01500
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0150', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(14);
+    it('SUB_VPE_VIDEO_API_TEST_01500', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01500();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0160
-     * @tc.number VPE_VIDEO_API_TEST_0160
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01600
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0160', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(15);
+    it('SUB_VPE_VIDEO_API_TEST_01600', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01600();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0170
-     * @tc.number VPE_VIDEO_API_TEST_0170
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01700
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0170', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(16);
+    it('SUB_VPE_VIDEO_API_TEST_01700', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01700();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0180
-     * @tc.number VPE_VIDEO_API_TEST_0180
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01800
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0180', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(17);
+    it('SUB_VPE_VIDEO_API_TEST_01800', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01800();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0190
-     * @tc.number VPE_VIDEO_API_TEST_0190
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_01900
+     * @tc.number SUB_VPE_VIDEO_API_TEST_01900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0190', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(18);
+    it('SUB_VPE_VIDEO_API_TEST_01900', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest01900();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0200
-     * @tc.number VPE_VIDEO_API_TEST_0200
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02000
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0200', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(19);
+    it('SUB_VPE_VIDEO_API_TEST_02000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02000();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0201
-     * @tc.number VPE_VIDEO_API_TEST_0201
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02100
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0201', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(20);
+    it('SUB_VPE_VIDEO_API_TEST_02100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0210
-     * @tc.number VPE_VIDEO_API_TEST_0210
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02200
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0210', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(21);
+    it('SUB_VPE_VIDEO_API_TEST_02200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0220
-     * @tc.number VPE_VIDEO_API_TEST_0220
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02300
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0220', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(22);
+    it('SUB_VPE_VIDEO_API_TEST_02300', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0230
-     * @tc.number VPE_VIDEO_API_TEST_0230
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02400
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0230', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(23);
+    it('SUB_VPE_VIDEO_API_TEST_02400', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02400();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0240
-     * @tc.number VPE_VIDEO_API_TEST_0240
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02500
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0240', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(24);
+    it('SUB_VPE_VIDEO_API_TEST_02500', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02500();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0250
-     * @tc.number VPE_VIDEO_API_TEST_0250
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02600
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0250', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(25);
+    it('SUB_VPE_VIDEO_API_TEST_02600', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02600();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0260
-     * @tc.number VPE_VIDEO_API_TEST_0260
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02700
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0260', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(26);
+    it('SUB_VPE_VIDEO_API_TEST_02700', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02700();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0270
-     * @tc.number VPE_VIDEO_API_TEST_0270
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02800
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0270', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(27);
+    it('SUB_VPE_VIDEO_API_TEST_02800', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02800();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0280
-     * @tc.number VPE_VIDEO_API_TEST_0280
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_02900
+     * @tc.number SUB_VPE_VIDEO_API_TEST_02900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0280', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(28);
+    it('SUB_VPE_VIDEO_API_TEST_02900', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest02900();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0290
-     * @tc.number VPE_VIDEO_API_TEST_0290
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03000
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0290', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(29);
+    it('SUB_VPE_VIDEO_API_TEST_03000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03000();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0291
-     * @tc.number VPE_VIDEO_API_TEST_0291
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03100
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0291', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(30);
+    it('SUB_VPE_VIDEO_API_TEST_03100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0300
-     * @tc.number VPE_VIDEO_API_TEST_0300
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03200
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0300', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(31);
+    it('SUB_VPE_VIDEO_API_TEST_03200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0310
-     * @tc.number VPE_VIDEO_API_TEST_0310
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03300
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0310', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(32);
+    it('SUB_VPE_VIDEO_API_TEST_03300', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0320
-     * @tc.number VPE_VIDEO_API_TEST_0320
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03400
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0320', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(33);
+    it('SUB_VPE_VIDEO_API_TEST_03400', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03400();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0330
-     * @tc.number VPE_VIDEO_API_TEST_0330
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03500
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0330', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(34);
+    it('SUB_VPE_VIDEO_API_TEST_03500', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03500();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0340
-     * @tc.number VPE_VIDEO_API_TEST_0340
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03600
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0340', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(35);
+    it('SUB_VPE_VIDEO_API_TEST_03600', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03600();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0350
-     * @tc.number VPE_VIDEO_API_TEST_0350
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03700
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0350', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(36);
+    it('SUB_VPE_VIDEO_API_TEST_03700', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03700();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0360
-     * @tc.number VPE_VIDEO_API_TEST_0360
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03800
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0360', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(37);
+    it('SUB_VPE_VIDEO_API_TEST_03800', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03800();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0370
-     * @tc.number VPE_VIDEO_API_TEST_0370
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_03900
+     * @tc.number SUB_VPE_VIDEO_API_TEST_03900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0370', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(38);
+    it('SUB_VPE_VIDEO_API_TEST_03900', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest03900();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0380
-     * @tc.number VPE_VIDEO_API_TEST_0380
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04000
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0380', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(39);
+    it('SUB_VPE_VIDEO_API_TEST_04000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04000();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0390
-     * @tc.number VPE_VIDEO_API_TEST_0390
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04100
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0390', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(40);
+    it('SUB_VPE_VIDEO_API_TEST_04100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0400
-     * @tc.number VPE_VIDEO_API_TEST_0400
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04200
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0400', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(41);
+    it('SUB_VPE_VIDEO_API_TEST_04200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0410
-     * @tc.number VPE_VIDEO_API_TEST_0410
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04300
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0410', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(42);
+    it('SUB_VPE_VIDEO_API_TEST_04300', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0420
-     * @tc.number VPE_VIDEO_API_TEST_0420
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04400
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0420', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(43);
+    it('SUB_VPE_VIDEO_API_TEST_04400', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04400();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0430
-     * @tc.number VPE_VIDEO_API_TEST_0430
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04500
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0430', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(44);
+    it('SUB_VPE_VIDEO_API_TEST_04500', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04500();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0440
-     * @tc.number VPE_VIDEO_API_TEST_0440
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04600
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0440', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(45);
+    it('SUB_VPE_VIDEO_API_TEST_04600', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04600();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0450
-     * @tc.number VPE_VIDEO_API_TEST_0450
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04700
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0450', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(46);
+    it('SUB_VPE_VIDEO_API_TEST_04700', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04700();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0460
-     * @tc.number VPE_VIDEO_API_TEST_0460
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04800
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0460', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(47);
+    it('SUB_VPE_VIDEO_API_TEST_04800', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04800();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0470
-     * @tc.number VPE_VIDEO_API_TEST_0470
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_04900
+     * @tc.number SUB_VPE_VIDEO_API_TEST_04900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0470', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(48);
+    it('SUB_VPE_VIDEO_API_TEST_04900', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest04900();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0480
-     * @tc.number VPE_VIDEO_API_TEST_0480
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05000
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0480', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(49);
+    it('SUB_VPE_VIDEO_API_TEST_05000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05000();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0490
-     * @tc.number VPE_VIDEO_API_TEST_0490
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05100
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0490', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(50);
+    it('SUB_VPE_VIDEO_API_TEST_05100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0500
-     * @tc.number VPE_VIDEO_API_TEST_0500
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05200
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0500', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(51);
+    it('SUB_VPE_VIDEO_API_TEST_05200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0510
-     * @tc.number VPE_VIDEO_API_TEST_0510
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05300
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0510', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(52);
+    it('SUB_VPE_VIDEO_API_TEST_05300', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0520
-     * @tc.number VPE_VIDEO_API_TEST_0520
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05400
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0520', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(53);
+    it('SUB_VPE_VIDEO_API_TEST_05400', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05400();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0530
-     * @tc.number VPE_VIDEO_API_TEST_0530
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05500
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0530', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(54);
+    it('SUB_VPE_VIDEO_API_TEST_05500', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05500();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0540
-     * @tc.number VPE_VIDEO_API_TEST_0540
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05600
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0540', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(55);
+    it('SUB_VPE_VIDEO_API_TEST_05600', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05600();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0550
-     * @tc.number VPE_VIDEO_API_TEST_0550
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05700
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0550', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(56);
+    it('SUB_VPE_VIDEO_API_TEST_05700', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05700();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0560
-     * @tc.number VPE_VIDEO_API_TEST_0560
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05800
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0560', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(57);
+    it('SUB_VPE_VIDEO_API_TEST_05800', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05800();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0570
-     * @tc.number VPE_VIDEO_API_TEST_0570
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_05900
+     * @tc.number SUB_VPE_VIDEO_API_TEST_05900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0570', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(58);
+    it('SUB_VPE_VIDEO_API_TEST_05900', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest05900();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0580
-     * @tc.number VPE_VIDEO_API_TEST_0580
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_06000
+     * @tc.number SUB_VPE_VIDEO_API_TEST_06000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0580', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(59);
+    it('SUB_VPE_VIDEO_API_TEST_06000', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest06000();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0590
-     * @tc.number VPE_VIDEO_API_TEST_0590
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_06100
+     * @tc.number SUB_VPE_VIDEO_API_TEST_06100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0590', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(60);
+    it('SUB_VPE_VIDEO_API_TEST_06100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest06100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0591
-     * @tc.number VPE_VIDEO_API_TEST_0591
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_06200
+     * @tc.number SUB_VPE_VIDEO_API_TEST_06200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0591', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(61);
+    it('SUB_VPE_VIDEO_API_TEST_06200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest06200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_VIDEO_API_TEST_0600
-     * @tc.number VPE_VIDEO_API_TEST_0600
+     * @tc.name   SUB_VPE_VIDEO_API_TEST_06300
+     * @tc.number SUB_VPE_VIDEO_API_TEST_06300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('VPE_VIDEO_API_TEST_0600', Level.LEVEL2, async (done: Function) => {
-      const result = await entry.Api_Test(62);
+    it('SUB_VPE_VIDEO_API_TEST_06300', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.VpeVideoApiTest06300();
       expect(result).assertEqual(0);
       done();
     })
+
   })
 }
-

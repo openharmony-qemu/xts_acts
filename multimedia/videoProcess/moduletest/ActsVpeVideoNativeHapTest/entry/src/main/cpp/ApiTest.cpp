@@ -25,6 +25,7 @@
 #include <string>
 #include <thread>
 #include <unistd.h>
+#include <napi/native_api.h>
 #include "include/CommonTool.h"
 
 using namespace std;
@@ -107,8 +108,12 @@ static void OnNewOutputBufferCallback(OH_VideoProcessing* videoProcessor, uint32
 
 } // namespace
 
-namespace VpeVideo {
-namespace Api {
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
 
 void TearDown()
 {
@@ -116,499 +121,499 @@ void TearDown()
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0010
- * @tc.number VPE_VIDEO_API_TEST_0010
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00100
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00100
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0010()
+napi_value VpeVideoApiTest00100(napi_env env, napi_callback_info info)
 {
-    ASSERT_EQ(SRC_INFO.metadataType, OH_VIDEO_HDR_VIVID);
-    ASSERT_EQ(SRC_INFO.colorSpace, OH_COLORSPACE_BT2020_HLG_LIMIT);
-    ASSERT_EQ(SRC_INFO.pixelFormat, NATIVEBUFFER_PIXEL_FMT_YCBCR_P010);
-    ASSERT_EQ(DST_INFO.metadataType, OH_VIDEO_HDR_VIVID);
-    ASSERT_EQ(DST_INFO.colorSpace, OH_COLORSPACE_BT2020_PQ_LIMIT);
-    ASSERT_EQ(DST_INFO.pixelFormat, NATIVEBUFFER_PIXEL_FMT_YCBCR_P010);
+    if (SRC_INFO.metadataType != OH_VIDEO_HDR_VIVID) { return CreateIntInt32Result(env, -1); }
+    if (SRC_INFO.colorSpace != OH_COLORSPACE_BT2020_HLG_LIMIT) { return CreateIntInt32Result(env, -1); }
+    if (SRC_INFO.pixelFormat != NATIVEBUFFER_PIXEL_FMT_YCBCR_P010) { return CreateIntInt32Result(env, -1); }
+    if (DST_INFO.metadataType != OH_VIDEO_HDR_VIVID) { return CreateIntInt32Result(env, -1); }
+    if (DST_INFO.colorSpace != OH_COLORSPACE_BT2020_PQ_LIMIT) { return CreateIntInt32Result(env, -1); }
+    if (DST_INFO.pixelFormat != NATIVEBUFFER_PIXEL_FMT_YCBCR_P010) { return CreateIntInt32Result(env, -1); }
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_InitializeEnvironment();
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessing_DeinitializeEnvironment();
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0020
- * @tc.number VPE_VIDEO_API_TEST_0020
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00200
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00200
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0020()
+napi_value VpeVideoApiTest00200(napi_env env, napi_callback_info info)
 {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_DeinitializeEnvironment();
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0030
- * @tc.number VPE_VIDEO_API_TEST_0030
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00300
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00300
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0030()
+napi_value VpeVideoApiTest00300(napi_env env, napi_callback_info info)
 {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_InitializeEnvironment();
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessing_DeinitializeEnvironment();
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0040
- * @tc.number VPE_VIDEO_API_TEST_0040
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00400
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00400
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0040()
+napi_value VpeVideoApiTest00400(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsColorSpaceConversionSupported(nullptr, nullptr);
-    ASSERT_FALSE(ret);
+    if ((ret)) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessing_DeinitializeEnvironment();
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0050
- * @tc.number VPE_VIDEO_API_TEST_0050
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00500
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00500
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0050()
+napi_value VpeVideoApiTest00500(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsColorSpaceConversionSupported(&SRC_INFO, nullptr);
-    ASSERT_FALSE(ret);
-    return SUCCESS_CODE;
+    if ((ret)) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0060
- * @tc.number VPE_VIDEO_API_TEST_0060
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00600
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00600
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0060()
+napi_value VpeVideoApiTest00600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsColorSpaceConversionSupported(nullptr, &DST_INFO);
-    ASSERT_FALSE(ret);
-    return SUCCESS_CODE;
+    if ((ret)) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0070
- * @tc.number VPE_VIDEO_API_TEST_0070
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00700
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00700
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0070()
+napi_value VpeVideoApiTest00700(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsColorSpaceConversionSupported(&SRC_INFO, &DST_INFO);
     if (!access("/system/lib64/libvideoprocessingengine_ext.z.so", 0)) {
-        ASSERT_TRUE(ret);
+        if (!(ret)) { return CreateIntInt32Result(env, -1); }
     } else {
-        ASSERT_FALSE(ret);
+        if ((ret)) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0080
- * @tc.number VPE_VIDEO_API_TEST_0080
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00800
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00800
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0080()
+napi_value VpeVideoApiTest00800(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsMetadataGenerationSupported(nullptr);
-    ASSERT_FALSE(ret);
-    return SUCCESS_CODE;
+    if ((ret)) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0090
- * @tc.number VPE_VIDEO_API_TEST_0090
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_00900
+ * @tc.number SUB_VPE_VIDEO_API_TEST_00900
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0090()
+napi_value VpeVideoApiTest00900(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO);
     if (!access("/system/lib64/libvideoprocessingengine_ext.z.so", 0)) {
-        ASSERT_TRUE(ret);
+        if (!(ret)) { return CreateIntInt32Result(env, -1); }
     } else {
-        ASSERT_FALSE(ret);
+        if ((ret)) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0100
- * @tc.number VPE_VIDEO_API_TEST_0100
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01000
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01000
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0100()
+napi_value VpeVideoApiTest01000(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing** videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(videoProcessor, INT_MAX);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0110
- * @tc.number VPE_VIDEO_API_TEST_0110
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01100
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01100
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0110()
+napi_value VpeVideoApiTest01100(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing** videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0120
- * @tc.number VPE_VIDEO_API_TEST_0120
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01200
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01200
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0120()
+napi_value VpeVideoApiTest01200(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&videoProcessor, INT_MAX);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessing_Destroy(videoProcessor);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0130
- * @tc.number VPE_VIDEO_API_TEST_0130
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01300
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01300
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0130()
+napi_value VpeVideoApiTest01300(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0140
- * @tc.number VPE_VIDEO_API_TEST_0140
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01400
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01400
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0140()
+napi_value VpeVideoApiTest01400(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Destroy(nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0150
- * @tc.number VPE_VIDEO_API_TEST_0150
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01500
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01500
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0150()
+napi_value VpeVideoApiTest01500(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Destroy(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0160
- * @tc.number VPE_VIDEO_API_TEST_0160
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01600
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01600
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0160()
+napi_value VpeVideoApiTest01600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_RegisterCallback(nullptr, nullptr, nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0170
- * @tc.number VPE_VIDEO_API_TEST_0170
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01700
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01700
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0170()
+napi_value VpeVideoApiTest01700(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessing_RegisterCallback(nullptr, callback, nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0180
- * @tc.number VPE_VIDEO_API_TEST_0180
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01800
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01800
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0180()
+napi_value VpeVideoApiTest01800(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RegisterCallback(videoProcessor, nullptr, nullptr);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
+        if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0190
- * @tc.number VPE_VIDEO_API_TEST_0190
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_01900
+ * @tc.number SUB_VPE_VIDEO_API_TEST_01900
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0190()
+napi_value VpeVideoApiTest01900(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         VideoProcessing_Callback* callback = nullptr;
         ret = OH_VideoProcessingCallback_Create(&callback);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessingCallback_BindOnError(callback, onErrorEmptyCallback);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RegisterCallback(videoProcessor, callback, nullptr);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_VideoProcessingCallback_Destroy(callback);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0200
- * @tc.number VPE_VIDEO_API_TEST_0200
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02000
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02000
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0200()
+napi_value VpeVideoApiTest02000(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         VideoProcessing_Callback* callback = nullptr;
         ret = OH_VideoProcessingCallback_Create(&callback);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RegisterCallback(videoProcessor, callback, nullptr);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_VALUE);
+        if (ret != VIDEO_PROCESSING_ERROR_INVALID_VALUE) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_VideoProcessingCallback_Destroy(callback);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0201
- * @tc.number VPE_VIDEO_API_TEST_0201
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02100
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02100
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0201()
+napi_value VpeVideoApiTest02100(napi_env env, napi_callback_info info)
 {
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
         OH_VideoProcessing* videoProcessor = nullptr;
         VideoProcessing_ErrorCode ret =
             OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
         auto listener = make_unique<TestConsumerListener>(
             TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
         auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
         ret = OH_VideoProcessing_SetSurface(videoProcessor, pNativeWindow);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OHNativeWindow* inwindow = nullptr;
         ret = OH_VideoProcessing_GetSurface(videoProcessor, &inwindow);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         VideoProcessing_Callback* callback = nullptr;
         ret = OH_VideoProcessingCallback_Create(&callback);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessingCallback_BindOnError(callback, onErrorEmptyCallback);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RegisterCallback(videoProcessor, callback, nullptr);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Start(videoProcessor);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RegisterCallback(videoProcessor, callback, nullptr);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessingCallback_Destroy(callback);
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0210
- * @tc.number VPE_VIDEO_API_TEST_0210
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02200
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02200
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0210()
+napi_value VpeVideoApiTest02200(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         VideoProcessing_Callback* callback = nullptr;
         ret = OH_VideoProcessingCallback_Create(&callback);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         void* userData = &g_userValue;
         if (!userData) {
             ret = OH_VideoProcessing_RegisterCallback(videoProcessor, callback, userData);
-            ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+            if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_VideoProcessingCallback_Destroy(callback);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0220
- * @tc.number VPE_VIDEO_API_TEST_0220
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02300
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02300
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0220()
+napi_value VpeVideoApiTest02300(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_SetSurface(nullptr, nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0230
- * @tc.number VPE_VIDEO_API_TEST_0230
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02400
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02400
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0230()
+napi_value VpeVideoApiTest02400(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
@@ -616,91 +621,91 @@ int VPE_VIDEO_API_TEST_0230()
         make_unique<TestConsumerListener>(TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
     auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_SetSurface(nullptr, pNativeWindow);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
     OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0240
- * @tc.number VPE_VIDEO_API_TEST_0240
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02500
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02500
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0240()
+napi_value VpeVideoApiTest02500(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_SetSurface(videoProcessor, nullptr);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
+        if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0250
- * @tc.number VPE_VIDEO_API_TEST_0250
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02600
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02600
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0250()
+napi_value VpeVideoApiTest02600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
         auto listener = make_unique<TestConsumerListener>(
             TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
         auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
         ret = OH_VideoProcessing_SetSurface(videoProcessor, pNativeWindow);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0260
- * @tc.number VPE_VIDEO_API_TEST_0260
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02700
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02700
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0260()
+napi_value VpeVideoApiTest02700(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_GetSurface(nullptr, nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0270
- * @tc.number VPE_VIDEO_API_TEST_0270
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02800
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02800
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0270()
+napi_value VpeVideoApiTest02800(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
@@ -708,614 +713,614 @@ int VPE_VIDEO_API_TEST_0270()
         make_unique<TestConsumerListener>(TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
     auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_GetSurface(nullptr, &pNativeWindow);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
     OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0280
- * @tc.number VPE_VIDEO_API_TEST_0280
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_02900
+ * @tc.number SUB_VPE_VIDEO_API_TEST_02900
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0280()
+napi_value VpeVideoApiTest02900(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_GetSurface(videoProcessor, nullptr);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
+        if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0290
- * @tc.number VPE_VIDEO_API_TEST_0290
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03000
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03000
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0290()
+napi_value VpeVideoApiTest03000(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
         auto listener = make_unique<TestConsumerListener>(
             TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
         auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
         ret = OH_VideoProcessing_GetSurface(videoProcessor, &pNativeWindow);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0291
- * @tc.number VPE_VIDEO_API_TEST_0291
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03100
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03100
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0291()
+napi_value VpeVideoApiTest03100(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OHNativeWindow* window = nullptr;
         OHNativeWindow* window2 = nullptr;
         ret = OH_VideoProcessing_GetSurface(videoProcessor, &window);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_GetSurface(videoProcessor, &window2);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_NativeWindow_DestroyNativeWindow(window);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0300
- * @tc.number VPE_VIDEO_API_TEST_0300
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03200
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03200
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0300()
+napi_value VpeVideoApiTest03200(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Start(nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0310
- * @tc.number VPE_VIDEO_API_TEST_0310
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03300
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03300
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0310()
+napi_value VpeVideoApiTest03300(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Start(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0320
- * @tc.number VPE_VIDEO_API_TEST_0320
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03400
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03400
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0320()
+napi_value VpeVideoApiTest03400(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
         auto listener = make_unique<TestConsumerListener>(
             TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
         auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
         ret = OH_VideoProcessing_SetSurface(videoProcessor, pNativeWindow);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Start(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0330
- * @tc.number VPE_VIDEO_API_TEST_0330
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03500
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03500
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0330()
+napi_value VpeVideoApiTest03500(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Stop(nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0340
- * @tc.number VPE_VIDEO_API_TEST_0340
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03600
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03600
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0340()
+napi_value VpeVideoApiTest03600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Stop(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0350
- * @tc.number VPE_VIDEO_API_TEST_0350
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03700
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03700
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0350()
+napi_value VpeVideoApiTest03700(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
         auto listener = make_unique<TestConsumerListener>(
             TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
         auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
         ret = OH_VideoProcessing_SetSurface(videoProcessor, pNativeWindow);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OHNativeWindow* outwindow = nullptr;
         ret = OH_VideoProcessing_GetSurface(videoProcessor, &outwindow);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Start(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Stop(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0360
- * @tc.number VPE_VIDEO_API_TEST_0360
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03800
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03800
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0360()
+napi_value VpeVideoApiTest03800(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_RenderOutputBuffer(nullptr, g_index);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0370
- * @tc.number VPE_VIDEO_API_TEST_0370
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_03900
+ * @tc.number SUB_VPE_VIDEO_API_TEST_03900
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0370()
+napi_value VpeVideoApiTest03900(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RenderOutputBuffer(videoProcessor, INT_MAX);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+        if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0380
- * @tc.number VPE_VIDEO_API_TEST_0380
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04000
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04000
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0380()
+napi_value VpeVideoApiTest04000(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0390
- * @tc.number VPE_VIDEO_API_TEST_0390
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04100
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04100
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0390()
+napi_value VpeVideoApiTest04100(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0400
- * @tc.number VPE_VIDEO_API_TEST_0400
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04200
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04200
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0400()
+napi_value VpeVideoApiTest04200(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Destroy(nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0410
- * @tc.number VPE_VIDEO_API_TEST_0410
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04300
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04300
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0410()
+napi_value VpeVideoApiTest04300(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessingCallback_Destroy(callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0420
- * @tc.number VPE_VIDEO_API_TEST_0420
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04400
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04400
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0420()
+napi_value VpeVideoApiTest04400(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_BindOnError(nullptr, onErrorEmptyCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0430
- * @tc.number VPE_VIDEO_API_TEST_0430
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04500
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04500
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0430()
+napi_value VpeVideoApiTest04500(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessingCallback_BindOnError(callback, onErrorEmptyCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0440
- * @tc.number VPE_VIDEO_API_TEST_0440
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04600
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04600
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0440()
+napi_value VpeVideoApiTest04600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_BindOnError(nullptr, onErrorCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0450
- * @tc.number VPE_VIDEO_API_TEST_0450
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04700
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04700
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0450()
+napi_value VpeVideoApiTest04700(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessingCallback_BindOnError(callback, onErrorCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0460
- * @tc.number VPE_VIDEO_API_TEST_0460
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04800
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04800
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0460()
+napi_value VpeVideoApiTest04800(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_BindOnState(nullptr, onStateEmptyCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0470
- * @tc.number VPE_VIDEO_API_TEST_0470
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_04900
+ * @tc.number SUB_VPE_VIDEO_API_TEST_04900
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0470()
+napi_value VpeVideoApiTest04900(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessingCallback_BindOnState(callback, onStateEmptyCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0480
- * @tc.number VPE_VIDEO_API_TEST_0480
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05000
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05000
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0480()
+napi_value VpeVideoApiTest05000(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_BindOnState(nullptr, onStateCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0490
- * @tc.number VPE_VIDEO_API_TEST_0490
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05100
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05100
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0490()
+napi_value VpeVideoApiTest05100(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessingCallback_BindOnState(callback, onStateCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0500
- * @tc.number VPE_VIDEO_API_TEST_0500
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05200
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05200
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0500()
+napi_value VpeVideoApiTest05200(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessingCallback_BindOnNewOutputBuffer(nullptr, OnNewOutputBufferEmptyCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0510
- * @tc.number VPE_VIDEO_API_TEST_0510
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05300
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05300
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0510()
+napi_value VpeVideoApiTest05300(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessingCallback_BindOnNewOutputBuffer(callback, OnNewOutputBufferEmptyCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0520
- * @tc.number VPE_VIDEO_API_TEST_0520
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05400
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05400
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0520()
+napi_value VpeVideoApiTest05400(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessingCallback_BindOnNewOutputBuffer(nullptr, OnNewOutputBufferCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0530
- * @tc.number VPE_VIDEO_API_TEST_0530
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05500
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05500
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0530()
+napi_value VpeVideoApiTest05500(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Create(&callback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     ret = OH_VideoProcessingCallback_BindOnNewOutputBuffer(callback, OnNewOutputBufferCallback);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     OH_VideoProcessingCallback_Destroy(callback);
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0540
- * @tc.number VPE_VIDEO_API_TEST_0540
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05600
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05600
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0540()
+napi_value VpeVideoApiTest05600(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
     if (OH_VideoProcessing_IsColorSpaceConversionSupported(&SRC_INFO, &DST_INFO)) {
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessing_Destroy(videoProcessor);
     } else {
-        ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret == VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0550
- * @tc.number VPE_VIDEO_API_TEST_0550
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05700
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05700
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0550()
+napi_value VpeVideoApiTest05700(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
-        return SUCCESS_CODE;
+        return CreateIntInt32Result(env, 0);
     }
     OH_AVFormat* format = OH_AVFormat_Create();
     int32_t metadataMode = VIDEO_METADATA_GENERATOR_CONTRAST_MODE;
@@ -1323,26 +1328,26 @@ int VPE_VIDEO_API_TEST_0550()
     ret = OH_VideoProcessing_SetParameter(videoProcessor, format);
     OH_VideoProcessing_Destroy(videoProcessor);
     OH_AVFormat_Destroy(format);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0560
- * @tc.number VPE_VIDEO_API_TEST_0560
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05800
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05800
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0560()
+napi_value VpeVideoApiTest05800(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* videoProcessor = nullptr;
     VideoProcessing_ErrorCode ret =
         OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
-        return SUCCESS_CODE;
+        return CreateIntInt32Result(env, 0);
     }
     OH_AVFormat* format = OH_AVFormat_Create();
     int32_t metadataMode = VIDEO_METADATA_GENERATOR_BRIGHT_MODE;
@@ -1350,19 +1355,19 @@ int VPE_VIDEO_API_TEST_0560()
     ret = OH_VideoProcessing_SetParameter(videoProcessor, format);
     OH_AVFormat_Destroy(format);
     OH_VideoProcessing_Destroy(videoProcessor);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0570
- * @tc.number VPE_VIDEO_API_TEST_0570
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_05900
+ * @tc.number SUB_VPE_VIDEO_API_TEST_05900
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0570()
+napi_value VpeVideoApiTest05900(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing* videoProcessor = nullptr;
     OH_AVFormat* format = OH_AVFormat_Create();
@@ -1370,19 +1375,19 @@ int VPE_VIDEO_API_TEST_0570()
     OH_AVFormat_SetIntValue(format, VIDEO_METADATA_GENERATOR_STYLE_CONTROL, metadataMode);
     int32_t ret = OH_VideoProcessing_SetParameter(videoProcessor, format);
     OH_AVFormat_Destroy(format);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0580
- * @tc.number VPE_VIDEO_API_TEST_0580
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_06000
+ * @tc.number SUB_VPE_VIDEO_API_TEST_06000
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0580()
+napi_value VpeVideoApiTest06000(napi_env env, napi_callback_info info)
 {
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
         OH_VideoProcessing* videoProcessor = nullptr;
@@ -1390,91 +1395,89 @@ int VPE_VIDEO_API_TEST_0580()
             OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
         ret = OH_VideoProcessing_SetParameter(videoProcessor, nullptr);
         OH_VideoProcessing_Destroy(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
+        if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0590
- * @tc.number VPE_VIDEO_API_TEST_0590
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_06100
+ * @tc.number SUB_VPE_VIDEO_API_TEST_06100
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0590()
+napi_value VpeVideoApiTest06100(napi_env env, napi_callback_info info)
 {
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
         OH_VideoProcessing* videoProcessor = nullptr;
         VideoProcessing_ErrorCode ret =
             OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_GetParameter(videoProcessor, nullptr);
         OH_VideoProcessing_Destroy(videoProcessor);
-        ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
+        if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
     }
-    return SUCCESS_CODE;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0591
- * @tc.number VPE_VIDEO_API_TEST_0591
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_06200
+ * @tc.number SUB_VPE_VIDEO_API_TEST_06200
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0591()
+napi_value VpeVideoApiTest06200(napi_env env, napi_callback_info info)
 {
     OH_VideoProcessing* videoProcessor = nullptr;
     int32_t ret = OH_VideoProcessing_GetParameter(videoProcessor, nullptr);
-    ASSERT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_INSTANCE);
-    return SUCCESS_CODE;
+    if (ret != VIDEO_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_VIDEO_API_TEST_0600
- * @tc.number VPE_VIDEO_API_TEST_0600
+ * @tc.name   SUB_VPE_VIDEO_API_TEST_06300
+ * @tc.number SUB_VPE_VIDEO_API_TEST_06300
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VPE_VIDEO_API_TEST_0600()
+napi_value VpeVideoApiTest06300(napi_env env, napi_callback_info info)
 {
     if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
         OH_VideoProcessing* videoProcessor = nullptr;
         VideoProcessing_ErrorCode ret =
             OH_VideoProcessing_Create(&videoProcessor, VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OH_NativeImage* cNativeImage = OH_ConsumerSurface_Create();
         auto listener = make_unique<TestConsumerListener>(
             TestConsumerListener(cNativeImage, "/data/test/media/out_320_240_10s.rgba"));
         auto pNativeWindow = OH_NativeImage_AcquireNativeWindow(cNativeImage);
         ret = OH_VideoProcessing_SetSurface(videoProcessor, pNativeWindow);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         OHNativeWindow* inWindow = nullptr;
         ret = OH_VideoProcessing_GetSurface(videoProcessor, &inWindow);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         VideoProcessing_Callback* callback = nullptr;
         ret = OH_VideoProcessingCallback_Create(&callback);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessingCallback_BindOnError(callback, onErrorEmptyCallback);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessingCallback_BindOnNewOutputBuffer(callback, OnNewOutputBufferEmptyCallback);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RegisterCallback(videoProcessor, callback, nullptr);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_Start(videoProcessor);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+        if (ret != VIDEO_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_VideoProcessing_RenderOutputBuffer(videoProcessor, INT_MAX);
-        EXPECT_EQ(ret, VIDEO_PROCESSING_ERROR_INVALID_PARAMETER);
+        if (ret != VIDEO_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
         OH_VideoProcessingCallback_Destroy(callback);
         OH_VideoProcessing_Destroy(videoProcessor);
         OH_NativeWindow_DestroyNativeWindow(pNativeWindow);
     }
-    return SUCCESS_CODE;
-}
-} // namespace Api
+    return CreateIntInt32Result(env, 0);
 }

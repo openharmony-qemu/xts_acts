@@ -13,126 +13,89 @@
  * limitations under the License.
  */
 
-#include <array>
-
 #include "include/ApiTest.h"
 #include "include/CommonTool.h"
 #include "napi/native_api.h"
+#include <iostream>
+#include <vector>
+#include <functional>
+#include <cstring>
 
-// 通用参数与返回码
-static constexpr int ARG_INDEX = 0;
-static constexpr int DEFAULT_ARG = -1;
-static constexpr int RESULT_ERROR = -1;
+using TestFunction = std::function<int()>;
 
-using TestHandler = int (*)();
-
-using namespace VpeVideo::Api;
-
-struct GenericAsyncContext {
+struct AsyncTestContext {
     napi_env env;
-    napi_async_work work;
     napi_deferred deferred;
-
-    int32_t caseNum;
+    napi_async_work work;
+    TestFunction func;
     int result;
-
-    const TestHandler* handlers;
-    size_t handlerCount;
 };
 
-static int DispatchByCaseNum(int caseNum, const TestHandler* handlers, size_t count)
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    if (caseNum < 0 || static_cast<size_t>(caseNum) >= count) {
-        return RESULT_ERROR;
-    }
-    return handlers[caseNum]();
-}
-
-static void ExecuteGenericWork(napi_env env, void* data)
-{
-    (void)env;
-    auto* context = static_cast<GenericAsyncContext*>(data);
-    try {
-        context->result = DispatchByCaseNum(context->caseNum, context->handlers, context->handlerCount);
-    } catch (...) {
-        context->result = RESULT_ERROR;
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
     }
 }
 
-static void CompleteGenericWork(napi_env env, napi_status status, void* data)
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
 {
-    (void)status;
-    auto* context = static_cast<GenericAsyncContext*>(data);
-
-    napi_value resultValue;
-    napi_create_int32(env, context->result, &resultValue);
-
-    napi_resolve_deferred(env, context->deferred, resultValue);
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
+    } else {
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
+    }
     napi_delete_async_work(env, context->work);
-
     delete context;
 }
 
-static napi_value CreateAsyncTest(napi_env env,
-                                  napi_callback_info info,
-                                  const TestHandler* handlers,
-                                  size_t handlerCount,
-                                  const char* resourceNameStr)
+static napi_value RunTestAsync(napi_env env, TestFunction func, const char* name)
 {
-    int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-    if (caseNum < 0 || static_cast<size_t>(caseNum) >= handlerCount) {
-        napi_throw_error(env, nullptr, "Invalid case number");
-        return nullptr;
-    }
-
     napi_value promise;
-    auto* context = new GenericAsyncContext();
-    context->env = env;
-    context->caseNum = caseNum;
-    context->result = RESULT_ERROR;
-    context->handlers = handlers;
-    context->handlerCount = handlerCount;
-
-    napi_create_promise(env, &context->deferred, &promise);
-
+    napi_deferred deferred;
+    napi_create_promise(env, &deferred, &promise);
+    AsyncTestContext* context = new AsyncTestContext{env, deferred, nullptr, func, -1};
     napi_value resourceName;
-    napi_create_string_utf8(env, resourceNameStr, NAPI_AUTO_LENGTH, &resourceName);
-    napi_create_async_work(
-        env, nullptr, resourceName, ExecuteGenericWork, CompleteGenericWork, context, &context->work);
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context, &context->work);
     napi_queue_async_work(env, context->work);
-
     return promise;
 }
 
-// 将 ApiTest.h 中所有用例函数注册到一个处理数组中，按 caseNum 下标调用
-static const std::array<TestHandler, 63> g_vpe_video_api_handlers = {
-    VPE_VIDEO_API_TEST_0010, VPE_VIDEO_API_TEST_0020, VPE_VIDEO_API_TEST_0030, VPE_VIDEO_API_TEST_0040,
-    VPE_VIDEO_API_TEST_0050, VPE_VIDEO_API_TEST_0060, VPE_VIDEO_API_TEST_0070, VPE_VIDEO_API_TEST_0080,
-    VPE_VIDEO_API_TEST_0090, VPE_VIDEO_API_TEST_0100, VPE_VIDEO_API_TEST_0110, VPE_VIDEO_API_TEST_0120,
-    VPE_VIDEO_API_TEST_0130, VPE_VIDEO_API_TEST_0140, VPE_VIDEO_API_TEST_0150, VPE_VIDEO_API_TEST_0160,
-    VPE_VIDEO_API_TEST_0170, VPE_VIDEO_API_TEST_0180, VPE_VIDEO_API_TEST_0190, VPE_VIDEO_API_TEST_0200,
-    VPE_VIDEO_API_TEST_0201, VPE_VIDEO_API_TEST_0210, VPE_VIDEO_API_TEST_0220, VPE_VIDEO_API_TEST_0230,
-    VPE_VIDEO_API_TEST_0240, VPE_VIDEO_API_TEST_0250, VPE_VIDEO_API_TEST_0260, VPE_VIDEO_API_TEST_0270,
-    VPE_VIDEO_API_TEST_0280, VPE_VIDEO_API_TEST_0290, VPE_VIDEO_API_TEST_0291, VPE_VIDEO_API_TEST_0300,
-    VPE_VIDEO_API_TEST_0310, VPE_VIDEO_API_TEST_0320, VPE_VIDEO_API_TEST_0330, VPE_VIDEO_API_TEST_0340,
-    VPE_VIDEO_API_TEST_0350, VPE_VIDEO_API_TEST_0360, VPE_VIDEO_API_TEST_0370, VPE_VIDEO_API_TEST_0380,
-    VPE_VIDEO_API_TEST_0390, VPE_VIDEO_API_TEST_0400, VPE_VIDEO_API_TEST_0410, VPE_VIDEO_API_TEST_0420,
-    VPE_VIDEO_API_TEST_0430, VPE_VIDEO_API_TEST_0440, VPE_VIDEO_API_TEST_0450, VPE_VIDEO_API_TEST_0460,
-    VPE_VIDEO_API_TEST_0470, VPE_VIDEO_API_TEST_0480, VPE_VIDEO_API_TEST_0490, VPE_VIDEO_API_TEST_0500,
-    VPE_VIDEO_API_TEST_0510, VPE_VIDEO_API_TEST_0520, VPE_VIDEO_API_TEST_0530, VPE_VIDEO_API_TEST_0540,
-    VPE_VIDEO_API_TEST_0550, VPE_VIDEO_API_TEST_0560, VPE_VIDEO_API_TEST_0570, VPE_VIDEO_API_TEST_0580,
-    VPE_VIDEO_API_TEST_0590, VPE_VIDEO_API_TEST_0591, VPE_VIDEO_API_TEST_0600,
+EXTERN_C_START
+
+struct Entry {
+    napi_callback func;
+    const char* name;
 };
 
-inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
 {
-    return { name, nullptr, cb, nullptr, nullptr, nullptr, napi_default, nullptr };
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+    napi_value ret = entry->func(env, info);
+    int32_t val = -1;
+    napi_get_value_int32(env, ret, &val);
+    return RunTestAsync(env, [val]() { return val; }, entry->name);
 }
 
-#define DECL_NAPI_DESC(fn) /* NOLINT(G.PRE.02-CPP) */ MakeNapiDesc(#fn, fn)
+static napi_property_descriptor XL(const char* functionName, napi_callback func)
+{
+    auto* entry = new Entry{func, functionName};
+    return {functionName, nullptr, AsyncWrapper, nullptr, nullptr, nullptr,
+            napi_default, entry};
+}
 
-// N-API 导出 TearDown，供测试框架在每个用例后调用
-static napi_value TearDown(napi_env env, napi_callback_info info)
+static napi_value NapiTearDown(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
@@ -142,23 +105,89 @@ static napi_value TearDown(napi_env env, napi_callback_info info)
     return result;
 }
 
-// 对外暴露的异步 N-API 接口，JS 侧通过传入 caseNum 选择具体用例
-static napi_value Api_Test(napi_env env, napi_callback_info info)
+static void InitPush1(std::vector<napi_property_descriptor> &desc)
 {
-    return CreateAsyncTest(
-        env, info, g_vpe_video_api_handlers.data(), g_vpe_video_api_handlers.size(), "VPE_Video_Api_Test");
+    desc.push_back(XL("VpeVideoApiTest00100", VpeVideoApiTest00100));
+    desc.push_back(XL("VpeVideoApiTest00200", VpeVideoApiTest00200));
+    desc.push_back(XL("VpeVideoApiTest00300", VpeVideoApiTest00300));
+    desc.push_back(XL("VpeVideoApiTest00400", VpeVideoApiTest00400));
+    desc.push_back(XL("VpeVideoApiTest00500", VpeVideoApiTest00500));
+    desc.push_back(XL("VpeVideoApiTest00600", VpeVideoApiTest00600));
+    desc.push_back(XL("VpeVideoApiTest00700", VpeVideoApiTest00700));
+    desc.push_back(XL("VpeVideoApiTest00800", VpeVideoApiTest00800));
+    desc.push_back(XL("VpeVideoApiTest00900", VpeVideoApiTest00900));
+    desc.push_back(XL("VpeVideoApiTest01000", VpeVideoApiTest01000));
+    desc.push_back(XL("VpeVideoApiTest01100", VpeVideoApiTest01100));
+    desc.push_back(XL("VpeVideoApiTest01200", VpeVideoApiTest01200));
+    desc.push_back(XL("VpeVideoApiTest01300", VpeVideoApiTest01300));
+    desc.push_back(XL("VpeVideoApiTest01400", VpeVideoApiTest01400));
+    desc.push_back(XL("VpeVideoApiTest01500", VpeVideoApiTest01500));
+    desc.push_back(XL("VpeVideoApiTest01600", VpeVideoApiTest01600));
+    desc.push_back(XL("VpeVideoApiTest01700", VpeVideoApiTest01700));
+    desc.push_back(XL("VpeVideoApiTest01800", VpeVideoApiTest01800));
+    desc.push_back(XL("VpeVideoApiTest01900", VpeVideoApiTest01900));
+    desc.push_back(XL("VpeVideoApiTest02000", VpeVideoApiTest02000));
+    desc.push_back(XL("VpeVideoApiTest02100", VpeVideoApiTest02100));
 }
 
-static const napi_property_descriptor g_vpeVideoDescriptors[] = {
-    DECL_NAPI_DESC(Api_Test),
-    DECL_NAPI_DESC(TearDown),
-};
+static void InitPush2(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VpeVideoApiTest02200", VpeVideoApiTest02200));
+    desc.push_back(XL("VpeVideoApiTest02300", VpeVideoApiTest02300));
+    desc.push_back(XL("VpeVideoApiTest02400", VpeVideoApiTest02400));
+    desc.push_back(XL("VpeVideoApiTest02500", VpeVideoApiTest02500));
+    desc.push_back(XL("VpeVideoApiTest02600", VpeVideoApiTest02600));
+    desc.push_back(XL("VpeVideoApiTest02700", VpeVideoApiTest02700));
+    desc.push_back(XL("VpeVideoApiTest02800", VpeVideoApiTest02800));
+    desc.push_back(XL("VpeVideoApiTest02900", VpeVideoApiTest02900));
+    desc.push_back(XL("VpeVideoApiTest03000", VpeVideoApiTest03000));
+    desc.push_back(XL("VpeVideoApiTest03100", VpeVideoApiTest03100));
+    desc.push_back(XL("VpeVideoApiTest03200", VpeVideoApiTest03200));
+    desc.push_back(XL("VpeVideoApiTest03300", VpeVideoApiTest03300));
+    desc.push_back(XL("VpeVideoApiTest03400", VpeVideoApiTest03400));
+    desc.push_back(XL("VpeVideoApiTest03500", VpeVideoApiTest03500));
+    desc.push_back(XL("VpeVideoApiTest03600", VpeVideoApiTest03600));
+    desc.push_back(XL("VpeVideoApiTest03700", VpeVideoApiTest03700));
+    desc.push_back(XL("VpeVideoApiTest03800", VpeVideoApiTest03800));
+    desc.push_back(XL("VpeVideoApiTest03900", VpeVideoApiTest03900));
+    desc.push_back(XL("VpeVideoApiTest04000", VpeVideoApiTest04000));
+    desc.push_back(XL("VpeVideoApiTest04100", VpeVideoApiTest04100));
+}
 
-EXTERN_C_START
+static void InitPush3(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VpeVideoApiTest04200", VpeVideoApiTest04200));
+    desc.push_back(XL("VpeVideoApiTest04300", VpeVideoApiTest04300));
+    desc.push_back(XL("VpeVideoApiTest04400", VpeVideoApiTest04400));
+    desc.push_back(XL("VpeVideoApiTest04500", VpeVideoApiTest04500));
+    desc.push_back(XL("VpeVideoApiTest04600", VpeVideoApiTest04600));
+    desc.push_back(XL("VpeVideoApiTest04700", VpeVideoApiTest04700));
+    desc.push_back(XL("VpeVideoApiTest04800", VpeVideoApiTest04800));
+    desc.push_back(XL("VpeVideoApiTest04900", VpeVideoApiTest04900));
+    desc.push_back(XL("VpeVideoApiTest05000", VpeVideoApiTest05000));
+    desc.push_back(XL("VpeVideoApiTest05100", VpeVideoApiTest05100));
+    desc.push_back(XL("VpeVideoApiTest05200", VpeVideoApiTest05200));
+    desc.push_back(XL("VpeVideoApiTest05300", VpeVideoApiTest05300));
+    desc.push_back(XL("VpeVideoApiTest05400", VpeVideoApiTest05400));
+    desc.push_back(XL("VpeVideoApiTest05500", VpeVideoApiTest05500));
+    desc.push_back(XL("VpeVideoApiTest05600", VpeVideoApiTest05600));
+    desc.push_back(XL("VpeVideoApiTest05700", VpeVideoApiTest05700));
+    desc.push_back(XL("VpeVideoApiTest05800", VpeVideoApiTest05800));
+    desc.push_back(XL("VpeVideoApiTest05900", VpeVideoApiTest05900));
+    desc.push_back(XL("VpeVideoApiTest06000", VpeVideoApiTest06000));
+    desc.push_back(XL("VpeVideoApiTest06100", VpeVideoApiTest06100));
+    desc.push_back(XL("VpeVideoApiTest06200", VpeVideoApiTest06200));
+    desc.push_back(XL("VpeVideoApiTest06300", VpeVideoApiTest06300));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(
-        env, exports, sizeof(g_vpeVideoDescriptors) / sizeof(g_vpeVideoDescriptors[0]), g_vpeVideoDescriptors);
+    std::vector<napi_property_descriptor> desc;
+    desc.push_back({"TearDown", nullptr, NapiTearDown, nullptr, nullptr, nullptr, napi_default, nullptr});
+    InitPush1(desc);
+    InitPush2(desc);
+    InitPush3(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END
