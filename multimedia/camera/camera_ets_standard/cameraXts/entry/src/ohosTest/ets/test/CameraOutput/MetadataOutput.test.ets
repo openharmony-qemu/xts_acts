@@ -872,5 +872,63 @@ export default function MetadataOutputTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1400
+     * @tc.desc   test lockMetadataObjectTracking api when param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1400';
+      if (mCameraDeviceArray.length < 2) {
+        console.info(TAG, 'mCameraDeviceArray does not have enough devices for this test.');
+        done();
+        return;
+      }
+      let isSupported: boolean;
+      let triggered: boolean = false;
+      try {
+        const device = mCameraDeviceArray[1];
+        mSupportedModes = mCameraManager.getSupportedSceneModes(device);
+        console.info(TAG, testName + ' mSupportedModes is ' + JSON.stringify(mSupportedModes));
+        // NORMAL_PHOTO
+        const mode = camera.SceneMode.NORMAL_PHOTO;
+        mCameraOutputCap = mCameraManager.getSupportedOutputCapability(device, mode);
+        mCameraInput = mCameraManager.createCameraInput(device);
+        mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+        mMetadataObjectTypes = mCameraOutputCap.supportedMetadataObjectTypes;
+        console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+        mMetadataOutput = mCameraManager.createMetadataOutput(mMetadataObjectTypes);
+        await getPhotoSession(testName, mode, mPreviewOutput, mPhotoOutput, mMetadataOutput);
+        // isLockMetadataObjectTrackingSupported
+        isSupported = mMetadataOutput.isLockMetadataObjectTrackingSupported();
+        console.info(TAG, testName + ' isSupported is ' + isSupported);
+        expect(typeof isSupported).assertEqual('boolean');
+        if (isSupported) {
+          mMetadataOutput.on('metadataObjectsAvailable', (err: BusinessError, metadataObjectArr: Array<camera.MetadataObject>) => {
+            console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+            triggered = true;
+          });
+          try {
+            mMetadataOutput.lockMetadataObjectTracking(undefined);
+          } catch (error) {
+            console.error(TAG, testName + 'lockMetadataObjectTracking failed. err: ' + error.code + ', msg: ' + error.message);
+            expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue()
+          }
+        }
+        console.info(TAG, testName + ' start release');
+        await releasePhotoSession();
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        await releasePhotoSession();
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }
