@@ -53,7 +53,6 @@ struct Second {
   @State enableWebAVSession: boolean | undefined = true;
   @State fileAccess: boolean | undefined = true;
   @State forceDisplayScrollBar: boolean | undefined = true;
-  @State pendingDatabaseAccessEventId: Long = 0;
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -83,17 +82,27 @@ struct Second {
 
             case "emitDatabaseAccessTrue": {
               this.databaseAccess = true;
-              this.pendingDatabaseAccessEventId = 161000;
-              this.isPageEnd = -1;
-              this.webviewCtl.refresh();
+              this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
+                if (res) {
+                  console.log("getDataResult==>" + res.toString());
+                  Utils.emitEvent(res, 161000);
+                }
+              });
+
               break;
             }
 
             case "emitDatabaseAccessFalse": {
               this.databaseAccess = false;
-              this.pendingDatabaseAccessEventId = 161001;
-              this.isPageEnd = -1;
               this.webviewCtl.refresh();
+              this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
+              this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
+                if (res) {
+                  console.log("getDataResult==>" + res.toString());
+                  Utils.emitEvent(res, 161001);
+                }
+              });
+
               break;
             }
 
@@ -337,18 +346,6 @@ struct Second {
         .enableWebAVSession(this.enableWebAVSession)
         .fileAccess(this.fileAccess)
         .forceDisplayScrollBar(this.forceDisplayScrollBar)
-        .onPageEnd((event) => {
-          console.log('onPageEnd url:' + event.url);
-          this.isPageEnd = 0;
-          if (this.pendingDatabaseAccessEventId > 0) {
-            const eventId: Long = this.pendingDatabaseAccessEventId;
-            this.pendingDatabaseAccessEventId = 0;
-            this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
-              console.log("getDataResult==>" + res);
-              Utils.emitEvent(res !== undefined && res !== null ? res : '', eventId);
-            });
-          }
-        })
     }
 
   }

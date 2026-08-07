@@ -73,12 +73,11 @@ struct Second {
               break;
             }
             case "onHttpErrorReceive": {
-              this.onHttpErrorReceiveResult = false;
               this.webviewCtl.refresh();
-              this.webviewCtl.loadUrl("https://postman-echo.com/status/404");
+              this.webviewCtl.loadUrl("https://example.com/404-test",);
               setTimeout(() => {
                 Utils.emitEvent(this.onHttpErrorReceiveResult, 2024120991)
-              }, 6000)
+              }, 3000)
               break;
             }
 
