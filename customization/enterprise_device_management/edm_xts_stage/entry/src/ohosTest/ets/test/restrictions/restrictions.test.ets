@@ -3448,6 +3448,50 @@ function testSetDisallowedPolicy() {
   })
 
   /**
+    * @tc.name   setUserRestriction_test_005
+    * @tc.number setUserRestriction_test_005
+    * @tc.desc   setUserRestriction with restricted parameter null
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestriction_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestriction_test_005  -------- START --------');
+    try {
+      restrictions.setUserRestriction(SELFWANT, LABEL_SET_APN, null);
+      console.info(' --- setUserRestriction_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestriction_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestriction_test_005  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setUserRestriction_test_006
+    * @tc.number setUserRestriction_test_006
+    * @tc.desc   setUserRestriction with restricted parameter undefined
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestriction_test_006", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestriction_test_006  -------- START --------');
+    try {
+      restrictions.setUserRestriction(SELFWANT, LABEL_SET_APN, undefined);
+      console.info(' --- setUserRestriction_test_006 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestriction_test_006 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestriction_test_006  -------- END --------');
+  })
+
+  /**
     * @tc.name   getUserRestricted_test_002
     * @tc.number getUserRestricted_test_002
     * @tc.desc   getUserRestricted with undefined parameter admin
@@ -3467,6 +3511,50 @@ function testSetDisallowedPolicy() {
     }
     done();
     console.info(' --- getUserRestricted_test_002  -------- END --------');
+  })
+
+  /**
+    * @tc.name   getUserRestricted_test_003
+    * @tc.number getUserRestricted_test_003
+    * @tc.desc   getUserRestricted with settingsItem parameter null
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestricted_test_003", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestricted_test_003  -------- START --------');
+    try {
+      restrictions.getUserRestricted(SELFWANT, null);
+      console.info(' --- getUserRestricted_test_003 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestricted_test_003 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestricted_test_003  -------- END --------');
+  })
+
+  /**
+    * @tc.name   getUserRestricted_test_004
+    * @tc.number getUserRestricted_test_004
+    * @tc.desc   getUserRestricted with settingsItem parameter undefined
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("getUserRestricted_test_004", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- getUserRestricted_test_004  -------- START --------');
+    try {
+      restrictions.getUserRestricted(SELFWANT, undefined);
+      console.info(' --- getUserRestricted_test_004 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- getUserRestricted_test_004 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- getUserRestricted_test_004  -------- END --------');
   })
 
 
@@ -3603,6 +3691,50 @@ function testSetDisallowedPolicy() {
     }
     done();
     console.info(' --- setUserRestrictionForAccount_test_006  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_007
+    * @tc.number setUserRestrictionForAccount_test_007
+    * @tc.desc   setUserRestrictionForAccount with restricted parameter null
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_007", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_007  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, null);
+      console.info(' --- setUserRestrictionForAccount_test_007 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_007 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_007  -------- END --------');
+  })
+
+  /**
+    * @tc.name   setUserRestrictionForAccount_test_008
+    * @tc.number setUserRestrictionForAccount_test_008
+    * @tc.desc   setUserRestrictionForAccount with restricted parameter undefined
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("setUserRestrictionForAccount_test_008", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setUserRestrictionForAccount_test_008  -------- START --------');
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, undefined);
+      console.info(' --- setUserRestrictionForAccount_test_008 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- setUserRestrictionForAccount_test_008 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+    console.info(' --- setUserRestrictionForAccount_test_008  -------- END --------');
   })
 
   /**
