@@ -146,6 +146,17 @@ static napi_value GetSyncFolders(napi_env env, napi_callback_info info)
     return result_1;
 }
 
+static napi_value GetSyncFolders001(napi_env env, napi_callback_info info)
+{
+    CloudDisk_SyncFolder *syncFolders;
+    LOGW("OH_CloudDisk_GetSyncFolders with null count start");
+    auto ret = OH_CloudDisk_GetSyncFolders(&syncFolders, nullptr);
+    LOGW("OH_CloudDisk_GetSyncFolders with null count ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
 static napi_value UpdateCustomAlias(napi_env env, napi_callback_info info)
 {
     char* path = GetStringParam(env, info);
@@ -397,6 +408,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "ActiveSyncFolder", nullptr, ActiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "DeactiveSyncFolder", nullptr, DeactiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "GetSyncFolders", nullptr, GetSyncFolders, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "GetSyncFolders001", nullptr, GetSyncFolders001, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "UpdateCustomAlias", nullptr, UpdateCustomAlias, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ReFolderChanges", nullptr, ReFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "UnReFolderChanges", nullptr, UnReFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
