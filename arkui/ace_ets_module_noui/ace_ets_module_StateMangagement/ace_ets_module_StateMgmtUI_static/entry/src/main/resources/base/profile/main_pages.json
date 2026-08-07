@@ -2,6 +2,28 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/entry/EntryParams",
-    "MainAbility/pages/entry/EntryParams2"
+    "MainAbility/pages/entry/EntryParams2",
+    "MainAbility/pages/entry/EntryOptionPage",
+    "MainAbility/pages/entry/EntryOptionPage2",
+    "MainAbility/pages/lifecycle/ComponentLifecycleDecorators",
+    "MainAbility/pages/lifecycle/ReuseComponentLifecycle",
+    "MainAbility/pages/lifecycle/ReuseV2ComponentLifecycle",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableButtonBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableColumnBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridItemBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableImageBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListItemBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableRelativeContainerBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableRowBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableStackBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableTextBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableToggleBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridItemBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListItemBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableStackBuiltInUndefined"
   ]
 }

@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 import BarStylePage from './Navigation/BarStylePage.test'
-import EntryOptionPage from './Navigation/EntryOptionPage.test'
-import EntryOptionPage2 from './Navigation/EntryOptionPage2.test'
 import HideToolBarNavPage from './Navigation/HideToolBarNavPage.test'
 import NavDestinationUIObserver from './Navigation/NavDestinationUIObserver.test'
 import NavigationCustomTitlePage from './Navigation/NavigationCustomTitlePage.test'
@@ -26,8 +24,6 @@ import TitleOptionsToolOptions from './Navigation/TitleOptionsToolOptions.test'
 export default function testsuite() {
   BarStylePage();
   NavigationTitleTextModifier();
-  EntryOptionPage();
-  EntryOptionPage2();
   NavigationCustomTitlePage();
   NavDestinationUIObserver();
   HideToolBarNavPage();

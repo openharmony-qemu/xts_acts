@@ -31,42 +31,40 @@ import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
-export default function EntryOptionPage() {
-  describe('EntryOptionPage', () => {
+export default function EntryOptionPage2() {
+  describe('EntryOptionPage2', () => {
     beforeAll(async (): Promise<void> => {
-      console.info("EntryOptionPage beforeEach start");
+      console.info("EntryOptionPage2 beforeEach start");
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.navigation13.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.StateMgmtUI.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-      console.info("EntryOptionPage beforeEach start");
+      console.info("EntryOptionPage2 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/EntryOptionPage',
+        url: 'MainAbility/pages/entry/EntryOptionPage2',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get EntryOptionPage state pages:" + JSON.stringify(pages));
-        if (!("EntryOptionPage" == pages.name)) {
-          console.info("get EntryOptionPage pages.name:" + JSON.stringify(pages.name));
+        console.info("get EntryOptionPage2 state pages:" + JSON.stringify(pages));
+        if (!("EntryOptionPage2" == pages.name)) {
+          console.info("get EntryOptionPage2 pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push EntryOptionPage page result:" + JSON.stringify(result));
+          // console.info("push EntryOptionPage2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push EntryOptionPage page error:" + err);
+        console.error("push EntryOptionPage2 page error:" + err);
       }
-      console.info("EntryOptionPage beforeEach end");
-
+      console.info("EntryOptionPage2 beforeEach end");
     });
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      console.info("EntryOptionPage after each called");
+      console.info("EntryOptionPage2 after each called");
     });
 
 
@@ -74,26 +72,26 @@ export default function EntryOptionPage() {
     
 
     /**
-     * @tc.number   EntryOptionPage_0100
-     * @tc.name     EntryOptionPage_0100
-     * @tc.desc     EntryOptionPage_0100
+     * @tc.number   EntryOptionPage2_static_0100
+     * @tc.name     EntryOptionPage2_static_0100
+     * @tc.desc     EntryOptionPage2_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('EntryOptionPage_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EntryOptionPage2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('EntryOptionPage_0100 START');
+      console.info('EntryOptionPage2_0100 START');
       await CommonFunc.sleep(1000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('textId');
+      let strJson: string = inspector.getInspectorByKey('text2Id');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[MultiNavigation_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[MultiNavigation_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('22');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('222');
 
-      console.info('EntryOptionPage_0100 END');
+      console.info('EntryOptionPage2_0100 END');
       done();
     });
 
