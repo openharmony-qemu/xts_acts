@@ -91,6 +91,29 @@ export default function DeviceManagerTest() {
       });
 
     /**
+     * @tc.name   testDistributedServiceKitGetLocalDeviceName0400
+     * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_0400
+     * @tc.desc   testing ERR_INVALID_PARAMETER interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDistributedServiceKitGetLocalDeviceName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testDistributedServiceKitGetLocalDeviceName0400 start====");
+          let result: number = devicemanagerndktest.ThirdGetLocalDeviceNameErrorCode401();
+          console.info("====>testDistributedServiceKitGetLocalDeviceName0400 result====" + result);
+          expect(KEY_CODE_EVENT_OK).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>testDistributedServiceKitGetLocalDeviceName0400 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
+          done()
+        }
+      });
+
+    /**
      * @tc.name   testDistributedServiceKitGetLocalDeviceNameC0100
      * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_C_0100
      * @tc.desc   testing ERR_OK interface
