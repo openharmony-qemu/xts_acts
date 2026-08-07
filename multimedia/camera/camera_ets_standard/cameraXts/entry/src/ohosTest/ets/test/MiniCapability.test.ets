@@ -189,7 +189,7 @@ export default function MiniCapabilityTest() {
       console.info(TAG, 'afterEach case.');
     });
 
-    afterAll(() => {
+    afterAll(async () => {
       console.info(TAG, 'afterAll case.');
       if (!isEmpty(mAVRecorder)) {
         await mAVRecorder.release();
