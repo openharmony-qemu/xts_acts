@@ -13,11 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
+import { createSharedBarrier, waitAtSharedBarrier } from "../SharedLock";
 
 @Concurrent
-async function entriesTraverse(arr: collections.Array<number>): Promise<string> {
+async function entriesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
     const iterator: IterableIterator<[number, number]> = arr.entries();
@@ -37,7 +39,8 @@ async function entriesTraverse(arr: collections.Array<number>): Promise<string> 
 }
 
 @Concurrent
-async function valuesTraverse(arr: collections.Array<number>): Promise<string> {
+async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
     const iterator: IterableIterator<number> = arr.values();
@@ -57,7 +60,8 @@ async function valuesTraverse(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function modifyFill(arr: collections.Array<number>): Promise<string> {
+async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   let dummy: number = 0;
   for (let j: number = 0; j < 50000; j++) { dummy += j; }
   try {
@@ -73,7 +77,8 @@ async function modifyFill(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function modifyUnshift(arr: collections.Array<number>): Promise<string> {
+async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   let dummy: number = 0;
   for (let j: number = 0; j < 50000; j++) { dummy += j; }
   try {
@@ -96,10 +101,11 @@ function makeArray(count: number): collections.Array<number> {
 
 async function runModifyTest(arr: collections.Array<number>,
   traverseTask: Function, modifyTask: Function): Promise<boolean> {
+  const barrier: SharedArrayBuffer = createSharedBarrier();
   try {
     const results: Object[] = await Promise.all([
-      taskpool.execute(traverseTask, arr),
-      taskpool.execute(modifyTask, arr)
+      taskpool.execute(traverseTask, arr, barrier),
+      taskpool.execute(modifyTask, arr, barrier)
     ]);
     for (let i: number = 0; i < results.length; i++) {
       if ((results[i] as string).indexOf("error:10200201") >= 0) {
@@ -117,6 +123,12 @@ async function runModifyTest(arr: collections.Array<number>,
 
 export default function arrayConcurrentTraverseModifyTest(): void {
   describe("arrayConcurrentTraverseModifyTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_TRAVMOD_0500
      * @tc.name      testArrayConcurrentEntriesModify0002

@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
 import { taskpool } from '@kit.ArkTS';
@@ -28,16 +43,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0100
-     * @tc.name: concurrentForEach_0001
+     * @tc.name: testCollectionsMapConcurrent0001
      * @tc.desc: 3 TaskPool tasks concurrently forEach the same Map (100 entries).
      *           Each task performs read-only traversal and returns element count,
      *           verifying concurrent traversal does not throw exceptions and count is correct.
      * @tc.type: FUNC
      * @tc.level: Level0
      */
-    it('concurrentForEach_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
-        const caseName: string = 'concurrentForEach_0001';
+        const caseName: string = 'testCollectionsMapConcurrent0001';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -63,15 +78,15 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0200
-     * @tc.name: modifyDuringForEach_0002
+     * @tc.name: testCollectionsMapConcurrent0002
      * @tc.desc: Call delete inside forEach callback, verify 10200201
      *           concurrent modification error is thrown.
      * @tc.type: FUNC
      * @tc.level: Level0
      */
-    it('modifyDuringForEach_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
-        const caseName: string = 'modifyDuringForEach_0002';
+        const caseName: string = 'testCollectionsMapConcurrent0002';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -91,7 +106,7 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0300
-     * @tc.name: workerCrossThread_0003
+     * @tc.name: testCollectionsMapConcurrent0003
      * @tc.desc: Main thread creates Map and sends it to Worker via
      *           postMessageWithSharedSendable. Worker performs read-only
      *           traversal and value retrieval, verifying reference passing
@@ -99,9 +114,9 @@ export default function collectionsMapConcurrentTest() {
      * @tc.type: FUNC
      * @tc.level: Level0
      */
-    it('workerCrossThread_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
-        const caseName: string = 'workerCrossThread_0003';
+        const caseName: string = 'testCollectionsMapConcurrent0003';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -137,16 +152,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0400
-     * @tc.name: largeMapConcurrentForEach_0004
+     * @tc.name: testCollectionsMapConcurrent0004
      * @tc.desc: Concurrent forEach traversal of Map with 10000+ elements,
      *           verify traversal completeness under large data volume
      *           (count === 10000).
      * @tc.type: FUNC
      * @tc.level: Level0
      */
-    it('largeMapConcurrentForEach_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
-        const caseName: string = 'largeMapConcurrentForEach_0004';
+        const caseName: string = 'testCollectionsMapConcurrent0004';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -170,16 +185,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0500
-     * @tc.name: nestedForEach_0005
+     * @tc.name: testCollectionsMapConcurrent0005
      * @tc.desc: Nested Map<string, Map<string, number>> structure with
      *           two-level forEach traversal, verify nested container reference
      *           correctness and traversal completeness.
      * @tc.type: FUNC
      * @tc.level: Level0
      */
-    it('nestedForEach_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testCollectionsMapConcurrent0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
-        const caseName: string = 'nestedForEach_0005';
+        const caseName: string = 'testCollectionsMapConcurrent0005';
         console.info(caseName + ', test start');
 
         let outerMap: collections.Map<string, collections.Map<string, number>> =
@@ -213,16 +228,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0600
-     * @tc.name: iteratorConcurrent_0006
+     * @tc.name: testCollectionsMapConcurrent0006
      * @tc.desc: 3 TaskPool tasks use entries/keys/values iterators for
      *           concurrent traversal respectively, verify iterator concurrent
      *           creation and traversal correctness.
      * @tc.type: FUNC
      * @tc.level: Level0
      */
-    it('iteratorConcurrent_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
-        const caseName: string = 'iteratorConcurrent_0006';
+        const caseName: string = 'testCollectionsMapConcurrent0006';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -248,16 +263,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0700
-     * @tc.name: cancelTaskPool_0007
+     * @tc.name: testCollectionsMapConcurrent0007
      * @tc.desc: Cancel TaskPool task during large Map forEach traversal,
      *           verify task can be cancelled normally and cancellation
      *           status is caught.
      * @tc.type: FUNC
      * @tc.level: Level0
      */
-    it('cancelTaskPool_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
-        const caseName: string = 'cancelTaskPool_0007';
+        const caseName: string = 'testCollectionsMapConcurrent0007';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -287,16 +302,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0800
-     * @tc.name: sendableElement_0008
+     * @tc.name: testCollectionsMapConcurrent0008
      * @tc.desc: Map stores @Sendable class instances as values,
      *           verify cross-thread access via TaskPool and element
      *           property retrieval is correct.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('sendableElement_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'sendableElement_0008';
+        const caseName: string = 'testCollectionsMapConcurrent0008';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, Person> = new collections.Map<string, Person>();
@@ -321,16 +336,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0900
-     * @tc.name: asyncLockConcurrentWrite_0009
+     * @tc.name: testCollectionsMapConcurrent0009
      * @tc.desc: Use AsyncLock to protect concurrent set operations
      *           from multiple TaskPool tasks, verify lock-protected
      *           writes are visible and consistent.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('asyncLockConcurrentWrite_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'asyncLockConcurrentWrite_0009';
+        const caseName: string = 'testCollectionsMapConcurrent0009';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -357,16 +372,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1000
-     * @tc.name: mapAsParameter_0010
+     * @tc.name: testCollectionsMapConcurrent0010
      * @tc.desc: Pass Map as @Concurrent function parameter via TaskPool,
      *           verify the task receives the Map correctly and returns
      *           the expected size.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('mapAsParameter_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'mapAsParameter_0010';
+        const caseName: string = 'testCollectionsMapConcurrent0010';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -386,16 +401,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1100
-     * @tc.name: mapAsReturnValue_0011
+     * @tc.name: testCollectionsMapConcurrent0011
      * @tc.desc: @Concurrent function returns a new Map instance,
      *           verify the returned Map is accessible in main thread
      *           with correct key-value pairs.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('mapAsReturnValue_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'mapAsReturnValue_0011';
+        const caseName: string = 'testCollectionsMapConcurrent0011';
         console.info(caseName + ', test start');
 
         let returnedMap: collections.Map<string, number> =
@@ -411,16 +426,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1200
-     * @tc.name: forEachException_0012
+     * @tc.name: testCollectionsMapConcurrent0012
      * @tc.desc: Throw exception inside forEach callback, verify the
      *           exception is correctly propagated and caught with the
      *           expected error message.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('forEachException_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testCollectionsMapConcurrent0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
-        const caseName: string = 'forEachException_0012';
+        const caseName: string = 'testCollectionsMapConcurrent0012';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -450,16 +465,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1300
-     * @tc.name: terminateTask_0013
+     * @tc.name: testCollectionsMapConcurrent0013
      * @tc.desc: Terminate a long-running loop task using terminateTask,
      *           verify the task was interrupted before completion by
      *           checking the counter stopped below the expected maximum.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('terminateTask_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'terminateTask_0013';
+        const caseName: string = 'testCollectionsMapConcurrent0013';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -498,16 +513,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1400
-     * @tc.name: promiseAllMultiMap_0014
+     * @tc.name: testCollectionsMapConcurrent0014
      * @tc.desc: Use Promise.all to wait for forEach traversal tasks
      *           on three different Maps, verify all tasks complete
      *           with correct counts.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('promiseAllMultiMap_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'promiseAllMultiMap_0014';
+        const caseName: string = 'testCollectionsMapConcurrent0014';
         console.info(caseName + ', test start');
 
         let map1: collections.Map<string, number> = new collections.Map<string, number>();
@@ -537,16 +552,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1500
-     * @tc.name: multiWorkerConcurrent_0015
+     * @tc.name: testCollectionsMapConcurrent0015
      * @tc.desc: Launch 2 Worker threads to concurrently read the same
      *           Map via postMessageWithSharedSendable, verify all workers
      *           complete without exception and read results are correct.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('multiWorkerConcurrent_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'multiWorkerConcurrent_0015';
+        const caseName: string = 'testCollectionsMapConcurrent0015';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -589,16 +604,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1600
-     * @tc.name: exportSharedMap_0016
+     * @tc.name: testCollectionsMapConcurrent0016
      * @tc.desc: Export a Map instance via export let from a shared module,
      *           verify the imported Map is accessible and modifiable
      *           from the test module.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('exportSharedMap_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testCollectionsMapConcurrent0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
-        const caseName: string = 'exportSharedMap_0016';
+        const caseName: string = 'testCollectionsMapConcurrent0016';
         console.info(caseName + ', test start');
 
         sharedMap.set('shared_key', 42);
@@ -613,16 +628,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1700
-     * @tc.name: nestedContainer_0017
+     * @tc.name: testCollectionsMapConcurrent0017
      * @tc.desc: Map<string, collections.Array<number>> nested container,
      *           verify inner Array elements are accessible and
      *           correctly retrieved via the outer Map.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('nestedContainer_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testCollectionsMapConcurrent0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
-        const caseName: string = 'nestedContainer_0017';
+        const caseName: string = 'testCollectionsMapConcurrent0017';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, collections.Array<number>> =
@@ -650,16 +665,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1800
-     * @tc.name: conditionVariable_0018
+     * @tc.name: testCollectionsMapConcurrent0018
      * @tc.desc: Use ConditionVariable to synchronize Map operations,
      *           verify wait/notifyAll works correctly across async
      *           boundaries in the main thread.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('conditionVariable_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'conditionVariable_0018';
+        const caseName: string = 'testCollectionsMapConcurrent0018';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -670,7 +685,7 @@ export default function collectionsMapConcurrentTest() {
 
         let modified: boolean = false;
 
-        cv.wait().then(() => {
+        let waitPromise: Promise<void> = cv.wait().then(() => {
           map.set('test', 1);
           modified = true;
         });
@@ -679,9 +694,7 @@ export default function collectionsMapConcurrentTest() {
 
         cv.notifyAll();
 
-        await new Promise<void>((resolve: () => void) => {
-          setTimeout(() => { resolve(); }, 200);
-        });
+        await waitPromise;
 
         expect(modified).assertEqual(true);
         expect(map.get('test')).assertEqual(1);
@@ -694,16 +707,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1900
-     * @tc.name: sendDataProgress_0019
+     * @tc.name: testCollectionsMapConcurrent0019
      * @tc.desc: Use sendData inside TaskPool forEach traversal to report
      *           progress, verify onReceiveData callback receives progress
      *           updates and traversal completes correctly.
      * @tc.type: FUNC
      * @tc.level: Level1
      */
-    it('sendDataProgress_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        const caseName: string = 'sendDataProgress_0019';
+        const caseName: string = 'testCollectionsMapConcurrent0019';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -735,16 +748,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_2000
-     * @tc.name: memoryLeak_0020
+     * @tc.name: testCollectionsMapConcurrent0020
      * @tc.desc: Loop create and destroy Map instances (1000 iterations),
      *           verify no crash or unhandled exception occurs during
      *           repeated allocation and release.
      * @tc.type: FUNC
      * @tc.level: Level2
      */
-    it('memoryLeak_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testCollectionsMapConcurrent0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
-        const caseName: string = 'memoryLeak_0020';
+        const caseName: string = 'testCollectionsMapConcurrent0020';
         console.info(caseName + ', test start');
 
         let completed: boolean = false;
@@ -765,16 +778,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_2100
-     * @tc.name: loopStress_0021
+     * @tc.name: testCollectionsMapConcurrent0021
      * @tc.desc: Perform 10000 forEach iterations on a Map with 100 elements
      *           in a TaskPool task, verify total traversed element count
      *           equals 100 * 10000.
      * @tc.type: FUNC
      * @tc.level: Level2
      */
-    it('loopStress_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testCollectionsMapConcurrent0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
-        const caseName: string = 'loopStress_0021';
+        const caseName: string = 'testCollectionsMapConcurrent0021';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -794,16 +807,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_2200
-     * @tc.name: lowMemoryBoundary_0022
+     * @tc.name: testCollectionsMapConcurrent0022
      * @tc.desc: Create a very large Map (500000 entries) to test
      *           boundary behavior, verify the Map is created successfully
      *           and size is reported correctly.
      * @tc.type: FUNC
      * @tc.level: Level2
      */
-    it('lowMemoryBoundary_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testCollectionsMapConcurrent0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
-        const caseName: string = 'lowMemoryBoundary_0022';
+        const caseName: string = 'testCollectionsMapConcurrent0022';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -817,7 +830,7 @@ export default function collectionsMapConcurrentTest() {
         }
 
         expect(success).assertEqual(true);
-        expect(map.size >= 0).assertEqual(true);
+        expect(map.size).assertEqual(500000);
         expect(map.has('key_0')).assertEqual(true);
 
         console.info(caseName + ', test end, map.size = ' + map.size);
@@ -828,16 +841,16 @@ export default function collectionsMapConcurrentTest() {
 
     /**
      * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_2300
-     * @tc.name: largeDataTransfer_0023
+     * @tc.name: testCollectionsMapConcurrent0023
      * @tc.desc: Create a Map with 100000 entries and pass it to TaskPool
      *           via reference, verify the task correctly reports the
      *           Map size across threads.
      * @tc.type: FUNC
      * @tc.level: Level2
      */
-    it('largeDataTransfer_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testCollectionsMapConcurrent0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
-        const caseName: string = 'largeDataTransfer_0023';
+        const caseName: string = 'testCollectionsMapConcurrent0023';
         console.info(caseName + ', test start');
 
         let map: collections.Map<string, number> = new collections.Map<string, number>();

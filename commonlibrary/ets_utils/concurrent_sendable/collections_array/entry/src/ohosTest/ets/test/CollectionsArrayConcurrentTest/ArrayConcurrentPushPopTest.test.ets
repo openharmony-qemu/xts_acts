@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
@@ -78,15 +78,27 @@ async function lockedPushPopTask(arr: collections.Array<number>, count: number,
 
 function executeArrayWorker(path: string, arr: collections.Array<number>, count: number,
   lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
-  return new Promise<number>((resolve: (value: number) => void): void => {
+  return new Promise<number>((resolve: (value: number) => void,
+    reject: (reason: Error) => void): void => {
     const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(path);
+    let settled: boolean = false;
     workerInstance.onmessage = (event: MessageEvents): void => {
+      settled = true;
       resolve(event.data as number);
       workerInstance.terminate();
     };
     workerInstance.onerror = (): void => {
-      resolve(-1);
+      if (!settled) {
+        settled = true;
+        reject(new Error(path + " error"));
+      }
       workerInstance.terminate();
+    };
+    workerInstance.onexit = (): void => {
+      if (!settled) {
+        settled = true;
+        reject(new Error(path + " exited before posting result"));
+      }
     };
     workerInstance.postMessageWithSharedSendable({
       arr: arr,
@@ -98,6 +110,12 @@ function executeArrayWorker(path: string, arr: collections.Array<number>, count:
 
 export default function arrayConcurrentPushPopTest(): void {
   describe("arrayConcurrentPushPopTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_PUSHPOP_0100
      * @tc.name      testArrayConcurrentPush0001

@@ -13,11 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
+import { createSharedBarrier, waitAtSharedBarrier } from "../SharedLock";
 
 @Concurrent
-async function entriesTraverse(arr: collections.Array<number>): Promise<string> {
+async function entriesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
     const iterator: IterableIterator<[number, number]> = arr.entries();
@@ -32,7 +34,8 @@ async function entriesTraverse(arr: collections.Array<number>): Promise<string> 
 }
 
 @Concurrent
-async function keysTraverse(arr: collections.Array<number>): Promise<string> {
+async function keysTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
     const iterator: IterableIterator<number> = arr.keys();
@@ -57,7 +60,8 @@ async function keysTraverse(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function valuesTraverse(arr: collections.Array<number>): Promise<string> {
+async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
     const iterator: IterableIterator<number> = arr.values();
@@ -72,7 +76,8 @@ async function valuesTraverse(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function modPush(arr: collections.Array<number>): Promise<string> {
+async function modPush(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   let dummy: number = 0;
   for (let j: number = 0; j < 50000; j++) { dummy += j; }
   try { arr.push(9999); return "success"; }
@@ -80,7 +85,8 @@ async function modPush(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function modPushForKeys(arr: collections.Array<number>): Promise<string> {
+async function modPushForKeys(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   try {
     for (let i: number = 0; i < 20; i++) {
       let dummy: number = 0;
@@ -96,7 +102,8 @@ async function modPushForKeys(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function modPop(arr: collections.Array<number>): Promise<string> {
+async function modPop(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   let dummy: number = 0;
   for (let j: number = 0; j < 50000; j++) { dummy += j; }
   try { arr.pop(); return "success"; }
@@ -104,7 +111,8 @@ async function modPop(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function modSplice(arr: collections.Array<number>): Promise<string> {
+async function modSplice(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   let dummy: number = 0;
   for (let j: number = 0; j < 50000; j++) { dummy += j; }
   try { arr.splice(10, 5); return "success"; }
@@ -112,7 +120,8 @@ async function modSplice(arr: collections.Array<number>): Promise<string> {
 }
 
 @Concurrent
-async function modFill(arr: collections.Array<number>): Promise<string> {
+async function modFill(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
   let dummy: number = 0;
   for (let j: number = 0; j < 50000; j++) { dummy += j; }
   try { arr.fill(0); return "success"; }
@@ -127,10 +136,11 @@ function makeArray(count: number): collections.Array<number> {
 
 async function runTest(arr: collections.Array<number>, traverseTask: Function,
   modifyTask: Function): Promise<boolean> {
+  const barrier: SharedArrayBuffer = createSharedBarrier();
   try {
     const results: Object[] = await Promise.all([
-      taskpool.execute(traverseTask, arr),
-      taskpool.execute(modifyTask, arr)
+      taskpool.execute(traverseTask, arr, barrier),
+      taskpool.execute(modifyTask, arr, barrier)
     ]);
     for (let i: number = 0; i < results.length; i++) {
       if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }
@@ -143,6 +153,12 @@ async function runTest(arr: collections.Array<number>, traverseTask: Function,
 
 export default function arrayConcurrentIteratorModifyTest(): void {
   describe("arrayConcurrentIteratorModifyTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_1000
      * @tc.name      testArrayConcurrentEntriesPush0001

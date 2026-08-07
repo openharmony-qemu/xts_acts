@@ -12,8 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// ArrayTraversal.test.ets
+// 遍历方法组（7个）：forEach, entries, keys, values, map, filter, reduce
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,
@@ -23,12 +25,20 @@ import {
   StringTestValue,
   TestValueItem,
   BooleanTestValue,
-  getBooleanTestValues
+  getBooleanTestValues,
+  getBigIntTestValues,
+  BigIntTestValue
 } from './test_data/TestDataFactory';
 import { TestHelper } from './test_utils/TestHelper';
 
 export default function suite() {
   describe('ArrayTraversalTests', () => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     // ==================== 基础遍历测试 ====================
 
     /**
@@ -390,6 +400,7 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
+
     // ==================== 正交遍历测试：string 类型 ====================
 
     /**
@@ -657,6 +668,7 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
+
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_2600
      * @tc.name testArrayTraversal0026
@@ -760,6 +772,7 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
+
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_3000
      * @tc.name testArrayTraversal0030
@@ -814,6 +827,7 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
+
     // ==================== 正交遍历测试：number 类型专项 ====================
 
     /**
@@ -921,13 +935,12 @@ export default function suite() {
       let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
       for (let i: number = 0; i < numberValues.length; i++) {
         let item: NumberTestValue = numberValues[i];
-        // NaN 过滤：NaN !== NaN，所以 filter 无法匹配 NaN
         if (item.id === 'number_nan') {
           let arr: collections.Array<number> = new collections.Array<number>(item.value);
           let filtered: collections.Array<number> = arr.filter((value: number): boolean => Number.isNaN(value));
           expect(filtered.length).assertEqual(1);
         } else {
-          let arr: collections.Array<number> = new collections.Array<number>(item.value, 0);
+          let arr: collections.Array<number> = new collections.Array<number>(item.value, -9999);
           let filtered: collections.Array<number> = arr.filter((value: number): boolean => value === item.value);
           expect(filtered.length).assertEqual(1);
           expect(filtered[0]).assertEqual(item.value);
@@ -956,12 +969,12 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
-    // ==================== 索引访问 [at 和 [index]] 测试 ====================
+    // ==================== forEach 补充：回调参数 array 引用验证 ====================
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_3700
      * @tc.name testArrayTraversal0037
-     * @tc.desc Verify at() with positive index on number Array.
+     * @tc.desc Verify forEach callback receives correct array reference for string type.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -970,247 +983,12 @@ export default function suite() {
       const caseName: string = 'testArrayTraversal0037';
       console.info(`${caseName}, test start`);
 
-      let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
-      expect(arr.at(0)).assertEqual(100);
-      expect(arr.at(1)).assertEqual(200);
-      expect(arr.at(2)).assertEqual(300);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_3800
-     * @tc.name testArrayTraversal0038
-     * @tc.desc Verify at() with negative index (from end) on number Array.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0038';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
-      expect(arr.at(-1)).assertEqual(300);
-      expect(arr.at(-2)).assertEqual(200);
-      expect(arr.at(-3)).assertEqual(100);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_3900
-     * @tc.name testArrayTraversal0039
-     * @tc.desc Verify at() with out-of-bounds index returns undefined.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0039';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
-      expect(arr.at(999)).assertEqual(undefined);
-      expect(arr.at(-999)).assertEqual(undefined);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4000
-     * @tc.name testArrayTraversal0040
-     * @tc.desc Verify at() with string test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0040';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i: number = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>(item.value);
-        expect(arr.at(0)).assertEqual(item.value);
-        expect(arr.at(-1)).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4100
-     * @tc.name testArrayTraversal0041
-     * @tc.desc Verify at() with Sendable test values.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0041';
-      console.info(`${caseName}, test start`);
-
-      let sendableValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i: number = 0; i < sendableValues.length; i++) {
-        let item: TestValueItem = sendableValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
-          expect(arr.at(0)).assertEqual(item.value);
-          expect(arr.at(-1)).assertEqual(item.value);
-        }
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4200
-     * @tc.name testArrayTraversal0042
-     * @tc.desc Verify at() on empty Array returns undefined.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0042';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>();
-      expect(arr.at(0)).assertEqual(undefined);
-      expect(arr.at(-1)).assertEqual(undefined);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4300
-     * @tc.name testArrayTraversal0043
-     * @tc.desc Verify [index] operator with valid index on number Array.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0043';
-      console.info(`${caseName}, test start`);
-
-      let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
-      expect(arr[0]).assertEqual(100);
-      expect(arr[1]).assertEqual(200);
-      expect(arr[2]).assertEqual(300);
-
-      console.info(`${caseName}, test end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4400
-     * @tc.name testArrayTraversal0044
-     * @tc.desc Verify [index] operator with out-of-bounds index on number Array throws 10200001.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    // 注意：根据官方文档，arr[999] 应抛出 10200001 错误
-    // 但由于当前测试环境（API 11/12）下 collections.Array 对越界索引
-    // 实际返回 undefined 而非抛错，因此以下测试暂时注释
-    // 待后续确认环境支持后再启用
-    //
-    // it('testArrayTraversal0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayTraversal0044';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
-    //   let caught: boolean = false;
-    //   try {
-    //     let _: number = arr[999];
-    //     expect(true).assertFalse();
-    //   } catch (e) {
-    //     caught = true;
-    //     let errObj: Record<string, Object> = e as Record<string, Object>;
-    //     expect(errObj['code']).assertEqual(10200001);
-    //   }
-    //   expect(caught).assertTrue();
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4500
-     * @tc.name testArrayTraversal0045
-     * @tc.desc Verify [index] operator with negative index on number Array throws 10200001.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    // 注意：根据官方文档，arr[-1] 应抛出 10200001 错误
-    // 但由于当前测试环境（API 11/12）下 collections.Array 对负数索引
-    // 实际返回 undefined 而非抛错，因此以下测试暂时注释
-    // 待后续确认环境支持后再启用
-    //
-    // it('testArrayTraversal0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testArrayTraversal0045';
-    //   console.info(`${caseName}, test start`);
-    //
-    //   let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
-    //   let caught: boolean = false;
-    //   try {
-    //     let _: number = arr[-1];
-    //     expect(true).assertFalse();
-    //   } catch (e) {
-    //     caught = true;
-    //     let errObj: Record<string, Object> = e as Record<string, Object>;
-    //     expect(errObj['code']).assertEqual(10200001);
-    //   }
-    //   expect(caught).assertTrue();
-    //
-    //   console.info(`${caseName}, test end`);
-    // });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4600
-     * @tc.name testArrayTraversal0046
-     * @tc.desc Verify [index] operator with valid index on string Array.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0046';
-      console.info(`${caseName}, test start`);
-
-      let stringValues: collections.Array<StringTestValue> = getStringTestValues();
-      for (let i: number = 0; i < stringValues.length; i++) {
-        let item: StringTestValue = stringValues[i];
-        let arr: collections.Array<string> = new collections.Array<string>(item.value);
-        expect(arr[0]).assertEqual(item.value);
-      }
-
-      console.info(`${caseName}, test end`);
-    });
-
-    // ==================== forEach 补充：回调参数 array 引用验证 ====================
-
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4700
-     * @tc.name testArrayTraversal0047
-     * @tc.desc Verify forEach callback receives correct array reference for string type.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testArrayTraversal0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0047';
-      console.info(`${caseName}, test start`);
-
       let stringValues: collections.Array<StringTestValue> = getStringTestValues();
       for (let i: number = 0; i < stringValues.length; i++) {
         let item: StringTestValue = stringValues[i];
         let arr: collections.Array<string> = new collections.Array<string>(item.value, item.value);
         arr.forEach((value: string, index: number, array: collections.Array<string>): void => {
           expect(value).assertEqual(item.value);
-          // 验证 array 引用正确
           expect(array === arr).assertTrue();
           expect(array.length).assertEqual(2);
         });
@@ -1222,19 +1000,20 @@ export default function suite() {
     // ==================== entries 补充测试 ====================
 
     /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4800
-     * @tc.name testArrayTraversal0048
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_3800
+     * @tc.name testArrayTraversal0038
      * @tc.desc Verify entries with nested array test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testArrayTraversal0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0048';
+    it('testArrayTraversal0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0038';
       console.info(`${caseName}, test start`);
 
       let nestedArr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
-      let arr: collections.Array<collections.Array<number>> = new collections.Array<collections.Array<number>>(nestedArr);
+      let arr: collections.Array<collections.Array<number>> =
+        new collections.Array<collections.Array<number>>(nestedArr);
       let iter: IterableIterator<[number, collections.Array<number>]> = arr.entries();
       let result: IteratorResult<[number, collections.Array<number>]> = iter.next();
       expect(result.done).assertEqual(false);
@@ -1246,28 +1025,26 @@ export default function suite() {
     });
 
     /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4900
-     * @tc.name testArrayTraversal0049
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_3900
+     * @tc.name testArrayTraversal0039
      * @tc.desc Verify entries returns new iterator on each call.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testArrayTraversal0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0049';
+    it('testArrayTraversal0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0039';
       console.info(`${caseName}, test start`);
 
       let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
       let iter1: IterableIterator<[number, number]> = arr.entries();
       let iter2: IterableIterator<[number, number]> = arr.entries();
-      // 两个迭代器应该独立
       let result1: IteratorResult<[number, number]> = iter1.next();
       let result2: IteratorResult<[number, number]> = iter2.next();
       expect(result1.value[0]).assertEqual(0);
       expect(result2.value[0]).assertEqual(0);
       expect(result1.value[1]).assertEqual(100);
       expect(result2.value[1]).assertEqual(100);
-      // iter1 前进，iter2 不受影响
       iter1.next();
       let result1Next: IteratorResult<[number, number]> = iter1.next();
       let result2Next: IteratorResult<[number, number]> = iter2.next();
@@ -1276,18 +1053,19 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
-    // ==================== 补充缺失的 keys/values 测试 ====================
+
+    // ==================== 补充缺失的 keys/values/reduce 测试 ====================
 
     /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5000
-     * @tc.name testArrayTraversal0050
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4000
+     * @tc.name testArrayTraversal0040
      * @tc.desc Verify keys with all number test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testArrayTraversal0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0050';
+    it('testArrayTraversal0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0040';
       console.info(`${caseName}, test start`);
 
       let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
@@ -1305,15 +1083,15 @@ export default function suite() {
     });
 
     /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5100
-     * @tc.name testArrayTraversal0051
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4100
+     * @tc.name testArrayTraversal0041
      * @tc.desc Verify values with all number test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testArrayTraversal0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0051';
+    it('testArrayTraversal0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0041';
       console.info(`${caseName}, test start`);
 
       let numberValues: collections.Array<NumberTestValue> = getNumberTestValues();
@@ -1331,15 +1109,15 @@ export default function suite() {
     });
 
     /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5200
-     * @tc.name testArrayTraversal0052
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4200
+     * @tc.name testArrayTraversal0042
      * @tc.desc Verify reduce with all string test values.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testArrayTraversal0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testArrayTraversal0052';
+    it('testArrayTraversal0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0042';
       console.info(`${caseName}, test start`);
 
       let stringValues: collections.Array<StringTestValue> = getStringTestValues();
@@ -1354,10 +1132,244 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
+    // ==================== undefined/null 遍历测试 ====================
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4300
+     * @tc.name testArrayTraversal0043
+     * @tc.desc Verify forEach with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0043';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let count: number = 0;
+      arr.forEach((): void => {
+        count = count + 1;
+      });
+      expect(count).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4400
+     * @tc.name testArrayTraversal0044
+     * @tc.desc Verify forEach with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0044';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let count: number = 0;
+      arr.forEach((): void => {
+        count = count + 1;
+      });
+      expect(count).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4500
+     * @tc.name testArrayTraversal0045
+     * @tc.desc Verify entries with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0045';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let iter: IterableIterator<[number, lang.ISendable | null | undefined]> = arr.entries();
+      let result: IteratorResult<[number, lang.ISendable | null | undefined]> = iter.next();
+      expect(result.done).assertEqual(false);
+      expect(result.value[0]).assertEqual(0);
+      expect(result.value[1]).assertEqual(undefined);
+      expect(iter.next().done).assertEqual(true);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4600
+     * @tc.name testArrayTraversal0046
+     * @tc.desc Verify entries with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0046';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let iter: IterableIterator<[number, lang.ISendable | null | undefined]> = arr.entries();
+      let result: IteratorResult<[number, lang.ISendable | null | undefined]> = iter.next();
+      expect(result.done).assertEqual(false);
+      expect(result.value[0]).assertEqual(0);
+      expect(result.value[1]).assertEqual(null);
+      expect(iter.next().done).assertEqual(true);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4700
+     * @tc.name testArrayTraversal0047
+     * @tc.desc Verify keys with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0047';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let count: number = 0;
+      for (let _ of arr.keys()) {
+        count = count + 1;
+      }
+      expect(count).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4800
+     * @tc.name testArrayTraversal0048
+     * @tc.desc Verify keys with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0048';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let count: number = 0;
+      for (let _ of arr.keys()) {
+        count = count + 1;
+      }
+      expect(count).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_4900
+     * @tc.name testArrayTraversal0049
+     * @tc.desc Verify values with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0049';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let count: number = 0;
+      for (let _ of arr.values()) {
+        count = count + 1;
+      }
+      expect(count).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5000
+     * @tc.name testArrayTraversal0050
+     * @tc.desc Verify values with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0050';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let count: number = 0;
+      for (let _ of arr.values()) {
+        count = count + 1;
+      }
+      expect(count).assertEqual(1);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5100
+     * @tc.name testArrayTraversal0051
+     * @tc.desc Verify map with undefined value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0051';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let mapped: collections.Array<lang.ISendable | null | undefined> = arr.map(
+        (value: lang.ISendable | null | undefined): lang.ISendable | null | undefined => value
+      );
+      expect(mapped.length).assertEqual(1);
+      expect(mapped[0]).assertEqual(undefined);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5200
+     * @tc.name testArrayTraversal0052
+     * @tc.desc Verify map with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0052';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let mapped: collections.Array<lang.ISendable | null | undefined> = arr.map(
+        (value: lang.ISendable | null | undefined): lang.ISendable | null | undefined => value
+      );
+      expect(mapped.length).assertEqual(1);
+      expect(mapped[0]).assertEqual(null);
+
+      console.info(`${caseName}, test end`);
+    });
+
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5300
      * @tc.name testArrayTraversal0053
-     * @tc.desc Verify at() with all boolean test values.
+     * @tc.desc Verify filter with undefined value.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -1366,13 +1378,13 @@ export default function suite() {
       const caseName: string = 'testArrayTraversal0053';
       console.info(`${caseName}, test start`);
 
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i: number = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>(item.value);
-        expect(arr.at(0)).assertEqual(item.value);
-        expect(arr.at(-1)).assertEqual(item.value);
-      }
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined);
+      let filtered: collections.Array<lang.ISendable | null | undefined> = arr.filter(
+        (): boolean => true
+      );
+      expect(filtered.length).assertEqual(1);
+      expect(filtered[0]).assertEqual(undefined);
 
       console.info(`${caseName}, test end`);
     });
@@ -1380,7 +1392,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5400
      * @tc.name testArrayTraversal0054
-     * @tc.desc Verify [index] operator with valid index on boolean Array.
+     * @tc.desc Verify filter with null value.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -1389,12 +1401,13 @@ export default function suite() {
       const caseName: string = 'testArrayTraversal0054';
       console.info(`${caseName}, test start`);
 
-      let booleanValues: collections.Array<BooleanTestValue> = getBooleanTestValues();
-      for (let i: number = 0; i < booleanValues.length; i++) {
-        let item: BooleanTestValue = booleanValues[i];
-        let arr: collections.Array<boolean> = new collections.Array<boolean>(item.value);
-        expect(arr[0]).assertEqual(item.value);
-      }
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null);
+      let filtered: collections.Array<lang.ISendable | null | undefined> = arr.filter(
+        (): boolean => true
+      );
+      expect(filtered.length).assertEqual(1);
+      expect(filtered[0]).assertEqual(null);
 
       console.info(`${caseName}, test end`);
     });
@@ -1402,7 +1415,7 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5500
      * @tc.name testArrayTraversal0055
-     * @tc.desc Verify [index] operator with valid index on Sendable Array.
+     * @tc.desc Verify reduce with undefined value.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -1411,14 +1424,303 @@ export default function suite() {
       const caseName: string = 'testArrayTraversal0055';
       console.info(`${caseName}, test start`);
 
-      let sendableValues: collections.Array<TestValueItem> = getAllTestValues();
-      for (let i: number = 0; i < sendableValues.length; i++) {
-        let item: TestValueItem = sendableValues[i];
-        if (item.value !== null && item.value !== undefined) {
-          let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
-          expect(arr[0] === item.value).assertTrue();
-        }
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(undefined, undefined);
+      let count: number = arr.reduce((acc: number, _cur: lang.ISendable | null | undefined): number => acc + 1, 0);
+      expect(count).assertEqual(2);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5600
+     * @tc.name testArrayTraversal0056
+     * @tc.desc Verify reduce with null value.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0056';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<lang.ISendable | null | undefined> =
+        new collections.Array<lang.ISendable | null | undefined>(null, null);
+      let count: number = arr.reduce((acc: number, _cur: lang.ISendable | null | undefined): number => acc + 1, 0);
+      expect(count).assertEqual(2);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    // ==================== 正交遍历测试：bigint 类型 ====================
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5700
+     * @tc.name testArrayTraversal0057
+     * @tc.desc Verify forEach with all bigint test values.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
+      for (let i: number = 0; i < bigintValues.length; i++) {
+        let item: BigIntTestValue = bigintValues[i];
+        let arr: collections.Array<bigint> = new collections.Array<bigint>(item.value, item.value);
+        let count: number = 0;
+        arr.forEach((value: bigint): void => {
+          expect(value).assertEqual(item.value);
+          count = count + 1;
+        });
+        expect(count).assertEqual(2);
       }
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5800
+     * @tc.name testArrayTraversal0058
+     * @tc.desc Verify entries with all bigint test values.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
+      for (let i: number = 0; i < bigintValues.length; i++) {
+        let item: BigIntTestValue = bigintValues[i];
+        let arr: collections.Array<bigint> = new collections.Array<bigint>(item.value);
+        let iter: IterableIterator<[number, bigint]> = arr.entries();
+        let result: IteratorResult<[number, bigint]> = iter.next();
+        expect(result.done).assertEqual(false);
+        expect(result.value[0]).assertEqual(0);
+        expect(result.value[1]).assertEqual(item.value);
+        expect(iter.next().done).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_5900
+     * @tc.name testArrayTraversal0059
+     * @tc.desc Verify keys with all bigint test values.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
+      for (let i: number = 0; i < bigintValues.length; i++) {
+        let item: BigIntTestValue = bigintValues[i];
+        let arr: collections.Array<bigint> = new collections.Array<bigint>(item.value, item.value);
+        let count: number = 0;
+        for (let _ of arr.keys()) {
+          count = count + 1;
+        }
+        expect(count).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6000
+     * @tc.name testArrayTraversal0060
+     * @tc.desc Verify values with all bigint test values.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
+      for (let i: number = 0; i < bigintValues.length; i++) {
+        let item: BigIntTestValue = bigintValues[i];
+        let arr: collections.Array<bigint> = new collections.Array<bigint>(item.value, item.value);
+        let count: number = 0;
+        for (let _ of arr.values()) {
+          count = count + 1;
+        }
+        expect(count).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6100
+     * @tc.name testArrayTraversal0061
+     * @tc.desc Verify map with all bigint test values.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0061';
+      console.info(`${caseName}, test start`);
+
+      let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
+      for (let i: number = 0; i < bigintValues.length; i++) {
+        let item: BigIntTestValue = bigintValues[i];
+        let arr: collections.Array<bigint> = new collections.Array<bigint>(item.value);
+        let mapped: collections.Array<bigint> = arr.map((v: bigint): bigint => v + BigInt(1));
+        expect(mapped.length).assertEqual(1);
+        expect(mapped[0]).assertEqual(item.value + BigInt(1));
+      }
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6200
+     * @tc.name testArrayTraversal0062
+     * @tc.desc Verify filter with all bigint test values.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0062';
+      console.info(`${caseName}, test start`);
+
+      let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
+      for (let i: number = 0; i < bigintValues.length; i++) {
+        let item: BigIntTestValue = bigintValues[i];
+        let secondValue: bigint = (item.value === BigInt(0)) ? BigInt(999) : BigInt(0);
+        let arr: collections.Array<bigint> = new collections.Array<bigint>(item.value, secondValue);
+        let filtered: collections.Array<bigint> = arr.filter((v: bigint): boolean => v === item.value);
+        expect(filtered.length).assertEqual(1);
+        expect(filtered[0]).assertEqual(item.value);
+      }
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6300
+     * @tc.name testArrayTraversal0063
+     * @tc.desc Verify reduce with all bigint test values.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0063';
+      console.info(`${caseName}, test start`);
+
+      let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
+      for (let i: number = 0; i < bigintValues.length; i++) {
+        let item: BigIntTestValue = bigintValues[i];
+        let arr: collections.Array<bigint> = new collections.Array<bigint>(item.value, item.value);
+        let sum: bigint = arr.reduce((acc: bigint, cur: bigint): bigint => acc + cur);
+        expect(sum).assertEqual(item.value + item.value);
+      }
+
+      console.info(`${caseName}, test end`);
+    });
+
+    // ==================== number 特殊值遍历测试：负数、零值、Infinity ====================
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6400
+     * @tc.name testArrayTraversal0064
+     * @tc.desc Verify forEach with negative, zero, and Infinity.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0064';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<number> = new collections.Array<number>(-1, 0, -0, Infinity, -Infinity);
+      let values: collections.Array<number> = new collections.Array<number>();
+      arr.forEach((value: number): void => {
+        values.push(value);
+      });
+      expect(values.length).assertEqual(5);
+      expect(values[0]).assertEqual(-1);
+      expect(values[1]).assertEqual(0);
+      expect(1 / (values[2] as number) === -Infinity).assertTrue();
+      expect(values[3]).assertEqual(Infinity);
+      expect(values[4]).assertEqual(-Infinity);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6500
+     * @tc.name testArrayTraversal0065
+     * @tc.desc Verify map with negative and Infinity.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0065';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<number> = new collections.Array<number>(-1, 0, Infinity);
+      let mapped: collections.Array<number> = arr.map((v: number): number => v * 2);
+      expect(mapped[0]).assertEqual(-2);
+      expect(mapped[1]).assertEqual(0);
+      expect(mapped[2]).assertEqual(Infinity);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6600
+     * @tc.name testArrayTraversal0066
+     * @tc.desc Verify filter with negative numbers.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0066';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<number> = new collections.Array<number>(-10, -5, 0, 3, 8);
+      let filtered: collections.Array<number> = arr.filter((v: number): boolean => v < 0);
+      expect(filtered.length).assertEqual(2);
+      expect(filtered[0]).assertEqual(-10);
+      expect(filtered[1]).assertEqual(-5);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6700
+     * @tc.name testArrayTraversal0067
+     * @tc.desc Verify reduce with negative numbers.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0067';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<number> = new collections.Array<number>(-5, -3, -1);
+      let sum: number = arr.reduce((acc: number, cur: number): number => acc + cur);
+      expect(sum).assertEqual(-9);
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRAVERSAL_6800
+     * @tc.name testArrayTraversal0068
+     * @tc.desc Verify reduce with Infinity.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testArrayTraversal0068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0068';
+      console.info(`${caseName}, test start`);
+
+      let arr: collections.Array<number> = new collections.Array<number>(Infinity, 1);
+      let sum: number = arr.reduce((acc: number, cur: number): number => acc + cur);
+      expect(sum).assertEqual(Infinity);
+
+      let arr2: collections.Array<number> = new collections.Array<number>(-Infinity, -Infinity);
+      let sum2: number = arr2.reduce((acc: number, cur: number): number => acc + cur);
+      expect(sum2).assertEqual(-Infinity);
 
       console.info(`${caseName}, test end`);
     });

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool, worker, MessageEvents } from "@kit.ArkTS";
 
 @Concurrent
@@ -52,8 +52,42 @@ async function valuesTraverseTask(arr: collections.Array<number>): Promise<numbe
   return count;
 }
 
+function executeArrayEntriesWorker(arr: collections.Array<number>): Promise<Object> {
+  return new Promise<Object>((resolve: (value: Object) => void,
+    reject: (reason: Error) => void): void => {
+    const workerInstance: worker.ThreadWorker =
+      new worker.ThreadWorker("./workers/ArrayEntriesWorker");
+    let settled: boolean = false;
+    workerInstance.onmessage = (event: MessageEvents): void => {
+      settled = true;
+      resolve(event.data as Object);
+      workerInstance.terminate();
+    };
+    workerInstance.onerror = (): void => {
+      if (!settled) {
+        settled = true;
+        reject(new Error("ArrayEntriesWorker error"));
+      }
+      workerInstance.terminate();
+    };
+    workerInstance.onexit = (): void => {
+      if (!settled) {
+        settled = true;
+        reject(new Error("ArrayEntriesWorker exited before posting result"));
+      }
+    };
+    workerInstance.postMessage(arr);
+  });
+}
+
 export default function arrayConcurrentIteratorsTest(): void {
   describe("arrayConcurrentIteratorsTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_ITERS_0100
      * @tc.name      testArrayConcurrentEntries0001
@@ -105,25 +139,11 @@ export default function arrayConcurrentIteratorsTest(): void {
           arr.push(i);
         }
         const workerCount: number = 2;
-        const workers: worker.ThreadWorker[] = [];
         const resultPromises: Promise<Object>[] = [];
         for (let i: number = 0; i < workerCount; i++) {
-          const workerInstance: worker.ThreadWorker =
-            new worker.ThreadWorker("./workers/ArrayEntriesWorker");
-          workers.push(workerInstance);
-          resultPromises.push(new Promise<Object>(
-            (resolve: (value: Object) => void): void => {
-              workerInstance.onmessage = (event: MessageEvents): void => {
-                resolve(event.data as Object);
-              };
-            }
-          ));
-          workerInstance.postMessage(arr);
+          resultPromises.push(executeArrayEntriesWorker(arr));
         }
         const results: Object[] = await Promise.all(resultPromises);
-        for (let i: number = 0; i < workers.length; i++) {
-          workers[i].terminate();
-        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(elementCount);
         }

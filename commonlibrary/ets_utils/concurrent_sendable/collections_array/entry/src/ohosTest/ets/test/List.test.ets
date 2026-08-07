@@ -24,6 +24,8 @@ import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test'
 import arrayQuerySuite from './CollectionsArrayBaseTest/ArrayQuery.test';
 import arrayOperationSuite from './CollectionsArrayBaseTest/ArrayOperation.test';
 import arrayTransformSuite from './CollectionsArrayBaseTest/ArrayTransform.test';
+import arrayIndexAccessSuite from './CollectionsArrayBaseTest/ArrayIndexAccess.test';
+import arrayModifySuite from './CollectionsArrayBaseTest/ArrayModify.test';
 import arrayInheritanceSuite from './CollectionsArrayBaseTest/ArrayInheritance.test';
 import arrayAnnotationSuite from './CollectionsArrayBaseTest/ArrayAnnotation.test';
 import arrayConcurrentSuite from './CollectionsArrayBaseTest/ArrayConcurrent.test';
@@ -57,6 +59,8 @@ export default function testsuite() {
   arrayQuerySuite();
   arrayOperationSuite();
   arrayTransformSuite();
+  arrayIndexAccessSuite();
+  arrayModifySuite();
   arrayInheritanceSuite();
   arrayAnnotationSuite();
   arrayConcurrentSuite();

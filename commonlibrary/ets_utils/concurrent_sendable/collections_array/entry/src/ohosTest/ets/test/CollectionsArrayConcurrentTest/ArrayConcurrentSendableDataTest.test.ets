@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 import { SendableWrapper } from "./SendableWrapper";
 
@@ -41,24 +41,30 @@ async function nestedArrayTask(outer: collections.Array<collections.Array<number
 
 @Concurrent
 async function mapPutTask(map: collections.Map<number, string>,
-  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  lock: ArkTSUtils.locks.AsyncLock, index: number): Promise<number> {
   return await lock.lockAsync(async (): Promise<number> => {
-    map.set(1, "v1");
+    map.set(index, "v" + index);
     return map.size;
   });
 }
 
 @Concurrent
 async function setAddTask(set: collections.Set<number>,
-  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  lock: ArkTSUtils.locks.AsyncLock, value: number): Promise<number> {
   return await lock.lockAsync(async (): Promise<number> => {
-    set.add(42);
+    set.add(value);
     return set.size;
   });
 }
 
 export default function arrayConcurrentSendableDataTest(): void {
   describe("arrayConcurrentSendableDataTest", (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_SENDABLE_0100
      * @tc.name      testArrayConcurrentSendableClass0001
@@ -128,10 +134,14 @@ export default function arrayConcurrentSendableDataTest(): void {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(mapPutTask, map, lock));
+          tasks.push(taskpool.execute(mapPutTask, map, lock, i));
         }
         await Promise.all(tasks);
-        expect(map.size >= 0).assertTrue();
+        expect(map.size).assertEqual(4);
+        for (let i: number = 0; i < 4; i++) {
+          expect(map.has(i)).assertTrue();
+          expect(map.get(i)).assertEqual("v" + i);
+        }
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -152,10 +162,13 @@ export default function arrayConcurrentSendableDataTest(): void {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(setAddTask, set, lock));
+          tasks.push(taskpool.execute(setAddTask, set, lock, i));
         }
         await Promise.all(tasks);
-        expect(set.size >= 0).assertTrue();
+        expect(set.size).assertEqual(4);
+        for (let i: number = 0; i < 4; i++) {
+          expect(set.has(i)).assertTrue();
+        }
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
   });
