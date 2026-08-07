@@ -3539,7 +3539,7 @@ export default function geolocationTest_geo7() {
             expect(true).assertFalse();
         } catch (error) {
             console.info('[lbs_js] SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100 off try err.' + JSON.stringify(error));
-            expect(error.code).assertEqual(3301100);
+            expect(error.code).assertEqual("3301100");
             console.info('[lbs_js] gnssFenceStatusChange off return 3301100 success');
         }
         done();
