@@ -3900,5 +3900,143 @@ export default function PhotoTest() {
       }
     })
 
+    /**
+     * @tc.name   testOHPhotoOutputIsAutoExtendedGainmapDeliverySupported0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsAutoExtendedGainmapDeliverySupported0100
+     * @tc.desc   Test OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoOutputIsAutoExtendedGainmapDeliverySupported0100', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let isSupport = cameraObj.oHPhotoOutputIsAutoExtendedGainmapDeliverySupported();
+      console.info(TAG + "testOHPhotoOutputIsAutoExtendedGainmapDeliverySupported0100: " + isSupport);
+      if (isSupport != null || isSupport != undefined) {
+        console.info(
+          TAG + "testOHPhotoOutputIsAutoExtendedGainmapDeliverySupported0100 Passed with isSupport is: " + isSupport);
+      }
+      else {
+        console.info(
+          TAG + "testOHPhotoOutputIsAutoExtendedGainmapDeliverySupported0100 Failed with isSupport is: " + isSupport);
+         expect().assertFail();
+     }
+    })
+
+    /**
+ 	   * @tc.name   testOHPhotoOutputIsAutoExtendedGainmapDeliverySupported0200
+ 	   * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsAutoExtendedGainmapDeliverySupported0200
+ 	   * @tc.desc   Test OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported with first param error.
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+    it('testOHPhotoOutputIsAutoExtendedGainmapDeliverySupported0200', Level.LEVEL0, () => {
+      let isSupported = cameraObj.isAutoExtendedGainmapDeliverySupported(Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG+"IsAutoExtendedGainmapDeliverySupported: "+isSupported);
+      expect(isSupported == false).assertTrue();
+    })
+
+    /**
+     * @tc.name   testOHPhotoOutputEnableAutoExtendedGainmapDelivery0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableAutoExtendedGainmapDelivery0100
+     * @tc.desc   Test OH_PhotoOutput_EnableAutoExtendedGainmapDelivery in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoOutputEnableAutoExtendedGainmapDelivery0100', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let isSupport = cameraObj.oHPhotoOutputIsAutoExtendedGainmapDeliverySupported();
+      console.info(TAG + "testOHPhotoOutputEnableAutoExtendedGainmapDelivery0100 isSupport: " + isSupport);
+      if (isSupport) {
+        let ret = cameraObj.oHPhotoOutputEnableAutoExtendedGainmapDelivery();
+        console.info(TAG + "testOHPhotoOutputEnableAutoExtendedGainmapDelivery0100: " + ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.info(TAG + "testOHPhotoOutputEnableAutoExtendedGainmapDelivery0100: device not supported");
+      }
+    })
+
+    /**
+     * @tc.name   testOHPhotoOutputEnableAutoExtendedGainmapDelivery0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableAutoExtendedGainmapDelivery0200
+     * @tc.desc   Test OH_PhotoOutput_EnableAutoExtendedGainmapDelivery with firse param error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoOutputEnableAutoExtendedGainmapDelivery0200', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let ret = cameraObj.enableAutoExtendedGainmapDelivery(Parameter_Setting.FIRST_PARAMETER_ERROR, true);
+      console.info(TAG+"testOHPhotoOutputEnableAutoExtendedGainmapDelivery0200: "+ ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+ 
+    /**
+     * @tc.name   testOHPhotoOutputEnableAutoExtendedGainmapDelivery0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableAutoExtendedGainmapDelivery0300
+     * @tc.desc   Test OH_PhotoOutput_EnableAutoExtendedGainmapDelivery with error code 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoOutputEnableAutoExtendedGainmapDelivery0300', Level.LEVEL0, () => {
+      let caseName = "testOHPhotoOutputEnableAutoExtendedGainmapDelivery0300"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionStart();
+        //--------------------------------------------process------------------------------------------------------
+        let isSupported = cameraObj.isAutoExtendedGainmapDeliverySupported(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"IsAutoExtendedGainmapDeliverySupported: "+isSupported);
+        if (!isSupported) {
+          let ret = cameraObj.enableAutoExtendedGainmapDelivery(Parameter_Setting.ALL_PARAMETER_OK, true);
+          console.info(TAG+"enableAutoExtendedGainmapDelivery true: "+ ret);
+          expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+          ret = cameraObj.enableAutoExtendedGainmapDelivery(Parameter_Setting.ALL_PARAMETER_OK, false);
+          console.info(TAG+"enableAutoExtendedGainmapDelivery true: "+ ret);
+          expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+ 
+    /**
+     * @tc.name   testOHPhotoOutputEnableAutoExtendedGainmapDelivery0400
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableAutoExtendedGainmapDelivery0400
+     * @tc.desc   Test OH_PhotoOutput_EnableAutoExtendedGainmapDelivery with error code 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoOutputEnableAutoExtendedGainmapDelivery0400', Level.LEVEL0, () => {
+      createPhotoOutput();
+      let ret = cameraObj.enableAutoExtendedGainmapDelivery(Parameter_Setting.ALL_PARAMETER_OK, true);
+      console.info(TAG+"testOHPhotoOutputEnableAutoExtendedGainmapDelivery0400: "+ ret);
+      expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG);
+    })
+
   })
 }
