@@ -57,9 +57,9 @@ export default function testsuite() {
   DialogBaseOptionsLayout();
   DialogBaseOptionsVisual();
   DialogBaseControllerLife();
-  DialogCustomPresent();
   DialogEnumsAssert();
   DialogButtonMatrix();
+  DialogCustomPresent();
   DialogLifeCallbacks();
   DialogBaseSizeBorder();
   DialogEnumsAssertExtra();

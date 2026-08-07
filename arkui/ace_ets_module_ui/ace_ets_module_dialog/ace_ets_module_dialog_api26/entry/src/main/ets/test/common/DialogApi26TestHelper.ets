@@ -110,12 +110,13 @@ export default class DialogApi26TestHelper {
     expect(node !== null).assertTrue();
   }
 
-  /** pressBack only when a known overlay marker is visible; never leave the page blindly. */
+  /** Close one overlay when a known marker is visible; prefer pressBack for custom dialogs. */
   static async dismissOverlayIfAny(driver: Driver): Promise<void> {
     let markers: string[] = [
       'WillDismissTitle', 'CtrlTitle', 'AutoCloseTitle', 'CustomStyleContent',
       'ComponentContentDialog', 'PresentUpdateContent', 'IsShowA', 'IsShowB', 'IsShowC',
-      'CustomIsShowX'
+      'CustomIsShowX', 'CustomSizeContent', 'CustomBorderContent', 'CustomFlagsContent',
+      'CustomClose'
     ];
     for (let i = 0; i < markers.length; i++) {
       try {
@@ -127,6 +128,35 @@ export default class DialogApi26TestHelper {
         }
       } catch (e) {
       }
+    }
+  }
+
+  /** Drain stacked dialogs left by prior suites (pressBack while markers remain). */
+  static async drainCustomDialogs(driver: Driver): Promise<void> {
+    let markers: string[] = [
+      'CustomStyleContent', 'ComponentContentDialog', 'PresentUpdateContent',
+      'CustomSizeContent', 'CustomBorderContent', 'CustomFlagsContent', 'CustomClose'
+    ];
+    for (let round = 0; round < 6; round++) {
+      let still = false;
+      for (let i = 0; i < markers.length; i++) {
+        try {
+          let node = await driver.findComponent(ON.text(markers[i]));
+          if (node !== null) {
+            still = true;
+            break;
+          }
+        } catch (e2) {
+        }
+      }
+      if (!still) {
+        return;
+      }
+      try {
+        await driver.pressBack();
+      } catch (e3) {
+      }
+      await CommonFunc.sleep(DialogApi26TestHelper.SETTLE_MS);
     }
   }
 
