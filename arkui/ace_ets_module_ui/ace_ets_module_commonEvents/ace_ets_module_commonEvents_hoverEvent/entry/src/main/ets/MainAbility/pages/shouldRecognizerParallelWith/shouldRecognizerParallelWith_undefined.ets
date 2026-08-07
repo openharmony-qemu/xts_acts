@@ -100,7 +100,7 @@ struct FatherControlChildTest1000000000 {
       })
       .shouldRecognizerParallelWith(undefined)
       .onGestureRecognizerJudgeBegin
-      ((event: BaseGestureEvent, current: GestureRecognizer, others: Array<GestureRecognizer>) => {
+      ((event: BaseGestureEvent, current: GestureRecognizer, others: GestureRecognizer[]) => {
         if (current) {
           let target = current.getEventTargetInfo();
           if(target){
@@ -112,7 +112,9 @@ struct FatherControlChildTest1000000000 {
                   let target = others[i] .getEventTargetInfo() as ScrollableTargetInfo;
                   if(target){
                     let id = target.getId();
-                    console.log('zcb onGestureJudgeBegin other id' + id + 'isSystemGesture' + others[i].isBuiltIn() + 'type' + others[i].getType());
+                    console.log('zcb onGestureJudgeBegin other id' + id +
+                      'isSystemGesture' + others[i].isBuiltIn() +
+                      'type' + others[i].getType());
                     if(id == 'FatherControlChildTest1_inner'){
                       console.log('zbc onGestureJudgeBegin other isBegin' + target.isBegin() + 'isEnd' + target.isEnd())
                       let panEvent = event as PanGestureEvent;

@@ -29,7 +29,8 @@ import setOnSizeChangeNullAndUndefinedTest from './UICommonEvent/SetOnSizeChange
 import setCustomCursornull from './setCustomCursor/setCustomCursor_null.test';
 import setCustomCursorundefined from './setCustomCursor/setCustomCursor_undefined.test';
 import shouldRecognizerParallelWith from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test';
-import shouldRecognizerParallelWith_undefined from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test';
+import shouldRecognizerParallelWith_undefined from './shouldRecognizerParallelWith/shouldRecognizerParallelWith_undefined.test';
+import shouldRecognizerParallelWith_null from './shouldRecognizerParallelWith/shouldRecognizerParallelWith_null.test';
 import HoveredAttributeTest from './hoveredAttribute/HoveredAttributeTest.test';
 
 
@@ -51,5 +52,6 @@ export default function testsuite() {
   setCustomCursorundefined();
   shouldRecognizerParallelWith();
   shouldRecognizerParallelWith_undefined();
+  shouldRecognizerParallelWith_null();
   HoveredAttributeTest();
 }

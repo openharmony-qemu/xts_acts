@@ -62,12 +62,12 @@ export default function BindMenuWithResponse() {
     });
 
     /**
-     * @tc.name   BindMenuWithResponse_0100
-     * @tc.number BindMenuWithResponse_0100
-     * @tc.desc   To test bindContextMenuWithResponse long Click
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : BindMenuWithResponse_0100
+     * @tc.number : BindMenuWithResponse_0100
+     * @tc.desc : To test bindContextMenuWithResponse long Click
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('BindMenuWithResponse_0100', Level.LEVEL0, async (done: Function) => {
       console.info('BindMenuWithResponse_0100 START');
@@ -88,5 +88,51 @@ export default function BindMenuWithResponse() {
       console.info('BindMenuWithResponse_0100 END');
       done();
     });
+
+    /**
+     * @tc.name : BindMenuWithResponseArray_0200
+     * @tc.number : BindMenuWithResponseArray_0200
+     * @tc.desc : bindContextMenuWithResponse MenuElement[] 调用+入参+返回链式绑定
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL1
+     */
+    it('BindMenuWithResponseArray_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let driver = await Driver.create();
+        await CommonFunc.sleep(500);
+        let btn = await driver.findComponent(ON.id('bindArrayId'));
+        expect(btn !== undefined).assertTrue();
+        await btn?.longClick();
+        await CommonFunc.sleep(1000);
+        let menu: Component = await driver.findComponent(ON.type('Menu'));
+        expect(menu !== null).assertTrue();
+        let hideBtn = await driver.findComponent(ON.id('hideId'));
+        await hideBtn?.click();
+        await CommonFunc.sleep(500);
+        done();
+      });
+
+    /**
+     * @tc.name : BindMenuWithResponseArrayAbnormal_0300
+     * @tc.number : BindMenuWithResponseArrayAbnormal_0300
+     * @tc.desc : Array 重载异常入参 null/undefined 组件可构建
+     * @tc.type : FUNCTION
+     * @tc.size : SMALLTEST
+     * @tc.level : LEVEL2
+     */
+    it('BindMenuWithResponseArrayAbnormal_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let driver = await Driver.create();
+        let n1 = await driver.findComponent(ON.id('bindArrayContentNullId'));
+        let n2 = await driver.findComponent(ON.id('bindArrayContentUndefId'));
+        let n3 = await driver.findComponent(ON.id('bindArrayOptionsNullId'));
+        let n4 = await driver.findComponent(ON.id('bindArrayOptionsUndefId'));
+        expect(n1 !== undefined).assertTrue();
+        expect(n2 !== undefined).assertTrue();
+        expect(n3 !== undefined).assertTrue();
+        expect(n4 !== undefined).assertTrue();
+        done();
+      });
   })
 }

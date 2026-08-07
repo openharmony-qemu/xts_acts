@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import { UIContext } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
 @Component
@@ -20,18 +21,16 @@ struct SetResourceManagerCacheMaxCountForHSPNullUndefinedTest {
   @State message: string = 'start'
 
   build() {
-    Column() {
-      Button('setResourceManagerCacheMaxCountForHSP').id('setResourceManagerCache_null_id')
+    Column({ space: 8 }) {
+      Button('setResourceManagerCache_null_undef')
+        .id('setResourceManagerCache_null_id')
         .onClick(() => {
-          // 测试 setResourceManagerCacheMaxCountForHSP 方法参数为 null 的情况
           try {
             UIContext.setResourceManagerCacheMaxCountForHSP(null);
             AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_null', 'success');
           } catch (e) {
             AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_null', 'error');
           }
-
-          // 测试 setResourceManagerCacheMaxCountForHSP 方法参数为 undefined 的情况
           try {
             UIContext.setResourceManagerCacheMaxCountForHSP(undefined);
             AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_undefined', 'success');
@@ -40,7 +39,40 @@ struct SetResourceManagerCacheMaxCountForHSPNullUndefinedTest {
           }
         })
 
+      Button('setResourceManagerCache_normal_return')
+        .id('setResourceManagerCache_normal_id')
+        .onClick(() => {
+          try {
+            // void 返回：调用不抛即视为返回值维度覆盖
+            UIContext.setResourceManagerCacheMaxCountForHSP(16);
+            AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_normal', 'void_ok');
+          } catch (e) {
+            AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_normal',
+              String((e as BusinessError).code));
+          }
+        })
+
+      Button('setResourceManagerCache_error_codes')
+        .id('setResourceManagerCache_error_id')
+        .onClick(() => {
+          try {
+            UIContext.setResourceManagerCacheMaxCountForHSP(-1);
+            AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_neg', 'no_throw');
+          } catch (e) {
+            AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_neg',
+              Number((e as BusinessError).code));
+          }
+          try {
+            UIContext.setResourceManagerCacheMaxCountForHSP(1.5);
+            AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_float', 'no_throw');
+          } catch (e) {
+            AppStorage.setOrCreate('setResourceManagerCacheMaxCountForHSP_float',
+              Number((e as BusinessError).code));
+          }
+        })
     }
     .height('100%')
+    .width('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }
