@@ -96,14 +96,36 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
+        };
+
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
+          workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -128,13 +150,33 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
+        };
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
+          workerInstance.terminate();
+        };
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
         workerInstance.postMessageWithSharedSendable({
           type: "forEach",
@@ -159,14 +201,36 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
+        };
+
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
+          workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -195,14 +259,36 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<boolean>((resolve) => {
+      let result = await new Promise<boolean>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as boolean);
           workerInstance.terminate();
+        };
+
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
+          workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -231,14 +317,36 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createSendableSet(50);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
+        };
+
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
+          workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -262,13 +370,33 @@ export default function collectionsSetWorkerTest() {
     it('testSetWorkerCreate0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerCreate0006';
       console.info(`[${caseName}] start`);
-      let result = await new Promise<collections.Set<number>>((resolve) => {
+      let result = await new Promise<collections.Set<number>>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.set as collections.Set<number>);
           workerInstance.terminate();
+        };
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
+          workerInstance.terminate();
+        };
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
         workerInstance.postMessageWithSharedSendable({
           type: "createSet",
@@ -298,21 +426,37 @@ export default function collectionsSetWorkerTest() {
         nestedSet.add(map);
       }
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           console.info('Worker nestedSize result: ' + event.data.result);
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
-        workerInstance.onerror = (error): void => {
-          console.error('Worker error: ' + error.message);
-          resolve(-1);
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -338,21 +482,37 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           console.info('Worker taskPoolCombine result: ' + event.data.result);
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
-        workerInstance.onerror = (error): void => {
-          console.error('Worker error: ' + error.message);
-          resolve(-1);
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -378,21 +538,37 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           console.info('Worker notify result: ' + event.data.result);
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
-        workerInstance.onerror = (error): void => {
-          console.error('Worker error: ' + error.message);
-          resolve(-1);
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -423,21 +599,37 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(10000);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           console.info('Worker largeKeys result: ' + event.data.result);
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
-        workerInstance.onerror = (error): void => {
-          console.error('Worker error: ' + error.message);
-          resolve(-1);
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -463,19 +655,36 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
-        workerInstance.onerror = (error): void => {
-          resolve(-1);
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -501,19 +710,36 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
-        workerInstance.onerror = (error): void => {
-          resolve(-1);
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -539,19 +765,36 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
-        workerInstance.onerror = (error): void => {
-          resolve(-1);
+        workerInstance.onerror = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -577,20 +820,37 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<ErrorRecoverSizeResult>((resolve) => {
+      let result = await new Promise<ErrorRecoverSizeResult>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           let data = event.data as ErrorRecoverSizeResult;
           resolve(data);
           workerInstance.terminate();
         };
 
         workerInstance.onerror = (): void => {
-          resolve({ errorCode: -1, sizeBefore: 0, sizeAfter: 0 });
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({
@@ -619,20 +879,37 @@ export default function collectionsSetWorkerTest() {
       console.info(`[${caseName}] start`);
       let set = createRangeNumberSet(100);
 
-      let result = await new Promise<ErrorRecoverTraverseResult>((resolve) => {
+      let result = await new Promise<ErrorRecoverTraverseResult>((resolve, reject) => {
+        let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
         );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
           let data = event.data as ErrorRecoverTraverseResult;
           resolve(data);
           workerInstance.terminate();
         };
 
         workerInstance.onerror = (): void => {
-          resolve({ errorCode: -1, traverseCount: 0, sum: 0 });
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker error'));
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          reject(new Error('worker exited before result'));
         };
 
         workerInstance.postMessageWithSharedSendable({

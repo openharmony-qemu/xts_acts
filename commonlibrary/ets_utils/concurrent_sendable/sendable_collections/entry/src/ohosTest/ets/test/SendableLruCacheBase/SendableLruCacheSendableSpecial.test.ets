@@ -128,6 +128,21 @@ function getSendableValues(): TestValue[] {
   result.push(new TestValue('nested_array', new collections.Array<number>(),
     new collections.Array<number>(), 'Sendable', 'nested Array'));
 
+  // ===== 新增 number 特殊值 =====
+  result.push(new TestValue('number_negative_one', -1, -1, 'Basic', 'number -1'));
+  result.push(new TestValue('number_negative_max', Number.MIN_SAFE_INTEGER, Number.MIN_SAFE_INTEGER,
+    'Basic', 'min safe integer'));
+  result.push(new TestValue('number_zero', 0, 0, 'Basic', 'number 0'));
+  result.push(new TestValue('number_negative_zero', -0, -0, 'Basic', 'negative zero'));
+  result.push(new TestValue('number_hex', 0x12, 0x12, 'Basic', 'hexadecimal 0x12'));
+  result.push(new TestValue('number_octal', 0o77, 0o77, 'Basic', 'octal 0o77'));
+  result.push(new TestValue('number_binary', 0b1010, 0b1010, 'Basic', 'binary 0b1010'));
+  result.push(new TestValue('number_infinity', Infinity, Infinity, 'Basic', 'Infinity'));
+  result.push(new TestValue('number_negative_infinity', -Infinity, -Infinity, 'Basic', 'negative Infinity'));
+  result.push(new TestValue('number_float_pi', 3.141592653589793, 3.141592653589793, 'Basic', 'PI float'));
+  result.push(new TestValue('number_float_negative', -0.001, -0.001, 'Basic', 'negative float'));
+  result.push(new TestValue('number_negative_01', -0.01, -0.01, 'Basic', 'negative 0.01'));
+
   return result;
 }
 

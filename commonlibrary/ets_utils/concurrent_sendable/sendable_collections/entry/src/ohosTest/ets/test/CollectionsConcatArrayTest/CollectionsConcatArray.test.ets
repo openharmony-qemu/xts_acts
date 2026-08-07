@@ -876,19 +876,32 @@ export default function collectionsConcatArrayTest() {
       console.info(`[${caseName}] start`);
       let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
 
-      let result = await new Promise<number>((resolve) => {
+      let result = await new Promise<number>((resolve: (value: number) => void,
+        reject: (reason: Error) => void): void => {
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./ConcatArrayWorker"
         );
+        let settled: boolean = false;
 
         workerInstance.onmessage = (event: MessageEvents): void => {
+          settled = true;
           resolve(event.data.result as number);
           workerInstance.terminate();
         };
 
         workerInstance.onerror = (): void => {
-          resolve(-1);
+          if (!settled) {
+            settled = true;
+            reject(new Error("ConcatArrayWorker error"));
+          }
           workerInstance.terminate();
+        };
+
+        workerInstance.onexit = (): void => {
+          if (!settled) {
+            settled = true;
+            reject(new Error("ConcatArrayWorker exited before posting result"));
+          }
         };
 
         workerInstance.postMessageWithSharedSendable({

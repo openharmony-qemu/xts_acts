@@ -14,7 +14,7 @@
  */
 
 import { worker, MessageEvents, collections, taskpool } from '@kit.ArkTS';
-
+import { BusinessError } from '@ohos.base';
 @Concurrent
 function workerForEachTask(set: collections.Set<number>): number {
   let count = 0;
@@ -382,24 +382,6 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
       });
       break;
     }
-
-    case 'largeKeys': {
-      let set = data.set as collections.Set<number>;
-      let count = 0;
-      let iterator = set.keys();
-      while (true) {
-        let result = iterator.next();
-        if (result.done) {
-          break;
-        }
-        count++;
-      }
-      workerPort.postMessage({
-        result: count
-      });
-      break;
-    }
-
 
   }
 };

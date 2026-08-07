@@ -42,7 +42,7 @@ import sendableLruCacheSendableTest from './SendableLruCacheBase/SendableLruCach
 import sendableLruCacheSpecialTest from './SendableLruCacheBase/SendableLruCacheSpecial.test';
 import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
 import collectionsConcatArrayTest from './CollectionsConcatArrayTest/CollectionsConcatArray.test';
-
+import sendableLruCacheNullableTest from './SendableLruCacheBase/SendableLruCacheNullableTest.test';
 export default function testsuite(): void {
   StressStabilityComboTest()
   BitVectorTest()
@@ -72,6 +72,7 @@ export default function testsuite(): void {
   sendableLruCacheErrorTest();
   sendableLruCacheSendableTest();
   sendableLruCacheSpecialTest();
+  sendableLruCacheNullableTest();
   sendableLruCacheConcurrentTest();
   collectionsConcatArrayTest();
 }

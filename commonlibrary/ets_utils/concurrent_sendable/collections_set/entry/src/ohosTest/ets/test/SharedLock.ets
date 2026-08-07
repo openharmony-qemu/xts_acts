@@ -20,6 +20,22 @@ export function createSharedLock(): SharedArrayBuffer {
   return buffer;
 }
 
+export function createSharedBarrier(): SharedArrayBuffer {
+  const buffer: SharedArrayBuffer = new SharedArrayBuffer(8);
+  const view: Int32Array = new Int32Array(buffer);
+  Atomics.store(view, 0, 0); // 已到达的参与者数量
+  Atomics.store(view, 1, 0); // 0 = 未放行, 1 = 已放行
+  return buffer;
+}
+
+export function createSharedSignal(count: number): SharedArrayBuffer {
+  const buffer: SharedArrayBuffer = new SharedArrayBuffer(count * 4);
+  const view: Int32Array = new Int32Array(buffer);
+  for (let i: number = 0; i < count; i++) {
+    Atomics.store(view, i, 0);
+  }
+  return buffer;
+}
 
 function lockAcquire(lockBuffer: SharedArrayBuffer): void {
   const view: Int32Array = new Int32Array(lockBuffer);
@@ -55,4 +71,40 @@ export function withLock<T>(lockBuffer: SharedArrayBuffer, fn: () => T): T {
   } finally {
     lockRelease(lockBuffer);
   }
+}
+
+export function waitAtSharedBarrier(barrierBuffer: SharedArrayBuffer, participantCount: number): void {
+  if (participantCount <= 1) {
+    return;
+  }
+  const view: Int32Array = new Int32Array(barrierBuffer);
+  const arrived: number = Atomics.add(view, 0, 1) + 1;
+  if (arrived >= participantCount) {
+    Atomics.store(view, 1, 1);
+    Atomics.notify(view, 1, participantCount - 1);
+    return;
+  }
+  while (Atomics.load(view, 1) === 0) {
+    Atomics.wait(view, 1, 0, 1);
+  }
+}
+
+export function notifySharedSignal(signalBuffer: SharedArrayBuffer, index: number): void {
+  const view: Int32Array = new Int32Array(signalBuffer);
+  Atomics.store(view, index, 1);
+  Atomics.notify(view, index, 1);
+}
+
+export function waitForSharedSignal(signalBuffer: SharedArrayBuffer, index: number, timeoutMs: number): boolean {
+  const view: Int32Array = new Int32Array(signalBuffer);
+  let waitedTime: number = 0;
+  const waitStepMs: number = 1;
+  while (Atomics.load(view, index) === 0) {
+    if (waitedTime >= timeoutMs) {
+      return false;
+    }
+    Atomics.wait(view, index, 0, waitStepMs);
+    waitedTime += waitStepMs;
+  }
+  return true;
 }

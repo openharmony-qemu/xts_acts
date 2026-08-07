@@ -23,6 +23,10 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
 
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => setTimeout(resolve, time));
+}
+
 @Sendable
 class SendableClassBasic {
   value: number = 0;
@@ -115,7 +119,10 @@ export default function CollectionsMapForEachEntriesTest() {
   describe('CollectionsMapForEachEntriesTest', () => {
 
     beforeAll(() => { console.info('[CollectionsMapForEachEntriesTest] beforeAll'); });
-    beforeEach(() => { console.info('[CollectionsMapForEachEntriesTest] beforeEach'); });
+    beforeEach(async () => {
+      await sleep(20);
+      console.info('[CollectionsMapForEachEntriesTest] beforeEach');
+    });
     afterEach(() => { console.info('[CollectionsMapForEachEntriesTest] afterEach'); });
     afterAll(() => { console.info('[CollectionsMapForEachEntriesTest] afterAll'); });
 

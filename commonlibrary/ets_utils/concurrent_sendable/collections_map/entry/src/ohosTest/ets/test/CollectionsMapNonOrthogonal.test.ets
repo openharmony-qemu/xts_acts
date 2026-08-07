@@ -21,32 +21,76 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 
-// ============================================================
-// Sendable Class Definitions
-// ============================================================
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => setTimeout(resolve, time));
+}
 
 @Sendable
 class SendableClassBasic {
   value: number = 0;
+  constructor() { this.value = 100; }
+}
+
+@Sendable
+class SendableClassComplex {
+  name: string = "complex";
+  id: number = 1;
+  constructor() { this.name = "complex"; this.id = 1; }
+}
+
+@Sendable
+class SendableClassExtended extends SendableClassBasic {
+  extra: string = "extended";
+  constructor() { super(); this.extra = "extended"; }
+}
+
+@Sendable
+class ComplexIndexSignature {
+  a: number = 1;
+  b: number = 2;
+  c: number = 3;
   constructor() {
-    this.value = 100;
+    this.a = 1;
+    this.b = 2;
+    this.c = 3;
   }
 }
 
-// ============================================================
-// Sendable Map 子类定义（用于继承测试）
-// ============================================================
+@Sendable
+class CircularRef {
+  name: string = "";
+  ref: CircularRef | null = null;
+  constructor(name: string) { this.name = name; }
+}
+
+@Sendable
+class SendableNormalFn {
+  execute(): number { return 42; }
+}
+
+@Sendable
+class SendableArrowFn {
+  execute(): number { return 100; }
+}
+
+@Sendable
+class SendableAsyncFn {
+  async execute(): Promise<number> { return 200; }
+}
+
+@Sendable
+class SendableAddFn {
+  execute(x: number): number { return x + 1; }
+}
+
+const enum SendableEnum { Success = 0, Failure = 1, Pending = 2 }
 
 @Sendable
 class MyMap<K, V> extends collections.Map<K, V> {
-  customMethod(): string {
-    return "custom";
-  }
-  getSize(): number {
-    return this.size;
-  }
+  customMethod(): string { return "custom"; }
+  getSize(): number { return this.size; }
 }
 
 @Sendable
@@ -60,27 +104,19 @@ class OverrideMap<K, V> extends collections.Map<K, V> {
 class CustomMap<K, V> extends collections.Map<K, V> {
   getKeys(): K[] {
     let keys: K[] = [];
-    this.forEach((_value: V, key: K) => {
-      keys.push(key);
-    });
+    this.forEach((_value: V, key: K) => { keys.push(key); });
     return keys;
   }
   hasValue(value: V): boolean {
     let found: boolean = false;
-    this.forEach((val: V) => {
-      if (val === value) {
-        found = true;
-      }
-    });
+    this.forEach((val: V) => { if (val === value) { found = true; } });
     return found;
   }
 }
 
 @Sendable
 class ExtendedMap<K, V> extends collections.Map<K, V> {
-  extendedMethod(): string {
-    return "extended";
-  }
+  extendedMethod(): string { return "extended"; }
 }
 
 @Sendable
@@ -90,43 +126,26 @@ class EmptyMap<K, V> extends collections.Map<K, V> {}
 class GenericMap<K, V> extends collections.Map<K, V> {
   getKeys(): K[] {
     let keys: K[] = [];
-    this.forEach((_value: V, key: K) => {
-      keys.push(key);
-    });
+    this.forEach((_value: V, key: K) => { keys.push(key); });
     return keys;
   }
   getValues(): V[] {
     let values: V[] = [];
-    this.forEach((value: V) => {
-      values.push(value);
-    });
+    this.forEach((value: V) => { values.push(value); });
     return values;
   }
 }
 
-// ============================================================
-// Test Suite
-// ============================================================
-
 export default function CollectionsMapNonOrthogonalTest() {
-
   describe('CollectionsMapNonOrthogonalTest', () => {
 
-    beforeAll(() => {
-      console.info('[CollectionsMapNonOrthogonalTest] beforeAll');
-    });
-
-    beforeEach(() => {
+    beforeAll(() => { console.info('[CollectionsMapNonOrthogonalTest] beforeAll'); });
+    beforeEach(async () => {
+      await sleep(20);
       console.info('[CollectionsMapNonOrthogonalTest] beforeEach');
     });
-
-    afterEach(() => {
-      console.info('[CollectionsMapNonOrthogonalTest] afterEach');
-    });
-
-    afterAll(() => {
-      console.info('[CollectionsMapNonOrthogonalTest] afterAll');
-    });
+    afterEach(() => { console.info('[CollectionsMapNonOrthogonalTest] afterEach'); });
+    afterAll(() => { console.info('[CollectionsMapNonOrthogonalTest] afterAll'); });
 
     // ============================================================
     // Return Value Tests (0100-1500)

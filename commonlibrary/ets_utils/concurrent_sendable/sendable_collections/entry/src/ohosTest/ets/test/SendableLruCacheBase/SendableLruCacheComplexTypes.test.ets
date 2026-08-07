@@ -61,12 +61,6 @@ class NormalObject implements lang.ISendable {
   age: number = 20;
 }
 
-@Sendable
-class ComplexObject implements lang.ISendable {
-  key1: number = 1;
-  key2: number = 2;
-  key3: number = 3;
-}
 
 // ===== 空对象=====
 @Sendable
@@ -104,7 +98,11 @@ function getCompositeValues(): TestValue[] {
   try {
     const normalObj: NormalObject = new NormalObject();
     const emptyObj: EmptyObject = new EmptyObject();
-    const complexObj: ComplexObject = new ComplexObject();
+    // 改用 collections.Map 模拟索引签名对象 { [key: string]: number }
+    const complexMap: collections.Map<string, number> = new collections.Map<string, number>();
+    complexMap.set('prop1', 1);
+    complexMap.set('prop2', 2);
+    complexMap.set('prop3', 3);
 
     const normalArr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
     normalArr.push(1);
@@ -119,13 +117,14 @@ function getCompositeValues(): TestValue[] {
 
     result.push(new TestValue('object_normal', normalObj, normalObj, 'Composite', 'normal object'));
     result.push(new TestValue('object_empty', emptyObj, emptyObj, 'Composite', 'empty object'));
-    result.push(new TestValue('object_complex', complexObj, complexObj, 'Composite', 'index signature object'));
+    result.push(new TestValue('object_complex', complexMap, complexMap, 'Composite', 'index signature object (Map)'));
     result.push(new TestValue('array_normal', normalArr, normalArr, 'Composite', 'normal array'));
     result.push(new TestValue('array_empty', emptyArr, emptyArr, 'Composite', 'empty array'));
     result.push(new TestValue('array_sparse', sparseArr, sparseArr, 'Composite', 'sparse array'));
     result.push(new TestValue('function_normal', normalFn, normalFn, 'Composite', 'normal function'));
     result.push(new TestValue('function_arrow', arrowFn, arrowFn, 'Composite', 'arrow function'));
     result.push(new TestValue('function_async', asyncFn, asyncFn, 'Composite', 'async function'));
+
   } catch (error) {
     console.error('Failed to create composite test values:', error);
     throw new Error(`Composite value creation failed: ${error}`);

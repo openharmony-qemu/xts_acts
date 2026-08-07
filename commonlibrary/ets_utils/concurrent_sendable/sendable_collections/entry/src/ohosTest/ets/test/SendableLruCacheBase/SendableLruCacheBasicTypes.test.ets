@@ -18,21 +18,20 @@ import { ArkTSUtils } from '@kit.ArkTS';
 import { lang } from '@kit.ArkTS';
 
 // ============================================================
-// 基础类型:12个测试值×19个方法=228个测试场景【实际：undefined 和 null不能准确实现，已注释，则10*19=190】
+// 0. 类型定义 - 使用联合类型解决 null/undefined 问题
 // ============================================================
 
-// ============================================================
-// 0. 类型定义
-// ============================================================
+// 定义联合类型别名
+type SendableOrNull = lang.ISendable | null | undefined;
 
 class TestValue {
   id: string = '';
-  key: lang.ISendable = 0;
-  value: lang.ISendable = 0;
+  key: SendableOrNull = 0;  // 修改为联合类型
+  value: SendableOrNull = 0;  // 修改为联合类型
   category: string = '';
   desc: string = '';
 
-  constructor(id: string, key: lang.ISendable, value: lang.ISendable, category: string, desc: string) {
+  constructor(id: string, key: SendableOrNull, value: SendableOrNull, category: string, desc: string) {
     this.id = id;
     this.key = key;
     this.value = value;
@@ -42,7 +41,14 @@ class TestValue {
 }
 
 // ===== 辅助函数：安全断言两个值相等 =====
-function assertEqualSafe(actual: lang.ISendable | undefined, expected: lang.ISendable): void {
+function assertEqualSafe(actual: SendableOrNull | undefined, expected: SendableOrNull): void {
+  // 处理 null 和 undefined 的特殊情况
+  if (actual === null && expected === null) {
+    return;
+  }
+  if (actual === undefined && expected === undefined) {
+    return;
+  }
   if (actual === undefined) {
     expect(actual).assertEqual(expected);
     return;
@@ -55,7 +61,7 @@ function assertEqualSafe(actual: lang.ISendable | undefined, expected: lang.ISen
 }
 
 // ============================================================
-// 1. 基础类型测试值定义 (12个,其中有两个值undefined 和 null不能够准确实现已被注释)
+// 1. 基础类型测试值定义 (12个)
 // ============================================================
 
 function getBasicValues(): TestValue[] {
@@ -72,12 +78,27 @@ function getBasicValues(): TestValue[] {
   result.push(new TestValue('boolean_true', true, true, 'Basic', 'true value'));
   result.push(new TestValue('boolean_false', false, false, 'Basic', 'false value'));
 
-  // /* ArkTS 的 SendableLruCache 本身就不支持 undefined 和 null 作为 key 或 value，因为：
-  //    lang.ISendable 接口不包含 undefined/null ， Sendable 容器只存储 Sendable 类型
-  //    使用 @Sendable 包装类替代又偏离了"测试 undefined/null 值"的初衷
-  // */
-  // result.push(new TestValue('undefined_value', undefined, undefined, 'Basic', 'undefined value'));
-  // result.push(new TestValue('null_value', null, null, 'Basic', 'null value'));
+  // ===== 新增 number 特殊值 =====
+  result.push(new TestValue('number_negative_one', -1, -1, 'Basic', 'number -1'));
+  result.push(new TestValue('number_negative_max', Number.MIN_SAFE_INTEGER, Number.MIN_SAFE_INTEGER,
+    'Basic', 'min safe integer'));
+  result.push(new TestValue('number_zero', 0, 0, 'Basic', 'number 0'));
+  result.push(new TestValue('number_negative_zero', -0, -0, 'Basic', 'negative zero'));
+  result.push(new TestValue('number_hex', 0x12, 0x12, 'Basic', 'hexadecimal 0x12'));
+  result.push(new TestValue('number_octal', 0o77, 0o77, 'Basic', 'octal 0o77'));
+  result.push(new TestValue('number_binary', 0b1010, 0b1010, 'Basic', 'binary 0b1010'));
+  result.push(new TestValue('number_infinity', Infinity, Infinity, 'Basic', 'Infinity'));
+  result.push(new TestValue('number_negative_infinity', -Infinity, -Infinity, 'Basic', 'negative Infinity'));
+  result.push(new TestValue('number_float_pi', 3.141592653589793, 3.141592653589793, 'Basic', 'PI float'));
+  result.push(new TestValue('number_float_negative', -0.001, -0.001, 'Basic', 'negative float'));
+  result.push(new TestValue('number_negative_01', -0.01, -0.01, 'Basic', 'negative 0.01'));
+
+  // ===== 新增 bigint 测试值 =====
+  result.push(new TestValue('bigint_normal', BigInt(100), BigInt(100), 'Basic', 'normal bigint'));
+  result.push(new TestValue('bigint_large', BigInt(Number.MAX_SAFE_INTEGER) + BigInt(1),
+    BigInt(Number.MAX_SAFE_INTEGER) + BigInt(1), 'Basic', 'large bigint'));
+  result.push(new TestValue('bigint_zero', BigInt(0), BigInt(0), 'Basic', 'bigint zero'));
+  result.push(new TestValue('bigint_negative', BigInt(-1), BigInt(-1), 'Basic', 'negative bigint'));
   return result;
 }
 
@@ -91,7 +112,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testPutBasicAllValues0001
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0100
-     * @tc.desc   Put operation with 12 basic type values,
+     * @tc.desc   Put operation with  basic type values,
      *            verifies put returns value and increments length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -103,8 +124,9 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
-        const result: lang.ISendable = cache.put(tv.key, tv.value);
+        // 修改泛型参数为联合类型
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
+        const result: SendableOrNull = cache.put(tv.key, tv.value);
         assertEqualSafe(result, tv.value);
         expect(cache.length).assertEqual(1);
         expect(cache.contains(tv.key)).assertTrue();
@@ -115,7 +137,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testGetBasicAllValues0002
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0200
-     * @tc.desc   Get operation with 12 basic type values,
+     * @tc.desc   Get operation with  basic type values,
      *            verifies retrieved value matches and matchCount increments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,9 +149,9 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         cache.put(tv.key, tv.value);
-        const retrieved: lang.ISendable | undefined = cache.get(tv.key);
+        const retrieved: SendableOrNull | undefined = cache.get(tv.key);
         assertEqualSafe(retrieved, tv.value);
         expect(cache.getMatchCount()).assertEqual(1);
       }
@@ -139,7 +161,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testRemoveBasicAllValues0003
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0300
-     * @tc.desc   Remove operation with 12 basic type values,
+     * @tc.desc   Remove operation with  basic type values,
      *            verifies removed value matches and length decrements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -151,9 +173,9 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         cache.put(tv.key, tv.value);
-        const removed: lang.ISendable | undefined = cache.remove(tv.key);
+        const removed: SendableOrNull | undefined = cache.remove(tv.key);
         assertEqualSafe(removed, tv.value);
         expect(cache.length).assertEqual(0);
         expect(cache.contains(tv.key)).assertFalse();
@@ -164,7 +186,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testContainsBasicAllValues0004
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0400
-     * @tc.desc   Contains operation with 12 basic type values,
+     * @tc.desc   Contains operation with basic type values,
      *            verifies key existence before and after put
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +198,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.contains(tv.key)).assertFalse();
         cache.put(tv.key, tv.value);
         expect(cache.contains(tv.key)).assertTrue();
@@ -187,7 +209,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testClearBasicAllValues0005
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0500
-     * @tc.desc   Clear operation with 12 basic type values,
+     * @tc.desc   Clear operation with basic type values,
      *            verifies all entries removed and length resets to 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +221,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         cache.put(tv.key, tv.value);
         cache.clear();
         expect(cache.length).assertEqual(0);
@@ -212,7 +234,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testEntriesBasicAllValues0006
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0600
-     * @tc.desc   Entries operation with 12 basic type values,
+     * @tc.desc   Entries operation with basic type values,
      *            verifies iterator returns correct key-value pair
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -224,12 +246,12 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         cache.put(tv.key, tv.value);
-        const iterator: IterableIterator<[lang.ISendable, lang.ISendable]> = cache.entries();
+        const iterator: IterableIterator<[SendableOrNull, SendableOrNull]> = cache.entries();
         expect(iterator !== null).assertTrue();
         let count: number = 0;
-        let next: IteratorResult<[lang.ISendable, lang.ISendable]> = iterator.next();
+        let next: IteratorResult<[SendableOrNull, SendableOrNull]> = iterator.next();
         while (!next.done) {
           count++;
           assertEqualSafe(next.value[0], tv.key);
@@ -244,7 +266,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testKeysBasicAllValues0007
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0700
-     * @tc.desc   Keys operation with 12 basic type values,
+     * @tc.desc   Keys operation with  basic type values,
      *            verifies keys array contains the correct key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -256,9 +278,9 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         cache.put(tv.key, tv.value);
-        const keys: lang.ISendable[] = cache.keys();
+        const keys: SendableOrNull[] = cache.keys();
         expect(Array.isArray(keys)).assertTrue();
         expect(keys.length).assertEqual(1);
         assertEqualSafe(keys[0], tv.key);
@@ -269,7 +291,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testValuesBasicAllValues0008
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0800
-     * @tc.desc   Values operation with 12 basic type values,
+     * @tc.desc   Values operation with  basic type values,
      *            verifies values array contains the correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,9 +303,9 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         cache.put(tv.key, tv.value);
-        const values: lang.ISendable[] = cache.values();
+        const values: SendableOrNull[] = cache.values();
         expect(Array.isArray(values)).assertTrue();
         expect(values.length).assertEqual(1);
         assertEqualSafe(values[0], tv.value);
@@ -294,7 +316,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testLengthBasicAllValues0009
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_0900
-     * @tc.desc   Length property with 12 basic type values,
+     * @tc.desc   Length property with  basic type values,
      *            verifies length changes after put and remove
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -306,7 +328,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.length).assertEqual(0);
         cache.put(tv.key, tv.value);
         expect(cache.length).assertEqual(1);
@@ -319,7 +341,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testGetCapacityBasicAllValues0010
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1000
-     * @tc.desc   GetCapacity operation with 12 basic type values,
+     * @tc.desc   GetCapacity operation with  basic type values,
      *            verifies capacity remains constant
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,7 +353,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.getCapacity()).assertEqual(64);
         cache.put(tv.key, tv.value);
         expect(cache.getCapacity()).assertEqual(64);
@@ -342,7 +364,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testUpdateCapacityBasicAllValues0011
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1100
-     * @tc.desc   UpdateCapacity operation with 12 basic type values,
+     * @tc.desc   UpdateCapacity operation with basic type values,
      *            verifies capacity updated and entries preserved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -354,13 +376,13 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         // ===== 场景1: 扩大容量 =====
         cache.put(tv.key, tv.value);
         cache.updateCapacity(100);
         expect(cache.getCapacity()).assertEqual(100);
         expect(cache.length).assertEqual(1);
-        const retrieved1: lang.ISendable | undefined = cache.get(tv.key);
+        const retrieved1: SendableOrNull | undefined = cache.get(tv.key);
         assertEqualSafe(retrieved1, tv.value);
         // ===== 场景2: 缩小容量（不触发淘汰） =====
         cache.clear();
@@ -368,16 +390,15 @@ export default function sendableLruCacheBasicTest() {
         cache.updateCapacity(10);
         expect(cache.getCapacity()).assertEqual(10);
         expect(cache.length).assertEqual(1);
-        const retrieved2: lang.ISendable | undefined = cache.get(tv.key);
+        const retrieved2: SendableOrNull | undefined = cache.get(tv.key);
         assertEqualSafe(retrieved2, tv.value);
         // ===== 场景3: 缩小容量（触发LRU淘汰） =====
-        cache.clear();
-        const smallCache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(5);
+        const smallCache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(5);
         smallCache.put(tv.key, tv.value);
-        smallCache.put(1, 1);
-        smallCache.put(2, 2);
-        smallCache.put(3, 3);
-        smallCache.put(4, 4);
+        smallCache.put('__aux1__', '__aux1__');
+        smallCache.put('__aux2__', '__aux2__');
+        smallCache.put('__aux3__', '__aux3__');
+        smallCache.put('__aux4__', '__aux4__');
         expect(smallCache.length).assertEqual(5);
         smallCache.get(tv.key);
         smallCache.updateCapacity(3);
@@ -385,14 +406,14 @@ export default function sendableLruCacheBasicTest() {
         expect(smallCache.length).assertEqual(3);
         expect(smallCache.contains(tv.key)).assertTrue();
         if (typeof tv.key === 'number' && Number.isNaN(tv.key)) {
-          const retrievedNaN: lang.ISendable | undefined = smallCache.get(tv.key);
+          const retrievedNaN: SendableOrNull | undefined = smallCache.get(tv.key);
           assertEqualSafe(retrievedNaN, tv.value);
         }
-        expect(smallCache.contains(1)).assertFalse();
-        expect(smallCache.contains(2)).assertFalse();
-        expect(smallCache.contains(3)).assertTrue();
-        expect(smallCache.contains(4)).assertTrue();
-        const retrieved3: lang.ISendable | undefined = smallCache.get(tv.key);
+        expect(smallCache.contains('__aux1__')).assertFalse();
+        expect(smallCache.contains('__aux2__')).assertFalse();
+        expect(smallCache.contains('__aux3__')).assertTrue();
+        expect(smallCache.contains('__aux4__')).assertTrue();
+        const retrieved3: SendableOrNull | undefined = smallCache.get(tv.key);
         assertEqualSafe(retrieved3, tv.value);
       }
       console.info(`${caseName}, test end`);
@@ -401,7 +422,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testIsEmptyBasicAllValues0012
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1200
-     * @tc.desc   IsEmpty operation with 12 basic type values,
+     * @tc.desc   IsEmpty operation with  basic type values,
      *            verifies empty state transitions correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -413,7 +434,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.isEmpty()).assertTrue();
         cache.put(tv.key, tv.value);
         expect(cache.isEmpty()).assertFalse();
@@ -426,7 +447,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testToStringBasicAllValues0013
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1300
-     * @tc.desc   ToString operation with 12 basic type values,
+     * @tc.desc   ToString operation with  basic type values,
      *            verifies string representation is valid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -438,7 +459,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         cache.put(tv.key, tv.value);
         const result: string = cache.toString();
         expect(result !== null).assertTrue();
@@ -451,7 +472,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testGetCreateCountBasicAllValues0014
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1400
-     * @tc.desc   GetCreateCount operation with 12 basic type values,
+     * @tc.desc   GetCreateCount operation with  basic type values,
      *            verifies count always returns 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -463,7 +484,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.getCreateCount()).assertEqual(0);
         cache.put(tv.key, tv.value);
         expect(cache.getCreateCount()).assertEqual(0);
@@ -475,7 +496,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testGetMissCountBasicAllValues0015
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1500
-     * @tc.desc   GetMissCount operation with 12 basic type values,
+     * @tc.desc   GetMissCount operation with  basic type values,
      *            verifies count increments on cache miss
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,7 +508,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.getMissCount()).assertEqual(0);
         cache.get(tv.key);
         expect(cache.getMissCount()).assertEqual(1);
@@ -501,7 +522,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testGetMatchCountBasicAllValues0016
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1600
-     * @tc.desc   GetMatchCount operation with 12 basic type values,
+     * @tc.desc   GetMatchCount operation with  basic type values,
      *            verifies count increments on cache hit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -513,7 +534,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.getMatchCount()).assertEqual(0);
         cache.put(tv.key, tv.value);
         cache.get(tv.key);
@@ -527,7 +548,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testGetRemoveCountBasicAllValues0017
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1700
-     * @tc.desc   GetRemoveCount operation with 12 basic type values,
+     * @tc.desc   GetRemoveCount operation with basic type values,
      *            verifies count increments on LRU eviction
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -539,12 +560,12 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(2);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(2);
         expect(cache.getRemoveCount()).assertEqual(0);
         cache.put(tv.key, tv.value);
-        const keyA: lang.ISendable = 999;
+        const keyA: SendableOrNull = '__auxA__';
         cache.put(keyA, keyA);
-        const keyB: lang.ISendable = 888;
+        const keyB: SendableOrNull = '__auxB__';
         cache.put(keyB, keyB);
         expect(cache.getRemoveCount()).assertEqual(1);
         expect(cache.contains(tv.key)).assertFalse();
@@ -557,7 +578,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testGetPutCountBasicAllValues0018
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1800
-     * @tc.desc   GetPutCount operation with 12 basic type values,
+     * @tc.desc   GetPutCount operation with  basic type values,
      *            verifies count increments on each put
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -569,7 +590,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache.getPutCount()).assertEqual(0);
         cache.put(tv.key, tv.value);
         expect(cache.getPutCount()).assertEqual(1);
@@ -582,7 +603,7 @@ export default function sendableLruCacheBasicTest() {
     /**
      * @tc.name   testConstructorBasicAllValues0019
      * @tc.number SUB_COLLECTIONS_LRU_BASIC_1900
-     * @tc.desc   Constructor with 12 basic type values,
+     * @tc.desc   Constructor with  basic type values,
      *            verifies cache created with correct capacity and stores values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -594,7 +615,7 @@ export default function sendableLruCacheBasicTest() {
       const basicValues: TestValue[] = getBasicValues();
       for (let i = 0; i < basicValues.length; i++) {
         const tv: TestValue = basicValues[i];
-        const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(64);
+        const cache = new ArkTSUtils.SendableLruCache<SendableOrNull, SendableOrNull>(64);
         expect(cache !== null).assertTrue();
         expect(cache.getCapacity()).assertEqual(64);
         cache.put(tv.key, tv.value);

@@ -1219,7 +1219,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatPut0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentStatPut0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentStatPut0024';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(200);
@@ -1244,7 +1244,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatMatch0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentStatMatch0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentStatMatch0025';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
@@ -1277,7 +1277,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatRemove0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentStatRemove0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentStatRemove0026';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -1304,7 +1304,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatClear0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentStatClear0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentStatClear0027';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -1343,7 +1343,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatConcurrentClear0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentStatConcurrentClear0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentStatConcurrentClear0028';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
@@ -1386,7 +1386,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableRef0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentSendableRef0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentSendableRef0029';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
@@ -1416,7 +1416,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableNested0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentSendableNested0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentSendableNested0030';
       console.info(`${caseName}, test start`);
       const innerCache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -1441,7 +1441,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableClassKey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentSendableClassKey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentSendableClassKey0031';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<TestKey, number>(10);
@@ -1470,7 +1470,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableCollectionValue0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentSendableCollectionValue0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentSendableCollectionValue0032';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, collections.Array<number>>(10);
@@ -1503,7 +1503,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableNestedCache0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentSendableNestedCache0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentSendableNestedCache0033';
       console.info(`${caseName}, test start`);
       const innerCache = new ArkTSUtils.SendableLruCache<number, number>(50);
@@ -1535,7 +1535,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressurePut0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentPressurePut0034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
       const caseName: string = 'testLruCacheConcurrentPressurePut0034';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(1000);
@@ -1546,7 +1546,7 @@ export default function SendableLruCacheConcurrentTest(): void {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
       await Promise.all(tasks);
-0.
+
       const length = await taskpool.execute(getCacheLength, cache, lock) as number;
       expect(length).assertEqual(1000);
 
@@ -1563,7 +1563,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressureGet0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentPressureGet0035', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
       const caseName: string = 'testLruCacheConcurrentPressureGet0035';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
@@ -1594,7 +1594,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressureLargeCapacity0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentPressureLargeCapacity0036', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
       const caseName: string = 'testLruCacheConcurrentPressureLargeCapacity0036';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10000);
@@ -1625,7 +1625,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressureMemoryLeak0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentPressureMemoryLeak0037', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
       const caseName: string = 'testLruCacheConcurrentPressureMemoryLeak0037';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10000);
@@ -1697,7 +1697,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatAccuracy0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentStatAccuracy0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testLruCacheConcurrentStatAccuracy0039';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(500);

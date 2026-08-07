@@ -112,6 +112,7 @@ function getBoundaryValues(): TestValue[] {
     result.push(new TestValue('large_array', largeArr, largeArr, 'Boundary', 'large array 10000+'));
     result.push(new TestValue('deep_nested', rootNode, rootNode, 'Boundary', 'deep nested 10+'));
     result.push(new TestValue('circular_ref', circularNode, circularNode, 'Boundary', 'circular reference'));
+
   } catch (error) {
     console.error('Failed to create boundary test values:', error);
     throw new Error(`Boundary value creation failed: ${error}`);
