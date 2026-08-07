@@ -28,7 +28,7 @@ const ncAPI: NcAPIInterface = {
   OHEthGetNetAddress: (): number => {
     console.info(`Mock OHEthGetNetAddress called, call count: ${netAddressCallCount}, currentErrorTest: ${currentErrorTest}`);
     netAddressCallCount++;
-    
+
     if (currentErrorTest.includes('ErrorCode_0100')) {
       return 201;
     } else if (currentErrorTest.includes('ErrorCode_0200')) {
@@ -45,7 +45,7 @@ const ncAPI: NcAPIInterface = {
   OHEthGetMacAddress: (): number => {
     console.info(`Mock OHEthGetMacAddress called, call count: ${macAddressCallCount}, currentErrorTest: ${currentErrorTest}`);
     macAddressCallCount++;
-    
+
     if (currentErrorTest.includes('ErrorCode_0100')) {
       return 201;
     } else if (currentErrorTest.includes('ErrorCode_0200')) {
@@ -72,15 +72,6 @@ beforeEach(() => {
   currentErrorTest = '';
 });
 
-// 成功
-const NETCONNECTION_OK = 0;
-
-// 错误码定义
-const ERROR_CODE_201 = 201;
-const ERROR_CODE_2200001 = 2200001;
-const ERROR_CODE_2200002 = 2200002;
-const ERROR_CODE_2201005 = 2201005;
-
 export default function NetExtNDKTest() {
 
 describe('NetExtNDKTest', () => {
@@ -97,7 +88,7 @@ describe('NetExtNDKTest', () => {
     console.info(`testOHEthGetNetAddress_0100 start`);
     let re: number = ncAPI.OHEthGetNetAddress()
     console.info(`testOHEthGetNetAddress_0100 result ${re}`);
-    expect(re).assertEqual(NETCONNECTION_OK);
+    expect(re).assertEqual(0);
     done();
   });
 
@@ -113,7 +104,7 @@ describe('NetExtNDKTest', () => {
     console.info(`testOHEthGetMacAddress_0100 start`);
     let re: number = ncAPI.OHEthGetMacAddress()
     console.info(`testOHEthGetMacAddress_0100 result ${re}`);
-    expect(re).assertEqual(NETCONNECTION_OK);
+    expect(re).assertEqual(0);
     done();
   });
 
@@ -131,8 +122,8 @@ describe('NetExtNDKTest', () => {
     console.info(`testOHEthGetMacAddress_NetAddress_0100 mac result ${reMac}`);
     let reNet: number = ncAPI.OHEthGetNetAddress()
     console.info(`testOHEthGetMacAddress_NetAddress_0100 net result ${reNet}`);
-    expect(reMac).assertEqual(NETCONNECTION_OK);
-    expect(reNet).assertEqual(NETCONNECTION_OK);
+    expect(reMac).assertEqual(0);
+    expect(reNet).assertEqual(0);
     done();
   });
 
@@ -150,8 +141,8 @@ describe('NetExtNDKTest', () => {
     console.info(`testOHEthGetNetAddress_MacAddress_0100 net result ${reNet}`);
     let reMac: number = ncAPI.OHEthGetMacAddress()
     console.info(`testOHEthGetNetAddress_MacAddress_0100 mac result ${reMac}`);
-    expect(reNet).assertEqual(NETCONNECTION_OK);
-    expect(reMac).assertEqual(NETCONNECTION_OK);
+    expect(reNet).assertEqual(0);
+    expect(reMac).assertEqual(0);
     done();
   });
 
@@ -170,10 +161,10 @@ describe('NetExtNDKTest', () => {
     let re3: number = ncAPI.OHEthGetNetAddress()
     let re4: number = ncAPI.OHEthGetMacAddress()
     console.info(`testOHEthGetAllInterfaceInfo_0100 result ${re1}, ${re2}, ${re3}, ${re4}`);
-    expect(re1).assertEqual(NETCONNECTION_OK);
-    expect(re2).assertEqual(NETCONNECTION_OK);
-    expect(re3).assertEqual(NETCONNECTION_OK);
-    expect(re4).assertEqual(NETCONNECTION_OK);
+    expect(re1).assertEqual(0);
+    expect(re2).assertEqual(0);
+    expect(re3).assertEqual(0);
+    expect(re4).assertEqual(0);
     done();
   });
 
@@ -191,7 +182,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0100';
       let re: number = ncAPI.OHEthGetMacAddress();
       console.info(`testOHEthGetMacAddress_ErrorCode_0100 result ${re}`);
-      expect(re == ERROR_CODE_201).assertTrue();
+      expect(re === 201).assertTrue();
     } finally {
       currentErrorTest = '';
     }
@@ -212,7 +203,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0100';
       let re: number = ncAPI.OHEthGetNetAddress();
       console.info(`testOHEthGetNetAddress_ErrorCode_0100 result ${re}`);
-      expect(re == ERROR_CODE_201).assertTrue();
+      expect(re === 201).assertTrue();
     } finally {
       currentErrorTest = '';
     }
@@ -233,7 +224,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0200';
       let re: number = ncAPI.OHEthGetMacAddress();
       console.info(`testOHEthGetMacAddress_ErrorCode_0200 result ${re}`);
-      expect(re == ERROR_CODE_2200001).assertTrue();
+      expect(re === 2200001).assertTrue();
     } finally {
       currentErrorTest = '';
     }
@@ -254,7 +245,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0200';
       let re: number = ncAPI.OHEthGetNetAddress();
       console.info(`testOHEthGetNetAddress_ErrorCode_0200 result ${re}`);
-      expect(re == ERROR_CODE_2200001).assertTrue();
+      expect(re === 2200001).assertTrue();
     } finally {
       currentErrorTest = '';
     }
@@ -275,7 +266,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0300';
       let re: number = ncAPI.OHEthGetMacAddress();
       console.info(`testOHEthGetMacAddress_ErrorCode_0300 result ${re}`);
-      expect(re == ERROR_CODE_2200002).assertTrue();
+      expect(re === 2200002).assertTrue();
     } finally {
       currentErrorTest = '';
     }
@@ -296,7 +287,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0300';
       let re: number = ncAPI.OHEthGetNetAddress();
       console.info(`testOHEthGetNetAddress_ErrorCode_0300 result ${re}`);
-      expect(re == ERROR_CODE_2200002).assertTrue();
+      expect(re === 2200002).assertTrue();
     } finally {
       currentErrorTest = '';
     }
@@ -317,7 +308,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0400';
       let re: number = ncAPI.OHEthGetMacAddress();
       console.info(`testOHEthGetMacAddress_ErrorCode_0400 result ${re}`);
-      expect(re == ERROR_CODE_2201005).assertTrue();
+      expect(re === 2201005).assertTrue();
     } finally {
       currentErrorTest = '';
     }
@@ -338,7 +329,7 @@ describe('NetExtNDKTest', () => {
       currentErrorTest = 'ErrorCode_0400';
       let re: number = ncAPI.OHEthGetNetAddress();
       console.info(`testOHEthGetNetAddress_ErrorCode_0400 result ${re}`);
-      expect(re == ERROR_CODE_2201005).assertTrue();
+      expect(re === 2201005).assertTrue();
     } finally {
       currentErrorTest = '';
     }

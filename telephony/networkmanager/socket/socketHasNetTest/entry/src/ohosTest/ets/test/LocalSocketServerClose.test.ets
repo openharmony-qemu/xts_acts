@@ -73,27 +73,29 @@ export default function LocalSocketServerCloseTest() {
             done();
           })
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} localClient connect fail , err is` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -122,14 +124,15 @@ export default function LocalSocketServerCloseTest() {
         }
         localServer.on('connect', async (localSocketConnection: socket.LocalSocketConnection) => {
           console.info(`${caseName} localServer on connect`);
-          await localServer.close().then(()=>{
+          try {
+            await localServer.close();
             console.info(`${caseName} localServer close success`);
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} get err is `+JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
+          }
           let sendOptions: socket.LocalSendOptions = {
             data: 'Hello, client!'
           }
@@ -145,13 +148,14 @@ export default function LocalSocketServerCloseTest() {
             done();
           })
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
         }
@@ -161,14 +165,15 @@ export default function LocalSocketServerCloseTest() {
         let sendOpt: socket.LocalSendOptions = {
           data: 'Hello world!'
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} localClient connect fail , err is` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -197,51 +202,55 @@ export default function LocalSocketServerCloseTest() {
         }
         localServer.on('connect', async (connection: socket.LocalSocketConnection) => {
           console.info(`${caseName} localServer on connect`);
-          await localServer.close().then(()=>{
+          try {
+            await localServer.close();
             console.info(`${caseName} localServer close success`);
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} get err is `+JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
+          }
           let sendOpt: socket.LocalSendOptions = {
             data: 'Hello world!'
           }
-          await localClient.send(sendOpt).then(()=>{
+          try {
+            await localClient.send(sendOpt);
             console.info(`${caseName} localClient send success`);
             ExpectTrue(true);
             console.info(`${caseName}---End`);
             done();
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} localClient send failed, error is `+JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
+          }
 
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} localClient connect fail , err is` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -271,46 +280,50 @@ export default function LocalSocketServerCloseTest() {
         }
         localServer.on('connect', async (connection: socket.LocalSocketConnection) => {
           console.info(`${caseName} localServer on connect`);
-          await localServer.close().then(()=>{
+          try {
+            await localServer.close();
             console.info(`${caseName} localServer close success`);
-            localServer.listen(listenAddr).then(() => {
+            try {
+              await localServer.listen(listenAddr);
               console.info(`${caseName} localServer again listen success`);
               ExpectTrue(true);
               console.info(`${caseName}---End`);
               done();
-            }).catch((err: Object) => {
+            } catch (err) {
               console.info(`${caseName}  again listen catch err is `+ JSON.stringify(err));
               ExpectFail();
               console.info(`${caseName}---End`);
-            });
-          }).catch((err: BusinessError)=>{
+            }
+          } catch (err) {
             console.info(`${caseName} localServer close get err is `+JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName} ---End`);
             done();
-          })
+          }
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} localClient connect fail , err is` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -353,29 +366,36 @@ export default function LocalSocketServerCloseTest() {
               console.info(`${caseName}---End`);
               done();
             })
+          }).catch((err: BusinessError)=>{
+            console.info(`${caseName} localClient close failed err is `+JSON.stringify(err));
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
           })
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} localClient connect fail , err is` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -418,29 +438,36 @@ export default function LocalSocketServerCloseTest() {
               console.info(`${caseName}---End`);
               done();
             })
+          }).catch((err: BusinessError)=>{
+            console.info(`${caseName} localSocketConnection close failed err is `+JSON.stringify(err));
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
           })
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} localClient connect fail , err is` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -467,24 +494,26 @@ export default function LocalSocketServerCloseTest() {
         let listenAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
-        await localServer.close().then(()=>{
+        }
+        try {
+          await localServer.close();
           console.info(`${caseName} localServer close success`);
           ExpectTrue(true);
           console.info(`${caseName}---End`);
           done();
-        }).catch((err: BusinessError)=>{
+        } catch (err) {
           console.info(`${caseName} get err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        })
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -511,32 +540,35 @@ export default function LocalSocketServerCloseTest() {
         let listenAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
-        await localServer.close().then(()=>{
+        }
+        try {
+          await localServer.close();
           console.info(`${caseName} localServer close success`);
-        }).catch((err: BusinessError)=>{
+        } catch (err) {
           console.info(`${caseName} localServer close get err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName} ---End`);
           done();
-        })
-        await localServer.close().then(()=>{
+        }
+        try {
+          await localServer.close();
           console.info(`${caseName} localServer close success`);
           ExpectTrue(true);
           console.info(`${caseName}---End`);
           done();
-        }).catch((err: BusinessError)=>{
+        } catch (err) {
           console.info(`${caseName} localServer close get err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        })
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -608,7 +640,8 @@ export default function LocalSocketServerCloseTest() {
             done();
           })
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
           localServer.getState().then((options: socket.SocketStateBase) => {
             console.info(`options `+JSON.stringify(options));
@@ -618,11 +651,11 @@ export default function LocalSocketServerCloseTest() {
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
 
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
@@ -630,7 +663,8 @@ export default function LocalSocketServerCloseTest() {
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
           localClient.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
             console.info(`options `+JSON.stringify(options));
@@ -640,12 +674,12 @@ export default function LocalSocketServerCloseTest() {
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} localClient Connect fail, err is ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -685,7 +719,8 @@ export default function LocalSocketServerCloseTest() {
             done();
           })
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
           localServer.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
             console.info(`options `+JSON.stringify(options));
@@ -696,11 +731,11 @@ export default function LocalSocketServerCloseTest() {
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
-        }).catch((err: Object) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        });
+        }
 
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
@@ -708,7 +743,8 @@ export default function LocalSocketServerCloseTest() {
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
           localClient.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
             console.info(`options `+JSON.stringify(options));
@@ -719,12 +755,12 @@ export default function LocalSocketServerCloseTest() {
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} localClient Connect fail, err is ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -764,20 +800,22 @@ export default function LocalSocketServerCloseTest() {
             done();
           })
         });
-        await localServer.listen(listenAddr).then(() => {
+        try {
+          await localServer.listen(listenAddr);
           console.info(`${caseName} localServer listen success`);
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} catch listen err is ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
-        })
+        }
         let localAddress : socket.LocalAddress = {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddress,
         }
-        await localClient.connect(connectOpt).then(() => {
+        try {
+          await localClient.connect(connectOpt);
           console.info(`${caseName} localClient connect success`);
           localClient.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
             console.info(`options `+JSON.stringify(options));
@@ -788,12 +826,12 @@ export default function LocalSocketServerCloseTest() {
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} localClient Connect fail, err is ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();

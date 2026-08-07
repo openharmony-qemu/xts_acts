@@ -132,7 +132,7 @@ function ExpectTrue(exp: boolean): void {
 };
 
 export default function SocketGetSocketFdTest() {
-  describe('SocketGetSocketFdTest', async () => {
+  describe('SocketGetSocketFdTest', () => {
 
     /**
      * @tc.name   testNetmanagerConnectionGetSocketFd0100
@@ -166,6 +166,7 @@ export default function SocketGetSocketFdTest() {
       }
     });
 
+
     /**
      * @tc.name   testNetmanagerConnectionGetSocketFd0200
      * @tc.number SUB_Netmanager_Connection_GetSocketFd_0200
@@ -184,21 +185,25 @@ export default function SocketGetSocketFdTest() {
           port: getPortNumber(),
         };
         await tls.bind(bindAddress);
-        tls.getSocketFd().then((data: number) => {
+        try {
+          let data: number = await tls.getSocketFd();
           console.info(`${caseName} success data:${JSON.stringify(data)}`);
           ExpectTrue(data !== undefined);
           console.info(`${caseName}---End`);
           done();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} fail err:${JSON.stringify(err)}`);
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).finally(async () => {
-          await tls.close();
-          console.info(`${caseName} test end`);
-          done();
-        })
+        } finally {
+          try {
+            await tls.close();
+            console.info(`${caseName} test end`);
+          } catch (err) {
+            console.info(`${caseName} close error:${JSON.stringify(err)}`);
+          }
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -224,35 +229,38 @@ export default function SocketGetSocketFdTest() {
           address: '127.0.0.1',
           port: getPortNumber()
         };
-        await tcp.bind(bindAddress).then(async ()=>{
+        try {
+          await tcp.bind(bindAddress);
           console.info(`${caseName} bind success `);
           let tcpConnectOptions: socket.TCPConnectOptions = {
             address: bindAddress,
           };
-          await tcp.connect(tcpConnectOptions).then(async ()=>{
+          try {
+            await tcp.connect(tcpConnectOptions);
             console.info(`${caseName} connect success `);
             let tls: socket.TLSSocket = socket.constructTLSSocketInstance(tcp);
-            await tls.getSocketFd().then((data: number) => {
+            try {
+              let data: number = await tls.getSocketFd();
               console.info(`${caseName} getSocketFd success data:${JSON.stringify(data)}`);
               ExpectTrue(data !== undefined);
-            }).catch((err: BusinessError) => {
+            } catch (err) {
               console.info(`${caseName} getSocketFd fail err:${JSON.stringify(err)}`);
               ExpectFail();
-            })
+            }
             console.info(`${caseName}---End`);
             done();
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.error(`${caseName} connect fail err is :${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
-        }).catch((err: BusinessError)=>{
+          }
+        } catch (err) {
           console.error(`${caseName} bind fail err is :${JSON.stringify(err)}`);
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        })
+        }
       } catch (err) {
         console.info(`${caseName} catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -312,44 +320,55 @@ export default function SocketGetSocketFdTest() {
         ALPNProtocols: ["spdy/1", "http/1.1"]
       }
       try {
-        tlsServer.listen(tlsConnectOptions_server).then(() => {
+        try {
+          await tlsServer.listen(tlsConnectOptions_server);
           console.info(`${caseName} listen success!`);
-          tls.bind(bindAddr).then(() => {
-            console.info(`${caseName} bind success`)
-            tls.connect(tlsConnectOptions_client_rightCA).then(async () => {
+          try {
+            await tls.bind(bindAddr);
+            console.info(`${caseName} bind success`);
+            try {
+              await tls.connect(tlsConnectOptions_client_rightCA);
               console.info(`${caseName} connect success!`);
-              await tls.send('hahahaha').then(()=>{
-                console.info(`${caseName} send success!`)
-              })
-              tls.getSocketFd().then((data: number) => {
+              try {
+                await tls.send('hahahaha');
+                console.info(`${caseName} send success!`);
+              } catch (err) {
+                console.error(`${caseName} send failed ` + JSON.stringify(err));
+                ExpectFail();
+                console.info(`${caseName}---End`);
+                done();
+                return;
+              }
+              try {
+                let data: number = await tls.getSocketFd();
                 console.info(`${caseName} getSocketFd  success data:${JSON.stringify(data)}`);
                 ExpectTrue(data !== undefined);
                 console.info(`${caseName}---End`);
                 done();
-              }).catch((err: BusinessError) => {
+              } catch (err) {
                 console.error(`${caseName} getSocketFd  fail err:${JSON.stringify(err)}`);
                 ExpectFail();
                 console.info(`${caseName}---End`);
                 done();
-              })
-            }).catch((err: BusinessError) => {
+              }
+            } catch (err) {
               console.error(`${caseName} connect failed ` + JSON.stringify(err));
               ExpectFail();
               console.info(`${caseName}---End`);
               done();
-            });
-          }).catch((err: BusinessError) => {
+            }
+          } catch (err) {
             console.error(`${caseName} bind failed `+ JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          });
-        }).catch((err: BusinessError) => {
+          }
+        } catch (err) {
           console.log(`${caseName} listen fail: ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.log(`${caseName} catch err in `,JSON.stringify(err))
         ExpectFail();
@@ -408,47 +427,53 @@ export default function SocketGetSocketFdTest() {
       try {
         let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
         let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-        tlsServer.listen(tlsConnectOptions_server).then(() => {
+        try {
+          await tlsServer.listen(tlsConnectOptions_server);
           console.log(`${caseName} listen success!`);
-          tls.bind(bindAddr).then(async () => {
-            console.log(`${caseName} bind success `)
-            await tls.getSocketFd().then((data: number) => {
+          try {
+            await tls.bind(bindAddr);
+            console.log(`${caseName} bind success `);
+            try {
+              let data: number = await tls.getSocketFd();
               console.info(`${caseName} getSocketFd success data:${JSON.stringify(data)}`);
               ExpectTrue(data !== undefined);
-            }).catch((err: BusinessError) => {
+            } catch (err) {
               console.info(`${caseName} getSocketFd fail err:${JSON.stringify(err)}`);
               ExpectFail();
               console.info(`${caseName}---End`);
               done();
-            })
-            await tls.connect(tlsConnectOptions_client_rightCA).then(async () => {
+              return;
+            }
+            try {
+              await tls.connect(tlsConnectOptions_client_rightCA);
               console.log(`${caseName} connect success!`);
-              tls.send("hahaha").then(()=>{
+              try {
+                await tls.send("hahaha");
                 console.log(`${caseName} send success!`);
-              }).catch((err: BusinessError)=>{
+              } catch (err) {
                 console.log(`${caseName} send fail`+JSON.stringify(err));
                 ExpectFail();
-              })
+              }
               done();
               console.info(`${caseName}---End`);
-            }).catch((err: BusinessError) => {
+            } catch (err) {
               console.log(`${caseName} connect failed ` + JSON.stringify(err));
               ExpectFail();
               console.info(`${caseName}---End`);
               done();
-            });
-          }).catch((err: BusinessError) => {
+            }
+          } catch (err) {
             console.log(`${caseName} bind failed `+ JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          });
-        }).catch((err: BusinessError) => {
+          }
+        } catch (err) {
           console.log(`${caseName} listen fail: ` + JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        });
+        }
       } catch (err) {
         console.log(`${caseName} catch err in `,JSON.stringify(err))
         ExpectFail();
@@ -482,27 +507,35 @@ export default function SocketGetSocketFdTest() {
         await tls.bind(bindAddress);
         const BASE_COUNT:number = 100
         let loopToGetFd= async (index:number) =>{
-          await tls.bind(bindAddressFn(index)).then(()=>{
-            console.info(`${caseName} bind success`)
-          })
-          await tls.getSocketFd().then(async (data: number) => {
-            console.info(`${caseName} getSocketFd index is `+index+` success data :${JSON.stringify(data)}`);
-          }).catch((err: BusinessError) => {
-            console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+          try {
+            await tls.bind(bindAddressFn(index));
+            console.info(`${caseName} bind success`);
+          } catch (err) {
+            console.info(`${caseName} bind fail err:${JSON.stringify(err)}`);
             ExpectFail();
             done();
-          }).finally(()=>{
-            console.info("`${caseName} getSocketFd index is `+index+=====finally")
+            return;
+          }
+          try {
+            let data: number = await tls.getSocketFd();
+            console.info(`${caseName} getSocketFd index is `+index+` success data :${JSON.stringify(data)}`);
+          } catch (err) {
+            console.info(`${caseName} getSocketFd fail err:${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+            return;
+          } finally {
+            console.info("`${caseName} getSocketFd index is `+index+=====finally");
             if (index < BASE_COUNT) {
-              loopToGetFd(index + 1);
-            }else {
-              tls.close()
+              await loopToGetFd(index + 1);
+            } else {
+              tls.close();
               ExpectTrue(true);
-              done()
+              done();
             }
-          })
+          }
         }
-        loopToGetFd(1);
+        await loopToGetFd(1);
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();

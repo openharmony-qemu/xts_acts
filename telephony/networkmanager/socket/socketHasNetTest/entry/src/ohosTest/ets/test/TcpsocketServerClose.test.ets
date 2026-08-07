@@ -61,36 +61,39 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is`+ JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `)
-          await tcpServer.close().then(()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
             ExpectTrue(true);
             console.info(`${caseName}---End`);
             done();
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed err is: `+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -98,7 +101,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0200
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0200
@@ -119,36 +122,39 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is`+ JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `)
-          await tcpServer.close().then(()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
             ExpectTrue(true);
             console.info(`${caseName}---End`);
             done();
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -156,7 +162,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0300
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0300
@@ -177,27 +183,29 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed :`+ JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `)
           let tcpSendOption: socket.TCPSendOptions = {
             data: 'Hello, client!'
           };
-          await tcpServer.close().then(()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed: `+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
           tcpSocketConnection.send(tcpSendOption, (err: BusinessError) => {
             if (err) {
               console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -212,14 +220,15 @@ export default function TcpSocketServerCloseTest() {
             };
           });
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -227,7 +236,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0400
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0400
@@ -248,27 +257,29 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed: err is`+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `)
           let tcpSendOption: socket.TCPSendOptions = {
             data: 'Hello, client!'
           };
-          await tcpServer.close().then(()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
           tcpSocketConnection.send(tcpSendOption, (err: BusinessError) => {
             if (err) {
               console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -283,14 +294,15 @@ export default function TcpSocketServerCloseTest() {
             };
           });
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -298,7 +310,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0500
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0500
@@ -319,47 +331,51 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `)
-          await tcpServer.close().then(()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
           let tcpSendOptions: socket.TCPSendOptions = {
             data: 'Send a message after closing !'
           }
-          await tcpClient.send(tcpSendOptions).then(()=>{
+          try {
+            await tcpClient.send(tcpSendOptions);
             console.info(`${caseName} tcpClient  send message  success`);
             ExpectTrue(true);
             done();
             console.info(`${caseName}---End`);
-          }).catch((err:BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpClient  send message  failed err is`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -367,7 +383,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0600
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0600
@@ -388,47 +404,51 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed`+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `);
-          await tcpServer.close().then(()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
           let tcpSendOptions: socket.TCPSendOptions = {
             data: 'Send a message after closing !'
           }
-          await tcpClient.send(tcpSendOptions).then(()=>{
+          try {
+            await tcpClient.send(tcpSendOptions);
             console.info(`${caseName} tcpClient  send message  success`);
             ExpectTrue(true);
             done();
             console.info(`${caseName}---End`);
-          }).catch((err:BusinessError)=>{
+          } catch (err) {
             console.info(`${caseName} tcpClient  send message  failed err is`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -436,7 +456,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0700
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0700
@@ -457,44 +477,48 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed`+ JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `)
-          await tcpServer.close().then(async ()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
-            await tcpServer.listen(listenAddress).then(()=>{
+            try {
+              await tcpServer.listen(listenAddress);
               console.info(`${caseName} tcpServer again listen success`);
               ExpectTrue(true);
               console.info(`${caseName}---End`);
               done();
-            }).catch((err:BusinessError) => {
+            } catch (err) {
               console.info(`${caseName} tcpServer  listen failed`+ JSON.stringify(err));
               ExpectFail();
               done();
               console.info(`${caseName}---End`);
-            })
-          }).catch((err: BusinessError)=>{
+            }
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -502,7 +526,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0800
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0800
@@ -523,44 +547,48 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer  listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed`+ JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect  `)
-          await tcpServer.close().then(async ()=>{
+          try {
+            await tcpServer.close();
             console.info(`${caseName} tcpServer  close success`);
-            await tcpServer.listen(listenAddress).then(()=>{
+            try {
+              await tcpServer.listen(listenAddress);
               console.info(`${caseName} tcpServer again listen success`);
               ExpectTrue(true);
               console.info(`${caseName}---End`);
               done();
-            }).catch((err:BusinessError) => {
+            } catch (err) {
               console.info(`${caseName} tcpServer listen failed`+ JSON.stringify(err));
               ExpectFail();
               done();
               console.info(`${caseName}---End`);
-            })
-          }).catch((err: BusinessError)=>{
+            }
+          } catch (err) {
             console.info(`${caseName} tcpServer  close failed`+ JSON.stringify(err));
             ExpectFail();
             done();
             console.info(`${caseName}---End`);
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -568,7 +596,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose0900
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_0900
@@ -589,43 +617,47 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect `)
-          await tcpClient.close().then(()=>{
+          try {
+            await tcpClient.close();
             console.log(`${caseName} tcpClient close success `);
-            tcpServer.close().then(()=> {
+            try {
+              await tcpServer.close();
               console.log(`${caseName} tcpServer close success `);
               ExpectTrue(true);
               done();
-            }).catch((err: BusinessError)=>{
+            } catch (err) {
               console.log(`${caseName} tcpServer close failed `+ JSON.stringify(err));
               ExpectFail();
               console.info(`${caseName}---End`);
               done();
-            })
-          }).catch((err: BusinessError)=>{
+            }
+          } catch (err) {
             console.log(`${caseName} tcpClient close failed err is`+ JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -633,7 +665,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose1000
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_1000
@@ -654,44 +686,48 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect `)
-          await tcpClient.close().then(()=>{
+          try {
+            await tcpClient.close();
             console.log(`${caseName} tcpClient close success `);
-            tcpServer.close().then(()=> {
+            try {
+              await tcpServer.close();
               console.log(`${caseName} tcpServer close success `);
               ExpectTrue(true);
               console.info(`${caseName}---End`);
               done();
-            }).catch((err: BusinessError)=>{
+            } catch (err) {
               console.log(`${caseName} tcpServer close failed `+ JSON.stringify(err));
               ExpectFail();
               console.info(`${caseName}---End`);
               done();
-            })
-          }).catch((err: BusinessError)=>{
+            }
+          } catch (err) {
             console.log(`${caseName} tcpClient close failed err is`+ JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -699,7 +735,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose1100
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_1100
@@ -720,43 +756,47 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect `)
-          await tcpSocketConnection.close().then(()=>{
+          try {
+            await tcpSocketConnection.close();
             console.log(`${caseName} tcpClient close success `);
-            tcpServer.close().then(()=> {
+            try {
+              await tcpServer.close();
               console.log(`${caseName} tcpServer close success `);
               ExpectTrue(true);
               done();
-            }).catch((err: BusinessError)=>{
+            } catch (err) {
               console.log(`${caseName} tcpServer close failed `+ JSON.stringify(err));
               ExpectFail();
               console.info(`${caseName}---End`);
               done();
-            })
-          }).catch((err: BusinessError)=>{
+            }
+          } catch (err) {
             console.log(`${caseName} tcpClient close failed err is`+ JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -764,7 +804,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose1200
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_1200
@@ -785,44 +825,48 @@ export default function TcpSocketServerCloseTest() {
         let tcpConnectOptions: socket.TCPConnectOptions = {
           address: listenAddress
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
         tcpServer.on('connect', async (tcpSocketConnection: socket.TCPSocketConnection) => {
           console.log(`${caseName} tcpServer on connect `)
-          await tcpSocketConnection.close().then(()=>{
+          try {
+            await tcpSocketConnection.close();
             console.log(`${caseName} tcpClient close success `);
-            tcpServer.close().then(()=> {
+            try {
+              await tcpServer.close();
               console.log(`${caseName} tcpServer close success `);
               ExpectTrue(true);
               console.info(`${caseName}---End`);
               done();
-            }).catch((err: BusinessError)=>{
+            } catch (err) {
               console.log(`${caseName} tcpServer close failed `+ JSON.stringify(err));
               ExpectFail();
               console.info(`${caseName}---End`);
               done();
-            })
-          }).catch((err: BusinessError)=>{
+            }
+          } catch (err) {
             console.log(`${caseName} tcpClient close failed err is`+ JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
+          }
         });
-        await tcpClient.connect(tcpConnectOptions).catch((err:BusinessError) => {
+        try {
+          await tcpClient.connect(tcpConnectOptions);
+          console.info(`${caseName} tcpClient  connect success`);
+        } catch (err) {
           console.info(`${caseName} get connect err is `+JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        }).then(()=>{
-          console.info(`${caseName} tcpClient  connect success`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -830,7 +874,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose1300
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_1300
@@ -848,25 +892,27 @@ export default function TcpSocketServerCloseTest() {
           port: Math.round(1024+ Math.random()*5000+Math.random()*4000),
           family: 2
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
-        await tcpServer.close().then(()=> {
+        }
+        try {
+          await tcpServer.close();
           console.log(`${caseName} tcpServer close success `);
           ExpectTrue(true);
           console.info(`${caseName}---End`);
           done();
-        }).catch((err: BusinessError)=>{
+        } catch (err) {
           console.log(`${caseName} tcpServer close failed `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -874,7 +920,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose1400
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_1400
@@ -897,33 +943,36 @@ export default function TcpSocketServerCloseTest() {
           port: Math.round(1024+ Math.random()*5000+Math.random()*4000),
           family: 1
         };
-        await tcpServer.listen(listenAddress01).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress01);
           console.info(`${caseName} tcpServer listen listenAddress01 success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen listenAddress01 failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
-        await tcpServer.listen(listenAddress02).then(()=>{
+        }
+        try {
+          await tcpServer.listen(listenAddress02);
           console.info(`${caseName} tcpServer listen listenAddress02 success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen listenAddress02 failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
-        await tcpServer.close().then(()=> {
+        }
+        try {
+          await tcpServer.close();
           console.log(`${caseName} tcpServer close success `);
           ExpectTrue(true);
           console.info(`${caseName}---End`);
           done();
-        }).catch((err: BusinessError)=>{
+        } catch (err) {
           console.log(`${caseName} tcpServer close failed `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -931,7 +980,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose1500
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_1500
@@ -949,33 +998,36 @@ export default function TcpSocketServerCloseTest() {
           port: Math.round(1024+ Math.random()*5000+Math.random()*4000),
           family: 2
         };
-        await tcpServer.listen(listenAddress).then(()=>{
+        try {
+          await tcpServer.listen(listenAddress);
           console.info(`${caseName} tcpServer listen success`);
-        }).catch((err:BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} tcpServer  listen failed err is: `+JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
-        await tcpServer.close().then(()=> {
+        }
+        try {
+          await tcpServer.close();
           console.log(`${caseName} tcpServer close success `);
-          tcpServer.close().then(()=> {
+          try {
+            await tcpServer.close();
             console.log(`${caseName} tcpServer close again success `);
             ExpectTrue(true);
             console.info(`${caseName}---End`);
             done();
-          }).catch((err: BusinessError)=>{
+          } catch (err) {
             console.log(`${caseName} tcpServer close again failed `+ JSON.stringify(err));
             ExpectFail();
             console.info(`${caseName}---End`);
             done();
-          })
-        }).catch((err: BusinessError)=>{
+          }
+        } catch (err) {
           console.log(`${caseName} tcpServer close failed `+ JSON.stringify(err));
           ExpectFail();
           console.info(`${caseName}---End`);
           done();
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
@@ -983,7 +1035,7 @@ export default function TcpSocketServerCloseTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerClose1600
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_Close_1600
@@ -997,17 +1049,18 @@ export default function TcpSocketServerCloseTest() {
       console.info(`${caseName} test start`);
       try {
         let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-        await tcpServer.close().then(()=>{
+        try {
+          await tcpServer.close();
           console.info(`${caseName} tcpServer  close success`);
           ExpectTrue(true);
           console.info(`${caseName}---End`);
           done();
-        }).catch((err: BusinessError)=>{
+        } catch (err) {
           console.info(`${caseName} tcpServer  close failed`+ JSON.stringify(err));
           ExpectFail();
           done();
           console.info(`${caseName}---End`);
-        })
+        }
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         ExpectFail();
