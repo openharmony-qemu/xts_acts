@@ -12,10 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Train related functions
-export const AudioCapAbility1:(caseName: number) => number;
-export const AudioCapAbility2:(caseName: number) => number;
-export const VideoTemporalEncode1:(caseName: number) => number;
-export const VideoTemporalEncode2:(caseName: number) => number;
-export const VideoTemporalEncode3:(caseName: number) => number;
-export const VideoTemporalEncode4:(caseName: number) => number;
+
+export const AudioCapAbility00100Test: () => Promise<number>;
+export const AudioCapAbility00200Test: () => Promise<number>;
+export const AudioCapAbility00300Test: () => Promise<number>;
+export const AudioCapAbility00400Test: () => Promise<number>;
+export const AudioCapAbility00500Test: () => Promise<number>;
+export const AudioCapAbility00600Test: () => Promise<number>;
+export const AudioCapAbility00700Test: () => Promise<number>;
+export const AudioCapAbility00800Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00100Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00200Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00300Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00400Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00500Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00600Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00700Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00800Test: () => Promise<number>;
+export const VideoTemporalEncodeApi00900Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01000Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01100Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01200Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01300Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01400Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01500Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01600Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01700Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01800Test: () => Promise<number>;
+export const VideoTemporalEncodeApi01900Test: () => Promise<number>;

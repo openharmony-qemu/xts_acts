@@ -108,6 +108,8 @@ public:
 VDecAPI11Sample::VDecAPI11Sample()
 {
     this->impl = new Impl();
+    this->vdec_ = nullptr;
+    this->signal_ = nullptr;
 }
 
 void VDecAPI11Sample::CleanupResources()
