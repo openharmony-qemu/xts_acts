@@ -849,22 +849,31 @@ export function getSuppotredZoomRatioRange(photoSession: ESObject) {
   try {
     zoomRatioRange = photoSession.getZoomRatioRange();
     if (zoomRatioRange == undefined) {
-      return undefined;
+      return [];
     }
     if (zoomRatioRange!.length > 1) {
-      if (zoomRatioRange![1] > 1) {
-        zoomRatioRange!.push(1)
+      if (zoomRatioRange![0] < 1 && zoomRatioRange![1] > 1) {
+        zoomRatioRange!.splice(0, 0, 1);
+      } else if (zoomRatioRange![0] < zoomRatioRange![1]) {
+        console.info("zoomRatioRange does not contain 1")
+      } else if (zoomRatioRange![0] === zoomRatioRange![1]) {
+        console.info("zoomRatioRange has a same number")
+        zoomRatioRange!.pop();
       } else {
-        zoomRatioRange!.push(zoomRatioRange![0] + (zoomRatioRange![1] - zoomRatioRange![0]) / 2)
+        console.error("zoomRatioRange has a no-standard size")
+        return [];
       }
+    } else if (zoomRatioRange!.length === 1) {
+      console.info("zoomRatioRange is only a number")
+    }
+    if (zoomRatioRange.length <= 0) {
+      console.error("zoomRatioRange is null")
+      return [];
     }
   } catch (error) {
     let err = error as BusinessError;
     console.error('Failed to get the zoom ratio range. errorCode = ' + err.code);
     expect().assertFail()
-  }
-  if (zoomRatioRange.length <= 0) {
-    return [];
   }
   return zoomRatioRange
 }
