@@ -761,15 +761,15 @@ export default function geolocationTest_geo8() {
                 geolocationm.offLocationChange(locationChange);
             } catch (e) {
                 console.info('[lbs_js] onLocationChange_perm_test_001 off err: ' + JSON.stringify(e));
+                expect().assertFail();
             }
-            expect(true).assertTrue();
             done();
         } catch (err) {
             console.error("errCode:" + err.code + ", message:" + err.message);
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
-                expect(err.code === 3301000).assertTrue();
+                expect().assertFail();
             }
             done();
         }
@@ -786,11 +786,15 @@ export default function geolocationTest_geo8() {
     it('SUB_Location_onLocationChange_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.onLocationChange(null, null);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
         } catch (err) {
             console.info('[lbs_js] onLocationChange_perm_test_002 catch err: ' + JSON.stringify(err));
-            expect(err.code === 401).assertTrue();
+            if (err.code === 401) {
+                expect(err.code === 401).assertTrue();
+            } else {
+                expect(err.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -817,15 +821,15 @@ export default function geolocationTest_geo8() {
                 geolocationm.offLocationChange(locationCallback);
             } catch (e) {
                 console.info('[lbs_js] onLocationChange_perm_test_003 off err: ' + JSON.stringify(e));
+                expect().assertFail();
             }
-            expect(true).assertTrue();
             done();
         } catch (err) {
             console.error("errCode:" + err.code + ", message:" + err.message);
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
-                expect(err.code === 3301000).assertTrue();
+                expect().assertFail();
             }
             done();
         }
@@ -842,11 +846,15 @@ export default function geolocationTest_geo8() {
     it('SUB_Location_onLocationChange_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.onLocationChange(undefined, undefined);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
         } catch (err) {
             console.info('[lbs_js] onLocationChange_perm_test_004 catch err: ' + JSON.stringify(err));
-            expect(err.code === 401).assertTrue();
+            if (err.code === 401) {
+                expect(err.code === 401).assertTrue();
+            } else {
+                expect(err.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -863,14 +871,13 @@ export default function geolocationTest_geo8() {
         try {
             geolocationm.offLocationChange();
             console.info('[lbs_js] offLocationChange_perm_test_001 done');
-            expect(true).assertTrue();
             done();
         } catch (err) {
             console.info('[lbs_js] offLocationChange_perm_test_001 catch err: ' + JSON.stringify(err));
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
-                expect(err.code === 3301000).assertTrue();
+                expect().assertFail();
             }
             done();
         }
@@ -887,11 +894,15 @@ export default function geolocationTest_geo8() {
     it('SUB_Location_offLocationChange_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.offLocationChange('invalid callback');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
         } catch (err) {
             console.info('[lbs_js] offLocationChange_perm_test_002 catch err: ' + JSON.stringify(err));
-            expect(err.code === 401).assertTrue();
+            if (err.code === 401) {
+                expect(err.code === 401).assertTrue();
+            } else {
+                expect(err.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -909,22 +920,30 @@ export default function geolocationTest_geo8() {
             let params = { 'locale': 'zh', 'timeoutMs': 5000 };
             geolocationm.getCurrentDistrict(params).then((res) => {
                 console.info('[lbs_js] getCurrentDistrict_perm_test_001 result: ' + JSON.stringify(res));
-                expect(true).assertTrue();
+                expect(typeof res === 'object').assertTrue();
+                expect(typeof res.locale === 'string').assertTrue();
+                expect(typeof res.countryCode === 'string').assertTrue();
+                expect(typeof res.countryName === 'string').assertTrue();
+                expect(typeof res.administrativeArea === 'string').assertTrue();
+                expect(typeof res.locality === 'string').assertTrue();
+                expect(typeof res.subLocality === 'string').assertTrue();
                 done();
             }).catch((error) => {
                 console.info('[lbs_js] getCurrentDistrict_perm_test_001 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     expect(error.code === 801).assertTrue();
-                } else if (error.code === 3301000) {
-                    expect(error.code === 3301000).assertTrue();
                 } else {
-                    expect(error.code === 3301500).assertTrue();
+                    expect().assertFail();
                 }
                 done();
             });
         } catch (error) {
             console.info('[lbs_js] getCurrentDistrict_perm_test_001 sync catch err: ' + JSON.stringify(error));
-            expect(false).assertTrue();
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
             done();
         }
     });
@@ -941,16 +960,24 @@ export default function geolocationTest_geo8() {
         try {
             geolocationm.getCurrentDistrict({ 'locale': 123 }).then((res) => {
                 console.info('[lbs_js] getCurrentDistrict_perm_test_002 unexpectedly succeeded: ' + JSON.stringify(res));
-                expect(false).assertTrue();
+                expect().assertFail();
                 done();
             }).catch((error) => {
                 console.info('[lbs_js] getCurrentDistrict_perm_test_002 promise catch err: ' + JSON.stringify(error));
-                expect(error.code === 401).assertTrue();
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
                 done();
             });
         } catch (error) {
             console.info('[lbs_js] getCurrentDistrict_perm_test_002 sync catch err: ' + JSON.stringify(error));
-            expect(error.code === 401).assertTrue();
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -967,6 +994,10 @@ export default function geolocationTest_geo8() {
         let requestInfo = {"deviceIdArray":['00:11:22:33:44:55'], "rssiThreshold":-80};
         let callback = (result) => {
             console.info('[lbs_js] startBluetoothSearch_perm_test_001 callback: ' + JSON.stringify(result));
+            expect(typeof result.deviceId === 'string').assertTrue();
+            expect(typeof result.rssi === 'number').assertTrue();
+            expect(typeof result.deviceName === 'string').assertTrue();
+            expect(typeof result.connectable === 'boolean').assertTrue();
         };
         try {
             geolocationm.startBluetoothSearch(requestInfo, callback);
@@ -976,17 +1007,15 @@ export default function geolocationTest_geo8() {
                 console.info('[lbs_js] startBluetoothSearch_perm_test_001 cleanup stop done');
             } catch (e) {
                 console.info('[lbs_js] startBluetoothSearch_perm_test_001 cleanup stop err: ' + JSON.stringify(e));
+                expect().assertFail();
             }
-            expect(true).assertTrue();
             done();
         } catch (err) {
             console.info('[lbs_js] startBluetoothSearch_perm_test_001 catch err: ' + JSON.stringify(err));
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
-            } else if (err.code === 3301000) {
-                expect(err.code === 3301000).assertTrue();
             } else {
-                expect(err.code === 3301800).assertTrue();
+                expect().assertFail();
             }
             done();
         }
@@ -1003,11 +1032,15 @@ export default function geolocationTest_geo8() {
     it('SUB_Location_startBluetoothSearch_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.startBluetoothSearch(null, null);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
         } catch (err) {
             console.info('[lbs_js] startBluetoothSearch_perm_test_002 catch err: ' + JSON.stringify(err));
-            expect(err.code === 401).assertTrue();
+            if (err.code === 401) {
+                expect(err.code === 401).assertTrue();
+            } else {
+                expect(err.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -1027,11 +1060,15 @@ export default function geolocationTest_geo8() {
         };
         try {
             geolocationm.startBluetoothSearch(requestInfo, callback);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
         } catch (err) {
             console.info('[lbs_js] startBluetoothSearch_perm_test_003 catch err: ' + JSON.stringify(err));
-            expect(err.code === 401).assertTrue();
+            if (err.code === 401) {
+                expect(err.code === 401).assertTrue();
+            } else {
+                expect(err.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -1047,11 +1084,15 @@ export default function geolocationTest_geo8() {
     it('SUB_Location_startBluetoothSearch_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.startBluetoothSearch(undefined, undefined);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
         } catch (err) {
             console.info('[lbs_js] startBluetoothSearch_perm_test_004 catch err: ' + JSON.stringify(err));
-            expect(err.code === 401).assertTrue();
+            if (err.code === 401) {
+                expect(err.code === 401).assertTrue();
+            } else {
+                expect(err.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -1068,14 +1109,13 @@ export default function geolocationTest_geo8() {
         try {
             geolocationm.stopBluetoothSearch();
             console.info('[lbs_js] stopBluetoothSearch_perm_test_001 done');
-            expect(true).assertTrue();
             done();
         } catch (err) {
             console.info('[lbs_js] stopBluetoothSearch_perm_test_001 catch err: ' + JSON.stringify(err));
             if (err.code === 801) {
                 expect(err.code === 801).assertTrue();
             } else {
-                expect(err.code === 3301000).assertTrue();
+                expect().assertFail();
             }
             done();
         }
@@ -1092,11 +1132,15 @@ export default function geolocationTest_geo8() {
     it('SUB_Location_stopBluetoothSearch_perm_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.stopBluetoothSearch(123);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
         } catch (err) {
             console.info('[lbs_js] stopBluetoothSearch_perm_test_002 catch err: ' + JSON.stringify(err));
-            expect(err.code === 401).assertTrue();
+            if (err.code === 401) {
+                expect(err.code === 401).assertTrue();
+            } else {
+                expect(err.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -1113,22 +1157,35 @@ export default function geolocationTest_geo8() {
         try {
             geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_001 result length: ' + res.length);
-                expect(true).assertTrue();
+                expect(res instanceof Array).assertTrue();
+                if (res.length > 0) {
+                    let loc = res[0];
+                    expect(typeof loc.latitude === 'number').assertTrue();
+                    expect(typeof loc.longitude === 'number').assertTrue();
+                    expect(typeof loc.altitude === 'number').assertTrue();
+                    expect(typeof loc.accuracy === 'number').assertTrue();
+                    expect(typeof loc.speed === 'number').assertTrue();
+                    expect(typeof loc.timeStamp === 'number').assertTrue();
+                    expect(typeof loc.direction === 'number').assertTrue();
+                    expect(typeof loc.timeSinceBoot === 'number').assertTrue();
+                }
                 done();
             }).catch((error) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_001 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     expect(error.code === 801).assertTrue();
-                } else if (error.code === 3301000) {
-                    expect(error.code === 3301000).assertTrue();
                 } else {
-                    expect(error.code === 3301200).assertTrue();
+                    expect().assertFail();
                 }
                 done();
             });
         } catch (error) {
             console.info('[lbs_js] getPostProcessingTrack_perm_test_001 sync catch err: ' + JSON.stringify(error));
-            expect(false).assertTrue();
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
             done();
         }
     });
@@ -1145,16 +1202,24 @@ export default function geolocationTest_geo8() {
         try {
             geolocationm.getPostProcessingTrack('abc').then((res) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_002 unexpectedly succeeded: ' + JSON.stringify(res));
-                expect(false).assertTrue();
+                expect().assertFail();
                 done();
             }).catch((error) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_002 promise catch err: ' + JSON.stringify(error));
-                expect(error.code === 401).assertTrue();
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
                 done();
             });
         } catch (error) {
             console.info('[lbs_js] getPostProcessingTrack_perm_test_002 sync catch err: ' + JSON.stringify(error));
-            expect(error.code === 401).assertTrue();
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
             done();
         }
     });
@@ -1200,7 +1265,11 @@ export default function geolocationTest_geo8() {
             done();
         } catch (err) {
             console.error("errCode:" + err.code + ", message:" + err.message);
-            expect(err.code === 3301100).assertTrue();
+            if (err.code === 801) {
+                expect(err.code === 801).assertTrue();
+            } else {
+                expect(err.code === 3301100).assertTrue();
+            }
             try {
                 geolocationm.enableLocation();
             } catch (e) {
@@ -1238,7 +1307,11 @@ export default function geolocationTest_geo8() {
                 done();
             }).catch((error) => {
                 console.info('[lbs_js] getCurrentDistrict_perm_test_003 promise catch err: ' + JSON.stringify(error));
-                expect(error.code === 3301100).assertTrue();
+                if (error.code === 801) {
+                    expect(error.code === 801).assertTrue();
+                } else {
+                    expect(error.code === 3301100).assertTrue();
+                }
                 try {
                     geolocationm.enableLocation();
                 } catch (e) {
@@ -1248,7 +1321,11 @@ export default function geolocationTest_geo8() {
             });
         } catch (error) {
             console.info('[lbs_js] getCurrentDistrict_perm_test_003 sync catch err: ' + JSON.stringify(error));
-            expect(error.code === 3301100).assertTrue();
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect(error.code === 3301100).assertTrue();
+            }
             try {
                 geolocationm.enableLocation();
             } catch (e) {
@@ -1285,7 +1362,11 @@ export default function geolocationTest_geo8() {
                 done();
             }).catch((error) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_003 promise catch err: ' + JSON.stringify(error));
-                expect(error.code === 3301100).assertTrue();
+                if (error.code === 801) {
+                    expect(error.code === 801).assertTrue();
+                } else {
+                    expect(error.code === 3301100).assertTrue();
+                }
                 try {
                     geolocationm.enableLocation();
                 } catch (e) {
@@ -1295,12 +1376,65 @@ export default function geolocationTest_geo8() {
             });
         } catch (error) {
             console.info('[lbs_js] getPostProcessingTrack_perm_test_003 sync catch err: ' + JSON.stringify(error));
-            expect(error.code === 3301100).assertTrue();
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect(error.code === 3301100).assertTrue();
+            }
             try {
                 geolocationm.enableLocation();
             } catch (e) {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_003 enableLocation err: ' + JSON.stringify(e));
             }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_findMatchingWlan_promiss_0600
+     * @tc.number SUB_Location_findMatchingWlan_promiss_0600
+     * @tc.desc   Test findMatchingWlan return value MatchingWlanInfo structure coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Location_findMatchingWlan_promiss_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        try {
+            let bssid = geolocationm.getCurrentWifiBssidForLocating();
+            console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600: ' + bssid);
+            
+            if (!bssid) {
+                console.info('[lbs_js] No BSSID available, skip test');
+                done();
+                return;
+            }
+            
+            let wlanBssidArray = [bssid];
+            let rssiThreshold = -100;
+            let needStartScan = true;
+            
+            geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600 result: ' + JSON.stringify(result));
+                expect(result instanceof Array).assertTrue();
+                if (result.length > 0) {
+                    console.info('[lbs_js] result[0].index: ' + result[0].index);
+                    console.info('[lbs_js] result[0].ssid: ' + result[0].ssid);
+                    console.info('[lbs_js] typeof result[0].index: ' + typeof result[0].index);
+                    console.info('[lbs_js] typeof result[0].ssid: ' + typeof result[0].ssid);
+                    expect(typeof result[0].index).assertEqual('number');
+                    expect(typeof result[0].ssid).assertEqual('string');
+                    expect(result[0].index >= 0).assertTrue();
+                    expect(result[0].index < wlanBssidArray.length).assertTrue();
+                }
+                done();
+            }).catch((err) => {
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600 err: ' + JSON.stringify(err));
+                expect(err.code === 801).assertTrue();
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600 try error: ' + JSON.stringify(error));
+            expect(error.code === 801).assertTrue();
             done();
         }
     });

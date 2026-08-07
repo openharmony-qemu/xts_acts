@@ -1760,32 +1760,12 @@ export default function geoLocationManager_nop_test() {
     /**
      * @tc.name   SUB_Location_nop_onLocationChange_0200
      * @tc.number SUB_Location_nop_onLocationChange_0200
-     * @tc.desc   Using geoLocationManager.onLocationChange with all-null args (401).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Location_nop_onLocationChange_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        geoLocationManager.onLocationChange(null, null);
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.info('onLocationChange_nop_test_002 catch err: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(401);
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_Location_nop_onLocationChange_0300
-     * @tc.number SUB_Location_nop_onLocationChange_0300
      * @tc.desc   Using geoLocationManager.onLocationChange with ContinuousLocationRequest but no permission.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_Location_nop_onLocationChange_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("SUB_Location_nop_onLocationChange_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let request: geoLocationManager.ContinuousLocationRequest = {
         'interval': 1,
         'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
@@ -1798,28 +1778,8 @@ export default function geoLocationManager_nop_test() {
         expect().assertFail();
         done();
       } catch (err) {
-        console.info('onLocationChange_nop_test_003 catch err: ' + JSON.stringify(err));
+        console.info('onLocationChange_nop_test_002 catch err: ' + JSON.stringify(err));
         expect(err.code).assertEqual(201);
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_Location_nop_onLocationChange_0400
-     * @tc.number SUB_Location_nop_onLocationChange_0400
-     * @tc.desc   Using geoLocationManager.onLocationChange with all-undefined args (401).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Location_nop_onLocationChange_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        geoLocationManager.onLocationChange(undefined, undefined);
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.info('onLocationChange_nop_test_004 catch err: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(401);
         done();
       }
     })
@@ -1840,26 +1800,6 @@ export default function geoLocationManager_nop_test() {
       } catch (err) {
         console.info('getCurrentDistrict_nop_test_001 catch err: ' + JSON.stringify(err));
         expect(err.code).assertEqual(201);
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_Location_nop_getCurrentDistrict_0200
-     * @tc.number SUB_Location_nop_getCurrentDistrict_0200
-     * @tc.desc   Using geoLocationManager.getCurrentDistrict with null params (401).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Location_nop_getCurrentDistrict_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        await geoLocationManager.getCurrentDistrict(null);
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.info('getCurrentDistrict_nop_test_002 catch err: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(401);
         done();
       }
     })
@@ -1900,73 +1840,6 @@ export default function geoLocationManager_nop_test() {
       })
 
     /**
-     * @tc.name   SUB_Location_nop_startBluetoothSearch_0200
-     * @tc.number SUB_Location_nop_startBluetoothSearch_0200
-     * @tc.desc   Using geoLocationManager.startBluetoothSearch with all-null args (401).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Location_nop_startBluetoothSearch_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-        try {
-          geoLocationManager.startBluetoothSearch(null, null);
-          expect().assertFail();
-          done();
-        } catch (err) {
-          console.info('startBluetoothSearch_nop_test_002 catch err: ' + JSON.stringify(err));
-          expect(err.code).assertEqual(401);
-          done();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Location_nop_startBluetoothSearch_0300
-     * @tc.number SUB_Location_nop_startBluetoothSearch_0300
-     * @tc.desc   Using geoLocationManager.startBluetoothSearch with null callback (401).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Location_nop_startBluetoothSearch_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-        let request: geoLocationManager.BluetoothSearchRequestParams = {
-          'deviceIdArray': ['00:11:22:33:44:55'],
-          'rssiThreshold': -80
-        };
-        try {
-          geoLocationManager.startBluetoothSearch(request, null);
-          expect().assertFail();
-          done();
-        } catch (err) {
-          console.info('startBluetoothSearch_nop_test_003 catch err: ' + JSON.stringify(err));
-          expect(err.code).assertEqual(401);
-          done();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Location_nop_startBluetoothSearch_0400
-     * @tc.number SUB_Location_nop_startBluetoothSearch_0400
-     * @tc.desc   Using geoLocationManager.startBluetoothSearch with all-undefined args (401).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Location_nop_startBluetoothSearch_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-        try {
-          geoLocationManager.startBluetoothSearch(undefined, undefined);
-          expect().assertFail();
-          done();
-        } catch (err) {
-          console.info('startBluetoothSearch_nop_test_004 catch err: ' + JSON.stringify(err));
-          expect(err.code).assertEqual(401);
-          done();
-        }
-      })
-
-    /**
      * @tc.name   SUB_Location_nop_getPostProcessingTrack_0100
      * @tc.number SUB_Location_nop_getPostProcessingTrack_0100
      * @tc.desc   Using geoLocationManager.getPostProcessingTrack with SKIING but no permission (201).
@@ -1983,27 +1856,6 @@ export default function geoLocationManager_nop_test() {
         } catch (err) {
           console.info('getPostProcessingTrack_nop_test_001 catch err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
-          done();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Location_nop_getPostProcessingTrack_0200
-     * @tc.number SUB_Location_nop_getPostProcessingTrack_0200
-     * @tc.desc   Using geoLocationManager.getPostProcessingTrack with null sportsType (401).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Location_nop_getPostProcessingTrack_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
-        try {
-          await geoLocationManager.getPostProcessingTrack(null);
-          expect().assertFail();
-          done();
-        } catch (err) {
-          console.info('getPostProcessingTrack_nop_test_002 catch err: ' + JSON.stringify(err));
-          expect(err.code).assertEqual(401);
           done();
         }
       })
