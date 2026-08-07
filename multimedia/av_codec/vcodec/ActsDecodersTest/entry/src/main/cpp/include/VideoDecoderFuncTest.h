@@ -16,40 +16,26 @@
 #ifndef VIDEO_DECODER_FUNC_TEST_H
 #define VIDEO_DECODER_FUNC_TEST_H
 
-namespace OHOS {
-namespace Media {
+#include <napi/native_api.h>
 
-// Buffer Mode Function Tests
-int VideoVc1DecFunction0001();
-int VideoMjpegDecFunction0003();
-int VideoMsvideo1DecFunction0005();
-
-// Surface Mode Function Tests
-int VideoVc1DecFunction0002();
-int VideoMjpegDecFunction0004();
-int VideoMsvideo1DecFunction0006();
-
-// VP8 Function Tests
-int VideoVp8DecFunction0007();
-int VideoVp8DecFunction0021();
-
-// VP9 Function Tests
-int VideoVp9DecFunction0008();
-int VideoVp9DecFunction0009();
-int VideoVp9DecFunction0010();
-int VideoVp9DecFunction0011();
-int VideoVp9DecFunction0019();
-int VideoVp9DecFunction0020();
-
-// AV1 Function Tests
-int VideoAv1DecFunction0012();
-int VideoAv1DecFunction0013();
-int VideoAv1DecFunction0015();
-int VideoAv1DecFunction0016();
-
-// CINEPAK Function Tests
-int VideoCinepakDecFunction0022();
-} // namespace Media
-} // namespace OHOS
+napi_value VideoVc1DecFunction0001(napi_env env, napi_callback_info info);
+napi_value VideoMjpegDecFunction0003(napi_env env, napi_callback_info info);
+napi_value VideoMsvideo1DecFunction0005(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecFunction0002(napi_env env, napi_callback_info info);
+napi_value VideoMjpegDecFunction0004(napi_env env, napi_callback_info info);
+napi_value VideoMsvideo1DecFunction0006(napi_env env, napi_callback_info info);
+napi_value VideoVp8DecFunction0007(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecFunction0008(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecFunction0009(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecFunction0010(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecFunction0011(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecFunction0012(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecFunction0013(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecFunction0015(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecFunction0016(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecFunction0019(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecFunction0020(napi_env env, napi_callback_info info);
+napi_value VideoVp8DecFunction0021(napi_env env, napi_callback_info info);
+napi_value VideoCinepakDecFunction0022(napi_env env, napi_callback_info info);
 
 #endif // VIDEO_DECODER_FUNC_TEST_H

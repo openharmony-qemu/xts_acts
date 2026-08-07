@@ -12,241 +12,131 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "include/AudioCapTest.h"
+
 #include "napi/native_api.h"
-#include <exception>
+#include "include/AudioCapTest.h"
 #include "include/CapTest.h"
+#include <iostream>
+#include <vector>
+#include <functional>
+#include <cstring>
 
-constexpr int ARG_INDEX = 0;
-constexpr int DEFAULT_ARG = -1;
+using TestFunction = std::function<int()>;
 
-enum CaseNum {
-    CASE_NUM_0 = 0,
-    CASE_NUM_1,
-    CASE_NUM_2,
-    CASE_NUM_3,
-    CASE_NUM_4,
+struct AsyncTestContext {
+    napi_env env;
+    napi_deferred deferred;
+    napi_async_work work;
+    TestFunction func;
+    int result;
 };
 
-
-int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue);
-
-inline int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    return GetInt32ArgImpl(env, info, index, defaultValue);
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
+    }
 }
-int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
+
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
 {
-    size_t argc = index + 1;
-    napi_value args[index + 1];
-
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok || argc <= index) {
-        napi_throw_type_error(env, nullptr, "Argument missing");
-        return defaultValue;
-    }
-
-    napi_valuetype valuetype;
-    napi_typeof(env, args[index], &valuetype);
-    if (valuetype != napi_number) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return defaultValue;
-    }
-
-    int32_t result = defaultValue;
-    status = napi_get_value_int32(env, args[index], &result);
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
     if (status != napi_ok) {
-        napi_throw_type_error(env, nullptr, "Value is not int32");
-        return defaultValue;
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
+    } else {
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
     }
-
-    return result;
+    napi_delete_async_work(env, context->work);
+    delete context;
 }
 
-
-template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
+static napi_value RunTestAsync(napi_env env, TestFunction func, const char* name)
 {
-    try {
-        return func();
-    } catch (const std::exception& e) {
-        napi_throw_error(env, nullptr, e.what());
-    } catch (...) {
-        napi_throw_error(env, nullptr, "Unknown native error");
-    }
-    return nullptr;
-}
-
-napi_value AudioCapAbility1(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_001();
-                break;
-            case CASE_NUM_1:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_002();
-                break;
-            case CASE_NUM_2:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_003();
-                break;
-            case CASE_NUM_3:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_004();
-                break;
-        }
-        napi_value resultValue;
-        napi_create_int32(env, result, &resultValue);
-        return resultValue;
-    });
-}
-
-napi_value AudioCapAbility2(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_005();
-                break;
-            case CASE_NUM_1:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_006();
-                break;
-            case CASE_NUM_2:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_007();
-                break;
-            case CASE_NUM_3:
-                result =OHOS::Media::AUDIO_CAPABILITY_TEST_008();
-                break;
-        }
-        napi_value resultValue;
-        napi_create_int32(env, result, &resultValue);
-        return resultValue;
-    });
-}
-
-napi_value VideoTemporalEncode1(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0010();
-                break;
-            case CASE_NUM_1:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0011();
-                break;
-            case CASE_NUM_2:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0012();
-                break;
-            case CASE_NUM_3:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0013();
-                break;
-            case CASE_NUM_4:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0014();
-                break;
-        }
-        napi_value resultValue;
-        napi_create_int32(env, result, &resultValue);
-        return resultValue;
-    });
-}
-
-napi_value VideoTemporalEncode2(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result = OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0015();
-                break;
-            case CASE_NUM_1:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0016();
-                break;
-            case CASE_NUM_2:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0017();
-                break;
-            case CASE_NUM_3:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0018();
-                break;
-            case CASE_NUM_4:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0019();
-                break;
-        }
-        napi_value resultValue;
-        napi_create_int32(env, result, &resultValue);
-        return resultValue;
-    });
-}
-
-napi_value VideoTemporalEncode3(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result = OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0020();
-                break;
-            case CASE_NUM_1:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0021();
-                break;
-            case CASE_NUM_2:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0022();
-                break;
-            case CASE_NUM_3:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0023();
-                break;
-            case CASE_NUM_4:
-                result =OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0024();
-                break;
-        }
-        napi_value resultValue;
-        napi_create_int32(env, result, &resultValue);
-        return resultValue;
-    });
-}
-
-napi_value VideoTemporalEncode4(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result = OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0025();
-                break;
-            case CASE_NUM_1:
-                result = OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0026();
-                break;
-            case CASE_NUM_2:
-                result = OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0027();
-                break;
-            case CASE_NUM_3:
-                result = OHOS::Media::VIDEO_TEMPORAL_ENCODE_API_0028();
-                break;
-        }
-        napi_value resultValue;
-        napi_create_int32(env, result, &resultValue);
-        return resultValue;
-    });
+    napi_value promise;
+    napi_deferred deferred;
+    napi_create_promise(env, &deferred, &promise);
+    AsyncTestContext* context = new AsyncTestContext{
+        env, deferred, nullptr, func, -1};
+    napi_value resourceName;
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context, &context->work);
+    napi_queue_async_work(env, context->work);
+    return promise;
 }
 
 EXTERN_C_START
+
+struct Entry {
+    napi_callback func;
+    const char* name;
+};
+
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+    napi_value ret = entry->func(env, info);
+    int32_t val = -1;
+    napi_get_value_int32(env, ret, &val);
+    return RunTestAsync(env, [val]() { return val; }, entry->name);
+}
+
+static napi_property_descriptor XL(const char* functionName, napi_callback func)
+{
+    auto* entry = new Entry{func, functionName};
+    return {functionName, nullptr, AsyncWrapper, nullptr, nullptr, nullptr,
+            napi_default, entry};
+}
+
+static void InitPush1(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AudioCapAbility00100Test", AudioCapAbility00100Test));
+    desc.push_back(XL("AudioCapAbility00200Test", AudioCapAbility00200Test));
+    desc.push_back(XL("AudioCapAbility00300Test", AudioCapAbility00300Test));
+    desc.push_back(XL("AudioCapAbility00400Test", AudioCapAbility00400Test));
+    desc.push_back(XL("AudioCapAbility00500Test", AudioCapAbility00500Test));
+    desc.push_back(XL("AudioCapAbility00600Test", AudioCapAbility00600Test));
+    desc.push_back(XL("AudioCapAbility00700Test", AudioCapAbility00700Test));
+    desc.push_back(XL("AudioCapAbility00800Test", AudioCapAbility00800Test));
+}
+
+static void InitPush2(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoTemporalEncodeApi00100Test", VideoTemporalEncodeApi00100Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00200Test", VideoTemporalEncodeApi00200Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00300Test", VideoTemporalEncodeApi00300Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00400Test", VideoTemporalEncodeApi00400Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00500Test", VideoTemporalEncodeApi00500Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00600Test", VideoTemporalEncodeApi00600Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00700Test", VideoTemporalEncodeApi00700Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00800Test", VideoTemporalEncodeApi00800Test));
+    desc.push_back(XL("VideoTemporalEncodeApi00900Test", VideoTemporalEncodeApi00900Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01000Test", VideoTemporalEncodeApi01000Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01100Test", VideoTemporalEncodeApi01100Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01200Test", VideoTemporalEncodeApi01200Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01300Test", VideoTemporalEncodeApi01300Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01400Test", VideoTemporalEncodeApi01400Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01500Test", VideoTemporalEncodeApi01500Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01600Test", VideoTemporalEncodeApi01600Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01700Test", VideoTemporalEncodeApi01700Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01800Test", VideoTemporalEncodeApi01800Test));
+    desc.push_back(XL("VideoTemporalEncodeApi01900Test", VideoTemporalEncodeApi01900Test));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        {"AudioCapAbility1", nullptr, AudioCapAbility1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AudioCapAbility2", nullptr, AudioCapAbility2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"VideoTemporalEncode1", nullptr, VideoTemporalEncode1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"VideoTemporalEncode2", nullptr, VideoTemporalEncode2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"VideoTemporalEncode3", nullptr, VideoTemporalEncode3, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"VideoTemporalEncode4", nullptr, VideoTemporalEncode4, nullptr, nullptr, nullptr, napi_default, nullptr},
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    std::vector<napi_property_descriptor> desc;
+    InitPush1(desc);
+    InitPush2(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END

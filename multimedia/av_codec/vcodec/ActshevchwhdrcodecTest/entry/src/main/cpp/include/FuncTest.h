@@ -15,13 +15,14 @@
 
 #ifndef ACTSHEVCHWHDRCODECTEST_FUNCTEST_H
 #define ACTSHEVCHWHDRCODECTEST_FUNCTEST_H
+#include <napi/native_api.h>
 namespace OHOS {
 namespace Media {
-int DEMUXER_DEC_ENC_MUXER_FUNC_009();
-int DEMUXER_DEC_ENC_MUXER_FUNC_010();
-int DEMUXER_DEC_ENC_MUXER_FUNC_011();
-int DEMUXER_DEC_ENC_MUXER_FUNC_012();
-int DEMUXER_DEC_ENC_MUXER_FUNC_013();
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_009(napi_env env, napi_callback_info info);
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_010(napi_env env, napi_callback_info info);
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_011(napi_env env, napi_callback_info info);
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_012(napi_env env, napi_callback_info info);
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_013(napi_env env, napi_callback_info info);
 }
 }
 #endif //ACTSHEVCHWHDRCODECTEST_FUNCTEST_H

@@ -25,9 +25,9 @@
 #include <memory>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <napi/native_api.h>
 
 using namespace std;
-using namespace OHOS;
 using namespace OHOS::Media;
 
 #undef LOG_DOMAIN
@@ -35,8 +35,12 @@ using namespace OHOS::Media;
 #define LOG_DOMAIN 0x0001
 #define LOG_TAG "VideoDecoderTest"
 
-namespace OHOS {
-namespace Media {
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
 
 static OH_AVCapability *g_capVc1 = nullptr;
 static OH_AVCapability* g_capMjpeg = nullptr;
@@ -60,6 +64,7 @@ static constexpr uint32_t FRAMESIZE100 = 100;
 static constexpr uint32_t FRAMESIZE180 = 180;
 static constexpr uint32_t FRAMESIZE45 = 45;
 static constexpr uint32_t FRAMESIZE5 = 5;
+static constexpr uint32_t SURFACE_RELEASE_WAIT_US = 500000;
 
 // Profile index constants
 static constexpr uint32_t PROFILE_INDEX_0 = 0;
@@ -169,192 +174,174 @@ static int VerifyDecodingResult(shared_ptr<VDecAPI11Sample> vDecSample, uint32_t
 }
 
 // Test VC1 decoder function with buffer mode
-int VideoVc1DecFunction0001()
+napi_value VideoVc1DecFunction0001(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capVc1 == nullptr) {
-        return 0;
-    }
+    if (g_capVc1 == nullptr) { return CreateIntInt32Result(env, 0); }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->GetFormat(GINP_DIR_VC1);
-    if (vDecSample->gFd < 0) {
-        return -1;
-    }
+    if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
     
     if (SetupDecoder(vDecSample, g_codecNameVc1) != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     int result = VerifyDecodingResult(vDecSample, FRAMESIZE60);
-    return result;
+    return CreateIntInt32Result(env, result);
 }
 
 // Test MJPEG decoder function with buffer mode
-int VideoMjpegDecFunction0003()
+napi_value VideoMjpegDecFunction0003(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capMjpeg == nullptr) {
-        return 0;
-    }
+    if (g_capMjpeg == nullptr) { return CreateIntInt32Result(env, 0); }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->GetFormat(GINP_DIR_MJPEG);
-    if (vDecSample->gFd < 0) {
-        return -1;
-    }
+    if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
     
     if (SetupDecoder(vDecSample, g_codecNameMjpeg) != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     int result = VerifyDecodingResult(vDecSample, FRAMESIZE30);
-    return result;
+    return CreateIntInt32Result(env, result);
 }
 
 // Test MSVIDEO1 decoder function with buffer mode
-int VideoMsvideo1DecFunction0005()
+napi_value VideoMsvideo1DecFunction0005(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capMsvideo1 == nullptr) {
-        return 0;
-    }
+    if (g_capMsvideo1 == nullptr) { return CreateIntInt32Result(env, 0); }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->GetFormat(GINP_DIR_MSVIDEO1);
-    if (vDecSample->gFd < 0) {
-        return -1;
-    }
+    if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
     
     if (SetupDecoder(vDecSample, g_codecNameMsvideo1) != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     int result = VerifyDecodingResult(vDecSample, FRAMESIZE98);
-    return result;
+    return CreateIntInt32Result(env, result);
 }
 
 // Test VC1 decoder function with surface mode
-int VideoVc1DecFunction0002()
+napi_value VideoVc1DecFunction0002(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capVc1 == nullptr) {
-        return 0;
+    if (g_capVc1 == nullptr) { return CreateIntInt32Result(env, 0); }
+
+    uint32_t frameCount = 0;
+    {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->GetFormat(GINP_DIR_VC1);
+        if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
+        vDecSample->sfOutput = true;
+        vDecSample->outputYuvSurface = true;
+        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+        vDecSample->afterEosDestoryCodec = false;
+        if (vDecSample->RunVideoDecSurface(g_codecNameVc1) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        frameCount = vDecSample->outFrameCount;
     }
-    
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->GetFormat(GINP_DIR_VC1);
-    if (vDecSample->gFd < 0) {
-        return -1;
-    }
-    vDecSample->sfOutput = true;
-    vDecSample->outputYuvSurface = true;
-    vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    if (vDecSample->RunVideoDecSurface(g_codecNameVc1) != AV_ERR_OK) {
-        return -1;
-    }
-    vDecSample->WaitForEOS();
-    if (vDecSample->outFrameCount != FRAMESIZE60) {
-        return -1;
-    }
-    return 0;
+    usleep(SURFACE_RELEASE_WAIT_US);
+    if (frameCount != FRAMESIZE60) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 // Test MJPEG decoder function with surface mode
-int VideoMjpegDecFunction0004()
+napi_value VideoMjpegDecFunction0004(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capMjpeg == nullptr) {
-        return 0;
+    if (g_capMjpeg == nullptr) { return CreateIntInt32Result(env, 0); }
+
+    uint32_t frameCount = 0;
+    {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->GetFormat(GINP_DIR_MJPEG);
+        if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
+        vDecSample->sfOutput = true;
+        vDecSample->outputYuvSurface = true;
+        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+        vDecSample->afterEosDestoryCodec = false;
+        if (vDecSample->RunVideoDecSurface(g_codecNameMjpeg) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        frameCount = vDecSample->outFrameCount;
     }
-    
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->GetFormat(GINP_DIR_MJPEG);
-    if (vDecSample->gFd < 0) {
-        return -1;
-    }
-    vDecSample->sfOutput = true;
-    vDecSample->outputYuvSurface = true;
-    vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    if (vDecSample->RunVideoDecSurface(g_codecNameMjpeg) != AV_ERR_OK) {
-        return -1;
-    }
-    vDecSample->WaitForEOS();
-    if (vDecSample->outFrameCount != FRAMESIZE30) {
-        return -1;
-    }
-    return 0;
+    usleep(SURFACE_RELEASE_WAIT_US);
+    if (frameCount != FRAMESIZE30) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 // Test MSVIDEO1 decoder function with surface mode
-int VideoMsvideo1DecFunction0006()
+napi_value VideoMsvideo1DecFunction0006(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capMsvideo1 == nullptr) {
-        return 0;
+    if (g_capMsvideo1 == nullptr) { return CreateIntInt32Result(env, 0); }
+
+    uint32_t frameCount = 0;
+    {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->GetFormat(GINP_DIR_MSVIDEO1);
+        if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
+        vDecSample->sfOutput = true;
+        vDecSample->outputYuvSurface = true;
+        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+        vDecSample->afterEosDestoryCodec = false;
+        if (vDecSample->RunVideoDecSurface(g_codecNameMsvideo1) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        frameCount = vDecSample->outFrameCount;
     }
-    
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->GetFormat(GINP_DIR_MSVIDEO1);
-    if (vDecSample->gFd < 0) {
-        return -1;
-    }
-    vDecSample->sfOutput = true;
-    vDecSample->outputYuvSurface = true;
-    vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    if (vDecSample->RunVideoDecSurface(g_codecNameMsvideo1) != AV_ERR_OK) {
-        return -1;
-    }
-    vDecSample->WaitForEOS();
-    if (vDecSample->outFrameCount != FRAMESIZE98) {
-        return -1;
-    }
-    return 0;
+    usleep(SURFACE_RELEASE_WAIT_US);
+    if (frameCount != FRAMESIZE98) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 // Test VP8 decoder function
-int VideoVp8DecFunction0007()
+napi_value VideoVp8DecFunction0007(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capVp8 == nullptr) {
-        return 0;
-    }
+    if (g_capVp8 == nullptr) { return CreateIntInt32Result(env, 0); }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_VP8;
     vDecSample->outputYuvFlag = true;
     
     if (vDecSample->CreateVideoDecoder(g_codecNameVp8) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE52);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE52));
 }
 
 // Test VP9 decoder function with profile 0
-int VideoVp9DecFunction0008()
+napi_value VideoVp9DecFunction0008(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
     if (g_capVp9 == nullptr || profiles == nullptr || profiles[0] != VP9_PROFILE_0) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
@@ -362,23 +349,19 @@ int VideoVp9DecFunction0008()
     vDecSample->outputYuvFlag = true;
     
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE52);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE52));
 }
 
 // Test VP9 decoder function with profile 1
-int VideoVp9DecFunction0009()
+napi_value VideoVp9DecFunction0009(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
@@ -386,30 +369,26 @@ int VideoVp9DecFunction0009()
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
     if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
             profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_VP9_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE100);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE100));
 }
 
 // Test VP9 decoder function with profile 2
-int VideoVp9DecFunction0010()
+napi_value VideoVp9DecFunction0010(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
@@ -417,30 +396,26 @@ int VideoVp9DecFunction0010()
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
     if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_3 ||
             profiles[PROFILE_INDEX_2] != VP9_PROFILE_2) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_VP9_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE100);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE100));
 }
 
 // Test VP9 decoder function with profile 3
-int VideoVp9DecFunction0011()
+napi_value VideoVp9DecFunction0011(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
@@ -448,60 +423,52 @@ int VideoVp9DecFunction0011()
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
     if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_4 ||
             profiles[PROFILE_INDEX_3] != VP9_PROFILE_3) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_VP9_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE100);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE100));
 }
 
 // Test AV1 decoder function with main profile
-int VideoAv1DecFunction0012()
+napi_value VideoAv1DecFunction0012(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
     if (g_capAv1 == nullptr || profiles == nullptr || profiles[0] != AV1_PROFILE_MAIN) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_AV1_MAIN;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderForAV1() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE180);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE180));
 }
 
 // Test AV1 decoder function with high profile
-int VideoAv1DecFunction0013()
+napi_value VideoAv1DecFunction0013(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
@@ -509,60 +476,52 @@ int VideoAv1DecFunction0013()
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
     if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
             profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_AV1_HIGH;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderForAV1() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE45);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE45));
 }
 
 // Test AV1 decoder function with main profile 8bit
-int VideoAv1DecFunction0015()
+napi_value VideoAv1DecFunction0015(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
     if (g_capAv1 == nullptr || profiles == nullptr || profiles[0] != AV1_PROFILE_MAIN) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_AV1_MAIN_8BIT;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderForAV1() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE180);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE180));
 }
 
 // Test AV1 decoder function with high profile 8bit
-int VideoAv1DecFunction0016()
+napi_value VideoAv1DecFunction0016(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
@@ -570,60 +529,52 @@ int VideoAv1DecFunction0016()
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
     if (g_capAv1 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
             profiles[PROFILE_INDEX_1] != AV1_PROFILE_HIGH) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_AV1_HIGH_8BIT;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameAv1) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderForAV1() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE45);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE45));
 }
 
 // Test VP9 decoder function with level 4 profile 0
-int VideoVp9DecFunction0019()
+napi_value VideoVp9DecFunction0019(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
     if (g_capVp9 == nullptr || profiles == nullptr || profiles[0] != VP9_PROFILE_0) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_VP9_L4_P0;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE100);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE100));
 }
 
 // Test VP9 decoder function with level 4 profile 1
-int VideoVp9DecFunction0020()
+napi_value VideoVp9DecFunction0020(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
     const int32_t *profiles = nullptr;
@@ -631,77 +582,61 @@ int VideoVp9DecFunction0020()
     OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
     if (g_capVp9 == nullptr || profiles == nullptr || profileNum < MIN_PROFILE_COUNT_2 ||
             profiles[PROFILE_INDEX_1] != VP9_PROFILE_1) {
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_VP9_L4_P1;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp9) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE100);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE100));
 }
 
 // Test VP8 decoder function with 1080p
-int VideoVp8DecFunction0021()
+napi_value VideoVp8DecFunction0021(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capVp8 == nullptr) {
-        return 0;
-    }
+    if (g_capVp8 == nullptr) { return CreateIntInt32Result(env, 0); }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->inpDir = GINP_DIR_1080P_VP8;
     vDecSample->outputYuvFlag = true;
     if (vDecSample->CreateVideoDecoder(g_codecNameVp8) != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
-    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        return -1;
-    }
-    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        return -1;
-    }
+    if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+    if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     if (vDecSample->StartVideoDecoderReadStream() != AV_ERR_OK) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return VerifyDecodingResult(vDecSample, FRAMESIZE52);
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE52));
 }
 
 // Test cinepak decoder function with buffer mode
-int VideoCinepakDecFunction0022()
+napi_value VideoCinepakDecFunction0022(napi_env env, napi_callback_info info)
 {
     InitCapabilities();
-    if (g_capCinepak == nullptr) {
-        return 0;
-    }
+    if (g_capCinepak == nullptr) { return CreateIntInt32Result(env, 0); }
     
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->GetFormat(GINP_DIR_CINEPAK);
-    if (vDecSample->gFd < 0) {
-        return -1;
-    }
+    if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
     
     if (SetupDecoder(vDecSample, g_codecNameCinepak) != 0) {
-        return -1;
+        return CreateIntInt32Result(env, -1);
     }
     
     vDecSample->WaitForEOS();
     
     int result = VerifyDecodingResult(vDecSample, FRAMESIZE5);
-    return result;
+    return CreateIntInt32Result(env, result);
 }
-} // namespace Media
-} // namespace OHOS
