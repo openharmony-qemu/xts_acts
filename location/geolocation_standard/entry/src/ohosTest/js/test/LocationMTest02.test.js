@@ -118,7 +118,15 @@ export default function geolocationTest_geo8() {
         beforeEach(function () {
             console.info('beforeEach case');
         })
-        afterEach(function () {
+        afterEach(async function (done) {
+            console.info('afterEach case');
+            try {
+                await geolocationm.enableLocation();
+                console.info('[lbs_js] afterEach enableLocation success');
+            } catch (error) {
+                console.info('[lbs_js] afterEach enableLocation error.' + JSON.stringify(error));
+            }
+            done();
         })
 
         afterAll(async function (done) {
@@ -1148,12 +1156,40 @@ export default function geolocationTest_geo8() {
     /**
      * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_001
      * @tc.number SUB_Location_getPostProcessingTrack_perm_test_001
-     * @tc.desc   Obtain post-processing track with SKIING and permission.
+     * @tc.desc   Obtain post-processing track after subscribing skiing continuous location.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SUB_Location_getPostProcessingTrack_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        let request = {
+            'interval': 1,
+            'locationScenario': geolocationm.UserActivityScenario.SPORT,
+            'sportsType': geolocationm.SportsType.SKIING
+        };
+        let locationCallback = (location) => {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 locationCallback: ' + JSON.stringify(location));
+        };
+        try {
+            geolocationm.onLocationChange(request, locationCallback);
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 onLocationChange subscribe success');
+        } catch (err) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 onLocationChange err: ' + JSON.stringify(err));
+            if (err.code === 801) {
+                expect(err.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
+            done();
+            return;
+        }
+        await sleep(3000);
+        try {
+            geolocationm.offLocationChange(locationCallback);
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 offLocationChange success');
+        } catch (err) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 offLocationChange err: ' + JSON.stringify(err));
+        }
         try {
             geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_001 result length: ' + res.length);
@@ -1185,6 +1221,40 @@ export default function geolocationTest_geo8() {
                 expect(error.code === 801).assertTrue();
             } else {
                 expect().assertFail();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_004
+     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_004
+     * @tc.desc   getPostProcessingTrack returns 3301200 when no skiing track recorded.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_getPostProcessingTrack_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 unexpectedly succeeded, len: ' + res.length);
+                expect().assertFail();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 801) {
+                    expect(error.code === 801).assertTrue();
+                } else {
+                    expect(error.code === 3301200).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_004 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect(error.code === 3301200).assertTrue();
             }
             done();
         }
@@ -1338,12 +1408,34 @@ export default function geolocationTest_geo8() {
     /**
      * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_003
      * @tc.number SUB_Location_getPostProcessingTrack_perm_test_003
-     * @tc.desc   getPostProcessingTrack returns 3301100 when location switch off.
+     * @tc.desc   getPostProcessingTrack returns 3301100 when location switch off after skiing subscription.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('SUB_Location_getPostProcessingTrack_perm_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let request = {
+            'interval': 1,
+            'locationScenario': geolocationm.UserActivityScenario.SPORT,
+            'sportsType': geolocationm.SportsType.SKIING
+        };
+        let locationCallback = (location) => {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 locationCallback: ' + JSON.stringify(location));
+        };
+        try {
+            geolocationm.onLocationChange(request, locationCallback);
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 onLocationChange subscribe success');
+        } catch (err) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_003 onLocationChange err: ' + JSON.stringify(err));
+            if (err.code === 801) {
+                expect(err.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
+            done();
+            return;
+        }
+        await sleep(2000);
         try {
             geolocationm.disableLocation();
             await sleep(1000);
@@ -1359,6 +1451,11 @@ export default function geolocationTest_geo8() {
                 } catch (e) {
                     console.info('[lbs_js] getPostProcessingTrack_perm_test_003 enableLocation err: ' + JSON.stringify(e));
                 }
+                try {
+                    geolocationm.offLocationChange(locationCallback);
+                } catch (e) {
+                    console.info('[lbs_js] getPostProcessingTrack_perm_test_003 offLocationChange err: ' + JSON.stringify(e));
+                }
                 done();
             }).catch((error) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_003 promise catch err: ' + JSON.stringify(error));
@@ -1371,6 +1468,11 @@ export default function geolocationTest_geo8() {
                     geolocationm.enableLocation();
                 } catch (e) {
                     console.info('[lbs_js] getPostProcessingTrack_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+                }
+                try {
+                    geolocationm.offLocationChange(locationCallback);
+                } catch (e) {
+                    console.info('[lbs_js] getPostProcessingTrack_perm_test_003 offLocationChange err: ' + JSON.stringify(e));
                 }
                 done();
             });
@@ -1385,6 +1487,11 @@ export default function geolocationTest_geo8() {
                 geolocationm.enableLocation();
             } catch (e) {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_003 enableLocation err: ' + JSON.stringify(e));
+            }
+            try {
+                geolocationm.offLocationChange(locationCallback);
+            } catch (e) {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_003 offLocationChange err: ' + JSON.stringify(e));
             }
             done();
         }
