@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,130 +12,112 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <string>
-#include "include/FuncTest.h"
-#include "include/VideodecApi11SampleTest.h"
+
+#include <iostream>
+#include <vector>
+#include <functional>
+#include <cstring>
 #include "napi/native_api.h"
+#include "include/FuncTest.h"
 
-using namespace OHOS::Media;
+using TestFunction = std::function<int()>;
 
-template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
+struct AsyncTestContext {
+    napi_env env;
+    napi_deferred deferred;
+    napi_async_work work;
+    TestFunction func;
+    int result;
+};
+
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    try {
-        return func();
-    } catch (const std::exception& e) {
-        napi_throw_error(env, nullptr, e.what());
-    } catch (...) {
-        napi_throw_error(env, nullptr, "Unknown native error");
+    (void)env;
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
     }
-    return nullptr;
+}
+
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
+{
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
+    } else {
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
+    }
+    napi_delete_async_work(env, context->work);
+    delete context;
+}
+
+static napi_value RunTestAsync(napi_env env, TestFunction func, const char* name)
+{
+    napi_value promise;
+    napi_deferred deferred;
+    napi_create_promise(env, &deferred, &promise);
+    AsyncTestContext* context = new AsyncTestContext{env, deferred, nullptr, func, -1};
+    napi_value resourceName;
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context, &context->work);
+    napi_queue_async_work(env, context->work);
+    return promise;
 }
 
 EXTERN_C_START
 
-struct AsyncWorkData {
-    napi_env env;
-    napi_deferred deferred;
-    napi_async_work work;
-    int (*testFunc)();
-    int result;
-    std::string errorMsg;
+struct Entry {
+    napi_callback func;
+    const char* name;
 };
 
-static void ExecuteWork(napi_env env, void* data)
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
 {
-    AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
-    try {
-        workData->result = workData->testFunc();
-    } catch (const std::exception& e) {
-        workData->errorMsg = e.what();
-        workData->result = -1;
-    } catch (...) {
-        workData->errorMsg = "Unknown error occurred";
-        workData->result = -1;
-    }
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+    napi_value ret = entry->func(env, info);
+    int32_t val = -1;
+    napi_get_value_int32(env, ret, &val);
+    return RunTestAsync(env, [val]() { return val; }, entry->name);
 }
 
-static void CompleteWork(napi_env env, napi_status status, void* data)
+static napi_property_descriptor XL(const char* functionName, napi_callback func)
 {
-    AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
-    
-    if (status != napi_ok) {
-        napi_reject_deferred(env, workData->deferred, nullptr);
-        goto cleanup;
-    }
-
-    if (!workData->errorMsg.empty()) {
-        napi_value error;
-        napi_create_string_utf8(env, workData->errorMsg.c_str(), NAPI_AUTO_LENGTH, &error);
-        napi_reject_deferred(env, workData->deferred, error);
-    } else {
-        napi_value result;
-        napi_create_int32(env, workData->result, &result);
-        napi_resolve_deferred(env, workData->deferred, result);
-    }
-
-cleanup:
-    napi_delete_async_work(env, workData->work);
-    delete workData;
+    auto* entry = new Entry{func, functionName};
+    return {functionName, nullptr, AsyncWrapper, nullptr, nullptr, nullptr,
+            napi_default, entry};
 }
 
-static napi_value CreateAsyncWrapper(napi_env env, napi_callback_info info, int (*testFunc)())
+static napi_value InitTests(napi_env env, napi_callback_info info)
 {
-    return NapiTry(env, [env, info, testFunc]() {
-        napi_value promise;
-        napi_deferred deferred;
-        napi_create_promise(env, &deferred, &promise);
-
-        AsyncWorkData* workData = new AsyncWorkData();
-        workData->env = env;
-        workData->deferred = deferred;
-        workData->testFunc = testFunc;
-        workData->result = 0;
-
-        napi_value workName;
-        napi_create_string_utf8(env, "AudioEncoderTest", NAPI_AUTO_LENGTH, &workName);
-        napi_create_async_work(env, nullptr, workName, ExecuteWork, CompleteWork, workData, &workData->work);
-
-        napi_queue_async_work(env, workData->work);
-
-        return promise;
-    });
+    (void)info;
+    InitMpeg4Test();
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
 }
 
-static napi_value FuncTest1(napi_env env, napi_callback_info info)
+static void InitPush1(std::vector<napi_property_descriptor>& desc)
 {
-    return CreateAsyncWrapper(env, info, VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010);
-}
-
-static napi_value FuncTest2(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncWrapper(env, info, VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020);
-}
-
-static napi_value FuncTest3(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncWrapper(env, info, VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040);
-}
-
-static napi_value FuncTest4(napi_env env, napi_callback_info info)
-{
-    return CreateAsyncWrapper(env, info, VIDEO_MPEG4SWDEC_BLANK_FRAME_0010);
+    desc.push_back(XL("VideoDecodeSyncSwMpeg4Func00100Test", VideoDecodeSyncSwMpeg4Func00100Test));
+    desc.push_back(XL("VideoDecodeSyncSwMpeg4Func00200Test", VideoDecodeSyncSwMpeg4Func00200Test));
+    desc.push_back(XL("VideoDecodeSyncSwMpeg4Func00400Test", VideoDecodeSyncSwMpeg4Func00400Test));
+    desc.push_back(XL("VideoMpeg4SwdecBlankFrame00100Test", VideoMpeg4SwdecBlankFrame00100Test));
 }
 
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        { "VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010", nullptr, FuncTest1,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020", nullptr, FuncTest2,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040", nullptr, FuncTest3,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "VIDEO_MPEG4SWDEC_BLANK_FRAME_0010", nullptr, FuncTest4,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    std::vector<napi_property_descriptor> desc;
+    desc.push_back(XL("initTests", InitTests));
+    InitPush1(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END

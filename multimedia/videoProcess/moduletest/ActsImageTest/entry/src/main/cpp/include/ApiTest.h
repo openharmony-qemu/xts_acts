@@ -16,19 +16,24 @@
 #ifndef ACTSIMAGETEST_APITEST_H
 #define ACTSIMAGETEST_APITEST_H
 
-int VpeImageApiTest0010();
-int VpeImageApiTest0020();
-int VpeImageApiTest0030();
-int VpeImageApiTest0040();
-int VpeImageApiTest0050();
-int VpeImageApiTest0060();
-int VpeImageApiTest0070();
-int VpeImageApiTest0080();
-int VpeImageApiTest0090();
-int VpeImageApiTest0100();
-int VpeImageApiTest0110();
-int VpeImageApiTest0120();
-int VpeImageApiTest0130();
-int VpeImageApiTest0140();
+#include "napi/native_api.h"
+
+napi_value VpeImageApiTest00100(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00200(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00300(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00400(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00500(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00600(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00700(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00800(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest00900(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest01000(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest01100(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest01200(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest01300(napi_env env, napi_callback_info info);
+napi_value VpeImageApiTest01400(napi_env env, napi_callback_info info);
+
+extern void InitApiTest();
+extern void TestTearDownApi();
 
 #endif // ACTSIMAGETEST_APITEST_H

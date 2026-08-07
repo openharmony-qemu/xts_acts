@@ -13,6 +13,19 @@
  * limitations under the License.
  */
 // Image_Test
-export const Image_CscTest: (caseName: number) => Promise<number>;
-export const Image_ComposeTest: (caseName: number) => Promise<number>;
-export const Image_InvalidInstanceTest: (caseName: number) => Promise<number>;
+export const initTests: () => number;
+
+export const VpeImageApiTest00100: () => Promise<number>;
+export const VpeImageApiTest00200: () => Promise<number>;
+export const VpeImageApiTest00300: () => Promise<number>;
+export const VpeImageApiTest00400: () => Promise<number>;
+export const VpeImageApiTest00500: () => Promise<number>;
+export const VpeImageApiTest00600: () => Promise<number>;
+export const VpeImageApiTest00700: () => Promise<number>;
+export const VpeImageApiTest00800: () => Promise<number>;
+export const VpeImageApiTest00900: () => Promise<number>;
+export const VpeImageApiTest01000: () => Promise<number>;
+export const VpeImageApiTest01100: () => Promise<number>;
+export const VpeImageApiTest01200: () => Promise<number>;
+export const VpeImageApiTest01300: () => Promise<number>;
+export const VpeImageApiTest01400: () => Promise<number>;

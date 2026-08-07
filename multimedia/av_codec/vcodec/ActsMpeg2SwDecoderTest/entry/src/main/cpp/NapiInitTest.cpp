@@ -13,161 +13,112 @@
  * limitations under the License.
  */
 
-#include <functional>
-#include <string>
+#include <iostream>
 #include <vector>
-#include "include/FuncTest.h"
+#include <functional>
+#include <cstring>
 #include "napi/native_api.h"
+#include "include/FuncTest.h"
 
 using TestFunction = std::function<int()>;
 
-// VideoDecodeSyncSwMpeg2FuncTest group: SYNC FUNC 分类（0010/0020/0040）
-static const std::vector<TestFunction> g_syncSwMpeg2FuncTests = {
-    VideoDecodeSyncSwMpeg2Func0010,
-    VideoDecodeSyncSwMpeg2Func0020,
-    VideoDecodeSyncSwMpeg2Func0040,
+struct AsyncTestContext {
+    napi_env env;
+    napi_deferred deferred;
+    napi_async_work work;
+    TestFunction func;
+    int result;
 };
 
-// VideoDecodeBlankFrameTest group: BLANK FRAME 分类（0010）
-static const std::vector<TestFunction> g_blankFrameTests = {
-    VideoDecodeBlankFrame0010,
-};
-
-// VideoDecodeBlankAddTest group: BLANK ADD 分类（0010）
-static const std::vector<TestFunction> g_blankAddTests = {
-    VideoDecodeBlankAdd0010,
-};
-
-// 异步工作数据结构
-struct AsyncMpeg2TestData {
-    napi_async_work asyncWork = nullptr;
-    napi_deferred deferred = nullptr;
-    const std::vector<TestFunction>* tests = nullptr;
-    int testCaseIndex = -1;
-    int result = -1;
-};
-
-// 在工作线程执行测试（不阻塞主线程）
-static void ExecuteMpeg2AsyncWork(napi_env env, void* data)
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    AsyncMpeg2TestData* workData = static_cast<AsyncMpeg2TestData*>(data);
-    int idx = workData->testCaseIndex;
-    const std::vector<TestFunction>& tests = *workData->tests;
-    if (idx >= 0 && idx < static_cast<int>(tests.size()) && tests[idx] != nullptr) {
-        workData->result = tests[idx]();
-    } else {
-        workData->result = -1;
+    (void)env;
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
     }
 }
 
-// 完成回调（回到主线程，处理 Promise）
-static void CompleteMpeg2AsyncWork(napi_env env, napi_status status, void* data)
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
 {
-    AsyncMpeg2TestData* workData = static_cast<AsyncMpeg2TestData*>(data);
-    napi_value result;
-    napi_create_int32(env, workData->result, &result);
-    if (workData->result == 0) {
-        napi_resolve_deferred(env, workData->deferred, result);
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
     } else {
-        napi_reject_deferred(env, workData->deferred, result);
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
     }
-    napi_delete_async_work(env, workData->asyncWork);
-    delete workData;
+    napi_delete_async_work(env, context->work);
+    delete context;
 }
 
-// 通用异步执行入口：取参数 → 创建 Promise → 队列异步工作 → 返回 Promise
-static napi_value RunTestAsync(napi_env env,
-                               napi_callback_info info,
-                               const std::vector<TestFunction>& tests,
-                               const char* resourceName)
+static napi_value RunTestAsync(napi_env env, TestFunction func, const char* name)
 {
-    size_t argc = 1;
-    napi_value args[1];
-    napi_valuetype valuetype;
-    int32_t caseNum = -1;
-    napi_status status;
-
-    if ((status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr)) != napi_ok ||
-        napi_typeof(env, args[0], &valuetype) != napi_ok || valuetype != napi_number ||
-        (status = napi_get_value_int32(env, args[0], &caseNum)) != napi_ok) {
-        napi_throw_error(env, nullptr, "Invalid argument");
-        return nullptr;
-    }
-
     napi_value promise;
     napi_deferred deferred;
-    if ((status = napi_create_promise(env, &deferred, &promise)) != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to create promise");
-        return nullptr;
-    }
-
-    AsyncMpeg2TestData* workData = new AsyncMpeg2TestData();
-    workData->deferred = deferred;
-    workData->tests = &tests;
-    workData->testCaseIndex = caseNum;
-
-    napi_value resName;
-    napi_create_string_utf8(env, resourceName, NAPI_AUTO_LENGTH, &resName);
-
-    status = napi_create_async_work(
-        env, nullptr, resName, ExecuteMpeg2AsyncWork, CompleteMpeg2AsyncWork, workData, &workData->asyncWork);
-    if (status != napi_ok) {
-        delete workData;
-        napi_throw_error(env, nullptr, "Failed to create async work");
-        return nullptr;
-    }
-
-    status = napi_queue_async_work(env, workData->asyncWork);
-    if (status != napi_ok) {
-        napi_delete_async_work(env, workData->asyncWork);
-        delete workData;
-        napi_throw_error(env, nullptr, "Failed to queue async work");
-        return nullptr;
-    }
-
+    napi_create_promise(env, &deferred, &promise);
+    AsyncTestContext* context = new AsyncTestContext{env, deferred, nullptr, func, -1};
+    napi_value resourceName;
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context, &context->work);
+    napi_queue_async_work(env, context->work);
     return promise;
 }
 
-static napi_value VideoDecodeSyncSwMpeg2FuncTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, g_syncSwMpeg2FuncTests, "VideoDecodeSyncSwMpeg2FuncTest");
-}
+EXTERN_C_START
 
-static napi_value VideoDecodeBlankFrameTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, g_blankFrameTests, "VideoDecodeBlankFrameTest");
-}
-
-static napi_value VideoDecodeBlankAddTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, g_blankAddTests, "VideoDecodeBlankAddTest");
-}
-
-static napi_property_descriptor g_mpeg2Descriptors[] = {
-    { "VideoDecodeSyncSwMpeg2FuncTest",
-      nullptr,
-      VideoDecodeSyncSwMpeg2FuncTest,
-      nullptr,
-      nullptr,
-      nullptr,
-      napi_default,
-      nullptr },
-    { "VideoDecodeBlankFrameTest",
-      nullptr,
-      VideoDecodeBlankFrameTest,
-      nullptr,
-      nullptr,
-      nullptr,
-      napi_default,
-      nullptr },
-    { "VideoDecodeBlankAddTest", nullptr, VideoDecodeBlankAddTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+struct Entry {
+    napi_callback func;
+    const char* name;
 };
 
-EXTERN_C_START
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+    napi_value ret = entry->func(env, info);
+    int32_t val = -1;
+    napi_get_value_int32(env, ret, &val);
+    return RunTestAsync(env, [val]() { return val; }, entry->name);
+}
+
+static napi_property_descriptor XL(const char* functionName, napi_callback func)
+{
+    auto* entry = new Entry{func, functionName};
+    return {functionName, nullptr, AsyncWrapper, nullptr, nullptr, nullptr,
+            napi_default, entry};
+}
+
+static void InitPush1(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoDecodeSyncSwMpeg2Func00100Test", VideoDecodeSyncSwMpeg2Func00100Test));
+    desc.push_back(XL("VideoDecodeSyncSwMpeg2Func00200Test", VideoDecodeSyncSwMpeg2Func00200Test));
+    desc.push_back(XL("VideoDecodeSyncSwMpeg2Func00400Test", VideoDecodeSyncSwMpeg2Func00400Test));
+    desc.push_back(XL("VideoDecodeBlankFrame00100Test", VideoDecodeBlankFrame00100Test));
+    desc.push_back(XL("VideoDecodeBlankAdd00100Test", VideoDecodeBlankAdd00100Test));
+}
+
+static napi_value InitTests(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    InitMpeg2Test();
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(
-        env, exports, sizeof(g_mpeg2Descriptors) / sizeof(g_mpeg2Descriptors[0]), g_mpeg2Descriptors);
+    std::vector<napi_property_descriptor> desc;
+    desc.push_back(XL("initTests", InitTests));
+    InitPush1(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END
