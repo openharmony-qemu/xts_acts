@@ -17,203 +17,205 @@ import libImageTest from 'libimagetest.so';
 
 export default function ImageTest() {
   describe('ImageTest', () => {
-    beforeAll(() => {})
+    beforeAll(() => {
+      libImageTest.initTests();
+    })
     beforeEach(() => {})
     afterEach(() => {})
     afterAll(() => {})
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0010
-     * @tc.number VPE_IMAGE_API_TEST_0010
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00100
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00100
      * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0010', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_CscTest(0);
+    it('SUB_VPE_IMAGE_API_TEST_00100', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00100();
       expect(result).assertEqual(0);
       done();
     })
 
-
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0020
-     * @tc.number VPE_IMAGE_API_TEST_0020
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00200
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00200
      * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0020', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_CscTest(1);
+    it('SUB_VPE_IMAGE_API_TEST_00200', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0030
-     * @tc.number VPE_IMAGE_API_TEST_0030
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00300
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00300
      * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0030', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_CscTest(2);
+    it('SUB_VPE_IMAGE_API_TEST_00300', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0040
-     * @tc.number VPE_IMAGE_API_TEST_0040
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00400
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00400
      * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0040', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_CscTest(3);
+    it('SUB_VPE_IMAGE_API_TEST_00400', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00400();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0050
-     * @tc.number VPE_IMAGE_API_TEST_0050
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00500
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00500
      * @tc.desc   OH_ImageProcessing_DeinitializeEnvironment IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0050', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_CscTest(4);
+    it('SUB_VPE_IMAGE_API_TEST_00500', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00500();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0060
-     * @tc.number VPE_IMAGE_API_TEST_0060
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00600
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00600
      * @tc.desc   OH_ImageProcessing_Compose IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0060', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_ComposeTest(0);
+    it('SUB_VPE_IMAGE_API_TEST_00600', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00600();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0070
-     * @tc.number VPE_IMAGE_API_TEST_0070
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00700
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00700
      * @tc.desc   OH_ImageProcessing_Decompose IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0070', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_ComposeTest(1);
+    it('SUB_VPE_IMAGE_API_TEST_00700', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00700();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0080
-     * @tc.number VPE_IMAGE_API_TEST_0080
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00800
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00800
      * @tc.desc   OH_ImageProcessing_GenerateMetadata IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0080', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_ComposeTest(2);
+    it('SUB_VPE_IMAGE_API_TEST_00800', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00800();
       expect(result).assertEqual(0);
       done();
     })
+
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0090
-     * @tc.number VPE_IMAGE_API_TEST_0090
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_00900
+     * @tc.number SUB_VPE_IMAGE_API_TEST_00900
      * @tc.desc   OH_ImageProcessing_Compose IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0090', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_ComposeTest(3);
+    it('SUB_VPE_IMAGE_API_TEST_00900', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest00900();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0100
-     * @tc.number VPE_IMAGE_API_TEST_0100
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_01000
+     * @tc.number SUB_VPE_IMAGE_API_TEST_01000
      * @tc.desc   OH_ImageProcessing_Decompose IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0100', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_ComposeTest(4);
+    it('SUB_VPE_IMAGE_API_TEST_01000', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest01000();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0110
-     * @tc.number VPE_IMAGE_API_TEST_0110
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_01100
+     * @tc.number SUB_VPE_IMAGE_API_TEST_01100
      * @tc.desc   OH_ImageProcessing_GenerateMetadata IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0110', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_ComposeTest(5);
+    it('SUB_VPE_IMAGE_API_TEST_01100', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest01100();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0120
-     * @tc.number VPE_IMAGE_API_TEST_0120
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_01200
+     * @tc.number SUB_VPE_IMAGE_API_TEST_01200
      * @tc.desc   OH_ImageProcessing_Compose IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0120', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_InvalidInstanceTest(0);
+    it('SUB_VPE_IMAGE_API_TEST_01200', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest01200();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0130
-     * @tc.number VPE_IMAGE_API_TEST_0130
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_01300
+     * @tc.number SUB_VPE_IMAGE_API_TEST_01300
      * @tc.desc   OH_ImageProcessing_Decompose IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0130', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_InvalidInstanceTest(1);
+    it('SUB_VPE_IMAGE_API_TEST_01300', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest01300();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VPE_IMAGE_API_TEST_0140
-     * @tc.number VPE_IMAGE_API_TEST_0140
+     * @tc.name   SUB_VPE_IMAGE_API_TEST_01400
+     * @tc.number SUB_VPE_IMAGE_API_TEST_01400
      * @tc.desc   OH_ImageProcessing_GenerateMetadata IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VPE_IMAGE_API_TEST_0140', Level.LEVEL0, async (done: Function) => {
-      const result = await libImageTest.Image_InvalidInstanceTest(2);
+    it('SUB_VPE_IMAGE_API_TEST_01400', Level.LEVEL0, async (done: Function) => {
+      const result = await libImageTest.VpeImageApiTest01400();
       expect(result).assertEqual(0);
       done();
     })

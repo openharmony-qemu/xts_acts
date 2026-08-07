@@ -16,13 +16,17 @@
 #ifndef ACTS_MPEG2_SW_DECODER_FUNC_TEST_H
 #define ACTS_MPEG2_SW_DECODER_FUNC_TEST_H
 
+#include "napi/native_api.h"
+
 constexpr const char* MPEG2_INPUT_FILE_PATH =
     "/data/storage/el2/base/haps/entry_test/files/main@high_level_1920_1080_60.m2v";
 
-int VideoDecodeSyncSwMpeg2Func0010();
-int VideoDecodeSyncSwMpeg2Func0020();
-int VideoDecodeSyncSwMpeg2Func0040();
-int VideoDecodeBlankFrame0010();
-int VideoDecodeBlankAdd0010();
+napi_value VideoDecodeSyncSwMpeg2Func00100Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSyncSwMpeg2Func00200Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSyncSwMpeg2Func00400Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeBlankFrame00100Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeBlankAdd00100Test(napi_env env, napi_callback_info info);
+
+extern void InitMpeg2Test();
 
 #endif // ACTS_MPEG2_SW_DECODER_FUNC_TEST_H
