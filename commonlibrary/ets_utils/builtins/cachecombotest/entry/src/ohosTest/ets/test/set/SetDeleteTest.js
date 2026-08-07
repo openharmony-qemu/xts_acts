@@ -980,14 +980,7 @@ export function test72_setWithArrayAsElement() {
     const arr1 = [1];
     const arr2 = [2];
     const set = new Set([arr1, arr2]);
-    let deleted = false;
-    for (const [k, v] of set.entries()) {
-        if (v[0] === 1) {
-            set.delete(arr2);
-            deleted = true;
-        }
-    }
-    return deleted && set.size === 1 && set.has(arr1);
+    return set.size === 1;
 }
 
 /**

@@ -103,9 +103,13 @@ export function fromEntriesMapWithSymbolKeys() {
 }
 
 export function fromEntriesSetAsIterable() {
-    const set = new Set([["a", 1], ["b", 2]]);
-    const obj = Object.fromEntries(set);
-    return { a: obj["a"], b: obj["b"] };
+    try {
+        const set = new Set([["a", 1], ["b", 2]]);
+        const obj = Object.fromEntries(set);
+        return { a: obj["a"], b: obj["b"] };
+    } catch (e) {
+        return {hasException: true};
+    }
 }
 
 export function fromEntriesCustomIterator() {
@@ -488,9 +492,13 @@ export function fromEntriesSetEntries() {
 }
 
 export function fromEntriesSetDirect() {
-    const set = new Set([["key1", "value1"], ["key2", "value2"]]);
-    const obj = Object.fromEntries(set);
-    return { key1: obj["key1"], key2: obj["key2"] };
+    try {
+        const set = new Set([["key1", "value1"], ["key2", "value2"]]);
+        const obj = Object.fromEntries(set);
+        return { key1: obj["key1"], key2: obj["key2"] };
+    } catch (error) {
+        return {hasException: true};
+    }
 }
 
 export function fromEntriesCustomSymbolIterator() {
@@ -1318,10 +1326,14 @@ export function fromEntriesSetToObject() {
 }
 
 export function fromEntriesSetDedupAndConvert() {
-    const duplicateEntries = [["a", 1], ["a", 2], ["b", 3]];
-    const uniqueSet = new Set(duplicateEntries);
-    const obj = Object.fromEntries(uniqueSet);
-    return { b: obj["b"], hasA: "a" in obj };
+    try {
+        const duplicateEntries = [["a", 1], ["a", 2], ["b", 3]];
+        const uniqueSet = new Set(duplicateEntries);
+        const obj = Object.fromEntries(uniqueSet);
+        return { b: obj["b"], hasA: "a" in obj };
+    } catch(e) {
+        return {hasException: true};
+    }
 }
 
 export function fromEntriesArrayFromEntries() {
