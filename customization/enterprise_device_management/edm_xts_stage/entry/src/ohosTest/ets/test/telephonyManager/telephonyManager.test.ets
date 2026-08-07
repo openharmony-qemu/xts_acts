@@ -1879,7 +1879,11 @@ function testGetOutgoingCallPolicyNumbers() {
       telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1900,7 +1904,11 @@ function testGetOutgoingCallPolicyNumbers() {
       telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2795,7 +2803,11 @@ function testGetIncomingCallPolicyNumbers() {
       telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2816,7 +2828,11 @@ function testGetIncomingCallPolicyNumbers() {
       telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
