@@ -242,6 +242,9 @@ export default function MetadataOutputTest() {
     });
 
     afterAll(() => {
+      if (!isEmpty(mAVRecorder)) {
+        await mAVRecorder.release();
+      }
       console.info(TAG, 'afterAll case.');
     });
 
