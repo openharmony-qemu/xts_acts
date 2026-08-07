@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium';
 import { ArkTSUtils } from '@kit.ArkTS';
 import { lang } from '@kit.ArkTS';
 
@@ -28,14 +28,23 @@ type SendableOrNull = lang.ISendable | null | undefined;
 // ============================================================
 
 export default function sendableLruCacheNullableTest() {
-  describe('SendableLruCache_Nullable_Test', () => {
+  describe('sendableLruCacheNullableTest', () => {
 
-    //对于null/undefined 只有四个方法有问题：实际行为：抛 BusinessError:401，设计需求：成功
-    // put、get、remove、contains 都需要传入 key，API 内部对 key 做了严格的类型检查，
-    // null 和 undefined 被认为是非法 key，所以报错。
-    // 其他方法都不需要传 key，不涉及这个校验，所以都正常。所以问题出在 API 的 key
-    // 校验逻辑上，它不允许 null/undefined，但类型定义却允许，两者不一致。
-    //所以让测试预期抛异常
+    /**
+     * @tc.setup 在每个测试用例执行前等待20ms
+     */
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
+
+    // // 对于null/undefined 只有四个方法有问题：实际行为：抛 BusinessError:401，设计需求：应该成功
+    // // put、get、remove、contains 都需要传入 key，API 内部对 key 做了严格的类型检查，
+    // // null 和 undefined 被认为是非法 key，所以报错。
+    // // 其他方法都不需要传 key，不涉及这个校验，所以都正常。所以问题出在 API 的 key
+    // // 校验逻辑上，它不允许 null/undefined，但类型定义却允许，两者不一致。
+    // // 所以让测试预期抛异常
     // /**
     //  * @tc.number SUB_COLLECTIONS_LRU_NULLABLE_0100
     //  * @tc.name testPutWithNullAndUndefined0001

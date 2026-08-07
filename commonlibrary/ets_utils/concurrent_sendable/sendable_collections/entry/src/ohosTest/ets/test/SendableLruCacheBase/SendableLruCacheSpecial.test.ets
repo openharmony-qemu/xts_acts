@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 import { lang } from '@kit.ArkTS';
 import { taskpool } from '@kit.ArkTS';
@@ -76,7 +76,16 @@ class DefaultStringCache extends ArkTSUtils.SendableLruCache<string, string> {
 // ============================================================
 
 export default function sendableLruCacheSpecialTest() {
-  describe('SendableLruCache_Special_Test', () => {
+  describe('sendableLruCacheSpecialTest', () => {
+
+    /**
+     * @tc.setup 在每个测试用例执行前等待20ms
+     */
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
 
     // ============================================================
     // 1. LRU淘汰机制 (4个)

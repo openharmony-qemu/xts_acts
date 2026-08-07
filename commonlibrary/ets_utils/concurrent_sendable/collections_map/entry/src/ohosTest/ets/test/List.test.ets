@@ -21,7 +21,7 @@ import CollectionsMapForeachTest from "./CollectionsMapForeachTest.test";
 import CollectionsMapGetTest from "./CollectionsMapGetTest.test";
 import CollectionsMapHasTest from "./CollectionsMapHasTest.test";
 import CollectionsMapValuesTest from "./CollectionsMapValuesTest.test";
-import collectionsMapConstructorTest from './CollectionsMapConstructor.test';
+import collectionsMapConstructorTest01 from './CollectionsMapConstructorTest01.test';
 import collectionsMapClearSizeTest from './CollectionsMapClearSize.test';
 import collectionsMapHasDeleteTest from './CollectionsMapHasDelete.test';
 import collectionsMapKeysValuesTest from './CollectionsMapKeysValues.test';
@@ -40,7 +40,7 @@ export default function testsuite() {
   CollectionsMapGetTest();
   CollectionsMapHasTest();
   CollectionsMapValuesTest();
-  collectionsMapConstructorTest();
+  collectionsMapConstructorTest01();
   collectionsMapClearSizeTest();
   collectionsMapForEachEntriesTest();
   collectionsMapHasDeleteTest();

@@ -17,7 +17,7 @@
 // 4.2 错误处理测试
 // ============================================================
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium';
 import { ArkTSUtils } from '@kit.ArkTS';
 
 // // ===== 辅助函数 =====
@@ -29,7 +29,16 @@ import { ArkTSUtils } from '@kit.ArkTS';
 // 主测试套件
 // ============================================================
 export default function sendableLruCacheErrorTest() {
-  describe('SendableLruCache_Error_Test', () => {
+  describe('sendableLruCacheErrorTest', () => {
+
+    /**
+     * @tc.setup 在每个测试用例执行前等待20ms
+     */
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
 
     // /**
     //  * @tc.name   testConstructorTypeError0001

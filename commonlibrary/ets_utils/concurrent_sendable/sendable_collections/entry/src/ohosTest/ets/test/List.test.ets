@@ -38,11 +38,14 @@ import sendableLruCacheBasicTest from './SendableLruCacheBase/SendableLruCacheBa
 import sendableLruCacheBoundaryTest from './SendableLruCacheBase/SendableLruCacheBoundaryCases.test';
 import sendableLruCacheCompositeTest from './SendableLruCacheBase/SendableLruCacheComplexTypes.test';
 import sendableLruCacheErrorTest from './SendableLruCacheBase/SendableLruCacheError.test';
-import sendableLruCacheSendableTest from './SendableLruCacheBase/SendableLruCacheSendableSpecial.test';
 import sendableLruCacheSpecialTest from './SendableLruCacheBase/SendableLruCacheSpecial.test';
-import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
-import collectionsConcatArrayTest from './CollectionsConcatArrayTest/CollectionsConcatArray.test';
 import sendableLruCacheNullableTest from './SendableLruCacheBase/SendableLruCacheNullableTest.test';
+import collectionsConcatArrayTest from './CollectionsConcatArrayTest/CollectionsConcatArray.test';
+import sendableLruCacheBatch1Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch1.test';
+import sendableLruCacheBatch2Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch2.test';
+import sendableLruCacheBatch3Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch3.test';
+import sendableLruCacheBatch4Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch4.test';
+import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
 export default function testsuite(): void {
   StressStabilityComboTest()
   BitVectorTest()
@@ -70,9 +73,12 @@ export default function testsuite(): void {
   sendableLruCacheBoundaryTest();
   sendableLruCacheCompositeTest();
   sendableLruCacheErrorTest();
-  sendableLruCacheSendableTest();
   sendableLruCacheSpecialTest();
   sendableLruCacheNullableTest();
+  sendableLruCacheBatch1Test();
+  sendableLruCacheBatch2Test();
+  sendableLruCacheBatch3Test();
+  sendableLruCacheBatch4Test();
   sendableLruCacheConcurrentTest();
   collectionsConcatArrayTest();
 }

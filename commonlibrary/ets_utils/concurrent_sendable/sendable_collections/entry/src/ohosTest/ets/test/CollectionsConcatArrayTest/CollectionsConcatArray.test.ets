@@ -60,8 +60,12 @@ export default function collectionsConcatArrayTest() {
       console.info('CollectionsConcatArrayTest beforeAll');
     });
 
-    beforeEach(() => {
+    // 修改 beforeEach 为异步函数，添加 20ms 等待时间
+    beforeEach(async (): Promise<void> => {
       console.info('CollectionsConcatArrayTest beforeEach');
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
     });
 
     afterEach(() => {

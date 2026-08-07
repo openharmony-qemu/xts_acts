@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium';
 import { ArkTSUtils } from '@kit.ArkTS';
 import { lang } from '@kit.ArkTS';
 
@@ -107,7 +107,16 @@ function getBasicValues(): TestValue[] {
 // ============================================================
 
 export default function sendableLruCacheBasicTest() {
-  describe('SendableLruCache_Basic_Test', () => {
+  describe('sendableLruCacheBasicTest', () => {
+
+    /**
+     * @tc.setup 在每个测试用例执行前等待20ms
+     */
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
+    });
 
     /**
      * @tc.name   testPutBasicAllValues0001
