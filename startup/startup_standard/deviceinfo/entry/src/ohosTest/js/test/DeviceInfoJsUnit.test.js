@@ -116,24 +116,19 @@ export default function DeviceInfoTest() {
             const cases = [
                 // 1. 标准格式测试
                 { input: makeVersion(major, minor, patch), expected: true },
-                
-                // 2. 带括号格式测试 (格式合法，应通过)
-                { input: makeVersion(major, minor, patch, 12), expected: true },
-                { input: makeVersion(major, minor, patch, 0), expected: true },
-                { input: makeVersion(major, minor, patch, 99), expected: true },
 
-                // 3. 小于当前版本 (标准格式)
+                // 2. 小于当前版本 (标准格式) XTS是OH工程，点分格式major版本号不能小于26
                 ...(patch > 0 ? [{ input: makeVersion(major, minor, patch - 1), expected: true }] : []),
                 ...(minor > 0 ? [{ input: makeVersion(major, minor - 1, 99), expected: true }] : []),
-                ...(major > 1 ? [{ input: makeVersion(major - 1, 99, 99), expected: true }] : []),
+                ...(major > 26 ? [{ input: makeVersion(major - 1, 99, 99), expected: true }] : []),
 
-                // 4. 大于当前版本 (标准格式)
+                // 3. 大于当前版本 (标准格式)
                 ...(patch < 99 ? [{ input: makeVersion(major, minor, patch + 1), expected: false }] : []),
                 ...(minor < 99 ? [{ input: makeVersion(major, minor + 1, 0), expected: false }] : []),
                 ...(major < 99 ? [{ input: makeVersion(major + 1, 0, 0), expected: false }] : []),
 
-                // 5. 边界测试
-                { input: "1.0.0", expected: versionLte({ major: 1, minor: 0, patch: 0 }, sysVersion) },
+                // 4. 边界测试
+                { input: "26.0.0", expected: versionLte({ major: 26, minor: 0, patch: 0 }, sysVersion) },
                 { input: "99.99.99", expected: versionLte({ major: 99, minor: 99, patch: 99 }, sysVersion) },
             ];
 
@@ -154,13 +149,15 @@ export default function DeviceInfoTest() {
                 "0.0.0", "100.0.0", "1.100.0", "1.0.100",
                 
                 // 2. 格式错误
-                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", "",
+                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", "", "26.0 .0", "26.0.0 ",
                 
-                // 3. 带括号的非法用例
-                "5.0.0(100)",   // 括号内超过 99
-                "5.0.0(a)",     // 括号内非数字
-                "5.0.0()",      // 括号内为空
-                // 4. 异常参数
+                // 3. OH工程major版本小于26的非法用例
+                "25.0.0",        // OH工程major版本小于26
+
+                // 4. 带括号的非法用例
+                "26.0.0(26)",   // OH工程不允许出现括号
+
+                // 5. 异常参数
                 undefined,      // 参数为undefined
                 null,           // 参数为null
             ];
@@ -1693,29 +1690,54 @@ export default function DeviceInfoTest() {
             console.info(`${caseName} START`);
 
             const originMajor = deviceinfo.sdkApiVersion;
+   
             console.info('apiAvailable, origin major:' + originMajor);
 
             console.info('--- 校验：传入数字类型的非法数值 ---');
-            let result = deviceinfo.apiAvailable(-1); // major负数
+            let negtiveValue = -1;
+            let result = deviceinfo.apiAvailable(negtiveValue); // major负数
             expect(result).assertEqual(false);
-            result = deviceinfo.apiAvailable(0); // major传0
+
+            let zeroValue = 0;
+            result = deviceinfo.apiAvailable(zeroValue); // major传0
             expect(result).assertEqual(false);
-            result = deviceinfo.apiAvailable(100); // major超大数
+
+            let oneHundred = 100;
+            result = deviceinfo.apiAvailable(oneHundred); // major超大数
             expect(result).assertEqual(false);
            
             /************************ 第二部分：合法传参-版本相等 ************************/
-            console.info('--- 校验：合法传参，版本号等于系统版本 ---');
-            result = deviceinfo.apiAvailable(originMajor);
-            expect(result).assertEqual(true);
-            // 验证传参小于系统版本时（且版本号为合法版本）返回1
-            if(originMajor - 1 > 0) {
-                result = deviceinfo.apiAvailable(originMajor - 1);
+            // 大于26的版本号，转换为字符串类型，传入apiAvailable中
+
+            if (originMajor >= 26) {
+                console.info('apiAvailable, originMajor :' + originMajor);
+                // 验证传参等于系统版本时（且版本号为合法版本）返回1
+                result = deviceinfo.apiAvailable(originMajor + ".0.0");
                 expect(result).assertEqual(true);
-            }
-             // 验证传参大于系统版本时（且版本号为合法版本）返回0
-            if(originMajor + 1 < 100) {
-                result = deviceinfo.apiAvailable(originMajor + 1);
+                
+                // 验证传参小于系统版本时（且版本号为合法版本）返回1
+                if ((originMajor - 1) >= 26) {
+                    result = deviceinfo.apiAvailable((originMajor - 1) + ".0.0");
+                    expect(result).assertEqual(true);
+                }
+
+                // 验证传参大于系统版本时（且版本号为合法版本）返回0
+                result = deviceinfo.apiAvailable((originMajor + 1) + ".0.0");
                 expect(result).assertEqual(false);
+            } else {
+                console.info('--- 校验：合法传参，版本号等于系统版本 ---');
+                result = deviceinfo.apiAvailable(originMajor);
+                expect(result).assertEqual(true);
+                // 验证传参小于系统版本时（且版本号为合法版本）返回1
+                if(originMajor - 1 > 0) {
+                    result = deviceinfo.apiAvailable(originMajor - 1);
+                    expect(result).assertEqual(true);
+                }
+                // 验证传参大于系统版本时（且版本号为合法版本）返回0
+                if(originMajor + 1 < 26) {
+                    result = deviceinfo.apiAvailable(originMajor + 1);
+                    expect(result).assertEqual(false);
+                }
             }
             console.info(`${caseName} END`);
             done();
