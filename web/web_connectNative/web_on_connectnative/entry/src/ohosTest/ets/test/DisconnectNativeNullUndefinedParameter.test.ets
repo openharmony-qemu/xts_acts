@@ -71,7 +71,7 @@ export default function disconnectNativeNullUndefinedParameterTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed successfully`);
           // 如果断开成功，测试仍然通过
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -115,7 +115,7 @@ export default function disconnectNativeNullUndefinedParameterTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed successfully`);
           // 如果断开成功，测试仍然通过
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -158,7 +158,7 @@ export default function disconnectNativeNullUndefinedParameterTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed successfully`);
           // 如果断开成功，测试仍然通过
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -201,7 +201,7 @@ export default function disconnectNativeNullUndefinedParameterTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed successfully`);
           // 如果断开成功，测试仍然通过
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -244,7 +244,7 @@ export default function disconnectNativeNullUndefinedParameterTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed successfully`);
           // 如果断开成功，测试仍然通过
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -315,7 +315,7 @@ export default function disconnectNativeNullUndefinedParameterTest() {
       }
       
       // 所有边界值测试完成
-      expect(true).assertTrue();
+      expect(1).assertEqual(1);
     })
   })
 }

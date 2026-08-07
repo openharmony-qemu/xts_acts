@@ -28,6 +28,8 @@ import webViewApiOne from './webViewApiOne.test';
 import webTwoJsunit from './WebTwoJsunit.test';
 import webController from './WebController.test';
 
+import webResourceResponseCoverageDirect from './WebResourceResponseCoverageDirect.test';
+
 export default function testsuite() {
   webJsunit();
   webJsunitTwo();
@@ -44,4 +46,5 @@ export default function testsuite() {
   AceWeb();
   webViewApiOne();
   webTwoJsunit();
+  webResourceResponseCoverageDirect();
 }

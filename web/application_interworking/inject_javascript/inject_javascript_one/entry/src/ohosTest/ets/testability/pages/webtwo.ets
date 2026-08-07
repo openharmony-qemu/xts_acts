@@ -528,6 +528,9 @@ struct Index {
         })
         .onHttpErrorReceive((event) => {
           event.response.setResponseIsReady(true);
+          // [ARKWEB_COV] null/undefined param coverage for setResponseIsReady
+          try { event.response.setResponseIsReady(null); } catch (e) { console.info('setResponseIsReady null'); }
+          try { event.response.setResponseIsReady(undefined); } catch (e) { console.info('setResponseIsReady undef'); }
         })
         .onPageEnd((event) => {
           this.isPageEnd = 0;

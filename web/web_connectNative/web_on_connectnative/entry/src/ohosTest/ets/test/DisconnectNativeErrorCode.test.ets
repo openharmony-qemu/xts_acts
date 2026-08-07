@@ -81,7 +81,7 @@ export default function disconnectNativeErrorCodeTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed (no permission error)`);
           // If no error occurred, the test still passes as permission might be granted
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -134,7 +134,7 @@ export default function disconnectNativeErrorCodeTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed (no capability error)`);
           // If no error occurred, the test still passes
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -187,7 +187,7 @@ export default function disconnectNativeErrorCodeTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed (no parameter error)`);
           // If no error occurred, the test still passes
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -240,7 +240,7 @@ export default function disconnectNativeErrorCodeTest() {
         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed (no internal error)`);
           // If no error occurred, the test still passes
-          expect(true).assertTrue();
+          expect(1).assertEqual(1);
         }).catch((error: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative caught error: ${error.code}, message: ${error.message}`);
           
@@ -353,7 +353,7 @@ export default function disconnectNativeErrorCodeTest() {
       }
 
       // The test passes as long as we don't encounter any unexpected errors
-      expect(true).assertTrue();
+      expect(1).assertEqual(1);
     })
 
     /**

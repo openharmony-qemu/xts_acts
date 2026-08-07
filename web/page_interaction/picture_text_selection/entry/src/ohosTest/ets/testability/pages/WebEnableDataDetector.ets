@@ -108,6 +108,18 @@ struct WebOnFirstContentfulPaint1 {
             console.log('onPageEnd url:' + event.url);
             this.isPageEnd = 1;
           })
+
+        // [ARKWEB_COV] null/undefined attribute coverage
+        Web({ src: $rawfile("WebEnableDataDetector.html"), controller: new webView.WebviewController() })
+          .enableDataDetector(null)
+          .enableSelectedDataDetector(null)
+          .height(1)
+          .width(1)
+        Web({ src: $rawfile("WebEnableDataDetector.html"), controller: new webView.WebviewController() })
+          .enableDataDetector(undefined)
+          .enableSelectedDataDetector(undefined)
+          .height(1)
+          .width(1)
       }
       .width('100%')
     }

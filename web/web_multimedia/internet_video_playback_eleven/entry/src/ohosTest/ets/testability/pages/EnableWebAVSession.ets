@@ -88,6 +88,17 @@ struct WebComponent {
           this.isPageEnd = 0;
         })
 
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: "https://assets-res-cn.c.huawei.com/file-html-app/f34ffa0a861df9c482702aaf92c842d620240806183443/index.html#/", controller: new web_webview.WebviewController() })
+        .enableWebAVSession(null)
+        .height(1)
+        .width(1)
+      Web({ src: "https://assets-res-cn.c.huawei.com/file-html-app/f34ffa0a861df9c482702aaf92c842d620240806183443/index.html#/", controller: new web_webview.WebviewController() })
+        .enableWebAVSession(undefined)
+        .height(1)
+        .width(1)
+
     }
   }
 }

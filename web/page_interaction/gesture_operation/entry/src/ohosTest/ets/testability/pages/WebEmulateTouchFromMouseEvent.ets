@@ -157,6 +157,14 @@ struct WebEmulateTouchFromMouseEventTest {
         .mixedMode(MixedMode.All).height("25%")
         .cacheMode(CacheMode.None).keyboardAvoidMode(WebKeyboardAvoidMode.OVERLAYS_CONTENT)
 
+      // Coverage: overviewModeAccess null/undefined
+      Web({ src: $rawfile("autofill.html"), controller: this.controller })
+        .overviewModeAccess(null)
+        .height("1%")
+      Web({ src: $rawfile("autofill.html"), controller: this.controller })
+        .overviewModeAccess(undefined)
+        .height("1%")
+
     }
   }
 }

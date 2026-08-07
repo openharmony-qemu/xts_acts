@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import webview from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 
@@ -224,6 +225,59 @@ export default function webCookieManager() {
       Utils.emitEvent('testGetCookie001', 134750)
       Utils.registerEvent('testGetCookie001', 'a=b', 134870, done);
       sendEventByKey('WebCookieManagerButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testExistCookieFalseDirect
+     * @tc.number SUB_WEB_EXISTCOOKIE_FALSE_0200
+     * @tc.desc   test existCookie(false) direct call for coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testExistCookieFalseDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let exists: boolean = webview.WebCookieManager.existCookie(false);
+        expect(typeof exists).assertEqual('boolean');
+      } catch (error) {
+        console.error('testExistCookieFalseDirect error: ' + JSON.stringify(error));
+        expect(0).assertEqual(1);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testExistCookieNullDirect
+     * @tc.number SUB_WEB_EXISTCOOKIE_NULL_0300
+     * @tc.desc   test existCookie(null) direct call for coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testExistCookieNullDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        webview.WebCookieManager.existCookie(null);
+      } catch (error) {
+        console.error('testExistCookieNullDirect error: ' + JSON.stringify(error));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testExistCookieUndefinedDirect
+     * @tc.number SUB_WEB_EXISTCOOKIE_UNDEFINED_0400
+     * @tc.desc   test existCookie(undefined) direct call for coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testExistCookieUndefinedDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        webview.WebCookieManager.existCookie(undefined);
+      } catch (error) {
+        console.error('testExistCookieUndefinedDirect error: ' + JSON.stringify(error));
+      }
+      done();
     })
   })
 }

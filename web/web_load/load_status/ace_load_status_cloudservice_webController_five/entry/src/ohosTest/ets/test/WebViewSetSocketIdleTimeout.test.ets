@@ -14,6 +14,7 @@
  */
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import webView from '@ohos.web.webview';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -152,7 +153,45 @@ export default function WebViewSetSocketIdleTimeout() {
         done()
     })
 
+    /**
+     * @tc.name   testSetSocketIdleTimeoutNull
+     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0006
+     * @tc.desc   test setSocketIdleTimeout null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetSocketIdleTimeoutNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testSetSocketIdleTimeoutNull start')
+        try {
+            webView.WebviewController.setSocketIdleTimeout(null);
+        } catch (error) {
+            console.error('testSetSocketIdleTimeoutNull error: ' + JSON.stringify(error))
+            expect(Number((error as BusinessError).code)).assertEqual(401)
+        }
+        console.log('testSetSocketIdleTimeoutNull end')
+        done()
+    })
 
+    /**
+     * @tc.name   testSetSocketIdleTimeoutUndefined
+     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0007
+     * @tc.desc   test setSocketIdleTimeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetSocketIdleTimeoutUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testSetSocketIdleTimeoutUndefined start')
+        try {
+            webView.WebviewController.setSocketIdleTimeout(undefined);
+        } catch (error) {
+            console.error('testSetSocketIdleTimeoutUndefined error: ' + JSON.stringify(error))
+            expect(Number((error as BusinessError).code)).assertEqual(401)
+        }
+        console.log('testSetSocketIdleTimeoutUndefined end')
+        done()
+    })
 
   })
 }

@@ -475,5 +475,96 @@ export default function webMessageExt() {
         done()
     })
 
+    /**
+     * @tc.name   testWebMessageExtSetTypeAllEnumsDirect
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ENUM_0100
+     * @tc.desc   setType cover all WebMessageType enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetTypeAllEnumsDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let types: Array<webview.WebMessageType> = [
+        webview.WebMessageType.NOT_SUPPORT,
+        webview.WebMessageType.STRING,
+        webview.WebMessageType.NUMBER,
+        webview.WebMessageType.BOOLEAN,
+        webview.WebMessageType.ARRAY_BUFFER,
+        webview.WebMessageType.ARRAY,
+        webview.WebMessageType.ERROR
+      ];
+      for (let i = 0; i < types.length; i++) {
+        try {
+          let ext: webview.WebMessageExt = new webview.WebMessageExt();
+          ext.setType(types[i]);
+        } catch (error) {
+          console.info('setType enum=' + types[i] + ' err=' + JSON.stringify(error));
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testWebMessageExtSetTypeNullUndefinedDirect
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_NULL_0200
+     * @tc.desc   setType null/undefined and invalid enum for param coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetTypeNullUndefinedDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ext: webview.WebMessageExt = new webview.WebMessageExt();
+      try {
+        ext.setType(null);
+      } catch (error) {
+        console.info('setType(null) err=' + JSON.stringify(error));
+      }
+      try {
+        ext.setType(undefined);
+      } catch (error) {
+        console.info('setType(undefined) err=' + JSON.stringify(error));
+      }
+      try {
+        ext.setType(999 as webview.WebMessageType);
+      } catch (error) {
+        console.info('setType(invalid) err=' + JSON.stringify(error));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testWebMessageExtSetArrayEmptyNullUndefinedDirect
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETARRAY_PARAM_0200
+     * @tc.desc   setArray empty/null/undefined for param coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetArrayEmptyNullUndefinedDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let ext: webview.WebMessageExt = new webview.WebMessageExt();
+        ext.setType(webview.WebMessageType.ARRAY);
+        ext.setArray([]);
+        expect(ext.getArray().length).assertEqual(0);
+      } catch (error) {
+        console.info('setArray([]) err=' + JSON.stringify(error));
+      }
+      try {
+        let ext2: webview.WebMessageExt = new webview.WebMessageExt();
+        ext2.setType(webview.WebMessageType.ARRAY);
+        ext2.setArray(null);
+      } catch (error) {
+        console.info('setArray(null) err=' + JSON.stringify(error));
+      }
+      try {
+        let ext3: webview.WebMessageExt = new webview.WebMessageExt();
+        ext3.setType(webview.WebMessageType.ARRAY);
+        ext3.setArray(undefined);
+      } catch (error) {
+        console.info('setArray(undefined) err=' + JSON.stringify(error));
+      }
+      done();
+    })
+
   })
 }

@@ -77,6 +77,17 @@ struct WebComponent {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 0;
         })
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: 'www.example.com', controller: new webview.WebviewController() })
+        .bypassVsyncCondition(null)
+        .height(1)
+        .width(1)
+      Web({ src: 'www.example.com', controller: new webview.WebviewController() })
+        .bypassVsyncCondition(undefined)
+        .height(1)
+        .width(1)
+
     }
   }
 }

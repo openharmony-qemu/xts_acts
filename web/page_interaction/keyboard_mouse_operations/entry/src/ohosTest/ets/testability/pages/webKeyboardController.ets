@@ -205,6 +205,16 @@ struct WebHitTestTypeEnumTest {
             console.log('onPageEnd url:' + event.url);
             this.isPageEnd = 1;
           })
+
+        // [ARKWEB_COV] null/undefined attribute coverage
+        Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+          .layoutMode(null)
+          .height(1)
+          .width(1)
+        Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+          .layoutMode(undefined)
+          .height(1)
+          .width(1)
       }
       .width('100%')
   }

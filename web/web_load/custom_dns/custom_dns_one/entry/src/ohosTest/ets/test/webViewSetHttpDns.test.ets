@@ -178,6 +178,23 @@ export default function webViewSetHttpDns() {
       done();
     })
     /**
+     * @tc.name   testClearHostIPError03
+     * @tc.number SUB_ACE_WEBVIEWCONTROLLER_CLEARHOSTIP_ERROR_API_0300
+     * @tc.desc   test clearHostIP empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testClearHostIPError03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) =>{
+      try {
+        webview.WebviewController.clearHostIP('')
+      } catch(error) {
+        let errorCode = Number(error.code)
+        expect(errorCode).assertEqual(401)
+      }
+      done();
+    })
+    /**
      * @tc.name   testSetHttpDnsAutoEmpty
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0500
      * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample

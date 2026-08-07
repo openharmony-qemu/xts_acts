@@ -125,6 +125,26 @@ struct EnableMediaNetworkProxy {
         .onPageEnd(() => {
           this.isPageEnd = 0;
         })
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: $rawfile('common_index.html'), controller: new web_webview.WebviewController() })
+        .enableMediaNetworkProxy(null)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile('common_index.html'), controller: new web_webview.WebviewController() })
+        .enableMediaNetworkProxy(undefined)
+        .height(1)
+        .width(1)
+
+      Web({ src: $rawfile('common_index.html'), controller: new web_webview.WebviewController() })
+        .enableMediaNetworkProxy(true)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile('common_index.html'), controller: new web_webview.WebviewController() })
+        .enableMediaNetworkProxy(false)
+        .height(1)
+        .width(1)
+
     }
   }
 }

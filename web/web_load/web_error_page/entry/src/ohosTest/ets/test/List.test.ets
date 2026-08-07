@@ -17,7 +17,10 @@
 import webErrorPage from './WebErrorPage.test';
 import WebEumClassTest from './WebEumClassTest.test'
 
+import webErrorPageCoverageDirect from './WebErrorPageCoverageDirect.test';
+
 export default function testsuite() {
   webErrorPage();
+  webErrorPageCoverageDirect();
   WebEumClassTest()
 }

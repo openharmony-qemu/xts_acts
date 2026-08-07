@@ -170,6 +170,16 @@ struct webViewScrollable {
           }).height('95%')
           .backToTop(this.x)
 
+        // [ARKWEB_COV] null/undefined attribute coverage
+        Web({ src: $rawfile('indexFive.html'), controller: new web_webview.WebviewController() })
+          .backToTop(null)
+          .height(1)
+          .width(1)
+        Web({ src: $rawfile('indexFive.html'), controller: new web_webview.WebviewController() })
+          .backToTop(undefined)
+          .height(1)
+          .width(1)
+
       }
   }
 }

@@ -454,6 +454,17 @@ struct webViewContCreatePdfAndOthersError {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 1;
         })
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: $rawfile('index.html'), controller: new web_webview.WebviewController() })
+        .enableHapticFeedback(null)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile('index.html'), controller: new web_webview.WebviewController() })
+        .enableHapticFeedback(undefined)
+        .height(1)
+        .width(1)
+
     }
   }
 }

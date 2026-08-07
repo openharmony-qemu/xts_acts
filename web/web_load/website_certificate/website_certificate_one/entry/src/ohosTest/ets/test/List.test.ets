@@ -18,6 +18,7 @@ import sslErrorHandler from './SslErrorHandler.test'
 import webAttributeTest from './WebAttributeTest.test'
 import onSslErrorEvent from './onSslErrorEvent.test'
 import onSslErrorEventTwo from './OnSslErrorEventTwo.test'
+import sslHandleCancelCoverageDirect from './SslHandleCancelCoverageDirect.test'
 
 export default function testsuite() {
   webAttributeTest()
@@ -25,5 +26,6 @@ export default function testsuite() {
   sslErrorHandler()
   onSslErrorEvent()
   onSslErrorEventTwo()
+  sslHandleCancelCoverageDirect()
 
 }
