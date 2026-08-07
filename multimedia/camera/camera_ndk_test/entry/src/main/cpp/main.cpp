@@ -4165,7 +4165,7 @@ static napi_value IsAutoExtendedGainmapDeliverySupported(napi_env env, napi_call
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-	napi_value result;
+    napi_value result;
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
  
     int32_t useCaseCode;
