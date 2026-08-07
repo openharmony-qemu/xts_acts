@@ -16,57 +16,46 @@
 #ifndef VIDEO_DECODER_API_TEST_H
 #define VIDEO_DECODER_API_TEST_H
 
-namespace OHOS {
-namespace Media {
+#include <napi/native_api.h>
 
-// VC1 Decoder Capability API Tests
-int VideoVc1DecCapApi0001();
-int VideoVc1DecCapApi0002();
-int VideoVc1DecCapApi0003();
-int VideoVc1DecCapApi0004();
-int VideoVc1DecCapApi0005();
-int VideoVc1DecCapApi0006();
-int VideoVc1DecCapApi0007();
-int VideoVc1DecCapApi0008();
-
-// MSVIDEO1/WMV3 Decoder Capability API Tests
-int VideoMsvideo1DecCapApi0009();
-int VideoMsvideo1DecCapApi0010();
-int VideoMsvideo1DecCapApi0011();
-int VideoMsvideo1DecCapApi0012();
-
-// Other Decoder Capability API Tests
-int VideoVp8DecCapApi0001();
-int VideoVp9DecCapApi0001();
-int VideoAv1DecCapApi0001();
-int VideoRv30DecCapApi0001();
-int VideoRv40DecCapApi0001();
-int VideoMjpegDecCapApi0001();
-int VideoMsvideo1DecCapApi0001();
-int VideoRawvideoDecCapApi0001();
-int VideoMpeg1DecCapApi0001();
-int VideoWvc1DecCapApi0001();
-int VideoWmv3DecCapApi0001();
-int VideoDvvideoDecCapApi0001();
-
-// Advanced Capability API Tests
-int VideoVp9DecCapApi0013();
-int VideoAv1DecCapApi0014();
-int VideoAv1DecCapApi0015();
-int VideoWvc1DecCapApi0016();
-int VideoAv1DecCapApi0017();
-int VideoEncCapApi0018();
-int VideoDecCapApi0019();
-int VideoEncCapApi0020();
-int VideoDecCapApi0021();
-int VideoEncCapApi0022();
-int VideoDecCapApi0023();
-int VideoDecCapApi0024();
-int VideoDecCapApi0025();
-int VideoDecCapApi0026();
-int VideoDecCapApi0027();
-
-} // namespace Media
-} // namespace OHOS
+napi_value VideoVc1DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecCapApi0002(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecCapApi0003(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecCapApi0004(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecCapApi0005(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecCapApi0006(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecCapApi0007(napi_env env, napi_callback_info info);
+napi_value VideoVc1DecCapApi0008(napi_env env, napi_callback_info info);
+napi_value VideoMsvideo1DecCapApi0009(napi_env env, napi_callback_info info);
+napi_value VideoMsvideo1DecCapApi0010(napi_env env, napi_callback_info info);
+napi_value VideoMsvideo1DecCapApi0011(napi_env env, napi_callback_info info);
+napi_value VideoMsvideo1DecCapApi0012(napi_env env, napi_callback_info info);
+napi_value VideoVp8DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoRv30DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoRv40DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoMjpegDecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoMsvideo1DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoRawvideoDecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoMpeg1DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoWvc1DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoWmv3DecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoDvvideoDecCapApi0001(napi_env env, napi_callback_info info);
+napi_value VideoVp9DecCapApi0013(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecCapApi0014(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecCapApi0015(napi_env env, napi_callback_info info);
+napi_value VideoWvc1DecCapApi0016(napi_env env, napi_callback_info info);
+napi_value VideoAv1DecCapApi0017(napi_env env, napi_callback_info info);
+napi_value VideoEncCapApi0018(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0019(napi_env env, napi_callback_info info);
+napi_value VideoEncCapApi0020(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0021(napi_env env, napi_callback_info info);
+napi_value VideoEncCapApi0022(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0023(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0024(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0025(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0026(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0027(napi_env env, napi_callback_info info);
 
 #endif // VIDEO_DECODER_API_TEST_H

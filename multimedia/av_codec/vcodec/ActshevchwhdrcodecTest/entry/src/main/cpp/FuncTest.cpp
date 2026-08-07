@@ -16,6 +16,7 @@
 #include <string>
 #include <include/FuncTest.h>
 #include <include/HdrCodecNdkSampleTest.h>
+#include <napi/native_api.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avcapability.h>
@@ -46,6 +47,13 @@ namespace {
     static string g_codecNameSw265 = "";
     static OH_AVCapability *cap_h265 = nullptr;
     static string g_codecNameHw265 = "";
+
+    static napi_value CreateIntInt32Result(napi_env env, int32_t value)
+    {
+        napi_value result;
+        napi_create_int32(env, value, &result);
+        return result;
+    }
 }
 void HDRFuncNdkTest::SetUpTestCase()
 {
@@ -102,7 +110,7 @@ namespace Media {
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int DEMUXER_DEC_ENC_MUXER_FUNC_009()
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_009(napi_env env, napi_callback_info info)
 {
     if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_h263)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
@@ -112,20 +120,20 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_009()
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecName263, g_codecNameHw265)) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->Configure()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->StartDemuxer()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         sample->WaitForEos();
         if (sample->errorCount != 0) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
@@ -136,7 +144,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_009()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int DEMUXER_DEC_ENC_MUXER_FUNC_010()
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_010(napi_env env, napi_callback_info info)
 {
     if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_mpeg2)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
@@ -146,20 +154,20 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_010()
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameMpeg2, g_codecNameHw265)) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->Configure()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->StartDemuxer()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         sample->WaitForEos();
         if (sample->errorCount != 0) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
@@ -170,7 +178,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_010()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int DEMUXER_DEC_ENC_MUXER_FUNC_011()
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_011(napi_env env, napi_callback_info info)
 {
     if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_mpeg4)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
@@ -180,20 +188,20 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_011()
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameMpeg4, g_codecNameHw265)) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->Configure()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->StartDemuxer()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         sample->WaitForEos();
         if (sample->errorCount != 0) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
@@ -204,7 +212,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_011()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int DEMUXER_DEC_ENC_MUXER_FUNC_012()
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_012(napi_env env, napi_callback_info info)
 {
     if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_h264)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
@@ -214,20 +222,20 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_012()
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecName264, g_codecNameHw265)) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->Configure()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->StartDemuxer()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         sample->WaitForEos();
         if (sample->errorCount != 0) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
@@ -238,7 +246,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_012()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int DEMUXER_DEC_ENC_MUXER_FUNC_013()
+napi_value DEMUXER_DEC_ENC_MUXER_FUNC_013(napi_env env, napi_callback_info info)
 {
     if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_sw265)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
@@ -248,20 +256,20 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_013()
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameSw265, g_codecNameHw265)) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->Configure()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (AV_ERR_OK != sample->StartDemuxer()) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         sample->WaitForEos();
         if (sample->errorCount != 0) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 }
 } // namespace
