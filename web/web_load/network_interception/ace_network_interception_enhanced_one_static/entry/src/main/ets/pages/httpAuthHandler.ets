@@ -86,9 +86,7 @@ struct httpAuthHandler {
                 }, 3000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 32040)
+                console.error(`loadUrl failed: ${JSON.stringify(error)}`);
               }
               break;
             }
@@ -103,9 +101,7 @@ struct httpAuthHandler {
                 }, 5000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 32041)
+                console.error(`loadUrl failed: ${JSON.stringify(error)}`);
               }
               break;
             }
@@ -119,9 +115,7 @@ struct httpAuthHandler {
                 }, 3000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 32042)
+                console.error(`loadUrl failed: ${JSON.stringify(error)}`);
               }
               break;
             }

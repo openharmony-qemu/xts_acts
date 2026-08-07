@@ -54,15 +54,6 @@ struct Second {
   @State fileAccess: boolean | undefined = true;
   @State forceDisplayScrollBar: boolean | undefined = true;
   @State pendingDatabaseAccessEventId: Long = 0;
-  @State databaseAccessLoadPhase: number = 0;
-
-  private startDatabaseAccessTest(enableAccess: boolean, eventId: Long): void {
-    this.databaseAccess = enableAccess;
-    this.pendingDatabaseAccessEventId = eventId;
-    this.databaseAccessLoadPhase = 1;
-    this.isPageEnd = -1;
-    this.webviewCtl.refresh();
-  }
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -91,12 +82,18 @@ struct Second {
           switch (this.stringObj.str) {
 
             case "emitDatabaseAccessTrue": {
-              this.startDatabaseAccessTest(true, 161000);
+              this.databaseAccess = true;
+              this.pendingDatabaseAccessEventId = 161000;
+              this.isPageEnd = -1;
+              this.webviewCtl.refresh();
               break;
             }
 
             case "emitDatabaseAccessFalse": {
-              this.startDatabaseAccessTest(false, 161001);
+              this.databaseAccess = false;
+              this.pendingDatabaseAccessEventId = 161001;
+              this.isPageEnd = -1;
+              this.webviewCtl.refresh();
               break;
             }
 
@@ -343,19 +340,9 @@ struct Second {
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 0;
-          if (this.pendingDatabaseAccessEventId <= 0) {
-            return;
-          }
-          if (this.databaseAccessLoadPhase === 1) {
-            this.databaseAccessLoadPhase = 2;
-            this.isPageEnd = -1;
-            this.webviewCtl.loadUrl("resource://rawfile/databaseAccess.html");
-            return;
-          }
-          if (this.databaseAccessLoadPhase === 2 && event.url.includes('databaseAccess.html')) {
+          if (this.pendingDatabaseAccessEventId > 0) {
             const eventId: Long = this.pendingDatabaseAccessEventId;
             this.pendingDatabaseAccessEventId = 0;
-            this.databaseAccessLoadPhase = 0;
             this.webviewCtl.runJavaScript('getDataResult()', (error, res) => {
               console.log("getDataResult==>" + res);
               Utils.emitEvent(res !== undefined && res !== null ? res : '', eventId);
