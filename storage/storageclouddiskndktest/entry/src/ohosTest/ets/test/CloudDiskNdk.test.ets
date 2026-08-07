@@ -128,6 +128,30 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0500
+     * @tc.name CloudDisk_RegisterSyncFolder_005
+     * @tc.desc Test RegisterSyncFolder001() interfaces with ACTIVE state and displayNameResId=1
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_RegisterSyncFolder_005', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/Documents/";
+      console.info("CloudDisk_RegisterSyncFolder_005: " + filepath);
+      let ret = clouddisk.RegisterSyncFolder001(filepath);
+      console.info("CloudDisk_RegisterSyncFolder_005 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+        done();
+      } else {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED'));
+        done();
+      }
+      done();
+    });
+
+    /**
      * @tc.number SUB_BASIC_FM_CloudDisk_UnregisterSyncFolder_0100
      * @tc.name CloudDisk_UnregisterSyncFolder_001
      * @tc.desc Test UnregisterSyncFolder() interfaces
@@ -216,6 +240,28 @@ export default function CloudDiskNdkTest(){
         done();
       } else {
         expect(ret).assertEqual(0);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_GetSyncFolders_0200
+     * @tc.name CloudDisk_GetSyncFolders_002
+     * @tc.desc Test GetSyncFolders() interfaces with null count parameter
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_GetSyncFolders_002', Level.LEVEL0, async (done: Function) => {
+      let ret = clouddisk.GetSyncFolders001();
+      console.info("CloudDisk_GetSyncFolders_002 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_INVALID_ARG'));
         done();
       }
       done();
