@@ -791,6 +791,32 @@ export default function CameraFunctionTest() {
       console.info(TAG, result);
       expect(result).assertEqual(7400101);
     });
-    
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_IsAutoExtendedGainmapSupported_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_IsAutoExtendedGainmapSupported_0100
+     * @tc.desc     OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_IsAutoExtendedGainmapSupported_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.PhotoOutputIsAutoExtendedGainmapSupported(CASE_INDEX_1);
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_EnableAutoExtendedGainmapDelivery_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_EnableAutoExtendedGainmapDelivery_0100
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_EnableAutoExtendedGainmapDelivery_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.PhotoOutputEnableAutoExtendedGainmapDelivery(CASE_INDEX_1);
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
   })
 }

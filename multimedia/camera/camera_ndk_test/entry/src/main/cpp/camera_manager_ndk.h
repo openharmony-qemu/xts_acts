@@ -519,6 +519,11 @@ public:
         return size_;
     }
 
+    bool IsAutoExtendedGainmapDeliverySupported();
+    Camera_ErrorCode EnableAutoExtendedGainmapDelivery(bool enable);
+    bool IsAutoExtendedGainmapDeliverySupported(int useCaseCode);
+    Camera_ErrorCode EnableAutoExtendedGainmapDelivery(int useCaseCode, bool enable);
+
 private:
     NDKCamera(const NDKCamera&) = delete;
     NDKCamera& operator = (const NDKCamera&) = delete;
