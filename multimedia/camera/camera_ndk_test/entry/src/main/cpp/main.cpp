@@ -4142,6 +4142,54 @@ static napi_value SetLogViewAssist(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHPhotoOutputIsAutoExtendedGainmapDeliverySupported(napi_env env, napi_callback_info info)
+{
+    bool isSupport = ndkCamera_->IsAutoExtendedGainmapDeliverySupported();
+    napi_value result;
+    napi_get_boolean(env, isSupport, &result);
+    return result;
+}
+
+static napi_value OHPhotoOutputEnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->EnableAutoExtendedGainmapDelivery(true);
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value IsAutoExtendedGainmapDeliverySupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+ 
+    bool ret = ndkCamera_->IsAutoExtendedGainmapDeliverySupported(useCaseCode);
+    napi_get_boolean(env, ret, &result);
+    return result;
+}
+ 
+static napi_value EnableAutoExtendedGainmapDelivery(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    bool isEnable;
+    napi_get_value_bool(env, args[1], &isEnable);
+    Camera_ErrorCode ret = ndkCamera_->EnableAutoExtendedGainmapDelivery(useCaseCode, isEnable);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value SetMirror(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -4692,6 +4740,14 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"setInvalidDeviceQueryInfo", nullptr, SetInvalidDeviceQueryInfo, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"oHPhotoOutputIsAutoExtendedGainmapDeliverySupported", nullptr,
+            OHPhotoOutputIsAutoExtendedGainmapDeliverySupported, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHPhotoOutputEnableAutoExtendedGainmapDelivery", nullptr, OHPhotoOutputEnableAutoExtendedGainmapDelivery,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"isAutoExtendedGainmapDeliverySupported", nullptr,
+            IsAutoExtendedGainmapDeliverySupported, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"enableAutoExtendedGainmapDelivery", nullptr, EnableAutoExtendedGainmapDelivery,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     size_t mergedLength = sizeof(desc) / sizeof(desc[0]) +
                           sizeof(desc1) / sizeof(desc1[0]) +

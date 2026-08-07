@@ -701,6 +701,14 @@ export const isLogViewAssistSupported: (index: number) => boolean;
 
 export const setLogViewAssistEnable: (index: number, enable: boolean) => number;
 
+export const oHPhotoOutputIsAutoExtendedGainmapDeliverySupported: () => boolean;
+
+export const oHPhotoOutputEnableAutoExtendedGainmapDelivery: () => number;
+
+export const isAutoExtendedGainmapDeliverySupported: (index: number) => boolean;
+ 
+export const enableAutoExtendedGainmapDelivery: (index: number, enable: boolean) => number;
+
 export const createPhotoCaptureSettingExt: (index: number) => number;
 
 export const destroyPhotoCaptureSettingExt: (index: number) => number;

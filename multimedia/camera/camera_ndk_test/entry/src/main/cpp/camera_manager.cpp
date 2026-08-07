@@ -4702,6 +4702,49 @@ Camera_ErrorCode NDKCamera::DeleteZoomPointInfo(int useCaseCode)
     return ret_;
 }
 
+bool NDKCamera::IsAutoExtendedGainmapDeliverySupported()
+{
+    bool isSupport = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput_);
+    LOG("OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported result. %{public}d", isSupport);
+    return isSupport;
+}
+
+Camera_ErrorCode NDKCamera::EnableAutoExtendedGainmapDelivery(bool enable)
+{
+    Camera_ErrorCode code = OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(photoOutput_, enable);
+    LOG("OH_PhotoOutput_EnableAutoExtendedGainmapDelivery result. %{public}d", code);
+    return code;
+}
+
+bool NDKCamera::IsAutoExtendedGainmapDeliverySupported(int useCaseCode)
+{
+    LOG("IsAutoExtendedGainmapDeliverySupported useCaseCode: %{public}d", useCaseCode);
+    bool isDeliverySupported;
+    if (useCaseCode == PARAMETER_OK) {
+        isDeliverySupported = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(photoOutput_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        isDeliverySupported = OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(nullptr);
+    }
+ 
+    LOG("OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported ret: %d", isDeliverySupported);
+    return isDeliverySupported;
+}
+ 
+Camera_ErrorCode NDKCamera::EnableAutoExtendedGainmapDelivery(int useCaseCode, bool isEnable)
+{
+    LOG("EnableAutoExtendedGainmapDelivery useCaseCode: %{public}d", useCaseCode);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(photoOutput_, isEnable);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(nullptr, isEnable);
+    }
+ 
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_EnableAutoExtendedGainmapDelivery failed.");
+    }
+    return ret_;
+}
+
 bool NDKCamera::IsLogViewAssistSupported(int useCaseCode)
 {
     LOG("IsLogViewAssistSupported useCaseCode: %d", useCaseCode);
