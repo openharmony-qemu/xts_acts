@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -446,18 +446,18 @@ export default function mdnsTest() {
           serviceType: "_print._tcp",
           serviceName: getName(),
         }
-        mdns.addLocalService(null, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(null, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -479,15 +479,15 @@ export default function mdnsTest() {
           serviceType: "_print._tcp",
           serviceName: getName(),
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -519,15 +519,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
          ExpectTrue(true, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -559,15 +559,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -599,15 +599,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -638,15 +638,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -676,15 +676,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -714,15 +714,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -752,15 +752,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -790,21 +790,21 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-            console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
-            ExpectTrue(false, caseName);
-            done();
-          }).catch((error: BusinessError) => {
+        try {
+          const data1 = await mdns.addLocalService(context, localServiceInfo);
+          const data2 = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: suscess :  ${JSON.stringify(data2)}`);
+          ExpectTrue(false, caseName);
+        } catch (error) {
+          if (error.code === 2204007) {
             console.info(`${caseName}: fail1 :  ${JSON.stringify(error)}`);
             ExpectTrue(error.code === 2204007, caseName);
-            done();
-          });
-        }).catch((error: BusinessError) => {
-          console.info(`${caseName}: fail2 :  ${JSON.stringify(error)}`);
-          ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+          } else {
+            console.info(`${caseName}: fail2 :  ${JSON.stringify(error)}`);
+            ExpectTrue(error.code === 401, caseName);
+          }
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -834,15 +834,15 @@ export default function mdnsTest() {
             family: 2
           },
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
          ExpectTrue(true, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -959,15 +959,15 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -1056,7 +1056,8 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           if (data !== null) {
             ExpectTrue(data.serviceType !== null, caseName);
@@ -1073,12 +1074,11 @@ export default function mdnsTest() {
           } else {
             ExpectTrue(false, caseName);
           }
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1481,15 +1481,15 @@ export default function mdnsTest() {
           serviceType: "_print._tcp",
           serviceName: getName(),
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
          ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1521,15 +1521,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-         ExpectTrue(Number(err.code) === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+         ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1561,15 +1561,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1601,15 +1601,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1639,15 +1639,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
          ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1677,15 +1677,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1715,15 +1715,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -1759,15 +1759,17 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-             ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataRemove = await mdns.removeLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataRemove)}`);
+               ExpectTrue(true, caseName);
+              } catch (err) {
+                console.log(`${caseName} fail ${JSON.stringify(err)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((err: BusinessError) => {
-              console.log(`${caseName} fail ${JSON.stringify(err)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
@@ -1805,15 +1807,17 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-             ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataRemove = await mdns.removeLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataRemove)}`);
+               ExpectTrue(true, caseName);
+              } catch (err) {
+                console.log(`${caseName} fail ${JSON.stringify(err)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((err: BusinessError) => {
-              console.log(`${caseName} fail ${JSON.stringify(err)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
@@ -1893,15 +1897,17 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-             ExpectTrue(false, caseName);
+            (async () => {
+              try {
+                const dataRemove = await mdns.removeLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataRemove)}`);
+               ExpectTrue(false, caseName);
+              } catch (err) {
+                console.log(`${caseName} fail ${JSON.stringify(err)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((err: BusinessError) => {
-              console.log(`${caseName} fail ${JSON.stringify(err)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
@@ -1936,21 +1942,22 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        }
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} fail ${JSON.stringify(err)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -1983,12 +1990,13 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
+        }
         mdns.removeLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
@@ -2021,18 +2029,18 @@ export default function mdnsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
-        mdns.removeLocalService(null, null).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(null, null);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2083,18 +2091,18 @@ export default function mdnsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
-        mdns.removeLocalService(undefined, undefined).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(undefined, undefined);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2156,13 +2164,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        }
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           if (data !== null) {
             ExpectTrue(data.serviceType !== null, caseName);
@@ -2179,12 +2189,11 @@ export default function mdnsTest() {
           } else {
             ExpectTrue(false, caseName);
           }
-          done();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} fail ${JSON.stringify(err)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -2217,12 +2226,13 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
+        }
         mdns.removeLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
@@ -2619,15 +2629,17 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-             ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataResolve = await mdns.resolveLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataResolve)}`);
+               ExpectTrue(true, caseName);
+              } catch (error) {
+                console.log(`${caseName} falil ${JSON.stringify(error)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((error: BusinessError) => {
-              console.log(`${caseName} falil ${JSON.stringify(error)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
@@ -2661,15 +2673,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -2694,15 +2706,15 @@ export default function mdnsTest() {
           serviceType: "_print._udp",
           serviceName: getName(),
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -2734,15 +2746,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -2774,15 +2786,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -2814,15 +2826,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -2860,15 +2872,17 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-             ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataResolve = await mdns.resolveLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataResolve)}`);
+               ExpectTrue(true, caseName);
+              } catch (error) {
+                console.log(`${caseName} falil ${JSON.stringify(error)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((error: BusinessError) => {
-              console.log(`${caseName} falil ${JSON.stringify(error)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
@@ -2903,18 +2917,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(null, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(null, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-       ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2944,15 +2958,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -2983,15 +2997,15 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
           ExpectTrue(Number(error.code) === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -3024,15 +3038,15 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
           ExpectTrue(Number(error.code) === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -3054,18 +3068,18 @@ export default function mdnsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
-        mdns.resolveLocalService(null, null).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(null, null);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3084,18 +3098,18 @@ export default function mdnsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
-        mdns.resolveLocalService(undefined, undefined).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(undefined, undefined);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3359,7 +3373,8 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           let serviceType = "_print._tcp";
           let discoveryService = mdns.createDiscoveryService(context, serviceType);
           discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
@@ -3368,11 +3383,11 @@ export default function mdnsTest() {
             done();
           });
           discoveryService.startSearchingMDNS();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} catch error: ${JSON.stringify(err)}`);
           ExpectTrue(false, caseName);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -3522,15 +3537,15 @@ export default function mdnsTest() {
             family: 888
           },
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
        ExpectTrue(false, caseName);
@@ -3593,18 +3608,18 @@ export default function mdnsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
-        mdns.addLocalService(null, null).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(null, null);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3623,18 +3638,18 @@ export default function mdnsTest() {
       console.info(`${caseName} test start `);
       try {
         let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
-        mdns.addLocalService(undefined, undefined).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(undefined, undefined);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
