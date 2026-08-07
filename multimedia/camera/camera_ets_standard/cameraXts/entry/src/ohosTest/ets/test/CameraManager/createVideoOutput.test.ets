@@ -215,6 +215,9 @@ export default function createVideoOutputTest() {
     afterAll(async () => {
       console.info(TAG, 'afterAll case.');
       mVideoSurfaceId = '';
+      if (!isEmpty(mAVRecorder)) {
+          await mAVRecorder.release();
+        }
       await closeFd(fdNumber);
     });
 
