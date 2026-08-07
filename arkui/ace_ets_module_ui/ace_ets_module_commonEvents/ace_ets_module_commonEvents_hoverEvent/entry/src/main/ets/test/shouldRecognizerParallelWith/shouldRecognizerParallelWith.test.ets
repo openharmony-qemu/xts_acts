@@ -60,12 +60,12 @@ export default function shouldRecognizerParallelWith() {
 
 
     /**
-     * @tc.name   SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100
-     * @tc.number SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100
-     * @tc.desc   SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100
+     * @tc.number : SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100
+     * @tc.desc : SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
    it('SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100', Level.LEVEL0, async (done: Function) => {
   console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] START');
@@ -75,7 +75,8 @@ export default function shouldRecognizerParallelWith() {
   let areaObj1 = CommonFunc.getComponentRectOnScreen('FatherControlChildTest1_inner_0');
   let areaHeight = areaObj1.bottom - areaObj1.top;
   let areaWidth = areaObj1.right - areaObj1.left;
-  console.log('SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100 item height and width', areaHeight, areaWidth);
+  console.log('SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100 item height and width',
+    areaHeight, areaWidth);
 
   // 子控件滚动（仅保留这一步）
   let driver = Driver.create();
@@ -89,9 +90,17 @@ export default function shouldRecognizerParallelWith() {
 
   // 校验手势识别生效
   let strJson1 = getInspectorByKey('recognizer_text');
-  console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] component strJson1 is: ' + JSON.stringify(JSON.parse(strJson1)));
-  console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] strJson1 content: ' + JSON.stringify(JSON.parse(strJson1).$attrs.content));
+  console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] component strJson1 is: ' +
+    JSON.stringify(JSON.parse(strJson1)));
+  console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] strJson1 content: ' +
+    JSON.stringify(JSON.parse(strJson1).$attrs.content));
   expect(JSON.parse(strJson1).$attrs.content).assertEqual('valid');
+  expect(AppStorage.get('srp_callback_invoked')).assertEqual(true);
+  expect(AppStorage.get('srp_others_is_array')).assertEqual(true);
+  expect(AppStorage.get('srp_current_defined')).assertEqual(true);
+  AppStorage.delete('srp_callback_invoked');
+  AppStorage.delete('srp_others_is_array');
+  AppStorage.delete('srp_current_defined');
 
   await CommonFunc.sleep(1000);
   console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] END');

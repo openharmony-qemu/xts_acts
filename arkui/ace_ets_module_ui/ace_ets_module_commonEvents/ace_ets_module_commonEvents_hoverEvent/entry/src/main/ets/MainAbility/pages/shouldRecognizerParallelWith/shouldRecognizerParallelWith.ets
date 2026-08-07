@@ -26,6 +26,31 @@ struct FatherControlChildTest1000 {
   @State vis: Visibility = Visibility.Visible
   @State text: string = 'start'
 
+  // 显式使用 ShouldRecognizerParallelWithCallback 类型别名（调用+入参+返回值）
+  private parallelCallback: ShouldRecognizerParallelWithCallback =
+    (current: GestureRecognizer, others: GestureRecognizer[]): GestureRecognizer => {
+      AppStorage.setOrCreate('srp_callback_invoked', true);
+      AppStorage.setOrCreate('srp_others_is_array', Array.isArray(others));
+      AppStorage.setOrCreate('srp_current_defined', current !== undefined);
+      for (let i = 0; i < others.length; i++) {
+        let pan = others[i] as PanRecognizer;
+        if (pan) {
+          console.log('shouldRecognizerParallelWith pan type', pan.getType());
+        }
+        let target = others[i].getEventTargetInfo();
+        if (target) {
+          let id = target.getId();
+          if (id == 'FatherControlChildTest1_inner' && others[i].isBuiltIn() &&
+            others[i].getType() == GestureControl.GestureType.PAN_GESTURE) {
+            this.currentRecognizer = current;
+            this.childRecognizer = others[i];
+            return others[i]; // 回调返回值：选中并行识别器
+          }
+        }
+      }
+      // 类型要求返回 GestureRecognizer；无并行目标时回退 current
+      return current;
+    }
 
   build() {
     Column(){
@@ -98,27 +123,9 @@ struct FatherControlChildTest1000 {
       .onScrollStop(()=>{
         console.info('Scroll stop')
       })
-      .shouldRecognizerParallelWith((current:GestureRecognizer,others:Array<GestureRecognizer>)=>{
-        for(let i = 0; i < others.length; i++){
-          let pan = others[i] as PanRecognizer;
-          if(pan){
-            console.log('zcb shouldBuiltInRecognizerParallelWith pan type', pan.getType() + 'distance' + pan.getPanGestureOptions().getDirection());
-          }
-          let target = others[i] .getEventTargetInfo();
-          if(target){
-            let id = target.getId();
-            console.log('zcb parallelInlnerGestureTo other id' + id + 'isSystemGesture' + others[i].isBuiltIn() + 'type' + others[i].getType());
-            if(id == 'FatherControlChildTest1_inner' && others[i].isBuiltIn() && others[i].getType() == GestureControl.GestureType.PAN_GESTURE){
-              this.currentRecognizer = current;
-              this.childRecognizer = others[i];
-              return others[i];
-            }
-          }
-        }
-        return undefined;
-      })
+      .shouldRecognizerParallelWith(this.parallelCallback)
       .onGestureRecognizerJudgeBegin
-      ((event: BaseGestureEvent, current: GestureRecognizer, others: Array<GestureRecognizer>) => {
+      ((event: BaseGestureEvent, current: GestureRecognizer, others: GestureRecognizer[]) => {
         if (current) {
           let target = current.getEventTargetInfo();
           if(target){
@@ -130,7 +137,9 @@ struct FatherControlChildTest1000 {
                   let target = others[i] .getEventTargetInfo() as ScrollableTargetInfo;
                   if(target){
                     let id = target.getId();
-                    console.log('zcb onGestureJudgeBegin other id' + id + 'isSystemGesture' + others[i].isBuiltIn() + 'type' + others[i].getType());
+                    console.log('zcb onGestureJudgeBegin other id' + id +
+                      'isSystemGesture' + others[i].isBuiltIn() +
+                      'type' + others[i].getType());
                     if(id == 'FatherControlChildTest1_inner'){
                       console.log('zbc onGestureJudgeBegin other isBegin' + target.isBegin() + 'isEnd' + target.isEnd())
                       let panEvent = event as PanGestureEvent;

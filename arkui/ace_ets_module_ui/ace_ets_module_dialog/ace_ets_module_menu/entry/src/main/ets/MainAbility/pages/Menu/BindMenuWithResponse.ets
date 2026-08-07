@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,12 @@
 struct BindMenuWithResponse {
   @State longPress: string = 'LONG_PRESS';
   @State rightClick: string = 'RIGHT_CLICK';
+  @State arrayHit: string = 'init';
+
+  private menuElements: MenuElement[] = [
+    { value: 'ArrayItem1', action: () => { this.arrayHit = 'item1'; } },
+    { value: 'ArrayItem2', action: () => { this.arrayHit = 'item2'; } },
+  ];
 
   @Builder
   MenuBuilderWithParam(type: ResponseType) {
@@ -44,12 +50,35 @@ struct BindMenuWithResponse {
   }
 
   build() {
-    Column() {
+    Column({ space: 12 }) {
       Button('BindContextMenu长按和右键点击触发菜单')
         .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
           enableArrow: true,
         })
         .id('bindClickId')
+
+      // API26 overload: MenuElement[]
+      Button('bindContextMenuWithResponse Array')
+        .id('bindArrayId')
+        .bindContextMenuWithResponse(this.menuElements, {
+          enableArrow: false,
+        })
+
+      // 异常入参：content null/undefined；options null/undefined
+      Button('array_content_null')
+        .id('bindArrayContentNullId')
+        .bindContextMenuWithResponse(null)
+      Button('array_content_undefined')
+        .id('bindArrayContentUndefId')
+        .bindContextMenuWithResponse(undefined)
+      Button('array_options_null')
+        .id('bindArrayOptionsNullId')
+        .bindContextMenuWithResponse(this.menuElements, null)
+      Button('array_options_undefined')
+        .id('bindArrayOptionsUndefId')
+        .bindContextMenuWithResponse(this.menuElements, undefined)
+
+      Text(this.arrayHit).id('arrayHitText')
       Button('hide').id('hideId')
     }
     .height('100%')

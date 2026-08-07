@@ -18,6 +18,7 @@
         "MainAbility/pages/setCustomCursor/setCustomCursor_undefined",
         "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith",
         "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith_undefined",
+        "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith_null",
         "MainAbility/pages/hoveredAttribute/HoveredAttributeTest"
     ]
 }
