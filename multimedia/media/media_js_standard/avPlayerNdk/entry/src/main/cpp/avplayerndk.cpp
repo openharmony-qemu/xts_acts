@@ -283,7 +283,7 @@ static napi_value OhAvPlayerSetFDSourceAbnormalThree(napi_env env, napi_callback
     napi_value result = nullptr;
     int backParam = FAIL;
     OH_AVErrCode errCode = OH_AVPlayer_SetFDSource(nullptr, PARAM_0, PARAM_0, PARAM_0);
-    if (errCode != AV_ERR_OK) {
+    if (errCode == AV_ERR_INVALID_VAL) {
         backParam = SUCCESS;
     }
     napi_create_int32(env, backParam, &result);

@@ -569,6 +569,126 @@ static napi_value OH_AVRecorder_Config0100(napi_env env, napi_callback_info info
     return retValue;
 }
 
+static napi_value OH_AVRecorderEnum0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t recorderdefault = 0;
+    int32_t recognition = 2;
+    int32_t communication = 7;
+    int32_t message = 10;
+    int32_t camcorder = 13;
+    int32_t yuv = 0;
+    int32_t es = 1;
+    int32_t res = 1;
+    if (OH_AVRecorder_AudioSourceType::AVRECORDER_DEFAULT == recorderdefault &&
+        OH_AVRecorder_AudioSourceType::AVRECORDER_VOICE_RECOGNITION == recognition &&
+        OH_AVRecorder_AudioSourceType::AVRECORDER_VOICE_COMMUNICATION == communication &&
+        OH_AVRecorder_AudioSourceType::AVRECORDER_VOICE_MESSAGE == message &&
+        OH_AVRecorder_AudioSourceType::AVRECORDER_CAMCORDER == camcorder &&
+        OH_AVRecorder_VideoSourceType::AVRECORDER_SURFACE_ES == es &&
+        OH_AVRecorder_VideoSourceType::AVRECORDER_SURFACE_YUV == yuv) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVRecorderEnum0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t avc = 2;
+    int32_t mpeg4 = 6;
+    int32_t hevc = 8;
+    int32_t aac = 3;
+    int32_t g711mu = 5;
+    int32_t amrnb = 9;
+    int32_t amrwb = 10;
+    int32_t res = 1;
+    if (OH_AVRecorder_CodecMimeType::AVRECORDER_VIDEO_AVC == avc &&
+        OH_AVRecorder_CodecMimeType::AVRECORDER_VIDEO_MPEG4 == mpeg4 &&
+        OH_AVRecorder_CodecMimeType::AVRECORDER_VIDEO_HEVC == hevc &&
+        OH_AVRecorder_CodecMimeType::AVRECORDER_AUDIO_AAC == aac &&
+        OH_AVRecorder_CodecMimeType::AVRECORDER_AUDIO_G711MU == g711mu &&
+        OH_AVRecorder_CodecMimeType::AVRECORDER_AUDIO_AMR_NB == amrnb &&
+        OH_AVRecorder_CodecMimeType::AVRECORDER_AUDIO_AMR_WB == amrwb) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVRecorderEnum0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t mpeg4 = 2;
+    int32_t mpeg4a = 6;
+    int32_t cetmp3 = 9;
+    int32_t cftwav = 10;
+    int32_t cftaac = 11;
+    int32_t res = 1;
+    if (OH_AVRecorder_ContainerFormatType::AVRECORDER_CFT_MPEG_4 == mpeg4 &&
+        OH_AVRecorder_ContainerFormatType::AVRECORDER_CFT_MPEG_4A == mpeg4a &&
+        OH_AVRecorder_ContainerFormatType::AVRECORDER_CFT_MP3 == cetmp3 &&
+        OH_AVRecorder_ContainerFormatType::AVRECORDER_CFT_WAV == cftwav &&
+        OH_AVRecorder_ContainerFormatType::AVRECORDER_CFT_AAC == cftaac) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVRecorderEnum0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t idle = 0;
+    int32_t prepared = 1;
+    int32_t started = 2;
+    int32_t paused = 3;
+    int32_t stopped = 4;
+    int32_t released = 5;
+    int32_t error = 6;
+    int32_t res = 1;
+    if (OH_AVRecorder_State::AVRECORDER_IDLE == idle &&
+        OH_AVRecorder_State::AVRECORDER_PREPARED == prepared &&
+        OH_AVRecorder_State::AVRECORDER_STARTED == started &&
+        OH_AVRecorder_State::AVRECORDER_PAUSED == paused &&
+        OH_AVRecorder_State::AVRECORDER_STOPPED == stopped &&
+        OH_AVRecorder_State::AVRECORDER_RELEASED == released &&
+        OH_AVRecorder_State::AVRECORDER_ERROR == error) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVRecorderEnum0500(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t user = 0;
+    int32_t background = 1;
+    int32_t res = 1;
+    if (OH_AVRecorder_StateChangeReason::AVRECORDER_USER == user &&
+        OH_AVRecorder_StateChangeReason::AVRECORDER_BACKGROUND == background) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVRecorderEnum0600(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t create = 0;
+    int32_t scene = 1;
+    int32_t res = 1;
+    if (OH_AVRecorder_FileGenerationMode::AVRECORDER_APP_CREATE == create &&
+        OH_AVRecorder_FileGenerationMode::AVRECORDER_AUTO_CREATE_CAMERA_SCENE == scene) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
 napi_property_descriptor desc[] = {
     {"OH_AVRecorder_Prepare0100", nullptr, OH_AVRecorder_Prepare0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVRecorder_GetAVRecorderConfig0100", nullptr, OH_AVRecorder_GetAVRecorderConfig0100, nullptr, nullptr, nullptr,
@@ -608,6 +728,12 @@ napi_property_descriptor desc[] = {
     {"OH_AVRecorder_Metadata0100", nullptr, OH_AVRecorder_Metadata0100, nullptr, nullptr, nullptr, napi_default,
      nullptr},
     {"OH_AVRecorder_Config0100", nullptr, OH_AVRecorder_Config0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVRecorderEnum0100", nullptr, OH_AVRecorderEnum0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVRecorderEnum0200", nullptr, OH_AVRecorderEnum0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVRecorderEnum0300", nullptr, OH_AVRecorderEnum0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVRecorderEnum0400", nullptr, OH_AVRecorderEnum0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVRecorderEnum0500", nullptr, OH_AVRecorderEnum0500, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVRecorderEnum0600", nullptr, OH_AVRecorderEnum0600, nullptr, nullptr, nullptr, napi_default, nullptr},
 
 };
 
