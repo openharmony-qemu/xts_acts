@@ -74,7 +74,10 @@
  	         "usedScene": {
  	           "when": "always"
  	         }
- 	    }
+ 	    },
+      {
+        "name": "ohos.permission.SET_WINDOW_TOUCH_AREAS"
+      }
     ]
   }
 }
