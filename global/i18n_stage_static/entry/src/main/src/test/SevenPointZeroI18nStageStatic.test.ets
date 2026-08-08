@@ -1264,7 +1264,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         i18n.TimeZone.setAppDefaultTimeZoneById('Asia/123');
       } catch (e) {
         console.log('i18n_setAppDefaultTimeZoneById_static_0500 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2315,7 +2315,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect(result > 0).assertTrue();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_0200 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2355,7 +2355,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_0400 error', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2395,7 +2395,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect(result > 0).assertTrue();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_0600 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2435,7 +2435,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_0800 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2474,7 +2474,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_1000 result:', result);
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_1000 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2514,7 +2514,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_1200 error: ', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2536,7 +2536,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_1500 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2575,7 +2575,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_1700 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2596,7 +2596,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_Static_1800 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2635,7 +2635,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect(Number.isNaN(result)).assertTrue();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0200 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(8900001);
+        expect(error.code).assertEqual(8900001);
       }
     })
 
@@ -2674,7 +2674,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect(Number.isNaN(result)).assertTrue();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0400 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(8900001);
+        expect(error.code).assertEqual(8900001);
       }
     })
 
@@ -2831,7 +2831,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         expect().assertFail();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1500 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(8900001);
+        expect(error.code).assertEqual(8900001);
       }
     })
 
@@ -2848,7 +2848,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         let value: boolean = i18n.ChineseCalendar.checkLeapMonth(2200, 20, 3);
         console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1300 value:', value);
       }catch(e){
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
