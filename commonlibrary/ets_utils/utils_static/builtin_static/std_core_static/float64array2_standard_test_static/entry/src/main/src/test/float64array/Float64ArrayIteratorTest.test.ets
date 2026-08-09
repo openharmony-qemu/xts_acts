@@ -1422,7 +1422,7 @@ export default function Float64ArrayIteratorTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator0688', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayIterator068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
       const iter: IterableIterator<number> = arr.subarray(1, 4).values();
       const actualIteratorValue = iter.next().value;
