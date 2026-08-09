@@ -719,8 +719,7 @@ export default function Float64ArrayChainExtension1Test(): void {
      */
     it('testFloat64ArrayChainExtension1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 2.0, 4.0]);
-      const result: number = arr.findLast((v: number): boolean => v === 2.0);
-      const actualResult = result;
+      const actualResult: number = arr.findLast((v: number): boolean => v === 2.0);
       const expectedResult: number = 2.0;
       expect(actualResult).assertEqual(expectedResult);
     });
@@ -799,8 +798,7 @@ export default function Float64ArrayChainExtension1Test(): void {
      */
     it('testFloat64ArrayChainExtension1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
-      const result: number = arr.findLast((v: number): boolean => v < 4.0);
-      const actualResult = result;
+      const actualResult: number = arr.findLast((v: number): boolean => v < 4.0);
       const expectedResult: number = 3.0;
       expect(actualResult).assertEqual(expectedResult);
     });

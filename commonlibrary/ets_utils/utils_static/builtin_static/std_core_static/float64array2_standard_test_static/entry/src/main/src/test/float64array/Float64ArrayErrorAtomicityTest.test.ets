@@ -303,7 +303,7 @@ export default function Float64ArrayErrorAtomicityTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ERRORATOMICITY_1000
      * @tc.name testFloat64ArrayErrorAtomicity010
-     * @tc.desc Verify findLast callback error propagates before not-found error
+     * @tc.desc Verify findLast predicate exception propagates immediately and keeps original error message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

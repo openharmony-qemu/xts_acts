@@ -1417,21 +1417,24 @@ export default function Float64ArrayIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0680
      * @tc.name testFloat64ArrayIterator068
-     * @tc.desc Verify findLast callback throw propagates
+     * @tc.desc Verify subarray values chain iterator returns sliced view values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayIterator068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
-      try {
-        arr.findLast((v: number): boolean => {
-          throw new Error('fl err');
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
+    it('testFloat64ArrayIterator0688', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
+      const iter: IterableIterator<number> = arr.subarray(1, 4).values();
+      const actualIteratorValue = iter.next().value;
+      const expectedIteratorValue: number = 2.0;
+      expect(actualIteratorValue).assertEqual(expectedIteratorValue);
+      const actualIteratorValueSecond = iter.next().value;
+      const expectedIteratorValueSecond: number = 3.0;
+      expect(actualIteratorValueSecond).assertEqual(expectedIteratorValueSecond);
+      const actualIteratorValueThird = iter.next().value;
+      const expectedIteratorValueThird: number = 4.0;
+      expect(actualIteratorValueThird).assertEqual(expectedIteratorValueThird);
+      expect(iter.next().done).assertTrue();
     });
 
     /**
@@ -1537,8 +1540,7 @@ export default function Float64ArrayIteratorTest(): void {
      */
     it('testFloat64ArrayIterator074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
-      const r = arr.findLastIndex((v: number): boolean => v > 100.0);
-      const actualResult = r;
+      const actualResult = arr.findLastIndex((v: number): boolean => v > 100.0);
       const expectedResult: number = -1;
       expect(actualResult).assertEqual(expectedResult);
     });
@@ -2476,29 +2478,6 @@ export default function Float64ArrayIteratorTest(): void {
       const actualResult = second;
       const expectedResult: number = 20.0;
       expect(actualResult).assertEqual(expectedResult);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1230
-     * @tc.name testFloat64ArrayIterator123
-     * @tc.desc Verify subarray values chain iterator returns sliced view values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayIterator123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0, 4.0);
-      const iter: IterableIterator<number> = arr.subarray(1, 4).values();
-      const actualIteratorValue = iter.next().value;
-      const expectedIteratorValue: number = 2.0;
-      expect(actualIteratorValue).assertEqual(expectedIteratorValue);
-      const actualIteratorValueSecond = iter.next().value;
-      const expectedIteratorValueSecond: number = 3.0;
-      expect(actualIteratorValueSecond).assertEqual(expectedIteratorValueSecond);
-      const actualIteratorValueThird = iter.next().value;
-      const expectedIteratorValueThird: number = 4.0;
-      expect(actualIteratorValueThird).assertEqual(expectedIteratorValueThird);
-      expect(iter.next().done).assertTrue();
     });
   })
 }

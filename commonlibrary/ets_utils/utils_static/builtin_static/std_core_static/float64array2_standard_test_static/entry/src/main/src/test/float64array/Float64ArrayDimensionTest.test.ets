@@ -705,10 +705,9 @@ export default function Float64ArrayDimensionTest(): void {
      */
     it('testFloat64ArrayDimension032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 5e-324, 3.0);
-      const r = arr.findLast((v: number): boolean => {
+      const actualResult = arr.findLast((v: number): boolean => {
         return v < 1.0;
       });
-      const actualResult = r;
       const expectedResult: number = 5e-324;
       expect(actualResult).assertEqual(expectedResult);
     });
@@ -759,10 +758,9 @@ export default function Float64ArrayDimensionTest(): void {
      */
     it('testFloat64ArrayDimension035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 5e-324, 2.0, 1e-323);
-      const idx: int = arr.findLastIndex((v: number): boolean => {
+      const actualResult: int = arr.findLastIndex((v: number): boolean => {
         return v < 1.0;
       });
-      const actualResult = idx;
       const expectedResult: number = 3;
       expect(actualResult).assertEqual(expectedResult);
     });
@@ -827,10 +825,9 @@ export default function Float64ArrayDimensionTest(): void {
      */
     it('testFloat64ArrayDimension039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(5e-324, 1e-323, 5e-324);
-      const r = arr.findLast((v: number): boolean => {
+      const actualResult = arr.findLast((v: number): boolean => {
         return v === 5e-324;
       });
-      const actualResult = r;
       const expectedResult: number = 5e-324;
       expect(actualResult).assertEqual(expectedResult);
     });
@@ -898,10 +895,9 @@ export default function Float64ArrayDimensionTest(): void {
      */
     it('testFloat64ArrayDimension043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 5e-324, 2.0, 1e-323);
-      const r = arr.findLast((v: number): boolean => {
+      const actualResult = arr.findLast((v: number): boolean => {
         return v < 1.0;
       });
-      const actualResult = r;
       const expectedResult: number = 1e-323;
       expect(actualResult).assertEqual(expectedResult);
     });

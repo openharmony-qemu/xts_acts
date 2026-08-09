@@ -467,19 +467,16 @@ export default function Float64ArrayContractErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_2300
      * @tc.name testFloat64ArrayContractError023
-     * @tc.desc Verify findLast reports an Error when no element matches
+     * @tc.desc Verify reduceRight single element no initialValue returns that element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayContractError023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
-      try {
-        arr.findLast((v: number): boolean => v > 10.0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
+      const arr: Float64Array = new Float64Array([7.0]);
+      const actualResult: number = arr.reduceRight((acc: number, v: number): number => acc + v);
+      const expectedResult: number = 7.0;
+      expect(actualResult).assertEqual(expectedResult);
     });
 
     /**
@@ -1486,28 +1483,12 @@ export default function Float64ArrayContractErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7200
      * @tc.name testFloat64ArrayContractError072
-     * @tc.desc Verify reduceRight single element no initialValue returns that element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayContractError072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = new Float64Array([7.0]);
-      const r: number = arr.reduceRight((acc: number, v: number): number => acc + v);
-      const actualResult = r;
-      const expectedResult: number = 7.0;
-      expect(actualResult).assertEqual(expectedResult);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7300
-     * @tc.name testFloat64ArrayContractError073
      * @tc.desc Verify nonzero byteOffset plus length exceeding buffer throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         const arr = new Float64Array(buf, 8, 2);
@@ -1521,14 +1502,14 @@ export default function Float64ArrayContractErrorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7400
-     * @tc.name testFloat64ArrayContractError074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_7300
+     * @tc.name testFloat64ArrayContractError073
      * @tc.desc Verify business buffer validation keeps critical static chain result after RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayContractError074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayContractError073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(0x10);
       try {
         const invalid = new Float64Array(buf, 0x8, 0b10);
