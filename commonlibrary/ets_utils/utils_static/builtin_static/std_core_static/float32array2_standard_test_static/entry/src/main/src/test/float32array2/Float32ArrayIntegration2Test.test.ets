@@ -952,6 +952,7 @@ export default function Float32ArrayIntegration2Test(): void {
       const buf = new ArrayBuffer(24);
       const arr = new Float32Array(buf, 8, 2);
       expect(arr.byteOffset).assertEqual(8);
+      expect(arr.byteLength).assertEqual(8);
     });
 
     /**
@@ -971,15 +972,14 @@ export default function Float32ArrayIntegration2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_TWO_6400
      * @tc.name testFloat32ArrayIntegrationTwo064
-     * @tc.desc Verify byteLength is 8 for Float32Array(buf,8,2)
+     * @tc.desc Verify at(-1) returns last element 3.0 on [1.0,2.0,3.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIntegrationTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(24);
-      const arr = new Float32Array(buf, 8, 2);
-      expect(arr.byteLength).assertEqual(8);
+      const arr = new Float32Array([1.0, 2.0, 3.0]);
+      expect(arr.at(-1)).assertEqual(3.0);
     });
 
     /**
