@@ -1431,7 +1431,7 @@ export default function Float32ArraySlice2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SLICE_TWO_0910
      * @tc.name testFloat32ArraySliceTwo091
-     * @tc.desc Verify buffer.byteLength buffer.byteLength
+     * @tc.desc Verify slice(0, 2) creates a result buffer with byteLength 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
