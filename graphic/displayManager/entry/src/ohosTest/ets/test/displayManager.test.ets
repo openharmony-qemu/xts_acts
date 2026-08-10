@@ -3297,6 +3297,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
     it('testOnBrightnessInfoChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0300';
       let subWindowClass: window.Window | undefined;
+      let totalTime = 0;
       try {
         if (deviceType !== 'tv' && !isDeskTop) {
           subWindowClass = await windowStage.createSubWindow(caseName);
@@ -3360,6 +3361,14 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
+          totalTime += 100;
+          if (totalTime > 60000) {
+            await subWindowClass?.destroyWindow();
+            display.off('brightnessInfoChange');
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done()
+          }
         }
         console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
         expect(brightnessChangeCount1).assertLargerOrEqual(1);
