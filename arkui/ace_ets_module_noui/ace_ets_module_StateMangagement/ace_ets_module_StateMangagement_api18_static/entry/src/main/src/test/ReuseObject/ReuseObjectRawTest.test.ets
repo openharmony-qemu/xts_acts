@@ -61,7 +61,7 @@ export default function ReuseObjectRawTest(): void {
      */
     it('ReuseObjectRawTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReuseObjectRawTest_0100 START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('ReuseObjectRaw_btn'));

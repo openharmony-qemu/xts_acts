@@ -24,23 +24,22 @@ struct ArraySample {
     Column() {
       Text(`${this.arr}`)
         .id('arrayText')
-        .height('20%')
+        .height('5%')
       Button('push')
         .id('pushButton')
-        .height('20%')
+        .height('5%')
         .onClick(() => {
           // 添加元素，UI会刷新
           this.arr.push(this.arr.length);
         })
       Button('reverse')
         .id('reverseButton')
-        .height('20%')
+        .height('5%')
         .onClick(() => {
           // 翻转arr中的元素，UI会刷新
           this.arr.reverse();
         })
     }
-    .height('20%')
   }
 }
 
@@ -57,28 +56,26 @@ struct MapSample {
         ForEach(Array.from(this.message.entries()), (item: [int, string]) => {
           Text(`${item[0]}: ${item[1]}`)
             .id('mapText')
-            .height('20%')
+            .height('5%')
           Divider()
         })
         Button('set')
           .id('setButton')
-          .height('20%')
+          .height('5%')
           .onClick(() => {
             // 添加新的键值对，UI会刷新
             this.message.set(2, 'c');
           })
         Button('delete')
           .id('deleteButton')
-          .height('20%')
+          .height('5%')
           .onClick(() => {
             // 删除key为0的键值对，UI会刷新
             this.message.delete(0);
           })
       }
       .id('mapContainer')
-      .width('100%')
     }
-    .height('20%')
   }
 }
 
@@ -94,29 +91,26 @@ struct SetSample {
         ForEach(Array.from(this.message.values()), (item: int) => {
           Text(`${item}`)
             .id('setText')
-            .height('20%')
+            .height('5%')
           Divider()
         })
         Button('add')
           .id('addButton')
-          .height('20%')
+          .height('5%')
           .onClick(() => {
             // 添加元素，UI会刷新
             this.message.add(this.message.size);
           })
         Button('delete')
           .id('deleteSetButton')
-          .height('20%')
+          .height('5%')
           .onClick(() => {
             // 移除值为0的元素，UI会刷新
             this.message.delete(0);
           })
       }
       .id('setContainer')
-      .width('100%')
     }
-    .height('20%')
-    .margin(50)
   }
 }
 
@@ -139,26 +133,23 @@ struct DateSample {
     Column() {
       Text(`${this.formatChineseDate(this.selectedDate)}`)
         .id('dateText')
-        .height('20%')
-        .width('100%')
+        .height('5%')
 
       Button('increase year')
         .id('increaseYearButton')
-        .height('20%')
+        .height('5%')
         .onClick(() => {
           // 将selectedDate实例对应的年份加1，UI会刷新
           this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
         })
       Button('increase month')
         .id('increaseMonthButton')
-        .height('20%')
+        .height('5%')
         .onClick(() => {
           // 将selectedDate实例对应的月份加1，UI会刷新
           this.selectedDate.setMonth(this.selectedDate.getMonth() + 1);
         })
     }
-    .width('50%')
-    .height('50%')
   }
 }
 

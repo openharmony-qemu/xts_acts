@@ -75,7 +75,7 @@ export default function LazyForEachCustomComponentFreezeModeStaticTest(): void {
      */
     it('LazyForEachCustomComponentFreezeModeStaticTest_0100', Level.LEVEL1, async (done: ()=>void) => {
       console.info('LazyForEachCustomComponentFreezeModeStaticTest_0100 START');
-      let driver = Driver.create()
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
       expect(LazyForEachCustomComponentFreezeMode.AUTO).assertEqual(0);

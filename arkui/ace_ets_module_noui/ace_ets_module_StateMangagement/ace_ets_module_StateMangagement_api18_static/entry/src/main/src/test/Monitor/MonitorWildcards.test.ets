@@ -71,7 +71,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0100] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button_001"));
       await (btn?.click() as Promise<void>);
@@ -93,7 +93,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0200] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button_002"));
       await (btn?.click() as Promise<void>);
@@ -115,7 +115,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0300] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button_003"));
       await (btn?.click() as Promise<void>);
@@ -137,7 +137,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0400] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_001"));
       await (btn?.click() as Promise<void>);
@@ -159,7 +159,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0500] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_002"));
       await (btn?.click() as Promise<void>);
@@ -181,7 +181,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0600] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_003"));
       await (btn?.click() as Promise<void>);
@@ -203,7 +203,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0700] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_004"));
       await (btn?.click() as Promise<void>);
@@ -225,7 +225,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0800] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_005"));
       await (btn?.click() as Promise<void>);
@@ -247,7 +247,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_0900] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_006"));
       await (btn?.click() as Promise<void>);
@@ -269,7 +269,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_1000] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_007"));
       await (btn?.click() as Promise<void>);
@@ -291,7 +291,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_1100] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("observedV2Button_001"));
       await (btn?.click() as Promise<void>);
@@ -313,7 +313,7 @@ export default function MonitorWildcards(): void {
     it('SUB_ARKUI_API_MonitorWildcardsTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_MonitorWildcardsTest_static_1200] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("observedV2Button_002"));
       await (btn?.click() as Promise<void>);

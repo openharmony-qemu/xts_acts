@@ -69,7 +69,7 @@ export default function ArrayLikeStringTest(): void {
      */
     it('ArrayLikeStringTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArrayLikeStringTest_001] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('TextString');
       let obj = JSON.parseJsonElement(strJson);

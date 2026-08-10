@@ -56,7 +56,7 @@ export default function RepeatCloseReuseTest0110(): void {
           await CommonFunc.sleep(2000);
           // console.info("push RepeatCloseReuseTest0110 success: " + JSON.stringify(result));
         }
-        let driver = Driver.create()
+        let driver = await Driver.create()
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.error("push RepeatCloseReuseTest0110 page error: " + err);
@@ -80,7 +80,7 @@ export default function RepeatCloseReuseTest0110(): void {
     it('RepeatCloseReuseTest0110_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatCloseReuseTest0110_static_001] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("btnRepeatCloseReuse0110"));
       await (btn?.click() as Promise<void>);

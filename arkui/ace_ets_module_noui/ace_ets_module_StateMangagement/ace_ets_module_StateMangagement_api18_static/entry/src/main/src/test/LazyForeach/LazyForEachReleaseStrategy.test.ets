@@ -72,7 +72,7 @@ export default function LazyForEachReleaseStrategyTest(): void {
      */
     it('SUB_ARKUI_API_LazyForEachReleaseStrategyTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('SUB_ARKUI_API_LazyForEachReleaseStrategyTest_static_0100 START');
-      let driver = Driver.create()
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LazyForEach_Item_0');
       let obj= JSON.parseJsonElement(strJson);
@@ -90,7 +90,7 @@ export default function LazyForEachReleaseStrategyTest(): void {
      */
     it('SUB_ARKUI_API_LazyForEachReleaseStrategyTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('SUB_ARKUI_API_LazyForEachReleaseStrategyTest_static_0200 START');
-      let driver = Driver.create()
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LazyForEach_Item_1');
       let obj= JSON.parseJsonElement(strJson);

@@ -61,7 +61,7 @@ export default function SVDeepListenMakeObservedFalseTest(): void {
     it('SUB_ARKUI_SVDeepListenMakeObservedTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_SVDeepListenMakeObservedTest_static_0200] START');
 
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
       // Step1: Verify initial state - info.name is 'Jack'

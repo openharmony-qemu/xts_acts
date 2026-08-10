@@ -62,7 +62,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
     it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0100] START');
 
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
       // Step1: Verify initial state - ObservedArray shows [0, 1, 2]
@@ -103,7 +103,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
     it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0200] START');
 
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
       // Step1: Click setButton to add new key-value pair, UI should refresh
@@ -139,7 +139,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
     it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0300] START');
 
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
       // Step1: Click addButton to add element, UI should refresh
@@ -176,7 +176,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
     it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400] START');
 
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
       // Step1: Verify initial state - date is 2026-05-01

@@ -75,7 +75,7 @@ export default function componentLifecycleDecoratorsTest(): void {
      */
     it('SUB_ARKUI_COMPONENTLIFECYCLE_COMPONENTINACTIVE_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'componentInactive_0100 START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let scrollBtn = await driver.findComponent(ON.id('scrollToIndexBtn'));
       await (scrollBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

@@ -74,7 +74,7 @@ export default function AddMonitorObservedV2Int(): void {
     it('AddMonitorObservedV2Int_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorObservedV2Int_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn_true = await driver.findComponent(ON.id('ObservedButton')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);

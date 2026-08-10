@@ -74,7 +74,7 @@ export default function AddMonitorTwoDimensionalArray(): void {
     it('AddMonitorTwoDimensionalArray_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorTwoDimensionalArray_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn_true = await driver.findComponent(ON.id('change1')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);
@@ -107,7 +107,7 @@ export default function AddMonitorTwoDimensionalArray(): void {
     it('AddMonitorTwoDimensionalArray_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorTwoDimensionalArray_static_0200';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn_true = await driver.findComponent(ON.id('change11')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);
@@ -140,7 +140,7 @@ export default function AddMonitorTwoDimensionalArray(): void {
     it('AddMonitorTwoDimensionalArray_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorTwoDimensionalArray_static_0300';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn_true = await driver.findComponent(ON.id('change111')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);

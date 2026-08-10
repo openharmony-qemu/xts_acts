@@ -67,7 +67,7 @@ export default function IDataSourcePrefetchingMethods(): void {
      */
     it('IDataSourcePrefetchingPrefetch_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[IDataSourcePrefetchingPrefetch_0100] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let prefetchBtn = await driver.findComponent(ON.id('ButtonPrefetch'));
       await CommonFunc.sleep(1000);
@@ -94,7 +94,7 @@ export default function IDataSourcePrefetchingMethods(): void {
      */
     it('IDataSourcePrefetchingCancel_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[IDataSourcePrefetchingCancel_0100] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let cancelBtn = await driver.findComponent(ON.id('ButtonCancel'));
       await CommonFunc.sleep(1000);

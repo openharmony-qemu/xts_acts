@@ -71,7 +71,7 @@ export default function repeatReusableTrue(): void {
     it('repeatreusabletrue_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[repeatreusabletrue_001] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("reusabletrue"));
       await (btn?.click() as Promise<void>);

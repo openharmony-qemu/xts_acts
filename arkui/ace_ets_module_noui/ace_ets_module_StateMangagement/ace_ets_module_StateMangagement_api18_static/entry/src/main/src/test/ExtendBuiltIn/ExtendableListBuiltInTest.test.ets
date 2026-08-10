@@ -96,7 +96,7 @@ export default function ExtendableListBuiltInTest() {
      * @tc.level: Level1
      */
     it('ExtendableListBuiltIn_Divider_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("ExtendableList_002"));
       await (btn?.click() as Promise<void>);

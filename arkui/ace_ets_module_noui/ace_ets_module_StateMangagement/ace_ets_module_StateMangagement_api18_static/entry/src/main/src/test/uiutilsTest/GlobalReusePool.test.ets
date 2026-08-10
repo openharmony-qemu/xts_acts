@@ -115,7 +115,7 @@ export default function GlobalReusePoolTest() {
      */
     it('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_REUSEID_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_REUSEID_0100 START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let button = await driver.findComponent(ON.id('GlobalReusePoolChangeComponent'));
       await (button?.click() as Promise<void>);
       await driver.delayMs(500)
@@ -140,7 +140,7 @@ export default function GlobalReusePoolTest() {
      */
     it('SUB_ARKUI_GLOBALREUSEPOOL_PRERENDER_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_PRERENDER_0100 START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let button = await driver.findComponent(ON.id('GlobalReusePoolCheckLegacyComp'));
       await (button?.click() as Promise<void>);
       await driver.delayMs(500);
