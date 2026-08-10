@@ -1,5 +1,4 @@
-'use static'
-
+'use static';
 import abilityTest from './Ability.test.ets';
 import int32ArrayFindPart01Test from './Int32Array/Int32ArrayFindPart01Test.test.ets';
 import int32ArrayFindPart02Test from './Int32Array/Int32ArrayFindPart02Test.test.ets';
