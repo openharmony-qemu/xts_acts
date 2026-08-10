@@ -950,8 +950,7 @@ export default function longOverall1Part3Test(): void {
       const a: Long = new Long(Long.MAX_VALUE);
       const b: Long = new Long(2);
       const result: Long = a.add(b);
-      const expected: Long = new Long(Long.MIN_VALUE);
-      expect(result.toLong()).assertEqual(expected.add(new Long(1)).toLong());
+      expect(result.toLong()).assertEqual(-9223372036854775807);
     });
 
     /**
@@ -1208,7 +1207,7 @@ export default function longOverall1Part3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_OVERALL_PART3_8600
      * @tc.name testLongOverall1Part3_086
-     * @tc.desc Verify compareTo of fifty vs thirty returns 50
+     * @tc.desc Verify compareTo of fifty vs thirty returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1314,7 +1313,7 @@ export default function longOverall1Part3Test(): void {
     it('testLongOverall1Part3_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: Long = new Long(Long.MAX_VALUE);
       const s: string = v.toString(2);
-      expect(v.toLong()).assertEqual(Long.MAX_VALUE);
+      expect(s).assertEqual('111111111111111111111111111111111111111111111111111111111111111');
     });
 
     /**
@@ -1328,7 +1327,7 @@ export default function longOverall1Part3Test(): void {
     it('testLongOverall1Part3_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: Long = new Long(10000000000);
       const s: string = v.toString(36);
-      expect(v.toLong()).assertEqual(10000000000);
+      expect(s).assertEqual('4ldqpds');
     });
   });
 }

@@ -337,14 +337,14 @@ export default function longToFloat3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT3_2400
      * @tc.name testLongToFloat3_024
-     * @tc.desc Verify Long.toFloat converts hex value 0xDEADBEEF to approximate float 3.735928878e9f
+     * @tc.desc Verify Long.toFloat converts hex value 0xDEADBEEF to float 3735928576.0f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testLongToFloat3_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: float = Long.toFloat(0xDEADBEEF);
-      expect(r).assertClose(3.735928878e9f, 1.0f);
+      expect(r).assertEqual(3735928576.0f);
     });
 
     /**
@@ -940,27 +940,27 @@ export default function longToFloat3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT3_6900
      * @tc.name testLongToFloat3_069
-     * @tc.desc Verify instance toFloat converts hex 0xDEADBEEF Long to approximate float 3.735928753e9f
+     * @tc.desc Verify instance toFloat converts hex 0xDEADBEEF Long to float 3735928576.0f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testLongToFloat3_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: float = new Long(0xDEADBEEF).toFloat();
-      expect(r).assertClose(3.735928753e9f, 1.0f);
+      expect(r).assertEqual(3735928576.0f);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT3_7000
      * @tc.name testLongToFloat3_070
-     * @tc.desc Verify instance toFloat converts hex 0xCAFEBABE Long to approximate float 3.405690014e9f
+     * @tc.desc Verify instance toFloat converts hex 0xCAFEBABE Long to float 3405691648.0f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testLongToFloat3_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: float = new Long(0xCAFEBABE).toFloat();
-      expect(r).assertClose(3.405690014e9f, 1.0f);
+      expect(r).assertEqual(3405691648.0f);
     });
   })
 }

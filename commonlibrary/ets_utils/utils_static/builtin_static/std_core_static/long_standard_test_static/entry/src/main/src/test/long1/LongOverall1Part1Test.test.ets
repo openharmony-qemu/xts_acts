@@ -706,7 +706,7 @@ export default function longOverall1Part1Test(): void {
     it('testLongOverall1Part1_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v = new Long(100);
       const r = v.toString(3);
-      expect(v.toString(3.14)).assertEqual(r);
+      expect(r).assertEqual('10201');
     });
 
     /**

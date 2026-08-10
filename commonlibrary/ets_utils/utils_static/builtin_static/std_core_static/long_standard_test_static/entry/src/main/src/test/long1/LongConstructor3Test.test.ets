@@ -227,7 +227,7 @@ export default function longConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR3_1500
      * @tc.name testLongConstructor3_015
-     * @tc.desc Verify Long(-1).toString(2) returns 64-bit two's complement string
+     * @tc.desc Verify Long(-1).toString(2) returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

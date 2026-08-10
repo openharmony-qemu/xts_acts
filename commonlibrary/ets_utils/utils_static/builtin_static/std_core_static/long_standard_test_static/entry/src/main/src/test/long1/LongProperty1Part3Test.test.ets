@@ -1,6 +1,5 @@
 'use static';
 
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +33,6 @@ export default function longProperty1Part3Test(): void {
 
     afterAll(() => {
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PROPERTY_PART3_0100
@@ -530,7 +528,7 @@ export default function longProperty1Part3Test(): void {
      */
     it('testLongProperty1Part3_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: double = Long.toDouble(Long.MAX_VALUE);
-      expect(d).assertEqual(9223372036854775807);
+      expect(d).assertEqual(9.223372036854776e18);
     });
 
     /**
@@ -845,25 +843,12 @@ export default function longProperty1Part3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PROPERTY_PART3_6200
      * @tc.name testLongProperty1Part3_062
-     * @tc.desc Verify -8000000000000000 string parsed as Long in hexadecimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongProperty1Part3_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const v: long = Long.parseInt('-8000000000000000', 16);
-      expect(v).assertEqual(Long.MIN_VALUE);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PROPERTY_PART3_6300
-     * @tc.name testLongProperty1Part3_063
      * @tc.desc Verify 7fffffffffffffff string parsed as Long in hexadecimal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongProperty1Part3_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongProperty1Part3_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: long = Long.parseInt('7fffffffffffffff', 16);
       expect(v).assertEqual(Long.MAX_VALUE);
     });

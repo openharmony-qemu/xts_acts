@@ -308,7 +308,7 @@ export default function longOverall1Part4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_OVERALL_PART4_0190
      * @tc.name testLongOverall1Part4_019
-     * @tc.desc Verify two minus one
+     * @tc.desc Verify add-mul-div round trip preserves ten billion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
