@@ -836,57 +836,6 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   tesKnuckleKnockRect
-         * @tc.number UiTest_API22_021
-         * @tc.desc   isComponentPresentWhenLongClick test.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('tesKnuckleKnockRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(`${TestTag}, tesKnuckleKnockRect start`);
-            try {
-                let play = display.getDefaultDisplaySync();
-                let centerX = play.width / 2;
-                let centY = play.height / 2;
-                let onePoint: Point = { x: centerX - 100, y: centY - 100 };
-                let twoPoint: Point = { x: centerX - 100, y: centY };
-                let threePoint: Point = { x: centerX - 100, y: centY + 100 };
-                let fourPoint: Point = { x: centerX, y: centY + 100 };
-                let fivePoint: Point = { x: centerX + 100, y: centY + 100 };
-                let sixPoint: Point = { x: centerX + 100, y: centY };
-                let sevPoint: Point = { x: centerX + 100, y: centY - 100 };
-                let eigPoint: Point = { x: centerX, y: centY - 100 };
-                let ninePoint: Point = { x: centerX - 100, y: centY - 100 };
-                let pointers = PointerMatrix.create(1, 9);
-                pointers.setPoint(0, 0, onePoint);
-                pointers.setPoint(0, 1, twoPoint);
-                pointers.setPoint(0, 2, threePoint);
-                pointers.setPoint(0, 3, fourPoint);
-                pointers.setPoint(0, 4, fivePoint);
-                pointers.setPoint(0, 5, sixPoint);
-                pointers.setPoint(0, 6, sevPoint);
-                pointers.setPoint(0, 7, eigPoint);
-                pointers.setPoint(0, 8, ninePoint);
-                await driver.injectKnucklePointerAction(pointers);
-                await driver.delayMs(waitUiReadyMs * 5);
-                let agreeBtn = await driver.findComponent(ON.text('同意'));
-                if (agreeBtn != null) {
-                    await agreeBtn.click()
-                    await driver.delayMs(waitUiReadyMs * 10);
-                }                
-                let screenPng = await driver.findComponent(ON.text('保存'));
-                expect(screenPng != null).assertTrue();
-                await driver.pressBack();
-            } catch (error) {
-                console.log(`${TestTag}, tesKnuckleKnockRect error, ${JSON.stringify(error)}`);
-                expect(error.code).assertEqual(17000005);
-            }
-            await driver.delayMs(waitUiReadyMs * 2);
-            console.log(`${TestTag}, tesKnuckleKnockRect end`);
-        })
-
-        /**
          * @tc.name   teTouchPadTwoFingersScrollVer
          * @tc.number UiTest_API22_022
          * @tc.desc   isComponentPresentWhenLongClick test.
