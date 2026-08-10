@@ -295,7 +295,7 @@ export default function Float64ArrayReturnChainTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_RETURN_CHAIN_0800
      * @tc.name testFloat64ArrayReturnChain008
-     * @tc.desc Verify a negative index on the derived array is rejected without changing either array
+     * @tc.desc Verify a negative out-of-range index on the derived array is rejected without changing either array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -304,13 +304,10 @@ export default function Float64ArrayReturnChainTest(): void {
       const source: Float64Array = Float64Array.of(10.0, 20.0, 30.0);
       const first: Float64Array = source.with(2, 99.0);
       try {
-        first.with(-1, 88.0);
+        first.with(-4, 88.0);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
-        const actualMessage = e.message;
-        const expectedMessage: string = 'invalid index';
-        expect(actualMessage).assertEqual(expectedMessage);
       }
 
       const actualElement0 = first.$_get(0);

@@ -534,7 +534,7 @@ export default function Float64ArrayContractErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONTRACT_ERROR_2700
      * @tc.name testFloat64ArrayContractError027
-     * @tc.desc Verify with negative index throws RangeError
+     * @tc.desc Verify with negative out-of-range index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -542,7 +542,7 @@ export default function Float64ArrayContractErrorTest(): void {
     it('testFloat64ArrayContractError027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.of(1.0, 2.0, 3.0);
       try {
-        arr.with(-1, 99.0);
+        arr.with(-4, 99.0);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
