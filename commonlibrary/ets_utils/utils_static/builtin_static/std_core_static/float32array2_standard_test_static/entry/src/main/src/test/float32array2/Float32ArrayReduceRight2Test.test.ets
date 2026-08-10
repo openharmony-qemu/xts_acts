@@ -267,7 +267,7 @@ export default function Float32ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REDUCE_RIGHT_TWO_0140
      * @tc.name testFloat32ArrayReduceRightTwo014
-     * @tc.desc Verify reduceRight callback receives array with correct element at index 0
+     * @tc.desc Verify reduceRight callback receives the source array reference and its element at index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -275,10 +275,13 @@ export default function Float32ArrayReduceRight2Test(): void {
     it('testFloat32ArrayReduceRightTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(11.0, 22.0, 33.0);
       let capturedElement017: number = 0;
+      let receivesSourceArray = false;
       arr.reduceRight((p, c, i, a) => {
+        receivesSourceArray = a === arr;
         capturedElement017 = a.$_get(0);
         return p + c;
       });
+      expect(receivesSourceArray).assertTrue();
       expect(capturedElement017).assertEqual(arr.$_get(0));
     });
 
@@ -361,7 +364,7 @@ export default function Float32ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REDUCE_RIGHT_TWO_0190
      * @tc.name testFloat32ArrayReduceRightTwo019
-     * @tc.desc Verify reduceRight callback receives array with correct last element
+     * @tc.desc Verify reduceRight callback receives the source array reference and its last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -369,17 +372,20 @@ export default function Float32ArrayReduceRight2Test(): void {
     it('testFloat32ArrayReduceRightTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(8.0, 9.0, 10.0);
       let capturedElement022: number = 0;
+      let receivesSourceArray = false;
       arr.reduceRight((p, c, i, a) => {
+        receivesSourceArray = a === arr;
         capturedElement022 = a.$_get(a.length - 1);
         return p + c;
       });
+      expect(receivesSourceArray).assertTrue();
       expect(capturedElement022).assertEqual(arr.$_get(arr.length - 1));
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_REDUCE_RIGHT_TWO_0200
      * @tc.name testFloat32ArrayReduceRightTwo020
-     * @tc.desc Verify reduceRight callback array access via index 1 matches original
+     * @tc.desc Verify reduceRight callback receives the source array reference and accesses index 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -387,10 +393,13 @@ export default function Float32ArrayReduceRight2Test(): void {
     it('testFloat32ArrayReduceRightTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(3.0, 6.0, 9.0);
       let capturedElement023: number = 0;
+      let receivesSourceArray = false;
       arr.reduceRight((p, c, i, a) => {
+        receivesSourceArray = a === arr;
         capturedElement023 = a[1];
         return p + c;
       });
+      expect(receivesSourceArray).assertTrue();
       expect(capturedElement023).assertEqual(arr.$_get(1));
     });
 
