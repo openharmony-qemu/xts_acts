@@ -728,5 +728,28 @@ export default function btConnectionSwitchOffTest() {
             }
             done();
         });
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_SWITCHOFF_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_SWITCHOFF_0200
+         * @tc.desc   Test disconnectAllowedProfiles callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_SWITCHOFF_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                await connection.disconnectAllowedProfiles('00:11:22:33:44:55')
+            } catch (err) {
+                console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+                    if (Number(err.code) == 801) {
+                        console.info("disconnectAllowedProfiles is not support");
+                        expect(true).assertTrue();
+                    }else {
+                        expect(Number(err.code)).assertEqual(2900003);
+                    }
+                }
+            done();
+        })
     })
 }

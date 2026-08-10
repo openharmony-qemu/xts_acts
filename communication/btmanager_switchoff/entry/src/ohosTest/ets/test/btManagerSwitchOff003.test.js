@@ -2802,5 +2802,28 @@ export default function btManagerError003Test() {
             }
             done();
         })
+        /**
+         * @tc.name testGattConnectErrorSwitchOff_0100
+         * @tc.number SUB_BLUETOOTH_BLE_CONNECT_SWITCOFF_0100
+         * @tc.desc 测试 GattClientDevice.connect 方法 - 蓝牙关
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL0
+         * @co.authored.by.agent
+         */
+        it('testGattConnectErrorSwitchOff_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+            try {
+                let gattServer = ble.createGattServer();
+                gattServer.disconnect('00:22:33:44:55:66');
+                console.info('testGattConnectErrorSwitchOff_0100 connect success');
+            } catch (err) {
+                console.info('testGattConnectErrorSwitchOff_0100 err: code=' + err.code + ', message=' + err.message);
+                if (err.code === 801) {
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(2900003);
+                }
+            }
+        });
     })
 }

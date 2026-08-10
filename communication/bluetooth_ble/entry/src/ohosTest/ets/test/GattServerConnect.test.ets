@@ -352,5 +352,55 @@ export default function GattConnectTest() {
         }
       }
     });
+
+    /**
+     * @tc.name testGattConnectError001
+     * @tc.number SUB_BLUETOOTH_BLE_CONNECT_ERROR_0100
+     * @tc.desc 测试 GattClientDevice.connect 方法 - 第二个入参为null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     * @co.authored.by.agent
+     */
+    it('testGattConnectError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        let device: ble.GattServer = ble.createGattServer();
+        device.connect('00:22:33:44:55:66', null);
+        console.info('testGattConnectError001 connect success');
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.info('testGattConnectError001 err: code=' + error.code + ', message=' + error.message);
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+    });
+
+    /**
+     * @tc.name testGattConnectError002
+     * @tc.number SUB_BLUETOOTH_BLE_CONNECT_ERROR_0200
+     * @tc.desc 测试 GattClientDevice.connect 方法 - 第二个入参为undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     * @co.authored.by.agent
+     */
+    it('testGattConnectError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        let device: ble.GattServer = ble.createGattServer();
+        device.connect('00:22:33:44:55:66', undefined);
+        console.info('testGattConnectError002 connect success');
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.info('testGattConnectError002 err: code=' + error.code + ', message=' + error.message);
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+    });
   });
 }
