@@ -47,6 +47,7 @@ let mAVRecorder: media.AVRecorder;
 let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+let isRealse: boolean;
 
 let CameraVideoProfile: media.AVRecorderProfile = {
   audioBitrate: 48000,
@@ -186,6 +187,7 @@ async function releaseCaptureSession() {
   await mPreviewOutput?.release();
   await mPhotoOutput?.release();
   await mCaptureSession?.release();
+  isRealse = true;
 }
 
 
@@ -235,8 +237,15 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       AppStorage.setOrCreate('test', [])
     });
 
-    beforeEach(() => {
+    beforeEach(async () => {
       console.info('afterEach case');
+      for (let i = 0; i < 10; i++) {
+        if (isRealse) {
+          break;
+        }
+        await sleep(200);
+      }
+      isRealse = false;
     });
 
     afterEach(async () => {
