@@ -3059,7 +3059,7 @@ export default function windowLayoutTest() {
           expect().assertFail();
           done();
         }).catch(async (err: BusinessError) => {
-          if((deviceType == '2in1' || deviceType == 'phone' || deviceType == 'tablet'|| deviceType=='default')&&isSyscapSessionManagerSupported){
+          if((deviceType == '2in1' || deviceType == 'phone' || deviceType == 'tablet')){
             console.error(`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
             await subWindowClass?.destroyWindow();
             expect(err.code).assertEqual(1300004);
