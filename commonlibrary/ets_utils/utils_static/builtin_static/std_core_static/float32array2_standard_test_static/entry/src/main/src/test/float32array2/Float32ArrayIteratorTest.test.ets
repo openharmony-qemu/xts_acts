@@ -276,7 +276,7 @@ export default function Float32ArrayIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ITERATOR_1400
      * @tc.name testFloat32ArrayIterator014
-     * @tc.desc Verify for loop with $_get on empty Float32Array(0) iterates zero times
+     * @tc.desc Verify for loop over empty Float32Array(0) iterates zero times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -285,8 +285,6 @@ export default function Float32ArrayIteratorTest(): void {
       const arr = new Float32Array(0);
       let count = 0;
       for (let __f32i = 0; __f32i < arr.length; __f32i++) {
-        const v = arr.$_get(__f32i);
-        expect(v).assertEqual(__f32i);
         count = count + 1;
       }
       expect(count).assertEqual(0);
