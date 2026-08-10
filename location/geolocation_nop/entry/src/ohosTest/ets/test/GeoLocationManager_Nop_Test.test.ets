@@ -1727,5 +1727,138 @@ export default function geoLocationManager_nop_test() {
         }
       });
 
+    /**
+     * @tc.name   SUB_Location_nop_onLocationChange_0100
+     * @tc.number SUB_Location_nop_onLocationChange_0100
+     * @tc.desc   Using geoLocationManager.onLocationChange with valid params but no permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_onLocationChange_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let request: geoLocationManager.LocationRequest = {
+        'priority': geoLocationManager.LocationRequestPriority.ACCURACY,
+        'scenario': geoLocationManager.LocationRequestScenario.NAVIGATION,
+        'timeInterval': 1,
+        'distanceInterval': 5,
+        'maxAccuracy': 10
+      };
+      let locationChange = (location: geoLocationManager.Location): void => {
+        console.info('locationChange: data: ' + JSON.stringify(location));
+      };
+      try {
+        geoLocationManager.onLocationChange(request, locationChange);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info('onLocationChange_nop_test_001 catch err: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Location_nop_onLocationChange_0200
+     * @tc.number SUB_Location_nop_onLocationChange_0200
+     * @tc.desc   Using geoLocationManager.onLocationChange with ContinuousLocationRequest but no permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_onLocationChange_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let request: geoLocationManager.ContinuousLocationRequest = {
+        'interval': 1,
+        'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
+      };
+      let locationCallback = (location: geoLocationManager.Location): void => {
+        console.info('locationCallback: data: ' + JSON.stringify(location));
+      };
+      try {
+        geoLocationManager.onLocationChange(request, locationCallback);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info('onLocationChange_nop_test_002 catch err: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Location_nop_getCurrentDistrict_0100
+     * @tc.number SUB_Location_nop_getCurrentDistrict_0100
+     * @tc.desc   Using geoLocationManager.getCurrentDistrict with valid params but no permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_getCurrentDistrict_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        await geoLocationManager.getCurrentDistrict({ 'locale': 'zh', 'timeoutMs': 5000 });
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info('getCurrentDistrict_nop_test_001 catch err: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Location_nop_startBluetoothSearch_0100
+     * @tc.number SUB_Location_nop_startBluetoothSearch_0100
+     * @tc.desc   Using geoLocationManager.startBluetoothSearch with valid params but no permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_startBluetoothSearch_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let request: geoLocationManager.BluetoothSearchRequestParams = {
+          'deviceIdArray': ['00:11:22:33:44:55'],
+          'rssiThreshold': -80
+        };
+        let callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult) => {
+          if (bluetoothScanResult) {
+            console.info('bluetoothScanResult: deviceId=' + bluetoothScanResult.deviceId);
+          }
+        };
+        try {
+          geoLocationManager.startBluetoothSearch(request, callback);
+          try {
+            geoLocationManager.stopBluetoothSearch(callback);
+          } catch (e) {
+            console.info('startBluetoothSearch_nop_test_001 cleanup stop err: ' + JSON.stringify(e));
+          }
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('startBluetoothSearch_nop_test_001 catch err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Location_nop_getPostProcessingTrack_0100
+     * @tc.number SUB_Location_nop_getPostProcessingTrack_0100
+     * @tc.desc   Using geoLocationManager.getPostProcessingTrack with SKIING but no permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_getPostProcessingTrack_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          await geoLocationManager.getPostProcessingTrack(geoLocationManager.SportsType.SKIING);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('getPostProcessingTrack_nop_test_001 catch err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      })
+
   })
 }

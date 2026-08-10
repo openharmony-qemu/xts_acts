@@ -1704,6 +1704,19 @@ export default function actslocationTest() {
         }
       })
 
+      /**
+       * @tc.number  SUB_core_isPoiServiceSupported_0100
+       * @tc.name  SUB_core_isPoiServiceSupported_0100
+       * @tc.desc  Test isPoiServiceSupported returns true
+       * @tc.level  Level 2
+       * @tc.type  Function
+       * @tc.size  MEDIUMTEST
+       */
+      it('SUB_core_isPoiServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let poiServiceState: boolean = geoLocationManager.isPoiServiceSupported();
+        expect(poiServiceState).assertTrue();
+      })
+
 
 
     })
