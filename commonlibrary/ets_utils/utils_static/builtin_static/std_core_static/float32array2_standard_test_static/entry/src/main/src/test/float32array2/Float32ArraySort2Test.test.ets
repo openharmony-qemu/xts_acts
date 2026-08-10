@@ -487,7 +487,7 @@ export default function Float32ArraySort2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_TWO_0300
      * @tc.name testFloat32ArraySortTwo030
-     * @tc.desc Verify sort() places the maximum value at the last index of a 4-element array
+     * @tc.desc Verify sort() orders a four-element array with the maximum value at the last index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
