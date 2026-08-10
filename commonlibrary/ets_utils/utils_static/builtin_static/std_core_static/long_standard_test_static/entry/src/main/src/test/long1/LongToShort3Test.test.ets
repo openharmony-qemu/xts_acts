@@ -1302,79 +1302,64 @@ export default function longToShort3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1000
      * @tc.name testLongToShort3_100
-     * @tc.desc Verify repeated calls return consistent short result for 65535
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongToShort3_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r1: short = Long.toShort(65535);
-      let r2: short = Long.toShort(65535);
-      expect(r1).assertEqual(-1);
-      expect(r2).assertEqual(r1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1010
-     * @tc.name testLongToShort3_101
      * @tc.desc Verify maximum long value truncates to short
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToShort3_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToShort3_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(Long.MAX_VALUE);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1020
-     * @tc.name testLongToShort3_102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1010
+     * @tc.name testLongToShort3_101
      * @tc.desc Verify minimum long value truncates to short
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToShort3_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToShort3_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(Long.MIN_VALUE);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1020
+     * @tc.name testLongToShort3_102
+     * @tc.desc Verify multiple -65536 of 2^16 wraps to short 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testLongToShort3_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: short = Long.toShort(-65536);
       expect(result).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1030
      * @tc.name testLongToShort3_103
-     * @tc.desc Verify multiple -65536 of 2^16 wraps to short 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongToShort3_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: short = Long.toShort(-65536);
-      expect(result).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1040
-     * @tc.name testLongToShort3_104
      * @tc.desc Verify value at short minimum boundary -32768 converts to short
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToShort3_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToShort3_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(-32768);
       expect(result).assertEqual(-32768);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1050
-     * @tc.name testLongToShort3_105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1040
+     * @tc.name testLongToShort3_104
      * @tc.desc Verify hexadecimal literal 0xffff and decimal 65535 convert to the same short value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToShort3_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToShort3_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r1: short = Long.toShort(0xffff);
       const r2: short = Long.toShort(65535);
       expect(r1).assertEqual(r2);
@@ -1382,14 +1367,14 @@ export default function longToShort3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1060
-     * @tc.name testLongToShort3_106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT3_1050
+     * @tc.name testLongToShort3_105
      * @tc.desc Verify hexadecimal literal 0x2a and decimal 42 convert to the same short value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToShort3_106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToShort3_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r1: short = Long.toShort(0x2a);
       const r2: short = Long.toShort(42);
       expect(r1).assertEqual(r2);

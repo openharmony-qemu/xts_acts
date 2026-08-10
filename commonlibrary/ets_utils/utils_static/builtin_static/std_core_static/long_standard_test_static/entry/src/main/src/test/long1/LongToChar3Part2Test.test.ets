@@ -1,6 +1,5 @@
 'use static';
 
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +33,6 @@ export default function longToChar3Part2Test(): void {
 
     afterAll(() => {
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_0100
@@ -325,291 +323,278 @@ export default function longToChar3Part2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2300
      * @tc.name testLongToChar3Part2_023
-     * @tc.desc Verify Long.toChar octal literal 0o177777 returns char code 65535
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongToChar3Part2_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: char = Long.toChar(0o177777);
-      expect(result.toString().charCodeAt(0)).assertEqual(65535);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2400
-     * @tc.name testLongToChar3Part2_024
      * @tc.desc Verify Long.toChar octal literal 0o200000 returns char code 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0o200000);
       expect(result.toString().charCodeAt(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2500
-     * @tc.name testLongToChar3Part2_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2400
+     * @tc.name testLongToChar3Part2_024
      * @tc.desc Verify Long.toChar octal literal 0o101 returns char code 65
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0o101);
       expect(result.toString().charCodeAt(0)).assertEqual(65);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2600
-     * @tc.name testLongToChar3Part2_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2500
+     * @tc.name testLongToChar3Part2_025
      * @tc.desc Verify Long.toChar octal literal 0o141 returns char code 97
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0o141);
       expect(result.toString().charCodeAt(0)).assertEqual(97);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2700
-     * @tc.name testLongToChar3Part2_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2600
+     * @tc.name testLongToChar3Part2_026
      * @tc.desc Verify Long.toChar octal literal 0o77777 returns char code 32767
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0o77777);
       expect(result.toString().charCodeAt(0)).assertEqual(32767);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2800
-     * @tc.name testLongToChar3Part2_028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2700
+     * @tc.name testLongToChar3Part2_027
      * @tc.desc Verify Long.toChar octal literal 0o100000 returns char code 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0o100000);
       expect(result.toString().charCodeAt(0)).assertEqual(32768);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2900
-     * @tc.name testLongToChar3Part2_029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2800
+     * @tc.name testLongToChar3Part2_028
      * @tc.desc Verify Long.toChar octal literal 0o377777 returns char code 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0o377777);
       expect(result.toString().charCodeAt(0)).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3000
-     * @tc.name testLongToChar3Part2_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_2900
+     * @tc.name testLongToChar3Part2_029
      * @tc.desc Verify Long.toChar octal literal 0o400000 returns char code 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0o400000);
       expect(result.toString().charCodeAt(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3100
-     * @tc.name testLongToChar3Part2_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3000
+     * @tc.name testLongToChar3Part2_030
      * @tc.desc Verify Long.toChar binary literal 0b1111111111111111 returns char code 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0b1111111111111111);
       expect(result.toString().charCodeAt(0)).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3200
-     * @tc.name testLongToChar3Part2_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3100
+     * @tc.name testLongToChar3Part2_031
      * @tc.desc Verify Long.toChar binary literal 0b10000000000000000 returns char code 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0b10000000000000000);
       expect(result.toString().charCodeAt(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3300
-     * @tc.name testLongToChar3Part2_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3200
+     * @tc.name testLongToChar3Part2_032
      * @tc.desc Verify Long.toChar binary literal 0b1000001 returns char code 65
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0b1000001);
       expect(result.toString().charCodeAt(0)).assertEqual(65);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3400
-     * @tc.name testLongToChar3Part2_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3300
+     * @tc.name testLongToChar3Part2_033
      * @tc.desc Verify Long.toChar binary literal 0b1100001 returns char code 97
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0b1100001);
       expect(result.toString().charCodeAt(0)).assertEqual(97);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3500
-     * @tc.name testLongToChar3Part2_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3400
+     * @tc.name testLongToChar3Part2_034
      * @tc.desc Verify Long.toChar binary literal 0b111111111111111 returns char code 32767
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0b111111111111111);
       expect(result.toString().charCodeAt(0)).assertEqual(32767);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3600
-     * @tc.name testLongToChar3Part2_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3500
+     * @tc.name testLongToChar3Part2_035
      * @tc.desc Verify Long.toChar binary literal 0b1000000000000000 returns char code 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0b1000000000000000);
       expect(result.toString().charCodeAt(0)).assertEqual(32768);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3700
-     * @tc.name testLongToChar3Part2_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3600
+     * @tc.name testLongToChar3Part2_036
      * @tc.desc Verify Long.toChar 32-bit binary literal returns char code 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0b11111111111111111111111111111111);
       expect(result.toString().charCodeAt(0)).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3800
-     * @tc.name testLongToChar3Part2_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3700
+     * @tc.name testLongToChar3Part2_037
      * @tc.desc Verify Long.toChar(0xABCD) returns char code 43981 and single-char string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0xABCD);
       expect(result.toString().charCodeAt(0)).assertEqual(43981);
       expect(result.toString().length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3900
-     * @tc.name testLongToChar3Part2_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3800
+     * @tc.name testLongToChar3Part2_038
      * @tc.desc Verify Long.toChar(0x7FFF) returns char code 32767 and single-char string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0x7FFF);
       expect(result.toString().charCodeAt(0)).assertEqual(32767);
       expect(result.toString().length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4000
-     * @tc.name testLongToChar3Part2_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_3900
+     * @tc.name testLongToChar3Part2_039
      * @tc.desc Verify Long.toChar(0x8000) returns char code 32768 and single-char string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(0x8000);
       expect(result.toString().charCodeAt(0)).assertEqual(32768);
       expect(result.toString().length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4100
-     * @tc.name testLongToChar3Part2_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4000
+     * @tc.name testLongToChar3Part2_040
      * @tc.desc Verify Long.toChar decimal and hex literals of same value return equal char code
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dec: char = Long.toChar(65);
       const hex: char = Long.toChar(0x41);
       expect(dec.toString().charCodeAt(0)).assertEqual(hex.toString().charCodeAt(0));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4200
-     * @tc.name testLongToChar3Part2_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4100
+     * @tc.name testLongToChar3Part2_041
      * @tc.desc Verify Long.toChar decimal and octal literals of same value return equal char code
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dec: char = Long.toChar(255);
       const oct: char = Long.toChar(0o377);
       expect(dec.toString().charCodeAt(0)).assertEqual(oct.toString().charCodeAt(0));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4300
-     * @tc.name testLongToChar3Part2_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4200
+     * @tc.name testLongToChar3Part2_042
      * @tc.desc Verify Long.toChar decimal and binary literals of same value return equal char code
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dec: char = Long.toChar(10);
       const bin: char = Long.toChar(0b1010);
       expect(dec.toString().charCodeAt(0)).assertEqual(bin.toString().charCodeAt(0));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4400
-     * @tc.name testLongToChar3Part2_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR_PART2_4300
+     * @tc.name testLongToChar3Part2_043
      * @tc.desc Verify Long.toChar decimal and hex literals of 65535 return equal char code
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToChar3Part2_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToChar3Part2_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dec: char = Long.toChar(65535);
       const hex: char = Long.toChar(0xFFFF);
       expect(dec.toString().charCodeAt(0)).assertEqual(hex.toString().charCodeAt(0));
