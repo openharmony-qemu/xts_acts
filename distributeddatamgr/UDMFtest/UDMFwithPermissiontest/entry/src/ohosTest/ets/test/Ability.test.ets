@@ -240,7 +240,7 @@ export default function dragPerssionNormalTest() {
         expect(error.code == 401 ).assertTrue();
         done();
       }
-})
 
+    })
   })
 }

@@ -839,6 +839,44 @@ export default function UDMFApiPromiseTest() {
 		})
 
 		/**
+		* @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0500
+		* @tc.number testSUB_DistributedData_UDMF_SDK_DragWithOutPermission_0500
+		* @tc.desc   setAppShareOptions with string intention parameter.
+		* @tc.type   FUNCTION
+		* @tc.size   MEDIUMTEST
+		* @tc.level  LEVEL2
+		*/
+		it('SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+			try {
+				unifiedDataChannel.setAppShareOptions('DRAG' as unifiedDataChannel.Intention, unifiedDataChannel.ShareOptions.CROSS_APP);
+				console.log(tag, `setAppShareOptions should fail with string intention`);
+				expect().assertFail();
+			} catch (e) {
+				console.error(tag, `Failed as expected, code is ${e.code},message is ${e.message} `);
+				expect(e.code).assertEqual(401)
+			}
+		})
+
+		/**
+		* @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0600
+		* @tc.number testSUB_DistributedData_UDMF_SDK_DragWithOutPermission_0600
+		* @tc.desc   removeAppShareOptions with string intention parameter.
+		* @tc.type   FUNCTION
+		* @tc.size   MEDIUMTEST
+		* @tc.level  LEVEL2
+		*/
+		it('SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+			try {
+				unifiedDataChannel.removeAppShareOptions('DRAG' as unifiedDataChannel.Intention);
+				console.log(tag, `removeAppShareOptions should fail with string intention`);
+				expect().assertFail();
+			} catch (e) {
+				console.error(tag, `Failed as expected, code is ${e.code},message is ${e.message} `);
+				expect(e.code).assertEqual(401)
+			}
+		})
+
+		/**
 		* @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0400
 		* @tc.number testSUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0400
 		* @tc.desc   html test.

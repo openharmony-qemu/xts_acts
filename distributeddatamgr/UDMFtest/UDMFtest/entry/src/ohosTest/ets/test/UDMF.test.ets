@@ -6901,8 +6901,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0400
-     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0400
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0400
+     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0400
      * @tc.desc   setAppShareOptions with null intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6920,8 +6920,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0500
-     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0500
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0500
+     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0500
      * @tc.desc   setAppShareOptions with undefined intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6939,8 +6939,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0400
-     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0400
+     * @tc.name   SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0400
+     * @tc.number testUnifiedDataChannelRemoveAppShareOptionsErrTest0400
      * @tc.desc   removeAppShareOptions with null intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6958,8 +6958,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0500
-     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0500
+     * @tc.name   SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0500
+     * @tc.number testUnifiedDataChannelRemoveAppShareOptionsErrTest0500
      * @tc.desc   removeAppShareOptions with undefined intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6977,8 +6977,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0600
-     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0600
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0600
+     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0600
      * @tc.desc   setAppShareOptions with null shareOptions parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6996,8 +6996,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0700
-     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0700
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0700
+     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0700
      * @tc.desc   setAppShareOptions with undefined shareOptions parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7015,8 +7015,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0800
-     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0800
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0800
+     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0800
      * @tc.desc   setAppShareOptions with invalid shareOptions enum value -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7034,8 +7034,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0900
-     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0900
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0900
+     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0900
      * @tc.desc   setAppShareOptions with invalid shareOptions enum value 999
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7052,5 +7052,43 @@ export default function UDMFApiTest() {
       }
     })
 
-  })
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_1000
+     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest1000
+     * @tc.desc   setAppShareOptions with string intention parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('testUnifiedDataChannelSetAppShareOptionsErrTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+       try {
+         unifiedDataChannel.setAppShareOptions('DRAG' as unifiedDataChannel.Intention, unifiedDataChannel.ShareOptions.CROSS_APP);
+         console.info(TAG, `setAppShareOptions should fail with string intention`);
+         expect().assertFail();
+       } catch (error) {
+         console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+         expect(error.code).assertEqual('401');
+       }
+     })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_1000
+     * @tc.number testUnifiedDataChannelRemoveAppShareOptionsErrTest1000
+     * @tc.desc   removeAppShareOptions with string intention parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('testUnifiedDataChannelRemoveAppShareOptionsErrTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+       try {
+         unifiedDataChannel.removeAppShareOptions('DRAG' as unifiedDataChannel.Intention);
+         console.info(TAG, `removeAppShareOptions should fail with string intention`);
+         expect().assertFail();
+       } catch (error) {
+         console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+         expect(error.code).assertEqual('401');
+       }
+     })
+
+   })
 }
