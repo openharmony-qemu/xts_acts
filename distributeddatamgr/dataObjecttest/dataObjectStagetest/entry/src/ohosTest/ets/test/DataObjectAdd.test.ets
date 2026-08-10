@@ -661,5 +661,37 @@ export default function DataObjectAddAPITest() {
       }
       console.info(tag + '************ SUB_DistributedData_DataObject_BindAssetStoreTest_0600 end ************');
     })
+
+    /**
+     * @tc.name   SUB_DistributedData_DataObject_CreateDistributedObjectTest_0300
+     * @tc.number testSUB_DistributedData_DataObject_CreateDistributedObjectTest_0300
+     * @tc.desc   Test createDistributedObject and off('change') callback interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_DataObject_CreateDistributedObjectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log(tag + 'SUB_DistributedData_DataObject_CreateDistributedObjectTest_0300 start');
+      try {
+        let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+        console.log(tag, `createDistributedObject success, object: ${JSON.stringify(g_object)}`);
+        
+        let changeCallback = (sessionId: string, changeData: Array<string>) => {
+          console.log(tag, `changeCallback called, sessionId: ${sessionId}, changeData: ${JSON.stringify(changeData)}`);
+        };
+        
+        g_object.on('change', changeCallback);
+        console.log(tag, 'on(change) success');
+        
+        g_object.off('change', changeCallback);
+        console.log(tag, 'off(change) success');
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Failed. code: ${error.code}, message: ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'SUB_DistributedData_DataObject_CreateDistributedObjectTest_0300 end');
+      done();
+    })
   });
 }

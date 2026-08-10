@@ -6878,5 +6878,179 @@ export default function UDMFApiTest() {
       });
     })
 
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9500
+     * @tc.desc   Test UDMF creating UnifiedRecord with empty string type parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9500 start');
+      try {
+        let unifiedRecord = new unifiedDataChannel.UnifiedRecord("", null);
+        console.info(TAG + "SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9500 should not reach here");
+        expect().assertFail();
+      } catch (error) {
+        console.info(TAG + "SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9500 " + error.code + error.message);
+        expect(error.code).assertEqual("401");
+      }
+      console.info(TAG + "SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9500 end");
+      done();
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0400
+     * @tc.desc   setAppShareOptions with null intention parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(null, unifiedDataChannel.ShareOptions.CROSS_APP);
+        console.info(TAG, `setAppShareOptions should fail with null intention`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0500
+     * @tc.desc   setAppShareOptions with undefined intention parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(undefined, unifiedDataChannel.ShareOptions.CROSS_APP);
+        console.info(TAG, `setAppShareOptions should fail with undefined intention`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0400
+     * @tc.desc   removeAppShareOptions with null intention parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelRemoveAppShareOptionsErrTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.removeAppShareOptions(null);
+        console.info(TAG, `removeAppShareOptions should fail with null intention`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0500
+     * @tc.desc   removeAppShareOptions with undefined intention parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelRemoveAppShareOptionsErrTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.removeAppShareOptions(undefined);
+        console.info(TAG, `removeAppShareOptions should fail with undefined intention`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0600
+     * @tc.desc   setAppShareOptions with null shareOptions parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.DRAG, null);
+        console.info(TAG, `setAppShareOptions should fail with null shareOptions`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0700
+     * @tc.desc   setAppShareOptions with undefined shareOptions parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.DRAG, undefined);
+        console.info(TAG, `setAppShareOptions should fail with undefined shareOptions`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0800
+     * @tc.desc   setAppShareOptions with invalid shareOptions enum value -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.DRAG, -1 as unifiedDataChannel.ShareOptions);
+        console.info(TAG, `setAppShareOptions should fail with invalid shareOptions -1`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0900
+     * @tc.desc   setAppShareOptions with invalid shareOptions enum value 999
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.DRAG, 999 as unifiedDataChannel.ShareOptions);
+        console.info(TAG, `setAppShareOptions should fail with invalid shareOptions 999`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed as expected, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual('401');
+      }
+    })
+
   })
 }
