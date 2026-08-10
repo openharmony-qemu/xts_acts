@@ -47,6 +47,8 @@ export default function systemManagerTest() {
     testGetInstallLocalEnterpriseAppEnabledForAccount();
     testSetOtaUpdateNonceEnable();
  	  testIsOtaUpdateNonceEnable();
+    testSetLocalHotaDomain();
+    testGetLocalHotaDomain();
   })
 }
 
@@ -702,6 +704,56 @@ function testGetInstallLocalEnterpriseAppEnabledForAccount() {
       } else {
         expect(Number(error.code) === 201).assertTrue();
       }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetLocalHotaDomain() {
+  /**
+  * @tc.name   test_set_local_hota_domain_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_LOCAL_HOTA_DOMAIN_JS_0100
+  * @tc.desc   test systemManager setLocalHotaDomain with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_local_hota_domain_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      const TEST_HOTA_DOMAIN: string = "https://www.hota.com";
+      systemManager.setLocalHotaDomain(SELFWANT, TEST_HOTA_DOMAIN);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else if (error.code === 201) {
+        expect(error.code === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetLocalHotaDomain() {
+  /**
+  * @tc.name   test_get_local_hota_domain_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_LOCAL_HOTA_DOMAIN_JS_0100
+  * @tc.desc   test systemManager getLocalHotaDomain with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_local_hota_domain_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.getLocalHotaDomain(SELFWANT);
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
