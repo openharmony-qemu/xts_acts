@@ -3513,7 +3513,7 @@ export default function actsWifiManagerFunctionsTest() {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
-          // "showNoInternetDialog":true
+          "showNoInternetDialog":true
         };
         networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
@@ -3558,7 +3558,7 @@ export default function actsWifiManagerFunctionsTest() {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
-          // "showNoInternetDialog":false
+          "showNoInternetDialog":false
         };
         networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
