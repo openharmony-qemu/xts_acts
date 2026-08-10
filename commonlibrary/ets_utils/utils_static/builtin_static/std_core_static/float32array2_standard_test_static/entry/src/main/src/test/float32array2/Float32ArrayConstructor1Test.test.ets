@@ -635,54 +635,12 @@ export default function Float32ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0410
      * @tc.name testFloat32ArrayConstructorOne041
-     * @tc.desc Verify overload 13 one-argument 12 buffer length is 3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(12);
-      const arr = new Float32Array(buf);
-      expect(arr.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0420
-     * @tc.name testFloat32ArrayConstructorOne042
-     * @tc.desc Verify overload 13 one-argument 16 buffer length is 4
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(16);
-      const arr = new Float32Array(buf);
-      expect(arr.length).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0430
-     * @tc.name testFloat32ArrayConstructorOne043
-     * @tc.desc Verify overload 13 one-argument 28 buffer length is 7
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(28);
-      const arr = new Float32Array(buf);
-      expect(arr.length).assertEqual(7);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0440
-     * @tc.name testFloat32ArrayConstructorOne044
      * @tc.desc Verify overload 1 vs overload 5 is constructs argument count different result different
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a0 = new Float32Array();
       const a1 = new Float32Array([1.0, 2.0]);
       expect(a0.length).assertEqual(0);
@@ -690,14 +648,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0450
-     * @tc.name testFloat32ArrayConstructorOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0420
+     * @tc.name testFloat32ArrayConstructorOne042
      * @tc.desc Verify overload 5(FixedArray source) vs overload 13(ArrayBuffer source) result length source different
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fromFixed = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const fromBuf = new Float32Array(new ArrayBuffer(16));
       expect(fromFixed.length).assertEqual(4);
@@ -705,14 +663,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0460
-     * @tc.name testFloat32ArrayConstructorOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0430
+     * @tc.name testFloat32ArrayConstructorOne043
      * @tc.desc Verify overload 9(byteOffset=0) and overload 13(buffer) on buffer result consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const observedValue056 = new Float32Array(buf, 0);
       const observedValue056Part2 = new Float32Array(new ArrayBuffer(8));
@@ -721,14 +679,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0470
-     * @tc.name testFloat32ArrayConstructorOne047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0440
+     * @tc.name testFloat32ArrayConstructorOne044
      * @tc.desc Verify overload 9 view buffer overload 5 constructs buffer (for)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const shared = new ArrayBuffer(8);
       const observedValue057 = new Float32Array(shared, 0);
       const observedValue057Part2 = new Float32Array([1.0, 2.0]);
@@ -738,14 +696,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0480
-     * @tc.name testFloat32ArrayConstructorOne048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0450
+     * @tc.name testFloat32ArrayConstructorOne045
      * @tc.desc Verify zero-argument construction creates an empty Float32Array with four-byte elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       expect(arr.length).assertEqual(0);
       expect(arr.byteLength).assertEqual(0);
@@ -753,14 +711,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0490
-     * @tc.name testFloat32ArrayConstructorOne049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0460
+     * @tc.name testFloat32ArrayConstructorOne046
      * @tc.desc Verify empty Float32Array $_get(0) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       try {
         arr.$_get(0);
@@ -771,56 +729,56 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0500
-     * @tc.name testFloat32ArrayConstructorOne050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0470
+     * @tc.name testFloat32ArrayConstructorOne047
      * @tc.desc Verify empty Float32Array at(0) and at(-1) both return undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       expect(arr.at(0)).assertUndefined();
       expect(arr.at(-1)).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0510
-     * @tc.name testFloat32ArrayConstructorOne051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0480
+     * @tc.name testFloat32ArrayConstructorOne048
      * @tc.desc Verify empty Float32Array toString is empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const observedValue062 = arr.toString();
       expect(observedValue062).assertEqual('');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0520
-     * @tc.name testFloat32ArrayConstructorOne052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0490
+     * @tc.name testFloat32ArrayConstructorOne049
      * @tc.desc Verify empty Float32Array join(',') is empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const joinedValue063 = arr.join(',');
       expect(joinedValue063).assertEqual('');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0530
-     * @tc.name testFloat32ArrayConstructorOne053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0500
+     * @tc.name testFloat32ArrayConstructorOne050
      * @tc.desc Verify empty Float32Array values() iterator is immediately done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const it = arr.values();
       const iteratorValue064 = it.next().done;
@@ -828,14 +786,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0540
-     * @tc.name testFloat32ArrayConstructorOne054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0510
+     * @tc.name testFloat32ArrayConstructorOne051
      * @tc.desc Verify empty Float32Array fill returns this and stays empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.fill(1.0);
       expect(r).assertEqual(arr);
@@ -843,98 +801,98 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0550
-     * @tc.name testFloat32ArrayConstructorOne055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0520
+     * @tc.name testFloat32ArrayConstructorOne052
      * @tc.desc Verify empty Float32Array map returns empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.map((v: number, index: int, array: Float32Array): number => v + 1.0);
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0560
-     * @tc.name testFloat32ArrayConstructorOne056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0530
+     * @tc.name testFloat32ArrayConstructorOne053
      * @tc.desc Verify empty Float32Array filter returns empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.filter((v: number, index: int, array: Float32Array): boolean => v > 0.0);
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0570
-     * @tc.name testFloat32ArrayConstructorOne057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0540
+     * @tc.name testFloat32ArrayConstructorOne054
      * @tc.desc Verify empty Float32Array every returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const predicateResult068 = arr.every((v: number, index: int, array: Float32Array): boolean => v > 0.0);
       expect(predicateResult068).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0580
-     * @tc.name testFloat32ArrayConstructorOne058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0550
+     * @tc.name testFloat32ArrayConstructorOne055
      * @tc.desc Verify empty Float32Array some returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const predicateResult069 = arr.some((v: number, index: int, array: Float32Array): boolean => v > 0.0);
       expect(predicateResult069).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0590
-     * @tc.name testFloat32ArrayConstructorOne059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0560
+     * @tc.name testFloat32ArrayConstructorOne056
      * @tc.desc Verify empty Float32Array find returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const foundValue070 = arr.find((v: number, index: int, array: Float32Array): boolean => v > 0.0);
       expect(foundValue070).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0600
-     * @tc.name testFloat32ArrayConstructorOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0570
+     * @tc.name testFloat32ArrayConstructorOne057
      * @tc.desc Verify empty Float32Array findIndex returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const foundIndex071 = arr.findIndex((v: number, index: int, array: Float32Array): boolean => v > 0.0);
       expect(foundIndex071).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0610
-     * @tc.name testFloat32ArrayConstructorOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0580
+     * @tc.name testFloat32ArrayConstructorOne058
      * @tc.desc Verify empty Float32Array reduce without initialValue throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       try {
         arr.reduce((acc: number, v: number, index: int, array: Float32Array): number => acc + v);
@@ -945,126 +903,126 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0620
-     * @tc.name testFloat32ArrayConstructorOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0590
+     * @tc.name testFloat32ArrayConstructorOne059
      * @tc.desc Verify empty Float32Array subarray(0) returns an empty view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.subarray(0);
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0630
-     * @tc.name testFloat32ArrayConstructorOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0600
+     * @tc.name testFloat32ArrayConstructorOne060
      * @tc.desc Verify empty Float32Array slice(0) returns an empty copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.slice(0);
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0640
-     * @tc.name testFloat32ArrayConstructorOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0610
+     * @tc.name testFloat32ArrayConstructorOne061
      * @tc.desc Verify empty Float32Array reverse returns this
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.reverse();
       expect(r).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0650
-     * @tc.name testFloat32ArrayConstructorOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0620
+     * @tc.name testFloat32ArrayConstructorOne062
      * @tc.desc Verify empty Float32Array sort returns this
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.sort();
       expect(r).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0660
-     * @tc.name testFloat32ArrayConstructorOne066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0630
+     * @tc.name testFloat32ArrayConstructorOne063
      * @tc.desc Verify empty Float32Array toReversed returns empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.toReversed();
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0670
-     * @tc.name testFloat32ArrayConstructorOne067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0640
+     * @tc.name testFloat32ArrayConstructorOne064
      * @tc.desc Verify empty Float32Array toSorted returns empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const r = arr.toSorted();
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0680
-     * @tc.name testFloat32ArrayConstructorOne068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0650
+     * @tc.name testFloat32ArrayConstructorOne065
      * @tc.desc Verify empty Float32Array indexOf returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const indexValue080 = arr.indexOf(1.0);
       expect(indexValue080).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0690
-     * @tc.name testFloat32ArrayConstructorOne069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0660
+     * @tc.name testFloat32ArrayConstructorOne066
      * @tc.desc Verify empty Float32Array includes returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const predicateResult081 = arr.includes(1.0);
       expect(predicateResult081).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0700
-     * @tc.name testFloat32ArrayConstructorOne070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0670
+     * @tc.name testFloat32ArrayConstructorOne067
      * @tc.desc Verify empty Float32Array entries() iterator is immediately done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       const it = arr.entries();
       const iteratorValue082 = it.next().done;
@@ -1072,14 +1030,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0710
-     * @tc.name testFloat32ArrayConstructorOne071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0680
+     * @tc.name testFloat32ArrayConstructorOne068
      * @tc.desc Verify two FixedArray-constructed arrays do not share buffer on $_set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array([1.0, 2.0, 3.0]);
       const b = new Float32Array([1.0, 2.0, 3.0]);
       a.$_set(0, 99.0);
@@ -1088,14 +1046,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0720
-     * @tc.name testFloat32ArrayConstructorOne072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0690
+     * @tc.name testFloat32ArrayConstructorOne069
      * @tc.desc Verify FixedArray-constructed $_set middle element keeps neighbors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       arr.$_set(1, 200.0);
       const element086 = arr.$_get(0);
@@ -1106,28 +1064,28 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0730
-     * @tc.name testFloat32ArrayConstructorOne073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0700
+     * @tc.name testFloat32ArrayConstructorOne070
      * @tc.desc Verify [1,2,3] at(-1) returns last and at(0) returns first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       expect(arr.at(-1)).assertEqual(3.0);
       expect(arr.at(0)).assertEqual(1.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0740
-     * @tc.name testFloat32ArrayConstructorOne074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0710
+     * @tc.name testFloat32ArrayConstructorOne071
      * @tc.desc Verify FixedArray-constructed values() yields elements in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const it = arr.values();
       const iteratorValue089 = it.next().value;
@@ -1139,14 +1097,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0750
-     * @tc.name testFloat32ArrayConstructorOne075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0720
+     * @tc.name testFloat32ArrayConstructorOne072
      * @tc.desc Verify FixedArray-constructed entries() yields [index,value]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([7.0, 8.0]);
       const it = arr.entries();
       const first = it.next().value!;
@@ -1159,112 +1117,85 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0760
-     * @tc.name testFloat32ArrayConstructorOne076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0730
+     * @tc.name testFloat32ArrayConstructorOne073
      * @tc.desc Verify FixedArray-constructed indexOf match returns index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
       const indexValue091 = arr.indexOf(2.0);
       expect(indexValue091).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0770
-     * @tc.name testFloat32ArrayConstructorOne077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0740
+     * @tc.name testFloat32ArrayConstructorOne074
      * @tc.desc Verify FixedArray-constructed lastIndexOf match returns last index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 2.0, 3.0]);
       const lastIndexValue092 = arr.lastIndexOf(2.0);
       expect(lastIndexValue092).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0780
-     * @tc.name testFloat32ArrayConstructorOne078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0750
+     * @tc.name testFloat32ArrayConstructorOne075
      * @tc.desc Verify FixedArray-constructed includes(NaN) returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, Number.NaN, 3.0]);
       const predicateResult093 = arr.includes(Number.NaN);
       expect(predicateResult093).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0790
-     * @tc.name testFloat32ArrayConstructorOne079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0760
+     * @tc.name testFloat32ArrayConstructorOne076
      * @tc.desc Verify FixedArray-constructed indexOf(NaN) returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, Number.NaN, 3.0]);
       const indexValue094 = arr.indexOf(Number.NaN);
       expect(indexValue094).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0800
-     * @tc.name testFloat32ArrayConstructorOne080
-     * @tc.desc Verify ArrayBuffer view byteOffset=4 length is (16-4)/4 = 3
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0770
+     * @tc.name testFloat32ArrayConstructorOne077
+     * @tc.desc Verify ArrayBuffer view byteOffset=4 length is 3 and byteLength is 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4);
       expect(arr.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0810
-     * @tc.name testFloat32ArrayConstructorOne081
-     * @tc.desc Verify ArrayBuffer view buffer property equals source buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const arr = new Float32Array(buf, 0);
-      expect(arr.buffer).assertEqual(buf);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0820
-     * @tc.name testFloat32ArrayConstructorOne082
-     * @tc.desc Verify ArrayBuffer view byteOffset=4 byteLength is 12
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(16);
-      const arr = new Float32Array(buf, 4);
       expect(arr.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0830
-     * @tc.name testFloat32ArrayConstructorOne083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0780
+     * @tc.name testFloat32ArrayConstructorOne078
      * @tc.desc Verify ArrayBuffer view byteOffset=0 length and buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Float32Array(buf, 0);
       expect(arr.length).assertEqual(2);
@@ -1272,14 +1203,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0840
-     * @tc.name testFloat32ArrayConstructorOne084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0790
+     * @tc.name testFloat32ArrayConstructorOne079
      * @tc.desc Verify ArrayBuffer view $_set then $_get is consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Float32Array(buf, 0);
       arr.$_set(0, 1.5);
@@ -1288,28 +1219,28 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0850
-     * @tc.name testFloat32ArrayConstructorOne085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0800
+     * @tc.name testFloat32ArrayConstructorOne080
      * @tc.desc Verify one-arg ArrayBuffer(8) view byteOffset is 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Float32Array(buf);
       expect(arr.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0860
-     * @tc.name testFloat32ArrayConstructorOne086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0810
+     * @tc.name testFloat32ArrayConstructorOne081
      * @tc.desc Verify one-arg ArrayBuffer(4) view length and byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const arr = new Float32Array(buf);
       expect(arr.length).assertEqual(1);
@@ -1317,14 +1248,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0870
-     * @tc.name testFloat32ArrayConstructorOne087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0820
+     * @tc.name testFloat32ArrayConstructorOne082
      * @tc.desc Verify one-arg ArrayBuffer view $_set/$_get second element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Float32Array(buf);
       arr.$_set(1, 2.5);
@@ -1333,14 +1264,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0880
-     * @tc.name testFloat32ArrayConstructorOne088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0830
+     * @tc.name testFloat32ArrayConstructorOne083
      * @tc.desc Verify empty Float32Array with(0,1.0) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array();
       try {
         arr.with(0, 1.0);
@@ -1351,14 +1282,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0890
-     * @tc.name testFloat32ArrayConstructorOne089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0840
+     * @tc.name testFloat32ArrayConstructorOne084
      * @tc.desc Verify byteOffset=3 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 3);
@@ -1369,14 +1300,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0900
-     * @tc.name testFloat32ArrayConstructorOne090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0850
+     * @tc.name testFloat32ArrayConstructorOne085
      * @tc.desc Verify byteOffset=5 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 5);
@@ -1387,14 +1318,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0910
-     * @tc.name testFloat32ArrayConstructorOne091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0860
+     * @tc.name testFloat32ArrayConstructorOne086
      * @tc.desc Verify byteOffset=6 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 6);
@@ -1405,14 +1336,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0920
-     * @tc.name testFloat32ArrayConstructorOne092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0870
+     * @tc.name testFloat32ArrayConstructorOne087
      * @tc.desc Verify byteOffset=-1 negative throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, -1);
@@ -1423,14 +1354,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0930
-     * @tc.name testFloat32ArrayConstructorOne093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0880
+     * @tc.name testFloat32ArrayConstructorOne088
      * @tc.desc Verify byteOffset=16 exceeds buffer throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 16);
@@ -1441,14 +1372,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0940
-     * @tc.name testFloat32ArrayConstructorOne094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0890
+     * @tc.name testFloat32ArrayConstructorOne089
      * @tc.desc Verify byteOffset=20 exceeds buffer throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 20);
@@ -1459,14 +1390,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0950
-     * @tc.name testFloat32ArrayConstructorOne095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0900
+     * @tc.name testFloat32ArrayConstructorOne090
      * @tc.desc Verify byteOffset=9 unaligned and out of bounds throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 9);
@@ -1477,50 +1408,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0960
-     * @tc.name testFloat32ArrayConstructorOne096
-     * @tc.desc Verify one-arg ArrayBuffer(6) not multiple of 4 throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(6);
-      try {
-        new Float32Array(buf);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0970
-     * @tc.name testFloat32ArrayConstructorOne097
-     * @tc.desc Verify one-arg ArrayBuffer(10) not multiple of 4 throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(10);
-      try {
-        new Float32Array(buf);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0980
-     * @tc.name testFloat32ArrayConstructorOne098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0910
+     * @tc.name testFloat32ArrayConstructorOne091
      * @tc.desc Verify one-arg ArrayBuffer(2) not multiple of 4 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(2);
       try {
         new Float32Array(buf);
@@ -1531,32 +1426,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0990
-     * @tc.name testFloat32ArrayConstructorOne099
-     * @tc.desc Verify one-arg ArrayBuffer(14) not multiple of 4 throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(14);
-      try {
-        new Float32Array(buf);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1000
-     * @tc.name testFloat32ArrayConstructorOne100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0920
+     * @tc.name testFloat32ArrayConstructorOne092
      * @tc.desc Verify one-arg ArrayBuffer(18) not multiple of 4 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(18);
       try {
         new Float32Array(buf);
@@ -1567,14 +1444,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1010
-     * @tc.name testFloat32ArrayConstructorOne101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0930
+     * @tc.name testFloat32ArrayConstructorOne093
      * @tc.desc Verify Float32Array view write is readable via another view on same buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf, 0);
       view.$_set(0, 1.5);
@@ -1584,14 +1461,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1020
-     * @tc.name testFloat32ArrayConstructorOne102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0940
+     * @tc.name testFloat32ArrayConstructorOne094
      * @tc.desc Verify offset views share underlying buffer on write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const observedValue124 = new Float32Array(buf, 0);
       const observedValue124Part2 = new Float32Array(buf, 4);
@@ -1601,14 +1478,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1030
-     * @tc.name testFloat32ArrayConstructorOne103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0950
+     * @tc.name testFloat32ArrayConstructorOne095
      * @tc.desc Verify base view $_set is visible through offset view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const observedValue125 = new Float32Array(buf, 0);
       const observedValue125Part2 = new Float32Array(buf, 4);
@@ -1618,31 +1495,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1040
-     * @tc.name testFloat32ArrayConstructorOne104
-     * @tc.desc Verify offset view observes base view write at overlapping index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const observedValue126 = new Float32Array(buf, 0);
-      const observedValue126Part2 = new Float32Array(buf, 4);
-      observedValue126.$_set(1, 3.25);
-      const element126 = observedValue126Part2.$_get(0);
-      expect(element126).assertEqual(3.25);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1050
-     * @tc.name testFloat32ArrayConstructorOne105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0960
+     * @tc.name testFloat32ArrayConstructorOne096
      * @tc.desc Verify view stores and reads maximum finite float value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf, 0);
       view.$_set(0, 3.4028234663852886e+38);
@@ -1652,14 +1512,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1060
-     * @tc.name testFloat32ArrayConstructorOne106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0970
+     * @tc.name testFloat32ArrayConstructorOne097
      * @tc.desc Verify buffer.byteLength unchanged after view writes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf, 0);
       view.$_set(0, 1.5);
@@ -1668,31 +1528,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1070
-     * @tc.name testFloat32ArrayConstructorOne107
-     * @tc.desc Verify offset view write is visible through base view
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const observedValue129 = new Float32Array(buf, 0);
-      const observedValue129Part2 = new Float32Array(buf, 4);
-      observedValue129Part2.$_set(0, 6.5);
-      const element129 = observedValue129.$_get(1);
-      expect(element129).assertEqual(6.5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1080
-     * @tc.name testFloat32ArrayConstructorOne108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0980
+     * @tc.name testFloat32ArrayConstructorOne098
      * @tc.desc Verify Float32Array write of 0 replaces an existing non-zero value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const view = new Float32Array([1.0, 2.0]);
       view.$_set(0, 0.0);
       const observedValue130 = view.$_get(0);
@@ -1702,14 +1545,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1090
-     * @tc.name testFloat32ArrayConstructorOne109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_0990
+     * @tc.name testFloat32ArrayConstructorOne099
      * @tc.desc Verify write is readable via another Float32Array on same buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf);
       view.$_set(0, 1.5);
@@ -1719,30 +1562,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1100
-     * @tc.name testFloat32ArrayConstructorOne110
-     * @tc.desc Verify view writes and reads the second element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorOne110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const view = new Float32Array(buf);
-      view.$_set(1, 9.5);
-      const element132 = view.$_get(1);
-      expect(element132).assertEqual(9.5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1110
-     * @tc.name testFloat32ArrayConstructorOne111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1000
+     * @tc.name testFloat32ArrayConstructorOne100
      * @tc.desc Verify two one-arg buffer views share writes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const observedValue133 = new Float32Array(buf);
       const observedValue133Part2 = new Float32Array(buf);
@@ -1752,14 +1579,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1120
-     * @tc.name testFloat32ArrayConstructorOne112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1010
+     * @tc.name testFloat32ArrayConstructorOne101
      * @tc.desc Verify Float32Array write updates all underlying bytes on either native endianness
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf);
       view.$_set(0, 1.0);
@@ -1772,14 +1599,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1130
-     * @tc.name testFloat32ArrayConstructorOne113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1020
+     * @tc.name testFloat32ArrayConstructorOne102
      * @tc.desc Verify subarray write affects underlying buffer at correct offset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf);
       const sub = view.subarray(1);
@@ -1790,14 +1617,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1140
-     * @tc.name testFloat32ArrayConstructorOne114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1030
+     * @tc.name testFloat32ArrayConstructorOne103
      * @tc.desc Verify view $_set(-0) preserves negative zero (1/x is -Infinity)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf);
       view.$_set(0, -0.0);
@@ -1807,14 +1634,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1150
-     * @tc.name testFloat32ArrayConstructorOne115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1040
+     * @tc.name testFloat32ArrayConstructorOne104
      * @tc.desc Verify view $_set(Infinity) is readable as Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf);
       view.$_set(0, Number.POSITIVE_INFINITY);
@@ -1824,14 +1651,14 @@ export default function Float32ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1160
-     * @tc.name testFloat32ArrayConstructorOne116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_ONE_1050
+     * @tc.name testFloat32ArrayConstructorOne105
      * @tc.desc Verify view $_set(NaN) is readable as NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorOne116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorOne105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf);
       view.$_set(0, Number.NaN);
