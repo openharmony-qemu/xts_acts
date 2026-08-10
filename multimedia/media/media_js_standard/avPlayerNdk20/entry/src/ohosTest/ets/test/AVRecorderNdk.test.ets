@@ -662,5 +662,132 @@ export default function AVRecorderNdkTest() {
         }
       })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorderEnum0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorderEnum0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorderEnum0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0100 start====");
+          let result: number = avrecorder.OH_AVRecorderEnum0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorderEnum0200
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorderEnum0200
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorderEnum0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0200 start====");
+          let result: number = avrecorder.OH_AVRecorderEnum0200();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0200 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorderEnum0300
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorderEnum0300
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorderEnum0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0300 start====");
+          let result: number = avrecorder.OH_AVRecorderEnum0300();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0300 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorderEnum0400
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorderEnum0400
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorderEnum0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0400 start====");
+          let result: number = avrecorder.OH_AVRecorderEnum0400();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0400 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorderEnum0500
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorderEnum0500
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorderEnum0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0500 start====");
+          let result: number = avrecorder.OH_AVRecorderEnum0500();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0500 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorderEnum0600
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorderEnum0600
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorderEnum0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0600 start====");
+          let result: number = avrecorder.OH_AVRecorderEnum0600();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorderEnum0600 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
   })
 }
