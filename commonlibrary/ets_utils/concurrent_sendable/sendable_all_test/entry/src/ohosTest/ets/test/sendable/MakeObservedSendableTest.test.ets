@@ -51,14 +51,14 @@ export default function MakeObservedSendableTest(): void {
     })
 
     /**
-     * @tc.name   MakeObservedSendableTest0100
+     * @tc.name   testMakeObservedSendable0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0100
      * @tc.desc   Verify UIUtils.makeObserved converts Sendable object for property access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MakeObservedSendableTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('testMakeObservedSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const model: ObservedModel = new ObservedModel()
       model.value_ = 3
       model.label_ = 'ok'
@@ -70,14 +70,14 @@ export default function MakeObservedSendableTest(): void {
     })
 
     /**
-     * @tc.name   MakeObservedSendableTest0200
+     * @tc.name   testMakeObservedSendable0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0200
      * @tc.desc   Verify empty Sendable object can be makeObserved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MakeObservedSendableTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMakeObservedSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const model: ObservedModel = new ObservedModel()
       const observed: ObservedModel = UIUtils.makeObserved(model)
       expect(observed.value_).assertEqual(0)
@@ -85,17 +85,18 @@ export default function MakeObservedSendableTest(): void {
     })
 
     /**
-     * @tc.name   MakeObservedSendableTest0300
+     * @tc.name   testMakeObservedSendable0300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0300
      * @tc.desc   Verify makeObserved result cannot be passed to TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MakeObservedSendableTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMakeObservedSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const model: ObservedModel = new ObservedModel()
       model.value_ = 1
       const observed: ObservedModel = UIUtils.makeObserved(model)
+      expect(ArkTSUtils.isSendable(observed)).assertFalse()
       let caught: boolean = false
       try {
         const task: taskpool.Task = trackTask(new taskpool.Task(readObservedValue, observed))

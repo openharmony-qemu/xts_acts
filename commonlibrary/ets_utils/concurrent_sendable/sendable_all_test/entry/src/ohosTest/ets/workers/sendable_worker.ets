@@ -17,14 +17,18 @@ import { SendableCounter } from './sendable';
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
-workerPort.onmessage = (e: MessageEvents) => {
+workerPort.onmessage = (e: MessageEvents): void => {
   console.info('sendable_worker received message:', e.data);
   if (typeof e.data === 'string') {
     workerPort.postMessage(e.data);
   } else if (typeof e.data === 'number') {
     workerPort.postMessage(e.data);
-  } else if (e.data instanceof SendableCounter) {
-    e.data.count_++;
-    workerPort.postMessage(e.data.count_);
+  } else {
+    // Shared Sendable instance arrives by shared reference via
+    // postMessageWithSharedSendable; instanceof across worker threads is
+    // unreliable, so dispatch by typeof and cast to the shared class.
+    const counter: SendableCounter = e.data as SendableCounter;
+    counter.count_++;
+    workerPort.postMessage(counter.count_);
   }
 };

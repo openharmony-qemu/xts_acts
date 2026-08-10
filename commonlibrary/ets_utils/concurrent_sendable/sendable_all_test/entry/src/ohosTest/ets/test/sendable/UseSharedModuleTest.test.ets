@@ -14,16 +14,17 @@
  */
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { sharedGuideService, SharedGuideService } from '../../workers/shared_guide_service'
+import { ArkTSUtils } from '@kit.ArkTS'
+import { sharedGuideService } from '../../workers/shared_guide_service'
 
 @Concurrent
-function incrSharedGuide(svc: SharedGuideService): number {
-  return svc.incr()
+async function incrSharedGuide(lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync((): number => sharedGuideService.incr())
 }
 
 @Concurrent
-function getSharedGuide(svc: SharedGuideService): number {
-  return svc.getCounter()
+function getSharedGuide(): number {
+  return sharedGuideService.getCounter()
 }
 
 export default function UseSharedModuleTest(): void {
@@ -50,46 +51,47 @@ export default function UseSharedModuleTest(): void {
     })
 
     /**
-     * @tc.name   UseSharedModuleTest0100
+     * @tc.name   testUseSharedModule0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SHARED_MODULE_TEST_0100
      * @tc.desc   Verify "use shared" module singleton counter starts at zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('UseSharedModuleTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('testUseSharedModule0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       expect(sharedGuideService.getCounter()).assertEqual(0)
     })
 
     /**
-     * @tc.name   UseSharedModuleTest0200
+     * @tc.name   testUseSharedModule0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SHARED_MODULE_TEST_0200
      * @tc.desc   Verify TaskPool can mutate "use shared" module singleton by reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('UseSharedModuleTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const task: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, sharedGuideService))
+    it('testUseSharedModule0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      const task: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
       const result: number = await taskpool.execute(task) as number
       expect(result).assertEqual(1)
       expect(sharedGuideService.getCounter()).assertEqual(1)
     })
 
     /**
-     * @tc.name   UseSharedModuleTest0300
+     * @tc.name   testUseSharedModule0300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SHARED_MODULE_TEST_0300
      * @tc.desc   Verify multiple TaskPool tasks share the same "use shared" instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('UseSharedModuleTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const t1: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, sharedGuideService))
-      const t2: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, sharedGuideService))
-      await taskpool.execute(t1)
-      await taskpool.execute(t2)
-      const t3: taskpool.Task = trackTask(new taskpool.Task(getSharedGuide, sharedGuideService))
+    it('testUseSharedModule0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      const t1: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
+      const t2: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
+      await Promise.all([taskpool.execute(t1), taskpool.execute(t2)])
+      const t3: taskpool.Task = trackTask(new taskpool.Task(getSharedGuide))
       const result: number = await taskpool.execute(t3) as number
       expect(result).assertEqual(2)
       expect(sharedGuideService.getCounter()).assertEqual(2)

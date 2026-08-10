@@ -14,12 +14,28 @@
  */
 
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
-import worker, { MessageEvents } from '@ohos.worker'
-import { ArkTSUtils, collections } from '@kit.ArkTS'
+import worker, { ErrorEvent, MessageEvents } from '@ohos.worker'
+import { ArkTSUtils } from '@kit.ArkTS'
 import { SharedWorkerData } from '../../../workers/sendable'
-import Utils from '../utils'
 
 const WORKER_PATH = '../../workers/SharedModuleWorker.ets'
+const MESSAGE_TIMEOUT_MS: number = 5000
+
+function waitWorkerMessage<T>(workerInstance: worker.ThreadWorker): Promise<T> {
+  return new Promise<T>((resolve: (value: T) => void, reject: (reason: Error) => void): void => {
+    const timeoutId: number = setTimeout((): void => {
+      reject(new Error(`worker message timeout after ${MESSAGE_TIMEOUT_MS}ms`))
+    }, MESSAGE_TIMEOUT_MS)
+    workerInstance.onmessage = (e: MessageEvents): void => {
+      clearTimeout(timeoutId)
+      resolve(e.data as T)
+    }
+    workerInstance.onerror = (e: ErrorEvent): void => {
+      clearTimeout(timeoutId)
+      reject(new Error(`worker error: ${e.message}`))
+    }
+  })
+}
 
 export default function BuiltinsWorkerIntegrationTest(): void {
   describe('BuiltinsWorkerIntegrationTest', (): void => {
@@ -30,12 +46,14 @@ export default function BuiltinsWorkerIntegrationTest(): void {
       sharedData = new SharedWorkerData(new ArkTSUtils.locks.AsyncLock())
     })
 
-    afterEach(async (): Promise<void> => {
+    afterEach((): void => {
       if (workerInstance !== null) {
-        workerInstance.terminate()
+        try {
+          workerInstance.terminate()
+        } catch (e) {
+        }
         workerInstance = null
       }
-      await Utils.sleep(500)
     })
 
     /**
@@ -63,15 +81,9 @@ export default function BuiltinsWorkerIntegrationTest(): void {
      */
     it('testWorkerIntegration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       workerInstance = new worker.ThreadWorker(WORKER_PATH)
-      const result: string = await new Promise<string>((resolve: Function): void => {
-        workerInstance!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as string)
-        }
-        workerInstance!.onerror = (): void => {
-          resolve('')
-        }
-        workerInstance!.postMessage('ping')
-      })
+      const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
+      workerInstance.postMessage('ping')
+      const result: string = await messagePromise
       expect(result).assertEqual('ack_ping')
     })
 
@@ -85,16 +97,11 @@ export default function BuiltinsWorkerIntegrationTest(): void {
      */
     it('testWorkerIntegration0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       workerInstance = new worker.ThreadWorker(WORKER_PATH)
-      const result: number = await new Promise<number>((resolve: Function): void => {
-        workerInstance!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as number)
-        }
-        workerInstance!.onerror = (): void => {
-          resolve(-1)
-        }
-        workerInstance!.postMessageWithSharedSendable(sharedData)
-      })
+      const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
+      workerInstance.postMessageWithSharedSendable(sharedData)
+      const result: number = await messagePromise
       expect(result).assertEqual(1)
+      // The main thread observes the worker's mutation on the shared instance.
       expect(await sharedData.getValue()).assertEqual(1)
     })
 
@@ -111,15 +118,9 @@ export default function BuiltinsWorkerIntegrationTest(): void {
       const results: string[] = []
       for (let i: number = 0; i < 3; i++) {
         const msg: string = `seq_${i}`
-        const result: string = await new Promise<string>((resolve: Function): void => {
-          workerInstance!.onmessage = (e: MessageEvents): void => {
-            resolve(e.data as string)
-          }
-          workerInstance!.onerror = (): void => {
-            resolve('')
-          }
-          workerInstance!.postMessage(msg)
-        })
+        const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
+        workerInstance.postMessage(msg)
+        const result: string = await messagePromise
         results.push(result)
       }
       expect(results[0]).assertEqual('ack_seq_0')

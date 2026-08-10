@@ -25,60 +25,61 @@ class AsonJsonData implements lang.ISendable {
 export default function AsonSendableTest(): void {
   describe('AsonSendableTest', (): void => {
     /**
-     * @tc.name   AsonSendableTest0100
+     * @tc.name   testAsonSendable0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_SENDABLE_TEST_0100
      * @tc.desc   Verify ASON.stringify serializes Sendable object fields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('AsonSendableTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('testAsonSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const data: AsonJsonData = new AsonJsonData()
       data.name_ = 'Test'
       data.age_ = 25
       data.active_ = true
       const jsonStr: string = ArkTSUtils.ASON.stringify(data)
-      expect(jsonStr.indexOf('Test') >= 0).assertTrue()
-      expect(jsonStr.indexOf('25') >= 0).assertTrue()
-      expect(jsonStr.indexOf('true') >= 0).assertTrue()
+      const parsed: AsonJsonData = ArkTSUtils.ASON.parse(jsonStr) as AsonJsonData
+      expect(parsed.name_).assertEqual('Test')
+      expect(parsed.age_).assertEqual(25)
+      expect(parsed.active_).assertTrue()
     })
 
     /**
-     * @tc.name   AsonSendableTest0200
+     * @tc.name   testAsonSendable0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_SENDABLE_TEST_0200
      * @tc.desc   Verify ASON.parse returns Sendable object for JSON text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('AsonSendableTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('testAsonSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const jsonText: string = '{"name_":"Alice","age_":30,"active_":false}'
-      const parsed: lang.ISendable = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable
+      const parsed: AsonJsonData = ArkTSUtils.ASON.parse(jsonText) as AsonJsonData
       expect(ArkTSUtils.isSendable(parsed)).assertTrue()
-      const again: string = ArkTSUtils.ASON.stringify(parsed)
-      expect(again.indexOf('Alice') >= 0).assertTrue()
-      expect(again.indexOf('30') >= 0).assertTrue()
+      expect(parsed.name_).assertEqual('Alice')
+      expect(parsed.age_).assertEqual(30)
+      expect(parsed.active_).assertFalse()
     })
 
     /**
-     * @tc.name   AsonSendableTest0300
+     * @tc.name   testAsonSendable0300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_SENDABLE_TEST_0300
      * @tc.desc   Verify ASON stringify then parse round-trip keeps Sendable and values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsonSendableTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testAsonSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const data: AsonJsonData = new AsonJsonData()
       data.name_ = 'Bob'
       data.age_ = 18
       data.active_ = true
       const jsonStr: string = ArkTSUtils.ASON.stringify(data)
-      const parsed: lang.ISendable = ArkTSUtils.ASON.parse(jsonStr) as lang.ISendable
+      const parsed: AsonJsonData = ArkTSUtils.ASON.parse(jsonStr) as AsonJsonData
       expect(ArkTSUtils.isSendable(parsed)).assertTrue()
-      const round: string = ArkTSUtils.ASON.stringify(parsed)
-      expect(round.indexOf('Bob') >= 0).assertTrue()
-      expect(round.indexOf('18') >= 0).assertTrue()
+      expect(parsed.name_).assertEqual('Bob')
+      expect(parsed.age_).assertEqual(18)
+      expect(parsed.active_).assertTrue()
     })
   })
 }

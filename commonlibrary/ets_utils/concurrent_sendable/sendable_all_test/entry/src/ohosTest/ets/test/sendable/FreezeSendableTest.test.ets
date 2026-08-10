@@ -57,50 +57,50 @@ export default function FreezeSendableTest(): void {
     })
 
     /**
-     * @tc.name   FreezeSendableTest0100
+     * @tc.name   testFreezeSendable0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_FREEZE_SENDABLE_TEST_0100
      * @tc.desc   Verify freezeSendable via .ts helper freezes Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeSendableTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('testFreezeSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const cfg: FreezeConfig = new FreezeConfig()
-      const frozen = freezeSendable(cfg) as FreezeConfig
+      const frozen: FreezeConfig = freezeSendable<FreezeConfig>(cfg)
       expect(isFrozenSendable(frozen)).assertTrue()
       expect(ArkTSUtils.isSendable(frozen)).assertTrue()
       expect(frozen.version_).assertEqual(1)
     })
 
     /**
-     * @tc.name   FreezeSendableTest0200
+     * @tc.name   testFreezeSendable0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_FREEZE_SENDABLE_TEST_0200
      * @tc.desc   Verify frozen Sendable config can transfer to TaskPool and be read
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeSendableTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testFreezeSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const cfg: FreezeConfig = new FreezeConfig()
       cfg.version_ = 7
-      const frozen = freezeSendable(cfg) as FreezeConfig
+      const frozen: FreezeConfig = freezeSendable<FreezeConfig>(cfg)
       const task: taskpool.Task = trackTask(new taskpool.Task(readFrozenConfig, frozen))
       const result: number = await taskpool.execute(task) as number
       expect(result).assertEqual(7)
     })
 
     /**
-     * @tc.name   FreezeSendableTest0300
+     * @tc.name   testFreezeSendable0300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_FREEZE_SENDABLE_TEST_0300
      * @tc.desc   Verify frozen SharedCounter remains readable after TaskPool transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('FreezeSendableTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testFreezeSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const counter: SharedCounter = new SharedCounter()
       counter.count_ = 9
-      const frozen = freezeSendable(counter) as SharedCounter
+      const frozen: SharedCounter = freezeSendable<SharedCounter>(counter)
       const task: taskpool.Task = trackTask(new taskpool.Task(readFrozenCounter, frozen))
       const result: number = await taskpool.execute(task) as number
       expect(result).assertEqual(9)

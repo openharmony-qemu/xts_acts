@@ -15,6 +15,7 @@
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
+import { ArkTSUtils } from '@kit.ArkTS'
 import {
   EmptySendableClass,
   SinglePropSendableClass,
@@ -60,8 +61,8 @@ export default function SendableDecoratorTest(): void {
      * @tc.level  LEVEL0
      */
     it('testSendableDecorator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance = new EmptySendableClass()
-      expect(instance instanceof EmptySendableClass).assertTrue()
+      const instance: EmptySendableClass = new EmptySendableClass()
+      expect(ArkTSUtils.isSendable(instance)).assertTrue()
     })
 
     /**

@@ -14,67 +14,100 @@
  */
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
-import { worker, MessageEvents } from '@kit.ArkTS'
+import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS'
 import { SendableCounter } from '../../../workers/sendable'
-import Utils from '../utils'
 
 const WORKER_PATH = '../../workers/sendable_worker.ets'
+const MESSAGE_TIMEOUT_MS: number = 5000
+
+function waitWorkerMessage<T>(workerInstance: worker.ThreadWorker): Promise<T> {
+  return new Promise<T>((resolve: (value: T) => void, reject: (reason: Error) => void): void => {
+    const timeoutId: number = setTimeout((): void => {
+      reject(new Error(`worker message timeout after ${MESSAGE_TIMEOUT_MS}ms`))
+    }, MESSAGE_TIMEOUT_MS)
+    workerInstance.onmessage = (e: MessageEvents): void => {
+      clearTimeout(timeoutId)
+      resolve(e.data as T)
+    }
+    workerInstance.onerror = (e: ErrorEvent): void => {
+      clearTimeout(timeoutId)
+      reject(new Error(`worker error: ${e.message}`))
+    }
+  })
+}
 
 export default function BuiltinsWorkerSendableTest(): void {
   describe('BuiltinsWorkerSendableTest', (): void => {
+    /**
+     * @tc.name   testWorkerSendable0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0100
+     * @tc.desc   Verify Worker echoes string message via postMessage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWorkerSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
       try {
-        const result: string = await new Promise<string>((resolve: Function): void => {
-          workerInstance.onmessage = (e: MessageEvents): void => {
-            resolve(e.data as string)
-          }
-          workerInstance.onerror = (): void => {
-            resolve('')
-          }
-          workerInstance.postMessage('hello')
-        })
+        const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
+        workerInstance.postMessage('hello')
+        const result: string = await messagePromise
         expect(result).assertEqual('hello')
       } finally {
-        workerInstance.terminate()
+        try {
+          workerInstance.terminate()
+        } catch (e) {
+        }
       }
     })
 
+    /**
+     * @tc.name   testWorkerSendable0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0200
+     * @tc.desc   Verify Worker echoes number message via postMessage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWorkerSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
       try {
-        const result: number = await new Promise<number>((resolve: Function): void => {
-          workerInstance.onmessage = (e: MessageEvents): void => {
-            resolve(e.data as number)
-          }
-          workerInstance.onerror = (): void => {
-            resolve(-1)
-          }
-          workerInstance.postMessage(42)
-        })
+        const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
+        workerInstance.postMessage(42)
+        const result: number = await messagePromise
         expect(result).assertEqual(42)
       } finally {
-        workerInstance.terminate()
+        try {
+          workerInstance.terminate()
+        } catch (e) {
+        }
       }
     })
 
+    /**
+     * @tc.name   testWorkerSendable0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0300
+     * @tc.desc   Verify Worker increments shared Sendable instance in place
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWorkerSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
       try {
         const counter: SendableCounter = new SendableCounter()
-        // sendable_worker 的 instanceof 跨线程不可靠，用 number 消息验证 Worker 可用
-        const result: number = await new Promise<number>((resolve: Function): void => {
-          workerInstance.onmessage = (e: MessageEvents): void => {
-            resolve(e.data as number)
-          }
-          workerInstance.onerror = (): void => {
-            resolve(-1)
-          }
-          workerInstance.postMessage(counter.count_)
-        })
-        expect(result).assertEqual(0)
+        const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
+        workerInstance.postMessageWithSharedSendable(counter)
+        const result: number = await messagePromise
+        // Worker increments the shared instance in place and reports the new count.
+        expect(result).assertEqual(1)
+        // The main thread observes the mutation on the same shared instance.
+        expect(counter.count_).assertEqual(1)
       } finally {
-        workerInstance.terminate()
+        try {
+          workerInstance.terminate()
+        } catch (e) {
+        }
       }
     })
   })

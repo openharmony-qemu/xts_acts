@@ -208,6 +208,17 @@ export class WorkerConfigData implements lang.ISendable {
   public key_: string = ''
   public value_: string = ''
   public version_: number = 0
+  public config_: SharedConfigForWorker | null = null
+}
+
+@Sendable
+export class WorkerConfigResponse implements lang.ISendable {
+  public ok_: boolean = false
+  public key_: string = ''
+  public value_: string = ''
+  public version_: number = 0
+  public found_: boolean = false
+  public error_: string = ''
 }
 
 @Sendable

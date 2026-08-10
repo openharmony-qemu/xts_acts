@@ -181,9 +181,9 @@ export default function SharedCounterInventoryTest(): void {
           successCount++
         }
       }
-      expect(successCount).assertLargerOrEqual(1)
-      expect(inventory.getStock()).assertLargerOrEqual(0)
-      expect(inventory.getSold()).assertLargerOrEqual(1)
+      expect(successCount).assertEqual(5)
+      expect(inventory.getStock()).assertEqual(0)
+      expect(inventory.getSold()).assertEqual(5)
     })
 
     /**
@@ -240,9 +240,9 @@ export default function SharedCounterInventoryTest(): void {
           successCount++
         }
       }
-      expect(successCount).assertLargerOrEqual(1)
-      expect(inventory.getStock()).assertLargerOrEqual(0)
-      expect(inventory.getSold()).assertLargerOrEqual(1)
+      expect(successCount).assertEqual(50)
+      expect(inventory.getStock()).assertEqual(0)
+      expect(inventory.getSold()).assertEqual(50)
     })
 
     /**
@@ -270,8 +270,9 @@ export default function SharedCounterInventoryTest(): void {
           successCount++
         }
       }
-      expect(successCount).assertLargerOrEqual(1)
-      expect(inventory.getStock()).assertLargerOrEqual(0)
+      expect(successCount).assertEqual(5)
+      expect(inventory.getStock()).assertEqual(50)
+      expect(inventory.getSold()).assertEqual(50)
     })
 
     /**
