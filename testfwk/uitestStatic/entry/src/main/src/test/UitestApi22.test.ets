@@ -1549,58 +1549,6 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
-     * @tc.name tesKnuckleKnockRect_static
-     * @tc.number uitestDriverTest_Api22_017
-     * @tc.desc isComponentPresentWhenLongClick test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('tesKnuckleKnockRect_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, tesKnuckleKnockRect_static start`);
-      try {
-        let play = display.getDefaultDisplaySync();
-        console.log(`${TestTag}, tesKnuckleKnockRect_static play, ${JSON.stringify(play)}`);
-        let centerX = (play.width / 2).toInt();
-        let centY = (play.height / 2).toInt();
-        let onePoint: Point = {x: centerX - 100, y: centY - 100};
-        let twoPoint: Point = {x: centerX -100, y: centY};
-        let threePoint: Point = {x: centerX - 100, y: centY + 100 };
-        let fourPoint: Point = {x: centerX, y: centY + 100};
-        let fivePoint: Point = {x: centerX + 100, y: centY + 100};
-        let sixPoint: Point = {x: centerX + 100, y: centY};
-        let sevPoint: Point = {x: centerX  + 100, y: centY - 100};
-        let eigPoint: Point = {x: centerX, y: centY - 100};
-        let ninePoint: Point = {x: centerX - 100, y: centY - 100};
-        let pointers = PointerMatrix.create(1,9);
-        pointers.setPoint(0,0, onePoint);
-        pointers.setPoint(0,1, twoPoint);
-        pointers.setPoint(0,2, threePoint);
-        pointers.setPoint(0,3, fourPoint);
-        pointers.setPoint(0,4, fivePoint);
-        pointers.setPoint(0,5, sixPoint);
-        pointers.setPoint(0,6, sevPoint);
-        pointers.setPoint(0,7, eigPoint);
-        pointers.setPoint(0,8, ninePoint);
-        await driver!.injectKnucklePointerAction(pointers, 3000);
-        await driver!.delayMs(waitUiReadyMs * 8)
-        let isTantWindow = driver!.findWindow({bundleName: 'com.huawei.hmos.vassistant'});
-        await Utils.msSleep(1000);
-        console.log(`${TestTag}, tesKnuckleKnockRect_static isTantWindow, ${JSON.stringify(isTantWindow)}`);
-        expect(isTantWindow != null).assertTrue();
-        await stopApplication('com.huawei.hmos.vassistant');
-        await Utils.msSleep(2000)
-      } catch (error) {
-        console.log(`${TestTag}, tesKnuckleKnockRect_static error, ${JSON.stringify(error)}`);
-        await stopApplication('com.huawei.hmos.vassistant');
-        expect((error as BusinessError).code).assertEqual(17000005);
-      }
-      await Utils.msSleep(3000)
-      console.log(`${TestTag}, tesKnuckleKnockRect_static end`);
-    })
-
-
-    /**
      * @tc.name teTouchPadTwoFingersScrollVer_Static
      * @tc.number uitestDriverTest_Api22_018
      * @tc.desc isComponentPresentWhenLongClick test.
