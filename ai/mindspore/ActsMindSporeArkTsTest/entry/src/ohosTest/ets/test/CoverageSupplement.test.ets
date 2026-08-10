@@ -4755,16 +4755,16 @@ export default function coverageSupplementTest() {
       console.log("CoverageSupplement2Test: mstensorSetDataInputArrayUndefined001");
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ["cpu"];
         let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
-        mindSporeLite.loadModelFromFile(model_file, context, (mslite: mindSporeLite.Model) => {
-          if (mslite !== null) {
-            let modelInputs: mindSporeLite.MSTensor[] = mslite.getInputs();
+        mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
+          if (msliteModel !== null) {
+            let modelInputs: mindSporeLite.MSTensor[] = msliteModel.getInputs();
             if (modelInputs.length > 0) {
               try {
                 modelInputs[0].setData(undefined);
-                expect(true).assertFalse();
               } catch (error) {
+                expect(true).assertFalse();
                 console.log("mstensorSetDataInputArrayUndefined001 setData error: " + JSON.stringify(error));
               }
             }
@@ -4772,6 +4772,245 @@ export default function coverageSupplementTest() {
         });
       } catch (error) {
         console.log("mstensorSetDataInputArrayUndefined001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportWeightsCollaborateWithMicroEnableFp16True001
+     * @tc.number CoverageSupplement3Test_001
+     * @tc.desc   Model exportWeightsCollaborateWithMicro enableFp16 true test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportWeightsCollaborateWithMicroEnableFp16True001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16True001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = ["CrossEntropy"];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, true);
+          expect(ret).assertTrue();
+        }
+      } catch (error) {
+        console.log("modelExportWeightsCollaborateWithMicroEnableFp16True001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportWeightsCollaborateWithMicroIsInferenceNull001
+     * @tc.number CoverageSupplement3Test_002
+     * @tc.desc   Model exportWeightsCollaborateWithMicro isInference null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportWeightsCollaborateWithMicroIsInferenceNull001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroIsInferenceNull001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = ["CrossEntropy"];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let ret = msliteModel.exportWeightsCollaborateWithMicro(path, null, true);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportWeightsCollaborateWithMicroIsInferenceNull001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportWeightsCollaborateWithMicroIsInferenceUndefined001
+     * @tc.number CoverageSupplement3Test_003
+     * @tc.desc   Model exportWeightsCollaborateWithMicro isInference undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportWeightsCollaborateWithMicroIsInferenceUndefined001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroIsInferenceUndefined001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = ["CrossEntropy"];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let ret = msliteModel.exportWeightsCollaborateWithMicro(path, undefined, true);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportWeightsCollaborateWithMicroIsInferenceUndefined001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportWeightsCollaborateWithMicroEnableFp16Null001
+     * @tc.number CoverageSupplement3Test_004
+     * @tc.desc   Model exportWeightsCollaborateWithMicro enableFp16 null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportWeightsCollaborateWithMicroEnableFp16Null001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16Null001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = ["CrossEntropy"];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, null);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportWeightsCollaborateWithMicroEnableFp16Null001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportWeightsCollaborateWithMicroEnableFp16Undefined001
+     * @tc.number CoverageSupplement3Test_005
+     * @tc.desc   Model exportWeightsCollaborateWithMicro enableFp16 undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportWeightsCollaborateWithMicroEnableFp16Undefined001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16Undefined001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = ["CrossEntropy"];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, undefined);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportWeightsCollaborateWithMicroEnableFp16Undefined001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportModelExportInferenceOnlyNull001
+     * @tc.number CoverageSupplement3Test_006
+     * @tc.desc   Model exportModel exportInferenceOnly null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportModelExportInferenceOnlyNull001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportModelExportInferenceOnlyNull001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let ret = msliteModel.exportModel(path, mindSporeLite.QuantizationType.NO_QUANT, null);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportModelExportInferenceOnlyNull001 error: " + JSON.stringify(error));
+      }
+    });
+    
+    /**
+     * @tc.name   modelExportModelExportInferenceOnlyUndefined001
+     * @tc.number CoverageSupplement3Test_007
+     * @tc.desc   Model exportModel exportInferenceOnly undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportModelExportInferenceOnlyUndefined001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportModelExportInferenceOnlyUndefined001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let ret = msliteModel.exportModel(path, mindSporeLite.QuantizationType.NO_QUANT, undefined);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportModelExportInferenceOnlyUndefined001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportModelQuantizationTypeNull001
+     * @tc.number CoverageSupplement3Test_008
+     * @tc.desc   Model exportModel quantizationType null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportModelQuantizationTypeNull001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportModelQuantizationTypeNull001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let ret = msliteModel.exportModel(path, null, true);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportModelQuantizationTypeNull001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   modelExportModelQuantizationTypeUndefined001
+     * @tc.number CoverageSupplement3Test_009
+     * @tc.desc   Model exportModel quantizationType undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportModelQuantizationTypeUndefined001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: modelExportModelQuantizationTypeUndefined001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let ret = msliteModel.exportModel(path, undefined, true);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportModelQuantizationTypeUndefined001 error: " + JSON.stringify(error));
       }
     });
 
