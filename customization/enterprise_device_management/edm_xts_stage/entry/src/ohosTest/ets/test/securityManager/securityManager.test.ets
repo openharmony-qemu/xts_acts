@@ -334,6 +334,7 @@ export default function securityManagerTest() {
 
     testInstallEnterpriseReSignatureCertificate();
     testUninstallEnterpriseReSignatureCertificate();
+
   })
 }
 
