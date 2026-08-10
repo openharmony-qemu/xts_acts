@@ -474,20 +474,21 @@ export default function Float32ArrayProperty3Test(): void {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const sl = arr.slice(2, 1);
       expect(sl.length).assertEqual(0);
+      expect(sl.byteLength).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_PROPERTY_THREE_3200
      * @tc.name testFloat32ArrayPropertyThree032
-     * @tc.desc Verify slice(2, 1) byteLength 0
+     * @tc.desc Verify with(-1, 9.0) returns new array with last element replaced by 9.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayPropertyThree032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
-      const sl = arr.slice(2, 1);
-      expect(sl.byteLength).assertEqual(0);
+      const r = arr.with(-1, 9.0);
+      expect(r.$_get(3)).assertEqual(9.0);
     });
 
     /**
@@ -1216,7 +1217,7 @@ export default function Float32ArrayProperty3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_PROPERTY_THREE_7800
      * @tc.name testFloat32ArrayPropertyThree078
-     * @tc.desc Verify map NaN byteOffset 0
+     * @tc.desc Verify map returning NaN produces NaN elements and a result with byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1225,6 +1226,7 @@ export default function Float32ArrayProperty3Test(): void {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const r = arr.map((v: number, index: int, array: Float32Array): number => Number.NaN);
       expect(r.byteOffset).assertEqual(0);
+      expect(isNaN(r.$_get(0))).assertTrue();
     });
 
     /**
