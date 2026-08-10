@@ -1599,6 +1599,104 @@ export default function int32ArrayCopyWithinPart04TestMindmapTestTest(): void {
           expect(parent.$_get(2)).assertEqual(3);
           expect(parent.$_get(3)).assertEqual(4);
         });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_0930
+         * @tc.name int32ArrayCopyWithinPart04TestMindmapTest093
+         * @tc.desc Verify copyWithin $_set
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayCopyWithinPart04TestMindmapTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let parent: Int32Array = new Int32Array([10, 20, 30, 40]);
+          let child: Int32Array = new Int32Array(parent.buffer, 0, 4);
+          parent.$_set(0, 99);
+          child.copyWithin(3, 0, 1);
+          expect(parent.$_get(3)).assertEqual(99);
+          expect(child.$_get(3)).assertEqual(99);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_0940
+         * @tc.name int32ArrayCopyWithinPart04TestMindmapTest094
+         * @tc.desc Verify ArrayBuffer Int32Array copyWithin
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayCopyWithinPart04TestMindmapTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let buf: ArrayBuffer = new ArrayBuffer(8);
+          let a: Int32Array = new Int32Array(buf, 0, 2);
+          a.$_set(0, 1);
+          a.$_set(1, 2);
+          a.copyWithin(1, 0, 1);
+          expect(a.$_get(1)).assertEqual(1);
+          expect(a.$_get(0)).assertEqual(1);
+          expect(a.byteLength).assertEqual(8);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_0950
+         * @tc.name int32ArrayCopyWithinPart04TestMindmapTest095
+         * @tc.desc Verify ArrayBuffer 8 2 copyWithin buffer
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayCopyWithinPart04TestMindmapTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let buf: ArrayBuffer = new ArrayBuffer(8);
+          let a: Int32Array = new Int32Array(buf, 0, 2);
+          a.$_set(0, 77);
+          a.$_set(1, 88);
+          a.copyWithin(1, 0, 2);
+          expect(a.$_get(0)).assertEqual(77);
+          expect(a.$_get(1)).assertEqual(77);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_0960
+         * @tc.name int32ArrayCopyWithinPart04TestMindmapTest096
+         * @tc.desc Verify byteOffset copyWithin / buffer
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayCopyWithinPart04TestMindmapTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let buf: ArrayBuffer = new ArrayBuffer(16);
+          let outer: Int32Array = new Int32Array(buf);
+          outer.$_set(0, 100);
+          outer.$_set(1, 200);
+          outer.$_set(2, 300);
+          outer.$_set(3, 400);
+          let inner: Int32Array = new Int32Array(buf, 4, 2);
+          inner.copyWithin(1, 0, 1);
+          expect(outer.$_get(0)).assertEqual(100);
+          expect(outer.$_get(1)).assertEqual(200);
+          expect(outer.$_get(2)).assertEqual(200);
+          expect(outer.$_get(3)).assertEqual(400);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_0970
+         * @tc.name int32ArrayCopyWithinPart04TestMindmapTest097
+         * @tc.desc Verify ArrayBuffer Int32Array copyWithin
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayCopyWithinPart04TestMindmapTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let buf: ArrayBuffer = new ArrayBuffer(12);
+          let a: Int32Array = new Int32Array(buf);
+          a.$_set(0, 5);
+          a.$_set(1, 6);
+          a.$_set(2, 7);
+          a.copyWithin(2, 0, 1);
+          expect(a.$_get(2)).assertEqual(5);
+          expect(a.$_get(0)).assertEqual(5);
+          expect(a.$_get(1)).assertEqual(6);
+        });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_0980
          * @tc.name int32ArrayCopyWithinPart04TestMindmapTest098
@@ -1616,6 +1714,7 @@ export default function int32ArrayCopyWithinPart04TestMindmapTestTest(): void {
           let u32: Uint32Array = new Uint32Array(buf, 0, 2);
           expect(u32.$_get(1)).assertEqual(123456);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_0990
          * @tc.name int32ArrayCopyWithinPart04TestMindmapTest099
@@ -1633,6 +1732,7 @@ export default function int32ArrayCopyWithinPart04TestMindmapTestTest(): void {
           let u32: Uint32Array = new Uint32Array(buf);
           expect(u32.$_get(1)).assertEqual(4294967295);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_1000
          * @tc.name int32ArrayCopyWithinPart04TestMindmapTest100
@@ -1650,6 +1750,7 @@ export default function int32ArrayCopyWithinPart04TestMindmapTestTest(): void {
           expect(i8.length).assertEqual(4);
           expect(i32.$_get(0)).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_1010
          * @tc.name int32ArrayCopyWithinPart04TestMindmapTest101
@@ -1667,6 +1768,7 @@ export default function int32ArrayCopyWithinPart04TestMindmapTestTest(): void {
           expect(s.$_get(2)).assertEqual(6);
           expect(s.length).assertEqual(3);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_1020
          * @tc.name int32ArrayCopyWithinPart04TestMindmapTest102
@@ -1682,6 +1784,7 @@ export default function int32ArrayCopyWithinPart04TestMindmapTestTest(): void {
           expect(s.$_get(0)).assertEqual(40);
           expect(s.$_get(1)).assertEqual(30);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_1030
          * @tc.name int32ArrayCopyWithinPart04TestMindmapTest103
@@ -1698,6 +1801,7 @@ export default function int32ArrayCopyWithinPart04TestMindmapTestTest(): void {
           expect(cp.$_get(0)).assertEqual(3);
           expect(cp.$_get(1)).assertEqual(4);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_COPY_WITHIN_PART04_TEST_MINDMAP_1040
          * @tc.name int32ArrayCopyWithinPart04TestMindmapTest104

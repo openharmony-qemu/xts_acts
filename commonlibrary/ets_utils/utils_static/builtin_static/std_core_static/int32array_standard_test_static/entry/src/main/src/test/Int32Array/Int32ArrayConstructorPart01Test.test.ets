@@ -183,6 +183,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
       const r: boolean = arr.every((v, _i, _a) => { return false; });
       expect(r).assertTrue();
     });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1100
          * @tc.name int32ArrayConstructorPart01TestMindmapTest011
@@ -195,6 +196,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array();
           expect(arr.indexOf(0)).assertEqual(-1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1200
          * @tc.name int32ArrayConstructorPart01TestMindmapTest012
@@ -212,6 +214,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('TypeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1300
          * @tc.name int32ArrayConstructorPart01TestMindmapTest013
@@ -225,6 +228,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const result: number = arr.reduce((acc: number, v: number, _i: int, _a: Int32Array): number => { return acc + v; }, 99);
           expect(result).assertEqual(99);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1400
          * @tc.name int32ArrayConstructorPart01TestMindmapTest014
@@ -239,6 +243,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           arr.forEach((_v: number, _i: int, _a: Int32Array): void => { count++; });
           expect(count).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1500
          * @tc.name int32ArrayConstructorPart01TestMindmapTest015
@@ -252,6 +257,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const r: Int32Array = arr.map((v: number, _i: int, _a: Int32Array): number => { return v + 1; });
           expect(r.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1600
          * @tc.name int32ArrayConstructorPart01TestMindmapTest016
@@ -265,6 +271,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const r: Int32Array = arr.filter((_v: number, _i: int, _a: Int32Array): boolean => { return true; });
           expect(r.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1700
          * @tc.name int32ArrayConstructorPart01TestMindmapTest017
@@ -282,6 +289,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1800
          * @tc.name int32ArrayConstructorPart01TestMindmapTest018
@@ -295,6 +303,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           arr.fill(99);
           expect(arr.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_1900
          * @tc.name int32ArrayConstructorPart01TestMindmapTest019
@@ -309,6 +318,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(s.length).assertEqual(0);
           expect(s.byteLength).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2000
          * @tc.name int32ArrayConstructorPart01TestMindmapTest020
@@ -323,6 +333,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(s.length).assertEqual(0);
           expect(s.buffer).assertEqual(arr.buffer);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2100
          * @tc.name int32ArrayConstructorPart01TestMindmapTest021
@@ -335,6 +346,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array();
           expect(arr.includes(0)).assertFalse();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2200
          * @tc.name int32ArrayConstructorPart01TestMindmapTest022
@@ -348,6 +360,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 0, 0);
           expect(arr.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2300
          * @tc.name int32ArrayConstructorPart01TestMindmapTest023
@@ -361,6 +374,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 0, 2);
           expect(arr.length).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2400
          * @tc.name int32ArrayConstructorPart01TestMindmapTest024
@@ -374,6 +388,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 0, 1);
           expect(arr.length).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2500
          * @tc.name int32ArrayConstructorPart01TestMindmapTest025
@@ -387,6 +402,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 0, 3);
           expect(arr.length).assertEqual(3);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2600
          * @tc.name int32ArrayConstructorPart01TestMindmapTest026
@@ -400,6 +416,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 0, 0);
           expect(arr.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2700
          * @tc.name int32ArrayConstructorPart01TestMindmapTest027
@@ -413,6 +430,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 4, 0);
           expect(arr.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2800
          * @tc.name int32ArrayConstructorPart01TestMindmapTest028
@@ -426,10 +444,11 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 0, 1);
           expect(arr.byteOffset).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_2900
          * @tc.name int32ArrayConstructorPart01TestMindmapTest029
-         * @tc.desc Verify byteOffset=4 length=1 5 1 byteOffset 4
+     * @tc.desc Verify byteOffset and BYTES_PER_ELEMENT for an offset buffer view
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -438,7 +457,9 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const arr: Int32Array = new Int32Array(buf, 4, 1);
           expect(arr.byteOffset).assertEqual(4);
+      expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3000
          * @tc.name int32ArrayConstructorPart01TestMindmapTest030
@@ -452,6 +473,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 8, 1);
           expect(arr.byteOffset).assertEqual(8);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3100
          * @tc.name int32ArrayConstructorPart01TestMindmapTest031
@@ -466,6 +488,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.byteOffset).assertEqual(4);
           expect(arr.length).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3200
          * @tc.name int32ArrayConstructorPart01TestMindmapTest032
@@ -483,6 +506,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3300
          * @tc.name int32ArrayConstructorPart01TestMindmapTest033
@@ -500,6 +524,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3400
          * @tc.name int32ArrayConstructorPart01TestMindmapTest034
@@ -517,6 +542,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3500
          * @tc.name int32ArrayConstructorPart01TestMindmapTest035
@@ -534,6 +560,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3600
          * @tc.name int32ArrayConstructorPart01TestMindmapTest036
@@ -551,6 +578,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3700
          * @tc.name int32ArrayConstructorPart01TestMindmapTest037
@@ -568,6 +596,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3800
          * @tc.name int32ArrayConstructorPart01TestMindmapTest038
@@ -582,6 +611,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.length).assertEqual(0);
           expect(arr.byteOffset).assertEqual(8);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_3900
          * @tc.name int32ArrayConstructorPart01TestMindmapTest039
@@ -595,6 +625,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 4, 0);
           expect(arr.length).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4000
          * @tc.name int32ArrayConstructorPart01TestMindmapTest040
@@ -612,6 +643,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4100
          * @tc.name int32ArrayConstructorPart01TestMindmapTest041
@@ -629,6 +661,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4200
          * @tc.name int32ArrayConstructorPart01TestMindmapTest042
@@ -643,6 +676,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.length).assertEqual(0);
           expect(arr.byteLength).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4300
          * @tc.name int32ArrayConstructorPart01TestMindmapTest043
@@ -657,6 +691,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.length).assertEqual(1);
           expect(arr.byteLength).assertEqual(4);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4400
          * @tc.name int32ArrayConstructorPart01TestMindmapTest044
@@ -671,6 +706,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.length).assertEqual(2);
           expect(arr.byteLength).assertEqual(8);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4500
          * @tc.name int32ArrayConstructorPart01TestMindmapTest045
@@ -685,6 +721,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.length).assertEqual(2);
           expect(arr.byteLength).assertEqual(8);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4600
          * @tc.name int32ArrayConstructorPart01TestMindmapTest046
@@ -699,6 +736,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.length).assertEqual(1);
           expect(arr.byteLength).assertEqual(4);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4700
          * @tc.name int32ArrayConstructorPart01TestMindmapTest047
@@ -716,6 +754,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4800
          * @tc.name int32ArrayConstructorPart01TestMindmapTest048
@@ -733,6 +772,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_4900
          * @tc.name int32ArrayConstructorPart01TestMindmapTest049
@@ -750,6 +790,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5000
          * @tc.name int32ArrayConstructorPart01TestMindmapTest050
@@ -767,6 +808,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5100
          * @tc.name int32ArrayConstructorPart01TestMindmapTest051
@@ -784,6 +826,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5200
          * @tc.name int32ArrayConstructorPart01TestMindmapTest052
@@ -799,6 +842,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.byteOffset).assertEqual(0);
           expect(arr.byteLength).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5300
          * @tc.name int32ArrayConstructorPart01TestMindmapTest053
@@ -814,6 +858,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.byteOffset).assertEqual(8);
           expect(arr.byteLength).assertEqual(4);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5400
          * @tc.name int32ArrayConstructorPart01TestMindmapTest054
@@ -831,6 +876,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5500
          * @tc.name int32ArrayConstructorPart01TestMindmapTest055
@@ -848,6 +894,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
             expect(e.name).assertEqual('RangeError');
           }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5600
          * @tc.name int32ArrayConstructorPart01TestMindmapTest056
@@ -862,6 +909,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.length).assertEqual(0);
           expect(arr.byteOffset).assertEqual(4);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5700
          * @tc.name int32ArrayConstructorPart01TestMindmapTest057
@@ -875,6 +923,7 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 0, 2);
           expect(arr.buffer).assertEqual(buf);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5800
          * @tc.name int32ArrayConstructorPart01TestMindmapTest058
@@ -888,129 +937,124 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           const arr: Int32Array = new Int32Array(buf, 4, 2);
           expect(arr.buffer).assertEqual(buf);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_5900
          * @tc.name int32ArrayConstructorPart01TestMindmapTest059
-         * @tc.desc Verify BYTES_PER_ELEMENT 4
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
-         */
-        it('int32ArrayConstructorPart01TestMindmapTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          const buf: ArrayBuffer = new ArrayBuffer(8);
-          const arr: Int32Array = new Int32Array(buf, 4, 1);
-          expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
-        });
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6000
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest060
          * @tc.desc Verify byteLength length*4
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(24);
           const arr: Int32Array = new Int32Array(buf, 4, 3);
           expect(arr.byteLength).assertEqual(12);
           expect(arr.byteLength).assertEqual(arr.length * 4);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6100
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6000
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest060
          * @tc.desc Verify buffer.byteLength buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(12);
           const arr: Int32Array = new Int32Array(buf, 4, 1);
           expect(arr.buffer.byteLength).assertEqual(12);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6200
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6100
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest061
          * @tc.desc Verify 0 buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const arr: Int32Array = new Int32Array(buf, 0, 2);
           expect(arr.$_get(0)).assertEqual(0);
           expect(arr.$_get(1)).assertEqual(0);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6300
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6200
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest062
          * @tc.desc Verify $_set(0,1) buffer offset
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const a: Int32Array = new Int32Array(buf, 0, 2);
           const b: Int32Array = new Int32Array(buf, 0, 2);
           a.$_set(0, 1);
           expect(b.$_get(0)).assertEqual(1);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6400
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6300
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest063
          * @tc.desc Verify offset=4 offset
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(12);
           const a: Int32Array = new Int32Array(buf, 4, 2);
           const b: Int32Array = new Int32Array(buf, 4, 2);
           a.$_set(0, 77);
           expect(b.$_get(0)).assertEqual(77);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6500
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6400
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest064
          * @tc.desc Verify (offset=0,len=2) 1 (offset=4,len=1) 0
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const parent: Int32Array = new Int32Array(buf, 0, 2);
           const child: Int32Array = new Int32Array(buf, 4, 1);
           parent.$_set(1, 333);
           expect(child.$_get(0)).assertEqual(333);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6600
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6500
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest065
          * @tc.desc Verify (offset=4,len=1) (offset=0,len=2) 1
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const parent: Int32Array = new Int32Array(buf, 0, 2);
           const child: Int32Array = new Int32Array(buf, 4, 1);
           child.$_set(0, 555);
           expect(parent.$_get(1)).assertEqual(555);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6700
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6600
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest066
          * @tc.desc Verify buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(12);
           const a: Int32Array = new Int32Array(buf, 0, 1);
           const b: Int32Array = new Int32Array(buf, 4, 1);
@@ -1022,15 +1066,16 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(b.$_get(0)).assertEqual(22);
           expect(c.$_get(0)).assertEqual(33);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6800
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6700
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest067
          * @tc.desc Verify buffer buffer length=0
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const full: Int32Array = new Int32Array(buf, 0, 2);
           const empty: Int32Array = new Int32Array(buf, 8, 0);
@@ -1039,45 +1084,48 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(empty.length).assertEqual(0);
           expect(full.$_get(0)).assertEqual(9);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6900
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6800
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest068
          * @tc.desc Verify INT_MAX(2147483647) buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(4);
           const a: Int32Array = new Int32Array(buf, 0, 1);
           const b: Int32Array = new Int32Array(buf, 0, 1);
           a.$_set(0, 2147483647);
           expect(b.$_get(0)).assertEqual(2147483647);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7000
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_6900
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest069
          * @tc.desc Verify INT_MIN(-2147483648) buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(4);
           const a: Int32Array = new Int32Array(buf, 0, 1);
           const b: Int32Array = new Int32Array(buf, 0, 1);
           a.$_set(0, -2147483648);
           expect(b.$_get(0)).assertEqual(-2147483648);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7100
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7000
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest070
          * @tc.desc Verify fill(7) buffer 7
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const a: Int32Array = new Int32Array(buf, 0, 2);
           const b: Int32Array = new Int32Array(buf, 0, 2);
@@ -1085,15 +1133,16 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(b.$_get(0)).assertEqual(7);
           expect(b.$_get(1)).assertEqual(7);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7200
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7100
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest071
          * @tc.desc Verify set(Int32Array ) buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const src: Int32Array = Int32Array.of(42, 43);
           const dst: Int32Array = new Int32Array(buf, 0, 2);
@@ -1102,15 +1151,16 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(mirror.$_get(0)).assertEqual(42);
           expect(mirror.$_get(1)).assertEqual(43);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7300
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7200
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest072
          * @tc.desc Verify reverse buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const a: Int32Array = new Int32Array(buf, 0, 2);
           a.$_set(0, 1);
@@ -1120,15 +1170,16 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(a.$_get(0)).assertEqual(2);
           expect(a.$_get(1)).assertEqual(1);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7400
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7300
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest073
          * @tc.desc Verify ArrayBuffer buf buffer
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let buf: ArrayBuffer = new ArrayBuffer(8);
           const arr: Int32Array = new Int32Array(buf, 0, 2);
           const origBuf: ArrayBuffer = buf;
@@ -1136,15 +1187,16 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(arr.buffer).assertEqual(origBuf);
           expect(arr.buffer.byteLength).assertEqual(8);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7500
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7400
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest074
          * @tc.desc Verify (offset=4)fill
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(8);
           const parent: Int32Array = new Int32Array(buf, 0, 2);
           const child: Int32Array = new Int32Array(buf, 4, 1);
@@ -1153,20 +1205,36 @@ export default function int32ArrayConstructorPart01TestMindmapTestTest(): void {
           expect(parent.$_get(0)).assertEqual(100);
           expect(parent.$_get(1)).assertEqual(200);
         });
+
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7600
-         * @tc.name int32ArrayConstructorPart01TestMindmapTest076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7500
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest075
          * @tc.desc Verify buffer(1024 ) offset=0 length=256 length=256
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
          */
-        it('int32ArrayConstructorPart01TestMindmapTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayConstructorPart01TestMindmapTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           const buf: ArrayBuffer = new ArrayBuffer(1024);
           const arr: Int32Array = new Int32Array(buf, 0, 256);
           expect(arr.length).assertEqual(256);
           expect(arr.byteLength).assertEqual(1024);
         });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_CONSTRUCTOR_PART01_TEST_MINDMAP_7600
+     * @tc.name int32ArrayConstructorPart01TestMindmapTest076
+     * @tc.desc Verify buffer(1024 )offset=1020 length=1 int32
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int32ArrayConstructorPart01TestMindmapTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1024);
+      const arr: Int32Array = new Int32Array(buf, 1020, 1);
+      expect(arr.length).assertEqual(1);
+      expect(arr.byteOffset).assertEqual(1020);
+    });
 
   });
 }

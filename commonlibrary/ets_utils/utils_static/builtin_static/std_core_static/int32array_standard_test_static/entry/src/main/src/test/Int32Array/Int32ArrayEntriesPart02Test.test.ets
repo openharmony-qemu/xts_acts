@@ -798,6 +798,55 @@ export default function int32ArrayEntriesPart02Test(): void {
           a1.$_set(1, 2);
           a2.$_set(0, 100);
           a2.$_set(1, 200);
+          expect(a1.entries().next().value![1] as number).assertEqual(1);
+          expect(a2.entries().next().value![1] as number).assertEqual(100);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_4900
+         * @tc.name int32ArrayEntriesPart02TestMindmapTest049
+         * @tc.desc Verify write via one view visible to another view entries()
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayEntriesPart02TestMindmapTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let buf = new ArrayBuffer(8);
+          let a1: Int32Array = new Int32Array(buf);
+          let a2: Int32Array = new Int32Array(buf);
+          a1.$_set(0, 777);
+          let r = a2.entries().next();
+          expect(r.value![1]).assertEqual(777);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5000
+         * @tc.name int32ArrayEntriesPart02TestMindmapTest050
+         * @tc.desc Verify subview byteOffset=8 entries index starts from 0
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayEntriesPart02TestMindmapTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let buf = new ArrayBuffer(16);
+          let a: Int32Array = new Int32Array(buf, 8, 2);
+          a.$_set(0, 10);
+          a.$_set(1, 20);
+          let iter = a.entries();
+          expect(iter.next().value![0]).assertEqual(0);
+          expect(iter.next().value![0]).assertEqual(1);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5100
+         * @tc.name int32ArrayEntriesPart02TestMindmapTest051
+         * @tc.desc Verify mid-iteration buffer modification via other view visible
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level LEVEL2
+         */
+        it('int32ArrayEntriesPart02TestMindmapTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          let buf = new ArrayBuffer(12);
           let a: Int32Array = new Int32Array(buf);
           a.$_set(0, 1);
           a.$_set(1, 2);
@@ -809,6 +858,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let r2 = iter.next();
           expect(r2.value![1] as number).assertEqual(99);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5200
          * @tc.name int32ArrayEntriesPart02TestMindmapTest052
@@ -826,6 +876,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let r2 = iter.next();
           expect(r2.value![1] as number).assertEqual(88);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5300
          * @tc.name int32ArrayEntriesPart02TestMindmapTest053
@@ -839,6 +890,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let a: Int32Array = new Int32Array(buf, 4, 0);
           expect(a.entries().next().done).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5400
          * @tc.name int32ArrayEntriesPart02TestMindmapTest054
@@ -856,6 +908,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           expect(iter.next().value![1] as number).assertEqual(40);
           expect(iter.next().done).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5500
          * @tc.name int32ArrayEntriesPart02TestMindmapTest055
@@ -871,6 +924,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           expect(iter.next().value![0]).assertEqual(0);
           expect(iter.next().value![0]).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5600
          * @tc.name int32ArrayEntriesPart02TestMindmapTest056
@@ -887,6 +941,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           iter.next();
           expect(iter.next().value![1] as number).assertEqual(999);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5700
          * @tc.name int32ArrayEntriesPart02TestMindmapTest057
@@ -900,6 +955,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let sub = a.subarray(0, 0);
           expect(sub.entries().next().done).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5800
          * @tc.name int32ArrayEntriesPart02TestMindmapTest058
@@ -911,13 +967,13 @@ export default function int32ArrayEntriesPart02Test(): void {
         it('int32ArrayEntriesPart02TestMindmapTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let a: Int32Array = Int32Array.of(1, 2, 3);
           let seen: int = 0;
-          let iter11 = a.entries(); let result11 = iter11.next();
-          while (!result11.done) {
-          seen = seen + 1;
-          break;
-          result11 = iter11.next(); }
+          for (const pair of a.entries()) {
+            seen = seen + 1;
+            break;
+          }
           expect(seen).assertEqual(1);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_5900
          * @tc.name int32ArrayEntriesPart02TestMindmapTest059
@@ -929,15 +985,15 @@ export default function int32ArrayEntriesPart02Test(): void {
         it('int32ArrayEntriesPart02TestMindmapTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let a: Int32Array = Int32Array.of(10, 20, 30, 40);
           let seen: int = 0;
-          let iter12 = a.entries(); let result12 = iter12.next();
-          while (!result12.done) { let pair = result12.value!;
-          seen = seen + 1;
-          if (pair[0] === 1) {
-          break;
+          for (const pair of a.entries()) {
+            seen = seen + 1;
+            if (pair[0] === 1) {
+              break;
+            }
           }
-          result12 = iter12.next(); }
           expect(seen).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6000
          * @tc.name int32ArrayEntriesPart02TestMindmapTest060
@@ -950,15 +1006,15 @@ export default function int32ArrayEntriesPart02Test(): void {
           let a: Int32Array = Int32Array.of(5, 6, 7, 8);
           let capturedIdx: int = -1;
           let capturedVal: int = -1;
-          let iter13 = a.entries(); let result13 = iter13.next();
-          while (!result13.done) { let pair = result13.value!;
-          capturedIdx = pair[0];
-          capturedVal = pair[1].toInt();
-          break;
-          result13 = iter13.next(); }
+          for (const pair of a.entries()) {
+            capturedIdx = pair[0];
+            capturedVal = pair[1].toInt();
+            break;
+          }
           expect(capturedIdx).assertEqual(0);
           expect(capturedVal).assertEqual(5);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6100
          * @tc.name int32ArrayEntriesPart02TestMindmapTest061
@@ -970,12 +1026,12 @@ export default function int32ArrayEntriesPart02Test(): void {
         it('int32ArrayEntriesPart02TestMindmapTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let a: Int32Array = Int32Array.of(1, 2, 3);
           let sum: int = 0;
-          let iter14 = a.entries(); let result14 = iter14.next();
-          while (!result14.done) { let pair = result14.value!;
-          sum = sum + (pair[1].toInt());
-          result14 = iter14.next(); }
+          for (const pair of a.entries()) {
+            sum = sum + pair[1].toInt();
+          }
           expect(sum).assertEqual(6);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6200
          * @tc.name int32ArrayEntriesPart02TestMindmapTest062
@@ -989,12 +1045,10 @@ export default function int32ArrayEntriesPart02Test(): void {
           let reached: int = 0;
           let caughtMsg: string = '';
           try {
-            let iter15 = a.entries(); let result15 = iter15.next();
-            while (!result15.done) {
-            reached = reached + 1;
-            throw new Error('stop');
-            result15 = iter15.next(); }
-            expect().assertFail();
+            for (const pair of a.entries()) {
+              reached = reached + 1;
+              throw new Error('stop');
+            }
           } catch (e) {
             caughtMsg = (e as Error).message;
             expect(e.name).assertEqual('Error');
@@ -1003,10 +1057,11 @@ export default function int32ArrayEntriesPart02Test(): void {
           expect(reached).assertEqual(1);
           expect(a.length).assertEqual(3);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6300
          * @tc.name int32ArrayEntriesPart02TestMindmapTest063
-         * @tc.desc Verify break then re-for-of continues from remaining
+         * @tc.desc Verify manual next() cursor resumes from the remaining pair
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level LEVEL2
@@ -1032,6 +1087,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           expect(count1).assertEqual(2);
           expect(count2).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6400
          * @tc.name int32ArrayEntriesPart02TestMindmapTest064
@@ -1043,13 +1099,12 @@ export default function int32ArrayEntriesPart02Test(): void {
         it('int32ArrayEntriesPart02TestMindmapTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           let iter = Int32Array.of(1, 2, 3).entries();
           let count: int = 0;
-          let r = iter.next();
-          while (!r.done) {
-          count = count + 1;
-          r = iter.next();
+          for (const pair of iter) {
+            count = count + 1;
           }
           expect(count).assertEqual(3);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6500
          * @tc.name int32ArrayEntriesPart02TestMindmapTest065
@@ -1065,13 +1120,12 @@ export default function int32ArrayEntriesPart02Test(): void {
           r = iter.next();
           }
           let count: int = 0;
-          r = iter.next();
-          while (!r.done) {
-          count = count + 1;
-          r = iter.next();
+          for (const pair of iter) {
+            count = count + 1;
           }
           expect(count).assertEqual(0);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6600
          * @tc.name int32ArrayEntriesPart02TestMindmapTest066
@@ -1085,6 +1139,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           expect(r.done).assertFalse();
           expect(r.value![1]).assertEqual(42);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6700
          * @tc.name int32ArrayEntriesPart02TestMindmapTest067
@@ -1097,6 +1152,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let r = new Int32Array(0).entries().next();
           expect(r.done).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6800
          * @tc.name int32ArrayEntriesPart02TestMindmapTest068
@@ -1111,17 +1167,16 @@ export default function int32ArrayEntriesPart02Test(): void {
           iter.next();
           let count: int = 0;
           let firstIdxInFor: int = -1;
-          let r = iter.next();
-          while (!r.done) {
-          if (count === 0) {
-          firstIdxInFor = r.value![0];
-          }
-          count = count + 1;
-          r = iter.next();
+          for (const pair of iter) {
+            if (count === 0) {
+              firstIdxInFor = pair[0];
+            }
+            count = count + 1;
           }
           expect(firstIdxInFor).assertEqual(1);
           expect(count).assertEqual(2);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_6900
          * @tc.name int32ArrayEntriesPart02TestMindmapTest069
@@ -1135,6 +1190,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let v: number = r.value![1];
           expect(v).assertEqual(5);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7000
          * @tc.name int32ArrayEntriesPart02TestMindmapTest070
@@ -1147,6 +1203,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let r = Int32Array.of(-100).entries().next();
           expect(r.value![1]).assertEqual(-100);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7100
          * @tc.name int32ArrayEntriesPart02TestMindmapTest071
@@ -1160,6 +1217,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           let eq: boolean = r.value![1] === 1;
           expect(eq).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7200
          * @tc.name int32ArrayEntriesPart02TestMindmapTest072
@@ -1175,6 +1233,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           while (!result16.done) { count = count + 1; result16 = iter16.next(); }
           expect(count).assertEqual(3);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7300
          * @tc.name int32ArrayEntriesPart02TestMindmapTest073
@@ -1192,6 +1251,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           result17 = iter17.next(); }
           expect(count2).assertEqual(60);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7400
          * @tc.name int32ArrayEntriesPart02TestMindmapTest074
@@ -1210,6 +1270,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           result18 = iter18.next(); }
           expect(expectedIdx).assertEqual(4);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7500
          * @tc.name int32ArrayEntriesPart02TestMindmapTest075
@@ -1225,6 +1286,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           expect(iter.next().value![1] as number).assertEqual(0);
           expect(iter.next().done).assertTrue();
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7600
          * @tc.name int32ArrayEntriesPart02TestMindmapTest076
@@ -1241,6 +1303,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           expect(iter.next().value![1] as number).assertEqual(6);
           expect(iter.next().value![1] as number).assertEqual(9);
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7700
          * @tc.name int32ArrayEntriesPart02TestMindmapTest077
@@ -1259,6 +1322,7 @@ export default function int32ArrayEntriesPart02Test(): void {
           idx = idx + 1;
           result19 = iter19.next(); }
         });
+
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_ENTRIES_PART02_TEST_MINDMAP_7800
          * @tc.name int32ArrayEntriesPart02TestMindmapTest078
