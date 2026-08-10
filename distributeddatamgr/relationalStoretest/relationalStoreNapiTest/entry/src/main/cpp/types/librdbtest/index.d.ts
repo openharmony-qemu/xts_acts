@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,39 +15,6 @@
 export const RdbFilePath: () => number;
 export const RdbstoreSetUpTestCase: () => number;
 export const RdbstoreTearDownTestCase: () => number;
-
-export const CursorSetUpTestCase: () => number;
-export const CursorTearDownTestCase: () => number;
-export const SUB_DDM_RDB_CURSOR_0100: () => number;
-export const SUB_DDM_RDB_CURSOR_0200: () => number;
-export const SUB_DDM_RDB_CURSOR_0300: () => number;
-export const SUB_DDM_RDB_CURSOR_0400: () => number;
-export const SUB_DDM_RDB_CURSOR_0500: () => number;
-export const SUB_DDM_RDB_CURSOR_0600: () => number;
-export const SUB_DDM_RDB_CURSOR_0700: () => number;
-export const SUB_DDM_RDB_CURSOR_0800: () => number;
-export const SUB_DDM_RDB_CURSOR_0900: () => number;
-export const SUB_DDM_RDB_CURSOR_1000: () => number;
-export const SUB_DDM_RDB_CURSOR_1100: () => number;
-export const SUB_DDM_RDB_CURSOR_1200: () => number;
-export const SUB_DDM_RDB_CURSOR_1300: () => number;
-export const SUB_DDM_RDB_CURSOR_1400: () => number;
-export const SUB_DDM_RDB_CURSOR_1500: () => number;
-export const SUB_DDM_RDB_CURSOR_1600: () => number;
-export const SUB_DDM_RDB_CURSOR_1700: () => number;
-export const SUB_DDM_RDB_CURSOR_1800: () => number;
-export const SUB_DDM_RDB_CURSOR_1900: () => number;
-export const SUB_DDM_RDB_CURSOR_2000: () => number;
-export const SUB_DDM_RDB_CURSOR_2100: () => number;
-export const SUB_DDM_RDB_CURSOR_2200: () => number;
-export const SUB_DDM_RDB_CURSOR_2300: () => number;
-export const SUB_DDM_RDB_CURSOR_2400: () => number;
-export const SUB_DDM_RDB_CURSOR_2500: () => number;
-export const SUB_DDM_RDB_CURSOR_2600: () => number;
-
-export const SUB_DDM_RDB_ENCRYPT_0100: () => number;
-export const SUB_DDM_RDB_ENCRYPT_0200: () => number;
-
 export const SUB_DDM_RDB_0100: () => number;
 export const SUB_DDM_RDB_0200: () => number;
 export const SUB_DDM_RDB_0300: () => number;

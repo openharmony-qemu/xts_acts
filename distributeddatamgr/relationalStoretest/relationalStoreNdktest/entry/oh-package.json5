@@ -15,7 +15,10 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libentry.so": "file:./src/main/cpp/types/libentry"
+    "@types/libentry.so": "file:./src/main/cpp/types/libentry",
+    "@types/librdbQuery.so": "file:./src/main/cpp/types/librdbQuery",
+    "@types/libcorrupted.so": "file:./src/main/cpp/types/libcorrupted",
+    "@types/librdbTran.so": "file:./src/main/cpp/types/librdbTran",
   },
   "author": "",
   "name": "entry",

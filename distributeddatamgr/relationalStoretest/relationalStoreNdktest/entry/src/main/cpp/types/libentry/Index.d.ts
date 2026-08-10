@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -76,52 +76,3 @@ export const SetVersionTwo: () => number;
 export const LockRowOne: () => number;
 export const UnLockRowOne: () => number;
 export const QueryLockRowOne: () => number;
-export const async: () => Promise<number>;
-export const RdbStoreCorruptHandlerTest_0100:() => number;
-export const RdbStoreCorruptHandlerTest_0200:() => number;
-export const RdbStoreCorruptHandlerTest_0300:() => number;
-export const RdbStoreCorruptHandlerTest_0400:() => number;
-export const RdbStoreCorruptHandlerTest_0500:() => number;
-export const RdbStoreCorruptHandlerTest_0600:() => number;
-export const RdbStoreCorruptHandlerTest_0700:() => number;
-export const RdbStoreCorruptHandlerTest_0800:() => number;
-export const RdbStoreCorruptHandlerTest_0900:() => number;
-export const RdbStoreCorruptHandlerTest_1000:() => number;
-export const RdbStoreCorruptHandlerTest_1100:() => number;
-export const RdbStoreCorruptHandlerTest_1200:() => number;
-export const RdbStoreCorruptHandlerTest_1300:() => number;
-export const RdbStoreCorruptHandlerTest_1400:() => number;
-export const RdbStoreCorruptHandlerTest_1500:() => number;
-export const RdbStoreCorruptHandlerTest_1600:() => number;
-export const RdbStoreCorruptHandlerTest_1700:() => number;
-export const RdbStoreCorruptHandlerTest_1800:() => number;
-export const RdbStoreCorruptHandlerTest_1900:() => number;
-export const RdbStoreCorruptHandlerTest_2000:() => number;
-export const RdbStoreCorruptHandlerTest_2100:() => number;
-export const RdbStoreCorruptHandlerTest_2100:() => number;
-
-export const SetUpTestCase: () => number;
-export const TearDownTestCase: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Normal_Get_0100: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Normal_Get_0200: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Abnormal_InvalidArgs_0200: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Abnormal_InvalidArgs_0300: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Abnormal_InvalidArgs_0400: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Abnormal_InvalidArgs_0500: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Abnormal_InvalidArgs_0600: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Abnormal_InvalidArgs_0700: () => number;
-export const OH_Rdb_QueryWithoutRowCount_Abnormal_InvalidArgs_0800: () => number;
-export const OH_Rdb_QuerySqlWithoutRowCount_Normal_Get_0200: () => number;
-
-export const SetUpTestCase: () => number;
-export const TearDownTestCase: () => number;
-export const OH_RdbTrans_QueryWithoutRowCount_Normal_Get_0100: () => number;
-export const OH_RdbTrans_QueryWithoutRowCount_Normal_Get_0200: () => number;
-export const OH_RdbTrans_QueryWithoutRowCount_Abnormal_InvalidArgs_0300: () => number;
-export const OH_RdbTrans_QueryWithoutRowCount_Abnormal_InvalidArgs_0400: () => number;
-export const OH_RdbTrans_QueryWithoutRowCount_Abnormal_InvalidArgs_0500: () => number;
-export const OH_RdbTrans_QueryWithoutRowCount_Abnormal_InvalidArgs_0600: () => number;
-export const OH_RdbTrans_QueryWithoutRowCount_Abnormal_InvalidArgs_0700: () => number;
-export const RdbTrans_QuerySqlWithoutRowCount_Normal_Get_0100: () => number;
-export const RdbTrans_QuerySqlWithoutRowCount_Normal_Get_0200: () => number;
-export const RdbTrans_QuerySqlWithoutRowCount_Abnormal_InvalidArgs_0300: () => number;
