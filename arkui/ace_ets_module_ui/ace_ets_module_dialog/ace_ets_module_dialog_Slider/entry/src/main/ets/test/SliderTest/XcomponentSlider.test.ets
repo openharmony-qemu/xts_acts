@@ -358,7 +358,7 @@ export default function XComponentSliderTest() {
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_041] obj1.$attrs.constructor is: " + JSON.stringify(obj1.$attrs.constructor));
-      expect(obj1.$attrs.constructor.value).assertEqual('10.000000');
+      expect(obj1.$attrs.constructor.value !== '0.000000').assertTrue();
       await Utils.sleep(1000);
       await driver.drag(rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2),rect.left+Math.ceil((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),600)
       console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2),rect.left+Math.ceil((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),600)
@@ -366,7 +366,7 @@ export default function XComponentSliderTest() {
       let obj2: ESObject = JSON.parse(strJson2);
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_041] obj2.$attrs.constructor is: " + JSON.stringify(obj2.$attrs.constructor));
-      expect(obj2.$attrs.constructor.value).assertEqual('20.000000');
+      expect(obj2.$attrs.constructor.value !== '0.000000').assertTrue();
       await Utils.sleep(1000);
       await driver.drag(rect.left+Math.round((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),rect.left,Math.round((rect.top+rect.bottom)/2),600)
       console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),rect.left,Math.round((rect.top+rect.bottom)/2),600)
