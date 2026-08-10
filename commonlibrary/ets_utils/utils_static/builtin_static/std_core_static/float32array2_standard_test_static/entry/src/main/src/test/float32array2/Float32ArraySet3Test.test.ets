@@ -515,6 +515,7 @@ export default function Float32ArraySet3Test(): void {
       target.set(src, 0);
       const element030 = target.$_get(0);
       expect(element030).assertEqual(0);
+      expect(1.0 / element030).assertEqual(Number.POSITIVE_INFINITY);
     });
 
     /**
