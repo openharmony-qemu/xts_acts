@@ -53,6 +53,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       await Utils.sleep(1000);
 
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THICK_interactive_true_ID'));
       await button.click();
       await Utils.sleep(1000);
@@ -60,14 +61,12 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let tree: ESObject = await getInspectorTree();
       let dialog: ESObject = tree.$children[1];
       let column: ESObject = dialog.$children[0];
-      let systemMaterial: ESObject = column.$attrs.systemMaterial;
 
-      console.info('[' + tagName + '] dialog attrs: ' + JSON.stringify(dialog.$attrs));
-      console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
-      console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
+      let systemMaterial: ESObject = column.$attrs.systemMaterial;
+      console.info('calendarPickerDialogSystemMaterialTest_0100 systemMaterial: ' + JSON.stringify(systemMaterial));
 
       if(isSupported){
-        let retValue: ESObject = JSON.parse(column).$attrs.systemMaterial.material.immersiveOptions.style;
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
  	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
       }
 
@@ -96,6 +95,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       await Utils.sleep(1000);
 
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THIN_interactive_true_ID'));
       await button.click();
       await Utils.sleep(1000);
@@ -103,14 +103,12 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let tree: ESObject = await getInspectorTree();
       let dialog: ESObject = tree.$children[1];
       let column: ESObject = dialog.$children[0];
-      let systemMaterial: ESObject = column.$attrs.systemMaterial;
 
-      console.info('[' + tagName + '] dialog attrs: ' + JSON.stringify(dialog.$attrs));
-      console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
-      console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
+      let systemMaterial: ESObject = column.$attrs.systemMaterial;
+      console.info('calendarPickerDialogSystemMaterialTest_0200 systemMaterial: ' + JSON.stringify(systemMaterial));
 
       if(isSupported){
-        let retValue: ESObject = JSON.parse(column).$attrs.systemMaterial.material.immersiveOptions.style;
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
  	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
       }
 
@@ -139,6 +137,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       await Utils.sleep(1000);
 
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THICK_interactive_false_ID'));
       await button.click();
       await Utils.sleep(1000);
@@ -146,14 +145,12 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let tree: ESObject = await getInspectorTree();
       let dialog: ESObject = tree.$children[1];
       let column: ESObject = dialog.$children[0];
-      let systemMaterial: ESObject = column.$attrs.systemMaterial;
 
-      console.info('[' + tagName + '] dialog attrs: ' + JSON.stringify(dialog.$attrs));
-      console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
-      console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
+      let systemMaterial: ESObject = column.$attrs.systemMaterial;
+      console.info('calendarPickerDialogSystemMaterialTest_0300 systemMaterial: ' + JSON.stringify(systemMaterial));
 
       if(isSupported){
-        let retValue: ESObject = JSON.parse(column).$attrs.systemMaterial.material.immersiveOptions.style;
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
  	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
       }
 
@@ -182,6 +179,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       await Utils.sleep(1000);
 
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THICK_lightEffect_ID'));
       await button.click();
       await Utils.sleep(1000);
@@ -189,11 +187,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let tree: ESObject = await getInspectorTree();
       let dialog: ESObject = tree.$children[1];
       let column: ESObject = dialog.$children[0];
-      let systemMaterial: ESObject = column.$attrs.systemMaterial;
 
-      console.info('[' + tagName + '] dialog attrs: ' + JSON.stringify(dialog.$attrs));
-      console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
-      console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
+      let systemMaterial: ESObject = column.$attrs.systemMaterial;
+      console.info('calendarPickerDialogSystemMaterialTest_0400 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -220,6 +221,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       await Utils.sleep(1000);
 
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('undefinedID'));
       await button.click();
       await Utils.sleep(1000);
@@ -227,11 +229,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let tree: ESObject = await getInspectorTree();
       let dialog: ESObject = tree.$children[1];
       let column: ESObject = dialog.$children[0];
-      let systemMaterial: ESObject = column.$attrs.systemMaterial;
 
-      console.info('[' + tagName + '] dialog attrs: ' + JSON.stringify(dialog.$attrs));
-      console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
-      console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
+      let systemMaterial: ESObject = column.$attrs.systemMaterial;
+      console.info('calendarPickerDialogSystemMaterialTest_0500 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -258,6 +263,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       await Utils.sleep(1000);
 
       const driver = Driver.create();
+      await Utils.sleep(1000);
       const button = await driver.findComponent(ON.id('nullID'));
       await button.click();
       await Utils.sleep(1000);
@@ -265,11 +271,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let tree: ESObject = await getInspectorTree();
       let dialog: ESObject = tree.$children[1];
       let column: ESObject = dialog.$children[0];
-      let systemMaterial: ESObject = column.$attrs.systemMaterial;
 
-      console.info('[' + tagName + '] dialog attrs: ' + JSON.stringify(dialog.$attrs));
-      console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
-      console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
+      let systemMaterial: ESObject = column.$attrs.systemMaterial;
+      console.info('calendarPickerDialogSystemMaterialTest_0600 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);

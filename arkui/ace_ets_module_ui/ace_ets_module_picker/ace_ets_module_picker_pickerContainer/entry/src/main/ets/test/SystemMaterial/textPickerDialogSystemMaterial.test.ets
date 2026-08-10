@@ -55,6 +55,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THICK_ID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -89,6 +90,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THIN_ID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -123,6 +125,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('interactive_false_ID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -157,6 +160,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('undefinedID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -191,6 +195,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('defaultID'));
       await button.click();
       await CommonFunc.sleep(1000);

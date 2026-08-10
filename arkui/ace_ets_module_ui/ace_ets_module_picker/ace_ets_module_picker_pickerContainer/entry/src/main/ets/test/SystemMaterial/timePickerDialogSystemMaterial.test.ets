@@ -54,6 +54,7 @@ export default function TimePickerDialogSystemMaterialTest() {
      */
     it('TimePickerDialogSystemMaterialTest_001', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ImmersiveStyleUltraThickID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -88,6 +89,7 @@ export default function TimePickerDialogSystemMaterialTest() {
      */
     it('TimePickerDialogSystemMaterialTest_002', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ImmersiveStyleUltraThinID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -122,6 +124,7 @@ export default function TimePickerDialogSystemMaterialTest() {
      */
     it('TimePickerDialogSystemMaterialTest_003', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('SystemMaterialUndefinedID'));
       await button.click();
       await CommonFunc.sleep(1000);

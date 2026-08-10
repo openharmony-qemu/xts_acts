@@ -42,6 +42,7 @@ export default function DatePickerDialogSystemMaterialTest() {
     it('DatePickerDialogSystemMaterialTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerDialogSystemMaterialTest_001 START');
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ultraThickID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -79,6 +80,7 @@ export default function DatePickerDialogSystemMaterialTest() {
     it('DatePickerDialogSystemMaterialTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerDialogSystemMaterialTest_002 START');
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ultraThinID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -116,6 +118,7 @@ export default function DatePickerDialogSystemMaterialTest() {
     it('DatePickerDialogSystemMaterialTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerDialogSystemMaterialTest_003 START');
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('undefinedID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -153,6 +156,7 @@ export default function DatePickerDialogSystemMaterialTest() {
     it('DatePickerDialogSystemMaterialTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerDialogSystemMaterialTest_004 START');
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('nullID'));
       await button.click();
       await CommonFunc.sleep(1000);
