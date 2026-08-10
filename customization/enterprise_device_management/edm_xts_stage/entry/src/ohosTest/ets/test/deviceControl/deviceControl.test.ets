@@ -466,6 +466,28 @@ function testOperateDevice() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_operate_device_0018
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0018
+   * @tc.desc   test deviceControl operateDevice with empty addition parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_operate_device_0018", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      deviceControl.operateDevice(SELFWANT, LOCK_SCREEN, "");
+      let edmEnable: string = systemParameterEnhance.getSync("persist.edm.edm_enable", "");
+      expect(edmEnable == "true").assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testOperateDeviceWithOperation() {
