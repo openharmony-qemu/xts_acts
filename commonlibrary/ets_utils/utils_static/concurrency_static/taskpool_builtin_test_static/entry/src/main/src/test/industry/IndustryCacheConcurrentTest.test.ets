@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Util.test';
+import Utils from '../Utils.test';
 
 function testRWLockCacheReader(cache: containers.ConcurrentHashMap<string, string>, lock: RWLock, readCounter: AtomicInt): void {
   for (let i: int = 0; i < 100; i++) {

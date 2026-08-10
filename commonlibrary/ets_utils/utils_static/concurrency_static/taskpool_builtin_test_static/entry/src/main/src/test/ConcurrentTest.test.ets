@@ -91,7 +91,7 @@ import {
 
 import { sleep } from '../testability/pages/utils'
 
-let concurrentNum: int = 10
+let concurrentNum: int = 100
 
 
 export default function globalTest1() {

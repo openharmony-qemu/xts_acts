@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Util.test';
+import Utils from '../Utils.test';
 
 function testMapNoLock(map: Map<string, number>): void {
   for (let i: number = 0; i < 10; i++) {

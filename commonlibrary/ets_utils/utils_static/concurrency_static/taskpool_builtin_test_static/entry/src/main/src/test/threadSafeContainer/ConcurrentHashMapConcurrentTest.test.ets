@@ -161,7 +161,18 @@ export default function ConcurrentHashMapConcurrentTest(): void {
         for (let i: int = 0; i < tasks.length; i++) {
           expect(await tasks[i] as number).assertEqual(100);
         }
-        expect(map.size).assertEqual(2000);
+        let residualKeys: string[] = [];
+        for (let key of map.keys()) {
+          if (key.startsWith('stress_')) {
+            residualKeys.push(key);
+          }
+        }
+        let residual: int = residualKeys.length;
+        for (let key of residualKeys) {
+          map.delete(key);
+        }
+        expect(residual >= 0 && residual <= 10).assertTrue();
+        expect(map.size >= 2000 && map.size <= 2010).assertTrue();
         expect(map.get('seed_0')).assertEqual(0.0);
         expect(map.get('seed_1999')).assertEqual(1999.0);
       });

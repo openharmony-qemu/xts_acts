@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Util.test';
+import Utils from '../Utils.test';
 
 // TaskPool 任务仅使用 AtomicInt（@Sendable），不传递非 Sendable 的 BlockingQueue
 function testProducerCounter(count: AtomicInt): void {

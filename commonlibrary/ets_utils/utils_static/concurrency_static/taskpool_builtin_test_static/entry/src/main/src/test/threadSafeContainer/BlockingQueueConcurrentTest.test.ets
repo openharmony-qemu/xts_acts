@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Util.test';
+import Utils from '../Utils.test';
 
 // 非阻塞 add：每个任务收到满队列克隆，add 返回 false（非阻塞，克隆不影响返回值）
 function testBlockingQueueAdd(failCounter: AtomicInt, count: AtomicInt): void {

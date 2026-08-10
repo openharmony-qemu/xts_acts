@@ -14,6 +14,7 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
+import type { BusinessError } from '@ohos.base';
 import {test_Global_test_001,test_Global_test_002,test_Global_test_003,test_Global_test_004,test_Global_test_005,test_Global_test_006,test_Global_test_007,test_Global_test_008,test_Global_test_009,test_Global_test_010,
   test_Global_test_011,test_Global_test_012,test_Global_test_013,test_Global_test_014,test_Global_test_015,test_Global_test_016,test_Global_test_017,test_Global_test_018,test_Global_test_019,test_Global_test_020,
   test_Global_test_021,test_Global_test_022,test_Global_test_023,test_Global_test_024,test_Global_test_025,test_Global_test_026,test_Global_test_027,test_Global_test_028,test_Global_test_029,test_Global_test_030,
@@ -1923,7 +1924,7 @@ export default function globalTest() {
               expect().assertFail();
               count++;
             }).catch((e: Error) => {
-              // 预期异常：encodeURI 对无效代理对应该抛出异常
+              expect(e.message).assertContain("DecodeURI: invalid chara");
               count++;
             });
           }
@@ -1932,7 +1933,7 @@ export default function globalTest() {
               const _r = encodeURI("\ud83d");
               expect().assertFail();
             } catch (err) {
-              // 预期异常：encodeURI 对无效代理对应该抛出异常
+              expect((err as BusinessError).message).assertContain("DecodeURI: invalid chara");
             }
           }
         } catch (e) {
@@ -1963,7 +1964,7 @@ export default function globalTest() {
               expect().assertFail();
               count++;
             }).catch((e: Error) => {
-              // 预期异常：encodeURIComponent 对无效代理对应该抛出异常
+              expect(e.message).assertContain("DecodeURI: invalid chara");
               count++;
             });
           }
@@ -1972,7 +1973,7 @@ export default function globalTest() {
               const _r = encodeURIComponent("\ud83d");
               expect().assertFail();
             } catch (err) {
-              // 预期异常：encodeURIComponent 对无效代理对应该抛出异常
+              expect((err as BusinessError).message).assertContain("DecodeURI: invalid chara");
             }
           }
         } catch (e) {
