@@ -51,44 +51,50 @@ export default function Float32ArrayProperty1Test(): void {
      */
     it('testFloat32ArrayPropertyOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const arr = new Float32Array();
       expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_PROPERTY_ONE_0200
      * @tc.name testFloat32ArrayPropertyOne002
-     * @tc.desc Verify new Float32Array() has byteLength 0
+     * @tc.desc Verify new Float32Array(src.subarray(1,3)) copies only the view elements length 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayPropertyOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const arr = new Float32Array();
-      expect(arr.byteLength).assertEqual(0);
+    it('testFloat32ArrayPropertyOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const src = new Float32Array([1.0, 2.0, 3.0, 4.0]);
+      const arr = new Float32Array(src.subarray(1, 3));
+      expect(arr.length).assertEqual(2);
+      expect(arr.$_get(0)).assertEqual(2.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_PROPERTY_ONE_0300
      * @tc.name testFloat32ArrayPropertyOne003
-     * @tc.desc Verify new Float32Array() has byteOffset 0
+     * @tc.desc Verify new Float32Array(src) allocates a new buffer distinct from source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayPropertyOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const arr = new Float32Array();
-      expect(arr.byteOffset).assertEqual(0);
+    it('testFloat32ArrayPropertyOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const src = new Float32Array([1.0, 2.0, 3.0]);
+      const arr = new Float32Array(src);
+      expect(arr.buffer === src.buffer).assertEqual(false);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_PROPERTY_ONE_0400
      * @tc.name testFloat32ArrayPropertyOne004
-     * @tc.desc Verify Float32Array.BYTES_PER_ELEMENT is 4 on default constructed array
+     * @tc.desc Verify new Float32Array(src) is independent; modifying copy does not affect source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayPropertyOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const arr = new Float32Array();
-      expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
-      expect(arr.length).assertEqual(0);
-      expect(arr.byteLength).assertEqual(0);
+    it('testFloat32ArrayPropertyOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const src = new Float32Array([1.0, 2.0, 3.0]);
+      const arr = new Float32Array(src);
+      arr.$_set(0, 99.0);
+      expect(src.$_get(0)).assertEqual(1.0);
     });
 
     /**
