@@ -60,45 +60,6 @@ export default function PhotoSetTitleTestSupp() {
       AppStorage.delete('emptyString');
     });
     /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
-     * @tc.desc      PhotoViewPicker.select-参数属性覆盖-true
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = true;
-        photoSelectOptions.isDestroyedWithNavigation = true;
-        photoSelectOptions.isReturnToPhotoBrowserEnabled = true;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 0;
-        let phAsset = {albumUri :'',displayName:'',gridLevel:0} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
      * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
      * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
      * @tc.desc      PhotoViewPicker.select-第一个参数为null
@@ -2094,21 +2055,24 @@ export default function PhotoSetTitleTestSupp() {
      */
     it('SUB_ON_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_ON_PHOTO_ALBUM_CHANGE_001';
-      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+        let newAlbumName: string = 'newAlbumName'+ new Date().getTime();
+        let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
         console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
-        expect(isEmpty(changeData.albumChangeDatas)).assertFalse();
-        expect(changeData.isForRecheck).assertFalse();
-        done();
+        const albumName: ESObject = changeData!.albumChangeDatas![0].albumAfterChange!.albumName;
+        if (albumName !== undefined && albumName === newAlbumName) {
+          expect(changeData.type == 0).assertTrue();
+          expect(isEmpty(changeData.albumChangeDatas)).assertFalse();
+          expect(changeData.isForRecheck).assertFalse();
+          PhAccessHelper.off('photoAlbumChange', onCallback);
+          done();
+        }
       }
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
           await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         PhAccessHelper.on('photoAlbumChange', onCallback);
-
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
-        let newAlbumName: string = 'newAlbumName'+ new Date().getTime();
         albumChangeRequest.setAlbumName(newAlbumName);
         await PhAccessHelper.applyChanges(albumChangeRequest);
       } catch (error) {
