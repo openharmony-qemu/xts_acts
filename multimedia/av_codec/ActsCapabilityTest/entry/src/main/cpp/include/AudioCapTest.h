@@ -15,16 +15,14 @@
 
 #ifndef ONE_AUDIOCAPTESR_H
 #define ONE_AUDIOCAPTESR_H
-namespace OHOS {
-namespace Media {
-int AUDIO_CAPABILITY_TEST_001();
-int AUDIO_CAPABILITY_TEST_002();
-int AUDIO_CAPABILITY_TEST_003();
-int AUDIO_CAPABILITY_TEST_004();
-int AUDIO_CAPABILITY_TEST_005();
-int AUDIO_CAPABILITY_TEST_006();
-int AUDIO_CAPABILITY_TEST_007();
-int AUDIO_CAPABILITY_TEST_008();
-}
-}
+
+napi_value AudioCapAbility00100Test(napi_env env, napi_callback_info info);
+napi_value AudioCapAbility00200Test(napi_env env, napi_callback_info info);
+napi_value AudioCapAbility00300Test(napi_env env, napi_callback_info info);
+napi_value AudioCapAbility00400Test(napi_env env, napi_callback_info info);
+napi_value AudioCapAbility00500Test(napi_env env, napi_callback_info info);
+napi_value AudioCapAbility00600Test(napi_env env, napi_callback_info info);
+napi_value AudioCapAbility00700Test(napi_env env, napi_callback_info info);
+napi_value AudioCapAbility00800Test(napi_env env, napi_callback_info info);
+
 #endif //ONE_AUDIOCAPTESR_H

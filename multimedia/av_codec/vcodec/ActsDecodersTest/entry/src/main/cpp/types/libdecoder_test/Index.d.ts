@@ -13,14 +13,64 @@
  * limitations under the License.
  */
 
+// API Capability Test functions
+export const VideoVc1DecCapApi0001: () => Promise<number>;
+export const VideoVc1DecCapApi0002: () => Promise<number>;
+export const VideoVc1DecCapApi0003: () => Promise<number>;
+export const VideoVc1DecCapApi0004: () => Promise<number>;
+export const VideoVc1DecCapApi0005: () => Promise<number>;
+export const VideoVc1DecCapApi0006: () => Promise<number>;
+export const VideoVc1DecCapApi0007: () => Promise<number>;
+export const VideoVc1DecCapApi0008: () => Promise<number>;
+export const VideoMsvideo1DecCapApi0009: () => Promise<number>;
+export const VideoMsvideo1DecCapApi0010: () => Promise<number>;
+export const VideoMsvideo1DecCapApi0011: () => Promise<number>;
+export const VideoMsvideo1DecCapApi0012: () => Promise<number>;
+export const VideoVp8DecCapApi0001: () => Promise<number>;
+export const VideoVp9DecCapApi0001: () => Promise<number>;
+export const VideoAv1DecCapApi0001: () => Promise<number>;
+export const VideoRv30DecCapApi0001: () => Promise<number>;
+export const VideoRv40DecCapApi0001: () => Promise<number>;
+export const VideoMjpegDecCapApi0001: () => Promise<number>;
+export const VideoMsvideo1DecCapApi0001: () => Promise<number>;
+export const VideoRawvideoDecCapApi0001: () => Promise<number>;
+export const VideoMpeg1DecCapApi0001: () => Promise<number>;
+export const VideoWvc1DecCapApi0001: () => Promise<number>;
+export const VideoWmv3DecCapApi0001: () => Promise<number>;
+export const VideoDvvideoDecCapApi0001: () => Promise<number>;
+export const VideoVp9DecCapApi0013: () => Promise<number>;
+export const VideoAv1DecCapApi0014: () => Promise<number>;
+export const VideoAv1DecCapApi0015: () => Promise<number>;
+export const VideoWvc1DecCapApi0016: () => Promise<number>;
+export const VideoAv1DecCapApi0017: () => Promise<number>;
+export const VideoEncCapApi0018: () => Promise<number>;
+export const VideoDecCapApi0019: () => Promise<number>;
+export const VideoEncCapApi0020: () => Promise<number>;
+export const VideoDecCapApi0021: () => Promise<number>;
+export const VideoEncCapApi0022: () => Promise<number>;
+export const VideoDecCapApi0023: () => Promise<number>;
+export const VideoDecCapApi0024: () => Promise<number>;
+export const VideoDecCapApi0025: () => Promise<number>;
+export const VideoDecCapApi0026: () => Promise<number>;
+export const VideoDecCapApi0027: () => Promise<number>;
 
-/**
- * Video decoder test function
- * @param testCaseNumber - Test case number (0-17)
- * @returns 0 for success, -1 for failure
- */
-export const videoDecoderTest: (testCaseNumber: number) => number;
-
-export const functest: (testCaseNumber: number) => Promise<number>;
-
-export const apitest: (testCaseNumber: number) => number;
+// Decoder Function Test functions
+export const VideoVc1DecFunction0001: () => Promise<number>;
+export const VideoMjpegDecFunction0003: () => Promise<number>;
+export const VideoMsvideo1DecFunction0005: () => Promise<number>;
+export const VideoVc1DecFunction0002: () => Promise<number>;
+export const VideoMjpegDecFunction0004: () => Promise<number>;
+export const VideoMsvideo1DecFunction0006: () => Promise<number>;
+export const VideoVp8DecFunction0007: () => Promise<number>;
+export const VideoVp9DecFunction0008: () => Promise<number>;
+export const VideoVp9DecFunction0009: () => Promise<number>;
+export const VideoVp9DecFunction0010: () => Promise<number>;
+export const VideoVp9DecFunction0011: () => Promise<number>;
+export const VideoAv1DecFunction0012: () => Promise<number>;
+export const VideoAv1DecFunction0013: () => Promise<number>;
+export const VideoAv1DecFunction0015: () => Promise<number>;
+export const VideoAv1DecFunction0016: () => Promise<number>;
+export const VideoVp9DecFunction0019: () => Promise<number>;
+export const VideoVp9DecFunction0020: () => Promise<number>;
+export const VideoVp8DecFunction0021: () => Promise<number>;
+export const VideoCinepakDecFunction0022: () => Promise<number>;

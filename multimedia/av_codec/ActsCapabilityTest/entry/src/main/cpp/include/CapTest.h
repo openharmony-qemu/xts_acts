@@ -15,27 +15,25 @@
 
 #ifndef ONE_CAPTEST_H
 #define ONE_CAPTEST_H
-namespace OHOS {
-namespace Media {
-int VIDEO_TEMPORAL_ENCODE_API_0010();
-int VIDEO_TEMPORAL_ENCODE_API_0011();
-int VIDEO_TEMPORAL_ENCODE_API_0012();
-int VIDEO_TEMPORAL_ENCODE_API_0013();
-int VIDEO_TEMPORAL_ENCODE_API_0014();
-int VIDEO_TEMPORAL_ENCODE_API_0015();
-int VIDEO_TEMPORAL_ENCODE_API_0016();
-int VIDEO_TEMPORAL_ENCODE_API_0017();
-int VIDEO_TEMPORAL_ENCODE_API_0018();
-int VIDEO_TEMPORAL_ENCODE_API_0019();
-int VIDEO_TEMPORAL_ENCODE_API_0020();
-int VIDEO_TEMPORAL_ENCODE_API_0021();
-int VIDEO_TEMPORAL_ENCODE_API_0022();
-int VIDEO_TEMPORAL_ENCODE_API_0023();
-int VIDEO_TEMPORAL_ENCODE_API_0024();
-int VIDEO_TEMPORAL_ENCODE_API_0025();
-int VIDEO_TEMPORAL_ENCODE_API_0026();
-int VIDEO_TEMPORAL_ENCODE_API_0027();
-int VIDEO_TEMPORAL_ENCODE_API_0028();
-}
-}
+
+napi_value VideoTemporalEncodeApi00100Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00200Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00300Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00400Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00500Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00600Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00700Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00800Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi00900Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01000Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01100Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01200Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01300Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01400Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01500Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01600Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01700Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01800Test(napi_env env, napi_callback_info info);
+napi_value VideoTemporalEncodeApi01900Test(napi_env env, napi_callback_info info);
+
 #endif //ONE_CAPTEST_H

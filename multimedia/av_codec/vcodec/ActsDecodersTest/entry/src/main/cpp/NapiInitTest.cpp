@@ -13,274 +13,231 @@
  * limitations under the License.
  */
 
-
 #include "napi/native_api.h"
 #include "include/VideoDecoderApiTest.h"
 #include "include/VideoDecoderFuncTest.h"
+#include <iostream>
+#include <vector>
+#include <functional>
+#include <cstring>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
 
-using namespace OHOS::Media;
+using TestFunction = std::function<int()>;
 
-// API Test case number enum
-enum ApiTestCaseNumber {
-    TEST_CASE_VC1_CAP_API_0001 = 0,
-    TEST_CASE_VC1_CAP_API_0002 = 1,
-    TEST_CASE_VC1_CAP_API_0003 = 2,
-    TEST_CASE_VC1_CAP_API_0004 = 3,
-    TEST_CASE_VC1_CAP_API_0005 = 4,
-    TEST_CASE_VC1_CAP_API_0006 = 5,
-    TEST_CASE_VC1_CAP_API_0007 = 6,
-    TEST_CASE_VC1_CAP_API_0008 = 7,
-    TEST_CASE_MSVIDEO1_CAP_API_0009 = 8,
-    TEST_CASE_MSVIDEO1_CAP_API_0010 = 9,
-    TEST_CASE_MSVIDEO1_CAP_API_0011 = 10,
-    TEST_CASE_MSVIDEO1_CAP_API_0012 = 11,
-    TEST_CASE_VP8_CAP_API_0001 = 12,
-    TEST_CASE_VP9_CAP_API_0001 = 13,
-    TEST_CASE_AV1_CAP_API_0001 = 14,
-    TEST_CASE_RV30_CAP_API_0001 = 15,
-    TEST_CASE_RV40_CAP_API_0001 = 16,
-    TEST_CASE_MJPEG_CAP_API_0001 = 17,
-    TEST_CASE_MSVIDEO1_CAP_API_0001 = 18,
-    TEST_CASE_RAWVIDEO_CAP_API_0001 = 19,
-    TEST_CASE_MPEG1_CAP_API_0001 = 20,
-    TEST_CASE_WVC1_CAP_API_0001 = 21,
-    TEST_CASE_WMV3_CAP_API_0001 = 22,
-    TEST_CASE_DVVIDEO_CAP_API_0001 = 23,
-    TEST_CASE_VP9_CAP_API_0013 = 24,
-    TEST_CASE_AV1_CAP_API_0014 = 25,
-    TEST_CASE_AV1_CAP_API_0015 = 26,
-    TEST_CASE_WVC1_CAP_API_0016 = 27,
-    TEST_CASE_AV1_CAP_API_0017 = 28,
-    TEST_CASE_CAP_API_0018 = 29,
-    TEST_CASE_CAP_API_0019 = 30,
-    TEST_CASE_CAP_API_0020 = 31,
-    TEST_CASE_CAP_API_0021 = 32,
-    TEST_CASE_CAP_API_0022 = 33,
-    TEST_CASE_CAP_API_0023 = 34,
-    TEST_CASE_CAP_API_0024 = 35,
-    TEST_CASE_CAP_API_0025 = 36,
-    TEST_CASE_CAP_API_0026 = 37
-};
-
-// Function Test case number enum
-enum FuncTestCaseNumber {
-    TEST_CASE_VC1_FUNCTION_0001 = 0,
-    TEST_CASE_MJPEG_FUNCTION_0003 = 1,
-    TEST_CASE_MSVIDEO1_FUNCTION_0005 = 2,
-    TEST_CASE_VC1_FUNCTION_0002 = 3,
-    TEST_CASE_MJPEG_FUNCTION_0004 = 4,
-    TEST_CASE_MSVIDEO1_FUNCTION_0006 = 5,
-    TEST_CASE_VP8_FUNCTION_0007 = 6,
-    TEST_CASE_VP9_FUNCTION_0008 = 7,
-    TEST_CASE_VP9_FUNCTION_0009 = 8,
-    TEST_CASE_VP9_FUNCTION_0010 = 9,
-    TEST_CASE_VP9_FUNCTION_0011 = 10,
-    TEST_CASE_AV1_FUNCTION_0012 = 11,
-    TEST_CASE_AV1_FUNCTION_0013 = 12,
-    TEST_CASE_AV1_FUNCTION_0015 = 13,
-    TEST_CASE_AV1_FUNCTION_0016 = 14,
-    TEST_CASE_VP9_FUNCTION_0019 = 15,
-    TEST_CASE_VP9_FUNCTION_0020 = 16,
-    TEST_CASE_VP8_FUNCTION_0021 = 17,
-    TEST_CASE_CINEPAK_FUNCTION_0022 = 18
-};
-
-static napi_value CreateResultValue(napi_env env, int result)
-{
-    napi_value resultValue;
-    napi_create_int32(env, result, &resultValue);
-    return resultValue;
-}
-
-// Type definition for test function pointer
-typedef int (*TestFunction)();
-
-// API Test function lookup table
-static const TestFunction API_TEST_FUNCTIONS[] = {
-    VideoVc1DecCapApi0001,           // 0
-    VideoVc1DecCapApi0002,           // 1
-    VideoVc1DecCapApi0003,           // 2
-    VideoVc1DecCapApi0004,           // 3
-    VideoVc1DecCapApi0005,           // 4
-    VideoVc1DecCapApi0006,           // 5
-    VideoVc1DecCapApi0007,           // 6
-    VideoVc1DecCapApi0008,           // 7
-    VideoMsvideo1DecCapApi0009,      // 8
-    VideoMsvideo1DecCapApi0010,      // 9
-    VideoMsvideo1DecCapApi0011,      // 10
-    VideoMsvideo1DecCapApi0012,      // 11
-    VideoVp8DecCapApi0001,           // 12
-    VideoVp9DecCapApi0001,           // 13
-    VideoAv1DecCapApi0001,           // 14
-    VideoRv30DecCapApi0001,          // 15
-    VideoRv40DecCapApi0001,          // 16
-    VideoMjpegDecCapApi0001,         // 17
-    VideoMsvideo1DecCapApi0001,      // 18
-    VideoRawvideoDecCapApi0001,      // 19
-    VideoMpeg1DecCapApi0001,         // 20
-    VideoWvc1DecCapApi0001,          // 21
-    VideoWmv3DecCapApi0001,          // 22
-    VideoDvvideoDecCapApi0001,       // 23
-    VideoVp9DecCapApi0013,           // 24
-    VideoAv1DecCapApi0014,           // 25
-    VideoAv1DecCapApi0015,           // 26
-    VideoWvc1DecCapApi0016,          // 27
-    VideoAv1DecCapApi0017,           // 28
-    VideoEncCapApi0018,              // 29
-    VideoDecCapApi0019,              // 30
-    VideoEncCapApi0020,              // 31
-    VideoDecCapApi0021,              // 32
-    VideoEncCapApi0022,              // 33
-    VideoDecCapApi0023,              // 34
-    VideoDecCapApi0024,              // 35
-    VideoDecCapApi0025,              // 36
-    VideoDecCapApi0026,              // 37
-    VideoDecCapApi0027               // 38
-};
-
-// Function Test function lookup table
-static const TestFunction FUNC_TEST_FUNCTIONS[] = {
-    VideoVc1DecFunction0001,         // 0 - Buffer mode
-    VideoMjpegDecFunction0003,       // 1 - Buffer mode
-    VideoMsvideo1DecFunction0005,    // 2 - Buffer mode
-    VideoVc1DecFunction0002,         // 3 - Surface mode
-    VideoMjpegDecFunction0004,       // 4 - Surface mode
-    VideoMsvideo1DecFunction0006,    // 5 - Surface mode
-    VideoVp8DecFunction0007,         // 6
-    VideoVp9DecFunction0008,         // 7
-    VideoVp9DecFunction0009,         // 8
-    VideoVp9DecFunction0010,         // 9
-    VideoVp9DecFunction0011,         // 10
-    VideoAv1DecFunction0012,         // 11
-    VideoAv1DecFunction0013,         // 12
-    VideoAv1DecFunction0015,         // 13
-    VideoAv1DecFunction0016,         // 14
-    VideoVp9DecFunction0019,         // 15
-    VideoVp9DecFunction0020,         // 16
-    VideoVp8DecFunction0021,         // 17
-    VideoCinepakDecFunction0022      // 18
-};
-
-static const int32_t API_TEST_FUNCTION_COUNT = sizeof(API_TEST_FUNCTIONS) / sizeof(API_TEST_FUNCTIONS[0]);
-static const int32_t FUNC_TEST_FUNCTION_COUNT = sizeof(FUNC_TEST_FUNCTIONS) / sizeof(FUNC_TEST_FUNCTIONS[0]);
-
-static napi_value ApiTest(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1];
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok) {
-        return CreateResultValue(env, -1);
-    }
-
-    napi_valuetype valuetype;
-    napi_typeof(env, args[0], &valuetype);
-    if (valuetype != napi_number) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return CreateResultValue(env, -1);
-    }
-
-    int32_t caseNum = -1;
-    status = napi_get_value_int32(env, args[0], &caseNum);
-    if (status != napi_ok) {
-        return CreateResultValue(env, -1);
-    }
-
-    if (caseNum < 0 || caseNum >= API_TEST_FUNCTION_COUNT) {
-        napi_throw_type_error(env, nullptr, "Invalid API test case number");
-        return CreateResultValue(env, -1);
-    }
-
-    int result = API_TEST_FUNCTIONS[caseNum]();
-    return CreateResultValue(env, result);
-}
-
-struct FuncTestContext {
+struct AsyncTestContext {
     napi_env env;
     napi_deferred deferred;
-    int32_t caseNum;
+    napi_async_work work;
+    TestFunction func;
     int result;
 };
 
-static void ExecuteFuncTest(napi_env env, void* data)
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    FuncTestContext* context = static_cast<FuncTestContext*>(data);
-    context->result = FUNC_TEST_FUNCTIONS[context->caseNum]();
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
+    }
 }
 
-static void CompleteFuncTest(napi_env env, napi_status status, void* data)
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
 {
-    FuncTestContext* context = static_cast<FuncTestContext*>(data);
-    napi_value result;
-    napi_create_int32(env, context->result, &result);
-    napi_resolve_deferred(env, context->deferred, result);
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
+    } else {
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
+    }
+    napi_delete_async_work(env, context->work);
     delete context;
 }
 
-static napi_value CreateErrorPromise(napi_env env)
+static napi_value RunTestAsync(napi_env env, TestFunction func,
+                               const char* name)
 {
     napi_value promise;
     napi_deferred deferred;
     napi_create_promise(env, &deferred, &promise);
-    napi_value error;
-    napi_create_int32(env, -1, &error);
-    napi_reject_deferred(env, deferred, error);
+    AsyncTestContext* context = new AsyncTestContext{
+        env, deferred, nullptr, func, -1};
+    napi_value resourceName;
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context, &context->work);
+    napi_queue_async_work(env, context->work);
     return promise;
 }
 
-static napi_value FuncTest(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1];
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok) {
-        return CreateErrorPromise(env);
-    }
-
-    napi_valuetype valuetype;
-    napi_typeof(env, args[0], &valuetype);
-    if (valuetype != napi_number) {
-        return CreateErrorPromise(env);
-    }
-
-    int32_t caseNum = -1;
-    status = napi_get_value_int32(env, args[0], &caseNum);
-    if (status != napi_ok) {
-        return CreateErrorPromise(env);
-    }
-
-    if (caseNum < 0 || caseNum >= FUNC_TEST_FUNCTION_COUNT) {
-        return CreateErrorPromise(env);
-    }
-
-    FuncTestContext* context = new FuncTestContext();
-    context->env = env;
-    context->caseNum = caseNum;
-    context->result = 0;
-
-    napi_value promise;
-    napi_create_promise(env, &context->deferred, &promise);
-
-    napi_value resourceName;
-    napi_create_string_utf8(env, "FuncTest", NAPI_AUTO_LENGTH, &resourceName);
-
+struct ThreadedTestContext {
+    napi_env env;
+    napi_deferred deferred;
     napi_async_work work;
-    napi_create_async_work(env, nullptr, resourceName, ExecuteFuncTest, CompleteFuncTest, context, &work);
-    napi_queue_async_work(env, work);
+    napi_callback func;
+    napi_callback_info info;
+    int32_t result;
+    std::thread testThread;
+    std::mutex mutex;
+    std::condition_variable cv;
+    bool done;
+};
 
-    return promise;
+static void ExecuteThreadedTest(napi_env env, void* data)
+{
+    ThreadedTestContext* context = static_cast<ThreadedTestContext*>(data);
+    std::unique_lock<std::mutex> lock(context->mutex);
+    context->cv.wait(lock, [context]() { return context->done; });
+}
+
+static void CompleteThreadedTest(napi_env env, napi_status status, void* data)
+{
+    ThreadedTestContext* context = static_cast<ThreadedTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
+    } else {
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
+    }
+    napi_delete_async_work(env, context->work);
+    if (context->testThread.joinable()) {
+        context->testThread.join();
+    }
+    delete context;
 }
 
 EXTERN_C_START
+
+struct Entry {
+    napi_callback func;
+    const char* name;
+};
+
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+
+    napi_value promise;
+    napi_deferred deferred;
+    napi_create_promise(env, &deferred, &promise);
+    auto* context = new ThreadedTestContext{
+        env, deferred, nullptr, entry->func, info, -1, {}, {}, {}, false};
+
+    context->testThread = std::thread([context]() {
+        int32_t val = -1;
+        try {
+            napi_value ret = context->func(context->env, context->info);
+            napi_get_value_int32(context->env, ret, &val);
+        } catch (...) {
+            // Swallow exceptions to ensure done is set and cv is notified below
+        }
+        std::lock_guard<std::mutex> lock(context->mutex);
+        context->result = val;
+        context->done = true;
+        context->cv.notify_all();
+    });
+
+    napi_value resourceName;
+    napi_create_string_utf8(env, entry->name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteThreadedTest, CompleteThreadedTest, context, &context->work);
+    napi_queue_async_work(env, context->work);
+    return promise;
+}
+
+static napi_property_descriptor XL(const char* functionName,
+                                   napi_callback func)
+{
+    auto* entry = new Entry{func, functionName};
+    return {functionName, nullptr, AsyncWrapper, nullptr, nullptr,
+            nullptr, napi_default, entry};
+}
+
+static void InitPush1(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoVc1DecCapApi0001", VideoVc1DecCapApi0001));
+    desc.push_back(XL("VideoVc1DecCapApi0002", VideoVc1DecCapApi0002));
+    desc.push_back(XL("VideoVc1DecCapApi0003", VideoVc1DecCapApi0003));
+    desc.push_back(XL("VideoVc1DecCapApi0004", VideoVc1DecCapApi0004));
+    desc.push_back(XL("VideoVc1DecCapApi0005", VideoVc1DecCapApi0005));
+    desc.push_back(XL("VideoVc1DecCapApi0006", VideoVc1DecCapApi0006));
+    desc.push_back(XL("VideoVc1DecCapApi0007", VideoVc1DecCapApi0007));
+    desc.push_back(XL("VideoVc1DecCapApi0008", VideoVc1DecCapApi0008));
+    desc.push_back(XL("VideoMsvideo1DecCapApi0009", VideoMsvideo1DecCapApi0009));
+    desc.push_back(XL("VideoMsvideo1DecCapApi0010", VideoMsvideo1DecCapApi0010));
+    desc.push_back(XL("VideoMsvideo1DecCapApi0011", VideoMsvideo1DecCapApi0011));
+    desc.push_back(XL("VideoMsvideo1DecCapApi0012", VideoMsvideo1DecCapApi0012));
+    desc.push_back(XL("VideoVp8DecCapApi0001", VideoVp8DecCapApi0001));
+    desc.push_back(XL("VideoVp9DecCapApi0001", VideoVp9DecCapApi0001));
+    desc.push_back(XL("VideoAv1DecCapApi0001", VideoAv1DecCapApi0001));
+    desc.push_back(XL("VideoRv30DecCapApi0001", VideoRv30DecCapApi0001));
+    desc.push_back(XL("VideoRv40DecCapApi0001", VideoRv40DecCapApi0001));
+    desc.push_back(XL("VideoMjpegDecCapApi0001", VideoMjpegDecCapApi0001));
+    desc.push_back(XL("VideoMsvideo1DecCapApi0001", VideoMsvideo1DecCapApi0001));
+    desc.push_back(XL("VideoRawvideoDecCapApi0001", VideoRawvideoDecCapApi0001));
+    desc.push_back(XL("VideoMpeg1DecCapApi0001", VideoMpeg1DecCapApi0001));
+    desc.push_back(XL("VideoWvc1DecCapApi0001", VideoWvc1DecCapApi0001));
+    desc.push_back(XL("VideoWmv3DecCapApi0001", VideoWmv3DecCapApi0001));
+    desc.push_back(XL("VideoDvvideoDecCapApi0001", VideoDvvideoDecCapApi0001));
+    desc.push_back(XL("VideoVp9DecCapApi0013", VideoVp9DecCapApi0013));
+    desc.push_back(XL("VideoAv1DecCapApi0014", VideoAv1DecCapApi0014));
+    desc.push_back(XL("VideoAv1DecCapApi0015", VideoAv1DecCapApi0015));
+    desc.push_back(XL("VideoWvc1DecCapApi0016", VideoWvc1DecCapApi0016));
+    desc.push_back(XL("VideoAv1DecCapApi0017", VideoAv1DecCapApi0017));
+    desc.push_back(XL("VideoEncCapApi0018", VideoEncCapApi0018));
+    desc.push_back(XL("VideoDecCapApi0019", VideoDecCapApi0019));
+    desc.push_back(XL("VideoEncCapApi0020", VideoEncCapApi0020));
+    desc.push_back(XL("VideoDecCapApi0021", VideoDecCapApi0021));
+    desc.push_back(XL("VideoEncCapApi0022", VideoEncCapApi0022));
+    desc.push_back(XL("VideoDecCapApi0023", VideoDecCapApi0023));
+    desc.push_back(XL("VideoDecCapApi0024", VideoDecCapApi0024));
+    desc.push_back(XL("VideoDecCapApi0025", VideoDecCapApi0025));
+    desc.push_back(XL("VideoDecCapApi0026", VideoDecCapApi0026));
+    desc.push_back(XL("VideoDecCapApi0027", VideoDecCapApi0027));
+}
+
+static void InitPush2(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoVc1DecFunction0001", VideoVc1DecFunction0001));
+    desc.push_back(XL("VideoMjpegDecFunction0003", VideoMjpegDecFunction0003));
+    desc.push_back(XL("VideoMsvideo1DecFunction0005", VideoMsvideo1DecFunction0005));
+    desc.push_back(XL("VideoVc1DecFunction0002", VideoVc1DecFunction0002));
+    desc.push_back(XL("VideoMjpegDecFunction0004", VideoMjpegDecFunction0004));
+    desc.push_back(XL("VideoMsvideo1DecFunction0006", VideoMsvideo1DecFunction0006));
+    desc.push_back(XL("VideoVp8DecFunction0007", VideoVp8DecFunction0007));
+    desc.push_back(XL("VideoVp9DecFunction0008", VideoVp9DecFunction0008));
+    desc.push_back(XL("VideoVp9DecFunction0009", VideoVp9DecFunction0009));
+    desc.push_back(XL("VideoVp9DecFunction0010", VideoVp9DecFunction0010));
+    desc.push_back(XL("VideoVp9DecFunction0011", VideoVp9DecFunction0011));
+    desc.push_back(XL("VideoAv1DecFunction0012", VideoAv1DecFunction0012));
+    desc.push_back(XL("VideoAv1DecFunction0013", VideoAv1DecFunction0013));
+    desc.push_back(XL("VideoAv1DecFunction0015", VideoAv1DecFunction0015));
+    desc.push_back(XL("VideoAv1DecFunction0016", VideoAv1DecFunction0016));
+    desc.push_back(XL("VideoVp9DecFunction0019", VideoVp9DecFunction0019));
+    desc.push_back(XL("VideoVp9DecFunction0020", VideoVp9DecFunction0020));
+    desc.push_back(XL("VideoVp8DecFunction0021", VideoVp8DecFunction0021));
+    desc.push_back(XL("VideoCinepakDecFunction0022", VideoCinepakDecFunction0022));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        {"apitest", nullptr, ApiTest, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"functest", nullptr, FuncTest, nullptr, nullptr, nullptr, napi_default, nullptr}
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    std::vector<napi_property_descriptor> desc;
+    InitPush1(desc);
+    InitPush2(desc);
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
+
 EXTERN_C_END
 
 static napi_module demoModule = {

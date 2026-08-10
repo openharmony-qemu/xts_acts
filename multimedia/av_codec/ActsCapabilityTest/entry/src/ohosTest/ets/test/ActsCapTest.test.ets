@@ -5,374 +5,363 @@ import libentry from "libentry.so"
 
 export default function ActsCapTest() {
   describe('ActsCapTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_001
-     * @tc.number AUDIO_CAPABILITY_TEST_001
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00100
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_001', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility1(0);
+    it('SUB_AUDIO_CAPABILITY_TEST_00100', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00100Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_002
-     * @tc.number AUDIO_CAPABILITY_TEST_002
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00200
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_002', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility1(1);
+    it('SUB_AUDIO_CAPABILITY_TEST_00200', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00200Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_003
-     * @tc.number AUDIO_CAPABILITY_TEST_003
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00300
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_003', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility1(2);
+    it('SUB_AUDIO_CAPABILITY_TEST_00300', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00300Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_004
-     * @tc.number AUDIO_CAPABILITY_TEST_004
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00400
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_004', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility1(3);
+    it('SUB_AUDIO_CAPABILITY_TEST_00400', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00400Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_005
-     * @tc.number AUDIO_CAPABILITY_TEST_005
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00500
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_005', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility2(0);
+    it('SUB_AUDIO_CAPABILITY_TEST_00500', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00500Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_006
-     * @tc.number AUDIO_CAPABILITY_TEST_006
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00600
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_006', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility2(1);
+    it('SUB_AUDIO_CAPABILITY_TEST_00600', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00600Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_007
-     * @tc.number AUDIO_CAPABILITY_TEST_007
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00700
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_007', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility2(2);
+    it('SUB_AUDIO_CAPABILITY_TEST_00700', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00700Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   AUDIO_CAPABILITY_TEST_008
-     * @tc.number AUDIO_CAPABILITY_TEST_008
+     * @tc.name   SUB_AUDIO_CAPABILITY_TEST_00800
+     * @tc.number SUB_AUDIO_CAPABILITY_TEST_00800
      * @tc.desc   check nullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_CAPABILITY_TEST_008', Level.LEVEL2, () => {
-      const result = libentry.AudioCapAbility2(3);
+    it('SUB_AUDIO_CAPABILITY_TEST_00800', Level.LEVEL2, async () => {
+      const result = await libentry.AudioCapAbility00800Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0010
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0010
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00100
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00100
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0010', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode1(0);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00100', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00100Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0011
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0011
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00200
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00200
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0011', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode1(1);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00200', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00200Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0012
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0012
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00300
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00300
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0012', Level.LEVEL1, () => {
-      const result = libentry.VideoTemporalEncode1(2);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00300', Level.LEVEL1, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00300Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0013
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0013
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00400
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00400
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0013', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode1(3);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00400', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00400Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0014
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0014
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00500
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00500
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0014', Level.LEVEL1, () => {
-      const result = libentry.VideoTemporalEncode1(4);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00500', Level.LEVEL1, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00500Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0015
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0015
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00600
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00600
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0015', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode2(0);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00600', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00600Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0016
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0016
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00700
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00700
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0016', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode2(1);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00700', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00700Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0017
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0017
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00800
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00800
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0017', Level.LEVEL1, () => {
-      const result = libentry.VideoTemporalEncode2(2);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00800', Level.LEVEL1, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00800Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0018
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0018
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_00900
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_00900
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0018', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode2(3);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_00900', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi00900Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0019
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0019
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01000
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01000
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0019', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode2(4);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01000', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01000Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0020
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0020
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01100
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01100
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0020', Level.LEVEL1, () => {
-      const result = libentry.VideoTemporalEncode3(0);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01100', Level.LEVEL1, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01100Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0021
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0021
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01200
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01200
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0021', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode3(1);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01200', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01200Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0022
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0022
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01300
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01300
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0022', Level.LEVEL1, () => {
-      const result = libentry.VideoTemporalEncode3(2);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01300', Level.LEVEL1, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01300Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0023
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0023
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01400
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01400
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0023', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode3(3);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01400', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01400Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0024
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0024
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01500
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01500
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0024', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode3(4);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01500', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01500Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0025
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0025
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01600
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01600
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0025', Level.LEVEL1, () => {
-      const result = libentry.VideoTemporalEncode4(0);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01600', Level.LEVEL1, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01600Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0026
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0026
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01700
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01700
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  Level2
+     * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0026', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode4(1);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01700', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01700Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0027
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0027
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01800
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01800
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  Level2
+     * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0027', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode4(2);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01800', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01800Test();
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0028
-     * @tc.number VIDEO_TEMPORAL_ENCODE_API_0028
+     * @tc.name   SUB_VIDEO_TEMPORAL_ENCODE_API_01900
+     * @tc.number SUB_VIDEO_TEMPORAL_ENCODE_API_01900
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  Level2
+     * @tc.level  LEVEL2
      */
-    it('VIDEO_TEMPORAL_ENCODE_API_0028', Level.LEVEL2, () => {
-      const result = libentry.VideoTemporalEncode4(3);
+    it('SUB_VIDEO_TEMPORAL_ENCODE_API_01900', Level.LEVEL2, async () => {
+      const result = await libentry.VideoTemporalEncodeApi01900Test();
       expect(result).assertEqual(0);
     })
   })
