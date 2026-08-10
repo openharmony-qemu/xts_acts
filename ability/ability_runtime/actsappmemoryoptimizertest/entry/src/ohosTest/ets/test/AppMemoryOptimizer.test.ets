@@ -372,5 +372,71 @@ export default function appMemoryOptimizerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400
+     * @tc.desc   Call evictModuleFilePages with null.expect error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const itName: string = 'SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0400'
+      hilog.info(domain,tag,itName  + 'it begin');
+      try {
+        await appMemoryOptimizer.evictModuleFilePages(null);
+        expect().assertFail();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        hilog.info(domain,tag,itName + 'failed code:'+ e?.code+ 'message:'+ e?.message);
+        expect(e?.code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0500
+     * @tc.desc   Call evictModuleFilePages with undefined.expect error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const itName: string = 'SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0500'
+      hilog.info(domain,tag,itName  + 'it begin');
+      try {
+        await appMemoryOptimizer.evictModuleFilePages(undefined);
+        expect().assertFail();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        hilog.info(domain,tag,itName + 'failed code:'+ e?.code+ 'message:'+ e?.message);
+        expect(e?.code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0600
+     * @tc.desc   Call evictModuleFilePages with empty.expect error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const itName: string = 'SUB_Ability_AbilityRuntime_AppMemoryOptimizer_EvictModuleFilePages_0600'
+      hilog.info(domain,tag,itName  + 'it begin');
+      try {
+        await appMemoryOptimizer.evictModuleFilePages([]);
+        expect().assertFail();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        hilog.info(domain,tag,itName + 'failed code:'+ e?.code+ 'message:'+ e?.message);
+        expect(e?.code).assertEqual(401);
+      }
+      done();
+    })
   })
 }
