@@ -17,6 +17,7 @@
 import { Entry, Text,Column, Component, Button, ClickEvent, Web, Row, Stack,ThreatType ,WebRotateEffect,WebResourceResponse,CopyOptions} from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import Utils from '../../src/test/Util.test';
+import { HTTP_AUTH_URL, URL_HTTPBIN, URL_BACKUP_EVILTESTER, URL_BACKUP_POSTMAN } from '../../src/test/Config.test';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData, BusinessError } from '@ohos.base'
@@ -47,8 +48,33 @@ struct Second {
   @State horizontalScrollBarAccess: boolean = true;
   @State enableNativeEmbedMode: boolean = true;
   @State onHttpAuthRequestResult: boolean = false;
+  @State currentHttpAuthUrl: string = HTTP_AUTH_URL;
+  @State pendingHttpAuthFallback: boolean = false;
+
+  private loadHttpAuthUrl(url: string, enableFallback: boolean = false): void {
+    this.currentHttpAuthUrl = url;
+    this.pendingHttpAuthFallback = enableFallback;
+    this.webviewCtl.loadUrl(url);
+  }
+
+  private tryHttpAuthFallback(responseCode: number): void {
+    if (!this.pendingHttpAuthFallback) {
+      return;
+    }
+    if (responseCode === 503 && this.currentHttpAuthUrl === URL_HTTPBIN) {
+      console.info('[onHttpAuthRequset] primary basic auth url failed, try eviltester backup url');
+      this.loadHttpAuthUrl(URL_BACKUP_EVILTESTER, true);
+      return;
+    }
+    if (responseCode === 503 && this.currentHttpAuthUrl === URL_BACKUP_EVILTESTER) {
+      console.info('[onHttpAuthRequset] eviltester backup url failed, try postman backup url');
+      this.loadHttpAuthUrl(URL_BACKUP_POSTMAN, false);
+    }
+  }
 
   aboutToAppear() {
+    this.currentHttpAuthUrl = HTTP_AUTH_URL;
+    this.pendingHttpAuthFallback = true;
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
@@ -76,7 +102,7 @@ struct Second {
 
             case 'emitonHttpAuthRequest': {
               this.webviewCtl.refresh();
-              this.webviewCtl.loadUrl('https://httpbin.org/basic-auth/2222/3333');
+              this.loadHttpAuthUrl(HTTP_AUTH_URL, true);
               Utils.emitEvent(this.onHttpAuthRequestResult, 161009);
               break;
             }
@@ -91,15 +117,21 @@ struct Second {
       }
 
 
-      Web({ src: 'https://httpbin.org/basic-auth/2222/3333', controller: this.webviewCtl })
+      Web({ src: HTTP_AUTH_URL, controller: this.webviewCtl })
         .onHttpAuthRequest(event => {
           if (event) {
+            this.pendingHttpAuthFallback = false;
             this.onHttpAuthRequestResult = true;
             console.log('onHttpAuthRequest host==>' + event.host);
             console.log('onHttpAuthRequest realm==>' + event.realm);
             console.log('onHttpAuthRequest isHttpAuthInfoSaved: ', event.handler.isHttpAuthInfoSaved());
           }
           return true
+        })
+        .onHttpErrorReceive((event) => {
+          if (event) {
+            this.tryHttpAuthFallback(event.response.getResponseCode());
+          }
         })
     }
 

@@ -98,11 +98,11 @@ export default function httpAuthHandlerEnhanced() {
         null, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", 'httpbin.org', 26031015,
+      Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", 'testpages.eviltester.com', 26031015,
         null, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", 'Fake Realm', 26031016,
+      Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", '', 26031016,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
