@@ -511,80 +511,12 @@ export default function Float32ArrayIntegration5Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_2900
      * @tc.name testFloat32ArrayIntegrationFive029
-     * @tc.desc Verify reverse returns the same reference and mutating the return value updates the original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIntegrationFive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1, 2, 3]);
-      const ret = arr.reverse();
-      expect(ret).assertEqual(arr);
-      ret.$_set(0, 99);
-      const element030 = arr.$_get(0);
-      expect(element030).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3000
-     * @tc.name testFloat32ArrayIntegrationFive030
-     * @tc.desc Verify sort returns the same reference and mutating the return value updates the original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIntegrationFive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([3, 1, 2]);
-      const ret = arr.sort();
-      expect(ret).assertEqual(arr);
-      ret.$_set(0, 99);
-      const element031 = arr.$_get(0);
-      expect(element031).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3100
-     * @tc.name testFloat32ArrayIntegrationFive031
-     * @tc.desc Verify fill returns the same reference and mutating the return value updates the original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIntegrationFive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(3);
-      const ret = arr.fill(5);
-      expect(ret).assertEqual(arr);
-      ret.$_set(1, 99);
-      const element032 = arr.$_get(1);
-      expect(element032).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3200
-     * @tc.name testFloat32ArrayIntegrationFive032
-     * @tc.desc Verify copyWithin returns the same reference and mutating the return value updates the original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIntegrationFive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1, 2, 3, 4]);
-      const ret = arr.copyWithin(0, 2, 4);
-      expect(ret).assertEqual(arr);
-      ret.$_set(0, 99);
-      const element033 = arr.$_get(0);
-      expect(element033).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3300
-     * @tc.name testFloat32ArrayIntegrationFive033
      * @tc.desc Verify map returns a new array and mutating the result leaves the original array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       const ret = arr.map((v: number, index: int, array: Float32Array) => {
         return v + 1;
@@ -595,14 +527,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3400
-     * @tc.name testFloat32ArrayIntegrationFive034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3000
+     * @tc.name testFloat32ArrayIntegrationFive030
      * @tc.desc Verify filter returns a new array and mutating the result leaves the original array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       const ret = arr.filter((v: number, index: int, array: Float32Array) => {
         return v > 1;
@@ -613,14 +545,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3500
-     * @tc.name testFloat32ArrayIntegrationFive035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3100
+     * @tc.name testFloat32ArrayIntegrationFive031
      * @tc.desc Verify with returns a new array and leaves the original array position unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       const ret = arr.with(1, 99);
       const element036 = arr.$_get(1);
@@ -630,14 +562,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3600
-     * @tc.name testFloat32ArrayIntegrationFive036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3200
+     * @tc.name testFloat32ArrayIntegrationFive032
      * @tc.desc Verify toReversed returns a new array and leaves the original array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       const ret = arr.toReversed();
       const element037 = arr.$_get(0);
@@ -647,14 +579,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3700
-     * @tc.name testFloat32ArrayIntegrationFive037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3300
+     * @tc.name testFloat32ArrayIntegrationFive033
      * @tc.desc Verify toSorted returns a new array and leaves the original array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3, 1, 2]);
       const ret = arr.toSorted();
       const element038 = arr.$_get(0);
@@ -664,14 +596,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3800
-     * @tc.name testFloat32ArrayIntegrationFive038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3400
+     * @tc.name testFloat32ArrayIntegrationFive034
      * @tc.desc Verify nested reverse(reverse(x)) restores the original order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       arr.reverse().reverse();
       const element039 = arr.$_get(0);
@@ -681,14 +613,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3900
-     * @tc.name testFloat32ArrayIntegrationFive039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3500
+     * @tc.name testFloat32ArrayIntegrationFive035
      * @tc.desc Verify nested sort(sort(x)) keeps ascending order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3, 1, 2]);
       arr.sort().sort();
       const element040 = arr.$_get(0);
@@ -698,14 +630,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4000
-     * @tc.name testFloat32ArrayIntegrationFive040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3600
+     * @tc.name testFloat32ArrayIntegrationFive036
      * @tc.desc Verify nested map(map(x)) adds 1 twice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       const r = arr.map((v: number, index: int, array: Float32Array) => {
         return v + 1;
@@ -717,14 +649,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4100
-     * @tc.name testFloat32ArrayIntegrationFive041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3700
+     * @tc.name testFloat32ArrayIntegrationFive037
      * @tc.desc Verify nested filter followed by map filters and transforms values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3, 4]);
       const r = arr.filter((v: number, index: int, array: Float32Array) => {
         return v > 1;
@@ -737,14 +669,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4200
-     * @tc.name testFloat32ArrayIntegrationFive042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3800
+     * @tc.name testFloat32ArrayIntegrationFive038
      * @tc.desc Verify nested fill followed by copyWithin performs chained in-place updates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3, 4]);
       arr.fill(5).copyWithin(2, 0, 1);
       const element043 = arr.$_get(0);
@@ -754,14 +686,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4300
-     * @tc.name testFloat32ArrayIntegrationFive043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_3900
+     * @tc.name testFloat32ArrayIntegrationFive039
      * @tc.desc Verify nested with calls form an immutable chain and leave the original array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       const r = arr.with(0, 10).with(1, 20);
       const element044 = arr.$_get(0);
@@ -773,14 +705,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4400
-     * @tc.name testFloat32ArrayIntegrationFive044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4000
+     * @tc.name testFloat32ArrayIntegrationFive040
      * @tc.desc Verify nested toReversed followed by toSorted leaves the original array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 3, 2]);
       const r = arr.toReversed().toSorted();
       const element045 = arr.$_get(0);
@@ -792,14 +724,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4500
-     * @tc.name testFloat32ArrayIntegrationFive045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4100
+     * @tc.name testFloat32ArrayIntegrationFive041
      * @tc.desc Verify a forEach callback writes to external accumulator state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sum = 0;
       const arr = new Float32Array([1, 2, 3]);
       arr.forEach((v: number, index: int, array: Float32Array) => {
@@ -809,14 +741,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4600
-     * @tc.name testFloat32ArrayIntegrationFive046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4200
+     * @tc.name testFloat32ArrayIntegrationFive042
      * @tc.desc Verify a map callback reads external multiplier state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let factor = 10;
       const arr = new Float32Array([1, 2, 3]);
       const r = arr.map((v: number, index: int, array: Float32Array) => {
@@ -827,14 +759,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4700
-     * @tc.name testFloat32ArrayIntegrationFive047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4300
+     * @tc.name testFloat32ArrayIntegrationFive043
      * @tc.desc Verify forEach reads later elements modified during iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       let seen = 0;
       arr.forEach((v: number, i: int) => {
@@ -849,14 +781,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4800
-     * @tc.name testFloat32ArrayIntegrationFive048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4400
+     * @tc.name testFloat32ArrayIntegrationFive044
      * @tc.desc Verify forEach propagates callback errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       try {
         arr.forEach((v: number, index: int, array: Float32Array) => {
@@ -870,14 +802,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4900
-     * @tc.name testFloat32ArrayIntegrationFive049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4500
+     * @tc.name testFloat32ArrayIntegrationFive045
      * @tc.desc Verify map propagates callback errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       try {
         arr.map((v: number, index: int, array: Float32Array) => {
@@ -891,14 +823,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5000
-     * @tc.name testFloat32ArrayIntegrationFive050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4600
+     * @tc.name testFloat32ArrayIntegrationFive046
      * @tc.desc Verify filter propagates callback errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       try {
         arr.filter((v: number, index: int, array: Float32Array) => {
@@ -912,14 +844,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5100
-     * @tc.name testFloat32ArrayIntegrationFive051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4700
+     * @tc.name testFloat32ArrayIntegrationFive047
      * @tc.desc Verify find propagates callback errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       try {
         arr.find((v: number, index: int, array: Float32Array) => {
@@ -933,14 +865,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5200
-     * @tc.name testFloat32ArrayIntegrationFive052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4800
+     * @tc.name testFloat32ArrayIntegrationFive048
      * @tc.desc Verify the same index reflects write-read-overwrite-read as the latest value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(1);
       arr.$_set(0, 42);
       const element053 = arr.$_get(0);
@@ -951,14 +883,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5300
-     * @tc.name testFloat32ArrayIntegrationFive053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_4900
+     * @tc.name testFloat32ArrayIntegrationFive049
      * @tc.desc Verify at reads the same index value after $_set writes it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0, 0, 0]);
       arr.$_set(2, 33);
       const atValue054 = arr.at(2);
@@ -966,14 +898,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5400
-     * @tc.name testFloat32ArrayIntegrationFive054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5000
+     * @tc.name testFloat32ArrayIntegrationFive050
      * @tc.desc Verify fill on a partial range followed by slice changes only the requested range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3, 4]);
       arr.fill(0, 1, 3);
       const r = arr.slice(0, 4);
@@ -984,14 +916,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5500
-     * @tc.name testFloat32ArrayIntegrationFive055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5100
+     * @tc.name testFloat32ArrayIntegrationFive051
      * @tc.desc Verify reverse moves the value written with $_set to the mirror position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       arr.$_set(0, 9);
       arr.reverse();
@@ -1000,14 +932,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5600
-     * @tc.name testFloat32ArrayIntegrationFive056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5200
+     * @tc.name testFloat32ArrayIntegrationFive052
      * @tc.desc Verify values iterator iterates over and sums all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10, 20, 30]);
       let sum = 0.0;
       const iterator = arr.values();
@@ -1019,14 +951,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5700
-     * @tc.name testFloat32ArrayIntegrationFive057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5300
+     * @tc.name testFloat32ArrayIntegrationFive053
      * @tc.desc Verify values().next() returns elements in sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10, 20]);
       const it = arr.values();
       const a = it.next();
@@ -1036,14 +968,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5800
-     * @tc.name testFloat32ArrayIntegrationFive058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5400
+     * @tc.name testFloat32ArrayIntegrationFive054
      * @tc.desc Verify entries() yields [index, value] pairs for each element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5, 6, 7]);
       const iter = arr.entries();
       const a = iter.next();
@@ -1060,14 +992,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5900
-     * @tc.name testFloat32ArrayIntegrationFive059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5500
+     * @tc.name testFloat32ArrayIntegrationFive055
      * @tc.desc Verify keys().next() returns the index sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5, 6, 7]);
       const it = arr.keys();
       const a = it.next();
@@ -1077,14 +1009,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_6000
-     * @tc.name testFloat32ArrayIntegrationFive060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5600
+     * @tc.name testFloat32ArrayIntegrationFive056
      * @tc.desc Verify an exhausted iterator returns undefined as the value from next()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5]);
       const it = arr.values();
       it.next();
@@ -1093,14 +1025,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_6100
-     * @tc.name testFloat32ArrayIntegrationFive061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5700
+     * @tc.name testFloat32ArrayIntegrationFive057
      * @tc.desc Verify two independent iterators do not interfere and each starts from the beginning
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10, 20, 30]);
       const it1 = arr.values();
       const it2 = arr.values();
@@ -1115,14 +1047,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_6200
-     * @tc.name testFloat32ArrayIntegrationFive062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5800
+     * @tc.name testFloat32ArrayIntegrationFive058
      * @tc.desc Verify $_iterator() returns an iterator whose next() yields elements in sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2]);
       const it = arr.$_iterator();
       const a = it.next();
@@ -1132,14 +1064,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_6300
-     * @tc.name testFloat32ArrayIntegrationFive063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_5900
+     * @tc.name testFloat32ArrayIntegrationFive059
      * @tc.desc Verify a new iterator reads the latest value after array mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       arr.$_set(0, 99);
       const it = arr.values();
@@ -1148,14 +1080,14 @@ export default function Float32ArrayIntegration5Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_6400
-     * @tc.name testFloat32ArrayIntegrationFive064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_FIVE_6000
+     * @tc.name testFloat32ArrayIntegrationFive060
      * @tc.desc Verify forEach reads a value changed externally before iteration begins
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIntegrationFive064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIntegrationFive060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1, 2, 3]);
       arr.$_set(1, 50);
       let saw = 0;
