@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 
-export const VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010: ()=> Promise<number>;
-export const VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020: ()=> Promise<number>;
-export const VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040: ()=> Promise<number>;
-export const VIDEO_MPEG4SWDEC_BLANK_FRAME_0010: ()=> Promise<number>;
+// Test initialization
+export const initTests: () => number;
+
+// One-to-one test bindings
+export const VideoDecodeSyncSwMpeg4Func00100Test: () => Promise<number>;
+export const VideoDecodeSyncSwMpeg4Func00200Test: () => Promise<number>;
+export const VideoDecodeSyncSwMpeg4Func00400Test: () => Promise<number>;
+export const VideoMpeg4SwdecBlankFrame00100Test: () => Promise<number>;

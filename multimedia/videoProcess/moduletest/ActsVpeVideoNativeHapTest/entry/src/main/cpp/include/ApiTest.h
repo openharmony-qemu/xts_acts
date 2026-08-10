@@ -15,76 +15,71 @@
 
 #ifndef API_TEST_H
 #define API_TEST_H
+#include "napi/native_api.h"
 
-namespace VpeVideo {
-namespace Api {
-
+napi_value VpeVideoApiTest00100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00700(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest00900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01700(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest01900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02700(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest02900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03700(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest03900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04700(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest04900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05300(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05400(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05500(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05600(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05700(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05800(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest05900(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06000(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06100(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06200(napi_env env, napi_callback_info info);
+napi_value VpeVideoApiTest06300(napi_env env, napi_callback_info info);
 void TearDown(void);
-int VPE_VIDEO_API_TEST_0010();
-int VPE_VIDEO_API_TEST_0020();
-int VPE_VIDEO_API_TEST_0030();
-int VPE_VIDEO_API_TEST_0040();
-int VPE_VIDEO_API_TEST_0050();
-int VPE_VIDEO_API_TEST_0060();
-int VPE_VIDEO_API_TEST_0070();
-int VPE_VIDEO_API_TEST_0080();
-int VPE_VIDEO_API_TEST_0090();
-int VPE_VIDEO_API_TEST_0100();
-int VPE_VIDEO_API_TEST_0110();
-int VPE_VIDEO_API_TEST_0120();
-int VPE_VIDEO_API_TEST_0130();
-int VPE_VIDEO_API_TEST_0140();
-int VPE_VIDEO_API_TEST_0150();
-int VPE_VIDEO_API_TEST_0160();
-int VPE_VIDEO_API_TEST_0170();
-int VPE_VIDEO_API_TEST_0180();
-int VPE_VIDEO_API_TEST_0190();
-int VPE_VIDEO_API_TEST_0200();
-int VPE_VIDEO_API_TEST_0201();
-int VPE_VIDEO_API_TEST_0210();
-int VPE_VIDEO_API_TEST_0220();
-int VPE_VIDEO_API_TEST_0230();
-int VPE_VIDEO_API_TEST_0240();
-int VPE_VIDEO_API_TEST_0250();
-int VPE_VIDEO_API_TEST_0260();
-int VPE_VIDEO_API_TEST_0270();
-int VPE_VIDEO_API_TEST_0280();
-int VPE_VIDEO_API_TEST_0290();
-int VPE_VIDEO_API_TEST_0291();
-int VPE_VIDEO_API_TEST_0300();
-int VPE_VIDEO_API_TEST_0310();
-int VPE_VIDEO_API_TEST_0320();
-int VPE_VIDEO_API_TEST_0330();
-int VPE_VIDEO_API_TEST_0340();
-int VPE_VIDEO_API_TEST_0350();
-int VPE_VIDEO_API_TEST_0360();
-int VPE_VIDEO_API_TEST_0370();
-int VPE_VIDEO_API_TEST_0380();
-int VPE_VIDEO_API_TEST_0390();
-int VPE_VIDEO_API_TEST_0400();
-int VPE_VIDEO_API_TEST_0410();
-int VPE_VIDEO_API_TEST_0420();
-int VPE_VIDEO_API_TEST_0430();
-int VPE_VIDEO_API_TEST_0440();
-int VPE_VIDEO_API_TEST_0450();
-int VPE_VIDEO_API_TEST_0460();
-int VPE_VIDEO_API_TEST_0470();
-int VPE_VIDEO_API_TEST_0480();
-int VPE_VIDEO_API_TEST_0490();
-int VPE_VIDEO_API_TEST_0500();
-int VPE_VIDEO_API_TEST_0510();
-int VPE_VIDEO_API_TEST_0520();
-int VPE_VIDEO_API_TEST_0530();
-int VPE_VIDEO_API_TEST_0540();
-int VPE_VIDEO_API_TEST_0550();
-int VPE_VIDEO_API_TEST_0560();
-int VPE_VIDEO_API_TEST_0570();
-int VPE_VIDEO_API_TEST_0580();
-int VPE_VIDEO_API_TEST_0590();
-int VPE_VIDEO_API_TEST_0591();
-int VPE_VIDEO_API_TEST_0600();
-
-} // namespace Api
-} // namespace VpeVideo
 
 #endif // API_TEST_H

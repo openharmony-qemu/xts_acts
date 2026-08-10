@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <napi/native_api.h>
 #include <multimedia/video_processing_engine/image_processing.h>
 #include <native_color_space_manager/native_color_space_manager.h>
 #include <multimedia/image_framework/image/pixelmap_native.h>
@@ -55,15 +56,26 @@ void CreateEmptyPixelmap(OH_PixelmapNative **pixelMap, int32_t width, int32_t he
     (void)OH_PixelmapNative_CreateEmptyPixelmap(options, pixelMap);
 }
 
+static napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
+void InitApiTest() {}
+
+void TestTearDownApi() {}
+
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0010
- * @tc.number VPE_IMAGE_API_TEST_0010
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00100
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00100
  * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0010()
+napi_value VpeImageApiTest00100(napi_env env, napi_callback_info info)
 {
     OH_ImageProcessing *instance = nullptr;
     OH_PixelmapNative *srcImg = nullptr;
@@ -73,21 +85,19 @@ int VpeImageApiTest0010()
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
     OH_PixelmapNative_Destroy(&srcImg);
     OH_PixelmapNative_Destroy(&dstImg);
-    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
-        return ret;
-    }
-    return IMAGE_PROCESSING_SUCCESS;
+    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0020
- * @tc.number VPE_IMAGE_API_TEST_0020
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00200
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00200
  * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0020()
+napi_value VpeImageApiTest00200(napi_env env, napi_callback_info info)
 {
     if (OH_ImageProcessing_IsColorSpaceConversionSupported(&CSC_SRC_INFO, &CSC_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
@@ -95,27 +105,23 @@ int VpeImageApiTest0020()
         OH_PixelmapNative *dstImg = nullptr;
         ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
             IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
         OH_ImageProcessing_Destroy(instance);
-        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0030
- * @tc.number VPE_IMAGE_API_TEST_0030
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00300
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00300
  * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0030()
+napi_value VpeImageApiTest00300(napi_env env, napi_callback_info info)
 {
     if (OH_ImageProcessing_IsColorSpaceConversionSupported(&CSC_SRC_INFO, &CSC_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
@@ -125,29 +131,25 @@ int VpeImageApiTest0030()
         CreateEmptyPixelmap(&dstImg, IMAGE_WIDTH, IMAGE_HEIGHT, PIXEL_FORMAT_BGRA_8888);
         ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
             IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
         OH_ImageProcessing_Destroy(instance);
         OH_PixelmapNative_Destroy(&srcImg);
         OH_PixelmapNative_Destroy(&dstImg);
-        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0040
- * @tc.number VPE_IMAGE_API_TEST_0040
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00400
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00400
  * @tc.desc   OH_ImageProcessing_ConvertColorSpace IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0040()
+napi_value VpeImageApiTest00400(napi_env env, napi_callback_info info)
 {
     if (OH_ImageProcessing_IsColorSpaceConversionSupported(&CSC_SRC_INFO, &CSC_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
@@ -161,49 +163,45 @@ int VpeImageApiTest0040()
         OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
         ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
             IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
         OH_NativeColorSpaceManager_Destroy(srcColorspace);
         OH_NativeColorSpaceManager_Destroy(dstColorspace);
         OH_ImageProcessing_Destroy(instance);
         OH_PixelmapNative_Destroy(&srcImg);
         OH_PixelmapNative_Destroy(&dstImg);
-        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0050
- * @tc.number VPE_IMAGE_API_TEST_0050
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00500
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00500
  * @tc.desc   OH_ImageProcessing_DeinitializeEnvironment IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0050()
+napi_value VpeImageApiTest00500(napi_env env, napi_callback_info info)
 {
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_DeinitializeEnvironment();
-    if (ret != IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) {
-        return ret;
-    }
-    return IMAGE_PROCESSING_SUCCESS;
+    if (ret != IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
+
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0060
- * @tc.number VPE_IMAGE_API_TEST_0060
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00600
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00600
  * @tc.desc   OH_ImageProcessing_Compose IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0060()
+napi_value VpeImageApiTest00600(napi_env env, napi_callback_info info)
 {
-    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO, &COMPOSE_DST_INFO)) {
+    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO,
+        &COMPOSE_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
         OH_PixelmapNative *srcImg = nullptr;
         OH_PixelmapNative *srcGainmap = nullptr;
@@ -218,9 +216,7 @@ int VpeImageApiTest0060()
         OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
         ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
             IMAGE_PROCESSING_TYPE_COMPOSITION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
         OH_NativeColorSpaceManager_Destroy(srcColorspace);
         OH_NativeColorSpaceManager_Destroy(dstColorspace);
@@ -228,24 +224,23 @@ int VpeImageApiTest0060()
         OH_PixelmapNative_Destroy(&srcImg);
         OH_PixelmapNative_Destroy(&srcGainmap);
         OH_PixelmapNative_Destroy(&dstImg);
-        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0070
- * @tc.number VPE_IMAGE_API_TEST_0070
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00700
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00700
  * @tc.desc   OH_ImageProcessing_Decompose IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0070()
+napi_value VpeImageApiTest00700(napi_env env, napi_callback_info info)
 {
-    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO, &COMPOSE_DST_INFO)) {
+    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO,
+        &COMPOSE_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
         OH_PixelmapNative *srcImg = nullptr;
         OH_PixelmapNative *srcGainmap = nullptr;
@@ -258,10 +253,9 @@ int VpeImageApiTest0070()
         CreateEmptyPixelmap(&dstImg, IMAGE_WIDTH, IMAGE_HEIGHT, PIXEL_FORMAT_RGBA_8888);
         OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
         OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_DECOMPOSITION);
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_Decompose(instance, srcImg, srcGainmap, dstImg);
         OH_NativeColorSpaceManager_Destroy(srcColorspace);
         OH_NativeColorSpaceManager_Destroy(dstColorspace);
@@ -269,22 +263,20 @@ int VpeImageApiTest0070()
         OH_PixelmapNative_Destroy(&srcImg);
         OH_PixelmapNative_Destroy(&srcGainmap);
         OH_PixelmapNative_Destroy(&dstImg);
-        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0080
- * @tc.number VPE_IMAGE_API_TEST_0080
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00800
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00800
  * @tc.desc   OH_ImageProcessing_GenerateMetadata IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0080()
+napi_value VpeImageApiTest00800(napi_env env, napi_callback_info info)
 {
     if (OH_ImageProcessing_IsMetadataGenerationSupported(&COMPOSE_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
@@ -294,160 +286,142 @@ int VpeImageApiTest0080()
         OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
         ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
             IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
         OH_NativeColorSpaceManager_Destroy(srcColorspace);
         OH_ImageProcessing_Destroy(instance);
         OH_PixelmapNative_Destroy(&srcImg);
-        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0090
- * @tc.number VPE_IMAGE_API_TEST_0090
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_00900
+ * @tc.number SUB_VPE_IMAGE_API_TEST_00900
  * @tc.desc   OH_ImageProcessing_Compose IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0090()
+napi_value VpeImageApiTest00900(napi_env env, napi_callback_info info)
 {
-    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO, &COMPOSE_DST_INFO)) {
+    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO,
+        &COMPOSE_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
         OH_PixelmapNative *srcImg = nullptr;
         OH_PixelmapNative *srcGainmap = nullptr;
         OH_PixelmapNative *dstImg = nullptr;
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COMPOSITION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COMPOSITION);
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
         OH_ImageProcessing_Destroy(instance);
-        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0100
- * @tc.number VPE_IMAGE_API_TEST_0100
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_01000
+ * @tc.number SUB_VPE_IMAGE_API_TEST_01000
  * @tc.desc   OH_ImageProcessing_Decompose IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0100()
+napi_value VpeImageApiTest01000(napi_env env, napi_callback_info info)
 {
-    if (OH_ImageProcessing_IsDecompositionSupported(&COMPOSE_DST_INFO, &COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO)) {
+    if (OH_ImageProcessing_IsDecompositionSupported(&COMPOSE_DST_INFO, &COMPOSE_SRC_INFO,
+        &COMPOSE_SRC_GAIN_INFO)) {
         OH_ImageProcessing *instance = nullptr;
         OH_PixelmapNative *srcImg = nullptr;
         OH_PixelmapNative *srcGainmap = nullptr;
         OH_PixelmapNative *dstImg = nullptr;
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_DECOMPOSITION);
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_Decompose(instance, srcImg, srcGainmap, dstImg);
         OH_ImageProcessing_Destroy(instance);
-        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0110
- * @tc.number VPE_IMAGE_API_TEST_0110
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_01100
+ * @tc.number SUB_VPE_IMAGE_API_TEST_01100
  * @tc.desc   OH_ImageProcessing_GenerateMetadata IMAGE_PROCESSING_ERROR_INVALID_PARAMETER
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0110()
+napi_value VpeImageApiTest01100(napi_env env, napi_callback_info info)
 {
     if (OH_ImageProcessing_IsMetadataGenerationSupported(&COMPOSE_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
         OH_PixelmapNative *srcImg = nullptr;
         ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
             IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
-        if (ret != IMAGE_PROCESSING_SUCCESS) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_SUCCESS) { return CreateIntInt32Result(env, -1); }
         ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
         OH_ImageProcessing_Destroy(instance);
-        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) {
-            return ret;
-        }
+        if (ret != IMAGE_PROCESSING_ERROR_INVALID_PARAMETER) { return CreateIntInt32Result(env, -1); }
     }
-    return IMAGE_PROCESSING_SUCCESS;
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0120
- * @tc.number VPE_IMAGE_API_TEST_0120
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_01200
+ * @tc.number SUB_VPE_IMAGE_API_TEST_01200
  * @tc.desc   OH_ImageProcessing_Compose IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0120()
+napi_value VpeImageApiTest01200(napi_env env, napi_callback_info info)
 {
     OH_ImageProcessing *instance = nullptr;
     OH_PixelmapNative *srcImg = nullptr;
     OH_PixelmapNative *srcGainmap = nullptr;
     OH_PixelmapNative *dstImg = nullptr;
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
-    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
-        return ret;
-    }
-    return IMAGE_PROCESSING_SUCCESS;
+    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0130
- * @tc.number VPE_IMAGE_API_TEST_0130
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_01300
+ * @tc.number SUB_VPE_IMAGE_API_TEST_01300
  * @tc.desc   OH_ImageProcessing_Decompose IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0130()
+napi_value VpeImageApiTest01300(napi_env env, napi_callback_info info)
 {
     OH_ImageProcessing *instance = nullptr;
     OH_PixelmapNative *srcImg = nullptr;
     OH_PixelmapNative *srcGainmap = nullptr;
     OH_PixelmapNative *dstImg = nullptr;
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_Decompose(instance, srcImg, srcGainmap, dstImg);
-    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
-        return ret;
-    }
-    return IMAGE_PROCESSING_SUCCESS;
+    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
 
 /**
- * @tc.name   VPE_IMAGE_API_TEST_0140
- * @tc.number VPE_IMAGE_API_TEST_0140
+ * @tc.name   SUB_VPE_IMAGE_API_TEST_01400
+ * @tc.number SUB_VPE_IMAGE_API_TEST_01400
  * @tc.desc   OH_ImageProcessing_GenerateMetadata IMAGE_PROCESSING_ERROR_INVALID_INSTANCE
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int VpeImageApiTest0140()
+napi_value VpeImageApiTest01400(napi_env env, napi_callback_info info)
 {
     OH_ImageProcessing *instance = nullptr;
     OH_PixelmapNative *srcImg = nullptr;
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
-    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) {
-        return ret;
-    }
-    return IMAGE_PROCESSING_SUCCESS;
+    if (ret != IMAGE_PROCESSING_ERROR_INVALID_INSTANCE) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }

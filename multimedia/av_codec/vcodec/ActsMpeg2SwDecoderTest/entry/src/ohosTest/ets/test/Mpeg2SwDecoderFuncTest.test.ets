@@ -3,7 +3,8 @@ import libMpeg2SwDecoder from 'libmpeg2swdecoder_test.so';
 
 export default function Mpeg2SwDecoderFuncTest() {
   describe('Mpeg2SwDecoderFuncTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
+      await libMpeg2SwDecoder.initTests();
     })
     beforeEach(() => {
     })
@@ -13,71 +14,71 @@ export default function Mpeg2SwDecoderFuncTest() {
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010
-     * @tc.number VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010
-     * @tc.desc   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010
+     * @tc.name   SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00100
+     * @tc.number SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00100
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010', Level.LEVEL1, async (done: Function) => {
-      const result: number = await libMpeg2SwDecoder.VideoDecodeSyncSwMpeg2FuncTest(0);
+    it('SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00100', Level.LEVEL1, async (done: Function) => {
+      const result: number = await libMpeg2SwDecoder.VideoDecodeSyncSwMpeg2Func00100Test();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020
-     * @tc.number VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020
-     * @tc.desc   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020
+     * @tc.name   SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00200
+     * @tc.number SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00200
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020', Level.LEVEL0, async (done: Function) => {
-      const result: number = await libMpeg2SwDecoder.VideoDecodeSyncSwMpeg2FuncTest(1);
+    it('SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00200', Level.LEVEL0, async (done: Function) => {
+      const result: number = await libMpeg2SwDecoder.VideoDecodeSyncSwMpeg2Func00200Test();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040
-     * @tc.number VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040
-     * @tc.desc   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040
+     * @tc.name   SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00400
+     * @tc.number SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00400
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040', Level.LEVEL1, async (done: Function) => {
-      const result: number = await libMpeg2SwDecoder.VideoDecodeSyncSwMpeg2FuncTest(2);
+    it('SUB_VIDEO_DECODE_SYNC_SWMPEG2_FUNC_00400', Level.LEVEL1, async (done: Function) => {
+      const result: number = await libMpeg2SwDecoder.VideoDecodeSyncSwMpeg2Func00400Test();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_BLANK_FRAME_0010
-     * @tc.number VIDEO_DECODE_BLANK_FRAME_0010
-     * @tc.desc   VIDEO_DECODE_BLANK_FRAME_0010
+     * @tc.name   SUB_VIDEO_DECODE_BLANK_FRAME_00100
+     * @tc.number SUB_VIDEO_DECODE_BLANK_FRAME_00100
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_BLANK_FRAME_0010', Level.LEVEL1, async (done: Function) => {
-      const result: number = await libMpeg2SwDecoder.VideoDecodeBlankFrameTest(0);
+    it('SUB_VIDEO_DECODE_BLANK_FRAME_00100', Level.LEVEL1, async (done: Function) => {
+      const result: number = await libMpeg2SwDecoder.VideoDecodeBlankFrame00100Test();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_BLANK_ADD_0010
-     * @tc.number VIDEO_DECODE_BLANK_ADD_0010
-     * @tc.desc   VIDEO_DECODE_BLANK_ADD_0010
+     * @tc.name   SUB_VIDEO_DECODE_BLANK_ADD_00100
+     * @tc.number SUB_VIDEO_DECODE_BLANK_ADD_00100
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_DECODE_BLANK_ADD_0010', Level.LEVEL2, async (done: Function) => {
-      const result: number = await libMpeg2SwDecoder.VideoDecodeBlankAddTest(0);
+    it('SUB_VIDEO_DECODE_BLANK_ADD_00100', Level.LEVEL2, async (done: Function) => {
+      const result: number = await libMpeg2SwDecoder.VideoDecodeBlankAdd00100Test();
       expect(result).assertEqual(0);
       done();
     })

@@ -16,13 +16,13 @@
 #ifndef MPEG4SWDECODER_FUNCTEST_H
 #define MPEG4SWDECODER_FUNCTEST_H
 
-namespace OHOS {
-namespace Media {
-int VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010();
-int VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020();
-int VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040();
-int VIDEO_MPEG4SWDEC_BLANK_FRAME_0010();
-}
-}
+#include "napi/native_api.h"
 
-#endif //MPEG4SWDECODER_FUNCTEST_H
+napi_value VideoDecodeSyncSwMpeg4Func00100Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSyncSwMpeg4Func00200Test(napi_env env, napi_callback_info info);
+napi_value VideoDecodeSyncSwMpeg4Func00400Test(napi_env env, napi_callback_info info);
+napi_value VideoMpeg4SwdecBlankFrame00100Test(napi_env env, napi_callback_info info);
+
+extern void InitMpeg4Test();
+
+#endif // MPEG4SWDECODER_FUNCTEST_H

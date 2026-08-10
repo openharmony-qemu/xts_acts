@@ -17,6 +17,7 @@ export default function FuncTest() {
       }
       Log.info(`[rawfile_copy_to_sandbox] sandbox path: ${context.filesDir}/`)
       await Utils.sleep(500)
+      await libentry.initTests();
     })
     beforeEach(async () => {
       let context = getContext()
@@ -31,76 +32,63 @@ export default function FuncTest() {
       }
       await Utils.sleep(500)
     })
-
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-    })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
+
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010
-     * @tc.number VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010
+     * @tc.name   SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00100
+     * @tc.number SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010', Level.LEVEL1, async (done: Function) => {
-      const result = await libentry.VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010();
+    it('SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00100', Level.LEVEL1, async (done: Function) => {
+      const result: number = await libentry.VideoDecodeSyncSwMpeg4Func00100Test();
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020
-     * @tc.number VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020
+     * @tc.name   SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00200
+     * @tc.number SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020', Level.LEVEL0, async (done: Function) => {
-      const result = await libentry.VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0020();
+    it('SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00200', Level.LEVEL0, async (done: Function) => {
+      const result: number = await libentry.VideoDecodeSyncSwMpeg4Func00200Test();
       expect(result).assertEqual(0);
       done();
     })
+
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040
-     * @tc.number VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040
+     * @tc.name   SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00400
+     * @tc.number SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040', Level.LEVEL1, async (done: Function) => {
-      const result = await libentry.VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0040();
+    it('SUB_VIDEO_DECODE_SYNC_SWMPEG4_FUNC_00400', Level.LEVEL1, async (done: Function) => {
+      const result: number = await libentry.VideoDecodeSyncSwMpeg4Func00400Test();
       expect(result).assertEqual(0);
       done();
     })
+
     /**
-     * @tc.name   VIDEO_MPEG4SWDEC_BLANK_FRAME_0010
-     * @tc.number VIDEO_MPEG4SWDEC_BLANK_FRAME_0010
+     * @tc.name   SUB_VIDEO_MPEG4SWDEC_BLANK_FRAME_00100
+     * @tc.number SUB_VIDEO_MPEG4SWDEC_BLANK_FRAME_00100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_MPEG4SWDEC_BLANK_FRAME_0010', Level.LEVEL1, async (done: Function) => {
-      const result = await libentry.VIDEO_MPEG4SWDEC_BLANK_FRAME_0010();
+    it('SUB_VIDEO_MPEG4SWDEC_BLANK_FRAME_00100', Level.LEVEL1, async (done: Function) => {
+      const result: number = await libentry.VideoMpeg4SwdecBlankFrame00100Test();
       expect(result).assertEqual(0);
       done();
     })
