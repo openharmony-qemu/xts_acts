@@ -27,7 +27,7 @@ struct GetSyncNullAndUndefined {
         .textAlign(TextAlign.Center)
 
       Text(this.result)
-        .id('resultText')
+        .id('resultTextGetSync1')
         .width('100%')
         .height('5%')
         .backgroundColor('#FFCCCCCC')
