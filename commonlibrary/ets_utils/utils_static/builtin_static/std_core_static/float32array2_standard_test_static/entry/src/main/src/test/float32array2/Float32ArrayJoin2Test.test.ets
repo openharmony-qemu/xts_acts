@@ -524,8 +524,10 @@ export default function Float32ArrayJoin2Test(): void {
     it('testFloat32ArrayJoinTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0);
       const before = arr.length;
+      const beforeByteLength = arr.byteLength;
       arr.join();
       expect(arr.length).assertEqual(before);
+      expect(arr.byteLength).assertEqual(beforeByteLength);
     });
 
     /**
@@ -546,16 +548,14 @@ export default function Float32ArrayJoin2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_JOIN_TWO_3600
      * @tc.name testFloat32ArrayJoinTwo036
-     * @tc.desc join() does not change byteLength of the array
+     * @tc.desc Verify join() on [16777217] returns '16777216' (float32 precision loss at 2^24+1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayJoinTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(1.0, 2.0, 3.0);
-      const before = arr.byteLength;
-      arr.join();
-      expect(arr.byteLength).assertEqual(before);
+      const arr = Float32Array.of(16777217);
+      expect(arr.join()).assertEqual('16777216');
     });
 
     /**
