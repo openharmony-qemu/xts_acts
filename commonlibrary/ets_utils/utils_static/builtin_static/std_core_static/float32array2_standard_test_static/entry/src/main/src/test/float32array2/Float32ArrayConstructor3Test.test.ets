@@ -180,6 +180,7 @@ export default function Float32ArrayConstructor3Test(): void {
       const off: number = 4.0;
       const arr = new Float32Array(new ArrayBuffer(8), off);
       expect(arr.byteOffset).assertEqual(4);
+      expect(arr.byteLength).assertEqual(4);
     });
 
     /**
@@ -402,15 +403,16 @@ export default function Float32ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0260
      * @tc.name testFloat32ArrayConstructorThree026
-     * @tc.desc Verify overload 10 number offset 4.0 view byteLength equals 4
+     * @tc.desc Verify overload 10 number offset NaN converts to 0 on 8 buffer view length 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorThree026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const off: number = 4.0;
+      const off: number = NaN;
       const arr = new Float32Array(new ArrayBuffer(8), off);
-      expect(arr.byteLength).assertEqual(4);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.length).assertEqual(2);
     });
 
     /**
@@ -1030,6 +1032,7 @@ export default function Float32ArrayConstructor3Test(): void {
     it('testFloat32ArrayConstructorThree062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 0, 0);
       expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
     });
 
     /**
@@ -1048,158 +1051,145 @@ export default function Float32ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0640
      * @tc.name testFloat32ArrayConstructorThree064
-     * @tc.desc Verify overload 11 length=2 on 8 buffer view length is 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(new ArrayBuffer(8), 0, 2);
-      expect(arr.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0650
-     * @tc.name testFloat32ArrayConstructorThree065
      * @tc.desc Verify overload 11 length=3 on 16 buffer view length is 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 0, 3);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0660
-     * @tc.name testFloat32ArrayConstructorThree066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0650
+     * @tc.name testFloat32ArrayConstructorThree065
      * @tc.desc Verify overload 11 length=5 on 20 buffer view length is 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(20), 0, 5);
       expect(arr.length).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0670
-     * @tc.name testFloat32ArrayConstructorThree067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0660
+     * @tc.name testFloat32ArrayConstructorThree066
      * @tc.desc Verify overload 11 length=0 on 0 buffer to empty view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(0), 0, 0);
       expect(arr.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0680
-     * @tc.name testFloat32ArrayConstructorThree068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0670
+     * @tc.name testFloat32ArrayConstructorThree067
      * @tc.desc Verify overload 11 length=10 on 40 buffer view length is 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(40), 0, 10);
       expect(arr.length).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0690
-     * @tc.name testFloat32ArrayConstructorThree069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0680
+     * @tc.name testFloat32ArrayConstructorThree068
      * @tc.desc Verify overload 11 length=25 on 100 buffer view length is 25
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(100), 0, 25);
       expect(arr.length).assertEqual(25);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0700
-     * @tc.name testFloat32ArrayConstructorThree070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0690
+     * @tc.name testFloat32ArrayConstructorThree069
      * @tc.desc Verify overload 11 byteOffset=0,length=0 on non zero buffer still is empty view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 0, 0);
       expect(arr.length).assertEqual(0);
       expect(arr.buffer.byteLength).assertEqual(16);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0700
+     * @tc.name testFloat32ArrayConstructorThree070
+     * @tc.desc Verify overload 11 byteOffset=8,length=0 on 8 buffer to empty view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayConstructorThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array(new ArrayBuffer(8), 8, 0);
+      expect(arr.length).assertEqual(0);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0710
      * @tc.name testFloat32ArrayConstructorThree071
-     * @tc.desc Verify overload 11 byteOffset=8,length=0 on 8 buffer to empty view
+     * @tc.desc Verify overload 11 byteOffset=8,length=0 view byteOffset is 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 8, 0);
-      expect(arr.length).assertEqual(0);
+      expect(arr.byteOffset).assertEqual(8);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0720
      * @tc.name testFloat32ArrayConstructorThree072
-     * @tc.desc Verify overload 11 byteOffset=8,length=0 view byteOffset is 8
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(new ArrayBuffer(8), 8, 0);
-      expect(arr.byteOffset).assertEqual(8);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0730
-     * @tc.name testFloat32ArrayConstructorThree073
      * @tc.desc Verify overload 11 byteOffset=4,length=3 16 buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 4, 3);
       const byteLengthValue073 = arr.byteOffset + arr.byteLength;
       expect(byteLengthValue073).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0740
-     * @tc.name testFloat32ArrayConstructorThree074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0730
+     * @tc.name testFloat32ArrayConstructorThree073
      * @tc.desc Verify overload 11 byteOffset=0,length=4 16 buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 0, 4);
       const byteLengthValue074 = arr.byteOffset + arr.byteLength;
       expect(byteLengthValue074).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0750
-     * @tc.name testFloat32ArrayConstructorThree075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0740
+     * @tc.name testFloat32ArrayConstructorThree074
      * @tc.desc Verify overload 11 length equals remaining element count (buf16,offset4,length3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       const lengthValue075 = arr.length * 4;
@@ -1207,81 +1197,81 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0760
-     * @tc.name testFloat32ArrayConstructorThree076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0750
+     * @tc.name testFloat32ArrayConstructorThree075
      * @tc.desc Verify overload 11 byteOffset=0,length=0 on 0 buffer length and byteLength are all 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(0), 0, 0);
       expect(arr.length).assertEqual(0);
       expect(arr.byteLength).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0770
-     * @tc.name testFloat32ArrayConstructorThree077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0760
+     * @tc.name testFloat32ArrayConstructorThree076
      * @tc.desc Verify overload 11 view (ArrayBuffer(24), 8, 2) length equals 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(24), 8, 2);
       expect(arr.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0780
-     * @tc.name testFloat32ArrayConstructorThree078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0770
+     * @tc.name testFloat32ArrayConstructorThree077
      * @tc.desc Verify overload 11 view byteLength equals length 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 0, 3);
       expect(arr.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0790
-     * @tc.name testFloat32ArrayConstructorThree079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0780
+     * @tc.name testFloat32ArrayConstructorThree078
      * @tc.desc Verify overload 11 view byteOffset equals byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 8, 1);
       expect(arr.byteOffset).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0800
-     * @tc.name testFloat32ArrayConstructorThree080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0790
+     * @tc.name testFloat32ArrayConstructorThree079
      * @tc.desc Verify overload 11 view buffer equals source buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 0, 2);
       expect(arr.buffer).assertEqual(buf);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0810
-     * @tc.name testFloat32ArrayConstructorThree081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0800
+     * @tc.name testFloat32ArrayConstructorThree080
      * @tc.desc Verify overload 11 view BYTES_PER_ELEMENT is 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 0, 2);
       expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
       expect(arr.length).assertEqual(2);
@@ -1289,14 +1279,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0820
-     * @tc.name testFloat32ArrayConstructorThree082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0810
+     * @tc.name testFloat32ArrayConstructorThree081
      * @tc.desc Verify overload 11 view name is Float32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 0, 2);
       expect(arr.name).assertEqual('Float32Array');
       expect(arr.length).assertEqual(2);
@@ -1304,82 +1294,85 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0830
-     * @tc.name testFloat32ArrayConstructorThree083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0820
+     * @tc.name testFloat32ArrayConstructorThree082
      * @tc.desc Verify overload 11 view length and byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 0, 2);
       expect(arr.length).assertEqual(2);
       expect(arr.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0840
-     * @tc.name testFloat32ArrayConstructorThree084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0830
+     * @tc.name testFloat32ArrayConstructorThree083
      * @tc.desc Verify overload 11 byteOffset=8,length=2 view byteOffset is 8 byteLength is 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 8, 2);
       expect(arr.byteOffset).assertEqual(8);
       expect(arr.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0850
-     * @tc.name testFloat32ArrayConstructorThree085
-     * @tc.desc Verify overload 11 length=0 view byteLength is 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0840
+     * @tc.name testFloat32ArrayConstructorThree084
+     * @tc.desc Verify overload 11 number length 2.9 truncates to 2 on 16 buffer view byteLength 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(new ArrayBuffer(8), 0, 0);
-      expect(arr.byteLength).assertEqual(0);
+    it('testFloat32ArrayConstructorThree084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const off: number = 0;
+      const len: number = 2.9;
+      const arr = new Float32Array(new ArrayBuffer(16), off, len);
+      expect(arr.length).assertEqual(2);
+      expect(arr.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0860
-     * @tc.name testFloat32ArrayConstructorThree086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0850
+     * @tc.name testFloat32ArrayConstructorThree085
      * @tc.desc Verify overload 11 length=1 view byteLength is 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 0, 1);
       expect(arr.byteLength).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0870
-     * @tc.name testFloat32ArrayConstructorThree087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0860
+     * @tc.name testFloat32ArrayConstructorThree086
      * @tc.desc Verify overload 11 view buffer.byteLength greater than or equal to view byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(32), 0, 2);
       expect(arr.buffer.byteLength).assertEqual(32);
       expect(arr.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0880
-     * @tc.name testFloat32ArrayConstructorThree088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0870
+     * @tc.name testFloat32ArrayConstructorThree087
      * @tc.desc Verify overload 11 view $_set and $_get returns consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(8), 0, 2);
       arr.$_set(1, 2.5);
       const element088 = arr.$_get(1);
@@ -1387,14 +1380,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0890
-     * @tc.name testFloat32ArrayConstructorThree089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0880
+     * @tc.name testFloat32ArrayConstructorThree088
      * @tc.desc Verify overload 11 view writes does not affect buffer.byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 0, 2);
       arr.$_set(0, 1.5);
@@ -1405,14 +1398,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0900
-     * @tc.name testFloat32ArrayConstructorThree090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0890
+     * @tc.name testFloat32ArrayConstructorThree089
      * @tc.desc Verify overload 11 view length writes within range and length subset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(new ArrayBuffer(16), 0, 2);
       expect(arr.length).assertEqual(2);
       arr.$_set(1, 1.0);
@@ -1421,14 +1414,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0910
-     * @tc.name testFloat32ArrayConstructorThree091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0900
+     * @tc.name testFloat32ArrayConstructorThree090
      * @tc.desc Verify overload 11 view buffer capacity and view byteLength difference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(20);
       const view = new Float32Array(buf, 4, 3);
       const byteLengthValue091 = view.buffer.byteLength - view.byteLength;
@@ -1436,14 +1429,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0920
-     * @tc.name testFloat32ArrayConstructorThree092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0910
+     * @tc.name testFloat32ArrayConstructorThree091
      * @tc.desc Verify overload 11 byteOffset=2,length=1 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 2, 1);
@@ -1454,14 +1447,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0930
-     * @tc.name testFloat32ArrayConstructorThree093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0920
+     * @tc.name testFloat32ArrayConstructorThree092
      * @tc.desc Verify overload 11 byteOffset=1,length=1 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 1, 1);
@@ -1472,14 +1465,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0940
-     * @tc.name testFloat32ArrayConstructorThree094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0930
+     * @tc.name testFloat32ArrayConstructorThree093
      * @tc.desc Verify overload 11 byteOffset=3,length=1 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 3, 1);
@@ -1490,14 +1483,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0950
-     * @tc.name testFloat32ArrayConstructorThree095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0940
+     * @tc.name testFloat32ArrayConstructorThree094
      * @tc.desc Verify overload 11 byteOffset=6,length=2 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 6, 2);
@@ -1508,14 +1501,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0960
-     * @tc.name testFloat32ArrayConstructorThree096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0950
+     * @tc.name testFloat32ArrayConstructorThree095
      * @tc.desc Verify overload 11 byteOffset=5,length=1 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 5, 1);
@@ -1526,14 +1519,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0970
-     * @tc.name testFloat32ArrayConstructorThree097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0960
+     * @tc.name testFloat32ArrayConstructorThree096
      * @tc.desc Verify overload 11 byteOffset=10,length=1 unaligned throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 10, 1);
@@ -1544,14 +1537,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0980
-     * @tc.name testFloat32ArrayConstructorThree098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0970
+     * @tc.name testFloat32ArrayConstructorThree097
      * @tc.desc Verify overload 11 byteOffset=-1,length=1 negative offset throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, -1, 1);
@@ -1562,14 +1555,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0990
-     * @tc.name testFloat32ArrayConstructorThree099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0980
+     * @tc.name testFloat32ArrayConstructorThree098
      * @tc.desc Verify overload 11 byteOffset=-4,length=1 negative offset throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, -4, 1);
@@ -1580,14 +1573,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1000
-     * @tc.name testFloat32ArrayConstructorThree100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_0990
+     * @tc.name testFloat32ArrayConstructorThree099
      * @tc.desc Verify overload 11 byteOffset=0,length=-1 negative length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 0, -1);
@@ -1598,14 +1591,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1010
-     * @tc.name testFloat32ArrayConstructorThree101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1000
+     * @tc.name testFloat32ArrayConstructorThree100
      * @tc.desc Verify overload 11 byteOffset=0,length=-5 negative length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 0, -5);
@@ -1616,14 +1609,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1020
-     * @tc.name testFloat32ArrayConstructorThree102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1010
+     * @tc.name testFloat32ArrayConstructorThree101
      * @tc.desc Verify overload 11 byteOffset=4,length=2 on 8 buffer out of bounds throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 4, 2);
@@ -1634,14 +1627,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1030
-     * @tc.name testFloat32ArrayConstructorThree103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1020
+     * @tc.name testFloat32ArrayConstructorThree102
      * @tc.desc Verify overload 11 byteOffset=0,length=5 on 16 buffer out of bounds throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 0, 5);
@@ -1652,14 +1645,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1040
-     * @tc.name testFloat32ArrayConstructorThree104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1030
+     * @tc.name testFloat32ArrayConstructorThree103
      * @tc.desc Verify overload 11 byteOffset=12,length=2 on 16 buffer out of bounds throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 12, 2);
@@ -1670,14 +1663,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1050
-     * @tc.name testFloat32ArrayConstructorThree105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1040
+     * @tc.name testFloat32ArrayConstructorThree104
      * @tc.desc Verify overload 11 byteOffset=16,length=1 on 16 buffer out of bounds throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Float32Array(buf, 16, 1);
@@ -1688,14 +1681,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1060
-     * @tc.name testFloat32ArrayConstructorThree106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1050
+     * @tc.name testFloat32ArrayConstructorThree105
      * @tc.desc Verify overload 11 byteOffset=8,length=1 on 8 buffer out of bounds throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 8, 1);
@@ -1706,14 +1699,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1070
-     * @tc.name testFloat32ArrayConstructorThree107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1060
+     * @tc.name testFloat32ArrayConstructorThree106
      * @tc.desc Verify overload 11 negative length throws RangeError after source buffer capacity remains
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Float32Array(buf, 0, -1);
@@ -1725,14 +1718,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1080
-     * @tc.name testFloat32ArrayConstructorThree108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1070
+     * @tc.name testFloat32ArrayConstructorThree107
      * @tc.desc Verify overload 11 byteOffset+length out of bounds throws RangeError after existing view fields remains
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const existing = new Float32Array(new ArrayBuffer(8), 0, 2);
       try {
         new Float32Array(new ArrayBuffer(8), 0, 4);
@@ -1744,14 +1737,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1090
-     * @tc.name testFloat32ArrayConstructorThree109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1080
+     * @tc.name testFloat32ArrayConstructorThree108
      * @tc.desc Verify overload 11 unaligned byteOffset throws RangeError after another view remains
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const valid = new Float32Array(buf, 0, 2);
       try {
@@ -1764,14 +1757,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1100
-     * @tc.name testFloat32ArrayConstructorThree110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1090
+     * @tc.name testFloat32ArrayConstructorThree109
      * @tc.desc Verify overload 11 view $_set writes is reflected in the underlying buffer (DataView reads)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf, 0, 2);
       view.$_set(0, 1.5);
@@ -1781,14 +1774,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1110
-     * @tc.name testFloat32ArrayConstructorThree111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1100
+     * @tc.name testFloat32ArrayConstructorThree110
      * @tc.desc Verify overload 11 DataView.setFloat32 writes is view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf, 0, 2);
       const dv = new DataView(buf);
@@ -1798,14 +1791,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1120
-     * @tc.name testFloat32ArrayConstructorThree112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1110
+     * @tc.name testFloat32ArrayConstructorThree111
      * @tc.desc Verify overload 11 two same byteOffset and length view buffer affects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const observedValue113 = new Float32Array(buf, 0, 2);
       const observedValue113Part2 = new Float32Array(buf, 0, 2);
@@ -1815,14 +1808,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1130
-     * @tc.name testFloat32ArrayConstructorThree113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1120
+     * @tc.name testFloat32ArrayConstructorThree112
      * @tc.desc Verify overload 11 offset view writes is reflected in whole-buffer view corresponding position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const full = new Float32Array(buf, 0, 4);
       const offset = new Float32Array(buf, 8, 2);
@@ -1832,14 +1825,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1140
-     * @tc.name testFloat32ArrayConstructorThree114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1130
+     * @tc.name testFloat32ArrayConstructorThree113
      * @tc.desc Verify overload 11 two overlapping views write through the shared region
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const observedValue115 = new Float32Array(buf, 0, 3);
       const observedValue115Part2 = new Float32Array(buf, 4, 3);
@@ -1849,14 +1842,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1150
-     * @tc.name testFloat32ArrayConstructorThree115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1140
+     * @tc.name testFloat32ArrayConstructorThree114
      * @tc.desc Verify overload 11 view subarray after modifying child view affects underlying buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf, 0, 2);
       const sub = view.subarray(1);
@@ -1867,14 +1860,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1160
-     * @tc.name testFloat32ArrayConstructorThree116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1150
+     * @tc.name testFloat32ArrayConstructorThree115
      * @tc.desc Verify overload 11 view writes affects source buffer copy construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Float32Array.of(1.0, 2.0);
       const copy = new Float32Array(src);
       const view = new Float32Array(src.buffer, 0, 2);
@@ -1887,14 +1880,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1170
-     * @tc.name testFloat32ArrayConstructorThree117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1160
+     * @tc.name testFloat32ArrayConstructorThree116
      * @tc.desc Verify overload 11 non zero byteOffset view $_get reads for buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(12);
       const setup = new Float32Array(buf, 0, 3);
       setup.$_set(2, 42.0);
@@ -1904,14 +1897,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1180
-     * @tc.name testFloat32ArrayConstructorThree118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1170
+     * @tc.name testFloat32ArrayConstructorThree117
      * @tc.desc Verify overload 11 view writes -0 after DataView reads is -0 (1/x is -Infinity)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf, 0, 1);
       view.$_set(0, -0.0);
@@ -1921,14 +1914,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1190
-     * @tc.name testFloat32ArrayConstructorThree119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1180
+     * @tc.name testFloat32ArrayConstructorThree118
      * @tc.desc Verify overload 11 view writes Infinity after DataView reads is Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf, 0, 1);
       view.$_set(0, Number.POSITIVE_INFINITY);
@@ -1938,14 +1931,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1200
-     * @tc.name testFloat32ArrayConstructorThree120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1190
+     * @tc.name testFloat32ArrayConstructorThree119
      * @tc.desc Verify overload 11 view writes NaN after DataView reads is NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new Float32Array(buf, 0, 1);
       view.$_set(0, Number.NaN);
@@ -1955,14 +1948,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1210
-     * @tc.name testFloat32ArrayConstructorThree121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1200
+     * @tc.name testFloat32ArrayConstructorThree120
      * @tc.desc Verify overload 11 view buffer one is visible
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const observedValue122 = new Float32Array(buf, 0, 1);
       const observedValue122Part2 = new Float32Array(buf, 0, 1);
@@ -1975,14 +1968,14 @@ export default function Float32ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1220
-     * @tc.name testFloat32ArrayConstructorThree122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1210
+     * @tc.name testFloat32ArrayConstructorThree121
      * @tc.desc Verify overload 11 view writes after another different length view byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayConstructorThree122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayConstructorThree121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const observedValue123 = new Float32Array(buf, 0, 2);
       const observedValue123Part2 = new Float32Array(buf, 0, 1);
@@ -1991,207 +1984,3 @@ export default function Float32ArrayConstructor3Test(): void {
       expect(observedValue123.$_get(1)).assertEqual(5.0);
       expect(observedValue123Part2.$_get(0)).assertEqual(0.0);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1230
-     * @tc.name testFloat32ArrayConstructorThree123
-     * @tc.desc Verify overload 11 buffer writes after toString changes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const observedValue124 = new Float32Array(buf, 0, 2);
-      const observedValue124Part2 = new Float32Array(buf, 0, 2);
-      observedValue124.$_set(0, 1.0);
-      observedValue124.$_set(1, 2.0);
-      const observedValue124Part3 = observedValue124Part2.toString();
-      expect(observedValue124Part3).assertEqual('1,2');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1240
-     * @tc.name testFloat32ArrayConstructorThree124
-     * @tc.desc Verify overload 11 offset view $_set after buffer again constructs view reads
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(12);
-      const observedValue125 = new Float32Array(buf, 4, 2);
-      observedValue125.$_set(1, 21.0);
-      const observedValue125Part2 = new Float32Array(buf, 4, 2);
-      const element125 = observedValue125Part2.$_get(1);
-      expect(element125).assertEqual(21.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1250
-     * @tc.name testFloat32ArrayConstructorThree125
-     * @tc.desc Verify overload 11 view on number buffer number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const setup = new Float32Array(buf, 0, 2);
-      setup.$_set(0, 3.0);
-      setup.$_set(1, 4.0);
-      const view = new Float32Array(buf, 0, 2);
-      const element126 = view.$_get(0);
-      expect(element126).assertEqual(3.0);
-      const element126Part2 = view.$_get(1);
-      expect(element126Part2).assertEqual(4.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1260
-     * @tc.name testFloat32ArrayConstructorThree126
-     * @tc.desc Verify overload 11 buffer float32 value view $_get read back consistent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      const dv = new DataView(buf);
-      dv.setFloat32(0, 1.25, true);
-      const view = new Float32Array(buf, 0, 1);
-      const element127 = view.$_get(0);
-      expect(element127).assertEqual(1.25);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1270
-     * @tc.name testFloat32ArrayConstructorThree127
-     * @tc.desc Verify overload 11 view reads buffer in float32 truncates value (16777217 is 16777216)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      const setup = new Float32Array(buf, 0, 1);
-      setup.$_set(0, 16777217);
-      const view = new Float32Array(buf, 0, 1);
-      const element128 = view.$_get(0);
-      expect(element128).assertEqual(16777216);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1280
-     * @tc.name testFloat32ArrayConstructorThree128
-     * @tc.desc Verify overload 11 view reads buffer in exceeds the float32 range value (1e40 is Infinity)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      const setup = new Float32Array(buf, 0, 1);
-      setup.$_set(0, 1.0e40);
-      const view = new Float32Array(buf, 0, 1);
-      const element129 = view.$_get(0);
-      expect(element129).assertEqual(Number.POSITIVE_INFINITY);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1290
-     * @tc.name testFloat32ArrayConstructorThree129
-     * @tc.desc Verify overload 11 view reads buffer in NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      const setup = new Float32Array(buf, 0, 1);
-      setup.$_set(0, Number.NaN);
-      const view = new Float32Array(buf, 0, 1);
-      const element130 = view.$_get(0);
-      expect(element130).assertNaN();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1300
-     * @tc.name testFloat32ArrayConstructorThree130
-     * @tc.desc Verify overload 11 view reads buffer in +0 and -0(1/x)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const setup = new Float32Array(buf, 0, 2);
-      setup.$_set(0, 0.0);
-      setup.$_set(1, -0.0);
-      const view = new Float32Array(buf, 0, 2);
-      const element131 = 1.0 / view.$_get(0);
-      expect(element131).assertEqual(Number.POSITIVE_INFINITY);
-      const element131Part2 = 1.0 / view.$_get(1);
-      expect(element131Part2).assertEqual(-Number.POSITIVE_INFINITY);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1310
-     * @tc.name testFloat32ArrayConstructorThree131
-     * @tc.desc Verify overload 11 view reads buffer in float32 precision 0.1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      const setup = new Float32Array(buf, 0, 1);
-      setup.$_set(0, 0.1);
-      const view = new Float32Array(buf, 0, 1);
-      expect(view.$_get(0)).assertEqual(Math.fround(0.1));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1320
-     * @tc.name testFloat32ArrayConstructorThree132
-     * @tc.desc Verify overload 11 view on offset number buffer reads corresponding position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(12);
-      const setup = new Float32Array(buf, 0, 3);
-      setup.$_set(0, 10.0);
-      setup.$_set(1, 20.0);
-      setup.$_set(2, 30.0);
-      const view = new Float32Array(buf, 4, 2);
-      const element133 = view.$_get(0);
-      expect(element133).assertEqual(20.0);
-      const element133Part2 = view.$_get(1);
-      expect(element133Part2).assertEqual(30.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_THREE_1330
-     * @tc.name testFloat32ArrayConstructorThree133
-     * @tc.desc Verify overload 11 view writes covers buffer in number after is buffer view observes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayConstructorThree133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(8);
-      const setup = new Float32Array(buf, 0, 2);
-      setup.$_set(0, 5.0);
-      setup.$_set(1, 6.0);
-      const view = new Float32Array(buf, 0, 2);
-      view.$_set(0, 99.0);
-      const element134 = setup.$_get(0);
-      expect(element134).assertEqual(99.0);
-      const element134Part2 = setup.$_get(1);
-      expect(element134Part2).assertEqual(6.0);
-    });
-
-  });
-}
