@@ -15,7 +15,8 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libentry.so": "file:./src/main/cpp/types/libentry"
+    "@types/libentry.so": "file:./src/main/cpp/types/libentry",
+    "@types/libcapability.so": "file:./src/main/cpp/types/libcapability",
   },
   "author": "",
   "name": "entry",

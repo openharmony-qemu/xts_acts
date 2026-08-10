@@ -15,7 +15,9 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libentry.so": "file:./src/main/cpp/types/libentry"
+    "@types/libcursor.so": "file:./src/main/cpp/types/libcursor",
+    "@types/libencrypt.so": "file:./src/main/cpp/types/libencrypt",
+    "@types/librdbtest.so": "file:./src/main/cpp/types/librdbtest",
   },
   "author": "",
   "name": "entry",

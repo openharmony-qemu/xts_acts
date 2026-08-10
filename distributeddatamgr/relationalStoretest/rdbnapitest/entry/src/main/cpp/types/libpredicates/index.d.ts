@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,27 +13,6 @@
  * limitations under the License.
  */
 export const RdbFilePath: () => number;
-export const RdbstoreSetUpTestCase: () => number;
-export const RdbstoreTearDownTestCase: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0100: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0300: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0400: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0500: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0600: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0700: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0800: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0900: () => number;
-export const SUB_DDM_RDB_BackupRestoreTest_0110: () => number;
-
-export const SUB_DDM_RDB_LEVEL_0100: () => number;
-export const SUB_DDM_RDB_LEVEL_0200: () => number;
-export const SUB_DDM_RDB_LEVEL_0300: () => number;
-export const SUB_DDM_RDB_LEVEL_0400: () => number;
-export const SUB_DDM_RDB_LEVEL_EL_0100: () => number;
-export const SUB_DDM_RDB_LEVEL_EL_0200: () => number;
-export const SUB_DDM_RDB_LEVEL_EL_0300: () => number;
-export const SUB_DDM_RDB_LEVEL_EL_0400: () => number;
-
 export const PredicatesSetUpTestCase: () => number;
 export const PredicatesTearDownTestCase: () => number;
 export const SUB_DDM_RDB_Predicates_0100: () => number;
@@ -92,7 +71,6 @@ export const SUB_DDM_RDB_Predicates_5300: () => number;
 export const SUB_DDM_RDB_Predicates_5400: () => number;
 export const SUB_DDM_RDB_Predicates_5500: () => number;
 export const SUB_DDM_RDB_Predicates_5600: () => number;
-export const SUB_DDM_RDB_Predicates_5700: () => number;
 export const SUB_DDM_RDB_Predicates_5800: () => number;
 export const SUB_DDM_RDB_Predicates_5900: () => number;
 export const SUB_DDM_RDB_Predicates_6000: () => number;

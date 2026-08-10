@@ -15,7 +15,9 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libentry.so": "file:./src/main/cpp/types/libentry"
+    "@types/libbackup.so": "file:./src/main/cpp/types/libbackup",
+    "@types/liblevel.so": "file:./src/main/cpp/types/liblevel",
+    "@types/libpredicates.so": "file:./src/main/cpp/types/libpredicates",
   },
   "author": "",
   "name": "entry",

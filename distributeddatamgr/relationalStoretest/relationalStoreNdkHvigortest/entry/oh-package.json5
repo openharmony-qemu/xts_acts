@@ -15,7 +15,14 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libentry.so": "file:./src/main/cpp/types/libentry"
+    "@types/libentry.so": "file:./src/main/cpp/types/libentry",
+    "@types/libinterfacetest.so": "file:./src/main/cpp/types/libinterfacetest",
+    "@types/libreturningtest.so": "file:./src/main/cpp/types/libreturningtest",
+    "@types/librdbvector.so": "file:./src/main/cpp/types/librdbvector",
+    "@types/libcryptoParam.so": "file:./src/main/cpp/types/libcryptoParam",
+    "@types/librdbvalue.so": "file:./src/main/cpp/types/librdbvalue",
+    "@types/librekeyextest.so": "file:./src/main/cpp/types/librekeyextest",
+    "@types/libtransaction.so": "file:./src/main/cpp/types/libtransaction",
   },
   "author": "",
   "name": "entry",

@@ -15,7 +15,7 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/librelationstorendk.so": "file:./src/main/cpp/types/libpreferencestest"
+    "@types/libpreferencestest.so": "file:./src/main/cpp/types/libpreferencestest",
   },
   "author": "",
   "name": "entry",
