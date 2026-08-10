@@ -453,6 +453,7 @@ export default function Float32ArraySort2Test(): void {
       const arr = new Float32Array(0);
       const r = arr.sort();
       expect(r.length).assertEqual(0);
+      expect(r.byteLength).assertEqual(0);
     });
 
     /**
@@ -486,15 +487,15 @@ export default function Float32ArraySort2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SORT_TWO_0300
      * @tc.name testFloat32ArraySortTwo030
-     * @tc.desc Verify byteLength is 0 for empty array
+     * @tc.desc Verify sort() places the maximum value at the last index of a 4-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySortTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(0);
-      const r = arr.sort();
-      expect(r.byteLength).assertEqual(0);
+      const arr = Float32Array.of(9.0, 3.0, 7.0, 1.0);
+      const last = arr.sort()[3];
+      expect(last).assertEqual(9.0);
     });
 
     /**
