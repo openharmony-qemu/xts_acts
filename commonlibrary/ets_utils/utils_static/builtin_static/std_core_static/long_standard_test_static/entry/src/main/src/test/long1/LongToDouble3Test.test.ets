@@ -290,312 +290,288 @@ export default function longToDouble3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2000
      * @tc.name testLongToDouble3_020
-     * @tc.desc Verify Long.toDouble converts octal zero value 0o0 to double 0.0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongToDouble3_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Long.toDouble(0o0)).assertEqual(0.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2100
-     * @tc.name testLongToDouble3_021
-     * @tc.desc Verify Long.toDouble converts binary zero value 0b0 to double 0.0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongToDouble3_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Long.toDouble(0b0)).assertEqual(0.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2200
-     * @tc.name testLongToDouble3_022
      * @tc.desc Verify Long.toDouble converts hex byte-max value 0x7f to double 127.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0x7f)).assertEqual(127.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2300
-     * @tc.name testLongToDouble3_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2100
+     * @tc.name testLongToDouble3_021
      * @tc.desc Verify Long.toDouble converts hex byte-full value 0xff to double 255.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0xff)).assertEqual(255.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2400
-     * @tc.name testLongToDouble3_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2200
+     * @tc.name testLongToDouble3_022
      * @tc.desc Verify Long.toDouble converts binary byte-max value 0b01111111 to double 127.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0b01111111)).assertEqual(127.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2500
-     * @tc.name testLongToDouble3_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2300
+     * @tc.name testLongToDouble3_023
      * @tc.desc Verify Long.toDouble converts hex short-max value 0x7fff to double 32767.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0x7fff)).assertEqual(32767.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2600
-     * @tc.name testLongToDouble3_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2400
+     * @tc.name testLongToDouble3_024
      * @tc.desc Verify Long.toDouble converts hex short-min value -0x8000 to double -32768.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(-0x8000)).assertEqual(-32768.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2700
-     * @tc.name testLongToDouble3_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2500
+     * @tc.name testLongToDouble3_025
      * @tc.desc Verify Long.toDouble converts hex unsigned-short-max value 0xffff to double 65535.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0xffff)).assertEqual(65535.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2800
-     * @tc.name testLongToDouble3_028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2600
+     * @tc.name testLongToDouble3_026
      * @tc.desc Verify Long.toDouble converts binary short-max value 0b111111111111111 to double 32767.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0b111111111111111)).assertEqual(32767.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2900
-     * @tc.name testLongToDouble3_029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2700
+     * @tc.name testLongToDouble3_027
      * @tc.desc Verify Long.toDouble converts hex int-max value 0x7fffffff to double 2147483647.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0x7fffffff)).assertEqual(2147483647.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3000
-     * @tc.name testLongToDouble3_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2800
+     * @tc.name testLongToDouble3_028
      * @tc.desc Verify Long.toDouble converts hex int-min value -0x80000000 to double -2147483648.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(-0x80000000)).assertEqual(-2147483648.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3100
-     * @tc.name testLongToDouble3_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_2900
+     * @tc.name testLongToDouble3_029
      * @tc.desc Verify Long.toDouble converts negative one value -1 to double -1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(-1)).assertEqual(-1.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3200
-     * @tc.name testLongToDouble3_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3000
+     * @tc.name testLongToDouble3_030
      * @tc.desc Verify Long.toDouble converts hex one value 0x1 to double 1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0x1)).assertEqual(1.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3300
-     * @tc.name testLongToDouble3_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3100
+     * @tc.name testLongToDouble3_031
      * @tc.desc Verify Long.toDouble converts hex 2^20 value 0x100000 to double 1048576.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0x100000)).assertEqual(1048576.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3400
-     * @tc.name testLongToDouble3_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3200
+     * @tc.name testLongToDouble3_032
      * @tc.desc Verify Long.toDouble converts hex 2^24 value 0x1000000 to double 16777216.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0x1000000)).assertEqual(16777216.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3500
-     * @tc.name testLongToDouble3_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3300
+     * @tc.name testLongToDouble3_033
      * @tc.desc Verify Long.toDouble converts binary one value 0b1 to double 1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0b1)).assertEqual(1.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3600
-     * @tc.name testLongToDouble3_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3400
+     * @tc.name testLongToDouble3_034
      * @tc.desc Verify Long.toDouble converts binary value 0b10 to double 2.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0b10)).assertEqual(2.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3700
-     * @tc.name testLongToDouble3_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3500
+     * @tc.name testLongToDouble3_035
      * @tc.desc Verify Long.toDouble converts binary value 0b100 to double 4.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0b100)).assertEqual(4.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3800
-     * @tc.name testLongToDouble3_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3600
+     * @tc.name testLongToDouble3_036
      * @tc.desc Verify Long.toDouble converts binary value 0b1000 to double 8.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0b1000)).assertEqual(8.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3900
-     * @tc.name testLongToDouble3_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3700
+     * @tc.name testLongToDouble3_037
      * @tc.desc Verify Long.toDouble converts binary value 0b10000 to double 16.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0b10000)).assertEqual(16.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4000
-     * @tc.name testLongToDouble3_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3800
+     * @tc.name testLongToDouble3_038
      * @tc.desc Verify Long.toDouble converts octal value 0o10 to double 8.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0o10)).assertEqual(8.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4100
-     * @tc.name testLongToDouble3_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_3900
+     * @tc.name testLongToDouble3_039
      * @tc.desc Verify Long.toDouble converts octal value 0o100 to double 64.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0o100)).assertEqual(64.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4200
-     * @tc.name testLongToDouble3_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4000
+     * @tc.name testLongToDouble3_040
      * @tc.desc Verify Long.toDouble converts octal value 0o1000 to double 512.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0o1000)).assertEqual(512.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4300
-     * @tc.name testLongToDouble3_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4100
+     * @tc.name testLongToDouble3_041
      * @tc.desc Verify Long.toDouble converts octal value 0o10000 to double 4096.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0o10000)).assertEqual(4096.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4400
-     * @tc.name testLongToDouble3_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4200
+     * @tc.name testLongToDouble3_042
      * @tc.desc Verify Long.toDouble converts octal short-boundary value 0o100000 to double 32768.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Long.toDouble(0o100000)).assertEqual(32768.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4500
-     * @tc.name testLongToDouble3_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4300
+     * @tc.name testLongToDouble3_043
      * @tc.desc Verify Long.toDouble returns consistent results for Long.MIN_VALUE repeated conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: number = Long.toDouble(Long.MIN_VALUE);
       let r2: number = Long.toDouble(Long.MIN_VALUE);
       expect(r1).assertEqual(r2);
@@ -603,14 +579,14 @@ export default function longToDouble3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4600
-     * @tc.name testLongToDouble3_046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4400
+     * @tc.name testLongToDouble3_044
      * @tc.desc Verify Long.toDouble returns equal results for decimal 255 and hex 0xff literals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: number = Long.toDouble(255);
       let r2: number = Long.toDouble(0xff);
       expect(r1).assertEqual(r2);
@@ -618,14 +594,14 @@ export default function longToDouble3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4700
-     * @tc.name testLongToDouble3_047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4500
+     * @tc.name testLongToDouble3_045
      * @tc.desc Verify Long.toDouble returns equal results for decimal 8 and octal 0o10 literals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: number = Long.toDouble(8);
       let r2: number = Long.toDouble(0o10);
       expect(r1).assertEqual(r2);
@@ -633,14 +609,14 @@ export default function longToDouble3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4800
-     * @tc.name testLongToDouble3_048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4600
+     * @tc.name testLongToDouble3_046
      * @tc.desc Verify Long.toDouble returns equal results for decimal 16 and binary 0b10000 literals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: number = Long.toDouble(16);
       let r2: number = Long.toDouble(0b10000);
       expect(r1).assertEqual(r2);
@@ -648,14 +624,14 @@ export default function longToDouble3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4900
-     * @tc.name testLongToDouble3_049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4700
+     * @tc.name testLongToDouble3_047
      * @tc.desc Verify Long.toDouble returns equal results for decimal int-max and hex 0x7fffffff literals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: number = Long.toDouble(2147483647);
       let r2: number = Long.toDouble(0x7fffffff);
       expect(r1).assertEqual(r2);
@@ -663,40 +639,40 @@ export default function longToDouble3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_5000
-     * @tc.name testLongToDouble3_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4800
+     * @tc.name testLongToDouble3_048
      * @tc.desc Verify Long.toDouble converts decimal value 42 to double 42.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(42);
       expect(result).assertEqual(42.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_5100
-     * @tc.name testLongToDouble3_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_4900
+     * @tc.name testLongToDouble3_049
      * @tc.desc Verify Long.toDouble handles double-precision rounding at 2^55 plus 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(36028797018963970);
       expect(result).assertEqual(36028797018963968.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_5200
-     * @tc.name testLongToDouble3_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE3_5000
+     * @tc.name testLongToDouble3_050
      * @tc.desc Verify Long.toDouble handles double-precision rounding at 2^55 plus 6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToDouble3_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToDouble3_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(36028797018963974);
       expect(result).assertEqual(36028797018963976.0);
     });
