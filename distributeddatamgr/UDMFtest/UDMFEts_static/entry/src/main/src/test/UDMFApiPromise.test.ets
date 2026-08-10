@@ -798,7 +798,7 @@ export default function UDMFApiPromiseTest() {
 				console.error(tag, `Failed, code is ${error.code},message is ${error.message} `);
 				expect(error.code).assertEqual(201)
 			}
-		})	
+		})
 
 		/**
 		* @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0400
