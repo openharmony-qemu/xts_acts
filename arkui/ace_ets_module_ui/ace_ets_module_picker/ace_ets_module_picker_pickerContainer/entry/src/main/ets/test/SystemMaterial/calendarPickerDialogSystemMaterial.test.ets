@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
 import { uiMaterial } from '@kit.ArkUI';
 
+let isSupported: boolean = uiMaterial.isImmersiveMaterialSupported(); // 是否支持沉浸式材质由设备决定，应用运行后不会改变
+
 export default function CalendarPickerDialogSystemMaterialTest() {
   describe('CalendarPickerDialogSystemMaterialTest', () => {
     beforeEach(async (done: Function) => {
@@ -64,6 +66,11 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
+      if(isSupported){
+        let retValue: ESObject = JSON.parse(column).$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
+      }
+
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -102,6 +109,11 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
+      if(isSupported){
+        let retValue: ESObject = JSON.parse(column).$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
+      }
+
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -139,6 +151,11 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] dialog attrs: ' + JSON.stringify(dialog.$attrs));
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: ESObject = JSON.parse(column).$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue))
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);

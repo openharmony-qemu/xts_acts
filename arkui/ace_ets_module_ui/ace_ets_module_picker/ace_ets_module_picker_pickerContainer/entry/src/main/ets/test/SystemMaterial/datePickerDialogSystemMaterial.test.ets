@@ -4,6 +4,8 @@ import { Driver, ON, Component } from '@kit.TestKit';
 import CommonFunc from '../../MainAbility/common/Common';
 import { uiMaterial } from '@kit.ArkUI';
 
+let isSupported: boolean = uiMaterial.isImmersiveMaterialSupported(); // 是否支持沉浸式材质由设备决定，应用运行后不会改变
+
 export default function DatePickerDialogSystemMaterialTest() {
   describe('DatePickerDialogSystemMaterialTest', () => {
 
@@ -50,6 +52,11 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_001 systemMaterial: ' + JSON.stringify(systemMaterial));
 
+      if(isSupported){
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('DatePickerDialogSystemMaterialTest_001 retValue: ' + JSON.stringify(retValue));
+      }
+
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -81,6 +88,11 @@ export default function DatePickerDialogSystemMaterialTest() {
 
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_002 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('DatePickerDialogSystemMaterialTest_002 retValue: ' + JSON.stringify(retValue));
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -114,6 +126,11 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_003 systemMaterial: ' + JSON.stringify(systemMaterial));
 
+      if(isSupported){
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('DatePickerDialogSystemMaterialTest_003 retValue: ' + JSON.stringify(retValue));
+      }
+
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -145,6 +162,11 @@ export default function DatePickerDialogSystemMaterialTest() {
 
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_004 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('DatePickerDialogSystemMaterialTest_004 retValue: ' + JSON.stringify(retValue));
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
