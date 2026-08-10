@@ -1229,8 +1229,8 @@ export default function bufferTest2(): void {
       const TAG = 'testBufferFrom30001';
       try {
         let buf = buffer.from(new String('this is a test'), 11, 0);
-        expect(String(buf.length)).assertEqual('0');
-        expect(buf.toString()).assertEqual('');
+        expect(String(buf.length)).assertEqual('14');
+        expect(buf.toString()).assertEqual('this is a test');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
