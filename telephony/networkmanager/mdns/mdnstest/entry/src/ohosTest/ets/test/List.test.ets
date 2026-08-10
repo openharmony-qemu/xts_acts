@@ -24,8 +24,8 @@ export default function testsuite() {
     if(netHandle.netId != 0){
       let NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
       if(NetCapabilities.bearerTypes[0] == 1){
-        NetworkManagerMdnsTest();
         mdnsTest();
+        NetworkManagerMdnsTest();
       }else{
         EmptyTest();
       }
