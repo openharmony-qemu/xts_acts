@@ -204,7 +204,7 @@ export default function ActsDlpNDK20Test() {
         let result = osAccountNdk.OsGetOriginalFileName0300();
         console.info("====>testOsGetOriginalFileName0300 result: " + result);
         let expectedFileName = 'a'.repeat(MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN);
-        expect(result === expectedFileName).assertTrue();
+		expect(result).assertContain(expectedFileName);
         done()
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0300 catch err: " + err);

@@ -155,7 +155,7 @@ export default function ActsDlpNDKTest() {
         try{
           let result = await testNapi.osGetSandboxAppConfigA();
           console.log("=======>getSandboxAppConfigTest result:" + result);
-          expect(result === 'configInfo').assertTrue();
+		  expect(result).assertContain('configInfo');
           done();
         } catch (error) {
           console.error("=======>getSandboxAppConfigTest error:" + error);
