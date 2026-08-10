@@ -691,8 +691,9 @@ export default function RangingTest() {
      * @co.authored.by.agent
      */
     it('testStopPassiveRangingErrcode34900052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let handle: number = -1;
       try {
-        let handle: number = await ranging.startPassiveRanging(ranging.RangingTypes.NEARLINK_HADM);
+        handle = await ranging.startPassiveRanging(ranging.RangingTypes.NEARLINK_HADM);
         console.info("[fusion_js] testStartPassiveRanging handle is: " + handle);
         console.info("[fusion_js] testStopPassiveRangingErrcode34900052 handle value is: " + handle);
         ranging.stopPassiveRanging(handle, -1);
@@ -709,6 +710,9 @@ export default function RangingTest() {
           expect(isSupport).assertFalse();
         } else {
           expect(error.code).assertEqual(34900052);
+          ranging.stopPassiveRanging(handle, 1);
+          console.info("[fusion_js] testStopPassiveRangingErrcode34900052 should success");
+          await sleep(500);
         }
         done();
       }
@@ -869,6 +873,330 @@ export default function RangingTest() {
         expect().assertFail();
       }
       done();
-    })
+    });
+
+    /**
+     * @tc.name testStartRangingParamNull001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTRANGING_0700
+     * @tc.desc startRanging第一个参数params传null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStartRangingParamNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let params = null;
+      try {
+        ranging.startRanging(params, (result: ranging.RangingResult) => {
+          console.info("[fusion_js] testStartRangingParamNull001 result is: " + JSON.stringify(result));
+          expect().assertFail();
+        });
+        console.info("[fusion_js] testStartRangingParamNull001 callback should not be called.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStartRangingParamNull001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStartRangingParamUndefined001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTRANGING_0800
+     * @tc.desc startRanging第一个参数params传undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStartRangingParamUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let params = undefined;
+      try {
+        ranging.startRanging(params, (result: ranging.RangingResult) => {
+          console.info("[fusion_js] testStartRangingParamUndefined001 result is: " + JSON.stringify(result));
+          expect().assertFail();
+        });
+        console.info("[fusion_js] testStartRangingParamUndefined001 callback should not be called.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStartRangingParamUndefined001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStopRangingParamNull001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPRANGING_0400
+     * @tc.desc stopRanging第二个参数params传null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStopRangingParamNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let params = null;
+      try {
+        ranging.stopRanging((result: ranging.RangingResult) => {
+          console.info("[fusion_js] testStopRangingParamNull001 result is: " + JSON.stringify(result));
+          expect().assertFail();
+        }, params);
+        console.info("[fusion_js] testStopRangingParamNull001 callback should not be called.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStopRangingParamNull001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStopRangingParamUndefined001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPRANGING_0500
+     * @tc.desc stopRanging第二个参数params传undefined，可选参数不传等价于停止所有测距
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStopRangingParamUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let params = undefined;
+      try {
+        let stopCallback = (result: ranging.RangingResult) => {
+          console.info("[fusion_js] testStopRangingParamUndefined001 result is: " + JSON.stringify(result));
+        }
+        ranging.stopRanging(stopCallback, params);
+        console.info("[fusion_js] testStopRangingParamUndefined001 stop success.");
+      } catch (err) {
+        console.info("[fusion_js] testStopRangingParamUndefined001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name testStartPassiveRangingParamNull001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTPASSIVERANGING_0400
+     * @tc.desc startPassiveRanging第一个参数capabilityType传null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStartPassiveRangingParamNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let capabilityType = null;
+      try {
+        await ranging.startPassiveRanging(capabilityType);
+        console.info("[fusion_js] testStartPassiveRangingParamNull001 should fail.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStartPassiveRangingParamNull001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStartPassiveRangingParamUndefined001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTPASSIVERANGING_0500
+     * @tc.desc startPassiveRanging第一个参数capabilityType传undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStartPassiveRangingParamUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let capabilityType = undefined;
+      try {
+        await ranging.startPassiveRanging(capabilityType);
+        console.info("[fusion_js] testStartPassiveRangingParamUndefined001 should fail.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStartPassiveRangingParamUndefined001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStopPassiveRangingHandleNull001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPPASSIVERANGING_0500
+     * @tc.desc stopPassiveRanging第一个参数handle传null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStopPassiveRangingHandleNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let handle = null;
+      try {
+        console.info("[fusion_js] testStopPassiveRangingHandleNull001 handle value is: " + handle);
+        ranging.stopPassiveRanging(handle, ranging.RangingTypes.NEARLINK_HADM);
+        console.info("[fusion_js] testStopPassiveRangingHandleNull001 should fail.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStopPassiveRangingHandleNull001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStopPassiveRangingHandleUndefined001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPPASSIVERANGING_0600
+     * @tc.desc stopPassiveRanging第一个参数handle传undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStopPassiveRangingHandleUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let handle = undefined;
+      try {
+        console.info("[fusion_js] testStopPassiveRangingHandleUndefined001 handle value is: " + handle);
+        ranging.stopPassiveRanging(handle, ranging.RangingTypes.NEARLINK_HADM);
+        console.info("[fusion_js] testStopPassiveRangingHandleUndefined001 should fail.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStopPassiveRangingHandleUndefined001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStopPassiveRangingCapabilityNull001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPPASSIVERANGING_0700
+     * @tc.desc stopPassiveRanging第二个参数capabilityType传null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStopPassiveRangingCapabilityNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let handle: number = -1;
+      try {
+        handle= await ranging.startPassiveRanging(ranging.RangingTypes.NEARLINK_HADM);
+        console.info("[fusion_js] testStopPassiveRangingCapabilityNull001 handle is: " + handle);
+        let capabilityType = null;
+        ranging.stopPassiveRanging(handle, capabilityType);
+        console.info("[fusion_js] testStopPassiveRangingCapabilityNull001 should fail.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStopPassiveRangingCapabilityNull001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+          ranging.stopPassiveRanging(handle, 1);
+          console.info("[fusion_js] testStopPassiveRangingCapabilityNull001 should success.");
+          await sleep(500);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name testStopPassiveRangingCapabilityUndefined001
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPPASSIVERANGING_0800
+     * @tc.desc stopPassiveRanging第二个参数capabilityType传undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('testStopPassiveRangingCapabilityUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let handle: number = -1;
+      try {
+        handle = await ranging.startPassiveRanging(ranging.RangingTypes.NEARLINK_HADM);
+        console.info("[fusion_js] testStopPassiveRangingCapabilityUndefined001 handle is: " + handle);
+        let capabilityType = undefined;
+        ranging.stopPassiveRanging(handle, capabilityType);
+        console.info("[fusion_js] testStopPassiveRangingCapabilityUndefined001 should fail.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testStopPassiveRangingCapabilityUndefined001 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(401);
+          ranging.stopPassiveRanging(handle, 1);
+          console.info("[fusion_js] testStopPassiveRangingCapabilityUndefined001 should success.");
+          await sleep(500);
+        }
+        done();
+      }
+    });
   });
 }
