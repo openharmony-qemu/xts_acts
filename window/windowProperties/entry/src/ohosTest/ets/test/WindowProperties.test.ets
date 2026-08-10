@@ -3579,31 +3579,44 @@ export default function windowPropertiesTest() {
      * @tc.level  LEVEL3
      */
     it('testSetSubWindowMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'TestSetSubWindowMask';
-      let subWindow: window.Window | undefined;
+      let caseName = 'testSetSubWindowMask';
+      let subWindow = await windowStage.createSubWindow('testSetSubWindowMask');
+      await subWindow.setUIContent('testability/pages/Index1');
+      await subWindow.showWindow();
+      await sleep(1000);
+      let maskWidth = subWindow.getWindowProperties().windowRect.width;
+      let maskHeight = subWindow.getWindowProperties().windowRect.height;
+      let windowMask = Array<Array<number>>(maskHeight).fill([]).map((_, row) => {
+        let array = Array<number>(maskWidth);
+        for (let i = 0; i < maskWidth; i++) {
+          array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+        }
+        return array;
+      });
       try {
-        subWindow = await windowStage.createSubWindow('subWindowMask');
-        console.info(`${caseName} Succeeded in creating the subwindow. Data: ` + JSON.stringify(subWindow));
-        await subWindow?.showWindow();
-        let windowMask: Array<Array<number>> = [
-          [0, 0, 0, 1, 0, 0, 0],
-          [0, 0, 1, 1, 1, 0, 0],
-          [0, 1, 1, 0, 1, 1, 0],
-          [1, 1, 0, 0, 0, 1, 1]
-        ];
-        await subWindow?.setWindowMask(windowMask);
-        console.info(`${caseName} Succeeded in setting the window mask.`);
-        await subWindow?.destroyWindow();
-        done();
-      } catch (exception) {
-        await subWindow?.destroyWindow();
-        console.error(`Failed to set sub window mask. Cause code: ${exception.code}, message: ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${caseName} The current device not support to set sub window mask`)
-          expect(exception.message != null).assertTrue();
+        let promise = subWindow.setWindowMask(windowMask);
+        promise.then(async () => {
+          console.info(caseName + ' Succeeded in setting the window mask.');
+          await subWindow.destroyWindow();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if (err.code === 801) {
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        if (err.code === 801) {
           done();
         } else {
-          expect().assertFail();
+          expect(false).assertTrue();
           done();
         }
       }
