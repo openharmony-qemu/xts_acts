@@ -17,6 +17,7 @@ group("startup_standard") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "permission:startup_deviceinfo_promise_test",
       "deviceinfo:startup_deviceinfo_js_test",
       "deviceinfo_lite:startup_deviceinfolite_js_test",
       "init_ndkTest:ActsInitNdkTest",

@@ -22,7 +22,7 @@ export default function DeviceInfoTest() {
         const MAX_CHARACTERS_NUM_ONE = 33;
         const MAX_CHARACTERS_NUM_TWO = 65;
         const MAX_CHARACTERS_NUM = 0;
-        const CHARACTERS_NUM_ODID = 36;
+        const CHARACTERS_NUM_ODID = 37;
         const CLASS_LEVEL_HIGH = 0;
         const CLASS_LEVEL_MEDIUM = 1;
         const CLASS_LEVEL_LOW = 2;
@@ -1936,7 +1936,7 @@ export default function DeviceInfoTest() {
 
             let len = odid.length
             console.info('the length of odid is:' + len);
-            expect(len).assertEqual(CHARACTERS_NUM_ODID);
+            expect(len).assertEqual(CHARACTERS_NUM_ODID - 1);
             console.info('device_info_test_070 : end');
         })
 
@@ -2203,6 +2203,125 @@ export default function DeviceInfoTest() {
             expect(deviceColor != undefined).assertTrue();
             done();          
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 end');
+        })
+
+        /**
+         * @tc.name   testGetSerial001
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_083
+         * @tc.desc   Get the device serial number represented by a string and the return value is not null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetSerial001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetSerial001 start');
+            let serialInfo = deviceinfo.serial;
+            
+            if (serialInfo != "" && serialInfo != null && serialInfo != undefined) {
+                console.info('testGetSerial001 the value of the deviceinfo serial is :' + serialInfo);
+                expect(serialInfo).assertInstanceOf('String');
+                let str = /[\w-\.\(\)]/g;
+                let arr = serialInfo.match(str);
+                let bufferstr = arr.join('');
+                console.info('testGetSerial001 the value of the bufferstr is :' + bufferstr);
+                expect(serialInfo).assertEqual(bufferstr);
+                done();
+            } else {
+                console.info('testGetSerial001 the return value is null or incorrect.');
+                expect().assertFail();
+                done();
+            }
+
+            console.info('testGetSerial001 ：end');
+        })
+
+        /**
+         * @tc.name   testGetSerial002
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_084
+         * @tc.desc   Get a string representing the device serial number which has at least one characters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetSerial002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('testGetSerial002 start');
+            let serialInfo = deviceinfo.serial;
+            console.info('testGetSerial002 the value of the deviceinfo serial is :' + serialInfo);
+
+            let len = serialInfo.length;
+            console.info('testGetSerial002 the value of the device serial number characters is :' + len);
+            expect(len).assertLarger(MAX_CHARACTERS_NUM);
+
+            let str = /[\w-\.\(\)]/g;
+            let arr = serialInfo.match(str);
+            let bufferstr = arr.join('');
+            console.info('testGetSerial002 the value of the bufferstr is :' + bufferstr);
+            expect(serialInfo).assertEqual(bufferstr);
+
+            console.info('testGetSerial002 ：end');
+        })
+
+        /**
+         * @tc.name   testGetUdid001
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_085
+         * @tc.desc   Get udid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetUdid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('testGetUdid001 start');
+            let udid = deviceinfo.udid;
+            console.info('testGetUdid001 the value of the deviceinfo udid is :' + udid);
+
+            let len = udid.length
+            console.info('testGetUdid001 the value of the different build host of the same baseline code characters is :' + len);
+            expect(len).assertLarger(MAX_CHARACTERS_NUM);
+            console.info('testGetUdid001 : end');
+        })
+
+        /**
+         * @tc.name   testGetUdid002
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_086
+         * @tc.desc   Get uuid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetUdid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetUdid002 start');
+            let udid = deviceinfo.udid;
+            
+            if (udid != "" && udid != null && udid != undefined) {
+                console.info('testGetUdid002 the value of the deviceinfo udid is :' + udid);
+                expect(udid).assertInstanceOf('String');
+                done();
+            } else {
+                console.info('testGetUdid002 the return value GetManufacture01 is null or incorrect.');
+                expect().assertFail();
+                done();
+            }
+
+            console.info('testGetUdid002 : end');
+        })
+
+        /**
+         * @tc.name   testGetUdid003
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_087
+         * @tc.desc   Get udid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetUdid003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('testGetUdid003 start');
+            let udid = deviceinfo.udid;
+            console.info('testGetUdid003 the value of the deviceinfo udid is :' + udid);
+
+            let len = udid.length
+            console.info('testGetUdid003 the value of the different build host of the same baseline code characters is :' + len);
+            expect(len).assertEqual(MAX_CHARACTERS_NUM_TWO - 1)
+            console.info('testGetUdid003 : end');
         })
     })
 }
