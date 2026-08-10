@@ -29,10 +29,10 @@ struct DialogEnumsAssert {
   }
 
   build() {
-    Scroll() {
-      Column({ space: 6 }) {
-        Text('dialog enums part1').fontSize(16).fontWeight(FontWeight.Bold)
-        Text(this.resultText).id('enums_result').fontSize(14)
+    Column({ space: 6 }) {
+      Text('dialog enums part1').fontSize(16).fontWeight(FontWeight.Bold)
+      Text(this.resultText).id('enums_result').fontSize(14)
+      Row(){
         Button('DialogState values').id('btn_enum_state').onClick(() => {
           let ok = DialogState.UNINITIALIZED === 0 && DialogState.INITIALIZED === 1 &&
             DialogState.APPEARING === 2 && DialogState.APPEARED === 3 &&
@@ -47,6 +47,9 @@ struct DialogEnumsAssert {
             DialogBaseAlignment.BOTTOM_START === 8 && DialogBaseAlignment.BOTTOM_END === 9;
           this.setResult(ok, 'DialogBaseAlignment');
         })
+      }
+
+      Row(){
         Button('DialogButtonOrientation values').id('btn_enum_btn_orient').onClick(() => {
           let ok = DialogButtonOrientation.AUTO === 0 &&
             DialogButtonOrientation.HORIZONTAL === 1 &&
@@ -58,44 +61,55 @@ struct DialogEnumsAssert {
             DialogButtonOrientation.HORIZONTAL === 1;
           this.setResult(ok, 'AllEnums');
         })
+      }
+      Row(){
         Button('state UNINITIALIZED').id('btn_enum_state_0').onClick(() => {
           this.setResult(DialogState.UNINITIALIZED === 0, 'UNINITIALIZED');
         })
         Button('state INITIALIZED').id('btn_enum_state_1').onClick(() => {
           this.setResult(DialogState.INITIALIZED === 1, 'INITIALIZED');
         })
+      }
+
+      Row(){
         Button('state APPEARING').id('btn_enum_state_2').onClick(() => {
           this.setResult(DialogState.APPEARING === 2, 'APPEARING');
         })
         Button('state APPEARED').id('btn_enum_state_3').onClick(() => {
           this.setResult(DialogState.APPEARED === 3, 'APPEARED');
         })
+      }
+      Row(){
         Button('state DISAPPEARING').id('btn_enum_state_4').onClick(() => {
           this.setResult(DialogState.DISAPPEARING === 4, 'DISAPPEARING');
         })
         Button('state DISAPPEARED').id('btn_enum_state_5').onClick(() => {
           this.setResult(DialogState.DISAPPEARED === 5, 'DISAPPEARED');
         })
+      }
+      Row(){
         Button('align TOP').id('btn_enum_align_0').onClick(() => {
           this.setResult(DialogBaseAlignment.TOP === 0, 'TOP');
         })
         Button('align CENTER').id('btn_enum_align_1').onClick(() => {
           this.setResult(DialogBaseAlignment.CENTER === 1, 'CENTER');
         })
+      }
+      Row(){
         Button('align BOTTOM').id('btn_enum_align_2').onClick(() => {
           this.setResult(DialogBaseAlignment.BOTTOM === 2, 'BOTTOM');
         })
         Button('align DEFAULT').id('btn_enum_align_3').onClick(() => {
           this.setResult(DialogBaseAlignment.DEFAULT === 3, 'DEFAULT');
         })
-        Button('align TOP_START').id('btn_enum_align_4').onClick(() => {
-          this.setResult(DialogBaseAlignment.TOP_START === 4, 'TOP_START');
-        })
       }
-      .width('100%')
-      .padding(12)
+
+      Button('align TOP_START').id('btn_enum_align_4').onClick(() => {
+        this.setResult(DialogBaseAlignment.TOP_START === 4, 'TOP_START');
+      })
     }
     .width('100%')
     .height('100%')
+    .padding(12)
   }
 }
