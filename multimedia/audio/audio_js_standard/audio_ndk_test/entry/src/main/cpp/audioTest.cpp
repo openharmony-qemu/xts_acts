@@ -13467,8 +13467,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_
     OH_AudioAccessoryManager *manager = nullptr;
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     OH_AudioCommon_Result ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13494,7 +13494,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100(
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
 OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
@@ -13524,9 +13524,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_010
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
-
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13560,9 +13559,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_010
         return res;
     }
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
-
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     OH_AudioCommon_Result rets = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13613,9 +13611,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
-
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13674,9 +13671,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
-
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13709,8 +13705,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13769,8 +13765,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTAT
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13820,9 +13816,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
-
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -13882,8 +13877,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100(na
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
     LOG("OH_AudioAccessoryInputStreamManager_Write_error createinput test: %{public}d", ret);
@@ -13942,8 +13937,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100(n
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14002,8 +13997,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14061,8 +14056,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_010
         return res;
     }
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14109,8 +14104,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
         return res;
     }
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14157,8 +14152,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0
         return res;
     }
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14205,8 +14200,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0
         return res;
     }
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
     OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
@@ -14252,8 +14247,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_010
         return res;
     }
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14302,8 +14297,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100(napi_env 
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -14363,8 +14358,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100(napi_en
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -14416,8 +14411,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100(napi
     }
 
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
 
     OH_AudioAccessory *accessory = nullptr;
     ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
@@ -14475,8 +14470,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100(napi_env e
         napi_create_int32(env, TEST_FAIL, &res);
     }
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
-OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
-OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
     OH_AudioAccessory *accessory = nullptr;
     OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
     OH_AudioAccessoryManager_Connected(manager, accessory); 
