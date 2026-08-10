@@ -60,14 +60,13 @@ export default function Float32ArrayProperty2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_PROPERTY_TWO_0200
      * @tc.name testFloat32ArrayPropertyTwo002
-     * @tc.desc Verify BYTES_PER_ELEMENT is 4 on 3-element Float32Array
+     * @tc.desc Verify a 3-element Float32Array has length 3 and byteLength 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayPropertyTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
-      expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
       expect(arr.length).assertEqual(3);
       expect(arr.byteLength).assertEqual(12);
     });

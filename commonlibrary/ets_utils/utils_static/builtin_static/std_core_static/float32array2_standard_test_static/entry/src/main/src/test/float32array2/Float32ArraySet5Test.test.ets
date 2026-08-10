@@ -102,7 +102,7 @@ export default function Float32ArraySet5Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_FIVE_0500
      * @tc.name testFloat32ArraySetFive005
-     * @tc.desc Verify set() with exact MAX_VALUE stores it without overflow (distinct from 3.5e38)
+     * @tc.desc Verify set() stores Float32 MAX_VALUE while 3.5e38 overflows to positive Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -112,6 +112,10 @@ export default function Float32ArraySet5Test(): void {
       const src: FixedArray<number> = [3.4028234663852886e+38];
       target.set(src);
       expect(target.$_get(0)).assertEqual(3.4028234663852886e+38);
+      const overflowTarget = new Float32Array(1);
+      const overflowSrc: FixedArray<number> = [3.5e38];
+      overflowTarget.set(overflowSrc);
+      expect(overflowTarget.$_get(0)).assertEqual(Number.POSITIVE_INFINITY);
     });
 
     /**
