@@ -124,9 +124,9 @@ export default function DlpEnterpriseServiceTest() {
         try {
           let code = dlpPermission.PluginCmd.CMD_BASE_INSTALL_CONFIG_FILE;
           let message = "config_file.json"
-          let result = await dlpPermission.processPluginCommand(code, message);
+          let result = await dlpPermission.processPluginCommand(code, message) ??undefined;
           console.info(curTag, "Call processPluginCommand success");
-          expect(true).assertTrue();
+          expect(result != undefined).assertTrue();
         } catch (err) {
           console.info(curTag, "Call processPluginCommand failed", err.code, err.message);
           if (err.code === 801) {
@@ -153,9 +153,9 @@ export default function DlpEnterpriseServiceTest() {
         try {
           let code = dlpPermission.PluginCmd.CMD_BASE_INSTALL_SUFFIX_FILTER_FILE;
           let message = "suffix_filter_file.json"
-          let result = await dlpPermission.processPluginCommand(code, message);
+          let result = await dlpPermission.processPluginCommand(code, message) ?? undefined;
           console.info(curTag, "Call processPluginCommand success");
-          expect(true).assertTrue();
+          expect(result != undefined).assertTrue();
         } catch (err) {
           console.info(curTag, "Call processPluginCommand failed", err.code, err.message);
           if (err.code === 801) {
@@ -182,9 +182,9 @@ export default function DlpEnterpriseServiceTest() {
         try {
           let code = dlpPermission.PluginCmd.CMD_BASE_UNINSTALL_PLUGIN;
           let message = ""
-          let result = await dlpPermission.processPluginCommand(code, message);
+          let result = await dlpPermission.processPluginCommand(code, message) ?? undefined;
           console.info(curTag, "Call processPluginCommand success");
-          expect(true).assertTrue();
+          expect(result != undefined).assertTrue();
         } catch (err) {
           console.info(curTag, "Call processPluginCommand failed", err.code, err.message);
           if (err.code === 801) {
@@ -211,9 +211,9 @@ export default function DlpEnterpriseServiceTest() {
         try {
           let code = dlpPermission.PluginCmd.CMD_BASE_QUERY_TRANSPARENT_CRYPTO_STATUS;
           let message = ""
-          let result = await dlpPermission.processPluginCommand(code, message);
+          let result = await dlpPermission.processPluginCommand(code, message) ?? undefined;
           console.info(curTag, "Call processPluginCommand success");
-          expect(true).assertTrue();
+          expect(result != undefined).assertTrue();
         } catch (err) {
           console.info(curTag, "Call processPluginCommand failed", err.code, err.message);
           if (err.code === 801) {
@@ -453,9 +453,9 @@ export default function DlpEnterpriseServiceTest() {
         try {
           let code = dlpPermission.PluginCmd.CMD_BASE_INSTALL_PLUGIN;
           let message = generateString(4096);
-          let result = await dlpPermission.processPluginCommand(code, message);
+          let result = await dlpPermission.processPluginCommand(code, message) ?? undefined;
           console.info(curTag, "Call processPluginCommand success");
-          expect(true).assertTrue();
+          expect(result != undefined).assertTrue();
         } catch (err) {
           console.info(curTag, "Call processPluginCommand failed", err.code, err.message);
           if (err.code === 801) {
