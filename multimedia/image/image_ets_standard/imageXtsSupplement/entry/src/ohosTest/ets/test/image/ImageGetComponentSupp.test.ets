@@ -287,14 +287,15 @@ export default function ImageGetComponentSupp() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
+      await getVideoSurfaceId();
     });
     beforeEach(async () => {
-      await sleep(500);
+      await sleep(1000);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(500)
+      await sleep(1000)
     });
     afterAll(async () => {
       console.info('afterAll case');
