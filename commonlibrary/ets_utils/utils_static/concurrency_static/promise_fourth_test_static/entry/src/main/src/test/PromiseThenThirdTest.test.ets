@@ -70,15 +70,16 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("async reject")
       try {
         await promise.then<number>(() => {
           return new Promise<number>((resolve, reject) => {
-            setTimeout(() => reject(new Error("async reject")), 500)
+            setTimeout(() => reject(expectedError), 500)
           })
         })
         expect().assertFail()
       } catch (error) {
-        let e = error
+        expect(error === expectedError).assertTrue()
       }
       Done();
     })
@@ -86,20 +87,21 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_0200
-     * @tc.desc   Verify Promise.then throwing Error with name check
+     * @tc.desc   Verify Promise.then preserves the thrown Error object identity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseThenThirdTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("test error")
       try {
         await promise.then<number>(() => {
-          throw new Error("test error")
+          throw expectedError
         })
         expect().assertFail()
       } catch (error) {
-        let e = error
+        expect(error === expectedError).assertTrue()
       }
       Done();
     })
@@ -107,20 +109,21 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest0300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_0300
-     * @tc.desc   Verify Promise.then throwing Error with partial message check
+     * @tc.desc   Verify Promise.then propagates a distinct thrown Error object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseThenThirdTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("detailed error message")
       try {
         await promise.then<number>(() => {
-          throw new Error("detailed error message")
+          throw expectedError
         })
         expect().assertFail()
       } catch (error) {
-        let e = error
+        expect(error === expectedError).assertTrue()
       }
       Done();
     })
@@ -128,20 +131,21 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest0400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_0400
-     * @tc.desc   Verify Promise.then throwing Error with stack trace check
+     * @tc.desc   Verify Promise.then propagates an Error from onFulfilled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseThenThirdTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("stack test")
       try {
         await promise.then<number>(() => {
-          throw new Error("stack test")
+          throw expectedError
         })
         expect().assertFail()
       } catch (error) {
-        let e = error
+        expect(error === expectedError).assertTrue()
       }
       Done();
     })
@@ -156,13 +160,14 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("caught error")
       try {
         await promise.then<number>(() => {
-          throw new Error("caught error")
+          throw expectedError
         })
         expect().assertFail()
       } catch (error) {
-        let e = error
+        expect(error === expectedError).assertTrue()
       }
       Done();
     })
@@ -177,11 +182,12 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("error")
       let result = await promise
         .then<number>(() => {
-          throw new Error("error")
+          throw expectedError
         })
-        .catch((error) => 42)
+        .catch((error) => { expect(error === expectedError).assertTrue(); return 42 })
       expect(result).assertEqual(42)
       Done();
     })
@@ -202,7 +208,8 @@ export default function BuiltinsPromiseThenThirdTest(): void {
         .finally(() => { finallyCalled1 = true })
       expect(finallyCalled1).assertTrue()
 
-      let promise2 = Promise.reject<string>(new Error("error"))
+      let expectedError = new Error("error")
+      let promise2 = Promise.reject<string>(expectedError)
       let finallyCalled2 = false
       let caught: boolean = false
       try {
@@ -210,8 +217,9 @@ export default function BuiltinsPromiseThenThirdTest(): void {
           .then<void>(() => { })
           .finally(() => { finallyCalled2 = true })
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === expectedError).assertTrue()
+      }
       expect(caught).assertTrue()
       expect(finallyCalled2).assertTrue()
       Done();
@@ -299,9 +307,9 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise
-        .then<string>(() => "world")
-        .then<string>(() => "!")
-      expect(result).assertEqual("!")
+        .then<string>((value: string) => { expect(value).assertEqual("hello"); return "world" })
+        .then<string>((value: string) => { expect(value).assertEqual("world"); return value + "!" })
+      expect(result).assertEqual("world!")
       Done();
     })
 
@@ -316,8 +324,8 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise
-        .then<number>(() => Promise.resolve(42.0))
-        .then<number>((v) => v + 8.0)
+        .then<number>((value: string) => { expect(value).assertEqual("hello"); return Promise.resolve(42.0) })
+        .then<number>((v) => { expect(v).assertEqual(42); return v + 8.0 })
       expect(result).assertEqual(50)
       Done();
     })
@@ -356,13 +364,19 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let fastPromise = new Promise<number>((resolve: (value: number) => void) => {
+        setTimeout(() => resolve(1.0), 500)
+      })
+      let slowPromise = new Promise<number>((resolve: (value: number) => void) => {
+        setTimeout(() => resolve(2.0), 1000)
+      })
       let result = await promise.then<number>(() => {
-        return Promise.race<number>([
-          new Promise<number>((resolve: (value: number) => void) => { setTimeout(() => resolve(1.0), 500) }),
-          new Promise<number>((resolve: (value: number) => void) => { setTimeout(() => resolve(2.0), 1000) })
-        ])
+        return Promise.race<number>([fastPromise, slowPromise])
       })
       expect(result).assertEqual(1)
+      let settled = await Promise.all<number>([fastPromise, slowPromise])
+      expect(settled[0]).assertEqual(1)
+      expect(settled[1]).assertEqual(2)
       Done();
     })
 
@@ -386,6 +400,13 @@ export default function BuiltinsPromiseThenThirdTest(): void {
       expect(results.length).assertEqual(3)
       let r0 = results[0] as PromiseFulfilledResult<number>
       expect(r0.status).assertEqual("fulfilled")
+      expect(r0.value).assertEqual(1)
+      let r1 = results[1] as PromiseRejectedResult
+      expect(r1.status).assertEqual("rejected")
+      expect(r1.reason instanceof Error).assertTrue()
+      let r2 = results[2] as PromiseFulfilledResult<number>
+      expect(r2.status).assertEqual("fulfilled")
+      expect(r2.value).assertEqual(3)
       Done();
     })
 
@@ -442,9 +463,15 @@ export default function BuiltinsPromiseThenThirdTest(): void {
         Promise.resolve<string>("c")
       ]
       let results = await Promise.all(
-        promises.map(p => p.then<number>(() => 1))
+        promises.map(p => p.then<number>((value: string) => {
+          expect(value.length).assertEqual(1)
+          return 1
+        }))
       )
       expect(results.length).assertEqual(3)
+      expect(results[0]).assertEqual(1)
+      expect(results[1]).assertEqual(1)
+      expect(results[2]).assertEqual(1)
       Done();
     })
 
@@ -469,6 +496,9 @@ export default function BuiltinsPromiseThenThirdTest(): void {
       })
       let result = await Promise.race([promise1, promise2])
       expect(result).assertEqual(1)
+      let settled = await Promise.all<number>([promise1, promise2])
+      expect(settled[0]).assertEqual(1)
+      expect(settled[1]).assertEqual(2)
       Done();
     })
 
@@ -482,15 +512,15 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
-      let caught = false
-      await promise
-        .then<void>(() => { throw new Error("chain error") })
-        .then<void>(() => { })
-        .catch((error) => {
-          caught = true
-          let e = error
-        })
-      expect(caught).assertTrue()
+      let expectedError = new Error("chain error")
+      try {
+        await promise
+          .then<void>((value: string) => { expect(value).assertEqual("hello"); throw expectedError })
+          .then<void>((value: void) => { expect(value).assertUndefined() })
+        expect().assertFail()
+      } catch (error) {
+        expect(error === expectedError).assertTrue()
+      }
       Done();
     })
 
@@ -504,10 +534,11 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("error")
       let result = await promise
-        .then<void>(() => { throw new Error("error") })
-        .catch(() => "recovered")
-        .then<string>((v) => v + "!")
+        .then<void>((value: string) => { expect(value).assertEqual("hello"); throw expectedError })
+        .catch((error) => { expect(error === expectedError).assertTrue(); return "recovered" })
+        .then<string>((v) => { expect(v).assertEqual("recovered"); return v + "!" })
       expect(result).assertEqual("recovered!")
       Done();
     })
@@ -618,7 +649,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise.then<number>(() => 42)
-      expect(typeof result).assertEqual("number")
+       expect(typeof result).assertEqual("number")
       Done();
     })
 
@@ -671,9 +702,9 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise
-        .then<string>(() => "hello world")
-        .then<number>(() => 100)
-        .then<boolean>(() => true)
+        .then<string>((value: string) => { expect(value).assertEqual("hello"); return "hello world" })
+        .then<number>((value: string) => { expect(value).assertEqual("hello world"); return 100 })
+        .then<boolean>((value: number) => { expect(value).assertEqual(100); return true })
       expect(result).assertTrue()
       Done();
     })
@@ -746,9 +777,8 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let result = await Promise.resolve<number>(1.0)
-        .then<number>((v) => v + 1.0)
-        .then<number>((v) => v * 2.0)
-        .catch<number>((e) => 0.0)
+        .then<number>((v) => { expect(v).assertEqual(1); return v + 1.0 })
+        .then<number>((v) => { expect(v).assertEqual(2); return v * 2.0 })
       expect(result).assertEqual(4)
       Done();
     })
@@ -764,9 +794,9 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let receivedResult = ""
       await Promise.resolve<number>(5.0)
-        .then<number>(() => 50.0)
-        .then<string>(() => "processed")
-        .then<void>((v) => { receivedResult = v })
+        .then<number>((value: number) => { expect(value).assertEqual(5); return 50.0 })
+        .then<string>((value: number) => { expect(value).assertEqual(50); return "processed" })
+        .then<void>((v) => { expect(v).assertEqual("processed"); receivedResult = v })
       expect(receivedResult).assertEqual("processed")
       Done();
     })
@@ -790,7 +820,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
         return "late"
       })
       await Promise.all([p1, p2])
-      expect(winner === "first" || winner === "second").assertTrue()
+      expect(winner).assertEqual("first")
       Done();
     })
 
@@ -803,15 +833,17 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseThenThirdTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let raceResult = await Promise.race<string>([
-        new Promise<string>((resolve: (value: string) => void) => {
-          setTimeout(() => resolve("timeout"), 500)
-        }),
-        new Promise<string>((resolve: (value: string) => void) => {
-          setTimeout(() => resolve("100"), 2000)
-        })
-      ])
+      let timeoutPromise = new Promise<string>((resolve: (value: string) => void) => {
+        setTimeout(() => resolve("timeout"), 500)
+      })
+      let valuePromise = new Promise<string>((resolve: (value: string) => void) => {
+        setTimeout(() => resolve("100"), 2000)
+      })
+      let raceResult = await Promise.race<string>([timeoutPromise, valuePromise])
       expect(raceResult).assertEqual("timeout")
+      let settled = await Promise.all<string>([timeoutPromise, valuePromise])
+      expect(settled[0]).assertEqual("timeout")
+      expect(settled[1]).assertEqual("100")
       Done();
     })
 
@@ -840,13 +872,14 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("never return")
       try {
         await promise.then<never>(() => {
-          throw new Error("never return")
+          throw expectedError
         })
         expect().assertFail()
       } catch (error) {
-        let e = error
+        expect(error === expectedError).assertTrue()
       }
       Done();
     })
@@ -866,6 +899,8 @@ export default function BuiltinsPromiseThenThirdTest(): void {
         return obj
       })
       let promiseResult = await promise
+       expect(typeof result).assertEqual("int")
+      expect(result).assertEqual(42)
       expect(promiseResult).assertEqual("hello")
       Done();
     })
@@ -884,9 +919,8 @@ export default function BuiltinsPromiseThenThirdTest(): void {
         let obj: Object = 42 as Object
         return obj
       })
-      if (typeof result === "number") {
-        expect(result).assertEqual(42)
-      }
+       expect(typeof result).assertEqual("int")
+      expect(result).assertEqual(42)
       Done();
     })
 
@@ -901,13 +935,13 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise.then<number>(() => {
-        let sum = 0
+        let sum: number = 0.0
         for (let i = 0; i < 1000000; i++) {
           sum += i
         }
         return sum
       })
-      expect(result > 0).assertTrue()
+      expect(result).assertEqual(499999500000)
       Done();
     })
 
@@ -922,11 +956,17 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
 
       let promise = Promise.resolve<string>("hello")
-      let result = await promise.then<BigData>(() => {
-        let obj: BigData = { data: new Array<number>(10000).fill(0) }
+       let result = await promise.then<BigData>(() => {
+         let data: number[] = []
+         for (let i = 0; i < 10000; i++) {
+           data.push(0)
+         }
+         let obj: BigData = { data: data }
         return obj
       })
-      expect(result.data.length).assertEqual(1)
+      expect(result.data.length).assertEqual(10000)
+      expect(result.data[0]).assertEqual(0)
+      expect(result.data[9999]).assertEqual(0)
       Done();
     })
 
@@ -978,13 +1018,14 @@ export default function BuiltinsPromiseThenThirdTest(): void {
      */
     it('PromiseThenThirdTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
+      let expectedError = new Error("sync error")
       try {
         await promise.then<number>(() => {
-          throw new Error("sync error")
+          throw expectedError
         })
         expect().assertFail()
       } catch (error) {
-        let e = error
+        expect(error === expectedError).assertTrue()
       }
       Done();
     })
@@ -1023,7 +1064,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     /**
      * @tc.name   PromiseThenThirdTest5000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_THEN_THIRD_TEST_5000
-     * @tc.desc   Verify Promise.then returning Array with isArray check
+     * @tc.desc   Verify Promise.then returning numeric array values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1031,7 +1072,7 @@ export default function BuiltinsPromiseThenThirdTest(): void {
     it('PromiseThenThirdTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.resolve<string>("hello")
       let result = await promise.then<Array<number>>(() => [1, 2, 3])
-      expect(Array.isArray(result)).assertTrue()
+       expect(result).assertDeepEquals([1.0, 2.0, 3.0])
       Done();
     })
 
