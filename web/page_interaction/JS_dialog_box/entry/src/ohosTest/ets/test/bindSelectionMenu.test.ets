@@ -19,7 +19,7 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON } from "@kit.TestKit";
+import { Driver, ON, MouseButton } from "@kit.TestKit";
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -74,8 +74,17 @@ export default function webViewSrollableJsunit() {
       Utils.emitEvent("bindSelectionMenuType01", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
       Utils.registerEvent("bindSelectionMenuType01", true, 177010, () => { isReturn = true });
+      let pageReady = false;
+      Utils.registerEvent("bindSelectionMenuType01", true, 177011, () => { pageReady = true });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType01");
-      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType01" + '_returnCheck', true, 1000);
+      await Utils.waitForExist(() => pageReady, "bindSelectionMenuType01" + '_pageReady', true, 1000, 8);
+      // 长按选中文本，弹出菜单后点击"复制"（串行模拟）
+      let target = await driver.findComponent(ON.id('bindSelectionMenuType'));
+      await target.longClick();
+      await Utils.sleep(1500);
+      let copyItem = await driver.findComponent(ON.text('复制'));
+      await copyItem.click();
+      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType01" + '_returnCheck', true, 1000, 8);
       done();
     })
     /**
@@ -107,8 +116,18 @@ export default function webViewSrollableJsunit() {
       Utils.emitEvent("bindSelectionMenuType03", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
       Utils.registerEvent("bindSelectionMenuType03", true, 20250919, () => { isReturn = true });
+      let pageReady = false;
+      Utils.registerEvent("bindSelectionMenuType03", true, 177031, () => { pageReady = true });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType03");
-      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType03" + '_returnCheck', true, 1000);
+      await Utils.waitForExist(() => pageReady, "bindSelectionMenuType03" + '_pageReady', true, 1000, 8);
+      // 右键选中文本，弹出菜单后点击"复制"（串行模拟）
+      let textNode = await driver.findComponent(ON.text('这是一段文字'));
+      let point = await textNode.getBoundsCenter();
+      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+      await Utils.sleep(2000);
+      let copyItem = await driver.findComponent(ON.text('复制'));
+      await copyItem.click();
+      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType03" + '_returnCheck', true, 1000, 8);
       done();
     })
 

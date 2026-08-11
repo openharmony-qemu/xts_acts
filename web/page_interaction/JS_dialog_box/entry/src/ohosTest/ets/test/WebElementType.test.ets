@@ -64,6 +64,8 @@ export default function WebElementTypeJsunit() {
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
       Utils.registerEvent("WebElementType01", 'WebElementType', 177210, () => { isReturn = true });
+      // 等待页面切换动画完成后再点击，避免点击被过渡动画丢弃
+      await Utils.sleep(2000);
       Utils.waitAndClickComponent(driver, "WebElementTypeButton", "WebElementType01");
       await Utils.waitForExist(() => isReturn, "WebElementType01" + '_returnCheck', true, 1000);
       done();

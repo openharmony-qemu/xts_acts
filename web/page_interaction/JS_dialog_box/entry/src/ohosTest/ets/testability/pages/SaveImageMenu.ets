@@ -16,7 +16,7 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
+import { MouseButton, UiWindow, On } from '@kit.TestKit';
 import { webview } from '@kit.ArkWeb';
 import { Context } from '@kit.AbilityKit';
 import { util } from '@kit.ArkTS';
@@ -25,9 +25,13 @@ import { fileIo, fileUri } from '@kit.CoreFileKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { http } from '@kit.NetworkKit';
 import { XtsTestServer } from 'library';
+interface Point {
+  x: number;
+  y: number;
+}
+
 const EVENT_ID_SET_SUITE_KEY = 177008;
 const TAG = 'WebContextMenuResult ';
-const driver = Driver.create();
 
   @Entry
   @Component
@@ -189,20 +193,19 @@ const driver = Driver.create();
             Button("web test").key('webSaveImageMenu').onClick(async () => {
               console.info("key==>" + this.str)
               await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               switch (this.str) {
                 case "SaveImageMenu01": {
                   this.flag = 1;
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/LocalImage.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  // 右键坐标由页面计算，随就绪事件交给测试侧执行（避免页面内使用 UiTest 与测试并发）
                   let webRect = Utils.getComponentRect('WebContextMenuResult');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-                  await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-                  Utils.sleep(1000);
-                  let buttonOne = await driver.findComponent(ON.text('保存图片'));
-                  await buttonOne.click();
+                  let pos: Point = { x: downX, y: downY };
+                  Utils.emitEvent(pos, 20230330);
                   break;
                 }
 
@@ -210,30 +213,25 @@ const driver = Driver.create();
                   this.flag = 2;
                   this.isPageEnd = -1;
                   this.controller.loadUrl(this.mServer.getAssetUrl('online.html'));
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  // 右键坐标由页面计算，随就绪事件交给测试侧执行（避免页面内使用 UiTest 与测试并发）
                   let webRect = Utils.getComponentRect('WebContextMenuResult');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-                  await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-                  Utils.sleep(1000);
-                  let buttonOne = await driver.findComponent(ON.text('保存图片'));
-                  await buttonOne.click();
+                  let pos: Point = { x: downX, y: downY };
+                  Utils.emitEvent(pos, 20230331);
                   break;
                 }
 
                 case "SaveImageMenu03": {
                   this.flag = 3;
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/canvas.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  // 组件 src 即 canvas.html（同 URL 重载不触发 onPageEnd），直接使用已加载页面
+                  // 右键坐标由页面计算，随就绪事件交给测试侧执行（避免页面内使用 UiTest 与测试并发）
                   let webRect = Utils.getComponentRect('WebContextMenuResult');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-                  await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-                  Utils.sleep(1000);
-                  let buttonOne = await driver.findComponent(ON.text('保存图片'));
-                  await buttonOne.click();
-                  Utils.sleep(3000);
+                  let pos: Point = { x: downX, y: downY };
+                  Utils.emitEvent(pos, 20230332);
                   break;
                 }
 
