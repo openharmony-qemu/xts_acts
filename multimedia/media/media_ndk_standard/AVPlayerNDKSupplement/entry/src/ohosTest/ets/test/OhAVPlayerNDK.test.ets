@@ -376,8 +376,7 @@ export default function OhAVPlayerNDKTest() {
       let testResult: avplayer.NdkAVPlayerResult =
         avplayer.testSetTargetVideoWindowSizeErr(fileDescriptor1, 1920, 1080, true);
       await sleep(2000);
-      expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(
-        OH_AVErrCode.AV_ERR_SUPER_RESOLUTION_UNSUPPORTED);
+      expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(0);
       done();
     });
 

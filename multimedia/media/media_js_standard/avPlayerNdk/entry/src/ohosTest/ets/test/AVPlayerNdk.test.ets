@@ -1793,13 +1793,13 @@ export default function AVPlayerNdkTest() {
     /**
      * @tc.name   testOhAvPlayerSetPlaybackRateError002
      * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETPLAYBACKRATE_2000
-     * @tc.desc   test OH_AVPlayer_SetPlaybackRate with error value 4.001
+     * @tc.desc   test OH_AVPlayer_SetPlaybackRate with error value 8.001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlaybackRateError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result: number = avplayer.AvPlayerSetPlaybackRateError(4.001);
+      let result: number = avplayer.AvPlayerSetPlaybackRateError(8.001);
       expect(result).assertEqual(0);
       done();
     });
