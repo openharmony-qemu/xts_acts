@@ -68,7 +68,8 @@ interface IPRangeValue {
 }
 
 interface IPMultiValue {
-  ips:IPAddress[]
+  ips:IPAddress[],
+  ipCount?: number
 }
 
 export interface IPMatch {
@@ -83,7 +84,8 @@ interface PortRange {
 }
 
 interface PortMulti {
-  ports: number[]
+  ports: number[],
+  portCount?: number
 }
 
 export interface PortMatch {
