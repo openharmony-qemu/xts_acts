@@ -321,12 +321,31 @@ export default function MetadataOutputTest() {
         const mode = camera.SceneMode.NORMAL_VIDEO;
         mCameraOutputCap = mCameraManager.getSupportedOutputCapability(device, mode);
         mCameraInput = mCameraManager.createCameraInput(device);
-        mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
-        mVideoOutput = mCameraManager.createVideoOutput(mCameraOutputCap.videoProfiles[0], mVideoSurfaceId);
+        // 预览和录像宽高比及格式匹配选择
+        const previewProfiles = mCameraOutputCap.previewProfiles;
+        const videoProfiles = mCameraOutputCap.videoProfiles;
+        let isMatchFound = false;
+        // 优先选择第一个预览配置和第一个视频配置的宽高比和格式
+        for (const nPreviewProfile of previewProfiles) {
+          const previewRatio = nPreviewProfile.size.width / nPreviewProfile.size.height;
+          for (const nVideoProfile of videoProfiles) {
+            const videoRatio = nVideoProfile.size.width / nVideoProfile.size.height;
+            // 匹配宽高比和格式
+            if (previewRatio === videoRatio && nPreviewProfile.format === nVideoProfile.format) {
+              console.info(TAG, testName + ' nPreviewProfile is ' + JSON.stringify(nPreviewProfile));
+              console.info(TAG, testName + ' nVideoProfile is ' + JSON.stringify(nVideoProfile));
+              mPreviewOutput = mCameraManager.createPreviewOutput(nPreviewProfile, indexSurfaceId);
+              mVideoOutput = mCameraManager.createVideoOutput(nVideoProfile, mVideoSurfaceId);
+              isMatchFound = true;
+              break;
+            }
+          }
+          if (isMatchFound) break;
+        }
         mMetadataObjectTypes = mCameraOutputCap.supportedMetadataObjectTypes;
         console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
         mMetadataOutput = mCameraManager.createMetadataOutput(mMetadataObjectTypes);
-        await getVideoSession(testName, mode, mPreviewOutput, mVideoOutput, mMetadataOutput);
+        await getVideoSession(testName, mode, mPreviewOutput!, mVideoOutput!, mMetadataOutput!);
         // isLockMetadataObjectTrackingSupported
         isSupported = mMetadataOutput.isLockMetadataObjectTrackingSupported();
         console.info(TAG, testName + ' isSupported is ' + isSupported);
@@ -921,6 +940,156 @@ export default function MetadataOutputTest() {
             console.error(TAG, testName + 'lockMetadataObjectTracking failed. err: ' + error.code + ', msg: ' + error.message);
             expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue()
           }
+        }
+        console.info(TAG, testName + ' start release');
+        await releasePhotoSession();
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        await releasePhotoSession();
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1500
+     * @tc.desc   test MetadataBasicFaceObject properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1500', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1500';
+      let isSupported: boolean;
+      let triggered: boolean = false;
+      try {
+        const device = mCameraDeviceArray[0];
+        mSupportedModes = mCameraManager.getSupportedSceneModes(device);
+        console.info(TAG, testName + ' mSupportedModes is ' + JSON.stringify(mSupportedModes));
+        // NORMAL_PHOTO
+        const mode = camera.SceneMode.NORMAL_PHOTO;
+        mCameraOutputCap = mCameraManager.getSupportedOutputCapability(device, mode);
+        mCameraInput = mCameraManager.createCameraInput(device);
+        mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+        mMetadataObjectTypes = mCameraOutputCap.supportedMetadataObjectTypes;
+        console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+        mMetadataOutput = mCameraManager.createMetadataOutput(mMetadataObjectTypes);
+        await getPhotoSession(testName, mode, mPreviewOutput, mPhotoOutput, mMetadataOutput);
+        // isLockMetadataObjectTrackingSupported
+        isSupported = mMetadataOutput.isLockMetadataObjectTrackingSupported();
+        console.info(TAG, testName + ' isSupported is ' + isSupported);
+        expect(typeof isSupported).assertEqual('boolean');
+        if (isSupported) {
+          mMetadataOutput.on('metadataObjectsAvailable', (err: BusinessError, metadataObjectArr: Array<camera.MetadataBasicFaceObject>) => {
+            console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+            if (metadataObjectArr.length > 0) {
+              let metadataBasicFaceObject = metadataObjectArr[0]
+              console.info(TAG + testName + " metadataBasicFaceObject leftEyeBoundingBox: " + metadataBasicFaceObject.leftEyeBoundingBox);
+              console.info(TAG + testName + " metadataBasicFaceObject rightEyeBoundingBox: " + metadataBasicFaceObject.rightEyeBoundingBox);
+              console.info(TAG + testName + " metadataBasicFaceObject pitchAngle: " + metadataBasicFaceObject.pitchAngle);
+              console.info(TAG + testName + " metadataBasicFaceObject yawAngle: " + metadataBasicFaceObject.yawAngle);
+              console.info(TAG + testName + " metadataBasicFaceObject rollAngle: " + metadataBasicFaceObject.rollAngle);
+            }
+            triggered = true;
+          });
+        }
+        console.info(TAG, testName + ' start release');
+        await releasePhotoSession();
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        await releasePhotoSession();
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1600
+     * @tc.desc   test MetadataFaceObject properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1600', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_LOCK_METADATA_OBJECT_TTACKING_1600';
+      let isSupported: boolean;
+      let triggered: boolean = false;
+      try {
+        const device = mCameraDeviceArray[0];
+        mSupportedModes = mCameraManager.getSupportedSceneModes(device);
+        console.info(TAG, testName + ' mSupportedModes is ' + JSON.stringify(mSupportedModes));
+        // NORMAL_PHOTO
+        const mode = camera.SceneMode.NORMAL_PHOTO;
+        mCameraOutputCap = mCameraManager.getSupportedOutputCapability(device, mode);
+        mCameraInput = mCameraManager.createCameraInput(device);
+        mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+        mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+        mMetadataObjectTypes = mCameraOutputCap.supportedMetadataObjectTypes;
+        console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+        mMetadataOutput = mCameraManager.createMetadataOutput(mMetadataObjectTypes);
+        await getPhotoSession(testName, mode, mPreviewOutput, mPhotoOutput, mMetadataOutput);
+        // isLockMetadataObjectTrackingSupported
+        isSupported = mMetadataOutput.isLockMetadataObjectTrackingSupported();
+        console.info(TAG, testName + ' isSupported is ' + isSupported);
+        expect(typeof isSupported).assertEqual('boolean');
+        if (isSupported) {
+          mMetadataOutput.on('metadataObjectsAvailable', (err: BusinessError, metadataObjectArr: Array<camera.MetadataObject>) => {
+            console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+            if (metadataObjectArr.length > 0) {
+              let metadataObj = metadataObjectArr[0];
+              switch (metadataObj.type) {
+                case camera.MetadataObjectType.FACE_DETECTION:
+                  let metadataFaceObject = metadataObj as camera.MetadataFaceObject;
+                  console.info(TAG + testName + " metadataFaceObject leftEyeBoundingBox: " + metadataFaceObject.leftEyeBoundingBox);
+                  console.info(TAG + testName + " metadataFaceObject rightEyeBoundingBox: " + metadataFaceObject.rightEyeBoundingBox);
+                  console.info(TAG + testName + " metadataFaceObject emotion: " + metadataFaceObject.emotion);
+                  console.info(TAG + testName + " metadataFaceObject emotionConfidence: " + metadataFaceObject.emotionConfidence);
+                  console.info(TAG + testName + " metadataFaceObject pitchAngle: " + metadataFaceObject.pitchAngle);
+                  console.info(TAG + testName + " metadataFaceObject yawAngle: " + metadataFaceObject.yawAngle);
+                  console.info(TAG + testName + " metadataFaceObject rollAngle: " + metadataFaceObject.rollAngle);
+                  break;
+                case camera.MetadataObjectType.HUMAN_BODY:
+                  let metadataHumanBodyObject = metadataObj as camera.MetadataHumanBodyObject;
+                  console.info(TAG + testName + " metadataHumanBodyObject : " + JSON.stringify(metadataHumanBodyObject));
+                  break;
+                case camera.MetadataObjectType.CAT_FACE:
+                  let metadataCatFaceObject = metadataObj as camera.MetadataCatFaceObject;
+                  console.info(TAG + testName + " metadataCatFaceObject leftEyeBoundingBox: " + metadataCatFaceObject.leftEyeBoundingBox);
+                  console.info(TAG + testName + " metadataCatFaceObject rightEyeBoundingBox: " + metadataCatFaceObject.rightEyeBoundingBox);
+                  break;
+                case camera.MetadataObjectType.CAT_BODY:
+                  let metadataCatBodyObject = metadataObj as camera.MetadataCatBodyObject;
+                  console.info(TAG + testName + " metadataCatBodyObject : " + JSON.stringify(metadataCatBodyObject));
+                  break;
+                case camera.MetadataObjectType.DOG_FACE:
+                  let metadataDogFaceObject = metadataObj as camera.MetadataDogFaceObject;
+                  console.info(TAG + testName + " metadataDogFaceObject leftEyeBoundingBox: " + metadataDogFaceObject.leftEyeBoundingBox);
+                  console.info(TAG + testName + " metadataDogFaceObject rightEyeBoundingBox: " + metadataDogFaceObject.rightEyeBoundingBox);
+                  break;
+                case camera.MetadataObjectType.DOG_BODY:
+                  let metadataDogBodyObject = metadataObj as camera.MetadataDogBodyObject;
+                  console.info(TAG + testName + " metadataDogBodyObject : " + JSON.stringify(metadataDogBodyObject));
+                  break;
+                case camera.MetadataObjectType.SALIENT_DETECTION:
+                  let metadataSalientDetectionObject = metadataObj as camera.MetadataSalientDetectionObject;
+                  console.info(TAG + testName + " metadataSalientDetectionObject : " + JSON.stringify(metadataSalientDetectionObject));
+                  break;
+                case camera.MetadataObjectType.BAR_CODE_DETECTION:
+                  let metadataBarcodeObject = metadataObj as camera.MetadataBarcodeObject;
+                  console.info(TAG + testName + " metadataBarcodeObject : " + JSON.stringify(metadataBarcodeObject));
+                  break;
+                default:
+                  console.info(`qxu detect unknown type metadata: ${metadataObj.type}`);
+                  break;
+              }
+            }
+            triggered = true;
+          });
         }
         console.info(TAG, testName + ' start release');
         await releasePhotoSession();
