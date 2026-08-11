@@ -1007,8 +1007,11 @@ int VpeVideoNdk38()
                                 NATIVEBUFFER_PIXEL_FMT_YCRCB_420_P, 1280, 720 };
     int32_t ret = sample->InitVideoSample(param);
     EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+    OHPrintf("oyh run here 1");
     sample->StartProcess();
+    OHPrintf("oyh run here 2");
     EXPECT_EQ(sample->WaitAndStopSample(), VIDEO_PROCESSING_SUCCESS);
+    OHPrintf("oyh run here 3");
     return VIDEO_PROCESSING_SUCCESS;
 }
 
