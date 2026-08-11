@@ -30,26 +30,34 @@ interface User {
 interface SharedState {
   count: number
 }
-interface RejectReason {
-  code: number
-  message: string
+
+function getFulfilledValue<T>(result: PromiseSettledResult<T>): T {
+  if (result instanceof PromiseFulfilledResult) {
+    return result.value
+  }
+  throw new Error("Expected fulfilled Promise result")
+}
+
+class CodedError extends Error {
+  constructor(message: string, code: int) {
+    super(code, message)
+    this.name = "CodedError"
+  }
 }
 
 class StringPromiseLike implements PromiseLike<string> {
-  value: string
-  constructor(value: string) { this.value = value }
-  then<U, E>(onFulfilled?: ((value: string) => U | PromiseLike<U>), onRejected?: ((reason: Error) => E | PromiseLike<E>)): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onFulfilled) { onFulfilled(this.value) }
-    return Promise.resolve<string>(this.value) as PromiseLike<Awaited<U> | Awaited<E>>
+  private promise: Promise<string>
+  constructor(value: string) { this.promise = Promise.resolve<string>(value) }
+  then<U = string, E = never>(onFulfilled: (value: string) => PromiseLike<U> | U, onRejected?: (error: Error) => PromiseLike<E> | E): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
   }
 }
 
 class RejectedPromiseLike implements PromiseLike<string> {
-  errorMsg: string
-  constructor(errorMsg: string) { this.errorMsg = errorMsg }
-  then<U, E>(onFulfilled?: ((value: string) => U | PromiseLike<U>), onRejected?: ((reason: Error) => E | PromiseLike<E>)): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onRejected) { onRejected(new Error(this.errorMsg)) }
-    return Promise.reject<string>(new Error(this.errorMsg)) as PromiseLike<Awaited<U> | Awaited<E>>
+  private promise: Promise<string>
+  constructor(errorMsg: string) { this.promise = Promise.reject<string>(new Error(errorMsg)) }
+  then<U = string, E = never>(onFulfilled: (value: string) => PromiseLike<U> | U, onRejected?: (error: Error) => PromiseLike<E> | E): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
   }
 }
 
@@ -181,7 +189,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     /**
      * @tc.name   PromiseAllSettledSecondTest0700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_0700
-     * @tc.desc   Verify Promise.allSettled with custom Iterable
+     * @tc.desc   Verify Promise.allSettled preserves ordered values from an array Iterable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -190,21 +198,28 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises: Promise<number>[] = [Promise.resolve<number>(1.0), Promise.resolve<number>(2.0)]
       let result = await Promise.allSettled<number>(promises)
       expect(result.length).assertEqual(2)
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<number>(result[0])).assertEqual(1.0)
+      expect(result[1].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<number>(result[1])).assertEqual(2.0)
       Done();
     })
 
     /**
      * @tc.name   PromiseAllSettledSecondTest0800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_0800
-     * @tc.desc   Verify Promise.allSettled with iterator throwing error
+     * @tc.desc   Verify Promise.allSettled records a rejected element without rejecting the aggregate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledSecondTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let promises: Promise<number>[] = [Promise.resolve<number>(1.0)]
+      let reason = new Error("element rejected")
+      let promises: Promise<number>[] = [Promise.reject<number>(reason)]
       let result = await Promise.allSettled<number>(promises)
       expect(result.length).assertEqual(1)
+      expect(result[0].status).assertEqual("rejected")
+      expect((result[0] as PromiseRejectedResult).reason).assertEqual(reason)
       Done();
     })
 
@@ -286,9 +301,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       promises.add(Promise.resolve("test"))
       let result = await Promise.allSettled<string>(promises)
       expect(result[0].status).assertEqual("fulfilled")
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("test")
-      }
+      expect(getFulfilledValue<string>(result[0])).assertEqual("test")
       Done();
     })
 
@@ -304,9 +317,8 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<number>>()
       promises.add(Promise.resolve<number>(42.0))
       let result = await Promise.allSettled<number>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(42.0)
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<number>(result[0])).assertEqual(42.0)
       Done();
     })
 
@@ -322,9 +334,9 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<Data>>()
       promises.add(Promise.resolve<Data>({ id: 1, name: "test" }))
       let result = await Promise.allSettled<Data>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<Data>).value.id).assertEqual(1)
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<Data>(result[0]).id).assertEqual(1)
+      expect(getFulfilledValue<Data>(result[0]).name).assertEqual("test")
       Done();
     })
 
@@ -348,18 +360,17 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     /**
      * @tc.name   PromiseAllSettledSecondTest1700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_1700
-     * @tc.desc   Verify Promise.allSettled with void generic type
+     * @tc.desc   Verify Promise.allSettled with void generic type preserves undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledSecondTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let promises = new Set<Promise<number>>()
-      promises.add(Promise.resolve<number>(1.0))
-      let result = await Promise.allSettled<number>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(1.0)
-      }
+      let promises = new Set<Promise<void>>()
+      promises.add(Promise.resolve<void>(undefined))
+      let result = await Promise.allSettled<void>(promises)
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<void>(result[0])).assertEqual(undefined)
       Done();
     })
 
@@ -375,9 +386,8 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<null>>()
       promises.add(Promise.resolve<null>(null))
       let result = await Promise.allSettled<null>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<null>).value).assertEqual(null)
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<null>(result[0])).assertEqual(null)
       Done();
     })
 
@@ -393,9 +403,8 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<string[]>>()
       promises.add(Promise.resolve<string[]>(["a", "b", "c"]))
       let result = await Promise.allSettled<string[]>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<string[]>).value.length).assertEqual(3)
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string[]>(result[0])).assertDeepEquals(["a", "b", "c"])
       Done();
     })
 
@@ -470,10 +479,12 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.resolve("test"))
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "fulfilled") {
-        let fulfilled = result[0] as PromiseFulfilledResult<string>
-        expect(fulfilled.status).assertEqual("fulfilled")
-        expect(fulfilled.value).assertEqual("test")
+      let settledResult = result[0]
+      if (settledResult instanceof PromiseFulfilledResult) {
+        expect(settledResult.status).assertEqual("fulfilled")
+        expect(settledResult.value).assertEqual("test")
+      } else {
+        expect().assertFail()
       }
       Done();
     })
@@ -491,11 +502,9 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let error = new Error("test error")
       promises.add(Promise.reject(error))
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "rejected") {
-        let rejected = result[0] as PromiseRejectedResult
-        expect(rejected.status).assertEqual("rejected")
-        expect(rejected.reason).assertEqual(error)
-      }
+      expect(result[0].status).assertEqual("rejected")
+      let rejected = result[0] as PromiseRejectedResult
+      expect(rejected.reason).assertEqual(error)
       Done();
     })
 
@@ -529,16 +538,15 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<undefined>>()
       promises.add(Promise.resolve<undefined>(undefined))
       let result = await Promise.allSettled<undefined>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<undefined>).value).assertEqual(undefined)
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<undefined>(result[0])).assertEqual(undefined)
       Done();
     })
 
     /**
      * @tc.name   PromiseAllSettledSecondTest2700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_2700
-     * @tc.desc   Verify Promise.allSettled return type
+     * @tc.desc   Verify Promise.allSettled returns the exact fulfilled status and value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -547,14 +555,15 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.resolve<string>("test"))
       let result: PromiseSettledResult<string>[] = await Promise.allSettled<string>(promises)
-      expect(result[0].status === "fulfilled" || result[0].status === "rejected").assertTrue()
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("test")
       Done();
     })
 
     /**
      * @tc.name   PromiseAllSettledSecondTest2800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_2800
-     * @tc.desc   Verify Promise.allSettled status property type
+     * @tc.desc   Verify Promise.allSettled reports exact statuses for mixed inputs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -562,10 +571,13 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     it('PromiseAllSettledSecondTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.resolve("success"))
-      promises.add(Promise.reject(new Error("failure")))
+      let reason = new Error("failure")
+      promises.add(Promise.reject(reason))
       let result = await Promise.allSettled<string>(promises)
-      expect(result[0].status === "fulfilled" || result[0].status === "rejected").assertTrue()
-      expect(result[1].status === "fulfilled" || result[1].status === "rejected").assertTrue()
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("success")
+      expect(result[1].status).assertEqual("rejected")
+      expect((result[1] as PromiseRejectedResult).reason).assertEqual(reason)
       Done();
     })
 
@@ -581,9 +593,8 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.resolve<string>("test"))
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<string>).status).assertEqual("fulfilled")
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("test")
       Done();
     })
 
@@ -597,11 +608,11 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
      */
     it('PromiseAllSettledSecondTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("error")))
+      let reason = new Error("error")
+      promises.add(Promise.reject<string>(reason))
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "rejected") {
-        expect((result[0] as PromiseRejectedResult).status).assertEqual("rejected")
-      }
+      expect(result[0].status).assertEqual("rejected")
+      expect((result[0] as PromiseRejectedResult).reason).assertEqual(reason)
       Done();
     })
 
@@ -665,37 +676,37 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     /**
      * @tc.name   PromiseAllSettledSecondTest3400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_3400
-     * @tc.desc   Verify Promise.allSettled with null parameter
+     * @tc.desc   Verify Promise.allSettled with a nullable fulfilled value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledSecondTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let promises: Promise<number>[] = [Promise.resolve<number>(1.0)]
-      let result = await Promise.allSettled<number>(promises)
-      expect(result.length).assertEqual(1)
+      let promises: Promise<string | null>[] = [Promise.resolve<string | null>(null)]
+      let result = await Promise.allSettled<string | null>(promises)
       expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string | null>(result[0])).assertNull()
       Done();
     })
 
     /**
      * @tc.name   PromiseAllSettledSecondTest3500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_3500
-     * @tc.desc   Verify Promise.allSettled with number parameter
+     * @tc.desc   Verify Promise.allSettled preserves numeric values and order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledSecondTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let promises: Promise<string>[] = [Promise.resolve("a"), Promise.resolve("b"), Promise.resolve("c")]
-      let result = await Promise.allSettled<string>(promises)
+      let promises: Promise<number>[] = [Promise.resolve<number>(1.0), Promise.resolve<number>(2.0), Promise.resolve<number>(3.0)]
+      let result = await Promise.allSettled<number>(promises)
       expect(result.length).assertEqual(3)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("a")
-      }
-      if (result[2].status === "fulfilled") {
-        expect((result[2] as PromiseFulfilledResult<string>).value).assertEqual("c")
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<number>(result[0])).assertEqual(1.0)
+      expect(result[1].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<number>(result[1])).assertEqual(2.0)
+      expect(result[2].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<number>(result[2])).assertEqual(3.0)
       Done();
     })
 
@@ -738,7 +749,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     /**
      * @tc.name   PromiseAllSettledSecondTest3800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_3800
-     * @tc.desc   Verify Promise.allSettled await catching iterator error
+     * @tc.desc   Verify Promise.allSettled reports a rejected Promise result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -764,7 +775,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     it('PromiseAllSettledSecondTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.resolve("test"))
-      Promise.allSettled<string>(promises)
+      await Promise.allSettled<string>(promises)
         .then((result) => {
           expect(result.length).assertEqual(1)
           return result
@@ -772,7 +783,6 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
         .then((result) => {
           expect(result[0].status).assertEqual("fulfilled")
         })
-      await new Promise<number>((resolve) => { setTimeout(() => resolve(1.0), 100) })
       Done();
     })
 
@@ -839,9 +849,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       }))
       let result = await Promise.allSettled<string>(promises)
       expect(result[0].status).assertEqual("fulfilled")
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("delayed")
-      }
+      expect(getFulfilledValue<string>(result[0])).assertEqual("delayed")
       Done();
     })
 
@@ -924,11 +932,12 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
           setTimeout(() => {
             counter++
             resolve(1.0)
-          }, 50)
+          }, 100)
         }))
       }
       let result = await Promise.allSettled<number>(promises)
       expect(result.every(r => r.status === "fulfilled")).assertTrue()
+      expect(counter).assertEqual(10)
       Done();
     })
 
@@ -946,7 +955,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
         inner.add(Promise.resolve<string>("inner"));
         let innerResult = await Promise.allSettled<string>(inner);
         if (innerResult[0].status === "fulfilled") {
-          return (innerResult[0] as PromiseFulfilledResult<string>).value;
+          return getFulfilledValue<string>(innerResult[0]);
         }
         return "error";
       };
@@ -1288,9 +1297,10 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
         nested: { value: true }
       }))
       let result = await Promise.allSettled<ComplexData>(promises)
-      if (result[0].status === "fulfilled") {
-        expect((result[0] as PromiseFulfilledResult<ComplexData>).value.nested.value).assertTrue()
-      }
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<ComplexData>(result[0]).id).assertEqual(1)
+      expect(getFulfilledValue<ComplexData>(result[0]).name).assertEqual("test")
+      expect(getFulfilledValue<ComplexData>(result[0]).nested.value).assertTrue()
       Done();
     })
 
@@ -1307,46 +1317,45 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.reject(error))
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "rejected") {
-      }
-      expect(Array.isArray(result)).assertTrue()
+      expect(result[0].status).assertEqual("rejected")
+      expect((result[0] as PromiseRejectedResult).reason).assertEqual(error)
       Done();
     })
 
     /**
      * @tc.name   PromiseAllSettledSecondTest6600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_6600
-     * @tc.desc   Verify Promise.allSettled with non-error rejection reason
+     * @tc.desc   Verify Promise.allSettled preserves a standard Error rejection reason
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledSecondTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("string reason")))
+      let reason = new Error("standard error")
+      promises.add(Promise.reject<string>(reason))
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "rejected") {
-      }
-      expect(Array.isArray(result)).assertTrue()
+      expect(result[0].status).assertEqual("rejected")
+      expect((result[0] as PromiseRejectedResult).reason).assertEqual(reason)
       Done();
     })
 
     /**
      * @tc.name   PromiseAllSettledSecondTest6700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_6700
-     * @tc.desc   Verify Promise.allSettled with object as rejection reason
+     * @tc.desc   Verify Promise.allSettled preserves a custom Error rejection reason
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledSecondTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let reason: RejectReason = { code: 500, message: "server error" }
+      let reason = new CodedError("server error", 500)
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error(reason.message)))
+      promises.add(Promise.reject<string>(reason))
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "rejected") {
-      }
-      expect(Array.isArray(result)).assertTrue()
+      expect(result[0].status).assertEqual("rejected")
+      expect((result[0] as PromiseRejectedResult).reason).assertEqual(reason)
+      expect(reason.code).assertEqual(500)
       Done();
     })
 
@@ -1451,7 +1460,7 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
     /**
      * @tc.name   PromiseAllSettledSecondTest7300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_SECOND_TEST_7300
-     * @tc.desc   Verify Promise.allSettled with race condition scenario
+     * @tc.desc   Verify Promise.allSettled waits for 100 resolved Promises
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1465,7 +1474,8 @@ export default function BuiltinsPromiseAllSettledSecondTest(): void {
           resolve(1.0)
         }))
       }
-      await Promise.allSettled<number>(promises)
+      let results = await Promise.allSettled<number>(promises)
+      expect(results.length).assertEqual(100)
       expect(counter).assertEqual(100)
       Done();
     })

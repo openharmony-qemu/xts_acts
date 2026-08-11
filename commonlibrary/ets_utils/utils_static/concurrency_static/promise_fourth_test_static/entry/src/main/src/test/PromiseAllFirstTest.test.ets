@@ -1874,6 +1874,7 @@ export default function BuiltinsPromiseAllFirstTest(): void {
       });
       const result = await allWithTimeout([slowPromise], 100);
       expect(result as string).assertEqual("timeout");
+      expect(await slowPromise).assertEqual(1.0);
       Done();
     })
 

@@ -39,9 +39,21 @@ interface InvalidObj {
   invalid: boolean;
 }
 
+class TaggedError extends Error {
+  readonly tag: string;
+  constructor(tag: string) {
+    super(tag);
+    this.tag = tag;
+  }
+}
+
 class ThrowThenable<T> implements PromiseLike<T> {
+  private reason: TaggedError;
+  constructor(reason: TaggedError) {
+    this.reason = reason;
+  }
   then<U, E>(onFulfilled: ((p1: T) => U | PromiseLike<U>), onRejected: (((p1: Error) => E | PromiseLike<E>)) | undefined): PromiseLike<Awaited<U> | Awaited<E>> {
-    throw new Error("then error");
+    throw this.reason;
   }
 }
 class SharedCounter {
@@ -56,18 +68,36 @@ class SharedCounter {
   }
 }
 class ErrorIterable<T> implements Iterable<T> {
+  private reason: TaggedError;
+  constructor(reason: TaggedError) {
+    this.reason = reason;
+  }
   [Symbol.iterator](): Iterator<T> {
-    throw new Error("Iterator error");
+    throw this.reason;
   }
 }
 class ErrorIterable2 implements Iterable<Promise<string>> {
+  private reason: TaggedError;
+  constructor(reason: TaggedError) {
+    this.reason = reason;
+  }
   [Symbol.iterator](): Iterator<Promise<string>> {
-    throw new Error("Iterator failed");
+    throw this.reason;
   }
 }
 class IteratorErrorIterable implements Iterable<never> {
+  private reason: TaggedError;
+  constructor(reason: TaggedError) {
+    this.reason = reason;
+  }
   [Symbol.iterator](): Iterator<never> {
-    throw new Error("Symbol.iterator error");
+    throw this.reason;
+  }
+}
+class PromisePairIterable implements Iterable<Promise<int>> {
+  private values: Promise<int>[] = [Promise.resolve<int>(1), Promise.resolve<int>(2)]
+  $_iterator(): IterableIterator<Promise<int>> {
+    return this.values.$_iterator()
   }
 }
 
@@ -164,14 +194,14 @@ export default function BuiltinsPromiseAllSecondTest(): void {
       ];
       const result = await Promise.all<string | int>(promises);
       expect(typeof result[0]).assertEqual("string");
-      expect(typeof result[1]).assertEqual("int");
+       expect(typeof result[1]).assertEqual("int");
       Done();
     })
 
     /**
      * @tc.name   PromiseAllSecondTest0500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SECOND_TEST_0500
-     * @tc.desc   Verify Promise.all with FixedArray
+     * @tc.desc   Verify Promise.all with an array of mixed int and Promise values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -288,19 +318,19 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     /**
      * @tc.name   PromiseAllSecondTest1000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SECOND_TEST_1000
-     * @tc.desc   Verify Promise.all with partial error message assertion
+     * @tc.desc   Verify Promise.all preserves the rejected Error identity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSecondTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      const reason = new TaggedError("partial-error");
       let caught: boolean = false
       try {
-        await Promise.all([Promise.reject(new Error("Partial error message with details"))]);
-        expect().assertFail();
+        await Promise.all([Promise.reject(reason)]);
       } catch (error) {
         caught = true
-        expect(error instanceof Error).assertTrue()
+        expect(error === reason).assertTrue()
       }
       expect(caught).assertTrue()
       Done();
@@ -309,7 +339,7 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     /**
      * @tc.name   PromiseAllSecondTest1100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SECOND_TEST_1100
-     * @tc.desc   Verify Promise.all with timer interval >= 50ms
+     * @tc.desc   Verify Promise.all with timer interval >= 100ms
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -509,7 +539,7 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     /**
      * @tc.name   PromiseAllSecondTest2200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SECOND_TEST_2200
-     * @tc.desc   Verify Promise.all with negative zero
+     * @tc.desc   Verify Promise.all with zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -792,7 +822,7 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     /**
      * @tc.name   PromiseAllSecondTest3900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SECOND_TEST_3900
-     * @tc.desc   Verify Promise.all requires promises parameter
+     * @tc.desc   Verify Promise.all accepts a Set of promises
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -816,11 +846,10 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     it('PromiseAllSecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let caught: boolean = false
       try {
-        const result = Promise.all<never>(null as never[]);
-        expect().assertFail();
+        await Promise.all<never>(null as never[]);
       } catch (error) {
-      caught = true
-}
+        caught = true
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -836,11 +865,10 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     it('PromiseAllSecondTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let caught: boolean = false
       try {
-        const result = Promise.all<never>(undefined as never[]);
-        expect().assertFail();
+        await Promise.all<never>(undefined as never[]);
       } catch (error) {
-      caught = true
-}
+        caught = true
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -872,7 +900,7 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAllSecondTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      const promises: Promise<int>[] = [Promise.resolve<int>(1), Promise.resolve<int>(2)];
+      const promises = new PromisePairIterable();
       const result = await Promise.all<int>(promises);
       expect(result).assertDeepEquals([1, 2]);
       Done();
@@ -995,7 +1023,6 @@ export default function BuiltinsPromiseAllSecondTest(): void {
       let caught: boolean = false;
       try {
         await Promise.all<never>(nonIterable as never[]);
-        expect().assertFail();
       } catch (error) {
         caught = true;
       }
@@ -1012,14 +1039,15 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAllSecondTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      const errorIterable = new ErrorIterable<Promise<string>>();
+      const reason = new TaggedError("iterator-error");
+      const errorIterable = new ErrorIterable<Promise<string>>(reason);
       let caught: boolean = false
       try {
         await Promise.all<string>(errorIterable);
-        expect().assertFail();
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === reason).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1338,7 +1366,7 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     /**
      * @tc.name   PromiseAllSecondTest6900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SECOND_TEST_6900
-     * @tc.desc   Verify Promise.all returns array type
+     * @tc.desc   Verify Promise.all preserves Set iteration order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1348,8 +1376,9 @@ export default function BuiltinsPromiseAllSecondTest(): void {
       promises.add(Promise.resolve<string>("a"));
       promises.add(Promise.resolve<string>("b"));
       const result = await Promise.all<string>(promises);
-      expect(Array.isArray(result)).assertTrue();
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual("a");
+      expect(result[1]).assertEqual("b");
       Done();
     })
 
@@ -1403,16 +1432,17 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      */
     it('PromiseAllSecondTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       const promises = new Set<Promise<string>>();
+      const reason = new TaggedError("single-rejection");
       promises.add(Promise.resolve<string>("success"));
-      promises.add(Promise.reject<string>(new Error("failed")));
+      promises.add(Promise.reject<string>(reason));
       promises.add(Promise.resolve<string>("another"));
       let caught: boolean = false
       try {
-        const result = await Promise.all<string>(promises);
-        expect().assertFail();
+        await Promise.all<string>(promises);
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === reason).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1427,15 +1457,17 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      */
     it('PromiseAllSecondTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       const promises = new Set<Promise<string>>();
-      promises.add(Promise.reject<string>(new Error("first error")));
-      promises.add(Promise.reject<string>(new Error("second error")));
+      const firstReason = new TaggedError("first-rejection");
+      const secondReason = new TaggedError("second-rejection");
+      promises.add(Promise.reject<string>(firstReason));
+      promises.add(Promise.reject<string>(secondReason));
       let caught: boolean = false
       try {
-        const result = await Promise.all<string>(promises);
-        expect().assertFail();
+        await Promise.all<string>(promises);
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === firstReason).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1450,19 +1482,29 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      */
     it('PromiseAllSecondTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       const promises = new Set<Promise<string>>();
+      const immediateReason = new TaggedError("immediate-rejection");
+      const laterReason = new TaggedError("later-rejection");
       const rejectLater = new Promise<string>((_, reject) => {
-        setTimeout(() => reject(new Error("later error")), 100);
+        setTimeout(() => reject(laterReason), 100);
       });
-      promises.add(Promise.reject<string>(new Error("immediate error")));
+      promises.add(Promise.reject<string>(immediateReason));
       promises.add(rejectLater);
       let caught: boolean = false
       try {
-        const result = await Promise.all<string>(promises);
-        expect().assertFail();
+        await Promise.all<string>(promises);
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === immediateReason).assertTrue()
+      }
       expect(caught).assertTrue()
+      let laterCaught: boolean = false;
+      try {
+        await rejectLater;
+      } catch (error) {
+        laterCaught = true;
+        expect(error === laterReason).assertTrue();
+      }
+      expect(laterCaught).assertTrue();
       Done();
     })
 
@@ -1476,17 +1518,18 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      */
     it('PromiseAllSecondTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       const promises = new Set<Promise<string>>();
+      const reason = new TaggedError("async-rejection");
       promises.add(new Promise<string>((_, reject) => {
-        setTimeout(() => reject(new Error("async error")), 100);
+        setTimeout(() => reject(reason), 100);
       }));
       promises.add(Promise.resolve<string>("success"));
       let caught: boolean = false
       try {
-        const result = await Promise.all<string>(promises);
-        expect().assertFail();
+        await Promise.all<string>(promises);
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === reason).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1501,14 +1544,15 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      */
     it('PromiseAllSecondTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
 
-      const errorIterable = new ErrorIterable2();
+      const reason = new TaggedError("iterator-next-error");
+      const errorIterable = new ErrorIterable2(reason);
       let caught: boolean = false
       try {
-        const result = await Promise.all<string>(errorIterable);
-        expect().assertFail();
+        await Promise.all<string>(errorIterable);
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === reason).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1522,14 +1566,15 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAllSecondTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      const invalidIterable = new IteratorErrorIterable();
+      const reason = new TaggedError("symbol-iterator-error");
+      const invalidIterable = new IteratorErrorIterable(reason);
       let caught: boolean = false
       try {
-        const result = await Promise.all<never>(invalidIterable);
-        expect().assertFail();
+        await Promise.all<never>(invalidIterable);
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === reason).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1537,19 +1582,14 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     /**
      * @tc.name   PromiseAllSecondTest7800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SECOND_TEST_7800
-     * @tc.desc   Verify Promise.all with non-Iterable parameter
+     * @tc.desc   Verify Promise.all with an empty iterable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSecondTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      try {
-        const result = await Promise.all<never>([]);
-        expect(Array.isArray(result)).assertTrue()
-        expect(result.length).assertEqual(0)
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
+      const result = await Promise.all<never>([]);
+      expect(result.length).assertEqual(0)
       Done();
     })
 
@@ -1562,15 +1602,16 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAllSecondTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      const thenable = new ThrowThenable<string>();
+      const reason = new TaggedError("then-error");
+      const thenable = new ThrowThenable<string>(reason);
       const promises: PromiseLike<string>[] = [thenable];
       let caught: boolean = false
       try {
-        const result = await Promise.all<string>(promises);
-        expect().assertFail();
+        await Promise.all<string>(promises);
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === reason).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1619,8 +1660,14 @@ export default function BuiltinsPromiseAllSecondTest(): void {
       promises.add(Promise.resolve<int>(1));
       promises.add(Promise.resolve<int>(2));
       const result = await Promise.all<int>(promises)
-        .then((values) => values.map(v => v * 2))
-        .then((values) => values.filter(v => v > 1));
+        .then((values) => {
+          expect(values).assertDeepEquals([1, 2])
+          return values.map(v => v * 2)
+        })
+        .then((values) => {
+          expect(values).assertDeepEquals([2, 4])
+          return values.filter(v => v > 1)
+        });
       expect(result).assertDeepEquals([2, 4]);
       Done();
     })
@@ -1635,13 +1682,14 @@ export default function BuiltinsPromiseAllSecondTest(): void {
      */
     it('PromiseAllSecondTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       const promises = new Set<Promise<string>>();
-      promises.add(Promise.reject<string>(new Error("test error")));
+      const reason = new TaggedError("catch-chain-error");
+      promises.add(Promise.reject<string>(reason));
       let caught = false;
       try {
         await Promise.all<string>(promises);
-        expect().assertFail();
       } catch (error) {
         caught = true;
+        expect(error === reason).assertTrue();
       }
       expect(caught).assertTrue();
       Done();
@@ -1698,14 +1746,15 @@ export default function BuiltinsPromiseAllSecondTest(): void {
     it('PromiseAllSecondTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       const test: () => Promise<void> = async (): Promise<void> => {
         const promises = new Set<Promise<string>>();
-        promises.add(Promise.reject<string>(new Error("test")));
+        const reason = new TaggedError("await-rejected");
+        promises.add(Promise.reject<string>(reason));
         let caught: boolean = false
         try {
-          const result = await Promise.all<string>(promises);
-          expect().assertFail();
+          await Promise.all<string>(promises);
         } catch (error) {
-      caught = true
-}
+          caught = true
+          expect(error === reason).assertTrue()
+        }
         expect(caught).assertTrue()
       };
       await test();

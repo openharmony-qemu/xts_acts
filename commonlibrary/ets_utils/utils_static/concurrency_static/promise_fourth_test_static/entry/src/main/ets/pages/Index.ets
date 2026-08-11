@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, Column, Component, Button } from '@ohos.arkui.component'
+import { Text, Column, Component, Button } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
-@Entry
 @Component
 struct MyStateSample {
   @State stateVar: string = 'state var';

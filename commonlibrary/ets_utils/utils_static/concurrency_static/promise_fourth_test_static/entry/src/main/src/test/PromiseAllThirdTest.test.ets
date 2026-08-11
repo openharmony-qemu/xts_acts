@@ -55,10 +55,15 @@ class SimpleLock {
 }
 
 class ErrorIterable implements Iterable<Promise<int>> {
+  private reason: Error
+  constructor(reason: Error) {
+    this.reason = reason
+  }
   [Symbol.iterator](): Iterator<Promise<int>> {
+    let reason = this.reason
     return {
       next(): IteratorResult<Promise<int>>   {
-        throw new Error("Iterator error occurred at line 123");
+        throw reason;
       }
     };
   }
@@ -185,14 +190,16 @@ export default function BuiltinsPromiseAllThirdTest(): void {
       promises.add(new Promise<string>((resolve: (value: string) => void) => {
         setTimeout(() => resolve("slow"), 500);
       }));
-      promises.add(Promise.reject<string>(new Error("immediate reject")));
+      let expectedError = new Error("immediate reject")
+      promises.add(Promise.reject<string>(expectedError));
       let caught: boolean = false
       try {
         await Promise.all<string>(promises);
         expect().assertFail();
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === expectedError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -215,16 +222,13 @@ export default function BuiltinsPromiseAllThirdTest(): void {
           return;
         }, 500);
         clearTimeout(timerId);
+        resolve("cleared");
       });
       promises.add(timerPromise);
       promises.add(Promise.resolve<string>("other"));
-      await Promise.race([
-        Promise.all<string>(promises),
-        new Promise<string[]>((resolve: (value: string[]) => void) => {
-          setTimeout(() => resolve(["timeout"]), 600);
-        })
-      ]);
+      let result = await Promise.all<string>(promises);
       expect(executed).assertFalse();
+      expect(result).assertDeepEquals(["cleared", "other"]);
       Done();
     })
 
@@ -238,16 +242,22 @@ export default function BuiltinsPromiseAllThirdTest(): void {
      */
     it('PromiseAllThirdTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>();
-      promises.add(new Promise<string>((resolve: (value: string) => void) => {
-        setTimeout(() => resolve("slow"), 2000);
-      }));
-      let result = await Promise.race<string[]>([
-        Promise.all<string>(promises),
-        new Promise<string[]>((resolve: (value: string[]) => void) => {
-          setTimeout(() => resolve(["timeout"]), 1000);
-        })
-      ]);
-      expect(result).assertDeepEquals(["timeout"]);
+      let slowTimerId: int = 0;
+      const slowPromise = new Promise<string>((resolve: (value: string) => void) => {
+        slowTimerId = setTimeout(() => resolve("slow"), 2000);
+      });
+      promises.add(slowPromise);
+      try {
+        let result = await Promise.race<string[]>([
+          Promise.all<string>(promises),
+          new Promise<string[]>((resolve: (value: string[]) => void) => {
+            setTimeout(() => resolve(["timeout"]), 1000);
+          })
+        ]);
+        expect(result).assertDeepEquals(["timeout"]);
+      } finally {
+        clearTimeout(slowTimerId);
+      }
       Done();
     })
 
@@ -301,22 +311,18 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     it('PromiseAllThirdTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
 
       let emitter = new SimpleEmitter();
-      let results: string[] = [];
-      emitter.on('data', (data: string) => {
-        let promises = new Set<Promise<string>>();
-        promises.add(Promise.resolve<string>(data + "_1"));
-        promises.add(Promise.resolve<string>(data + "_2"));
-        Promise.all<string>(promises).then<void>((result: string[]) => {
-          for (let j = 0; j < result.length; j++) {
-            results.push(result[j]);
-          }
-          return;
+      const eventResult = new Promise<string[]>((resolve: (value: string[]) => void) => {
+        emitter.on('data', (data: string) => {
+          let promises = new Set<Promise<string>>();
+          promises.add(Promise.resolve<string>(data + "_1"));
+          promises.add(Promise.resolve<string>(data + "_2"));
+          Promise.all<string>(promises).then<void>((result: string[]) => {
+            resolve(result);
+          });
         });
       });
       emitter.emit('data', 'input');
-      await new Promise<void>((resolve: (value: void) => void) => {
-        setTimeout(() => resolve(undefined as void), 100);
-      });
+      let results = await eventResult;
       expect(results.length).assertEqual(2);
       expect(results.includes("input_1")).assertTrue();
       expect(results.includes("input_2")).assertTrue();
@@ -354,8 +360,9 @@ export default function BuiltinsPromiseAllThirdTest(): void {
       let totalCount = 5;
       let promises = new Set<Promise<void>>();
       for (let i = 0; i < totalCount; i++) {
-        counter++;
-        promises.add(Promise.resolve<void>(undefined));
+        promises.add(Promise.resolve<void>(undefined).then<void>(() => {
+          counter++;
+        }));
       }
       await Promise.all<void>(promises);
       expect(counter).assertEqual(totalCount);
@@ -412,7 +419,7 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     /**
      * @tc.name   PromiseAllThirdTest1300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_THIRD_TEST_1300
-     * @tc.desc   Verify EAWorker.run callback nested Promise.all
+     * @tc.desc   Verify Promise.all accepts a Set of resolved Promises
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -430,19 +437,21 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     /**
      * @tc.name   PromiseAllThirdTest1400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_THIRD_TEST_1400
-     * @tc.desc   Verify assertContain for partial error message
+     * @tc.desc   Verify Promise.all rejects when the iterable iterator throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllThirdTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("Iterator error occurred at line 123")
       let caught: boolean = false
       try {
-        await Promise.all<int>(new ErrorIterable());
+        await Promise.all<int>(new ErrorIterable(expectedError));
         expect().assertFail();
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === expectedError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -450,7 +459,7 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     /**
      * @tc.name   PromiseAllThirdTest1500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_THIRD_TEST_1500
-     * @tc.desc   Verify Timer interval >= 50ms
+     * @tc.desc   Verify Promise.all resolves two promises scheduled at 100ms
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -478,14 +487,16 @@ export default function BuiltinsPromiseAllThirdTest(): void {
      */
     it('PromiseAllThirdTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>();
-      promises.add(Promise.reject<string>(new Error("Iterator error: invalid state")));
+      let expectedError = new Error("Iterator error: invalid state")
+      promises.add(Promise.reject<string>(expectedError));
       let caught: boolean = false
       try {
         await Promise.all<string>(promises);
         expect().assertFail();
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === expectedError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -517,7 +528,7 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     /**
      * @tc.name   PromiseAllThirdTest1800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_THIRD_TEST_1800
-     * @tc.desc   Verify Timer branch interval > 50ms
+     * @tc.desc   Verify Promise.all preserves input order for timed branches
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -530,17 +541,18 @@ export default function BuiltinsPromiseAllThirdTest(): void {
           branch = "branch1";
           resolve("first");
           return;
-        }, 50);
+        }, 100);
       }));
       promises.add(new Promise<string>((resolve: (value: string) => void) => {
         setTimeout(() => {
           branch = "branch2";
           resolve("second");
           return;
-        }, 100);
+        }, 200);
       }));
       let result = await Promise.all<string>(promises);
-      expect(result.length).assertEqual(2);
+      expect(result).assertDeepEquals(["first", "second"]);
+      expect(branch).assertEqual("branch2");
       Done();
     })
 
@@ -575,11 +587,8 @@ export default function BuiltinsPromiseAllThirdTest(): void {
         promises.add(Promise.resolve<string>(item));
       });
       let result = await Promise.all<string>(promises);
-      expect(result.length).assertEqual(3);
-      items.forEach((item: string) => {
-        expect(result.includes(item)).assertTrue();
+      expect(result).assertDeepEquals(items);
       Done();
-      });
     })
 
     /**
@@ -592,20 +601,26 @@ export default function BuiltinsPromiseAllThirdTest(): void {
      */
     it('PromiseAllThirdTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>();
-      promises.add(Promise.reject<string>(new Error("test")));
+      let expectedError = new Error("test")
+      promises.add(Promise.reject<string>(expectedError));
       let caught: boolean = false
       try {
         let result = await Promise.all<string>(promises);
         expect().assertFail();
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === expectedError).assertTrue()
+      }
       expect(caught).assertTrue()
+      let expectedError2 = new Error("test2");
       let promises2 = new Set<Promise<string>>();
-      promises2.add(Promise.reject<string>(new Error("test2")));
+      promises2.add(Promise.reject<string>(expectedError2));
+      let secondCaught = false
       await Promise.all<string>(promises2).catch<void>((error: Error) => {
-        expect(error instanceof Error).assertTrue();
+        secondCaught = true
+        expect(error).assertEqual(expectedError2);
       });
+      expect(secondCaught).assertTrue()
       Done();
     })
 
@@ -622,7 +637,6 @@ export default function BuiltinsPromiseAllThirdTest(): void {
       let result = await Promise.all<string>(emptySet);
       expect(result).assertDeepEquals([] as string[]);
       expect(result.length).assertEqual(0);
-      expect(Array.isArray(result)).assertTrue();
       Done();
     })
 
@@ -748,19 +762,19 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     it('PromiseAllThirdTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('promiseWorker');
       eaWorker.start();
-
-      let job1 = eaWorker.run<int>(() => { return 1 * 2; });
-      let job2 = eaWorker.run<int>(() => { return 2 * 2; });
-      let job3 = eaWorker.run<int>(() => { return 3 * 2; });
-
-      let r1 = job1.Await();
-      let r2 = job2.Await();
-      let r3 = job3.Await();
-      let results: int[] = [r1, r2, r3];
-      let allResult = await Promise.all<int>([Promise.resolve(results[0]), Promise.resolve(results[1]), Promise.resolve(results[2])]);
-      expect(allResult).assertDeepEquals([2, 4, 6]);
-
-      await eaWorker.join();
+      try {
+        let job1 = eaWorker.run<number>((): number => { return 1.0 * 2.0; });
+        let job2 = eaWorker.run<number>((): number => { return 2.0 * 2.0; });
+        let job3 = eaWorker.run<number>((): number => { return 3.0 * 2.0; });
+        let r1 = job1.Await();
+        let r2 = job2.Await();
+        let r3 = job3.Await();
+        let results: number[] = [r1, r2, r3];
+        let allResult = await Promise.all<number>([Promise.resolve(results[0]), Promise.resolve(results[1]), Promise.resolve(results[2])]);
+         expect(allResult).assertDeepEquals([2.0, 4.0, 6.0]);
+      } finally {
+        eaWorker.join().Await();
+      }
       Done();
     })
 
@@ -775,32 +789,31 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     it('PromiseAllThirdTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('settledWorker');
       eaWorker.start();
-
-      let job = eaWorker.run<int>((a: int, b: int, c: int, d: int, e: int) => {
-        let count = 0;
-        if (a > 0) { count++; }
-        if (b > 0) { count++; }
-        if (c > 0) { count++; }
-        if (d > 0) { count++; }
-        if (e > 0) { count++; }
-        return count;
-      }, 1, -1, 2, -2, 3);
-
-      let successCount = job.Await();
-
-      let promises: Promise<int>[] = [
-        Promise.resolve<int>(1), Promise.reject<int>(new Error("negative")),
-        Promise.resolve<int>(2), Promise.reject<int>(new Error("negative")),
-        Promise.resolve<int>(3)
-      ];
-      let results = await Promise.allSettled<int>(promises);
-      let mainCount = 0;
-      for (let i = 0; i < results.length; i++) {
-        if (results[i].status === "fulfilled") { mainCount++; }
+      try {
+        let job = eaWorker.run<number>((a: number, b: number, c: number, d: number, e: number): number => {
+          let count: number = 0.0;
+          if (a > 0) { count++; }
+          if (b > 0) { count++; }
+          if (c > 0) { count++; }
+          if (d > 0) { count++; }
+          if (e > 0) { count++; }
+          return count;
+        }, 1.0, -1.0, 2.0, -2.0, 3.0);
+        let successCount = job.Await();
+        let promises: Promise<int>[] = [
+          Promise.resolve<int>(1), Promise.reject<int>(new Error("negative")),
+          Promise.resolve<int>(2), Promise.reject<int>(new Error("negative")),
+          Promise.resolve<int>(3)
+        ];
+        let results = await Promise.allSettled<int>(promises);
+        let mainCount = 0;
+        for (let i = 0; i < results.length; i++) {
+          if (results[i].status === "fulfilled") { mainCount++; }
+        }
+        expect(successCount).assertEqual(mainCount);
+      } finally {
+        eaWorker.join().Await();
       }
-      expect(successCount).assertEqual(mainCount);
-
-      await eaWorker.join();
       Done();
     })
 
@@ -815,16 +828,16 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     it('PromiseAllThirdTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('testWorker');
       eaWorker.start();
-
-      let job1 = eaWorker.run<int>(() => { return 1; });
-      let job2 = eaWorker.run<int>(() => { return 2; });
-
-      let jr1 = job1.Await();
-      let jr2 = job2.Await();
-      let result = await Promise.all<int>([Promise.resolve(jr1), Promise.resolve(jr2)]);
-      expect(result).assertDeepEquals([1, 2]);
-
-      await eaWorker.join();
+      try {
+        let job1 = eaWorker.run<number>((): number => { return 1.0; });
+        let job2 = eaWorker.run<number>((): number => { return 2.0; });
+        let jr1 = job1.Await();
+        let jr2 = job2.Await();
+        let result = await Promise.all<number>([Promise.resolve(jr1), Promise.resolve(jr2)]);
+         expect(result).assertDeepEquals([1.0, 2.0]);
+      } finally {
+        eaWorker.join().Await();
+      }
       Done();
     })
 
@@ -839,20 +852,20 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     it('PromiseAllThirdTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('testWorker');
       eaWorker.start();
-
-      let job = eaWorker.run<int>(() => {
-        return 2;
-      });
-
-      let promises: Promise<string>[] = [
-        Promise.resolve<string>("success"),
-        Promise.reject<string>(new Error("fail"))
-      ];
-      let results = await Promise.allSettled<string>(promises);
-      let workerResult = job.Await();
-      expect(results.length).assertEqual(workerResult);
-
-      await eaWorker.join();
+      try {
+        let job = eaWorker.run<number>((): number => {
+          return 2.0;
+        });
+        let promises: Promise<string>[] = [
+          Promise.resolve<string>("success"),
+          Promise.reject<string>(new Error("fail"))
+        ];
+        let results = await Promise.allSettled<string>(promises);
+        let workerResult = job.Await();
+        expect(results.length).assertEqual(workerResult);
+      } finally {
+        eaWorker.join().Await();
+      }
       Done();
     })
 
@@ -867,18 +880,18 @@ export default function BuiltinsPromiseAllThirdTest(): void {
     it('PromiseAllThirdTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('handlerWorker');
       eaWorker.start();
-      let job = eaWorker.run<int>((a: int, b: int, c: int) => {
-        return a * 2 + b * 2 + c * 2;
-      }, 1, 2, 3);
-
-      let workerSum = job.Await();
-
-      let promises: Promise<int>[] = [Promise.resolve(1 * 2), Promise.resolve(2 * 2), Promise.resolve(3 * 2)];
-      let results = await Promise.all<int>(promises);
-      let mainSum = results[0] + results[1] + results[2];
-      expect(workerSum).assertEqual(mainSum);
-
-      await eaWorker.join();
+      try {
+        let job = eaWorker.run<number>((a: number, b: number, c: number): number => {
+          return a * 2 + b * 2 + c * 2;
+        }, 1.0, 2.0, 3.0);
+        let workerSum = job.Await();
+        let promises: Promise<number>[] = [Promise.resolve(1.0 * 2.0), Promise.resolve(2.0 * 2.0), Promise.resolve(3.0 * 2.0)];
+        let results = await Promise.all<number>(promises);
+        let mainSum = results[0] + results[1] + results[2];
+        expect(workerSum).assertEqual(mainSum);
+      } finally {
+        eaWorker.join().Await();
+      }
       Done();
     })
 

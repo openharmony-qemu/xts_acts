@@ -37,29 +37,30 @@ interface DeepData {
   level1: Level1
 }
 
-class StringPromiseLike implements PromiseLike<string> {
-  value: string
-  constructor(value: string) {
-    this.value = value
+function getFulfilledValue<T>(result: PromiseSettledResult<T>): T {
+  if (result instanceof PromiseFulfilledResult) {
+    return result.value
   }
-  then<U, E>(onFulfilled?: ((value: string) => U | PromiseLike<U>), onRejected?: ((reason: Error) => E | PromiseLike<E>)): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onFulfilled) {
-      onFulfilled(this.value)
-    }
-    return Promise.resolve<string>(this.value) as PromiseLike<Awaited<U> | Awaited<E>>
+  throw new Error("Expected fulfilled Promise result")
+}
+
+class StringPromiseLike implements PromiseLike<string> {
+  private promise: Promise<string>
+  constructor(value: string) {
+    this.promise = Promise.resolve<string>(value)
+  }
+  then<U = string, E = never>(onFulfilled: (value: string) => PromiseLike<U> | U, onRejected?: (error: Error) => PromiseLike<E> | E): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
   }
 }
 
 class NumberPromiseLike implements PromiseLike<number> {
-  value: number
+  private promise: Promise<number>
   constructor(value: number) {
-    this.value = value
+    this.promise = Promise.resolve<number>(value)
   }
-  then<U, E>(onFulfilled?: ((value: number) => U | PromiseLike<U>), onRejected?: ((reason: Error) => E | PromiseLike<E>)): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onFulfilled) {
-      onFulfilled(this.value)
-    }
-    return Promise.resolve<number>(this.value) as PromiseLike<Awaited<U> | Awaited<E>>
+  then<U = number, E = never>(onFulfilled: (value: number) => PromiseLike<U> | U, onRejected?: (error: Error) => PromiseLike<E> | E): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
   }
 }
 
@@ -125,7 +126,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await Promise.allSettled<number>(promises)
       expect(result.length).assertEqual(3)
       expect(result[0].status).assertEqual("fulfilled")
-      expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(1.0)
+      expect(getFulfilledValue<number>(result[0])).assertEqual(1.0)
       Done()
     })
 
@@ -143,7 +144,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await Promise.allSettled<string>(promises)
       expect(result.length).assertEqual(2)
       expect(result[0].status).assertEqual("fulfilled")
-      expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("hello")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("hello")
       Done()
     })
 
@@ -160,8 +161,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let promises: (PromiseLike<number> | Promise<number>)[] = [promiseLike, Promise.resolve<number>(200.0)]
       let result = await Promise.allSettled<number>(promises)
       expect(result.length).assertEqual(2)
-      expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(100.0)
-      expect((result[1] as PromiseFulfilledResult<number>).value).assertEqual(200.0)
+      expect(getFulfilledValue<number>(result[0])).assertEqual(100.0)
+      expect(getFulfilledValue<number>(result[1])).assertEqual(200.0)
       Done()
     })
 
@@ -178,7 +179,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await Promise.allSettled<number | undefined>(promises)
       expect(result.length).assertEqual(3)
       expect(result[1].status).assertEqual("fulfilled")
-      expect((result[1] as PromiseFulfilledResult<number | undefined>).value).assertEqual(undefined)
+      expect(getFulfilledValue<number | undefined>(result[1])).assertEqual(undefined)
       Done()
     })
 
@@ -194,7 +195,6 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let promises: Promise<number>[] = []
       let result = await Promise.allSettled<number>(promises)
       expect(result.length).assertEqual(0)
-      expect(Array.isArray(result)).assertTrue()
       Done()
     })
 
@@ -211,7 +211,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await Promise.allSettled<string>(promises)
       expect(result.length).assertEqual(1)
       expect(result[0].status).assertEqual("fulfilled")
-      expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("single")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("single")
       Done()
     })
 
@@ -232,7 +232,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       expect(result.length).assertEqual(100)
       for (let i = 0; i < 100; i++) {
         expect(result[i].status).assertEqual("fulfilled")
-        expect((result[i] as PromiseFulfilledResult<number>).value).assertEqual(i * 1.0)
+        expect(getFulfilledValue<number>(result[i])).assertEqual(i * 1.0)
       }
       Done()
     })
@@ -254,10 +254,10 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await Promise.allSettled<string>(promises)
       expect(result.length).assertEqual(3)
       expect(result[0].status).assertEqual("fulfilled")
-      expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("success1")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("success1")
       expect(result[1].status).assertEqual("rejected")
       expect(result[2].status).assertEqual("fulfilled")
-      expect((result[2] as PromiseFulfilledResult<string>).value).assertEqual("success2")
+      expect(getFulfilledValue<string>(result[2])).assertEqual("success2")
       Done()
     })
 
@@ -318,8 +318,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promises: Promise<string>[] = [Promise.resolve("hello"), Promise.resolve("world")]
       let result = await Promise.allSettled<string>(promises)
-      expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("hello")
-      expect((result[1] as PromiseFulfilledResult<string>).value).assertEqual("world")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("hello")
+      expect(getFulfilledValue<string>(result[1])).assertEqual("world")
       Done()
     })
 
@@ -334,8 +334,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promises: Promise<number>[] = [Promise.resolve<number>(100.0), Promise.resolve<number>(200.0)]
       let result = await Promise.allSettled<number>(promises)
-      expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(100.0)
-      expect((result[1] as PromiseFulfilledResult<number>).value).assertEqual(200.0)
+      expect(getFulfilledValue<number>(result[0])).assertEqual(100.0)
+      expect(getFulfilledValue<number>(result[1])).assertEqual(200.0)
       Done()
     })
 
@@ -350,8 +350,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<boolean>[] = [Promise.resolve(true), Promise.resolve(false)]
       let result = await Promise.allSettled<boolean>(promises)
-      expect((result[0] as PromiseFulfilledResult<boolean>).value).assertTrue()
-      expect((result[1] as PromiseFulfilledResult<boolean>).value).assertFalse()
+      expect(getFulfilledValue<boolean>(result[0])).assertTrue()
+      expect(getFulfilledValue<boolean>(result[1])).assertFalse()
       Done()
     })
 
@@ -372,8 +372,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
         Promise.resolve<User>(user2)
       ]
       let result = await Promise.allSettled<User>(promises)
-      expect((result[0] as PromiseFulfilledResult<User>).value.name).assertEqual("Alice")
-      expect((result[1] as PromiseFulfilledResult<User>).value.name).assertEqual("Bob")
+      expect(getFulfilledValue<User>(result[0]).name).assertEqual("Alice")
+      expect(getFulfilledValue<User>(result[1]).name).assertEqual("Bob")
       Done()
     })
 
@@ -388,8 +388,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<number[]>[] = [Promise.resolve<number[]>([1.0, 2.0, 3.0]), Promise.resolve<number[]>([4.0, 5.0, 6.0])]
       let result = await Promise.allSettled<number[]>(promises)
-      expect((result[0] as PromiseFulfilledResult<number[]>).value.length).assertEqual(3)
-      expect((result[1] as PromiseFulfilledResult<number[]>).value.length).assertEqual(3)
+      expect(getFulfilledValue<number[]>(result[0]).length).assertEqual(3)
+      expect(getFulfilledValue<number[]>(result[1]).length).assertEqual(3)
       Done()
     })
 
@@ -425,8 +425,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<string | null>[] = [Promise.resolve("value"), Promise.resolve(null)]
       let result = await Promise.allSettled<string | null>(promises)
-      expect((result[0] as PromiseFulfilledResult<string | null>).value).assertEqual("value")
-      expect((result[1] as PromiseFulfilledResult<string | null>).value).assertNull()
+      expect(getFulfilledValue<string | null>(result[0])).assertEqual("value")
+      expect(getFulfilledValue<string | null>(result[1])).assertNull()
       Done()
     })
 
@@ -443,7 +443,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await Promise.allSettled<void>(promises)
       expect(result.length).assertEqual(2)
       expect(result[0].status).assertEqual("fulfilled")
-      expect((result[0] as PromiseFulfilledResult<void>).value).assertEqual(undefined)
+      expect(getFulfilledValue<void>(result[0])).assertEqual(undefined)
       Done()
     })
 
@@ -458,8 +458,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<string>[] = [Promise.resolve(""), Promise.resolve("normal")]
       let result = await Promise.allSettled<string>(promises)
-      expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("")
-      expect((result[1] as PromiseFulfilledResult<string>).value).assertEqual("normal")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("")
+      expect(getFulfilledValue<string>(result[1])).assertEqual("normal")
       Done()
     })
 
@@ -474,9 +474,9 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<number>[] = [Promise.resolve<number>(0.0), Promise.resolve<number>(-1.0), Promise.resolve<number>(1.0)]
       let result = await Promise.allSettled<number>(promises)
-      expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(0.0)
-      expect((result[1] as PromiseFulfilledResult<number>).value).assertEqual(-1.0)
-      expect((result[2] as PromiseFulfilledResult<number>).value).assertEqual(1.0)
+      expect(getFulfilledValue<number>(result[0])).assertEqual(0.0)
+      expect(getFulfilledValue<number>(result[1])).assertEqual(-1.0)
+      expect(getFulfilledValue<number>(result[2])).assertEqual(1.0)
       Done()
     })
 
@@ -543,10 +543,14 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<string>[] = [Promise.resolve("test")]
       let result = await Promise.allSettled<string>(promises)
-      let fulfilled = result[0] as PromiseFulfilledResult<string>
-      expect(fulfilled.status).assertEqual("fulfilled")
-      expect(typeof fulfilled.value).assertEqual("string")
-      expect(fulfilled.value).assertEqual("test")
+      let settledResult = result[0]
+      if (settledResult instanceof PromiseFulfilledResult) {
+        expect(settledResult.status).assertEqual("fulfilled")
+        expect(typeof settledResult.value).assertEqual("string")
+        expect(settledResult.value).assertEqual("test")
+      } else {
+        expect().assertFail()
+      }
       Done()
     })
 
@@ -559,11 +563,12 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledFirstTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let promises: Promise<string>[] = [Promise.reject(new Error("test error"))]
+      let reason = new Error("test error")
+      let promises: Promise<string>[] = [Promise.reject(reason)]
       let result = await Promise.allSettled<string>(promises)
       let rejected = result[0] as PromiseRejectedResult
       expect(rejected.status).assertEqual("rejected")
-      expect(rejected.reason instanceof Error).assertTrue()
+      expect(rejected.reason).assertEqual(reason)
       Done()
     })
 
@@ -582,9 +587,9 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
         new Promise<string>((resolve) => { setTimeout(() => resolve("second"), 200) })
       ]
       let result = await Promise.allSettled<string>(promises)
-      expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("third")
-      expect((result[1] as PromiseFulfilledResult<string>).value).assertEqual("first")
-      expect((result[2] as PromiseFulfilledResult<string>).value).assertEqual("second")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("third")
+      expect(getFulfilledValue<string>(result[1])).assertEqual("first")
+      expect(getFulfilledValue<string>(result[2])).assertEqual("second")
       Done()
     })
 
@@ -712,7 +717,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
      */
     it('PromiseAllSettledFirstTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<number>[] = [Promise.resolve<number>(1.0), Promise.resolve<number>(2.0)]
-      Promise.allSettled<number>(promises)
+      await Promise.allSettled<number>(promises)
         .then((result) => {
           expect(result.length).assertEqual(2)
           return result.length
@@ -809,8 +814,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
         new Promise<string>((resolve) => { setTimeout(() => resolve("fast"), 100) })
       ])
       expect(allSettledResult.length).assertEqual(2)
-      expect((allSettledResult[0] as PromiseFulfilledResult<string>).value).assertEqual("slow")
-      expect((allSettledResult[1] as PromiseFulfilledResult<string>).value).assertEqual("fast")
+      expect(getFulfilledValue<string>(allSettledResult[0])).assertEqual("slow")
+      expect(getFulfilledValue<string>(allSettledResult[1])).assertEqual("fast")
       Done()
     })
 
@@ -830,8 +835,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result2 = await Promise.allSettled<number>(sharedPromises)
       expect(result1.length).assertEqual(2)
       expect(result2.length).assertEqual(2)
-      expect((result1[0] as PromiseFulfilledResult<number>).value).assertEqual(1.0)
-      expect((result2[0] as PromiseFulfilledResult<number>).value).assertEqual(1.0)
+      expect(getFulfilledValue<number>(result1[0])).assertEqual(1.0)
+      expect(getFulfilledValue<number>(result2[0])).assertEqual(1.0)
       Done()
     })
 
@@ -865,18 +870,20 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledFirstTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let result: PromiseSettledResult<string>[] | null = null
-      setTimeout(() => {
+      let result = await new Promise<PromiseSettledResult<string>[]>((resolve: (value: PromiseSettledResult<string>[]) => void) => {
+        setTimeout(() => {
         let promises: Promise<string>[] = [Promise.resolve<string>("a"), Promise.resolve<string>("b")]
         Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => {
-          result = r
+          resolve(r)
           return
         })
-      }, 500)
-      await new Promise<number>((resolve: (value: number) => void) => {
-        setTimeout(() => resolve(1.0), 1000)
+        }, 500)
       })
-      expect(result!.length).assertEqual(2)
+      expect(result.length).assertEqual(2)
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("a")
+      expect(result[1].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[1])).assertEqual("b")
       Done()
     })
 
@@ -895,8 +902,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       ]
       let result = await Promise.allSettled<string>(promises)
       expect(result.length).assertEqual(2)
-      expect((result[0] as PromiseFulfilledResult<string>).value).assertEqual("delayed")
-      expect((result[1] as PromiseFulfilledResult<string>).value).assertEqual("immediate")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("delayed")
+      expect(getFulfilledValue<string>(result[1])).assertEqual("immediate")
       Done()
     })
 
@@ -911,8 +918,19 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<number>[] = [Promise.resolve<number>(1.0), Promise.reject<number>(new Error("error")), Promise.resolve<number>(3.0)]
       let result = await Promise.allSettled<number>(promises)
-        .then<PromiseSettledResult<number>[]>((results: PromiseSettledResult<number>[]) => results.filter((r: PromiseSettledResult<number>) => r.status === "fulfilled"))
-        .then<number[]>((fulfilledResults: PromiseSettledResult<number>[]) => fulfilledResults.map((r: PromiseSettledResult<number>) => (r as PromiseFulfilledResult<number>).value))
+        .then<PromiseSettledResult<number>[]>((results: PromiseSettledResult<number>[]) => {
+          expect(results.length).assertEqual(3)
+          expect(results[0].status).assertEqual("fulfilled")
+          expect(results[1].status).assertEqual("rejected")
+          expect(results[2].status).assertEqual("fulfilled")
+          return results.filter((r: PromiseSettledResult<number>) => r.status === "fulfilled")
+        })
+        .then<number[]>((fulfilledResults: PromiseSettledResult<number>[]) => {
+          expect(fulfilledResults.length).assertEqual(2)
+          expect(fulfilledResults[0].status).assertEqual("fulfilled")
+          expect(fulfilledResults[1].status).assertEqual("fulfilled")
+          return fulfilledResults.map((r: PromiseSettledResult<number>) => getFulfilledValue<number>(r))
+        })
       expect(result.length).assertEqual(2)
       expect(result[0]).assertEqual(1.0)
       expect(result[1]).assertEqual(3.0)
@@ -954,8 +972,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result2 = await Promise.allSettled<string>(promises2)
       expect(result1.length).assertEqual(2)
       expect(result2.length).assertEqual(2)
-      expect((result1[0] as PromiseFulfilledResult<string>).value).assertEqual("a1")
-      expect((result2[0] as PromiseFulfilledResult<string>).value).assertEqual("b1")
+      expect(getFulfilledValue<string>(result1[0])).assertEqual("a1")
+      expect(getFulfilledValue<string>(result2[0])).assertEqual("b1")
       Done()
     })
 
@@ -975,7 +993,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = await Promise.allSettled<string>(promises)
 
       expect(result.length).assertEqual(2)
-      expect((result[1] as PromiseFulfilledResult<string>).value).assertEqual("fast")
+      expect(getFulfilledValue<string>(result[1])).assertEqual("fast")
       Done()
     })
 
@@ -995,11 +1013,10 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
         let promises: Promise<string>[] = [Promise.resolve<string>("event1"), Promise.resolve<string>("event2")]
         results = await Promise.allSettled<string>(promises)
       }
-      setTimeout(() => {
-        onEventTrigger()
-      }, 500)
-      await new Promise<number>((resolve: (value: number) => void) => {
-        setTimeout(() => resolve(1.0), 1000)
+      await new Promise<void>((resolve: (value: void) => void) => {
+        setTimeout(() => {
+          onEventTrigger().then<void>(() => resolve(undefined))
+        }, 500)
       })
       expect(eventTriggered).assertTrue()
       expect(results.length).assertEqual(2)
@@ -1053,27 +1070,27 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     /**
      * @tc.name   PromiseAllSettledFirstTest4900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_FIRST_TEST_4900
-     * @tc.desc   Verify Promise.allSettled with assertContain for error messages
+     * @tc.desc   Verify Promise.allSettled preserves a rejected Error object by identity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledFirstTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let reason = new Error("This is a detailed error message with many details")
       let promises: Promise<string>[] = [
-        Promise.reject(new Error("This is a detailed error message with many details"))
+        Promise.reject(reason)
       ]
       let result = await Promise.allSettled<string>(promises)
-      if (result[0].status === "rejected") {
-        let rejected = result[0] as PromiseRejectedResult
-        expect(rejected.status).assertEqual("rejected")
-      }
+      expect(result[0].status).assertEqual("rejected")
+      let rejected = result[0] as PromiseRejectedResult
+      expect(rejected.reason).assertEqual(reason)
       Done()
     })
 
     /**
      * @tc.name   PromiseAllSettledFirstTest5000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_FIRST_TEST_5000
-     * @tc.desc   Verify Promise.allSettled with Timer intervals >= 50ms
+     * @tc.desc   Verify Promise.allSettled with deterministic Timer intervals of 100ms
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1148,21 +1165,27 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAllSettledFirstTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let result1: PromiseSettledResult<string>[] = []
-      let result2: PromiseSettledResult<string>[] = []
-      setTimeout(() => {
-        let promises: Promise<string>[] = [Promise.resolve<string>("timer1")]
-        Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => { result1 = r; return })
-      }, 100)
-      setTimeout(() => {
-        let promises: Promise<string>[] = [Promise.resolve<string>("timer2")]
-        Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => { result2 = r; return })
-      }, 200)
-      await new Promise<number>((resolve: (value: number) => void) => {
-        setTimeout(() => resolve(1.0), 500)
+      let branch1 = new Promise<PromiseSettledResult<string>[]>((resolve: (value: PromiseSettledResult<string>[]) => void) => {
+        setTimeout(() => {
+          let promises: Promise<string>[] = [Promise.resolve<string>("timer1")]
+          Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => resolve(r))
+        }, 100)
       })
+      let branch2 = new Promise<PromiseSettledResult<string>[]>((resolve: (value: PromiseSettledResult<string>[]) => void) => {
+        setTimeout(() => {
+          let promises: Promise<string>[] = [Promise.resolve<string>("timer2")]
+          Promise.allSettled<string>(promises).then<void>((r: PromiseSettledResult<string>[]) => resolve(r))
+        }, 200)
+      })
+      let branchResults = await Promise.all<PromiseSettledResult<string>[]>([branch1, branch2])
+      let result1 = branchResults[0]
+      let result2 = branchResults[1]
       expect(result1.length).assertEqual(1)
       expect(result2.length).assertEqual(1)
+      expect(result1[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result1[0])).assertEqual("timer1")
+      expect(result2[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result2[0])).assertEqual("timer2")
       Done()
     })
 
@@ -1249,7 +1272,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     /**
      * @tc.name   PromiseAllSettledFirstTest5800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_FIRST_TEST_5800
-     * @tc.desc   Verify Promise.allSettled with async lock protection
+     * @tc.desc   Verify Promise.all processes operations protected by an async lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1325,8 +1348,8 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     it('PromiseAllSettledFirstTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<boolean>[] = [Promise.resolve(false), Promise.resolve(true)]
       let result = await Promise.allSettled<boolean>(promises)
-      expect((result[0] as PromiseFulfilledResult<boolean>).value).assertFalse()
-      expect((result[1] as PromiseFulfilledResult<boolean>).value).assertTrue()
+      expect(getFulfilledValue<boolean>(result[0])).assertFalse()
+      expect(getFulfilledValue<boolean>(result[1])).assertTrue()
       Done()
     })
 
@@ -1351,14 +1374,14 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       }
       let promises: Promise<DeepData>[] = [Promise.resolve<DeepData>(deepData)]
       let result = await Promise.allSettled<DeepData>(promises)
-      expect((result[0] as PromiseFulfilledResult<DeepData>).value.level1.level2.level3.value).assertEqual("deep")
+      expect(getFulfilledValue<DeepData>(result[0]).level1.level2.level3.value).assertEqual("deep")
       Done()
     })
 
     /**
      * @tc.name   PromiseAllSettledFirstTest6300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_FIRST_TEST_6300
-     * @tc.desc   Verify Promise.allSettled cannot be cancelled
+     * @tc.desc   Verify Promise.allSettled waits for a delayed Promise to fulfill
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1376,11 +1399,10 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       ]
       let allSettledPromise = Promise.allSettled<string>(promises)
       let result = await allSettledPromise
-      await new Promise<number>((resolve: (value: number) => void) => {
-        setTimeout(() => resolve(1.0), 200)
-      })
       expect(executed).assertTrue()
       expect(result.length).assertEqual(1)
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("done")
       Done()
     })
 
@@ -1431,7 +1453,7 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
     /**
      * @tc.name   PromiseAllSettledFirstTest6600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_FIRST_TEST_6600
-     * @tc.desc   Verify Promise.allSettled returns Promise type
+     * @tc.desc   Verify awaiting Promise.allSettled returns the exact single fulfilled result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1441,13 +1463,15 @@ export default function BuiltinsPromiseAllSettledFirstTest(): void {
       let result = Promise.allSettled<string>(promises)
       let allResult = await result
       expect(allResult.length).assertEqual(1)
-Done()
+      expect(allResult[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(allResult[0])).assertEqual("test")
+      Done()
     })
 
     /**
      * @tc.name   PromiseAllSettledFirstTest6700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ALL_SETTLED_FIRST_TEST_6700
-     * @tc.desc   Verify Promise.allSettled returns array type
+     * @tc.desc   Verify Promise.allSettled preserves two fulfilled string values in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1455,8 +1479,11 @@ Done()
     it('PromiseAllSettledFirstTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<string>[] = [Promise.resolve("a"), Promise.resolve("b")]
       let result = await Promise.allSettled<string>(promises)
-      expect(Array.isArray(result)).assertTrue()
       expect(result.length).assertEqual(2)
+      expect(result[0].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[0])).assertEqual("a")
+      expect(result[1].status).assertEqual("fulfilled")
+      expect(getFulfilledValue<string>(result[1])).assertEqual("b")
       Done()
     })
 
@@ -1472,7 +1499,7 @@ Done()
       let promises: PromiseLike<number>[] = [new NumberPromiseLike(42.0)]
       let result = await Promise.allSettled<number>(promises)
       expect(result[0].status).assertEqual("fulfilled")
-      expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(42.0)
+      expect(getFulfilledValue<number>(result[0])).assertEqual(42.0)
       Done()
     })
 
@@ -1489,8 +1516,8 @@ Done()
       let promises: Promise<number>[] = [sharedPromise, sharedPromise]
       let result = await Promise.allSettled<number>(promises)
       expect(result.length).assertEqual(2)
-      expect((result[0] as PromiseFulfilledResult<number>).value).assertEqual(100.0)
-      expect((result[1] as PromiseFulfilledResult<number>).value).assertEqual(100.0)
+      expect(getFulfilledValue<number>(result[0])).assertEqual(100.0)
+      expect(getFulfilledValue<number>(result[1])).assertEqual(100.0)
       Done()
     })
 
@@ -1576,7 +1603,7 @@ Done()
       let result = await Promise.allSettled<number[]>(outerPromises)
       expect(result.length).assertEqual(1)
       expect(result[0].status).assertEqual("fulfilled")
-      expect((result[0] as PromiseFulfilledResult<number[]>).value).assertDeepEquals([1.0, 2.0])
+      expect(getFulfilledValue<number[]>(result[0])).assertDeepEquals([1.0, 2.0])
       Done()
     })
 
@@ -1611,9 +1638,9 @@ Done()
     it('PromiseAllSettledFirstTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises: Promise<number | null>[] = [Promise.resolve<number | null>(1.0), Promise.resolve<number | null>(null), Promise.resolve<number | null>(3.0)]
       let result = await Promise.allSettled<number | null>(promises)
-      expect((result[0] as PromiseFulfilledResult<number | null>).value).assertEqual(1.0)
-      expect((result[1] as PromiseFulfilledResult<number | null>).value).assertNull()
-      expect((result[2] as PromiseFulfilledResult<number | null>).value).assertEqual(3.0)
+      expect(getFulfilledValue<number | null>(result[0])).assertEqual(1.0)
+      expect(getFulfilledValue<number | null>(result[1])).assertNull()
+      expect(getFulfilledValue<number | null>(result[2])).assertEqual(3.0)
       Done()
     })
 
