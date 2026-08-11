@@ -76,6 +76,8 @@ export default function webViewControllerJsunit() {
     it('testGetWebId',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitGetWebId";
       Utils.registerEvent("testGetWebId",true,154070,done);
+      // 等待页面切换动画完成后再点击，避免点击被过渡动画丢弃
+      await Utils.sleep(2000);
       sendEventByKey('webcomponent',10,'');
     })
   })
