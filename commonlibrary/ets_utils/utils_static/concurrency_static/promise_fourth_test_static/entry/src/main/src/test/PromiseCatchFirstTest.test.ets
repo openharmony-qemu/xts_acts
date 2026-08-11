@@ -32,6 +32,10 @@ class RecoverResult {
   }
 }
 
+interface CatchState {
+  state: string
+}
+
 class DeepObject {
   a: DeepObjectInner = new DeepObjectInner()
 }
@@ -93,21 +97,22 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
     /**
      * @tc.name   PromiseCatchFirstTest0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_0100
-     * @tc.desc   Verify missing onRejected parameter throws error
+     * @tc.desc   Verify missing onRejected parameter passes through rejection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("test"))
+      let sourceError = new Error("test")
+      let promise = Promise.reject<string>(sourceError)
       let caught: boolean = false
       try {
         let result = promise.catch()
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === sourceError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -274,7 +279,7 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
       let promise = Promise.reject<string>(new Error("test"))
       let result: Promise<string|number> = promise.catch<string|number>(() => "recovered")
       let value = await result
-      expect(typeof value === "string").assertTrue()
+       expect(value).assertEqual("recovered")
       Done();
     })
 
@@ -304,14 +309,15 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch<Promise<string>>(() => Promise.reject(new Error("new error")))
+      let rejection = new Error("new error")
+      let result = promise.catch<Promise<string>>(() => Promise.reject(rejection))
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === rejection).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -359,14 +365,15 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch(() => { throw new Error("callback error") })
+      let callbackError = new Error("callback error")
+      let result = promise.catch(() => { throw callbackError })
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === callbackError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -374,41 +381,41 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
     /**
      * @tc.name   PromiseCatchFirstTest1700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_1700
-     * @tc.desc   Verify onRejected parameter passing null throws error
+     * @tc.desc   Verify zero-parameter onRejected callback executes exactly once
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let callbackCount: int = 0
       let promise = Promise.reject<string>(new Error("test"))
-      let caught: boolean = false
-      try {
-        promise.catch(null as Object as () => string)
-        expect().assertFail()
-      } catch (error) {
-      caught = true
-}
-      expect(caught).assertTrue()
+      let result = await promise.catch<string>(() => {
+        callbackCount++
+        return "recovered"
+      })
+      expect(callbackCount).assertEqual(1)
+      expect(result).assertEqual("recovered")
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFirstTest1800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_1800
-     * @tc.desc   Verify onRejected parameter passing undefined throws error
+     * @tc.desc   Verify explicit undefined onRejected passes through rejection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("test"))
+      let sourceError = new Error("test")
+      let promise = Promise.reject<string>(sourceError)
       let caught: boolean = false
       try {
-        promise.catch(undefined as Object as () => string)
-        expect().assertFail()
+        await promise.catch(undefined)
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === sourceError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -416,62 +423,64 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
     /**
      * @tc.name   PromiseCatchFirstTest1900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_1900
-     * @tc.desc   Verify onRejected parameter passing string throws error
+     * @tc.desc   Verify parameterized onRejected receives the source Error once
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("test"))
-      let caught: boolean = false
-      try {
-        promise.catch("not a function" as Object as () => string)
-        expect().assertFail()
-      } catch (error) {
-      caught = true
-}
-      expect(caught).assertTrue()
+      let sourceError = new Error("test")
+      let promise = Promise.reject<string>(sourceError)
+      let callbackCount: int = 0
+      let result = await promise.catch<string>((error: Error): string => {
+        callbackCount++
+        expect(error === sourceError).assertTrue()
+        return "recovered"
+      })
+      expect(callbackCount).assertEqual(1)
+      expect(result).assertEqual("recovered")
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFirstTest2000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_2000
-     * @tc.desc   Verify onRejected parameter passing number throws error
+     * @tc.desc   Verify onRejected can recover with an Error object as a value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("test"))
-      let caught: boolean = false
-      try {
-        promise.catch(123 as Object as () => string)
-        expect().assertFail()
-      } catch (error) {
-      caught = true
-}
-      expect(caught).assertTrue()
+      let recoveryError = new Error("recovery value")
+      let promise = Promise.reject<Error>(new Error("test"))
+      let result: Error = await promise.catch<Error>(() => recoveryError)
+      expect(result === recoveryError).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFirstTest2100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_2100
-     * @tc.desc   Verify onRejected parameter passing object throws error
+     * @tc.desc   Verify parameterized onRejected can replace the rejection reason
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("test"))
+      let sourceError = new Error("source error")
+      let replacementError = new Error("replacement error")
+      let promise = Promise.reject<string>(sourceError)
       let caught: boolean = false
+      let result = promise.catch<Promise<string>>((error: Error): Promise<string> => {
+        expect(error === sourceError).assertTrue()
+        return Promise.reject<string>(replacementError)
+      })
       try {
-        promise.catch({} as Object as () => string)
-        expect().assertFail()
+        await result
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === replacementError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -547,9 +556,11 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
+      let chainedError = new Error("new error")
       let value = await promise
-        .catch(() => { throw new Error("new error") })
+        .catch(() => { throw chainedError })
         .catch<string>((error: Error) => {
+          expect(error === chainedError).assertTrue()
           return "caught"
         })
       expect(value).assertEqual("caught")
@@ -618,10 +629,13 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseCatchFirstTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch<Object>(() => new Object())
-      let value = await result
-      expect(value instanceof Object).assertTrue()
+       let promise = Promise.reject<never>(new Error("test"))
+       let result: Promise<CatchState> = promise.catch<CatchState>(() : CatchState => {
+         let recovered: CatchState = { state: "recovered" }
+         return recovered
+       })
+       let value = await result
+       expect(value.state).assertEqual("recovered")
       Done();
     })
 
@@ -692,7 +706,7 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
     /**
      * @tc.name   PromiseCatchFirstTest3400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_3400
-     * @tc.desc   Verify catch returns Promise type check
+     * @tc.desc   Verify catch returns the recovered value from a typed Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -731,14 +745,15 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch(() => { throw new Error("always throw") })
+      let thrownError = new Error("always throw")
+      let result = promise.catch(() => { throw thrownError })
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === thrownError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -873,13 +888,14 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch(() => { throw new Error("callback error") })
+      let callbackError = new Error("callback error")
+      let result = promise.catch(() => { throw callbackError })
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
         caught = true
+        expect(error === callbackError).assertTrue()
       }
       expect(caught).assertTrue()
       Done();
@@ -888,21 +904,22 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
     /**
      * @tc.name   PromiseCatchFirstTest4500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FIRST_TEST_4500
-     * @tc.desc   Verify onRejected throws custom Error
+     * @tc.desc   Verify onRejected propagates the thrown Error object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch(() => { throw new Error("custom error") })
+      let customError = new Error("custom error")
+      let result = promise.catch(() => { throw customError })
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === customError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -957,14 +974,15 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch<Promise<string>>(() => Promise.reject(new Error("new rejection")))
+      let rejection = new Error("new rejection")
+      let result = promise.catch<Promise<string>>(() => Promise.reject(rejection))
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === rejection).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -979,18 +997,19 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
+      let rejection = new Error("promise rejection")
       let result = promise.catch<Promise<string>>(() => {
         return new Promise<string>((_, reject) => {
-          reject(new Error("promise rejection"))
+          reject(rejection)
         })
       })
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === rejection).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1010,10 +1029,10 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === thenable.error).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1077,14 +1096,15 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("test"))
-      let result = promise.catch(() => { throw new Error("uncaught in callback") })
+      let uncaughtError = new Error("uncaught in callback")
+      let result = promise.catch(() => { throw uncaughtError })
       let caught: boolean = false
       try {
         await result
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === uncaughtError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1134,9 +1154,9 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
       let promise = new Promise<string>((_, reject) => {
         setTimeout(() => reject(new Error("delayed")), 100)
       })
-      promise.catch(() => { callbackExecuted = true })
+      let catchPromise = promise.catch(() => { callbackExecuted = true })
       expect(callbackExecuted).assertFalse()
-      await new Promise<number>((resolve) => { setTimeout(() => resolve(0), 100) })
+      await catchPromise
       expect(callbackExecuted).assertTrue()
       Done();
     })
@@ -1200,12 +1220,18 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      */
     it('PromiseCatchFirstTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject(new Error("test"))
+      let customError = new CustomError("custom error")
       let result = promise.catch(() => {
-        throw new CustomError("custom error")
+        throw customError
       })
-      result.catch(error => {
-        expect(error instanceof CustomError).assertTrue()
-      })
+      let caught: boolean = false
+      try {
+        await result
+      } catch (error) {
+        caught = true
+        expect(error === customError).assertTrue()
+      }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -1218,14 +1244,15 @@ export default function BuiltinsPromiseCatchFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFirstTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new CustomError("custom failed"))
+      let customError = new CustomError("custom failed")
+      let promise = Promise.reject<string>(customError)
       let errorReceived: Error|null = null
       let resultPromise = promise.catch((error: Error) => {
         errorReceived = error
         return "recovered"
       })
       await resultPromise
-      expect(errorReceived instanceof Error).assertTrue()
+      expect(errorReceived === customError).assertTrue()
       Done();
     })
   })

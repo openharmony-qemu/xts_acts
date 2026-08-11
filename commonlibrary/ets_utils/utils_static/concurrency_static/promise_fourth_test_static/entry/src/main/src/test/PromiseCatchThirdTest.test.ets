@@ -24,12 +24,6 @@ class NetworkError extends Error {
     this.ecode = ecode
   }
 }
-class HandlerError extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = "HandlerError"
-  }
-}
 class RecoveryData {
   status: string = ""
   value: number = 0
@@ -335,22 +329,21 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
     /**
      * @tc.name   PromiseCatchThirdTest1600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_THIRD_TEST_1600
-     * @tc.desc   Verify onRejected receives Error with stack info
+     * @tc.desc   Verify onRejected receives the original Error object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseCatchThirdTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let error = new Error("failed")
-      error.stack = "Error stack trace"
       let promise = Promise.reject<string>(error)
-      let hasStack: boolean = false
-      let resultPromise = promise.catch((error: Error) => {
-        hasStack = error.stack !== null
+      let receivedError: Error | undefined = undefined
+      let resultPromise = promise.catch((caughtError: Error) => {
+        receivedError = caughtError
         return "recovered"
       })
       await resultPromise
-      expect(hasStack).assertTrue()
+      expect(receivedError === error).assertTrue()
       Done();
     })
 
@@ -413,46 +406,32 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
     /**
      * @tc.name   PromiseCatchThirdTest2000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_THIRD_TEST_2000
-     * @tc.desc   Verify null as callback parameter
+     * @tc.desc   Verify omitted onRejected preserves a fulfilled value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchThirdTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("failed"))
-      let caught = false
-      try {
-        let resultPromise = promise.catch(null as Object as (error: Error) => string)
-        await resultPromise.catch(() => {
-          caught = true
-        })
-      } catch (error) {
-        caught = true
-        expect(error instanceof Error).assertTrue();
-      }
-      expect(caught).assertTrue()
+      let promise = Promise.resolve<string>("fulfilled")
+      let resultPromise = promise.catch()
+      let result = await resultPromise
+      expect(result).assertEqual("fulfilled")
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchThirdTest2100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_THIRD_TEST_2100
-     * @tc.desc   Verify non-function type as onRejected
+     * @tc.desc   Verify explicit undefined onRejected preserves a fulfilled value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseCatchThirdTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("failed"))
-      let caught = false
-      try {
-        let resultPromise = promise.catch(123 as Object as (error: Error) => string)
-        await resultPromise
-      } catch (error) {
-        caught = true
-        expect(error instanceof Error).assertTrue();
-      }
-      expect(caught).assertTrue()
+      let promise = Promise.resolve<string>("fulfilled")
+      let resultPromise = promise.catch(undefined)
+      let result = await resultPromise
+      expect(result).assertEqual("fulfilled")
       Done();
     })
 
@@ -478,7 +457,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
     /**
      * @tc.name   PromiseCatchThirdTest2300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_THIRD_TEST_2300
-     * @tc.desc   Verify catch returns new Promise object
+     * @tc.desc   Verify catch recovers a rejection with a string value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -696,9 +675,14 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      */
     it('PromiseCatchThirdTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<EmptyObj>(new Error("failed"))
-      let resultPromise = promise.catch<EmptyObj>((error: Error) => new EmptyObj())
-      let result = await resultPromise
-      expect(result instanceof EmptyObj).assertTrue()
+      let callbackCalled = false
+      let resultPromise = promise.catch<EmptyObj>((error: Error) => {
+        callbackCalled = true
+        return new EmptyObj()
+      })
+       let result = await resultPromise
+       expect(callbackCalled).assertTrue()
+       expect(Object.keys(result).length).assertEqual(0)
       Done();
     })
 
@@ -711,18 +695,15 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseCatchThirdTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("failed"))
+      let sourceError = new Error("failed")
+      let promise = Promise.reject<string>(sourceError)
       let resultPromise = promise.catch()
-      await resultPromise.catch((error: Error) => {
-        expect(error instanceof Error).assertTrue();
-        return "caught";
-      })
       let caught: boolean = false
       try {
-        await promise
-        expect().assertFail()
-      } catch (e) {
+        await resultPromise
+      } catch (error) {
         caught = true
+        expect(error === sourceError).assertTrue()
       }
       expect(caught).assertTrue()
       Done();
@@ -780,7 +761,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
     /**
      * @tc.name   PromiseCatchThirdTest4000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_THIRD_TEST_4000
-     * @tc.desc   Verify return value is Promise instance
+     * @tc.desc   Verify catch returns the recovered value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -796,7 +777,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
     /**
      * @tc.name   PromiseCatchThirdTest4100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_THIRD_TEST_4100
-     * @tc.desc   Verify returned Promise has then method
+     * @tc.desc   Verify the recovered value can pass through then
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -821,7 +802,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
       let promise = Promise.reject<string>(new Error("failed"))
       let resultPromise = promise.catch<number|boolean|string>((error: Error) => 123)
       let result = await resultPromise
-      expect(typeof result === "number").assertTrue()
+       expect(result).assertEqual(123)
       Done();
     })
 
@@ -837,7 +818,7 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
       let promise = Promise.reject<string|number|boolean>(new Error("failed"))
       let resultPromise = promise.catch<string|number|boolean>((error: Error) => 42)
       let result: string|number|boolean = await resultPromise
-      expect(typeof result === "number").assertTrue()
+       expect(result).assertEqual(42)
       Done();
     })
 
@@ -900,18 +881,18 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
     /**
      * @tc.name   PromiseCatchThirdTest4700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_THIRD_TEST_4700
-     * @tc.desc   Verify Error property completeness
+     * @tc.desc   Verify catch receives the original Error object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseCatchThirdTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let error = new Error("test error")
-      error.stack = "test stack trace"
       let promise = Promise.reject<string>(error)
-      let result = await promise.catch((receivedError: Error) => {
-        return "recovered"
-      })
+       let result = await promise.catch((receivedError: Error) => {
+         expect(receivedError === error).assertTrue()
+         return "recovered"
+       })
       expect(result).assertEqual("recovered")
       Done();
     })
@@ -925,12 +906,16 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseCatchThirdTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("error in catch handler")
       let promise = Promise.reject<string>(new Error("first error"))
-      let resultPromise = promise.catch((error: Error) => { throw new Error("error in catch handler") })
+      let resultPromise = promise.catch((error: Error) => { throw expectedError })
+      let caught = false
       await resultPromise.catch((finalError: Error) => {
-        expect(finalError instanceof Error).assertTrue();
+        caught = true
+        expect(finalError === expectedError).assertTrue()
         return "caught";
       })
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -943,12 +928,16 @@ export default function BuiltinsPromiseCatchThirdTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseCatchThirdTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("handler failed")
       let promise = Promise.reject<string>(new Error("first error"))
-      let resultPromise = promise.catch((error: Error) => { throw new Error("handler failed") })
+      let resultPromise = promise.catch((error: Error) => { throw expectedError })
+      let caught = false
       await resultPromise.catch((finalError: Error) => {
-        expect(finalError instanceof Error).assertTrue();
+        caught = true
+        expect(finalError === expectedError).assertTrue()
         return "caught";
       })
+      expect(caught).assertTrue()
       Done();
     })
 

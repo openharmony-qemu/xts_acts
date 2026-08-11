@@ -53,14 +53,14 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
         }
       })
       let result = await resultPromise
-      expect(result.indexOf("parsed") >= 0).assertTrue()
+       expect(result).assertEqual("parsed: true")
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFourthTest0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_0200
-     * @tc.desc   Verify try-catch inside catch callback catches internal error
+     * @tc.desc   Verify try-catch inside catch callback catches an internal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -68,10 +68,11 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promise = Promise.reject<string>(new Error("failed"))
       let resultPromise = promise.catch<string>((error: Error) => {
-        try {
-          return "parse error caught"
-        } catch (parseError) {
-          return "parse error caught"
+         try {
+           throw new Error("parse failure")
+           return "parse error caught"
+         } catch (parseError) {
+           return "parse error caught"
         }
       })
       let result = await resultPromise
@@ -417,14 +418,22 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseCatchFourthTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let promise1 = Promise.reject<string>(new Error("one failed"))
-      let promise2 = Promise.reject<string>(new Error("two failed"))
+      let error1 = new Error("one failed")
+      let error2 = new Error("two failed")
+      let promise1 = Promise.reject<string>(error1)
+      let promise2 = Promise.reject<string>(error2)
       let anyPromise = Promise.any([promise1, promise2])
-      await anyPromise.catch((error: Error) => {
+      let caught: boolean = false
+      await anyPromise.catch<void>((error: Error): void => {
+        caught = true
+        expect(error instanceof AggregateError).assertTrue()
         if (error instanceof AggregateError) {
           expect(error.errors.length).assertEqual(2)
+          expect(error.errors[0] === error1).assertTrue()
+          expect(error.errors[1] === error2).assertTrue()
         }
       })
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -479,7 +488,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest2300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2300
-     * @tc.desc   Verify EAWorker.run callback catch recovery
+     * @tc.desc   Verify Promise.catch recovers a rejected string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -494,7 +503,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest2400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2400
-     * @tc.desc   Verify EAWorker.run callback catch then chain
+     * @tc.desc   Verify Promise.catch recovery flows through a then chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -527,14 +536,14 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
         return "second"
       })
       await Promise.all([p1, p2])
-      expect(branch === "A" || branch === "B").assertTrue()
+      expect(branch).assertEqual("B")
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFourthTest2600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2600
-     * @tc.desc   Verify catch timeout with AtomicBoolean wait
+     * @tc.desc   Verify Promise.race timeout wins over delayed catch recovery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -586,7 +595,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest2800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_2800
-     * @tc.desc   Verify ArkTS-Sta reject only accepts Error type
+     * @tc.desc   Verify catch is invoked on a rejected Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -622,24 +631,17 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest3000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_3000
-     * @tc.desc   Verify ArkTS-Sta reject Error-only constraint
+     * @tc.desc   Verify catch recovery from an Error rejection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseCatchFourthTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let recovered = false
-      try {
-        let promise = Promise.reject<string>(new Error("string instead of Error"))
-        let result = await promise.catch((error: Error) => {
-          return "recovered"
-        })
-        recovered = true
-        expect(result).assertEqual("recovered")
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
-      expect(recovered).assertTrue()
+      let promise = Promise.reject<string>(new Error("string instead of Error"))
+      let result = await promise.catch((error: Error) => {
+        return "recovered"
+      })
+      expect(result).assertEqual("recovered")
       Done();
     })
 
@@ -670,15 +672,16 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseCatchFourthTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let promise = Promise.reject<string>(new Error("failed"))
+      let sourceError = new Error("failed")
+      let promise = Promise.reject<string>(sourceError)
       let resultPromise = promise.catch()
       let caught: boolean = false
       try {
-        let value = await resultPromise
-        expect().assertFail()
+        await resultPromise
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error === sourceError).assertTrue()
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -686,7 +689,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest3300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_3300
-     * @tc.desc   Verify generic constraint with specified U type
+     * @tc.desc   Verify a specified generic catch return type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -697,14 +700,14 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
         return 42
       })
       let result = await resultPromise
-      expect(typeof result === "number").assertTrue()
+       expect(result).assertEqual(42)
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFourthTest3400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_3400
-     * @tc.desc   Verify catch and then(undefined, onRejected) error capture consistency
+     * @tc.desc   Verify two rejected Promises independently invoke catch handlers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -733,7 +736,7 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     /**
      * @tc.name   PromiseCatchFourthTest3500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_3500
-     * @tc.desc   Verify catch and then(undefined, onRejected) return value consistency
+     * @tc.desc   Verify separate catch handlers return consistent recovery values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -870,15 +873,21 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
      * @tc.level  LEVEL2
      */
     it('PromiseCatchFourthTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
-      let processedCount = 0
-      let promises: Promise<string|undefined>[] = []
-      for (let i = 0; i < 3; i++) {
-        let p = Promise.reject<string>(new Error("error" + i.toString()))
-          .catch<string|undefined>(() => { processedCount++; return undefined })
-        promises.push(p)
+      let eaWorker = new EAWorker('nestedCatchWorker')
+      eaWorker.start()
+      try {
+        let job = eaWorker.run<string>(() => "worker recovery")
+        let workerResult = job.Await()
+        let directResult = await Promise.reject<string>(new Error("direct error"))
+          .catch<string>(() => workerResult)
+        let nestedResult = await Promise.resolve<string>("start")
+          .then<string>(() => Promise.reject<string>(new Error("nested error"))
+            .catch<string>(() => workerResult))
+        expect(directResult).assertEqual("worker recovery")
+        expect(nestedResult).assertEqual(directResult)
+      } finally {
+        eaWorker.join().Await()
       }
-      await Promise.all(promises)
-      expect(processedCount).assertEqual(3)
       Done();
     })
 
@@ -893,18 +902,21 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('catchWorker')
       eaWorker.start()
+      try {
 
-      let job = eaWorker.run<string>(() => {
-        return "recovered in EAWorker"
-      })
-      let workerResult = job.Await()
-
-      let result = await Promise.reject<string>(new Error("eaWorker error"))
-        .catch<string>(() => {
-          return workerResult
+        let job = eaWorker.run<string>(() => {
+          return "recovered in EAWorker"
         })
-      expect(result).assertEqual("recovered in EAWorker")
-      await eaWorker.join()
+        let workerResult = job.Await()
+
+        let result = await Promise.reject<string>(new Error("eaWorker error"))
+          .catch<string>(() => {
+            return workerResult
+          })
+        expect(result).assertEqual("recovered in EAWorker")
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
@@ -919,25 +931,28 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('chainCatchWorker')
       eaWorker.start()
+      try {
 
-      let job = eaWorker.run<int>(() => {
-        return 10
-      })
-      let baseValue = job.Await()
+        let job = eaWorker.run<number>((): number => {
+          return 10.0
+        })
+        let baseValue = job.Await()
 
-      let result = await Promise.reject<number>(new Error("fail"))
-        .catch<number>((e: Error) => baseValue)
-        .then<number>((v: number) => v + 5)
-        .then<number>((v: number) => v * 2)
-      expect(result).assertEqual(30)
-      await eaWorker.join()
+        let result = await Promise.reject<number>(new Error("fail"))
+          .catch<number>((e: Error) => baseValue)
+          .then<number>((v: number) => v + 5)
+          .then<number>((v: number) => v * 2)
+        expect(result).assertEqual(30)
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFourthTest4400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_4400
-     * @tc.desc   EAWorker.run callback catch finally full chain
+     * @tc.desc   Verify Promise.catch recovery followed by a then callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -945,20 +960,23 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('fullChainWorker')
       eaWorker.start()
-      let cleanupDone = false
+      try {
+        let cleanupDone = false
 
-      let job = eaWorker.run<int>(() => {
-        return 100
-      })
-      let baseValue = job.Await()
+        let job = eaWorker.run<number>((): number => {
+          return 100.0
+        })
+        let baseValue = job.Await()
 
-      let result = await Promise.reject<number>(new Error("test"))
-        .catch<number>((e: Error) => baseValue)
-        .then<number>((v: number) => v + 50)
-        .then<number>((v: number) => { cleanupDone = true; return v })
-      expect(result).assertEqual(150)
-      expect(cleanupDone).assertTrue()
-      await eaWorker.join()
+        let result = await Promise.reject<number>(new Error("test"))
+          .catch<number>((e: Error) => baseValue)
+          .then<number>((v: number) => v + 50)
+          .then<number>((v: number) => { cleanupDone = true; return v })
+        expect(result).assertEqual(150)
+        expect(cleanupDone).assertTrue()
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
@@ -973,16 +991,19 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('msgCatchWorker')
       eaWorker.start()
+      try {
 
-      let job = eaWorker.run<string>((msg: string): string => {
-        return "recovered: " + msg
-      }, "test")
-      let workerResult = job.Await()
+        let job = eaWorker.run<string>((msg: string): string => {
+          return "recovered: " + msg
+        }, "test")
+        let workerResult = job.Await()
 
-      let result = await Promise.reject<string>(new Error("handler error"))
-        .catch<string>((e: Error) => workerResult)
-      expect(result).assertEqual("recovered: test")
-      await eaWorker.join()
+        let result = await Promise.reject<string>(new Error("handler error"))
+          .catch<string>((e: Error) => workerResult)
+        expect(result).assertEqual("recovered: test")
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
@@ -997,18 +1018,21 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('msgChainWorker')
       eaWorker.start()
+      try {
 
-      let job = eaWorker.run<int>((data: int): int => {
-        return data
-      }, 5)
-      let baseValue = job.Await()
+        let job = eaWorker.run<number>((data: number): number => {
+          return data
+        }, 5.0)
+        let baseValue = job.Await()
 
-      let result = await Promise.reject<number>(new Error("error"))
-        .catch<number>((e: Error) => baseValue)
-        .then<number>((v: number) => v * 10)
-        .then<string>((v: number) => "result: " + v.toString())
-      expect(result).assertEqual("result: 50")
-      await eaWorker.join()
+        let result = await Promise.reject<number>(new Error("error"))
+          .catch<number>((e: Error) => baseValue)
+          .then<number>((v: number) => v * 10)
+          .then<string>((v: number) => "result: " + v.toString())
+        expect(result).assertEqual("result: 50")
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
@@ -1023,21 +1047,24 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
     it('PromiseCatchFourthTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('catchWorker')
       eaWorker.start()
-      let job = eaWorker.run<string>(() => {
-        return "worker-recovered"
-      })
-      let workerResult = job.Await()
-      let result = await Promise.reject<string>(new Error("worker error"))
-        .catch<string>((error: Error) => workerResult)
-      expect(result).assertEqual("worker-recovered")
-      await eaWorker.join()
+      try {
+        let job = eaWorker.run<string>(() => {
+          return "worker-recovered"
+        })
+        let workerResult = job.Await()
+        let result = await Promise.reject<string>(new Error("worker error"))
+          .catch<string>((error: Error) => workerResult)
+        expect(result).assertEqual("worker-recovered")
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
     /**
      * @tc.name   PromiseCatchFourthTest4800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_CATCH_FOURTH_TEST_4800
-     * @tc.desc   EAWorker.run callback nested Promise.catch
+     * @tc.desc   EAWorker.run result matches three catch callbacks counted with AtomicInt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1046,16 +1073,19 @@ export default function BuiltinsPromiseCatchFourthTest(): void {
       let processedCount = new AtomicInt(0)
       let eaWorker = new EAWorker('msgCatchWorker')
       eaWorker.start()
-      let job = eaWorker.run<int>((m1: string, m2: string, m3: string): int => {
-        return 3
-      }, "error1", "error2", "error3")
-      let workerResult = job.Await()
-      let p1 = Promise.reject<void>(new Error("error1")).catch<void>(() => { processedCount.fetchAdd(1) })
-      let p2 = Promise.reject<void>(new Error("error2")).catch<void>(() => { processedCount.fetchAdd(1) })
-      let p3 = Promise.reject<void>(new Error("error3")).catch<void>(() => { processedCount.fetchAdd(1) })
-      await Promise.all<void>([p1, p2, p3])
-      expect(processedCount.load()).assertEqual(3)
-      await eaWorker.join()
+      try {
+        let job = eaWorker.run<number>((m1: string, m2: string, m3: string): number => {
+          return 3.0
+        }, "error1", "error2", "error3")
+        let workerResult = job.Await()
+        let p1 = Promise.reject<void>(new Error("error1")).catch<void>(() => { processedCount.fetchAdd(1) })
+        let p2 = Promise.reject<void>(new Error("error2")).catch<void>(() => { processedCount.fetchAdd(1) })
+        let p3 = Promise.reject<void>(new Error("error3")).catch<void>(() => { processedCount.fetchAdd(1) })
+        await Promise.all<void>([p1, p2, p3])
+        expect(processedCount.load()).assertEqual(3)
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
   })
