@@ -84,9 +84,9 @@ export default function Int32ArrayReducePart05Test(): void {
      */
     it('int32ArrayReducePart05Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(10, 20, 30, 40);
-      let rn: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c);
+      let noInitResult: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c);
       let rg: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
-      expect(rn).assertEqual(100);
+      expect(noInitResult).assertEqual(100);
       expect(rg).assertEqual(100);
     });
 
@@ -655,9 +655,9 @@ export default function Int32ArrayReducePart05Test(): void {
      */
     it('int32ArrayReducePart05Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2);
-      let rn: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c);
+      let noInitResult: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c);
       let rs: string = arr.reduce((p: string, c: number, _i: int, _a: Int32Array): string => p + c.toString(), '');
-      expect(rn).assertEqual(3);
+      expect(noInitResult).assertEqual(3);
       expect(rs).assertEqual('12');
     });
 
