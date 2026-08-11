@@ -326,7 +326,7 @@ export default function PictureSetMainPixelmapTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0700
      * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0700
-     * @tc.desc   1.set pictuer mainPixelmap
+     * @tc.desc   1.set pictuer mainPixelmap error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -334,70 +334,6 @@ export default function PictureSetMainPixelmapTest() {
 
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0700'
-      let fileName1 = "0801_sdr2.heic";
-      let fileName2 = "test.png";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
-      try {
-        let pic1 = await getPictureForSource(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800'
-      let fileName1 = "0801_sdr2.heic";
-      let fileName2 = "test.png";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
-      try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0900
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0900
-     * @tc.desc   1.set pictuer mainPixelmap error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0500', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0500'
       let fileName = "0801_sdr2.heic";
       let resurt = await isSupportDecode(testName, 'image/heic');
       if (!resurt) {
@@ -422,6 +358,70 @@ export default function PictureSetMainPixelmapTest() {
     // jpeg setMainPixelmap with otherPicture
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800
+     * @tc.desc   1.set pictuer mainPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+
+    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0800'
+      let fileName1 = "test.jpg";
+      let fileName2 = "0801_sdr2.heic";
+      let resurt = await isSupportDecode(testName, 'image/heic');
+      if (!resurt) {
+        console.info(`${testName} The device does not support decoding of HEIC images.`);
+        done();
+        return;
+      }
+      try {
+        let pic1 = await getPicture(testName, fileName1);
+        let pic2 = await getPicture(testName, fileName2);
+        let result = await comparisonMainPixelmap(testName, pic1, pic2);
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0900
+     * @tc.desc   1.set pictuer mainPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+
+    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0900', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_0900'
+      let fileName1 = "test.jpg";
+      let fileName2 = "0801_sdr2.heic";
+      let resurt = await isSupportDecode(testName, 'image/heic');
+      if (!resurt) {
+        console.info(`${testName} The device does not support decoding of HEIC images.`);
+        done();
+        return;
+      }
+      try {
+        let pic1 = await getPictureForSource(testName, fileName1);
+        let pic2 = await getPicture(testName, fileName2);
+        let result = await comparisonMainPixelmap(testName, pic1, pic2);
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1000
      * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1000
      * @tc.desc   1.set pictuer mainPixelmap
@@ -441,8 +441,8 @@ export default function PictureSetMainPixelmapTest() {
         return;
       }
       try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPicture(testName, fileName2);
+        let pic1 = await getPictureForSource(testName, fileName1);
+        let pic2 = await getPictureForSource(testName, fileName2);
         let result = await comparisonMainPixelmap(testName, pic1, pic2);
         expect(result).assertTrue();
         done();
@@ -473,8 +473,8 @@ export default function PictureSetMainPixelmapTest() {
         return;
       }
       try {
-        let pic1 = await getPictureForSource(testName, fileName1);
-        let pic2 = await getPicture(testName, fileName2);
+        let pic1 = await getPicture(testName, fileName1);
+        let pic2 = await getPictureForSource(testName, fileName2);
         let result = await comparisonMainPixelmap(testName, pic1, pic2);
         expect(result).assertTrue();
         done();
@@ -497,16 +497,10 @@ export default function PictureSetMainPixelmapTest() {
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1200'
       let fileName1 = "test.jpg";
-      let fileName2 = "0801_sdr2.heic";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
+      let fileName2 = "test.png";
       try {
-        let pic1 = await getPictureForSource(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
+        let pic1 = await getPicture(testName, fileName1);
+        let pic2 = await getPicture(testName, fileName2);
         let result = await comparisonMainPixelmap(testName, pic1, pic2);
         expect(result).assertTrue();
         done();
@@ -529,16 +523,10 @@ export default function PictureSetMainPixelmapTest() {
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1300'
       let fileName1 = "test.jpg";
-      let fileName2 = "0801_sdr2.heic";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
+      let fileName2 = "test.png";
       try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
+        let pic1 = await getPictureForSource(testName, fileName1);
+        let pic2 = await getPicture(testName, fileName2);
         let result = await comparisonMainPixelmap(testName, pic1, pic2);
         expect(result).assertTrue();
         done();
@@ -552,7 +540,7 @@ export default function PictureSetMainPixelmapTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1400
      * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1400
-     * @tc.desc   1.set pictuer mainPixelmap
+     * @tc.desc   1.set pictuer mainPixelmap error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -560,20 +548,22 @@ export default function PictureSetMainPixelmapTest() {
 
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1400'
-      let fileName1 = "test.jpg";
-      let fileName2 = "test.png";
+      let fileName = "test.jpg";
       try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPicture(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
+        let pic = await getPicture(testName, fileName);
+        let pixelMap: image.PixelMap = await pic.getMainPixelmap();
+        await pixelMap.release();
+        await pic.setMainPixelmap(pixelMap);
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
+        expect(error.code).assertEqual(7700204);
         done();
       }
     })
+
+    // png setMainPixelmap with otherPicture
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1500
@@ -586,10 +576,16 @@ export default function PictureSetMainPixelmapTest() {
 
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1500'
-      let fileName1 = "test.jpg";
-      let fileName2 = "test.png";
+      let fileName1 = "test.png";
+      let fileName2 = "0801_sdr2.heic";
+      let resurt = await isSupportDecode(testName, 'image/heic');
+      if (!resurt) {
+        console.info(`${testName} The device does not support decoding of HEIC images.`);
+        done();
+        return;
+      }
       try {
-        let pic1 = await getPictureForSource(testName, fileName1);
+        let pic1 = await getPicture(testName, fileName1);
         let pic2 = await getPicture(testName, fileName2);
         let result = await comparisonMainPixelmap(testName, pic1, pic2);
         expect(result).assertTrue();
@@ -612,11 +608,16 @@ export default function PictureSetMainPixelmapTest() {
 
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1600'
-      let fileName1 = "test.jpg";
-      let fileName2 = "test.png";
+      let fileName1 = "test.png";
+      let fileName2 = "0801_sdr2.heic";
       let resurt = await isSupportDecode(testName, 'image/heic');
+      if (!resurt) {
+        console.info(`${testName} The device does not support decoding of HEIC images.`);
+        done();
+        return;
+      }
       try {
-        let pic1 = await getPictureForSource(testName, fileName1);
+        let pic1 = await getPicture(testName, fileName1);
         let pic2 = await getPictureForSource(testName, fileName2);
         let result = await comparisonMainPixelmap(testName, pic1, pic2);
         expect(result).assertTrue();
@@ -639,11 +640,11 @@ export default function PictureSetMainPixelmapTest() {
 
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1700'
-      let fileName1 = "test.jpg";
-      let fileName2 = "test.png";
+      let fileName1 = "test.png";
+      let fileName2 = "test.jpg";
       try {
         let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
+        let pic2 = await getPicture(testName, fileName2);
         let result = await comparisonMainPixelmap(testName, pic1, pic2);
         expect(result).assertTrue();
         done();
@@ -657,7 +658,7 @@ export default function PictureSetMainPixelmapTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1800
      * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1800
-     * @tc.desc   1.set pictuer mainPixelmap error
+     * @tc.desc   1.set pictuer mainPixelmap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -665,27 +666,25 @@ export default function PictureSetMainPixelmapTest() {
 
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1800'
-      let fileName = "test.jpg";
+      let fileName1 = "test.png";
+      let fileName2 = "test.jpg";
       try {
-        let pic = await getPicture(testName, fileName);
-        let pixelMap: image.PixelMap = await pic.getMainPixelmap();
-        await pixelMap.release();
-        await pic.setMainPixelmap(pixelMap);
-        expect().assertFail();
+        let pic1 = await getPicture(testName, fileName1);
+        let pic2 = await getPictureForSource(testName, fileName2);
+        let result = await comparisonMainPixelmap(testName, pic1, pic2);
+        expect(result).assertTrue();
         done();
       } catch (error) {
         console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect(error.code).assertEqual(7700204);
+        expect().assertFail();
         done();
       }
     })
 
-    // png setMainPixelmap with otherPicture
-
     /**
      * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1900
      * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1900
-     * @tc.desc   1.set pictuer mainPixelmap
+     * @tc.desc   1.set pictuer mainPixelmap error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -693,238 +692,6 @@ export default function PictureSetMainPixelmapTest() {
 
     it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_1900'
-      let fileName1 = "test.png";
-      let fileName2 = "0801_sdr2.heic";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
-      try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPicture(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2000
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2000
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2000', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2000'
-      let fileName1 = "test.png";
-      let fileName2 = "0801_sdr2.heic";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
-      try {
-        let pic1 = await getPictureForSource(testName, fileName1);
-        let pic2 = await getPicture(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2100
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2100
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2100', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2100'
-      let fileName1 = "test.png";
-      let fileName2 = "0801_sdr2.heic";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
-      try {
-        let pic1 = await getPictureForSource(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2200
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2200
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2200', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2200'
-      let fileName1 = "test.png";
-      let fileName2 = "0801_sdr2.heic";
-      let resurt = await isSupportDecode(testName, 'image/heic');
-      if (!resurt) {
-        console.info(`${testName} The device does not support decoding of HEIC images.`);
-        done();
-        return;
-      }
-      try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2300
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2300
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2300', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2300'
-      let fileName1 = "test.png";
-      let fileName2 = "test.jpg";
-      try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPicture(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2400
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2400
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2400', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2400'
-      let fileName1 = "test.png";
-      let fileName2 = "test.jpg";
-      try {
-        let pic1 = await getPictureForSource(testName, fileName1);
-        let pic2 = await getPicture(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2500
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2500
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2500', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2500'
-      let fileName1 = "test.png";
-      let fileName2 = "test.jpg";
-      try {
-        let pic1 = await getPictureForSource(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2600
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2600
-     * @tc.desc   1.set pictuer mainPixelmap
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2600', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2600'
-      let fileName1 = "test.png";
-      let fileName2 = "test.jpg";
-      try {
-        let pic1 = await getPicture(testName, fileName1);
-        let pic2 = await getPictureForSource(testName, fileName2);
-        let result = await comparisonMainPixelmap(testName, pic1, pic2);
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2700
-     * @tc.number SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2700
-     * @tc.desc   1.set pictuer mainPixelmap error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    it('SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2700', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_PICTURE_SET_MAIN_PIXELMAP_2700'
       let fileName = "test.png";
       try {
         let pic = await getPicture(testName, fileName);
