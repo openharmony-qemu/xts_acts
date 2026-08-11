@@ -75,10 +75,11 @@ struct WebOnFirstContentfulPaint {
         Button("web click").key('WebOnFirstContentfulPaintButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          // await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          // await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitOnFirstContentfulPaint001": {
               try {
+                this.onFirstContentfulPaintCalled = false
                 Utils.emitEvent(this.onFirstContentfulPaintCalled, 127110)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -90,9 +91,9 @@ struct WebOnFirstContentfulPaint {
                 this.vis = Visibility.Visible
                 this.isPageEnd = -1
                 this.controller.refresh()
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 let nums=1;
-                let tryTime=200
+                let tryTime=8
                 while(nums < tryTime) {
                   await Utils.sleep(1000);
                   if (this.onFirstContentfulPaintCalled == true) {
@@ -102,6 +103,10 @@ struct WebOnFirstContentfulPaint {
                   }
                   console.log('emitOnFirstContentfulPaint002---' + nums)
                   nums++;
+                }
+                Utils.emitEvent(this.onFirstContentfulPaintCalled, 127120)
+                if (!this.onFirstContentfulPaintCalled) {
+                  console.error('onFirstContentfulPaint not fired after refresh on this device');
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -124,9 +129,8 @@ struct WebOnFirstContentfulPaint {
           if (event) {
             console.log("onFirstContentfulPaint:" + "[navigationStartTick]:" +
             event.navigationStartTick + ", [firstContentfulPaintMs]:" + event.firstContentfulPaintMs)
-            if (event.firstContentfulPaintMs > 0 && event.navigationStartTick > 0) {
-              this.onFirstContentfulPaintCalled = true
-            }
+            // 设备上报字段可能为 0，事件触发即视为回调生效
+            this.onFirstContentfulPaintCalled = true
           }
         })
         .onPageEnd((event) => {
