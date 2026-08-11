@@ -34,6 +34,9 @@
 #include "ohaudio/native_audio_session_base.h"
 #include "ohaudio/native_audio_device_enhance_manager.h"
 #include "ohaudio/native_audio_debugging_manager.h"
+#include "ohaudio/native_audio_accessory_manager.h"
+#include "ohaudio/native_audio_accessory_input_stream_manager.h"
+#include "ohaudio/native_audio_accessory_common.h"
 #include "hilog/log.h"
 #include <ctime>
 #include <set>
@@ -64,7 +67,7 @@ bool g_mark = false;
 static std::string g_filePath = "/data/storage/el2/base/haps/entry_test/files/test_44100_2.wav";
 FILE *g_file = nullptr;
 bool g_readEnd = false;
-const int32_t TEST_PASS = 0; // success result
+const int32_t TEST_PASS = 0; //  success result
 const int32_t TEST_FAIL = 1; // fail result
 
 static OH_AudioCapturer *g_audioCapturer;
@@ -74,6 +77,12 @@ static OH_AudioStreamBuilder *g_rendererBuilder;
 static std::string g_pcmFilePath = "/data/storage/el2/base/haps/entry_test/files/oh_test_audio.pcm";
 FILE *g_pcmFile = nullptr;
 
+static bool g_isStreamStarted = false;
+static OH_AudioAccessory *g_accessory = nullptr;
+static OH_AudioAccessoryManager *g_manager = nullptr;
+static OH_AudioAccessoryInputStream *g_stream = nullptr;
+static OH_AudioStreamInfo g_accessoryStreamInfo = {};
+
 OH_AudioStream_Usage g_ohRendererStreamUsage;
 OH_AudioStream_SourceType g_ohCapturerStreamUsage;
 OH_AudioStream_SampleFormat g_ohFormat;
@@ -81,6 +90,11 @@ static int32_t g_ohSamplingRate;
 static int32_t g_ohChannelCount;
 OH_AudioStream_LatencyMode g_ohLatencyMode;
 constexpr int32_t INVALID_VALUE = -1;
+
+static std::atomic<bool> g_accessoryStarted { false };
+static std::atomic<bool> g_accessoryStopped { false };
+static std::atomic<bool> g_accessoryReleased { false };
+static std::atomic<int64_t> g_accessoryFramePosition { 0 };
 
 static OH_AudioRenderer *audioRenderer;
 static OH_AudioStreamBuilder *builder;
@@ -157,6 +171,112 @@ static int32_t AudioRendererOnMarkReachedWriteData(OH_AudioRenderer* capturer,
     return 0;
 }
 
+ static OH_AudioStreamInfo CreateAccessoryStreamInfo()
+    {
+        OH_AudioStreamInfo streamInfo = {};
+        streamInfo.samplingRate = 48000;
+        streamInfo.channelLayout = CH_LAYOUT_MONO;
+        streamInfo.encodingType = AUDIOSTREAM_ENCODING_TYPE_RAW;
+        streamInfo.sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+        return streamInfo;
+    }
+
+static OH_AudioAccessoryInfo CreateAccessoryInfo()
+    {
+        OH_AudioAccessoryInfo info = {};
+        info.structSize = sizeof(OH_AudioAccessoryInfo);
+        info.accessoryName = "TestAccessory";
+        info.manufacturer = "TestManufacturer";
+        info.modelNumber = "TestModel";
+        info.macAddress = "00:11:22:33:44:55";
+        info.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+        info.isUnidirectional = true;
+        return info;
+    }
+
+static OH_AudioAccessoryCapabilities CreateAccessoryCapabilities(const OH_AudioStreamInfo &streamInfo)
+    {
+        OH_AudioAccessoryCapabilities capabilities = {};
+        capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+        capabilities.streamProperties = &streamInfo;
+        capabilities.streamPropertyCount = 1;
+        return capabilities;
+    }
+
+static uint32_t GetAccessorySampleBytes(OH_AudioStream_SampleFormat format)
+    {
+        switch (format) {
+            case AUDIOSTREAM_SAMPLE_U8:
+                return 1;
+            case AUDIOSTREAM_SAMPLE_S16LE:
+                return 2;
+            case AUDIOSTREAM_SAMPLE_S24LE:
+                return 3;
+            case AUDIOSTREAM_SAMPLE_S32LE:
+            case AUDIOSTREAM_SAMPLE_F32LE:
+                return 4;
+            default:
+                return 0;
+        }
+    }
+
+
+static uint32_t GetAccessoryChannelCount(OH_AudioChannelLayout layout)
+    {
+        switch (layout) {
+            case CH_LAYOUT_MONO:
+                return 1;
+            case CH_LAYOUT_STEREO:
+            case CH_LAYOUT_STEREO_DOWNMIX:
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+static uint32_t GetAccessoryFrameBytes(const OH_AudioStreamInfo &streamInfo)
+    {
+        uint32_t sampleBytes = GetAccessorySampleBytes(streamInfo.sampleFormat);
+        uint32_t channels = GetAccessoryChannelCount(streamInfo.channelLayout);
+        if (streamInfo.samplingRate <= 0 || sampleBytes == 0 || channels == 0) {
+            return 0;
+        }
+        return static_cast<uint32_t>(streamInfo.samplingRate / 50) * channels * sampleBytes;
+    }
+
+static OH_AudioAccessoryInputStream *GetAccessoryStream()
+    {
+        return g_stream;
+    }
+    
+static OH_AudioStreamInfo GetAccessoryOpenedStreamInfo()
+{
+    return g_accessoryStreamInfo;
+}
+
+
+static bool AccessoryOnStreamStart(OH_AudioAccessory *, OH_AudioAccessoryInputStream *)
+{
+    g_accessoryStarted.store(true);
+    g_accessoryStopped.store(false);
+    g_accessoryFramePosition.store(0);
+    return true;
+}
+    
+static bool AccessoryOnStreamStop(OH_AudioAccessory *, OH_AudioAccessoryInputStream *)
+{
+    g_accessoryStopped.store(true);
+    g_accessoryStarted.store(false);
+    return true;
+}
+
+static bool AccessoryOnStreamRelease(OH_AudioAccessory *, OH_AudioAccessoryInputStream *)
+{
+    g_accessoryReleased.store(true);
+    g_accessoryStarted.store(false);
+    g_stream = nullptr;
+    return true;
+}
 
 static int32_t MyAudioSessionDeactivatedCallback(OH_AudioSession_DeactivatedEvent event)
 {
@@ -228,6 +348,99 @@ static napi_value CreateAudioStreamBuilder(napi_env env, napi_callback_info info
     napi_value res;
     napi_create_int32(env, result, &res);
     return res;
+}
+
+static bool OnInputStreamStart(OH_AudioAccessory *accessory, OH_AudioAccessoryInputStream *stream)
+{
+    g_isStreamStarted = true;
+    LOG("OnInputStreamStart callback triggered");
+    return true;
+}
+
+static bool OnInputStreamStop(OH_AudioAccessory *accessory, OH_AudioAccessoryInputStream *stream)
+{
+    g_isStreamStarted = false;
+    LOG("OnInputStreamStop callback triggered");
+    return true;
+}
+
+static bool OnInputStreamRelease(OH_AudioAccessory *accessory, OH_AudioAccessoryInputStream *stream)
+{
+    g_isStreamStarted = false;
+    LOG("OnInputStreamRelease callback triggered");
+    return true;
+}
+
+static bool OnGetLatency(OH_AudioAccessory *accessory, OH_AudioAccessoryInputStream *stream, int32_t *latency)
+{
+    if (latency == nullptr) {
+        LOG("OnGetLatency callback triggered failed, result: %{public}d", *latency);
+        return false;
+    }
+    *latency = 20;
+    LOG("OnGetLatency callback triggered, latency: %{public}d", *latency);
+    return true;
+}
+
+static bool OnGetFramePosition(OH_AudioAccessory *accessory, OH_AudioAccessoryInputStream *stream,
+    int64_t *framePosition, int64_t *timestamp)
+{
+    if (framePosition == nullptr || timestamp == nullptr) {
+        return false;
+    }
+    *framePosition = 0;
+    *timestamp = 0;
+    LOG("OnGetFramePosition callback triggered");
+    return true;
+}
+
+static bool OnOpenInputStream(OH_AudioAccessory *accessory, OH_AudioAccessoryInputStream *stream,
+    OH_AudioStreamInfo *streamInfo)
+{
+    if (stream == nullptr || streamInfo == nullptr) {
+        LOG("OnOpenInputStream: invalid params");
+        return false;
+    }
+    g_stream = stream;
+
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_RegisterStartCallback(stream, OnInputStreamStart);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterStartCallback failed: %{public}d", ret);
+        return false;
+    }
+
+    ret = OH_AudioAccessoryInputStreamManager_RegisterStopCallback(stream, OnInputStreamStop);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterStopCallback failed: %{public}d", ret);
+        return false;
+    }
+
+    ret = OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback(stream, OnInputStreamRelease);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterReleaseCallback failed: %{public}d", ret);
+        return false;
+    }
+
+    ret = OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback(stream, OnGetLatency);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterLatencyCallback failed: %{public}d", ret);
+        return false;
+    }
+
+    ret = OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback(stream, OnGetFramePosition);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterFramePositionCallback failed: %{public}d", ret);
+        return false;
+    }
+
+    LOG("OnOpenInputStream success");
+    return true;
+}
+
+static bool OnSetNoiseReductionMode(OH_AudioAccessory *accessory, OH_AudioNoiseReductionMode mode)
+{
+    LOG("OnSetNoiseReductionMode callback triggered, mode: %{public}d", mode);
+    return true;
 }
 
 OH_AudioStreamBuilder *CreateCapturerBuilder()
@@ -5828,7 +6041,7 @@ static napi_value AudioRenderGetAudioTimestampInfoInterval(napi_env env, napi_ca
     uDelay(sleepNum);
 
     napi_value res;
-    float rate = 0.4;
+    float rate = 0.15;
     int counti = 5;
     int64_t framePositionLastDuration = 0;
     int64_t timestampLastDuration = 0;
@@ -12501,6 +12714,1884 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MO
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    LOG("OH_AudioManager_GetAccessoryManager result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS && manager != nullptr) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(nullptr);
+    LOG("OH_AudioManager_GetAccessoryManager with null result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryManager_CreateInput result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS && accessory != nullptr) {
+        g_accessory = accessory;
+        g_manager = manager;
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryManager_CreateInput(nullptr, &accessoryInfo, &capabilities,
+        OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryManager_CreateInput with null manager result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, nullptr, &capabilities, OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryManager_CreateInput with null info result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, nullptr, OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryManager_CreateInput with null capabilities result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, nullptr, &accessory);
+    LOG("OH_AudioAccessoryManager_CreateInput with null callback result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, nullptr);
+    LOG("OH_AudioAccessoryManager_CreateInput with null accessory result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    const char *macAddresses[2] = {"00:11:22:33:44:66", "00:11:22:33:44:77"};
+    ret = OH_AudioAccessoryManager_SetAssociatedMacAddresses(manager, accessory, macAddresses, 2);
+    LOG("OH_AudioAccessoryManager_SetAssociatedMacAddresses result: %{public}d", ret);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_SetAssociatedMacAddresses(manager, accessory, nullptr, 0);
+    LOG("OH_AudioAccessoryManager_SetAssociatedMacAddresses with count=0 result: %{public}d", ret);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    const char *macAddresses[2] = {"00:11:22:33:44:66", "00:11:22:33:44:77"};
+    OH_AudioCommon_Result ret = OH_AudioAccessoryManager_SetAssociatedMacAddresses(nullptr, nullptr, macAddresses, 2);
+    LOG("OH_AudioAccessoryManager_SetAssociatedMacAddresses with null manager result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static const OH_AudioNoiseReductionMode g_supportedNoiseModes[3] = {
+    AUDIO_NOISE_REDUCTION_MODE_FIDELITY,
+    AUDIO_NOISE_REDUCTION_MODE_STANDARD,
+    AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS
+};
+
+static const size_t SUPPORTED_NOISE_MODE_COUNT = sizeof(g_supportedNoiseModes) / sizeof(g_supportedNoiseModes[0]);
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    LOG("OH_AudioAccessoryManager_RegisterNoiseReductionCapability result: %{public}d", ret);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryInfo accessoryInfo = {0};
+    accessoryInfo.structSize = sizeof(OH_AudioAccessoryInfo);
+    accessoryInfo.accessoryName = "TestAccessory";
+    accessoryInfo.manufacturer = "TestManufacturer";
+    accessoryInfo.modelNumber = "TestModel";
+    accessoryInfo.macAddress = "00:11:22:33:44:55";
+    accessoryInfo.type = AUDIO_ACCESSORY_TYPE_BT_SPP;
+    accessoryInfo.isUnidirectional = true;
+
+    OH_AudioStreamInfo streamProperties[1] = {0};
+    streamProperties[0].samplingRate = 48000;
+    streamProperties[0].sampleFormat = AUDIOSTREAM_SAMPLE_S16LE;
+    streamProperties[0].channelLayout = CH_LAYOUT_MONO;
+
+    OH_AudioAccessoryCapabilities capabilities = {0};
+    capabilities.structSize = sizeof(OH_AudioAccessoryCapabilities);
+    capabilities.streamProperties = streamProperties;
+    capabilities.streamPropertyCount = 1;
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed result: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, nullptr,
+        OnSetNoiseReductionMode);
+    LOG("OH_AudioAccessoryManager_RegisterNoiseReductionCapability with null capability result: %{public}d", ret);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_RegisterStartCallback(nullptr, OnInputStreamStart);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterStartCallback with null stream result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryInputStream *stream = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_RegisterStartCallback(stream, nullptr);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterStartCallback with null callback result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_RegisterStopCallback(nullptr, nullptr);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterStopCallback with null params result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback(nullptr, nullptr);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback with null params result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback(nullptr, nullptr);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback with null params result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback(nullptr, nullptr);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback with null params result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint8_t data[1920] = {0};
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_Write(nullptr, data, 1920);
+    LOG("OH_AudioAccessoryInputStreamManager_Write with null stream result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryInputStream *stream = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_Write(stream, nullptr, 1920);
+    LOG("OH_AudioAccessoryInputStreamManager_Write with null data result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryInputStream *stream = nullptr;
+    uint8_t data[1920] = {0};
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_Write(stream, data, 0);
+    LOG("OH_AudioAccessoryInputStreamManager_Write with dataSize=0 result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint32_t writableSize = 0;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_GetWritableSize(nullptr, &writableSize);
+    LOG("OH_AudioAccessoryInputStreamManager_GetWritableSize with null stream result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryInputStream *stream = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryInputStreamManager_GetWritableSize(stream, nullptr);
+    LOG("OH_AudioAccessoryInputStreamManager_GetWritableSize with null writableSize result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryManager_Connected(nullptr, nullptr);
+    LOG("OH_AudioAccessoryManager_Connected with null manager result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryManager_Disconnected(nullptr, nullptr);
+    LOG("OH_AudioAccessoryManager_Disconnected with null manager result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryManager_Destroy(nullptr, nullptr);
+    LOG("OH_AudioAccessoryManager_Destroy with null manager result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryManager_SetNoiseReductionMode(nullptr, nullptr,
+        AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    LOG("OH_AudioAccessoryManager_SetNoiseReductionMode with null manager result: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    if (AUDIO_NOISE_REDUCTION_MODE_FIDELITY == 0 &&
+        AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS == 1 &&
+        AUDIO_NOISE_REDUCTION_MODE_STANDARD == 2) {
+        LOG("OH_AudioNoiseReductionMode enum values are correct");
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        LOG("OH_AudioNoiseReductionMode enum values are incorrect");
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    if (AUDIO_ACCESSORY_TYPE_BT_SPP == 1) {
+        LOG("OH_AudioAccessoryType enum value is correct");
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        LOG("OH_AudioAccessoryType enum value is incorrect");
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    if (AUDIOCOMMON_RESULT_SUCCESS == 0 &&
+        AUDIOCOMMON_RESULT_ERROR_PERMISSION_DENIED == 201 &&
+        AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM == 6800101 &&
+        AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE == 6800103 &&
+        AUDIOCOMMON_RESULT_ERROR_UNSUPPORTED == 6800104 &&
+        AUDIOCOMMON_RESULT_ERROR_TIMEOUT == 6800105 &&
+        AUDIOCOMMON_RESULT_ERROR_FRAME_LENGTH_MISMATCH == 6800106) {
+        LOG("OH_AudioCommon_Result enum values are correct");
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        LOG("OH_AudioCommon_Result enum values are incorrect");
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 2. OH_AudioAccessoryManager_CreateInput - ERROR_ILLEGAL_STATE 测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryManager_CreateInput error illegal state test: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 4. OH_AudioAccessoryManager_SetAssociatedMacAddresses - ERROR_ILLEGAL_STATE 测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    const char *macAddresses[2] = {"00:11:22:33:44:66", "00:11:22:33:44:77"};
+    OH_AudioCommon_Result rets = OH_AudioAccessoryManager_SetAssociatedMacAddresses(manager, accessory, macAddresses, 2);
+    LOG("OH_AudioAccessoryManager_SetAssociatedMacAddresses error illegal state: %{public}d", rets);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 5. OH_AudioAccessoryManager_RegisterNoiseReductionCapability - ERROR_ILLEGAL_STATE 测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    LOG("OH_AudioAccessoryManager_RegisterNoiseReductionCapability error illegal state: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 6. OH_AudioAccessoryManager_SetNoiseReductionMode - ERROR_ILLEGAL_STATE 测试(配件未连接)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioCommon_Result rets = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (rets != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", rets);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_SetNoiseReductionMode(manager, accessory,
+        AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    LOG("OH_AudioAccessoryManager_SetNoiseReductionMode error illegal state: %{public}d", ret);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+// 7. OH_AudioAccessoryManager_SetNoiseReductionMode - ERROR_UNSUPPORTED 测试(模式不支持)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("Connected failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioNoiseReductionMode unsupportedMode = (OH_AudioNoiseReductionMode)99;
+    ret = OH_AudioAccessoryManager_SetNoiseReductionMode(manager, accessory, unsupportedMode);
+    LOG("OH_AudioAccessoryManager_SetNoiseReductionMode error unsupported: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_UNSUPPORTED) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+// 9. OH_AudioAccessoryManager_Connected - ERROR_ILLEGAL_STATE 测试(未注册能力)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    LOG("OH_AudioAccessoryManager_Connected error illegal state (no capability): %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 10. OH_AudioAccessoryManager_Connected - ERROR_ILLEGAL_STATE 测试(重复连接)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("First Connected failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    LOG("OH_AudioAccessoryManager_Connected error illegal state (duplicate): %{public}d", ret);
+    
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+
+// 13. OH_AudioAccessoryManager_Disconnected - ERROR_ILLEGAL_STATE 测试(未连接状态)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    LOG("OH_AudioAccessoryManager_Disconnected error illegal state (not connected): %{public}d", ret);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 15. OH_AudioAccessoryManager_Destroy - ERROR_ILLEGAL_STATE 测试(未断开连接)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("Connected failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_Destroy(manager, accessory);
+    LOG("OH_AudioAccessoryManager_Destroy error illegal state (still connected): %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    return res;
+}
+
+// 16. OH_AudioAccessoryInputStreamManager_Write - ERROR_FRAME_LENGTH_MISMATCH 测试(帧长度不匹配)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint8_t data[1920] = {0};
+    uint32_t wrongDataSize = 1000;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryInputStreamManager_Write_error createinput test: %{public}d", ret);
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    LOG("OH_AudioAccessoryInputStreamManager_Write_error  connected test: %{public}d", ret);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    streamResult = OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_GenerateCapturer failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    streamResult = OH_AudioCapturer_Start(capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioCapturer_Start failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_Write(stream, data, wrongDataSize);
+    LOG("OH_AudioAccessoryInputStreamManager_Write error frame length mismatch: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_FRAME_LENGTH_MISMATCH) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 17. OH_AudioAccessoryInputStreamManager_Write - ERROR_ILLEGAL_STATE 测试(流已释放)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint8_t data[1920] = {0};
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    streamResult = OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_GenerateCapturer failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    streamResult = OH_AudioCapturer_Start(capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioCapturer_Start failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_Write(stream, data, 1920);
+    LOG("OH_AudioAccessoryInputStreamManager_Write error : stream has been stop: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 18. OH_AudioAccessoryInputStreamManager_GetWritableSize - ERROR_ILLEGAL_STATE 测试(流已释放)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint8_t data[1920] = {0};
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    streamResult = OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_GenerateCapturer failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    streamResult = OH_AudioCapturer_Start(capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioCapturer_Start failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    uint32_t writableSize = 0;
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_GetWritableSize(stream, &writableSize);
+    LOG("OH_AudioAccessoryInputStreamManager_GetWritableSize error : stream has been stop: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 21. OH_AudioAccessoryInputStreamManager_RegisterStartCallback - ERROR_ILLEGAL_STATE 测试(非OpenInputStream回调期间)
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterStartCallback(stream, AccessoryOnStreamStart);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterStartCallback error illegal state: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 22. OH_AudioAccessoryInputStreamManager_RegisterStopCallback - ERROR_ILLEGAL_STATE 测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterStopCallback(stream, AccessoryOnStreamStop);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterStopCallback error illegal state: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 23. OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback - ERROR_ILLEGAL_STATE 测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback(stream, AccessoryOnStreamRelease);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback error illegal state: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 24. OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback - ERROR_ILLEGAL_STATE 流释放测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback(stream, OnGetLatency);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback error illegal state: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 25. OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback - ERROR_ILLEGAL_STATE 测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback(stream, OnGetFramePosition);
+    LOG("OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback error illegal state: %{public}d", rets);
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    if (rets == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+
+}
+
+// 1. OH_AudioAccessoryManager_SetNoiseReductionMode - SUCCESS测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("Connected failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_SetNoiseReductionMode(manager, accessory, AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    LOG("OH_AudioAccessoryManager_SetNoiseReductionMode success test: %{public}d", ret);
+    
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 2. OH_AudioAccessoryManager_Connected - SUCCESS测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    LOG("OH_AudioAccessoryManager_Connected success test: %{public}d", ret);
+    
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 3. OH_AudioAccessoryManager_Disconnected - SUCCESS测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    LOG("SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100 createinput success test: %{public}d", ret);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("CreateInput failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    OH_AudioAccessoryNoiseReductionCapability noiseCapability = {0};
+    noiseCapability.structSize = sizeof(OH_AudioAccessoryNoiseReductionCapability);
+    noiseCapability.supportedModes = g_supportedNoiseModes;
+    noiseCapability.supportedModeCount = SUPPORTED_NOISE_MODE_COUNT;
+    noiseCapability.currentMode = AUDIO_NOISE_REDUCTION_MODE_STANDARD;
+
+    ret = OH_AudioAccessoryManager_RegisterNoiseReductionCapability(manager, accessory, &noiseCapability,
+        OnSetNoiseReductionMode);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("RegisterNoiseReductionCapability failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("Connected failed: %{public}d", ret);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    ret = OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    LOG("OH_AudioAccessoryManager_Disconnected success test: %{public}d", ret);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        return res;
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        OH_AudioAccessoryManager_Destroy(manager, accessory);
+        return res;
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory); 
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioCommon_Result rets = OH_AudioAccessoryManager_Destroy(manager, accessory);
+    LOG("OH_AudioAccessoryManager_Destroy failed: %{public}d", rets);
+    if (rets == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+// 5. OH_AudioAccessoryInputStreamManager_Write - SUCCESS测试
+// 注意:Write需要在流启动后才能成功,这里模拟完整流程
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint8_t data[1920] = {0};
+    uint32_t dataSize = 1920;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryInputStreamManager_Write createinput success test: %{public}d", ret);
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    LOG("OH_AudioAccessoryInputStreamManager_Write createinput connected test: %{public}d", ret);
+
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    streamResult = OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_GenerateCapturer failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    streamResult = OH_AudioCapturer_Start(capturer);
+    if (streamResult != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioCapturer_Start failed: %{public}d", streamResult);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_Write(stream, data, dataSize);
+    LOG("OH_AudioAccessoryInputStreamManager_Write success test: %{public}d", rets);
+    if (rets == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    return res;
+}
+
+// 6. OH_AudioAccessoryInputStreamManager_GetWritableSize - SUCCESS测试
+static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint32_t writableSize = 0;
+    OH_AudioAccessoryManager *manager = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
+    if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAccessoryManager failed: %{public}d", ret);
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
+    OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
+    OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    ret = OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    LOG("OH_AudioAccessoryInputStreamManager_GetWritableSize createinput test: %{public}d", ret);
+    ret = OH_AudioAccessoryManager_Connected(manager, accessory);
+    LOG("OH_AudioAccessoryInputStreamManager_GetWritableSize  connected test: %{public}d", ret);
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *capturer = nullptr;
+    OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
+    (void)OH_AudioStreamBuilder_SetSamplingRate(builder, 48000);
+    (void)OH_AudioStreamBuilder_SetChannelCount(builder, 1);
+    (void)OH_AudioStreamBuilder_SetSampleFormat(builder, AUDIOSTREAM_SAMPLE_S16LE);
+    (void)OH_AudioStreamBuilder_SetEncodingType(builder, AUDIOSTREAM_ENCODING_TYPE_RAW);
+    (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
+    OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_GetWritableSize(stream, &writableSize);
+    LOG("OH_AudioAccessoryInputStreamManager_GetWritableSize success test: %{public}d, writableSize: %{public}u",
+        rets, writableSize);  
+    if (rets == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioAccessoryManager_Disconnected(manager, accessory);
+    OH_AudioAccessoryManager_Destroy(manager, accessory);
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100", nullptr,
@@ -13500,6 +15591,168 @@ napi_property_descriptor desc3[] = {
         SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100, nullptr, nullptr, nullptr,
         napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
