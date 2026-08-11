@@ -1992,13 +1992,34 @@ void InitProcTest() {}
 
 void CleanupProcResources()
 {
-    if (format != nullptr) { OH_AVFormat_Destroy(format); format = nullptr; }
-    if (trackFormat != nullptr) { OH_AVFormat_Destroy(trackFormat); trackFormat = nullptr; }
-    if (sourceFormat != nullptr) { OH_AVFormat_Destroy(sourceFormat); sourceFormat = nullptr; }
-    if (avBuffer != nullptr) { OH_AVBuffer_Destroy(avBuffer); avBuffer = nullptr; }
-    if (memory != nullptr) { OH_AVMemory_Destroy(memory); memory = nullptr; }
-    if (demuxer != nullptr) { OH_AVDemuxer_Destroy(demuxer); demuxer = nullptr; }
-    if (source != nullptr) { OH_AVSource_Destroy(source); source = nullptr; }
+    if (format != nullptr) {
+        OH_AVFormat_Destroy(format);
+        format = nullptr;
+    }
+    if (trackFormat != nullptr) {
+        OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
+    }
+    if (sourceFormat != nullptr) {
+        OH_AVFormat_Destroy(sourceFormat);
+        sourceFormat = nullptr;
+    }
+    if (avBuffer != nullptr) {
+        OH_AVBuffer_Destroy(avBuffer);
+        avBuffer = nullptr;
+    }
+    if (memory != nullptr) {
+        OH_AVMemory_Destroy(memory);
+        memory = nullptr;
+    }
+    if (demuxer != nullptr) {
+        OH_AVDemuxer_Destroy(demuxer);
+        demuxer = nullptr;
+    }
+    if (source != nullptr) {
+        OH_AVSource_Destroy(source);
+        source = nullptr;
+    }
     g_trackCount = 0;
 }
 

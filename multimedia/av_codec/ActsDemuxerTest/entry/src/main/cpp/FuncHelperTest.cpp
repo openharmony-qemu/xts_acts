@@ -402,7 +402,11 @@ int OpenFile(const char *fileName, int fd, OH_AVSource **src,
     *src = OH_AVSource_CreateWithFD(fd, 0, size);
     if (*src == nullptr) { return -1; }
     *audioDemuxer = OH_AVDemuxer_CreateWithSource(*src);
-    if (*audioDemuxer == nullptr) { OH_AVSource_Destroy(*src); *src = nullptr; return -1; }
+    if (*audioDemuxer == nullptr) {
+        OH_AVSource_Destroy(*src);
+        *src = nullptr;
+        return -1;
+    }
     return 0;
 }
 
