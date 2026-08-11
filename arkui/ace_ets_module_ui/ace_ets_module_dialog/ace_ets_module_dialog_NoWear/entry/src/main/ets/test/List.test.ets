@@ -75,7 +75,7 @@ export default function testsuite() {
 	SelectJsunit02();
 	SelectAttr();
 	selectoptionwithJsSuit();
-	SelectTest();;
+	SelectTest();
 	SelectJsunit1();
 	menuBackgroundBlurStyle();
 	menuBackgroundColor();
