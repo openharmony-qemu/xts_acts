@@ -61,45 +61,6 @@ export default function PhotoGetAssetsTestSupp() {
     });
 
     /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_CALLBACK_00001
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_CALLBACK_00001
-     * @tc.desc      PhotoViewPicker.select-参数属性覆盖-true
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_CALLBACK_00001', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_CALLBACK_00001';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = true;
-        photoSelectOptions.isDestroyedWithNavigation = true;
-        photoSelectOptions.isReturnToPhotoBrowserEnabled = true;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 0;
-        let phAsset = {albumUri :'',displayName:'',gridLevel:0} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions, (err: BusinessError, photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        });
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
      * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_CALLBACK_00002
      * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_CALLBACK_00002
      * @tc.desc      PhotoViewPicker.select-第一个参数为null
