@@ -14,6 +14,7 @@
  */
 import router from '@ohos.router';
 import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import Utils from '../../MainAbility/common/Utils'
 
 export default function SelectTest() {
   describe('SelectTest', () => {
@@ -44,23 +45,16 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0030', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0030 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0030');
-          console.info('ArkUX_Select_Visual_0030 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0030 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("300.000000");
-          expect(optionHeight).assertEqual("300.000000");
-          console.info('ArkUX_Select_Visual_0030 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0030 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0030');
+      console.info('ArkUX_Select_Visual_0030 START  :' + JSON.stringify(strJson));
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0030 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+      expect(optionWidth).assertEqual("300.000000");
+      expect(optionHeight).assertEqual("300.000000");
+      console.info('ArkUX_Select_Visual_0030 END ');
     });
 
     /*
@@ -70,23 +64,16 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0040', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0040 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0040');
-          console.info('ArkUX_Select_Visual_0040 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0040 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("600.000000");
-          expect(optionHeight).assertEqual("600.000000");
-          console.info('ArkUX_Select_Visual_0040 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0040 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0040');
+      console.info('ArkUX_Select_Visual_0040 START  :' + JSON.stringify(strJson));
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0040 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+      expect(optionWidth).assertEqual("600.000000");
+      expect(optionHeight).assertEqual("600.000000");
+      console.info('ArkUX_Select_Visual_0040 END ');
     });
 
     /*
@@ -96,23 +83,16 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0050', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0050 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0050');
-          console.info('ArkUX_Select_Visual_0050 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("900.000000");
-          expect(optionHeight).assertEqual("900.000000");
-          console.info('ArkUX_Select_Visual_0050 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0050 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0050');
+      console.info('ArkUX_Select_Visual_0050 START  :' + JSON.stringify(strJson));
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+      expect(optionWidth).assertEqual("900.000000");
+      expect(optionHeight).assertEqual("900.000000");
+      console.info('ArkUX_Select_Visual_0050 END ');
     });
 
     /*
@@ -122,23 +102,16 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0060', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0060 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0060');
-          console.info('ArkUX_Select_Visual_0060 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0060 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("1200.000000");
-          expect(optionHeight).assertEqual("1200.000000");
-          console.info('ArkUX_Select_Visual_0060 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0060 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0060');
+      console.info('ArkUX_Select_Visual_0060 START  :' + JSON.stringify(strJson));
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0060 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+      expect(optionWidth).assertEqual("1200.000000");
+      expect(optionHeight).assertEqual("1200.000000");
+      console.info('ArkUX_Select_Visual_0060 END ');
     });
 
     /*
@@ -148,23 +121,16 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0070', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0070 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0070');
-          console.info('ArkUX_Select_Visual_0070 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0070 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("1500.000000");
-          expect(optionHeight).assertEqual("1500.000000");
-          console.info('ArkUX_Select_Visual_0070 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0070 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0070');
+      await Utils.sleep(1000);
+      console.info('ArkUX_Select_Visual_0070 START  :' + JSON.stringify(strJson));
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0070 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+      expect(optionWidth).assertEqual("1500.000000");
+      expect(optionHeight).assertEqual("1500.000000");
+      console.info('ArkUX_Select_Visual_0070 END ');
     });
 
   })
