@@ -47,7 +47,7 @@ function clearTxtChKeys(): void {
   AppStorage.delete('txtCh_event_opt');
 }
 
-export default function UIObserverTextChangeTest() {
+export default function UIObserverTextChangeTest(): void {
   describe('UIObserverTextChangeTest', () => {
     beforeAll(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeAll', 'start');

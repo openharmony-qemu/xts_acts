@@ -80,7 +80,7 @@ async function waitStatusByAppStorage(key: string, expected: string, timeoutMs: 
   expect(getAppStorageStatus(key)).assertEqual(expected);
 }
 
-export default function UIContextTest() {
+export default function UIContextTest(): void {
   describe('UIContextTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');

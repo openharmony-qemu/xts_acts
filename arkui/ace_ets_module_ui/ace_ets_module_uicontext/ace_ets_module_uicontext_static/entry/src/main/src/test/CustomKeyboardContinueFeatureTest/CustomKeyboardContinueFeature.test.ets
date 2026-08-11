@@ -42,7 +42,7 @@ function getContentByKey(key: string): string {
   return inspectorObj.getElement('$attrs').getString('content');
 }
 
-export default function CustomKeyboardContinueFeatureTest() {
+export default function CustomKeyboardContinueFeatureTest(): void {
   describe('CustomKeyboardContinueFeatureTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');
