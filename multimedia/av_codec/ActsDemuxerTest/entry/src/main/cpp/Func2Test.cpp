@@ -65,7 +65,7 @@ static const std::string TRACK_REF_TYPE_CDSC = "cdsc";
 static const std::string AUXILIARY_DEPTH_TRACK_KEY = "com.openharmony.moviemode.depth";
 static const std::string AUXILIARY_PREY_TRACK_KEY = "com.openharmony.moviemode.prey";
 static const std::string TIMED_METADATA_KEY = "timed_metadata";
-static int32_t g_trackType = 0;
+int32_t g_trackType = 0;
 
 // 结构体定义：用于减少函数参数
 struct TrackState {
@@ -97,7 +97,7 @@ static constexpr int OGG_SKIP_FRAME_INDEX_6862 = 6862;
 
 // GET_FILE_SIZE 已在 FuncHelperTest.h 中定义为宏
 
-static void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &videoFrame)
+void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &videoFrame)
 {
     if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
         videoIsEnd = true;
@@ -134,7 +134,7 @@ struct SkipSampleReadParams {
     OH_AVFormat *&format;
 };
 
-static int InitSkipSampleFile(SkipSampleParams &params)
+int InitSkipSampleFile(SkipSampleParams &params)
 {
     params.fd = open(params.file, O_RDONLY);
     g_testFd = params.fd;
@@ -198,7 +198,7 @@ static int ValidateSkipSampleResults(SkipSampleResultParams &params)
     return 0;
 }
 
-static int CloseFdAndReturn(int &fd)
+int CloseFdAndReturn(int &fd)
 {
     if (fd >= 0) {
         close(fd);
@@ -207,7 +207,7 @@ static int CloseFdAndReturn(int &fd)
     return -1;
 }
 
-static int InitFile(const char *file, int32_t trackNum, int &fd)
+int InitFile(const char *file, int32_t trackNum, int &fd)
 {
     g_initResult = false;
     fd = open(file, O_RDONLY);
@@ -248,7 +248,7 @@ static int InitFile(const char *file, int32_t trackNum, int &fd)
     return 0;
 }
 
-static int GetDepthTrack()
+int GetDepthTrack()
 {
     g_isRefult = false;
     const char *trackRefType = nullptr;
@@ -284,7 +284,7 @@ static int GetDepthTrack()
     return 0;
 }
 
-static int GetPreyTrack()
+int GetPreyTrack()
 {
     g_isRefult = false;
     const char *trackRefType = nullptr;
@@ -317,7 +317,7 @@ static int GetPreyTrack()
     return 0;
 }
 
-static int GetTimedMetaTrack()
+int GetTimedMetaTrack()
 {
     g_isRefult = false;
     const char *trackRefType = nullptr;
@@ -350,7 +350,7 @@ static int GetTimedMetaTrack()
     return 0;
 }
 
-static int GetDepthAndIdsTrack()
+int GetDepthAndIdsTrack()
 {
     g_isRefult = false;
     const char *trackRefType = nullptr;
@@ -389,7 +389,7 @@ static int GetDepthAndIdsTrack()
     return 0;
 }
 
-static int GetPreyAndIdsTrack()
+int GetPreyAndIdsTrack()
 {
     g_isRefult = false;
     const char *trackRefType = nullptr;
@@ -1104,25 +1104,21 @@ int DemuxerFunctionTrack0040()
     if (!(g_initResult)) {
         return -1;
     }
-    int32_t *trackIdsDepth = nullptr;
-    int32_t *trackIdsPrey = nullptr;
+    int32_t *trackIds = nullptr;
     size_t bufferSize;
-    int bufferSizeResult = 3;
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
     if (trackFormat == nullptr) {
         return -1;
     }
-    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        return -1;
-    }
-    if (g_trackType != MEDIA_TYPE_AUXILIARY) {
+    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType)) ||
+        g_trackType != MEDIA_TYPE_AUXILIARY) {
         return -1;
     }
     if (!(OH_AVFormat_GetIntBuffer(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS,
-        &trackIdsDepth, &bufferSize))) {
+        &trackIds, &bufferSize))) {
         return -1;
     }
-    if (bufferSize != bufferSizeResult) {
+    if (bufferSize != TRACKNUM_3) {
         return -1;
     }
     OH_AVFormat_Destroy(trackFormat);
@@ -1132,18 +1128,15 @@ int DemuxerFunctionTrack0040()
     if (trackFormat == nullptr) {
         return -1;
     }
-    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        return -1;
-    }
-    if (g_trackType != MEDIA_TYPE_AUXILIARY) {
+    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType)) ||
+        g_trackType != MEDIA_TYPE_AUXILIARY) {
         return -1;
     }
     if (!(OH_AVFormat_GetIntBuffer(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS,
-        &trackIdsPrey, &bufferSize))) {
+        &trackIds, &bufferSize))) {
         return -1;
     }
-    bufferSizeResult = EXPECTED_BUFFER_SIZE_2;
-    if (bufferSize != bufferSizeResult) {
+    if (bufferSize != EXPECTED_BUFFER_SIZE_2) {
         return -1;
     }
     if (fd >= 0) {
@@ -1336,21 +1329,16 @@ int DemuxerFunctionTrack0090()
     if (g_trackType != MEDIA_TYPE_AUXILIARY) {
         return -1;
     }
-    if (OH_AVFormat_GetDoubleValue(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &doubleData)) {
-        return -1;
-    }
-    if (OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &intData)) {
-        return -1;
-    }
-    if (OH_AVFormat_GetLongValue(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &longData)) {
+    if (OH_AVFormat_GetDoubleValue(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &doubleData) ||
+        OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &intData) ||
+        OH_AVFormat_GetLongValue(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &longData)) {
         return -1;
     }
     if (!(OH_AVFormat_GetIntBuffer(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS,
         &trackIdsDepth, &bufferSize))) {
         return -1;
     }
-    int bufferSizeResult = 3;
-    if (bufferSize != bufferSizeResult) {
+    if (bufferSize != TRACKNUM_3) {
         return -1;
     }
     if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_0) {
@@ -1461,6 +1449,77 @@ int DemuxerFunctionTrack0140()
     return 0;
 }
 
+struct AuxTrackSampleParams {
+    int32_t trackIndex;
+    int32_t expectedType;
+    int (*validateFunc)();
+    OH_AVCodecBufferAttr &bufferAttr;
+    bool &videoIsEnd;
+    int &videoFrame;
+};
+
+int ProcessAuxTrackSample(AuxTrackSampleParams &params)
+{
+    trackFormat = OH_AVSource_GetTrackFormat(source, params.trackIndex);
+    if (trackFormat == nullptr) {
+        return -1;
+    }
+    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, params.trackIndex, avBuffer) != AV_ERR_OK) {
+        return -1;
+    }
+    if (avBuffer == nullptr) {
+        return -1;
+    }
+    if (OH_AVBuffer_GetBufferAttr(avBuffer, &params.bufferAttr) != AV_ERR_OK) {
+        return -1;
+    }
+    if (g_trackType == params.expectedType) {
+        if (params.validateFunc() != 0 || !(g_isRefult)) {
+            return -1;
+        }
+        SetVideoValue(params.bufferAttr, params.videoIsEnd, params.videoFrame);
+    }
+    OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
+    return 0;
+}
+
+int GetDepthTrack0190()
+{
+    g_isRefult = false;
+    const char *trackRefType = nullptr;
+    const char *trackdescription = nullptr;
+    int32_t *trackIdsDepth = nullptr;
+    size_t bufferSize;
+    if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE, &trackRefType))) {
+        return -1;
+    }
+    if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) {
+        return -1;
+    }
+    if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION, &trackdescription))) {
+        return -1;
+    }
+    if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) {
+        return -1;
+    }
+    if (!(OH_AVFormat_GetIntBuffer(
+        trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) {
+        return -1;
+    }
+    if (bufferSize != TRACKNUM_1) {
+        return -1;
+    }
+    if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_1) {
+        return -1;
+    }
+    g_isRefult = true;
+    return 0;
+}
+
 int DemuxerFunctionTrack0150()
 {
     const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary.mp4";
@@ -1472,56 +1531,12 @@ int DemuxerFunctionTrack0150()
     bool videoIsEnd = false;
     int videoFrame = 0;
     OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsDepth = nullptr;
-    size_t bufferSize;
     while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_3);
-        if (trackFormat == nullptr) {
+        AuxTrackSampleParams params = {TRACKNUM_3, MEDIA_TYPE_TIMED_METADATA, GetTimedMetaTrack,
+            bufferAttr, videoIsEnd, videoFrame};
+        if (ProcessAuxTrackSample(params) != 0) {
             return -1;
         }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_3, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_TIMED_METADATA) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_CDSC.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, TIMED_METADATA_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_1) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_1) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
     }
     if (videoFrame != TRACKFRAME_16) {
         return -1;
@@ -1544,59 +1559,12 @@ int DemuxerFunctionTrack0160()
     bool videoIsEnd = false;
     int videoFrame = 0;
     OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsPrey = nullptr;
-    size_t bufferSize;
     while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
-        if (trackFormat == nullptr) {
+        AuxTrackSampleParams params = {TRACKNUM_2, MEDIA_TYPE_AUXILIARY, GetPreyAndIdsTrack,
+            bufferAttr, videoIsEnd, videoFrame};
+        if (ProcessAuxTrackSample(params) != 0) {
             return -1;
         }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_2, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_PREY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_PREY_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsPrey, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_2) {
-                return -1;
-            }
-            if (trackIdsPrey[TRACKNUM_0] != TRACKNUM_0) {
-                return -1;
-            }
-            if (trackIdsPrey[TRACKNUM_1] != TRACKNUM_1) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
     }
     if (videoFrame != TRACKFRAME_16) {
         return -1;
@@ -1620,59 +1588,15 @@ int DemuxerFunctionTrack0170()
     bool videoIsEnd = false;
     int videoFrame = 0;
     OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsPrey = nullptr;
-    size_t bufferSize;
     if (OH_AVDemuxer_SeekToTime(demuxer, VIDEOTRACKSEEK / THOUSAND, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) {
         return -1;
     }
     while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
-        if (trackFormat == nullptr) {
+        AuxTrackSampleParams params = {TRACKNUM_2, MEDIA_TYPE_AUXILIARY, GetPreyTrack,
+            bufferAttr, videoIsEnd, videoFrame};
+        if (ProcessAuxTrackSample(params) != 0) {
             return -1;
         }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_2, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_PREY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_PREY_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsPrey, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_1) {
-                return -1;
-            }
-            if (trackIdsPrey[TRACKNUM_0] != TRACKNUM_2) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
     }
     if (fd >= 0) {
         close(fd);
@@ -1692,62 +1616,12 @@ int DemuxerFunctionTrack0180()
     bool videoIsEnd = false;
     int videoFrame = 0;
     OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsDepth = nullptr;
-    size_t bufferSize;
     while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
-        if (trackFormat == nullptr) {
+        AuxTrackSampleParams params = {TRACKNUM_1, MEDIA_TYPE_AUXILIARY, GetDepthAndIdsTrack,
+            bufferAttr, videoIsEnd, videoFrame};
+        if (ProcessAuxTrackSample(params) != 0) {
             return -1;
         }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_1, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_3) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_0) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_1] != TRACKNUM_2) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
     }
     if (videoFrame != TRACKFRAME_77) {
         return -1;
@@ -1771,59 +1645,15 @@ int DemuxerFunctionTrack0190()
     bool videoIsEnd = false;
     int videoFrame = 0;
     OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsDepth = nullptr;
-    size_t bufferSize;
     if (OH_AVDemuxer_SeekToTime(demuxer, VIDEOTRACKSEEK / THOUSAND, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) {
         return -1;
     }
     while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
-        if (trackFormat == nullptr) {
+        AuxTrackSampleParams params = {TRACKNUM_1, MEDIA_TYPE_AUXILIARY, GetDepthTrack0190,
+            bufferAttr, videoIsEnd, videoFrame};
+        if (ProcessAuxTrackSample(params) != 0) {
             return -1;
         }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_1, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_1) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_1) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
     }
     if (fd >= 0) {
         close(fd);
@@ -2319,515 +2149,6 @@ int DemuxerFunctionAudioTrack0140()
         close(fd);
         fd = -1;
     }
-    return 0;
-}
-
-int DemuxerFunctionAudioTrack0150()
-{
-    const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_02.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_4, fd);
-    if (!(g_initResult)) {
-        return -1;
-    }
-    bool videoIsEnd = false;
-    int videoFrame = 0;
-    OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsDepth = nullptr;
-    size_t bufferSize;
-    while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_3);
-        if (trackFormat == nullptr) {
-            return -1;
-        }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_3, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_TIMED_METADATA) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_CDSC.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, TIMED_METADATA_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_1) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_1) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
-    }
-    if (videoFrame != TRACKFRAME_231) {
-        return -1;
-    }
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerFunctionAudioTrack0160()
-{
-    const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_02.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_4, fd);
-    if (!(g_initResult)) {
-        return -1;
-    }
-    bool videoIsEnd = false;
-    int videoFrame = 0;
-    OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsPrey = nullptr;
-    size_t bufferSize;
-    while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
-        if (trackFormat == nullptr) {
-            return -1;
-        }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_2, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_PREY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_PREY_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsPrey, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_2) {
-                return -1;
-            }
-            if (trackIdsPrey[TRACKNUM_0] != TRACKNUM_0) {
-                return -1;
-            }
-            if (trackIdsPrey[TRACKNUM_1] != TRACKNUM_1) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
-    }
-    if (videoFrame != TRACKFRAME_431) {
-        return -1;
-    }
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerFunctionAudioTrack0170()
-{
-    const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_02.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_4, fd);
-    if (!(g_initResult)) {
-        return -1;
-    }
-    bool videoIsEnd = false;
-    int videoFrame = 0;
-    OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsPrey = nullptr;
-    size_t bufferSize;
-    if (OH_AVDemuxer_SeekToTime(demuxer, AUDIOTRACKSEEK / THOUSAND, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) {
-        return -1;
-    }
-    while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
-        if (trackFormat == nullptr) {
-            return -1;
-        }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_2, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_PREY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_PREY_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsPrey, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_2) {
-                return -1;
-            }
-            if (trackIdsPrey[TRACKNUM_0] != TRACKNUM_0) {
-                return -1;
-            }
-            if (trackIdsPrey[TRACKNUM_1] != TRACKNUM_1) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
-    }
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerFunctionAudioTrack0180()
-{
-    const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_02.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_4, fd);
-    if (!(g_initResult)) {
-        return -1;
-    }
-    bool videoIsEnd = false;
-    int videoFrame = 0;
-    OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsDepth = nullptr;
-    size_t bufferSize;
-    while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
-        if (trackFormat == nullptr) {
-            return -1;
-        }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_1, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_3) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_0) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_1] != TRACKNUM_2) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
-    }
-    if (videoFrame != TRACKFRAME_431) {
-        return -1;
-    }
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerFunctionAudioTrack0190()
-{
-    const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_02.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_4, fd);
-    if (!(g_initResult)) {
-        return -1;
-    }
-    bool videoIsEnd = false;
-    int videoFrame = 0;
-    OH_AVCodecBufferAttr bufferAttr;
-    const char *trackRefType = nullptr;
-    const char *trackdescription = nullptr;
-    int32_t *trackIdsDepth = nullptr;
-    size_t bufferSize;
-    if (OH_AVDemuxer_SeekToTime(demuxer, AUDIOTRACKSEEK / THOUSAND, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) {
-        return -1;
-    }
-    while (!videoIsEnd) {
-        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
-        if (trackFormat == nullptr) {
-            return -1;
-        }
-        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-            return -1;
-        }
-        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_1, avBuffer) != AV_ERR_OK) {
-            return -1;
-        }
-        if (avBuffer == nullptr) {
-            return -1;
-        }
-        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) {
-            return -1;
-        }
-        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
-                &trackRefType))) {
-                return -1;
-            }
-            if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
-                &trackdescription))) {
-                return -1;
-            }
-            if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) {
-                return -1;
-            }
-            if (!(OH_AVFormat_GetIntBuffer(
-                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) {
-                return -1;
-            }
-            if (bufferSize != TRACKNUM_3) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_0) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_1] != TRACKNUM_2) {
-                return -1;
-            }
-            if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) {
-                return -1;
-            }
-            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
-        }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
-    }
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerFunctionAdd0010()
-{
-    const char *file = "/data/storage/el2/base/files/media/test_size_large.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_2, fd);
-    if (!(g_initResult)) {
-        return -1;
-    }
-    if (OH_AVDemuxer_SeekToTime(demuxer, EXPECTED_SEEK_TIME_2487, SEEK_MODE_NEXT_SYNC) != AV_ERR_UNKNOWN) {
-        return -1;
-    }
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerFunctionAdd0020()
-{
-    const char *file = "/data/storage/el2/base/files/media/test_size_large.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_2, fd);
-    if (!(g_initResult)) {
-        return -1;
-    }
-    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_1, avBuffer) != AV_ERR_UNKNOWN) {
-        return -1;
-    }
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerFunctionAdd0030()
-{
-    // 初始化 memory (需要用于 OH_AVDemuxer_ReadSample)
-    int32_t width = MEMORY_BUFFER_WIDTH;
-    int32_t height = MEMORY_BUFFER_HEIGHT;
-    memory = OH_AVMemory_Create(width * height);
-    if (memory == nullptr) {
-        return -1;
-    }
-    const char *file = "/data/storage/el2/base/files/media/test_size_large.mp4";
-    int fd = 0;
-    InitFile(file, TRACKNUM_2, fd);
-    if (!(g_initResult)) {
-        OH_AVMemory_Destroy(memory);
-        memory = nullptr;
-        return -1;
-    }
-    OH_AVCodecBufferAttr attr;
-    int result = OH_AVDemuxer_ReadSample(demuxer, TRACKNUM_1, memory, &attr);
-    OH_AVMemory_Destroy(memory);
-    memory = nullptr;
-
-    if (result != AV_ERR_UNKNOWN) {
-        if (fd >= 0) {
-            close(fd);
-            fd = -1;
-        }
-        return -1;
-    }
-
-    if (fd >= 0) {
-        close(fd);
-        fd = -1;
-    }
-    return 0;
-}
-
-int DemuxerSkipSampleFunc0010()
-{
-    OH_AVCodecBufferAttr attr;
-    bool audioIsEnd = false;
-    int audioFrame = 0;
-    int skipSampleCounts = 0;
-    int aKeyCount = 0;
-    const char *file = "/data/storage/el2/base/files/media/audio/MP3_8K_1.mp3";
-    int fd = 0;
-    int64_t size = 0;
-    SkipSampleParams params = {file, fd, size, 1};
-    if (InitSkipSampleFile(params) != 0) {
-        return -1;
-    }
-    SkipSampleFrameContext ctx = {size, attr, audioFrame, skipSampleCounts, aKeyCount, audioIsEnd, fd};
-    while (!audioIsEnd) {
-        if (ProcessMp3SkipSampleFrame(ctx) != 0) {
-            return -1;
-        }
-    }
-    if (skipSampleCounts != EXPECTED_SKIP_SAMPLE_COUNT_MP3 || audioFrame != EXPECTED_AUDIO_FRAMES_3052 ||
-        aKeyCount != EXPECTED_AUDIO_FRAMES_3052) {
-        close(fd);
-        return -1;
-    }
-    close(fd);
-    return 0;
-}
-
-int DemuxerSkipSampleFunc0020()
-{
-    OH_AVCodecBufferAttr attr;
-    int skipSampleCounts = 0;
-    bool audioIsEnd = false;
-    int audioFrame = 0;
-    int aKeyCount = 0;
-    const char *file = "/data/storage/el2/base/files/media/audio/OGG_8K_1.ogg";
-    int fd = 0;
-    int64_t size = 0;
-    SkipSampleParams params = {file, fd, size, 1};
-    if (InitSkipSampleFile(params) != 0) {
-        return -1;
-    }
-    SkipSampleFrameContext ctx = {size, attr, audioFrame, skipSampleCounts, aKeyCount, audioIsEnd, fd};
-    while (!audioIsEnd) {
-        if (ProcessOggSkipSampleFrame(ctx) != 0) {
-            return -1;
-        }
-    }
-    if (skipSampleCounts != EXPECTED_SKIP_SAMPLE_COUNT_OGG || audioFrame != EXPECTED_AUDIO_FRAMES_6863 ||
-        aKeyCount != EXPECTED_AUDIO_FRAMES_6863) {
-        close(fd);
-        return -1;
-    }
-    close(fd);
     return 0;
 }
 
