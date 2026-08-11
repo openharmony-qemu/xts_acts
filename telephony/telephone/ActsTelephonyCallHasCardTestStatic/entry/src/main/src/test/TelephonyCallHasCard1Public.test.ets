@@ -27,12 +27,12 @@ import hilog from '@ohos.hilog'
 const rightPhone: string = "17301740854";
 const emptyStr: string = "";
 const errPhone: string = "125qqqq555";
-const emergencyPhone: string = "120";
+const emergencyPhone: string = "911";
 const specialPhone: string = "10086";
 
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let tag: string = 'CallTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 const ExpectFail = () => {
   try {
@@ -77,7 +77,7 @@ async function getPermissions() {
   console.info('getPermission end');
 }
 
-export default function HasCard1PublicTest() {
+export default function HasCard1PublicTest(): void {
   describe('TelephonyCallHasCard1PublicTest', (): void => {
       beforeAll(async (done: () => void) => {
         console.info('getPermission beforeAll');
@@ -96,7 +96,6 @@ export default function HasCard1PublicTest() {
     it("testTelephonyCallManagerFormatPhoneNumberToE164_static_0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE164_static_0150';
       hilog.info(domain, tag, `${caseName} test start `);
-      done();
       try {
         call.formatPhoneNumberToE164(specialPhone, "CN", (err: BusinessError<void> | null, data: string | undefined) => {
           if (err?.code) {
@@ -520,6 +519,238 @@ export default function HasCard1PublicTest() {
         hilog.error(domain, tag, `${caseName} test end `);
         done();
       }
+    });
+
+    /**
+     * @tc.name   testGetCallTransferInfoUnconditional_static_0100
+     * @tc.number SUB_Telephony_CallManager_GetCallTransferInfo_0100
+     * @tc.desc   Test getCallTransferInfo with TRANSFER_TYPE_UNCONDITIONAL.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
+     */
+    it("testGetCallTransferInfoUnconditional_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testGetCallTransferInfoUnconditional_static_0100';
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        let data: call.CallTransferResult = await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, specialPhone)
+        hilog.info(domain, tag, `${caseName} success, promise: data->${JSON.stringify(data)}, status->${data.status}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName} test end `);
+        done();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`+err);
+        expect(true).assertEqual(err?.code === 8401002);
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetCallTransferInfoBusy_static_0200
+     * @tc.number SUB_Telephony_CallManager_GetCallTransferInfo_0200
+     * @tc.desc   Test getCallTransferInfo with TRANSFER_TYPE_BUSY.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
+     */
+    it("testGetCallTransferInfoBusy_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testGetCallTransferInfoBusy_static_0200';
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        let data: call.CallTransferResult = await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_BUSY, specialPhone)
+        hilog.info(domain, tag, `${caseName} success, promise: data->${JSON.stringify(data)}, status->${data.status}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName} test end `);
+        done();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`+err);
+        expect(true).assertEqual(err?.code === 8401002);
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetCallTransferInfoNoReply_static_0300
+     * @tc.number SUB_Telephony_CallManager_GetCallTransferInfo_0300
+     * @tc.desc   Test getCallTransferInfo with TRANSFER_TYPE_NO_REPLY.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
+     */
+    it("testGetCallTransferInfoNoReply_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testGetCallTransferInfoNoReply_static_0300';
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        let data: call.CallTransferResult = await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NO_REPLY, specialPhone)
+        hilog.info(domain, tag, `${caseName} success, promise: data->${JSON.stringify(data)}, status->${data.status}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName} test end `);
+        done();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`+err);
+        expect(true).assertEqual(err?.code === 8401002);
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetCallTransferInfoNotReachable_static_0400
+     * @tc.number SUB_Telephony_CallManager_GetCallTransferInfo_0400
+     * @tc.desc   Test getCallTransferInfo with TRANSFER_TYPE_NOT_REACHABLE.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
+     */
+    it("testGetCallTransferInfoNotReachable_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testGetCallTransferInfoNotReachable_static_0400';
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        let data: call.CallTransferResult = await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_NOT_REACHABLE, specialPhone)
+        hilog.info(domain, tag, `${caseName} success, promise: data->${JSON.stringify(data)}, status->${data.status}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName} test end `);
+        done();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`+err);
+        expect(true).assertEqual(err?.code === 8401002);
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetCallTransferInfoInvalidType_static_0500
+     * @tc.number SUB_Telephony_CallManager_GetCallTransferInfo_0500
+     * @tc.desc   Test getCallTransferInfo with invalid type 999, expect error code 8300001.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
+     */
+    it("testGetCallTransferInfoInvalidType_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testGetCallTransferInfoInvalidType_static_0500';
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        await call.getCallTransferInfo(call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL, emptyStr)
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`+err);
+        expect(true).assertEqual(err?.code === 8300001);
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerAnswerCall0100
+     * @tc.number SUB_Telephony_CallManager_AnswerCall_0100
+     * @tc.desc   Determine whether there is a phone call api10+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerAnswerCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerAnswerCall0100';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      if (isSimActive == true) {
+        try {
+          call.answerCall((err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: answerCall err->${JSON.stringify(err)}`);
+              ExpectTrue(err?.code === 8300003);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: answerCall fail->${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName +'  catch fail, err->'+JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', caseName +' the sim is active: false');
+        ExpectFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerhangUpCall0100
+     * @tc.number SUB_Telephony_CallManager_hangUpCall_0100
+     * @tc.desc   Determine whether there is a phone call api10+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerhangUpCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerhangUpCall0100';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      if (isSimActive == true) {
+        try {
+          call.hangUpCall((err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: hangUpCall err->${JSON.stringify(err)}`);
+              ExpectTrue(err?.code === 8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: hangUpCall fail->${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName +'  catch fail, err->'+JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', caseName +' the sim is active: false');
+        ExpectFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerrejectCall0100
+     * @tc.number SUB_Telephony_CallManager_rejectCall_0100
+     * @tc.desc   Determine whether there is a phone call api10+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerrejectCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerrejectCall0100';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      if (isSimActive == true) {
+        try {
+          call.rejectCall((err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: rejectCall err->${JSON.stringify(err)}`);
+              ExpectTrue(err?.code === 8300003);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: rejectCall fail->${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName +'  catch fail, err->'+JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+      } else {
+        hilog.info(domain, tag, '%{public}s', caseName +' the sim is active: false');
+        ExpectFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
   });
