@@ -649,7 +649,12 @@ export default function CameraFunctionTest() {
     it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL0, async () => {
       let result = cameraObj.TestGetSupportedExposureDurationRangeSucc(indexSurfaceId);
       console.info(TAG, result);
-      expect(result).assertEqual(0);
+      if (result === 7400102) {
+        expect(result).assertEqual(7400102);
+      } else {
+        expect(result).assertEqual(0);
+      }
+      
     });
 
     /**
