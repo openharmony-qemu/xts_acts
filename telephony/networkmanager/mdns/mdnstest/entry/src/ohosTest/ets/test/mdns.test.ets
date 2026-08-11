@@ -17,6 +17,7 @@ import mdns from '@ohos.net.mdns';
 import { BusinessError } from '@ohos.base';
 import ethernet from '@ohos.net.ethernet';
 import { common } from '@kit.AbilityKit';
+import { GlobalContext } from '../testability/GlobalContext';
 
 let context: Context;
 const ExpectTrue: (n: boolean, caseName: string) => void = (n: boolean, caseName: string) => {
@@ -48,6 +49,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService0100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -64,7 +66,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(Number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -81,6 +83,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService0200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -97,7 +100,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -114,6 +117,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService0300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -132,17 +136,17 @@ export default function mdnsTest() {
             done();
           } else {
             ExpectTrue(data !== null, caseName);
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
     });
-
     /**
      * @tc.name   testNetworkMgrAddLocalService0400
      * @tc.number SUB_NetworkMgr_Mdns_AddLocalService_0400
@@ -155,6 +159,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService0400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -173,12 +178,13 @@ export default function mdnsTest() {
             done();
           } else {
             ExpectTrue(data !== null, caseName);
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -195,6 +201,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService0500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -218,7 +225,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -236,6 +243,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService0700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -252,12 +260,13 @@ export default function mdnsTest() {
             done();
           } else {
             ExpectTrue(data !== null, caseName);
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -275,6 +284,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService0900";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "",
           serviceName: getName(),
@@ -296,7 +306,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -313,6 +323,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1000";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "...",
           serviceName: getName(),
@@ -334,7 +345,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -351,6 +362,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: "",
@@ -372,7 +384,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -389,6 +401,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -403,6 +416,7 @@ export default function mdnsTest() {
             if (error1) {
               console.info(`${caseName}: fail ${JSON.stringify(error1)}`);
               ExpectTrue(error1.code === 2204007, caseName);
+              mdns.removeLocalService(context, localServiceInfo, () => {});
               done();
             } else {
               console.info(`${caseName}: success ${JSON.stringify(data)}`);
@@ -413,7 +427,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -430,22 +444,23 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
         }
-        mdns.addLocalService(null, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(null, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -462,22 +477,23 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -494,6 +510,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -505,18 +522,24 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(true, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -533,6 +556,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -544,18 +568,24 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -572,6 +602,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -583,18 +614,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -612,6 +643,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService1900";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -621,18 +653,24 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -649,6 +687,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "",
           serviceName: getName(),
@@ -658,18 +697,18 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -686,6 +725,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "...",
           serviceName: getName(),
@@ -695,18 +735,18 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -723,6 +763,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: "",
@@ -732,18 +773,18 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -760,6 +801,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -769,24 +811,29 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-            console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
-            ExpectTrue(false, caseName);
-            done();
-          }).catch((error: BusinessError) => {
+        try {
+          const data1 = await mdns.addLocalService(context, localServiceInfo);
+          const data2 = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: suscess :  ${JSON.stringify(data2)}`);
+          ExpectTrue(false, caseName);
+        } catch (error) {
+          if (error.code === 2204007) {
             console.info(`${caseName}: fail1 :  ${JSON.stringify(error)}`);
             ExpectTrue(error.code === 2204007, caseName);
-            done();
-          });
-        }).catch((error: BusinessError) => {
-          console.info(`${caseName}: fail2 :  ${JSON.stringify(error)}`);
-          ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+          } else {
+            console.info(`${caseName}: fail2 :  ${JSON.stringify(error)}`);
+            ExpectTrue(error.code === 401, caseName);
+          }
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -803,6 +850,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -812,18 +860,24 @@ export default function mdnsTest() {
             family: 2
           },
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(true, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -841,6 +895,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -858,12 +913,13 @@ export default function mdnsTest() {
           } else {
             console.info(`${caseName}: suscess : ${JSON.stringify(data)}`);
             ExpectTrue(true, caseName);
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -881,6 +937,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService3300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -892,7 +949,7 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+
         mdns.addLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           console.info(`${caseName}: callback : ${JSON.stringify(error)}  | ${JSON.stringify(data)}`);
           if (error) {
@@ -900,6 +957,7 @@ export default function mdnsTest() {
             done();
           } else {
             ExpectTrue(data !== null, caseName);
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
@@ -923,6 +981,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService3400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -934,16 +993,21 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -964,6 +1028,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService3500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -975,7 +1040,6 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
         mdns.addLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           console.info(`${caseName}: callback : ${JSON.stringify(error)}  | ${JSON.stringify(data)}`);
           if (error) {
@@ -995,8 +1059,9 @@ export default function mdnsTest() {
                 ExpectTrue(false,caseName);
               }
             } else {
-               ExpectTrue(false,caseName);
+              ExpectTrue(false,caseName);
             }
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
@@ -1020,6 +1085,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService3600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -1031,8 +1097,8 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           if (data !== null) {
             ExpectTrue(data.serviceType !== null, caseName);
@@ -1049,15 +1115,19 @@ export default function mdnsTest() {
           } else {
             ExpectTrue(false, caseName);
           }
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1075,6 +1145,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1092,7 +1163,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1109,6 +1180,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1133,7 +1205,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1150,6 +1222,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -1174,7 +1247,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1191,6 +1264,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1215,7 +1289,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1232,6 +1306,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1248,13 +1323,13 @@ export default function mdnsTest() {
             done();
           } else {
             console.log(`${caseName} success ${JSON.stringify(data)}`);
-            ExpectTrue(true, caseName);
+            ExpectTrue(false, caseName);
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1271,6 +1346,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "...",
           serviceName: getName(),
@@ -1293,7 +1369,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1310,6 +1386,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: "",
@@ -1332,7 +1409,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1349,6 +1426,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0800";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1379,7 +1457,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1396,6 +1474,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService0900";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -1426,7 +1505,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1443,22 +1522,23 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1000";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
-          ExpectTrue(true, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+          ExpectTrue(false, caseName);
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1475,6 +1555,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1486,18 +1567,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(true, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1514,6 +1595,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -1525,18 +1607,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1553,6 +1635,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1564,18 +1647,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1592,6 +1675,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1601,18 +1685,18 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
-          ExpectTrue(true, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+          ExpectTrue(false, caseName);
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1629,6 +1713,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "...",
           serviceName: getName(),
@@ -1638,18 +1723,18 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1666,6 +1751,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: "",
@@ -1675,18 +1761,18 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 401, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1703,6 +1789,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1718,20 +1805,22 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-              ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataRemove = await mdns.removeLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataRemove)}`);
+                ExpectTrue(true, caseName);
+              } catch (err) {
+                console.log(`${caseName} fail ${JSON.stringify(err)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((err: BusinessError) => {
-              console.log(`${caseName} fail ${JSON.stringify(err)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1748,6 +1837,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1800";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -1763,20 +1853,22 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-              ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataRemove = await mdns.removeLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataRemove)}`);
+                ExpectTrue(true, caseName);
+              } catch (err) {
+                console.log(`${caseName} fail ${JSON.stringify(err)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((err: BusinessError) => {
-              console.log(`${caseName} fail ${JSON.stringify(err)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1793,6 +1885,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService1900";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1807,7 +1900,7 @@ export default function mdnsTest() {
         mdns.removeLocalService(null, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
-            ExpectTrue(true, caseName);
+            ExpectTrue(false, caseName);
             done();
           } else {
             console.log(`${caseName} success ${JSON.stringify(data)}`);
@@ -1815,10 +1908,9 @@ export default function mdnsTest() {
             done();
           }
         });
-
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(Number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1835,6 +1927,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2000";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1850,20 +1943,22 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-              ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataRemove = await mdns.removeLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataRemove)}`);
+                ExpectTrue(false, caseName);
+              } catch (err) {
+                console.log(`${caseName} fail ${JSON.stringify(err)}`);
+                ExpectTrue(false, caseName);
+              }
               done();
-            }).catch((err: BusinessError) => {
-              console.log(`${caseName} fail ${JSON.stringify(err)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(Number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1881,6 +1976,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1892,22 +1988,22 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        }
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} fail ${JSON.stringify(err)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -1928,6 +2024,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -1939,17 +2036,17 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
+        }
         mdns.removeLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
-            ExpectTrue(true, caseName);
+            ExpectTrue(false, caseName);
             done();
           } else {
             console.log(`${caseName} success ${JSON.stringify(data)}`);
@@ -1957,10 +2054,9 @@ export default function mdnsTest() {
             done();
           }
         });
-
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1978,18 +2074,19 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2300";
       console.info(`${caseName} test start `);
       try {
-        mdns.removeLocalService(null, null).then((data: mdns.LocalServiceInfo) => {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
+        try {
+          const data = await mdns.removeLocalService(null, null);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2007,6 +2104,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         mdns.removeLocalService(null, null, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
@@ -2038,18 +2136,19 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2500";
       console.info(`${caseName} test start `);
       try {
-        mdns.removeLocalService(undefined, undefined).then((data: mdns.LocalServiceInfo) => {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
+        try {
+          const data = await mdns.removeLocalService(undefined, undefined);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} fail ${JSON.stringify(err)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+        } catch (error) {
+          console.log(`${caseName} fail ${JSON.stringify(error)}`);
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2067,6 +2166,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         mdns.removeLocalService(undefined, undefined, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
@@ -2078,7 +2178,6 @@ export default function mdnsTest() {
             done();
           }
         });
-
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(Number(err.code) === 401, caseName);
@@ -2099,6 +2198,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2110,14 +2210,15 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
-        mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        }
+        try {
+          const data = await mdns.removeLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           if (data !== null) {
             ExpectTrue(data.serviceType !== null, caseName);
@@ -2134,12 +2235,11 @@ export default function mdnsTest() {
           } else {
             ExpectTrue(false, caseName);
           }
-          done();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} fail ${JSON.stringify(err)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
         ExpectTrue(false, caseName);
@@ -2160,6 +2260,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrRemoveLocalService2800";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2171,35 +2272,35 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-        await mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-          console.info(`${caseName}: success :  ${JSON.stringify(data)}`);
-          console.info(`${caseName}: success :  ${JSON.stringify(data.serviceAttribute)}`);
-        }).catch((error: BusinessError) => {
+        try {
+          const dataAdd = await mdns.addLocalService(context, localServiceInfo);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd)}`);
+          console.info(`${caseName}: success :  ${JSON.stringify(dataAdd.serviceAttribute)}`);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-        });
+        }
         mdns.removeLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
             ExpectTrue(false, caseName);
             done();
           } else {
-          console.log(`${caseName} success ${JSON.stringify(data)}`);
-          if (data !== null) {
-            ExpectTrue(data.serviceType !== null, caseName);
-            ExpectTrue(data.serviceName !== null, caseName);
-            ExpectTrue(data.port !== null, caseName);
-            ExpectTrue(data.host?.address !== null, caseName);
-            ExpectTrue(data.host?.family !== null, caseName);
-            ExpectTrue(data.host?.port !== null, caseName);
-            if (data.serviceAttribute !== undefined) {
-              ExpectTrue(data.serviceAttribute.length !== 0,caseName);
+            console.log(`${caseName} success ${JSON.stringify(data)}`);
+            if (data !== null) {
+              ExpectTrue(data.serviceType !== null, caseName);
+              ExpectTrue(data.serviceName !== null, caseName);
+              ExpectTrue(data.port !== null, caseName);
+              ExpectTrue(data.host?.address !== null, caseName);
+              ExpectTrue(data.host?.family !== null, caseName);
+              ExpectTrue(data.host?.port !== null, caseName);
+              if (data.serviceAttribute !== undefined) {
+                ExpectTrue(data.serviceAttribute.length !== 0,caseName);
+              } else {
+                ExpectTrue(false,caseName);
+              }
             } else {
-              ExpectTrue(false,caseName);
+              ExpectTrue(false, caseName);
             }
-          } else {
-            ExpectTrue(false, caseName);
-          }
             done();
           }
         });
@@ -2223,6 +2324,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2245,12 +2347,13 @@ export default function mdnsTest() {
             let discoveryService: Object = mdns.createDiscoveryService(context, serviceType);
             console.info(`${caseName} result :${JSON.stringify(discoveryService)}`);
             ExpectTrue(true, caseName);
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2267,6 +2370,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "_print._udp";
         let discoveryService: Object = mdns.createDiscoveryService(context, serviceType);
         console.log(`${caseName} result :${JSON.stringify(discoveryService)}`);
@@ -2292,6 +2396,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2317,6 +2422,7 @@ export default function mdnsTest() {
               } else {
                 console.log(`${caseName} success ${JSON.stringify(data)}`);
                 ExpectTrue(true, caseName);
+                mdns.removeLocalService(context, localServiceInfo, () => {});
                 done();
               }
             });
@@ -2324,7 +2430,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2341,6 +2447,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2365,7 +2472,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2382,6 +2489,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -2399,7 +2507,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2417,6 +2525,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2441,7 +2550,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2458,6 +2567,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "000",
           serviceName: getName(),
@@ -2472,7 +2582,7 @@ export default function mdnsTest() {
         mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} falil ${JSON.stringify(error)}`);
-            ExpectTrue(Number(error.code) === 401, caseName);
+            ExpectTrue(error.code === 401, caseName);
             done();
           } else {
             console.log(`${caseName} success ${JSON.stringify(data)}`);
@@ -2482,7 +2592,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2499,6 +2609,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -2524,6 +2635,7 @@ export default function mdnsTest() {
               } else {
                 console.log(`${caseName} success ${JSON.stringify(data)}`);
                 ExpectTrue(true, caseName);
+                mdns.removeLocalService(context, localServiceInfo, () => {});
                 done();
               }
             });
@@ -2531,7 +2643,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2548,6 +2660,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0800";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2565,20 +2678,27 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-              ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataResolve = await mdns.resolveLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataResolve)}`);
+                ExpectTrue(true, caseName);
+              } catch (error) {
+                console.log(`${caseName} falil ${JSON.stringify(error)}`);
+                ExpectTrue(false, caseName);
+              }
+              try {
+                await mdns.removeLocalService(context, localServiceInfo);
+              } catch (err) {
+                console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+              }
               done();
-            }).catch((error: BusinessError) => {
-              console.log(`${caseName} falil ${JSON.stringify(error)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2595,6 +2715,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0900";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -2606,18 +2727,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2634,22 +2755,23 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1000";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2666,6 +2788,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2677,18 +2800,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2705,6 +2828,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -2716,18 +2840,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 2204006, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2744,6 +2868,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "000",
           serviceName: getName(),
@@ -2755,18 +2880,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2783,6 +2908,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -2800,20 +2926,27 @@ export default function mdnsTest() {
             ExpectTrue(false, caseName);
             done();
           } else {
-            mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-              console.log(`${caseName} success ${JSON.stringify(data)}`);
-              ExpectTrue(true, caseName);
+            (async () => {
+              try {
+                const dataResolve = await mdns.resolveLocalService(context, localServiceInfo);
+                console.log(`${caseName} success ${JSON.stringify(dataResolve)}`);
+                ExpectTrue(true, caseName);
+              } catch (error) {
+                console.log(`${caseName} falil ${JSON.stringify(error)}`);
+                ExpectTrue(false, caseName);
+              }
+              try {
+                await mdns.removeLocalService(context, localServiceInfo);
+              } catch (err) {
+                console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+              }
               done();
-            }).catch((error: BusinessError) => {
-              console.log(`${caseName} falil ${JSON.stringify(error)}`);
-              ExpectTrue(false, caseName);
-              done();
-            });
+            })();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2831,6 +2964,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -2842,18 +2976,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.resolveLocalService(null, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(null, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2871,6 +3005,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: "",
@@ -2882,19 +3017,18 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
           ExpectTrue(error.code === 401, caseName);
-          done();
-        });
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2912,6 +3046,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1800";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -2921,18 +3056,18 @@ export default function mdnsTest() {
           },
           serviceAttribute: []
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(error.code === 2204006, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2950,6 +3085,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService1900";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -2961,18 +3097,18 @@ export default function mdnsTest() {
             key: "111", value: []
           }]
         }
-        mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.resolveLocalService(context, localServiceInfo);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(error.code === 2204006, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -2990,18 +3126,19 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService2000";
       console.info(`${caseName} test start `);
       try {
-        mdns.resolveLocalService(null, null).then((data: mdns.LocalServiceInfo) => {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
+        try {
+          const data = await mdns.resolveLocalService(null, null);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3019,18 +3156,19 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService2100";
       console.info(`${caseName} test start `);
       try {
-        mdns.resolveLocalService(undefined, undefined).then((data: mdns.LocalServiceInfo) => {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
+        try {
+          const data = await mdns.resolveLocalService(undefined, undefined);
           console.log(`${caseName} success ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3048,6 +3186,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService2200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: "",
@@ -3059,7 +3198,6 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
         mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
@@ -3073,7 +3211,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3091,6 +3229,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService2300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -3103,7 +3242,7 @@ export default function mdnsTest() {
         mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
-            ExpectTrue(false, caseName);
+            ExpectTrue(error.code===2204006, caseName);
             done();
           } else {
             console.log(`${caseName} success ${JSON.stringify(data)}`);
@@ -3113,7 +3252,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3131,6 +3270,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService2400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
@@ -3143,6 +3283,38 @@ export default function mdnsTest() {
           }]
         }
         mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
+          if (error) {
+            console.log(`${caseName} fail ${JSON.stringify(error)}`);
+            ExpectTrue(error.code===2204006, caseName);
+            done();
+          } else {
+            console.log(`${caseName} success ${JSON.stringify(data)}`);
+            ExpectTrue(false, caseName);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName}: err is catch ${err}`);
+        ExpectTrue(false, caseName);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrResolveLocalService2500
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2500
+     * @tc.desc   Parsing an mDNS service callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrResolveLocalService2500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
+      const caseName: string = "testNetworkMgrResolveLocalService2500";
+      console.info(`${caseName} test start `);
+      try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
+        mdns.resolveLocalService(null, null, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
             ExpectTrue(false, caseName);
@@ -3162,37 +3334,6 @@ export default function mdnsTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrResolveLocalService2500
-     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2500
-     * @tc.desc   Parsing an mDNS service callBack
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("testNetworkMgrResolveLocalService2500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: Function) => {
-      const caseName: string = "testNetworkMgrResolveLocalService2500";
-      console.info(`${caseName} test start `);
-      try {
-        mdns.resolveLocalService(null, null, (error: BusinessError, data: mdns.LocalServiceInfo) => {
-          if (error) {
-            console.log(`${caseName} fail ${JSON.stringify(error)}`);
-            ExpectTrue(false, caseName);
-            done();
-          } else {
-            console.log(`${caseName} success ${JSON.stringify(data)}`);
-            ExpectTrue(false, caseName);
-            done();
-          }
-        });
-      } catch (err) {
-        console.info(`${caseName}: err is catch ${err}`);
-         ExpectTrue(Number(err.code) === 401, caseName);
-        done();
-      }
-      console.info(`${caseName} test end `);
-    });
-
-    /**
      * @tc.name   testNetworkMgrResolveLocalService2600
      * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_2600
      * @tc.desc   Parsing an mDNS service callBack
@@ -3204,6 +3345,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService2600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         mdns.resolveLocalService(undefined, undefined, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} fail ${JSON.stringify(error)}`);
@@ -3217,7 +3359,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-         ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(Number(err.code) === 401, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3235,13 +3377,14 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService2700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._udp",
           serviceName: getName(),
           port: 8081,
           host: {
             address: address,
-          },            
+          },
           serviceAttribute: [{
             key: "111", value: [1]
           }]
@@ -3277,6 +3420,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrStartSearchingMDNS0100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -3288,23 +3432,26 @@ export default function mdnsTest() {
             key: "111", value: [1]
           }]
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           let serviceType = "_print._tcp";
           let discoveryService = mdns.createDiscoveryService(context, serviceType);
           discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
             console.log(`${caseName} result: ${JSON.stringify(data)}`);
             ExpectTrue(data !== null, caseName);
+            discoveryService.stopSearchingMDNS();
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           });
           discoveryService.startSearchingMDNS();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.log(`${caseName} catch error: ${JSON.stringify(err)}`);
           ExpectTrue(false, caseName);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3321,6 +3468,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrStartSearchingMDNS0200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "_print._udp";
         let discoveryService = mdns.createDiscoveryService(context, serviceType);
         discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
@@ -3331,7 +3479,7 @@ export default function mdnsTest() {
         discoveryService.startSearchingMDNS();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3348,6 +3496,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrStartSearchingMDNS0300";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "111";
         let discoveryService = mdns.createDiscoveryService(context, serviceType);
         discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
@@ -3358,7 +3507,7 @@ export default function mdnsTest() {
         discoveryService.startSearchingMDNS();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3376,6 +3525,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrDiscoveryStartOn0100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "_print._tcp";
         let discoveryService = mdns.createDiscoveryService(context, serviceType);
         discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
@@ -3390,7 +3540,7 @@ export default function mdnsTest() {
         discoveryService.startSearchingMDNS();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3408,6 +3558,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrDiscoveryStopOn0100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "_print._tcp";
         let discoveryService = mdns.createDiscoveryService(context, serviceType);
         discoveryService.startSearchingMDNS();
@@ -3419,7 +3570,7 @@ export default function mdnsTest() {
         discoveryService.stopSearchingMDNS();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3437,6 +3588,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -3446,18 +3598,24 @@ export default function mdnsTest() {
             family: 888
           },
         }
-        mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+        try {
+          const data = await mdns.addLocalService(context, localServiceInfo);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(data !== null, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
           ExpectTrue(false, caseName);
-          done();
-        });
+        }
+        try {
+          await mdns.removeLocalService(context, localServiceInfo);
+        } catch (err) {
+          console.info(`${caseName}: cleanup: ${JSON.stringify(err)}`);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3475,6 +3633,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2800";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -3492,18 +3651,19 @@ export default function mdnsTest() {
           } else {
             console.info(`${caseName}: callback : ${JSON.stringify(data)}`);
             ExpectTrue(data !== null, caseName);
+            mdns.removeLocalService(context, localServiceInfo, () => {});
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
     });
 
-   /**
+    /**
      * @tc.name   testNetworkMgrAddLocalService2900
      * @tc.number SUB_NetworkMgr_Mdns_AddLocalService_2900
      * @tc.desc   Add an mDNS service Promise
@@ -3515,24 +3675,25 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService2900";
       console.info(`${caseName} test start `);
       try {
-        mdns.addLocalService(null, null).then((data: mdns.LocalServiceInfo) => {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
+        try {
+          const data = await mdns.addLocalService(null, null);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
     });
 
-   /**
+    /**
      * @tc.name   testNetworkMgrAddLocalService3000
      * @tc.number SUB_NetworkMgr_Mdns_AddLocalService_3000
      * @tc.desc   Add an mDNS service Promise
@@ -3544,24 +3705,25 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService3000";
       console.info(`${caseName} test start `);
       try {
-        mdns.addLocalService(undefined, undefined).then((data: mdns.LocalServiceInfo) => {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
+        try {
+          const data = await mdns.addLocalService(undefined, undefined);
           console.info(`${caseName}: suscess :  ${JSON.stringify(data)}`);
           ExpectTrue(false, caseName);
-          done();
-        }).catch((error: BusinessError) => {
+        } catch (error) {
           console.info(`${caseName}: fail :  ${JSON.stringify(error)}`);
-          ExpectTrue(false, caseName);
-          done();
-        });
+          ExpectTrue(Number(error.code) === 401, caseName);
+        }
+        done();
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(Number(err.code) === 401, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
     });
 
-   /**
+    /**
      * @tc.name   testNetworkMgrAddLocalService3100
      * @tc.number SUB_NetworkMgr_Mdns_AddLocalService_3100
      * @tc.desc   Add an mDNS service callback
@@ -3573,6 +3735,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService3100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         mdns.addLocalService(null, null, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.info(`${caseName}: callback : ${JSON.stringify(error)}  `);
@@ -3592,7 +3755,7 @@ export default function mdnsTest() {
       console.info(`${caseName} test end `);
     });
 
-   /**
+    /**
      * @tc.name   testNetworkMgrAddLocalService3200
      * @tc.number SUB_NetworkMgr_Mdns_AddLocalService_3200
      * @tc.desc   Add an mDNS service callback
@@ -3604,6 +3767,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrAddLocalService3200";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         mdns.addLocalService(undefined, undefined, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.info(`${caseName}: callback : ${JSON.stringify(error)}  `);
@@ -3635,6 +3799,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrResolveLocalService0400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let localServiceInfo: mdns.LocalServiceInfo = {
           serviceType: "_print._tcp",
           serviceName: getName(),
@@ -3659,7 +3824,7 @@ export default function mdnsTest() {
         });
       } catch (err) {
         console.info(`${caseName}: err is catch ${err}`);
-        ExpectTrue(true, caseName);
+        ExpectTrue(false, caseName);
         done();
       }
       console.info(`${caseName} test end `);
@@ -3676,6 +3841,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0100";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "";
         let discoveryService: Object = mdns.createDiscoveryService(context, serviceType);
         console.log(`${caseName} result :${JSON.stringify(discoveryService)}`);
@@ -3700,6 +3866,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0400";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "668";
         let discoveryService: Object = mdns.createDiscoveryService(context, serviceType);
         console.log(`${caseName} result :${JSON.stringify(discoveryService)}`);
@@ -3725,6 +3892,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0500";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "668";
         let discoveryService: Object = mdns.createDiscoveryService(null, null);
         console.log(`${caseName} result :${JSON.stringify(discoveryService)}`);
@@ -3750,6 +3918,7 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0600";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "668";
         let discoveryService: Object = mdns.createDiscoveryService(undefined, undefined);
         console.log(`${caseName} result :${JSON.stringify(discoveryService)}`);
@@ -3775,8 +3944,8 @@ export default function mdnsTest() {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0700";
       console.info(`${caseName} test start `);
       try {
+        let context: common.UIAbilityContext = GlobalContext.getContext().getObject('context') as common.UIAbilityContext;
         let serviceType = "668";
-        let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
         let discoveryService: Object = mdns.createDiscoveryService(context, "");
         console.log(`${caseName} result :${JSON.stringify(discoveryService)}`);
         ExpectTrue(discoveryService !== null, caseName);

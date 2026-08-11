@@ -104,6 +104,8 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("discoveryStart", ()=>{
           console.log(`${caseName} on discoveryStart : startSearching `);
           ExpectTrue(true);
+          discoveryService.stopSearchingMDNS();
+          discoveryService.off("discoveryStart");
           removeTheService(localServiceInfo);
           done();
           console.info(`${caseName}---End`);
@@ -159,6 +161,7 @@ export default function NetworkManagerMdnsTest() {
             console.log(`${caseName} addLocalService success, LocalServiceInfo is `+JSON.stringify(data));
             discoveryService.startSearchingMDNS();
             await sleep(1000)
+            discoveryService.stopSearchingMDNS();
             ExpectTrue(true);
             removeTheService(localServiceInfo);
             done();
@@ -191,6 +194,7 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("discoveryStop", ()=>{
           console.log(`${caseName} on discoveryStop : stopSearchingMDNS`);
           ExpectTrue(true);
+          discoveryService.off("discoveryStop");
           removeTheService(localServiceInfo);
           done();
         });
@@ -280,6 +284,7 @@ export default function NetworkManagerMdnsTest() {
           console.log(`${caseName} on serviceFound , data is ${JSON.stringify(data)}`);
           ExpectTrue(true);
           discoveryService.stopSearchingMDNS();
+          discoveryService.off("serviceFound");
           removeTheService(localServiceInfo);
           console.info(`${caseName}---End`);
           done();
@@ -320,6 +325,8 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("serviceFound", (data: mdns.LocalServiceInfo)=>{
           console.log(`${caseName} on serviceFound , data is ${JSON.stringify(data)}`);
           ExpectFail();
+          discoveryService.stopSearchingMDNS();
+          discoveryService.off("serviceFound");
           done();
         });
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
@@ -334,6 +341,7 @@ export default function NetworkManagerMdnsTest() {
             await sleep(1000);
             ExpectTrue(true);
             discoveryService.stopSearchingMDNS();
+            discoveryService.off("serviceFound");
             removeTheService(localServiceInfo);
             done();
             console.info(`${caseName}---End`);
@@ -380,6 +388,7 @@ export default function NetworkManagerMdnsTest() {
             console.log(`${caseName} addLocalService success `);
             discoveryService.startSearchingMDNS();
             await sleep(500);
+            discoveryService.stopSearchingMDNS();
             removeTheService(localServiceInfo);
             ExpectTrue(true);
             done();
@@ -413,12 +422,13 @@ export default function NetworkManagerMdnsTest() {
         }
         let localServiceInfo = localServiceInfoTypeTcp();
         let discoveryService = mdns.createDiscoveryService(context , serviceTypeTcp);
-        discoveryService.on('serviceFound', (data: mdns.LocalServiceInfo) => {
+        let serviceFoundCallback = (data: mdns.LocalServiceInfo) => {
           console.info('serviceFound', JSON.stringify(data));
           mdns.resolveLocalService(context, data, (error: BusinessError, resolveData: mdns.LocalServiceInfo) => {
             console.info('serviceFound', JSON.stringify(resolveData));
           });
-        });
+        };
+        discoveryService.on('serviceFound', serviceFoundCallback);
         discoveryService.off("serviceFound", callback);
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
           if (err) {
@@ -430,6 +440,8 @@ export default function NetworkManagerMdnsTest() {
             console.log(`${caseName} addLocalService success `);
             discoveryService.startSearchingMDNS();
             await sleep(500);
+            discoveryService.stopSearchingMDNS();
+            discoveryService.off("serviceFound", serviceFoundCallback);
             removeTheService(localServiceInfo);
             ExpectTrue(data != null);
             done();
@@ -460,6 +472,7 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("serviceLost", (data: mdns.LocalServiceInfo)=>{
           console.log(`${caseName} on serviceLost , data is ${JSON.stringify(data)}`);
           ExpectTrue(true);
+          discoveryService.off("serviceLost");
           done();
         });
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
@@ -476,6 +489,7 @@ export default function NetworkManagerMdnsTest() {
         removeTheService(localServiceInfo);
         await sleep(200);
         discoveryService.stopSearchingMDNS();
+        discoveryService.off("serviceLost");
       }catch (err) {
         console.info(`${caseName} catch err is `+JSON.stringify(err));
         ExpectFail();
@@ -501,6 +515,8 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("serviceLost", (data: mdns.LocalServiceInfo)=>{
           console.log(`${caseName} on serviceLost , data is ${JSON.stringify(data)}`);
           ExpectFail();
+          discoveryService.stopSearchingMDNS();
+          discoveryService.off("serviceLost");
           done();
         });
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
@@ -514,6 +530,8 @@ export default function NetworkManagerMdnsTest() {
             removeTheService(localServiceInfo);
             await sleep(500);
             ExpectTrue(true);
+            discoveryService.stopSearchingMDNS();
+            discoveryService.off("serviceLost");
             done();
           }
         });
@@ -557,6 +575,7 @@ export default function NetworkManagerMdnsTest() {
             discoveryService.startSearchingMDNS();
             removeTheService(localServiceInfo);
             await sleep(500);
+            discoveryService.stopSearchingMDNS();
             ExpectTrue(true);
             done();
           }
