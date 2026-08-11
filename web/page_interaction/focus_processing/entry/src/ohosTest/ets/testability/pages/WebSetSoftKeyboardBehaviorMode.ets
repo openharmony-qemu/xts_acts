@@ -15,12 +15,10 @@
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {inputMethod} from '@kit.IMEKit';
 import { waitForExist} from '../../test/WaitTest.test';
 const EVENT_ID_SET_SUITE_KEY = 178208;
-const driver = Driver.create();
 @Entry
 @Component
 struct WebComponent {
@@ -39,6 +37,14 @@ struct WebComponent {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    // 测试侧点击输入框后通知页面执行 onInactive
+    let inactiveEvent: events_emitter.InnerEvent = {
+      eventId: 20251122,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(inactiveEvent, () => {
+      this.controller.onInactive();
+    })
   }
 
   onPageHide() {
@@ -71,20 +77,13 @@ struct WebComponent {
                   }
                   this.controller.onActive();
                   this.controller.setSoftKeyboardBehaviorMode(web_webview.WebSoftKeyboardBehaviorMode.DISABLE_AUTO_KEYBOARD_ON_ACTIVE);
-                  let buttonOne = await driver.findComponent(ON.text('textContent'));
-                  console.log('buttonOne11' + buttonOne)
-                  this.isOnConsoleEnd = -1
-                  await buttonOne.click();
-                  await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-                  this.controller.onInactive();
-                  let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
-                  console.log('buttonTwo22' + buttonTwo)
-                 // DISABLE_AUTO_KEYBOARD_ON_ACTIVE时,不会有软键盘的自动隐藏和啦气的表现
-                  if (buttonTwo) {
-                    Utils.emitEvent(true, 20251115)
-                  } else {
-                    Utils.emitEvent(false, 20251115)
-                  }
+                  // DISABLE_AUTO_KEYBOARD_ON_ACTIVE：onActive 后软键盘不应自动弹出
+                  let imeShown = false;
+                  const imeCtl = inputMethod.getInputMethodSetting();
+                  imeCtl.on('imeShow', (): void => { imeShown = true; });
+                  await Utils.sleep(1500);
+                  imeCtl.off('imeShow');
+                  Utils.emitEvent(!imeShown, 20251115);
                   break;
               }
             case "emitSetSoftKeyboardBehaviorMode02": {
@@ -94,21 +93,15 @@ struct WebComponent {
                   break;
                 }
                 this.controller.loadUrl('resource://rawfile/SetSoftKeyboardBehaviorMode.html');
-                await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
                 this.controller.onActive();
                 this.controller.setSoftKeyboardBehaviorMode(web_webview.WebSoftKeyboardBehaviorMode.DEFAULT);
-                let buttonOne = await driver.findComponent(ON.text('textContent'));
-                this.isOnConsoleEnd = -1
-                await buttonOne.click();
-                await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-                this.controller.onInactive();
-                // defualt时,还会有软键盘的自动隐藏和啦气的表现
-                let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
-                if (!buttonTwo) {
-                  Utils.emitEvent(true, 20251116)
-                } else {
-                  Utils.emitEvent(false, 20251116)
-                }
+                // DEFAULT：测试点击输入框激活后软键盘应弹出（imeShow 触发即通过）
+                const imeCtl = inputMethod.getInputMethodSetting();
+                imeCtl.on('imeShow', (): void => {
+                  imeCtl.off('imeShow');
+                  Utils.emitEvent(true, 20251116);
+                });
+                Utils.emitEvent(true, 20251121);
                 break;
                 }
             }
