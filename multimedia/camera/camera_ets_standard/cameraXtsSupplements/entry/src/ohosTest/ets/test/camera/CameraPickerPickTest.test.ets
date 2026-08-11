@@ -21,6 +21,7 @@ import {
   driveFn,
   getFd,
   getPermission,
+  hostDeviceType,
   isEmpty,
   resourceName,
   sceneMode,
@@ -31,6 +32,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { media } from '@kit.MediaKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
 import { fileUri } from '@kit.CoreFileKit';
+import { Driver, ON } from '@kit.TestKit';
 
 
 const TAG = "CameraXtsCameraPickerTest";
@@ -128,7 +130,7 @@ function createPhotoOutput() {
   let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
   let haveValidDevice = false;
   for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    mSupportedModes = mCameraManager.getSupportedSceneModes(useDevice);
     if (mSupportedModes.includes(camera.SceneMode.NORMAL_PHOTO)) {
       useDevice = device;
       haveValidDevice = true;
@@ -166,7 +168,7 @@ async function createVideoOutput() {
   let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
   let haveValidDevice = false;
   for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    mSupportedModes = mCameraManager.getSupportedSceneModes(useDevice);
     if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
       useDevice = device;
       haveValidDevice = true;
@@ -297,10 +299,38 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO,cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          console.info(TAG, testName,"waitForComponentPower" + JSON.stringify(power));
+          if(power) {
+            let newId = await power.getId();
+            console.info(TAG, testName, "newId" + JSON.stringify(newId));
+            await sleep(1000);
+            if(newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1')
+            {
+              await power.click();
+            }
+          }
+          if(powerB) {
+            let newIdB = await powerB.getId();
+            console.info(TAG, testName,"newIdB" + JSON.stringify(newIdB));
+            await sleep(1000);
+            if(newIdB == 'EnhanceCloseBtn')
+            {
+              await powerB.click();
+            }
+          }
+
+          console.info(TAG, testName,"power click" + JSON.stringify(power));
+
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -333,10 +363,36 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          console.info(TAG, testName,"waitForComponentPower" + JSON.stringify(power));
+          if(power) {
+            let newId = await power.getId();
+            console.info(TAG, testName, "newId" + JSON.stringify(newId));
+            await sleep(1000);
+            if(newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1')
+            {
+              await power.click();
+            }
+          }
+          if(powerB) {
+            let newIdB = await powerB.getId();
+            console.info(TAG, testName,"newIdB" + JSON.stringify(newIdB));
+            await sleep(1000);
+            if(newIdB == 'EnhanceCloseBtn')
+            {
+              await powerB.click();
+            }
+          }
+          console.info(TAG, testName,"power click" + JSON.stringify(power));
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -369,10 +425,36 @@ export default function CameraPickerPickTest() {
             saveUri: "",
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          console.info(TAG, testName,"waitForComponentPower" + JSON.stringify(power));
+          if(power) {
+            let newId = await power.getId();
+            console.info(TAG, testName, "newId" + JSON.stringify(newId));
+            await sleep(1000);
+            if(newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1')
+            {
+              await power.click();
+            }
+          }
+          if(powerB) {
+            let newIdB = await powerB.getId();
+            console.info(TAG, testName,"newIdB" + JSON.stringify(newIdB));
+            await sleep(1000);
+            if(newIdB == 'EnhanceCloseBtn')
+            {
+              await powerB.click();
+            }
+          }
+          console.info(TAG, testName,"power click" + JSON.stringify(power));
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -442,7 +524,7 @@ export default function CameraPickerPickTest() {
             videoDuration: 10
           };
           let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-           undefined, pickerProfile);
+            undefined, pickerProfile);
           console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
           expect(pickerResult).assertUndefined();
         }
@@ -621,10 +703,37 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          console.info(TAG, testName,"waitForComponentPower" + JSON.stringify(power));
+          if(power) {
+            let newId = await power.getId();
+            console.info(TAG, testName, "newId" + JSON.stringify(newId));
+            await sleep(1000);
+            if(newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1')
+            {
+              await power.click();
+            }
+          }
+          if(powerB) {
+            let newIdB = await powerB.getId();
+            console.info(TAG, testName,"newIdB" + JSON.stringify(newIdB));
+            await sleep(1000);
+            if(newIdB == 'EnhanceCloseBtn')
+            {
+              await powerB.click();
+            }
+          }
+          console.info(TAG, testName,"power click" + JSON.stringify(power));
+
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
