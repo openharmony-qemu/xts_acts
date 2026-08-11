@@ -1,9 +1,9 @@
 {
-    "description": "Configuration for hjunit demo Tests",
+    "description": "Configuration for ActsVideoProcessTestStatic",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "com.example.helloworld",
+        "bundle-name": "com.example.actsvideoprocesstest.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": "180000"

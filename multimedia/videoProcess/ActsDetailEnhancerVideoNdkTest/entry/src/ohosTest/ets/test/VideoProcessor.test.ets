@@ -13,10 +13,10 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { videoProcessing} from '@kit.MediaKit';
+import { videoProcessing } from '@kit.MediaKit';
 
-export default function VpeVideoNdkTest() {
-describe('VpeVideoNdkTest', () => {
+export default function VideoProcessorTest() {
+describe('VideoProcessorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
     // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -71,7 +71,6 @@ describe('VpeVideoNdkTest', () => {
         expect(videoProcessor != null).assertTrue();
         let status = await videoProcessor.getStatus();
         if (status == undefined) {
-        expect(true).assertTrue();
         done();
         } else {
         if (status.aiHdr != null) {
@@ -79,11 +78,9 @@ describe('VpeVideoNdkTest', () => {
             expect(typeof status.aiHdr.enabled == 'boolean').assertTrue();
             done();
             } else {
-            expect(true).assertTrue();
             done();
             }
         } else {
-            expect(true).assertTrue();
             done();
         }
         }
@@ -111,7 +108,6 @@ describe('VpeVideoNdkTest', () => {
         }
         videoProcessor.onStatusChange(statusCallback);
         videoProcessor.offStatusChange(statusCallback);
-        expect(true).assertTrue();
         done();
     } catch (err) {
         console.info('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VIDEO_PROCESSOR_0300 failed, error is' + err.message);
@@ -137,7 +133,6 @@ describe('VpeVideoNdkTest', () => {
         }
         videoProcessor.onStatusChange(statusCallback);
         videoProcessor.offStatusChange();
-        expect(true).assertTrue();
         done();
     } catch (err) {
         console.info('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VIDEO_PROCESSOR_0400 failed, error is' + err.message);
@@ -167,7 +162,6 @@ describe('VpeVideoNdkTest', () => {
         videoProcessor.onStatusChange(statusCallback1);
         videoProcessor.onStatusChange(statusCallback2);
         videoProcessor.offStatusChange();
-        expect(true).assertTrue();
         done();
     } catch (err) {
         console.info('SUB_MULTIMIEDIA_VIDEO_PROCESSING_ENGINE_VIDEO_PROCESSOR_0500 failed, error is' + err.message);
