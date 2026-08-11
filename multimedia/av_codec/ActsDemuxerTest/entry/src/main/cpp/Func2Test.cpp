@@ -561,10 +561,9 @@ static int ProcessSingleTrackSimple(SingleTrackSimpleParams &params)
         return 1;
     }
     
-    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, params.index, avBuffer) != AV_ERR_OK || avBuffer == nullptr ||
-        OH_AVBuffer_GetBufferAttr(avBuffer, &params.bufferAttr) != AV_ERR_OK) {
-        return -1;
-    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, params.index, avBuffer) != AV_ERR_OK) { return -1; }
+    if (avBuffer == nullptr) { return -1; }
+    if (OH_AVBuffer_GetBufferAttr(avBuffer, &params.bufferAttr) != AV_ERR_OK) { return -1; }
     
     if (params.processFunc(params.index, g_trackType, params.bufferAttr, params.outState, params.funcName) != 0) {
         return -1;

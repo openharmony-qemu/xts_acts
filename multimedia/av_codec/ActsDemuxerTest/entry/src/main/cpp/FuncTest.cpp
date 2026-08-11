@@ -1361,9 +1361,15 @@ int DemuxerFunction3700()
         close(fd);
         return -1;
     }
-    if (OH_AVDemuxer_SeekToTime(demuxer, toMs / TIME_DIVISOR_1000, SEEK_MODE_PREVIOUS_SYNC) != AV_ERR_OK ||
-        OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr) != AV_ERR_OK ||
-        abs(toMs - attr.pts) >= TIME_TOLERANCE_40000) {
+    if (OH_AVDemuxer_SeekToTime(demuxer, toMs / TIME_DIVISOR_1000, SEEK_MODE_PREVIOUS_SYNC) != AV_ERR_OK) {
+        close(fd);
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr) != AV_ERR_OK) {
+        close(fd);
+        return -1;
+    }
+    if (abs(toMs - attr.pts) >= TIME_TOLERANCE_40000) {
         close(fd);
         return -1;
     }
@@ -1391,9 +1397,15 @@ int DemuxerFunction3800()
         close(fd);
         return -1;
     }
-    if (OH_AVDemuxer_SeekToTime(demuxer, toMs / TIME_DIVISOR_1000, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK ||
-        OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr) != AV_ERR_OK ||
-        abs(toMs - attr.pts) >= TIME_TOLERANCE_40000) {
+    if (OH_AVDemuxer_SeekToTime(demuxer, toMs / TIME_DIVISOR_1000, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) {
+        close(fd);
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr) != AV_ERR_OK) {
+        close(fd);
+        return -1;
+    }
+    if (abs(toMs - attr.pts) >= TIME_TOLERANCE_40000) {
         close(fd);
         return -1;
     }
@@ -1421,9 +1433,15 @@ int DemuxerFunction3900()
         close(fd);
         return -1;
     }
-    if (OH_AVDemuxer_SeekToTime(demuxer, toMs / TIME_DIVISOR_1000, SEEK_MODE_CLOSEST_SYNC) != AV_ERR_OK ||
-        OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr) != AV_ERR_OK ||
-        abs(toMs - attr.pts) >= TIME_TOLERANCE_40000) {
+    if (OH_AVDemuxer_SeekToTime(demuxer, toMs / TIME_DIVISOR_1000, SEEK_MODE_CLOSEST_SYNC) != AV_ERR_OK) {
+        close(fd);
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr) != AV_ERR_OK) {
+        close(fd);
+        return -1;
+    }
+    if (abs(toMs - attr.pts) >= TIME_TOLERANCE_40000) {
         close(fd);
         return -1;
     }
