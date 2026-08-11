@@ -19,6 +19,8 @@ import Utils from '../../MainAbility/common/Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 import { uiMaterial } from '@kit.ArkUI';
 
+let isSupported: boolean = uiMaterial.isImmersiveMaterialSupported(); // 是否支持沉浸式材质由设备决定，应用运行后不会改变
+
 export default function TextPickerDialogSystemMaterialTest() {
   describe('TextPickerDialogSystemMaterialTest', () => {
 
@@ -53,6 +55,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THICK_ID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -62,6 +65,11 @@ export default function TextPickerDialogSystemMaterialTest() {
       
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TextPickerDialogSystemMaterialTest_001 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('TextPickerDialogSystemMaterialTest_001 retValue: ' + retValue);
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -82,6 +90,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('ULTRA_THIN_ID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -91,6 +100,11 @@ export default function TextPickerDialogSystemMaterialTest() {
       
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TextPickerDialogSystemMaterialTest_002 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('TextPickerDialogSystemMaterialTest_002 retValue: ' + retValue);
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -111,6 +125,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('interactive_false_ID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -120,6 +135,11 @@ export default function TextPickerDialogSystemMaterialTest() {
       
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TextPickerDialogSystemMaterialTest_003 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('TextPickerDialogSystemMaterialTest_003 retValue: ' + retValue);
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -140,6 +160,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('undefinedID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -149,6 +170,11 @@ export default function TextPickerDialogSystemMaterialTest() {
       
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TextPickerDialogSystemMaterialTest_004 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('TextPickerDialogSystemMaterialTest_004 retValue: ' + retValue);
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -169,6 +195,7 @@ export default function TextPickerDialogSystemMaterialTest() {
      */
     it('TextPickerDialogSystemMaterialTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
+      await CommonFunc.sleep(1000);
       const button = await driver.findComponent(ON.id('defaultID'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -178,6 +205,11 @@ export default function TextPickerDialogSystemMaterialTest() {
       
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TextPickerDialogSystemMaterialTest_005 systemMaterial: ' + JSON.stringify(systemMaterial));
+
+      if(isSupported){
+        let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+ 	      console.info('TextPickerDialogSystemMaterialTest_005 retValue: ' + retValue);
+      }
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);

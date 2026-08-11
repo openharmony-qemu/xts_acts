@@ -55,6 +55,7 @@ export default function textPickerDialogOnScrollStopTest(){
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('myTextPicker1'));
       await btn1.click()
+      await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.text('确定'));
       await btn2.click()
       await CommonFunc.sleep(2000);
