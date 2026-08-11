@@ -2577,16 +2577,16 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
-     * @tc.name   OhAvPlayerSetVideoSideOutput_0200
-     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_VIDEO_SIDE_OUTPUT_0200
+     * @tc.name   testOhAvPlayerSetVideoSideOutput0200
+     * @tc.number testOhAvPlayerSetVideoSideOutput0200
      * @tc.desc   test OH_AVPlayer_SetVideoSideOutput
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 0
      */
-    it('OhAvPlayerSetVideoSideOutput_0200', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvPlayerSetVideoSideOutput0200', Level.LEVEL0,async (done: Function) => {
       let result: number = await avplayer.avPlayerSetVideoSideOutputOne();
-      console.info(`OhAvPlayerSetVideoSideOutput_0200 result = ${result}`);
+      console.info(`testOhAvPlayerSetVideoSideOutput0200 result = ${result}`);
       expect(result).assertEqual(0);
       done();
     });
