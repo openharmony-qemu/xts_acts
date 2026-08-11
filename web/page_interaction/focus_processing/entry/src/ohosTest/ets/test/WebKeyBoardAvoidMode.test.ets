@@ -72,6 +72,12 @@ export default function ActsWebKeyBoardAvoidModeTest() {
       let isReturn = false;
       Utils.registerEvent("emitWebKeyBoardAvoidMode01", true, 20251211, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "webKeyBoardAvoidModeButton",emitKey);
+      // 等页面就绪后，由测试侧串行点击 input 触发 focus（页面不再并发使用 UiTest，避免 17000002）
+      let pageReady = false;
+      Utils.registerEvent("emitWebKeyBoardAvoidMode01", true, 20251220, () => { pageReady = true });
+      await Utils.waitForExist(() => pageReady, 'testWebKeyBoardAvoidMode01' + '_pageReady', true, 1000);
+      let inputButton = await driver.findComponent(ON.text('input'));
+      await inputButton.click();
       if (await Utils.waitForExist(() => isReturn, 'testWebKeyBoardAvoidMode01' + '_returnCheck', true, 1000)) {
         done();
       }
