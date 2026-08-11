@@ -35,12 +35,12 @@ constexpr int32_t TRACKFRAME_417 = 417;
 constexpr int64_t VIDEOTRACKSEEK = 900000;
 constexpr int64_t AUDIOTRACKSEEK = 130604;
 constexpr int32_t THOUSAND = 1000;
-static const std::string TRACK_REF_TYPE_DEPTH = "vdep";
-static const std::string TRACK_REF_TYPE_PREY = "auxl";
-static const std::string TRACK_REF_TYPE_CDSC = "cdsc";
-static const std::string AUXILIARY_DEPTH_TRACK_KEY = "com.openharmony.moviemode.depth";
-static const std::string AUXILIARY_PREY_TRACK_KEY = "com.openharmony.moviemode.prey";
-static const std::string TIMED_METADATA_KEY = "timed_metadata";
+extern const std::string TRACK_REF_TYPE_DEPTH;
+extern const std::string TRACK_REF_TYPE_PREY;
+extern const std::string TRACK_REF_TYPE_CDSC;
+extern const std::string AUXILIARY_DEPTH_TRACK_KEY;
+extern const std::string AUXILIARY_PREY_TRACK_KEY;
+extern const std::string TIMED_METADATA_KEY;
 
 constexpr int EXPECTED_BUFFER_SIZE_2 = 2;
 constexpr int EXPECTED_AUDIO_FRAMES_40 = 40;

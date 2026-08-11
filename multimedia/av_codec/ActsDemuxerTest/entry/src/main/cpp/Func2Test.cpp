@@ -45,6 +45,13 @@ OH_AVBuffer *avBuffer = nullptr;
 bool g_isRefult = false;
 int32_t g_unselect = -1;
 
+const std::string TRACK_REF_TYPE_DEPTH = "vdep";
+const std::string TRACK_REF_TYPE_PREY = "auxl";
+const std::string TRACK_REF_TYPE_CDSC = "cdsc";
+const std::string AUXILIARY_DEPTH_TRACK_KEY = "com.openharmony.moviemode.depth";
+const std::string AUXILIARY_PREY_TRACK_KEY = "com.openharmony.moviemode.prey";
+const std::string TIMED_METADATA_KEY = "timed_metadata";
+
 int32_t g_trackType = 0;
 
 struct TrackState {
@@ -1725,8 +1732,10 @@ int DemuxerFunctionAudioTrack0040()
     if (!(g_initResult)) {
         return -1;
     }
-    int32_t *trackIdsDepth = nullptr, *trackIdsPrey = nullptr;
-    size_t bufferSize; int bufferSizeResult = 3;
+    int32_t *trackIdsDepth = nullptr;
+    int32_t *trackIdsPrey = nullptr;
+    size_t bufferSize;
+    int bufferSizeResult = 3;
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
     if (trackFormat == nullptr) {
         return -1;
