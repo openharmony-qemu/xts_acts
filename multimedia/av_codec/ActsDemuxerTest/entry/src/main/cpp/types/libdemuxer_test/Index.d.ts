@@ -13,44 +13,189 @@
  * limitations under the License.
  */
 
-/**
- * 运行 API 测试
- * @param caseNumber 测试用例编号 (0-21)
- * @returns 测试结果，0 表示成功，-1 表示失败
- */
-export const runApiTest: (caseNumber: number) => number;
+export const initTests: () => number;
 
-/**
- * 运行功能测试
- * @param caseNumber 测试用例编号 (0-63)
- * @returns 测试结果，0 表示成功，-1 表示失败
- */
-export const runFuncTest: (caseNumber: number) => number;
-
-/**
- * 运行功能测试 (异步版本，用于 2200 和 2300)
- * @param caseNumber 测试用例编号 (19 或 20)
- * @returns Promise<number> 测试结果，0 表示成功，-1 表示失败
- */
-export const runFuncTestAsync: (caseNumber: number) => Promise<number>;
-
-/**
- * 运行功能测试2
- * @param caseNumber 测试用例编号 (0-48)
- * @returns 测试结果，0 表示成功，-1 表示失败
- */
-export const runFunc2Test: (caseNumber: number) => number;
-
-/**
- * 运行流程测试
- * @param caseNumber 测试用例编号 (0-25)
- * @returns 测试结果，0 表示成功，-1 表示失败
- */
-export const runProcTest: (caseNumber: number) => number;
-
-/**
- * 运行网络测试
- * @param caseNumber 测试用例编号 (0-9)
- * @returns 测试结果，0 表示成功，-1 表示失败
- */
-export const runNetTest: (caseNumber: number) => number;
+export const OhAvSourceCreateWithDataSource0100: () => Promise<number>;
+export const OhAvSourceCreateWithDataSourceExt0100: () => Promise<number>;
+export const DemuxerIllegalPara0100: () => Promise<number>;
+export const DemuxerIllegalPara0200: () => Promise<number>;
+export const DemuxerIllegalPara0700: () => Promise<number>;
+export const DemuxerIllegalPara0800: () => Promise<number>;
+export const DemuxerIllegalPara0300: () => Promise<number>;
+export const DemuxerIllegalPara0400: () => Promise<number>;
+export const DemuxerIllegalPara0500: () => Promise<number>;
+export const DemuxerIllegalPara0600: () => Promise<number>;
+export const DemuxerIllegalPara2300: () => Promise<number>;
+export const DemuxerIllegalPara0900: () => Promise<number>;
+export const DemuxerIllegalPara1000: () => Promise<number>;
+export const DemuxerIllegalPara1100: () => Promise<number>;
+export const DemuxerIllegalPara1200: () => Promise<number>;
+export const DemuxerIllegalPara1300: () => Promise<number>;
+export const DemuxerIllegalPara1400: () => Promise<number>;
+export const DemuxerIllegalPara1500: () => Promise<number>;
+export const DemuxerIllegalPara1600: () => Promise<number>;
+export const DemuxerIllegalPara1700: () => Promise<number>;
+export const DemuxerIllegalPara1800: () => Promise<number>;
+export const DemuxerIllegalPara1900: () => Promise<number>;
+export const DemuxerIllegalPara2100: () => Promise<number>;
+export const DemuxerIllegalPara2200: () => Promise<number>;
+export const DemuxerIllegalPara2400: () => Promise<number>;
+export const DemuxerIllegalPara2500: () => Promise<number>;
+export const DemuxerIllegalPara2600: () => Promise<number>;
+export const DemuxerIllegalPara2700: () => Promise<number>;
+export const DemuxerIllegalPara2800: () => Promise<number>;
+export const DemuxerIllegalPara2900: () => Promise<number>;
+export const DemuxerIllegalPara3000: () => Promise<number>;
+export const DemuxerApi0200: () => Promise<number>;
+export const DemuxerApi0300: () => Promise<number>;
+export const DemuxerApi0500: () => Promise<number>;
+export const DemuxerApi0700: () => Promise<number>;
+export const DemuxerApi1000: () => Promise<number>;
+export const DemuxerApi1100: () => Promise<number>;
+export const DemuxerApi1200: () => Promise<number>;
+export const DemuxerApi1300: () => Promise<number>;
+export const DemuxerApi1400: () => Promise<number>;
+export const DemuxerApi2300: () => Promise<number>;
+export const DemuxerApi2400: () => Promise<number>;
+export const DemuxerApi2500: () => Promise<number>;
+export const SubMediaDemuxerVtt6100: () => Promise<number>;
+export const DemuxerMeta0090: () => Promise<number>;
+export const DemuxerWavAlawFunc0001: () => Promise<number>;
+export const DemuxerWavAlawFunc0002: () => Promise<number>;
+export const DemuxerWavAlawFunc0003: () => Promise<number>;
+export const DemuxerWavAlawFunc0004: () => Promise<number>;
+export const DemuxerWavAlawFunc0005: () => Promise<number>;
+export const DemuxerWavAlawFunc0006: () => Promise<number>;
+export const DemuxerWavAlawFunc0007: () => Promise<number>;
+export const DemuxerWavAlawFunc0008: () => Promise<number>;
+export const DemuxerWavAlawFunc0009: () => Promise<number>;
+export const DemuxerWavAlawFunc0010: () => Promise<number>;
+export const DemuxerFunctionTrack0010: () => Promise<number>;
+export const DemuxerFunctionTrack0020: () => Promise<number>;
+export const DemuxerFunctionTrack0030: () => Promise<number>;
+export const DemuxerFunctionTrack0040: () => Promise<number>;
+export const DemuxerFunctionTrack0050: () => Promise<number>;
+export const DemuxerFunctionTrack0060: () => Promise<number>;
+export const DemuxerFunctionTrack0061: () => Promise<number>;
+export const DemuxerFunctionTrack0070: () => Promise<number>;
+export const DemuxerFunctionTrack0080: () => Promise<number>;
+export const DemuxerFunctionTrack0090: () => Promise<number>;
+export const DemuxerFunctionTrack0130: () => Promise<number>;
+export const DemuxerFunctionTrack0140: () => Promise<number>;
+export const DemuxerFunctionTrack0150: () => Promise<number>;
+export const DemuxerFunctionTrack0160: () => Promise<number>;
+export const DemuxerFunctionTrack0170: () => Promise<number>;
+export const DemuxerFunctionTrack0180: () => Promise<number>;
+export const DemuxerFunctionTrack0190: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0010: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0020: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0030: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0040: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0050: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0060: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0061: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0070: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0080: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0090: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0130: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0140: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0150: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0160: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0170: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0180: () => Promise<number>;
+export const DemuxerFunctionAudioTrack0190: () => Promise<number>;
+export const DemuxerFunctionAdd0010: () => Promise<number>;
+export const DemuxerFunctionAdd0020: () => Promise<number>;
+export const DemuxerFunctionAdd0030: () => Promise<number>;
+export const DemuxerSkipSampleFunc0010: () => Promise<number>;
+export const DemuxerSkipSampleFunc0020: () => Promise<number>;
+export const DemuxerFunction0200: () => Promise<number>;
+export const DemuxerFunction0300: () => Promise<number>;
+export const DemuxerFunction0400: () => Promise<number>;
+export const DemuxerFunction0500: () => Promise<number>;
+export const DemuxerFunction0700: () => Promise<number>;
+export const DemuxerFunction0800: () => Promise<number>;
+export const DemuxerFunction0900: () => Promise<number>;
+export const DemuxerFunction1000: () => Promise<number>;
+export const DemuxerFunction1100: () => Promise<number>;
+export const DemuxerFunction1200: () => Promise<number>;
+export const DemuxerFunction1300: () => Promise<number>;
+export const DemuxerFunction1400: () => Promise<number>;
+export const DemuxerFunction1500: () => Promise<number>;
+export const DemuxerFunction1600: () => Promise<number>;
+export const DemuxerFunction1700: () => Promise<number>;
+export const DemuxerFunction1800: () => Promise<number>;
+export const DemuxerFunction1900: () => Promise<number>;
+export const DemuxerFunction2000: () => Promise<number>;
+export const DemuxerFunction2100: () => Promise<number>;
+export const DemuxerFunction2200: () => Promise<number>;
+export const DemuxerFunction2300: () => Promise<number>;
+export const DemuxerFunction2400: () => Promise<number>;
+export const DemuxerFunction3100: () => Promise<number>;
+export const DemuxerFunction3200: () => Promise<number>;
+export const DemuxerFunction3300: () => Promise<number>;
+export const DemuxerFunction3400: () => Promise<number>;
+export const DemuxerFunction3500: () => Promise<number>;
+export const DemuxerFunction3600: () => Promise<number>;
+export const DemuxerFunction3700: () => Promise<number>;
+export const DemuxerFunction3800: () => Promise<number>;
+export const DemuxerFunction3900: () => Promise<number>;
+export const DemuxerFunction4000: () => Promise<number>;
+export const DemuxerFunction4100: () => Promise<number>;
+export const DemuxerFunction4200: () => Promise<number>;
+export const DemuxerFunction4300: () => Promise<number>;
+export const DemuxerFunction4400: () => Promise<number>;
+export const DemuxerFunction4500: () => Promise<number>;
+export const DemuxerFunction7000: () => Promise<number>;
+export const DemuxerFunction7100: () => Promise<number>;
+export const DemuxerFunction7200: () => Promise<number>;
+export const DemuxerFunction7300: () => Promise<number>;
+export const DemuxerFunction7400: () => Promise<number>;
+export const DemuxerFunction7500: () => Promise<number>;
+export const DemuxerFunction7600: () => Promise<number>;
+export const DemuxerFunction7700: () => Promise<number>;
+export const DemuxerFunction7800: () => Promise<number>;
+export const DemuxerFunction7900: () => Promise<number>;
+export const DemuxerFunction8000: () => Promise<number>;
+export const DemuxerFunction8100: () => Promise<number>;
+export const DemuxerFunction8200: () => Promise<number>;
+export const DemuxerFunction8300: () => Promise<number>;
+export const DemuxerFunction8400: () => Promise<number>;
+export const DemuxerFunction8500: () => Promise<number>;
+export const DemuxerFunction8600: () => Promise<number>;
+export const DemuxerFunction8700: () => Promise<number>;
+export const DemuxerFunction8800: () => Promise<number>;
+export const DemuxerFunction8900: () => Promise<number>;
+export const DemuxerFunction9000: () => Promise<number>;
+export const SubMediaDemuxerFunction0200: () => Promise<number>;
+export const SubMediaDemuxerFunction0300: () => Promise<number>;
+export const SubMediaDemuxerFunction1000: () => Promise<number>;
+export const SubMediaDemuxerFunction1100: () => Promise<number>;
+export const SubMediaDemuxerFunction1200: () => Promise<number>;
+export const SubMediaDemuxerFunction1300: () => Promise<number>;
+export const SubMediaDemuxerProcess1400: () => Promise<number>;
+export const SubMediaDemuxerProcess1500: () => Promise<number>;
+export const SubMediaDemuxerProcess1600: () => Promise<number>;
+export const SubMediaDemuxerProcess1700: () => Promise<number>;
+export const SubMediaDemuxerProcess1800: () => Promise<number>;
+export const SubMediaDemuxerProcess1900: () => Promise<number>;
+export const SubMediaDemuxerProcess2000: () => Promise<number>;
+export const SubMediaDemuxerProcess2100: () => Promise<number>;
+export const SubMediaDemuxerProcess2200: () => Promise<number>;
+export const SubMediaDemuxerProcess2300: () => Promise<number>;
+export const SubMediaDemuxerProcess2400: () => Promise<number>;
+export const SubMediaDemuxerProcess2500: () => Promise<number>;
+export const SubMediaDemuxerProcess2600: () => Promise<number>;
+export const SubMediaDemuxerProcess2700: () => Promise<number>;
+export const SubMediaDemuxerProcess2800: () => Promise<number>;
+export const SubMediaDemuxerProcess2900: () => Promise<number>;
+export const SubMediaDemuxerProcess3000: () => Promise<number>;
+export const SubMediaDemuxerProcess3100: () => Promise<number>;
+export const SubMediaDemuxerProcess3200: () => Promise<number>;
+export const SubMediaDemuxerProcess3300: () => Promise<number>;
+export const SubMediaDemuxerProcess3400: () => Promise<number>;
+export const SubMediaDemuxerProcess3800: () => Promise<number>;
+export const SubMediaDemuxerProcess3700: () => Promise<number>;
+export const SubMediaDemuxerProcess3600: () => Promise<number>;
+export const SubMediaDemuxerProcess3510: () => Promise<number>;
+export const SubMediaDemuxerProcess3500: () => Promise<number>;

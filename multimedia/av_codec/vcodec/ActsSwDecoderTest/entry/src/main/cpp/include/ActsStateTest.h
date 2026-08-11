@@ -16,8 +16,7 @@
 #ifndef ACTS_SW_DECODER_TEST_ACTS_STATE_TEST_H
 #define ACTS_SW_DECODER_TEST_ACTS_STATE_TEST_H
 
-namespace Acts {
-namespace SwDecoder {
+#include "napi/native_api.h"
 
 int VideoSwdecState0100();
 int VideoSwdecState0101();
@@ -55,7 +54,6 @@ int VideoSwdecState3200();
 int VideoSwdecState3300();
 int VideoSwdecState3400();
 
-} // namespace SwDecoder
-} // namespace Acts
+void InitActsStateTest();
 
 #endif // ACTS_SW_DECODER_TEST_ACTS_STATE_TEST_H

@@ -39,6 +39,7 @@ OH_AVFormat *sourceFormat = nullptr;
 OH_AVFormat *trackFormat = nullptr;
 OH_AVMemory *memory = nullptr;
 int32_t g_trackCount = 0;
+int g_testFd = -1;
 
 // Skip sample相关常量
 static constexpr size_t SKIP_SAMPLE_BUFFER_SIZE = 10;
@@ -229,15 +230,29 @@ int ProcessDualTrackLoop(DualTrackParams &params)
 
 void InitTestResources()
 {
-    if (memory == nullptr) {
-        memory = OH_AVMemory_Create(MEMORY_BUFFER_WIDTH * MEMORY_BUFFER_HEIGHT);
+    if (memory != nullptr) {
+        OH_AVMemory_Destroy(memory);
+        memory = nullptr;
     }
+    memory = OH_AVMemory_Create(MEMORY_BUFFER_WIDTH * MEMORY_BUFFER_HEIGHT);
 }
 
 void CleanupResources()
 {
-    CleanupDemuxerResources(&source, &demuxer, &sourceFormat, &trackFormat, &memory);
+    CleanupDemuxerResources(&source, &demuxer, &sourceFormat,
+        &trackFormat, &memory);
+    if (avBuffer != nullptr) {
+        OH_AVBuffer_Destroy(avBuffer);
+        avBuffer = nullptr;
+    }
+    if (g_testFd >= 0) {
+        close(g_testFd);
+        g_testFd = -1;
+    }
     g_trackCount = 0;
+    g_initResult = false;
+    g_isRefult = false;
+    g_unselect = -1;
 }
 
 int ValidateSkipData(uint8_t *addr, size_t buffSize, int audioFrame, uint8_t *expected)
@@ -379,22 +394,24 @@ int ProcessOggSkipSampleFrame(SkipSampleFrameContext &ctx)
     return 0;
 }
 
-int OpenFile(const char *fileName, int fd, OH_AVSource **src, OH_AVDemuxer **audioDemuxer)
+int OpenFile(const char *fileName, int fd, OH_AVSource **src,
+    OH_AVDemuxer **audioDemuxer)
 {
     int64_t size = GET_FILE_SIZE(fileName);
     cout << fileName << "----------------------" << fd << "---------" << size << endl;
     *src = OH_AVSource_CreateWithFD(fd, 0, size);
     if (*src == nullptr) { return -1; }
-
     *audioDemuxer = OH_AVDemuxer_CreateWithSource(*src);
-    if (*audioDemuxer == nullptr) { return -1; }
+    if (*audioDemuxer == nullptr) { OH_AVSource_Destroy(*src); *src = nullptr; return -1; }
     return 0;
 }
 
-int CheckTrackCount(OH_AVFormat **srcFormat, OH_AVSource *src, int32_t *trackCount, int trackNum)
+int CheckTrackCount(OH_AVFormat **srcFormat, OH_AVSource *src,
+    int32_t *trackCount, int trackNum)
 {
     *srcFormat = OH_AVSource_GetSourceFormat(src);
-    if (!(OH_AVFormat_GetIntValue(*srcFormat, OH_MD_KEY_TRACK_COUNT, trackCount))) { return -1; }
+    if (!(OH_AVFormat_GetIntValue(*srcFormat, OH_MD_KEY_TRACK_COUNT,
+        trackCount))) { return -1; }
     if (*trackCount != trackNum) { return -1; }
     return 0;
 }
@@ -402,7 +419,9 @@ int CheckTrackCount(OH_AVFormat **srcFormat, OH_AVSource *src, int32_t *trackCou
 int CheckTrackSelect(int32_t trackCount, OH_AVDemuxer *audioDemuxer)
 {
     for (int32_t index = 0; index < trackCount; index++) {
-        if (OH_AVDemuxer_SelectTrackByID(audioDemuxer, index) != AV_ERR_OK) { return -1; }
+        if (OH_AVDemuxer_SelectTrackByID(audioDemuxer, index) != AV_ERR_OK) {
+            return -1;
+        }
     }
     return 0;
 }
@@ -414,16 +433,15 @@ int CountAudioFrames(OH_AVDemuxer *audioDemuxer, OH_AVMemory *mem,
     int keyCount = 0;
     bool audioIsEnd = false;
     OH_AVCodecBufferAttr attr;
-
     while (!audioIsEnd) {
         for (int32_t index = 0; index < trackCount; index++) {
-            if (OH_AVDemuxer_ReadSample(audioDemuxer, index, mem, &attr) != AV_ERR_OK) { return -1; }
+            if (OH_AVDemuxer_ReadSample(audioDemuxer, index, mem,
+                &attr) != AV_ERR_OK) { return -1; }
             if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_EOS) {
                 audioIsEnd = true;
                 cout << audioFrame << "    audio is end !!!!!!!!!!!!!!!" << endl;
                 continue;
             }
-
             audioFrame++;
             if (attr.flags & OH_AVCodecBufferFlags::AVCODEC_BUFFER_FLAGS_SYNC_FRAME) {
                 keyCount++;
@@ -438,23 +456,13 @@ int CountAudioFrames(OH_AVDemuxer *audioDemuxer, OH_AVMemory *mem,
 int WavCheckResult(wavParamInfo &info)
 {
     InitTestResources();
-    if (memory == nullptr) {
-        return -1;
-    }
-    if (OpenFile(info.file, info.fd, &source, &demuxer)) {
-        return -1;
-    }
-    if (CheckTrackCount(&sourceFormat, source, &g_trackCount, 1)) {
-        return -1;
-    }
-    if (CheckTrackSelect(g_trackCount, demuxer)) {
-        return -1;
-    }
-    if (info.isSeek && OH_AVDemuxer_SeekToTime(demuxer, info.seekTime, info.seekMode) != AV_ERR_OK) {
-        return -1;
-    }
-    if (CountAudioFrames(demuxer, memory, g_trackCount, info.audioFrameNum, info.audioKeyNum)) {
-        return -1;
-    }
+    if (memory == nullptr) { return -1; }
+    if (OpenFile(info.file, info.fd, &source, &demuxer)) { return -1; }
+    if (CheckTrackCount(&sourceFormat, source, &g_trackCount, 1)) { return -1; }
+    if (CheckTrackSelect(g_trackCount, demuxer)) { return -1; }
+    if (info.isSeek && OH_AVDemuxer_SeekToTime(demuxer, info.seekTime,
+        info.seekMode) != AV_ERR_OK) { return -1; }
+    if (CountAudioFrames(demuxer, memory, g_trackCount, info.audioFrameNum,
+        info.audioKeyNum)) { return -1; }
     return 0;
 }

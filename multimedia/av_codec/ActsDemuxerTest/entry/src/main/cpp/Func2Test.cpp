@@ -39,11 +39,10 @@ using namespace std;
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "DemuxerFunc2Test"
 
-// 全局变量声明（部分在FuncHelperTest.h中已声明为extern）
-static bool g_initResult = false;
-static OH_AVBuffer *avBuffer = nullptr;
-static bool g_isRefult = false;
-static int32_t g_unselect = -1;
+bool g_initResult = false;
+OH_AVBuffer *avBuffer = nullptr;
+bool g_isRefult = false;
+int32_t g_unselect = -1;
 
 // 常量定义
 static const int32_t TRACKNUM_0 = 0;
@@ -138,6 +137,7 @@ struct SkipSampleReadParams {
 static int InitSkipSampleFile(SkipSampleParams &params)
 {
     params.fd = open(params.file, O_RDONLY);
+    g_testFd = params.fd;
     if (params.fd < 0) {
         return -1;
     }
@@ -202,24 +202,30 @@ static int InitFile(const char *file, int32_t trackNum, int &fd)
 {
     g_initResult = false;
     fd = open(file, O_RDONLY);
+    g_testFd = fd;
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
+    if (avBuffer != nullptr) { OH_AVBuffer_Destroy(avBuffer); avBuffer = nullptr; }
     source = OH_AVSource_CreateWithFD(fd, 0, size);
-    if (source == nullptr) { return -1; }
+    if (source == nullptr) { if (fd >= 0) { close(fd); fd = -1; } return -1; }
 
     demuxer = OH_AVDemuxer_CreateWithSource(source);
-    if (demuxer == nullptr) { return -1; }
+    if (demuxer == nullptr) { if (fd >= 0) { close(fd); fd = -1; } return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
-    if (g_trackCount != trackNum) { return -1; }
+    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) {
+        if (fd >= 0) { close(fd); fd = -1; } return -1;
+    }
+    if (g_trackCount != trackNum) { if (fd >= 0) { close(fd); fd = -1; } return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (g_unselect != index) {
-            if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
+            if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) {
+                if (fd >= 0) { close(fd); fd = -1; } return -1;
+            }
         }
     }
     avBuffer = OH_AVBuffer_Create(size);
-    if (avBuffer == nullptr) { return -1; }
+    if (avBuffer == nullptr) { if (fd >= 0) { close(fd); fd = -1; } return -1; }
     g_initResult = true;
     return 0;
 }
@@ -695,6 +701,7 @@ int SubMediaDemuxerVtt6100()
     OH_AVCodecBufferAttr attr;
     const char *file = "/data/storage/el2/base/files/media/vtt_6100.vtt";
     int fd = open(file, O_RDONLY);
+    g_testFd = fd;
     if (InitVttDemuxer6100(fd, file) != 0) {
         OH_AVMemory_Destroy(memory);
         memory = nullptr;
@@ -757,7 +764,8 @@ int DemuxerWavAlawFunc0003()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_8K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_20, EXPECTED_AUDIO_FRAMES_20, SEEK_MODE_NEXT_SYNC, 0, false};
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_20, EXPECTED_AUDIO_FRAMES_20,
+        SEEK_MODE_NEXT_SYNC, 0, false};
     if (WavCheckResult(info)) {
         close(fd);
         return -1;
@@ -772,8 +780,8 @@ int DemuxerWavAlawFunc0004()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_8K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11, SEEK_MODE_PREVIOUS_SYNC,
-        seekTime / thousand, true};
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11,
+        SEEK_MODE_PREVIOUS_SYNC, seekTime / thousand, true};
     if (WavCheckResult(info)) {
         close(fd);
         return -1;
@@ -786,7 +794,8 @@ int DemuxerWavAlawFunc0005()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_16K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_40, EXPECTED_AUDIO_FRAMES_40, SEEK_MODE_NEXT_SYNC, 0, false};
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_40, EXPECTED_AUDIO_FRAMES_40,
+        SEEK_MODE_NEXT_SYNC, 0, false};
     if (WavCheckResult(info)) {
         close(fd);
         return -1;
@@ -801,8 +810,8 @@ int DemuxerWavAlawFunc0006()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_16K_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_21, EXPECTED_AUDIO_FRAMES_21, SEEK_MODE_CLOSEST_SYNC,
-        seekTime / thousand, true};
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_21, EXPECTED_AUDIO_FRAMES_21,
+        SEEK_MODE_CLOSEST_SYNC, seekTime / thousand, true};
     if (WavCheckResult(info)) {
         close(fd);
         return -1;
@@ -815,7 +824,8 @@ int DemuxerWavAlawFunc0007()
 {
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_48K_8b_1.wav";
     int fd = open(file, O_RDONLY);
-    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_59, EXPECTED_AUDIO_FRAMES_59, SEEK_MODE_NEXT_SYNC, 0, false};
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_59, EXPECTED_AUDIO_FRAMES_59,
+        SEEK_MODE_NEXT_SYNC, 0, false};
     if (WavCheckResult(info)) {
         close(fd);
         return -1;
@@ -830,8 +840,8 @@ int DemuxerWavAlawFunc0008()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_48K_8b_1.wav";
     int fd = open(file, O_RDONLY);
-    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_26, EXPECTED_AUDIO_FRAMES_26, SEEK_MODE_NEXT_SYNC,
-        seekTime / thousand, true};
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_26, EXPECTED_AUDIO_FRAMES_26,
+        SEEK_MODE_NEXT_SYNC, seekTime / thousand, true};
     if (WavCheckResult(info)) {
         close(fd);
         return -1;
@@ -860,8 +870,8 @@ int DemuxerWavAlawFunc0010()
     int32_t thousand = 1000;
     const char *file = "/data/storage/el2/base/files/media/audio/wav_alaw_768001_8b_2.wav";
     int fd = open(file, O_RDONLY);
-    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11, SEEK_MODE_PREVIOUS_SYNC,
-        seekTime / thousand, true};
+    wavParamInfo info = {file, fd, EXPECTED_AUDIO_FRAMES_11, EXPECTED_AUDIO_FRAMES_11,
+        SEEK_MODE_PREVIOUS_SYNC, seekTime / thousand, true};
     if (WavCheckResult(info)) {
         close(fd);
         return -1;
@@ -2108,3 +2118,5 @@ int DemuxerSkipSampleFunc0020()
     close(fd);
     return 0;
 }
+
+void InitFunc2Test() {}

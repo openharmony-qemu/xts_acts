@@ -39,7 +39,7 @@
 #define LOG_TAG "DemuxerFuncTest"
 namespace {
 constexpr uint32_t CODEC_NAME_SIZE = 128;
-constexpr int SUBTITLE_INDEX_INCREMENT = 10;
+constexpr int SUBTITLE_INDEX_INCREMENT = 1;
 char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 }
 
@@ -891,6 +891,7 @@ int SubMediaDemuxerProcess1500()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != auidoTrackCount + 1) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -1038,6 +1039,7 @@ int SubMediaDemuxerProcess1800()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -1089,6 +1091,7 @@ int SubMediaDemuxerProcess1900()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     trackFormat = OH_AVSource_GetTrackFormat(source, 0);
     if (trackFormat == nullptr) { return -1; }
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, &mimeType))) { return -1; }
@@ -1141,11 +1144,14 @@ int SubMediaDemuxerProcess2000()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
     }
+    InitTestResources();
+    if (memory == nullptr) { close(fd); return -1; }
     int vKeyCount = 0;
     int aKeyCount = 0;
     int audioFrame = 0;
@@ -1189,11 +1195,14 @@ int SubMediaDemuxerProcess2100()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
     }
+    InitTestResources();
+    if (memory == nullptr) { close(fd); return -1; }
     int vKeyCount = 0;
     int aKeyCount = 0;
     int audioFrame = 0;
@@ -1237,6 +1246,7 @@ int SubMediaDemuxerProcess2200()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -1288,6 +1298,7 @@ int SubMediaDemuxerProcess2300()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_KEY_FRAMES_1) { return -1; }
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
@@ -1395,6 +1406,7 @@ int SubMediaDemuxerProcess2600()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     trackFormat = OH_AVSource_GetTrackFormat(source, 0);
     if (trackFormat == nullptr) { return -1; }
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, &mimeType))) { return -1; }
@@ -1405,6 +1417,8 @@ int SubMediaDemuxerProcess2600()
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_KEY_FRAMES_1) { return -1; }
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
+    InitTestResources();
+    if (memory == nullptr) { close(fd); return -1; }
     bool isEnd = false;
     while (!isEnd) {
         if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) { return -1; }
@@ -1435,16 +1449,18 @@ int SubMediaDemuxerProcess2700()
 {
     OH_LOG_INFO(LOG_APP, "[TEST2700] START");
     OH_AVCodecBufferAttr attr;
-    int srtIndex = 10;
+    int srtIndex = 1;
     const char *file = "/data/storage/el2/base/files/media/srt_test.srt";
     int fd = open(file, O_RDONLY);
     if (InitSubtitleDemuxer2700(fd, file) != 0) {
         return -1;
     }
+    InitTestResources();
+    if (memory == nullptr) { close(fd); return -1; }
     if (ReadFirstSubtitles2700(fd, attr, srtIndex) != 0) {
         return -1;
     }
-
+    srtIndex = 2;
     if (SeekAndReadSubtitle2700(fd, attr, srtIndex) != 0) {
         return -1;
     }
@@ -1478,6 +1494,7 @@ int SubMediaDemuxerProcess2800()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_KEY_FRAMES_1) { return -1; }
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
@@ -1525,6 +1542,7 @@ int SubMediaDemuxerProcess2900()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_KEY_FRAMES_1) { return -1; }
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
@@ -1678,15 +1696,19 @@ int SubMediaDemuxerProcess3200()
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { close(fd); return -1; }
     demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) { close(fd); return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
+    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { close(fd); return -1; }
     cout << "g_trackCount"<< "----------------" << g_trackCount << "-----------------" << endl;
-    OH_AVDemuxer_SelectTrackByID(demuxer, 0);
+    if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { close(fd); return -1; }
 
     InitTestResources();
+    if (memory == nullptr) { close(fd); return -1; }
 
-    OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr);
+    if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) { close(fd); return -1; }
     uint8_t *data = OH_AVMemory_GetAddr(memory);
     cout << "subtitle"<< "----------------" << data << "-----------------" << endl;
     close(fd);
@@ -1709,16 +1731,11 @@ int SubMediaDemuxerProcess3300()
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
-    if (source == nullptr) {
-        close(fd);
-        return -1;
-    }
+    if (source == nullptr) { close(fd); return -1; }
     demuxer = OH_AVDemuxer_CreateWithSource(source);
-    if (demuxer == nullptr) {
-        close(fd);
-        return -1;
-    }
+    if (demuxer == nullptr) { close(fd); return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { close(fd); return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) {
         close(fd);
         return -1;
@@ -1820,7 +1837,10 @@ int SubMediaDemuxerProcess3800()
     InitTestResources();
 
     int audioFrame = 0;
-    ProcessAudioLoop3800(fd, attr, audioFrame);
+    if (ProcessAudioLoop3800(fd, attr, audioFrame) != 0) {
+        close(fd);
+        return -1;
+    }
     close(fd);
     return 0;
 }
@@ -1966,5 +1986,19 @@ int SubMediaDemuxerProcess3500()
         close(fd);
     }
     return 0;
+}
+
+void InitProcTest() {}
+
+void CleanupProcResources()
+{
+    if (format != nullptr) { OH_AVFormat_Destroy(format); format = nullptr; }
+    if (trackFormat != nullptr) { OH_AVFormat_Destroy(trackFormat); trackFormat = nullptr; }
+    if (sourceFormat != nullptr) { OH_AVFormat_Destroy(sourceFormat); sourceFormat = nullptr; }
+    if (avBuffer != nullptr) { OH_AVBuffer_Destroy(avBuffer); avBuffer = nullptr; }
+    if (memory != nullptr) { OH_AVMemory_Destroy(memory); memory = nullptr; }
+    if (demuxer != nullptr) { OH_AVDemuxer_Destroy(demuxer); demuxer = nullptr; }
+    if (source != nullptr) { OH_AVSource_Destroy(source); source = nullptr; }
+    g_trackCount = 0;
 }
 

@@ -55,9 +55,6 @@ void InitSwdecCapability()
 }
 } // namespace
 
-namespace Acts {
-namespace SwDecoder {
-
 int VideoSwdecFunction0200()
 {
     OH_AVCodec* vdec = OH_VideoDecoder_CreateByName("OMX.h264.decode.111.222.333");
@@ -197,7 +194,10 @@ int VideoSwdecFunction4000()
     vDecSample->surfaceOutput = true;
     vDecSample->beforeEosInput = true;
     int ret = vDecSample->RunVideoDecSurface(CODEC_NAME_AVC);
-    if (ret == AV_ERR_SURFACE_UNAVAILABLE_SKIP || ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) {
+    if (ret == AV_ERR_SURFACE_UNAVAILABLE_SKIP) {
+        return SWDEC_SUCCESS;
+    }
+    if (ret == AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP) {
         return SWDEC_SUCCESS;
     }
     if (ret != AV_ERR_OK) {
@@ -534,5 +534,5 @@ int VideoSwdecodeBlankFrame0010()
     return (vDecSample->errCount == 0) ? SWDEC_SUCCESS : -1;
 }
 
-} // namespace SwDecoder
-} // namespace Acts
+void InitActsFuncTest() {}
+

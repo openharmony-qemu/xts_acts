@@ -319,17 +319,15 @@ int DemuxerFunction0700()
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
-
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
     }
-
     InitTestResources();
     if (memory == nullptr) {
         close(fd);
@@ -497,19 +495,17 @@ int DemuxerFunction1100()
     OH_AVCodecBufferAttr attr;
     bool audioIsEnd = false;
     int audioFrame = 0;
-
     const char *file = "/data/storage/el2/base/files/media/audio/M4A_48000_1.m4a";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
-
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
 
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -550,19 +546,18 @@ int DemuxerFunction1200()
     OH_AVCodecBufferAttr attr;
     bool audioIsEnd = false;
     int audioFrame = 0;
-
     const char *file = "/data/storage/el2/base/files/media/audio/AAC_48000_1.aac";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
 
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -602,19 +597,18 @@ int DemuxerFunction1300()
     OH_AVCodecBufferAttr attr;
     bool audioIsEnd = false;
     int audioFrame = 0;
-
     const char *file = "/data/storage/el2/base/files/media/audio/MP3_48000_1.mp3";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
 
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -654,19 +648,18 @@ int DemuxerFunction1400()
     OH_AVCodecBufferAttr attr;
     bool audioIsEnd = false;
     int audioFrame = 0;
-
     const char *file = "/data/storage/el2/base/files/media/audio/OGG_48000_1.ogg";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
 
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -706,19 +699,18 @@ int DemuxerFunction1500()
     OH_AVCodecBufferAttr attr;
     bool audioIsEnd = false;
     int audioFrame = 0;
-
     const char *file = "/data/storage/el2/base/files/media/audio/FLAC_48000_1.flac";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
 
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -758,19 +750,18 @@ int DemuxerFunction1600()
     OH_AVCodecBufferAttr attr;
     bool audioIsEnd = false;
     int audioFrame = 0;
-
     const char *file = "/data/storage/el2/base/files/media/audio/wav_48000_1.wav";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
 
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -873,7 +864,8 @@ int DemuxerFunction1900()
     if (demuxer == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 0) { return -1; }
 
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_INVALID_VAL) { return -1; }
@@ -1193,15 +1185,12 @@ int DemuxerFunction3400()
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
-
     sourceFormat = OH_AVSource_GetSourceFormat(source);
     if (sourceFormat == nullptr) { return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     cout << g_trackCount << "####################" << endl;
-
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
     }
@@ -1210,12 +1199,10 @@ int DemuxerFunction3400()
         close(fd);
         return -1;
     }
-
     int64_t endPts = 0;
     while (!isEnd) {
         for (int32_t index = 0; index < g_trackCount; index++) {
             if (OH_AVDemuxer_ReadSample(demuxer, index, memory, &attr) != AV_ERR_OK) { return -1; }
-
             if (static_cast<uint32_t>(index) != trackIndex) {
                 continue;
             }
@@ -1295,14 +1282,12 @@ int DemuxerFunction3600()
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
     if (sourceFormat == nullptr) { return -1; }
     if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     cout << g_trackCount << "####################" << endl;
-
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
     }
@@ -1311,7 +1296,6 @@ int DemuxerFunction3600()
         close(fd);
         return -1;
     }
-
     int64_t endPts = 0;
     while (!isEnd) {
         for (int32_t index = 0; index < g_trackCount; index++) {
@@ -1506,7 +1490,8 @@ int DemuxerFunction4200()
     if (demuxer == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
@@ -1547,12 +1532,11 @@ int DemuxerFunction4300()
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
-
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
@@ -1592,31 +1576,25 @@ int DemuxerFunction4400()
 {
     OH_AVCodecBufferAttr attr;
     const char *file = "/data/storage/el2/base/files/media/01_video_audio.mp4";
-
     int audioCount = 0;
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (source == nullptr) { return -1; }
-
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
-
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     for (int32_t index = 0; index < g_trackCount; index++) {
         if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
     }
     memory = OH_AVMemory_Create(size);
-    if (memory == nullptr) {
-        close(fd);
-        return -1;
-    }
+    if (memory == nullptr) { close(fd); return -1; }
     int pos = GetSecureRandomInt(250);
     cout << " pos= " << pos << endl;
-
     bool reachedPos = false;
     while (!reachedPos) {
         if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) { return -1; }
@@ -1631,7 +1609,6 @@ int DemuxerFunction4400()
         }
         audioCount++;
     }
-
     bool isEnd = false;
     while (!isEnd) {
         if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) { return -1; }
@@ -1688,6 +1665,7 @@ int DemuxerFunction7000()
     cout << OH_AVFormat_DumpInfo(trackFormat) << "trackformat1" << endl;
 
     trackFormat2 = OH_AVSource_GetTrackFormat(source, 0);
+    if (trackFormat2 == nullptr) { close(fd); return -1; }
     cout << OH_AVFormat_DumpInfo(trackFormat2) << "trackformat0" << endl;
     OH_AVFormat_Destroy(trackFormat2);
     trackFormat2 = nullptr;
@@ -1705,7 +1683,8 @@ int DemuxerFunction7100()
     if (source == nullptr) { return -1; }
 
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
     close(fd);
     return 0;
@@ -2052,7 +2031,8 @@ int SubMediaDemuxerFunction0200()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
     memory = OH_AVMemory_Create(size);
@@ -2086,7 +2066,8 @@ int SubMediaDemuxerFunction0300()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (sourceFormat == nullptr ||
+        !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
     if (g_trackCount != 1) { return -1; }
     if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
     memory = OH_AVMemory_Create(size);
@@ -2159,7 +2140,7 @@ int SubMediaDemuxerFunction1200()
     demuxer = OH_AVDemuxer_CreateWithSource(source);
     if (demuxer == nullptr) { return -1; }
     sourceFormat = OH_AVSource_GetSourceFormat(source);
-    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount)) ||
+    if (sourceFormat == nullptr || !(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount)) ||
         g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
 
     for (int32_t index = 0; index < g_trackCount; index++) {
@@ -2220,3 +2201,5 @@ int SubMediaDemuxerFunction1300()
     close(fd);
     return 0;
 }
+
+void InitFuncTest() {}

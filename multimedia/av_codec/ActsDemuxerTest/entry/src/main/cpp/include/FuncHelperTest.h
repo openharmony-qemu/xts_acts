@@ -21,16 +21,21 @@
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmemory.h>
+#include <multimedia/player_framework/native_avbuffer.h>
 #include <cstdint>
 #include <string>
 
-// 全局变量声明
 extern OH_AVSource *source;
 extern OH_AVDemuxer *demuxer;
 extern OH_AVFormat *sourceFormat;
 extern OH_AVFormat *trackFormat;
 extern OH_AVMemory *memory;
 extern int32_t g_trackCount;
+extern OH_AVBuffer *avBuffer;
+extern bool g_initResult;
+extern bool g_isRefult;
+extern int32_t g_unselect;
+extern int g_testFd;
 
 // 结构体：封装双轨道处理参数
 struct DualTrackParams {
@@ -114,16 +119,6 @@ constexpr int64_t TIME_TOLERANCE_40000 = 40000;
 constexpr int EXPECTED_TRACK_COUNT_THREE = 3;
 constexpr int EXPECTED_AUDIO_TRACK_COUNT_TWO = 2;
 
-struct wavParamInfo {
-    const char *file;
-    int fd;
-    int audioFrameNum;
-    int audioKeyNum;
-    OH_AVSeekMode seekMode;
-    int64_t seekTime;
-    bool isSeek;
-};
-
 // 辅助函数声明
 int64_t GetFileSize(const char *fileName);
 int GetSecureRandomInt(int max);
@@ -145,6 +140,17 @@ int ValidateSkipData(uint8_t *addr, size_t buffSize, int audioFrame, uint8_t *ex
 void CleanupSkipSampleResources(OH_AVFormat *format, int fd);
 int ValidateMp3SkipData(SkipSampleValidationParams &params, OH_AVFormat *format);
 int ValidateOggSkipData(SkipSampleValidationParams &params, OH_AVFormat *format);
+
+struct wavParamInfo {
+    const char *file;
+    int fd;
+    int audioFrameNum;
+    int audioKeyNum;
+    OH_AVSeekMode seekMode;
+    int64_t seekTime;
+    bool isSeek;
+};
+
 int OpenFile(const char *fileName, int fd, OH_AVSource **src, OH_AVDemuxer **audioDemuxer);
 int CheckTrackCount(OH_AVFormat **srcFormat, OH_AVSource *src, int32_t *trackCount, int trackNum);
 int CheckTrackSelect(int32_t trackCount, OH_AVDemuxer *audioDemuxer);
