@@ -146,7 +146,8 @@ export default function OhosArkuiObserverTest(): void {
      */
     it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const driver: Driver = Driver.create();
+        const driver: Driver = await Driver.create();
+        await Utils.sleep(SLEEP);
         await globalOnAndInput(driver, 'evt_id');
         const comp: Component = (await driver.findComponent(
           ON.id('observer_global_TextChangeEventInfo_id')
@@ -170,7 +171,8 @@ export default function OhosArkuiObserverTest(): void {
      */
     it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const driver: Driver = Driver.create();
+        const driver: Driver = await Driver.create();
+        await Utils.sleep(SLEEP);
         await globalOnAndInput(driver, 'evt_uid');
         const comp: Component = (await driver.findComponent(
           ON.id('observer_global_TextChangeEventInfo_uniqueId')
@@ -194,7 +196,8 @@ export default function OhosArkuiObserverTest(): void {
      */
     it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const driver: Driver = Driver.create();
+        const driver: Driver = await Driver.create();
+        await Utils.sleep(SLEEP);
         await globalOnAndInput(driver, 'evt_content_body');
         const comp: Component = (await driver.findComponent(ON.id('globalOutputTextInput'))) as Component;
         expect((await comp.getText())).assertEqual('global:evt_content_body');
@@ -216,7 +219,8 @@ export default function OhosArkuiObserverTest(): void {
      */
     it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Id_Local_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const driver: Driver = Driver.create();
+        const driver: Driver = await Driver.create();
+        await Utils.sleep(SLEEP);
         await localOnAndInput(driver, 'lid_probe');
         const comp: Component = (await driver.findComponent(
           ON.id('observer_local_TextChangeEventInfo_id')
@@ -240,7 +244,8 @@ export default function OhosArkuiObserverTest(): void {
      */
     it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Unique_Id_Local_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const driver: Driver = Driver.create();
+        const driver: Driver = await Driver.create();
+        await Utils.sleep(SLEEP);
         await localOnAndInput(driver, 'luid_probe');
         const comp: Component = (await driver.findComponent(
           ON.id('observer_local_TextChangeEventInfo_uniqueId')
@@ -264,7 +269,8 @@ export default function OhosArkuiObserverTest(): void {
      */
     it('SUB_ArkUI_OhosArkuiObserver_Text_Change_Event_Info_Content_Local_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const driver: Driver = Driver.create();
+        const driver: Driver = await Driver.create();
+        await Utils.sleep(SLEEP);
         await localOnAndInput(driver, 'evt_content_local');
         const comp: Component = (await driver.findComponent(ON.id('localOutputTextInput'))) as Component;
         expect((await comp.getText())).assertEqual('local:evt_content_local');
@@ -287,7 +293,8 @@ export default function OhosArkuiObserverTest(): void {
     it('SUB_ArkUI_OhosArkuiObserver_Text_Input_Observer_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[textInputObserverTest_0010] START');
       try {
-        const driver: Driver = Driver.create();
+        const driver: Driver = await Driver.create();
+        await Utils.sleep(SLEEP);
         const globalObserverOpenButton: Component = (await driver.findComponent(
           ON.id('全局监听(开)')
         )) as Component;
