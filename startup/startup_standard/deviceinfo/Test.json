@@ -10,7 +10,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsStartupSysDeviceInfoTest.hap"
+                "ActsStartupDeviceInfoTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
