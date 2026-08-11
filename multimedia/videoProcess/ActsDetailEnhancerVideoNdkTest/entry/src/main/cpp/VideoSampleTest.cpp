@@ -142,13 +142,25 @@ int32_t VideoSample::InputFunc()
 {
     for (int i = 0; i < INPUT_FRAME_NUMBER; i++) {
         int fenceFd = -1;
-        OHNativeWindowBuffer* ohNativeWindowBuffer;
-        OH_NativeWindow_NativeWindowRequestBuffer(inWindow_, &ohNativeWindowBuffer, &fenceFd);
+        OHNativeWindowBuffer* ohNativeWindowBuffer = nullptr;
+
+        int32_t err = OH_NativeWindow_NativeWindowRequestBuffer(
+            inWindow_, &ohNativeWindowBuffer, &fenceFd);
+        if (err != 0 || ohNativeWindowBuffer == nullptr) {
+            break;
+        }
+
         if (fenceFd > 0) {
             close(fenceFd);
         }
+
         OH_NativeBuffer* nativeBuffer = nullptr;
-        OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
+
+        err = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
+        if (err != 0) {
+            break;
+        }
+
         OH_NativeWindow_NativeWindowFlushBuffer(inWindow_, ohNativeWindowBuffer, -1, region_);
     }
     return 0;
