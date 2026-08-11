@@ -16,13 +16,6 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 
-class CustomError extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = "CustomError"
-  }
-}
-
 class TestData {
   name: string = ""
   value: number = 0
@@ -76,14 +69,16 @@ export default function BuiltinsPromiseFinallyTest(): void  {
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let p2 = Promise.reject(new Error("fail"))
+      let reason = new Error("fail")
+      let executed = false
+      let p2 = Promise.reject(reason)
       try {
-        await p2.finally()
+        await p2.finally(() => { executed = true })
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(reason)
       }
+      expect(executed).assertTrue()
       Done();
     })
 
@@ -116,7 +111,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let p = Promise.resolve("value")
       let result = await p.finally(() => {
-        return undefined
+        return "ignored"
       })
       expect(result).assertEqual("value")
       Done();
@@ -132,27 +127,37 @@ export default function BuiltinsPromiseFinallyTest(): void  {
      */
     it('PromiseFinallyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let p1 = Promise.resolve("original")
-      let result1 = await p1.finally(() => "ignored")
+      let cleanupCompleted = false
+      let result1 = await p1.finally(() => {
+        return new Promise<string>((resolve: (value: string) => void): void => {
+          setTimeout(() => {
+            cleanupCompleted = true
+            resolve("ignored")
+          }, 100)
+        })
+      })
       expect(result1).assertEqual("original")
+      expect(cleanupCompleted).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest0600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_0600
-     * @tc.desc   onFinally returns rejected Promise, original Promise is rejected
+     * @tc.desc   onFinally returns rejected Promise, its rejection overrides the original rejection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let p2 = Promise.reject(new Error("error"))
+      let originalReason = new Error("original error")
+      let finallyReason = new Error("finally error")
+      let p2 = Promise.reject(originalReason)
       try {
-        await p2.finally(() => "ignored")
+        await p2.finally(() => Promise.reject(finallyReason))
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(finallyReason)
       }
       Done();
     })
@@ -160,25 +165,24 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest0700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_0700
-     * @tc.desc   onFinally throws synchronous error, original Promise is rejected
+     * @tc.desc   onFinally throws a synchronous error and the returned Promise rejects with that object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let executed = false
+      let finallyReason = new Error("sync error")
       let p = Promise.resolve("value")
-      // Testing finally returns a Promise that resolves after timer (Rule 1 exception).
-      // Timer creates async Promise to verify finally waits for returned Promise.
-      let result = await p.finally(() => {
-        return new Promise<string>((resolve: (value: string) => void, _reject: (reason: Error) => void): void => {
-          setTimeout(() => {
-            executed = true
-            resolve("done")
-          }, 50)
+      try {
+        await p.finally(() => {
+          executed = true
+          throw finallyReason
         })
-      })
-      expect(result).assertEqual("value")
+        expect().assertFail()
+      } catch (e) {
+        expect(e).assertEqual(finallyReason)
+      }
       expect(executed).assertTrue()
       Done();
     })
@@ -193,32 +197,29 @@ export default function BuiltinsPromiseFinallyTest(): void  {
      */
     it('PromiseFinallyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let p1 = Promise.resolve("value")
-      try {
-        await p1.finally(() => Promise.reject(new Error("finally error")))
-        expect().assertFail()
-      } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
-      }
+      let executed = false
+      let result = await p1.finally(() => { executed = true })
+      expect(result).assertEqual("value")
+      expect(executed).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest0900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_0900
-     * @tc.desc   Use regular function as onFinally
+     * @tc.desc   onFinally callback preserves the original rejection object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let p2 = Promise.reject(new Error("original error"))
+      let originalReason = new Error("original error")
+      let p2 = Promise.reject(originalReason)
       try {
-        await p2.finally(() => Promise.reject(new Error("finally error")))
+        await p2.finally(() => undefined)
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(originalReason)
       }
       Done();
     })
@@ -233,44 +234,45 @@ export default function BuiltinsPromiseFinallyTest(): void  {
      */
     it('PromiseFinallyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let p = Promise.resolve("value")
-      try {
-        await p.finally(() => {
-          throw new Error("sync error")
-        })
-        expect().assertFail()
-      } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
-      }
+      let executed = false
+      let result = await p.finally(async (): Promise<void> => {
+        await Promise.resolve<void>(undefined)
+        executed = true
+      })
+      expect(result).assertEqual("value")
+      expect(executed).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest1100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1100
-     * @tc.desc   Pass null as onFinally argument
+     * @tc.desc   Omit onFinally for a rejected Promise and preserve its rejection object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let result = await Promise.resolve("value").finally()
-      expect(result).assertEqual("value")
+      let reason = new Error("omitted callback")
+      try {
+        await Promise.reject(reason).finally()
+        expect().assertFail()
+      } catch (e) {
+        expect(e).assertEqual(reason)
+      }
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest1200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1200
-     * @tc.desc   Pass undefined as onFinally argument
+     * @tc.desc   Pass undefined as onFinally and preserve the fulfilled value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let cleanup: () => void = (): void => {
-      };
-      let result = await Promise.resolve("value").finally(cleanup)
+      let result = await Promise.resolve("value").finally(undefined)
       expect(result).assertEqual("value")
       Done();
     })
@@ -278,7 +280,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest1300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1300
-     * @tc.desc   Pass non-function type triggers type error
+     * @tc.desc   onFinally waits for a fulfilled Promise and preserves the original value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -290,7 +292,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
           setTimeout(() => {
             executed = true
             resolve("done")
-          }, 50)
+          }, 100)
         })
       })
       expect(result).assertEqual("value")
@@ -301,47 +303,41 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest1400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1400
-     * @tc.desc   Rejected Promise calls finally, error keeps original error
+     * @tc.desc   Rejected Promise calls finally with undefined and keeps the original error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseFinallyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let p = Promise.resolve("value")
-      let result = await p.finally(undefined)
-      expect(result).assertEqual("value")
+      let reason = new Error("original error")
+      try {
+        await Promise.reject(reason).finally(undefined)
+        expect().assertFail()
+      } catch (e) {
+        expect(e).assertEqual(reason)
+      }
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest1500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1500
-     * @tc.desc   finally returns Promise supporting chain call
+     * @tc.desc   finally returns a Promise supporting a subsequent then call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseFinallyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let p = Promise.resolve("value")
-      let caught = false
-      let errorCaught: boolean = false
-      try {
-        await p.finally("not a function" as Object as () => void)
-      } catch (e) {
-        caught = true
-        if (e instanceof Error) {
-          errorCaught = true
-        }
-      }
-      expect(errorCaught).assertTrue()
-      expect(caught).assertTrue()
+      let result = await p.finally(() => undefined).then<string>((value: string) => value + " chained")
+      expect(result).assertEqual("value chained")
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest1600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1600
-     * @tc.desc   Chain call then after finally
+     * @tc.desc   finally preserves a resolved Promise value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -356,19 +352,19 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest1700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1700
-     * @tc.desc   Chain call catch after finally
+     * @tc.desc   try-catch observes rejection after finally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let p = Promise.reject(new Error("original error"))
+      let reason = new Error("original error")
+      let p = Promise.reject(reason)
       try {
         await p.finally(() => {})
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(reason)
       }
       Done();
     })
@@ -376,7 +372,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest1800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1800
-     * @tc.desc   Promise resolve null, finally keeps null value
+     * @tc.desc   Multiple finally callbacks execute sequentially and preserve the value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -394,7 +390,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest1900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_1900
-     * @tc.desc   Promise resolve undefined, finally keeps undefined value
+     * @tc.desc   then executes after finally and receives the preserved value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -403,7 +399,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
       let order: string[] = []
       let result = await Promise.resolve("value")
         .finally(() => { order.push("finally") })
-        .then((v) => { order.push("then"); return v })
+        .then((v) => { expect(v).assertEqual("value"); order.push("then"); return v })
       expect(result).assertEqual("value")
       expect(order[0]).assertEqual("finally")
       expect(order[1]).assertEqual("then")
@@ -413,18 +409,21 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2000
-     * @tc.desc   Promise resolve 0, finally keeps 0 value
+     * @tc.desc   finally executes before catch on a rejected Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let order: string[] = []
-      try {
-        await Promise.reject(new Error("error"))
+      let reason = new Error("error")
+       try {
+         await Promise.reject(reason)
           .finally(() => { order.push("finally") })
-          .catch((e) => { order.push("catch"); throw e })
-      } catch (e) {
+           .catch((e) => { order.push("catch"); throw e })
+         expect().assertFail()
+       } catch (e) {
+        expect(e).assertEqual(reason)
         expect(order[0]).assertEqual("finally")
         expect(order[1]).assertEqual("catch")
       }
@@ -434,7 +433,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2100
-     * @tc.desc   Promise resolve false, finally keeps false value
+     * @tc.desc   Promise resolve null, finally keeps null value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -448,7 +447,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2200
-     * @tc.desc   Promise resolve empty string, finally keeps empty string
+     * @tc.desc   Promise resolve undefined, finally keeps undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -462,7 +461,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2300
-     * @tc.desc   Promise resolve object, finally keeps object reference
+     * @tc.desc   Promise resolve zero, finally keeps zero value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -476,7 +475,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2400
-     * @tc.desc   Promise resolve array, finally keeps array
+     * @tc.desc   Promise resolve false, finally keeps false value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -490,7 +489,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2500
-     * @tc.desc   finally returns Promise type Promise<Awaited<T>>
+     * @tc.desc   Promise resolve empty string, finally keeps empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -504,7 +503,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2600
-     * @tc.desc   finally keeps original Promise generic type
+     * @tc.desc   Promise resolve object, finally keeps object reference and fields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -512,6 +511,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let obj = new TestData("test", 123)
       let result = await Promise.resolve(obj).finally(() => {})
+      expect(result).assertEqual(obj)
       expect(result.value).assertEqual(123)
       Done();
     })
@@ -519,7 +519,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest2700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2700
-     * @tc.desc   Promise<Promise<T>> is flattened to Promise<T>
+     * @tc.desc   Promise resolve array, finally keeps all array values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -527,14 +527,14 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let arr = [1, 2, 3]
       let result = await Promise.resolve(arr).finally(() => {})
-      expect(result.length).assertEqual(3)
+      expect(result).assertDeepEquals([1, 2, 3])
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest2800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2800
-     * @tc.desc   Multiple finally execute sequentially, final value unchanged
+     * @tc.desc   finally keeps the original Promise generic string value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -543,14 +543,14 @@ export default function BuiltinsPromiseFinallyTest(): void  {
       let p: Promise<string> = Promise.resolve("value")
       let result: Promise<string> = p.finally(() => {})
       let value: string = await result
-      expect(typeof value === "string").assertTrue()
+      expect(value).assertEqual("value")
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest2900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_2900
-     * @tc.desc   Throw Error in finally, overrides original Promise state
+     * @tc.desc   finally preserves number and boolean fulfilled values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -558,17 +558,17 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let p1: Promise<number> = Promise.resolve(123.0)
       let result1: number = await p1.finally(() => {})
-      expect(typeof result1 === "number").assertTrue()
+      expect(result1).assertEqual(123.0)
       let p2: Promise<boolean> = Promise.resolve(true)
       let result2: boolean = await p2.finally(() => {})
-      expect(typeof result2 === "boolean").assertTrue()
+      expect(result2).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest3000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_3000
-     * @tc.desc   finally returns rejected Promise, overrides original Promise state
+     * @tc.desc   Nested Promise fulfillment is flattened and preserved through finally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -583,7 +583,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest3100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_3100
-     * @tc.desc   Resolved Promise rejected by finally error
+     * @tc.desc   Multiple finally callbacks execute sequentially and preserve a fulfilled value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -604,21 +604,21 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest3200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_3200
-     * @tc.desc   Rejected Promise overridden by new finally error
+     * @tc.desc   A thrown finally error overrides a fulfilled Promise value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let p = Promise.resolve("value")
+      let reason = new Error("finally error")
       try {
         await p.finally(() => {
-          throw new Error("finally error")
+          throw reason
         })
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(reason)
       }
       Done();
     })
@@ -633,14 +633,14 @@ export default function BuiltinsPromiseFinallyTest(): void  {
      */
     it('PromiseFinallyTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let p = Promise.resolve("value")
+      let reason = new Error("async finally error")
       try {
         await p.finally(() => {
-          return Promise.reject(new Error("async finally error"))
+          return Promise.reject(reason)
         })
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(reason)
       }
       Done();
     })
@@ -648,20 +648,20 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest3400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_3400
-     * @tc.desc   async function error in finally is caught
+     * @tc.desc   A synchronous error thrown by finally is caught with object identity preserved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let reason = new Error("override")
       try {
         await Promise.resolve("ok").finally(() => {
-          throw new Error("override")
+          throw reason
         })
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(reason)
       }
       Done();
     })
@@ -675,14 +675,15 @@ export default function BuiltinsPromiseFinallyTest(): void  {
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let originalReason = new Error("original")
+      let finallyReason = new Error("override")
       try {
-        await Promise.reject(new Error("original")).finally(() => {
-          throw new Error("override")
+        await Promise.reject(originalReason).finally(() => {
+          throw finallyReason
         })
         expect().assertFail()
       } catch (e) {
-        let err = e
-        expect(err instanceof Error).assertTrue()
+        expect(e).assertEqual(finallyReason)
       }
       Done();
     })
@@ -690,7 +691,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest3600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_3600
-     * @tc.desc   async function returned Promise calls finally
+     * @tc.desc   A finally error is observable by a subsequent catch callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -730,7 +731,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest3800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_3800
-     * @tc.desc   finally execution order in complex Promise chain
+     * @tc.desc   finally executes on a fulfilled Promise without changing success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -752,7 +753,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest3900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_3900
-     * @tc.desc   finally in rejected Promise chain
+     * @tc.desc   An async fulfilled Promise executes finally cleanup and preserves its value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -773,7 +774,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4000
-     * @tc.desc   Promise in Promise.all calls finally
+     * @tc.desc   finally waits for its returned Promise before preserving the fulfilled value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -785,7 +786,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
           setTimeout(() => {
             cleaned = true
             resolve("done")
-          }, 50)
+          }, 100)
         })
       })
       expect(result).assertEqual("value")
@@ -796,18 +797,19 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4100
-     * @tc.desc   Promise in Promise.race calls finally
+     * @tc.desc   finally callbacks execute in order within a then/finally chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let order: string[] = []
-      await Promise.resolve(1)
-        .then((v) => { order.push("then1"); return v + 1 })
+      let result = await Promise.resolve(1)
+        .then((v) => { expect(v).assertEqual(1); order.push("then1"); return v + 1 })
         .finally(() => { order.push("finally1") })
-        .then((v) => { order.push("then2"); return v + 1 })
+        .then((v) => { expect(v).assertEqual(2); order.push("then2"); return v + 1 })
         .finally(() => { order.push("finally2") })
+      expect(result).assertEqual(3)
       expect(order[0]).assertEqual("then1")
       expect(order[1]).assertEqual("finally1")
       expect(order[2]).assertEqual("then2")
@@ -818,18 +820,21 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4200
-     * @tc.desc   finally returns Promise<Promise>, flattened
+     * @tc.desc   Multiple finally callbacks execute in order on a rejected Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseFinallyTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let order: string[] = []
+      let reason = new Error("error")
       try {
-        await Promise.reject(new Error("error"))
+        await Promise.reject(reason)
           .finally(() => { order.push("finally1") })
           .finally(() => { order.push("finally2") })
+        expect().assertFail()
       } catch (e) {
+        expect(e).assertEqual(reason)
         expect(order[0]).assertEqual("finally1")
         expect(order[1]).assertEqual("finally2")
       }
@@ -839,7 +844,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4300
-     * @tc.desc   Multiple Promise instances share same finally callback
+     * @tc.desc   Multiple Promise instances each execute a finally callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -861,7 +866,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4400
-     * @tc.desc   Multiple finally modify shared state
+     * @tc.desc   Promise.race returns the first value while all finally callbacks update shared state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -893,7 +898,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4500
-     * @tc.desc   Outer Promise resolves inner Promise, finally execution order
+     * @tc.desc   A fulfilled Promise returned by finally is flattened and the original value is preserved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -909,7 +914,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4600
-     * @tc.desc   Three-level Promise nesting, each with finally
+     * @tc.desc   Multiple Promises share one finally callback and each invokes it once
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -931,7 +936,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4700
-     * @tc.desc   Execute Promise after setTimeout delay, finally ensures cleanup
+     * @tc.desc   Promise.all waits for two finally callbacks that update shared state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -949,7 +954,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4800
-     * @tc.desc   setTimeout delayed reject, finally still executes
+     * @tc.desc   finally executes after nested async functions complete and preserves their result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -984,7 +989,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest4900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_4900
-     * @tc.desc   finally callback uses Timer internally
+     * @tc.desc   Multiple finally callbacks execute after a three-level async call chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1016,7 +1021,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest5000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_5000
-     * @tc.desc   Multiple Promises execute sequentially, each with finally
+     * @tc.desc   A delayed fulfilled Promise executes finally cleanup and preserves its result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1038,7 +1043,7 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     /**
      * @tc.name   PromiseFinallyTest5100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_5100
-     * @tc.desc   Verify EAWorker.run callback nested Promise.finally cleanup
+     * @tc.desc   Verify EAWorker numeric result is transformed and preserved through finally cleanup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1046,19 +1051,20 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('finallyWorker')
       eaWorker.start()
-      let cleanupExecuted = false
-
-      let job = eaWorker.run<int>(() => {
-        return 42
-      })
-      let baseValue = job.Await()
-
-      let result = await Promise.resolve<number>(baseValue)
-        .then<number>((v: number) => v * 2)
-        .then<number>((v: number) => { cleanupExecuted = true; return v })
-      expect(result).assertEqual(84)
-      expect(cleanupExecuted).assertTrue()
-      await eaWorker.join()
+      try {
+        let cleanupExecuted = false
+        let job = eaWorker.run<number>((): number => {
+          return 42.0
+        })
+        let baseValue = job.Await()
+        let result = await Promise.resolve<number>(baseValue)
+          .then<number>((v: number) => v * 2)
+          .finally(() => { cleanupExecuted = true })
+        expect(result).assertEqual(84)
+        expect(cleanupExecuted).assertTrue()
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
@@ -1073,27 +1079,28 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('chainFinallyWorker')
       eaWorker.start()
-      let finalCleanup = false
-
-      let job = eaWorker.run<string>(() => {
-        return "recovered"
-      })
-      let workerResult = job.Await()
-
-      let result = await Promise.reject<string>(new Error("test"))
-        .catch<string>((e: Error) => workerResult)
-        .then<string>((v: string) => v + " processed")
-        .then<string>((v: string) => { finalCleanup = true; return v })
-      expect(result).assertEqual("recovered processed")
-      expect(finalCleanup).assertTrue()
-      await eaWorker.join()
+      try {
+        let finalCleanup = false
+        let job = eaWorker.run<string>(() => {
+          return "recovered"
+        })
+        let workerResult = job.Await()
+        let result = await Promise.reject<string>(new Error("test"))
+          .catch<string>((e: Error) => workerResult)
+          .then<string>((v: string) => v + " processed")
+          .finally(() => { finalCleanup = true })
+        expect(result).assertEqual("recovered processed")
+        expect(finalCleanup).assertTrue()
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest5300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_5300
-     * @tc.desc   Verify EAWorker.run callback nested Promise.finally cleanup
+     * @tc.desc   Verify EAWorker string result is preserved through finally cleanup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1101,24 +1108,26 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('msgFinallyWorker')
       eaWorker.start()
-      let msgCleanup = false
-
-      let job = eaWorker.run<string>((data: string): string => {
-        return data.toUpperCase()
-      }, "hello")
-      let workerResult = job.Await()
-
-      let result = await Promise.resolve<string>(workerResult)
-        .then<string>((v: string) => { msgCleanup = true; return v })
-      expect(msgCleanup).assertTrue()
-      await eaWorker.join()
+      try {
+        let msgCleanup = false
+        let job = eaWorker.run<string>((data: string): string => {
+          return data.toUpperCase()
+        }, "hello")
+        let workerResult = job.Await()
+        let result = await Promise.resolve<string>(workerResult)
+          .finally(() => { msgCleanup = true })
+        expect(result).assertEqual("HELLO")
+        expect(msgCleanup).assertTrue()
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest5400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_5400
-     * @tc.desc   Verify EAWorker.run callback nested Promise.finally
+     * @tc.desc   Verify EAWorker result is unchanged after Promise.finally cleanup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1126,26 +1135,26 @@ export default function BuiltinsPromiseFinallyTest(): void  {
     it('PromiseFinallyTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('finallyWorker')
       eaWorker.start()
-
-      let cleanupDone = false
-      let job = eaWorker.run<string>(() => {
-        return "worker-result"
-      })
-      let workerResult = job.Await()
-
-      let result = await Promise.resolve<string>(workerResult)
-        .then<string>((v: string) => { cleanupDone = true; return v })
-      expect(cleanupDone).assertTrue()
-      expect(result).assertEqual("worker-result")
-
-      await eaWorker.join()
+      try {
+        let cleanupDone = false
+        let job = eaWorker.run<string>(() => {
+          return "worker-result"
+        })
+        let workerResult = job.Await()
+        let result = await Promise.resolve<string>(workerResult)
+          .finally(() => { cleanupDone = true })
+        expect(cleanupDone).assertTrue()
+        expect(result).assertEqual("worker-result")
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 
     /**
      * @tc.name   PromiseFinallyTest5500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_FINALLY_TEST_5500
-     * @tc.desc   Verify EAWorker.run callback nested Promise.finally
+     * @tc.desc   Verify EAWorker result drives three Promise.finally callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1154,19 +1163,21 @@ export default function BuiltinsPromiseFinallyTest(): void  {
       let processedCount = new AtomicInt(0)
       let eaWorker = new EAWorker('msgFinallyWorker')
       eaWorker.start()
-
-      let job = eaWorker.run<int>((m1: string, m2: string, m3: string): int => {
-        return 3
-      }, "msg1", "msg2", "msg3")
-      let workerResult = job.Await()
-
-      let p1 = Promise.resolve<string>("msg1").then<void>(() => { processedCount.fetchAdd(1) })
-      let p2 = Promise.resolve<string>("msg2").then<void>(() => { processedCount.fetchAdd(1) })
-      let p3 = Promise.resolve<string>("msg3").then<void>(() => { processedCount.fetchAdd(1) })
-      await Promise.all<void>([p1, p2, p3])
-      expect(processedCount.load()).assertEqual(3)
-
-      await eaWorker.join()
+      try {
+        let job = eaWorker.run<number>((m1: string, m2: string, m3: string): number => {
+          return 3.0
+        }, "msg1", "msg2", "msg3")
+        let workerResult = job.Await()
+        let p1 = Promise.resolve<string>("msg1").finally(() => { processedCount.fetchAdd(1) })
+        let p2 = Promise.resolve<string>("msg2").finally(() => { processedCount.fetchAdd(1) })
+        let p3 = Promise.resolve<string>("msg3").finally(() => { processedCount.fetchAdd(1) })
+        let values = await Promise.all<string>([p1, p2, p3])
+        expect(workerResult).assertEqual(3)
+        expect(values).assertDeepEquals(["msg1", "msg2", "msg3"])
+        expect(processedCount.load()).assertEqual(3)
+      } finally {
+        eaWorker.join().Await()
+      }
       Done();
     })
 

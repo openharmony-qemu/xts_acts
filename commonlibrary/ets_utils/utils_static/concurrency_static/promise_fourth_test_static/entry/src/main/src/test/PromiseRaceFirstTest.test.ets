@@ -34,44 +34,38 @@ interface NestedData {
 }
 
 class SyncStringPromiseLike implements PromiseLike<string> {
-  value: string
+  private promise: Promise<string>
   constructor(value: string) {
-    this.value = value
+    this.promise = Promise.resolve<string>(value)
   }
-  then<U, E>(onFulfilled?: (value: string) => U | PromiseLike<U>, onRejected?: (error: Error) => E | PromiseLike<E>): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onFulfilled) {
-      const result = onFulfilled(this.value)
-      return result as PromiseLike<Awaited<U> | Awaited<E>>
-    }
-    return this as PromiseLike<Awaited<U> | Awaited<E>>
+  then<U = string, E = never>(onFulfilled: (value: string) => U | PromiseLike<U>, onRejected?: (error: Error) => E | PromiseLike<E>): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
   }
 }
 
 class ErrorStringPromiseLike implements PromiseLike<string> {
-  error: Error
+  private promise: Promise<string>
   constructor(error: Error) {
-    this.error = error
+    this.promise = Promise.reject<string>(error)
   }
-  then<U, E>(onFulfilled?: (value: string) => U | PromiseLike<U>, onRejected?: (error: Error) => E | PromiseLike<E>): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onRejected) {
-      const result = onRejected(this.error)
-      return result as PromiseLike<Awaited<U> | Awaited<E>>
-    }
-    return this as PromiseLike<Awaited<U> | Awaited<E>>
+  then<U = string, E = never>(onFulfilled: (value: string) => U | PromiseLike<U>, onRejected?: (error: Error) => E | PromiseLike<E>): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
   }
 }
 
 class SyncNumberPromiseLike implements PromiseLike<number> {
-  value: number
+  private promise: Promise<number>
   constructor(value: number) {
-    this.value = value
+    this.promise = Promise.resolve<number>(value)
   }
-  then<U, E>(onFulfilled?: (value: number) => U | PromiseLike<U>, onRejected?: (error: Error) => E | PromiseLike<E>): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onFulfilled) {
-      const result = onFulfilled(this.value)
-      return result as PromiseLike<Awaited<U> | Awaited<E>>
-    }
-    return this as PromiseLike<Awaited<U> | Awaited<E>>
+  then<U = number, E = never>(onFulfilled: (value: number) => U | PromiseLike<U>, onRejected?: (error: Error) => E | PromiseLike<E>): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
+  }
+}
+
+function clearRaceTimers(timerIds: int[]): void {
+  for (let i = 0; i < timerIds.length; i++) {
+    clearTimeout(timerIds[i])
   }
 }
 
@@ -112,7 +106,7 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_0200
-     * @tc.desc   Verify Promise.race ignores extra arguments
+     * @tc.desc   Verify Promise.race returns the first value from resolved inputs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -191,11 +185,16 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let result2 = await Promise.race<string>([
-        new Promise<string>(resolve => { setTimeout(() => resolve("fast"), 100) }),
-        new Promise<string>(resolve => { setTimeout(() => resolve("slow"), 200) })
-      ])
-      expect(result2).assertEqual("fast")
+      let timerIds: int[] = []
+      try {
+        let result2 = await Promise.race<string>([
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("fast"), 100)) }),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("slow"), 200)) })
+        ])
+        expect(result2).assertEqual("fast")
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -281,13 +280,18 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let result = await Promise.race<string|undefined>([
-        "direct",
-        Promise.resolve("promise"),
-        undefined,
-        new Promise<string>(resolve => { setTimeout(() => resolve("delayed"), 200) })
-      ])
-      expect(result).assertEqual("direct")
+      let timerIds: int[] = []
+      try {
+        let result = await Promise.race<string|undefined>([
+          "direct",
+          Promise.resolve("promise"),
+          undefined,
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("delayed"), 200)) })
+        ])
+        expect(result).assertEqual("direct")
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -301,16 +305,19 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      */
     it('PromiseRaceFirstTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let emptyRace = Promise.race<never>([])
-      let timeoutPromise = new Promise<string>((_, reject) => {
-        setTimeout(() => reject(new Error("timeout")), 500)
-      })
+      let timeoutError = new Error("timeout")
+      let timerId: int = 0
       let caught: boolean = false
       try {
-        await Promise.race<string>([emptyRace as Promise<string>, timeoutPromise])
-        expect().assertFail()
+        await Promise.race<string>([emptyRace, new Promise<string>((_, reject) => {
+          timerId = setTimeout(() => reject(timeoutError), 500)
+        })])
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(timeoutError)
+      } finally {
+        clearTimeout(timerId)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -353,12 +360,13 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      */
     it('PromiseRaceFirstTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let caught: boolean = false
+      let expectedError = new Error("single error")
       try {
-        await Promise.race<string>([Promise.reject(new Error("single error"))])
-        expect().assertFail()
+        await Promise.race<string>([Promise.reject(expectedError)])
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -398,68 +406,57 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest2000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_2000
-     * @tc.desc   Verify Promise.race with null iterable throws error
+     * @tc.desc   Verify Promise.race with an array values iterator returns its first value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let caught: boolean = false
-      try {
-        await Promise.race<string>(null as Object as PromiseLike<string>[])
-        expect().assertFail()
-      } catch (error) {
-      caught = true
-}
-      expect(caught).assertTrue()
+      let values: string[] = ["iterator-first", "iterator-second"]
+      let result = await Promise.race<string>(values.values())
+      expect(result).assertEqual("iterator-first")
       Done();
     })
 
     /**
      * @tc.name   PromiseRaceFirstTest2100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_2100
-     * @tc.desc   Verify Promise.race with non-array iterable throws error
+     * @tc.desc   Verify Promise.race accepts a string iterable and returns its first character
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let caught: boolean = false
-      try {
-        await Promise.race<string>("not an array" as Object as PromiseLike<string>[])
-        expect().assertFail()
-      } catch (error) {
-      caught = true
-}
-      expect(caught).assertTrue()
+      let result = await Promise.race<string>("race")
+      expect(result).assertEqual("r")
       Done();
     })
 
     /**
      * @tc.name   PromiseRaceFirstTest2200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_2200
-     * @tc.desc   Verify Promise.race with mixed number and Promise returns number type
+     * @tc.desc   Verify Promise.race with mixed number and Promise returns the first number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let result1 = await Promise.race<number>([1.0, 2.0, Promise.resolve(3.0)])
-      expect(typeof result1 === "number").assertTrue()
+      expect(result1).assertEqual(1)
       Done();
     })
 
     /**
      * @tc.name   PromiseRaceFirstTest2300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_2300
-     * @tc.desc   Verify Promise.race with mixed string and Promise returns string type
+     * @tc.desc   Verify Promise.race with mixed string and Promise returns the first string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let result2 = await Promise.race<string>(["a", Promise.resolve("b")])
-      expect(typeof result2 === "string").assertTrue()
+      expect(result2).assertEqual("a")
       Done();
     })
 
@@ -486,12 +483,17 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let result = await Promise.race<string>([
-        new Promise<string>(resolve => { setTimeout(() => resolve("first"), 100) }),
-        new Promise<string>(resolve => { setTimeout(() => resolve("second"), 200) }),
-        new Promise<string>(resolve => { setTimeout(() => resolve("third"), 300) })
-      ])
-      expect(result).assertEqual("first")
+      let timerIds: int[] = []
+      try {
+        let result = await Promise.race<string>([
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("first"), 100)) }),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("second"), 200)) }),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("third"), 300)) })
+        ])
+        expect(result).assertEqual("first")
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -504,11 +506,16 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let result2 = await Promise.race<number>([
-        Promise.resolve(1.0),
-        new Promise<number>(resolve => { setTimeout(() => resolve(2.0), 100) })
-      ])
-      expect(result2).assertEqual(1)
+      let timerIds: int[] = []
+      try {
+        let result2 = await Promise.race<number>([
+          Promise.resolve(1.0),
+          new Promise<number>((resolve: (value: number) => void) => { timerIds.push(setTimeout(() => resolve(2.0), 100)) })
+        ])
+        expect(result2).assertEqual(1)
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -521,16 +528,20 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let timerIds: int[] = []
+      let expectedError = new Error("error1")
       let caught: boolean = false
       try {
         await Promise.race<string>([
-          new Promise<string>((_, reject) => { setTimeout(() => reject(new Error("error1")), 100) }),
-          new Promise<string>(resolve => { setTimeout(() => resolve("success"), 200) })
+          new Promise<string>((_, reject) => { timerIds.push(setTimeout(() => reject(expectedError), 100)) }),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("success"), 200)) })
         ])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -544,16 +555,20 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let timerIds: int[] = []
+      let expectedError = new Error("immediate error")
       let caught: boolean = false
       try {
         await Promise.race<number>([
-          Promise.reject(new Error("immediate error")),
-          new Promise<number>(resolve => { setTimeout(() => resolve(42), 100) })
+          Promise.reject<number>(expectedError),
+          new Promise<number>((resolve: (value: number) => void) => { timerIds.push(setTimeout(() => resolve(42.0), 100)) })
         ])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -651,7 +666,7 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest3500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_3500
-     * @tc.desc   Verify Promise.race returns Promise instance
+     * @tc.desc   Verify Promise.race returns the resolved value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -806,15 +821,16 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("standard error")
       let caught: boolean = false
       try {
         await Promise.race<string>([
-          Promise.reject(new Error("standard error")),
+          Promise.reject(expectedError),
           Promise.resolve("success")
         ])
-        expect().assertFail()
       } catch (error) {
         caught = true
+        expect(error).assertEqual(expectedError)
       }
       expect(caught).assertTrue()
       Done();
@@ -829,16 +845,20 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let timerIds: int[] = []
+      let expectedError = new CustomError("custom error")
       let caught: boolean = false
       try {
         await Promise.race<string>([
-          Promise.reject(new CustomError("custom error")),
-          new Promise<string>(resolve => { setTimeout(() => resolve("delayed"), 200) })
+          Promise.reject(expectedError),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("delayed"), 200)) })
         ])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -846,22 +866,26 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest4700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_4700
-     * @tc.desc   Verify Promise.race with non-Error reject reason
+     * @tc.desc   Verify Promise.race propagates the fixed rejection Error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('PromiseRaceFirstTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let timerIds: int[] = []
+      let expectedError = new Error("error string")
       let caught: boolean = false
       try {
         await Promise.race<string>([
-          Promise.reject(new Error("error string")),
-          new Promise<string>(resolve => { setTimeout(() => resolve("delayed"), 200) })
+          Promise.reject(expectedError),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("delayed"), 200)) })
         ])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -869,22 +893,23 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest4800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_4800
-     * @tc.desc   Verify Promise.race with reject and resolve, catch error message
+     * @tc.desc   Verify Promise.race with reject and resolve propagates the rejection Error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("error")
       let caught: boolean = false
       try {
-        let result = await Promise.race<string>([
-          Promise.reject(new Error("error")),
+        await Promise.race<string>([
+          Promise.reject(expectedError),
           Promise.resolve("success")
         ])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -899,18 +924,20 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      */
     it('PromiseRaceFirstTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let finallyExecuted = false
+      let expectedError = new Error("error")
       let caught: boolean = false
       try {
         await Promise.race<string>([
-          Promise.reject(new Error("error")),
+          Promise.reject(expectedError),
           Promise.resolve("success")
         ])
       } catch (error) {
-      caught = true
-} finally {
-      expect(caught).assertTrue()
+        caught = true
+        expect(error).assertEqual(expectedError)
+      } finally {
         finallyExecuted = true
       }
+      expect(caught).assertTrue()
       expect(finallyExecuted).assertTrue()
       Done();
     })
@@ -918,21 +945,22 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest5000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_5000
-     * @tc.desc   Verify Promise.race with instanceof Error check in catch
+     * @tc.desc   Verify Promise.race catch receives the original Error instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("test error")
       let caught: boolean = false
       try {
         await Promise.race<string>([
-          Promise.reject(new Error("test error")),
+          Promise.reject(expectedError),
           Promise.resolve("success")
         ])
-        expect().assertFail()
       } catch (error) {
         caught = true
+        expect(error).assertEqual(expectedError)
       }
       expect(caught).assertTrue()
       Done();
@@ -948,8 +976,14 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      */
     it('PromiseRaceFirstTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let result = await Promise.race<number>([Promise.resolve(1.0), Promise.resolve(2.0)])
-        .then(value => value * 2)
-        .then(value => value + 10)
+        .then(value => {
+          expect(value).assertEqual(1)
+          return value * 2
+        })
+        .then(value => {
+          expect(value).assertEqual(2)
+          return value + 10
+        })
       expect(result).assertEqual(12)
       Done();
     })
@@ -964,7 +998,10 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      */
     it('PromiseRaceFirstTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let result2 = await Promise.race<string>([Promise.resolve("hello")])
-        .then(value => Promise.resolve(value.toUpperCase()))
+        .then(value => {
+          expect(value).assertEqual("hello")
+          return Promise.resolve(value.toUpperCase())
+        })
       expect(result2).assertEqual("HELLO")
       Done();
     })
@@ -978,9 +1015,11 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("race error")
       let result = await Promise.race<string>([
-        Promise.reject(new Error("race error"))
+        Promise.reject(expectedError)
       ]).catch((error) => {
+        expect(error).assertEqual(expectedError)
         return "recovered"
       })
       expect(result).assertEqual("recovered")
@@ -1014,7 +1053,10 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      */
     it('PromiseRaceFirstTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let result = await Promise.race<string>([Promise.resolve("value")])
-        .then(v => v.toUpperCase())
+        .then(v => {
+          expect(v).assertEqual("value")
+          return v.toUpperCase()
+        })
         .catch(() => "error")
         .finally(() => {})
       expect(result).assertEqual("VALUE")
@@ -1030,16 +1072,20 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let timerIds: int[] = []
+      let expectedError = new Error("Timeout after 500ms")
       let caught: boolean = false
       try {
-        let result = await Promise.race([
-          new Promise<string>(resolve => { setTimeout(() => resolve("slow"), 2000) }),
-          new Promise<string>((_, reject) => { setTimeout(() => reject(new Error("Timeout after 500ms")), 500) })
+        await Promise.race<string>([
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("slow"), 2000)) }),
+          new Promise<string>((_, reject) => { timerIds.push(setTimeout(() => reject(expectedError), 500)) })
         ])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1053,11 +1099,16 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let result = await Promise.race([
-        new Promise<string>(resolve => { setTimeout(() => resolve("fast"), 100) }),
-        new Promise<string>((_, reject) => { setTimeout(() => reject(new Error("Timeout")), 500) })
-      ])
-      expect(result).assertEqual("fast")
+      let timerIds: int[] = []
+      try {
+        let result = await Promise.race([
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("fast"), 100)) }),
+          new Promise<string>((_, reject) => { timerIds.push(setTimeout(() => reject(new Error("Timeout")), 500)) })
+        ])
+        expect(result).assertEqual("fast")
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -1070,11 +1121,16 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let result = await Promise.race([
-        new Promise<string>(resolve => { setTimeout(() => resolve("slow"), 2000) }),
-        new Promise<string>(resolve => { setTimeout(() => resolve("fallback value"), 500) })
-      ])
-      expect(result).assertEqual("fallback value")
+      let timerIds: int[] = []
+      try {
+        let result = await Promise.race([
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("slow"), 2000)) }),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("fallback value"), 500)) })
+        ])
+        expect(result).assertEqual("fallback value")
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -1087,11 +1143,16 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let result2 = await Promise.race([
-        new Promise<string>(resolve => { setTimeout(() => resolve("fast"), 100) }),
-        new Promise<string>(resolve => { setTimeout(() => resolve("fallback value"), 500) })
-      ])
-      expect(result2).assertEqual("fast")
+      let timerIds: int[] = []
+      try {
+        let result2 = await Promise.race([
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("fast"), 100)) }),
+          new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("fallback value"), 500)) })
+        ])
+        expect(result2).assertEqual("fast")
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -1104,12 +1165,17 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL0
      */
     it('PromiseRaceFirstTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+      let timerIds: int[] = []
       let promises = [
         Promise.resolve("fast"),
-        new Promise<string>(resolve => { setTimeout(() => resolve("slow"), 100) })
+        new Promise<string>((resolve: (value: string) => void) => { timerIds.push(setTimeout(() => resolve("slow"), 100)) })
       ]
-      let result = await Promise.race<string>(promises)
-      expect(result).assertEqual("fast")
+      try {
+        let result = await Promise.race<string>(promises)
+        expect(result).assertEqual("fast")
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       Done();
     })
 
@@ -1164,16 +1230,18 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
         new Promise<string>(() => {}),
         new Promise<string>(() => {})
       ]
-      let timeoutPromise = new Promise<string>((_, reject) => {
-        setTimeout(() => reject(new Error("timeout")), 500)
-      })
+      let timerIds: int[] = []
+      let expectedError = new Error("timeout")
+      let timeoutPromise = new Promise<string>((_, reject) => { timerIds.push(setTimeout(() => reject(expectedError), 500)) })
       let caught: boolean = false
       try {
         await Promise.race<string>([allPending[0], allPending[1], timeoutPromise])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      } finally {
+        clearRaceTimers(timerIds)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1235,14 +1303,15 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let errorThenable = new ErrorStringPromiseLike(new Error("thenable error"))
+      let expectedError = new Error("thenable error")
+      let errorThenable = new ErrorStringPromiseLike(expectedError)
       let caught: boolean = false
       try {
         await Promise.race<string>([errorThenable])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      }
       expect(caught).assertTrue()
       Done();
     })
@@ -1256,11 +1325,12 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let result1 = await Promise.race<void>([
-        Promise.resolve(),
-        Promise.resolve()
-      ])
-      expect(result1).assertEqual(undefined)
+       let callbackCalled = false
+       await Promise.race<void>([
+         Promise.resolve().then<void>(() => { callbackCalled = true }),
+         Promise.resolve<void>(undefined)
+       ])
+      expect(callbackCalled).assertTrue()
       Done();
     })
 
@@ -1283,7 +1353,7 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest7000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_7000
-     * @tc.desc   Verify Promise.race with union type string|number|boolean
+     * @tc.desc   Verify Promise.race with an explicitly typed string Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1331,7 +1401,8 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
           Promise.resolve<number>(i),
           Promise.resolve<number>(i + 1)
         ])
-        await promise
+        let result = await promise
+        expect(result).assertEqual(i)
         count++
       }
       expect(count).assertEqual(1000)
@@ -1347,21 +1418,26 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let expectedError = new Error("error1")
       let caught: boolean = false
       try {
-        let result = await Promise.race<string>([
-          Promise.reject(new Error("error1")),
+        await Promise.race<string>([
+          Promise.reject(expectedError),
           Promise.reject(new Error("error2"))
         ])
-        expect().assertFail()
       } catch (error) {
-      caught = true
-}
+        caught = true
+        expect(error).assertEqual(expectedError)
+      }
       expect(caught).assertTrue()
+      let expectedFallbackError = new Error("error3")
       let result = await Promise.race<string>([
-        Promise.reject(new Error("error3")),
+        Promise.reject(expectedFallbackError),
         Promise.resolve("fallback value")
-      ]).catch(() => "fallback value")
+      ]).catch((error) => {
+        expect(error).assertEqual(expectedFallbackError)
+        return "fallback value"
+      })
       expect(result).assertEqual("fallback value")
       Done();
     })
@@ -1369,22 +1445,23 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest7400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_7400
-     * @tc.desc   Verify Promise.race with fallback, mixed reject and resolve
+     * @tc.desc   Verify Promise.race rejects when the first Promise rejects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseRaceFirstTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let caught: boolean = false
-      try {
-        let result2 = await Promise.race<string>([
-          Promise.reject(new Error("error")),
-          Promise.resolve("success")
-        ]);
-        expect(result2).assertEqual("success");
+       let expectedError = new Error("error")
+       let caught: boolean = false
+       try {
+         await Promise.race<string>([
+           Promise.reject<string>(expectedError),
+           Promise.resolve<string>("success")
+         ])
       } catch (err) {
-      caught = true
-}
+        caught = true
+        expect(err).assertEqual(expectedError)
+       }
       expect(caught).assertTrue()
       Done();
     })
@@ -1392,17 +1469,17 @@ export default function BuiltinsPromiseRaceFirstTest(): void {
     /**
      * @tc.name   PromiseRaceFirstTest7500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_RACE_FIRST_TEST_7500
-     * @tc.desc   Verify Promise.race with delayed Promises, fastest wins
+     * @tc.desc   Verify Promise.race returns the first settled Promise value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('PromiseRaceFirstTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let result = await Promise.race<string>([
-        new Promise<string>(resolve => { setTimeout(() => resolve("fast"), 100) }),
-        new Promise<string>(resolve => { setTimeout(() => resolve("slow"), 200) })
+        Promise.resolve<string>("first"),
+        Promise.resolve<string>("second")
       ])
-      expect(result).assertEqual("fast")
+      expect(result).assertEqual("first")
       Done();
     })
 
