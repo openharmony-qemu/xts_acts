@@ -143,25 +143,32 @@ int32_t VideoSample::InputFunc()
     for (int i = 0; i < INPUT_FRAME_NUMBER; i++) {
         int fenceFd = -1;
         OHNativeWindowBuffer* ohNativeWindowBuffer = nullptr;
-
-        int32_t err = OH_NativeWindow_NativeWindowRequestBuffer(
-            inWindow_, &ohNativeWindowBuffer, &fenceFd);
+        int32_t err = OH_NativeWindow_NativeWindowRequestBuffer(inWindow_, &ohNativeWindowBuffer, &fenceFd);
         if (err != 0 || ohNativeWindowBuffer == nullptr) {
-            break;
+            OHPrintf("InputFunc: NativeWindowRequestBuffer failed, err= %d", err);
+            std::cout << "InputFunc: NativeWindowRequestBuffer failed, err=" << err << std::endl;
+            if (fenceFd > 0) {
+                close(fenceFd);
+            }
+            return -1;
         }
-
         if (fenceFd > 0) {
             close(fenceFd);
         }
-
         OH_NativeBuffer* nativeBuffer = nullptr;
-
         err = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
-        if (err != 0) {
-            break;
+        if (err != 0 || nativeBuffer == nullptr) {
+            OHPrintf("InputFunc: NativeWindowRequestBuffer failed, err= %d", err);
+            std::cout << "InputFunc: FromNativeWindowBuffer failed, err=" << err << std::endl;
+            OH_NativeWindow_NativeWindowAbortBuffer(inWindow_, ohNativeWindowBuffer);
+            return -1;
         }
-
-        OH_NativeWindow_NativeWindowFlushBuffer(inWindow_, ohNativeWindowBuffer, -1, region_);
+        err = OH_NativeWindow_NativeWindowFlushBuffer(inWindow_, ohNativeWindowBuffer, -1, region_);
+        if (err != 0) {
+            OHPrintf("InputFunc: NativeWindowRequestBuffer failed, err= %d", err);
+            std::cout << "InputFunc: FlushBuffer failed, err=" << err << std::endl;
+            return -1;
+        }
     }
     return 0;
 }
