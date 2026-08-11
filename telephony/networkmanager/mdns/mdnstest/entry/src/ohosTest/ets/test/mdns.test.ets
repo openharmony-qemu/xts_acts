@@ -1573,7 +1573,7 @@ export default function mdnsTest() {
           ExpectTrue(false, caseName);
         } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(Number(error.code) === 401, caseName);
+          ExpectTrue(error.code === 401, caseName);
         }
         done();
       } catch (err) {
@@ -2582,7 +2582,7 @@ export default function mdnsTest() {
         mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           if (error) {
             console.log(`${caseName} falil ${JSON.stringify(error)}`);
-            ExpectTrue(Number(error.code) === 401, caseName);
+            ExpectTrue(error.code === 401, caseName);
             done();
           } else {
             console.log(`${caseName} success ${JSON.stringify(data)}`);
@@ -3062,7 +3062,7 @@ export default function mdnsTest() {
           ExpectTrue(false, caseName);
         } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(Number(error.code) === 2204006, caseName);
+          ExpectTrue(error.code === 2204006, caseName);
         }
         done();
       } catch (err) {
@@ -3103,7 +3103,7 @@ export default function mdnsTest() {
           ExpectTrue(false, caseName);
         } catch (error) {
           console.log(`${caseName} fail ${JSON.stringify(error)}`);
-          ExpectTrue(Number(error.code) === 2204006, caseName);
+          ExpectTrue(error.code === 2204006, caseName);
         }
         done();
       } catch (err) {
