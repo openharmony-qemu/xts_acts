@@ -47,7 +47,8 @@ export default function smsUiJsunit() {
         console.log("dxj fail visibleMessageBody:" + shortMessage.visibleMessageBody);
         expect(shortMessage.visibleRawAddress.length !== 0).assertTrue();
         console.log("dxj fail visibleRawAddress:" + shortMessage.visibleRawAddress);
-        expect(shortMessage.messageClass !== -1).assertTrue();
+        expect(shortMessage.messageClass === 0 || shortMessage.messageClass === 1 || shortMessage.messageClass === 2 ||
+          shortMessage.messageClass === 3 || shortMessage.messageClass === 4).assertTrue();
         console.log("dxj fail messageClass:" + shortMessage.messageClass);
         expect(shortMessage.protocolId !== -1).assertTrue();
         console.log("dxj fail protocolId:" + shortMessage.protocolId);
@@ -81,7 +82,8 @@ export default function smsUiJsunit() {
       sms.createMessage(rawArray, '3gpp').then(shortMessage => {
         expect(shortMessage.visibleMessageBody == "Aa").assertTrue();
         expect(shortMessage.visibleRawAddress.length !== 0).assertTrue();
-        expect(shortMessage.messageClass !== -1).assertTrue();
+        expect(shortMessage.messageClass === 0 || shortMessage.messageClass === 1 || shortMessage.messageClass === 2 ||
+          shortMessage.messageClass === 3 || shortMessage.messageClass === 4).assertTrue();
         expect(shortMessage.protocolId !== -1).assertTrue();
         expect(shortMessage.scAddress.length !== 0).assertTrue();
         expect(shortMessage.scTimestamp !== 0).assertTrue();
