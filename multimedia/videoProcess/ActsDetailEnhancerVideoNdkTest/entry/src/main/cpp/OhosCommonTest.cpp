@@ -63,7 +63,7 @@ void OHPrintf(const char* fmt, ...)
 
     va_list args;
     va_start(args, fmt);
-    OH_LOG_VPrint(LOG_APP, LOG_ERROR, LOG_DOMAIN, DEFAULT_TAG.c_str(), fmtPublic, args);
+    OH_LOG_VPrint(LOG_APP, LOG_DEBUG, LOG_DOMAIN, DEFAULT_TAG.c_str(), fmtPublic, args);
     va_end(args);
 }
 
