@@ -522,6 +522,19 @@ export default function ActsOsAccountTestStatic(): void {
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>OsAccountParamCheck_1800 ";
         hilog.info(0x0000, tag, logTag + "start====");
+        try {
+          let get_edm_enterprise: string = parameter.getSync("const.edm.is_enterprise_device");
+          let edmEnterprise: boolean = get_edm_enterprise === "true" ? true : false;
+          hilog.info(0x0000, tag, "edmEnterprise: " + JSON.stringify(edmEnterprise));
+          if (edmEnterprise) {
+            hilog.info(0x0000, tag, "edm.is_enterprise_device param is true Server is true no nacessary to verify connectivity.");
+            done();
+            return;
+          }
+        } catch (err) {
+          hilog.info(0x0000, tag, "const.edm.is_enterprise_device run error" + JSON.stringify(err))
+          hilog.info(0x0000, tag, "the testcases run normal")
+        }
 
         let adConfigData: Record<string, RecordData> = {
           'adDomain': 'test.example.com'
@@ -563,6 +576,19 @@ export default function ActsOsAccountTestStatic(): void {
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>OsAccountParamCheck_1900 ";
         hilog.info(0x0000, tag, logTag + "start====");
+        try {
+          let get_edm_enterprise: string = parameter.getSync("const.edm.is_enterprise_device");
+          let edmEnterprise: boolean = get_edm_enterprise === "true" ? true : false;
+          hilog.info(0x0000, tag, "edmEnterprise: " + JSON.stringify(edmEnterprise));
+          if (edmEnterprise) {
+            hilog.info(0x0000, tag, "edm.is_enterprise_device param is true Server is true no nacessary to verify connectivity.");
+            done();
+            return;
+          }
+        } catch (err) {
+          hilog.info(0x0000, tag, "const.edm.is_enterprise_device run error" + JSON.stringify(err))
+          hilog.info(0x0000, tag, "the testcases run normal")
+        }
 
         let ldapConfigData: Record<string, RecordData> = {
           'authServerAddress': 'test.example.com',
@@ -610,6 +636,19 @@ export default function ActsOsAccountTestStatic(): void {
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>OsAccountParamCheck_2000 ";
         hilog.info(0x0000, tag, logTag + "start====");
+        try {
+          let get_edm_enterprise: string = parameter.getSync("const.edm.is_enterprise_device");
+          let edmEnterprise: boolean = get_edm_enterprise === "true" ? true : false;
+          hilog.info(0x0000, tag, "edmEnterprise: " + JSON.stringify(edmEnterprise));
+          if (edmEnterprise) {
+            hilog.info(0x0000, tag, "edm.is_enterprise_device param is true Server is true no nacessary to verify connectivity.");
+            done();
+            return;
+          }
+        } catch (err) {
+          hilog.info(0x0000, tag, "const.edm.is_enterprise_device run error" + JSON.stringify(err))
+          hilog.info(0x0000, tag, "the testcases run normal")
+        }
 
         let oauthConfig: Record<string, RecordData> = {
           'userAuthenRequestUri': 'https://www.test.com/login',

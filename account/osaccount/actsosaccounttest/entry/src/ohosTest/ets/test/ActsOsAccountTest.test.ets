@@ -890,6 +890,19 @@ export default function ActsOsAccountTest(): void {
     it('OsAccountParamCheck_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1800 ";
       console.info(tag + "start====");
+      try{
+        let get_edm_enterprise: string = parameter.getSync("const.edm.is_enterprise_device");
+        let edmEnterprise: boolean = get_edm_enterprise === "true" ? true : false;
+        console.info(tag + "edmEnterprise: " + JSON.stringify(edmEnterprise));
+        if (edmEnterprise) {
+          console.info(tag + "edm.is_enterprise_device param is true Server is true no nacessary to verify connectivity.");
+          done();
+          return;
+        }
+      } catch (err) {
+        console.info(tag + "const.edm.is_enterprise_device run err" + JSON.stringify(err))
+        console.info(tag + "the testcases run normal")
+      }
       interface AdConfig {
         adDomain: string
       }
@@ -935,6 +948,19 @@ export default function ActsOsAccountTest(): void {
     it('OsAccountParamCheck_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1900 ";
       console.info(tag + "start====");
+      try{
+        let get_edm_enterprise: string = parameter.getSync("const.edm.is_enterprise_device");
+        let edmEnterprise: boolean = get_edm_enterprise === "true" ? true : false;
+        console.info(tag + "edmEnterprise: " + JSON.stringify(edmEnterprise));
+        if (edmEnterprise) {
+          console.info(tag + "edm.is_enterprise_device param is true Server is true no nacessary to verify connectivity.");
+          done();
+          return;
+        }
+      } catch (err) {
+        console.info(tag + "const.edm.is_enterprise_device run err" + JSON.stringify(err))
+        console.info(tag + "the testcases run normal")
+      }
       interface LDAPConfig {
         authServerAddress: string,
         authenProtocol: string,
@@ -992,6 +1018,19 @@ export default function ActsOsAccountTest(): void {
     it('OsAccountParamCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2000 ";
       console.info(tag + "start====");
+      try{
+        let get_edm_enterprise: string = parameter.getSync("const.edm.is_enterprise_device");
+        let edmEnterprise: boolean = get_edm_enterprise === "true" ? true : false;
+        console.info(tag + "edmEnterprise: " + JSON.stringify(edmEnterprise));
+        if (edmEnterprise) {
+          console.info(tag + "edm.is_enterprise_device param is true Server is true no nacessary to verify connectivity.");
+          done();
+          return;
+        }
+      } catch (err) {
+        console.info(tag + "const.edm.is_enterprise_device run err" + JSON.stringify(err))
+        console.info(tag + "the testcases run normal")
+      }
       interface OauthConfig {
         userAuthenRequestUri: string,
         authorizationRequestUri: string,
