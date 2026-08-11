@@ -21,6 +21,7 @@
 #include <multimedia/player_framework/native_avmemory.h>
 #include "include/DemuxerHelperTest.h"
 #include "include/FuncHelperTest.h"
+#include "include/Func2TestHelper.h"
 #include <hilog/log.h>
 
 #include <iostream>
@@ -44,30 +45,8 @@ OH_AVBuffer *avBuffer = nullptr;
 bool g_isRefult = false;
 int32_t g_unselect = -1;
 
-// 常量定义
-static const int32_t TRACKNUM_0 = 0;
-static const int32_t TRACKNUM_1 = 1;
-static const int32_t TRACKNUM_2 = 2;
-static const int32_t TRACKNUM_3 = 3;
-static const int32_t TRACKNUM_4 = 4;
-static const int32_t TRACKFRAME_231 = 231;
-static const int32_t TRACKFRAME_431 = 431;
-static const int32_t TRACKFRAME_16 = 16;
-static const int32_t TRACKFRAME_77 = 77;
-static const int32_t TRACKFRAME_223 = 223;
-static const int32_t TRACKFRAME_417 = 417;
-static const int64_t VIDEOTRACKSEEK = 900000;
-static const int64_t AUDIOTRACKSEEK = 130604;
-static const int32_t THOUSAND = 1000;
-static const std::string TRACK_REF_TYPE_DEPTH = "vdep";
-static const std::string TRACK_REF_TYPE_PREY = "auxl";
-static const std::string TRACK_REF_TYPE_CDSC = "cdsc";
-static const std::string AUXILIARY_DEPTH_TRACK_KEY = "com.openharmony.moviemode.depth";
-static const std::string AUXILIARY_PREY_TRACK_KEY = "com.openharmony.moviemode.prey";
-static const std::string TIMED_METADATA_KEY = "timed_metadata";
 int32_t g_trackType = 0;
 
-// 结构体定义：用于减少函数参数
 struct TrackState {
     bool *isEnd1;
     bool *isEnd2;
@@ -76,26 +55,6 @@ struct TrackState {
     int *frame2;
     int *frame3;
 };
-
-// 测试预期值常量
-static constexpr int EXPECTED_BUFFER_SIZE_2 = 2;
-static constexpr int EXPECTED_AUDIO_FRAMES_40 = 40;
-static constexpr int EXPECTED_AUDIO_FRAMES_20 = 20;
-static constexpr int EXPECTED_AUDIO_FRAMES_11 = 11;
-static constexpr int EXPECTED_AUDIO_FRAMES_21 = 21;
-static constexpr int EXPECTED_AUDIO_FRAMES_26 = 26;
-static constexpr int EXPECTED_AUDIO_FRAMES_59 = 59;
-static constexpr int EXPECTED_AUDIO_FRAMES_1876 = 1876;
-static constexpr int EXPECTED_SEEK_TIME_2487 = 2487;
-static constexpr int EXPECTED_SKIP_SAMPLE_COUNT_MP3 = 2;
-static constexpr int EXPECTED_AUDIO_FRAMES_3052 = 3052;
-static constexpr int EXPECTED_SKIP_SAMPLE_COUNT_OGG = 1;
-static constexpr int EXPECTED_AUDIO_FRAMES_6863 = 6863;
-static constexpr size_t SKIP_SAMPLE_BUFFER_SIZE = 10;
-static constexpr int MP3_SKIP_FRAME_INDEX_3051 = 3051;
-static constexpr int OGG_SKIP_FRAME_INDEX_6862 = 6862;
-
-// GET_FILE_SIZE 已在 FuncHelperTest.h 中定义为宏
 
 void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &videoFrame)
 {
@@ -120,19 +79,6 @@ static void SetAudioValueLocal(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int 
         }
     }
 }
-
-struct SkipSampleParams {
-    const char *file;
-    int &fd;
-    int64_t &size;
-    int32_t trackNum;
-};
-
-struct SkipSampleReadParams {
-    int64_t size;
-    OH_AVCodecBufferAttr &attr;
-    OH_AVFormat *&format;
-};
 
 int InitSkipSampleFile(SkipSampleParams &params)
 {
@@ -172,16 +118,7 @@ static int ReadSkipSampleBuffer(SkipSampleReadParams &params)
     return 0;
 }
 
-struct SkipSampleResultParams {
-    int skipSampleCounts;
-    int audioFrame;
-    int aKeyCount;
-    int expectedSkipCount;
-    int expectedFrameCount;
-    int fd;
-};
-
-static int ValidateSkipSampleResults(SkipSampleResultParams &params)
+int ValidateSkipSampleResults(SkipSampleResultParams &params)
 {
     if (params.skipSampleCounts != params.expectedSkipCount) {
         CleanupSkipSampleResources(nullptr, params.fd);
@@ -1449,15 +1386,6 @@ int DemuxerFunctionTrack0140()
     return 0;
 }
 
-struct AuxTrackSampleParams {
-    int32_t trackIndex;
-    int32_t expectedType;
-    int (*validateFunc)();
-    OH_AVCodecBufferAttr &bufferAttr;
-    bool &videoIsEnd;
-    int &videoFrame;
-};
-
 int ProcessAuxTrackSample(AuxTrackSampleParams &params)
 {
     trackFormat = OH_AVSource_GetTrackFormat(source, params.trackIndex);
@@ -1797,18 +1725,14 @@ int DemuxerFunctionAudioTrack0040()
     if (!(g_initResult)) {
         return -1;
     }
-    int32_t *trackIdsDepth = nullptr;
-    int32_t *trackIdsPrey = nullptr;
-    size_t bufferSize;
-    int bufferSizeResult = 3;
+    int32_t *trackIdsDepth = nullptr, *trackIdsPrey = nullptr;
+    size_t bufferSize; int bufferSizeResult = 3;
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
     if (trackFormat == nullptr) {
         return -1;
     }
-    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        return -1;
-    }
-    if (g_trackType != MEDIA_TYPE_AUXILIARY) {
+    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType)) ||
+        g_trackType != MEDIA_TYPE_AUXILIARY) {
         return -1;
     }
     if (!(OH_AVFormat_GetIntBuffer(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS,
@@ -1825,10 +1749,8 @@ int DemuxerFunctionAudioTrack0040()
     if (trackFormat == nullptr) {
         return -1;
     }
-    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        return -1;
-    }
-    if (g_trackType != MEDIA_TYPE_AUXILIARY) {
+    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType)) ||
+        g_trackType != MEDIA_TYPE_AUXILIARY) {
         return -1;
     }
     if (!(OH_AVFormat_GetIntBuffer(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS,
@@ -2023,10 +1945,8 @@ int DemuxerFunctionAudioTrack0090()
     int intData = 0;
     double doubleData;
     int64_t longData = 0;
-    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        return -1;
-    }
-    if (g_trackType != MEDIA_TYPE_AUXILIARY) {
+    if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType)) ||
+        g_trackType != MEDIA_TYPE_AUXILIARY) {
         return -1;
     }
     if (OH_AVFormat_GetDoubleValue(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &doubleData)) {
@@ -2046,10 +1966,8 @@ int DemuxerFunctionAudioTrack0090()
     if (bufferSize != bufferSizeResult) {
         return -1;
     }
-    if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_0) {
-        return -1;
-    }
-    if (trackIdsDepth[TRACKNUM_1] != TRACKNUM_2) {
+    if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_0 ||
+        trackIdsDepth[TRACKNUM_1] != TRACKNUM_2) {
         return -1;
     }
     if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) {
