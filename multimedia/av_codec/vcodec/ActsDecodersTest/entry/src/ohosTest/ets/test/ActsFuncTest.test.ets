@@ -42,6 +42,7 @@ export default function actsFuncTest() {
         "1920_1080_30.avi",
         "msvideo1_720x480.avi",
         "vp8_480x640.ivf",
+        "vp8_1080x1920.ivf",
         "vp9_1_0_p0_256x144@15fps.ivf",
         "vp9_1_1_p1_384x192@30fps.ivf",
         "vp9_2_1_p2_640x384@30fps.ivf",
