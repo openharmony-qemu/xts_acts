@@ -84,7 +84,7 @@ struct webViewHasImage {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
           console.info("key==>after isReceive " + this.str)
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           console.info("key==>after isPageEnd " + this.str)
           switch (this.str) {
             case "emitHasImagePm": {
@@ -105,7 +105,7 @@ struct webViewHasImage {
             case "emitHasImagePmSvg": {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('hasImageTwo.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               console.info("after isPageEnd111 " + this.str)
               try {
                 this.controller.hasImage().then((data) => {
@@ -124,7 +124,7 @@ struct webViewHasImage {
             case "emitHasImagePmOnline": {
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('onlineImageAccess.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               try {
                 this.controller.hasImage().then((data) => {
                   console.info('HasImagePmOnline: ' + data);
@@ -141,7 +141,7 @@ struct webViewHasImage {
             case "emitHasImageCb": {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('hasImageOne.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               try {
                 this.controller.hasImage((error, data) => {
                   if (error) {
@@ -159,7 +159,7 @@ struct webViewHasImage {
             case "emitHasImageCbSvg": {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('hasImageTwo.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               try {
                 this.controller.hasImage((error, data) => {
                   if (error) {
@@ -177,7 +177,7 @@ struct webViewHasImage {
             case "emitHasImageCbOnline": {
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('onlineImageAccess.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               try {
                 this.controller.hasImage((error, data) => {
                   if (error) {

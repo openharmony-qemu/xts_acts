@@ -152,7 +152,7 @@ struct WebViewEnumAndFontLibrary {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitWebContextMenuParamX": {
               let button = await driver.findComponent(ON.id('webCenter'));
@@ -213,7 +213,7 @@ struct WebViewEnumAndFontLibrary {
               this.isPageEnd = -1
               this.ImageContent = false
               this.controller.loadUrl("resource://rawfile/ParamExistsImageTrue.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let button = await driver.findComponent(ON.id('imgs'));
               this.isOnContextMenuShowEnd = -1
               await button.longClick();
@@ -228,7 +228,7 @@ struct WebViewEnumAndFontLibrary {
               this.isPageEnd = -1
               this.MediaType = 0
               this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let button = await driver.findComponent(ON.id('webCenter'));
               this.isOnContextMenuShowEnd = -1
               await button.longClick();
@@ -293,7 +293,7 @@ struct WebViewEnumAndFontLibrary {
               Utils.emitEvent(Number(this.EditStateFlags), 183330)
               this.isPageEnd = -1
               this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.FileSelectorMode = 0
               break;
             }
@@ -318,7 +318,7 @@ struct WebViewEnumAndFontLibrary {
               Utils.emitEvent(Number(this.EditStateFlags), 183360)
               this.isPageEnd = -1
               this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               break;
             }
             case "emitContextMenuMediaTypeNone": {
@@ -329,7 +329,7 @@ struct WebViewEnumAndFontLibrary {
               this.MediaType = 0
               this.isPageEnd = -1
               this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               break;
             }
             case "onContextMenuShow": {

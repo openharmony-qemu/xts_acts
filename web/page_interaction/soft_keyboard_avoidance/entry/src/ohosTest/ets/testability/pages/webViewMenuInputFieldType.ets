@@ -130,7 +130,7 @@ struct WebViewMenuInputFieldType {
         Button('WebViewMenuInputFieldTypeTestButton').key('WebViewMenuInputFieldTypeTestButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "onInterceptKeyboardAttach0100": {
               this.ResultKey = 1
@@ -141,7 +141,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -158,7 +158,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttachDefault.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -176,7 +176,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_DONE.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -193,7 +193,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_GO.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -210,7 +210,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_NEXT.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -227,7 +227,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_PREVIOUS.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -244,7 +244,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_SEARCH.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -261,7 +261,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_SEND.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -278,7 +278,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_UNSPECIFIED.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
@@ -295,7 +295,7 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000)
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5)
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)

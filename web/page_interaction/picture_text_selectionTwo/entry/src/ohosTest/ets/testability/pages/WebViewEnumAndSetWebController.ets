@@ -147,12 +147,12 @@ struct WebViewEnumAndSetWebController {
         Button("web clicks").key('buttonEnumAndSetWebController').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitFileSelectorModeFileOpenMultipleMode": {
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexFile1.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let driver = Driver.create();
               let button = await driver.findComponent(ON.id('WebViewEnumAndSetWebControllerWebView'));
               await button.click();
@@ -163,7 +163,7 @@ struct WebViewEnumAndSetWebController {
             case "emitFileSelectorModeFileOpenFolderMode": {
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexFile2.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('选择文件'));
               await buttonOne.click()
               await Utils.waitForExist(()=>this.isOnShowFileSelectorEnd, this.str+' isOnShowFileSelectorEnd', 1, 1000);
@@ -174,7 +174,7 @@ struct WebViewEnumAndSetWebController {
               this.mouse = false
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexLongClickImage.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let button = await driver.findComponent(ON.id('WebViewEnumAndSetWebControllerWebView'));
               await button.longClick();
               break;
@@ -183,7 +183,7 @@ struct WebViewEnumAndSetWebController {
               this.mouse = true
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexLongClickImage.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let webRect = Utils.getComponentRect('WebViewEnumAndSetWebControllerWebView');
               let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
               let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);

@@ -74,7 +74,7 @@ struct WebkeyboardAvoidMode {
         Button("keyboardAvoidMode").key('keyboardAvoidMode').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitKeyboardAvoidMode0100": {
               this.userAgentPC = this.controller.getUserAgent();
@@ -85,10 +85,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/index388.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.type('textField').isAfter(ON.text('TextA')));
               await buttonOne.click()
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -111,10 +111,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('TextA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -137,10 +137,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('7788'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -162,10 +162,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('EmailA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -187,7 +187,7 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', )
@@ -215,7 +215,7 @@ struct WebkeyboardAvoidMode {
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 100)
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('TelA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -237,10 +237,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('TextA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -262,10 +262,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.type('textField').isAfter(ON.text('TextA')));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -287,10 +287,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('7788'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -312,10 +312,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('EmailA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -337,7 +337,7 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd',)
@@ -365,10 +365,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('TelA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -390,10 +390,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('TelA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -415,10 +415,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('TextA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -440,10 +440,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('7788'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -465,10 +465,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('EmailA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -490,10 +490,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('URLA'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -515,10 +515,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index388.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.type('textField').isAfter(ON.text('TextA')));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -540,10 +540,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with text'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -565,10 +565,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with tel'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -590,10 +590,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with url'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -615,10 +615,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with email'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -640,10 +640,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with numeric'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -665,10 +665,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with decimal'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -690,10 +690,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with text'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -715,10 +715,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with tel'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -740,10 +740,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with url'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -765,10 +765,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with email'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -790,10 +790,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with numeric'));
               await buttonOne.click()
               await Utils.sleep(1000);
@@ -815,10 +815,10 @@ struct WebkeyboardAvoidMode {
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
               this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
               let buttonOne = await driver.findComponent(ON.text('paragraph with decimal'));
               await buttonOne.click()
               await Utils.sleep(1000);

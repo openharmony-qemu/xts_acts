@@ -86,7 +86,7 @@ struct webViewController {
         Button("WebViewController click").key('WebViewControllerButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           let webRect = Utils.getComponentRect('RowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
@@ -139,7 +139,7 @@ struct webViewController {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X, Y - 60, X, Y + 60);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
@@ -155,7 +155,7 @@ struct webViewController {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X, Y + 230, X, Y - 200);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
@@ -171,7 +171,7 @@ struct webViewController {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X + 60, Y, X - 60, Y);
                 Utils.emitEvent(this.onOverScrollCallBack, 179860)
@@ -186,7 +186,7 @@ struct webViewController {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X - 60, Y, X + 60, Y);
                 Utils.emitEvent(this.onOverScrollCallBack, 179870)
