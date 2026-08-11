@@ -65,7 +65,7 @@ export default function BasicPrefetcherMethods(): void {
      */
     it('BasicPrefetcherSetDataSource_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BasicPrefetcherSetDataSource_0100] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let setDataSourceBtn = await driver.findComponent(ON.id('ButtonSetDataSource'));
       await CommonFunc.sleep(1000);
@@ -92,7 +92,7 @@ export default function BasicPrefetcherMethods(): void {
      */
     it('BasicPrefetcherVisibleAreaChanged_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BasicPrefetcherVisibleAreaChanged_0100] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let visibleAreaChangedBtn = await driver.findComponent(ON.id('ButtonVisibleAreaChanged'));
       await CommonFunc.sleep(1000);

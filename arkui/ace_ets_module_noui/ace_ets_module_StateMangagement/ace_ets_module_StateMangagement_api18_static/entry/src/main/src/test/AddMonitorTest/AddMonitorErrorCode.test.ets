@@ -74,7 +74,7 @@ export default function AddMonitorErrorCode(): void {
     it('AddMonitorErrorCode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorErrorCode_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn_true = await driver.findComponent(ON.id('ErrorCodeButton')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);

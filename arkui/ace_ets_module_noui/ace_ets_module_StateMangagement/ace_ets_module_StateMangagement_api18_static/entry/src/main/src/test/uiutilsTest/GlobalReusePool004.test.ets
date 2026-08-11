@@ -101,7 +101,7 @@ export default function GlobalReusePool004Test() {
      */
     it('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100 START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let globalReuse004: boolean | undefined =
         AppStorage.get<boolean | undefined>('GlobalReuse004') as boolean | undefined;
       expect(globalReuse004).assertUndefined();

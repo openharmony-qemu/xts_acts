@@ -70,7 +70,7 @@ export default function AppStorageV2Api(): void {
      */
     it('SUB_ARKUI_API_AppStorageV2Api_connect_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_AppStorageV2Api_connect_0100 start');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_connect1'));
@@ -135,7 +135,7 @@ export default function AppStorageV2Api(): void {
      */
     it('SUB_ARKUI_API_AppStorageV2Api_remove_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_AppStorageV2Api_remove_0100 start');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_remove'));
@@ -161,7 +161,7 @@ export default function AppStorageV2Api(): void {
      */
     it('SUB_ARKUI_API_AppStorageV2Api_connect_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_AppStorageV2Api_connect_0300 start');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_connect3'));
@@ -205,7 +205,7 @@ export default function AppStorageV2Api(): void {
      */
     it('SUB_ARKUI_API_AppStorageV2Api_connect_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_AppStorageV2Api_connect_0500 start');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_connect4'));
@@ -231,7 +231,7 @@ export default function AppStorageV2Api(): void {
      */
     it('SUB_ARKUI_API_AppStorageV2Api_remove_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_AppStorageV2Api_remove_0200 start');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_remove2'));

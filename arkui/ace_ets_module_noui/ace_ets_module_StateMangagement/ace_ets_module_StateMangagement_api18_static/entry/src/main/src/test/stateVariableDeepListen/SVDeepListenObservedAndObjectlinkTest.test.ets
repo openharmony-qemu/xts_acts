@@ -62,7 +62,7 @@ export default function SVDeepListenObservedAndObjectlinkTest(): void {
     it('SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100] START');
 
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
       // Step1: Verify initial state - bag.book.name is 'JS'
@@ -97,7 +97,7 @@ export default function SVDeepListenObservedAndObjectlinkTest(): void {
     it('SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200] START');
 
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
       // Step1: Verify initial state - BookCard shows book.name as 'JS'

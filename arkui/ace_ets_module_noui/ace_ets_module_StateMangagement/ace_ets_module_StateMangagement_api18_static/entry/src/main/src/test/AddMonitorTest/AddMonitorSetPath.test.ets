@@ -74,7 +74,7 @@ export default function AddMonitorSetPath(): void {
     it('AddMonitorSetPath_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorSetPath_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('AddPathButton')) as Component;
       await CommonFunc.sleep(1000);

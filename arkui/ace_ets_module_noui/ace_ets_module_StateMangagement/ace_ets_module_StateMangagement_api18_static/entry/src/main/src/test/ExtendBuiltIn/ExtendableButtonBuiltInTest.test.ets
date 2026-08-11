@@ -141,7 +141,7 @@ export default function ExtendableButtonBuiltInTest() {
      */
     it('ExtendableButtonBuiltIn_ClickEvent_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ExtendableButtonBuiltIn_ClickEvent_0400] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ExtendableButton_001'));
       await CommonFunc.sleep(1000);
@@ -163,7 +163,7 @@ export default function ExtendableButtonBuiltInTest() {
      */
     it('ExtendableButtonBuiltIn_ClickEvent_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ExtendableButtonBuiltIn_ClickEvent_0500] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ExtendableButton_002'));
       await CommonFunc.sleep(1000);

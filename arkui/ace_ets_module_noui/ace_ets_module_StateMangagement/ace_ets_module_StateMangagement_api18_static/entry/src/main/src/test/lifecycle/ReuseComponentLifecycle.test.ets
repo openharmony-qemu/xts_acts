@@ -74,7 +74,7 @@ export default function reuseComponentLifecycleTest(): void {
      */
     it('SUB_ARKUI_REUSE_COMPONENTINACTIVE_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'ReuseComponentLifecycle', 'reuseComponentInactive_0100 START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let changeBtn = await driver.findComponent(ON.id('changeBtn'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -95,7 +95,7 @@ export default function reuseComponentLifecycleTest(): void {
      */
     it('SUB_ARKUI_REUSE_COMPONENTACTIVE_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'ReuseComponentLifecycle', 'reuseComponentActive_0100 START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let changeBtn = await driver.findComponent(ON.id('changeBtn'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

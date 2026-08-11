@@ -71,7 +71,7 @@ export default function SyncMonitorNotWildcards(): void {
     it('SUB_ARKUI_API_SyncMonitorNotWildcardsTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_SyncMonitorNotWildcardsTest_static_0100] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button"));
       await (btn?.click() as Promise<void>);
@@ -93,7 +93,7 @@ export default function SyncMonitorNotWildcards(): void {
     it('SUB_ARKUI_API_SyncMonitorNotWildcardsTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_SyncMonitorNotWildcardsTest_static_0200] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("observedV2Button"));
       await (btn?.click() as Promise<void>);
@@ -115,7 +115,7 @@ export default function SyncMonitorNotWildcards(): void {
     it('SUB_ARKUI_API_SyncMonitorNotWildcardsTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_SyncMonitorNotWildcardsTest_static_0300] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButton"));
       await (btn?.click() as Promise<void>);

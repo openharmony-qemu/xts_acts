@@ -81,7 +81,7 @@ export default function AddMonitorWildcard2() {
      */
     it('SUB_ARKUI_API_AddMonitorWildcard2_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_AddMonitorWildcard2_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // Click button to change propA - this should trigger onClsChanged callback
@@ -110,7 +110,7 @@ export default function AddMonitorWildcard2() {
      */
     it('SUB_ARKUI_API_AddMonitorWildcard2_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_AddMonitorWildcard2_0200] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
 

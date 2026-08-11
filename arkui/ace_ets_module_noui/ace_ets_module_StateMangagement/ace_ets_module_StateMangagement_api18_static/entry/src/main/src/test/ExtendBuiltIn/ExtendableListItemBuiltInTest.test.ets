@@ -98,7 +98,7 @@ export default function ExtendableListItemBuiltInTest() {
     it('ExtendableListItemBuiltIn_ChildComponent_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ExtendableListItemBuiltIn_ChildComponent_0200] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("ExtendableListItem_001"));
       await (btn?.click() as Promise<void>);

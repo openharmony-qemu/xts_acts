@@ -68,7 +68,7 @@ export default function DumpObject(): void {
     it('SUB_ARKUI_API_DumpObjectTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_DumpObjectTest_static_0100] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("DumpObjectButton_001"));
       await (btn?.click() as Promise<void>);

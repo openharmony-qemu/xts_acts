@@ -81,7 +81,7 @@ export default function PersistenceV2Api(): void {
      */
     it('SUB_ARKUI_API_PersistenceV2Connect_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistenceV2Connect_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Get initial value
@@ -119,7 +119,7 @@ export default function PersistenceV2Api(): void {
      */
     it('SUB_ARKUI_API_PersistenceV2GlobalConnect_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistenceV2GlobalConnect_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Verify initial globalConnect value
@@ -157,7 +157,7 @@ export default function PersistenceV2Api(): void {
      */
     it('SUB_ARKUI_API_PersistenceV2Keys_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistenceV2Keys_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Click button to get keys
@@ -189,7 +189,7 @@ export default function PersistenceV2Api(): void {
      */
     it('SUB_ARKUI_API_PersistenceV2Remove_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistenceV2Remove_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Get initial keys count
@@ -222,7 +222,7 @@ export default function PersistenceV2Api(): void {
      */
     it('SUB_ARKUI_API_PersistenceV2Save_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistenceV2Save_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Click button to change person
@@ -257,7 +257,7 @@ export default function PersistenceV2Api(): void {
      */
     it('SUB_ARKUI_API_PersistenceV2NotifyOnError_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistenceV2NotifyOnError_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Verify that notifyOnError callback is registered by checking initial state

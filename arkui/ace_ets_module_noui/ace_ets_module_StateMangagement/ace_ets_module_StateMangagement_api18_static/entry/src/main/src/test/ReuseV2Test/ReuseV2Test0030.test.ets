@@ -71,7 +71,7 @@ export default function ReuseV2Test0030(): void {
     it('ReuseV2Test0030_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ReuseV2Test0030_001] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       for (let index = 0; index < 2; index++) {
         let btn = await driver.findComponent(ON.id("btnReuseV20030Change"));

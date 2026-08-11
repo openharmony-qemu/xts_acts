@@ -71,7 +71,7 @@ export default function PersistentStorageApi(): void {
      */
     it('SUB_ARKUI_API_PersistentStoragePersistProp_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStoragePersistProp_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Get initial value
@@ -108,7 +108,7 @@ export default function PersistentStorageApi(): void {
      */
     it('SUB_ARKUI_API_PersistentStoragePersistProps_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStoragePersistProps_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Verify first persisted property
@@ -138,7 +138,7 @@ export default function PersistentStorageApi(): void {
      */
     it('SUB_ARKUI_API_PersistentStorageDeleteProp_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStorageDeleteProp_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Get initial value before delete
@@ -167,7 +167,7 @@ export default function PersistentStorageApi(): void {
      */
     it('SUB_ARKUI_API_PersistentStorageKeys_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStorageKeys_0100] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
  
       // Click button to get keys

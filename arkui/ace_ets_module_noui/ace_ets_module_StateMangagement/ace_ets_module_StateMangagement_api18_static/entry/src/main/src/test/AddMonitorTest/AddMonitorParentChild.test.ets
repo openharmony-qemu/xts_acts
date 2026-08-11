@@ -74,7 +74,7 @@ export default function AddMonitorParentChild(): void {
     it('AddMonitorParentChild_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorParentChild_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn_true = await driver.findComponent(ON.id('ParentButton')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);
@@ -106,7 +106,7 @@ export default function AddMonitorParentChild(): void {
     it('AddMonitorParentChild_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorParentChild_static_0200';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn_true = await driver.findComponent(ON.id('ChildButton')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);

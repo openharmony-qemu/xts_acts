@@ -74,7 +74,7 @@ export default function AddMonitorNoPath(): void {
     it('AddMonitorNoPath_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorNoPath_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let NoPathButton = await driver.findComponent(ON.id('NoPathButton')) as Component;
       await NoPathButton.click();
       await CommonFunc.sleep(1000);

@@ -141,7 +141,7 @@ export default function ExtendableToggleBuiltInTest() {
     it('ExtendableToggleBuiltIn_CustomAttribute_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ExtendableToggleBuiltIn_CustomAttribute_0400] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("ExtendableToggle_001"));
       await (btn?.click() as Promise<void>);
