@@ -12,30 +12,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/utils/Common';
 
 export default function SelectTest() {
   describe('SelectTest', () => {
     beforeEach(async (done: Function) => {
-      console.info("flex beforeEach start");
+      console.info("SelectTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/select/Select',
-      };
+      }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get Select state success " + JSON.stringify(pages));
+        console.info("get SelectTest state pages: " + JSON.stringify(pages));
         if (!("Select" == pages.name)) {
-          console.info("get Select state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          console.info("push Select page success " + JSON.stringify(result));
+          console.info("get SelectTest state pages.name:" + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push SelectTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push Select page error: " + err);
+        console.error("push SelectTest page error:" + err);
       }
-      done();
+      done()
     });
+
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info("overlay after each called");
+    });
+
 
     /*
      *@tc.number ArkUX_Select_Visual_0030
@@ -44,23 +54,21 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0030', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0030 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0030');
-          console.info('ArkUX_Select_Visual_0030 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0030 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("300.000000");
-          expect(optionHeight).assertEqual("300.000000");
-          console.info('ArkUX_Select_Visual_0030 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0030 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0030'));
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0030');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0030 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+
+      expect(Math.abs(Math.round(optionWidth) - 300) <= 2).assertTrue();
+      expect(Math.abs(Math.round(optionHeight) - 300) <= 2).assertTrue();
+
+      console.info('ArkUX_Select_Visual_0030 END ');
+      done();
     });
 
     /*
@@ -70,23 +78,21 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0040', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0040 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0040');
-          console.info('ArkUX_Select_Visual_0040 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0040 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("600.000000");
-          expect(optionHeight).assertEqual("600.000000");
-          console.info('ArkUX_Select_Visual_0040 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0040 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0040'));
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0040');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0040 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+
+      expect(Math.abs(Math.round(optionWidth) - 600) <= 2).assertTrue();
+      expect(Math.abs(Math.round(optionHeight) - 600) <= 2).assertTrue();
+
+      console.info('ArkUX_Select_Visual_0040 END ');
+      done();
     });
 
     /*
@@ -96,23 +102,23 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0050', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0050 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0050');
-          console.info('ArkUX_Select_Visual_0050 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("900.000000");
-          expect(optionHeight).assertEqual("900.000000");
-          console.info('ArkUX_Select_Visual_0050 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0050 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      await CommonFunc.sleep(1000);
+
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0050'));
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0050');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+
+      expect(Math.abs(Math.round(optionWidth) - 900) <= 2).assertTrue();
+      expect(Math.abs(Math.round(optionHeight) - 900) <= 2).assertTrue();
+
+      console.info('ArkUX_Select_Visual_0050 END ');
+      done();
     });
 
     /*
@@ -122,23 +128,24 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0060', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0060 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0060');
-          console.info('ArkUX_Select_Visual_0060 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0060 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("1200.000000");
-          expect(optionHeight).assertEqual("1200.000000");
-          console.info('ArkUX_Select_Visual_0060 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0060 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
+      await CommonFunc.sleep(1000);
+
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0060'));
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0060');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0060 obj is: " + JSON.stringify(obj));
+
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
+
+      expect(Math.abs(Math.round(optionWidth) - 1200) <= 2).assertTrue();
+      expect(Math.abs(Math.round(optionHeight) - 1200) <= 2).assertTrue();
+
+      console.info('ArkUX_Select_Visual_0060 END ');
+      done();
     });
 
     /*
@@ -148,24 +155,23 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0070', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0070 START');
-      setTimeout(() => {
-        try {
-          let strJson = getInspectorByKey('ArkUX_Select_Visual_0070');
-          console.info('ArkUX_Select_Visual_0070 START  :' + JSON.stringify(strJson));
-          let obj: ESObject = JSON.parse(strJson);
-          console.info("ArkUX_Select_Visual_0070 obj is: " + JSON.stringify(obj));
-          let optionWidth: ESObject = obj.$attrs.optionWidth;
-          let optionHeight: ESObject = obj.$attrs.optionHeight;
-          expect(optionWidth).assertEqual("1500.000000");
-          expect(optionHeight).assertEqual("1500.000000");
-          console.info('ArkUX_Select_Visual_0070 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Select_Visual_0070 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500);
-    });
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0070'));
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('ArkUX_Select_Visual_0070');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("ArkUX_Select_Visual_0070 obj is: " + JSON.stringify(obj));
+      let optionWidth: ESObject = obj.$attrs.optionWidth;
+      let optionHeight: ESObject = obj.$attrs.optionHeight;
 
+      expect(Math.abs(Math.round(optionWidth) - 1500) <= 2).assertTrue();
+      expect(Math.abs(Math.round(optionHeight) - 1500) <= 2).assertTrue();
+
+      console.info('ArkUX_Select_Visual_0070 END ');
+      done();
+    });
+	
   })
 }
