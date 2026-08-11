@@ -297,10 +297,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO,cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -333,10 +335,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -369,10 +373,12 @@ export default function CameraPickerPickTest() {
             saveUri: "",
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -405,10 +411,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], undefined);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -441,10 +449,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-           undefined, pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -477,10 +487,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(undefined,
-            [cameraPicker.PickerMediaType.PHOTO,cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -513,10 +525,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], null);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -549,10 +563,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            null, pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -585,10 +601,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(null,
-            [cameraPicker.PickerMediaType.PHOTO,cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -621,10 +639,12 @@ export default function CameraPickerPickTest() {
             saveUri: uri,
             videoDuration: 10
           };
-          let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(testContext,
-            [], pickerProfile);
-          console.info(TAG, testName,"the pick pickerResult is:" + JSON.stringify(pickerResult));
-          expect(pickerResult).assertUndefined();
+          cameraPicker.pick(testContext, [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO],
+            pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, "the pick pickerResult is:" + JSON.stringify(pickerResult));
+              expect(pickerResult).assertUndefined();
+            })
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
