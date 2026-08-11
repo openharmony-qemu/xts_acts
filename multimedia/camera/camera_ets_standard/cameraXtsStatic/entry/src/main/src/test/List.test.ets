@@ -11,6 +11,7 @@ import MetadataOutputStaticTest from "./MetadataOutput/MetadataOutput.test";
 import ApertureTest from "./cameraPhotoSession/Aperture.test";
 import ApertureQueryGetSupportedPhysicalAperturesTest
   from "./cameraPhotoSession/ApertureQueryGetSupportedPhysicalApertures.test";
+import CameraPhotoSessionMetadata from "./cameraPhotoSession/CameraPhotoSessionMetadata.test";
 
 export default function testsuite() {
   cameraNoPermissionStaticTest();
@@ -24,4 +25,5 @@ export default function testsuite() {
   MetadataOutputStaticTest();
   ApertureTest();
   ApertureQueryGetSupportedPhysicalAperturesTest();
+  CameraPhotoSessionMetadata();
 }
