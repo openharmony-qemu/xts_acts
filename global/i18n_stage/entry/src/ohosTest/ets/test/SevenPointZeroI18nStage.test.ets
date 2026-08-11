@@ -364,7 +364,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_0700 catch error:', e.code + e.message);
-        expect(Number(e.code) === 401).assertTrue();
+        expect(e.code === 401).assertTrue();
       }
     })
 
@@ -1022,7 +1022,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1100 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1100 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1043,7 +1043,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1200 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1200 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1064,7 +1064,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1300 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1300 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1085,7 +1085,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1400 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1400 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1106,7 +1106,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1500 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1500 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1127,7 +1127,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1600 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1600 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1148,7 +1148,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1700 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1700 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1169,7 +1169,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('test_SymbolDateTimeFormat_1800 result:', dateFormat);
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1800 code&message:' + e.code +e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1566,7 +1566,7 @@ export default function SevenPointZeroI18nStageTest() {
         i18n.TimeZone.setAppDefaultTimeZoneById('Asia/123');
       } catch (e) {
         console.log('i18n_setAppDefaultTimeZoneById_test_0500 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -1583,7 +1583,7 @@ export default function SevenPointZeroI18nStageTest() {
         i18n.TimeZone.setAppDefaultTimeZoneById('');
       } catch (e) {
         console.log('i18n_setAppDefaultTimeZoneById_test_0600 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -1600,7 +1600,7 @@ export default function SevenPointZeroI18nStageTest() {
         i18n.TimeZone.setAppDefaultTimeZoneById(null);
       } catch (e) {
         console.log('i18n_setAppDefaultTimeZoneById_test_0700 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -1617,7 +1617,7 @@ export default function SevenPointZeroI18nStageTest() {
         i18n.TimeZone.setAppDefaultTimeZoneById(undefined);
       } catch (e) {
         console.log('i18n_setAppDefaultTimeZoneById_test_0800 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -1779,7 +1779,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(ltr).assertFail();
       } catch (e) {
         console.log('i18n_setUnicodeWrappedBidiDirection_test_1000 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1797,7 +1797,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(ltr).assertFail();
       } catch (e) {
         console.log('i18n_setUnicodeWrappedBidiDirection_test_1100 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1816,7 +1816,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(ltr).assertFail();
       } catch (e) {
         console.log('i18n_setUnicodeWrappedBidiDirection_test_1200 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -1835,7 +1835,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(ltr).assertFail();
       } catch (e) {
         console.log('i18n_setUnicodeWrappedBidiDirection_test_1300 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2163,7 +2163,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Null_Test_1600 value:', value);
       } catch (e) {
         console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Null_Test_1600 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2188,7 +2188,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Undefined_Test_1700 value:', value);
       } catch (e) {
         console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Undefined_Test_1700 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2516,7 +2516,7 @@ export default function SevenPointZeroI18nStageTest() {
         chineseCalendar.setChineseCalendarTime(null);
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_1300 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2535,7 +2535,7 @@ export default function SevenPointZeroI18nStageTest() {
         chineseCalendar.setChineseCalendarTime(undefined);
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_1400 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2552,7 +2552,7 @@ export default function SevenPointZeroI18nStageTest() {
         let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(null);
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_1500 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2569,7 +2569,7 @@ export default function SevenPointZeroI18nStageTest() {
         let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(undefined);
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_1600 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2586,7 +2586,7 @@ export default function SevenPointZeroI18nStageTest() {
         i18n.ChineseCalendar.checkLeapMonth(null, null, null);
       } catch (e) {
         console.log('SUB_GLOBAL_CheckLeapMonth_Null_Test_1700 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2603,7 +2603,7 @@ export default function SevenPointZeroI18nStageTest() {
         i18n.ChineseCalendar.checkLeapMonth(undefined, undefined, undefined);
       } catch (e) {
         console.log('SUB_GLOBAL_CheckLeapMonth_Undefined_Test_1800 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -2631,7 +2631,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_1900 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2659,7 +2659,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_2000 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2687,7 +2687,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_2100 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2715,7 +2715,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_2200 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2743,7 +2743,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_2300 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2771,7 +2771,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_2400 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2799,7 +2799,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Null_Test_2500 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2827,7 +2827,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_2600 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2855,7 +2855,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_2700 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2883,7 +2883,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_2800 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2911,7 +2911,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_2900 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2939,7 +2939,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_3000 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2967,7 +2967,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_3100 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -2995,7 +2995,7 @@ export default function SevenPointZeroI18nStageTest() {
         })
       } catch (e) {
         console.log('SUB_GLOBAL_GetChineseCalendar_Undefined_Test_3200 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3158,7 +3158,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1000 value:', value);
       } catch (e) {
         console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1000 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -3177,7 +3177,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1100 value:', value);
       } catch (e) {
         console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1100 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -3349,7 +3349,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1200 value:', CanonicalLocale);
       } catch (e) {
         console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1200 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -3367,7 +3367,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1300 value:', CanonicalLocale);
       } catch (e) {
         console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1300 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -3408,7 +3408,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(result > 0).assertTrue();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0200 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3448,7 +3448,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0400 error', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3488,7 +3488,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(result > 0).assertTrue();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0600 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3528,7 +3528,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_0800 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3567,7 +3567,7 @@ export default function SevenPointZeroI18nStageTest() {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1000 result:', result);
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1000 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3607,7 +3607,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1200 error: ', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3630,7 +3630,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1300 error: ', e.code, e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -3651,7 +3651,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1400 error: ', e.code, e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -3673,7 +3673,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1500 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3712,7 +3712,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1700 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3733,7 +3733,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolDateTimeFormat_parse_1800 error:', e.code, e.message);
-        expect(Number(e.code)).assertEqual(8900001);
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -3772,7 +3772,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(Number.isNaN(result)).assertTrue();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0200 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(8900001);
+        expect(error.code).assertEqual(8900001);
       }
     })
 
@@ -3811,7 +3811,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(Number.isNaN(result)).assertTrue();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_0400 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(8900001);
+        expect(error.code).assertEqual(8900001);
       }
     })
 
@@ -3968,7 +3968,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1300 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(401);
       }
     })
 
@@ -3989,7 +3989,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1400 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(401);
       }
     })
 
@@ -4010,7 +4010,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1500 catch error:' + error.code + error.message);
-        expect(Number(error.code)).assertEqual(8900001);
+        expect(error.code).assertEqual(8900001);
       }
     })
 
@@ -4027,7 +4027,7 @@ export default function SevenPointZeroI18nStageTest() {
         let value: boolean = i18n.ChineseCalendar.checkLeapMonth(2200, 20, 3);
         console.log('SUB_GLOBAL_GetChineseCalendar_Test_1300 value:', value);
       }catch(e){
-        expect(e.code).assertEqual('8900001');
+        expect(e.code).assertEqual(8900001);
       }
     })
 
@@ -4050,7 +4050,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_1900 catch error:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -4073,7 +4073,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_2000 catch error:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -4095,7 +4095,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1600 catch error:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
@@ -4117,7 +4117,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect().assertFail();
       } catch (e) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_1700 catch error:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(401);
+        expect(e.code).assertEqual(401);
       }
     })
 
