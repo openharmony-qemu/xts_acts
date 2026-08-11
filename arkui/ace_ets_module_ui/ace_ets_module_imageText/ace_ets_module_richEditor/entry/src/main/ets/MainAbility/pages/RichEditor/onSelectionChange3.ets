@@ -38,7 +38,6 @@ struct onSelectionChange3 {
         })
         .id('onSelectionChange3_RichEditor2')
         .width('100%')
-        .height('10%')
       RichEditor(this.options)
         .onReady(() => {
           this.controller.addTextSpan('012345123455464521437888555123123123',
@@ -57,7 +56,6 @@ struct onSelectionChange3 {
         })
         .id('onSelectionChange3_RichEditor')
         .width('100%')
-        .height('30%')
       Text('' + this.text1).key('onSelectionChange3_text1').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
       Text('' + this.text2).key('onSelectionChange3_text2').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
       Text('' + this.text3).key('onSelectionChange3_text3').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
