@@ -83,6 +83,7 @@ export default function DeviceInfoNoPermissionTest() {
             } catch (e) {
                 console.info('device_info_noperm_test_002 error code: ' + e.code + ', error message: ' + e.message);
                 expect(e.code).assertEqual(14700103);
+                expect().assertFail();
             }
             console.info('device_info_noperm_test_002 : end');
             done();
@@ -108,6 +109,7 @@ export default function DeviceInfoNoPermissionTest() {
             } catch (e) {
                 console.info('device_info_noperm_test_003 error code: ' + e.code + ', error message: ' + e.message);
                 expect(e.code).assertEqual(14700103);
+                expect().assertFail();
             }
             console.info('device_info_noperm_test_003 : end');
             done();
