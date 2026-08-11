@@ -22,7 +22,7 @@ import { resourceManager } from '@kit.LocalizationKit';
 import common from '@ohos.app.ability.common';
 
 const Tag = 'audio_ndk_test:'
-const TEST_PASS = 0;  // success result
+const test_pass = 0;  // success result
 
 export class AudioData {
   streamRendererUsageNum: number;
@@ -1071,7 +1071,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_GETVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererGetVolume_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_GETVOLUME_0100 audioRendererGetVolume: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1086,7 +1086,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolume_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0100 audioRendererSetVolume: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1101,7 +1101,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolume_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0200 audioRendererSetVolume: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1116,7 +1116,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolume_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0300 audioRendererSetVolume: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1131,7 +1131,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolume_04();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0400 audioRendererSetVolume fail: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1146,7 +1146,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolume_05();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0500 audioRendererSetVolume fail: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1161,7 +1161,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolume_06();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUME_0600 audioRendererSetVolume fail: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1176,7 +1176,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0100 audioRendererSetVolumeWithRamp: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1191,7 +1191,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0200 audioRendererSetVolumeWithRamp: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1206,7 +1206,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0300 audioRendererSetVolumeWithRamp: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1221,7 +1221,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_04();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0400 audioRendererSetVolumeWithRamp: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1236,7 +1236,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_05();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0500 audioRendererSetVolumeWithRamp: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1251,7 +1251,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_06();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0600 audioRendererSetVolumeWithRamp: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1266,7 +1266,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_07();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0700 audioRendererSetVolumeWithRamp fail: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1281,7 +1281,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_08();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0800 audioRendererSetVolumeWithRamp fail: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1296,7 +1296,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetVolumeWithRamp_09();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETVOLUMEWITHRAMP_0900 audioRendererSetVolumeWithRamp fail: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1311,7 +1311,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetOnMarkReached_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0100 audioRendererSetOnMarkReached: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1326,7 +1326,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetOnMarkReached_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0200 audioRendererSetOnMarkReached: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1341,7 +1341,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetOnMarkReached_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0300 audioRendererSetOnMarkReached: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1356,7 +1356,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetOnMarkReached_04();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0400 audioRendererSetOnMarkReached: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1371,7 +1371,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetOnMarkReached_05();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0500 audioRendererSetOnMarkReached: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1386,7 +1386,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetOnMarkReached_07();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0700 audioRendererSetOnMarkReached: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1401,7 +1401,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetOnMarkReached_08();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETONMARKREACHED_0800 audioRendererSetOnMarkReached: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1416,7 +1416,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_MARKCANCAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererCancelMark_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_MARKCANCAL_0100 audioRendererCancelMark: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1431,7 +1431,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_MARKCANCAL_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererCancelMark_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_MARKCANCAL_0200 audioRendererCancelMark: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1446,7 +1446,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_MARKCANCAL_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererCancelMark_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_MARKCANCAL_0300 audioRendererCancelMark: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1461,7 +1461,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetInterruptMode_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0100 audioRendererSetInterruptMode: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1476,7 +1476,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetInterruptMode_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0200 audioRendererSetInterruptMode: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1491,7 +1491,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetInterruptMode_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0300 audioRendererSetInterruptMode: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1506,7 +1506,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererSetInterruptMode_04();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_RENDERER_SETINTERRUPTMODE_0400 audioRendererSetInterruptMode: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1521,7 +1521,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETAUDIOROUTINGMANAGER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioManagerGetAudioRoutingManager_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETAUDIOROUTINGMANAGER_0100 audioManagerGetAudioRoutingManager: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1536,7 +1536,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetDevices_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0100 audioRoutingManagerDevices result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1551,7 +1551,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetDevices_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0200 audioRoutingManagerDevice result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1566,7 +1566,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetDevices_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0300 audioRoutingManagerDevice result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1581,7 +1581,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetDevices_04();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0400 audioRoutingManagerDevice result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1596,7 +1596,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetDevices_05();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0500 audioRoutingManagerDevice result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1611,7 +1611,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetDevices_06();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0600 audioRoutingManagerDevice result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1626,7 +1626,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetDevices_07();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0700 audioRoutingManagerDevice result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1641,7 +1641,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETMANAGER_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioManagerGetManager_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETMANAGER_0001 audioManager result: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1656,7 +1656,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETMANAGER_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioManagerGetManager_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETMANAGER_0002 audioManagerGetManager_02: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1671,7 +1671,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETAUDIOSCENE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioManagerGetAudioScene_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETAUDIOSCENE_0001 audioManagerGetAudioScene_01: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1686,7 +1686,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETAUDIOSCENE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioManagerGetAudioScene_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETAUDIOSCENE_0002 audioManagerGetAudioScene_02: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1701,7 +1701,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_REGISTERAUDIOSCENECHANGECALLBACK_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioManagerRegisterAudioSceneChangeCallback_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_REGISTERAUDIOSCENECHANGECALLBACK_0001 audioManagerRegisterAudioSceneChangeCallback_01: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1716,7 +1716,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_REGISTERAUDIOSCENECHANGECALLBACK_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioManagerRegisterAudioSceneChangeCallback_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_REGISTERAUDIOSCENECHANGECALLBACK_0002 audioManagerRegisterAudioSceneChangeCallback_02: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1731,7 +1731,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_REGISTERAUDIOSCENECHANGECALLBACK_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioManagerRegisterAudioSceneChangeCallback_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_REGISTERAUDIOSCENECHANGECALLBACK_0003 audioManagerRegisterAudioSceneChangeCallback_03: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1746,7 +1746,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioManagerUnregisterAudioSceneChangeCallback_01();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0001 audioManagerUnregisterAudioSceneChangeCallback_01: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1761,7 +1761,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioManagerUnregisterAudioSceneChangeCallback_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0002 audioManagerUnregisterAudioSceneChangeCallback_02: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1776,7 +1776,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioManagerUnregisterAudioSceneChangeCallback_03();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0003 audioManagerUnregisterAudioSceneChangeCallback_03: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1791,7 +1791,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioManagerUnregisterAudioSceneChangeCallback_04();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_UNREGISTERAUDIOSCENECHANGECALLBACK_0004 audioManagerUnregisterAudioSceneChangeCallback_04: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1806,7 +1806,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETAVAILABLEDEVICE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetAvailableDevices001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETAVAILABLEDEVICE_0001 audioRoutingManagerGetAvailableDevices001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1821,7 +1821,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETPREFERREDOUTPUTDEVICE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetPreferredOutputDevice001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETPREFERREDOUTPUTDEVICE_0001 audioRoutingManagerGetPreferredOutputDevice001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1836,7 +1836,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETPREFERREDINPUTDEVICE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerGetPreferredInputDevice001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETPREFERREDINPUTDEVICE_0001 audioRoutingManagerGetPreferredInputDevice001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1851,7 +1851,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SET_MIC_BLOCK_STATUS_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerSetMicBlockStatusCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SET_MIC_BLOCK_STATUS_CALLBACK_0100 audioRoutingManagerSetMicBlockStatusCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1866,7 +1866,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SET_MIC_BLOCK_STATUS_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerSetMicBlockStatusCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SET_MIC_BLOCK_STATUS_CALLBACK_0200 audioRoutingManagerSetMicBlockStatusCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1881,7 +1881,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0100 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1896,7 +1896,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0200 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1911,7 +1911,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0300 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1926,7 +1926,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0400 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1941,7 +1941,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_005();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0500 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1956,7 +1956,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_006();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0600 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1971,7 +1971,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_007();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0700 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -1986,7 +1986,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerRegisterDeviceChangeCallback_008();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_REGISTERDEVICECHANGECALLBACK_0800 audioRoutingManagerRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2001,7 +2001,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_UNREGISTERDEVICECHANGECALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerUnregisterDeviceChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_UNREGISTERDEVICECHANGECALLBACK_0100 audioRoutingManagerUnRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2016,7 +2016,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_UNREGISTERDEVICECHANGECALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerUnregisterDeviceChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_UNREGISTERDEVICECHANGECALLBACK_0200 audioRoutingManagerUnRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2031,7 +2031,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_UNREGISTERDEVICECHANGECALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerUnregisterDeviceChangeCallback_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_UNREGISTERDEVICECHANGECALLBACK_0300 audioRoutingManagerUnRegisterDeviceChangeCallback: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2046,7 +2046,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_RELEASEDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerReleaseDevices_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_RELEASEDEVICES_0100 audioRoutingManagerReleaseDevices: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2061,7 +2061,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_RELEASEDEVICES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRoutingManagerReleaseDevices_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_RELEASEDEVICES_0200 audioRoutingManagerReleaseDevices: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2076,7 +2076,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceType_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0100 audioAudioDeviceDescriptorGetDeviceType: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2091,7 +2091,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceType_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0200 audioAudioDeviceDescriptorGetDeviceType: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2106,7 +2106,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceType_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0300 audioAudioDeviceDescriptorGetDeviceType: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2121,7 +2121,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceRole_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0100 audioAudioDeviceDescriptorGetDeviceRole: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2136,7 +2136,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceRole_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0200 audioAudioDeviceDescriptorGetDeviceRole: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2151,7 +2151,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceRole_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0300 audioAudioDeviceDescriptorGetDeviceRole: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2166,7 +2166,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceId_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0100 audioAudioDeviceDescriptorGetDeviceId: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2181,7 +2181,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceId_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0200 audioAudioDeviceDescriptorGetDeviceId: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2196,7 +2196,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceId_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0300 audioAudioDeviceDescriptorGetDeviceId: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2211,7 +2211,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceName_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0100 audioAudioDeviceDescriptorGetDeviceName: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2226,7 +2226,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceName_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0200 audioAudioDeviceDescriptorGetDeviceName: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2241,7 +2241,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceName_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0300 audioAudioDeviceDescriptorGetDeviceName: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2256,7 +2256,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceAddress_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0100 audioAudioDeviceDescriptorGetDeviceAddress: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2271,7 +2271,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceAddress_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0200 audioAudioDeviceDescriptorGetDeviceAddress: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2286,7 +2286,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceAddress_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0300 audioAudioDeviceDescriptorGetDeviceAddress: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2301,7 +2301,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceSampleRates_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0100 audioAudioDeviceDescriptorGetDeviceSampleRates: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2316,7 +2316,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceSampleRates_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0200 audioAudioDeviceDescriptorGetDeviceSampleRates: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2331,7 +2331,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceSampleRates_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0300 audioAudioDeviceDescriptorGetDeviceSampleRates: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2346,7 +2346,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceSampleRates_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0400 audioAudioDeviceDescriptorGetDeviceSampleRates: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2361,7 +2361,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceChannelCounts_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0100 audioAudioDeviceDescriptorGetDeviceChannelCounts: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2376,7 +2376,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceChannelCounts_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0200 audioAudioDeviceDescriptorGetDeviceChannelCounts: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2391,7 +2391,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceChannelCounts_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0300 audioAudioDeviceDescriptorGetDeviceChannelCounts: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2406,7 +2406,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceChannelCounts_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0400 audioAudioDeviceDescriptorGetDeviceChannelCounts: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2421,7 +2421,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceDisplayName_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0100 audioAudioDeviceDescriptorGetDeviceDisplayName: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2436,7 +2436,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceDisplayName_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0200 audioAudioDeviceDescriptorGetDeviceDisplayName: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2451,7 +2451,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceDisplayName_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0300 audioAudioDeviceDescriptorGetDeviceDisplayName: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2466,7 +2466,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceEncodingTypes_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0100 audioAudioDeviceDescriptorGetDeviceEncodingTypes: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2481,7 +2481,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceEncodingTypes_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0200 audioAudioDeviceDescriptorGetDeviceEncodingTypes: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2496,7 +2496,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceEncodingTypes_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0300 audioAudioDeviceDescriptorGetDeviceEncodingTypes: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -2511,7 +2511,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceEncodingTypes_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0400 audioAudioDeviceDescriptorGetDeviceEncodingTypes: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3524,7 +3524,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_AUDIOVOLUMEMANAGER_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioManagerGetAudioVolumeManager_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_AUDIOVOLUMEMANAGER_0001 audioManagerGetAudioVolumeManager_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3539,7 +3539,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_AUDIOVOLUMEMANAGER_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioManagerGetAudioVolumeManager_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_AUDIOVOLUMEMANAGER_0002 audioManagerGetAudioVolumeManager_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3554,7 +3554,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMaxVolumeByUsage_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0001 audioVolumeManagerGetMaxVolumeByUsage_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3569,7 +3569,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMaxVolumeByUsage_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0002 audioVolumeManagerGetMaxVolumeByUsage_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3584,7 +3584,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMaxVolumeByUsage_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0003 audioVolumeManagerGetMaxVolumeByUsage_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3599,7 +3599,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMaxVolumeByUsage_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MAX_VOLUME_BY_USAGE_0004 audioVolumeManagerGetMaxVolumeByUsage_004: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3614,7 +3614,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMinVolumeByUsage_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0001 audioVolumeManagerGetMinVolumeByUsage_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3629,7 +3629,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMinVolumeByUsage_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0002 audioVolumeManagerGetMinVolumeByUsage_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3644,7 +3644,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMinVolumeByUsage_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0003 audioVolumeManagerGetMinVolumeByUsage_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3659,7 +3659,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetMinVolumeByUsage_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_MIN_VOLUME_BY_USAGE_0004 audioVolumeManagerGetMinVolumeByUsage_004: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3674,7 +3674,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetVolumeByUsage_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0001 audioVolumeManagerGetVolumeByUsage_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3689,7 +3689,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetVolumeByUsage_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0002 audioVolumeManagerGetVolumeByUsage_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3704,7 +3704,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetVolumeByUsage_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0003 audioVolumeManagerGetVolumeByUsage_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3719,7 +3719,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetVolumeByUsage_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_VOLUME_BY_USAGE_0004 audioVolumeManagerGetVolumeByUsage_004: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3734,7 +3734,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerIsMuteByUsage_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0001 audioVolumeManagerIsMuteByUsage_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3749,7 +3749,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerIsMuteByUsage_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0002 audioVolumeManagerIsMuteByUsage_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3764,7 +3764,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerIsMuteByUsage_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0003 audioVolumeManagerIsMuteByUsage_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3779,7 +3779,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerIsMuteByUsage_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_IS_MUTE_BY_USAGE_0004 audioVolumeManagerIsMuteByUsage_004: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3794,7 +3794,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0001 audioVolumeManagerRegisterStreamVolumeChangeCallback_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3809,7 +3809,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0002 audioVolumeManagerRegisterStreamVolumeChangeCallback_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3824,7 +3824,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0003 audioVolumeManagerRegisterStreamVolumeChangeCallback_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3839,7 +3839,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0004 audioVolumeManagerRegisterStreamVolumeChangeCallback_004: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3854,7 +3854,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_005();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0005 audioVolumeManagerRegisterStreamVolumeChangeCallback_005: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3869,7 +3869,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_006();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0006 audioVolumeManagerRegisterStreamVolumeChangeCallback_006: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3884,7 +3884,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_007();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0007 audioVolumeManagerRegisterStreamVolumeChangeCallback_007: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3899,7 +3899,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterStreamVolumeChangeCallback_008();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0008 audioVolumeManagerRegisterStreamVolumeChangeCallback_008: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3914,7 +3914,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterStreamVolumeChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0001 audioVolumeManagerUnregisterStreamVolumeChangeCallback_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3929,7 +3929,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterStreamVolumeChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0002 audioVolumeManagerUnregisterStreamVolumeChangeCallback_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3944,7 +3944,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterStreamVolumeChangeCallback_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0003 audioVolumeManagerUnregisterStreamVolumeChangeCallback_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3959,7 +3959,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterStreamVolumeChangeCallback_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_STREAM_VOLUME_CHANGE_CALLBACK_0004 audioVolumeManagerUnregisterStreamVolumeChangeCallback_004: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3974,7 +3974,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_RINGER_MODE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetRingerMode_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_RINGER_MODE_0001 audioVolumeManagerGetRingerMode_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -3989,7 +3989,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_RINGER_MODE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetRingerMode_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_RINGER_MODE_0002 audioVolumeManagerGetRingerMode_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4004,7 +4004,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_GET_RINGER_MODE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerGetRingerMode_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_GET_RINGER_MODE_0003 audioVolumeManagerGetRingerMode_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4019,7 +4019,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_RINGER_MODE_CHANGE_CALLBACK_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterRingerModeChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_RINGER_MODE_CHANGE_CALLBACK_0001 audioVolumeManagerRegisterRingerModeChangeCallback_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4034,7 +4034,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_RINGER_MODE_CHANGE_CALLBACK_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterRingerModeChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_RINGER_MODE_CHANGE_CALLBACK_0002 audioVolumeManagerRegisterRingerModeChangeCallback_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
      })
 
@@ -4049,7 +4049,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_RINGER_MODE_CHANGE_CALLBACK_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerRegisterRingerModeChangeCallback_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_REGISTER_RINGER_MODE_CHANGE_CALLBACK_0003 audioVolumeManagerRegisterRingerModeChangeCallback_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
      })
 
@@ -4064,7 +4064,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterRingerModeChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0001 audioVolumeManagerUnregisterRingerModeChangeCallback_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
      })
 
@@ -4079,7 +4079,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterRingerModeChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0002 audioVolumeManagerUnregisterRingerModeChangeCallback_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
      })
 
@@ -4094,7 +4094,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterRingerModeChangeCallback_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0003 audioVolumeManagerUnregisterRingerModeChangeCallback_003: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
      })
 
@@ -4109,7 +4109,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.audioVolumeManagerUnregisterRingerModeChangeCallback_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_UNREGISTER_RINGER_MODE_CHANGE_CALLBACK_0004 audioVolumeManagerUnregisterRingerModeChangeCallback_004: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
      })
 
@@ -4244,7 +4244,7 @@ export default function audioNDK() {
     it('TestCapturerGetFastStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioCaptureGetFastStatus_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_FAST_STATUS_001 audioCaptureGetFastStatus_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4259,7 +4259,7 @@ export default function audioNDK() {
     it('TestCapturerGetFastStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioCaptureGetFastStatus_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_FAST_STATUS_002 audioCaptureGetFastStatus_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4274,7 +4274,7 @@ export default function audioNDK() {
     it('TestRendererGetFastStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererGetFastStatus_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_GET_FAST_STATUS_001 audioRendererGetFastStatus_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4289,7 +4289,7 @@ export default function audioNDK() {
     it('TestRendererGetFastStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioRendererGetFastStatus_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_GET_FAST_STATUS_002 audioRendererGetFastStatus_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4304,7 +4304,7 @@ export default function audioNDK() {
     it('TestIsFastPlaybackSupported001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioStreamManagerIsFastPlaybackSupported_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_FAST_PLAYBACK_SUPPORTED_001 audioStreamManagerIsFastPlaybackSupported_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4319,7 +4319,7 @@ export default function audioNDK() {
     it('TestIsFastRecordingSupported001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioStreamManagerIsFastRecordingSupported_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_FAST_RECORDING_SUPPORTED_001 audioStreamManagerIsFastRecordingSupported_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4334,7 +4334,7 @@ export default function audioNDK() {
     it('TestSetCapturerFastStatusChangeCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioStreamBuilderSetCapturerFastStatusChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_FAST_STATUS_CHANGED_CALLBACK_001 audioStreamBuilderSetCapturerFastStatusChangeCallback_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4349,7 +4349,7 @@ export default function audioNDK() {
     it('TestSetCapturerFastStatusChangeCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioStreamBuilderSetCapturerFastStatusChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_FAST_STATUS_CHANGED_CALLBACK_002 audioStreamBuilderSetCapturerFastStatusChangeCallback_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4364,7 +4364,7 @@ export default function audioNDK() {
     it('TestSetRendererFastStatusChangeCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioStreamBuilderSetRendererFastStatusChangeCallback_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_RENDERER_FAST_STATUS_CHANGED_CALLBACK_001 audioStreamBuilderSetRendererFastStatusChangeCallback_001: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4379,7 +4379,7 @@ export default function audioNDK() {
     it('TestSetRendererFastStatusChangeCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioStreamBuilderSetRendererFastStatusChangeCallback_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_RENDERER_FAST_STATUS_CHANGED_CALLBACK_002 audioStreamBuilderSetRendererFastStatusChangeCallback_002: ${result}`);
-      expect(result).assertEqual(TEST_PASS)
+      expect(result).assertEqual(test_pass)
       done()
     })
 
@@ -4485,7 +4485,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_STREAMMANAGER_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.isIntelligentNoiseReductionEnabledForCurrentDevice_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_STREAMMANAGER_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4500,7 +4500,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerAvailableDevices_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4514,7 +4514,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerAvailableDevices_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4528,7 +4528,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerAvailableDevices_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4542,7 +4542,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerAvailableDevices_004();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4556,7 +4556,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_005();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_005 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4570,7 +4570,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_006();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_006 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4584,7 +4584,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_007();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_007 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4598,7 +4598,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_008();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_008 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4612,7 +4612,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_009();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_009 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4626,7 +4626,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_010();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_010 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4640,7 +4640,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_011();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_011 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4654,7 +4654,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_012();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_012 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4668,7 +4668,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_013();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_013 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4682,7 +4682,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerAvailableDevices_014();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_014 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })    
     /**
@@ -4696,7 +4696,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.bluetoothAndNearlinkPreferredRecordCategory_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4710,7 +4710,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCommonResult_001();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4725,7 +4725,7 @@ export default function audioNDK() {
       async (done: Function) => {
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4741,7 +4741,7 @@ export default function audioNDK() {
       async (done: Function) => {
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4757,7 +4757,7 @@ export default function audioNDK() {
       async (done: Function) => {
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0300();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4773,7 +4773,7 @@ export default function audioNDK() {
       async (done: Function) => {
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0400();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4789,7 +4789,7 @@ export default function audioNDK() {
       async (done: Function) => {
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0500();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4805,7 +4805,7 @@ export default function audioNDK() {
       async (done: Function) => {
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0600();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0600 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4821,7 +4821,7 @@ export default function audioNDK() {
       async (done: Function) => {
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0700();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0700 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4835,7 +4835,7 @@ export default function audioNDK() {
     it('AudioSessionManagerMuteSuggestion_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerMuteSuggestion_001();
       console.info(`Tag: AudioSessionManagerMuteSuggestion_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4849,7 +4849,7 @@ export default function audioNDK() {
     it('AudioSessionManagerMuteSuggestion_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerMuteSuggestion_002();
       console.info(`Tag: AudioSessionManagerMuteSuggestion_002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4863,7 +4863,7 @@ export default function audioNDK() {
     it('AudioSessionManagerMuteSuggestion_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerMuteSuggestion_003();
       console.info(`Tag: AudioSessionManagerMuteSuggestion_003 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4877,7 +4877,7 @@ export default function audioNDK() {
     it('AudioSessionManagerMuteSuggestion_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerMuteSuggestion_004();
       console.info(`Tag: AudioSessionManagerMuteSuggestion_004 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4891,7 +4891,7 @@ export default function audioNDK() {
     it('AudioSessionManagerMuteSuggestion_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.audioSessionManagerMuteSuggestion_005();
       console.info(`Tag: AudioSessionManagerMuteSuggestion_005 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -4905,7 +4905,7 @@ export default function audioNDK() {
     it('AudioSessionManagerIsOtherMediaPlaying_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManagerIsOtherMediaPlaying_001();
       console.info(`Tag: AudioSessionManagerIsOtherMediaPlaying_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4920,7 +4920,7 @@ export default function audioNDK() {
     it('AudioCapturer_RequestPlaybackStart_Callback_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0001();
       console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4935,7 +4935,7 @@ export default function audioNDK() {
     it('AudioCapturer_RequestPlaybackStart_Callback_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0002();
       console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4950,7 +4950,7 @@ export default function audioNDK() {
     it('AudioCapturer_RequestPlaybackStart_Callback_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0003();
       console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0003 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4965,7 +4965,7 @@ export default function audioNDK() {
     it('AudioCapturer_RequestPlaybackStart_Callback_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0004();
       console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0004 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4981,7 +4981,7 @@ export default function audioNDK() {
     it('AudioCapturer_RequestPlaybackStart_Callback_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0005();
       console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0005 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -4996,7 +4996,7 @@ export default function audioNDK() {
     it('AudioCapturer_RequestPlaybackStart_Callback_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0006();
       console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0006 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5011,7 +5011,7 @@ export default function audioNDK() {
     it('AudioCapturer_RequestPlaybackStart_Callback_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0007();
       console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0007 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5026,7 +5026,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0001();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5041,7 +5041,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0002();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5056,7 +5056,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0003();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0003 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5071,7 +5071,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0004();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0004 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5086,7 +5086,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0005();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0005 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5101,7 +5101,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0006();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0006 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5116,7 +5116,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0007();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0007 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5131,7 +5131,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0008();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0008 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5146,7 +5146,7 @@ export default function audioNDK() {
     it('AudioStreamBuilder_SetPlaybackCaptureMode_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0009();
       console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0009 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5161,7 +5161,7 @@ export default function audioNDK() {
     it('AudioStream_PlaybackCaptureStartState_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioStream_PlaybackCaptureStartState_0001();
       console.info(`Tag: AudioStream_PlaybackCaptureStartState_0001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5176,7 +5176,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_enum_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_enum_001();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_enum_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5191,7 +5191,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_enum_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_enum_002();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_enum_002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5206,7 +5206,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_001();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5221,7 +5221,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_002();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5236,7 +5236,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_003();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_003 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5251,7 +5251,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_004();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_004 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5266,7 +5266,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_005();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_005 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5281,7 +5281,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_006();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_006 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5296,7 +5296,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_007();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_007 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5311,7 +5311,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_008();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_008 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5326,7 +5326,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_009();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_009 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5341,7 +5341,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_010();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_010 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5356,7 +5356,7 @@ export default function audioNDK() {
     it('AudioCapturer_SetIndependentAudioSessionStrategy_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_011();
       console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_011 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5371,7 +5371,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     
@@ -5386,7 +5386,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5401,7 +5401,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5416,7 +5416,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5431,7 +5431,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_001();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5446,7 +5446,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_002();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5461,7 +5461,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_003();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_003 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5476,7 +5476,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_004();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_004 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5491,7 +5491,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_005();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_005 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5506,7 +5506,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_006();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_006 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5521,7 +5521,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_007();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_007 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5536,7 +5536,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_008();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_008 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5551,7 +5551,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_009();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_009 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5566,7 +5566,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_010();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_010 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5581,7 +5581,7 @@ export default function audioNDK() {
     it('AudioRenderer_SetIndependentAudioSessionStrategy_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioRenderer_SetIndependentAudioSessionStrategy_011();
       console.info(`Tag: AudioRenderer_SetIndependentAudioSessionStrategy_011 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5596,7 +5596,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5611,7 +5611,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5626,7 +5626,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5641,7 +5641,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5656,7 +5656,7 @@ export default function audioNDK() {
     it('AudioSessionManager_SetBehavior_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManager_SetBehavior_001();
       console.info(`Tag: AudioSessionManager_SetBehavior_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5671,7 +5671,7 @@ export default function audioNDK() {
     it('AudioSessionManager_SetBehavior_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManager_SetBehavior_002();
       console.info(`Tag: AudioSessionManager_SetBehavior_002 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5686,7 +5686,7 @@ export default function audioNDK() {
     it('AudioSessionManager_SetBehavior_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManager_SetBehavior_003();
       console.info(`Tag: AudioSessionManager_SetBehavior_003 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5701,7 +5701,7 @@ export default function audioNDK() {
     it('AudioSessionManager_SetBehavior_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.AudioSessionManager_SetBehavior_004();
       console.info(`Tag: AudioSessionManager_SetBehavior_004 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5716,7 +5716,7 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5731,7 +5731,7 @@ export default function audioNDK() {
     it('AudioStreamManagerIsMultichannelPlaybackSupported_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioStreamManagerIsMultichannelPlaybackSupported_001();
       console.info(`AudioStreamManagerIsMultichannelPlaybackSupported_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -5745,7 +5745,7 @@ export default function audioNDK() {
     it('AudioStreamManagerIsDirectPlaybackSupported_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioStreamManagerIsDirectPlaybackSupported_001();
       console.info(`Tag: AudioStreamManagerIsDirectPlaybackSupported_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -5759,7 +5759,7 @@ export default function audioNDK() {
     it('AudioStreamManagerIsOffloadPlaybackSupported_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.AudioStreamManagerIsOffloadPlaybackSupported_001();
       console.info(`Tag: AudioStreamManagerIsOffloadPlaybackSupported_001 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -5773,7 +5773,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
  	   /**
@@ -5787,7 +5787,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
  	   /**
@@ -5801,7 +5801,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
  	   /**
@@ -5815,7 +5815,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
  	   /**
@@ -5829,7 +5829,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
  	   /**
@@ -5843,7 +5843,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
  	   /**
@@ -5857,7 +5857,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
  	   /**
@@ -5871,7 +5871,7 @@ export default function audioNDK() {
  	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
  	     let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400();
  	     console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400 : ${result}`);
- 	     expect(result).assertEqual(TEST_PASS);
+ 	     expect(result).assertEqual(test_pass);
  	     done();
  	   })
 
@@ -5886,7 +5886,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5901,7 +5901,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5916,7 +5916,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5931,7 +5931,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0200();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5946,7 +5946,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0300();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5961,7 +5961,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0400();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0400 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5976,7 +5976,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -5991,7 +5991,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6006,7 +6006,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6021,7 +6021,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6036,7 +6036,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6051,7 +6051,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0200();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6066,7 +6066,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0300();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6081,7 +6081,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0400();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0400 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6096,7 +6096,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6111,7 +6111,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -6125,7 +6125,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -6139,7 +6139,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0200();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
     /**
@@ -6153,7 +6153,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6168,7 +6168,7 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0200();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6184,7 +6184,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6200,7 +6200,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6216,7 +6216,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6232,7 +6232,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6248,311 +6248,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100
-     * @tc.desc   Test OH_AudioManager_GetAudioDeviceEnhanceManager with nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100
-     * @tc.desc   Test OH_AudioManager_GetAudioDeviceEnhanceManager return success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported with manager nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported with supported nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported return success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice with manager nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice return success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice with manager nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice return success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with manager nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with renderer nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer return success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with manager nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with capturer nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer return success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice with all valid parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice with all valid parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with all valid parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100
-     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with all valid parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100',
-        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6571,7 +6267,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6590,7 +6286,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6609,7 +6305,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6628,7 +6324,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6647,7 +6343,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6666,7 +6362,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6685,7 +6381,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6704,7 +6400,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6723,7 +6419,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6742,7 +6438,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6761,7 +6457,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6780,7 +6476,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6799,7 +6495,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6818,7 +6514,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6837,7 +6533,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6856,7 +6552,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_PARAM_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6894,7 +6590,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6904,7 +6600,7 @@ export default function audioNDK() {
      * @tc.desc   Test complete flow: CreateBuilder→SetVoiceDownlink→SetCallback→GenerateCapturer.
      *            测试点：验证设置回调后能够成功创建录音器
      *            测试输入：创建builder→设置VOICE_DOWNLINK→设置回调→创建录音器
-     *            测试输出：成功创建录音器，返回 TEST_PASS
+     *            测试输出：成功创建录音器，返回 test_pass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -6913,7 +6609,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6932,7 +6628,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_FLOW_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6942,7 +6638,7 @@ export default function audioNDK() {
      * @tc.desc   Test callback function pointer validation in VOICE_DOWNLINK scene.
      *            测试点：验证回调函数指针被正确设置并可被使用
      *            测试输入：创建builder→设置VOICE_DOWNLINK→设置回调→验证回调指针
-     *            测试输出：回调函数指针有效，返回 TEST_PASS
+     *            测试输出：回调函数指针有效，返回 test_pass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -6951,7 +6647,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETSENSITIVERECORDPERMITCALLBACK_CALLBACK_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6970,7 +6666,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -6989,7 +6685,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -7008,7 +6704,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_PARAM_0300 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -7046,7 +6742,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECURITYPARAMS_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -7065,7 +6761,7 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
+      expect(result).assertEqual(test_pass);
       done();
     })
 
@@ -7079,7 +6775,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100 result: ${ret}`);
       done();
     });
@@ -7094,7 +6790,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100 result: ${ret}`);
       done();
     });
@@ -7109,7 +6805,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200 result: ${ret}`);
       done();
     });
@@ -7124,7 +6820,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300 result: ${ret}`);
       done();
     });
@@ -7139,7 +6835,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400 result: ${ret}`);
       done();
     });
@@ -7155,7 +6851,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100 result: ${ret}`);
       done();
     });
@@ -7170,7 +6866,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200 result: ${ret}`);
       done();
     });
@@ -7186,7 +6882,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100 result: ${ret}`);
       done();
     });
@@ -7201,7 +6897,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200 result: ${ret}`);
       done();
     });
@@ -7217,7 +6913,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100 result: ${ret}`);
       done();
     });
@@ -7232,7 +6928,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200 result: ${ret}`);
       done();
     });
@@ -7248,7 +6944,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100 result: ${ret}`);
       done();
     });
@@ -7263,7 +6959,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200 result: ${ret}`);
       done();
     });
@@ -7278,7 +6974,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300 result: ${ret}`);
       done();
     });
@@ -7294,7 +6990,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100 result: ${ret}`);
       done();
     });
@@ -7309,7 +7005,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200 result: ${ret}`);
       done();
     });
@@ -7324,7 +7020,7 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300 result: ${ret}`);
       done();
     });
@@ -7339,9 +7035,1927 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400();
-      expect(ret).assertEqual(TEST_PASS);
+      expect(ret).assertEqual(test_pass);
       console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400 result: ${ret}`);
       done();
     });
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100
+      * @tc.desc    Test OH_AudioManager_GetAccessoryManager with valid params.
+      *             测试点：验证正常参数下获取配件管理器
+      *             测试输入：manager = 有效指针
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100()
+        console.info(`${Tag} GetAccessoryManager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200
+      * @tc.desc    Test OH_AudioManager_GetAccessoryManager with null manager.
+      *             测试点：验证空指针参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200()
+        console.info(`${Tag} GetAccessoryManager with null result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with valid params.
+      *             测试点：验证正常参数下创建输入配件
+      *             测试输入：manager = 有效指针, info = 有效信息, capabilities = 有效能力
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100()
+        console.info(`${Tag} CreateInput result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200()
+        console.info(`${Tag} CreateInput with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null info.
+      *             测试点：验证空info参数下的错误处理
+      *             测试输入：info = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300()
+        console.info(`${Tag} CreateInput with null info result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null capabilities.
+      *             测试点：验证空capabilities参数下的错误处理
+      *             测试输入：capabilities = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400()
+        console.info(`${Tag} CreateInput with null capabilities result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null callback.
+      *             测试点：验证空callback参数下的错误处理
+      *             测试输入：openInputStream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500()
+        console.info(`${Tag} CreateInput with null callback result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null accessory output.
+      *             测试点：验证空accessory输出参数下的错误处理
+      *             测试输入：accessory = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600()
+        console.info(`${Tag} CreateInput with null accessory result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetAssociatedMacAddresses with valid params.
+      *             测试点：验证正常参数下设置关联MAC地址
+      *             测试输入：manager = 有效指针, accessory = 有效指针, macAddresses = 有效数组, count = 2
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100()
+        console.info(`${Tag} SetAssociatedMacAddresses result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryManager_SetAssociatedMacAddresses with count=0 to clear.
+      *             测试点：验证清空关联MAC地址列表
+      *             测试输入：count = 0, macAddresses = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200()
+        console.info(`${Tag} SetAssociatedMacAddresses with count=0 result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300
+      * @tc.desc    Test OH_AudioAccessoryManager_SetAssociatedMacAddresses with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300()
+        console.info(`${Tag} SetAssociatedMacAddresses with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_RegisterNoiseReductionCapability with valid params.
+      *             测试点：验证正常参数下注册降噪能力
+      *             测试输入：capability = 有效降噪能力结构体
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100()
+        console.info(`${Tag} RegisterNoiseReductionCapability result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryManager_RegisterNoiseReductionCapability with null capability.
+      *             测试点：验证空capability参数下的错误处理
+      *             测试输入：capability = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200()
+        console.info(`${Tag} RegisterNoiseReductionCapability with null capability result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStartCallback with null params.
+      *             测试点：验证空stream参数下的错误处理
+      *             测试输入：stream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100()
+        console.info(`${Tag} RegisterStartCallback with null stream result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStartCallback with null callback.
+      *             测试点：验证空callback参数下的错误处理
+      *             测试输入：callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200()
+        console.info(`${Tag} RegisterStartCallback with null callback result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStopCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100()
+        console.info(`${Tag} RegisterStopCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100()
+        console.info(`${Tag} RegisterReleaseCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100()
+        console.info(`${Tag} RegisterLatencyCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100()
+        console.info(`${Tag} RegisterFramePositionCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with null stream.
+      *             测试点：验证空stream参数下的错误处理
+      *             测试输入：stream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100()
+        console.info(`${Tag} Write with null stream result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with null data.
+      *             测试点：验证空data参数下的错误处理
+      *             测试输入：data = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200()
+        console.info(`${Tag} Write with null data result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with dataSize=0.
+      *             测试点：验证dataSize为0的错误处理
+      *             测试输入：dataSize = 0
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300()
+        console.info(`${Tag} Write with dataSize=0 result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_GetWritableSize with null stream.
+      *             测试点：验证空stream参数下的错误处理
+      *             测试输入：stream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100()
+        console.info(`${Tag} GetWritableSize with null stream result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_GetWritableSize with null writableSize.
+      *             测试点：验证空writableSize参数下的错误处理
+      *             测试输入：writableSize = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200()
+        console.info(`${Tag} GetWritableSize with null writableSize result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_NotifyConnected with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100()
+        console.info(`${Tag} NotifyConnected with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_NotifyDisconnected with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100()
+        console.info(`${Tag} NotifyDisconnected with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Release with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100()
+        console.info(`${Tag} Release with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetNoiseReductionMode with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100()
+        console.info(`${Tag} SetNoiseReductionMode with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100
+      * @tc.desc    Test OH_AudioNoiseReductionMode enum values.
+      *             测试点：验证降噪模式枚举值正确性
+      *             测试输入：验证 FIDELITY, PURE_VOCALS, STANDARD 枚举值
+      *             测试输出：枚举值正确
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100()
+        console.info(`${Tag} NoiseReductionMode enum result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100
+      * @tc.desc    Test OH_AudioAccessoryType enum values.
+      *             测试点：验证配件类型枚举值正确性
+      *             测试输入：验证 AUDIO_ACCESSORY_TYPE_BT_SPP 枚举值
+      *             测试输出：枚举值正确
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100()
+        console.info(`${Tag} AccessoryType enum result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100
+      * @tc.desc    Test OH_AudioCommon_Result error code enum values.
+      *             测试点：验证错误码枚举值正确性
+      *             测试输入：验证 SUCCESS, PERMISSION_DENIED, INVALID_PARAM 等枚举值
+      *             测试输出：枚举值正确
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100()
+        console.info(`${Tag} Error code enum result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100
+      * @tc.desc    Test OH_AudioManager_GetAccessoryManager with valid params.
+      *             测试点：验证正常参数下获取配件管理器
+      *             测试输入：manager = 有效指针
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0100()
+        console.info(`${Tag} GetAccessoryManager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200
+      * @tc.desc    Test OH_AudioManager_GetAccessoryManager with null manager.
+      *             测试点：验证空指针参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETMANAGER_PARAM_0200()
+        console.info(`${Tag} GetAccessoryManager with null result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with valid params.
+      *             测试点：验证正常参数下创建输入配件
+      *             测试输入：manager = 有效指针, info = 有效信息, capabilities = 有效能力
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0100()
+        console.info(`${Tag} CreateInput result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0200()
+        console.info(`${Tag} CreateInput with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null info.
+      *             测试点：验证空info参数下的错误处理
+      *             测试输入：info = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0300()
+        console.info(`${Tag} CreateInput with null info result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null capabilities.
+      *             测试点：验证空capabilities参数下的错误处理
+      *             测试输入：capabilities = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0400()
+        console.info(`${Tag} CreateInput with null capabilities result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null callback.
+      *             测试点：验证空callback参数下的错误处理
+      *             测试输入：openInputStream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0500()
+        console.info(`${Tag} CreateInput with null callback result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with null accessory output.
+      *             测试点：验证空accessory输出参数下的错误处理
+      *             测试输入：accessory = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_PARAM_0600()
+        console.info(`${Tag} CreateInput with null accessory result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetAssociatedMacAddresses with valid params.
+      *             测试点：验证正常参数下设置关联MAC地址
+      *             测试输入：manager = 有效指针, accessory = 有效指针, macAddresses = 有效数组, count = 2
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0100()
+        console.info(`${Tag} SetAssociatedMacAddresses result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryManager_SetAssociatedMacAddresses with count=0 to clear.
+      *             测试点：验证清空关联MAC地址列表
+      *             测试输入：count = 0, macAddresses = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0200()
+        console.info(`${Tag} SetAssociatedMacAddresses with count=0 result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300
+      * @tc.desc    Test OH_AudioAccessoryManager_SetAssociatedMacAddresses with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_PARAM_0300()
+        console.info(`${Tag} SetAssociatedMacAddresses with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_RegisterNoiseReductionCapability with valid params.
+      *             测试点：验证正常参数下注册降噪能力
+      *             测试输入：capability = 有效降噪能力结构体
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0100()
+        console.info(`${Tag} RegisterNoiseReductionCapability result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryManager_RegisterNoiseReductionCapability with null capability.
+      *             测试点：验证空capability参数下的错误处理
+      *             测试输入：capability = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_PARAM_0200()
+        console.info(`${Tag} RegisterNoiseReductionCapability with null capability result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStartCallback with null params.
+      *             测试点：验证空stream参数下的错误处理
+      *             测试输入：stream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0100()
+        console.info(`${Tag} RegisterStartCallback with null stream result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStartCallback with null callback.
+      *             测试点：验证空callback参数下的错误处理
+      *             测试输入：callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_PARAM_0200()
+        console.info(`${Tag} RegisterStartCallback with null callback result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStopCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_PARAM_0100()
+        console.info(`${Tag} RegisterStopCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_PARAM_0100()
+        console.info(`${Tag} RegisterReleaseCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_PARAM_0100()
+        console.info(`${Tag} RegisterLatencyCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback with null params.
+      *             测试点：验证空参数下的错误处理
+      *             测试输入：stream = nullptr, callback = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_PARAM_0100()
+        console.info(`${Tag} RegisterFramePositionCallback with null params result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with null stream.
+      *             测试点：验证空stream参数下的错误处理
+      *             测试输入：stream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0100()
+        console.info(`${Tag} Write with null stream result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with null data.
+      *             测试点：验证空data参数下的错误处理
+      *             测试输入：data = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0200()
+        console.info(`${Tag} Write with null data result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with dataSize=0.
+      *             测试点：验证dataSize为0的错误处理
+      *             测试输入：dataSize = 0
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_PARAM_0300()
+        console.info(`${Tag} Write with dataSize=0 result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_GetWritableSize with null stream.
+      *             测试点：验证空stream参数下的错误处理
+      *             测试输入：stream = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0100()
+        console.info(`${Tag} GetWritableSize with null stream result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_GetWritableSize with null writableSize.
+      *             测试点：验证空writableSize参数下的错误处理
+      *             测试输入：writableSize = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_PARAM_0200()
+        console.info(`${Tag} GetWritableSize with null writableSize result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_NotifyConnected with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_PARAM_0100()
+        console.info(`${Tag} NotifyConnected with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_NotifyDisconnected with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_PARAM_0100()
+        console.info(`${Tag} NotifyDisconnected with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Release with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_PARAM_0100()
+        console.info(`${Tag} Release with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetNoiseReductionMode with null manager.
+      *             测试点：验证空manager参数下的错误处理
+      *             测试输入：manager = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_PARAM_0100()
+        console.info(`${Tag} SetNoiseReductionMode with null manager result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100
+      * @tc.desc    Test OH_AudioNoiseReductionMode enum values.
+      *             测试点：验证降噪模式枚举值正确性
+      *             测试输入：验证 FIDELITY, PURE_VOCALS, STANDARD 枚举值
+      *             测试输出：枚举值正确
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOISEMODE_ENUM_0100()
+        console.info(`${Tag} NoiseReductionMode enum result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100
+      * @tc.desc    Test OH_AudioAccessoryType enum values.
+      *             测试点：验证配件类型枚举值正确性
+      *             测试输入：验证 AUDIO_ACCESSORY_TYPE_BT_SPP 枚举值
+      *             测试输出：枚举值正确
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_TYPE_ENUM_0100()
+        console.info(`${Tag} AccessoryType enum result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100
+      * @tc.desc    Test OH_AudioCommon_Result error code enum values.
+      *             测试点：验证错误码枚举值正确性
+      *             测试输入：验证 SUCCESS, PERMISSION_DENIED, INVALID_PARAM 等枚举值
+      *             测试输出：枚举值正确
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_ERRORCODE_ENUM_0100()
+        console.info(`${Tag} Error code enum result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_CreateInput with illegal state.
+      *             测试点：验证管理器未初始化状态下的错误处理
+      *             测试输入：manager = 未初始化管理器
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_CREATEINPUT_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} CreateInput illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetAssociatedMacAddresses with illegal state.
+      *             测试点：验证配件未创建状态下的错误处理
+      *             测试输入：accessory = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETMAC_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} SetAssociatedMacAddresses illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_RegisterNoiseReductionCapability with illegal state.
+      *             测试点：验证配件未创建状态下的错误处理
+      *             测试输入：accessory = nullptr
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGNOISE_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} RegisterNoiseReductionCapability illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetNoiseReductionMode with illegal state.
+      *             测试点：验证配件未连接状态下的错误处理
+      *             测试输入：accessory = 未连接配件
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} SetNoiseReductionMode illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetNoiseReductionMode with unsupported mode.
+      *             测试点：验证不支持降噪模式下的错误处理
+      *             测试输入：mode = 未注册的降噪模式
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_UNSUPPORTED
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_ERROR_UNSUPPORTED_0100()
+        console.info(`${Tag} SetNoiseReductionMode unsupported result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Connected with illegal state (no capability).
+      *             测试点：验证未注册能力情况下连接的错误处理
+      *             测试输入：配件未注册降噪能力
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} Connected illegal state (no capability) result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0200
+      * @tc.desc    Test OH_AudioAccessoryManager_Connected with illegal state (duplicate connection).
+      *             测试点：验证重复连接情况下的错误处理
+      *             测试输入：配件已处于连接状态
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_ERROR_ILLEGALSTATE_0200()
+        console.info(`${Tag} Connected illegal state (duplicate) result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Disconnected with illegal state (not connected).
+      *             测试点：验证配件未连接状态下断连的错误处理
+      *             测试输入：配件处于未连接状态
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} Disconnected illegal state (not connected) result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Destroy with illegal state (still connected).
+      *             测试点：验证配件仍处于连接状态下销毁的错误处理
+      *             测试输入：配件处于连接状态
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_RELEASE_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} Destroy illegal state (still connected) result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with frame length mismatch.
+      *             测试点：验证写入数据长度不匹配20ms帧长的错误处理
+      *             测试输入：dataSize = 1000 (不匹配20ms)
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_FRAME_LENGTH_MISMATCH
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100()
+        console.info(`${Tag} Write frame length mismatch result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+      /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with illegal state (stream released).
+      *             测试点：验证流已释放状态下查询可写大小的错误处理
+      *             测试输入：stream = 已释放的流
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} Writable illegal state (released) result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_GetWritableSize with illegal state (stream released).
+      *             测试点：验证流已释放状态下查询可写大小的错误处理
+      *             测试输入：stream = 已释放的流
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} GetWritableSize illegal state (released) result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStartCallback with illegal state.
+      *             测试点：验证非OpenInputStream回调期间注册的错误处理
+      *             测试输入：在错误时机注册回调
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} RegisterStartCallback illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterStopCallback with illegal state.
+      *             测试点：验证非OpenInputStream回调期间注册的错误处理
+      *             测试输入：在错误时机注册回调
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} RegisterStopCallback illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback with illegal state.
+      *             测试点：验证非OpenInputStream回调期间注册的错误处理
+      *             测试输入：在错误时机注册回调
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} RegisterReleaseCallback illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback with illegal state.
+      *             测试点：验证非OpenInputStream回调期间注册的错误处理
+      *             测试输入：在错误时机注册回调
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} RegisterLatencyCallback illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback with illegal state.
+      *             测试点：验证非OpenInputStream回调期间注册的错误处理
+      *             测试输入：在错误时机注册回调
+      *             测试输出：返回AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100()
+        console.info(`${Tag} RegisterFramePositionCallback illegal state result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_SetNoiseReductionMode with valid mode and connected accessory.
+      *             测试点：验证配件已连接状态下设置支持的降噪模式成功
+      *             测试输入：mode = AUDIO_NOISE_REDUCTION_MODE_STANDARD (已注册的模式)
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100()
+        console.info(`${Tag} SetNoiseReductionMode success result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Connected with valid accessory and registered capabilities.
+      *             测试点：验证配件已注册能力后成功连接
+      *             测试输入：accessory = 有效配件且已注册降噪能力
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100()
+        console.info(`${Tag} Connected success result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Disconnected with connected accessory.
+      *             测试点：验证配件已连接状态下成功断开
+      *             测试输入：accessory = 已连接的配件
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100()
+        console.info(`${Tag} Disconnected success result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100
+      * @tc.desc    Test OH_AudioAccessoryManager_Destroy with disconnected accessory.
+      *             测试点：验证配件已断开状态下成功销毁
+      *             测试输入：accessory = 已断开的配件
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100()
+        console.info(`${Tag} Destroy success result: ${result}`)
+        expect(result).assertEqual(test_pass)
+        done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_Write with valid stream and data.
+      *             测试点：验证流已启动且数据长度正确情况下成功写入
+      *             测试输入：stream = 已启动的流, data = 有效数据, dataSize = 1920 (20ms)
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100()
+      console.info(`${Tag} Write success result: ${result}`)
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100
+      * @tc.desc    Test OH_AudioAccessoryInputStreamManager_GetWritableSize with valid stream.
+      *             测试点：验证流有效情况下成功查询可写大小
+      *             测试输入：stream = 有效流
+      *             测试输出：返回AUDIOCOMMON_RESULT_SUCCESS
+      * @tc.type    Function
+      * @tc.size    MediumTest
+      * @tc.level   Level0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100()
+      console.info(`${Tag} GetWritableSize success result: ${result}`)
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDeviceEnhanceManager with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDeviceEnhanceManager return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported with supported nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with renderer nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with manager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with capturer nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer return success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDevice with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDevice with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100
+     * @tc.desc   Test OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer with all valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
   })
 }
