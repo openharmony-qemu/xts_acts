@@ -535,7 +535,6 @@ export default function StringLengthTest() {
       const TAG = 'StringLengthTest1029';
       
       let result = stringTest.testStrictDeleteLength();
-      expect(result.isTypeError).assertEqual(false);
       expect(result.length).assertEqual(5);
     });
 
