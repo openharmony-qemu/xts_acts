@@ -252,7 +252,7 @@ struct Summarizer {
         Button("WebViewController click").key('WebViewAiSessionOptionsButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitWebViewLanguageModel01": {
               try {
@@ -260,7 +260,7 @@ struct Summarizer {
                   console.log('emitWebViewLanguageModel01111')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/prompt.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('Create'));
                   await buttonOne.click();
                 } else {
@@ -278,7 +278,7 @@ struct Summarizer {
                   console.log('emitWebViewLanguageModel0222')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/prompt.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('Create'));
                   await buttonOne.click();
                   await Utils.sleep(2000)
@@ -298,7 +298,7 @@ struct Summarizer {
                   console.log('emitWebViewLanguageModel0333')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/prompt.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('Create'));
                   await buttonOne.click();
                   await Utils.sleep(2000)
@@ -318,7 +318,7 @@ struct Summarizer {
                   console.log('emitWebViewLanguageDetector0444')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/language_detector.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('中文'));
                   await buttonOne.click();
                   await Utils.sleep(2000)
@@ -338,7 +338,7 @@ struct Summarizer {
                   console.log('emitWebViewProofreader0555')
                   this.isPageEnd = -1;
                   this.controller.loadUrl(this.mServer.getAssetUrl('proofreader.html'));
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('开始校对'));
                   await buttonOne.click();
                 } else {
@@ -356,7 +356,7 @@ struct Summarizer {
                   console.log('emitWebViewProofreader0666')
                   this.isPageEnd = -1;
                   this.controller.loadUrl(this.mServer.getAssetUrl('proofreader.html'));
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('返回导航页'));
                   await buttonOne.click();
                 } else {
@@ -373,7 +373,7 @@ struct Summarizer {
                   console.log('emitWebViewWriter0777')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/writer.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('生成内容'));
                   await buttonOne.click();
                 } else {
@@ -390,7 +390,7 @@ struct Summarizer {
                   console.log('emitWebViewWriter0888')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/writer.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('生成内容'));
                   await buttonOne.click();
                   await Utils.sleep(2000)
@@ -411,7 +411,7 @@ struct Summarizer {
                   console.log('emitWebViewWriter0999')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/rewriter.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonTwo = await driver.findComponent(ON.text('下载模型并重写'));
                   await buttonTwo.click();
                 } else {
@@ -429,7 +429,7 @@ struct Summarizer {
                   console.log('emitWebViewWriter010')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/rewriter.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('下载模型并重写'));
                   await buttonOne.click();
                   await Utils.sleep(2000)
@@ -450,7 +450,7 @@ struct Summarizer {
                   console.log('emitWebViewTranslator11')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/translator.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('开始翻译'));
                   await buttonOne.click();
                 } else {
@@ -468,7 +468,7 @@ struct Summarizer {
                   console.log('emitWebViewSummarizer12')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/summarizer.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('示例文章'));
                   await buttonOne.click();
                   await Utils.sleep(2000)
@@ -490,7 +490,7 @@ struct Summarizer {
                   console.log('emitWebViewSummarizer13')
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/summarizer.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
                   let buttonOne = await driver.findComponent(ON.text('示例文章'));
                   await buttonOne.click();
                   await Utils.sleep(2000)

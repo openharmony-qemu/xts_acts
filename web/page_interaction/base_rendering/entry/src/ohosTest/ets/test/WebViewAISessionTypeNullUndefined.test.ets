@@ -107,7 +107,7 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
     it('testWebViewAiSessionOptions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewAiSessionOptions03", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("testWebViewAiSessionOptions03",true, 20260521, () => { isReturn = true });
+      Utils.registerEvent("testWebViewAiSessionOptions03",true, 20260522, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewAISessionTypeNullUndefinedButton","testWebViewAiSessionOptions03");
       await Utils.waitForExist(() => isReturn, "testWebViewAiSessionOptions03" + '_returnCheck', true, 1000);
       done();
