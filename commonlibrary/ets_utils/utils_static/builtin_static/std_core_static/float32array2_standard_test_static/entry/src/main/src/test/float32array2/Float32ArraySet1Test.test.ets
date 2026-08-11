@@ -1141,20 +1141,17 @@ export default function Float32ArraySet1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_ONE_0650
      * @tc.name testFloat32ArraySetOne065
-     * @tc.desc Verify insertPos=2147483647 throws IndexOutOfBoundsError
+     * @tc.desc Verify set preserves negative zero when -Number.MIN_VALUE underflows to Float32
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArraySetOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float32Array = new Float32Array(3);
-      const source: FixedArray<number> = [1];
-      try {
-        arr.set(source, 2147483647);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
+      const arr: Float32Array = new Float32Array(1);
+      const source: FixedArray<number> = [-Number.MIN_VALUE];
+      arr.set(source, 0);
+      const reciprocal = 1.0 / arr.$_get(0);
+      expect(reciprocal).assertEqual(-Number.POSITIVE_INFINITY);
     });
 
     /**

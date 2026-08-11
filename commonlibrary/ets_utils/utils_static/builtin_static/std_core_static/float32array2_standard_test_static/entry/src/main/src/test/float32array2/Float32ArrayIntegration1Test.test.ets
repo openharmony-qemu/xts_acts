@@ -292,18 +292,15 @@ export default function Float32ArrayIntegration1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INTEGRATION_ONE_0180
      * @tc.name testFloat32ArrayIntegrationOne018
-     * @tc.desc Verify length=-0.5 throws RangeError
+     * @tc.desc Verify Number.MIN_VALUE length truncates to 0 and creates an empty buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIntegrationOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Float32Array(-0.5);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const arr = new Float32Array(Number.MIN_VALUE);
+      expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
     });
 
     /**

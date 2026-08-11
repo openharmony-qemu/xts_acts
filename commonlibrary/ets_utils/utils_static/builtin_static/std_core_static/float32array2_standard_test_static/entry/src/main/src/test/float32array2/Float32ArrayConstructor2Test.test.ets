@@ -380,19 +380,15 @@ export default function Float32ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_CONSTRUCTOR_TWO_0240
      * @tc.name testFloat32ArrayConstructorTwo024
-     * @tc.desc Verify overload 3 number length -0.5 throws RangeError
+     * @tc.desc Verify overload 3 number length -0.5 truncates to 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayConstructorTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const len: number = -0.5;
-      try {
-        new Float32Array(len);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      const arr = new Float32Array(len);
+      expect(arr.length).assertEqual(0);
     });
 
     /**

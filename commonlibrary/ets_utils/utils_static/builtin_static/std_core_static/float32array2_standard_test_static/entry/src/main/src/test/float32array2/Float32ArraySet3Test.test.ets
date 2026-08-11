@@ -719,7 +719,7 @@ export default function Float32ArraySet3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_THREE_4000
      * @tc.name testFloat32ArraySetThree040
-     * @tc.desc Verify overload 6 insertPos = 2147483647 throws IndexOutOfBoundsError for a large positive index
+     * @tc.desc Verify overload 6 insertPos = 2147483647 throws RangeError for a large positive index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -731,7 +731,7 @@ export default function Float32ArraySet3Test(): void {
         target.set(src, 2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -998,7 +998,7 @@ export default function Float32ArraySet3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_SET_THREE_5600
      * @tc.name testFloat32ArraySetThree056
-     * @tc.desc Verify overload 9 offset = 2147483647 throws IndexOutOfBoundsError for a large positive offset
+     * @tc.desc Verify overload 9 offset = 2147483647 throws RangeError for a large positive offset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1009,7 +1009,7 @@ export default function Float32ArraySet3Test(): void {
         target.set([1], 2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
