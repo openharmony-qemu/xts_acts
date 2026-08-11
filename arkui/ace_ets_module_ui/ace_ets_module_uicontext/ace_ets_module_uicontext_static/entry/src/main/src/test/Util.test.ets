@@ -21,7 +21,7 @@ let domain: int = 0x0000;
 let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest{
-  static isStartedAbility = false;
+  static isStartedAbility: boolean = false;
 
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {

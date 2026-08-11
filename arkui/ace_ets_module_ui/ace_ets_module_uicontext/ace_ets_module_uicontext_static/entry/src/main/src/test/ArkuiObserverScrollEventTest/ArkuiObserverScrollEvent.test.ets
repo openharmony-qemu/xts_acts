@@ -38,7 +38,7 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
   console.error('[ARKUI_NEW] ' + suite + ' ' + phase + ': ' + detail);
 }
 
-export default function ArkuiObserverScrollEventTest() {
+export default function ArkuiObserverScrollEventTest(): void {
   describe('ArkuiObserverScrollEventTest', () => {
     beforeAll(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeAll', 'start | startAbility');

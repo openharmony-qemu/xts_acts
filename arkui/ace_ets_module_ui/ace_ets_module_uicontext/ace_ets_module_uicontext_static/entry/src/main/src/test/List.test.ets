@@ -15,6 +15,7 @@
  */
 
 import OverlayManagerTest from './OverlayManagerTest/OverlayManager.test';
+import OnOverlayBackPressNodeIdentityTest from './OverlayManagerTest/OnOverlayBackPressNodeIdentity.test';
 import MagnifierTest from './MagnifierTest/Magnifier.test';
 import MeasureUtilsTest from './MeasureUtilsTest/MeasureUtils.test';
 import ResolveStrategyTest from './ResolveStrategyTest/ResolveStrategy.test';
@@ -26,7 +27,7 @@ import UIObserverTextChangeTest from './UIObserverTextChangeTest/UIObserverTextC
 import UIContextStaticMethodsTest from './UIContextStaticMethodsTest/UIContextStaticMethods.test';
 import GetWindowIdTest from './window/GetWindowIdTest.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   OverlayManagerTest();
   MagnifierTest();
   MeasureUtilsTest();
@@ -38,4 +39,6 @@ export default function testsuite() {
   UIObserverTextChangeTest();
   UIContextStaticMethodsTest();
   GetWindowIdTest();
+  // onBackPress 注册后页面跳转会触发 overlay 清理回调，需放在最后执行
+  OnOverlayBackPressNodeIdentityTest();
 }
