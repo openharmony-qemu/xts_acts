@@ -992,7 +992,7 @@ export default function ImageGetComponentSupp() {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
           mPhotoSession.start();
-          await sleep(2000);	 
+          await sleep(2000);
           done();
         }
       } catch (error) {
