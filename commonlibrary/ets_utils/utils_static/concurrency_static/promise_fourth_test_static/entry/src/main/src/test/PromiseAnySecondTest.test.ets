@@ -17,15 +17,12 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 
 class CustomPromiseLike<T> implements PromiseLike<T> {
-  value: T
+  private promise: Promise<T>
   constructor(value: T) {
-    this.value = value
+    this.promise = new Promise<T>((resolve: (value: T) => void) => resolve(value))
   }
-  then<U, E>(onFulfilled: ((value: T) => U | PromiseLike<U>), onRejected?: ((reason: Error) => E | PromiseLike<E>)): PromiseLike<Awaited<U> | Awaited<E>> {
-    if (onFulfilled) {
-      onFulfilled(this.value)
-    }
-    return Promise.resolve<T>(this.value) as PromiseLike<Awaited<U> | Awaited<E>>
+  then<U = T, E = never>(onFulfilled: (value: T) => U | PromiseLike<U>, onRejected?: (error: Error) => E | PromiseLike<E>): PromiseLike<Awaited<U | E>> {
+    return this.promise.then<U, E>(onFulfilled, onRejected)
   }
 }
 
@@ -49,6 +46,16 @@ class SharedCounter {
   }
 }
 
+class ThrowingIterable implements Iterable<Promise<string>> {
+  private reason: Error
+  constructor(reason: Error) {
+    this.reason = reason
+  }
+  $_iterator(): IterableIterator<Promise<string>> {
+    throw this.reason
+  }
+}
+
 class EventEmitter {
   listeners: Map<string, (() => void)[]> = new Map<string, (() => void)[]>()
   on(event: string, callback: () => void) {
@@ -63,14 +70,6 @@ class EventEmitter {
       callbacks.forEach(cb => cb())
     }
   }
-}
-
-function anyFixedArrayFunc(): string {
-  return "taskpool-success";
-}
-
-function anySetFunc(): string {
-  return "taskpool-success";
 }
 
 export default function BuiltinsPromiseAnySecondTest(): void {
@@ -138,7 +137,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       promises.add(Promise.resolve("first"))
       promises.add(Promise.resolve("second"))
       let result = await Promise.any<string>(promises)
-      expect(result === "first" || result === "second").assertTrue()
+      expect(result).assertEqual("first")
       Done();
     })
 
@@ -171,12 +170,17 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.reject<string>(new Error("error1")))
       promises.add(Promise.reject<string>(new Error("error2")))
+      let caught = false
       try {
         await Promise.any<string>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
         expect(error instanceof AggregateError).assertTrue()
+        if (error instanceof AggregateError) {
+          expect(error.errors.length).assertEqual(2)
+        }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -193,7 +197,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       iterable.add(Promise.resolve<string>("custom"))
       iterable.add(Promise.resolve<string>("iterable"))
       let result = await Promise.any<string>(iterable)
-      expect(result === "custom" || result === "iterable").assertTrue()
+      expect(result).assertEqual("custom")
       Done();
     })
 
@@ -211,7 +215,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         Promise.resolve("b")
       ]
       let result = await Promise.any<string>(promises)
-      expect(result === "a" || result === "b").assertTrue()
+      expect(result).assertEqual("a")
       Done();
     })
 
@@ -225,71 +229,68 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      */
     it('PromiseAnySecondTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let emptyIterable = new Set<Promise<string>>()
+      let caught = false
       try {
         await Promise.any<string>(emptyIterable)
-        expect().assertFail()
       } catch (error) {
+        caught = true
+        expect(error instanceof AggregateError).assertTrue()
         if (error instanceof AggregateError) {
           expect(error.errors.length).assertEqual(0)
         }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseAnySecondTest0900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_0900
-     * @tc.desc   Verify Promise.any throws TypeError with null input
+     * @tc.desc   Verify Promise.any returns a leading null value from a Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      try {
-        await Promise.any<string>(null as Object as Iterable<string|PromiseLike<string>>)
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof TypeError).assertFalse()
-      }
+      let values = new Set<string|null>()
+      values.add(null)
+      values.add("later")
+      let result = await Promise.any<string|null>(values)
+      expect(result).assertNull()
       Done();
     })
 
     /**
      * @tc.name   PromiseAnySecondTest1000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_1000
-     * @tc.desc   Verify Promise.any throws TypeError with undefined input
+     * @tc.desc   Verify Promise.any returns a leading undefined value from a Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      try {
-        await Promise.any<string>(undefined as Object as Iterable<string|PromiseLike<string>>)
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof TypeError).assertFalse()
-      }
+      let values = new Set<string|undefined>()
+      values.add(undefined)
+      values.add("later")
+      let result = await Promise.any<string|undefined>(values)
+      expect(result).assertUndefined()
       Done();
     })
 
     /**
      * @tc.name   PromiseAnySecondTest1100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_1100
-     * @tc.desc   Verify Promise.any handles iterator that throws error
+     * @tc.desc   Verify Promise.any accepts a custom PromiseLike in a Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      try {
-        let promises = new Set<string|PromiseLike<string>>()
-        let promiseLike = new CustomPromiseLike<string>("test")
-        promises.add(promiseLike)
-        let result = await Promise.any<string>(promises)
-        expect(result === "test").assertTrue()
-      } catch (error) {
-        expect().assertFail()
-      }
+      let promises = new Set<string|PromiseLike<string>>()
+      let promiseLike = new CustomPromiseLike<string>("test")
+      promises.add(promiseLike)
+      let result = await Promise.any<string>(promises)
+      expect(result).assertEqual("test")
       Done();
     })
 
@@ -306,7 +307,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       values.add(1)
       values.add(2)
       let result = await Promise.any<number>(values)
-      expect(result === 1 || result === 2).assertTrue()
+      expect(result).assertEqual(1)
       Done();
     })
 
@@ -323,7 +324,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       mixed.add("plain")
       mixed.add(Promise.resolve("promise"))
       let result = await Promise.any<string>(mixed)
-      expect(result === "plain" || result === "promise").assertTrue()
+      expect(result).assertEqual("plain")
       Done();
     })
 
@@ -357,7 +358,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       values.add(null)
       values.add("value")
       let result = await Promise.any<string|null>(values)
-      expect(result === null || result === "value").assertTrue()
+      expect(result).assertNull()
       Done();
     })
 
@@ -374,7 +375,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       values.add(undefined)
       values.add("value")
       let result = await Promise.any<string|undefined>(values)
-      expect(result === undefined || result === "value").assertTrue()
+      expect(result).assertUndefined()
       Done();
     })
 
@@ -391,7 +392,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       promises.add(Promise.resolve<number>(100.0))
       promises.add(Promise.resolve<number>(200.0))
       let result = await Promise.any<number>(promises)
-      expect(result === 100.0 || result === 200.0).assertTrue()
+      expect(result).assertEqual(100.0)
       Done();
     })
 
@@ -426,7 +427,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       promises.add(Promise.resolve<string|number>("text"))
       promises.add(Promise.resolve<string|number>(123))
       let result = await Promise.any<string|number>(promises)
-      expect(typeof result === "string" || typeof result === "number").assertTrue()
+      expect(result).assertEqual("text")
       Done();
     })
 
@@ -447,6 +448,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => resolve("slow"), 200)
       }))
       let result = await Promise.any<string>(promises)
+      await Promise.all<string>(promises)
       expect(result).assertEqual("fast")
       Done();
     })
@@ -481,7 +483,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       promises.add(Promise.resolve<number>(2.0))
       promises.add(Promise.resolve<number>(3.0))
       let result = await Promise.any<number>(promises)
-      expect([1.0, 2.0, 3.0].indexOf(result) >= 0).assertTrue()
+      expect(result).assertEqual(1.0)
       Done();
     })
 
@@ -600,7 +602,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     /**
      * @tc.name   PromiseAnySecondTest3000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_3000
-     * @tc.desc   Verify Promise.any returns a Promise instance
+     * @tc.desc   Verify Promise.any result can be awaited
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -617,7 +619,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     /**
      * @tc.name   PromiseAnySecondTest3100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_3100
-     * @tc.desc   Verify Promise.any with nested promise (auto-flattening)
+     * @tc.desc   Verify Promise.any with a resolved Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -633,7 +635,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     /**
      * @tc.name   PromiseAnySecondTest3200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_3200
-     * @tc.desc   Verify Promise.any result has then method
+     * @tc.desc   Verify Promise.any resolves to a numeric value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -728,8 +730,14 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let promises = new Set<Promise<number>>()
       promises.add(Promise.resolve<number>(10.0))
       let result = await Promise.any<number>(promises)
-        .then<number>(value => value * 2.0)
-        .then<number>(value => value + 5.0)
+        .then<number>((value: number): number => {
+          expect(value).assertEqual(10.0)
+          return value * 2.0
+        })
+        .then<number>((value: number): number => {
+          expect(value).assertEqual(20.0)
+          return value + 5.0
+        })
       expect(result).assertEqual(25.0)
       Done();
     })
@@ -775,65 +783,89 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     /**
      * @tc.name   PromiseAnySecondTest4000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_4000
-     * @tc.desc   Verify AggregateError name property when all promises reject
+     * @tc.desc   Verify AggregateError preserves two rejected errors in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseAnySecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("error1")))
-      promises.add(Promise.reject<string>(new Error("error2")))
+      let error1 = new Error("error1")
+      let error2 = new Error("error2")
+      promises.add(Promise.reject<string>(error1))
+      promises.add(Promise.reject<string>(error2))
+      let caught = false
       try {
         await Promise.any<string>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
         expect(error instanceof AggregateError).assertTrue()
+        if (error instanceof AggregateError) {
+          expect(error.errors.length).assertEqual(2)
+          expect(error.errors[0]).assertEqual(error1)
+          expect(error.errors[1]).assertEqual(error2)
+        }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseAnySecondTest4100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_4100
-     * @tc.desc   Verify AggregateError contains all error messages when all reject
+     * @tc.desc   Verify AggregateError contains all rejected error objects in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('PromiseAnySecondTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("error1")))
-      promises.add(Promise.reject<string>(new Error("error2")))
-      promises.add(Promise.reject<string>(new Error("error3")))
+      let error1 = new Error("error1")
+      let error2 = new Error("error2")
+      let error3 = new Error("error3")
+      promises.add(Promise.reject<string>(error1))
+      promises.add(Promise.reject<string>(error2))
+      promises.add(Promise.reject<string>(error3))
+      let caught = false
       try {
         await Promise.any<string>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
+        expect(error instanceof AggregateError).assertTrue()
         if (error instanceof AggregateError) {
           expect(error.errors.length).assertEqual(3)
+          expect(error.errors[0]).assertEqual(error1)
+          expect(error.errors[1]).assertEqual(error2)
+          expect(error.errors[2]).assertEqual(error3)
         }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
     /**
      * @tc.name   PromiseAnySecondTest4200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_4200
-     * @tc.desc   Verify AggregateError has message property
+     * @tc.desc   Verify AggregateError preserves a single rejected error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("fail")))
+      let rejection = new Error("fail")
+      promises.add(Promise.reject<string>(rejection))
+      let caught = false
       try {
         await Promise.any<string>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
         expect(error instanceof AggregateError).assertTrue()
+        if (error instanceof AggregateError) {
+          expect(error.errors[0]).assertEqual(rejection)
+        }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -847,16 +879,24 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      */
     it('PromiseAnySecondTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<CustomError>>()
-      promises.add(Promise.reject<CustomError>(new CustomError("custom", 500)))
+      let customError = new CustomError("custom", 500)
+      promises.add(Promise.reject<CustomError>(customError))
+      let caught = false
       try {
         await Promise.any<CustomError>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
+        expect(error instanceof AggregateError).assertTrue()
         if (error instanceof AggregateError) {
-          let firstError: Error = error.errors[0]
+          expect(error.errors[0]).assertEqual(customError)
+          let firstError = error.errors[0]
           expect(firstError instanceof CustomError).assertTrue()
+          if (firstError instanceof CustomError) {
+            expect(firstError.errorCode).assertEqual(500)
+          }
         }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -869,14 +909,15 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+      let rejection = new Error("Sync iterator error")
+      let caught = false
       try {
-        let promises = new Set<Promise<string>>()
-        promises.add(Promise.reject<string>(new Error("Sync iterator error")))
-        let result = await Promise.any<string>(promises)
-        expect().assertFail()
+        await Promise.any<string>(new ThrowingIterable(rejection))
       } catch (error) {
-        expect(error instanceof AggregateError).assertTrue();
+        caught = true
+        expect(error === rejection).assertTrue()
       }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -890,13 +931,19 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      */
     it('PromiseAnySecondTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("rejected")))
+      let rejection = new Error("rejected")
+      promises.add(Promise.reject<string>(rejection))
+      let caught = false
       try {
         await Promise.any<string>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
         expect(error instanceof AggregateError).assertTrue()
+        if (error instanceof AggregateError) {
+          expect(error.errors[0]).assertEqual(rejection)
+        }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -939,6 +986,9 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       } catch (error) {
         caught = true
         expect(error instanceof AggregateError).assertTrue()
+        if (error instanceof AggregateError) {
+          expect(error.errors.length).assertEqual(1)
+        }
       }
       expect(caught).assertTrue()
       Done();
@@ -959,8 +1009,6 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       try {
         let result = await Promise.any<string>(promises)
         expect(result).assertEqual("success")
-      } catch (error) {
-        expect().assertFail()
       } finally {
         finallyCalled = true
       }
@@ -971,29 +1019,30 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     /**
      * @tc.name   PromiseAnySecondTest4900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_4900
-     * @tc.desc   Verify catch handler receives AggregateError with error details
+     * @tc.desc   Verify catch handler receives AggregateError with ordered error objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("error1")))
-      promises.add(Promise.reject<string>(new Error("error2")))
-      let result = await Promise.any<string>(promises).catch<string>((error: Error) => {
+      let error1 = new Error("error1")
+      let error2 = new Error("error2")
+      promises.add(Promise.reject<string>(error1))
+      promises.add(Promise.reject<string>(error2))
+      let caught = false
+      try {
+        await Promise.any<string>(promises)
+      } catch (error) {
+        caught = true
+        expect(error instanceof AggregateError).assertTrue()
         if (error instanceof AggregateError) {
-          let messages = ""
-          for (let i = 0; i < error.errors.length; i++) {
-            if (i > 0) messages = messages + ", "
-            messages = messages + error.errors[i].message
-          }
-          return "All failed: " + messages
+          expect(error.errors.length).assertEqual(2)
+          expect(error.errors[0]).assertEqual(error1)
+          expect(error.errors[1]).assertEqual(error2)
         }
-        return "All failed"
-      })
-      expect(result).assertContain("All failed")
-      expect(result).assertContain("error1")
-      expect(result).assertContain("error2")
+      }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -1011,12 +1060,13 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => resolve("first"), 100)
       }))
       promises.add(new Promise<string>((resolve) => {
-        setTimeout(() => resolve("second"), 100)
+        setTimeout(() => resolve("second"), 200)
       }))
       promises.add(new Promise<string>((resolve) => {
-        setTimeout(() => resolve("third"), 150)
+        setTimeout(() => resolve("third"), 300)
       }))
       let result = await Promise.any<string>(promises)
+      await Promise.all<string>(promises)
       expect(result).assertEqual("first")
       Done();
     })
@@ -1050,20 +1100,23 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      */
     it('PromiseAnySecondTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(new Promise<string>((_, reject) => {
-        setTimeout(() => reject(new Error("error1")), 100)
-      }))
-      promises.add(new Promise<string>((_, reject) => {
-        setTimeout(() => reject(new Error("error2")), 100)
-      }))
+      let error1 = new Error("error1")
+      let error2 = new Error("error2")
+      promises.add(new Promise<string>((_, reject) => { setTimeout(() => reject(error1), 100) }))
+      promises.add(new Promise<string>((_, reject) => { setTimeout(() => reject(error2), 200) }))
+      let caught = false
       try {
         await Promise.any<string>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
+        expect(error instanceof AggregateError).assertTrue()
         if (error instanceof AggregateError) {
           expect(error.errors.length).assertEqual(2)
+          expect(error.errors[0]).assertEqual(error1)
+          expect(error.errors[1]).assertEqual(error2)
         }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -1080,7 +1133,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       promises.add(Promise.resolve<number>(1.0))
       promises.add(Promise.resolve<number>(2.0))
       let result = await Promise.any<number>(promises)
-      expect([1.0, 2.0].indexOf(result) >= 0).assertTrue()
+      expect(result).assertEqual(1.0)
       Done();
     })
 
@@ -1101,6 +1154,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => resolve("fast"), 100)
       }))
       let result = await Promise.any<string>(promises)
+      await Promise.all<string>(promises)
       expect(result).assertEqual("fast")
       Done();
     })
@@ -1120,37 +1174,43 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => {
           order.push("first")
           resolve("first")
-        }, 50)
+        }, 100)
       }))
       promises.add(new Promise<string>((resolve) => {
         setTimeout(() => {
           order.push("second")
           resolve("second")
-        }, 150)
+        }, 300)
       }))
       let result = await Promise.any<string>(promises)
+      await Promise.all<string>(promises)
       expect(result).assertEqual("first")
-      await new Promise<number>((resolve) => { setTimeout(() => resolve(0), 300) })
       expect(order[0]).assertEqual("first")
+      expect(order[1]).assertEqual("second")
       Done();
     })
 
     /**
      * @tc.name   PromiseAnySecondTest5600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_5600
-     * @tc.desc   Verify Promise.any ignores pending promise when another resolves
+     * @tc.desc   Verify Promise.any returns before a controllable loser settles
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      let pendingPromise = new Promise<string>(() => {})
+      let settleLoser: (value: string) => void = (_value: string): void => {}
+      let pendingPromise = new Promise<string>((resolve) => {
+        settleLoser = resolve
+      })
       promises.add(new Promise<string>((resolve) => {
         setTimeout(() => resolve("resolved"), 100)
       }))
       promises.add(pendingPromise)
       let result = await Promise.any<string>(promises)
+      settleLoser("loser settled")
+      await pendingPromise
       expect(result).assertEqual("resolved")
       Done();
     })
@@ -1203,7 +1263,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         promises.add(counter.increment())
       }
       let result = await Promise.any<number>(promises)
-      expect(result >= 1 && result <= 5).assertTrue()
+      expect(result).assertEqual(1.0)
       expect(counter.getCount()).assertEqual(5)
       Done();
     })
@@ -1223,17 +1283,18 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => {
           sharedState = "first"
           resolve("first")
-        }, 50)
+        }, 100)
       }))
       promises.add(new Promise<string>((resolve) => {
         setTimeout(() => {
           sharedState = "second"
           resolve("second")
-        }, 150)
+        }, 300)
       }))
       let result = await Promise.any<string>(promises)
+      await Promise.all<string>(promises)
       expect(result).assertEqual("first")
-      expect(sharedState).assertEqual("first")
+      expect(sharedState).assertEqual("second")
       Done();
     })
 
@@ -1308,12 +1369,13 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => resolve(1.0), 100)
       }))
       promises.add(new Promise<number>((resolve) => {
-        setTimeout(() => resolve(2.0), 100)
+        setTimeout(() => resolve(2.0), 200)
       }))
       promises.add(new Promise<number>((resolve) => {
-        setTimeout(() => resolve(3.0), 150)
+        setTimeout(() => resolve(3.0), 300)
       }))
       let result = await Promise.any<number>(promises)
+      await Promise.all<number>(promises)
       expect(result).assertEqual(1.0)
       Done();
     })
@@ -1328,11 +1390,12 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      */
     it('PromiseAnySecondTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      let promise = new Promise<string>((resolve) => {
+      let promise = new Promise<string>((resolve, reject) => {
         let timer = setTimeout(() => {
           resolve("cancelled timer")
         }, 100)
         clearTimeout(timer)
+        reject(new Error("timer cancelled"))
       })
       promises.add(promise)
       promises.add(Promise.resolve("valid"))
@@ -1353,9 +1416,11 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let promises1 = new Set<Promise<number>>()
       promises1.add(Promise.resolve<number>(1.0))
       let result1 = await Promise.any<number>(promises1)
+      expect(result1).assertEqual(1.0)
       let promises2 = new Set<Promise<number>>()
       promises2.add(Promise.resolve<number>(result1 + 1.0))
       let result2 = await Promise.any<number>(promises2)
+      expect(result2).assertEqual(2.0)
       let promises3 = new Set<Promise<number>>()
       promises3.add(Promise.resolve<number>(result2 + 1.0))
       let result = await Promise.any<number>(promises3)
@@ -1382,8 +1447,8 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         Promise.any<string>(promises1),
         Promise.any<string>(promises2)
       ])
-      expect(["a1", "a2"].indexOf(results[0]) >= 0).assertTrue()
-      expect(["b1", "b2"].indexOf(results[1]) >= 0).assertTrue()
+       expect(results[0]).assertEqual("a1")
+       expect(results[1]).assertEqual("b1")
       Done();
     })
 
@@ -1399,6 +1464,7 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let promises1 = new Set<Promise<string>>()
       promises1.add(Promise.resolve("step1"))
       let step1 = await Promise.any<string>(promises1)
+      expect(step1).assertEqual("step1")
       let promises2a = new Set<Promise<string>>()
       promises2a.add(Promise.resolve(step1 + "-a"))
       let promises2b = new Set<Promise<string>>()
@@ -1428,11 +1494,13 @@ export default function BuiltinsPromiseAnySecondTest(): void {
           setTimeout(() => {
             sharedData++
             resolve(sharedData)
-          }, 50 + i * 20)
+          }, 100 + i * 100)
         }))
       }
       let result = await Promise.any<number>(promises)
-      expect(result >= 1 && result <= 5).assertTrue()
+      await Promise.all<number>(promises)
+      expect(result).assertEqual(1.0)
+      expect(sharedData).assertEqual(5)
       Done();
     })
 
@@ -1451,16 +1519,18 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => {
           state = 1
           resolve(state)
-        }, 50)
+        }, 100)
       }))
       promises.add(new Promise<number>((resolve) => {
         setTimeout(() => {
           state = 2
           resolve(state)
-        }, 150)
+        }, 300)
       }))
       let result = await Promise.any<number>(promises)
+      await Promise.all<number>(promises)
       expect(result).assertEqual(1.0)
+      expect(state).assertEqual(2)
       Done();
     })
 
@@ -1474,13 +1544,14 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      */
     it('PromiseAnySecondTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let cancelled = false
+      let cancelError = new Error("cancelled")
       let promises = new Set<Promise<string>>()
       let pendingPromise = new Promise<string>((resolve, reject) => {
         setTimeout(() => {
           if (!cancelled) {
             resolve("completed")
           } else {
-            reject(new Error("cancelled"))
+            reject(cancelError)
           }
         }, 300)
       })
@@ -1491,6 +1562,14 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let result = await Promise.any<string>(promises)
       expect(result).assertEqual("immediate")
       cancelled = true
+      let loserRejected = false
+      try {
+        await pendingPromise
+      } catch (error) {
+        loserRejected = true
+        expect(error).assertEqual(cancelError)
+      }
+      expect(loserRejected).assertTrue()
       Done();
     })
 
@@ -1521,17 +1600,20 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     it('PromiseAnySecondTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
       promises.add(Promise.resolve("success"))
+      let timeoutId: int = 0
       let result: string
       try {
         let raceResult = await Promise.race([
           Promise.any<string>(promises),
           new Promise<string>((_, reject) => {
-            setTimeout(() => reject(new Error("Timeout")), 500)
+            timeoutId = setTimeout(() => reject(new Error("Timeout")), 500)
           })
         ])
         result = raceResult
       } catch (error) {
         result = "fallback"
+      } finally {
+        clearTimeout(timeoutId)
       }
       expect(result).assertEqual("success")
       Done();
@@ -1604,12 +1686,13 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         setTimeout(() => resolve("event1"), 100)
       }))
       promises.add(new Promise<string>((resolve) => {
-        setTimeout(() => resolve("event2"), 100)
+        setTimeout(() => resolve("event2"), 200)
       }))
       promises.add(new Promise<string>((resolve) => {
-        setTimeout(() => resolve("event3"), 150)
+        setTimeout(() => resolve("event3"), 300)
       }))
       let result = await Promise.any<string>(promises)
+      await Promise.all<string>(promises)
       expect(result).assertEqual("event1")
       Done();
     })
@@ -1710,27 +1793,33 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         promises.add(Promise.resolve<number>(i * 1.0))
       }
       let result = await Promise.any<number>(promises)
-      expect(result >= 0 && result < 100).assertTrue()
+      expect(result).assertEqual(0.0)
       Done();
     })
 
     /**
      * @tc.name   PromiseAnySecondTest8200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_8200
-     * @tc.desc   Verify AggregateError message and error details
+     * @tc.desc   Verify AggregateError preserves the rejected error object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('PromiseAnySecondTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let promises = new Set<Promise<string>>()
-      promises.add(Promise.reject<string>(new Error("All promises rejected")))
+      let rejection = new Error("test rejection")
+      promises.add(Promise.reject<string>(rejection))
+      let caught = false
       try {
         await Promise.any<string>(promises)
-        expect().assertFail()
       } catch (error) {
+        caught = true
         expect(error instanceof AggregateError).assertTrue();
+        if (error instanceof AggregateError) {
+          expect(error.errors[0]).assertEqual(rejection)
+        }
       }
+      expect(caught).assertTrue()
       Done();
     })
 
@@ -1772,7 +1861,8 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         }))
       }
       await Promise.any<number>(promises)
-      expect(counter > 0).assertTrue()
+      await Promise.all<number>(promises)
+      expect(counter).assertEqual(3)
       Done();
     })
 
@@ -1794,7 +1884,8 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         }))
       }
       await Promise.any<number>(promises)
-      expect(counter > 0).assertTrue()
+      await Promise.all<number>(promises)
+      expect(counter).assertEqual(5)
       Done();
     })
 
@@ -1816,7 +1907,8 @@ export default function BuiltinsPromiseAnySecondTest(): void {
         }))
       }
       await Promise.any<number>(promises)
-      expect(counter > 0).assertTrue()
+      await Promise.all<number>(promises)
+      expect(counter).assertEqual(10)
       Done();
     })
 
@@ -1846,14 +1938,12 @@ export default function BuiltinsPromiseAnySecondTest(): void {
      * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
-      let processedCount = 0
       let promises = new Set<Promise<string>>()
       promises.add(Promise.resolve("a"))
       promises.add(Promise.resolve("b"))
       promises.add(Promise.resolve("c"))
       let result = await Promise.any<string>(promises)
-      processedCount++
-      expect(processedCount).assertEqual(1)
+      expect(result).assertEqual("a")
       Done();
     })
 
@@ -1870,12 +1960,18 @@ export default function BuiltinsPromiseAnySecondTest(): void {
       let worker1 = new Promise<string>((resolve) => {
         setTimeout(() => resolve("worker1-success"), 100)
       })
+      let workerError = new Error("worker2-error")
       let worker2 = new Promise<string>((_, reject) => {
-        setTimeout(() => reject(new Error("worker2-error")), 100)
+        setTimeout(() => reject(workerError), 100)
       })
       promises.add(worker1)
       promises.add(worker2)
       let result = await Promise.any<string>(promises)
+      try {
+        await worker2
+      } catch (error) {
+        expect(error).assertEqual(workerError)
+      }
       expect(result).assertEqual("worker1-success")
       Done();
     })
@@ -1883,19 +1979,17 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     /**
      * @tc.name   PromiseAnySecondTest9000
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_PROMISE_ANY_SECOND_TEST_9000
-     * @tc.desc   Verify Promise.any with forEach-created promises and counter
+     * @tc.desc   Verify Promise.any with Promises created by forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('PromiseAnySecondTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
-      let processedCount = 0
       let promises = new Set<Promise<string>>()
       let items: string[] = ["a", "b", "c"]
       items.forEach((s: string) => { promises.add(Promise.resolve(s)) })
       let result = await Promise.any<string>(promises)
-      processedCount++
-      expect(processedCount).assertEqual(1)
+      expect(result).assertEqual("a")
       Done();
     })
 
@@ -1928,20 +2022,20 @@ export default function BuiltinsPromiseAnySecondTest(): void {
     it('PromiseAnySecondTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let eaWorker = new EAWorker('anyWorker');
       eaWorker.start();
-
-      let job = eaWorker.run<int>((a: int, b: int, c: int, d: int): int => {
-        if (a > 0) return a;
-        if (b > 0) return b;
-        if (c > 0) return c;
-        return d;
-      }, -1, 2, -3, 4);
-
-      let workerResult = job.Await();
-      let promises: Promise<int>[] = [Promise.resolve(workerResult)];
-      let result = await Promise.any<int>(promises);
-      expect(result).assertEqual(2);
-
-      await eaWorker.join();
+      try {
+        let job = eaWorker.run<number>((a: number, b: number, c: number, d: number): number => {
+          if (a > 0) return a;
+          if (b > 0) return b;
+          if (c > 0) return c;
+          return d;
+        }, -1.0, 2.0, -3.0, 4.0);
+        let workerResult = job.Await();
+        let promises: Promise<number>[] = [Promise.resolve<number>(workerResult * 1.0)];
+        let result = await Promise.any<number>(promises);
+        expect(result).assertEqual(2.0);
+      } finally {
+        eaWorker.join().Await();
+      }
       Done();
     })
 
