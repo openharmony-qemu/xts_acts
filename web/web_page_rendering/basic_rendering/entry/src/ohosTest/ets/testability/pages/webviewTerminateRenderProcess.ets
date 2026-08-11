@@ -81,7 +81,8 @@ struct webviewTerminateRenderProcess {
                   break;
                 }
                 this.isComplete = -1;
-                this.controller.loadUrl(this.mServer.getAssetUrl('baidu.html'));
+                // 同 URL 重复导航不触发 onPageEnd，追加时间戳强制新导航
+                this.controller.loadUrl(this.mServer.getAssetUrl('baidu.html') + '?t=' + Date.now());
                 await waitForExist(() => this.isComplete, this.str, 0);
                 let result = this.controller.terminateRenderProcess();
                 console.log("terminateRenderProcess result: " + result);
@@ -102,7 +103,8 @@ struct webviewTerminateRenderProcess {
                   break;
                 }
                 this.isComplete = -1;
-                this.controller.loadUrl(this.mServer.getAssetUrl('baidu.html'));
+                // 同 URL 重复导航不触发 onPageEnd，追加时间戳强制新导航
+                this.controller.loadUrl(this.mServer.getAssetUrl('baidu.html') + '?t=' + Date.now());
                 await waitForExist(() => this.isComplete, this.str, 0);
                 // 先取 title 再 terminate，避免渲染进程退出后 title 不可用导致误失败
                 let title = this.controller.getTitle();
