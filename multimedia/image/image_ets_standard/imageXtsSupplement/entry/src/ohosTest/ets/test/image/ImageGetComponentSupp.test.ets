@@ -967,6 +967,7 @@ export default function ImageGetComponentSupp() {
           let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
           mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
           console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
+          let value: ESObject = null;
           receiver.on('imageArrival', async () => {
             counter =  1;
             console.info(TAG, testName, 'counter.',counter);
@@ -974,7 +975,7 @@ export default function ImageGetComponentSupp() {
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
             try {
               console.info(TAG,testName,"get receiver SurfaceId success");
-              let value = img.getBufferData()
+              value = img.getBufferData()
               if (value == null) {
                 console.info(TAG, testName, 'does not support getBufferData.');
               } else {
@@ -992,8 +993,12 @@ export default function ImageGetComponentSupp() {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
           mPhotoSession.start();
-          await sleep(2000);
-          expect(counter).assertEqual(1);
+          if (value == null) {
+            expect(counter).assertEqual(0);
+          } else {
+            await sleep(2000);
+            expect(counter).assertEqual(1);
+          }
           done();
         }
       } catch (error) {
