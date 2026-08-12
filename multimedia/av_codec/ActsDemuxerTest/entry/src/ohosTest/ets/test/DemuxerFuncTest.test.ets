@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+﻿import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import testNapi from 'libdemuxer_test.so';
 import fs from '@ohos.file.fs';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -88,6 +88,7 @@ export default function DemuxerFuncTestTest() {
           console.error(`Skip file ${file.raw}: not found in rawfile`);
         }
       }
+      testNapi.initTests();
       } catch (e) {
         console.error(`beforeAll error: ${JSON.stringify(e)}`);
       }
@@ -114,7 +115,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_0200', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(0);
+      let result:number = await testNapi.DemuxerFunction0200();
       expect(result).assertEqual(0);
     });
 
@@ -127,7 +128,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_0300', Level.LEVEL0, async() => {
-      let result:number = await testNapi.runFuncTest(1);
+      let result:number = await testNapi.DemuxerFunction0300();
       expect(result).assertEqual(0);
     });
 
@@ -140,7 +141,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_0400', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(2);
+      let result:number = await testNapi.DemuxerFunction0400();
       expect(result).assertEqual(0);
     });
 
@@ -153,7 +154,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_0500', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(3);
+      let result:number = await testNapi.DemuxerFunction0500();
       expect(result).assertEqual(0);
     });
 
@@ -166,7 +167,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_0700', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(4);
+      let result:number = await testNapi.DemuxerFunction0700();
       expect(result).assertEqual(0);
     });
 
@@ -179,7 +180,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_0800', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(5);
+      let result:number = await testNapi.DemuxerFunction0800();
       expect(result).assertEqual(0);
     });
 
@@ -192,7 +193,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_0900', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(6);
+      let result:number = await testNapi.DemuxerFunction0900();
       expect(result).assertEqual(0);
     });
 
@@ -205,7 +206,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL2
      */
     it('DEMUXER_FUNCTION_1000', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFuncTest(7);
+      let result:number = await testNapi.DemuxerFunction1000();
       expect(result).assertEqual(0);
     });
 
@@ -218,7 +219,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL2
      */
     it('DEMUXER_FUNCTION_1100', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFuncTest(8);
+      let result:number = await testNapi.DemuxerFunction1100();
       expect(result).assertEqual(0);
     });
 
@@ -231,7 +232,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_1200', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(9);
+      let result:number = await testNapi.DemuxerFunction1200();
       expect(result).assertEqual(0);
     });
 
@@ -244,7 +245,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_1300', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(10);
+      let result:number = await testNapi.DemuxerFunction1300();
       expect(result).assertEqual(0);
     });
 
@@ -257,7 +258,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_1400', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(11);
+      let result:number = await testNapi.DemuxerFunction1400();
       expect(result).assertEqual(0);
     });
 
@@ -270,7 +271,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_1500', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(12);
+      let result:number = await testNapi.DemuxerFunction1500();
       expect(result).assertEqual(0);
     });
 
@@ -283,7 +284,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_1600', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(13);
+      let result:number = await testNapi.DemuxerFunction1600();
       expect(result).assertEqual(0);
     });
 
@@ -296,7 +297,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_1700', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(14);
+      let result:number = await testNapi.DemuxerFunction1700();
       expect(result).assertEqual(0);
     });
 
@@ -309,7 +310,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL2
      */
     it('DEMUXER_FUNCTION_1800', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFuncTest(15);
+      let result:number = await testNapi.DemuxerFunction1800();
       expect(result).assertEqual(0);
     });
 
@@ -322,7 +323,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_1900', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(16);
+      let result:number = await testNapi.DemuxerFunction1900();
       expect(result).assertEqual(0);
     });
 
@@ -335,7 +336,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_2000', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(17);
+      let result:number = await testNapi.DemuxerFunction2000();
       expect(result).assertEqual(0);
     });
 
@@ -348,7 +349,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_2100', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(18);
+      let result:number = await testNapi.DemuxerFunction2100();
       expect(result).assertEqual(0);
     });
 
@@ -361,7 +362,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_2200', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTestAsync(19);
+      let result:number = await testNapi.DemuxerFunction2200();
       expect(result).assertEqual(0);
     });
 
@@ -374,7 +375,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_2300', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTestAsync(20);
+      let result:number = await testNapi.DemuxerFunction2300();
       expect(result).assertEqual(0);
     });
 
@@ -387,7 +388,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_2400', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(21);
+      let result:number = await testNapi.DemuxerFunction2400();
       expect(result).assertEqual(0);
     });
 
@@ -400,7 +401,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_3100', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(22);
+      let result:number = await testNapi.DemuxerFunction3100();
       expect(result).assertEqual(0);
     });
 
@@ -413,7 +414,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_3200', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(23);
+      let result:number = await testNapi.DemuxerFunction3200();
       expect(result).assertEqual(0);
     });
 
@@ -426,7 +427,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_3300', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(24);
+      let result:number = await testNapi.DemuxerFunction3300();
       expect(result).assertEqual(0);
     });
 
@@ -439,7 +440,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_3400', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(25);
+      let result:number = await testNapi.DemuxerFunction3400();
       expect(result).assertEqual(0);
     });
 
@@ -452,7 +453,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_3500', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(26);
+      let result:number = await testNapi.DemuxerFunction3500();
       expect(result).assertEqual(0);
     });
 
@@ -465,7 +466,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_3600', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(27);
+      let result:number = await testNapi.DemuxerFunction3600();
       expect(result).assertEqual(0);
     });
 
@@ -478,7 +479,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_3700', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(28);
+      let result:number = await testNapi.DemuxerFunction3700();
       expect(result).assertEqual(0);
     });
 
@@ -491,7 +492,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_3800', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(29);
+      let result:number = await testNapi.DemuxerFunction3800();
       expect(result).assertEqual(0);
     });
 
@@ -504,7 +505,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_3900', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(30);
+      let result:number = await testNapi.DemuxerFunction3900();
       expect(result).assertEqual(0);
     });
 
@@ -517,7 +518,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL2
      */
     it('DEMUXER_FUNCTION_4000', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFuncTest(31);
+      let result:number = await testNapi.DemuxerFunction4000();
       expect(result).assertEqual(0);
     });
 
@@ -530,7 +531,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL2
      */
     it('DEMUXER_FUNCTION_4100', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFuncTest(32);
+      let result:number = await testNapi.DemuxerFunction4100();
       expect(result).assertEqual(0);
     });
 
@@ -543,7 +544,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_4200', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(33);
+      let result:number = await testNapi.DemuxerFunction4200();
       expect(result).assertEqual(0);
     });
 
@@ -556,7 +557,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_4300', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(34);
+      let result:number = await testNapi.DemuxerFunction4300();
       expect(result).assertEqual(0);
     });
 
@@ -569,7 +570,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL1
      */
     it('DEMUXER_FUNCTION_4400', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFuncTest(35);
+      let result:number = await testNapi.DemuxerFunction4400();
       expect(result).assertEqual(0);
     });
 
@@ -582,7 +583,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL2
      */
     it('DEMUXER_FUNCTION_4500', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFuncTest(36);
+      let result:number = await testNapi.DemuxerFunction4500();
       expect(result).assertEqual(0);
     });
 
@@ -595,7 +596,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7000', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(37);
+      let result:number = await testNapi.DemuxerFunction7000();
       expect(result).assertEqual(0);
     });
 
@@ -608,7 +609,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7100', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(38);
+      let result:number = await testNapi.DemuxerFunction7100();
       expect(result).assertEqual(0);
     });
 
@@ -621,7 +622,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7200', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(39);
+      let result:number = await testNapi.DemuxerFunction7200();
       expect(result).assertEqual(0);
     });
 
@@ -634,7 +635,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7300', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(40);
+      let result:number = await testNapi.DemuxerFunction7300();
       expect(result).assertEqual(0);
     });
 
@@ -647,7 +648,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7400', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(41);
+      let result:number = await testNapi.DemuxerFunction7400();
       expect(result).assertEqual(0);
     });
 
@@ -660,7 +661,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7500', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(42);
+      let result:number = await testNapi.DemuxerFunction7500();
       expect(result).assertEqual(0);
     });
 
@@ -673,7 +674,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7600', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(43);
+      let result:number = await testNapi.DemuxerFunction7600();
       expect(result).assertEqual(0);
     });
 
@@ -686,7 +687,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7700', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(44);
+      let result:number = await testNapi.DemuxerFunction7700();
       expect(result).assertEqual(0);
     });
 
@@ -699,7 +700,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7800', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(45);
+      let result:number = await testNapi.DemuxerFunction7800();
       expect(result).assertEqual(0);
     });
 
@@ -712,7 +713,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_7900', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(46);
+      let result:number = await testNapi.DemuxerFunction7900();
       expect(result).assertEqual(0);
     });
 
@@ -725,7 +726,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8000', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(47);
+      let result:number = await testNapi.DemuxerFunction8000();
       expect(result).assertEqual(0);
     });
 
@@ -738,7 +739,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8100', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(48);
+      let result:number = await testNapi.DemuxerFunction8100();
       expect(result).assertEqual(0);
     });
 
@@ -751,7 +752,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8200', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(49);
+      let result:number = await testNapi.DemuxerFunction8200();
       expect(result).assertEqual(0);
     });
 
@@ -764,7 +765,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8300', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(50);
+      let result:number = await testNapi.DemuxerFunction8300();
       expect(result).assertEqual(0);
     });
 
@@ -777,7 +778,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8400', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(51);
+      let result:number = await testNapi.DemuxerFunction8400();
       expect(result).assertEqual(0);
     });
 
@@ -790,7 +791,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8500', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(52);
+      let result:number = await testNapi.DemuxerFunction8500();
       expect(result).assertEqual(0);
     });
 
@@ -803,7 +804,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8600', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(53);
+      let result:number = await testNapi.DemuxerFunction8600();
       expect(result).assertEqual(0);
     });
 
@@ -816,7 +817,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8700', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(54);
+      let result:number = await testNapi.DemuxerFunction8700();
       expect(result).assertEqual(0);
     });
 
@@ -829,7 +830,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8800', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(55);
+      let result:number = await testNapi.DemuxerFunction8800();
       expect(result).assertEqual(0);
     });
 
@@ -842,7 +843,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_8900', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(56);
+      let result:number = await testNapi.DemuxerFunction8900();
       expect(result).assertEqual(0);
     });
 
@@ -855,7 +856,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('DEMUXER_FUNCTION_9000', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(57);
+      let result:number = await testNapi.DemuxerFunction9000();
       expect(result).assertEqual(0);
     });
 
@@ -868,7 +869,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_0200', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(58);
+      let result:number = await testNapi.SubMediaDemuxerFunction0200();
       expect(result).assertEqual(0);
     });
 
@@ -881,7 +882,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_0300', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(59);
+      let result:number = await testNapi.SubMediaDemuxerFunction0300();
       expect(result).assertEqual(0);
     });
 
@@ -894,7 +895,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_1000', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(60);
+      let result:number = await testNapi.SubMediaDemuxerFunction1000();
       expect(result).assertEqual(0);
     });
 
@@ -907,7 +908,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_1100', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(61);
+      let result:number = await testNapi.SubMediaDemuxerFunction1100();
       expect(result).assertEqual(0);
     });
 
@@ -920,7 +921,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_1200', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(62);
+      let result:number = await testNapi.SubMediaDemuxerFunction1200();
       expect(result).assertEqual(0);
     });
 
@@ -933,7 +934,7 @@ export default function DemuxerFuncTestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_1300', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFuncTest(63);
+      let result:number = await testNapi.SubMediaDemuxerFunction1300();
       expect(result).assertEqual(0);
     });
 

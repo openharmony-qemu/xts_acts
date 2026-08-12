@@ -13,4 +13,13 @@
  * limitations under the License.
  */
 
-export const HdrFuncTest: (index: number) => Promise<number>;
+export const initTests: () => number;
+
+export const HdrFunc0010Test: () => Promise<number>;
+export const HdrFunc0020Test: () => Promise<number>;
+export const HdrFunc0030Test: () => Promise<number>;
+export const HdrFunc0040Test: () => Promise<number>;
+export const HdrFunc0050Test: () => Promise<number>;
+export const HdrFunc0060Test: () => Promise<number>;
+export const HdrFunc0070Test: () => Promise<number>;
+export const HdrFunc0080Test: () => Promise<number>;

@@ -115,9 +115,6 @@ static int32_t Cap7100ExpectInvalidDoubleRgbaRejected()
 }
 } // namespace
 
-namespace Acts {
-namespace SwDecoder {
-
 // ---- ILLEGAL_PARA (30) ----
 int VideoSwdecIllegalPara0100()
 {
@@ -1919,5 +1916,5 @@ int VideoH263SwdecIllegalPara0700()
     return SWDEC_SUCCESS;
 }
 
-} // namespace SwDecoder
-} // namespace Acts
+void InitActsApiTest() {}
+

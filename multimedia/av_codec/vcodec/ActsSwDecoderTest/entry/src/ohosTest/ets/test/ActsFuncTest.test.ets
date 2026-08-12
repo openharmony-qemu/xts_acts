@@ -1,4 +1,4 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+﻿import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import libSwdecoderTest from 'libswdecoder_test.so';
 
 export default function ActsFuncTest() {
@@ -21,7 +21,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_SWDEC_FUNCTION_0200', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecFuncCreateTest(0);
+      const result = await libSwdecoderTest.VideoSwdecFunction0200();
       expect(result).assertEqual(0);
     })
 
@@ -34,7 +34,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL0
      */
     it('VIDEO_SWDEC_FUNCTION_0300', Level.LEVEL0, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(0);
+      const result = await libSwdecoderTest.VideoSwdecFunction0300();
       expect(result).assertEqual(0);
     })
 
@@ -47,7 +47,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL0
      */
     it('VIDEO_SWDEC_FUNCTION_0400', Level.LEVEL0, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(1);
+      const result = await libSwdecoderTest.VideoSwdecFunction0400();
       expect(result).assertEqual(0);
     })
 
@@ -60,7 +60,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_SWDEC_FUNCTION_0700', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(2);
+      const result = await libSwdecoderTest.VideoSwdecFunction0700();
       expect(result).assertEqual(0);
     })
 
@@ -73,7 +73,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_SWDEC_FUNCTION_0800', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(3);
+      const result = await libSwdecoderTest.VideoSwdecFunction0800();
       expect(result).assertEqual(0);
     })
 
@@ -86,7 +86,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_SWDEC_FUNCTION_4000', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(4);
+      const result = await libSwdecoderTest.VideoSwdecFunction4000();
       expect(result).assertEqual(0);
     })
 
@@ -99,7 +99,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_SWDEC_FUNCTION_1000', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(5);
+      const result = await libSwdecoderTest.VideoSwdecFunction1000();
       expect(result).assertEqual(0);
     })
 
@@ -112,7 +112,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_SWDEC_FUNCTION_1100', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(6);
+      const result = await libSwdecoderTest.VideoSwdecFunction1100();
       expect(result).assertEqual(0);
     })
 
@@ -125,7 +125,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_SWDEC_FUNCTION_1200', Level.LEVEL2, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(7);
+      const result = await libSwdecoderTest.VideoSwdecFunction1200();
       expect(result).assertEqual(0);
     })
 
@@ -138,7 +138,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_SWDEC_FUNCTION_1300', Level.LEVEL2, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(8);
+      const result = await libSwdecoderTest.VideoSwdecFunction1300();
       expect(result).assertEqual(0);
     })
 
@@ -151,7 +151,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_SWDEC_FUNCTION_1400', Level.LEVEL2, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(9);
+      const result = await libSwdecoderTest.VideoSwdecFunction1400();
       expect(result).assertEqual(0);
     })
 
@@ -164,7 +164,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_SWDEC_FUNCTION_1500', Level.LEVEL2, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(10);
+      const result = await libSwdecoderTest.VideoSwdecFunction1500();
       expect(result).assertEqual(0);
     })
 
@@ -177,7 +177,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL2
      */
     it('VIDEO_SWDEC_FUNCTION_1600', Level.LEVEL2, async () => {
-      const result = await libSwdecoderTest.SwdecFuncNdkTest(11);
+      const result = await libSwdecoderTest.VideoSwdecFunction1600();
       expect(result).assertEqual(0);
     })
 
@@ -190,7 +190,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_DECODE_SYNC_SW264_FUNC_0010', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecSync264Test(0);
+      const result = await libSwdecoderTest.VideoDecodeSyncSw264Func0010();
       expect(result).assertEqual(0);
     })
 
@@ -203,7 +203,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL0
      */
     it('VIDEO_DECODE_SYNC_SW264_FUNC_0020', Level.LEVEL0, async () => {
-      const result = await libSwdecoderTest.SwdecSync264Test(1);
+      const result = await libSwdecoderTest.VideoDecodeSyncSw264Func0020();
       expect(result).assertEqual(0);
     })
 
@@ -216,7 +216,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_DECODE_SYNC_SW264_FUNC_0040', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecSync264Test(2);
+      const result = await libSwdecoderTest.VideoDecodeSyncSw264Func0040();
       expect(result).assertEqual(0);
     })
 
@@ -229,7 +229,7 @@ export default function ActsFuncTest() {
      * @tc.level  LEVEL1
      */
     it('VIDEO_SWDECODE_BLANK_FRAME_0010', Level.LEVEL1, async () => {
-      const result = await libSwdecoderTest.SwdecBlankFrameTest(0);
+      const result = await libSwdecoderTest.VideoSwdecodeBlankFrame0010();
       expect(result).assertEqual(0);
     })
   })

@@ -13,423 +13,327 @@
  * limitations under the License.
  */
 
-#include <array>
-#include <cstddef>
-#include <cstdint>
+#include "napi/native_api.h"
 #include "include/ActsApiTest.h"
 #include "include/ActsFuncTest.h"
 #include "include/ActsStateTest.h"
-#include "napi/native_api.h"
 
-namespace {
-constexpr int32_t RESULT_ERROR = -1;
-// G.CNS.02: case index constants to avoid magic numbers
-constexpr int K_IDX0 = 0;
-constexpr int K_IDX1 = 1;
-constexpr int K_IDX2 = 2;
-constexpr int K_IDX3 = 3;
-constexpr int K_IDX4 = 4;
-constexpr int K_IDX5 = 5;
-constexpr int K_IDX6 = 6;
-constexpr int K_IDX7 = 7;
-constexpr int K_IDX8 = 8;
-constexpr int K_IDX9 = 9;
-constexpr int K_IDX10 = 10;
-constexpr int K_IDX11 = 11;
-constexpr int K_IDX12 = 12;
-constexpr int K_IDX13 = 13;
-constexpr int K_IDX14 = 14;
-constexpr int K_IDX15 = 15;
-constexpr int K_IDX16 = 16;
-constexpr int K_IDX17 = 17;
-constexpr int K_IDX18 = 18;
-constexpr int K_IDX19 = 19;
-constexpr int K_IDX20 = 20;
-constexpr int K_IDX21 = 21;
-constexpr int K_IDX22 = 22;
-constexpr int K_IDX23 = 23;
-constexpr int K_IDX24 = 24;
-constexpr int K_IDX25 = 25;
-constexpr int K_IDX26 = 26;
-constexpr int K_IDX27 = 27;
-constexpr int K_IDX28 = 28;
-constexpr int K_IDX29 = 29;
-constexpr int K_IDX30 = 30;
-constexpr int K_IDX31 = 31;
-constexpr int K_IDX32 = 32;
-constexpr int K_IDX33 = 33;
-constexpr int K_IDX34 = 34;
-constexpr int K_IDX35 = 35;
-constexpr int K_IDX36 = 36;
-constexpr int K_IDX37 = 37;
-constexpr int K_IDX38 = 38;
-constexpr int K_IDX39 = 39;
-constexpr int K_IDX40 = 40;
-constexpr int K_IDX41 = 41;
-constexpr int K_IDX42 = 42;
-constexpr int K_IDX43 = 43;
-constexpr int K_IDX44 = 44;
-constexpr int K_IDX45 = 45;
-constexpr int K_IDX46 = 46;
-constexpr int K_IDX47 = 47;
-constexpr int K_IDX48 = 48;
-constexpr int K_IDX49 = 49;
-constexpr int K_IDX50 = 50;
+using TestFunction = int (*)();
 
-static int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, int32_t defaultVal)
-{
-    size_t argc = 1;
-    napi_value args[1];
-    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc <= index) {
-        return defaultVal;
-    }
-    napi_valuetype type = napi_undefined;
-    if (napi_typeof(env, args[index], &type) != napi_ok || type != napi_number) {
-        return defaultVal;
-    }
-    int32_t value = 0;
-    if (napi_get_value_int32(env, args[index], &value) != napi_ok) {
-        return defaultVal;
-    }
-    return value;
-}
-
-using SwdecRunner = int (*)(int32_t);
-using SwdecCaseFn = int (*)();
-
-// Table-driven dispatch reduces function length and cyclomatic complexity (G.FUD.05 / complexity rules).
-static const std::array<SwdecCaseFn, 30> kSwdecIllegalParaRunners = { {
-    Acts::SwDecoder::VideoSwdecIllegalPara0100, Acts::SwDecoder::VideoSwdecIllegalPara0200,
-    Acts::SwDecoder::VideoSwdecIllegalPara3300, Acts::SwDecoder::VideoSwdecIllegalPara1800,
-    Acts::SwDecoder::VideoSwdecIllegalPara0300, Acts::SwDecoder::VideoSwdecIllegalPara0400,
-    Acts::SwDecoder::VideoSwdecIllegalPara0500, Acts::SwDecoder::VideoSwdecIllegalPara1400,
-    Acts::SwDecoder::VideoSwdecIllegalPara5000, Acts::SwDecoder::VideoSwdecIllegalPara5100,
-    Acts::SwDecoder::VideoSwdecIllegalPara0600, Acts::SwDecoder::VideoSwdecIllegalPara0700,
-    Acts::SwDecoder::VideoSwdecIllegalPara0800, Acts::SwDecoder::VideoSwdecIllegalPara0900,
-    Acts::SwDecoder::VideoSwdecIllegalPara1000, Acts::SwDecoder::VideoSwdecIllegalPara1100,
-    Acts::SwDecoder::VideoSwdecIllegalPara4100, Acts::SwDecoder::VideoSwdecIllegalPara1500,
-    Acts::SwDecoder::VideoSwdecIllegalPara1200, Acts::SwDecoder::VideoSwdecIllegalPara1600,
-    Acts::SwDecoder::VideoSwdecIllegalPara1700, Acts::SwDecoder::VideoSwdecIllegalPara2200,
-    Acts::SwDecoder::VideoSwdecIllegalPara2500, Acts::SwDecoder::VideoSwdecIllegalPara2600,
-    Acts::SwDecoder::VideoSwdecIllegalPara2700, Acts::SwDecoder::VideoSwdecIllegalPara2800,
-    Acts::SwDecoder::VideoSwdecIllegalPara2900, Acts::SwDecoder::VideoSwdecIllegalPara3000,
-    Acts::SwDecoder::VideoSwdecIllegalPara3100, Acts::SwDecoder::VideoSwdecIllegalPara3200,
-} };
-
-static const std::array<SwdecCaseFn, 51> kSwdecCapApiRunners = { {
-    Acts::SwDecoder::VideoSwdecCapApi0100, Acts::SwDecoder::VideoSwdecCapApi0300, Acts::SwDecoder::VideoSwdecCapApi0400,
-    Acts::SwDecoder::VideoSwdecCapApi0500, Acts::SwDecoder::VideoSwdecCapApi0600, Acts::SwDecoder::VideoSwdecCapApi0700,
-    Acts::SwDecoder::VideoSwdecCapApi0800, Acts::SwDecoder::VideoSwdecCapApi0900, Acts::SwDecoder::VideoSwdecCapApi1000,
-    Acts::SwDecoder::VideoSwdecCapApi3100, Acts::SwDecoder::VideoSwdecCapApi3200, Acts::SwDecoder::VideoSwdecCapApi3300,
-    Acts::SwDecoder::VideoSwdecCapApi3400, Acts::SwDecoder::VideoSwdecCapApi3500, Acts::SwDecoder::VideoSwdecCapApi3600,
-    Acts::SwDecoder::VideoSwdecCapApi3700, Acts::SwDecoder::VideoSwdecCapApi3800, Acts::SwDecoder::VideoSwdecCapApi3900,
-    Acts::SwDecoder::VideoSwdecCapApi4000, Acts::SwDecoder::VideoSwdecCapApi4100, Acts::SwDecoder::VideoSwdecCapApi4200,
-    Acts::SwDecoder::VideoSwdecCapApi4300, Acts::SwDecoder::VideoSwdecCapApi4400, Acts::SwDecoder::VideoSwdecCapApi4500,
-    Acts::SwDecoder::VideoSwdecCapApi4600, Acts::SwDecoder::VideoSwdecCapApi4700, Acts::SwDecoder::VideoSwdecCapApi4800,
-    Acts::SwDecoder::VideoSwdecCapApi4900, Acts::SwDecoder::VideoSwdecCapApi5000, Acts::SwDecoder::VideoSwdecCapApi5100,
-    Acts::SwDecoder::VideoSwdecCapApi5200, Acts::SwDecoder::VideoSwdecCapApi5300, Acts::SwDecoder::VideoSwdecCapApi9400,
-    Acts::SwDecoder::VideoSwdecCapApi5400, Acts::SwDecoder::VideoSwdecCapApi5500, Acts::SwDecoder::VideoSwdecCapApi5600,
-    Acts::SwDecoder::VideoSwdecCapApi5700, Acts::SwDecoder::VideoSwdecCapApi5800, Acts::SwDecoder::VideoSwdecCapApi5900,
-    Acts::SwDecoder::VideoSwdecCapApi6000, Acts::SwDecoder::VideoSwdecCapApi6100, Acts::SwDecoder::VideoSwdecCapApi6200,
-    Acts::SwDecoder::VideoSwdecCapApi6300, Acts::SwDecoder::VideoSwdecCapApi6400, Acts::SwDecoder::VideoSwdecCapApi6500,
-    Acts::SwDecoder::VideoSwdecCapApi6600, Acts::SwDecoder::VideoSwdecCapApi6700, Acts::SwDecoder::VideoSwdecCapApi6800,
-    Acts::SwDecoder::VideoSwdecCapApi6900, Acts::SwDecoder::VideoSwdecCapApi7000, Acts::SwDecoder::VideoSwdecCapApi7100,
-} };
-
-static const std::array<SwdecCaseFn, 35> kSwdecStateRunners = { {
-    Acts::SwDecoder::VideoSwdecState0100, Acts::SwDecoder::VideoSwdecState0101, Acts::SwDecoder::VideoSwdecState0200,
-    Acts::SwDecoder::VideoSwdecState0300, Acts::SwDecoder::VideoSwdecState0400, Acts::SwDecoder::VideoSwdecState0500,
-    Acts::SwDecoder::VideoSwdecState0600, Acts::SwDecoder::VideoSwdecState0700, Acts::SwDecoder::VideoSwdecState0800,
-    Acts::SwDecoder::VideoSwdecState0900, Acts::SwDecoder::VideoSwdecState1000, Acts::SwDecoder::VideoSwdecState1100,
-    Acts::SwDecoder::VideoSwdecState1200, Acts::SwDecoder::VideoSwdecState1300, Acts::SwDecoder::VideoSwdecState1400,
-    Acts::SwDecoder::VideoSwdecState1500, Acts::SwDecoder::VideoSwdecState1600, Acts::SwDecoder::VideoSwdecState1700,
-    Acts::SwDecoder::VideoSwdecState1800, Acts::SwDecoder::VideoSwdecState1900, Acts::SwDecoder::VideoSwdecState2000,
-    Acts::SwDecoder::VideoSwdecState2100, Acts::SwDecoder::VideoSwdecState2200, Acts::SwDecoder::VideoSwdecState2300,
-    Acts::SwDecoder::VideoSwdecState2400, Acts::SwDecoder::VideoSwdecState2500, Acts::SwDecoder::VideoSwdecState2600,
-    Acts::SwDecoder::VideoSwdecState2700, Acts::SwDecoder::VideoSwdecState2800, Acts::SwDecoder::VideoSwdecState2900,
-    Acts::SwDecoder::VideoSwdecState3000, Acts::SwDecoder::VideoSwdecState3100, Acts::SwDecoder::VideoSwdecState3200,
-    Acts::SwDecoder::VideoSwdecState3300, Acts::SwDecoder::VideoSwdecState3400,
-} };
-
-struct AsyncTestData {
-    napi_async_work asyncWork = nullptr;
-    napi_deferred deferred = nullptr;
-    SwdecRunner runner = nullptr;
-    int32_t testCaseIndex = -1;
-    int result = RESULT_ERROR;
+struct AsyncTestContext {
+    napi_deferred deferred;
+    napi_async_work work;
+    TestFunction func;
+    int result;
 };
 
-static void ExecuteAsyncWork(napi_env /*env*/, void* data)
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    AsyncTestData* workData = static_cast<AsyncTestData*>(data);
-    try {
-        if (workData->runner != nullptr) {
-            workData->result = workData->runner(workData->testCaseIndex);
-        } else {
-            workData->result = RESULT_ERROR;
-        }
-    } catch (...) {
-        workData->result = RESULT_ERROR;
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
     }
 }
 
-static void CompleteAsyncWork(napi_env env, napi_status status, void* data)
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
 {
-    AsyncTestData* workData = static_cast<AsyncTestData*>(data);
-    napi_value resultValue;
-    (void)napi_create_int32(env, workData->result, &resultValue);
-    if (status == napi_cancelled) {
-        napi_reject_deferred(env, workData->deferred, resultValue);
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed",
+            NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
     } else {
-        napi_resolve_deferred(env, workData->deferred, resultValue);
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
     }
-    napi_delete_async_work(env, workData->asyncWork);
-    delete workData;
+    napi_delete_async_work(env, context->work);
+    delete context;
 }
 
-static napi_value RunTestAsync(napi_env env, napi_callback_info info, SwdecRunner runner, const char* resourceName)
+static napi_value RunTestAsync(napi_env env, TestFunction func,
+                               const char* name)
 {
-    int32_t caseIndex = GetInt32Arg(env, info, 0, RESULT_ERROR);
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
+    napi_value promise;
+    napi_deferred deferred;
     if (napi_create_promise(env, &deferred, &promise) != napi_ok) {
         return nullptr;
     }
-    AsyncTestData* workData = new AsyncTestData();
-    workData->deferred = deferred;
-    workData->runner = runner;
-    workData->testCaseIndex = caseIndex;
-
-    napi_value resName;
-    if (napi_create_string_utf8(env, resourceName, NAPI_AUTO_LENGTH, &resName) != napi_ok) {
-        delete workData;
-        return nullptr;
+    AsyncTestContext* context = new AsyncTestContext{
+        deferred, nullptr, func, -1};
+    napi_value resourceName;
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH,
+        &resourceName);
+    if (napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context,
+        &context->work) != napi_ok) {
+        napi_value err;
+        napi_create_int32(env, -1, &err);
+        napi_reject_deferred(env, deferred, err);
+        delete context;
+        return promise;
     }
-    napi_status createStatus = napi_create_async_work(
-        env, nullptr, resName, ExecuteAsyncWork, CompleteAsyncWork, workData, &workData->asyncWork);
-    if (createStatus != napi_ok) {
-        delete workData;
-        return nullptr;
-    }
-    if (napi_queue_async_work(env, workData->asyncWork) != napi_ok) {
-        napi_delete_async_work(env, workData->asyncWork);
-        delete workData;
-        return nullptr;
+    if (napi_queue_async_work(env, context->work) != napi_ok) {
+        napi_delete_async_work(env, context->work);
+        napi_value err;
+        napi_create_int32(env, -1, &err);
+        napi_reject_deferred(env, deferred, err);
+        delete context;
+        return promise;
     }
     return promise;
 }
 
-// SwdecFuncCreateTest: 1 case (0200)
-static int DispatchSwdecFuncCreateTest(int32_t caseNum)
-{
-    if (caseNum != 0) {
-        return RESULT_ERROR;
-    }
-    return Acts::SwDecoder::VideoSwdecFunction0200();
-}
-
-// SwdecFuncNdkTest: 12 cases (0300..1600)
-static int DispatchSwdecFuncNdkTest(int32_t caseNum)
-{
-    switch (caseNum) {
-        case K_IDX0:
-            return Acts::SwDecoder::VideoSwdecFunction0300();
-        case K_IDX1:
-            return Acts::SwDecoder::VideoSwdecFunction0400();
-        case K_IDX2:
-            return Acts::SwDecoder::VideoSwdecFunction0700();
-        case K_IDX3:
-            return Acts::SwDecoder::VideoSwdecFunction0800();
-        case K_IDX4:
-            return Acts::SwDecoder::VideoSwdecFunction4000();
-        case K_IDX5:
-            return Acts::SwDecoder::VideoSwdecFunction1000();
-        case K_IDX6:
-            return Acts::SwDecoder::VideoSwdecFunction1100();
-        case K_IDX7:
-            return Acts::SwDecoder::VideoSwdecFunction1200();
-        case K_IDX8:
-            return Acts::SwDecoder::VideoSwdecFunction1300();
-        case K_IDX9:
-            return Acts::SwDecoder::VideoSwdecFunction1400();
-        case K_IDX10:
-            return Acts::SwDecoder::VideoSwdecFunction1500();
-        case K_IDX11:
-            return Acts::SwDecoder::VideoSwdecFunction1600();
-        default:
-            return RESULT_ERROR;
-    }
-}
-
-// SwdecSync264Test: 3 cases (0010, 0020, 0040)
-static int DispatchSwdecSync264Test(int32_t caseNum)
-{
-    switch (caseNum) {
-        case K_IDX0:
-            return Acts::SwDecoder::VideoDecodeSyncSw264Func0010();
-        case K_IDX1:
-            return Acts::SwDecoder::VideoDecodeSyncSw264Func0020();
-        case K_IDX2:
-            return Acts::SwDecoder::VideoDecodeSyncSw264Func0040();
-        default:
-            return RESULT_ERROR;
-    }
-}
-
-// SwdecBlankFrameTest: 1 case (0010)
-static int DispatchSwdecBlankFrameTest(int32_t caseNum)
-{
-    if (caseNum != 0) {
-        return RESULT_ERROR;
-    }
-    return Acts::SwDecoder::VideoSwdecodeBlankFrame0010();
-}
-
-static napi_value SwdecFuncCreateTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecFuncCreateTest, "SwdecFuncCreateTest");
-}
-
-static napi_value SwdecFuncNdkTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecFuncNdkTest, "SwdecFuncNdkTest");
-}
-
-static napi_value SwdecSync264Test(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecSync264Test, "SwdecSync264Test");
-}
-
-static napi_value SwdecBlankFrameTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecBlankFrameTest, "SwdecBlankFrameTest");
-}
-
-// SwdecApiIllegalParaTest: 30 cases (0-29)
-static int DispatchSwdecApiIllegalParaTest(int32_t caseNum)
-{
-    if (caseNum < 0 || static_cast<size_t>(caseNum) >= kSwdecIllegalParaRunners.size()) {
-        return RESULT_ERROR;
-    }
-    return kSwdecIllegalParaRunners[static_cast<size_t>(caseNum)]();
-}
-
-// SwdecApiTest: 12 cases (0-11)
-static int DispatchSwdecApiTest(int32_t caseNum)
-{
-    switch (caseNum) {
-        case K_IDX0:
-            return Acts::SwDecoder::VideoSwdecApi0100();
-        case K_IDX1:
-            return Acts::SwDecoder::VideoSwdecApi0200();
-        case K_IDX2:
-            return Acts::SwDecoder::VideoSwdecApi0300();
-        case K_IDX3:
-            return Acts::SwDecoder::VideoSwdecApi0400();
-        case K_IDX4:
-            return Acts::SwDecoder::VideoSwdecApi0500();
-        case K_IDX5:
-            return Acts::SwDecoder::VideoSwdecApi0600();
-        case K_IDX6:
-            return Acts::SwDecoder::VideoSwdecApi0700();
-        case K_IDX7:
-            return Acts::SwDecoder::VideoSwdecApi0800();
-        case K_IDX8:
-            return Acts::SwDecoder::VideoSwdecApi0900();
-        case K_IDX9:
-            return Acts::SwDecoder::VideoSwdecApi1000();
-        case K_IDX10:
-            return Acts::SwDecoder::VideoSwdecApi1100();
-        case K_IDX11:
-            return Acts::SwDecoder::VideoSwdecApi1200();
-        default:
-            return RESULT_ERROR;
-    }
-}
-
-// SwdecCapApiTest: 51 cases (0-50)
-static int DispatchSwdecCapApiTest(int32_t caseNum)
-{
-    if (caseNum < 0 || static_cast<size_t>(caseNum) >= kSwdecCapApiRunners.size()) {
-        return RESULT_ERROR;
-    }
-    return kSwdecCapApiRunners[static_cast<size_t>(caseNum)]();
-}
-
-// SwdecOtherCodecIllegalTest: 3 cases (0-2)
-static int DispatchSwdecOtherCodecIllegalTest(int32_t caseNum)
-{
-    switch (caseNum) {
-        case K_IDX0:
-            return Acts::SwDecoder::VideoMpeg2SwdecIllegalPara0700();
-        case K_IDX1:
-            return Acts::SwDecoder::VideoMpeg4SwdecIllegalPara0700();
-        case K_IDX2:
-            return Acts::SwDecoder::VideoH263SwdecIllegalPara0700();
-        default:
-            return RESULT_ERROR;
-    }
-}
-
-static napi_value SwdecApiIllegalParaTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecApiIllegalParaTest, "SwdecApiIllegalParaTest");
-}
-
-static napi_value SwdecApiTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecApiTest, "SwdecApiTest");
-}
-
-static napi_value SwdecCapApiTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecCapApiTest, "SwdecCapApiTest");
-}
-
-static napi_value SwdecOtherCodecIllegalTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecOtherCodecIllegalTest, "SwdecOtherCodecIllegalTest");
-}
-
-// SwdecStateTest: 35 cases (0-34)
-static int DispatchSwdecStateTest(int32_t caseNum)
-{
-    if (caseNum < 0 || static_cast<size_t>(caseNum) >= kSwdecStateRunners.size()) {
-        return RESULT_ERROR;
-    }
-    return kSwdecStateRunners[static_cast<size_t>(caseNum)]();
-}
-
-static napi_value SwdecStateTest(napi_env env, napi_callback_info info)
-{
-    return RunTestAsync(env, info, DispatchSwdecStateTest, "SwdecStateTest");
-}
-
-static napi_property_descriptor g_swdecDescriptors[] = {
-    { "SwdecFuncCreateTest", nullptr, SwdecFuncCreateTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    { "SwdecFuncNdkTest", nullptr, SwdecFuncNdkTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    { "SwdecSync264Test", nullptr, SwdecSync264Test, nullptr, nullptr, nullptr, napi_default, nullptr },
-    { "SwdecBlankFrameTest", nullptr, SwdecBlankFrameTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    { "SwdecApiIllegalParaTest", nullptr, SwdecApiIllegalParaTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    { "SwdecApiTest", nullptr, SwdecApiTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    { "SwdecCapApiTest", nullptr, SwdecCapApiTest, nullptr, nullptr, nullptr, napi_default, nullptr },
-    { "SwdecOtherCodecIllegalTest",
-      nullptr,
-      SwdecOtherCodecIllegalTest,
-      nullptr,
-      nullptr,
-      nullptr,
-      napi_default,
-      nullptr },
-    { "SwdecStateTest", nullptr, SwdecStateTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+struct Entry {
+    TestFunction func;
+    const char* name;
 };
-} // namespace
+
+static Entry g_entries[200];
+static int g_entryCount = 0;
+
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+    return RunTestAsync(env, entry->func, entry->name);
+}
+
+static napi_property_descriptor XL(const char* name, TestFunction func)
+{
+    Entry* entry = &g_entries[g_entryCount++];
+    entry->func = func;
+    entry->name = name;
+    return {name, nullptr, AsyncWrapper, nullptr, nullptr,
+        nullptr, napi_default, entry};
+}
+
+static napi_value InitTests(napi_env env, napi_callback_info info)
+{
+    InitActsApiTest();
+    InitActsFuncTest();
+    InitActsStateTest();
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+static void RegisterChunk1(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        XL("VideoSwdecIllegalPara0100", VideoSwdecIllegalPara0100),
+        XL("VideoSwdecIllegalPara0200", VideoSwdecIllegalPara0200),
+        XL("VideoSwdecIllegalPara3300", VideoSwdecIllegalPara3300),
+        XL("VideoSwdecIllegalPara1800", VideoSwdecIllegalPara1800),
+        XL("VideoSwdecIllegalPara0300", VideoSwdecIllegalPara0300),
+        XL("VideoSwdecIllegalPara0400", VideoSwdecIllegalPara0400),
+        XL("VideoSwdecIllegalPara0500", VideoSwdecIllegalPara0500),
+        XL("VideoSwdecIllegalPara1400", VideoSwdecIllegalPara1400),
+        XL("VideoSwdecIllegalPara5000", VideoSwdecIllegalPara5000),
+        XL("VideoSwdecIllegalPara5100", VideoSwdecIllegalPara5100),
+        XL("VideoSwdecIllegalPara0600", VideoSwdecIllegalPara0600),
+        XL("VideoSwdecIllegalPara0700", VideoSwdecIllegalPara0700),
+        XL("VideoSwdecIllegalPara0800", VideoSwdecIllegalPara0800),
+        XL("VideoSwdecIllegalPara0900", VideoSwdecIllegalPara0900),
+        XL("VideoSwdecIllegalPara1000", VideoSwdecIllegalPara1000),
+        XL("VideoSwdecIllegalPara1100", VideoSwdecIllegalPara1100),
+        XL("VideoSwdecIllegalPara4100", VideoSwdecIllegalPara4100),
+        XL("VideoSwdecIllegalPara1500", VideoSwdecIllegalPara1500),
+        XL("VideoSwdecIllegalPara1200", VideoSwdecIllegalPara1200),
+        XL("VideoSwdecIllegalPara1600", VideoSwdecIllegalPara1600),
+        XL("VideoSwdecIllegalPara1700", VideoSwdecIllegalPara1700),
+        XL("VideoSwdecIllegalPara2200", VideoSwdecIllegalPara2200),
+        XL("VideoSwdecIllegalPara2500", VideoSwdecIllegalPara2500),
+        XL("VideoSwdecIllegalPara2600", VideoSwdecIllegalPara2600),
+        XL("VideoSwdecIllegalPara2700", VideoSwdecIllegalPara2700),
+        XL("VideoSwdecIllegalPara2800", VideoSwdecIllegalPara2800),
+        XL("VideoSwdecIllegalPara2900", VideoSwdecIllegalPara2900),
+        XL("VideoSwdecIllegalPara3000", VideoSwdecIllegalPara3000),
+        XL("VideoSwdecIllegalPara3100", VideoSwdecIllegalPara3100),
+        XL("VideoSwdecIllegalPara3200", VideoSwdecIllegalPara3200),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterChunk2(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        XL("VideoSwdecApi0100", VideoSwdecApi0100),
+        XL("VideoSwdecApi0200", VideoSwdecApi0200),
+        XL("VideoSwdecApi0300", VideoSwdecApi0300),
+        XL("VideoSwdecApi0400", VideoSwdecApi0400),
+        XL("VideoSwdecApi0500", VideoSwdecApi0500),
+        XL("VideoSwdecApi0600", VideoSwdecApi0600),
+        XL("VideoSwdecApi0700", VideoSwdecApi0700),
+        XL("VideoSwdecApi0800", VideoSwdecApi0800),
+        XL("VideoSwdecApi0900", VideoSwdecApi0900),
+        XL("VideoSwdecApi1000", VideoSwdecApi1000),
+        XL("VideoSwdecApi1100", VideoSwdecApi1100),
+        XL("VideoSwdecApi1200", VideoSwdecApi1200),
+        XL("VideoMpeg2SwdecIllegalPara0700", VideoMpeg2SwdecIllegalPara0700),
+        XL("VideoMpeg4SwdecIllegalPara0700", VideoMpeg4SwdecIllegalPara0700),
+        XL("VideoH263SwdecIllegalPara0700", VideoH263SwdecIllegalPara0700),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterChunk3(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        XL("VideoSwdecCapApi0100", VideoSwdecCapApi0100),
+        XL("VideoSwdecCapApi0300", VideoSwdecCapApi0300),
+        XL("VideoSwdecCapApi0400", VideoSwdecCapApi0400),
+        XL("VideoSwdecCapApi0500", VideoSwdecCapApi0500),
+        XL("VideoSwdecCapApi0600", VideoSwdecCapApi0600),
+        XL("VideoSwdecCapApi0700", VideoSwdecCapApi0700),
+        XL("VideoSwdecCapApi0800", VideoSwdecCapApi0800),
+        XL("VideoSwdecCapApi0900", VideoSwdecCapApi0900),
+        XL("VideoSwdecCapApi1000", VideoSwdecCapApi1000),
+        XL("VideoSwdecCapApi3100", VideoSwdecCapApi3100),
+        XL("VideoSwdecCapApi3200", VideoSwdecCapApi3200),
+        XL("VideoSwdecCapApi3300", VideoSwdecCapApi3300),
+        XL("VideoSwdecCapApi3400", VideoSwdecCapApi3400),
+        XL("VideoSwdecCapApi3500", VideoSwdecCapApi3500),
+        XL("VideoSwdecCapApi3600", VideoSwdecCapApi3600),
+        XL("VideoSwdecCapApi3700", VideoSwdecCapApi3700),
+        XL("VideoSwdecCapApi3800", VideoSwdecCapApi3800),
+        XL("VideoSwdecCapApi3900", VideoSwdecCapApi3900),
+        XL("VideoSwdecCapApi4000", VideoSwdecCapApi4000),
+        XL("VideoSwdecCapApi4100", VideoSwdecCapApi4100),
+        XL("VideoSwdecCapApi4200", VideoSwdecCapApi4200),
+        XL("VideoSwdecCapApi4300", VideoSwdecCapApi4300),
+        XL("VideoSwdecCapApi4400", VideoSwdecCapApi4400),
+        XL("VideoSwdecCapApi4500", VideoSwdecCapApi4500),
+        XL("VideoSwdecCapApi4600", VideoSwdecCapApi4600),
+        XL("VideoSwdecCapApi4700", VideoSwdecCapApi4700),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterChunk4(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        XL("VideoSwdecCapApi4800", VideoSwdecCapApi4800),
+        XL("VideoSwdecCapApi4900", VideoSwdecCapApi4900),
+        XL("VideoSwdecCapApi5000", VideoSwdecCapApi5000),
+        XL("VideoSwdecCapApi5100", VideoSwdecCapApi5100),
+        XL("VideoSwdecCapApi5200", VideoSwdecCapApi5200),
+        XL("VideoSwdecCapApi5300", VideoSwdecCapApi5300),
+        XL("VideoSwdecCapApi9400", VideoSwdecCapApi9400),
+        XL("VideoSwdecCapApi5400", VideoSwdecCapApi5400),
+        XL("VideoSwdecCapApi5500", VideoSwdecCapApi5500),
+        XL("VideoSwdecCapApi5600", VideoSwdecCapApi5600),
+        XL("VideoSwdecCapApi5700", VideoSwdecCapApi5700),
+        XL("VideoSwdecCapApi5800", VideoSwdecCapApi5800),
+        XL("VideoSwdecCapApi5900", VideoSwdecCapApi5900),
+        XL("VideoSwdecCapApi6000", VideoSwdecCapApi6000),
+        XL("VideoSwdecCapApi6100", VideoSwdecCapApi6100),
+        XL("VideoSwdecCapApi6200", VideoSwdecCapApi6200),
+        XL("VideoSwdecCapApi6300", VideoSwdecCapApi6300),
+        XL("VideoSwdecCapApi6400", VideoSwdecCapApi6400),
+        XL("VideoSwdecCapApi6500", VideoSwdecCapApi6500),
+        XL("VideoSwdecCapApi6600", VideoSwdecCapApi6600),
+        XL("VideoSwdecCapApi6700", VideoSwdecCapApi6700),
+        XL("VideoSwdecCapApi6800", VideoSwdecCapApi6800),
+        XL("VideoSwdecCapApi6900", VideoSwdecCapApi6900),
+        XL("VideoSwdecCapApi7000", VideoSwdecCapApi7000),
+        XL("VideoSwdecCapApi7100", VideoSwdecCapApi7100),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterChunk5(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        XL("VideoSwdecFunction0200", VideoSwdecFunction0200),
+        XL("VideoSwdecFunction0300", VideoSwdecFunction0300),
+        XL("VideoSwdecFunction0400", VideoSwdecFunction0400),
+        XL("VideoSwdecFunction0700", VideoSwdecFunction0700),
+        XL("VideoSwdecFunction0800", VideoSwdecFunction0800),
+        XL("VideoSwdecFunction4000", VideoSwdecFunction4000),
+        XL("VideoSwdecFunction1000", VideoSwdecFunction1000),
+        XL("VideoSwdecFunction1100", VideoSwdecFunction1100),
+        XL("VideoSwdecFunction1200", VideoSwdecFunction1200),
+        XL("VideoSwdecFunction1300", VideoSwdecFunction1300),
+        XL("VideoSwdecFunction1400", VideoSwdecFunction1400),
+        XL("VideoSwdecFunction1500", VideoSwdecFunction1500),
+        XL("VideoSwdecFunction1600", VideoSwdecFunction1600),
+        XL("VideoDecodeSyncSw264Func0010", VideoDecodeSyncSw264Func0010),
+        XL("VideoDecodeSyncSw264Func0020", VideoDecodeSyncSw264Func0020),
+        XL("VideoDecodeSyncSw264Func0040", VideoDecodeSyncSw264Func0040),
+        XL("VideoSwdecodeBlankFrame0010", VideoSwdecodeBlankFrame0010),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterChunk6(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        XL("VideoSwdecState0100", VideoSwdecState0100),
+        XL("VideoSwdecState0101", VideoSwdecState0101),
+        XL("VideoSwdecState0200", VideoSwdecState0200),
+        XL("VideoSwdecState0300", VideoSwdecState0300),
+        XL("VideoSwdecState0400", VideoSwdecState0400),
+        XL("VideoSwdecState0500", VideoSwdecState0500),
+        XL("VideoSwdecState0600", VideoSwdecState0600),
+        XL("VideoSwdecState0700", VideoSwdecState0700),
+        XL("VideoSwdecState0800", VideoSwdecState0800),
+        XL("VideoSwdecState0900", VideoSwdecState0900),
+        XL("VideoSwdecState1000", VideoSwdecState1000),
+        XL("VideoSwdecState1100", VideoSwdecState1100),
+        XL("VideoSwdecState1200", VideoSwdecState1200),
+        XL("VideoSwdecState1300", VideoSwdecState1300),
+        XL("VideoSwdecState1400", VideoSwdecState1400),
+        XL("VideoSwdecState1500", VideoSwdecState1500),
+        XL("VideoSwdecState1600", VideoSwdecState1600),
+        XL("VideoSwdecState1700", VideoSwdecState1700),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterChunk7(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        XL("VideoSwdecState1800", VideoSwdecState1800),
+        XL("VideoSwdecState1900", VideoSwdecState1900),
+        XL("VideoSwdecState2000", VideoSwdecState2000),
+        XL("VideoSwdecState2100", VideoSwdecState2100),
+        XL("VideoSwdecState2200", VideoSwdecState2200),
+        XL("VideoSwdecState2300", VideoSwdecState2300),
+        XL("VideoSwdecState2400", VideoSwdecState2400),
+        XL("VideoSwdecState2500", VideoSwdecState2500),
+        XL("VideoSwdecState2600", VideoSwdecState2600),
+        XL("VideoSwdecState2700", VideoSwdecState2700),
+        XL("VideoSwdecState2800", VideoSwdecState2800),
+        XL("VideoSwdecState2900", VideoSwdecState2900),
+        XL("VideoSwdecState3000", VideoSwdecState3000),
+        XL("VideoSwdecState3100", VideoSwdecState3100),
+        XL("VideoSwdecState3200", VideoSwdecState3200),
+        XL("VideoSwdecState3300", VideoSwdecState3300),
+        XL("VideoSwdecState3400", VideoSwdecState3400),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
 
 EXTERN_C_START
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(
-        env, exports, sizeof(g_swdecDescriptors) / sizeof(g_swdecDescriptors[0]), g_swdecDescriptors);
+    napi_property_descriptor initDesc[] = {
+        {"initTests", nullptr, InitTests, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, 1, initDesc);
+    RegisterChunk1(env, exports);
+    RegisterChunk2(env, exports);
+    RegisterChunk3(env, exports);
+    RegisterChunk4(env, exports);
+    RegisterChunk5(env, exports);
+    RegisterChunk6(env, exports);
+    RegisterChunk7(env, exports);
     return exports;
 }
 EXTERN_C_END
@@ -440,7 +344,7 @@ static napi_module swdecoderTestModule = {
     .nm_filename = nullptr,
     .nm_register_func = Init,
     .nm_modname = "swdecoder_test",
-    .nm_priv = nullptr,
+    .nm_priv = ((void*)0),
     .reserved = { 0 },
 };
 

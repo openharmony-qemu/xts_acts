@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
+﻿import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
 import testNapi from 'libdemuxer_test.so';
 import fs from '@ohos.file.fs';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -83,6 +83,7 @@ export default function DemuxerFunc2TestTest() {
         }
         
         console.info('[beforeAll] File preparation completed');
+      testNapi.initTests();
       } catch (error) {
         console.error(`[beforeAll] Setup failed: ${JSON.stringify(error)}`);
       }
@@ -109,7 +110,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_VTT_6100', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(0);
+      let result:number = await testNapi.SubMediaDemuxerVtt6100();
       expect(result).assertEqual(0);
     });
 
@@ -122,7 +123,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_META_0090', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(1);
+      let result:number = await testNapi.DemuxerMeta0090();
       expect(result).assertEqual(0);
     });
 
@@ -135,7 +136,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0001', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(2);
+      let result:number = await testNapi.DemuxerWavAlawFunc0001();
       expect(result).assertEqual(0);
     });
 
@@ -148,7 +149,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0002', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(3);
+      let result:number = await testNapi.DemuxerWavAlawFunc0002();
       expect(result).assertEqual(0);
     });
 
@@ -161,7 +162,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0003', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(4);
+      let result:number = await testNapi.DemuxerWavAlawFunc0003();
       expect(result).assertEqual(0);
     });
 
@@ -174,7 +175,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0004', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFunc2Test(5);
+      let result:number = await testNapi.DemuxerWavAlawFunc0004();
       expect(result).assertEqual(0);
     });
 
@@ -187,7 +188,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0005', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(6);
+      let result:number = await testNapi.DemuxerWavAlawFunc0005();
       expect(result).assertEqual(0);
     });
 
@@ -200,7 +201,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0006', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(7);
+      let result:number = await testNapi.DemuxerWavAlawFunc0006();
       expect(result).assertEqual(0);
     });
 
@@ -213,7 +214,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0007', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(8);
+      let result:number = await testNapi.DemuxerWavAlawFunc0007();
       expect(result).assertEqual(0);
     });
 
@@ -226,7 +227,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0008', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(9);
+      let result:number = await testNapi.DemuxerWavAlawFunc0008();
       expect(result).assertEqual(0);
     });
 
@@ -239,7 +240,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0009', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(10);
+      let result:number = await testNapi.DemuxerWavAlawFunc0009();
       expect(result).assertEqual(0);
     });
 
@@ -252,7 +253,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0010', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(11);
+      let result:number = await testNapi.DemuxerWavAlawFunc0010();
       expect(result).assertEqual(0);
     });
 
@@ -265,7 +266,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0010', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFunc2Test(12);
+      let result:number = await testNapi.DemuxerFunctionTrack0010();
       expect(result).assertEqual(0);
     });
 
@@ -278,7 +279,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0020', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(13);
+      let result:number = await testNapi.DemuxerFunctionTrack0020();
       expect(result).assertEqual(0);
     });
 
@@ -291,7 +292,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0030', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(14);
+      let result:number = await testNapi.DemuxerFunctionTrack0030();
       expect(result).assertEqual(0);
     });
 
@@ -304,7 +305,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0040', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(15);
+      let result:number = await testNapi.DemuxerFunctionTrack0040();
       expect(result).assertEqual(0);
     });
 
@@ -317,7 +318,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0050', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(16);
+      let result:number = await testNapi.DemuxerFunctionTrack0050();
       expect(result).assertEqual(0);
     });
 
@@ -330,7 +331,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0060', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(17);
+      let result:number = await testNapi.DemuxerFunctionTrack0060();
       expect(result).assertEqual(0);
     });
 
@@ -343,7 +344,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0061', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(18);
+      let result:number = await testNapi.DemuxerFunctionTrack0061();
       expect(result).assertEqual(0);
     });
 
@@ -356,7 +357,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0070', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(19);
+      let result:number = await testNapi.DemuxerFunctionTrack0070();
       expect(result).assertEqual(0);
     });
 
@@ -369,7 +370,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0080', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(20);
+      let result:number = await testNapi.DemuxerFunctionTrack0080();
       expect(result).assertEqual(0);
     });
 
@@ -382,7 +383,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0090', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(21);
+      let result:number = await testNapi.DemuxerFunctionTrack0090();
       expect(result).assertEqual(0);
     });
 
@@ -395,7 +396,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0130', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(22);
+      let result:number = await testNapi.DemuxerFunctionTrack0130();
       expect(result).assertEqual(0);
     });
 
@@ -408,7 +409,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0140', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(23);
+      let result:number = await testNapi.DemuxerFunctionTrack0140();
       expect(result).assertEqual(0);
     });
 
@@ -421,7 +422,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0150', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(24);
+      let result:number = await testNapi.DemuxerFunctionTrack0150();
       expect(result).assertEqual(0);
     });
 
@@ -434,7 +435,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0160', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(25);
+      let result:number = await testNapi.DemuxerFunctionTrack0160();
       expect(result).assertEqual(0);
     });
 
@@ -447,7 +448,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0170', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(26);
+      let result:number = await testNapi.DemuxerFunctionTrack0170();
       expect(result).assertEqual(0);
     });
 
@@ -460,7 +461,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0180', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(27);
+      let result:number = await testNapi.DemuxerFunctionTrack0180();
       expect(result).assertEqual(0);
     });
 
@@ -473,7 +474,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_TRACK_0190', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(28);
+      let result:number = await testNapi.DemuxerFunctionTrack0190();
       expect(result).assertEqual(0);
     });
 
@@ -486,7 +487,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0010', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFunc2Test(29);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0010();
       expect(result).assertEqual(0);
     });
 
@@ -499,7 +500,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0020', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFunc2Test(30);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0020();
       expect(result).assertEqual(0);
     });
 
@@ -512,7 +513,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0030', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFunc2Test(31);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0030();
       expect(result).assertEqual(0);
     });
 
@@ -525,7 +526,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0040', Level.LEVEL1, async () => {
-      let result:number = await testNapi.runFunc2Test(32);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0040();
       expect(result).assertEqual(0);
     });
 
@@ -538,7 +539,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0050', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(33);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0050();
       expect(result).assertEqual(0);
     });
 
@@ -551,7 +552,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0060', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(34);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0060();
       expect(result).assertEqual(0);
     });
 
@@ -564,7 +565,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0061', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(35);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0061();
       expect(result).assertEqual(0);
     });
 
@@ -577,7 +578,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0070', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(36);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0070();
       expect(result).assertEqual(0);
     });
 
@@ -590,7 +591,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0080', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(37);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0080();
       expect(result).assertEqual(0);
     });
 
@@ -603,7 +604,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0090', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(38);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0090();
       expect(result).assertEqual(0);
     });
 
@@ -616,7 +617,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0130', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(39);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0130();
       expect(result).assertEqual(0);
     });
 
@@ -629,7 +630,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0140', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(40);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0140();
       expect(result).assertEqual(0);
     });
 
@@ -642,7 +643,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0150', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(41);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0150();
       expect(result).assertEqual(0);
     });
 
@@ -655,7 +656,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0160', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(42);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0160();
       expect(result).assertEqual(0);
     });
 
@@ -668,7 +669,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0170', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(43);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0170();
       expect(result).assertEqual(0);
     });
 
@@ -681,7 +682,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0180', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(44);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0180();
       expect(result).assertEqual(0);
     });
 
@@ -694,7 +695,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0190', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(45);
+      let result:number = await testNapi.DemuxerFunctionAudioTrack0190();
       expect(result).assertEqual(0);
     });
 
@@ -707,7 +708,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_ADD_0010', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(46);
+      let result:number = await testNapi.DemuxerFunctionAdd0010();
       expect(result).assertEqual(0);
     });
 
@@ -720,7 +721,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_ADD_0020', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(47);
+      let result:number = await testNapi.DemuxerFunctionAdd0020();
       expect(result).assertEqual(0);
     });
 
@@ -733,7 +734,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_DEMUXER_FUNCTION_ADD_0030', Level.LEVEL2, async () => {
-      let result:number = await testNapi.runFunc2Test(48);
+      let result:number = await testNapi.DemuxerFunctionAdd0030();
       expect(result).assertEqual(0);
     });
 
@@ -746,7 +747,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_SKIP_SAMPLE_FUNC_0010', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(49);
+      let result:number = await testNapi.DemuxerSkipSampleFunc0010();
       expect(result).assertEqual(0);
     });
 
@@ -759,7 +760,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_DEMUXER_SKIP_SAMPLE_FUNC_0020', Level.LEVEL0, async () => {
-      let result:number = await testNapi.runFunc2Test(50);
+      let result:number = await testNapi.DemuxerSkipSampleFunc0020();
       expect(result).assertEqual(0);
     });
 

@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
+﻿import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
 import testNapi from 'libdemuxer_test.so';
 import fs from '@ohos.file.fs';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -71,6 +71,7 @@ export default function DemuxerApiTestTest() {
         }
         
         console.info('[beforeAll] File preparation completed');
+      testNapi.initTests();
       } catch (error) {
         console.error(`[beforeAll] Setup failed: ${JSON.stringify(error)}`);
       }
@@ -96,8 +97,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OH_AVSource_CreateWithDataSource_0100', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(0);
+    it('OH_AVSource_CreateWithDataSource_0100', Level.LEVEL0, async () => {
+      let result:number = await testNapi.OhAvSourceCreateWithDataSource0100();
       expect(result).assertEqual(0);
     });
 
@@ -109,8 +110,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('OH_AVSource_CreateWithDataSourceExt_0100', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(1);
+    it('OH_AVSource_CreateWithDataSourceExt_0100', Level.LEVEL0, async () => {
+      let result:number = await testNapi.OhAvSourceCreateWithDataSourceExt0100();
       expect(result).assertEqual(0);
     });
 
@@ -122,8 +123,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0100', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(2);
+    it('DEMUXER_ILLEGAL_PARA_0100', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0100();
       expect(result).assertEqual(0);
     });
 
@@ -135,8 +136,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0200', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(3);
+    it('DEMUXER_ILLEGAL_PARA_0200', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0200();
       expect(result).assertEqual(0);
     });
 
@@ -148,8 +149,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0700', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(4);
+    it('DEMUXER_ILLEGAL_PARA_0700', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0700();
       expect(result).assertEqual(0);
     });
 
@@ -161,8 +162,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0800', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(5);
+    it('DEMUXER_ILLEGAL_PARA_0800', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0800();
       expect(result).assertEqual(0);
     });
 
@@ -174,8 +175,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0300', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(6);
+    it('DEMUXER_ILLEGAL_PARA_0300', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0300();
       expect(result).assertEqual(0);
     });
 
@@ -187,8 +188,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0400', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(7);
+    it('DEMUXER_ILLEGAL_PARA_0400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0400();
       expect(result).assertEqual(0);
     });
 
@@ -200,8 +201,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0500', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(8);
+    it('DEMUXER_ILLEGAL_PARA_0500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0500();
       expect(result).assertEqual(0);
     });
 
@@ -213,8 +214,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0600', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(9);
+    it('DEMUXER_ILLEGAL_PARA_0600', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0600();
       expect(result).assertEqual(0);
     });
 
@@ -226,8 +227,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2300', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(10);
+    it('DEMUXER_ILLEGAL_PARA_2300', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2300();
       expect(result).assertEqual(0);
     });
 
@@ -239,8 +240,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_0900', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(11);
+    it('DEMUXER_ILLEGAL_PARA_0900', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara0900();
       expect(result).assertEqual(0);
     });
 
@@ -252,8 +253,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1000', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(12);
+    it('DEMUXER_ILLEGAL_PARA_1000', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1000();
       expect(result).assertEqual(0);
     });
 
@@ -265,8 +266,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1100', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(13);
+    it('DEMUXER_ILLEGAL_PARA_1100', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1100();
       expect(result).assertEqual(0);
     });
 
@@ -278,8 +279,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1200', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(14);
+    it('DEMUXER_ILLEGAL_PARA_1200', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1200();
       expect(result).assertEqual(0);
     });
 
@@ -291,8 +292,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1300', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(15);
+    it('DEMUXER_ILLEGAL_PARA_1300', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1300();
       expect(result).assertEqual(0);
     });
 
@@ -304,8 +305,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1400', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(16);
+    it('DEMUXER_ILLEGAL_PARA_1400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1400();
       expect(result).assertEqual(0);
     });
 
@@ -317,8 +318,8 @@ export default function DemuxerApiTestTest() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1500', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(17);
+    it('DEMUXER_ILLEGAL_PARA_1500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1500();
       expect(result).assertEqual(0);
     });
 
@@ -330,8 +331,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1600', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(18);
+    it('DEMUXER_ILLEGAL_PARA_1600', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1600();
       expect(result).assertEqual(0);
     });
 
@@ -343,8 +344,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1700', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(19);
+    it('DEMUXER_ILLEGAL_PARA_1700', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1700();
       expect(result).assertEqual(0);
     });
 
@@ -356,8 +357,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_0200', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(20);
+    it('DEMUXER_API_0200', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1800();
       expect(result).assertEqual(0);
     });
 
@@ -369,8 +370,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_1100', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(21);
+    it('DEMUXER_API_1100', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1900();
       expect(result).assertEqual(0);
     });
 
@@ -382,8 +383,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1800', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(20);
+    it('DEMUXER_ILLEGAL_PARA_1800', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1800();
       expect(result).assertEqual(0);
     });
 
@@ -395,8 +396,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_1900', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(21);
+    it('DEMUXER_ILLEGAL_PARA_1900', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara1900();
       expect(result).assertEqual(0);
     });
 
@@ -408,8 +409,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2100', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(22);
+    it('DEMUXER_ILLEGAL_PARA_2100', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2100();
       expect(result).assertEqual(0);
     });
 
@@ -421,8 +422,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2200', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(23);
+    it('DEMUXER_ILLEGAL_PARA_2200', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2200();
       expect(result).assertEqual(0);
     });
 
@@ -434,8 +435,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2400', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(24);
+    it('DEMUXER_ILLEGAL_PARA_2400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2400();
       expect(result).assertEqual(0);
     });
 
@@ -447,8 +448,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2500', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(25);
+    it('DEMUXER_ILLEGAL_PARA_2500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2500();
       expect(result).assertEqual(0);
     });
 
@@ -460,8 +461,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2600', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(26);
+    it('DEMUXER_ILLEGAL_PARA_2600', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2600();
       expect(result).assertEqual(0);
     });
 
@@ -473,8 +474,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2700', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(27);
+    it('DEMUXER_ILLEGAL_PARA_2700', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2700();
       expect(result).assertEqual(0);
     });
 
@@ -486,8 +487,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2800', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(28);
+    it('DEMUXER_ILLEGAL_PARA_2800', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2800();
       expect(result).assertEqual(0);
     });
 
@@ -499,8 +500,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_2900', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(29);
+    it('DEMUXER_ILLEGAL_PARA_2900', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara2900();
       expect(result).assertEqual(0);
     });
 
@@ -512,8 +513,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_ILLEGAL_PARA_3000', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(30);
+    it('DEMUXER_ILLEGAL_PARA_3000', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerIllegalPara3000();
       expect(result).assertEqual(0);
     });
 
@@ -525,8 +526,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_0300', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(32);
+    it('DEMUXER_API_0300', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi0300();
       expect(result).assertEqual(0);
     });
 
@@ -538,8 +539,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_0500', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(33);
+    it('DEMUXER_API_0500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi0500();
       expect(result).assertEqual(0);
     });
 
@@ -551,8 +552,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_0700', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(34);
+    it('DEMUXER_API_0700', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi0700();
       expect(result).assertEqual(0);
     });
 
@@ -564,8 +565,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_1000', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(35);
+    it('DEMUXER_API_1000', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi1000();
       expect(result).assertEqual(0);
     });
 
@@ -577,8 +578,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_1200', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(37);
+    it('DEMUXER_API_1200', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi1200();
       expect(result).assertEqual(0);
     });
 
@@ -590,8 +591,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_1300', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(38);
+    it('DEMUXER_API_1300', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi1300();
       expect(result).assertEqual(0);
     });
 
@@ -603,8 +604,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_1400', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(39);
+    it('DEMUXER_API_1400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi1400();
       expect(result).assertEqual(0);
     });
 
@@ -616,8 +617,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_2300', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(40);
+    it('DEMUXER_API_2300', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi2300();
       expect(result).assertEqual(0);
     });
 
@@ -629,8 +630,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_2400', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(41);
+    it('DEMUXER_API_2400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi2400();
       expect(result).assertEqual(0);
     });
 
@@ -642,8 +643,8 @@ export default function DemuxerApiTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('DEMUXER_API_2500', Level.LEVEL0, () => {
-      let result:number = testNapi.runApiTest(42);
+    it('DEMUXER_API_2500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.DemuxerApi2500();
       expect(result).assertEqual(0);
     });
 
