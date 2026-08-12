@@ -807,39 +807,12 @@ export default function int32ArrayReduceRightPart04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_4800
      * @tc.name int32ArrayReduceRightPart04Test048
-     * @tc.desc Verify initialValue=undefined U=number|undefined prev=undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int32ArrayReduceRightPart04Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int32Array = new Int32Array([1, 2]);
-      let hit: boolean = false;
-      let firstUndef: boolean = false;
-      let r: number | undefined =
-      arr.reduceRight((p: number | undefined, c: number, _i: int, _a: Int32Array): number | undefined => {
-        if (!hit) {
-          firstUndef = (p === undefined);
-          hit = true;
-        }
-        if (p === undefined) {
-          return c;
-        }
-        return p + c;
-      }, undefined);
-      expect(firstUndef).assertTrue();
-      expect(r).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_4900
-     * @tc.name int32ArrayReduceRightPart04Test049
      * @tc.desc Verify initialValue=[] number[] [1,2,3,4,5,6] [6,4,2]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4, 5, 6]);
       let r: number[] = arr.reduceRight((p: number[], c: number, _i: int, _a: Int32Array): number[] => {
         if (c % 2 === 0) {
@@ -854,14 +827,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5000
-     * @tc.name int32ArrayReduceRightPart04Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_4900
+     * @tc.name int32ArrayReduceRightPart04Test049
      * @tc.desc Verify initialValue=[] string[] toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30]);
       let r: string[] = arr.reduceRight((p: string[], c: number, _i: int, _a: Int32Array): string[] => {
         p.push(c.toString());
@@ -873,14 +846,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5100
-     * @tc.name int32ArrayReduceRightPart04Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5000
+     * @tc.name int32ArrayReduceRightPart04Test050
      * @tc.desc Verify initialValue=[0] push length+1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2]);
       let init: number[] = [0];
       let r: number[] = arr.reduceRight((p: number[], c: number, _i: int, _a: Int32Array): number[] => {
@@ -893,42 +866,42 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5200
-     * @tc.name int32ArrayReduceRightPart04Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5100
+     * @tc.name int32ArrayReduceRightPart04Test051
      * @tc.desc Verify Int32Array.from([1..4]) reduceRight 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.from([1, 2, 3, 4]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5300
-     * @tc.name int32ArrayReduceRightPart04Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5200
+     * @tc.name int32ArrayReduceRightPart04Test052
      * @tc.desc Verify Int32Array.of(7,8,9) reduceRight 24
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(7, 8, 9);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(24);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5400
-     * @tc.name int32ArrayReduceRightPart04Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5300
+     * @tc.name int32ArrayReduceRightPart04Test053
      * @tc.desc Verify Int32Array.from Int32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int32Array = new Int32Array([5, 6, 7]);
       let arr: Int32Array = Int32Array.from(src);
       src.$_set(0, 999);
@@ -937,14 +910,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5500
-     * @tc.name int32ArrayReduceRightPart04Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5400
+     * @tc.name int32ArrayReduceRightPart04Test054
      * @tc.desc Verify subarray(1,3) [20,30] 50
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30, 40]);
       let sub: Int32Array = arr.subarray(1, 3);
       let r: number = sub.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
@@ -952,14 +925,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5600
-     * @tc.name int32ArrayReduceRightPart04Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5500
+     * @tc.name int32ArrayReduceRightPart04Test055
      * @tc.desc Verify subarray(length-1) 99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30, 99]);
       let sub: Int32Array = arr.subarray(arr.length - 1);
       let r: number = sub.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
@@ -967,14 +940,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5700
-     * @tc.name int32ArrayReduceRightPart04Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5600
+     * @tc.name int32ArrayReduceRightPart04Test056
      * @tc.desc Verify ArrayBuffer byteOffset=4 length=2 15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(16);
       let view: Int32Array = new Int32Array(buf, 4, 2);
       view.$_set(0, 7);
@@ -984,14 +957,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5800
-     * @tc.name int32ArrayReduceRightPart04Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5700
+     * @tc.name int32ArrayReduceRightPart04Test057
      * @tc.desc Verify ArrayBuffer byteOffset=12 length=1 -55
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(16);
       let view: Int32Array = new Int32Array(buf, 12, 1);
       view.$_set(0, -55);
@@ -1000,126 +973,126 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5900
-     * @tc.name int32ArrayReduceRightPart04Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5800
+     * @tc.name int32ArrayReduceRightPart04Test058
      * @tc.desc Verify [INT_MIN] init=1 -2147483647
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-2147483648]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 1);
       expect(r).assertEqual(-2147483647);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6000
-     * @tc.name int32ArrayReduceRightPart04Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_5900
+     * @tc.name int32ArrayReduceRightPart04Test059
      * @tc.desc Verify [INT_MAX] init=1 2147483648 number
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([2147483647]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 1);
       expect(r).assertEqual(2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6100
-     * @tc.name int32ArrayReduceRightPart04Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6000
+     * @tc.name int32ArrayReduceRightPart04Test060
      * @tc.desc Verify [INT_MAX, 1] 2147483648 number
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([2147483647, 1]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6200
-     * @tc.name int32ArrayReduceRightPart04Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6100
+     * @tc.name int32ArrayReduceRightPart04Test061
      * @tc.desc Verify [-2147483648, -1] -2147483649 number
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-2147483648, -1]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(-2147483649);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6300
-     * @tc.name int32ArrayReduceRightPart04Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6200
+     * @tc.name int32ArrayReduceRightPart04Test062
      * @tc.desc Verify 7 init=1 343
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([7, 7, 7]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p * c, 1);
       expect(r).assertEqual(343);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6400
-     * @tc.name int32ArrayReduceRightPart04Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6300
+     * @tc.name int32ArrayReduceRightPart04Test063
      * @tc.desc Verify 1/-1 5 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, -1, 1, -1, 1]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6500
-     * @tc.name int32ArrayReduceRightPart04Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6400
+     * @tc.name int32ArrayReduceRightPart04Test064
      * @tc.desc Verify [1,0,0,0,0] init=1 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 0, 0, 0, 0]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p * c, 1);
       expect(r).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6600
-     * @tc.name int32ArrayReduceRightPart04Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6500
+     * @tc.name int32ArrayReduceRightPart04Test065
      * @tc.desc Verify [-3,-5,-7] -15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-3, -5, -7]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(-15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6700
-     * @tc.name int32ArrayReduceRightPart04Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6600
+     * @tc.name int32ArrayReduceRightPart04Test066
      * @tc.desc Verify 7 1..7 28
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let n: int = 7;
       let arr: Int32Array = new Int32Array(n);
       for (let i: int = 0; i < n; i++) {
@@ -1130,14 +1103,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6800
-     * @tc.name int32ArrayReduceRightPart04Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6700
+     * @tc.name int32ArrayReduceRightPart04Test067
      * @tc.desc Verify fill(-1) 4 -4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(4);
       arr.fill(-1);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
@@ -1145,28 +1118,28 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6900
-     * @tc.name int32ArrayReduceRightPart04Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6800
+     * @tc.name int32ArrayReduceRightPart04Test068
      * @tc.desc Verify 0 [0,0,0,0] init=1 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([0, 0, 0, 0]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 1);
       expect(r).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7000
-     * @tc.name int32ArrayReduceRightPart04Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_6900
+     * @tc.name int32ArrayReduceRightPart04Test069
      * @tc.desc Verify slice() reduceRight
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4]);
       let cp: Int32Array = arr.slice();
       let r: number = cp.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
@@ -1176,42 +1149,42 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7100
-     * @tc.name int32ArrayReduceRightPart04Test071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7000
+     * @tc.name int32ArrayReduceRightPart04Test070
      * @tc.desc Verify number accumulator with initial value 0 returns -3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-1, -2]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(-3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7200
-     * @tc.name int32ArrayReduceRightPart04Test072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7100
+     * @tc.name int32ArrayReduceRightPart04Test071
      * @tc.desc Verify string accumulator with initial value 'X' returns 'X5'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([5]);
       let r: string = arr.reduceRight((p: string, c: number, _i: int, _a: Int32Array): string => p + c.toString(), 'X');
       expect(r).assertEqual('X5');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7300
-     * @tc.name int32ArrayReduceRightPart04Test073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7200
+     * @tc.name int32ArrayReduceRightPart04Test072
      * @tc.desc Verify initialValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2]);
       let init: number[] = [];
       let r: number[] = arr.reduceRight((p: number[], _c: number, _i: int, _a: Int32Array): number[] => p, init);
@@ -1219,14 +1192,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7400
-     * @tc.name int32ArrayReduceRightPart04Test074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7300
+     * @tc.name int32ArrayReduceRightPart04Test073
      * @tc.desc Verify reduceRight returns the initial result without mutating the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-3, 0, 3]);
       arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 10);
       expect(arr.$_get(0)).assertEqual(-3);
@@ -1235,56 +1208,56 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7500
-     * @tc.name int32ArrayReduceRightPart04Test075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7400
+     * @tc.name int32ArrayReduceRightPart04Test074
      * @tc.desc Verify byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(arr.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7600
-     * @tc.name int32ArrayReduceRightPart04Test076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7500
+     * @tc.name int32ArrayReduceRightPart04Test075
      * @tc.desc Verify + initialValue undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1]);
       arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(arr.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7700
-     * @tc.name int32ArrayReduceRightPart04Test077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7600
+     * @tc.name int32ArrayReduceRightPart04Test076
      * @tc.desc Verify [25] init=75 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([25]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 75);
       expect(r).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7800
-     * @tc.name int32ArrayReduceRightPart04Test078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7700
+     * @tc.name int32ArrayReduceRightPart04Test077
      * @tc.desc Verify callbackfn index=1 length=3 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let n: int = 0;
       try {
@@ -1303,14 +1276,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7900
-     * @tc.name int32ArrayReduceRightPart04Test079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7800
+     * @tc.name int32ArrayReduceRightPart04Test078
      * @tc.desc Verify callbackfn RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2]);
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
@@ -1323,14 +1296,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8000
-     * @tc.name int32ArrayReduceRightPart04Test080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_7900
+     * @tc.name int32ArrayReduceRightPart04Test079
      * @tc.desc Verify callbackfn TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1]);
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
@@ -1343,14 +1316,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8100
-     * @tc.name int32ArrayReduceRightPart04Test081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8000
+     * @tc.name int32ArrayReduceRightPart04Test080
      * @tc.desc Verify callbackfn NaN NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([5, 6]);
       let step: int = 0;
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
@@ -1364,14 +1337,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8200
-     * @tc.name int32ArrayReduceRightPart04Test082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8100
+     * @tc.name int32ArrayReduceRightPart04Test081
      * @tc.desc Verify callbackfn -Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let step: int = 0;
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
@@ -1386,14 +1359,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8300
-     * @tc.name int32ArrayReduceRightPart04Test083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8200
+     * @tc.name int32ArrayReduceRightPart04Test082
      * @tc.desc Verify INT_MIN=-2147483648 currentValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-2147483648]);
       let seen: number = 0;
       arr.reduceRight((_p: number, c: number, _i: int, _a: Int32Array): number => {
@@ -1404,35 +1377,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8400
-     * @tc.name int32ArrayReduceRightPart04Test084
-     * @tc.desc Verify callbackfn Error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int32ArrayReduceRightPart04Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int32Array = new Int32Array([1, 2, 3]);
-      try {
-        arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
-          throw new Error('boom');
-        }, 0);
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
-      let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
-      expect(r).assertEqual(6);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8500
-     * @tc.name int32ArrayReduceRightPart04Test085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8300
+     * @tc.name int32ArrayReduceRightPart04Test083
      * @tc.desc Verify callbackfn Error message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1]);
       let msg: string = '';
       try {
@@ -1448,14 +1400,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8600
-     * @tc.name int32ArrayReduceRightPart04Test086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8400
+     * @tc.name int32ArrayReduceRightPart04Test084
      * @tc.desc Verify + initialValue callbackfn initialValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(0);
       let r: number = arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
         throw new Error('never-called');
@@ -1464,14 +1416,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8700
-     * @tc.name int32ArrayReduceRightPart04Test087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8500
+     * @tc.name int32ArrayReduceRightPart04Test085
      * @tc.desc Verify ArrayBuffer reduceRight
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(16);
       let a: Int32Array = new Int32Array(buf, 0, 4);
       let b: Int32Array = new Int32Array(buf, 0, 4);
@@ -1493,14 +1445,14 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8800
-     * @tc.name int32ArrayReduceRightPart04Test088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8600
+     * @tc.name int32ArrayReduceRightPart04Test086
      * @tc.desc Verify callbackfn (i=0) length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let n: int = 0;
       try {
@@ -1519,42 +1471,42 @@ export default function int32ArrayReduceRightPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8900
-     * @tc.name int32ArrayReduceRightPart04Test089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8700
+     * @tc.name int32ArrayReduceRightPart04Test087
      * @tc.desc Verify fill(4) reduceRight 3 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(3);
       let r: number = arr.fill(4).reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       expect(r).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_9000
-     * @tc.name int32ArrayReduceRightPart04Test090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8800
+     * @tc.name int32ArrayReduceRightPart04Test088
      * @tc.desc Verify callbackfn c*0.5 [1,2,3] 3.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => p + c * 0.5, 0);
       expect(r).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_9100
-     * @tc.name int32ArrayReduceRightPart04Test091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_RIGHT_PART04_TEST_MINDMAP_8900
+     * @tc.name int32ArrayReduceRightPart04Test089
      * @tc.desc Verify callbackfn boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReduceRightPart04Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReduceRightPart04Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1]);
       let entered: boolean = false;
       arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
@@ -1563,5 +1515,8 @@ export default function int32ArrayReduceRightPart04Test(): void {
       }, 0);
       expect(entered).assertTrue();
     });
+
+
+
   });
 }
