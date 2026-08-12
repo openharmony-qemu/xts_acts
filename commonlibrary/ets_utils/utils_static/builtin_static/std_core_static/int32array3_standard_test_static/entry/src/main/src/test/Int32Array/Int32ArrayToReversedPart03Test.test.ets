@@ -6,7 +6,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -865,9 +865,8 @@ export default function int32ArrayToReversedPart03Test(): void {
       let firstKey: int = -1;
       let firstVal: number = 0;
       for (let i = 0; i < r.length; i++) {
-        let e: [int, number] = [i, r.$_get(i)];
-        firstKey = e[0];
-        firstVal = e[1];
+        firstKey = i;
+        firstVal = r.$_get(i);
         break;
       }
       expect(firstKey).assertEqual(0);
