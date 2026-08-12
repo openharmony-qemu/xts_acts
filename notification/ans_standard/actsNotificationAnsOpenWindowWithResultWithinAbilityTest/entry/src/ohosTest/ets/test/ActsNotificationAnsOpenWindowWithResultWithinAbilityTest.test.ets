@@ -403,7 +403,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
      */
     it('SUB_Notification_Ans_openWindow_WithResult_1400', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1400'
-      let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
           notificationExtensionSubscription.openSubscriptionSettingsWithResult(null).then((data) => {
@@ -447,7 +446,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
      */
     it('SUB_Notification_Ans_openWindow_WithResult_1500', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1500'
-      let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
           notificationExtensionSubscription.openSubscriptionSettingsWithResult(undefined).then((data) => {

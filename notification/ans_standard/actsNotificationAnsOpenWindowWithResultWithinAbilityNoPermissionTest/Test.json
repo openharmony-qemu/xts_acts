@@ -19,7 +19,7 @@
         {
             "type":"ShellKit",
             "run-command":[
-                "anm setting -e com.example.actsnotificationansopenwindowwithresultwithinabilitynopermissiontest:0:1"
+                ""
             ],
             "cleanup-apps":true
         }
