@@ -7,7 +7,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -140,7 +140,7 @@ export default function int32ArrayToLocaleStringPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART03_TEST_MINDMAP_0500
      * @tc.name int32ArrayToLocaleStringPart03Test005
-     * @tc.desc Verify "en US" RangeError
+     * @tc.desc Verify "en_US" RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -148,7 +148,7 @@ export default function int32ArrayToLocaleStringPart03Test(): void {
     it('int32ArrayToLocaleStringPart03Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1]);
       try {
-        arr.toLocaleString('en US');
+        arr.toLocaleString('en_US');
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');

@@ -7,7 +7,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -937,27 +937,12 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0570
      * @tc.name int32ArrayToLocaleStringPart01Test057
-     * @tc.desc Verify options 0 useGrouping 'en-US' 1000000
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int32ArrayToLocaleStringPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int32Array = Int32Array.of(1000000);
-      let options: Intl.NumberFormatOptions = { useGrouping: false };
-      let r: string = arr.toLocaleString('en-US', options);
-      expect(r.indexOf(',') < 0).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0580
-     * @tc.name int32ArrayToLocaleStringPart01Test058
      * @tc.desc Verify options.style='decimal' 'en-US' 42 '42'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let __o = new O();
       __o.style = 'decimal';
@@ -966,14 +951,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0590
-     * @tc.name int32ArrayToLocaleStringPart01Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0580
+     * @tc.name int32ArrayToLocaleStringPart01Test058
      * @tc.desc Verify options.style='percent' 'en-US' 1 '%'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let __o = new O();
       __o.style = 'percent';
@@ -982,14 +967,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0600
-     * @tc.name int32ArrayToLocaleStringPart01Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0590
+     * @tc.name int32ArrayToLocaleStringPart01Test059
      * @tc.desc Verify options.style='percent' 'en-US' 0 '0' '%'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(0);
       let __o = new O();
       __o.style = 'percent';
@@ -998,14 +983,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0610
-     * @tc.name int32ArrayToLocaleStringPart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0600
+     * @tc.name int32ArrayToLocaleStringPart01Test060
      * @tc.desc Verify options.style='percent' useGrouping=false 'en-US' 50 '50'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(50);
       let __o = new O();
       __o.style = 'percent';
@@ -1015,14 +1000,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0620
-     * @tc.name int32ArrayToLocaleStringPart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0610
+     * @tc.name int32ArrayToLocaleStringPart01Test061
      * @tc.desc Verify options.style='currency' currency='USD' 'en-US' 1 '$'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let __o = new O();
       __o.style = 'currency';
@@ -1032,14 +1017,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0630
-     * @tc.name int32ArrayToLocaleStringPart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0620
+     * @tc.name int32ArrayToLocaleStringPart01Test062
      * @tc.desc Verify options.style='currency' currency='USD' 'en-US' -1 '$'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(-1);
       let __o = new O();
       __o.style = 'currency';
@@ -1049,14 +1034,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0640
-     * @tc.name int32ArrayToLocaleStringPart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0630
+     * @tc.name int32ArrayToLocaleStringPart01Test063
      * @tc.desc Verify options.style='currency' currency='EUR' 'de-DE' 1000 ' '
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000);
       let __o = new O();
       __o.style = 'currency';
@@ -1066,14 +1051,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0650
-     * @tc.name int32ArrayToLocaleStringPart01Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0640
+     * @tc.name int32ArrayToLocaleStringPart01Test064
      * @tc.desc Verify options.style='currency' currency='JPY' 'ja-JP' 1000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000);
       let __o = new O();
       __o.style = 'currency';
@@ -1083,14 +1068,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0660
-     * @tc.name int32ArrayToLocaleStringPart01Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0650
+     * @tc.name int32ArrayToLocaleStringPart01Test065
      * @tc.desc Verify options.currencyDisplay='code' style='currency' currency='USD' 'en-US' 'USD'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let __o = new O();
       __o.style = 'currency';
@@ -1101,14 +1086,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0670
-     * @tc.name int32ArrayToLocaleStringPart01Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0660
+     * @tc.name int32ArrayToLocaleStringPart01Test066
      * @tc.desc Verify options.minimumIntegerDigits=5 useGrouping=false 'en-US' 42 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let __o = new O();
       __o.minimumIntegerDigits = 5;
@@ -1118,14 +1103,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0680
-     * @tc.name int32ArrayToLocaleStringPart01Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0670
+     * @tc.name int32ArrayToLocaleStringPart01Test067
      * @tc.desc Verify options.minimumIntegerDigits=1 useGrouping=false 'en-US' 42 '42'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let __o = new O();
       __o.minimumIntegerDigits = 1;
@@ -1135,14 +1120,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0690
-     * @tc.name int32ArrayToLocaleStringPart01Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0680
+     * @tc.name int32ArrayToLocaleStringPart01Test068
      * @tc.desc Verify options.minimumFractionDigits=2 is accepted and output remains '1'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let __o = new O();
       __o.minimumFractionDigits = 2;
@@ -1152,14 +1137,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0700
-     * @tc.name int32ArrayToLocaleStringPart01Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0690
+     * @tc.name int32ArrayToLocaleStringPart01Test069
      * @tc.desc Verify options.maximumFractionDigits=0 'en-US' 1 '1'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let __o = new O();
       __o.maximumFractionDigits = 0;
@@ -1169,14 +1154,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0710
-     * @tc.name int32ArrayToLocaleStringPart01Test071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0700
+     * @tc.name int32ArrayToLocaleStringPart01Test070
      * @tc.desc Verify options.notation='scientific' is accepted and output remains grouped '1,000'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000);
       let __o = new O();
       __o.notation = 'scientific';
@@ -1185,14 +1170,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0720
-     * @tc.name int32ArrayToLocaleStringPart01Test072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0710
+     * @tc.name int32ArrayToLocaleStringPart01Test071
      * @tc.desc Verify options.notation='engineering' 'en-US' 10000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(10000);
       let __o = new O();
       __o.notation = 'engineering';
@@ -1201,14 +1186,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0730
-     * @tc.name int32ArrayToLocaleStringPart01Test073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0720
+     * @tc.name int32ArrayToLocaleStringPart01Test072
      * @tc.desc Verify options.notation='compact' 'en-US' 1000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000000);
       let __o = new O();
       __o.notation = 'compact';
@@ -1217,14 +1202,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0740
-     * @tc.name int32ArrayToLocaleStringPart01Test074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0730
+     * @tc.name int32ArrayToLocaleStringPart01Test073
      * @tc.desc Verify options.notation='compact' compactDisplay='long' 'en-US' 1000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000000);
       let __o = new O();
       __o.notation = 'compact';
@@ -1234,14 +1219,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0750
-     * @tc.name int32ArrayToLocaleStringPart01Test075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0740
+     * @tc.name int32ArrayToLocaleStringPart01Test074
      * @tc.desc Verify options.signDisplay='always' useGrouping=false 'en-US' 42 '+'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let __o = new O();
       __o.signDisplay = 'always';
@@ -1251,14 +1236,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0760
-     * @tc.name int32ArrayToLocaleStringPart01Test076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0750
+     * @tc.name int32ArrayToLocaleStringPart01Test075
      * @tc.desc Verify options.signDisplay='never' useGrouping=false 'en-US' -42 '-'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(-42);
       let __o = new O();
       __o.signDisplay = 'never';
@@ -1268,14 +1253,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0770
-     * @tc.name int32ArrayToLocaleStringPart01Test077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0760
+     * @tc.name int32ArrayToLocaleStringPart01Test076
      * @tc.desc Verify options.signDisplay='exceptZero' useGrouping=false 'en-US' 0 '+'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(0);
       let __o = new O();
       __o.signDisplay = 'exceptZero';
@@ -1285,14 +1270,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0780
-     * @tc.name int32ArrayToLocaleStringPart01Test078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0770
+     * @tc.name int32ArrayToLocaleStringPart01Test077
      * @tc.desc Verify options 'en-US' 1000 '1,000'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000);
       let __o = new O();
       __o.notARealOption = 'ignored';
@@ -1301,14 +1286,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0790
-     * @tc.name int32ArrayToLocaleStringPart01Test079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0780
+     * @tc.name int32ArrayToLocaleStringPart01Test078
      * @tc.desc Verify toLocaleString with en-US grouping options does not mutate source elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000, 2000, 3000);
       let __g = new GroupOn();
       arr.toLocaleString('en-US', __g);
@@ -1318,14 +1303,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0800
-     * @tc.name int32ArrayToLocaleStringPart01Test080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0790
+     * @tc.name int32ArrayToLocaleStringPart01Test079
      * @tc.desc Verify null options throw ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let thrown: string = '';
       try {
@@ -1338,14 +1323,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0810
-     * @tc.name int32ArrayToLocaleStringPart01Test081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0800
+     * @tc.name int32ArrayToLocaleStringPart01Test080
      * @tc.desc Verify an unsupported style option is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let thrown: string = '';
       try {
@@ -1360,14 +1345,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0820
-     * @tc.name int32ArrayToLocaleStringPart01Test082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0810
+     * @tc.name int32ArrayToLocaleStringPart01Test081
      * @tc.desc Verify an unsupported currency option is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let thrown: string = '';
       try {
@@ -1383,14 +1368,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0830
-     * @tc.name int32ArrayToLocaleStringPart01Test083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0820
+     * @tc.name int32ArrayToLocaleStringPart01Test082
      * @tc.desc Verify useGrouping=false is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000);
       let thrown: string = '';
       try {
@@ -1405,14 +1390,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0840
-     * @tc.name int32ArrayToLocaleStringPart01Test084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0830
+     * @tc.name int32ArrayToLocaleStringPart01Test083
      * @tc.desc Verify minimumFractionDigits=-1 is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let thrown: string = '';
       try {
@@ -1427,14 +1412,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0850
-     * @tc.name int32ArrayToLocaleStringPart01Test085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0840
+     * @tc.name int32ArrayToLocaleStringPart01Test084
      * @tc.desc Verify minimumFractionDigits=21 is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let thrown: string = '';
       try {
@@ -1449,14 +1434,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0860
-     * @tc.name int32ArrayToLocaleStringPart01Test086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0850
+     * @tc.name int32ArrayToLocaleStringPart01Test085
      * @tc.desc Verify options.minimumFractionDigits=2.7 is accepted and output remains '42'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let __o = new O();
       __o.minimumFractionDigits = 2.7;
@@ -1465,14 +1450,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0870
-     * @tc.name int32ArrayToLocaleStringPart01Test087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0860
+     * @tc.name int32ArrayToLocaleStringPart01Test086
      * @tc.desc Verify minimumFractionDigits=NaN is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let thrown: string = '';
       try {
@@ -1487,14 +1472,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0880
-     * @tc.name int32ArrayToLocaleStringPart01Test088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0870
+     * @tc.name int32ArrayToLocaleStringPart01Test087
      * @tc.desc Verify minimumFractionDigits=positive infinity is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let thrown: string = '';
       try {
@@ -1509,14 +1494,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0890
-     * @tc.name int32ArrayToLocaleStringPart01Test089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0880
+     * @tc.name int32ArrayToLocaleStringPart01Test088
      * @tc.desc Verify minimumIntegerDigits=0 is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let thrown: string = '';
       try {
@@ -1531,14 +1516,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0900
-     * @tc.name int32ArrayToLocaleStringPart01Test090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0890
+     * @tc.name int32ArrayToLocaleStringPart01Test089
      * @tc.desc Verify minimumIntegerDigits=22 is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let thrown: string = '';
       try {
@@ -1553,14 +1538,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0910
-     * @tc.name int32ArrayToLocaleStringPart01Test091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0900
+     * @tc.name int32ArrayToLocaleStringPart01Test090
      * @tc.desc Verify inverted fraction digit limits are accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let thrown: string = '';
       try {
@@ -1576,14 +1561,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0920
-     * @tc.name int32ArrayToLocaleStringPart01Test092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0910
+     * @tc.name int32ArrayToLocaleStringPart01Test091
      * @tc.desc Verify options.localeMatcher='lookup' 'en-US' 1234 '1,234'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1234);
       let __o = new O();
       __o.localeMatcher = 'lookup';
@@ -1592,14 +1577,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0930
-     * @tc.name int32ArrayToLocaleStringPart01Test093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0920
+     * @tc.name int32ArrayToLocaleStringPart01Test092
      * @tc.desc Verify an unsupported localeMatcher is accepted without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1);
       let thrown: string = '';
       try {
@@ -1614,14 +1599,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0940
-     * @tc.name int32ArrayToLocaleStringPart01Test094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0930
+     * @tc.name int32ArrayToLocaleStringPart01Test093
      * @tc.desc Verify 0 'en-US' useGrouping:false '0'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(0);
       let __f = new GroupOff();
       let r: string = arr.toLocaleString('en-US', __f);
@@ -1629,14 +1614,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0950
-     * @tc.name int32ArrayToLocaleStringPart01Test095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0940
+     * @tc.name int32ArrayToLocaleStringPart01Test094
      * @tc.desc Verify -0 Int32 0 'en-US' useGrouping:false '0'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(0);
       arr.$_set(0, 0);
       let __f = new GroupOff();
@@ -1645,14 +1630,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0960
-     * @tc.name int32ArrayToLocaleStringPart01Test096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0950
+     * @tc.name int32ArrayToLocaleStringPart01Test095
      * @tc.desc Verify [-2147483648, 0, 2147483647] 'en-US' useGrouping:true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(-2147483648, 0, 2147483647);
       let __g = new GroupOn();
       let r: string = arr.toLocaleString('en-US', __g);
@@ -1660,14 +1645,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0970
-     * @tc.name int32ArrayToLocaleStringPart01Test097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0960
+     * @tc.name int32ArrayToLocaleStringPart01Test096
      * @tc.desc Verify 0 [0,0,0] 'en-US' split(',')
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(0, 0, 0);
       let r: string = arr.toLocaleString('en-US');
       let parts: string[] = r.split(',');
@@ -1675,14 +1660,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0980
-     * @tc.name int32ArrayToLocaleStringPart01Test098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0970
+     * @tc.name int32ArrayToLocaleStringPart01Test097
      * @tc.desc Verify 42 minimumSignificantDigits=3 useGrouping=false 'en-US' 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42);
       let __o = new O();
       __o.minimumSignificantDigits = 3;
@@ -1692,14 +1677,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0990
-     * @tc.name int32ArrayToLocaleStringPart01Test099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0980
+     * @tc.name int32ArrayToLocaleStringPart01Test098
      * @tc.desc Verify 1234 maximumSignificantDigits=2 useGrouping=false 'en-US' 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1234);
       let __o = new O();
       __o.maximumSignificantDigits = 2;
@@ -1709,14 +1694,14 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_1000
-     * @tc.name int32ArrayToLocaleStringPart01Test100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_0990
+     * @tc.name int32ArrayToLocaleStringPart01Test099
      * @tc.desc Verify locales=undefined options.useGrouping=false returns ungrouped '1000'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000);
       let options: Intl.NumberFormatOptions = { useGrouping: false };
       let r: string = arr.toLocaleString(undefined, options);
@@ -1725,18 +1710,21 @@ export default function int32ArrayToLocaleStringPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_1010
-     * @tc.name int32ArrayToLocaleStringPart01Test101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_TO_LOCALE_STRING_PART01_TEST_MINDMAP_1000
+     * @tc.name int32ArrayToLocaleStringPart01Test100
      * @tc.desc Verify 'de-DE' useGrouping=false returns locale-grouped '1.000.000'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayToLocaleStringPart01Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayToLocaleStringPart01Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1000000);
       let __f = new GroupOff();
       let r: string = arr.toLocaleString('de-DE', __f);
       expect(r).assertEqual('1.000.000');
     });
+
+
+
   });
 }

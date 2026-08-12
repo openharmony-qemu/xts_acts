@@ -6,7 +6,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -431,7 +431,7 @@ export default function int32ArrayToLocaleStringPart02Test(): void {
       let rUs: string = arr.toLocaleString('en-US');
       let rFr: string = arr.toLocaleString('fr-FR');
       expect(rUs).assertEqual('1,000');
-      expect(rFr.length).assertLargerOrEqual(5);
+      expect(rFr).assertEqual('1\u202F000');
     });
 
     /**
