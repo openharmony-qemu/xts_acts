@@ -6,7 +6,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -129,8 +129,8 @@ export default function int32ArraySubarrayPart02Test(): void {
      */
     it('int32ArraySubarrayPart02Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(11, 22, 33);
-      let obj: Object = arr.subarray() as Object;
-      expect((obj as Int32Array).length).assertEqual(3);
+      let obj: Int32Array = arr.subarray();
+      expect(obj.length).assertEqual(3);
     });
 
     /**
