@@ -43,18 +43,28 @@ class TimeoutResultCollector {
     this.pendingTasks_.set(taskId, taskName)
   }
 
-  async markCompleted(taskId: number, result: string): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+  async markCompleted(taskId: number, result: string): Promise<boolean> {
+    return await this.lock_.lockAsync((): boolean => {
+      if (!this.pendingTasks_.has(taskId)) {
+        return false
+      }
       this.completedTasks_.set(taskId, result)
       this.pendingTasks_.delete(taskId)
+      return true
     })
   }
 
-  markTimeout(taskId: number): void {
-    const taskName: string | undefined = this.pendingTasks_.get(taskId)
-    this.timeoutTasks_.set(taskId, taskName ?? '')
-    this.timeoutTimes_.set(taskId, Date.now())
-    this.pendingTasks_.delete(taskId)
+  async markTimeout(taskId: number): Promise<boolean> {
+    return await this.lock_.lockAsync((): boolean => {
+      const taskName: string | undefined = this.pendingTasks_.get(taskId)
+      if (taskName === undefined) {
+        return false
+      }
+      this.timeoutTasks_.set(taskId, taskName)
+      this.timeoutTimes_.set(taskId, Date.now())
+      this.pendingTasks_.delete(taskId)
+      return true
+    })
   }
 
   getPendingCount(): number {
@@ -161,7 +171,7 @@ export default function TimeoutResultCollectTest(): void {
      */
     it('testTimeoutResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
-      collector.markTimeout(1)
+      await collector.markTimeout(1)
       expect(collector.getTimeoutCount()).assertEqual(1)
       expect(collector.getPendingCount()).assertEqual(0)
     })
@@ -177,7 +187,7 @@ export default function TimeoutResultCollectTest(): void {
     it('testTimeoutResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       const beforeTimeout: number = Date.now()
-      collector.markTimeout(1)
+      await collector.markTimeout(1)
       const afterTimeout: number = Date.now()
       const timeoutTime: number | undefined = collector.getTimeoutTime(1)
       expect(timeoutTime !== undefined).assertTrue()
@@ -254,8 +264,9 @@ export default function TimeoutResultCollectTest(): void {
         await collector.markCompleted(i, results[i] as string)
       }
       expect(collector.getCompletedCount()).assertEqual(5)
-      collector.markTimeout(99)
-      expect(collector.getTimeoutCount()).assertEqual(1)
+      const marked: boolean = await collector.markTimeout(99)
+      expect(marked).assertFalse()
+      expect(collector.getTimeoutCount()).assertEqual(0)
     })
 
     /**
@@ -269,8 +280,8 @@ export default function TimeoutResultCollectTest(): void {
     it('testTimeoutResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
       collector.addPendingTask(2, 'task_2')
-      collector.markTimeout(1)
-      collector.markTimeout(2)
+      await collector.markTimeout(1)
+      await collector.markTimeout(2)
       const timeoutIds: number[] = collector.getTimeoutTaskIds()
       expect(timeoutIds.length).assertEqual(2)
     })
@@ -302,7 +313,7 @@ export default function TimeoutResultCollectTest(): void {
      */
     it('testTimeoutResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addPendingTask(1, 'task_1')
-      collector.markTimeout(1)
+      await collector.markTimeout(1)
       expect(collector.getPendingCount()).assertEqual(0)
       expect(collector.getTimeoutCount()).assertEqual(1)
       expect(collector.getCompletedCount()).assertEqual(0)
@@ -334,7 +345,7 @@ export default function TimeoutResultCollectTest(): void {
     it('testTimeoutResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
-      collector.markTimeout(1)
+      await collector.markTimeout(1)
       expect(collector.getPendingCount()).assertEqual(0)
     })
 
@@ -362,8 +373,10 @@ export default function TimeoutResultCollectTest(): void {
       for (let i = 0; i < results.length; i++) {
         await collector.markCompleted(i, results[i] as string)
       }
-      collector.markTimeout(100)
-      collector.markTimeout(101)
+      collector.addPendingTask(100, 'timeout_task_100')
+      collector.addPendingTask(101, 'timeout_task_101')
+      await collector.markTimeout(100)
+      await collector.markTimeout(101)
       expect(collector.getCompletedCount()).assertEqual(10)
       expect(collector.getTimeoutCount()).assertEqual(2)
     })

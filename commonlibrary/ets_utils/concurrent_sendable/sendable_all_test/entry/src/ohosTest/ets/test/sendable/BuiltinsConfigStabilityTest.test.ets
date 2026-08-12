@@ -16,7 +16,6 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
-import Utils from '../utils'
 
 @Sendable
 class StabilityConfigManager {
@@ -67,8 +66,8 @@ class StabilityConfigManager {
 }
 
 @Concurrent
-function concurrentReadConfig(manager: StabilityConfigManager, key: string): string | undefined {
-  return manager.configMap_.get(key)
+async function concurrentReadConfig(manager: StabilityConfigManager, key: string): Promise<string | undefined> {
+  return await manager.lock_.lockAsync((): string | undefined => manager.configMap_.get(key))
 }
 
 @Concurrent
@@ -148,13 +147,19 @@ export default function BuiltinsConfigStabilityTest(): void {
         configManager.incrementNotification()
       })
       await taskpool.execute(task)
-      await new Promise<void>((resolve: Function): void => {
+      await new Promise<void>((resolve: () => void, reject: (reason: Error) => void): void => {
+        let timeoutId: number = -1
         const checkInterval: number = setInterval((): void => {
           if (hotUpdateReceived) {
             clearInterval(checkInterval)
+            clearTimeout(timeoutId)
             resolve()
           }
-        }, 10)
+        }, 500)
+        timeoutId = setTimeout((): void => {
+          clearInterval(checkInterval)
+          reject(new Error('hot update notification timeout'))
+        }, 5000)
       })
       expect(hotUpdateReceived).assertTrue()
       expect(updateKey).assertEqual('updated_key')

@@ -51,11 +51,29 @@ class DynamicThreshold {
   }
 
   async increase(delta: number): Promise<boolean> {
-    return this.adjust(this.currentThreshold_ + delta)
+    return await this.lock_.lockAsync((): boolean => {
+      const newThreshold: number = this.currentThreshold_ + delta
+      if (newThreshold >= this.minThreshold_ && newThreshold <= this.maxThreshold_) {
+        this.currentThreshold_ = newThreshold
+        this.adjustmentHistory_.push(newThreshold)
+        this.adjustmentCount_++
+        return true
+      }
+      return false
+    })
   }
 
   async decrease(delta: number): Promise<boolean> {
-    return this.adjust(this.currentThreshold_ - delta)
+    return await this.lock_.lockAsync((): boolean => {
+      const newThreshold: number = this.currentThreshold_ - delta
+      if (newThreshold >= this.minThreshold_ && newThreshold <= this.maxThreshold_) {
+        this.currentThreshold_ = newThreshold
+        this.adjustmentHistory_.push(newThreshold)
+        this.adjustmentCount_++
+        return true
+      }
+      return false
+    })
   }
 
   getCurrentThreshold(): number {
@@ -319,6 +337,7 @@ export default function BuiltinsDynamicThresholdTest(): void {
       await Promise.all(promises)
 
       expect(threshold.getAdjustmentCount()).assertEqual(3)
+      expect(threshold.getCurrentThreshold()).assertEqual(80)
     })
 
     /**

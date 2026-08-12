@@ -15,7 +15,7 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -23,6 +23,7 @@ class ResourceRefCounter {
   public resourceId_: string = ''
   public refCount_: number = 0
   public holders_: collections.Array<string>
+  public lock_: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
 
   constructor(id: string, holders_: collections.Array<string>) {
@@ -70,18 +71,17 @@ class ResourceRefCounter {
 }
 
 @Concurrent
-function acquireResource(refCounter: ResourceRefCounter, holderId: string): number {
-  refCounter.refCount_++
-  refCounter.holders_.push(holderId)
-  return refCounter.refCount_
-}
-
-@Concurrent
-function releaseResource(refCounter: ResourceRefCounter, holderId: string): number {
-  if (refCounter.refCount_ > 0) {
-    refCounter.refCount_--
-  }
-  return refCounter.refCount_
+async function releaseResource(refCounter: ResourceRefCounter, holderId: string): Promise<number> {
+  return await refCounter.lock_.lockAsync((): number => {
+    if (refCounter.refCount_ > 0) {
+      refCounter.refCount_--
+      const index: number = refCounter.holders_.indexOf(holderId)
+      if (index >= 0) {
+        refCounter.holders_[index] = ''
+      }
+    }
+    return refCounter.refCount_
+  })
 }
 
 export default function SharedCounterResourceRefTest(): void {
@@ -201,7 +201,7 @@ export default function SharedCounterResourceRefTest(): void {
         promises.push(taskpool.execute(tasks[i]))
       }
       await Promise.all(promises)
-      expect(refCounter.getRefCount()).assertLargerOrEqual(0)
+      expect(refCounter.getRefCount()).assertEqual(0)
     })
 
     /**

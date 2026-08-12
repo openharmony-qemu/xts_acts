@@ -112,17 +112,11 @@ class CapacityPool {
 
 @Concurrent
 async function capacityAcquireTask(pool: CapacityPool): Promise<number> {
-  return await pool.lock_.lockAsync((): number => {
-    for (let i: number = 0; i < pool.connections_.length; i++) {
-      if (pool.connections_[i].isActive_) {
-        pool.connections_[i].isActive_ = false
-        return pool.connections_[i].id_
-      }
-    }
-    pool.rejectedCount_++
+  const connection = await pool.tryAcquire()
+  if (connection === null) {
     return -1
-
-  })
+  }
+  return connection.id_
 }
 
 function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
@@ -230,7 +224,8 @@ export default function ConnectionCapacityTest(): void {
         tasks.push(new taskpool.Task(capacityAcquireTask, pool))
       }
       await executeTasksGetObjects(tasks)
-      expect(await pool.getTotalCount() <= 3).assertTrue()
+      expect(await pool.getTotalCount()).assertEqual(3)
+      expect(await pool.getRejectedCount()).assertEqual(7)
     })
 
     /**
@@ -277,8 +272,8 @@ export default function ConnectionCapacityTest(): void {
         tasks.push(new taskpool.Task(capacityAcquireTask, pool))
       }
       await executeTasksGetObjects(tasks)
-      expect(await pool.getTotalCount() <= 5).assertTrue()
-      expect(await pool.getRejectedCount() >= 15).assertTrue()
+      expect(await pool.getTotalCount()).assertEqual(5)
+      expect(await pool.getRejectedCount()).assertEqual(15)
     })
 
     /**
@@ -346,7 +341,8 @@ export default function ConnectionCapacityTest(): void {
         tasks.push(new taskpool.Task(capacityAcquireTask, pool))
       }
       await executeTasksGetObjects(tasks)
-      expect(await pool.getTotalCount() <= 2).assertTrue()
+      expect(await pool.getTotalCount()).assertEqual(2)
+      expect(await pool.getRejectedCount()).assertEqual(3)
     })
   })
 }

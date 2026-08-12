@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,6 @@ export default function UseSharedModuleTest(): void {
 
     beforeEach((): void => {
       activeTasks = []
-      sharedGuideService.counter_ = 0
     })
     afterEach((): void => {
       for (let i: number = 0; i < activeTasks.length; i++) {
@@ -48,6 +47,7 @@ export default function UseSharedModuleTest(): void {
         }
       }
       activeTasks = []
+      sharedGuideService.counter_ = 0
     })
 
     /**

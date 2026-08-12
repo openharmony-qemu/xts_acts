@@ -15,6 +15,7 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
+import { ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
 import { RequestType } from './SendableTestEnums'
 
@@ -26,6 +27,7 @@ class RequestCounter {
   public failedCount_: number = 0
   public getCount_: number = 0
   public postCount_: number = 0
+  public lock_: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
   recordRequest(type: number, success: boolean): void {
     this.totalCount_++
@@ -77,23 +79,29 @@ class RequestCounter {
 }
 
 @Concurrent
-function simulateGetRequest(counter: RequestCounter): void {
-  counter.totalCount_++
-  counter.successCount_++
-  counter.getCount_++
+async function simulateGetRequest(counter: RequestCounter): Promise<void> {
+  await counter.lock_.lockAsync((): void => {
+    counter.totalCount_++
+    counter.successCount_++
+    counter.getCount_++
+  })
 }
 
 @Concurrent
-function simulatePostRequest(counter: RequestCounter): void {
-  counter.totalCount_++
-  counter.successCount_++
-  counter.postCount_++
+async function simulatePostRequest(counter: RequestCounter): Promise<void> {
+  await counter.lock_.lockAsync((): void => {
+    counter.totalCount_++
+    counter.successCount_++
+    counter.postCount_++
+  })
 }
 
 @Concurrent
-function simulateFailedRequest(counter: RequestCounter): void {
-  counter.totalCount_++
-  counter.failedCount_++
+async function simulateFailedRequest(counter: RequestCounter): Promise<void> {
+  await counter.lock_.lockAsync((): void => {
+    counter.totalCount_++
+    counter.failedCount_++
+  })
 }
 
 export default function SharedCounterRequestTest(): void {
@@ -167,8 +175,10 @@ export default function SharedCounterRequestTest(): void {
         promises.push(taskpool.execute(tasks[i]))
       }
       await Promise.all(promises)
-      expect(counter.getTotal()).assertLargerOrEqual(1)
-      expect(counter.getSuccess()).assertLargerOrEqual(1)
+      expect(counter.getTotal()).assertEqual(20)
+      expect(counter.getSuccess()).assertEqual(20)
+      expect(counter.getByType(RequestType.GET)).assertEqual(10)
+      expect(counter.getByType(RequestType.POST)).assertEqual(10)
     })
 
     /**
@@ -195,7 +205,9 @@ export default function SharedCounterRequestTest(): void {
         promises.push(taskpool.execute(tasks[i]))
       }
       await Promise.all(promises)
-      expect(counter.getTotal()).assertLargerOrEqual(1)
+      expect(counter.getTotal()).assertEqual(50)
+      expect(counter.getSuccess()).assertEqual(33)
+      expect(counter.getFailed()).assertEqual(17)
     })
 
     /**
@@ -216,8 +228,9 @@ export default function SharedCounterRequestTest(): void {
         promises.push(taskpool.execute(tasks[i]))
       }
       await Promise.all(promises)
-      expect(counter.getTotal()).assertLargerOrEqual(1)
-      expect(counter.getSuccess()).assertLargerOrEqual(1)
+      expect(counter.getTotal()).assertEqual(100)
+      expect(counter.getSuccess()).assertEqual(100)
+      expect(counter.getByType(RequestType.GET)).assertEqual(100)
     })
 
     /**
@@ -277,8 +290,10 @@ export default function SharedCounterRequestTest(): void {
       const total: number = counter.getTotal()
       const success: number = counter.getSuccess()
       const failed: number = counter.getFailed()
-      expect(total).assertLargerOrEqual(1)
-      expect(success + failed).assertLargerOrEqual(1)
+      expect(total).assertEqual(30)
+      expect(success).assertEqual(22)
+      expect(failed).assertEqual(8)
+      expect(success + failed).assertEqual(total)
     })
 
     /**

@@ -77,13 +77,16 @@ class TaskDispatchQueue {
 }
 
 @Concurrent
-function producerEnqueue(taskId: number): number {
-  return taskId
+async function producerEnqueue(queue: TaskDispatchQueue, taskId: number): Promise<void> {
+  await queue.enqueue(taskId)
 }
 
 @Concurrent
-function consumerDequeue(): number {
-  return -1
+async function consumerDequeue(queue: TaskDispatchQueue): Promise<void> {
+  const taskId: number | undefined = await queue.dequeue()
+  if (taskId !== undefined) {
+    await queue.markProcessed(taskId)
+  }
 }
 
 export default function TaskDispatchQueueTest(): void {
@@ -194,17 +197,14 @@ export default function TaskDispatchQueueTest(): void {
     it('testTaskDispatchQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
-        tasks.push(new taskpool.Task(producerEnqueue, i))
+        tasks.push(new taskpool.Task(producerEnqueue, queue, i))
       }
       const promises: Promise<Object>[] = []
       for (let i = 0; i < tasks.length; i++) {
         promises.push(taskpool.execute(tasks[i]))
       }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await queue.enqueue(results[i] as number)
-      }
-      expect(await queue.getPendingSize()).assertLargerOrEqual(1)
+      await Promise.all(promises)
+      expect(await queue.getPendingSize()).assertEqual(20)
     })
 
     /**
@@ -221,21 +221,15 @@ export default function TaskDispatchQueueTest(): void {
       }
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(consumerDequeue))
+        tasks.push(new taskpool.Task(consumerDequeue, queue))
       }
       const promises: Promise<Object>[] = []
       for (let i = 0; i < tasks.length; i++) {
         promises.push(taskpool.execute(tasks[i]))
       }
       await Promise.all(promises)
-      for (let i = 0; i < 10; i++) {
-        const taskId: number | undefined = await queue.dequeue()
-        if (taskId !== undefined) {
-          await queue.markProcessed(taskId)
-        }
-      }
       expect(await queue.isPendingEmpty()).assertTrue()
-      expect(await queue.getProcessedSize()).assertLargerOrEqual(1)
+      expect(await queue.getProcessedSize()).assertEqual(10)
     })
 
     /**
@@ -249,26 +243,22 @@ export default function TaskDispatchQueueTest(): void {
     it('testTaskDispatchQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const producerTasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
-        producerTasks.push(new taskpool.Task(producerEnqueue, i))
+        producerTasks.push(new taskpool.Task(producerEnqueue, queue, i))
       }
       const producerPromises: Promise<Object>[] = []
       for (let i = 0; i < producerTasks.length; i++) {
         producerPromises.push(taskpool.execute(producerTasks[i]))
       }
-      const producerResults: Object[] = await Promise.all(producerPromises)
-      for (let i = 0; i < producerResults.length; i++) {
-        await queue.enqueue(producerResults[i] as number)
-      }
-      expect(await queue.getPendingSize()).assertLargerOrEqual(1)
+      await Promise.all(producerPromises)
+      expect(await queue.getPendingSize()).assertEqual(10)
 
+      const consumerPromises: Promise<Object>[] = []
       for (let i = 0; i < 10; i++) {
-        const taskId: number | undefined = await queue.dequeue()
-        if (taskId !== undefined) {
-          await queue.markProcessed(taskId)
-        }
+        consumerPromises.push(taskpool.execute(new taskpool.Task(consumerDequeue, queue)))
       }
+      await Promise.all(consumerPromises)
       expect(await queue.getPendingSize()).assertEqual(0)
-      expect(await queue.getProcessedSize()).assertLargerOrEqual(1)
+      expect(await queue.getProcessedSize()).assertEqual(10)
     })
 
     /**

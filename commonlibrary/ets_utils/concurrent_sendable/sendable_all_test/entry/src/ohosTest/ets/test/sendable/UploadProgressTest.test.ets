@@ -50,8 +50,9 @@ class UploadProgressTracker {
   async updateChunkProgress(chunkIndex: number, progress: number): Promise<void> {
     await this.lock_.lockAsync((): void => {
       if (this.chunkProgress_.has(chunkIndex)) {
+        const previousProgress: number = this.chunkProgress_.get(chunkIndex) ?? 0
         this.chunkProgress_.set(chunkIndex, Math.min(100, progress))
-        if (progress >= 100) {
+        if (previousProgress < 100 && progress >= 100) {
           this.completedChunks_++
         }
       }
@@ -106,8 +107,11 @@ class UploadProgressTracker {
 @Concurrent
 async function uploadChunkTask(tracker: UploadProgressTracker, chunkIndex: number): Promise<void> {
   return await tracker.lock_.lockAsync((): void => {
+    const previousProgress: number = tracker.chunkProgress_.get(chunkIndex) ?? 0
     tracker.chunkProgress_.set(chunkIndex, 100)
-    tracker.completedChunks_++
+    if (previousProgress < 100) {
+      tracker.completedChunks_++
+    }
 
   })
 }
@@ -171,6 +175,7 @@ export default function UploadProgressTest(): void {
      */
     it('testUploadProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotalChunks(1)
+      await tracker.updateChunkProgress(0, 100)
       await tracker.updateChunkProgress(0, 100)
       expect(await tracker.getChunkProgress(0)).assertEqual(100)
       expect(await tracker.getCompletedChunks()).assertEqual(1)
