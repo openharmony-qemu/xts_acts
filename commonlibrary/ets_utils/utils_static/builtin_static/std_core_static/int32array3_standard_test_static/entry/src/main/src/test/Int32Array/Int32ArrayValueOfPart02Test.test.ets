@@ -6,7 +6,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -482,9 +482,9 @@ export default function int32ArrayValueOfPart02Test(): void {
     it('int32ArrayValueOfPart02Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(16);
       let a: Int32Array = new Int32Array(buf, 4, 2);
-      let r: Object = a.valueOf();
-      expect((r as Int32Array).byteOffset).assertEqual(4);
-      expect((r as Int32Array).length).assertEqual(2);
+      let r: Int32Array = a.valueOf();
+      expect(r.byteOffset).assertEqual(4);
+      expect(r.length).assertEqual(2);
     });
 
     /**
@@ -497,9 +497,9 @@ export default function int32ArrayValueOfPart02Test(): void {
      */
     it('int32ArrayValueOfPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int32Array = Int32Array.of(1, 2, 3);
-      let s: Object = a.subarray(0).valueOf();
-      expect((s as Int32Array).length).assertEqual(3);
-      expect((s as Int32Array).$_get(2)).assertEqual(3);
+      let s: Int32Array = a.subarray(0).valueOf();
+      expect(s.length).assertEqual(3);
+      expect(s.$_get(2)).assertEqual(3);
     });
 
     /**
@@ -512,9 +512,9 @@ export default function int32ArrayValueOfPart02Test(): void {
      */
     it('int32ArrayValueOfPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int32Array = Int32Array.of(1, 2);
-      let m: Object = a.map((v: number, _i: int) => v).valueOf();
-      expect((m as Int32Array).length).assertEqual(2);
-      expect((m as Int32Array).$_get(1)).assertEqual(2);
+      let m: Int32Array = a.map((v: number, _i: int) => v).valueOf();
+      expect(m.length).assertEqual(2);
+      expect(m.$_get(1)).assertEqual(2);
     });
 
     /**
@@ -527,10 +527,10 @@ export default function int32ArrayValueOfPart02Test(): void {
      */
     it('int32ArrayValueOfPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int32Array = Int32Array.of(1, -2, 3);
-      let f: Object = a.filter((v: number, _i: int) => v > 0).valueOf();
-      expect((f as Int32Array).length).assertEqual(2);
-      expect((f as Int32Array).$_get(0)).assertEqual(1);
-      expect((f as Int32Array).$_get(1)).assertEqual(3);
+      let f: Int32Array = a.filter((v: number, _i: int) => v > 0).valueOf();
+      expect(f.length).assertEqual(2);
+      expect(f.$_get(0)).assertEqual(1);
+      expect(f.$_get(1)).assertEqual(3);
     });
 
     /**
@@ -543,8 +543,8 @@ export default function int32ArrayValueOfPart02Test(): void {
      */
     it('int32ArrayValueOfPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int32Array = new Int32Array(3);
-      let r: Object = a.valueOf();
-      expect((r as Int32Array).length).assertEqual(3);
+      let r: Int32Array = a.valueOf();
+      expect(r.length).assertEqual(3);
     });
 
     /**
