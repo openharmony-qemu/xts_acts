@@ -15,25 +15,14 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import Utils from '../Util.test';
 
 class MutexCtorSharedCounter {
   value: number = 0;
 }
 
-// TC-1100: Construct Mutex in TaskPool task
-function taskPoolConstructTask(counter: AtomicInt): void {
-  const mutex = new Mutex();
-  counter.fetchAdd(1);
-}
-
-// TC-1300: Concurrent construction with AtomicInt counter
-function concurrentConstructTask(counter: AtomicInt): void {
-  const mutex = new Mutex();
-  counter.fetchAdd(1);
-}
-
-// TC-1700: Construct Mutex in EAWorker thread
-function eaWorkerConstructTask(counter: AtomicInt): void {
+// TC-1100/TC-1300/TC-1700: Construct a Mutex inside a concurrent task or worker thread
+function constructMutexTask(counter: AtomicInt): void {
   const mutex = new Mutex();
   counter.fetchAdd(1);
 }
@@ -50,13 +39,10 @@ function mutexLockUseTask(mutex: Mutex, c: MutexCtorSharedCounter): void {
 
 // TC-2000: Stress construction in TaskPool
 function stressConstructTask(counter: AtomicInt): void {
-  let success: boolean = true;
   for (let i = 0; i < 100; i++) {
     const mutex = new Mutex();
   }
-  if (success) {
-    counter.fetchAdd(1);
-  }
+  counter.fetchAdd(1);
 }
 
 // TC-2100: Lifecycle - construct, lock, unlock in TaskPool
@@ -148,7 +134,7 @@ export default function MutexConstructorTest(): void {
      */
     it('MutexConstructorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(taskPoolConstructTask, counter));
+      let p1 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
     })
@@ -163,11 +149,11 @@ export default function MutexConstructorTest(): void {
      */
     it('MutexConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
+      let p1 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
+      let p2 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
+      let p3 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
+      let p4 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
+      let p5 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
       await Promise.all([p1, p2, p3, p4, p5]);
       expect(counter.load()).assertEqual(5);
     })
@@ -238,40 +224,29 @@ export default function MutexConstructorTest(): void {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('mutexCtorWorker1');
       worker.start();
-      await worker.run<void>(eaWorkerConstructTask, counter);
-      worker.quit();
+      try {
+        await worker.run<void>(constructMutexTask, counter);
+        // run<void> may resolve before the worker-side store is visible; bounded-poll it.
+        let waits: int = 0;
+        while (counter.load() === 0 && waits < 50) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+      } finally {
+        worker.quit();
+      }
       expect(counter.load()).assertEqual(1);
     })
 
     /**
      * @tc.name    MutexConstructorTest1000
      * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_1000
-     * @tc.desc    TC-08: Verify a Mutex instance supports lock and unlock operations
+     * @tc.desc    TC-08/TC-13: Verify a newly constructed Mutex is initially unlocked and lock() can be acquired immediately
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('MutexConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const mutex = new Mutex();
-      let usable: boolean = false;
-      mutex.lock();
-      try {
-        usable = true;
-      } finally {
-        mutex.unlock();
-      }
-      expect(usable).assertTrue();
-    })
-
-    /**
-     * @tc.name    MutexConstructorTest1100
-     * @tc.number  SUB_MUTEX_CONSTRUCTOR_TEST_1100
-     * @tc.desc    TC-13: Verify a newly constructed Mutex is initially unlocked and lock() can be acquired immediately
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('MutexConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const mutex = new Mutex();
       let lockAcquired: boolean = false;
       try {
