@@ -1106,7 +1106,7 @@ export default function Int32ArrayReducePart01Test(): void {
     it('int32ArrayReducePart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       let r: number = arr.reduce((p: number, c: number): number => p + c, 0.1);
-      expect(Math.abs(r - 6.1) < 1e-9).assertTrue();
+      expect(r).assertClose(6.1, 1e-9);
     });
 
     /**
