@@ -78,6 +78,9 @@ import Marquee from './ScrollTest/Marquee.test';
 import MarqueeNull from './ScrollTest/Marquee_null.test';
 import MarqueeUndefined from './ScrollTest/Marquee_undefined.test';
 import TextSymbolWithEnvFontScaleTest from './WithEnvTest/TextSymbolWithEnvFontScale.test';
+import GetCharacterPositionAtCoordinateTest from './TextApi26Test/GetCharacterPositionAtCoordinate.test';
+import GetGlyphRangeForCharacterRangeTest from './TextApi26Test/GetGlyphRangeForCharacterRange.test';
+import GetCharacterRangeForGlyphRangeTest from './TextApi26Test/GetCharacterRangeForGlyphRange.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -145,4 +148,9 @@ export default function testsuite() {
   MarqueeNull();
   MarqueeUndefined();
   TextSymbolWithEnvFontScaleTest();
+
+  // TextApi26Test
+  GetCharacterPositionAtCoordinateTest();
+  GetGlyphRangeForCharacterRangeTest();
+  GetCharacterRangeForGlyphRangeTest();
 }
