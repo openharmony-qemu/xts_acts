@@ -741,6 +741,17 @@ export default function AVScreenCaptureRecorderTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ENUM_static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ENUM_static_0100 start')
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STARTED)).assertEqual(0);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_CANCELED)).assertEqual(1);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_USER)).assertEqual(2);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_INTERRUPTED_BY_OTHER)).assertEqual(3);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_CALL)).assertEqual(4);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_UNAVAILABLE)).assertEqual(5);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_MUTED_BY_USER)).assertEqual(6);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_UNMUTED_BY_USER)).assertEqual(7);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_ENTER_PRIVATE_SCENE)).assertEqual(8);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_EXIT_PRIVATE_SCENE)).assertEqual(9);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_USER_SWITCHES)).assertEqual(10);
       expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_USER)).assertEqual(11);
       expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_RESUMED_BY_USER)).assertEqual(12);
       expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_APP)).assertEqual(13);
