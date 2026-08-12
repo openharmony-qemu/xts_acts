@@ -2907,6 +2907,66 @@ export default function TrafficFilterTest() {
 
 
     /**
+     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddRedirectRule8400
+     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddRedirectRule_8400
+     * @tc.desc   Add redirect rule to redirector instance_destination address MULTI type, set single ipCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrNetfirewallTrafficFilterAddRedirectRule8400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddRedirectRule8400';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        const info: trafficFilterSdk.CreateRedirectInfo = trafficFilterSdk.CreateRedirector(100, 500);
+        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
+        let rule: trafficFilterSdk.RuleConfig = getBaseRule();
+        rule.srcIp = { type: IPMatchType.IP_MATCH_MULTI, invert: false, value: { ips: [{ family: IPFamily.IP_FAMILY_V4, addr: ['192.168.1.1'] }] , ipCount: 1}};
+        const ret: number = trafficFilterSdk.AddRedirectRule(info.redirector, rule);
+        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
+        ExpectTrue(ret === 0);
+        trafficFilterSdk.DestroyRedirector(info.redirector);
+        done();
+
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddRedirectRule8500
+     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddRedirectRule_8500
+     * @tc.desc   Add redirect rule to redirector instance_source port MULTI type, set single port count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrNetfirewallTrafficFilterAddRedirectRule8500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddRedirectRule8500';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        const info: trafficFilterSdk.CreateRedirectInfo = trafficFilterSdk.CreateRedirector(100, 500);
+        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
+        let rule: trafficFilterSdk.RuleConfig = getBaseRule();
+        rule.srcPort = { type: PortMatchType.PORT_MATCH_MULTI, invert: false, value: { ports: [8080], portCount: 1 } };
+        const ret: number = trafficFilterSdk.AddRedirectRule(info.redirector, rule);
+        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
+        ExpectTrue(ret === 0);
+        trafficFilterSdk.DestroyRedirector(info.redirector);
+        done();
+
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+    })
+
+
+    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterClearRedirectRule0100
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_ClearRedirectRule_0100
      * @tc.desc   Clear redirect rules of redirector instance_valid redirector instance
