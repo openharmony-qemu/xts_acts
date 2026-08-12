@@ -63,11 +63,11 @@ struct ComposeListItemV2ContentExample {
 
   build(): void {
     Scroll() {
-      Column({ space: 10 } as ColumnOptions) {
+      Column({ space: 2 } as ColumnOptions) {
         Text('ContentItemV2 Test')
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 10, bottom: 10 })
+          .margin({ top: 2, bottom: 2 })
 
         ComposeListItemV2({contentItemV2: this.contentItem1 });
 
@@ -80,7 +80,6 @@ struct ComposeListItemV2ContentExample {
         ComposeListItemV2({ contentItemV2: this.contentItem5 });
       }
       .width('100%')
-      .padding(10)
     }
     .width('100%')
     .height('100%')
