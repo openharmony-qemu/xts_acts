@@ -3566,7 +3566,7 @@ export default function WindowLifecycle() {
             done();
           } else {
             await subWindowClass?.destroyWindow();
-            if (!canIUseRes || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+            if (!canIUseRes) {
               expect(err.code).assertEqual(801);
               done();
             } else {
@@ -4274,7 +4274,6 @@ export default function WindowLifecycle() {
           let subWindow: window.Window =
             await window.createSubWindowAndBindParent('WindowEventListener_Normal_0100', windowId, context,
               parentWindowEventListener);
-          await subWindow.destroyWindow();
           done();
         } catch (exception) {
           console.error(`${msgStr} Failed to createSubWindowAndBindParent, Cause code ${exception.code}, message ${exception.message}`);

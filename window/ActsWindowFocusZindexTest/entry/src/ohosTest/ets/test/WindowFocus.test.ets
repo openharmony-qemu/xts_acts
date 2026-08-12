@@ -1057,11 +1057,15 @@ export default function windowFocusTest() {
         await windowClass.destroyWindow();
         windowClass.off('windowHighlightChange',callback);
         console.log(msgStr  + 'Succeeded on windowHighlightChange ');
-        expect(false).assertFail();
         done()
       } catch (e) {
         console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
-        expect(e.code).assertEqual(1300002);
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(801);
+          expect(err.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
         done()
       }
 
@@ -2065,6 +2069,141 @@ export default function windowFocusTest() {
           done()
         }
       })
-      
+  /**
+     * @tc.name   SUB_WINDOW_SetFocusable_Callback_null_0100
+     * @tc.number SUB_WINDOW_SetFocusable_Callback_null_0100
+     * @tc.desc   SUB_WINDOW_SetFocusable_Callback_null_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_SetFocusable_Callback_null_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_SetFocusable_Callback_null_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindow = await windowStage.createSubWindow('SUB_WINDOW_SetFocusable_Callback_null_0100');
+      try {
+        subWindow.setFocusable(null, async (err: BusinessError) => {
+          await subWindow.destroyWindow()
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(msgStr + 'Failed to call setFocusable. Cause:' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done()
+            return;
+          }
+          console.info(msgStr + 'Succeeded in calling setFocusable.');
+          expect().assertFail();
+          done();
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        await subWindow.destroyWindow()
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetFocusable_Callback_undefined_0100
+     * @tc.number SUB_WINDOW_SetFocusable_Callback_undefined_0100
+     * @tc.desc   SUB_WINDOW_SetFocusable_Callback_undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_SetFocusable_Callback_undefined_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_SetFocusable_Callback_undefined_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindow = await windowStage.createSubWindow('SUB_WINDOW_SetFocusable_Callback_undefined_0100');
+      try {
+        subWindow.setFocusable(undefined, async (err: BusinessError) => {
+          await subWindow.destroyWindow()
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(msgStr + 'Failed to call setFocusable. Cause:' + JSON.stringify(err));
+            expect(err.code).assertEqual(1003);
+            done()
+            return;
+          }
+          console.info(msgStr + 'Succeeded in calling setFocusable.');
+          expect().assertFail();
+          done();
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        await subWindow.destroyWindow()
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetFocusable_Promise_null_0100
+     * @tc.number SUB_WINDOW_SetFocusable_Promise_null_0100
+     * @tc.desc   SUB_WINDOW_SetFocusable_Promise_null_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_SetFocusable_Promise_null_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_SetFocusable_Promise_null_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindow = await windowStage.createSubWindow('SUB_WINDOW_SetFocusable_Promise_null_0100');
+      try {
+        subWindow.setFocusable(null).then(async () => {
+          console.info(msgStr + 'Succeeded in calling setWindowFocusable.');
+          await subWindow.destroyWindow()
+          expect().assertFail();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to call setFocusable. Cause: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(1003);
+          await subWindow.destroyWindow()
+          done();
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        await subWindow.destroyWindow()
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_WINDOW_SetFocusable_Promise_undefined_0100
+     * @tc.number SUB_WINDOW_SetFocusable_Promise_undefined_0100
+     * @tc.desc   SUB_WINDOW_SetFocusable_Promise_undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_SetFocusable_Promise_undefined_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_SetFocusable_Promise_undefined_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindow = await windowStage.createSubWindow('SUB_WINDOW_SetFocusable_Promise_undefined_0100');
+      try {
+        subWindow.setFocusable(undefined).then(async () => {
+          console.info(msgStr + 'Succeeded in calling setWindowFocusable.');
+          await subWindow.destroyWindow()
+          expect().assertFail();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to call setFocusable. Cause: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(1003);
+          await subWindow.destroyWindow()
+          done();
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        await subWindow.destroyWindow()
+        expect().assertFail();
+        done()
+      }
+    })    
+
   })
 }

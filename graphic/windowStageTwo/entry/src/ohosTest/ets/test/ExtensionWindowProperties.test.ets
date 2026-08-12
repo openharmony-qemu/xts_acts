@@ -30,6 +30,7 @@ export default function extensionWindowPropertiesTest() {
     let isAutoWindow: string = '';
     let driver: Driver;
     let isFreeWindowMode = false;
+    let canIUseRes: boolean = false;
     let deviceType:string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
 
@@ -44,6 +45,8 @@ export default function extensionWindowPropertiesTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       driver = Driver.create();
     })
     beforeEach(() => {
@@ -1666,6 +1669,37 @@ export default function extensionWindowPropertiesTest() {
         }
       }
     })
+
+  /**
+     * @tc.name   testOffuiExtensionLimitChange_DestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_0200
+     * @tc.desc   testOffuiExtensionLimitChange_DestoryedSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOffuiExtensionLimitChange_DestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'testOffuiExtensionLimitChange_DestoryedSubWindow';
+        let subWindowClass = await windowStage.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow');
+        await subWindowClass.destroyWindow();
+        try {
+          const callback = (data: boolean) => {
+          };
+          subWindowClass.off("uiExtensionSecureLimitChange", callback);
+          console.log(caseName + ' off keyboardDidShow success');
+          done()
+        } catch (error) {
+          console.error(`${caseName} Failed. Cause code: ${error.code}, message: ${error.message}`);
+          if (!canIUseRes) {
+            expect(error.code).assertEqual(801);
+            expect(error.message !== '').assertTrue();
+          } else {
+            expect().assertFail();
+          }
+          done()
+        }
+      })
 
     /**
      * @tc.name   testCreateSubWindowWithOptionsFollowTrue

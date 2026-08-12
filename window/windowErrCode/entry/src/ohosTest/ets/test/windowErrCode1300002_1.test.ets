@@ -22,10 +22,13 @@ export default function windowErrCode1300002_1() {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let context : common.UIAbilityContext;
     let windowStage:ohosWindow.WindowStage;
+    let canIUseRes: boolean = false;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
     })
     /**
      * @tc.name   testMoveWindowToAsyncPromiseErrCode1300002_0100
@@ -1175,5 +1178,134 @@ export default function windowErrCode1300002_1() {
         done()
       }
     })
+
+    /**
+     * @tc.name   testOffDisplayIdChangeErrCode1300002_0100
+     * @tc.number SUB_BASIC_WMS_OFF_DisplayIdChange_WITH_DESTROYED_SUBWINDOW_0100
+     * @tc.desc   testOffDisplayIdChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffDisplayIdChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testOffDisplayIdChangeErrCode1300002_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWin: ohosWindow.Window =
+        await windowStage.createSubWindow('testOffDisplayIdChangeErrCode1300002_SubWindow_Promise');
+      await subWin.destroyWindow();
+      try {
+        subWin!.off("displayIdChange", (res: number) => {
+        });
+        console.log(msgStr + 'Succeeded in calling off displayIdChange.');
+        done()
+      } catch (error) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(error.code) + ` message:${error.message}`);
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(801);
+          expect(error.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testOffSystemDensityChangeErrCode1300002_0100
+     * @tc.number SUB_BASIC_WMS_OFF_SystemDensityChange_WITH_DESTROYED_SUBWINDOW_0100
+     * @tc.desc   testOffSystemDensityChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffSystemDensityChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testOffSystemDensityChangeErrCode1300002_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWin: ohosWindow.Window =
+        await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_SubWindow_Promise');
+      await subWin.destroyWindow();
+      try {
+        subWin!.off("systemDensityChange", (res: number) => {
+        });
+        console.log(msgStr + 'Succeeded in calling off systemDensityChange.');
+        done()
+      } catch (error) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(error.code) + ` message:${error.message}`);
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(801);
+          expect(error.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testOffNoInteractionDetectedErrCode1300002_0100
+     * @tc.number SUB_BASIC_WMS_OFF_NoInteractionDetected_WITH_DESTROYED_SUBWINDOW_0100
+     * @tc.desc   testOffNoInteractionDetectedErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testOffNoInteractionDetectedErrCode1300002_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWin: ohosWindow.Window =
+        await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_SubWindow_Promise')
+      await subWin.destroyWindow();
+      try {
+        subWin!.off("noInteractionDetected", () => {
+        });
+        console.log(msgStr + 'Succeeded in calling off noInteractionDetected.');
+        done()
+      } catch (error) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(error.code) + ` message:${error.message}`);
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(801);
+          expect(error.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testOffSubWindowCloseErrCode1300002_0100
+     * @tc.number SUB_BASIC_WMS_OFF_SubWindowClose_WITH_DESTROYED_SUBWINDOW_0100
+     * @tc.desc   testOffSubWindowCloseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testOffSubWindowCloseErrCode1300002_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWin: ohosWindow.Window =
+        await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_SubWindow_Promise');
+      await subWin.destroyWindow();
+      try {
+        subWin!.off("subWindowClose", () => {
+        });
+        console.log(msgStr + 'Succeeded in calling off subWindowClose.');
+        done()
+      } catch (error) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(error.code) + ` message:${error.message}`);
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(801);
+          expect(error.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done()
+      }
+    })
+
   })
 }

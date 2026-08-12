@@ -24,7 +24,7 @@ export default function windowInputTest(context: common.UIAbilityContext, window
     console.log('describe window_input_test start!!!')
     let tempWnd: window.Window | void;
     let subWin: window.Window | void;
-
+    
     beforeEach(async ()=>{
       let msg = 'window_input_test';
       console.log(msg + ' beforeEach start!!!');
@@ -597,6 +597,43 @@ export default function windowInputTest(context: common.UIAbilityContext, window
     })
 
     /**
+     * @tc.name   testWindowOffkeyboardDidShow_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0120
+     * @tc.desc   test testWindowOffkeyboardDidShow_WindowAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('testWindowOffkeyboardDidShow_WindowAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
+      let caseName = 'testWindowOffkeyboardDidShow_WindowAbnormal';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      tempWnd =
+        await windowStage.createSubWindow('testWindowOffkeyboardDidShow_WindowAbnormal').catch((err: BusinessError) => {
+          console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+          expect().assertFail();
+        });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!tempWnd).assertTrue();
+      await (tempWnd as window.Window).destroyWindow();
+      try {
+        (tempWnd as window.Window).off('keyboardDidShow');
+        console.log(msgStr + 'off keyboardDidShow success');
+      } catch (exception) {
+        console.error(msgStr +
+          `Failed to enable the listener for keyboard show. Cause code: ${exception.code}, message: ${exception.message}`);
+        if (!canIUseRes) {
+          expect(exception.code).assertEqual(801);
+          expect(exception.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+    })
+
+    /**
      * @tc.name   testWindowOnkeyboardDidHide_WindowAbnormal
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0130
      * @tc.desc   test testWindowOnkeyboardDidHide_WindowAbnormal
@@ -631,5 +668,43 @@ export default function windowInputTest(context: common.UIAbilityContext, window
         }
       }
     })
+
+    /**
+     * @tc.name   testWindowOffkeyboardDidHide_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWINPUT_JS_API_0140
+     * @tc.desc   test testWindowOffkeyboardDidHide_WindowAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('testWindowOffkeyboardDidHide_WindowAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
+      let caseName = 'testWindowOffkeyboardDidHide_WindowAbnormal';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      tempWnd =
+        await windowStage.createSubWindow('testWindowOffkeyboardDidHide_WindowAbnormal').catch((err: BusinessError) => {
+          console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+          expect().assertFail();
+        });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!tempWnd).assertTrue();
+      await (tempWnd as window.Window).destroyWindow();
+      try {
+        (tempWnd as window.Window).off('keyboardDidHide');
+        console.log(msgStr + 'off keyboardDidHide success');
+      } catch (exception) {
+        console.error(msgStr +
+          `Failed to enable the listener for keyboard show. Cause code: ${exception.code}, message: ${exception.message}`);
+        if (!canIUseRes) {
+          expect(exception.code).assertEqual(801);
+          expect(exception.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+    })
+
   })
 }
