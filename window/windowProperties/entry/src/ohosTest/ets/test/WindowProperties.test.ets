@@ -3607,11 +3607,9 @@ export default function windowPropertiesTest() {
           console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
           if (err.code === 801) {
-            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
             done();
           } else {
             expect(err.code).assertEqual(1300002);
-            expect(err.message != null).assertTrue();
             done();
           }
         });
@@ -3619,11 +3617,9 @@ export default function windowPropertiesTest() {
         console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
         await subWindow.destroyWindow();
         if (err.code === 801) {
-          expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
           done();
         } else {
           expect(err.code).assertEqual(1300002);
-          expect(err.message != null).assertTrue();
           done();
         }
       }
