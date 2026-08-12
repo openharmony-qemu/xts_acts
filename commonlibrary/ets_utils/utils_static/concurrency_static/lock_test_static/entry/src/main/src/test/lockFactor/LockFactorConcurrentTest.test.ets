@@ -74,16 +74,18 @@ function lockPassingTask(mutex: Mutex, counter: AtomicInt): void {
 }
 
 // TC-006: Worker internal lock competition task
-function workerInternalLockTask(counter: AtomicInt): void {
+function workerInternalLockTask(): number {
   const mutex = new Mutex();
+  let completed: number = 0;
   for (let i = 0; i < 100; i++) {
     mutex.lock();
     try {
-      counter.fetchAdd(1);
+      completed = completed + 1;
     } finally {
       mutex.unlock();
     }
   }
+  return completed;
 }
 
 // TC-007: Mutex TaskPool concurrent task
@@ -127,7 +129,7 @@ function taskPoolShareTaskB(mutex: Mutex, counter: LockFactorSharedCounter): voi
   }
 }
 
-// TC-010: TaskPool callback lock task
+// TC-010: TaskPool callback lock task - sendData triggers the onReceiveData callback
 function callbackLockTask(mutex: Mutex, counter: AtomicInt): void {
   mutex.lock();
   try {
@@ -135,6 +137,7 @@ function callbackLockTask(mutex: Mutex, counter: AtomicInt): void {
   } finally {
     mutex.unlock();
   }
+  taskpool.Task.sendData('callback_lock');
 }
 
 // TC-004: Read task competing with writers on the same RWLock
@@ -238,7 +241,7 @@ export default function LockFactorConcurrentTest(): void {
     /**
      * @tc.name    LockFactorConcurrentTest0300
      * @tc.number  SUB_LOCK_FACTOR_CONCURRENT_TEST_0300
-     * @tc.desc    TC-003: Verify WriteLock multi-thread mutual exclusion with 10 concurrent tasks each performing 100 write operations
+     * @tc.desc    TC-003: Verify WriteLock multi-thread mutual exclusion with 10 concurrent tasks competing for the same write lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -287,12 +290,14 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.level   LEVEL1
      */
     it('LockFactorConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorEA01');
       worker.start();
-      await worker.run<void>(workerInternalLockTask, counter);
-      worker.quit();
-      expect(counter.load()).assertEqual(100);
+      try {
+        const completed: number = worker.run<number>(workerInternalLockTask).Await();
+        expect(completed).assertEqual(100);
+      } finally {
+        worker.quit();
+      }
     })
 
     /**
@@ -403,7 +408,9 @@ export default function LockFactorConcurrentTest(): void {
         }
       });
       await taskpool.execute(task);
-      expect(counter.load()).assertEqual(1);
+      // The task incremented once under the Mutex; the onReceiveData callback
+      // (triggered by sendData) incremented once more under the same Mutex.
+      expect(counter.load()).assertEqual(2);
     })
 
     /**

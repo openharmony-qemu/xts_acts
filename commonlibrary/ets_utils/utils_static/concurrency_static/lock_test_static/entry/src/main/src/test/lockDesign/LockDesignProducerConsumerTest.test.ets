@@ -17,7 +17,11 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
 
 class ProducerConsumerQueue {
-  items: number[] = [];
+  items: number[] = [0];
+  produced: number = 0;
+  consumed: number = 0;
+  producerAttempts: number = 0;
+  consumerAttempts: number = 0;
 }
 
 class RingBuffer {
@@ -63,7 +67,9 @@ class PersistQueueData {
 function pcProducerTask(mutex: Mutex, queue: ProducerConsumerQueue, counter: AtomicInt): void {
   mutex.lock();
   try {
+    queue.producerAttempts = queue.producerAttempts + 1;
     queue.items.push(Math.floor(Math.random() * 1000));
+    queue.produced = queue.produced + 1;
     counter.fetchAdd(1);
   } finally {
     mutex.unlock();
@@ -74,8 +80,10 @@ function pcProducerTask(mutex: Mutex, queue: ProducerConsumerQueue, counter: Ato
 function pcConsumerTask(mutex: Mutex, queue: ProducerConsumerQueue, counter: AtomicInt): void {
   mutex.lock();
   try {
+    queue.consumerAttempts = queue.consumerAttempts + 1;
     if (queue.items.length > 0) {
       queue.items.shift();
+      queue.consumed = queue.consumed + 1;
     }
     counter.fetchAdd(1);
   } finally {
@@ -274,6 +282,11 @@ export default function LockDesignProducerConsumerTest(): void {
       let c5 = taskpool.execute(new taskpool.Task(pcConsumerTask, mutex, queue, counter));
       await Promise.all([p1, p2, p3, p4, p5, c1, c2, c3, c4, c5]);
       expect(counter.load()).assertEqual(10);
+      expect(queue.producerAttempts).assertEqual(5);
+      expect(queue.consumerAttempts).assertEqual(5);
+      expect(queue.produced).assertEqual(5);
+      expect(queue.consumed).assertLarger(0);
+      expect(queue.items.length + queue.consumed).assertEqual(6);
     })
 
     /**
@@ -293,14 +306,17 @@ export default function LockDesignProducerConsumerTest(): void {
       let p3 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
       let p4 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
       let p5 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
+      await Promise.all([p1, p2, p3, p4, p5]);
       let c1 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
       let c2 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
       let c3 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
       let c4 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
       let c5 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
-      await Promise.all([p1, p2, p3, p4, p5, c1, c2, c3, c4, c5]);
+      await Promise.all([c1, c2, c3, c4, c5]);
       expect(counter.load()).assertEqual(10);
       expect(rb.writePos).assertEqual(5);
+      expect(rb.readPos).assertEqual(5);
+      expect(rb.buffer.length).assertEqual(5);
     })
 
     /**
@@ -364,11 +380,14 @@ export default function LockDesignProducerConsumerTest(): void {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(blockingProducerTask, mutex, data, counter));
       let p2 = taskpool.execute(new taskpool.Task(blockingProducerTask, mutex, data, counter));
+      await Promise.all([p1, p2]);
       let c1 = taskpool.execute(new taskpool.Task(blockingConsumerTask, mutex, data, counter));
       let c2 = taskpool.execute(new taskpool.Task(blockingConsumerTask, mutex, data, counter));
-      await Promise.all([p1, p2, c1, c2]);
-      expect(data.produced + data.consumed).assertLarger(0);
-      expect(data.produced + data.consumed).assertLessOrEqual(12);
+      await Promise.all([c1, c2]);
+      expect(counter.load()).assertEqual(10);
+      expect(data.produced).assertEqual(5);
+      expect(data.consumed).assertEqual(5);
+      expect(data.items.length).assertEqual(0);
     })
 
     /**

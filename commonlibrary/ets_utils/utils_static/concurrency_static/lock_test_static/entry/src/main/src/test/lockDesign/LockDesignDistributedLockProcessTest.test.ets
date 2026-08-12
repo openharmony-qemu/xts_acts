@@ -55,7 +55,7 @@ class RetryLimitData {
 
 // ==================== DistributedLockPriority classes ====================
 class LockPriorityData {
-  readCount: number = 0;
+  readCount: AtomicInt = new AtomicInt(0);
   writeCount: number = 0;
 }
 
@@ -116,9 +116,9 @@ function lockTimeoutTask(mutex: Mutex, counter: AtomicInt): void {
 function lockRetryTask(mutex: Mutex, data: ProcessRetryData, counter: AtomicInt): void {
   let acquired: boolean = false;
   for (let attempt: number = 0; attempt < 3; attempt++) {
-    data.attempts = data.attempts + 1;
     mutex.lock();
     try {
+      data.attempts = data.attempts + 1;
       data.success = data.success + 1;
       acquired = true;
     } finally {
@@ -143,9 +143,9 @@ function lockTimeoutSimpleTask(mutex: Mutex, data: TimeoutLockData, counter: Ato
 }
 
 function lockRetryBackoffTask(mutex: Mutex, data: RetryLockData, counter: AtomicInt): void {
-  data.attempts = data.attempts + 1;
   mutex.lock();
   try {
+    data.attempts = data.attempts + 1;
     data.success = data.success + 1;
     counter.fetchAdd(1);
   } finally {
@@ -186,7 +186,7 @@ function readPriorityTask(rwlock: RWLock, data: LockPriorityData, counter: Atomi
   const readLock = rwlock.readLock();
   readLock.lock();
   try {
-    data.readCount = data.readCount + 1;
+    data.readCount.fetchAdd(1);
     counter.fetchAdd(1);
   } finally {
     readLock.unlock();
@@ -288,6 +288,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.counter).assertEqual(0);
+      // Mutual exclusion oracle: maxSeen stays 1 only if the mutex serializes every cycle.
+      expect(data.maxSeen).assertEqual(1);
     })
 
     /**
@@ -328,6 +330,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.success).assertEqual(3);
+      expect(data.attempts).assertEqual(3);
     })
     /**
      * @tc.name    LockDesignDistributedLockProcessTest0500
@@ -354,7 +357,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
     /**
      * @tc.name    LockDesignDistributedLockProcessTest0600
      * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0600
-     * @tc.desc    Verify lock retry backoff with 5 tasks each acquiring lock once
+     * @tc.desc    Verify 5 concurrent tasks each record one attempt and acquire the lock once using Mutex
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -371,6 +374,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.success).assertEqual(5);
+      expect(data.attempts).assertEqual(5);
     })
 
     /**
@@ -424,7 +428,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
     /**
      * @tc.name    LockDesignDistributedLockProcessTest0900
      * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0900
-     * @tc.desc    Verify RWLock read-write priority with 5 readers and 2 writers concurrent
+     * @tc.desc    Verify RWLock with 5 concurrent readers and 2 writers completing read and write operations
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -442,6 +446,7 @@ export default function LockDesignDistributedLockProcessTest(): void {
       let w2 = taskpool.execute(new taskpool.Task(writePriorityTask, rwlock, data, counter));
       await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
       expect(counter.load()).assertEqual(7);
+      expect(data.readCount.load()).assertEqual(5);
       expect(data.writeCount).assertEqual(2);
     })
 

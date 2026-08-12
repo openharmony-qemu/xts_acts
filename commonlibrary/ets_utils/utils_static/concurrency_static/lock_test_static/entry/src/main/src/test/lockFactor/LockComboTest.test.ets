@@ -17,7 +17,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium'
 import Utils from '../Util.test'
 
-// === Module-level helpers for combo scenarios (8300-9700) ===
+// === Module-level helpers for combo scenarios (8200-9600) ===
 
 // Sleep helper usable inside worker/task coroutines.
 function lockComboSleep(ms: int): Promise<void> {
@@ -362,7 +362,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest0700
      * @tc.number  SUB_LOCK_COMBO_TEST_0700
-     * @tc.desc    Verify multiple read locks and single write lock concurrent contention priority
+     * @tc.desc    Verify 5 sequential ReadLock acquisitions followed by WriteLock acquisition on same RWLock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -391,7 +391,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest0800
      * @tc.number  SUB_LOCK_COMBO_TEST_0800
-     * @tc.desc    Verify multiple ReadLock objects from same RWLock can share access
+     * @tc.desc    Verify ReadLock instance from same RWLock can be acquired repeatedly for shared access
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -415,7 +415,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest0900
      * @tc.number  SUB_LOCK_COMBO_TEST_0900
-     * @tc.desc    Verify multiple WriteLock objects from same RWLock have mutual exclusion
+     * @tc.desc    Verify WriteLock instance from same RWLock can be re-acquired after release
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -540,7 +540,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest1400
      * @tc.number  SUB_LOCK_COMBO_TEST_1400
-     * @tc.desc    Verify lock object passed to task can be used for shared access in static model
+     * @tc.desc    Verify Mutex protects shared value update correctness in static model
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -632,7 +632,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest1800
      * @tc.number  SUB_LOCK_COMBO_TEST_1800
-     * @tc.desc    Verify lock sharing between two sequential tasks with ordering
+     * @tc.desc    Verify sequential Mutex lock/unlock preserves operation ordering
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -649,12 +649,14 @@ export default function LockComboTest(): void {
       order.push(3)
       expect(order.length).assertEqual(3)
       expect(order[0]).assertEqual(1)
+      expect(order[1]).assertEqual(2)
+      expect(order[2]).assertEqual(3)
     })
 
     /**
      * @tc.name    LockComboTest1900
      * @tc.number  SUB_LOCK_COMBO_TEST_1900
-     * @tc.desc    Verify Mutex lock/unlock around a taskpool task execution
+     * @tc.desc    Verify Mutex lock/unlock after taskpool task execution completes
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -665,13 +667,14 @@ export default function LockComboTest(): void {
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'data'
       })
-      await taskpool.execute(task)
+      let result: string = await taskpool.execute(task) as string
       mutex.lock()
       try {
         callbackExecuted = true
       } finally {
         mutex.unlock()
       }
+      expect(result).assertEqual('data')
       expect(callbackExecuted).assertTrue()
     })
 
@@ -841,7 +844,7 @@ export default function LockComboTest(): void {
       let order: string[] = []
       mutex.lock()
       order.push('main_locked')
-      await lockComboSleep(10)
+      await lockComboSleep(100)
       order.push('waited')
       order.push('main_unlocking')
       mutex.unlock()
@@ -864,7 +867,7 @@ export default function LockComboTest(): void {
       let mainProceeded: boolean = false
       mutex.lock()
       taskLocked = true
-      await lockComboSleep(10)
+      await lockComboSleep(100)
       mutex.unlock()
       mutex.lock()
       mainProceeded = true
@@ -876,7 +879,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest2800
      * @tc.number  SUB_LOCK_COMBO_TEST_2800
-     * @tc.desc    Verify multiple sequential tasks nesting on same lock with ordering
+     * @tc.desc    Verify repeated sequential Mutex lock/unlock preserves operation ordering
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -933,7 +936,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest3000
      * @tc.number  SUB_LOCK_COMBO_TEST_3000
-     * @tc.desc    Verify nested lock timeout does not affect outer lock state
+     * @tc.desc    Verify inner Mutex release does not affect outer Mutex re-acquisition
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -998,10 +1001,11 @@ export default function LockComboTest(): void {
       let rl1: ReadLock = rw1.readLock()
       let rl2: ReadLock = rw2.readLock()
       let rl3: ReadLock = rw3.readLock()
+      let value: int = 0
       rl1.lock()
       rl2.lock()
       rl3.lock()
-      let value: int = 345
+      value = 345
       rl3.unlock()
       rl2.unlock()
       rl1.unlock()
@@ -1035,7 +1039,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest3400
      * @tc.number  SUB_LOCK_COMBO_TEST_3400
-     * @tc.desc    Verify dynamic nesting depth based on runtime condition
+     * @tc.desc    Verify 3-layer Mutex array nesting with sequential lock/unlock correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -1046,10 +1050,11 @@ export default function LockComboTest(): void {
       for (let i: int = 0; i < depth; i++) {
         mutexes.push(new Mutex())
       }
+      let result: int = 0
       for (let i: int = 0; i < depth; i++) {
         mutexes[i].lock()
+        result++
       }
-      let result: int = depth
       for (let i: int = depth - 1; i >= 0; i--) {
         mutexes[i].unlock()
       }
@@ -1072,11 +1077,12 @@ export default function LockComboTest(): void {
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'rw_data'
       })
-      await taskpool.execute(task)
+      let result: string = await taskpool.execute(task) as string
       let rl: ReadLock = rwLock.readLock()
       rl.lock()
       callbackDone = true
       rl.unlock()
+      expect(result).assertEqual('rw_data')
       expect(callbackDone).assertTrue()
     })
 
@@ -1155,7 +1161,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest3900
      * @tc.number  SUB_LOCK_COMBO_TEST_3900
-     * @tc.desc    Verify multiple tasks concurrently competing for same lock safety
+     * @tc.desc    Verify Mutex sequential repeated lock/unlock counting correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1177,7 +1183,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest4000
      * @tc.number  SUB_LOCK_COMBO_TEST_4000
-     * @tc.desc    Verify sendData protected by Mutex lock/unlock correctness
+     * @tc.desc    Verify Mutex lock/unlock after taskpool task execution with result correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1202,7 +1208,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest4100
      * @tc.number  SUB_LOCK_COMBO_TEST_4100
-     * @tc.desc    Verify sendData protected by RWLock ReadLock for concurrent sending
+     * @tc.desc    Verify ReadLock repeated sequential acquisition counting correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1223,7 +1229,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest4200
      * @tc.number  SUB_LOCK_COMBO_TEST_4200
-     * @tc.desc    Verify nested sendData with lock in callback correctness
+     * @tc.desc    Verify Mutex lock/unlock after taskpool task execution with string result
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1233,7 +1239,7 @@ export default function LockComboTest(): void {
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'first'
       })
-      await taskpool.execute(task)
+      let result: string = await taskpool.execute(task) as string
       let nestedReceived: boolean = false
       mutex.lock()
       try {
@@ -1241,13 +1247,14 @@ export default function LockComboTest(): void {
       } finally {
         mutex.unlock()
       }
+      expect(result).assertEqual('first')
       expect(nestedReceived).assertTrue()
     })
 
     /**
      * @tc.name    LockComboTest4300
      * @tc.number  SUB_LOCK_COMBO_TEST_4300
-     * @tc.desc    Verify sendData triggers callback with lock safety
+     * @tc.desc    Verify Mutex lock/unlock after taskpool task returning trigger marker
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1257,7 +1264,7 @@ export default function LockComboTest(): void {
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'trigger'
       })
-      await taskpool.execute(task)
+      let result: string = await taskpool.execute(task) as string
       let triggeredAndLocked: boolean = false
       mutex.lock()
       try {
@@ -1265,6 +1272,7 @@ export default function LockComboTest(): void {
       } finally {
         mutex.unlock()
       }
+      expect(result).assertEqual('trigger')
       expect(triggeredAndLocked).assertTrue()
     })
 
@@ -1280,8 +1288,7 @@ export default function LockComboTest(): void {
      */
     it('LockComboTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let mutex: Mutex = new Mutex()
-      await lockComboSleep(10)
-      let timerCompleted: boolean = true
+      await lockComboSleep(100)
       let lockOk: boolean = false
       mutex.lock()
       try {
@@ -1289,14 +1296,13 @@ export default function LockComboTest(): void {
       } finally {
         mutex.unlock()
       }
-      expect(timerCompleted).assertTrue()
       expect(lockOk).assertTrue()
     })
 
     /**
      * @tc.name    LockComboTest4500
      * @tc.number  SUB_LOCK_COMBO_TEST_4500
-     * @tc.desc    Verify lock-protected state update in a simulated message handling flow
+     * @tc.desc    Verify Mutex lock/unlock protected state flag update in simulated flow
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1339,7 +1345,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest4700
      * @tc.number  SUB_LOCK_COMBO_TEST_4700
-     * @tc.desc    Verify producer-consumer queue with 5 producers and 5 consumers
+     * @tc.desc    Verify Mutex-protected queue with 5 sequential produce and 5 consume operations
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1440,7 +1446,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest5100
      * @tc.number  SUB_LOCK_COMBO_TEST_5100
-     * @tc.desc    Verify cache read-heavy write-rare with 10 readers and 1 writer
+     * @tc.desc    Verify cache read-heavy write-rare scenario with 10 sequential reads and 1 write
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1492,7 +1498,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest5300
      * @tc.number  SUB_LOCK_COMBO_TEST_5300
-     * @tc.desc    Verify config file multi-thread read and single-thread update consistency
+     * @tc.desc    Verify config file read-update consistency with 5 sequential reads and single update
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1518,7 +1524,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest5400
      * @tc.number  SUB_LOCK_COMBO_TEST_5400
-     * @tc.desc    Verify log read-write separation with multi-reader single-writer safety
+     * @tc.desc    Verify log read-write separation with 5 sequential reads and single write
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1544,7 +1550,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest5500
      * @tc.number  SUB_LOCK_COMBO_TEST_5500
-     * @tc.desc    Verify status query-update with multi-thread query and single-thread update
+     * @tc.desc    Verify status query-update with 6 sequential queries and single update
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1677,7 +1683,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest6000
      * @tc.number  SUB_LOCK_COMBO_TEST_6000
-     * @tc.desc    Verify shared Mutex across multiple tasks simulating multi-process
+     * @tc.desc    Verify shared Mutex sequential lock/unlock across 5 iterations
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -1696,7 +1702,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest6100
      * @tc.number  SUB_LOCK_COMBO_TEST_6100
-     * @tc.desc    Verify lock acquire timeout mechanism does not cause deadlock
+     * @tc.desc    Verify Mutex re-acquisition after release does not deadlock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -1718,7 +1724,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest6200
      * @tc.number  SUB_LOCK_COMBO_TEST_6200
-     * @tc.desc    Verify lock retry mechanism after failed acquire correctness
+     * @tc.desc    Verify Mutex lock acquisition with bounded retry count tracking
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -1744,7 +1750,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest6300
      * @tc.number  SUB_LOCK_COMBO_TEST_6300
-     * @tc.desc    Verify RWLock read-priority vs write-priority strategy
+     * @tc.desc    Verify RWLock sequential read-then-write acquisition order
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -1771,7 +1777,7 @@ export default function LockComboTest(): void {
       expect(writeAfterRead).assertTrue()
     })
 
-    // === Section 5.5: Special Business Scenarios (6700-7200) ===
+    // === Section 5.5: Special Business Scenarios (6700-7100) ===
 
     /**
      * @tc.name    LockComboTest6400
@@ -1839,7 +1845,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest6700
      * @tc.number  SUB_LOCK_COMBO_TEST_6700
-     * @tc.desc    Verify event trigger callback with Mutex lock protection safety
+     * @tc.desc    Verify Mutex lock/unlock protected state flag update safety
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -1853,12 +1859,12 @@ export default function LockComboTest(): void {
       expect(eventHandled).assertTrue()
     })
 
-    // === Section 6.1: High Concurrency Stress (7100-7400) ===
+    // === Section 6.1: High Concurrency Stress (7100-7300) ===
 
     /**
      * @tc.name    LockComboTest6800
      * @tc.number  SUB_LOCK_COMBO_TEST_6800
-     * @tc.desc    Verify RWLock extreme concurrency with 5 read and 5 write tasks 1000 ops each
+     * @tc.desc    Verify RWLock sustained sequential access with 5 read and 5 write rounds of 100 ops each
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
@@ -1891,7 +1897,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest6900
      * @tc.number  SUB_LOCK_COMBO_TEST_6900
-     * @tc.desc    Verify mixed Mutex and RWLock extreme concurrency stability
+     * @tc.desc    Verify mixed Mutex and RWLock sustained sequential lock stability
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
@@ -1924,7 +1930,7 @@ export default function LockComboTest(): void {
     /**
      * @tc.name    LockComboTest7000
      * @tc.number  SUB_LOCK_COMBO_TEST_7000
-     * @tc.desc    Verify callback concurrency with 10 tasks with lock contention
+     * @tc.desc    Verify Mutex counting after 10 sequential taskpool task executions
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
@@ -1937,7 +1943,8 @@ export default function LockComboTest(): void {
         let task: taskpool.Task = new taskpool.Task((): int => {
           return 1
         })
-        await taskpool.execute(task)
+        let result: int = await taskpool.execute(task) as int
+        expect(result).assertEqual(1)
         mutex.lock()
         counter++
         mutex.unlock()
@@ -1945,39 +1952,17 @@ export default function LockComboTest(): void {
       expect(counter).assertEqual(taskCount)
     })
 
-    // === Section 6.2: Long-running Stress (7500-7600) ===
+    // === Section 7.1: Exception Recovery Stability (7600-8000) ===
 
     /**
      * @tc.name    LockComboTest7100
      * @tc.number  SUB_LOCK_COMBO_TEST_7100
-     * @tc.desc    Verify Mutex sustained lock/unlock operations without resource leak
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL3
-     */
-    it('LockComboTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      let mutex: Mutex = new Mutex()
-      let counter: int = 0
-      let iterations: int = 1000
-      for (let i: int = 0; i < iterations; i++) {
-        mutex.lock()
-        counter++
-        mutex.unlock()
-      }
-      expect(counter).assertEqual(iterations)
-    })
-
-    // === Section 7.1: Exception Recovery Stability (7700-8100) ===
-
-    /**
-     * @tc.name    LockComboTest7200
-     * @tc.number  SUB_LOCK_COMBO_TEST_7200
      * @tc.desc    Verify Mutex exception recovery after unlock without prior lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       let errorCaught: boolean = false
       try {
@@ -1997,14 +1982,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest7300
-     * @tc.number  SUB_LOCK_COMBO_TEST_7300
+     * @tc.name    LockComboTest7200
+     * @tc.number  SUB_LOCK_COMBO_TEST_7200
      * @tc.desc    Verify RWLock exception recovery after ReadLock unlock on unlocked state
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rwLock: RWLock = new RWLock()
       let rl: ReadLock = rwLock.readLock()
       let errorCaught: boolean = false
@@ -2025,14 +2010,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest7400
-     * @tc.number  SUB_LOCK_COMBO_TEST_7400
+     * @tc.name    LockComboTest7300
+     * @tc.number  SUB_LOCK_COMBO_TEST_7300
      * @tc.desc    Verify lock is eventually released even when task throws exception
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       mutex.lock()
       try {
@@ -2051,14 +2036,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest7500
-     * @tc.number  SUB_LOCK_COMBO_TEST_7500
+     * @tc.name    LockComboTest7400
+     * @tc.number  SUB_LOCK_COMBO_TEST_7400
      * @tc.desc    Verify callback exception does not corrupt lock state
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       let exceptionCaught: boolean = false
       mutex.lock()
@@ -2080,14 +2065,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest7600
-     * @tc.number  SUB_LOCK_COMBO_TEST_7600
+     * @tc.name    LockComboTest7500
+     * @tc.number  SUB_LOCK_COMBO_TEST_7500
      * @tc.desc    Verify nested lock exception does not cause deadlock on outer lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let outerMutex: Mutex = new Mutex()
       let innerMutex: Mutex = new Mutex()
       outerMutex.lock()
@@ -2111,17 +2096,17 @@ export default function LockComboTest(): void {
       expect(recovered).assertTrue()
     })
 
-    // === Section 7.2: Resource Release Stability (8200-8400) ===
+    // === Section 7.2: Resource Release Stability (8100-8300) ===
 
     /**
-     * @tc.name    LockComboTest7700
-     * @tc.number  SUB_LOCK_COMBO_TEST_7700
+     * @tc.name    LockComboTest7600
+     * @tc.number  SUB_LOCK_COMBO_TEST_7600
      * @tc.desc    Verify creating and releasing 100 Mutex instances without resource leak
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let count: int = 100
       let completed: int = 0
       for (let i: int = 0; i < count; i++) {
@@ -2134,14 +2119,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest7800
-     * @tc.number  SUB_LOCK_COMBO_TEST_7800
+     * @tc.name    LockComboTest7700
+     * @tc.number  SUB_LOCK_COMBO_TEST_7700
      * @tc.desc    Verify creating large number of RWLock objects then releasing without leak
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let count: int = 100
       let completed: int = 0
       for (let i: int = 0; i < count; i++) {
@@ -2158,14 +2143,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest7900
-     * @tc.number  SUB_LOCK_COMBO_TEST_7900
-     * @tc.desc    Verify lock object lifecycle tracking and proper destruction
+     * @tc.name    LockComboTest7800
+     * @tc.number  SUB_LOCK_COMBO_TEST_7800
+     * @tc.desc    Verify Mutex re-acquisition after release remains usable
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       mutex.lock()
       mutex.unlock()
@@ -2179,17 +2164,17 @@ export default function LockComboTest(): void {
       expect(reacquired).assertTrue()
     })
 
-    // === Section 7.3: Boundary Condition Stability (8500-8700) ===
+    // === Section 7.3: Boundary Condition Stability (8400-8600) ===
 
     /**
-     * @tc.name    LockComboTest8000
-     * @tc.number  SUB_LOCK_COMBO_TEST_8000
-     * @tc.desc    Verify creating Mutex without using it has no resource overhead
+     * @tc.name    LockComboTest7900
+     * @tc.number  SUB_LOCK_COMBO_TEST_7900
+     * @tc.desc    Verify Mutex created without immediate use remains fully usable
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mutex: Mutex = new Mutex()
       // A Mutex created without immediate use remains fully usable later.
       let usable: boolean = false
@@ -2203,14 +2188,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest8100
-     * @tc.number  SUB_LOCK_COMBO_TEST_8100
+     * @tc.name    LockComboTest8000
+     * @tc.number  SUB_LOCK_COMBO_TEST_8000
      * @tc.desc    Verify single thread holding multiple RWLock instances management
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('LockComboTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rw1: RWLock = new RWLock()
       let rw2: RWLock = new RWLock()
       let rw3: RWLock = new RWLock()
@@ -2232,14 +2217,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest8200
-     * @tc.number  SUB_LOCK_COMBO_TEST_8200
+     * @tc.name    LockComboTest8100
+     * @tc.number  SUB_LOCK_COMBO_TEST_8100
      * @tc.desc    Verify Mutex basic lock/unlock boundary handling
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('LockComboTest8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let errorCaught: boolean = false
       let validMutex: Mutex = new Mutex()
       try {
@@ -2251,17 +2236,17 @@ export default function LockComboTest(): void {
       expect(errorCaught).assertFalse()
     })
 
-    // === Section 8: Missing Combo Scenarios (8300-9700) ===
+    // === Section 8: Missing Combo Scenarios (8200-9600) ===
 
     /**
-     * @tc.name    LockComboTest8300
-     * @tc.number  SUB_LOCK_COMBO_TEST_8300
+     * @tc.name    LockComboTest8200
+     * @tc.number  SUB_LOCK_COMBO_TEST_8200
      * @tc.desc    Verify read lock to write lock upgrade attempt blocks writer while reader holds (deadlock detection without hang)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Same-coroutine read->write upgrade is unsupported: WriteLock waits for all readers, including itself.
       // Cross-coroutine observable behavior: writer stays blocked until the reader releases.
       let rwLock: RWLock = new RWLock()
@@ -2277,14 +2262,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest8400
-     * @tc.number  SUB_LOCK_COMBO_TEST_8400
+     * @tc.name    LockComboTest8300
+     * @tc.number  SUB_LOCK_COMBO_TEST_8300
      * @tc.desc    Verify write lock to read lock transition blocks readers until writer releases (downgrade handoff)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Same-coroutine write->read downgrade is unsupported: ReadLock.lock() suspends while WriteLock is held by the
       // same coroutine, so WriteLock.unlock() is unreachable. Cross-coroutine handoff is validated instead.
       let rwLock: RWLock = new RWLock()
@@ -2300,31 +2285,32 @@ export default function LockComboTest(): void {
           await Utils.msSleep(100)
           tries++
         }
-        expect(held.load()).assertEqual(1)
-        let pR = taskpool.execute(new taskpool.Task(lockComboReadAttemptTask, rwLock, rGot))
         try {
+          expect(held.load()).assertEqual(1)
+          let pR = taskpool.execute(new taskpool.Task(lockComboReadAttemptTask, rwLock, rGot))
           await Utils.msSleep(300)
           expect(rGot.load()).assertEqual(0)
+          release.store(1)
+          await pW.Await()
+          await pR
+          expect(rGot.load()).assertEqual(1)
         } finally {
           release.store(1)
         }
-        await pW.Await()
-        await pR
-        expect(rGot.load()).assertEqual(1)
       } finally {
         worker.quit()
       }
     })
 
     /**
-     * @tc.name    LockComboTest8500
-     * @tc.number  SUB_LOCK_COMBO_TEST_8500
+     * @tc.name    LockComboTest8400
+     * @tc.number  SUB_LOCK_COMBO_TEST_8400
      * @tc.desc    Verify same-thread true nesting of two distinct Mutex instances (lock A then lock B)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockComboTest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let mutexA: Mutex = new Mutex()
       let mutexB: Mutex = new Mutex()
       let counter: AtomicInt = new AtomicInt(0)
@@ -2339,14 +2325,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest8600
-     * @tc.number  SUB_LOCK_COMBO_TEST_8600
+     * @tc.name    LockComboTest8500
+     * @tc.number  SUB_LOCK_COMBO_TEST_8500
      * @tc.desc    Verify true nesting of WriteLocks from two distinct RWLock instances
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockComboTest8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let rw1: RWLock = new RWLock()
       let rw2: RWLock = new RWLock()
       let counter: AtomicInt = new AtomicInt(0)
@@ -2361,14 +2347,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest8700
-     * @tc.number  SUB_LOCK_COMBO_TEST_8700
+     * @tc.name    LockComboTest8600
+     * @tc.number  SUB_LOCK_COMBO_TEST_8600
      * @tc.desc    Verify cross-thread nesting: worker waits for Mutex held by main thread, then acquires after release
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let mutex: Mutex = new Mutex()
       let done: AtomicInt = new AtomicInt(0)
       mutex.lock()
@@ -2390,14 +2376,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest8800
-     * @tc.number  SUB_LOCK_COMBO_TEST_8800
+     * @tc.name    LockComboTest8700
+     * @tc.number  SUB_LOCK_COMBO_TEST_8700
      * @tc.desc    Verify reverse cross-thread nesting: worker holds Mutex, host-side attempt blocks until worker releases
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let mutex: Mutex = new Mutex()
       let held: AtomicInt = new AtomicInt(0)
       let release: AtomicInt = new AtomicInt(0)
@@ -2411,75 +2397,74 @@ export default function LockComboTest(): void {
           await Utils.msSleep(100)
           tries++
         }
-        expect(held.load()).assertEqual(1)
-        let pM = taskpool.execute(new taskpool.Task(lockComboAttemptTask, mutex, mainGot))
         try {
+          expect(held.load()).assertEqual(1)
+          let pM = taskpool.execute(new taskpool.Task(lockComboAttemptTask, mutex, mainGot))
           await Utils.msSleep(300)
           expect(mainGot.load()).assertEqual(0)
+          release.store(1)
+          await pW.Await()
+          await pM
+          expect(mainGot.load()).assertEqual(1)
         } finally {
           release.store(1)
         }
-        await pW.Await()
-        await pM
-        expect(mainGot.load()).assertEqual(1)
       } finally {
         worker.quit()
       }
     })
 
     /**
-     * @tc.name    LockComboTest8900
-     * @tc.number  SUB_LOCK_COMBO_TEST_8900
+     * @tc.name    LockComboTest8800
+     * @tc.number  SUB_LOCK_COMBO_TEST_8800
      * @tc.desc    Verify multi-worker nesting on the same Mutex: worker2 waits while worker1 holds, acquires after release
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let mutex: Mutex = new Mutex()
       let w1Held: AtomicInt = new AtomicInt(0)
       let releaseW1: AtomicInt = new AtomicInt(0)
       let w2Done: AtomicInt = new AtomicInt(0)
       let w1: EAWorker = new EAWorker('lockComboNest30a')
       w1.start()
+      let w2: EAWorker = new EAWorker('lockComboNest30b')
+      w2.start()
       try {
-        let p1 = w1.run<Promise<void>>(lockComboHoldTask, mutex, w1Held, releaseW1)
-        let tries: int = 0
-        while (w1Held.load() === 0 && tries < 50) {
-          await Utils.msSleep(100)
-          tries++
-        }
-        expect(w1Held.load()).assertEqual(1)
-        let w2: EAWorker = new EAWorker('lockComboNest30b')
-        w2.start()
         try {
-          let p2 = w2.run<void>(lockComboWaitTask, mutex, w2Done)
-          try {
-            await Utils.msSleep(300)
-            expect(w2Done.load()).assertEqual(0)
-          } finally {
-            releaseW1.store(1)
+          let p1 = w1.run<Promise<void>>(lockComboHoldTask, mutex, w1Held, releaseW1)
+          let tries: int = 0
+          while (w1Held.load() === 0 && tries < 50) {
+            await Utils.msSleep(100)
+            tries++
           }
+          expect(w1Held.load()).assertEqual(1)
+          let p2 = w2.run<void>(lockComboWaitTask, mutex, w2Done)
+          await Utils.msSleep(300)
+          expect(w2Done.load()).assertEqual(0)
+          releaseW1.store(1)
           await p1.Await()
           p2.Await()
           expect(w2Done.load()).assertEqual(1)
         } finally {
-          w2.quit()
+          releaseW1.store(1)
         }
       } finally {
+        w2.quit()
         w1.quit()
       }
     })
 
     /**
-     * @tc.name    LockComboTest9000
-     * @tc.number  SUB_LOCK_COMBO_TEST_9000
+     * @tc.name    LockComboTest8900
+     * @tc.number  SUB_LOCK_COMBO_TEST_8900
      * @tc.desc    Verify Mutex lock/unlock safety inside taskpool onReceiveData callback
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let mutex: Mutex = new Mutex()
       let callbackCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task(lockComboSendDataTask, 1)
@@ -2494,14 +2479,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest9100
-     * @tc.number  SUB_LOCK_COMBO_TEST_9100
+     * @tc.name    LockComboTest9000
+     * @tc.number  SUB_LOCK_COMBO_TEST_9000
      * @tc.desc    Verify periodic timer task increments shared state under Mutex protection with correct final count
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockComboTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let mutex: Mutex = new Mutex()
       let counter: int = 0
       let tickCount: int = 0
@@ -2532,14 +2517,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest9200
-     * @tc.number  SUB_LOCK_COMBO_TEST_9200
+     * @tc.name    LockComboTest9100
+     * @tc.number  SUB_LOCK_COMBO_TEST_9100
      * @tc.desc    Verify Mutex concurrency: 10 tasks each performing 100 locked increments
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let mutex: Mutex = new Mutex()
       let counter: AtomicInt = new AtomicInt(0)
       let taskCount: int = 10
@@ -2552,14 +2537,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest9300
-     * @tc.number  SUB_LOCK_COMBO_TEST_9300
+     * @tc.name    LockComboTest9200
+     * @tc.number  SUB_LOCK_COMBO_TEST_9200
      * @tc.desc    Verify Mutex protects 1MB-level big data transfer with integrity assertions
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let mutex: Mutex = new Mutex()
       let payload: string = lockComboBuildPayload(1050)
       let expectedLen: int = payload.length
@@ -2575,14 +2560,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest9400
-     * @tc.number  SUB_LOCK_COMBO_TEST_9400
+     * @tc.name    LockComboTest9300
+     * @tc.number  SUB_LOCK_COMBO_TEST_9300
      * @tc.desc    Verify RWLock protects 1MB-level big data write under WriteLock and read under ReadLock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let rwLock: RWLock = new RWLock()
       let data: string[] = [lockComboBuildPayload(525)]
       let chunk: string = lockComboBuildPayload(525)
@@ -2598,14 +2583,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest9500
-     * @tc.number  SUB_LOCK_COMBO_TEST_9500
+     * @tc.name    LockComboTest9400
+     * @tc.number  SUB_LOCK_COMBO_TEST_9400
      * @tc.desc    Verify multiple big data chunks concurrently transferred under separate Mutex instances
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let taskCount: int = 5
       let mutexes: Mutex[] = []
       let payloads: string[] = []
@@ -2626,14 +2611,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest9600
-     * @tc.number  SUB_LOCK_COMBO_TEST_9600
+     * @tc.name    LockComboTest9500
+     * @tc.number  SUB_LOCK_COMBO_TEST_9500
      * @tc.desc    Verify RWLock sustained read/write lock rounds for long-running stability
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('LockComboTest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let rwLock: RWLock = new RWLock()
       let readCount: int = 0
       let writeCount: int = 0
@@ -2658,14 +2643,14 @@ export default function LockComboTest(): void {
     })
 
     /**
-     * @tc.name    LockComboTest9700
-     * @tc.number  SUB_LOCK_COMBO_TEST_9700
+     * @tc.name    LockComboTest9600
+     * @tc.number  SUB_LOCK_COMBO_TEST_9600
      * @tc.desc    Verify sustained taskpool onReceiveData callbacks using Mutex for long-running callback stability
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let mutex: Mutex = new Mutex()
       let callbackCount: AtomicInt = new AtomicInt(0)
       let rounds: int = 20

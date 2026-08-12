@@ -16,8 +16,10 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
 
-class CallbackSharedCounter {
-  value: number = 0;
+// TC-036: Holder for the nested EAWorker execution created inside the callback
+class CallbackNestedWorkerHolder {
+  worker: EAWorker | null = null;
+  job: Job<void> | null = null;
 }
 
 // TC-032: onReceiveData callback with Mutex
@@ -87,17 +89,6 @@ function sendDataRWLockTask(rwlock: RWLock, counter: AtomicInt): void {
   }
 }
 
-// TC-040: sendData nested lock send task
-function sendDataNestedTask(mutex: Mutex, counter: AtomicInt): void {
-  mutex.lock();
-  try {
-    counter.fetchAdd(1);
-    taskpool.Task.sendData('nested_send');
-  } finally {
-    mutex.unlock();
-  }
-}
-
 // TC-041: sendData trigger callback lock task
 function sendDataTriggerTask(counter: AtomicInt): void {
   counter.fetchAdd(1);
@@ -115,70 +106,41 @@ function sendDataConcurrentTask(mutex: Mutex, counter: AtomicInt): void {
   }
 }
 
-// TC-043: sendData exception handling task
-function sendDataExceptionTask(mutex: Mutex, counter: AtomicInt): void {
+// TC-043: sendData lock reuse task
+function sendDataLockReuseTask(mutex: Mutex, counter: AtomicInt): void {
   mutex.lock();
   try {
     counter.fetchAdd(1);
-    taskpool.Task.sendData('exception_data');
+    taskpool.Task.sendData('lock_reuse_data');
   } finally {
     mutex.unlock();
   }
 }
 
-// TC-044: Worker callback lock task
-function workerCallbackLockTask(mutex: Mutex, counter: AtomicInt): void {
+// Worker Mutex-protected task shared by TC-044, TC-047, and TC-049
+function workerLockTask(mutex: Mutex): number {
   mutex.lock();
   try {
-    counter.fetchAdd(1);
+    return 1;
   } finally {
     mutex.unlock();
   }
 }
 
-// TC-045: Worker message handler lock task
-function workerMessageHandlerTask(counter: AtomicInt): void {
-  counter.fetchAdd(1);
+// TC-045: Worker counter increment task
+function workerMessageHandlerTask(): number {
+  return 1;
 }
 
-// TC-046: Worker exception callback lock task
+// TC-046: Worker exception lock task - throws while holding the Mutex
 function workerExceptionTask(mutex: Mutex, counter: AtomicInt): void {
   mutex.lock();
   try {
     counter.fetchAdd(1);
+    throw new Error('Worker exception');
   } finally {
     mutex.unlock();
   }
-}
-
-// TC-047: Worker multi-callback concurrent task
-function workerMultiCallbackTask(mutex: Mutex, counter: AtomicInt): void {
-  mutex.lock();
-  try {
-    counter.fetchAdd(1);
-  } finally {
-    mutex.unlock();
-  }
-}
-
-// TC-048: MessageHandler constructor callback lock task
-function messageHandlerConstructorTask(counter: AtomicInt): void {
-  counter.fetchAdd(1);
-}
-
-// TC-049: handler.sendMessage lock protection task
-function sendMessageLockTask(mutex: Mutex, counter: AtomicInt): void {
-  mutex.lock();
-  try {
-    counter.fetchAdd(1);
-  } finally {
-    mutex.unlock();
-  }
-}
-
-// TC-050: message.getObject lock protection task
-function messageGetObjectTask(counter: AtomicInt): void {
-  counter.fetchAdd(1);
 }
 
 // TC-051: MessageHandler multi-message concurrent task
@@ -191,14 +153,10 @@ function multiMessageTask(mutex: Mutex, counter: AtomicInt): void {
   }
 }
 
-// TC-052: MessageHandler exception message task
+// TC-052: Worker exception task - increments then throws
 function exceptionMessageTask(counter: AtomicInt): void {
   counter.fetchAdd(1);
-}
-
-// TC-053: MessageHandler nested message task
-function nestedMessageTask(counter: AtomicInt): void {
-  counter.fetchAdd(1);
+  throw new Error('Worker exception message');
 }
 
 export default function LockFactorCallbackTest(): void {
@@ -323,6 +281,7 @@ export default function LockFactorCallbackTest(): void {
     it('LockFactorCallbackTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
+      const holder = new CallbackNestedWorkerHolder();
       const task = new taskpool.Task(callbackNestedOuterTask, counter);
       task.onReceiveData(() => {
         mutex.lock();
@@ -331,9 +290,25 @@ export default function LockFactorCallbackTest(): void {
         } finally {
           mutex.unlock();
         }
+        // Nested execution created inside the callback
+        const nestedWorker = new EAWorker('lockFactorCBNested');
+        nestedWorker.start();
+        holder.worker = nestedWorker;
+        holder.job = nestedWorker.run<void>(callbackNestedInnerTask, counter);
       });
       await taskpool.execute(task);
-      expect(counter.load()).assertEqual(2);
+      try {
+        let job = holder.job;
+        if (job != null) {
+          job.Await();
+        }
+      } finally {
+        let worker = holder.worker;
+        if (worker != null) {
+          worker.quit();
+        }
+      }
+      expect(counter.load()).assertEqual(3);
     })
 
     /**
@@ -423,32 +398,12 @@ export default function LockFactorCallbackTest(): void {
     /**
      * @tc.name    LockFactorCallbackTest0900
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_0900
-     * @tc.desc    TC-040: Verify sendData nested lock sending - sendData then callback lock then sendData
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL2
-     */
-    it('LockFactorCallbackTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const mutex = new Mutex();
-      const counter = new AtomicInt(0);
-      const task = new taskpool.Task(sendDataNestedTask, mutex, counter);
-      task.onReceiveData(() => {
-        // Use a different mutex in callback to avoid deadlock with task's mutex
-        counter.fetchAdd(1);
-      });
-      await taskpool.execute(task);
-      expect(counter.load()).assertEqual(2);
-    })
-
-    /**
-     * @tc.name    LockFactorCallbackTest1000
-     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1000
      * @tc.desc    TC-041: Verify sendData triggers onReceiveData callback with lock safety
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(sendDataTriggerTask, counter);
@@ -466,14 +421,14 @@ export default function LockFactorCallbackTest(): void {
     })
 
     /**
-     * @tc.name    LockFactorCallbackTest1100
-     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1100
+     * @tc.name    LockFactorCallbackTest1000
+     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1000
      * @tc.desc    TC-042: Verify sendData concurrent contention with multiple tasks competing for lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task1 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
@@ -494,49 +449,84 @@ export default function LockFactorCallbackTest(): void {
     })
 
     /**
+     * @tc.name    LockFactorCallbackTest1100
+     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1100
+     * @tc.desc    TC-043: Verify Mutex remains usable after sendData callback completes
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockFactorCallbackTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const mutex = new Mutex();
+      const counter = new AtomicInt(0);
+      const task = new taskpool.Task(sendDataLockReuseTask, mutex, counter);
+      task.onReceiveData(() => {
+        counter.fetchAdd(1);
+      });
+      await taskpool.execute(task);
+      // Verify the Mutex is still usable after the sendData callback completes:
+      // reuse the same lock on the main thread and make the operation observable.
+      mutex.lock();
+      try {
+        counter.fetchAdd(1);
+      } finally {
+        mutex.unlock();
+      }
+      expect(counter.load()).assertEqual(3);
+    })
+
+    /**
      * @tc.name    LockFactorCallbackTest1200
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1200
-     * @tc.desc    TC-043: Verify sendData exception handling - lock state is correct after sendData exception
+     * @tc.desc    TC-044: Verify EAWorker run task internal Mutex lock/unlock safety
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('LockFactorCallbackTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const mutex = new Mutex();
-      const counter = new AtomicInt(0);
-      const task = new taskpool.Task(sendDataExceptionTask, mutex, counter);
-      task.onReceiveData(() => {
-        counter.fetchAdd(1);
-      });
-      await taskpool.execute(task);
-      expect(counter.load()).assertEqual(2);
-      // Verify lock is usable after callback
-      mutex.lock();
-      mutex.unlock();
+      const worker = new EAWorker('lockFactorCB01');
+      worker.start();
+      try {
+        const workerResult: number = worker.run<number>(workerLockTask, mutex).Await();
+        expect(workerResult).assertEqual(1);
+      } finally {
+        worker.quit();
+      }
     })
 
     /**
      * @tc.name    LockFactorCallbackTest1300
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1300
-     * @tc.desc    TC-044: Verify EAWorker internal callback lock safety with Mutex
+     * @tc.desc    TC-045: Verify EAWorker run task with main thread Mutex-protected counter access
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      const worker = new EAWorker('lockFactorCB01');
+      const worker = new EAWorker('lockFactorCB02');
       worker.start();
-      await worker.run<void>(workerCallbackLockTask, mutex, counter);
-      worker.quit();
-      expect(counter.load()).assertEqual(1);
+      try {
+        const workerResult: number = worker.run<number>(workerMessageHandlerTask).Await();
+        mutex.lock();
+        try {
+          counter.fetchAdd(1);
+        } finally {
+          mutex.unlock();
+        }
+        expect(workerResult).assertEqual(1);
+        expect(counter.load()).assertEqual(1);
+      } finally {
+        worker.quit();
+      }
     })
 
     /**
      * @tc.name    LockFactorCallbackTest1400
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1400
-     * @tc.desc    TC-045: Verify EAWorker message-style callback lock correctness
+     * @tc.desc    TC-046: Verify EAWorker task exception lock safety - Mutex released and reusable after task throws
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -544,48 +534,59 @@ export default function LockFactorCallbackTest(): void {
     it('LockFactorCallbackTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      const worker = new EAWorker('lockFactorCB02');
+      const worker = new EAWorker('lockFactorCB03');
       worker.start();
-      await worker.run<void>(workerMessageHandlerTask, counter);
-      mutex.lock();
       try {
-        counter.fetchAdd(1);
+        let exceptionCaught: boolean = false;
+        try {
+          worker.run<void>(workerExceptionTask, mutex, counter).Await();
+        } catch (e) {
+          // Expected exception from worker task
+          exceptionCaught = true;
+        }
+        expect(exceptionCaught).assertTrue();
+        // Verify lock is usable after worker task exception
+        mutex.lock();
+        try {
+          counter.fetchAdd(1);
+        } finally {
+          mutex.unlock();
+        }
+        expect(counter.load()).assertEqual(2);
       } finally {
-        mutex.unlock();
+        worker.quit();
       }
-      worker.quit();
-      expect(counter.load()).assertEqual(2);
     })
 
     /**
      * @tc.name    LockFactorCallbackTest1500
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1500
-     * @tc.desc    TC-046: Verify EAWorker exception callback lock safety
+     * @tc.desc    TC-047: Verify two EAWorkers each complete a Mutex-protected operation
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('LockFactorCallbackTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
-      const counter = new AtomicInt(0);
-      const worker = new EAWorker('lockFactorCB03');
-      worker.start();
-      await worker.run<void>(workerExceptionTask, mutex, counter);
-      // Verify lock is usable after worker task completes
-      mutex.lock();
+      const worker1 = new EAWorker('lockFactorCB04');
+      const worker2 = new EAWorker('lockFactorCB05');
+      worker1.start();
+      worker2.start();
       try {
-        counter.fetchAdd(1);
+        const job1 = worker1.run<number>(workerLockTask, mutex);
+        const job2 = worker2.run<number>(workerLockTask, mutex);
+        expect(job1.Await()).assertEqual(1);
+        expect(job2.Await()).assertEqual(1);
       } finally {
-        mutex.unlock();
+        worker1.quit();
+        worker2.quit();
       }
-      worker.quit();
-      expect(counter.load()).assertEqual(2);
     })
 
     /**
      * @tc.name    LockFactorCallbackTest1600
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1600
-     * @tc.desc    TC-047: Verify EAWorker multi-callback concurrent lock contention
+     * @tc.desc    TC-049: Verify EAWorker Mutex-protected run task and lock reuse on main thread after execution
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -593,98 +594,32 @@ export default function LockFactorCallbackTest(): void {
     it('LockFactorCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      const worker1 = new EAWorker('lockFactorCB04');
-      const worker2 = new EAWorker('lockFactorCB05');
-      worker1.start();
-      worker2.start();
-      await worker1.run<void>(workerMultiCallbackTask, mutex, counter);
-      await worker2.run<void>(workerMultiCallbackTask, mutex, counter);
-      worker1.quit();
-      worker2.quit();
-      expect(counter.load()).assertEqual(2);
+      const worker = new EAWorker('lockFactorCB07');
+      worker.start();
+      try {
+        const workerResult: number = worker.run<number>(workerLockTask, mutex).Await();
+        mutex.lock();
+        try {
+          counter.fetchAdd(1);
+        } finally {
+          mutex.unlock();
+        }
+        expect(workerResult).assertEqual(1);
+        expect(counter.load()).assertEqual(1);
+      } finally {
+        worker.quit();
+      }
     })
 
     /**
      * @tc.name    LockFactorCallbackTest1700
      * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1700
-     * @tc.desc    TC-048: Verify EAWorker callback construction lock safety
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL2
-     */
-    it('LockFactorCallbackTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const mutex = new Mutex();
-      const counter = new AtomicInt(0);
-      const worker = new EAWorker('lockFactorCB06');
-      worker.start();
-      await worker.run<void>(messageHandlerConstructorTask, counter);
-      mutex.lock();
-      try {
-        counter.fetchAdd(1);
-      } finally {
-        mutex.unlock();
-      }
-      worker.quit();
-      expect(counter.load()).assertEqual(2);
-    })
-
-    /**
-     * @tc.name    LockFactorCallbackTest1800
-     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1800
-     * @tc.desc    TC-049: Verify EAWorker run with lock protection before and after execution
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL2
-     */
-    it('LockFactorCallbackTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const mutex = new Mutex();
-      const counter = new AtomicInt(0);
-      const worker = new EAWorker('lockFactorCB07');
-      worker.start();
-      await worker.run<void>(sendMessageLockTask, mutex, counter);
-      mutex.lock();
-      try {
-        counter.fetchAdd(1);
-      } finally {
-        mutex.unlock();
-      }
-      worker.quit();
-      expect(counter.load()).assertEqual(2);
-    })
-
-    /**
-     * @tc.name    LockFactorCallbackTest1900
-     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1900
-     * @tc.desc    TC-050: Verify EAWorker data access with lock protection
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL2
-     */
-    it('LockFactorCallbackTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const mutex = new Mutex();
-      const counter = new AtomicInt(0);
-      const worker = new EAWorker('lockFactorCB08');
-      worker.start();
-      await worker.run<void>(messageGetObjectTask, counter);
-      mutex.lock();
-      try {
-        counter.fetchAdd(1);
-      } finally {
-        mutex.unlock();
-      }
-      worker.quit();
-      expect(counter.load()).assertEqual(2);
-    })
-
-    /**
-     * @tc.name    LockFactorCallbackTest2000
-     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_2000
      * @tc.desc    TC-051: Verify taskpool multi-task concurrent lock contention
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(multiMessageTask, mutex, counter));
@@ -695,51 +630,37 @@ export default function LockFactorCallbackTest(): void {
     })
 
     /**
-     * @tc.name    LockFactorCallbackTest2100
-     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_2100
+     * @tc.name    LockFactorCallbackTest1800
+     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_1800
      * @tc.desc    TC-052: Verify EAWorker exception flow lock state handling
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorCB09');
       worker.start();
-      await worker.run<void>(exceptionMessageTask, counter);
-      mutex.lock();
       try {
-        counter.fetchAdd(1);
+        let exceptionCaught: boolean = false;
+        try {
+          worker.run<void>(exceptionMessageTask, counter).Await();
+        } catch (e) {
+          // Expected exception from worker task
+          exceptionCaught = true;
+        }
+        expect(exceptionCaught).assertTrue();
+        mutex.lock();
+        try {
+          counter.fetchAdd(1);
+        } finally {
+          mutex.unlock();
+        }
+        expect(counter.load()).assertEqual(2);
       } finally {
-        mutex.unlock();
+        worker.quit();
       }
-      worker.quit();
-      expect(counter.load()).assertEqual(2);
-    })
-
-    /**
-     * @tc.name    LockFactorCallbackTest2200
-     * @tc.number  SUB_LOCK_FACTOR_CALLBACK_TEST_2200
-     * @tc.desc    TC-053: Verify EAWorker nested execution lock correctness
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL2
-     */
-    it('LockFactorCallbackTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const mutex = new Mutex();
-      const counter = new AtomicInt(0);
-      const worker = new EAWorker('lockFactorCB10');
-      worker.start();
-      await worker.run<void>(nestedMessageTask, counter);
-      mutex.lock();
-      try {
-        counter.fetchAdd(1);
-      } finally {
-        mutex.unlock();
-      }
-      worker.quit();
-      expect(counter.load()).assertEqual(2);
     })
   })
 }

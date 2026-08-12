@@ -27,6 +27,7 @@ class NestingTimeData {
   outerUnlockTime: number = 0;
 }
 
+// TC-014: Mutex outer + ReadLock inner task
 function mutexNestReadLockTask(mutex: Mutex, rwlock: RWLock, counter: AtomicInt): void {
   mutex.lock();
   try {
@@ -90,21 +91,11 @@ function writeLockNestMutexTask(rwlock: RWLock, mutex: Mutex, counter: AtomicInt
   }
 }
 
-// TC-018: Cross-thread nesting - holder task
-function crossThreadHolderTask(mutex: Mutex, counter: NestingSharedCounter): void {
+// TC-018: Cross-thread nesting - waiter task acquires the Mutex after the main thread releases it
+function crossThreadWaiterTask(mutex: Mutex): number {
   mutex.lock();
   try {
-    counter.value = counter.value + 1;
-  } finally {
-    mutex.unlock();
-  }
-}
-
-// TC-018: Cross-thread nesting - waiter task
-function crossThreadWaiterTask(mutex: Mutex, counter: NestingSharedCounter): void {
-  mutex.lock();
-  try {
-    counter.value = counter.value + 1;
+    return 1;
   } finally {
     mutex.unlock();
   }
@@ -121,20 +112,20 @@ function workerNestMainTask(mutex: Mutex, counter: AtomicInt): void {
 }
 
 // TC-020: Multi-worker nesting same lock - worker1
-function multiWorkerNestTask1(mutex: Mutex, counter: NestingSharedCounter): void {
+function multiWorkerNestTask1(mutex: Mutex): number {
   mutex.lock();
   try {
-    counter.value = counter.value + 1;
+    return 1;
   } finally {
     mutex.unlock();
   }
 }
 
 // TC-020: Multi-worker nesting same lock - worker2
-function multiWorkerNestTask2(mutex: Mutex, counter: NestingSharedCounter): void {
+function multiWorkerNestTask2(mutex: Mutex): number {
   mutex.lock();
   try {
-    counter.value = counter.value + 1;
+    return 1;
   } finally {
     mutex.unlock();
   }
@@ -519,23 +510,31 @@ export default function LockFactorNestingTest(): void {
     /**
      * @tc.name    LockFactorNestingTest0800
      * @tc.number  SUB_LOCK_FACTOR_NESTING_TEST_0800
-     * @tc.desc    TC-018: Verify cross-thread lock nesting - main thread lock then TaskPool task waits then main unlock
+     * @tc.desc    TC-018: Verify cross-thread lock nesting - main thread holds Mutex then EAWorker task waits then main unlocks
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('LockFactorNestingTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
-      const counter = new NestingSharedCounter();
-      const worker1 = new EAWorker('lockFactorNestCT1');
-      const worker2 = new EAWorker('lockFactorNestCT2');
-      worker1.start();
-      worker2.start();
-      await worker1.run<void>(crossThreadHolderTask, mutex, counter);
-      await worker2.run<void>(crossThreadWaiterTask, mutex, counter);
-      worker1.quit();
-      worker2.quit();
-      expect(counter.value).assertEqual(2);
+      const worker = new EAWorker('lockFactorNestCT1');
+      worker.start();
+      try {
+        mutex.lock();
+        const workerJob = worker.run<number>(crossThreadWaiterTask, mutex);
+        try {
+          // Main thread keeps holding the lock while the worker task waits
+          let sum: number = 0;
+          for (let i = 0; i < 50000; i++) {
+            sum = sum + i;
+          }
+        } finally {
+          mutex.unlock();
+        }
+        expect(workerJob.Await()).assertEqual(1);
+      } finally {
+        worker.quit();
+      }
     })
 
     /**
@@ -551,8 +550,11 @@ export default function LockFactorNestingTest(): void {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorNest01');
       worker.start();
-      await worker.run<void>(workerNestMainTask, mutex, counter);
-      worker.quit();
+      try {
+        await worker.run<void>(workerNestMainTask, mutex, counter);
+      } finally {
+        worker.quit();
+      }
       mutex.lock();
       try {
         counter.fetchAdd(1);
@@ -572,16 +574,19 @@ export default function LockFactorNestingTest(): void {
      */
     it('LockFactorNestingTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const mutex = new Mutex();
-      const counter = new NestingSharedCounter();
       const worker1 = new EAWorker('lockFactorNest02');
       const worker2 = new EAWorker('lockFactorNest03');
       worker1.start();
       worker2.start();
-      await worker1.run<void>(multiWorkerNestTask1, mutex, counter);
-      await worker2.run<void>(multiWorkerNestTask2, mutex, counter);
-      worker1.quit();
-      worker2.quit();
-      expect(counter.value).assertEqual(2);
+      try {
+        const job1 = worker1.run<number>(multiWorkerNestTask1, mutex);
+        const job2 = worker2.run<number>(multiWorkerNestTask2, mutex);
+        expect(job1.Await()).assertEqual(1);
+        expect(job2.Await()).assertEqual(1);
+      } finally {
+        worker1.quit();
+        worker2.quit();
+      }
     })
 
     /**
@@ -677,7 +682,7 @@ export default function LockFactorNestingTest(): void {
     /**
      * @tc.name    LockFactorNestingTest1400
      * @tc.number  SUB_LOCK_FACTOR_NESTING_TEST_1400
-     * @tc.desc    TC-025: Verify nested lock hold time - outer lock hold time affects inner lock wait correctness
+     * @tc.desc    TC-025: Verify nested lock hold time recording - inner lock timestamps are ordered within nested execution
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -810,7 +815,7 @@ export default function LockFactorNestingTest(): void {
     /**
      * @tc.name    LockFactorNestingTest2100
      * @tc.number  SUB_LOCK_FACTOR_NESTING_TEST_2100
-     * @tc.desc    TC-032: Verify nested lock timeout - inner lock wait does not affect outer lock correctness
+     * @tc.desc    TC-022: Verify nested lock timeout - waiter task acquires the lock after the holder releases it without affecting lock correctness
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2

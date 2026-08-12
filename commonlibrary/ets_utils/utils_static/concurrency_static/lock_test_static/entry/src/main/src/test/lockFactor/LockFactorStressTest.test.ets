@@ -191,7 +191,7 @@ function mutexNormalAfterRecoveryTask(mutex: Mutex, counter: AtomicInt): void {
   }
 }
 
-// TC-065: RWLock exception recovery task
+// TC-065: RWLock read task for lock usability verification
 function rwlockExceptionRecoveryTask(rwlock: RWLock, counter: AtomicInt): void {
   const readLock = rwlock.readLock();
   readLock.lock();
@@ -284,7 +284,7 @@ export default function LockFactorStressTest(): void {
     /**
      * @tc.name    LockFactorStressTest0300
      * @tc.number  SUB_LOCK_FACTOR_STRESS_TEST_0300
-     * @tc.desc    TC-056: Verify mixed Mutex and RWLock extreme concurrency stability with 10 tasks
+     * @tc.desc    TC-056: Verify mixed Mutex and RWLock extreme concurrency stability with 5 tasks
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
@@ -496,7 +496,7 @@ export default function LockFactorStressTest(): void {
     /**
      * @tc.name    LockFactorStressTest1200
      * @tc.number  SUB_LOCK_FACTOR_STRESS_TEST_1200
-     * @tc.desc    TC-065: Verify RWLock exception recovery - ReadLock.unlock on unlocked state does not break lock
+     * @tc.desc    TC-065: Verify RWLock remains usable after concurrent read task - subsequent read/write lock operations succeed
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -529,23 +529,26 @@ export default function LockFactorStressTest(): void {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorStress01');
       worker.start();
-      let exceptionCaught: boolean = false;
       try {
-        worker.run<void>(mutexExceptionRecoveryTask, mutex, counter).Await();
-      } catch (e) {
-        exceptionCaught = true;
-      }
-      worker.quit();
-      expect(exceptionCaught).assertTrue();
-      expect(counter.load()).assertEqual(1);
-      // Verify lock is usable after worker exits
-      mutex.lock();
-      try {
-        counter.fetchAdd(1);
+        let exceptionCaught: boolean = false;
+        try {
+          worker.run<void>(mutexExceptionRecoveryTask, mutex, counter).Await();
+        } catch (e) {
+          exceptionCaught = true;
+        }
+        expect(exceptionCaught).assertTrue();
+        expect(counter.load()).assertEqual(1);
+        // Verify lock is usable after worker exits
+        mutex.lock();
+        try {
+          counter.fetchAdd(1);
+        } finally {
+          mutex.unlock();
+        }
+        expect(counter.load()).assertEqual(2);
       } finally {
-        mutex.unlock();
+        worker.quit();
       }
-      expect(counter.load()).assertEqual(2);
     })
 
     /**

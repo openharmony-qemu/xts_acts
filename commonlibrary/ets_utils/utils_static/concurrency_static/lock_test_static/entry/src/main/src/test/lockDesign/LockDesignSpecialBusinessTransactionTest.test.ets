@@ -62,7 +62,7 @@ class BatchProgressData {
 
 // ==================== Stream classes ====================
 class StreamData {
-  readCount: number = 0;
+  readCount: AtomicInt = new AtomicInt(0);
   writeCount: number = 0;
 }
 
@@ -221,7 +221,7 @@ function streamReadTask(rwlock: RWLock, data: StreamData, counter: AtomicInt): v
   const readLock = rwlock.readLock();
   readLock.lock();
   try {
-    data.readCount = data.readCount + 1;
+    data.readCount.fetchAdd(1);
     counter.fetchAdd(1);
   } finally {
     readLock.unlock();
@@ -515,6 +515,7 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       await Promise.all([t1, t2]);
       expect(counter.load()).assertEqual(2);
       expect(data.processed).assertEqual(4);
+      expect(data.interrupted).assertTrue();
       expect(data.resumed).assertTrue();
     })
 
@@ -562,6 +563,7 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       let w2 = taskpool.execute(new taskpool.Task(streamWriteTask, rwlock, data, counter));
       await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
       expect(counter.load()).assertEqual(7);
+      expect(data.readCount.load()).assertEqual(5);
       expect(data.writeCount).assertEqual(2);
     })
 
@@ -689,6 +691,7 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       await Promise.all([t1, t2]);
       expect(counter.load()).assertEqual(2);
       expect(data.executed).assertEqual(2);
+      expect(data.cancelled).assertTrue();
     })
 
     /**
@@ -709,6 +712,7 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.executed).assertEqual(3);
+      expect(data.errorHandled).assertTrue();
     })
 
     /**

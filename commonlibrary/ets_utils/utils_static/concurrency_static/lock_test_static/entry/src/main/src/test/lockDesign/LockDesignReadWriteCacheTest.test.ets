@@ -36,7 +36,7 @@ class AvalancheCacheData {
 class PenetrateCacheData {
   value: number = 0;
   hasValue: boolean = false;
-  missCount: number = 0;
+  missCount: AtomicInt = new AtomicInt(0);
 }
 
 class LruCacheData {
@@ -52,7 +52,7 @@ class PreloadCacheData {
 // ==================== ReadWriteConfig classes ====================
 class ConfigData {
   value: string = 'config_v1';
-  readCount: number = 0;
+  readCount: AtomicInt = new AtomicInt(0);
 }
 
 class HotUpdateConfig {
@@ -185,7 +185,7 @@ function penetrateReadTask(rwlock: RWLock, cache: PenetrateCacheData, counter: A
   readLock.lock();
   try {
     if (!cache.hasValue) {
-      cache.missCount = cache.missCount + 1;
+      cache.missCount.fetchAdd(1);
     }
     counter.fetchAdd(1);
   } finally {
@@ -264,7 +264,7 @@ function configReadTask(rwlock: RWLock, config: ConfigData, counter: AtomicInt):
   readLock.lock();
   try {
     let val: string = config.value;
-    config.readCount = config.readCount + 1;
+    config.readCount.fetchAdd(1);
     counter.fetchAdd(1);
   } finally {
     readLock.unlock();
@@ -649,6 +649,7 @@ export default function LockDesignReadWriteCacheTest(): void {
       let w1 = taskpool.execute(new taskpool.Task(configUpdateTask, rwlock, config, counter));
       await Promise.all([r1, r2, r3, r4, r5, w1]);
       expect(counter.load()).assertEqual(6);
+      expect(config.readCount.load()).assertEqual(5);
     })
 
     /**
@@ -712,6 +713,8 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([t1, t2]);
       expect(counter.load()).assertEqual(2);
       expect(config.rollbackCount).assertEqual(2);
+      // Two serialized swap-rollbacks restore the original current value.
+      expect(config.currentValue).assertEqual('current');
     })
 
     /**
@@ -861,6 +864,7 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(counter.load()).assertEqual(6);
       expect(data.queryCount.load()).assertEqual(5);
       expect(data.rebuildCount.load()).assertEqual(1);
+      expect(data.index.length).assertEqual(6);
     })
   })
 }

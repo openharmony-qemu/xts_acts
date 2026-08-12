@@ -434,6 +434,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(pool.allocated).assertEqual(3);
       expect(pool.freed).assertEqual(2);
+      // 5 initial blocks - 3 allocations + 2 frees.
+      expect(pool.blocks.length).assertEqual(4);
     })
 
     /**
@@ -453,6 +455,9 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       await Promise.all([d1, d2]);
       expect(counter.load()).assertEqual(2);
       expect(pool.defragCount).assertEqual(2);
+      // Defragmentation compacts the 4 used slots to the front.
+      expect(pool.usedSlots[3]).assertTrue();
+      expect(pool.usedSlots[4]).assertFalse();
     })
 
     /**
@@ -527,6 +532,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       await Promise.all([e1, e2, e3, e4, e5, d1, d2, d3, d4, d5]);
       expect(counter.load()).assertEqual(10);
       expect(queue.enqueued).assertEqual(5);
+      // Conservation: every dequeued task was enqueued, the rest remain queued.
+      expect(queue.dequeued + queue.tasks.length).assertEqual(5);
     })
 
     /**
@@ -602,6 +609,7 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       await Promise.all([p1, p2, p3]);
       expect(counter.load()).assertEqual(6);
       expect(queue.completed).assertEqual(3);
+      expect(queue.timedOut).assertEqual(0);
     })
   })
 }
