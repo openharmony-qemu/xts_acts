@@ -16,7 +16,7 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import { ArkTSUtils, lang } from '@kit.ArkTS'
 import taskpool from '@ohos.taskpool'
 import { freezeSendable, isFrozenSendable } from '../helper/freezeHelper'
-import { SharedCounter } from '../../../workers/sendable'
+import { SharedCounter } from '../../workers/Sendable'
 
 @Sendable
 class FreezeConfig implements lang.ISendable {

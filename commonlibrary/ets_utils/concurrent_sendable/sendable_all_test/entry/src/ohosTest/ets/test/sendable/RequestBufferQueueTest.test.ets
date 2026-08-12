@@ -16,7 +16,7 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
-import { Request } from '../../../workers/sendable'
+import { Request } from '../../workers/Sendable'
 import Utils from '../utils'
 
 @Sendable

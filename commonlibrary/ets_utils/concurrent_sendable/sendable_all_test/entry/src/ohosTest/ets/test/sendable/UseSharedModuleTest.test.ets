@@ -15,7 +15,7 @@
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
-import { sharedGuideService } from '../../workers/shared_guide_service'
+import { sharedGuideService } from '../../workers/SharedGuideService'
 
 @Concurrent
 async function incrSharedGuide(lock: ArkTSUtils.locks.AsyncLock): Promise<number> {

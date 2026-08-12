@@ -16,10 +16,10 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { worker, MessageEvents } from '@kit.ArkTS'
-import { SendableCounter } from '../../../workers/sendable'
+import { SendableCounter } from '../../workers/Sendable'
 import Utils from '../utils'
 
-const WORKER_PATH = '../../workers/sendable_worker.ets'
+const WORKER_PATH = '../../workers/SendableWorker.ets'
 
 @Sendable
 class TaskCompletionCounter {

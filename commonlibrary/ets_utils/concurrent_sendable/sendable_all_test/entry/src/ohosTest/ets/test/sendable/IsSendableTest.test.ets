@@ -15,7 +15,7 @@
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { ArkTSUtils, lang } from '@kit.ArkTS'
 import taskpool from '@ohos.taskpool'
-import { SharedCounter } from '../../../workers/sendable'
+import { SharedCounter } from '../../workers/Sendable'
 
 class PlainObject {
   a: number = 1

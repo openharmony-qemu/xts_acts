@@ -17,7 +17,7 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
-import { EventQueueItem } from '../../../workers/sendable'
+import { EventQueueItem } from '../../workers/Sendable'
 
 @Sendable
 class EventQueueBus {

@@ -24,7 +24,7 @@ import {
   MethodSendableClass,
   ChildSendableClass,
   GrandChildSendableClass
-} from '../../../workers/sendable'
+} from '../../workers/Sendable'
 import Utils from '../utils'
 
 @Concurrent
