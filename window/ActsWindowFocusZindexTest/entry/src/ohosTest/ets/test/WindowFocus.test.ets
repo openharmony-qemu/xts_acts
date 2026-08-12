@@ -1058,8 +1058,8 @@ export default function windowFocusTest() {
         windowClass.off('windowHighlightChange',callback);
         console.log(msgStr  + 'Succeeded on windowHighlightChange ');
         done()
-      } catch (e) {
-        console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+      } catch (err) {
+        console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(err.code));
         if (!canIUseRes) {
           expect(err.code).assertEqual(801);
           expect(err.message !== '').assertTrue();
