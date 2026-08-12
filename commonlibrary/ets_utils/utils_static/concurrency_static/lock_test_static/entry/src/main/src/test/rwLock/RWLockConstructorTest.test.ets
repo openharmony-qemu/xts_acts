@@ -348,8 +348,11 @@ export default function RWLockConstructorTest(): void {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('rwlockCtorWorker1');
       worker.start();
-      await worker.run<void>(eaWorkerConstructTask, counter);
-      worker.quit();
+      try {
+        await worker.run<void>(eaWorkerConstructTask, counter);
+      } finally {
+        worker.quit();
+      }
       expect(counter.load()).assertEqual(1);
     })
 
@@ -365,8 +368,11 @@ export default function RWLockConstructorTest(): void {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('rwlockCtorWorker2');
       worker.start();
-      await worker.run<void>(eaWorkerConstructAndUseTask, counter);
-      worker.quit();
+      try {
+        await worker.run<void>(eaWorkerConstructAndUseTask, counter);
+      } finally {
+        worker.quit();
+      }
       expect(counter.load()).assertEqual(1);
     })
 
@@ -384,15 +390,24 @@ export default function RWLockConstructorTest(): void {
      */
     it('RWLockConstructorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const rwlock = new RWLock();
-      let usable: boolean = false;
       const rl = rwlock.readLock();
-      rl.lock();
-      rl.unlock();
       const wl = rwlock.writeLock();
+      let state: number = 0;
       wl.lock();
-      wl.unlock();
-      usable = true;
-      expect(usable).assertTrue();
+      try {
+        state = 42;
+      } finally {
+        wl.unlock();
+      }
+      let observed: number = 0;
+      rl.lock();
+      try {
+        observed = state;
+      } finally {
+        rl.unlock();
+      }
+      expect(state).assertEqual(42);
+      expect(observed).assertEqual(42);
     })
 
     /**
@@ -428,26 +443,18 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('RWLockConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      // A newly constructed RWLock starts unlocked, so the first acquisitions succeed immediately,
+      // including when the first acquirer runs on another thread.
       const rwlock = new RWLock();
-      const wl = rwlock.writeLock();
-      let writeAcquired: boolean = false;
-      wl.lock();
-      try {
-        writeAcquired = true;
-      } finally {
-        wl.unlock();
-      }
-      const rl = rwlock.readLock();
-      let readAcquired: boolean = false;
-      rl.lock();
-      try {
-        readAcquired = true;
-      } finally {
-        rl.unlock();
-      }
-      expect(writeAcquired).assertTrue();
-      expect(readAcquired).assertTrue();
+      const writeCounter = new RWLockCtorSharedCounter();
+      const readCounter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(rwlockWriteUseTask, rwlock, writeCounter));
+      await p1;
+      expect(writeCounter.value).assertEqual(10);
+      let p2 = taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, readCounter));
+      await p2;
+      expect(readCounter.load()).assertEqual(1);
     })
 
     /**
@@ -521,10 +528,13 @@ export default function RWLockConstructorTest(): void {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('rwlockCtorWorker3');
       worker.start();
-      await worker.run<void>(eaWorkerConstructTask, counter);
-      await worker.run<void>(eaWorkerConstructTask, counter);
-      await worker.run<void>(eaWorkerConstructTask, counter);
-      worker.quit();
+      try {
+        await worker.run<void>(eaWorkerConstructTask, counter);
+        await worker.run<void>(eaWorkerConstructTask, counter);
+        await worker.run<void>(eaWorkerConstructTask, counter);
+      } finally {
+        worker.quit();
+      }
       expect(counter.load()).assertEqual(3);
     })
   })

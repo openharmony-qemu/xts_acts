@@ -37,17 +37,6 @@ function readLockSingleAcquireTask(c: ReadLockSharedCounter): void {
   }
 }
 
-// TC-09: Multi-thread concurrent read lock acquire
-function readLockConcurrentReadTask(c: ReadLockSharedCounter): void {
-  const rl = gReadLockRWLock.readLock();
-  rl.lock();
-  try {
-    c.value = c.value + 1;
-  } finally {
-    rl.unlock();
-  }
-}
-
 // TC-09 (Atomic version): Multi-thread concurrent read lock with atomic counter
 function readLockConcurrentReadTaskAtomic(c: ReadLockSharedCounter, atomicCounter: AtomicInt): void {
   const rl = gReadLockRWLock.readLock();
@@ -106,17 +95,6 @@ function readLockReaderAfterWriterTask(c: ReadLockSharedCounter): void {
   }
 }
 
-// TC-12: Reader increments shared counter under read lock
-function readLockSharedAccessTask(c: ReadLockSharedCounter): void {
-  const rl = gReadLockRWLock.readLock();
-  rl.lock();
-  try {
-    c.value = c.value + 1;
-  } finally {
-    rl.unlock();
-  }
-}
-
 // TC-12 (Atomic version): Reader increments with atomic counter
 function readLockSharedAccessTaskAtomic(c: ReadLockSharedCounter, atomicCounter: AtomicInt): void {
   const rl = gReadLockRWLock.readLock();
@@ -146,17 +124,6 @@ function readLockReadSharedVarTask(c: ReadLockSharedCounter): void {
   try {
     let temp: number = c.value;
     temp = temp + 0;
-  } finally {
-    rl.unlock();
-  }
-}
-
-// TC-19: Read lock with AtomicInt
-function readLockAtomicReadTask(a: AtomicInt): void {
-  const rl = gReadLockRWLock.readLock();
-  rl.lock();
-  try {
-    a.load();
   } finally {
     rl.unlock();
   }
@@ -228,18 +195,6 @@ function eaWorkerReadLockBasicTask(a: AtomicInt): void {
   }
 }
 
-// TC-15: EAWorker read and write lock
-function eaWorkerReadLockFullTask(a: AtomicInt): void {
-  const rl = gReadLockRWLock.readLock();
-  rl.lock();
-  a.fetchAdd(1);
-  rl.unlock();
-  const wl = gReadLockRWLock.writeLock();
-  wl.lock();
-  a.fetchAdd(10);
-  wl.unlock();
-}
-
 export default function RWLockReadLockTest(): void {
   describe('RWLockReadLockTest', (): void => {
     beforeAll((): void => {})
@@ -287,21 +242,21 @@ export default function RWLockReadLockTest(): void {
     /**
      * @tc.name    RWLockReadLockTest0300
      * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_0300
-     * @tc.desc    Verify multiple threads (5) can concurrently acquire read locks for shared access
+     * @tc.desc    Verify multiple threads (5) can concurrently acquire read locks and complete without error
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('RWLockReadLockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new ReadLockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTask, counter));
+      const atomicCounter = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
+      let p2 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
+      let p3 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
+      let p4 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
+      let p5 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
       await Promise.all([p1, p2, p3, p4, p5]);
-      expect(counter.value).assertLargerOrEqual(1);
-      expect(counter.value).assertLessOrEqual(5);
+      expect(atomicCounter.load()).assertEqual(5);
     })
 
     /**
@@ -350,7 +305,7 @@ export default function RWLockReadLockTest(): void {
     /**
      * @tc.name    RWLockReadLockTest0600
      * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_0600
-     * @tc.desc    Verify multiple threads (10) can simultaneously hold read locks and access shared resource
+     * @tc.desc    Verify multiple threads (10) can concurrently acquire read locks and access shared resource without error
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -404,8 +359,11 @@ export default function RWLockReadLockTest(): void {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('readLockEAWkr1');
       worker.start();
-      await worker.run<void>(eaWorkerReadLockBasicTask, counter);
-      worker.quit();
+      try {
+        await worker.run<void>(eaWorkerReadLockBasicTask, counter);
+      } finally {
+        worker.quit();
+      }
       expect(counter.load()).assertEqual(1);
     })
 
@@ -451,7 +409,7 @@ export default function RWLockReadLockTest(): void {
     /**
      * @tc.name    RWLockReadLockTest1100
      * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1100
-     * @tc.desc    Verify read lock protects shared variable reads correctly across multiple threads
+     * @tc.desc    Verify multiple threads (5) can read a shared variable under read lock without error
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -472,30 +430,12 @@ export default function RWLockReadLockTest(): void {
     /**
      * @tc.name    RWLockReadLockTest1200
      * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1200
-     * @tc.desc    Verify read lock works correctly with AtomicInt atomic variable
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL2
-     */
-    it('RWLockReadLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const atomic = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockAtomicReadTask, atomic));
-      let p2 = taskpool.execute(new taskpool.Task(readLockAtomicReadTask, atomic));
-      let p3 = taskpool.execute(new taskpool.Task(readLockAtomicReadTask, atomic));
-      await Promise.all([p1, p2, p3]);
-      // All read tasks completed without error, AtomicInt value unchanged
-      expect(atomic.load()).assertEqual(0);
-    })
-
-    /**
-     * @tc.name    RWLockReadLockTest1300
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1300
      * @tc.desc    Verify read lock lifecycle management: acquire, use, release does not leak resources
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockReadLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockReadLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockLifecycleTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(readLockLifecycleTask, counter));
@@ -505,47 +445,43 @@ export default function RWLockReadLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockReadLockTest1400
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1400
-     * @tc.desc    Verify read lock acquired without unlock does not crash the system
+     * @tc.name    RWLockReadLockTest1300
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1300
+     * @tc.desc    Verify a held read lock is released cleanly and the write lock can be acquired afterwards
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockReadLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('RWLockReadLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
-      let readHeld: boolean = false;
-      let writeAcquired: boolean = false;
+      let state: number = 0;
       rl.lock();
       try {
-        // Intentionally hold the read lock without an immediate unlock.
-        readHeld = true;
+        state = 1;
       } finally {
-        // Clean up: release the read lock so the test does not leak.
         rl.unlock();
       }
       // After the read lock is released the write lock must be acquirable.
       const wl = rwlock.writeLock();
       wl.lock();
       try {
-        writeAcquired = true;
+        state = state + 1;
       } finally {
         wl.unlock();
       }
-      expect(readHeld).assertTrue();
-      expect(writeAcquired).assertTrue();
+      expect(state).assertEqual(2);
     })
 
     /**
-     * @tc.name    RWLockReadLockTest1500
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1500
+     * @tc.name    RWLockReadLockTest1400
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1400
      * @tc.desc    Verify read and write locks work correctly in mixed alternating acquire/release scenario
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockReadLockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockReadLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockReadWriteMixedTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(readLockReadWriteMixedTask, counter));
@@ -556,18 +492,18 @@ export default function RWLockReadLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockReadLockTest1600
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1600
-     * @tc.desc    Verify read lock stability when held for an extended period (500 ms): other readers can still operate concurrently
+     * @tc.name    RWLockReadLockTest1500
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1500
+     * @tc.desc    Verify read lock stability when held for an extended period (500 ms) while other read tasks complete
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockReadLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockReadLockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new AtomicInt(0);
-      // Long-held read lock (5s)
+      // Long-held read lock (500 ms)
       let p1 = taskpool.execute(new taskpool.Task(readLockLongHoldTask, counter));
-      // Short reads that should succeed concurrently (read locks are shared)
+      // Short reads that run while the long read holds (read locks are shared)
       let p2 = taskpool.execute(new taskpool.Task(readLockShortReadTask, counter));
       let p3 = taskpool.execute(new taskpool.Task(readLockShortReadTask, counter));
       await Promise.all([p1, p2, p3]);
@@ -576,14 +512,14 @@ export default function RWLockReadLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockReadLockTest1700
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1700
+     * @tc.name    RWLockReadLockTest1600
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1600
      * @tc.desc    Verify readLock() returns a reusable ReadLock object that supports shared locking
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockReadLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('RWLockReadLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
       // A ReadLock supports shared acquisition: two read holds coexist without blocking
@@ -595,35 +531,36 @@ export default function RWLockReadLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockReadLockTest1800
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1800
+     * @tc.name    RWLockReadLockTest1700
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1700
      * @tc.desc    Verify readLock() returns a non-null usable ReadLock object
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockReadLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('RWLockReadLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
-      let usable: boolean = false;
+      let shared: number = 42;
+      let observed: number = 0;
       rl.lock();
       try {
-        usable = true;
+        observed = shared;
       } finally {
         rl.unlock();
       }
-      expect(usable).assertTrue();
+      expect(observed).assertEqual(42);
     })
 
     /**
-     * @tc.name    RWLockReadLockTest1900
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1900
+     * @tc.name    RWLockReadLockTest1800
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1800
      * @tc.desc    Verify readLock() still returns a usable ReadLock after the RWLock has been fully used and released (destroyed-object scenario approximation)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockReadLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('RWLockReadLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       // RWLock exposes no destroy API, so the exact destroyed-object behavior cannot be exercised.
       // Closest semantics: after the RWLock is fully used and all locks released, readLock() still
       // returns a valid ReadLock without throwing or returning an invalid object.
@@ -631,26 +568,27 @@ export default function RWLockReadLockTest(): void {
       const rl1 = rwlock.readLock();
       rl1.lock();
       rl1.unlock();
-      let postUseOk: boolean = false;
+      let shared: number = 7;
+      let observed: number = 0;
       const rl2 = rwlock.readLock();
       rl2.lock();
       try {
-        postUseOk = true;
+        observed = shared;
       } finally {
         rl2.unlock();
       }
-      expect(postUseOk).assertTrue();
+      expect(observed).assertEqual(7);
     })
 
     /**
-     * @tc.name    RWLockReadLockTest2000
-     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_2000
+     * @tc.name    RWLockReadLockTest1900
+     * @tc.number  SUB_RW_LOCK_READ_LOCK_TEST_1900
      * @tc.desc    Verify read lock can be acquired reentrantly (nested acquisition) by the same thread
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockReadLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('RWLockReadLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const rwlock = new RWLock();
       const rl1 = rwlock.readLock();
       const rl2 = rwlock.readLock();

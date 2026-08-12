@@ -37,78 +37,55 @@ function writeLockIncrementTask(c: WriteLockSharedCounter): void {
   }
 }
 
-// TC-CONC-002/010/011: WriteLock acquire and increment AtomicInt
-function writeLockAtomicIncrementTask(a: AtomicInt): void {
+// TC-CONC-004: Write lock holder - signals readiness, holds briefly, then sets value to 100
+function writeLockWriteHolderTask(c: WriteLockSharedCounter, holderReady: AtomicInt): void {
   const wl = gRWLock.writeLock();
   wl.lock();
   try {
-    a.fetchAdd(1);
-  } finally {
-    wl.unlock();
-  }
-}
-
-// TC-CONC-003: Write lock holder - sets value to 1
-function writeLockHolderTask(c: WriteLockSharedCounter): void {
-  const wl = gRWLock.writeLock();
-  wl.lock();
-  try {
-    c.value = 1;
-  } finally {
-    wl.unlock();
-  }
-}
-
-// TC-CONC-003: Write lock waiter - increments value by 1
-function writeLockWaiterTask(c: WriteLockSharedCounter): void {
-  const wl = gRWLock.writeLock();
-  wl.lock();
-  try {
-    c.value = c.value + 1;
-  } finally {
-    wl.unlock();
-  }
-}
-
-// TC-CONC-004: Write lock holder - sets value to 100
-function writeLockWriteSetTask(c: AtomicInt): void {
-  const wl = gRWLock.writeLock();
-  wl.lock();
-  try {
-    c.fetchAdd(100);
+    holderReady.store(1);
+    const start: number = Date.now();
+    while (Date.now() - start < 200) {
+      // hold the write lock briefly so the reader overlaps with the hold
+    }
+    c.value = 100;
   } finally {
     wl.unlock();
   }
 }
 
 // TC-CONC-004: Read lock waiter - increments value by 1
-function writeLockReadWaiterTask(c: AtomicInt): void {
+function writeLockReadWaiterTask(c: WriteLockSharedCounter): void {
   const rl = gRWLock.readLock();
   rl.lock();
   try {
-    c.fetchAdd(1);
+    c.value = c.value + 1;
   } finally {
     rl.unlock();
   }
 }
 
-// TC-CONC-005: Read lock holder - sets value to 50
-function writeLockReadHolderTask(c: AtomicInt): void {
+// TC-CONC-005: Read lock holder - signals readiness, holds briefly, then sets value to 50
+function writeLockReadHolderTask(c: WriteLockSharedCounter, holderReady: AtomicInt): void {
   const rl = gRWLock.readLock();
   rl.lock();
   try {
-    c.fetchAdd(50);
+    holderReady.store(1);
+    const start: number = Date.now();
+    while (Date.now() - start < 200) {
+      // hold the read lock briefly so the writer overlaps with the hold
+    }
+    c.value = 50;
   } finally {
     rl.unlock();
   }
 }
 
 // TC-CONC-005: Write lock waiter after read - adds 100
-function writeLockWriteAddTask(c: AtomicInt): void {
+function writeLockWriteAddTask(c: WriteLockSharedCounter): void {
   const wl = gRWLock.writeLock();
   wl.lock();
   try {
-    c.fetchAdd(100);
+    c.value = c.value + 100;
   } finally {
     wl.unlock();
   }
@@ -204,16 +181,14 @@ function writeLockSequentialReuseTask(counter: AtomicInt): void {
   counter.fetchAdd(1);
 }
 
-// TC-CONC-011: Fairness - each waiter records its acquisition order inside the critical section
-class WriteLockOrderData {
-  order: Array<number> = [];
-}
-
-function writeLockOrderedAcquireTask(rwlock: RWLock, data: WriteLockOrderData, value: int): void {
+// TC-CONC-011: Each waiter records one acquisition and its value inside the critical section
+function writeLockOrderedAcquireTask(rwlock: RWLock, acquisitions: AtomicInt, sum: AtomicInt,
+  value: int): void {
   const wl = rwlock.writeLock();
   wl.lock();
   try {
-    data.order.push(value);
+    acquisitions.fetchAdd(1);
+    sum.fetchAdd(value);
   } finally {
     wl.unlock();
   }
@@ -224,13 +199,16 @@ class WriteLockCancelData {
   ran: boolean = false;
 }
 
-function writeLockHolderDelayTask(rwlock: RWLock, c: AtomicInt): void {
+function writeLockHolderDelayTask(rwlock: RWLock, c: AtomicInt, holderReady: AtomicInt, cancelDone: AtomicInt): void {
   const wl = rwlock.writeLock();
   wl.lock();
   try {
+    holderReady.store(1);
+    // Hold the write lock until the cancellation attempt is done so the waiter is guaranteed to be
+    // blocked in lock() when cancel() is called (bounded to avoid a deadlock on the failure path).
     const start: number = Date.now();
-    while (Date.now() - start < 300) {
-      // hold the write lock briefly so a waiter queues behind it
+    while (cancelDone.load() === 0 && Date.now() - start < 5000) {
+      // spin
     }
     c.fetchAdd(1);
   } finally {
@@ -239,7 +217,8 @@ function writeLockHolderDelayTask(rwlock: RWLock, c: AtomicInt): void {
   c.fetchAdd(100);
 }
 
-function writeLockCancelledWaiterTask(rwlock: RWLock, data: WriteLockCancelData, c: AtomicInt): void {
+function writeLockCancelledWaiterTask(rwlock: RWLock, data: WriteLockCancelData, c: AtomicInt, started: AtomicInt): void {
+  started.store(1);
   const wl = rwlock.writeLock();
   wl.lock();
   try {
@@ -281,7 +260,7 @@ export default function RWLockWriteLockTest(): void {
     /**
      * @tc.name    RWLockWriteLockTest0200
      * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0200
-     * @tc.desc    Verify batch creation of WriteLock objects does not cause resource exhaustion
+     * @tc.desc    Verify 1000 consecutive writeLock() calls succeed without throwing exceptions
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -299,25 +278,25 @@ export default function RWLockWriteLockTest(): void {
     /**
      * @tc.name    RWLockWriteLockTest0300
      * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_0300
-     * @tc.desc    Verify writeLock() works correctly in try-finally exception handling context
+     * @tc.desc    Verify writeLock() works correctly in a try-finally usage context and the lock is released for re-acquisition
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('RWLockWriteLockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const rwlock = new RWLock();
-      let lockAcquired: boolean = false;
-      let finallyExecuted: boolean = false;
       const wl = rwlock.writeLock();
+      let state: number = 0;
       wl.lock();
       try {
-        lockAcquired = true;
+        state = 42;
       } finally {
-        finallyExecuted = true;
         wl.unlock();
       }
-      expect(lockAcquired).assertTrue();
-      expect(finallyExecuted).assertTrue();
+      expect(state).assertEqual(42);
+      // The finally block released the lock: it can be acquired again
+      wl.lock();
+      wl.unlock();
     })
 
     // ========== CONCURRENCY TESTS ==========
@@ -374,11 +353,20 @@ export default function RWLockWriteLockTest(): void {
      * @tc.level   LEVEL1
      */
     it('RWLockWriteLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(writeLockWriteSetTask, counter));
+      const counter = new WriteLockSharedCounter();
+      const holderReady = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(writeLockWriteHolderTask, counter, holderReady));
+      // Wait until the writer actually holds the write lock before starting the reader (bounded poll).
+      let waitCycles: number = 0;
+      while (holderReady.load() === 0 && waitCycles < 50) {
+        await Utils.msSleep(100);
+        waitCycles++;
+      }
+      expect(holderReady.load()).assertEqual(1);
       let p2 = taskpool.execute(new taskpool.Task(writeLockReadWaiterTask, counter));
       await Promise.all([p1, p2]);
-      expect(counter.load()).assertEqual(101);
+      // The reader was blocked while the writer held the write lock: it reads 100 and adds 1 -> 101.
+      expect(counter.value).assertEqual(101);
     })
 
     /**
@@ -390,11 +378,20 @@ export default function RWLockWriteLockTest(): void {
      * @tc.level   LEVEL1
      */
     it('RWLockWriteLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(writeLockReadHolderTask, counter));
+      const counter = new WriteLockSharedCounter();
+      const holderReady = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(writeLockReadHolderTask, counter, holderReady));
+      // Wait until the reader actually holds the read lock before starting the writer (bounded poll).
+      let waitCycles: number = 0;
+      while (holderReady.load() === 0 && waitCycles < 50) {
+        await Utils.msSleep(100);
+        waitCycles++;
+      }
+      expect(holderReady.load()).assertEqual(1);
       let p2 = taskpool.execute(new taskpool.Task(writeLockWriteAddTask, counter));
       await Promise.all([p1, p2]);
-      expect(counter.load()).assertEqual(150);
+      // The writer was blocked while the reader held the read lock: 50 set first, then +100 -> 150.
+      expect(counter.value).assertEqual(150);
     })
 
     /**
@@ -465,30 +462,31 @@ export default function RWLockWriteLockTest(): void {
      * @tc.level   LEVEL2
      */
     it('RWLockWriteLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p6 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p7 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p8 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p9 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p10 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p11 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p12 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p13 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p14 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p15 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p16 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p17 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p18 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p19 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
-      let p20 = taskpool.execute(new taskpool.Task(writeLockAtomicIncrementTask, atomicCounter));
+      const counter = new WriteLockSharedCounter();
+      let p1 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p2 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p3 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p4 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p5 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p6 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p7 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p8 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p9 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p10 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p11 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p12 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p13 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p14 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p15 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p16 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p17 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p18 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p19 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
+      let p20 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
         p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
-      expect(atomicCounter.load()).assertEqual(20);
+      // Non-atomic read-modify-write under the exclusive write lock: any lock failure loses updates
+      expect(counter.value).assertEqual(20);
     })
 
 
@@ -591,33 +589,12 @@ export default function RWLockWriteLockTest(): void {
       const atomicCounter = new AtomicInt(0);
       const worker = new EAWorker('writeLockEAWkr1');
       worker.start();
-      await worker.run<void>(eaWorkerWriteLockBasicTask, atomicCounter);
-      worker.quit();
+      try {
+        worker.run<void>(eaWorkerWriteLockBasicTask, atomicCounter).Await();
+      } finally {
+        worker.quit();
+      }
       expect(atomicCounter.load()).assertEqual(1);
-    })
-
-    /**
-     * @tc.name    RWLockWriteLockTest1700
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1700
-     * @tc.desc    Verify writeLock() returns WriteLock that holds lock protecting critical section across multiple threads
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('RWLockWriteLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter = new WriteLockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p6 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p7 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p8 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p9 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      let p10 = taskpool.execute(new taskpool.Task(writeLockStressTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
-      expect(counter.value).assertEqual(10);
     })
 
     // TC-PARAM-002 (md writeLock(1) parameter check) is skipped: writeLock() accepts no parameters and
@@ -625,35 +602,37 @@ export default function RWLockWriteLockTest(): void {
     // runtime-observable behavior and cannot be expressed as a runtime test case.
 
     /**
-     * @tc.name    RWLockWriteLockTest1800
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1800
+     * @tc.name    RWLockWriteLockTest1700
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1700
      * @tc.desc    Verify writeLock() returns a non-null usable WriteLock object
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockWriteLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('RWLockWriteLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const rwlock = new RWLock();
       const wl = rwlock.writeLock();
-      let usable: boolean = false;
-      wl.lock();
-      try {
-        usable = true;
-      } finally {
-        wl.unlock();
+      let state: number = 0;
+      for (let i = 0; i < 3; i++) {
+        wl.lock();
+        try {
+          state++;
+        } finally {
+          wl.unlock();
+        }
       }
-      expect(usable).assertTrue();
+      expect(state).assertEqual(3);
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest1900
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1900
+     * @tc.name    RWLockWriteLockTest1800
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1800
      * @tc.desc    Verify writeLock() returns a reusable WriteLock object that supports exclusive locking
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockWriteLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('RWLockWriteLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const rwlock = new RWLock();
       const wl = rwlock.writeLock();
       // A WriteLock provides exclusive acquisition: lock/unlock round-trip succeeds
@@ -663,35 +642,32 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2000
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2000
+     * @tc.name    RWLockWriteLockTest1900
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_1900
      * @tc.desc    Verify a freshly obtained WriteLock starts in unlocked state: first lock() succeeds immediately
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockWriteLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('RWLockWriteLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      // A freshly obtained WriteLock starts unlocked, so the first lock() succeeds immediately,
+      // including when the first acquirer runs on another thread.
       const rwlock = new RWLock();
-      const wl = rwlock.writeLock();
-      let acquired: boolean = false;
-      wl.lock();
-      try {
-        acquired = true;
-      } finally {
-        wl.unlock();
-      }
-      expect(acquired).assertTrue();
+      const counter = new WriteLockSharedCounter();
+      let p1 = taskpool.execute(new taskpool.Task(writeLockCrossThreadTask, rwlock, counter));
+      await p1;
+      expect(counter.value).assertEqual(1);
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2100
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2100
+     * @tc.name    RWLockWriteLockTest2000
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2000
      * @tc.desc    Verify writeLock() still returns a usable WriteLock after the RWLock has been fully used and released (destroyed-object scenario approximation)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockWriteLockTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('RWLockWriteLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       // RWLock exposes no destroy API, so the exact destroyed-object behavior cannot be exercised.
       // Closest semantics: after the RWLock is fully used and all locks released, writeLock() still
       // returns a valid WriteLock without throwing or returning an invalid object.
@@ -699,26 +675,26 @@ export default function RWLockWriteLockTest(): void {
       const wl1 = rwlock.writeLock();
       wl1.lock();
       wl1.unlock();
-      let postUseOk: boolean = false;
+      let state: number = 0;
       const wl2 = rwlock.writeLock();
       wl2.lock();
       try {
-        postUseOk = true;
+        state = 7;
       } finally {
         wl2.unlock();
       }
-      expect(postUseOk).assertTrue();
+      expect(state).assertEqual(7);
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2200
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2200
+     * @tc.name    RWLockWriteLockTest2100
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2100
      * @tc.desc    Verify write lock sequential lock-unlock reuse (same-thread nested reentrancy is implementation-dependent and not exercised to avoid deadlock)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockSequentialReuseTask, counter));
       await p1;
@@ -726,77 +702,71 @@ export default function RWLockWriteLockTest(): void {
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2300
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2300
+     * @tc.name    RWLockWriteLockTest2200
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2200
      * @tc.desc    Verify multiple write lock waiters acquire one at a time and all complete (approximate fairness verification)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockWriteLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockWriteLockTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const rwlock = new RWLock();
-      const data = new WriteLockOrderData();
-      let p1 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, data, 10));
-      let p2 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, data, 20));
-      let p3 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, data, 30));
-      let p4 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, data, 40));
-      let p5 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, data, 50));
+      const acquisitions = new AtomicInt(0);
+      const sum = new AtomicInt(0);
+      let p1 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, acquisitions, sum, 10));
+      let p2 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, acquisitions, sum, 20));
+      let p3 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, acquisitions, sum, 30));
+      let p4 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, acquisitions, sum, 40));
+      let p5 = taskpool.execute(new taskpool.Task(writeLockOrderedAcquireTask, rwlock, acquisitions, sum, 50));
       await Promise.all([p1, p2, p3, p4, p5]);
       // Every waiter acquired the write lock exactly once (records are made inside the critical section);
       // strict FIFO order is scheduler-dependent and is not asserted
-      expect(data.order.length).assertEqual(5);
-      let sum: number = 0;
-      for (let i = 0; i < data.order.length; i++) {
-        sum = sum + data.order[i];
-      }
-      expect(sum).assertEqual(150);
+      expect(acquisitions.load()).assertEqual(5);
+      expect(sum.load()).assertEqual(150);
     })
 
     /**
-     * @tc.name    RWLockWriteLockTest2400
-     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2400
-     * @tc.desc    Verify write lock acquisition behavior when a waiting task is cancelled (approximation of thread interruption/cancellation)
+     * @tc.name    RWLockWriteLockTest2300
+     * @tc.number  SUB_RW_LOCK_WRITE_LOCK_TEST_2300
+     * @tc.desc    Verify a task already blocked in write lock acquisition is not interrupted by taskpool.cancel: it still acquires the lock after the holder releases (cancellation approximation)
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockWriteLockTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockWriteLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       const data = new WriteLockCancelData();
-      let holderPromise = taskpool.execute(new taskpool.Task(writeLockHolderDelayTask, rwlock, counter));
-      // Give the holder time to acquire the write lock so the waiter queues behind it
-      await Utils.msSleep(50);
-      const waiter = new taskpool.Task(writeLockCancelledWaiterTask, rwlock, data, counter);
-      let cancelThrew: boolean = false;
-      let waiterPromise: Promise<Any> | null = null;
-      try {
-        waiterPromise = taskpool.execute(waiter);
-        taskpool.cancel(waiter);
-      } catch (error) {
-        // The waiter was already executing (blocked on the write lock) so cancellation is not applicable
-        cancelThrew = true;
-      }
-      await holderPromise;
-      if (waiterPromise !== null) {
-        try {
-          await waiterPromise;
-        } catch (e) {
-          // Expected when the waiter was cancelled before execution
-        }
-      }
-      let settleStart: number = Date.now();
-      while (!data.ran && Date.now() - settleStart < 1000) {
+      const holderReady = new AtomicInt(0);
+      const waiterStarted = new AtomicInt(0);
+      const cancelDone = new AtomicInt(0);
+      let holderPromise = taskpool.execute(new taskpool.Task(writeLockHolderDelayTask, rwlock, counter, holderReady, cancelDone));
+      // Wait until the holder actually holds the write lock so the waiter queues behind it (bounded poll).
+      let holderCycles: number = 0;
+      while (holderReady.load() === 0 && holderCycles < 50) {
         await Utils.msSleep(100);
+        holderCycles++;
       }
-      if (data.ran) {
-        // Cancellation did not interrupt the already-running waiter: it acquired the write lock after the holder released
-        expect(counter.load()).assertEqual(111);
-      } else {
-        // Cancellation succeeded before execution: the waiter never acquired the write lock
-        expect(counter.load()).assertEqual(101);
-        expect(cancelThrew).assertFalse();
+      expect(holderReady.load()).assertEqual(1);
+      const waiter = new taskpool.Task(writeLockCancelledWaiterTask, rwlock, data, counter, waiterStarted);
+      let waiterPromise = taskpool.execute(waiter);
+      // Wait until the waiter is executing and blocked in lock() before cancelling it (bounded poll).
+      let waiterCycles: number = 0;
+      while (waiterStarted.load() === 0 && waiterCycles < 50) {
+        await Utils.msSleep(100);
+        waiterCycles++;
       }
+      expect(waiterStarted.load()).assertEqual(1);
+      // taskpool.cancel only marks an already-executing task as cancelled: it cannot interrupt a
+      // waiter that is blocked in lock(), so the waiter must still complete after the holder releases.
+      taskpool.cancel(waiter);
+      cancelDone.store(1);
+      await holderPromise;
+      // Cancelling an already-running task does not interrupt lock(); wait for the task to complete.
+      await waiterPromise;
+      // Single expected direction: the blocked waiter was not interrupted and acquired the write lock
+      expect(data.ran).assertTrue();
+      expect(counter.load()).assertEqual(111);
     })
   })
 }
