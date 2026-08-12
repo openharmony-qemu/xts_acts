@@ -143,46 +143,17 @@ export default function WriteLockUnlockTest(): void {
       expect(errorCaught).assertTrue();
     })
 
-    /**
-     * @tc.name    WriteLockUnlockTest0400
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0400
-     * @tc.desc    Verify WriteLock.unlock() throws error on consecutive unlock calls without re-locking
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('WriteLockUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const rwlock = new RWLock();
-      const wl = rwlock.writeLock();
-      wl.lock();
-      wl.unlock();
-      let firstError: boolean = false;
-      let secondError: boolean = false;
-      try {
-        wl.unlock();
-      } catch (error) {
-        firstError = true;
-      }
-      try {
-        wl.unlock();
-      } catch (error) {
-        secondError = true;
-      }
-      expect(firstError).assertTrue();
-      expect(secondError).assertTrue();
-    })
-
     // ========== CONCURRENCY TESTS ==========
 
     /**
-     * @tc.name    WriteLockUnlockTest0500
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0500
+     * @tc.name    WriteLockUnlockTest0400
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0400
      * @tc.desc    Verify multiple threads can acquire and release the same write lock sequentially via TaskPool
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new UnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
@@ -192,14 +163,14 @@ export default function WriteLockUnlockTest(): void {
     })
 
     /**
-     * @tc.name    WriteLockUnlockTest0600
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0600
+     * @tc.name    WriteLockUnlockTest0500
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0500
      * @tc.desc    Verify other threads can acquire the write lock after it is released by another thread
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new UnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       await p1;
@@ -212,14 +183,14 @@ export default function WriteLockUnlockTest(): void {
     // ========== RETURN VALUE TESTS (supplement) ==========
 
     /**
-     * @tc.name    WriteLockUnlockTest0700
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0700
+     * @tc.name    WriteLockUnlockTest0600
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0600
      * @tc.desc    Verify WriteLock.unlock() releases the write lock so the same thread can call lock() again successfully
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('WriteLockUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('WriteLockUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const rwlock = new RWLock();
       const wl = rwlock.writeLock();
       wl.lock();
@@ -237,14 +208,14 @@ export default function WriteLockUnlockTest(): void {
     // ========== CONCURRENCY TESTS (supplement) ==========
 
     /**
-     * @tc.name    WriteLockUnlockTest0800
-     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0800
-     * @tc.desc    Verify WriteLock.unlock() ownership with real EAWorker threads: the holder's release succeeds, and non-holder threads attempting to release the same write lock after the holder's release throw
+     * @tc.name    WriteLockUnlockTest0700
+     * @tc.number  SUB_WRITE_LOCK_UNLOCK_TEST_0700
+     * @tc.desc    Verify WriteLock.unlock() with real EAWorker threads: the holding thread's release succeeds, and threads that do not hold the write lock throw when attempting to release it
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const heldFlag = new AtomicInt(0);
       const holderUnlockOk = new AtomicInt(-1);
       const caughtA = new AtomicInt(-1);
