@@ -25,12 +25,17 @@ int ResetThreadQoSNdkTest();
 int GetThreadQoSNdkTest();
 int ThreadQoSNdkTest();
 
-// Gewu API Tests
+// Gewu Error Code Tests
+int GewuCreateSessionInvalTest();
+int GewuSubmitRequestInvalTest();
+int GewuAbortRequestInvalTest();
+int GewuDestroySessionInvalTest();
+
+// Gewu Normal Function Tests
 int GewuCreateSessionTest();
 int GewuSubmitRequestTest();
 int GewuAbortRequestTest();
 int GewuDestroySessionTest();
-int GewuErrorCodeTest();
 
 } // namespace QosManager
 } // namespace Acts
