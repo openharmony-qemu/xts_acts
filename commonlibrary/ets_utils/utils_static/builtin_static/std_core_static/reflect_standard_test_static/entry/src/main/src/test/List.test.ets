@@ -86,6 +86,23 @@ import StaticMethodIsPrivateTest from "./staticMethod/StaticMethodIsPrivateTest.
 import StaticMethodIsProtectedTest from "./staticMethod/StaticMethodIsProtectedTest.test";
 import StaticMethodIsPublicTest from "./staticMethod/StaticMethodIsPublicTest.test";
 import StaticMethodIsSetterTest from "./staticMethod/StaticMethodIsSetterTest.test";
+
+import StaticMethodInvoke2Test from "./staticMethod/StaticMethodInvoke2Test.test";
+import StaticMethodIsAsync2Test from "./staticMethod/StaticMethodIsAsync2Test.test";
+import StaticMethodIsGetter2Test from "./staticMethod/StaticMethodIsGetter2Test.test";
+import StaticMethodIsPrivate2Test from "./staticMethod/StaticMethodIsPrivate2Test.test";
+import StaticMethodIsProtected2Test from "./staticMethod/StaticMethodIsProtected2Test.test";
+import StaticMethodIsPublic2Test from "./staticMethod/StaticMethodIsPublic2Test.test";
+import StaticMethodIsSetter2Test from "./staticMethod/StaticMethodIsSetter2Test.test";
+import StaticMethodEquals2Test from "./staticMethod/StaticMethodEquals2Test.test";
+import StaticMethodGetName2Test from "./staticMethod/StaticMethodGetName2Test.test";
+import StaticMethodGetOwner2Test from "./staticMethod/StaticMethodGetOwner2Test.test";
+import StaticMethodGetParametersNum2Test from "./staticMethod/StaticMethodGetParametersNum2Test.test";
+import StaticMethodGetParameterTypes2Test from "./staticMethod/StaticMethodGetParameterTypes2Test.test";
+import StaticMethodGetParameterType2Test from "./staticMethod/StaticMethodGetParameterType2Test.test";
+import StaticMethodGetReturnType2Test from "./staticMethod/StaticMethodGetReturnType2Test.test";
+
+
 import InstanceFieldSetValueTest from "./InstanceField/InstanceFieldSetValueTest.test";
 import InstanceFieldGetValueTest from "./InstanceField/InstanceFieldGetValueTest.test";
 import InstanceFieldIsReadonlyTest from "./InstanceField/InstanceFieldIsReadonlyTest.test";
@@ -184,6 +201,21 @@ export default function testsuite(): void {
   StaticMethodIsProtectedTest();
   StaticMethodIsPublicTest();
   StaticMethodIsSetterTest();
+
+  StaticMethodInvoke2Test();
+  StaticMethodIsAsync2Test();
+  StaticMethodIsGetter2Test();
+  StaticMethodIsPrivate2Test();
+  StaticMethodIsProtected2Test();
+  StaticMethodIsPublic2Test();
+  StaticMethodIsSetter2Test();
+  StaticMethodEquals2Test();
+  StaticMethodGetName2Test();
+  StaticMethodGetOwner2Test();
+  StaticMethodGetParametersNum2Test();
+  StaticMethodGetParameterTypes2Test();
+  StaticMethodGetParameterType2Test();
+  StaticMethodGetReturnType2Test();
 
   ClassIsFuncObjAsyncTest();
   ClassIsLiteralInitializedInterfaceTest();
