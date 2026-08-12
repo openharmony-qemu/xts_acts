@@ -53,9 +53,6 @@ std::shared_ptr<VDecNdkSample> CreateConfiguredStateSample()
 }
 } // namespace
 
-namespace Acts {
-namespace SwDecoder {
-
 int VideoSwdecState0100()
 {
     auto vDecSample = CreateConfiguredStateSample();
@@ -1068,5 +1065,5 @@ int VideoSwdecState3400()
     return SWDEC_SUCCESS;
 }
 
-} // namespace SwDecoder
-} // namespace Acts
+void InitActsStateTest() {}
+

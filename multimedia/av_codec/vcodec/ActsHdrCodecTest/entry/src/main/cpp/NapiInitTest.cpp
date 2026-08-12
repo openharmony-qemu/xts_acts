@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,116 +12,105 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <functional>
-#include <string>
-#include <vector>
-#include "include/FuncTest.h"
+
 #include "napi/native_api.h"
+#include "include/FuncTest.h"
+#include <functional>
+#include <cstring>
 
 using TestFunction = std::function<int()>;
 
-// HdrCodec Function Tests (0010-0080, index 0-7)
-static const std::vector<TestFunction> g_hdrFuncTests = {
-    Acts::HdrCodec::HdrFunc0010,
-    Acts::HdrCodec::HdrFunc0020,
-    Acts::HdrCodec::HdrFunc0030,
-    Acts::HdrCodec::HdrFunc0040,
-    Acts::HdrCodec::HdrFunc0050,
-    Acts::HdrCodec::HdrFunc0060,
-    Acts::HdrCodec::HdrFunc0070,
-    Acts::HdrCodec::HdrFunc0080,
-};
-
-struct AsyncWorkData {
+struct AsyncTestContext {
     napi_env env;
     napi_deferred deferred;
     napi_async_work work;
-    const std::vector<TestFunction>* tests;
-    int testCaseIndex;
+    TestFunction func;
     int result;
 };
 
-static void ExecuteWork(napi_env env, void* data)
+static void ExecuteTestAsync(napi_env env, void* data)
 {
-    AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
-    int idx = workData->testCaseIndex;
-    const std::vector<TestFunction>& tests = *workData->tests;
-    if (idx >= 0 && idx < static_cast<int>(tests.size()) && tests[idx] != nullptr) {
-        workData->result = tests[idx]();
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    context->result = -1;
+    if (context->func) {
+        context->result = context->func();
+    }
+}
+
+static void CompleteTestAsync(napi_env env, napi_status status, void* data)
+{
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+    if (status != napi_ok) {
+        napi_value error;
+        napi_create_string_utf8(env, "Async test failed", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, context->deferred, error);
     } else {
-        workData->result = -1;
+        napi_value result;
+        napi_create_int32(env, context->result, &result);
+        napi_resolve_deferred(env, context->deferred, result);
     }
+    napi_delete_async_work(env, context->work);
+    delete context;
 }
 
-static void CompleteWork(napi_env env, napi_status status, void* data)
+static napi_value RunTestAsync(napi_env env, TestFunction func, const char* name)
 {
-    AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
-    napi_value result;
-    napi_create_int32(env, workData->result, &result);
-    napi_resolve_deferred(env, workData->deferred, result);
-    napi_delete_async_work(env, workData->work);
-    delete workData;
-}
-
-static napi_value HdrFuncTest(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1];
-    int32_t caseNum = -1;
-    napi_status status;
-    napi_valuetype valuetype;
-
-    if ((status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr)) != napi_ok ||
-        napi_typeof(env, args[0], &valuetype) != napi_ok || valuetype != napi_number ||
-        (status = napi_get_value_int32(env, args[0], &caseNum)) != napi_ok) {
-        napi_throw_error(env, nullptr, "Invalid argument");
-        return nullptr;
-    }
-
     napi_value promise;
     napi_deferred deferred;
-    if ((status = napi_create_promise(env, &deferred, &promise)) != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to create promise");
-        return nullptr;
-    }
-
-    AsyncWorkData* workData = new AsyncWorkData();
-    workData->env = env;
-    workData->deferred = deferred;
-    workData->tests = &g_hdrFuncTests;
-    workData->testCaseIndex = caseNum;
-    workData->result = -1;
-
-    napi_value workName;
-    napi_create_string_utf8(env, "HdrFuncTest", NAPI_AUTO_LENGTH, &workName);
-
-    status = napi_create_async_work(env, nullptr, workName, ExecuteWork, CompleteWork, workData, &workData->work);
-    if (status != napi_ok) {
-        delete workData;
-        napi_throw_error(env, nullptr, "Failed to create async work");
-        return nullptr;
-    }
-
-    status = napi_queue_async_work(env, workData->work);
-    if (status != napi_ok) {
-        napi_delete_async_work(env, workData->work);
-        delete workData;
-        napi_throw_error(env, nullptr, "Failed to queue async work");
-        return nullptr;
-    }
-
+    napi_create_promise(env, &deferred, &promise);
+    AsyncTestContext* context = new AsyncTestContext{env, deferred, nullptr, func, -1};
+    napi_value resourceName;
+    napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
+    napi_create_async_work(env, nullptr, resourceName,
+        ExecuteTestAsync, CompleteTestAsync, context, &context->work);
+    napi_queue_async_work(env, context->work);
     return promise;
 }
 
-static napi_property_descriptor g_hdrCodecDescriptors[] = {
-    { "HdrFuncTest", nullptr, HdrFuncTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+EXTERN_C_START
+
+struct Entry {
+    TestFunction func;
+    const char* name;
 };
 
-EXTERN_C_START
+static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, nullptr, &data);
+    auto* entry = static_cast<Entry*>(data);
+    return RunTestAsync(env, entry->func, entry->name);
+}
+
+static napi_property_descriptor XL(const char* functionName, TestFunction func)
+{
+    auto* entry = new Entry{std::move(func), functionName};
+    return {functionName, nullptr, AsyncWrapper, nullptr, nullptr, nullptr,
+            napi_default, entry};
+}
+
+static napi_value InitTests(napi_env env, napi_callback_info info)
+{
+    InitFuncTest();
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(
-        env, exports, sizeof(g_hdrCodecDescriptors) / sizeof(g_hdrCodecDescriptors[0]), g_hdrCodecDescriptors);
+    napi_property_descriptor desc[] = {
+        {"initTests", nullptr, InitTests, nullptr, nullptr, nullptr, napi_default, nullptr},
+        XL("HdrFunc0010Test", HdrFunc0010Test),
+        XL("HdrFunc0020Test", HdrFunc0020Test),
+        XL("HdrFunc0030Test", HdrFunc0030Test),
+        XL("HdrFunc0040Test", HdrFunc0040Test),
+        XL("HdrFunc0050Test", HdrFunc0050Test),
+        XL("HdrFunc0060Test", HdrFunc0060Test),
+        XL("HdrFunc0070Test", HdrFunc0070Test),
+        XL("HdrFunc0080Test", HdrFunc0080Test),
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }
 EXTERN_C_END

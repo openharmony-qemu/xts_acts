@@ -932,3 +932,5 @@ int DemuxerApi2500()
     TestTearDown();
     return 0;
 }
+
+void InitApiTest() {}

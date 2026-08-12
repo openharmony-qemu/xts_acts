@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,10 +37,18 @@ OH_AVCapability* cap_hevc = nullptr;
 constexpr int32_t REPEAT_COUNT = 5;
 constexpr int32_t DEFAULT_WIDTH_1080P = 1920;
 constexpr int32_t DEFAULT_HEIGHT_1080P = 1080;
-} // namespace
+constexpr const char* HDR_PQ_VIVID_INPUT_FILE_PATH =
+    "/data/storage/el2/base/haps/entry_test/files/pq_vivid.h265";
+constexpr const char* HDR_HLG_VIVID_4K_INPUT_FILE_PATH =
+    "/data/storage/el2/base/haps/entry_test/files/hlg_vivid_4k.h265";
+constexpr const char* HDR_HLG_VIVID_1080P_INPUT_FILE_PATH =
+    "/data/storage/el2/base/haps/entry_test/files/hlg_vivid_1080p.h265";
 
-namespace Acts {
-namespace HdrCodec {
+static void TestSetUpTestCase()
+{
+    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
+}
+} // namespace
 
 /**
  * @tc.name   HDR_FUNC_0010
@@ -50,29 +58,20 @@ namespace HdrCodec {
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int HdrFunc0010()
+int HdrFunc0010Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_PQ_VIVID_INPUT_FILE_PATH;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        if (!sample->timedOut && sample->errorCount != 0) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (!sample->timedOut && sample->errorCount != 0) { return -1; }
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
 /**
@@ -83,29 +82,20 @@ int HdrFunc0010()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int HdrFunc0020()
+int HdrFunc0020Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        if (!sample->timedOut && sample->errorCount != 0) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (!sample->timedOut && sample->errorCount != 0) { return -1; }
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
 /**
@@ -116,27 +106,19 @@ int HdrFunc0020()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int HdrFunc0030()
+int HdrFunc0030Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         sample->INP_DIR = HDR_PQ_VIVID_INPUT_FILE_PATH;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        // errorCount >= 0 is always true, result is acceptable
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
 /**
@@ -147,27 +129,19 @@ int HdrFunc0030()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int HdrFunc0040()
+int HdrFunc0040Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        // errorCount >= 0 is always true, result is acceptable
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
 /**
@@ -178,30 +152,21 @@ int HdrFunc0040()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int HdrFunc0050()
+int HdrFunc0050Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
         sample->REPEAT_START_STOP_BEFORE_EOS = REPEAT_COUNT;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        if (!sample->timedOut && sample->errorCount != 0) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (!sample->timedOut && sample->errorCount != 0) { return -1; }
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
 /**
@@ -212,30 +177,21 @@ int HdrFunc0050()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int HdrFunc0060()
+int HdrFunc0060Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
         sample->REPEAT_START_FLUSH_STOP_BEFORE_EOS = REPEAT_COUNT;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        if (!sample->timedOut && sample->errorCount != 0) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (!sample->timedOut && sample->errorCount != 0) { return -1; }
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
 /**
@@ -246,30 +202,21 @@ int HdrFunc0060()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int HdrFunc0070()
+int HdrFunc0070Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
         sample->REPEAT_START_FLUSH_BEFORE_EOS = REPEAT_COUNT;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        if (!sample->timedOut && sample->errorCount != 0) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (!sample->timedOut && sample->errorCount != 0) { return -1; }
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
 /**
@@ -280,43 +227,30 @@ int HdrFunc0070()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int HdrFunc0080()
+int HdrFunc0080Test()
 {
-    cap_hevc = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
     if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
         OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
         sample->INP_DIR = HDR_HLG_VIVID_4K_INPUT_FILE_PATH;
-        if (sample->CreateCodec() != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        if (sample->Configure() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
-        if (sample->Start() != AV_ERR_OK) {
-            return AV_ERR_UNKNOWN;
-        }
+        if (sample->CreateCodec() != AV_ERR_OK) { return -1; }
+        if (sample->Configure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        (void)sample->errorCount;
         sample->errorCount = 0;
         sample->timedOut = false;
         sample->DEFAULT_WIDTH = DEFAULT_WIDTH_1080P;
         sample->DEFAULT_HEIGHT = DEFAULT_HEIGHT_1080P;
         sample->INP_DIR = HDR_HLG_VIVID_1080P_INPUT_FILE_PATH;
-        int32_t rcRet = sample->ReConfigure();
-        if (rcRet != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
-        int32_t startRet = sample->Start();
-        if (startRet != AV_ERR_OK) {
-            return AV_ERR_OK;
-        }
+        if (sample->ReConfigure() != AV_ERR_OK) { return -1; }
+        if (sample->Start() != AV_ERR_OK) { return -1; }
         sample->WaitForEos();
-        (void)sample->errorCount;
     }
-    return AV_ERR_OK;
+    return 0;
 }
 
-} // namespace HdrCodec
-} // namespace Acts
+void InitFuncTest()
+{
+    TestSetUpTestCase();
+}

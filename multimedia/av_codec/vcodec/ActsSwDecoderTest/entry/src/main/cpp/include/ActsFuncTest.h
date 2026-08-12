@@ -16,8 +16,7 @@
 #ifndef ACTS_SW_DECODER_TEST_ACTS_FUNC_TEST_H
 #define ACTS_SW_DECODER_TEST_ACTS_FUNC_TEST_H
 
-namespace Acts {
-namespace SwDecoder {
+#include "napi/native_api.h"
 
 int VideoSwdecFunction0200();
 int VideoSwdecFunction0300();
@@ -37,7 +36,6 @@ int VideoDecodeSyncSw264Func0020();
 int VideoDecodeSyncSw264Func0040();
 int VideoSwdecodeBlankFrame0010();
 
-} // namespace SwDecoder
-} // namespace Acts
+void InitActsFuncTest();
 
 #endif // ACTS_SW_DECODER_TEST_ACTS_FUNC_TEST_H

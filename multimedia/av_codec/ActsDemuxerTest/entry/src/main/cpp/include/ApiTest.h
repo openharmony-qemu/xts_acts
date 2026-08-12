@@ -16,49 +16,52 @@
 #ifndef API_TEST_H
 #define API_TEST_H
 
-// API 测试函数声明
-extern int OhAvSourceCreateWithDataSource0100();
-extern int OhAvSourceCreateWithDataSourceExt0100();
-extern int DemuxerIllegalPara0100();
-extern int DemuxerIllegalPara0200();
-extern int DemuxerIllegalPara0700();
-extern int DemuxerIllegalPara0800();
-extern int DemuxerIllegalPara0300();
-extern int DemuxerIllegalPara0400();
-extern int DemuxerIllegalPara0500();
-extern int DemuxerIllegalPara0600();
-extern int DemuxerIllegalPara2300();
-extern int DemuxerIllegalPara0900();
-extern int DemuxerIllegalPara1000();
-extern int DemuxerIllegalPara1100();
-extern int DemuxerIllegalPara1200();
-extern int DemuxerIllegalPara1300();
-extern int DemuxerIllegalPara1400();
-extern int DemuxerIllegalPara1500();
-extern int DemuxerIllegalPara1600();
-extern int DemuxerIllegalPara1700();
-extern int DemuxerIllegalPara1800();
-extern int DemuxerIllegalPara1900();
-extern int DemuxerIllegalPara2100();
-extern int DemuxerIllegalPara2200();
-extern int DemuxerIllegalPara2400();
-extern int DemuxerIllegalPara2500();
-extern int DemuxerIllegalPara2600();
-extern int DemuxerIllegalPara2700();
-extern int DemuxerIllegalPara2800();
-extern int DemuxerIllegalPara2900();
-extern int DemuxerIllegalPara3000();
-extern int DemuxerApi0200();
-extern int DemuxerApi0300();
-extern int DemuxerApi0500();
-extern int DemuxerApi0700();
-extern int DemuxerApi1000();
-extern int DemuxerApi1100();
-extern int DemuxerApi1200();
-extern int DemuxerApi1300();
-extern int DemuxerApi1400();
-extern int DemuxerApi2300();
-extern int DemuxerApi2400();
-extern int DemuxerApi2500();
+#include "napi/native_api.h"
+
+int OhAvSourceCreateWithDataSource0100();
+int OhAvSourceCreateWithDataSourceExt0100();
+int DemuxerIllegalPara0100();
+int DemuxerIllegalPara0200();
+int DemuxerIllegalPara0700();
+int DemuxerIllegalPara0800();
+int DemuxerIllegalPara0300();
+int DemuxerIllegalPara0400();
+int DemuxerIllegalPara0500();
+int DemuxerIllegalPara0600();
+int DemuxerIllegalPara2300();
+int DemuxerIllegalPara0900();
+int DemuxerIllegalPara1000();
+int DemuxerIllegalPara1100();
+int DemuxerIllegalPara1200();
+int DemuxerIllegalPara1300();
+int DemuxerIllegalPara1400();
+int DemuxerIllegalPara1500();
+int DemuxerIllegalPara1600();
+int DemuxerIllegalPara1700();
+int DemuxerIllegalPara1800();
+int DemuxerIllegalPara1900();
+int DemuxerIllegalPara2100();
+int DemuxerIllegalPara2200();
+int DemuxerIllegalPara2400();
+int DemuxerIllegalPara2500();
+int DemuxerIllegalPara2600();
+int DemuxerIllegalPara2700();
+int DemuxerIllegalPara2800();
+int DemuxerIllegalPara2900();
+int DemuxerIllegalPara3000();
+int DemuxerApi0200();
+int DemuxerApi0300();
+int DemuxerApi0500();
+int DemuxerApi0700();
+int DemuxerApi1000();
+int DemuxerApi1100();
+int DemuxerApi1200();
+int DemuxerApi1300();
+int DemuxerApi1400();
+int DemuxerApi2300();
+int DemuxerApi2400();
+int DemuxerApi2500();
+
+void InitApiTest();
 
 #endif // API_TEST_H
