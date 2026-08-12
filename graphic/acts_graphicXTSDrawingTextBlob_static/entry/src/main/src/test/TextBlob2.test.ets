@@ -187,15 +187,15 @@ export default function textBlob2Test(): void {
 
     });
     /**
-     * @tc.name   testTextBlobMakeFromStringNormalStatic
+     * @tc.name   testTextBlobMakeFromStringNormal2Static
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0400
-     * @tc.desc   testTextBlobMakeFromStringNormalStatic
+     * @tc.desc   testTextBlobMakeFromStringNormal2Static
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobMakeFromStringNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testTextBlobMakeFromStringNormalStatic';
+    it('testTextBlobMakeFromStringNormal2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTextBlobMakeFromStringNormal2Static';
       let font = new drawing.Font();
       try {
         let textBlob = drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
@@ -221,15 +221,15 @@ export default function textBlob2Test(): void {
       }
     });
     /**
-     * @tc.name   testTextBlobMakeFromStringMultipleCallsStatic
+     * @tc.name   testTextBlobMakeFromStringMultipleCalls2Static
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0403
-     * @tc.desc   testTextBlobMakeFromStringMultipleCallsStatic
+     * @tc.desc   testTextBlobMakeFromStringMultipleCalls2Static
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobMakeFromStringMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testTextBlobMakeFromStringMultipleCallsStatic';
+    it('testTextBlobMakeFromStringMultipleCalls2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTextBlobMakeFromStringMultipleCalls2Static';
       let font = new drawing.Font();
 
       try {

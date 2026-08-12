@@ -478,15 +478,15 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.name   testTypeFaceMakeFromRawFileWithArgumentsAbnormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0603
-     * @tc.desc   testTypeFaceMakeFromRawFileWithArgumentsAbnormal
+     * @tc.name   testTypeFaceMakeFromRawFileWithArgumentsAbnormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0603
+     * @tc.desc   testTypeFaceMakeFromRawFileWithArgumentsAbnormalStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTypeFaceMakeFromRawFileWithArgumentsAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testTypeFaceMakeFromRawFileWithArgumentsAbnormal';
+    it('testTypeFaceMakeFromRawFileWithArgumentsAbnormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testTypeFaceMakeFromRawFileWithArgumentsAbnormalStatic';
       let typeFaceArgument = new drawing.TypefaceArguments();
       try {
         let myTypeFace = drawing.Typeface.makeFromRawFileWithArguments($rawfile('image.png'), typeFaceArgument!);

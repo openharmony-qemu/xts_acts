@@ -1294,15 +1294,15 @@ export default function brushTest(): void {
       }
     });
     /**
-     * @tc.name   testBrushSetAndGetColor4fMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1702
-     * @tc.desc   testBrushSetAndGetColor4fMultipleCalls
+     * @tc.name   testBrushSetAndGetColor4fMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_STATIC_1702
+     * @tc.desc   testBrushSetAndGetColor4fMultipleCallsStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testBrushSetAndGetColor4fMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testBrushSetAndGetColor4fMultipleCalls';
+    it('testBrushSetAndGetColor4fMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testBrushSetAndGetColor4fMultipleCallsStatic';
       try {
         for (let i = 0; i < 20; i += 1) {
           const brush = new drawing.Brush();

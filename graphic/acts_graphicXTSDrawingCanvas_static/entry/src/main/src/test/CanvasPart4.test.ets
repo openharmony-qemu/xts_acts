@@ -21,7 +21,7 @@ import common2D from '@ohos.graphics.common2D';
 import { getEnumCount } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
-export default function drawingTsCanvasPart4Test() {
+export default function drawingTsCanvasPart4Test(): void {
   describe('DrawingTsCanvasPart4Test', () => {
     let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
