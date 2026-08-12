@@ -3573,7 +3573,7 @@ export default function windowPropertiesTest() {
     /**
      * @tc.name   testSetSubWindowMask
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6600
-     * @tc.desc   set window ui context
+     * @tc.desc   set subWindow mask with dimensions inconsistent with the subWindow size to verify error code 1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -3586,10 +3586,13 @@ export default function windowPropertiesTest() {
       await sleep(1000);
       let maskWidth = subWindow.getWindowProperties().windowRect.width;
       let maskHeight = subWindow.getWindowProperties().windowRect.height;
-      let windowMask = Array<Array<number>>(maskHeight).fill([]).map((_, row) => {
-        let array = Array<number>(maskWidth);
-        for (let i = 0; i < maskWidth; i++) {
-          array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+      // Intentionally construct a windowMask whose dimensions are inconsistent with the subWindow size.
+      let invalidMaskWidth = maskWidth - 10;
+      let invalidMaskHeight = maskHeight - 10;
+      let windowMask = Array<Array<number>>(invalidMaskHeight).fill([]).map((_, row) => {
+        let array = Array<number>(invalidMaskWidth);
+        for (let i = 0; i < invalidMaskWidth; i++) {
+          array[i] = (i + row) > (invalidMaskWidth + invalidMaskHeight) / 2 ? 1 : 0;
         }
         return array;
       });
@@ -3597,6 +3600,7 @@ export default function windowPropertiesTest() {
         let promise = subWindow.setWindowMask(windowMask);
         promise.then(async () => {
           console.info(caseName + ' Succeeded in setting the window mask.');
+          expect(false).assertTrue();
           await subWindow.destroyWindow();
           done();
         }).catch(async (err: BusinessError) => {
@@ -3606,7 +3610,8 @@ export default function windowPropertiesTest() {
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
             done();
           } else {
-            expect(false).assertTrue();
+            expect(err.code).assertEqual(1300002);
+            expect(err.message != null).assertTrue();
             done();
           }
         });
@@ -3614,9 +3619,11 @@ export default function windowPropertiesTest() {
         console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
         await subWindow.destroyWindow();
         if (err.code === 801) {
+          expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
           done();
         } else {
-          expect(false).assertTrue();
+          expect(err.code).assertEqual(1300002);
+          expect(err.message != null).assertTrue();
           done();
         }
       }
