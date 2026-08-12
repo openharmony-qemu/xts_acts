@@ -14,8 +14,10 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 add_library(demuxer_test SHARED
     NapiInitTest.cpp
     FuncTest.cpp
+    FuncTestPart2.cpp
     FuncHelperTest.cpp
     Func2Test.cpp
+    Func2TestPart2.cpp
     ProcTest.cpp
     ApiTest.cpp
     DemuxerHelperTest.cpp

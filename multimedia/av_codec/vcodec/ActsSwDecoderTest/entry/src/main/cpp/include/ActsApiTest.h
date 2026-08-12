@@ -16,10 +16,8 @@
 #ifndef ACTS_SW_DECODER_TEST_ACTS_API_TEST_H
 #define ACTS_SW_DECODER_TEST_ACTS_API_TEST_H
 
-namespace Acts {
-namespace SwDecoder {
+#include "napi/native_api.h"
 
-// VIDEO_SWDEC_ILLEGAL_PARA_* (30)
 int VideoSwdecIllegalPara0100();
 int VideoSwdecIllegalPara0200();
 int VideoSwdecIllegalPara3300();
@@ -51,7 +49,6 @@ int VideoSwdecIllegalPara3000();
 int VideoSwdecIllegalPara3100();
 int VideoSwdecIllegalPara3200();
 
-// VIDEO_SWDEC_API_* (12)
 int VideoSwdecApi0100();
 int VideoSwdecApi0200();
 int VideoSwdecApi0300();
@@ -65,7 +62,6 @@ int VideoSwdecApi1000();
 int VideoSwdecApi1100();
 int VideoSwdecApi1200();
 
-// VIDEO_SWDEC_CAP_API_* (51)
 int VideoSwdecCapApi0100();
 int VideoSwdecCapApi0300();
 int VideoSwdecCapApi0400();
@@ -118,12 +114,10 @@ int VideoSwdecCapApi6900();
 int VideoSwdecCapApi7000();
 int VideoSwdecCapApi7100();
 
-// VIDEO_*SWDEC_ILLEGAL_PARA_0700 (3)
 int VideoMpeg2SwdecIllegalPara0700();
 int VideoMpeg4SwdecIllegalPara0700();
 int VideoH263SwdecIllegalPara0700();
 
-} // namespace SwDecoder
-} // namespace Acts
+void InitActsApiTest();
 
 #endif // ACTS_SW_DECODER_TEST_ACTS_API_TEST_H

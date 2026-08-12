@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,22 +18,18 @@ import libHdrCodec from 'libhdrcodec.so';
 export default function HdrCodecFuncTest() {
   describe('HdrCodecFuncTest', () => {
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
+      console.info('HdrCodecFuncTest beforeAll called');
+      libHdrCodec.initTests();
+      console.info('[beforeAll] initTests completed');
     });
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
+      console.info('HdrCodecFuncTest beforeEach called');
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+      console.info('HdrCodecFuncTest afterEach called');
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      console.info('HdrCodecFuncTest afterAll called');
     });
 
     /**
@@ -44,10 +40,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('HDR_FUNC_0010', Level.LEVEL1, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(0);
+    it('HDR_FUNC_0010', Level.LEVEL1, async () => {
+      let result: number = await libHdrCodec.HdrFunc0010Test();
       expect(result).assertEqual(0);
-      done();
     })
 
     /**
@@ -58,10 +53,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('HDR_FUNC_0020', Level.LEVEL1, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(1);
+    it('HDR_FUNC_0020', Level.LEVEL1, async () => {
+      let result: number = await libHdrCodec.HdrFunc0020Test();
       expect(result).assertEqual(0);
-      done();
     })
 
     /**
@@ -72,10 +66,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('HDR_FUNC_0030', Level.LEVEL2, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(2);
+    it('HDR_FUNC_0030', Level.LEVEL2, async () => {
+      let result: number = await libHdrCodec.HdrFunc0030Test();
       expect(result).assertEqual(0);
-      done();
     })
 
     /**
@@ -86,10 +79,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('HDR_FUNC_0040', Level.LEVEL2, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(3);
+    it('HDR_FUNC_0040', Level.LEVEL2, async () => {
+      let result: number = await libHdrCodec.HdrFunc0040Test();
       expect(result).assertEqual(0);
-      done();
     })
 
     /**
@@ -100,10 +92,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('HDR_FUNC_0050', Level.LEVEL2, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(4);
+    it('HDR_FUNC_0050', Level.LEVEL2, async () => {
+      let result: number = await libHdrCodec.HdrFunc0050Test();
       expect(result).assertEqual(0);
-      done();
     })
 
     /**
@@ -114,10 +105,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('HDR_FUNC_0060', Level.LEVEL2, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(5);
+    it('HDR_FUNC_0060', Level.LEVEL2, async () => {
+      let result: number = await libHdrCodec.HdrFunc0060Test();
       expect(result).assertEqual(0);
-      done();
     })
 
     /**
@@ -128,10 +118,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('HDR_FUNC_0070', Level.LEVEL2, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(6);
+    it('HDR_FUNC_0070', Level.LEVEL2, async () => {
+      let result: number = await libHdrCodec.HdrFunc0070Test();
       expect(result).assertEqual(0);
-      done();
     })
 
     /**
@@ -142,10 +131,9 @@ export default function HdrCodecFuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('HDR_FUNC_0080', Level.LEVEL1, async (done: Function) => {
-      const result: number = await libHdrCodec.HdrFuncTest(7);
+    it('HDR_FUNC_0080', Level.LEVEL1, async () => {
+      let result: number = await libHdrCodec.HdrFunc0080Test();
       expect(result).assertEqual(0);
-      done();
     })
 
   })
