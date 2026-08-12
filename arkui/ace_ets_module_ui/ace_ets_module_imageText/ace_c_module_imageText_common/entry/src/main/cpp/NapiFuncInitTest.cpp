@@ -27,6 +27,7 @@
 #include "TextCommon/ParagraphStyleTailIndentsTest.cpp"
 #include "StyledString/LinearGradientTest.cpp"
 #include "StyledString/RadialGradientTest.cpp"
+#include "TextCommon/TextLayoutManagerWithEncodingTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -200,6 +201,37 @@ static napi_value Init(napi_env env, napi_value exports)
         {"RadialGradientTest_031", nullptr, RadialGradientTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RadialGradientTest_032", nullptr, RadialGradientTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RadialGradientTest_033", nullptr, RadialGradientTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_001", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_002", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_003", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_004", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_005", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_006", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_007", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_008", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_009", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_001", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_002", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_003", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_004", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_005", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_006", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_007", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_008", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_009", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_001", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_002", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_003", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_004", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_005", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_006", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_007", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_008", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_009", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterPositionAtCoordinateWithEncodingTest_010", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
