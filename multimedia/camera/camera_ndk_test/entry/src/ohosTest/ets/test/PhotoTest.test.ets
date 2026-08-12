@@ -716,7 +716,7 @@ export default function PhotoTest() {
       await sleep(10000);
       done();
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       await sleep(500);
       getCameraManagerInstance();
       createCaptureSession();
