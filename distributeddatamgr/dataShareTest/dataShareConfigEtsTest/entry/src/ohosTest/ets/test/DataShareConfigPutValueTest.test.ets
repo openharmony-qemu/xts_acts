@@ -699,7 +699,7 @@ export default function dataShareConfigPutValueTest() {
         };
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config);
-        await g_handle!.putValue(testUri, 1, "PutValueTest021", u_config);
+        await g_handle!.putValue(testUri, 1, "PutValueTest023", u_config);
         expect().assertFail();
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest023 failed,code =" + err.code + ",message=" + err.message);

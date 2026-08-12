@@ -1263,5 +1263,66 @@ export default function DataSharePredicatesErrTest() {
         expect().assertFail();
       }
     })
+
+    /**
+     * @tc.name   SUB_DataShare_NotIn0004
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0520
+     * @tc.desc   SUB_DataShare_NotIn0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_NotIn0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.notIn("NAME", []);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_NotIn0004 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_DataShare_NotIn0005
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0520
+     * @tc.desc   SUB_DataShare_NotIn0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_NotIn0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.notIn("NAME", null);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_NotIn0005 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+
+
+
+    /**
+     * @tc.name   SUB_DataShare_NotIn0006
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0520
+     * @tc.desc   SUB_DataShare_NotIn0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_NotIn0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.notIn("NAME", undefined);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_NotIn0006 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+
   })
 }

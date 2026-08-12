@@ -588,5 +588,27 @@ export default function dataShareConfigUnSubscribeTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   createDataProxyHandle024
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_3410
+     * @tc.desc   get 100k value when maxValueLength = MAX_LENGTH_100K
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('createDataProxyHandle024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await dataShare.createDataProxyHandle().then((handle: dataShare.DataProxyHandle) => {
+        if (handle == null || handle == undefined) {
+          console.log(TAG + "[DataShareProvider] createDataProxyHandle failed,handle is null");
+        } else {
+          g_handle = handle;
+          console.log(TAG + "[DataShareProvider] createDataProxyHandle success");
+        }
+      }).catch((err: Error) => {
+        console.error(TAG + `[DataShareProvider] createDataProxyHandle failed: code:${err.code},message:${err.message}`)
+      })
+    });
+
   })
 }
