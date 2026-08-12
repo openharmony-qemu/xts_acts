@@ -56,6 +56,7 @@ export default function dataShareConfigGetTest() {
     })
     afterEach(async () => {
       console.info(TAG + "afterEach---------------------------------");
+      await g_handle!.deleteMyPublishedData(g_config);
       let uris = [
         testUri1
       ]
