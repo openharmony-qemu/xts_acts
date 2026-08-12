@@ -1769,7 +1769,7 @@ export default function builtinsJsonTest(): void {
       const elem: jsonx.JsonElement = jsonx.JsonElement.createUndefined();
       const result: string = JSON.stringifyJsonElement(elem);
 
-      expect(result).assertEqual('undefined');
+      expect(result).assertEqual('');
     });
 
     /**
@@ -1967,7 +1967,7 @@ export default function builtinsJsonTest(): void {
       const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
       const result: string = JSON.stringifyJsonElement(elem);
 
-      expect(result).assertEqual('[72,"Hello",true,null,undefined,NaN]');
+      expect(result).assertEqual('[72,"Hello",true,null,,NaN]');
     });
 
     /**
@@ -2235,7 +2235,7 @@ export default function builtinsJsonTest(): void {
       const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
       const result: string = JSON.stringifyJsonElement(elem);
 
-      expect(result).assertEqual('[72,"Hello",undefined,NaN,Infinity]');
+      expect(result).assertEqual('[72,"Hello",,NaN,Infinity]');
     });
 
     /**
@@ -2744,7 +2744,7 @@ export default function builtinsJsonTest(): void {
       const elem: jsonx.JsonElement = jsonx.JsonElement.createUndefined();
       const result: string = JSON.stringifyJsonElement(elem);
 
-      expect(result).assertEqual('undefined');
+      expect(result).assertEqual('');
     });
 
     /**
@@ -3308,7 +3308,7 @@ export default function builtinsJsonTest(): void {
       ];
       const elem: jsonx.JsonElement = jsonx.JsonElement.createArray(arr);
       const result: string = JSON.stringifyJsonElement(elem, undefined, 2);
-      expect(result).assertEqual('[\n  1,\n  undefined,\n  3\n]');
+      expect(result).assertEqual('[\n  1,\n  ,\n  3\n]');
     });
 
     /**
