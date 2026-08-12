@@ -113,18 +113,35 @@ export default function composeListItemV2Page02Test() {
       console.info('[composeListItemV2Page02Test_0300] START');
       let driver = await Driver.create();
       await driver.delayMs(2000);
-      
       let completeSectionText = await driver.findComponent(ON.text('ComposeListItemV2 Complete Example'));
       expect(completeSectionText !== null).assertTrue();
-      
       let completeItemText = await driver.findComponent(ON.text('Complete Item'));
       expect(completeItemText !== null).assertTrue();
-      
       let allFeaturesText = await driver.findComponent(ON.text('All Features'));
       expect(allFeaturesText !== null).assertTrue();
-      
       console.info('[composeListItemV2Page02Test_0300] END');
       done();
     });
+
+    /**
+     * @tc.number composeListItemV2Page02Test
+     * @tc.name   composeListItemV2Page02Test_0400
+     * @tc.desc   Test ComposeListItemV2 Complete Example
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('composeListItemV2Page02Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[composeListItemV2Page02Test_0400] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      let symbolStyleText = await driver.findComponent(ON.text('operate symbolStyle'));
+      expect(symbolStyleText !== null).assertTrue();
+      let buttonText = await driver.findComponent(ON.text('operate button'));
+      expect(buttonText !== null).assertTrue();
+      console.info('[composeListItemV2Page02Test_0400] END');
+      done();
+    });
+
   })
 }

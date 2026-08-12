@@ -27,9 +27,9 @@ struct ComposeListItemV2Page {
       Scroll() {
         Column({ space: 12 }) {
           Text('ComposeListItemV2 Basic Test')
-            .fontSize(20)
+            .fontSize(16)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 50 })
+            .margin({ top: 25 })
 
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
@@ -39,9 +39,9 @@ struct ComposeListItemV2Page {
           })
 
           Text('ComposeListItemV2 with IconStyle')
-            .fontSize(20)
+            .fontSize(16)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
+            .margin({ top: 10 })
 
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
@@ -62,9 +62,9 @@ struct ComposeListItemV2Page {
           })
 
           Text('ComposeListItemV2 with OperateItem')
-            .fontSize(20)
+            .fontSize(16)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
+            .margin({ top: 10 })
 
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
@@ -131,65 +131,8 @@ struct ComposeListItemV2Page {
             })
           })
 
-          Text('ComposeListItemV2 with Button')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
 
-          ComposeListItemV2({
-            contentItemV2: new ContentItemV2({
-              iconStyle: IconTypeV2.NORMAL_ICON,
-              icon: $r('sys.symbol.download'),
-              primaryText: 'Item with Button',
-              secondaryText: 'Operate: Button'
-            }),
-            operateItemV2: new OperateItemV2({
-              button: new OperateButtonV2({
-                text: 'Download'
-              })
-            })
-          })
 
-          Text('ComposeListItemV2 with Description')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
-
-          ComposeListItemV2({
-            contentItemV2: new ContentItemV2({
-              iconStyle: IconTypeV2.HEAD_SCULPTURE,
-              icon: $r('sys.symbol.person'),
-              primaryText: 'User Profile',
-              secondaryText: 'User Name',
-              description: 'This is a detailed description of the user profile item'
-            })
-          })
-
-          Text('ComposeListItemV2 Complete Example')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
-
-          ComposeListItemV2({
-            contentItemV2: new ContentItemV2({
-              iconStyle: IconTypeV2.PREVIEW,
-              icon: $r('sys.symbol.trash'),
-              primaryText: 'Complete Item',
-              secondaryText: 'All Features',
-              description: 'This item demonstrates all available features'
-            }),
-            operateItemV2: new OperateItemV2({
-              icon: new OperateIconV2({
-                value: $r('sys.symbol.star'),
-                action: () => {
-                  console.info('Icon clicked');
-                }
-              }),
-              arrow: new OperateIconV2({
-                value: $r('sys.symbol.chevron_right')
-              })
-            })
-          })
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')

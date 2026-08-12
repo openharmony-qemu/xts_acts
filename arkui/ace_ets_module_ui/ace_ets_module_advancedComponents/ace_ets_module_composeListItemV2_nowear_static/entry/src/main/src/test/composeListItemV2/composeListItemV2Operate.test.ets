@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -178,5 +178,23 @@ export default function composeListItemV2OperateTest() {
       console.info('[composeListItemV2Operate_static_0700] END');
       done();
     });
+
+    /**
+     * @tc.number   composeListItemV2Operate_static_0800
+     * @tc.name     composeListItemV2Operate_static_0800
+     * @tc.desc     Test OperateItemV2 with text
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+    it('composeListItemV2Operate_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[composeListItemV2Operate_static_0800] START');
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      let operateText = await driver.findComponent(ON.text('Operate image'));
+      expect(operateText !== null).assertTrue();
+      await driver.delayMs(1000);
+      console.info('[composeListItemV2Operate_static_0800] END');
+      done();
+    });
+
   })
 }

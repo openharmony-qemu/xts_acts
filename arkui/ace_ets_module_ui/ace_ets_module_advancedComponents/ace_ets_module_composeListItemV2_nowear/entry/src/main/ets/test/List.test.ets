@@ -15,8 +15,12 @@
 
 import composeListItemV2PageTest from './composeListItemV2/ComposeListItemV2Page.test';
 import composeListItemV2Page02Test from './composeListItemV2/ComposeListItemV2Page02.test';
+import composeListItemV2Page03Test from './composeListItemV2/ComposeListItemV2Page03.test';
+import composeListItemV2Page04Test from './composeListItemV2/ComposeListItemV2Page04.test';
 
 export default function testsuite() {
   composeListItemV2PageTest();
   composeListItemV2Page02Test();
+  composeListItemV2Page03Test();
+  composeListItemV2Page04Test();
 }
