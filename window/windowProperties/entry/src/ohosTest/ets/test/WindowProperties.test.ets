@@ -3596,6 +3596,8 @@ export default function windowPropertiesTest() {
         }
         return array;
       });
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         let promise = subWindow.setWindowMask(windowMask);
         promise.then(async () => {
@@ -3607,6 +3609,10 @@ export default function windowPropertiesTest() {
           console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
           if (err.code === 801) {
+            if (canIUseRes) {
+              console.error(caseName + ` Unexpected 801: device supports SystemCapability.Window.SessionManager but got capability error.`);
+              expect(false).assertTrue();
+            }
             done();
           } else {
             expect(err.code).assertEqual(1300002);
@@ -3616,12 +3622,8 @@ export default function windowPropertiesTest() {
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
         await subWindow.destroyWindow();
-        if (err.code === 801) {
-          done();
-        } else {
-          expect(err.code).assertEqual(1300002);
-          done();
-        }
+        expect(false).assertTrue();
+        done();
       }
     })
     /**
