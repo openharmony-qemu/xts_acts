@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
-import Utils, { sleep } from '../Utils.test';
 
 class User {
   public id: number = 0;

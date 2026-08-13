@@ -155,8 +155,8 @@ export default function asyncRealWorldTest(): void {
      * @tc.level  LEVEL2
      */
     it('asyncRealWorldTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let lastCallTime: long = 0;
-      const debounceTime: long = 50;
+      let lastCallTime: number = 0;
+      const debounceTime: number = 50;
 
       const debouncedRequest = async (key: string): Promise<string> => {
         const now = Date.now();

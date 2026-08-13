@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
-import { sleep } from '../Utils.test';
 
 class WithLength {
   public length: number = 0;
@@ -433,7 +432,7 @@ export default function asyncGenericsTest(): void {
       const defaultUser: User = new User();
       const result = await fetchGeneric<User>('/api/user', defaultUser);
 
-      expect(typeof result).assertEqual('object');
+      expect(result instanceof User).assertTrue();
     });
 
     /**

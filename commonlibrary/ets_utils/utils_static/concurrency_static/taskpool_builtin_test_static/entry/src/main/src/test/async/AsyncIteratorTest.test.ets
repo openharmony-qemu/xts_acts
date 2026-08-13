@@ -706,7 +706,7 @@ export default function asyncIteratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('AsyncIteratorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // static equivalent of asyncIterator[Symbol.asyncIterator]() === asyncIterator
       const iter: SelfReturningIter = new SelfReturningIter();
       const iterable: SelfReturningIter = iter.getIterator();
@@ -1873,7 +1873,7 @@ export default function asyncIteratorTest(): void {
       const slowYield: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
         setTimeout((): void => {
           resolve('win');
-        }, 100);
+        }, 200);
       });
       const raced: string = await Promise.race([fastDelay, slowYield]);
       const iter: SeqIter<string> = new SeqIter<string>([raced]);
@@ -1907,7 +1907,7 @@ export default function asyncIteratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('AsyncIteratorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const factor: int = 2;
       const nums: number[] = [1, 2, 3];
       const values: number[] = [];

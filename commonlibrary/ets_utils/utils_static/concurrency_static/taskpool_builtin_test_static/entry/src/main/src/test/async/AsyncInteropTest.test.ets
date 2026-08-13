@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
-import Utils, { sleep } from '../Utils.test';
 
 class EventEmitter {
   private listeners: Map<string, (data: string) => void> = new Map<string, (data: string) => void>();
@@ -131,7 +130,6 @@ export default function asyncInteropTest(): void {
      */
     it('asyncInteropTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const emitter = new EventEmitter();
-      let eventData = '';
 
       const waitForEvent = async (): Promise<string> => {
         return new Promise<string>((resolve) => {

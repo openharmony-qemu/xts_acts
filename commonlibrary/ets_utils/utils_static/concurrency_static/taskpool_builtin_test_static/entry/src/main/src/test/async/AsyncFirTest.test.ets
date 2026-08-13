@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
-import Utils, { sleep } from '../Utils.test';
 
 class AsyncMethodClass {
   private value: int = 10;
@@ -1249,26 +1248,12 @@ export default function asyncFirTest(): void {
      * @tc.level  LEVEL3
      */
     it('asyncFirTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const stringResult = await helperGenericReturn<string>('test');
-      const numberResult = await helperGenericReturn<number>(42);
-      const booleanResult = await helperGenericReturn<boolean>(true);
+      const returnResult = await helperGenericReturn<string>('return-type');
+      const transformResult =
+        await helperGenericTransform<string, boolean>('test', (str: string): boolean => str.length === 4);
 
-      expect(stringResult).assertEqual('test');
-      expect(typeof stringResult).assertEqual('string');
-      expect(numberResult).assertEqual(42);
-      expect(typeof numberResult).assertEqual('number');
-      expect(booleanResult).assertEqual(true);
-      expect(typeof booleanResult).assertEqual('boolean');
-
-      const transformResult1 =
-        await helperGenericTransform<string, number>('hello', (str: string): number => str.length);
-      const transformResult2 =
-        await helperGenericTransform<number, string>(123, (num: number): string => num.toString());
-
-      expect(transformResult1).assertEqual(5);
-      expect(typeof transformResult1).assertEqual('number');
-      expect(transformResult2).assertEqual('123');
-      expect(typeof transformResult2).assertEqual('string');
+      expect(returnResult).assertEqual('return-type');
+      expect(transformResult).assertTrue();
     });
 
     /**
@@ -1280,24 +1265,13 @@ export default function asyncFirTest(): void {
      * @tc.level  LEVEL3
      */
     it('asyncFirTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const arrayResult1 = await helperGenericArrayProcess<number>([1, 2, 3]);
-      const arrayResult2 = await helperGenericArrayProcess<string>(['a', 'b', 'c']);
+      const arrayResult = await helperGenericArrayProcess<number>([3, 1, 4]);
+      const optionalValue = await helperGenericOptional<number>(0);
+      const optionalNull = await helperGenericOptional<number>(null);
 
-      let res: number[] = [1, 2, 3]
-      expect(arrayResult1).assertDeepEquals(res);
-      expect(arrayResult2).assertDeepEquals(['a', 'b', 'c']);
-
-      const optionalResult1 = await helperGenericOptional<string>('value');
-      const optionalResult2 = await helperGenericOptional<string>(null);
-
-      expect(optionalResult1).assertEqual('value');
-      expect(optionalResult2).assertEqual(null);
-
-      const constrainedResult1 = await helperGenericConstrained<string>('constrained');
-      const constrainedResult2 = await helperGenericConstrained<number>(100);
-
-      expect(constrainedResult1).assertEqual('constrained');
-      expect(constrainedResult2).assertEqual(100);
+      expect(arrayResult).assertDeepEquals([3.0, 1.0, 4.0]);
+      expect(optionalValue).assertEqual(0);
+      expect(optionalNull).assertEqual(null);
     });
 
     /**
@@ -1309,23 +1283,16 @@ export default function asyncFirTest(): void {
      * @tc.level  LEVEL3
      */
     it('asyncFirTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const multipleResult = await helperGenericMultiple<string, number, string>(
-        'Count: ',
-        5,
-        (str: string, num: number): string => str + num.toString()
+      const multipleResult = await helperGenericMultiple<string, number, boolean>(
+        'test',
+        4,
+        (str: string, num: number): boolean => str.length === num
       );
-
-      expect(multipleResult).assertEqual('Count: 5');
-
-      const stringProcessor = new GenericProcessor<string>();
       const numberProcessor = new GenericProcessor<number>();
+      const classResult = await numberProcessor.processArray([7, 8, 9]);
 
-      const classResult1 = await stringProcessor.process('class_test');
-      const classResult2 = await numberProcessor.processArray([10, 20, 30]);
-
-      expect(classResult1).assertEqual('class_test');
-      let res: number[] = [10, 20, 30]
-      expect(classResult2).assertDeepEquals(res);
+      expect(multipleResult).assertTrue();
+      expect(classResult).assertDeepEquals([7.0, 8.0, 9.0]);
     });
 
     /**

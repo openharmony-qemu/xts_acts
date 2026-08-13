@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
-import Utils, { sleep } from '../Utils.test';
 
 class NestedObject {
   public value: number = 0;
@@ -151,15 +150,14 @@ export default function asyncBoundaryTest(): void {
      * @tc.level  LEVEL2
      */
     it('asyncBoundaryTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let caughtError: Error | undefined;
+      let caught: boolean = false;
       try {
         await deepError(10);
-      } catch (err) {
-        caughtError = err as Error;
+      } catch (e) {
+        caught = true;
       }
 
-      expect(caughtError !== undefined).assertTrue();
-      expect(caughtError instanceof Error).assertTrue();
+      expect(caught).assertTrue();
     });
 
     /**

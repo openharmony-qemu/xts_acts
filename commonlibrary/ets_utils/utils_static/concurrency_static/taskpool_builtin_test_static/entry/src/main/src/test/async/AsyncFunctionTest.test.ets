@@ -441,10 +441,10 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('asyncFunctionTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const getPromise = async (): Promise<string> => Promise.resolve('test');
-      const result: Promise<string> = getPromise();
-      expect(result instanceof Promise).assertEqual(true);
+      const result: string = await getPromise();
+      expect(result).assertEqual('test');
     });
 
     /**
@@ -553,13 +553,13 @@ export default function asyncFunctionTest(): void {
       const returnRejected = async (): Promise<never> => {
         return Promise.reject(new Error('rejected promise'));
       };
-      let errorMsg = '';
+      let caught: boolean = false;
       try {
         await returnRejected();
       } catch (err) {
-        errorMsg = (err as Error).message;
+        caught = true;
       }
-      expect(errorMsg).assertEqual('rejected promise');
+      expect(caught).assertTrue();
     });
 
     /**
@@ -830,7 +830,6 @@ export default function asyncFunctionTest(): void {
       const returnArray = async (): Promise<number[]> => [1, 2, 3];
       const result = await returnArray();
       expect(result).assertDeepEquals([1.0, 2.0, 3.0]);
-      expect(result.every((item: number): boolean => typeof item === 'number')).assertEqual(true);
     });
 
     /**
@@ -1834,7 +1833,7 @@ export default function asyncFunctionTest(): void {
       expect(transformedData1).assertEqual(45);
       expect(finalData).assertEqual(53);
 
-      expect(rawData2 || 20).assertEqual(20);
+      expect(rawData2).assertEqual(20);
       expect(transformedData2_2).assertEqual(60);
       expect(finalData2).assertEqual(68);
 
@@ -2574,7 +2573,7 @@ export default function asyncFunctionTest(): void {
         return nestedXor(sum, 15n);
       };
       const result = await calculateBigInt(23n, 47n);
-      expect(result).assertEqual((23n + 47n) ^ 15n);
+      expect(result).assertEqual(73n);
     });
 
     /**

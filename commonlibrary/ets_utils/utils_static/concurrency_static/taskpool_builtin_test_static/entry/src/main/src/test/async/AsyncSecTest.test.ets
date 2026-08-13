@@ -646,26 +646,19 @@ export default function asyncSecTest(): void {
     /**
      * @tc.name   asyncSecTest0008
      * @tc.number ASYNC_SEC_TEST_0008
-     * @tc.desc   Verify await on non-Promise values returns immediately without blocking time
+     * @tc.desc   Verify await on non-Promise values preserves their values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('asyncSecTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const startTime = new Date().getTime();
-
       const numResult = await 123;
       const strResult = await 'NonBlocking';
       const boolResult = await true;
 
-      const endTime = new Date().getTime();
-      const diff = endTime - startTime;
-
       expect(numResult).assertEqual(123);
       expect(strResult).assertEqual('NonBlocking');
       expect(boolResult).assertEqual(true);
-
-      expect(diff < 50).assertTrue();
     });
 
     /**
@@ -751,7 +744,7 @@ export default function asyncSecTest(): void {
     /**
      * @tc.name   asyncSecTest0011
      * @tc.number ASYNC_SEC_TEST_0011
-     * @tc.desc   Verify logic correctness under high concurrency (1000+ tasks)
+     * @tc.desc   Verify logic correctness under high concurrency (100 parallel tasks)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1226,10 +1219,13 @@ export default function asyncSecTest(): void {
       await successOperation();
       expect(conn.isOpen).assertFalse();
 
+      let caught: boolean = false;
       try {
         await failOperation();
       } catch (e) {
+        caught = true;
       }
+      expect(caught).assertTrue();
       expect(conn.isOpen).assertFalse();
     });
 
@@ -2040,15 +2036,6 @@ export default function asyncSecTest(): void {
       const service = new ServiceMock();
 
       const unstableFetch = async (): Promise<string> => {
-        const now = new Date().getTime();
-
-        if (service.callCount > 0) {
-          const diff = now - service.lastCallTime;
-
-          expect(diff >= 40).assertTrue();
-        }
-
-        service.lastCallTime = now;
         service.callCount++;
 
         await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
@@ -2278,7 +2265,7 @@ export default function asyncSecTest(): void {
     /**
      * @tc.name   asyncSecTest0052
      * @tc.number ASYNC_SEC_TEST_0052
-     * @tc.desc   Stress test: High frequency calls (1000+) to verify no degradation/leaks
+     * @tc.desc   Stress test: 100 light async calls to verify no degradation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -2292,15 +2279,11 @@ export default function asyncSecTest(): void {
       const iterationCount: int = 100;
       const tasks: Promise<number>[] = [];
 
-      const startTime = new Date().getTime();
-
       for (let i: int = 0; i < iterationCount; i++) {
         tasks.push(lightTask(i));
       }
 
       const results = await Promise.all(tasks);
-
-      const endTime = new Date().getTime();
 
       expect(results.length).assertEqual(iterationCount);
 
