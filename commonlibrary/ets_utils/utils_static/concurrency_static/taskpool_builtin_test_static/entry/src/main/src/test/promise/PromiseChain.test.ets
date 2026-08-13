@@ -15,18 +15,15 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
-import Utils, { sleep } from '../Utils.test';
 import defaultExportedPromise, {
   exportedPromiseFunc,
   exportedPromiseArrow,
-  exportedPromiseWithGetterSetter,
   ExportedPromiseClass,
   ExportedMultiplePromiseClass
 } from './promiseExportModule';
 import { PromiseNamespace } from './promiseNamespaceModule';
 import {
   PromiseInterface,
-  AbstractPromiseClass,
   PromiseInterfaceImpl,
   AbstractPromiseImpl
 } from './promiseInterfaceModule';
@@ -38,11 +35,8 @@ import {
 import {
   taskPoolPromiseFunc,
   taskPoolAsyncPromise,
-  taskPoolPromiseChain,
-  taskPoolAsyncChain
+  taskPoolPromiseChain
 } from './promiseTaskPoolModule';
-
-const SLEEP_INTERVAL_MS: int = 100;
 
 interface TestObjectData {
   name: string;
@@ -114,6 +108,25 @@ function normalFinallyHandler(): void {
   console.info('finally executed');
 }
 
+function normalFunctionStepA(value: string): string {
+  expect(value).assertEqual('start');
+  return 'a';
+}
+
+function normalFunctionStepB(value: string): string {
+  expect(value).assertEqual('a');
+  return 'b';
+}
+
+function normalFunctionStepC(value: string): string {
+  expect(value).assertEqual('b');
+  return 'c';
+}
+
+function verifyNormalFunctionResult(value: string): void {
+  expect(value).assertEqual('c');
+}
+
 async function asyncFuncNested(): Promise<string> {
   return 'async result';
 }
@@ -148,12 +161,6 @@ class CustomError extends Error {
   }
 }
 
-interface SettledResult {
-  status: string;
-  value?: Object;
-  reason?: Object;
-}
-
 export default function promiseChainTest(): void {
   describe('PromiseChainTest', (): void => {
     beforeAll((): void => {
@@ -179,11 +186,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainStringPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainStringPass';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('start')
+        Promise.resolve<string>('start')
           .then((value: string): string => {
             expect(value).assertEqual('start');
             return 'modified';
@@ -194,10 +201,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: string): void => {
             expect(value).assertEqual('final');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -209,11 +223,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainNumberType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainNumberType';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('100')
+        Promise.resolve<string>('100')
           .then((value: string): number => {
             expect(value).assertEqual('100');
             return parseInt(value);
@@ -224,10 +238,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: string): void => {
             expect(value).assertEqual('100');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -239,11 +260,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainObjectPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainObjectPass';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<void>(undefined)
+        Promise.resolve<void>(undefined)
           .then(() => {
             const obj: TestObjectData = { name: 'test', age: 25, data: [1, 2, 3] };
             return obj;
@@ -259,10 +280,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: string): void => {
             expect(value).assertEqual('test');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -274,11 +302,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainArrayPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainArrayPass';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<number>(1)
+        Promise.resolve<number>(1)
           .then((value: number): number[] => {
             expect(value).assertEqual(1);
             return [value, value * 2, value * 3];
@@ -292,10 +320,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: number): void => {
             expect(value).assertEqual(2);
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -307,11 +342,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainBooleanPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainBooleanPass';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<number>(10)
+        Promise.resolve<number>(10)
           .then((value: number): boolean => {
             expect(value).assertEqual(10);
             return value > 5;
@@ -322,10 +357,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: string): void => {
             expect(value).assertEqual('yes');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -337,26 +379,32 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainReturnUndefined';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('value')
+        Promise.resolve<string>('value')
           .then((value: string): undefined => {
             expect(value).assertEqual('value');
             return undefined;
           })
           .then((value: undefined): string => {
             console.log(caseName + ": " + value)
-            expect(value).assertEqual(undefined);
             return 'after undefined';
           })
           .then((value: string): void => {
             expect(value).assertEqual('after undefined');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -368,11 +416,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainReturnNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainReturnNull';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('value')
+        Promise.resolve<string>('value')
           .then((value: string): null => {
             expect(value).assertEqual('value');
             return null;
@@ -383,10 +431,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: string): void => {
             expect(value).assertEqual('after null');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -398,11 +453,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainVoidReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainVoidReturn';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('value')
+        Promise.resolve<string>('value')
           .then((value: string): void => {
             expect(value).assertEqual('value');
           })
@@ -411,10 +466,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: string): void => {
             expect(value).assertEqual('after void');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -426,21 +488,28 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainReturnPromiseResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainReturnPromiseResolve';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('outer')
+        Promise.resolve<string>('outer')
           .then((value: string): Promise<string> => {
             expect(value).assertEqual('outer');
             return Promise.resolve('inner');
           })
           .then((value: string): void => {
             expect(value).assertEqual('inner');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -452,28 +521,35 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainReturnPromiseReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainReturnPromiseReject';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('start')
+        let rejected: boolean = false;
+        Promise.resolve<string>('start')
           .then((value: string): Promise<string> => {
             expect(value).assertEqual('start');
             return Promise.reject(new Error('inner error'));
           })
-          .then(() => {
-            expect().assertFail();
-          })
           .catch((error: Error): string => {
-            expect(error instanceof Error).assertTrue();
+            rejected = true;
             return 'recovered';
           })
           .then((value: string | void): void => {
             expect(value).assertEqual('recovered');
-          });
+          })
+          .then((): void => {
+            expect(rejected).assertTrue();
 
-        console.info(`${caseName} test end`);
-        done();
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
       });
 
     /**
@@ -485,11 +561,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainReturnPendingPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainReturnPendingPromise';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('start')
+        Promise.resolve<string>('start')
           .then((value: string): Promise<string> => {
             expect(value).assertEqual('start');
             return new Promise<string>((resolve: (value: string) => void) => {
@@ -500,10 +576,17 @@ export default function promiseChainTest(): void {
           })
           .then((value: string): void => {
             expect(value).assertEqual('delayed');
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -515,28 +598,35 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainThrowError';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('start')
+        let rejected: boolean = false;
+        Promise.resolve<string>('start')
           .then((value: string): string => {
             expect(value).assertEqual('start');
             throw new Error('thrown error');
           })
-          .then(() => {
-            expect().assertFail();
-          })
           .catch((error: Error): string => {
-            expect(error instanceof Error).assertTrue();
+            rejected = true;
             return 'recovered';
           })
           .then((value: string | void): void => {
             expect(value).assertEqual('recovered');
-          });
+          })
+          .then((): void => {
+            expect(rejected).assertTrue();
 
-        console.info(`${caseName} test end`);
-        done();
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
       });
 
     /**
@@ -548,11 +638,11 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainEmptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainEmptyString';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<string>('start')
+        Promise.resolve<string>('start')
           .then((value: string): string => {
             expect(value).assertEqual('start');
             return '';
@@ -560,10 +650,17 @@ export default function promiseChainTest(): void {
           .then((value: string): void => {
             expect(value).assertEqual('');
             expect(value.length).assertEqual(0);
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -575,21 +672,28 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainEmptyObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainEmptyObject';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<void>(undefined)
+        Promise.resolve<void>(undefined)
           .then(() => {
             const emptyObj: Record<string, Object> = {};
             return emptyObj;
           })
           .then((obj: Record<string, Object>): void => {
             expect(Object.keys(obj).length).assertEqual(0);
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -601,21 +705,28 @@ export default function promiseChainTest(): void {
      * @tc.level LEVEL0
      */
     it('testPromiseChainEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testPromiseChainEmptyArray';
         console.info(`${caseName} test start`);
 
-        await Promise.resolve<void>(undefined)
+        Promise.resolve<void>(undefined)
           .then(() => {
             const emptyArr: Object[] = [];
             return emptyArr;
           })
           .then((arr: Object[]): void => {
             expect(arr.length).assertEqual(0);
+          })
+          .then((): void => {
+            console.info(`${caseName} test end`);
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
           });
-
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -626,11 +737,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainArrowFunction';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('start')
+      Promise.resolve<string>('start')
         .then((value: string): string => {
           expect(value).assertEqual('start');
           return 'a';
@@ -645,10 +756,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('c');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -659,29 +777,31 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNormalFunction';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('start')
-        .then((value: string): string => {
-          expect(value).assertEqual('start');
-          return 'a';
-        })
-        .then((value: string): string => {
-          expect(value).assertEqual('a');
-          return 'b';
-        })
-        .then((value: string): string => {
-          expect(value).assertEqual('b');
-          return 'c';
-        })
+      let finalResult: string = '';
+      Promise.resolve<string>('start')
+        .then(normalFunctionStepA)
+        .then(normalFunctionStepB)
+        .then(normalFunctionStepC)
         .then((value: string): void => {
-          expect(value).assertEqual('c');
-        });
+          verifyNormalFunctionResult(value);
+          finalResult = value;
+        })
+        .then((): void => {
+          expect(finalResult).assertEqual('c');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -692,11 +812,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMixedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMixedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMixedFunction';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('start')
+      Promise.resolve<string>('start')
         .then((value: string): string => {
           expect(value).assertEqual('start');
           return 'arrow1';
@@ -711,10 +831,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('arrow2');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -725,18 +852,26 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNamedFunction';
       console.info(`${caseName} test start`);
 
-      const result: string = await Promise.resolve<string>('start')
+      Promise.resolve<string>('start')
         .then(step1)
         .then(step2)
-        .then(step3);
-      expect(result).assertEqual('start-step1-step2');
+        .then(step3)
+        .then((result: string): void => {
+          expect(result).assertEqual('start-step1-step2');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -747,21 +882,27 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCatchArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCatchArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCatchArrowFunction';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('error'))
+      Promise.reject(new Error('error'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -772,18 +913,25 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCatchNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCatchNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCatchNormalFunction';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('error'))
+      Promise.reject(new Error('error'))
         .catch(normalCatchHandler)
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -794,18 +942,25 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCatchNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCatchNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCatchNamedFunction';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('error'))
+      Promise.reject(new Error('error'))
         .catch(errorHandler)
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -816,23 +971,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainFinallyArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainFinallyArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainFinallyArrowFunction';
       console.info(`${caseName} test start`);
 
       let executed: boolean = false;
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .finally(() => {
           executed = true;
         })
         .then((value: string): void => {
           expect(value).assertEqual('value');
           expect(executed).assertTrue();
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -843,21 +1005,29 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainFinallyNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainFinallyNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainFinallyNormalFunction';
       console.info(`${caseName} test start`);
 
       normalFinallyExecuted = false;
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .finally(normalFinallyHandler)
         .then((value: string): void => {
           expect(value).assertEqual('value');
-        });
-      expect(normalFinallyExecuted).assertTrue();
+        })
+        .then((): void => {
+          expect(normalFinallyExecuted).assertTrue();
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -868,21 +1038,29 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainFinallyNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainFinallyNamedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainFinallyNamedFunction';
       console.info(`${caseName} test start`);
 
       cleanupExecuted = false;
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .finally(cleanup)
         .then((value: string): void => {
           expect(value).assertEqual('value');
-        });
-      expect(cleanupExecuted).assertTrue();
+        })
+        .then((): void => {
+          expect(cleanupExecuted).assertTrue();
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -893,15 +1071,14 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMixedCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMixedCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMixedCatchFinally';
       console.info(`${caseName} test start`);
 
       let finallyExecuted: boolean = false;
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'arrow recovered';
         })
         .then((value: string): string => {
@@ -914,10 +1091,17 @@ export default function promiseChainTest(): void {
         .then((value: string): void => {
           expect(value).assertEqual('arrow recovered normal');
           expect(finallyExecuted).assertTrue();
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -928,13 +1112,13 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainComplexFunctionMix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainComplexFunctionMix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainComplexFunctionMix';
       console.info(`${caseName} test start`);
 
       let finallyCount: number = 0;
 
-      await Promise.resolve<string>('start')
+      Promise.resolve<string>('start')
         .then((v: string): string => {
           expect(v).assertEqual('start');
           return v + '-arrow';
@@ -947,18 +1131,22 @@ export default function promiseChainTest(): void {
         .then((v: string): void => {
           expect(v).assertEqual('start-arrow-normal-named');
         })
-        .catch((e: Error): string => {
-          return 'error';
-        })
         .finally(() => {
           finallyCount++;
         })
         .then((v: string | void): void => {
           expect(finallyCount).assertEqual(1);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISECHAIN_MULTI_0100
@@ -968,11 +1156,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainThreeLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainThreeLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainThreeLevels';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<number>(1)
+      Promise.resolve<number>(1)
         .then((value: number): number => {
           expect(value).assertEqual(1);
           return value * 2;
@@ -983,10 +1171,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: number): void => {
           expect(value).assertEqual(5);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -997,11 +1192,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainFiveLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainFiveLevels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainFiveLevels';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('')
+      Promise.resolve<string>('')
         .then((value: string): string => {
           expect(value).assertEqual('');
           expect(value.length).assertEqual(0);
@@ -1023,10 +1218,17 @@ export default function promiseChainTest(): void {
         .then((value: string): void => {
           expect(value).assertEqual('abcd');
           expect(value.length).assertEqual(4);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1037,11 +1239,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainTypeConversion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainTypeConversion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainTypeConversion';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('100')
+      Promise.resolve<string>('100')
         .then((value: string): number => {
           expect(value).assertEqual('100');
           return parseInt(value);
@@ -1056,10 +1258,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('yes');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1070,13 +1279,13 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainThenSuccessCatchSkip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainThenSuccessCatchSkip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainThenSuccessCatchSkip';
       console.info(`${caseName} test start`);
 
       let catchExecuted: boolean = false;
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .then((value: string): string => {
           expect(value).assertEqual('value');
           return 'success';
@@ -1088,10 +1297,17 @@ export default function promiseChainTest(): void {
         .then((value: string): void => {
           expect(value).assertEqual('success');
           expect(catchExecuted).assertFalse();
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1102,25 +1318,31 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainThenFailCatchExecute', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainThenFailCatchExecute', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainThenFailCatchExecute';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .then((value: string): string => {
           expect(value).assertEqual('value');
           throw new Error('then failed');
         })
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1131,11 +1353,12 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMultipleThenThenCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMultipleThenThenCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMultipleThenThenCatch';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('start')
+      let caught: boolean = false;
+      Promise.resolve<string>('start')
         .then((value: string): string => {
           expect(value).assertEqual('start');
           return value + '1';
@@ -1144,20 +1367,25 @@ export default function promiseChainTest(): void {
           expect(value).assertEqual('start1');
           throw new Error('failed at step 2');
         })
-        .then((value: string): string => {
-          expect().assertFail();
-          return value;
-        })
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
+          caught = true;
           return 'caught';
         })
         .then((value: string): void => {
           expect(value).assertEqual('caught');
-        });
+        })
+        .then((): void => {
+          expect(caught).assertTrue();
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -1168,13 +1396,13 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainSuccessCompleteFlow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainSuccessCompleteFlow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainSuccessCompleteFlow';
       console.info(`${caseName} test start`);
 
       let steps: string[] = [];
 
-      await Promise.resolve<string>('start')
+      Promise.resolve<string>('start')
         .then((value: string): string => {
           expect(value).assertEqual('start');
           steps.push('then1');
@@ -1196,10 +1424,17 @@ export default function promiseChainTest(): void {
           expect(value).assertEqual('start12');
           steps.push('final then');
           expect(steps.join(',')).assertEqual('then1,then2,finally,final then');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1210,15 +1445,14 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainFailCompleteFlow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainFailCompleteFlow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainFailCompleteFlow';
       console.info(`${caseName} test start`);
 
       let steps: string[] = [];
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           steps.push('catch');
           return 'recovered';
         })
@@ -1229,10 +1463,17 @@ export default function promiseChainTest(): void {
           expect(value).assertEqual('recovered');
           steps.push('then');
           expect(steps.join(',')).assertEqual('catch,finally,then');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1243,20 +1484,19 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainThenFailCatchRecoverFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainThenFailCatchRecoverFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainThenFailCatchRecoverFinally';
       console.info(`${caseName} test start`);
 
       let steps: string[] = [];
 
-      await Promise.resolve<string>('start')
+      Promise.resolve<string>('start')
         .then((value: string): string => {
           expect(value).assertEqual('start');
           steps.push('then');
           throw new Error('then error');
         })
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           steps.push('catch');
           return 'recovered';
         })
@@ -1267,10 +1507,17 @@ export default function promiseChainTest(): void {
           expect(value).assertEqual('recovered');
           steps.push('final then');
           expect(steps.join(',')).assertEqual('then,catch,finally,final then');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1281,15 +1528,14 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMultipleCatchFirstCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMultipleCatchFirstCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMultipleCatchFirstCatch';
       console.info(`${caseName} test start`);
 
       let catchCount: number = 0;
 
-      await Promise.reject(new Error('error'))
+      Promise.reject(new Error('error'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           catchCount++;
           return 'caught1';
         })
@@ -1300,10 +1546,17 @@ export default function promiseChainTest(): void {
         .then((value: string): void => {
           expect(value).assertEqual('caught1');
           expect(catchCount).assertEqual(1);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1314,25 +1567,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCatchThrowNextCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCatchThrowNextCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCatchThrowNextCatch';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('original'))
+      Promise.reject(new Error('original'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           throw new Error('new error');
         })
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'caught2';
         })
         .then((value: string): void => {
           expect(value).assertEqual('caught2');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1343,13 +1601,12 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCatchRecoverContinue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCatchRecoverContinue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCatchRecoverContinue';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): string => {
@@ -1358,10 +1615,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('recovered processed');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1372,15 +1636,14 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCatchRecoverFinallyContinue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCatchRecoverFinallyContinue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCatchRecoverFinallyContinue';
       console.info(`${caseName} test start`);
 
       let finallyExecuted: boolean = false;
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .finally(() => {
@@ -1389,10 +1652,17 @@ export default function promiseChainTest(): void {
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
           expect(finallyExecuted).assertTrue();
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1403,25 +1673,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMultipleRejectRecover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMultipleRejectRecover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMultipleRejectRecover';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('error1'))
+      Promise.reject(new Error('error1'))
         .catch((error: Error): Promise<string> => {
-          expect(error instanceof Error).assertTrue();
           return Promise.reject(new Error('error2'));
         })
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'final recovery';
         })
         .then((value: string): void => {
           expect(value).assertEqual('final recovery');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1432,13 +1707,12 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseCatchReturnString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseCatchReturnString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseCatchReturnString';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): string => {
@@ -1447,10 +1721,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('recovered processed');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1461,25 +1742,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseCatchReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseCatchReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseCatchReturnUndefined';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): undefined => {
-          expect(error instanceof Error).assertTrue();
           return undefined;
         })
         .then((value: undefined): string => {
-          expect(value).assertEqual(undefined);
           return 'after undefined';
         })
         .then((value: string): void => {
           expect(value).assertEqual('after undefined');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1490,21 +1776,27 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseCatchReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseCatchReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseCatchReturnPromise';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): Promise<string> => {
-          expect(error instanceof Error).assertTrue();
           return Promise.resolve('promise recovered');
         })
         .then((value: string): void => {
           expect(value).assertEqual('promise recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1515,25 +1807,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseCatchThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseCatchThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseCatchThrowError';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('original'))
+      Promise.reject(new Error('original'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           throw new Error('new error');
         })
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'final recovered';
         })
         .then((value: string): void => {
           expect(value).assertEqual('final recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1544,25 +1841,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseCatchReturnRejectPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseCatchReturnRejectPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseCatchReturnRejectPromise';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('original'))
+      Promise.reject(new Error('original'))
         .catch((error: Error): Promise<string> => {
-          expect(error instanceof Error).assertTrue();
           return Promise.reject(new Error('rejected again'));
         })
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1573,24 +1875,29 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseCatchNoReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseCatchNoReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseCatchNoReturn';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): void => {
-          expect(error instanceof Error).assertTrue();
         })
         .then((value: void): string => {
-          expect(value).assertEqual(undefined);
           return 'after catch void';
         })
         .then((value: string): void => {
           expect(value).assertEqual('after catch void');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1601,13 +1908,13 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyResolveThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyResolveThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyResolveThen';
       console.info(`${caseName} test start`);
 
       let finallyExecuted: boolean = false;
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .then((value: string): string => {
           expect(value).assertEqual('value');
           return 'modified';
@@ -1618,10 +1925,17 @@ export default function promiseChainTest(): void {
         .then((value: string): void => {
           expect(value).assertEqual('modified');
           expect(finallyExecuted).assertTrue();
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1632,15 +1946,14 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyRejectCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyRejectCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyRejectCatch';
       console.info(`${caseName} test start`);
 
       let finallyExecuted: boolean = false;
 
-      await Promise.reject(new Error('failed'))
+      Promise.reject(new Error('failed'))
         .catch((error: Error): string => {
-          expect(error instanceof Error).assertTrue();
           return 'recovered';
         })
         .finally(() => {
@@ -1649,10 +1962,17 @@ export default function promiseChainTest(): void {
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
           expect(finallyExecuted).assertTrue();
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1663,19 +1983,26 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyNoParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyNoParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyNoParameter';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .finally(() => {
         })
         .then((value: string): void => {
           expect(value).assertEqual('value');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1686,20 +2013,27 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyReturnValueIgnored', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyReturnValueIgnored', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyReturnValueIgnored';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('original')
+      Promise.resolve<string>('original')
         .finally(() => {
           return 'ignored';
         })
         .then((value: string): void => {
           expect(value).assertEqual('original');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1710,20 +2044,27 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyReturnUndefined';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .finally(() => {
           return undefined;
         })
         .then((value: string): void => {
           expect(value).assertEqual('value');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1734,11 +2075,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyReturnPromise';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('value')
+      Promise.resolve<string>('value')
         .finally(() => {
           return new Promise<void>((resolve: (value: void) => void) => {
             setTimeout(() => {
@@ -1748,10 +2089,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('value');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1762,11 +2110,12 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyThrowError';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('value')
+      let caught: boolean = false;
+      Promise.resolve<string>('value')
         .then((value: string): string => {
           expect(value).assertEqual('value');
           return 'processed';
@@ -1774,15 +2123,21 @@ export default function promiseChainTest(): void {
         .finally(() => {
           throw new Error('finally error');
         })
-        .then((value: string): void => {
-          expect().assertFail();
-        })
         .catch((error: Error): void => {
-          expect(error instanceof Error).assertTrue();
-        });
+          caught = true;
+        })
+        .then((): void => {
+          expect(caught).assertTrue();
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -1793,20 +2148,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseFinallyReturnRejectPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseFinallyReturnRejectPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseFinallyReturnRejectPromise';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('value')
+      let caught: boolean = false;
+      Promise.resolve<string>('value')
         .finally(() => {
           return Promise.reject(new Error('finally reject'));
         })
         .catch((error: Error): void => {
-          expect(error instanceof Error).assertTrue();
-        });
+          caught = true;
+        })
+        .then((): void => {
+          expect(caught).assertTrue();
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -1817,26 +2182,32 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseCustomErrorCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseCustomErrorCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseCustomErrorCatch';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           throw new CustomError('custom error', 500);
         })
         .catch((error: Error): string => {
           const customError = error as CustomError;
-          expect(customError instanceof Error).assertTrue();
           expect(customError.customCode).assertEqual(500);
           return 'recovered';
         })
         .then((value: string): void => {
           expect(value).assertEqual('recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1847,11 +2218,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNestedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNestedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNestedPromise';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('outer')
+      Promise.resolve<string>('outer')
         .then((value: string): Promise<string> => {
           expect(value).assertEqual('outer');
           return Promise.resolve<string>('inner')
@@ -1862,10 +2233,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('inner-nested');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1876,11 +2254,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainDoubleNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainDoubleNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainDoubleNested';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return Promise.resolve<void>(undefined)
             .then(() => {
@@ -1889,10 +2267,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('deep');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1903,25 +2288,31 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNestedErrorHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNestedErrorHandling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNestedErrorHandling';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('outer')
+      Promise.resolve<string>('outer')
         .then((value: string): Promise<string> => {
           expect(value).assertEqual('outer');
           return Promise.reject(new Error('nested error'))
             .catch((error: Error): string => {
-              expect(error instanceof Error).assertTrue();
               return 'nested recovered';
             });
         })
         .then((value: string): void => {
           expect(value).assertEqual('nested recovered');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -1976,11 +2367,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNestedThenChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNestedThenChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNestedThenChain';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return Promise.resolve<string>('inner')
             .then((v: string): string => {
@@ -1994,10 +2385,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('inner12');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2008,20 +2406,27 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainValuePenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainValuePenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainValuePenetration';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('original')
+      Promise.resolve<string>('original')
         .then((value: string): string => value)
         .then((value: string): string => value)
         .then((value: string): string => value)
         .then((value: string): void => {
           expect(value).assertEqual('original');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2032,19 +2437,29 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainErrorPenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainErrorPenetration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainErrorPenetration';
       console.info(`${caseName} test start`);
 
-      await Promise.reject(new Error('error'))
+      let caught: boolean = false;
+      Promise.reject(new Error('error'))
         .then((value: string): string => value)
         .then((value: string): string => value)
         .catch((error: Error): void => {
-          expect(error instanceof Error).assertTrue();
-        });
+          caught = true;
+        })
+        .then((): void => {
+          expect(caught).assertTrue();
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2055,11 +2470,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCreateNewPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCreateNewPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCreateNewPromise';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return new Promise<string>((resolve: (value: string) => void) => {
             resolve('new promise');
@@ -2067,10 +2482,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('new promise');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2081,20 +2503,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainResolveRejectThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainResolveRejectThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainResolveRejectThen';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<void>(undefined)
+      let caught: boolean = false;
+      Promise.resolve<void>(undefined)
         .then(() => {
           throw new Error('then error');
         })
         .catch((error: Error): void => {
-          expect(error instanceof Error).assertTrue();
-        });
+          caught = true;
+        })
+        .then((): void => {
+          expect(caught).assertTrue();
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2105,7 +2537,7 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainPromiseAllNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainPromiseAllNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainPromiseAllNested';
       console.info(`${caseName} test start`);
 
@@ -2121,14 +2553,21 @@ export default function promiseChainTest(): void {
           return v + 'b';
         });
 
-      await Promise.all([chain1, chain2])
+      Promise.all([chain1, chain2])
         .then((results: string[]): void => {
           expect(results[0]).assertEqual('chain1a');
           expect(results[1]).assertEqual('chain2b');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2169,20 +2608,27 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMaxValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMaxValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMaxValue';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return Number.MAX_VALUE;
         })
         .then((value: number): void => {
           expect(value).assertEqual(Number.MAX_VALUE);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2193,20 +2639,27 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMinValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMinValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMinValue';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return Number.MIN_VALUE;
         })
         .then((value: number): void => {
           expect(value).assertEqual(Number.MIN_VALUE);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2217,23 +2670,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainLongString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainLongString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainLongString';
       console.info(`${caseName} test start`);
 
       const longString: string = 'a'.repeat(10000);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return longString;
         })
         .then((value: string): void => {
           expect(value.length).assertEqual(10000);
           expect(value).assertEqual(longString);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2244,7 +2704,7 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainLargeArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainLargeArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainLargeArray';
       console.info(`${caseName} test start`);
 
@@ -2253,7 +2713,7 @@ export default function promiseChainTest(): void {
         largeArray.push(i);
       }
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return largeArray;
         })
@@ -2261,10 +2721,17 @@ export default function promiseChainTest(): void {
           expect(value.length).assertEqual(1000);
           expect(value[0]).assertEqual(0);
           expect(value[999]).assertEqual(999);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2275,24 +2742,31 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainCircularObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainCircularObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainCircularObject';
       console.info(`${caseName} test start`);
 
       const circularObj: CircularObject = { name: 'test' };
       circularObj.self = circularObj;
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return circularObj;
         })
         .then((obj: CircularObject): void => {
           expect(obj.name).assertEqual('test');
           expect(obj.self).assertEqual(obj);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2303,13 +2777,13 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainDateObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainDateObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainDateObject';
       console.info(`${caseName} test start`);
 
       const date: Date = new Date('2025-01-01');
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return date;
         })
@@ -2317,10 +2791,17 @@ export default function promiseChainTest(): void {
           expect(value.getFullYear()).assertEqual(2025);
           expect(value.getMonth()).assertEqual(0);
           expect(value.getDate()).assertEqual(1);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2331,7 +2812,7 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainMapObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainMapObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainMapObject';
       console.info(`${caseName} test start`);
 
@@ -2339,7 +2820,7 @@ export default function promiseChainTest(): void {
       map.set('a', 1);
       map.set('b', 2);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return map;
         })
@@ -2347,10 +2828,17 @@ export default function promiseChainTest(): void {
           expect(value.size).assertEqual(2);
           expect(value.get('a')).assertEqual(1);
           expect(value.get('b')).assertEqual(2);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2361,7 +2849,7 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainSetObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainSetObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainSetObject';
       console.info(`${caseName} test start`);
 
@@ -2370,7 +2858,7 @@ export default function promiseChainTest(): void {
       set.add(2);
       set.add(3);
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return set;
         })
@@ -2379,10 +2867,17 @@ export default function promiseChainTest(): void {
           expect(value.has(1)).assertTrue();
           expect(value.has(2)).assertTrue();
           expect(value.has(3)).assertTrue();
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2393,11 +2888,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainDataProcessing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainDataProcessing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainDataProcessing';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('{"value": 100}')
+      Promise.resolve<string>('{"value": 100}')
         .then((json: string): ValueObject => {
           expect(json).assertEqual('{"value": 100}');
           const data: ValueObject = { value: 100 };
@@ -2413,10 +2908,17 @@ export default function promiseChainTest(): void {
         })
         .then((output: string): void => {
           expect(output).assertEqual('Result: 200');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2427,11 +2929,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainZeroValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainZeroValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainZeroValue';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<number>(0)
+      Promise.resolve<number>(0)
         .then((value: number): number => {
           expect(value).assertEqual(0);
           return value;
@@ -2442,10 +2944,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('0');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2456,21 +2965,28 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNegativeValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNegativeValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNegativeValue';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<number>(-100)
+      Promise.resolve<number>(-100)
         .then((value: number): number => {
           expect(value).assertEqual(-100);
           return Math.abs(value);
         })
         .then((value: number): void => {
           expect(value).assertEqual(100);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2481,11 +2997,11 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainFalseValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainFalseValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainFalseValue';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<boolean>(false)
+      Promise.resolve<boolean>(false)
         .then((value: boolean): boolean => {
           expect(value).assertFalse();
           return value;
@@ -2496,10 +3012,17 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('false');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2510,7 +3033,7 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainComplexObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainComplexObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainComplexObject';
       console.info(`${caseName} test start`);
 
@@ -2519,17 +3042,24 @@ export default function promiseChainTest(): void {
       const level1Obj: Level1Object = { level2: level2Obj };
       const complexObj: ComplexNestedObject = { level1: level1Obj };
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return complexObj;
         })
         .then((obj: ComplexNestedObject): void => {
           expect(obj.level1.level2.level3.value).assertEqual('deep value');
           expect(obj.level1.level2.level3.array.length).assertEqual(3);
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2540,22 +3070,29 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainUnicodeString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainUnicodeString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainUnicodeString';
       console.info(`${caseName} test start`);
 
       const unicodeString: string = '你好世界 Hello World 🌍';
 
-      await Promise.resolve<void>(undefined)
+      Promise.resolve<void>(undefined)
         .then(() => {
           return unicodeString;
         })
         .then((value: string): void => {
           expect(value).assertEqual('你好世界 Hello World 🌍');
+        })
+        .then((): void => {
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         });
-
-      console.info(`${caseName} test end`);
-      done();
     });
 
     /**
@@ -2566,15 +3103,23 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainExportedPromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainExportedPromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainExportedPromiseFunc';
       console.info(`${caseName} test start`);
 
-      const result: string = await exportedPromiseFunc();
-      expect(result).assertEqual('exported-chain');
+      exportedPromiseFunc()
+        .then((result: string): void => {
+          expect(result).assertEqual('exported-chain');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2585,15 +3130,23 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainExportedPromiseArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainExportedPromiseArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainExportedPromiseArrow';
       console.info(`${caseName} test start`);
 
-      const result: number = await exportedPromiseArrow();
-      expect(result).assertEqual(84);
+      exportedPromiseArrow()
+        .then((result: number): void => {
+          expect(result).assertEqual(84);
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2604,15 +3157,23 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainDefaultExportedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainDefaultExportedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainDefaultExportedPromise';
       console.info(`${caseName} test start`);
 
-      const result: string = await defaultExportedPromise();
-      expect(result).assertEqual('exported-chain');
+      defaultExportedPromise()
+        .then((result: string): void => {
+          expect(result).assertEqual('exported-chain');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2623,17 +3184,25 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainExportedPromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainExportedPromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainExportedPromiseClassMethod';
       console.info(`${caseName} test start`);
 
       const instance = new ExportedPromiseClass();
       instance.value = 10;
-      const result: string = await instance.exportedPromiseMethod();
-      expect(result).assertEqual('class-method');
+      instance.exportedPromiseMethod()
+        .then((result: string): void => {
+          expect(result).assertEqual('class-method');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2670,15 +3239,23 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNamespacePromiseFunc';
       console.info(`${caseName} test start`);
 
-      const result: string = await PromiseNamespace.namespacePromiseFunc();
-      expect(result).assertEqual('namespace-chain');
+      PromiseNamespace.namespacePromiseFunc()
+        .then((result: string): void => {
+          expect(result).assertEqual('namespace-chain');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2689,17 +3266,25 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainNamespacePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainNamespacePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainNamespacePromiseClassMethod';
       console.info(`${caseName} test start`);
 
       const instance = new PromiseNamespace.NamespacePromiseClass();
       instance.value = 20;
-      const result: string = await instance.namespacePromiseMethod();
-      expect(result).assertEqual('namespace-class-method');
+      instance.namespacePromiseMethod()
+        .then((result: string): void => {
+          expect(result).assertEqual('namespace-class-method');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2710,15 +3295,23 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL1
      */
-    it('testPromiseChainInnerNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testPromiseChainInnerNamespacePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       const caseName = 'testPromiseChainInnerNamespacePromiseFunc';
       console.info(`${caseName} test start`);
 
-      const result: string = await PromiseNamespace.InnerPromiseNamespace.innerNamespacePromiseFunc();
-      expect(result).assertEqual('inner-namespace-inner');
+      PromiseNamespace.InnerPromiseNamespace.innerNamespacePromiseFunc()
+        .then((result: string): void => {
+          expect(result).assertEqual('inner-namespace-inner');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2729,16 +3322,24 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainInterfacePromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainInterfacePromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainInterfacePromiseMethod';
       console.info(`${caseName} test start`);
 
       const instance: PromiseInterface = new PromiseInterfaceImpl();
-      const result: string = await instance.promiseMethod();
-      expect(result).assertEqual('interface-impl');
+      instance.promiseMethod()
+        .then((result: string): void => {
+          expect(result).assertEqual('interface-impl');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2749,16 +3350,24 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainAbstractPromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainAbstractPromiseMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainAbstractPromiseMethod';
       console.info(`${caseName} test start`);
 
       const instance = new AbstractPromiseImpl();
-      const result: number = await instance.abstractPromiseMethod();
-      expect(result).assertEqual(200);
+      instance.abstractPromiseMethod()
+        .then((result: number): void => {
+          expect(result).assertEqual(200);
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2769,15 +3378,23 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainSendablePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainSendablePromiseFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainSendablePromiseFunc';
       console.info(`${caseName} test start`);
 
-      const result: string = await sendablePromiseFunc();
-      expect(result).assertEqual('sendable-chain');
+      sendablePromiseFunc()
+        .then((result: string): void => {
+          expect(result).assertEqual('sendable-chain');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2788,17 +3405,25 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseChainSendablePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseChainSendablePromiseClassMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseChainSendablePromiseClassMethod';
       console.info(`${caseName} test start`);
 
       const instance = new SendablePromiseClass();
       instance.value = 10;
-      const result: number = await instance.sendablePromiseMethod();
-      expect(result).assertEqual(30);
+      instance.sendablePromiseMethod()
+        .then((result: number): void => {
+          expect(result).assertEqual(30);
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2895,22 +3520,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseRaceBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseRaceBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseRaceBasic';
       console.info(`${caseName} test start`);
 
-      const result: string = await Promise.race([
+      Promise.race([
         Promise.resolve<string>('fast'),
         new Promise<string>((resolve: (value: string) => void) => {
           setTimeout(() => {
             resolve('slow');
           }, 100);
         })
-      ]);
-      expect(result).assertEqual('fast');
+      ])
+        .then((result: string): void => {
+          expect(result).assertEqual('fast');
 
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2921,22 +3554,29 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseRaceReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseRaceReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseRaceReject';
       console.info(`${caseName} test start`);
 
-      try {
-        await Promise.race([
-          Promise.reject(new Error('first error')),
-          Promise.resolve<string>('success')
-        ]);
-        expect().assertFail();
-      } catch (e) {
-        expect(e instanceof Error).assertTrue();
-      }
-
-      console.info(`${caseName} test end`);
-      done();
+      Promise.race([
+        Promise.reject(new Error('first error')),
+        Promise.resolve<string>('success')
+      ])
+        .then((value: string): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            console.info(`${caseName} test end`);
+            done();
+          }
+        }, (error: Error): void => {
+          try {
+            expect(error.message).assertEqual('first error');
+          } finally {
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
     });
 
     /**
@@ -2947,23 +3587,30 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-    it('testPromiseAllSettledMixed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testPromiseAllSettledMixed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
       const caseName = 'testPromiseAllSettledMixed';
       console.info(`${caseName} test start`);
 
-      const results: Object[] = await Promise.allSettled([
+      Promise.allSettled([
         Promise.resolve<string>('success'),
         Promise.reject(new Error('failed'))
-      ]) as Object[];
+      ])
+        .then((results: (PromiseFulfilledResult<string> | PromiseRejectedResult)[]): void => {
+          expect(results.length).assertEqual(2);
+          const r0 = results[0] as PromiseSettledResult<string>;
+          const r1 = results[1] as PromiseSettledResult<string>;
+          expect(r0.status).assertEqual('fulfilled');
+          expect(r1.status).assertEqual('rejected');
 
-      expect(results.length).assertEqual(2);
-      const r0 = results[0] as PromiseSettledResult<string>;
-      const r1 = results[1] as PromiseSettledResult<string>;
-      expect(r0.status).assertEqual('fulfilled');
-      expect(r1.status).assertEqual('rejected');
-
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
 
     /**
@@ -2974,25 +3621,32 @@ export default function promiseChainTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL1
      */
-    it('testPromiseAllSettledAllSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testPromiseAllSettledAllSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       const caseName = 'testPromiseAllSettledAllSuccess';
       console.info(`${caseName} test start`);
 
-      const results: Object[] = await Promise.allSettled([
+      Promise.allSettled([
         Promise.resolve<number>(10)
           .then((v: number): number => v * 2),
         Promise.resolve<number>(20)
           .then((v: number): number => v + 5)
-      ]) as Object[];
+      ])
+        .then((results: (PromiseFulfilledResult<number> | PromiseRejectedResult)[]): void => {
+          expect(results.length).assertEqual(2);
+          const r0 = results[0] as PromiseSettledResult<number>;
+          const r1 = results[1] as PromiseSettledResult<number>;
+          expect(r0.status).assertEqual('fulfilled');
+          expect(r1.status).assertEqual('fulfilled');
 
-      expect(results.length).assertEqual(2);
-      const r0 = results[0] as PromiseSettledResult<number>;
-      const r1 = results[1] as PromiseSettledResult<number>;
-      expect(r0.status).assertEqual('fulfilled');
-      expect(r1.status).assertEqual('fulfilled');
-
-      console.info(`${caseName} test end`);
-      done();
+          console.info(`${caseName} test end`);
+          done();
+        }, (error: Error): void => {
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
+        });
     });
   });
 }

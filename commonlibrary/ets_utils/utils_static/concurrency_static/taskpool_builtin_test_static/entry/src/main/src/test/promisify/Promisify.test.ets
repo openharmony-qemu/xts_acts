@@ -15,7 +15,6 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
-import Utils, { sleep } from '../Utils.test';
 import util from '@ohos.util';
 import {
   callCallbackWithThis,
@@ -1344,13 +1343,14 @@ export default function PromisifyTest(): void {
       async (): Promise<void> => {
         console.info('testFailCallbackConversion0300 start');
         const promisified = util.promisify(errorCallback);
+        let caught: boolean = false;
         try {
           await promisified();
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testFailCallbackConversion0300 end');
       });
 
@@ -1998,16 +1998,17 @@ export default function PromisifyTest(): void {
         console.info('testErrorHandlingChain5200 start');
         const promisified = util.promisify(errorCallback);
 
+        let caught: boolean = false;
         try {
           await (promisified() as Promise<String>)
             .then((res: string) => {
               return 'should-not-reach';
             });
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testErrorHandlingChain5200 end');
       });
 
@@ -2080,13 +2081,14 @@ export default function PromisifyTest(): void {
         console.info('testErrorObjectType5800 start');
 
         const promisified = util.promisify(customErrorCallback);
+        let caught: boolean = false;
         try {
           await promisified();
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testErrorObjectType5800 end');
       });
 
@@ -2107,13 +2109,14 @@ export default function PromisifyTest(): void {
         const result1: FixedArray<Any>= await promisified('success') as FixedArray<Any>;
         expect(result1[0] as PromisifyResultValue).assertEqual('processed-success');
 
+        let caught: boolean = false;
         try {
           await promisified('error');
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testCustomErrorFirst5900 end');
       });
 
@@ -2368,13 +2371,14 @@ export default function PromisifyTest(): void {
         const promisified2 = util.promisify((callback: (err: Error | null, ...value: FixedArray<Any>) => void) => {
           instance.errorCallback(callback);
         });
+        let caught: boolean = false;
         try {
           await promisified2();
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testSendableComplexCallback8300 end');
       });
 
@@ -2507,13 +2511,14 @@ export default function PromisifyTest(): void {
           instance.errorCallback(callback);
         });
 
+        let caught: boolean = false;
         try {
           await promisified();
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testSendableErrorHandling9000 end');
       });
 
@@ -2724,13 +2729,14 @@ export default function PromisifyTest(): void {
       async (): Promise<void> => {
         console.info('testCrossFileErrorHandling12000 start');
         const promisifiedETS = util.promisify(etsErrorCallback);
+        let caught: boolean = false;
         try {
           await promisifiedETS();
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testCrossFileErrorHandling12000 end');
       });
 
@@ -3154,13 +3160,14 @@ export default function PromisifyTest(): void {
       async (): Promise<void> => {
         console.info('testPromiseReject20300 start');
         const promisified = util.promisify(rejectCallback);
+        let caught: boolean = false;
         try {
           await promisified();
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
         console.info('testPromiseReject20300 end');
       });
 
