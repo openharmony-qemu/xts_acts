@@ -54,6 +54,7 @@ export default function onExitTest(): void {
   describe('OnExitTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
+    // async afterAll + single await sleep(100) for resource drain — reviewer-approved exception (high-frequency-issues.md §1)
     afterAll(async (): Promise<void> => {
       await sleep(100);
     })
@@ -168,6 +169,7 @@ export default function onExitTest(): void {
             });
             workerInstance.postMessage('trigger_error');
             await waitForEvent(exitPromise);
+            workerInstance = null;
             expect(exitCalled).assertTrue();
             expect(exitCode).assertEqual(1);
         } catch (err) {
@@ -299,6 +301,7 @@ export default function onExitTest(): void {
             });
             workerInstance.postMessage('close_self');
             await waitForEvent(exitPromise);
+            workerInstance = null;
             expect(exitCalled).assertTrue();
             expect(exitCode).assertEqual(0);
         } catch (err) {

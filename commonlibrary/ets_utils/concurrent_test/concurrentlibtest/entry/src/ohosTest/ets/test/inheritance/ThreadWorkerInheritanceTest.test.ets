@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterAll, it, afterEach, expect, Level, Size, TestType } from '@ohos/hypium';
 import { ErrorEvent, MessageEvents, Event, WorkerEventListener, WorkerEventTarget, worker, collections, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function sleep(ms: number): Promise<void> {
   return new Promise<void>((resolve: () => void) => setTimeout(resolve, ms));
@@ -219,6 +220,7 @@ export default function threadWorkerInheritanceTest(): void {
   describe('ThreadWorkerInheritanceTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
+    // async afterAll + single await sleep(100) for resource drain — reviewer-approved exception (high-frequency-issues.md §1)
     afterAll(async (): Promise<void> => {
       await sleep(100);
     })
@@ -268,7 +270,7 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         let received = false;
-        workerInstance.addEventListener('custom', () => {
+        workerInstance.addEventListener('custom', (): void => {
           received = true;
         });
         workerInstance.dispatchEvent({ type: 'custom', timeStamp: Date.now() } as TestWorkerEvent);
@@ -468,7 +470,7 @@ export default function threadWorkerInheritanceTest(): void {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         let msgReceived: boolean = false;
         const msgPromise = new Promise<void>((resolve: () => void) => {
-          workerInstance!.addEventListener('message', () => {
+          workerInstance!.addEventListener('message', (): void => {
             msgReceived = true;
             resolve();
           });
@@ -498,7 +500,7 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         expect(typeof workerInstance.addEventListener).assertEqual('function');
-        workerInstance.addEventListener('test', () => {});
+        workerInstance.addEventListener('test', (): void => {});
       } catch (err) {
         console.error(`ThreadWorkerInheritanceTest0900 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -521,7 +523,7 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         let received = false;
-        workerInstance.addEventListener('test', () => {
+        workerInstance.addEventListener('test', (): void => {
           received = true;
         });
         workerInstance.dispatchEvent({ type: 'test', timeStamp: Date.now() } as TestWorkerEvent);
@@ -577,8 +579,8 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         let count = 0;
-        workerInstance.addEventListener('test', () => { count++; });
-        workerInstance.addEventListener('test', () => { count++; });
+        workerInstance.addEventListener('test', (): void => { count++; });
+        workerInstance.addEventListener('test', (): void => { count++; });
         workerInstance.dispatchEvent({ type: 'test', timeStamp: Date.now() } as TestWorkerEvent);
         expect(count).assertEqual(2);
         workerInstance.removeAllListener();
@@ -607,7 +609,7 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         let received = false;
-        workerInstance.on('test', () => {
+        workerInstance.on('test', (): void => {
           received = true;
         });
         workerInstance.dispatchEvent({ type: 'test', timeStamp: Date.now() } as TestWorkerEvent);
@@ -634,7 +636,7 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         let count = 0;
-        workerInstance.once('oncetest', () => {
+        workerInstance.once('oncetest', (): void => {
           count++;
         });
         workerInstance.dispatchEvent({ type: 'oncetest', timeStamp: Date.now() } as TestWorkerEvent);
@@ -662,7 +664,7 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         let count = 0;
-        const cb = () => { count++; };
+        const cb = (): void => { count++; };
         workerInstance.on('test', cb);
         workerInstance.off('test', cb);
         workerInstance.dispatchEvent({ type: 'test', timeStamp: Date.now() } as TestWorkerEvent);
@@ -963,7 +965,7 @@ export default function threadWorkerInheritanceTest(): void {
           workerInstance.postMessage('test');
           expect().assertFail();
         } catch (err) {
-          let e = err as Record<string, Object>;
+          let e = err as BusinessError;
           expect(e.code).assertEqual(10200004);
         }
         workerInstance = null;
@@ -1105,7 +1107,7 @@ export default function threadWorkerInheritanceTest(): void {
         expect(count).assertEqual(1);
         // removeEventListener without callback removes all listeners of the type.
         let count2 = 0;
-        target.addEventListener('custom2', () => { count2++; });
+        target.addEventListener('custom2', (): void => { count2++; });
         target.removeEventListener('custom2');
         let dispatched2 = target.dispatchEvent({ type: 'custom2', timeStamp: Date.now() } as TestWorkerEvent);
         expect(dispatched2).assertFalse();
@@ -1129,14 +1131,14 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         let target = new CustomTarget();
         let onceCount = 0;
-        target.once('oncetest', () => { onceCount++; });
+        target.once('oncetest', (): void => { onceCount++; });
         target.dispatchEvent({ type: 'oncetest', timeStamp: Date.now() } as TestWorkerEvent);
         target.dispatchEvent({ type: 'oncetest', timeStamp: Date.now() } as TestWorkerEvent);
         expect(onceCount).assertEqual(1);
 
         let count = 0;
-        target.addEventListener('test', () => { count++; });
-        target.addEventListener('test', () => { count++; });
+        target.addEventListener('test', (): void => { count++; });
+        target.addEventListener('test', (): void => { count++; });
         target.dispatchEvent({ type: 'test', timeStamp: Date.now() } as TestWorkerEvent);
         expect(count).assertEqual(2);
         target.removeAllListener();
@@ -1195,7 +1197,7 @@ export default function threadWorkerInheritanceTest(): void {
       try {
         let target = new CustomTargetLogger();
         let count = 0;
-        target.addEventListener('log', () => { count++; });
+        target.addEventListener('log', (): void => { count++; });
         let dispatched = target.dispatchEvent({ type: 'log', timeStamp: Date.now() } as TestWorkerEvent);
         expect(dispatched).assertTrue();
         expect(count).assertEqual(1);

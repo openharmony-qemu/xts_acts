@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
+import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
 
 // Top-level throw: this executes during worker script load (not inside a callback)
 throw new Error('Top level execution error');
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
-workerPort.onmessage = (e: MessageEvents) => {
+workerPort.onmessage = (e: MessageEvents): void => {
   // Never reached - worker fails to load
 }

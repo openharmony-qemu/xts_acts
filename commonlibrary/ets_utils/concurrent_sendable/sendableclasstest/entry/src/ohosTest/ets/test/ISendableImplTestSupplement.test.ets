@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { taskpool, worker, lang, MessageEvents, ErrorEvent } from '@kit.ArkTS';
+import { taskpool, worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 import { jsSendableFunc } from './SendableJsFuncSource';
 
 /**
@@ -224,7 +224,7 @@ export default function iSendableImplTestSupplement(): void {
 
     /**
      * @tc.name   ISendableImplTestSupplement0800
-     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ISENDABLE_IMPL_SUPPLEMENT_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ISENDABLE_IMPL_TEST_SUPPLEMENT_0800
      * @tc.desc   Verify 'use concurrent' in .js file executed via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -239,7 +239,7 @@ export default function iSendableImplTestSupplement(): void {
 
     /**
      * @tc.name   ISendableImplTestSupplement0900
-     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ISENDABLE_IMPL_SUPPLEMENT_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ISENDABLE_IMPL_TEST_SUPPLEMENT_0900
      * @tc.desc   Verify .ets imports .js sendable function and executes concurrently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

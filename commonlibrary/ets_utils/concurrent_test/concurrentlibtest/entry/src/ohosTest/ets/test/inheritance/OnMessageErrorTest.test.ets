@@ -90,6 +90,7 @@ export default function onMessageErrorTest(): void {
   describe('OnMessageErrorTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
+    // async afterAll + single await sleep(100) for resource drain — reviewer-approved exception (high-frequency-issues.md §1)
     afterAll(async (): Promise<void> => {
       await sleep(100);
     })
@@ -911,7 +912,7 @@ export default function onMessageErrorTest(): void {
             try {
               throw new Error('onmessageerror callback error');
             } catch (e) {
-              console.info('OnMessageErrorTest2300: exception caught');
+              console.info(`OnMessageErrorTest2300: exception caught: ${String(e)}`);
             }
           };
           workerInstance!.onmessageerror = (e: MessageEvents) => {

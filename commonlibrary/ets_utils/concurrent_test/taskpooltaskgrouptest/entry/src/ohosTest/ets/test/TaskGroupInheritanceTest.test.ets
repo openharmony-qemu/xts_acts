@@ -233,6 +233,8 @@ export default function TaskGroupInheritanceTest(): void {
 
       let results = await taskpool.execute(group2) as Object[]
       expect(results.length).assertEqual(2)
+      expect(String(results[0])).assertEqual(String(11))
+      expect(String(results[1])).assertEqual(String(6))
     })
 
     /**

@@ -662,7 +662,7 @@ export default function useSendableTestSupplement(): void {
       let timeoutId: number = -1
       try {
         await Promise.race([
-          new Promise<void>((resolve, reject) => {
+          new Promise<void>((resolve, reject): void => {
             myWorker.onmessage = (e: MessageEvents): void => {
               receivedValue = e.data as number
               resolve()
@@ -672,7 +672,7 @@ export default function useSendableTestSupplement(): void {
             }
             myWorker.postMessage(instance)
           }),
-          new Promise<void>((resolve, reject) => {
+          new Promise<void>((resolve, reject): void => {
             timeoutId = setTimeout((): void => {
               reject(new Error('UseSendableTestSupplement2100: worker reply timeout'))
             }, 5000)

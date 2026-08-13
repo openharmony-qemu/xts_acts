@@ -181,7 +181,7 @@ function ucBitVectorLength(bv: collections.BitVector): number {
   return bv.length
 }
 
-export default function useConcurrentTestSupplement(): void {
+export default function UseConcurrentTestSupplement(): void {
   describe('UseConcurrentTestSupplement', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {});
@@ -466,7 +466,7 @@ export default function useConcurrentTestSupplement(): void {
         tasks.push(new taskpool.Task(ucIdentity, i))
       }
 
-      let results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object | void> => {
+      let results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => {
         return taskpool.execute(t)
       }))
 
@@ -598,7 +598,7 @@ export default function useConcurrentTestSupplement(): void {
      * @tc.level  LEVEL1
      */
     it('UseConcurrentTestSupplement2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let work = new worker.ThreadWorker('../workers/Worker')
+      let work = new worker.ThreadWorker('../workers/Worker.ets')
       let workerData: string = ''
       let workerDone: boolean = false
       work.onmessage = (e: MessageEvents): void => {
@@ -719,7 +719,7 @@ export default function useConcurrentTestSupplement(): void {
         tasks.push(new taskpool.Task(tsConcurrentIdentity, i * 1.0))
       }
 
-      let results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object | void> => {
+      let results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => {
         return taskpool.execute(t)
       }))
 
@@ -787,7 +787,7 @@ export default function useConcurrentTestSupplement(): void {
       group.addTask(jsConcurrentDouble, 5.0)
       group.addTask(jsConcurrentAdd, 10.0, 20.0)
       group.addTask(jsConcurrentStringLength, 'hello')
-      let results = await taskpool.execute(group)
+      let results = await taskpool.execute(group) as Object[]
 
       expect(results.length).assertEqual(3)
       expect(String(results[0])).assertEqual(String(10))

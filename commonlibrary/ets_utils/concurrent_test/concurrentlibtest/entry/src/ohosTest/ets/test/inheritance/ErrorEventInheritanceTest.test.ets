@@ -71,6 +71,7 @@ export default function errorEventInheritanceTest(): void {
   describe('ErrorEventInheritanceTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
+    // async afterAll + single await sleep(100) for resource drain — reviewer-approved exception (high-frequency-issues.md §1)
     afterAll(async (): Promise<void> => {
       await sleep(100);
     })
@@ -842,7 +843,8 @@ export default function errorEventInheritanceTest(): void {
         expect(checked).assertTrue();
         if (checked) {
           // readonly is enforced by the type definition (ErrorEvent.error has no setter).
-          expect(typeof capturedError).assertEqual('object');
+          // Verify the error object is an Error instance carrying the worker-thrown exception.
+          expect(capturedError instanceof Error).assertTrue();
         }
       } catch (err) {
         console.error(`ErrorEventInheritanceTest2100 failed, error: ${String(err)}`);
@@ -911,8 +913,8 @@ export default function errorEventInheritanceTest(): void {
         expect(checked).assertTrue();
         if (checked) {
           // CustomError name may not survive cross-thread serialization,
-          // but the ErrorEvent message should be a string.
-          expect(capturedMessage.length > 0).assertTrue();
+          // but the ErrorEvent message should contain the original message text.
+          expect(capturedMessage.includes('CustomError message')).assertTrue();
         }
       } catch (err) {
         console.error(`ErrorEventInheritanceTest2300 failed, error: ${String(err)}`);

@@ -17,7 +17,7 @@ import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
-workerPort.onmessage = (e: MessageEvents) => {
+workerPort.onmessage = (e: MessageEvents): void => {
   let data = e.data as string;
   if (data === 'close_self') {
     workerPort.close();
@@ -26,10 +26,10 @@ workerPort.onmessage = (e: MessageEvents) => {
   }
 }
 
-workerPort.onmessageerror = (e: MessageEvents) => {
+workerPort.onmessageerror = (e: MessageEvents): void => {
   console.error('InheritanceSelfCloseWorker onmessageerror');
 }
 
-workerPort.onerror = (e: ErrorEvent) => {
+workerPort.onerror = (e: ErrorEvent): void => {
   console.error('InheritanceSelfCloseWorker onerror');
 }

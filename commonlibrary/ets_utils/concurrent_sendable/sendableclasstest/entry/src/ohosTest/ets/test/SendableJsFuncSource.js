@@ -21,12 +21,3 @@ export function jsSendableFunc(input) {
   'use concurrent'
   return input * 2
 }
-
-export function jsSendableArraySum(arr) {
-  'use concurrent'
-  let sum = 0
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i]
-  }
-  return sum
-}

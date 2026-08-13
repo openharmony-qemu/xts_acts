@@ -26,7 +26,7 @@ class CustomError extends Error {
   }
 }
 
-workerPort.onmessage = (e: MessageEvents) => {
+workerPort.onmessage = (e: MessageEvents): void => {
   let data = e.data as string;
   switch (data) {
     case 'throw_error':
@@ -60,6 +60,6 @@ workerPort.onmessage = (e: MessageEvents) => {
   }
 }
 
-workerPort.onmessageerror = (e: MessageEvents) => {
+workerPort.onmessageerror = (e: MessageEvents): void => {
   console.info('InheritanceErrorWorker onmessageerror');
 }

@@ -61,6 +61,7 @@ export default function onAllErrorsTest(): void {
   describe('OnAllErrorsTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
+    // async afterAll + single await sleep(100) for resource drain — reviewer-approved exception (high-frequency-issues.md §1)
     afterAll(async (): Promise<void> => {
       await sleep(100);
     })
@@ -138,7 +139,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('throw_sync_error');
         await waitForEvent(errorPromise);
         expect(errorTriggered).assertTrue();
-        expect(errorMessage.length > 0).assertTrue();
+        expect(errorMessage.includes('Test error')).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest0300 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -172,7 +173,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('start_timer_error');
         await waitForEvent(errorPromise);
         expect(errorTriggered).assertTrue();
-        expect(errorMessage.length > 0).assertTrue();
+        expect(errorMessage.includes('Timer callback error')).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest0400 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -206,7 +207,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('start_interval_error');
         await waitForEvent(errorPromise);
         expect(errorTriggered).assertTrue();
-        expect(errorMessage.length > 0).assertTrue();
+        expect(errorMessage.includes('Interval callback error')).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest0500 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -240,7 +241,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('throw_in_callback');
         await waitForEvent(errorPromise);
         expect(errorTriggered).assertTrue();
-        expect(errorMessage.length > 0).assertTrue();
+        expect(errorMessage.includes('Error in onmessage callback')).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest0600 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -278,7 +279,7 @@ export default function onAllErrorsTest(): void {
         });
         await waitForEvent(errorPromise);
         expect(errorTriggered).assertTrue();
-        expect(errorMessage !== '').assertTrue();
+        expect(errorMessage.includes('Top level execution error')).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest0700 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -434,7 +435,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('throw_custom_error');
         await waitForEvent(errorPromise);
         expect(errorReceived).assertTrue();
-        expect(errorMessage.length > 0).assertTrue();
+        expect(errorMessage.includes('CustomError message')).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest1100 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -684,6 +685,7 @@ export default function onAllErrorsTest(): void {
           await waitForEvent(errorPromise);
         }
         expect(caught || errorTriggered).assertTrue();
+        expect(!(caught && errorTriggered)).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest1800 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -717,7 +719,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('throw_in_callback');
         await waitForEvent(errorPromise);
         expect(errorTriggered).assertTrue();
-        expect(errorMessage.length > 0).assertTrue();
+        expect(errorMessage.includes('Error in onmessage callback')).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest1900 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -740,7 +742,7 @@ export default function onAllErrorsTest(): void {
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceErrorWorker.ets');
         let errorTriggered = false;
-        let errorObj: Object | null = null;
+        let errorObj: Object = new Object();
         const errorPromise = new Promise<void>((resolve: () => void) => {
           workerInstance!.onAllErrors = (err: ErrorEvent) => {
             errorTriggered = true;
@@ -751,8 +753,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('throw_type_error');
         await waitForEvent(errorPromise);
         expect(errorTriggered).assertTrue();
-        expect(errorObj !== null).assertTrue();
-        expect(typeof errorObj === 'object').assertTrue();
+        expect(errorObj instanceof Error).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest2000 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -789,6 +790,7 @@ export default function onAllErrorsTest(): void {
         workerInstance.postMessage('throw_sync_error');
         await waitForEvent(errorPromise);
         expect(onErrorTriggered || onAllErrorsTriggered).assertTrue();
+        expect(!(onErrorTriggered && onAllErrorsTriggered)).assertTrue();
       } catch (err) {
         console.error(`OnAllErrorsTest2100 failed, error: ${String(err)}`);
         expect().assertFail();

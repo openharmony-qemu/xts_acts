@@ -27,7 +27,7 @@ import TaskGroupAbilityTest3 from './TaskGroupAbility3.test';
 import TaskPolymorphismTest from './TaskPolymorphismTest.test';
 import TaskGroupInheritanceTest from './TaskGroupInheritanceTest.test';
 import UseConcurrentTest from './UseConcurrentTest.test';
-import useConcurrentTestSupplement from './UseConcurrentTestSupplement.test';
+import UseConcurrentTestSupplement from './UseConcurrentTestSupplement.test';
 
 export default function testsuite() {
   taskPoolTaskMultipleTest();
@@ -45,5 +45,5 @@ export default function testsuite() {
   TaskPolymorphismTest();
   TaskGroupInheritanceTest();
   UseConcurrentTest();
-  useConcurrentTestSupplement();
+  UseConcurrentTestSupplement();
 }

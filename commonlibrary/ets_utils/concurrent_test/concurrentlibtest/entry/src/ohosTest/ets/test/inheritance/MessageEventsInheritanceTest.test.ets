@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterAll, it, afterEach, expect, Level, Size, TestType } from '@ohos/hypium';
-import { ErrorEvent, MessageEvents, worker, collections } from '@kit.ArkTS';
+import { MessageEvents, worker, collections } from '@kit.ArkTS';
 
 function sleep(ms: number): Promise<void> {
   return new Promise<void>((resolve: () => void) => setTimeout(resolve, ms));
@@ -61,6 +61,7 @@ export default function messageEventsInheritanceTest(): void {
   describe('MessageEventsInheritanceTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
+    // async afterAll + single await sleep(100) for resource drain — reviewer-approved exception (high-frequency-issues.md §1)
     afterAll(async (): Promise<void> => {
       await sleep(100);
     })

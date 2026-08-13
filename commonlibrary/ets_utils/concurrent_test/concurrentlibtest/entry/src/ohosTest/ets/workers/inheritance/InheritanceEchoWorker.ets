@@ -23,7 +23,7 @@ class CircularRefData {
   public fn: () => void = () => {};
 }
 
-workerPort.onmessage = (e: MessageEvents) => {
+workerPort.onmessage = (e: MessageEvents): void => {
   try {
     let data: Object = e.data;
     if (typeof data === 'string') {
@@ -35,20 +35,20 @@ workerPort.onmessage = (e: MessageEvents) => {
         workerPort.postMessage('pong');
         break;
       case 'delayed_response': {
-        // Save the timer handle. If the worker is terminated before the timer
-        // fires, clearTimeout cannot be called because the worker script has
-        // already been destroyed — this is an inherent limitation of worker
-        // lifecycle. The try/catch inside the callback guards against
-        // postMessage on a terminated worker.
-        let delayedTimer: number = setTimeout(() => {
+        // The timer fires once and posts a delayed response. If the worker is
+        // terminated before the timer fires, clearTimeout cannot be called
+        // because the worker script has already been destroyed — this is an
+        // inherent limitation of worker lifecycle. The try/catch inside the
+        // callback guards against postMessage on a terminated worker.
+        // Timer handle is intentionally not retained: the callback is the only
+        // consumer and clearing it prematurely would prevent the response.
+        setTimeout(() => {
           try {
             workerPort.postMessage('delayed_result');
           } catch (e) {
             // Worker may have been terminated before timer fired.
           }
         }, 200);
-        // Timer handle is intentionally not cleared here: the callback is the
-        // only consumer and clearing it prematurely would prevent the response.
         break;
       }
       case 'msg1':
@@ -201,7 +201,7 @@ workerPort.onmessage = (e: MessageEvents) => {
   }
 }
 
-workerPort.onmessageerror = (e: MessageEvents) => {
+workerPort.onmessageerror = (e: MessageEvents): void => {
   console.info('InheritanceEchoWorker onmessageerror');
 }
 

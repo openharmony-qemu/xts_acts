@@ -17,15 +17,14 @@ import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
-workerPort.onmessage = (e: MessageEvents) => {
+workerPort.onmessage = (e: MessageEvents): void => {
   let data = e.data as string;
   switch (data) {
     case 'start_timer_error': {
-      // Save the timer handle. This setTimeout intentionally throws inside the
-      // callback, so the worker will be destroyed after the error propagates —
-      // clearTimeout cannot be called afterward. The handle is stored for
-      // completeness but is cleaned up implicitly when the worker thread exits.
-      let timerId: number = setTimeout(() => {
+      // This setTimeout intentionally throws inside the callback, so the worker
+      // will be destroyed after the error propagates — clearTimeout cannot be
+      // called afterward. Cleanup happens implicitly when the worker thread exits.
+      setTimeout(() => {
         throw new Error('Timer callback error');
       }, 100);
       break;
@@ -41,11 +40,6 @@ workerPort.onmessage = (e: MessageEvents) => {
       }, 100);
       break;
     }
-    case 'start_promise_rejection':
-      new Promise<void>((resolve: () => void, reject: (reason?: Object) => void) => {
-        reject(new Error('Unhandled rejection'));
-      });
-      break;
     case 'throw_in_callback':
       throw new Error('Error in onmessage callback');
     default:
@@ -53,6 +47,6 @@ workerPort.onmessage = (e: MessageEvents) => {
   }
 }
 
-workerPort.onmessageerror = (e: MessageEvents) => {
+workerPort.onmessageerror = (e: MessageEvents): void => {
   console.info('InheritanceAsyncErrorWorker onmessageerror');
 }
