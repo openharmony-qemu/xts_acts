@@ -1,6 +1,6 @@
 'use static';
 
-export function testError() {
+export function testError(): void {
   const TAG = 'testError';
   try {
     throw new Error('Whoops!');
@@ -15,7 +15,7 @@ export function testError() {
 }
 
 
-export function testRangeError() {
+export function testRangeError(): void {
   const TAG = 'testRangeError';
   try {
     throw new RangeError('It is a RangeError');
@@ -30,7 +30,7 @@ export function testRangeError() {
 }
 
 
-export function testReferenceError() {
+export function testReferenceError(): void {
   const TAG = 'testReferenceError';
   try {
     throw new ReferenceError('message err');
@@ -45,7 +45,7 @@ export function testReferenceError() {
 }
 
 
-export function testTypeError() {
+export function testTypeError(): void {
   const TAG = 'testTypeError';
   try {
     throw new TypeError('message err');
@@ -60,7 +60,7 @@ export function testTypeError() {
 }
 
 
-export function testAggregateError() {
+export function testAggregateError(): void {
   const TAG = 'testAggregateError';
   try {
     throw new AggregateError([new Error('some error')], 'Hello');
@@ -75,7 +75,7 @@ export function testAggregateError() {
 }
 
 
-export function testURIError() {
+export function testURIError(): void {
   const TAG = 'testURIError';
   try {
     throw new URIError('abc');
@@ -90,7 +90,7 @@ export function testURIError() {
 }
 
 
-export function testSyntaxError() {
+export function testSyntaxError(): void {
   const TAG = 'testSyntaxError';
   try {
     throw new SyntaxError('test');
@@ -105,7 +105,7 @@ export function testSyntaxError() {
 }
 
 
-export function testEvalError() {
+export function testEvalError(): void {
   const TAG = 'testEvalError';
   try {
     throw new EvalError('test');

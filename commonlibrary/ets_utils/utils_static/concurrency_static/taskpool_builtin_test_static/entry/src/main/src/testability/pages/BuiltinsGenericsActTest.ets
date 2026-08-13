@@ -27,7 +27,7 @@ class Pair<T1, T2> {
   getValue1(): T1 { return this.v1; }
   getValue2(): T2 { return this.v2; }
 }
-export function testMultiGeneric() {
+export function testMultiGeneric(): void {
   const TAG = 'testMultiGeneric';
   try {
     const caseName = 'builtinsGenericsActTest1000';
@@ -60,7 +60,7 @@ class Box1<T extends Animal> {
   constructor(v: T) { this.value = v; }
   getValue(): T { return this.value; }
 }
-export function testGenericConstraint() {
+export function testGenericConstraint(): void {
   const TAG = 'testGenericConstraint';
   try {
     const caseName = 'builtinsGenericsActTest1100';
@@ -85,7 +85,7 @@ class DataStorage<T = string> {
   getData(): T { return this.data; }
   setData(newData: T): void { this.data = newData; }
 }
-export function testGenericDefaultClass() {
+export function testGenericDefaultClass(): void {
   const TAG = 'testGenericDefaultClass';
   try {
     const caseName = 'builtinsGenericsDefaultTest0100';
@@ -128,7 +128,7 @@ class G1<T = string[]> {
     return (this.value as string).indexOf(item);
   }
 }
-export function builtinsGenericsFormatTest() {
+export function builtinsGenericsFormatTest(): void {
   const TAG = 'builtinsGenericsFormatTest';
   try {
     const caseName = 'builtinsGenericsFormatTest';

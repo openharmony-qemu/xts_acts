@@ -1,7 +1,7 @@
 'use static';
 
 
-export function testRegExpToString1() {
+export function testRegExpToString1(): void {
   const TAG = 'testRegExpToString1'
   try {
     const reg = new RegExp('a+b+c');
@@ -16,7 +16,7 @@ export function testRegExpToString1() {
 }
 
 
-export function testRegExpTest1() {
+export function testRegExpTest1(): void {
   const TAG = 'testRegExpTest1'
   try {
     const pattern = 'hello world!';
@@ -32,7 +32,7 @@ export function testRegExpTest1() {
 }
 
 
-export function testRegExpInstanceDotAll1() {
+export function testRegExpInstanceDotAll1(): void {
   const TAG = 'testRegExpInstanceDotAll1'
   try {
     const reg1 = new RegExp("except", "s");
@@ -47,7 +47,7 @@ export function testRegExpInstanceDotAll1() {
 }
 
 
-export function testRegExpConstructor1() {
+export function testRegExpConstructor1(): void {
   const TAG = 'testRegExpConstructor1'
   try {
     const reg = new RegExp(new RegExp("ab+c", "i"));
@@ -61,7 +61,7 @@ export function testRegExpConstructor1() {
 }
 
 
-export function testBigIntValueOf1() {
+export function testBigIntValueOf1(): void {
   const TAG = 'testBigIntValueOf1'
   try {
     const bigIntValue: bigint = 123n;
@@ -77,7 +77,7 @@ export function testBigIntValueOf1() {
 }
 
 
-export function testUndefinedLiteral1() {
+export function testUndefinedLiteral1(): void {
   const TAG = 'testUndefinedLiteral1'
   try {
     const simpleUndefinedVar: undefined = undefined;
@@ -91,7 +91,7 @@ export function testUndefinedLiteral1() {
 }
 
 
-export function testBigIntToString1() {
+export function testBigIntToString1(): void {
   const TAG = 'testBigIntToString1'
   try {
     const bigIntNumber: bigint = 123n;
@@ -106,7 +106,7 @@ export function testBigIntToString1() {
 }
 
 
-export function testBigIntToLocaleString1() {
+export function testBigIntToLocaleString1(): void {
   const TAG = 'testBigIntToLocaleString1'
   try {
     const bigNum: bigint = 12345678901234567890n;
@@ -121,7 +121,7 @@ export function testBigIntToLocaleString1() {
 }
 
 
-export function testStringPadEnd1() {
+export function testStringPadEnd1(): void {
   const TAG = 'testStringPadEnd1'
   try {
     const s = 'abc';
@@ -136,7 +136,7 @@ export function testStringPadEnd1() {
 }
 
 
-export function testStringStartsWith1() {
+export function testStringStartsWith1(): void {
   const TAG = 'testStringStartsWith1'
   try {
     const s = 'Hello world everyone';

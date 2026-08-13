@@ -1,6 +1,6 @@
 'use static';
 
-export function testDataViewSetuint32() {
+export function testDataViewSetuint32(): void {
   let TAG = 'testDataViewSetuint'
   try {
     const buffer = new ArrayBuffer(16);
@@ -18,7 +18,7 @@ export function testDataViewSetuint32() {
 
 
 
-export function testDataViewSetuint16() {
+export function testDataViewSetuint16(): void {
   let TAG = 'testDataViewSetuint'
   try {
     const buffer = new ArrayBuffer(8);
@@ -36,7 +36,7 @@ export function testDataViewSetuint16() {
 
 
 
-export function testDataViewSetuint8() {
+export function testDataViewSetuint8(): void {
   let TAG = 'testDataViewSetuint'
   try {
     const buffer = new ArrayBuffer(64);
@@ -53,7 +53,7 @@ export function testDataViewSetuint8() {
 }
 
 
-export function testDataViewSetInt32() {
+export function testDataViewSetInt32(): void {
   let TAG = 'testDataViewSetInt32'
   try {
     const buffer = new ArrayBuffer(64);
@@ -70,7 +70,7 @@ export function testDataViewSetInt32() {
 }
 
 
-export function testDataViewSetInt16() {
+export function testDataViewSetInt16(): void {
   let TAG = 'testDataViewSetInt16'
   try {
     try {
@@ -91,7 +91,7 @@ export function testDataViewSetInt16() {
 }
 
 
-export function testDataViewSetInt8() {
+export function testDataViewSetInt8(): void {
   let TAG = 'testDataViewSetInt8'
   try {
     const buffer = new ArrayBuffer(64);
@@ -108,7 +108,7 @@ export function testDataViewSetInt8() {
 }
 
 
-export function testDataViewSetFloat64() {
+export function testDataViewSetFloat64(): void {
   let TAG = 'testDataViewSetFloat64'
   try {
     let value = new ArrayBuffer(16);
@@ -125,7 +125,7 @@ export function testDataViewSetFloat64() {
 }
 
 
-export function testDataViewSetFloat32() {
+export function testDataViewSetFloat32(): void {
   let TAG = 'testDataViewSetFloat32'
   try {
     const dataView = new DataView(new ArrayBuffer(4));
@@ -140,7 +140,7 @@ export function testDataViewSetFloat32() {
 }
 
 
-export function testDataViewSetBigUint64_4100() {
+export function testDataViewSetBigUint64_4100(): void {
   const TAG = 'testDataViewSetBigUint64_4100';
   try {
     const buffer = new ArrayBuffer(10);
@@ -157,7 +157,7 @@ export function testDataViewSetBigUint64_4100() {
 }
 
 
-export function testDataViewSetBigInt64_4600() {
+export function testDataViewSetBigInt64_4600(): void {
   const TAG = 'testDataViewSetBigInt64_4600';
   try {
     const buffer = new ArrayBuffer(16);
@@ -173,7 +173,7 @@ export function testDataViewSetBigInt64_4600() {
 }
 
 
-export function testDataViewByteOffset_5100() {
+export function testDataViewByteOffset_5100(): void {
   const TAG = 'testDataViewByteOffset_5100';
   try {
     const buffer = new ArrayBuffer(8);
@@ -191,7 +191,7 @@ export function testDataViewByteOffset_5100() {
 
 
 
-export function testDataViewGetBigInt64() {
+export function testDataViewGetBigInt64(): void {
   const TAG = 'testDataViewGetBigInt64';
   try {
     const dataView = new DataView(new ArrayBuffer(8));
@@ -205,7 +205,7 @@ export function testDataViewGetBigInt64() {
 }
 
 
-export function testDataViewGetBigUint64() {
+export function testDataViewGetBigUint64(): void {
   const TAG = 'testDataViewGetBigUint64';
   try {
     const dataView = new DataView(new ArrayBuffer(8));
@@ -219,7 +219,7 @@ export function testDataViewGetBigUint64() {
 }
 
 
-export function testDataViewGetFloat32() {
+export function testDataViewGetFloat32(): void {
   const TAG = 'testDataViewGetFloat32';
   try {
     const dataView = new DataView(new ArrayBuffer(4));
@@ -233,7 +233,7 @@ export function testDataViewGetFloat32() {
 }
 
 
-export function testDataViewGetFloat64() {
+export function testDataViewGetFloat64(): void {
   const TAG = 'testDataViewGetFloat64';
   try {
     const buffer = new ArrayBuffer(8);
@@ -248,7 +248,7 @@ export function testDataViewGetFloat64() {
 }
 
 
-export function testDataViewGetInt8() {
+export function testDataViewGetInt8(): void {
   const TAG = 'testDataViewGetInt8';
   try {
     const buffer = new ArrayBuffer(16);
@@ -263,7 +263,7 @@ export function testDataViewGetInt8() {
 }
 
 
-export function testDataViewGetInt16() {
+export function testDataViewGetInt16(): void {
   const TAG = 'testDataViewGetInt16';
   try {
     const buffer = new ArrayBuffer(8);
@@ -278,7 +278,7 @@ export function testDataViewGetInt16() {
 }
 
 
-export function testDataViewGetInt32() {
+export function testDataViewGetInt32(): void {
   const TAG = 'testDataViewGetInt32';
   try {
     const buffer = new ArrayBuffer(8);
@@ -293,7 +293,7 @@ export function testDataViewGetInt32() {
 }
 
 
-export function testDataViewGetUint8() {
+export function testDataViewGetUint8(): void {
   const TAG = 'testDataViewGetUint8';
   try {
     const buffer = new ArrayBuffer(8);
@@ -308,7 +308,7 @@ export function testDataViewGetUint8() {
 }
 
 
-export function testDataViewGetUint16() {
+export function testDataViewGetUint16(): void {
   const TAG = 'testDataViewGetUint16';
   try {
     const buffer = new ArrayBuffer(8);
@@ -323,7 +323,7 @@ export function testDataViewGetUint16() {
 }
 
 
-export function testDataViewGetUint32() {
+export function testDataViewGetUint32(): void {
   const TAG = 'testDataViewGetUint32';
   try {
     const buffer = new ArrayBuffer(8);
@@ -338,7 +338,7 @@ export function testDataViewGetUint32() {
 }
 
 
-export function testDataViewByteLength() {
+export function testDataViewByteLength(): void {
   const TAG = 'testDataViewByteLength';
   try {
     const buffer = new ArrayBuffer(8);
