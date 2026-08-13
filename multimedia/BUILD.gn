@@ -205,9 +205,6 @@ group("multimedia") {
       "photoAccess/photoAccessSupplement:photoAccessXts_supp_ets_hap",
       "photoAccess/photoAccessStatic:photoAccess_js_static_hap",
       "photoAccess/photo_ndk_xts_supplement:ActsPhotoXTSNdkSupplementTest",
-      "videoProcess/ActsDetailEnhancerVideoNdkTest:ActsDetailEnhancerVideoNdkUnitHapTest",
-      "videoProcess/moduletest/ActsVpeVideoNativeHapTest:ActsVpeVideoNativeHapTest",
-      "videoProcess/ActsDetailEnhancerImageNdkTest:ActsDetailEnhancerImageNdkUnitHapTest",
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
       "audio_ndk/ActsOhAudioRenderTest:ActsOhAudioRenderHapTest",
       "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
@@ -222,10 +219,14 @@ group("multimedia") {
       "media/ActsMediaCppStandardTest:ActsMediaCppStandardHapTest",     
       "av_codec/vcodec/ActshevchwhdrcodecTest:ActshevchwhdrcodecHapTest",
       "av_codec/vcodec/ActsMpeg4swdecoderTest:ActsMpeg4swdecoderHapTest",
-      "videoProcess/moduletest/ActsImageTest:ActsImageHapTest",
       "av_codec/vcodec/ActsHdrCodecTest:ActsHdrCodecHapTest",
       "av_codec/vcodec/ActsSwDecoderTest:ActsSwDecoderHapTest",
       "av_codec/vcodec/ActsHwdecoderHapTest:ActsHwdecoderHapTest",
+      "videoProcess/ActsDetailEnhancerVideoNdkTest:ActsDetailEnhancerVideoNdkUnitHapTest",
+      "videoProcess/ActsDetailEnhancerImageNdkTest:ActsDetailEnhancerImageNdkUnitHapTest",
+      "videoProcess/ActsVideoProcessTestStatic:ActsVideoProcessStaticTest",
+      "videoProcess/moduletest/ActsVpeVideoNativeHapTest:ActsVpeVideoNativeHapTest",
+      "videoProcess/moduletest/ActsImageTest:ActsImageHapTest",
 
     ]
   } else {
