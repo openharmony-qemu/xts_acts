@@ -14,7 +14,6 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
-import type { BusinessError } from '@ohos.base';
 import { testRegExpToString1,
   testRegExpTest1,
   testRegExpConstructor1,
@@ -27,20 +26,18 @@ import { testRegExpToString1,
   testStringStartsWith1,
 } from '../testability/pages/taskpool4';
 
-import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
 
-export default function supplyTest() {
-  describe('supplyTest', () => {
+export default function supplyTest(): void {
+  describe('supplyTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -64,7 +61,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_tostring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_tostring_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -73,21 +70,30 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpToString1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -99,7 +105,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_test_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -108,21 +114,30 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpTest1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -134,7 +149,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_instance_dotall_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_instance_dotall_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -143,17 +158,27 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpInstanceDotAll1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -165,7 +190,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_constructor_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_constructor_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -174,17 +199,27 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpConstructor1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
 
@@ -197,7 +232,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_bigint_valueof_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_bigint_valueof_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -206,19 +241,29 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntValueOf1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -230,7 +275,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_undefined_literal_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_undefined_literal_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -239,19 +284,29 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testUndefinedLiteral1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -263,7 +318,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_bigint_tostring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_bigint_tostring_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -272,19 +327,29 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntToString1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -296,7 +361,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_bigint_tolocalestring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_bigint_tolocalestring_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -305,19 +370,29 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntToLocaleString1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
 
@@ -330,7 +405,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_string_padend_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_string_padend_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -339,19 +414,29 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testStringPadEnd1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -363,7 +448,7 @@ export default function supplyTest() {
      * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_string_startswith_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_string_startswith_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -372,19 +457,29 @@ export default function supplyTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testStringStartsWith1)
           }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: Error) => {
+          taskpool.execute(group).then((res: Any[]): void => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
   })

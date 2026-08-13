@@ -19,7 +19,6 @@ import { BuiltinsAsIntNTest2600,
   BuiltinsBigIntLiteralTest0100,
   testBigIntDiv,
   testBigIntAdd,
-  testBigIntMul,
   testBigIntSub,
   testBigIntMod,
   testBigIntPow,
@@ -27,18 +26,16 @@ import { BuiltinsAsIntNTest2600,
   testBigIntIsEven} from '../testability/pages/Asint';
 
 
-import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function BuiltinsAsIntNTest() {
-  describe('BuiltinsAsIntNTest', () => {
+export default function BuiltinsAsIntNTest(): void {
+  describe('BuiltinsAsIntNTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -62,7 +59,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('BuiltinsAsIntNTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'BuiltinsAsIntNTest2600';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -71,20 +68,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(BuiltinsAsIntNTest2600)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -96,7 +103,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('BuiltinsAsUintNTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'BuiltinsAsUintNTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -105,20 +112,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(BuiltinsAsUintNTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -130,7 +147,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('BuiltinsBigIntLiteralTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'BuiltinsBigIntLiteralTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -139,20 +156,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(BuiltinsBigIntLiteralTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -164,7 +191,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntDiv', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntDiv';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -173,20 +200,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntDiv)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -198,8 +235,8 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntAdd', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testBigIntDiv';
+      (done: () => void): void => {
+        const caseName = 'testBigIntAdd';
         console.info(`${caseName} test start`);
         let result: int = 0
         try {
@@ -207,20 +244,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntAdd)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -232,7 +279,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntSub', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntSub';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -241,20 +288,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntSub)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -266,7 +323,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntMod', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntMod';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -275,20 +332,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntMod)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -300,7 +367,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntPow', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntPow';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -309,20 +376,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntPow)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -334,7 +411,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntLessThan', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntLessThan';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -343,20 +420,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntLessThan)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -368,7 +455,7 @@ export default function BuiltinsAsIntNTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntIsEven', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntIsEven';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -377,20 +464,30 @@ export default function BuiltinsAsIntNTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntIsEven)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
   })
 }
