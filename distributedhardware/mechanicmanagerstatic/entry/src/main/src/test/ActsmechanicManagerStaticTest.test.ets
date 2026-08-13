@@ -556,5 +556,29 @@ export default function ActsmechanicManagerStaticTest() {
         console.info(`======>${LOG_NAME} end======`);
         done();
       });
+
+    /**
+     * @tc.name   SUB_DH_mechanicManager_isControlSupported_0500
+     * @tc.number SUB_DH_mechanicManager_isControlSupported_0500
+     * @tc.desc   Device supports embodied control of devices,isControlSupported参数为空
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_DH_mechanicManager_isControlSupported_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const LOG_NAME = `SUB_DH_mechanicManager_isControlSupported_0500`;
+        console.info(`======>${LOG_NAME} begin======`);
+        try {
+          let isControlSupported = mechanicManager.isControlSupported();
+          console.info(`${LOG_NAME} isControlSupported current return is ${isControlSupported}`);
+          expect(isControlSupported == true || isControlSupported == false).assertTrue();
+        } catch (error) {
+          console.info(`SUB_DH_mechanicManager_isControlSupported_0500 failed, code is ${error.code}, message is ${error.message}`);
+          expect(Number(error.code) === 33300001).assertTrue();
+        }
+        console.info(`======>${LOG_NAME} end======`);
+        done();
+      });
   })
 }
