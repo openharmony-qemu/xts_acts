@@ -18,7 +18,7 @@ import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 class CustomError extends Error {
-  code: number;
+  public code: number;
   constructor(message: string, code: number) {
     super(message);
     this.name = 'CustomError';

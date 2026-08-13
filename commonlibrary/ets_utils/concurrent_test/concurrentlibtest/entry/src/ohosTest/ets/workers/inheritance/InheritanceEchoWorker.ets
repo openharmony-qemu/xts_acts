@@ -18,9 +18,9 @@ import { MessageEvents, ThreadWorkerGlobalScope, worker, collections } from '@ki
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 class CircularRefData {
-  name: string = '';
-  self: CircularRefData | null = null;
-  fn: () => void = () => {};
+  public name: string = '';
+  public self: CircularRefData | null = null;
+  public fn: () => void = () => {};
 }
 
 workerPort.onmessage = (e: MessageEvents) => {

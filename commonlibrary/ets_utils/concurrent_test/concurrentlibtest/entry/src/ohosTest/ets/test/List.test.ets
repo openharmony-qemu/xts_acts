@@ -27,7 +27,6 @@ import concurrencyCoveredSupplement from './returnCovered/concurrencyCoveredSupp
 import utilsCoverageTest from './arkTSUtils/UtilsCoverageTest.test';
 import containerSerializeTest from './serialize/containerSerialize.test';
 
-// --- inheritance (new files, keep active) ---
 import threadWorkerInheritanceTest from './inheritance/ThreadWorkerInheritanceTest.test';
 import errorEventInheritanceTest from './inheritance/ErrorEventInheritanceTest.test';
 import messageEventsInheritanceTest from './inheritance/MessageEventsInheritanceTest.test';
@@ -51,7 +50,6 @@ export default function testsuite() {
   utilsCoverageTest();
   containerSerializeTest();
 
-  // --- inheritance (new files, keep active) ---
   threadWorkerInheritanceTest();
   errorEventInheritanceTest();
   messageEventsInheritanceTest();

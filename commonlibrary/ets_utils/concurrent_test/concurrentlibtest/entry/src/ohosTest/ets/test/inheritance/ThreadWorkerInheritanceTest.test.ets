@@ -44,10 +44,10 @@ async function terminateAndAwait(w: worker.ThreadWorker | null): Promise<void> {
       })
     ]);
     clearTimeout(timeoutId);
+    w.removeAllListener();
     w.onexit = (): void => {};
     w.onmessage = (e: MessageEvents): void => {};
     w.onerror = (): void => {};
-    w.removeAllListener();
   } catch (e) { console.warn(`terminateAndAwait error: ${e}`) }
 }
 
@@ -476,7 +476,6 @@ export default function threadWorkerInheritanceTest(): void {
         workerInstance.postMessage('ping');
         await waitForEvent(msgPromise);
         expect(msgReceived).assertTrue();
-        workerInstance.removeAllListener();
       } catch (err) {
         console.error(`ThreadWorkerInheritanceTest0800 failed, error: ${String(err)}`);
         expect().assertFail();
@@ -583,6 +582,7 @@ export default function threadWorkerInheritanceTest(): void {
         workerInstance.dispatchEvent({ type: 'test', timeStamp: Date.now() } as TestWorkerEvent);
         expect(count).assertEqual(2);
         workerInstance.removeAllListener();
+        workerInstance.onerror = (): void => {};
         workerInstance.dispatchEvent({ type: 'test', timeStamp: Date.now() } as TestWorkerEvent);
         expect(count).assertEqual(2);
       } catch (err) {
@@ -881,7 +881,6 @@ export default function threadWorkerInheritanceTest(): void {
         workers.forEach(w => w.terminate());
         await waitForEvent(completedPromise);
         expect(completed).assertEqual(3);
-        workers = [];
       } catch (err) {
         console.error(`ThreadWorkerInheritanceTest2100 failed, error: ${String(err)}`);
         expect().assertFail();

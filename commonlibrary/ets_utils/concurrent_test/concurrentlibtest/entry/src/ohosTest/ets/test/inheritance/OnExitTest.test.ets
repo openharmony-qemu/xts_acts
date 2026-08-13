@@ -32,10 +32,10 @@ async function terminateAndAwait(w: worker.ThreadWorker | null): Promise<void> {
     });
     w.terminate();
     await waitForEvent(exitPromise);
+    w.removeAllListener();
     w.onexit = (): void => {};
     w.onmessage = (e: MessageEvents): void => {};
     w.onerror = (): void => {};
-    w.removeAllListener();
   } catch (e) { console.warn(`terminateAndAwait error: ${e}`) }
 }
 
