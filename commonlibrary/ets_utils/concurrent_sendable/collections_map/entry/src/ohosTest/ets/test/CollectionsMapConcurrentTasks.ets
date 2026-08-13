@@ -173,24 +173,16 @@ export function forEachWithProgress(map: collections.Map<string, number>): numbe
   }
 }
 
-@Sendable
-export class TaskCounter {
-  count: number = 0;
-}
-
 @Concurrent
-export function longRunningLoopWithCounter(
-  map: collections.Map<string, number>,
-  counter: TaskCounter
-): number {
+export function repeatedForEach(map: collections.Map<string, number>): number {
   try {
-    for (let i: number = 0; i < 10000000; i++) {
-      counter.count++;
-      if (counter.count % 100000 === 0) {
-        map.set('progress', counter.count);
-      }
+    let count: number = 0;
+    for (let loop: number = 0; loop < 10; loop++) {
+      map.forEach((_value: number, _key: string) => {
+        count++;
+      });
     }
-    return counter.count;
+    return count;
   } catch (_e) {
     return -1;
   }

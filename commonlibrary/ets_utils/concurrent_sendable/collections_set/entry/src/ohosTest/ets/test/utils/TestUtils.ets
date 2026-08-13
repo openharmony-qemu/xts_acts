@@ -13,13 +13,8 @@
  * limitations under the License.
  */
 import { collections, taskpool, ArkTSUtils} from '@kit.ArkTS';
-import { createSharedLock, withLock } from '../SharedLock';
+import { createSharedLock, withLock, createSharedBarrier, waitAtSharedBarrier, createSharedSignal, notifySharedSignal, waitForSharedSignal } from '../SharedLock';
 import { BusinessError } from '@ohos.base';
-@Sendable
-export class Counter {
-  count: number = 0;
-}
-
 @Sendable
 export class SendableClass {
   id: number;
@@ -173,27 +168,6 @@ export function forEachFindStringTask(
   }
 }
 
-@Concurrent
-export function forEachCollectTask(
-  set: collections.Set<number>
-): Array<number> {
-  try {
-    let result: Array<number> = [];
-    set.forEach(
-      (
-        value: number,
-        value2: number,
-        setRef: collections.Set<number>
-      ) => {
-        result.push(value);
-      }
-    );
-    return result;
-  } catch (e) {
-    return [];
-  }
-}
-
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -298,9 +272,19 @@ export function errorRecoverTask(
     );
   }catch(e){
   }
+  // ERR_RECOVER_001: 错误后容器状态未被损坏
   let hasValue =
     set.has(1);
-  return hasValue;
+  // ERR_RECOVER_002: 错误后重新遍历可正常执行
+  let count = 0;
+  set.forEach(
+    (
+      value:number
+    ):void=>{
+      count++;
+    }
+  );
+  return hasValue && (count === set.size);
 }
 
 
@@ -446,33 +430,25 @@ export function largeEntriesTask(
   }
 }
 
+/*
+ * TC_CONC_SET_LARGE_004: 大容量 keys 遍历任务（Set<string> → count）
+ */
 @Concurrent
-export function entriesClearErrorTask(set: collections.Set<number>): number {
-  let code = 0;
+export function largeKeysStringTask(set: collections.Set<string>): number {
   try {
-    set.forEach((_value: number): void => {
-      set.clear();
-    });
+    let count = 0;
+    let iterator = set.keys();
+    while (true) {
+      let result = iterator.next();
+      if (result.done) {
+        break;
+      }
+      count++;
+    }
+    return count;
   } catch (e) {
-    code = (e as BusinessError).code;
+    return -1;
   }
-  return code;
-}
-
-@Concurrent
-export function keysDeleteErrorTask(
-  set: collections.Set<number>
-): number {
-  let code = 0;
-  try {
-    // ⭐ 改用 forEach 触发错误
-    set.forEach((value: number): void => {
-      set.delete(value);
-    });
-  } catch (e) {
-    code = (e as BusinessError).code;
-  }
-  return code;
 }
 
 @Concurrent
@@ -481,24 +457,10 @@ export function forEachDeleteOtherErrorTask(
 ): number {
   let code = 0;
   try {
-    let deleteTarget = 999;
+    // 删除一个存在但不等于当前迭代值的元素（50 ≠ 0 首次迭代值）
+    let deleteTarget = 50;
     set.forEach((): void => {
       set.delete(deleteTarget);
-    });
-  } catch (e) {
-    code = (e as BusinessError).code;
-  }
-  return code;
-}
-
-@Concurrent
-export function entriesAddErrorTask(
-  set: collections.Set<number>
-): number {
-  let code = 0;
-  try {
-    set.forEach((_value: number): void => {
-      set.add(999);
     });
   } catch (e) {
     code = (e as BusinessError).code;
@@ -512,21 +474,6 @@ export class SendableData {
   constructor(id: number) {
     this.id = id;
   }
-}
-
-@Concurrent
-export function valuesClearErrorTask(
-  set: collections.Set<number>
-): number {
-  let code = 0;
-  try {
-    set.forEach((_value: number): void => {
-      set.clear();
-    });
-  } catch (e) {
-    code = (e as BusinessError).code;
-  }
-  return code;
 }
 
 @Concurrent
@@ -565,4 +512,286 @@ export function forEachCollectSharedTask(
     count++;
   });
   return count;
+}
+
+/*
+ * TC_CONC_SET_VALUES_002: keys 收集任务（Set<string> → sorted string[]）
+ * 与 valuesToStringArrayTask 配合，验证 keys/values 迭代器结果一致性
+ */
+@Concurrent
+export function keysToStringArrayTask(set: collections.Set<string>): string[] {
+  let result: string[] = [];
+  let iter = set.keys();
+  let item = iter.next();
+  while (!item.done) {
+    result.push(item.value);
+    item = iter.next();
+  }
+  return result.sort();
+}
+
+/*
+ * TC_CONC_SET_VALUES_002: values 收集任务（Set<string> → sorted string[]）
+ * 与 keysToStringArrayTask 配合，验证 keys/values 迭代器结果一致性
+ */
+@Concurrent
+export function valuesToStringArrayTask(set: collections.Set<string>): string[] {
+  let result: string[] = [];
+  let iter = set.values();
+  let item = iter.next();
+  while (!item.done) {
+    result.push(item.value);
+    item = iter.next();
+  }
+  return result.sort();
+}
+
+/*
+ * TC_CONC_SET_ITERATOR_001: for...of 遍历验证任务
+ * 返回 [count, sum]，同时验证遍历元素数量和元素值正确性
+ */
+@Concurrent
+export function forOfVerifyTask(set: collections.Set<number>): number[] {
+  let count: number = 0;
+  let sum: number = 0;
+  for (const value of set) {
+    count++;
+    sum += value;
+  }
+  return [count, sum];
+}
+
+/*
+ * TC_CONC_SET_ITERATOR_002: spread 展开任务（Set<string> → sorted string[]）
+ * 通过迭代器将 Set 展开为排序数组，验证 Symbol.iterator 并发正确性
+ */
+@Concurrent
+export function spreadToStringArrayTask(set: collections.Set<string>): string[] {
+  let result: string[] = [];
+  let iter = set.values();
+  let item = iter.next();
+  while (!item.done) {
+    result.push(item.value);
+    item = iter.next();
+  }
+  return result.sort();
+}
+
+/*
+ * ====== 并发修改错误检测 — signal 协调 + 强化断言诊断 ======
+ * 返回 JSON: {"status":"ok|err10200201|errUnknown", "count":N, ...}
+ */
+
+@Concurrent
+export async function setEntriesTraverseTask(
+  set: collections.Set<number>,
+  barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer
+): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
+  let count: number = 0;
+  try {
+    let iter = set.entries();
+    let item = iter.next();
+    notifySharedSignal(signal, 0);
+    if (!waitForSharedSignal(signal, 1, 5000)) {
+      return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+    }
+    while (!item.done) {
+      count++;
+      item = iter.next();
+    }
+    return '{"status":"ok","role":"entriesTraverse","count":' + count + '}';
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) {
+      return '{"status":"err10200201","role":"entriesTraverse","count":' + count + ',"err":"' + e + '"}';
+    }
+    return '{"status":"errUnknown","role":"entriesTraverse","count":' + count + ',"err":"' + e + '"}';
+  }
+}
+
+@Concurrent
+export async function setAddModifyTask(
+  set: collections.Set<number>,
+  barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer
+): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
+  if (!waitForSharedSignal(signal, 0, 3000)) {
+    return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+  }
+  notifySharedSignal(signal, 1);
+  let ops: number = 0;
+  try {
+    // 批量添加增加冲突概率
+    for (let i: number = 0; i < 1000; i++) {
+      set.add(1000 + i);
+      ops++;
+    }
+    return '{"status":"ok","role":"addModify","ops":' + ops + '}';
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) {
+      return '{"status":"err10200201","role":"addModify","ops":' + ops + ',"err":"' + e + '"}';
+    }
+    return '{"status":"errUnknown","role":"addModify","ops":' + ops + ',"err":"' + e + '"}';
+  }
+}
+
+@Concurrent
+export async function setKeysTraverseTask(
+  set: collections.Set<number>,
+  barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer
+): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
+  let count: number = 0;
+  try {
+    let iter = set.keys();
+    let item = iter.next();
+    notifySharedSignal(signal, 0);
+    if (!waitForSharedSignal(signal, 1, 5000)) {
+      return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+    }
+    while (!item.done) {
+      count++;
+      item = iter.next();
+    }
+    return '{"status":"ok","role":"keysTraverse","count":' + count + '}';
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) {
+      return '{"status":"err10200201","role":"keysTraverse","count":' + count + ',"err":"' + e + '"}';
+    }
+    return '{"status":"errUnknown","role":"keysTraverse","count":' + count + ',"err":"' + e + '"}';
+  }
+}
+
+@Concurrent
+export async function setDeleteModifyTask(
+  set: collections.Set<number>,
+  barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer
+): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
+  if (!waitForSharedSignal(signal, 0, 3000)) {
+    return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+  }
+  notifySharedSignal(signal, 1);
+  let ops: number = 0;
+  try {
+    // 密集删除，大集合确保迭代器 mid-flight 时持续冲突
+    for (let i: number = 0; i < 10000; i++) {
+      set.delete(i);
+      ops++;
+    }
+    return '{"status":"ok","role":"deleteModify","ops":' + ops + '}';
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) {
+      return '{"status":"err10200201","role":"deleteModify","ops":' + ops + ',"err":"' + e + '"}';
+    }
+    return '{"status":"errUnknown","role":"deleteModify","ops":' + ops + ',"err":"' + e + '"}';
+  }
+}
+
+@Concurrent
+export async function setValuesTraverseTask(
+  set: collections.Set<number>,
+  barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer
+): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
+  let count: number = 0;
+  try {
+    let iter = set.values();
+    let first = iter.next();
+    notifySharedSignal(signal, 0);
+    if (!waitForSharedSignal(signal, 1, 5000)) {
+      return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+    }
+    // clear+回填已完成，继续用旧迭代器 → 期待 10200201
+    while (!first.done) {
+      count++;
+      first = iter.next();
+    }
+    return '{"status":"ok","role":"valuesTraverse","count":' + count + '}';
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) {
+      return '{"status":"err10200201","role":"valuesTraverse","count":' + count + ',"err":"' + e + '"}';
+    }
+    return '{"status":"errUnknown","role":"valuesTraverse","count":' + count + ',"err":"' + e + '"}';
+  }
+}
+
+@Concurrent
+export async function setClearModifyTask(
+  set: collections.Set<number>,
+  barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer
+): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
+  if (!waitForSharedSignal(signal, 0, 5000)) {
+    return '{"status":"errUnknown","role":"clearModify","msg":"wait values timeout"}';
+  }
+  try {
+    // clear + 回填大量元素：确保迭代器 next() 穿过 size 检查，撞到 epoch 检查
+    set.clear();
+    for (let i: number = 0; i < 50000; i++) {
+      set.add(i);
+    }
+    notifySharedSignal(signal, 1);
+    return '{"status":"ok","role":"clearModify","ops":1}';
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) {
+      return '{"status":"err10200201","role":"clearModify","ops":1,"err":"' + e + '"}';
+    }
+    return '{"status":"errUnknown","role":"clearModify","ops":1,"err":"' + e + '"}';
+  }
+}
+
+/*
+ * runModifyTest: 启动遍历+修改双任务，最多重试3轮，打印详细诊断
+ */
+export async function runModifyTest(
+  set: collections.Set<number>,
+  traverseTask: Function,
+  modifyTask: Function
+): Promise<boolean> {
+  for (let round: number = 1; round <= 3; round++) {
+    const barrier = createSharedBarrier();
+    const signal = createSharedSignal(4);
+    let roundResult: boolean = false;
+    let details: string[] = [];
+    try {
+      const results: Object[] = await Promise.all([
+        taskpool.execute(traverseTask, set, barrier, signal),
+        taskpool.execute(modifyTask, set, barrier, signal)
+      ]);
+      for (let i = 0; i < results.length; i++) {
+        const s: string = results[i] as string;
+        details.push("  task" + i + "=" + s);
+        if (s.indexOf('"err10200201"') >= 0) {
+          roundResult = true;
+        }
+      }
+    } catch (err) {
+      const e: string = JSON.stringify(err);
+      details.push("  catch=" + e);
+      if (e.indexOf("10200201") >= 0) {
+        roundResult = true;
+      }
+    }
+    console.info("[runModifyTest] round " + round + " detectedError=" + roundResult);
+    for (let k = 0; k < details.length; k++) {
+      console.info("[runModifyTest] " + details[k]);
+    }
+    if (roundResult) {
+      return true;
+    }
+  }
+  return false;
 }

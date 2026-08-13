@@ -108,3 +108,34 @@ export function waitForSharedSignal(signalBuffer: SharedArrayBuffer, index: numb
   }
   return true;
 }
+
+/*
+ * 并发修改完成信号 — 用于 Worker/TaskPool 修改 Set 后通知主线程
+ * 利用 Atomics.store(seq-cst) + Atomics.notify → Atomics.wait 的 synchronizes-with 关系
+ * 确保跨线程的共享内存修改对读取线程可见
+ */
+export function createCompletionFlag(): SharedArrayBuffer {
+  const buffer: SharedArrayBuffer = new SharedArrayBuffer(4);
+  const view: Int32Array = new Int32Array(buffer);
+  Atomics.store(view, 0, 0); // 0 = 未完成, 1 = 已完成
+  return buffer;
+}
+
+export function signalComplete(flag: SharedArrayBuffer): void {
+  const view: Int32Array = new Int32Array(flag);
+  Atomics.store(view, 0, 1);
+  Atomics.notify(view, 0, 1);
+}
+
+export function waitForComplete(flag: SharedArrayBuffer, timeoutMs: number = 5000): void {
+  const view: Int32Array = new Int32Array(flag);
+  let waited: number = 0;
+  const stepMs: number = 10;
+  while (Atomics.load(view, 0) === 0) {
+    if (waited >= timeoutMs) {
+      throw new Error('waitForComplete timeout after ' + timeoutMs + 'ms');
+    }
+    Atomics.wait(view, 0, 0, stepMs);
+    waited += stepMs;
+  }
+}

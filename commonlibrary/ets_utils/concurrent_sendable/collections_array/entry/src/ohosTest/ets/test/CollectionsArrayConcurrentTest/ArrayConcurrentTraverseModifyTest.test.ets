@@ -15,10 +15,17 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
-import { createSharedBarrier, waitAtSharedBarrier } from "../SharedLock";
+import {
+  createSharedBarrier,
+  createSharedSignal,
+  notifySharedSignal,
+  waitAtSharedBarrier,
+  waitForSharedSignal
+} from "../SharedLock";
 
 @Concurrent
-async function entriesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function entriesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
@@ -27,6 +34,11 @@ async function entriesTraverse(arr: collections.Array<number>, barrier: SharedAr
     while (!entry.done) {
       count++;
       entry = iterator.next();
+      if (count === 100) {
+        notifySharedSignal(signal, 0);
+        if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+        notifySharedSignal(signal, 2);
+      }
     }
     return "success";
   } catch (err) {
@@ -39,7 +51,8 @@ async function entriesTraverse(arr: collections.Array<number>, barrier: SharedAr
 }
 
 @Concurrent
-async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
@@ -48,6 +61,11 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
     while (!val.done) {
       count++;
       val = iterator.next();
+      if (count === 100) {
+        notifySharedSignal(signal, 0);
+        if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+        notifySharedSignal(signal, 2);
+      }
     }
     return "success";
   } catch (err) {
@@ -60,10 +78,12 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
 }
 
 @Concurrent
-async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  if (!waitForSharedSignal(signal, 0, 5000)) { return "error:unknown"; }
+  notifySharedSignal(signal, 1);
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
   try {
     arr.fill(0);
     return "success";
@@ -77,10 +97,12 @@ async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBu
 }
 
 @Concurrent
-async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  if (!waitForSharedSignal(signal, 0, 5000)) { return "error:unknown"; }
+  notifySharedSignal(signal, 1);
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
   try {
     arr.unshift(9999);
     return "success";
@@ -102,10 +124,11 @@ function makeArray(count: number): collections.Array<number> {
 async function runModifyTest(arr: collections.Array<number>,
   traverseTask: Function, modifyTask: Function): Promise<boolean> {
   const barrier: SharedArrayBuffer = createSharedBarrier();
+  const signal: SharedArrayBuffer = createSharedSignal(3);
   try {
     const results: Object[] = await Promise.all([
-      taskpool.execute(traverseTask, arr, barrier),
-      taskpool.execute(modifyTask, arr, barrier)
+      taskpool.execute(traverseTask, arr, barrier, signal),
+      taskpool.execute(modifyTask, arr, barrier, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
       if ((results[i] as string).indexOf("error:10200201") >= 0) {

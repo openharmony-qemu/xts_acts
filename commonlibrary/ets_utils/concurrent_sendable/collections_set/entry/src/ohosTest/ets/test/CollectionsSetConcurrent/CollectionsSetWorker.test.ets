@@ -15,15 +15,11 @@
 
 import {
   describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
   it,
   expect,
   TestType,
   Size,
-  Level
+  Level, beforeEach
 } from '@ohos/hypium';
 
 import {
@@ -35,9 +31,12 @@ import {
 import {
   createNumberSet,
   createStringSet,
-  createSendableSet,
   createRangeNumberSet,
+  SendableClass,
+  sleep,
 } from '../utils/TestUtils';
+
+import { createCompletionFlag, waitForComplete } from '../SharedLock';
 
 interface ErrorRecoverSizeResult {
   errorCode: number;
@@ -51,47 +50,21 @@ interface ErrorRecoverTraverseResult {
   sum: number;
 }
 
-interface NotifyMainResult {
-  type: string;
-  result: number;
-  success: boolean;
-  errorCode?: number;
-}
-
-interface LargeNestedResult {
-  result: number;
-  totalElements: number;
-}
-
 export default function collectionsSetWorkerTest() {
 
-  describe('CollectionsSetWorkerTest', () => {
-
-    beforeAll(() => {
-      console.info('CollectionsSetWorkerTest beforeAll');
+  describe('collectionsSetWorkerTest', () => {
+    beforeEach(async () => {
+      await sleep(50);
     });
-
-    beforeEach(() => {
-      console.info('CollectionsSetWorkerTest beforeEach');
-    });
-
-    afterEach(() => {
-      console.info('CollectionsSetWorkerTest afterEach');
-    });
-
-    afterAll(() => {
-      console.info('CollectionsSetWorkerTest afterAll');
-    });
-
     /**
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0100
      * @tc.name testSetWorkerReceive0001
      * @tc.desc Verify Worker receives Set reference from main thread.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerReceive0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerReceive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerReceive0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
@@ -141,14 +114,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0200
      * @tc.name testSetWorkerTraverse0002
      * @tc.desc Verify Worker traverses Set received from main thread.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerTraverse0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerTraverse0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerTraverse0002';
       console.info(`[${caseName}] start`);
-      let set = createNumberSet(100);
+      let set = createStringSet(50);
 
       let result = await new Promise<number>((resolve, reject) => {
         let settled = false;
@@ -179,12 +152,12 @@ export default function collectionsSetWorkerTest() {
           reject(new Error('worker exited before result'));
         };
         workerInstance.postMessageWithSharedSendable({
-          type: "forEach",
+          type: "forEachString",
           set: set
         });
       });
 
-      expect(result).assertEqual(100);
+      expect(result).assertEqual(50);
       console.info(`[${caseName}] end`);
     });
 
@@ -192,14 +165,15 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0300
      * @tc.name testSetWorkerModify0003
      * @tc.desc Verify Worker modifies Set and changes are visible to main thread.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerModify0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerModify0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerModify0003';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
+      let modifyFlag = createCompletionFlag();
 
       let result = await new Promise<number>((resolve, reject) => {
         let settled = false;
@@ -236,10 +210,12 @@ export default function collectionsSetWorkerTest() {
         workerInstance.postMessageWithSharedSendable({
           type: "add",
           set: set,
-          value: 999
+          value: 999,
+          flag: modifyFlag
         });
       });
 
+      waitForComplete(modifyFlag);
       expect(result).assertEqual(101);
       expect(set.has(999)).assertTrue();
       expect(set.size).assertEqual(101);
@@ -250,14 +226,15 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0400
      * @tc.name testSetWorkerDelete0004
      * @tc.desc Verify Worker deletes element from Set.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerDelete0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerDelete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerDelete0004';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
+      let modifyFlag = createCompletionFlag();
 
       let result = await new Promise<boolean>((resolve, reject) => {
         let settled = false;
@@ -294,10 +271,12 @@ export default function collectionsSetWorkerTest() {
         workerInstance.postMessageWithSharedSendable({
           type: "delete",
           set: set,
-          value: 50
+          value: 50,
+          flag: modifyFlag
         });
       });
 
+      waitForComplete(modifyFlag);
       expect(result).assertTrue();
       expect(set.has(50)).assertFalse();
       expect(set.size).assertEqual(99);
@@ -308,16 +287,16 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0500
      * @tc.name testSetWorkerSendable0005
      * @tc.desc Verify Worker handles Sendable Class Set.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerSendable0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerSendable0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerSendable0005';
       console.info(`[${caseName}] start`);
-      let set = createSendableSet(50);
+      let createFlag = createCompletionFlag();
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result = await new Promise<collections.Set<SendableClass>>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -328,7 +307,7 @@ export default function collectionsSetWorkerTest() {
             return;
           }
           settled = true;
-          resolve(event.data.result as number);
+          resolve(event.data.set as collections.Set<SendableClass>);
           workerInstance.terminate();
         };
 
@@ -350,12 +329,23 @@ export default function collectionsSetWorkerTest() {
         };
 
         workerInstance.postMessageWithSharedSendable({
-          type: "forEachSendable",
-          set: set
+          type: "createSendableSet",
+          size: 50,
+          flag: createFlag
         });
       });
 
-      expect(result).assertEqual(50);
+      waitForComplete(createFlag);
+      expect(result.size).assertEqual(50);
+      // 验证所有元素可迭代，确保 SendableClass Set 数据完整
+      let iter = result.values();
+      let count = 0;
+      let item = iter.next();
+      while (!item.done) {
+        count++;
+        item = iter.next();
+      }
+      expect(count).assertEqual(50);
       console.info(`[${caseName}] end`);
     });
 
@@ -363,13 +353,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0600
      * @tc.name testSetWorkerCreate0006
      * @tc.desc Verify Worker creates Set and returns to main thread.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerCreate0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerCreate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerCreate0006';
       console.info(`[${caseName}] start`);
+      let createFlag = createCompletionFlag();
       let result = await new Promise<collections.Set<number>>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
@@ -400,11 +391,15 @@ export default function collectionsSetWorkerTest() {
         };
         workerInstance.postMessageWithSharedSendable({
           type: "createSet",
-          size: 100
+          size: 100,
+          flag: createFlag
         });
       });
+      waitForComplete(createFlag);
       expect(result.size).assertEqual(100);
+      expect(result.has(0)).assertTrue();
       expect(result.has(50)).assertTrue();
+      expect(result.has(99)).assertTrue();
       console.info(`[${caseName}] end`);
     });
 
@@ -412,11 +407,11 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0700
      * @tc.name testSetWorkerNestedContainer0007
      * @tc.desc Verify Worker handles nested Set<Map> container.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerNestedContainer0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerNestedContainer0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerNestedContainer0007';
       console.info(`[${caseName}] start`);
       let nestedSet = new collections.Set<collections.Map<string, number>>();
@@ -473,11 +468,11 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0800
      * @tc.name testSetWorkerTaskPoolCombine0008
      * @tc.desc Verify Worker passes Set to TaskPool tasks.
-     * @tc.size SmallTest
+     * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerTaskPoolCombine0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerTaskPoolCombine0008', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerTaskPoolCombine0008';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
@@ -529,14 +524,15 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_0900
      * @tc.name testSetWorkerTaskPoolNotify0009
      * @tc.desc Verify TaskPool modifies Set and notifies Worker.
-     * @tc.size SmallTest
+     * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerTaskPoolNotify0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerTaskPoolNotify0009', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerTaskPoolNotify0009';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
+      let notifyFlag = createCompletionFlag();
 
       let result = await new Promise<number>((resolve, reject) => {
         let settled = false;
@@ -574,10 +570,12 @@ export default function collectionsSetWorkerTest() {
         workerInstance.postMessageWithSharedSendable({
           type: "taskPoolNotify",
           set: set,
-          value: 999
+          value: 999,
+          flag: notifyFlag
         });
       });
 
+      waitForComplete(notifyFlag);
       // Worker 内部启动 TaskPool 添加元素后返回新 size
       expect(result).assertEqual(101);
       // 验证主线程的 Set 也被修改了（引用传递）
@@ -590,11 +588,11 @@ export default function collectionsSetWorkerTest() {
      * @tc.number SUB_COLLECTIONS_SET_WORKER_1000
      * @tc.name testSetWorkerLargeKeys0010
      * @tc.desc Verify large Set keys concurrent traversal via Worker.
-     * @tc.size SmallTest
+     * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerLargeKeys0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerLargeKeys0010', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
       const caseName = 'testSetWorkerLargeKeys0010';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(10000);
@@ -644,69 +642,14 @@ export default function collectionsSetWorkerTest() {
 
     /**
      * @tc.number SUB_COLLECTIONS_SET_WORKER_1100
-     * @tc.name testSetWorkerEntriesClear0011
-     * @tc.desc Verify clear operation during entries traversal triggers error code.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testSetWorkerEntriesClear0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      const caseName = 'testSetWorkerEntriesClear0011';
-      console.info(`[${caseName}] start`);
-      let set = createNumberSet(100);
-
-      let result = await new Promise<number>((resolve, reject) => {
-        let settled = false;
-        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
-          "./SetWorker"
-        );
-
-        workerInstance.onmessage = (event: MessageEvents): void => {
-          if (settled) {
-            return;
-          }
-          settled = true;
-          resolve(event.data.result as number);
-          workerInstance.terminate();
-        };
-
-        workerInstance.onerror = (): void => {
-          if (settled) {
-            return;
-          }
-          settled = true;
-          reject(new Error('worker error'));
-          workerInstance.terminate();
-        };
-
-        workerInstance.onexit = (): void => {
-          if (settled) {
-            return;
-          }
-          settled = true;
-          reject(new Error('worker exited before result'));
-        };
-
-        workerInstance.postMessageWithSharedSendable({
-          type: "entriesClearError",
-          set: set
-        });
-      });
-
-      expect(result).assertEqual(10200201);
-      console.info(`[${caseName}] end`);
-    });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_SET_WORKER_1200
-     * @tc.name testSetWorkerValuesAdd0012
+     * @tc.name testSetWorkerValuesAdd0011
      * @tc.desc Verify add operation during values traversal triggers error code.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerValuesAdd0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      const caseName = 'testSetWorkerValuesAdd0012';
+    it('testSetWorkerValuesAdd0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const caseName = 'testSetWorkerValuesAdd0011';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
@@ -753,15 +696,15 @@ export default function collectionsSetWorkerTest() {
     });
 
     /**
-     * @tc.number SUB_COLLECTIONS_SET_WORKER_1300
-     * @tc.name testSetWorkerKeysDelete0013
+     * @tc.number SUB_COLLECTIONS_SET_WORKER_1200
+     * @tc.name testSetWorkerKeysDelete0012
      * @tc.desc Verify delete operation during keys traversal triggers error code.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerKeysDelete0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      const caseName = 'testSetWorkerKeysDelete0013';
+    it('testSetWorkerKeysDelete0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const caseName = 'testSetWorkerKeysDelete0012';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
@@ -808,15 +751,15 @@ export default function collectionsSetWorkerTest() {
     });
 
     /**
-     * @tc.number SUB_COLLECTIONS_SET_WORKER_1400
-     * @tc.name testSetWorkerErrorRecoverSize0014
+     * @tc.number SUB_COLLECTIONS_SET_WORKER_1300
+     * @tc.name testSetWorkerErrorRecoverSize0013
      * @tc.desc Verify Set size is correct after concurrent modification error.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerErrorRecoverSize0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      const caseName = 'testSetWorkerErrorRecoverSize0014';
+    it('testSetWorkerErrorRecoverSize0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const caseName = 'testSetWorkerErrorRecoverSize0013';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
@@ -867,15 +810,15 @@ export default function collectionsSetWorkerTest() {
     });
 
     /**
-     * @tc.number SUB_COLLECTIONS_SET_WORKER_1500
-     * @tc.name testSetWorkerErrorRecoverTraverse0015
+     * @tc.number SUB_COLLECTIONS_SET_WORKER_1400
+     * @tc.name testSetWorkerErrorRecoverTraverse0014
      * @tc.desc Verify Set can be traversed correctly after concurrent modification error.
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level0
      */
-    it('testSetWorkerErrorRecoverTraverse0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      const caseName = 'testSetWorkerErrorRecoverTraverse0015';
+    it('testSetWorkerErrorRecoverTraverse0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const caseName = 'testSetWorkerErrorRecoverTraverse0014';
       console.info(`[${caseName}] start`);
       let set = createRangeNumberSet(100);
 

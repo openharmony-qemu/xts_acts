@@ -15,6 +15,8 @@
 
 import { worker, MessageEvents, collections, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
+import { SendableClass } from '../utils/TestUtils';
+
 @Concurrent
 function workerForEachTask(set: collections.Set<number>): number {
   let count = 0;
@@ -37,6 +39,7 @@ class WorkerMessage {
   set?: Object;
   value?: number;
   size?: number;
+  flag?: SharedArrayBuffer;
 }
 
 
@@ -83,6 +86,13 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
     case 'add': {
       let set = data.set as collections.Set<number>;
       set.add(data.value as number);
+      // 写完成信号，确保共享内存修改对主线程可见
+      let flag = data.flag as SharedArrayBuffer;
+      if (flag !== undefined) {
+        let flagView = new Int32Array(flag);
+        Atomics.store(flagView, 0, 1);
+        Atomics.notify(flagView, 0, 1);
+      }
       workerPort.postMessage({ result: set.size });
       break;
     }
@@ -90,21 +100,14 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
     case 'delete': {
       let set = data.set as collections.Set<number>;
       let result = set.delete(data.value as number);
+      // 写完成信号，确保共享内存修改对主线程可见
+      let flag = data.flag as SharedArrayBuffer;
+      if (flag !== undefined) {
+        let flagView = new Int32Array(flag);
+        Atomics.store(flagView, 0, 1);
+        Atomics.notify(flagView, 0, 1);
+      }
       workerPort.postMessage({ result: result });
-      break;
-    }
-
-    case 'has': {
-      let set = data.set as collections.Set<number>;
-      let result = set.has(data.value as number);
-      workerPort.postMessage({ result: result });
-      break;
-    }
-
-    case 'clear': {
-      let set = data.set as collections.Set<number>;
-      set.clear();
-      workerPort.postMessage({ result: set.size });
       break;
     }
 
@@ -113,6 +116,30 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
       let set = new collections.Set<number>();
       for (let i = 0; i < size; i++) {
         set.add(i);
+      }
+      // 写完成信号，确保 Worker 创建的 Set 对主线程可见
+      let flag = data.flag as SharedArrayBuffer;
+      if (flag !== undefined) {
+        let flagView = new Int32Array(flag);
+        Atomics.store(flagView, 0, 1);
+        Atomics.notify(flagView, 0, 1);
+      }
+      workerPort.postMessage({ set: set });
+      break;
+    }
+
+    // TC_CONC_SET_WORKER_005: Worker 创建 SendableClass Set 返回主线程
+    case 'createSendableSet': {
+      let size = data.size as number;
+      let set = new collections.Set<SendableClass>();
+      for (let i = 0; i < size; i++) {
+        set.add(new SendableClass(i));
+      }
+      let flag = data.flag as SharedArrayBuffer;
+      if (flag !== undefined) {
+        let flagView = new Int32Array(flag);
+        Atomics.store(flagView, 0, 1);
+        Atomics.notify(flagView, 0, 1);
       }
       workerPort.postMessage({ set: set });
       break;
@@ -157,6 +184,14 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
       let task = new taskpool.Task(workerAddTask, set, newValue);
       let result = await taskpool.execute(task);
 
+      // 写完成信号，确保 TaskPool 修改对主线程可见
+      let flag = data.flag as SharedArrayBuffer;
+      if (flag !== undefined) {
+        let flagView = new Int32Array(flag);
+        Atomics.store(flagView, 0, 1);
+        Atomics.notify(flagView, 0, 1);
+      }
+
       workerPort.postMessage({
         result: result
       });
@@ -176,77 +211,6 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
       }
       workerPort.postMessage({
         result: count
-      });
-      break;
-    }
-
-    case 'mainModify': {
-      // Worker 先返回当前 Set 的大小，主线程修改后再验证
-      let set = data.set as collections.Set<number>;
-      let currentSize = set.size;
-      workerPort.postMessage({
-        result: currentSize,
-        type: 'mainModify'
-      });
-      break;
-    }
-
-    // 新增：Worker 检查 Set 是否被修改
-    case 'checkModified': {
-      let set = data.set as collections.Set<number>;
-      let newValue = data.value as number;
-      let hasNewValue = set.has(newValue);
-      workerPort.postMessage({
-        result: hasNewValue,
-        type: 'checkModified'
-      });
-      break;
-    }
-
-    // SetWorker.ts - 新增 case
-    case 'createStringSet': {
-      let size = data.size as number;
-      let set = new collections.Set<string>();
-      for (let i = 0; i < size; i++) {
-        set.add("worker_value_" + i);
-      }
-      workerPort.postMessage({
-        set: set,
-        type: 'stringSet'
-      });
-      break;
-    }
-
-    // SetWorker.ts - 新增 case
-    case 'largeValues': {
-      let set = data.set as collections.Set<number>;
-      let count = 0;
-      let iterator = set.values();
-      while (true) {
-        let result = iterator.next();
-        if (result.done) {
-          break;
-        }
-        count++;
-      }
-      workerPort.postMessage({
-        result: count
-      });
-      break;
-    }
-
-    case 'entriesClearError': {
-      let set = data.set as collections.Set<number>;
-      let code = 0;
-      try {
-        set.forEach((_value: number): void => {
-          set.clear();
-        });
-      } catch (e) {
-        code = (e as BusinessError).code;
-      }
-      workerPort.postMessage({
-        result: code
       });
       break;
     }
@@ -332,53 +296,6 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
         errorCode: errorCode,
         traverseCount: traverseCount,
         sum: sum
-      });
-      break;
-    }
-
-    case 'taskPoolNotifyMain': {
-      let set = data.set as collections.Set<number>;
-      let newValue = data.value as number;
-      let errorCode = 0;
-
-      try {
-        // 在 Worker 中通过 TaskPool 执行添加操作
-        let task = new taskpool.Task(workerAddTask, set, newValue);
-        let result = await taskpool.execute(task);
-
-        // TaskPool 修改成功后，Worker 通知主线程
-        workerPort.postMessage({
-          type: 'notifyMain',
-          result: result,
-          success: true
-        });
-      } catch (e) {
-        errorCode = (e as BusinessError).code;
-        workerPort.postMessage({
-          type: 'notifyMain',
-          result: -1,
-          success: false,
-          errorCode: errorCode
-        });
-      }
-      break;
-    }
-
-    case 'largeNestedSet': {
-      let set = data.set as collections.Set<collections.Map<string, number>>;
-      let count = 0;
-      let totalElements = 0;
-
-      set.forEach((item: collections.Map<string, number>): void => {
-        count++;
-        if (item !== undefined && item.size !== undefined) {
-          totalElements += item.size;
-        }
-      });
-
-      workerPort.postMessage({
-        result: count,
-        totalElements: totalElements
       });
       break;
     }

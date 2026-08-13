@@ -1178,7 +1178,8 @@ export default function sendableLruCacheSpecialTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testConcurrentDecoratorTaskPool0042',TestType.FUNCTION|Size.SMALLTEST|Level.LEVEL0,async():Promise<void> =>{
+    it('testConcurrentDecoratorTaskPool0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (): Promise<void> => {
       const caseName: string = 'testConcurrentDecoratorTaskPool0042';
       console.info(`${caseName}, test start`);
       try {
