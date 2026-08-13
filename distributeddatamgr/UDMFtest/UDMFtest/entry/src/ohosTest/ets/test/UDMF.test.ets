@@ -5931,6 +5931,256 @@ export default function UDMFApiTest() {
     })
 
     /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest1100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_1100
+     * @tc.desc   Test insertData with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1100 start');
+      let options: unifiedDataChannel.Options = {
+        intention: "999" as unifiedDataChannel.Intention,
+      };
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'hello world!';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1100 ' + data);
+        expect().assertFail();
+      } catch (e) {
+        console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1100 e' + e.code + e.message);
+        expect(e.code).assertEqual("401");
+      }
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1100 end');
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest1200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_1200
+     * @tc.desc   Test insertData callback with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1200 start');
+      let options: unifiedDataChannel.Options = {
+        intention: "999" as unifiedDataChannel.Intention,
+      };
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'hello world!';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        unifiedDataChannel.insertData(options, unifiedData, (err, data) => {
+          if (err === undefined) {
+            console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1200 ' + data);
+            expect().assertFail();
+            done();
+          } else {
+            console.error(TAG + `Failed to insert data. code is ${err.code}, message is ${err.message} `);
+            expect(err.code).assertEqual("401");
+            done();
+          }
+        });
+      } catch (e) {
+        console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1200 e' + e.code + e.message);
+        expect(e.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1200 end');
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_1000
+     * @tc.desc   Test updateData with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelUpdateDataErrTest1000 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+      };
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'hello world!';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG + `insertData success; data = ${data}`);
+        let ret = await unifiedDataChannel.updateData({
+          intention: "999" as unifiedDataChannel.Intention,
+        }, unifiedData);
+        console.info(TAG + `updateData success; data = ${ret}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + 'testUnifiedDataChannelUpdateDataErrTest1000 end');
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest1100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_1100
+     * @tc.desc   Test updateData callback with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelUpdateDataErrTest1100 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+      };
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = 'hello world!';
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG + `insertData success; data = ${data}`);
+        unifiedDataChannel.updateData({
+          intention: "999" as unifiedDataChannel.Intention,
+        }, unifiedData, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `updateData success; data = ${ret}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.error(TAG + `Failed to update data. code is ${err.code}, message is ${err.message} `);
+            expect(err.code).assertEqual("401");
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + 'testUnifiedDataChannelUpdateDataErrTest1100 end');
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0800
+     * @tc.desc   Test queryData with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0800 start');
+      let options: unifiedDataChannel.Options = {
+        intention: "999" as unifiedDataChannel.Intention,
+      };
+      try {
+        let ret = await unifiedDataChannel.queryData(options);
+        console.info(TAG + `queryData success`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+      }
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0800 end');
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0900
+     * @tc.desc   Test queryData callback with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0900 start');
+      let options: unifiedDataChannel.Options = {
+        intention: "999" as unifiedDataChannel.Intention,
+      };
+      try {
+        unifiedDataChannel.queryData(options, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `queryData success`);
+            expect().assertFail();
+            done();
+          } else {
+            console.error(TAG + `Failed to query data. code is ${err.code}, message is ${err.message} `);
+            expect(err.code).assertEqual("401");
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0900 end');
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0800
+     * @tc.desc   Test deleteData with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0800 start');
+      let options: unifiedDataChannel.Options = {
+        intention: "999" as unifiedDataChannel.Intention,
+      };
+      try {
+        await unifiedDataChannel.deleteData(options);
+        console.info(TAG + `Succeeded in deleting data.`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+      }
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0800 end');
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0900
+     * @tc.desc   Test deleteData callback with invalid intention enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0900 start');
+      let options: unifiedDataChannel.Options = {
+        intention: "999" as unifiedDataChannel.Intention,
+      };
+      try {
+        unifiedDataChannel.deleteData(options, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `Succeeded in deleting data.`);
+            expect().assertFail();
+            done();
+          } else {
+            console.error(TAG + `Failed to delete data. code is ${err.code}, message is ${err.message} `);
+            expect(err.code).assertEqual("401");
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0900 end');
+    })
+
+    /**
      * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0100
      * @tc.desc   setAppShareOptions
@@ -6901,8 +7151,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0400
-     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0400
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0400
      * @tc.desc   setAppShareOptions with null intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6920,8 +7170,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0500
-     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0500
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0500
      * @tc.desc   setAppShareOptions with undefined intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6939,8 +7189,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0400
-     * @tc.number testUnifiedDataChannelRemoveAppShareOptionsErrTest0400
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0400
      * @tc.desc   removeAppShareOptions with null intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6958,8 +7208,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0500
-     * @tc.number testUnifiedDataChannelRemoveAppShareOptionsErrTest0500
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0500
      * @tc.desc   removeAppShareOptions with undefined intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6977,8 +7227,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0600
-     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0600
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0600
      * @tc.desc   setAppShareOptions with null shareOptions parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6996,8 +7246,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0700
-     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0700
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0700
      * @tc.desc   setAppShareOptions with undefined shareOptions parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7015,8 +7265,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0800
-     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0800
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0800
      * @tc.desc   setAppShareOptions with invalid shareOptions enum value -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7034,8 +7284,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0900
-     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest0900
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0900
      * @tc.desc   setAppShareOptions with invalid shareOptions enum value 999
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7053,8 +7303,8 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_1000
-     * @tc.number testUnifiedDataChannelSetAppShareOptionsErrTest1000
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_1000
      * @tc.desc   setAppShareOptions with string intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7072,8 +7322,8 @@ export default function UDMFApiTest() {
      })
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_1000
-     * @tc.number testUnifiedDataChannelRemoveAppShareOptionsErrTest1000
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_1000
      * @tc.desc   removeAppShareOptions with string intention parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

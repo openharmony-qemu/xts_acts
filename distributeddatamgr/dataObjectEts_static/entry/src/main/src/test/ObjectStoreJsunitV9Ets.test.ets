@@ -105,7 +105,7 @@ export default function ObjectStoreJsunitV9Ets(): void {
         }
         let assettype1: commonType.Asset = asset1;
         let assettype2: commonType.Asset = asset2;
-        let assetarray11: commonType.Asset[] = [assettype1, assettype2];
+        let assetarray11: commonType.Assets = new Array<commonType.Asset>(assettype1, assettype2);
         expect(assetarray11[0] == assettype1).assertTrue();
         expect(assetarray11[1] == assettype2).assertTrue();
         done();

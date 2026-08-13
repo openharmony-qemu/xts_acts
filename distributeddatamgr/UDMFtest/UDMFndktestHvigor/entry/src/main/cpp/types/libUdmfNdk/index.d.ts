@@ -128,6 +128,7 @@ export const OH_UdmfOptions_GetKey_004: () => number;
 export const OH_UdmfOptions_GetIntention_003: () => number;
 export const OH_Udmf_SetUnifiedDataByOptions_013: () => number;
 export const OH_Udmf_GetDataElementAt_001: () => number;
+export const OH_Udmf_GetDataElementAt_002: () => number;
 export const OH_UdmfData_Udmf_ListenerStatus_0001: () => number;
 export const OH_UdmfData_Udmf_ListenerStatus_0002: () => number;
 export const OH_UdmfData_Udmf_ListenerStatus_0003: () => number;
