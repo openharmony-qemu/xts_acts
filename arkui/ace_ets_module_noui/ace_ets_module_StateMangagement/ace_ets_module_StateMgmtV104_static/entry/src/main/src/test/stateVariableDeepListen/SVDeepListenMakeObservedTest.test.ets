@@ -72,7 +72,7 @@ export default function SVDeepListenMakeObservedTest(): void {
       // Step2: Click changNameButton to change second level property info.name from 'Jack' to 'Jackson'
       // This should trigger UI update due to deep listener
       let button = await driver.findComponent(ON.id('allowDeep_true_changNameButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('allowDeep_true_infoNameText');
@@ -82,7 +82,7 @@ export default function SVDeepListenMakeObservedTest(): void {
       // Step3: Click replaceInfoButton to replace first level property info
       // This should trigger UI update - info becomes { name: 'Tom', age: 25 }
       button = await driver.findComponent(ON.id('replaceInfoButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('allowDeep_true_infoNameText');

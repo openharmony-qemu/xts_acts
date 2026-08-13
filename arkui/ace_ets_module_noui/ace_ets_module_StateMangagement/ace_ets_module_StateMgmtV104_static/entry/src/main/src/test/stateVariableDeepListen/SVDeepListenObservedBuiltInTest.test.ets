@@ -72,7 +72,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step2: Click pushButton to add element, UI should refresh
       let button = await driver.findComponent(ON.id('pushButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('arrayText');
@@ -81,7 +81,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step3: Click reverseButton to reverse array, UI should refresh
       button = await driver.findComponent(ON.id('reverseButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('arrayText');
@@ -108,7 +108,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step1: Click setButton to add new key-value pair, UI should refresh
       let button = await driver.findComponent(ON.id('setButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('mapText');
@@ -118,7 +118,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step2: Click deleteButton to delete key=0 entry, UI should refresh
       button = await driver.findComponent(ON.id('deleteButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       let strJson1 = inspector.getInspectorByKey('mapText');
@@ -144,7 +144,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step1: Click addButton to add element, UI should refresh
       let button = await driver.findComponent(ON.id('addButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('setText');
@@ -153,7 +153,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step2: Click deleteSetButton to delete element 0, UI should refresh
       button = await driver.findComponent(ON.id('deleteSetButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       let strJson1 = inspector.getInspectorByKey('setText');
@@ -187,7 +187,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step2: Click increaseYearButton to increase year by 1, UI should refresh
       let button = await driver.findComponent(ON.id('increaseYearButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('dateText');
@@ -197,7 +197,7 @@ export default function SVDeepListenObservedBuiltInTest(): void {
 
       // Step3: Click increaseMonthButton to increase month by 1, UI should refresh
       button = await driver.findComponent(ON.id('increaseMonthButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('dateText');

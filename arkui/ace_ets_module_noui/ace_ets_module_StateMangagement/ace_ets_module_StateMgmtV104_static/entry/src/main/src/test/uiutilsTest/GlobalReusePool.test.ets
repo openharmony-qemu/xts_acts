@@ -29,7 +29,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { IReusableInfo, IReusePool, AppStorage } from '@kit.ArkUI';
 
 
-export default function GlobalReusePoolTest() {
+export default function GlobalReusePoolTest(): void {
   describe('GlobalReusePoolTest', () => {
     beforeAll(async () => {
 
@@ -117,10 +117,10 @@ export default function GlobalReusePoolTest() {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_REUSEID_0100 START');
       let driver = await Driver.create();
       let button = await driver.findComponent(ON.id('GlobalReusePoolChangeComponent'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await driver.delayMs(500)
       let button2 = await driver.findComponent(ON.id('GlobalReusePoolCheckGlobalChild'));
-      await (button2?.click() as Promise<void>);
+      button2?.click();
       await driver.delayMs(500)
       let getReusePool: IReusePool| undefined = AppStorage.get<IReusePool| undefined>('getReusePoolNotUndefined') as IReusePool| undefined;
       expect(getReusePool).not().assertUndefined()
@@ -142,7 +142,7 @@ export default function GlobalReusePoolTest() {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_PRERENDER_0100 START');
       let driver = await Driver.create();
       let button = await driver.findComponent(ON.id('GlobalReusePoolCheckLegacyComp'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await driver.delayMs(500);
       let iReusableInfo: IReusableInfo| undefined = AppStorage.get<IReusableInfo| undefined>('IReusableInfo') as IReusableInfo| undefined;
       expect(iReusableInfo).not().assertUndefined();
