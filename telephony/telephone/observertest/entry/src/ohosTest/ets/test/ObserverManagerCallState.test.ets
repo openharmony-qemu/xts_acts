@@ -314,14 +314,14 @@ export default function observerManagerCallStateTest() {
      * @tc.type   Function
      * @tc.level  Level 0
      */
-      it('Telephony_Call_CallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        expect(call.CallState.CALL_STATE_UNKNOWN === -1).assertTrue();
-        expect(call.CallState.CALL_STATE_IDLE === 0).assertTrue();
-        expect(call.CallState.CALL_STATE_RINGING === 1).assertTrue();
-        expect(call.CallState.CALL_STATE_OFFHOOK === 2).assertTrue();
-        expect(call.CallState.CALL_STATE_ANSWERED === 3).assertTrue();
-        done();
-      });
+    it('Telephony_Call_CallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      expect(call.CallState.CALL_STATE_UNKNOWN === -1).assertTrue();
+      expect(call.CallState.CALL_STATE_IDLE === 0).assertTrue();
+      expect(call.CallState.CALL_STATE_RINGING === 1).assertTrue();
+      expect(call.CallState.CALL_STATE_OFFHOOK === 2).assertTrue();
+      expect(call.CallState.CALL_STATE_ANSWERED === 3).assertTrue();
+      done();
+    });
 
     /**
      * @tc.name   testTelephonyObserverCallStateChangeExOn0100
@@ -338,12 +338,13 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 0
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -367,12 +368,13 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 1
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -396,12 +398,13 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 2
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -425,12 +428,13 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: -1
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -453,13 +457,13 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
+          ExpectTrue(false);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: -2
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 8800001);
@@ -482,13 +486,13 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
+          ExpectTrue(false);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 3
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 8800001);
@@ -512,9 +516,10 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx', callback);
+          done();
         }
         observer.on('callStateChangeEx', callback);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -537,46 +542,13 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
+          ExpectTrue(false);
+          done();
         }
         observer.on(null, callback);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
-        done();
-      }
-      console.info(`${caseName} test end `);
-    });
-
-    /**
-     * @tc.name   testTelephonyObserverCallStateChangeExOn0900
-     * @tc.number SUB_Telephony_Observer_CallStateChangeExOn_0900
-     * @tc.desc   Subscribe to call status change event
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyObserverCallStateChangeExOn0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyObserverCallStateChangeExOn0900';
-      console.info(`${caseName} test start `);
-      try {
-        let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
-          console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          const telCallStateAry: number[] = [
-            call.TelCallState.TEL_CALL_STATE_UNKNOWN,
-            call.TelCallState.TEL_CALL_STATE_IDLE,
-            call.TelCallState.TEL_CALL_STATE_RINGING,
-            call.TelCallState.TEL_CALL_STATE_OFFHOOK,
-            call.TelCallState.TEL_CALL_STATE_ANSWERED,
-            call.TelCallState.TEL_CALL_STATE_CONNECTED
-          ]
-          ExpectTrue(telCallStateAry.includes(data));        }
-        observer.on('callStateChangeEx', callback);
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end `);
@@ -655,12 +627,9 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(false);
-        }
-        let options: observer.ObserverOptions = {
-          slotId: 0
+          done();
         }
         observer.on('callStateChangeEx', callback, undefined);
-        done();
       } catch (error) {
         console.info(`${caseName} success,  catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
@@ -677,15 +646,15 @@ export default function observerManagerCallStateTest() {
      * @tc.type   Function
      * @tc.level  Level 0
      */
-      it('Telephony_Call_TelCallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        expect(call.TelCallState.TEL_CALL_STATE_UNKNOWN === -1).assertTrue();
-        expect(call.TelCallState.TEL_CALL_STATE_IDLE === 0).assertTrue();
-        expect(call.TelCallState.TEL_CALL_STATE_RINGING === 1).assertTrue();
-        expect(call.TelCallState.TEL_CALL_STATE_OFFHOOK === 2).assertTrue();
-        expect(call.TelCallState.TEL_CALL_STATE_ANSWERED === 3).assertTrue();
-        expect(call.TelCallState.TEL_CALL_STATE_CONNECTED === 4).assertTrue();
-        done();
-      });
+    it('Telephony_Call_TelCallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      expect(call.TelCallState.TEL_CALL_STATE_UNKNOWN === -1).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_IDLE === 0).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_RINGING === 1).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_OFFHOOK === 2).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_ANSWERED === 3).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_CONNECTED === 4).assertTrue();
+      done();
+    });
 
     /**
      * @tc.name   testTelephonyObserverCallStateChangeExOff0100
@@ -930,7 +899,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' +
-          JSON.stringify(value.teleNumber));
+            JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
           observer.offCCallStateChange();
           done();
@@ -1050,11 +1019,6 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0800';
       console.log("************* Telephony_observer_on_cCallStateInfo_0800 Test start *************");
       try {
-        let callback = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
-          ExpectTrue(value !== null);
-          done();
-        }
         observer.onCCallStateChange(null);
       } catch (err) {
         console.info(`${caseName} success, catchError: ${JSON.stringify(err)}}` + err);
@@ -1076,11 +1040,6 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0900';
       console.log("************* Telephony_observer_on_cCallStateInfo_0900 Test start *************");
       try {
-        let callback = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
-          ExpectTrue(value !== null);
-          done();
-        }
         observer.onCCallStateChange(undefined);
       } catch (err) {
         console.info(`${caseName} success, catchError: ${JSON.stringify(err)}}` + err);
@@ -1107,9 +1066,6 @@ export default function observerManagerCallStateTest() {
           expect(false).assertTrue();
           done();
         }
-        let options: observer.ObserverOptions = {
-          slotId: 0
-        }
         observer.onCCallStateChange(callback, undefined);
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
@@ -1135,9 +1091,6 @@ export default function observerManagerCallStateTest() {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
           done();
-        }
-        let options: observer.ObserverOptions = {
-          slotId: 0
         }
         observer.onCCallStateChange(callback, null);
       } catch (err) {
