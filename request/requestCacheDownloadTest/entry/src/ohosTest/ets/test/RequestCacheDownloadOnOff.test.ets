@@ -1360,6 +1360,158 @@ export default function requestCacheDownloadOnOffUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0900
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0900
+     * @tc.desc   setGlobalTimeoutOptions with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0900 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalTimeoutOptions(null);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0900 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_1000
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_1000
+     * @tc.desc   setGlobalTimeoutOptions with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_1000', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_1000 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalTimeoutOptions(undefined);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_1000 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_1100
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_1100
+     * @tc.desc   setGlobalTimeoutOptions with no parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_1100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_1100 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalTimeoutOptions();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_1100 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_1200
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_1200
+     * @tc.desc   setGlobalTimeoutOptions with empty object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_1200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_1200 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_1200 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_1300
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_1300
+     * @tc.desc   setGlobalTimeoutOptions with networkCheckTimeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_1300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_1300 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: undefined,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_1300 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_1400
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_1400
+     * @tc.desc   setGlobalTimeoutOptions with httpTotalTimeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_1400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_1400 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: undefined,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_1400 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_1500
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_1500
+     * @tc.desc   setGlobalTimeoutOptions with both networkCheckTimeout and httpTotalTimeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_1500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_1500 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: undefined,
+          httpTotalTimeout: undefined,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_1500 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
      * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0100
      * @tc.number SUB_Request_cacheDownload_GlobalRetry_0100
      * @tc.desc   setGlobalRetryOptions with invalid maxRetryCount -1
@@ -1448,6 +1600,111 @@ export default function requestCacheDownloadOnOffUnitTest() {
         done();
       } catch (err) {
         console.info("====>SUB_Request_cacheDownload_GlobalRetry_0400 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0500
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0500
+     * @tc.desc   setGlobalRetryOptions with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0500 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalRetryOptions(null);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0500 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0600
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0600
+     * @tc.desc   setGlobalRetryOptions with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0600 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalRetryOptions(undefined);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0600 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0700
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0700
+     * @tc.desc   setGlobalRetryOptions with no parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0700 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalRetryOptions();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0700 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0800
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0800
+     * @tc.desc   setGlobalRetryOptions with empty object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0800 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0800 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_1000
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_1000
+     * @tc.desc   setGlobalRetryOptions with maxRetryCount undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_1000', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_1000 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: undefined,
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_1000 catch err code:" + err.code + "err message:" + err.message);
         expect().assertFail();
         done();
       }
