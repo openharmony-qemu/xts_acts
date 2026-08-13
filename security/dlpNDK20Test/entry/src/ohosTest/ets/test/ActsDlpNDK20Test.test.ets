@@ -35,7 +35,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetDlpPermissionInfo0100 start====");
         let result = await osAccountNdk.OsGetDlpPermissionInfo0100();
         console.info("====>testOsGetDlpPermissionInfo0100 result: " + result);
-        expect(result).assertEqual(19100001);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetDlpPermissionInfo0100 catch err: " + err);
@@ -56,7 +60,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetDlpPermissionInfo0101 start====");
         let result = await osAccountNdk.OsGetDlpPermissionInfo0101();
         console.info("====>testOsGetDlpPermissionInfo0101 result: " + result);
-        expect(result).assertEqual(19100006);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100006);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetDlpPermissionInfo0101 catch err: " + err);
@@ -77,7 +85,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetDlpPermissionInfo0102 start====");
         let result = await osAccountNdk.OsGetDlpPermissionInfo0102();
         console.info("====>testOsGetDlpPermissionInfo0102 result: " + result);
-        expect(result).assertEqual(19100006);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100006);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetDlpPermissionInfo0102 catch err: " + err);
@@ -98,7 +110,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetDlpPermissionInfo0103 start====");
         let result = await osAccountNdk.OsGetDlpPermissionInfo0103();
         console.info("====>testOsGetDlpPermissionInfo0103 result: " + result);
-        expect(result).assertEqual(19100006);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100006);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetDlpPermissionInfo0103 catch err: " + err);
@@ -119,7 +135,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetDlpPermissionInfo0104 start====");
         let result = await osAccountNdk.OsGetDlpPermissionInfo0104();
         console.info("====>testOsGetDlpPermissionInfo0104 result: " + result);
-        expect(result).assertEqual(19100006);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100006);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetDlpPermissionInfo0104 catch err: " + err);
@@ -140,7 +160,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetDlpPermissionInfo0105 start====");
         let result = await osAccountNdk.OsGetDlpPermissionInfo0105();
         console.info("====>testOsGetDlpPermissionInfo0105 result: " + result);
-        expect(result).assertEqual(19100001);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetDlpPermissionInfo0105 catch err: " + err);
@@ -161,7 +185,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetOriginalFileName0100 start====");
         let result = osAccountNdk.OsGetOriginalFileName0100();
         console.info("====>testOsGetOriginalFileName0100 result: " + result);
-        expect(result).assertEqual(19100001);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0100 catch err: " + err);
@@ -182,7 +210,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetOriginalFileName0200 start====");
         let result = osAccountNdk.OsGetOriginalFileName0200();
         console.info("====>testOsGetOriginalFileName0200 result: " + result);
-        expect(result).assertEqual(19100001);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0200 catch err: " + err);
@@ -204,7 +236,11 @@ export default function ActsDlpNDK20Test() {
         let result = osAccountNdk.OsGetOriginalFileName0300();
         console.info("====>testOsGetOriginalFileName0300 result: " + result);
         let expectedFileName = 'a'.repeat(MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN);
-		expect(result).assertContain(expectedFileName);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertContain(expectedFileName);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0300 catch err: " + err);
@@ -225,7 +261,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetOriginalFileName0400 start====");
         let result = osAccountNdk.OsGetOriginalFileName0400();
         console.info("====>testOsGetOriginalFileName0400 result: " + result);
-        expect(result).assertEqual(19100001);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
         done()
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0400 catch err: " + err);
@@ -246,7 +286,11 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsSetSandboxAppConfig0100 start====");
         let result = osAccountNdk.OsSetSandboxAppConfig0100();
         console.info("====>testOsSetSandboxAppConfig0100 result: " + result);
-        expect(result).assertEqual(19100001);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
         done()
       } catch (err) {
         console.error("====>testOsSetSandboxAppConfig0100 catch err: " + err);

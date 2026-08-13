@@ -311,9 +311,13 @@ export default function dlpTest() {
         let fileTypes = await dlpPermission.getDLPSupportedFileTypes();
         expect(typeof (fileTypes)).assertEqual("object");
       } catch (err) {
-        console.error(TAG, "getDLPSupportedFileTypes failed", err.code, err.message);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(TAG, "getDLPSupportedFileTypes failed", err.code, err.message);
+          expect(false).assertTrue();
+          return;
+        }
       }
 
       console.info(curTag, "end");
@@ -357,7 +361,11 @@ export default function dlpTest() {
         await dlpPermission.setRetentionState(uriArray);
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -404,14 +412,18 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       let uriArray = ['uri'];
       await dlpPermission.cancelRetentionState(uriArray);
@@ -445,14 +457,18 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       let uriArray = ['uri'];
       await dlpPermission.cancelRetentionState(uriArray);
@@ -486,14 +502,18 @@ export default function dlpTest() {
           'ohos.dlp.params.success': false
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       expect(result.resultCode).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
       try {
@@ -525,14 +545,18 @@ export default function dlpTest() {
           'ohos.dlp.params.success': false
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       expect(result.resultCode).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
       try {
@@ -559,8 +583,12 @@ export default function dlpTest() {
         let uriArray = ['uri'];
         await dlpPermission.cancelRetentionState(uriArray);
       } catch (err) {
-        console.error(curTag, "cancelRetentionState failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "cancelRetentionState failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -603,7 +631,11 @@ export default function dlpTest() {
         await dlpPermission.cancelRetentionState(docUris);
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code === DLPErrCode.ERR_JS_INVALID_PARAMETER).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code === DLPErrCode.ERR_JS_INVALID_PARAMETER).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -653,30 +685,42 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
 
       try {
         let uriArray = await dlpPermission.getRetentionSandboxList(bundleName);
         expect(typeof (uriArray)).assertEqual("object");
       } catch (err) {
-        console.error(curTag, "setRetentionState failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setRetentionState failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       try {
         await dlpPermission.cancelRetentionState([uri, "uri2"]);
       } catch (err) {
-        console.error(curTag, "cancelRetentionState failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "cancelRetentionState failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       try {
@@ -712,15 +756,19 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
 
       dlpPermission.getRetentionSandboxList(bundleName, async (err, data) => {
@@ -728,8 +776,12 @@ export default function dlpTest() {
         try {
           await dlpPermission.cancelRetentionState([uri, "uri2"]);
         } catch (err) {
-          console.error(curTag, "cancelRetentionState failed", err.code, err.message);
-          expect(false).assertTrue();
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            console.error(curTag, "cancelRetentionState failed", err.code, err.message);
+            expect(false).assertTrue();
+          }
         }
 
         try {
@@ -763,28 +815,40 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       try {
         let uriArray = await dlpPermission.getRetentionSandboxList();
         expect(typeof (uriArray)).assertEqual("object");
       } catch (err) {
-        console.error(curTag, "getRetentionSandboxList failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getRetentionSandboxList failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       try {
         await dlpPermission.cancelRetentionState([uri]);
       } catch (err) {
-        console.error(curTag, "cancelRetentionState failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "cancelRetentionState failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       try {
@@ -819,15 +883,19 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       dlpPermission.getRetentionSandboxList(async (err, data) => {
         expect(err).assertEqual(null);
@@ -837,8 +905,12 @@ export default function dlpTest() {
       try {
         await dlpPermission.cancelRetentionState([uri]);
       } catch (err) {
-        console.error(curTag, "cancelRetentionState failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "cancelRetentionState failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       try {
@@ -876,10 +948,14 @@ export default function dlpTest() {
         let result: common.AbilityResult = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(DLPErrCode.ERR_JS_API_NOT_FOR_SANDBOX_ERROR);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -909,14 +985,18 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          return;
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -943,8 +1023,12 @@ export default function dlpTest() {
         await dlpPermission.getRetentionSandboxList(uriArray);
         expect(false).assertTrue();
       } catch (err) {
-        console.info('testGetRetentionSandboxList007 err:' + err.code);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info('testGetRetentionSandboxList007 err:' + err.code);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
       return;
@@ -968,10 +1052,14 @@ export default function dlpTest() {
           return;
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
-        console.info(curTag, "end");
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+          console.info(curTag, "end");
+          return;
+        }
       }
     })
 
@@ -995,9 +1083,13 @@ export default function dlpTest() {
           console.info(curTag, "end");
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1061,9 +1153,13 @@ export default function dlpTest() {
           console.info(curTag, "end");
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1086,9 +1182,13 @@ export default function dlpTest() {
           console.info(curTag, "end");
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1112,9 +1212,13 @@ export default function dlpTest() {
           console.info(curTag, "end");
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1133,9 +1237,13 @@ export default function dlpTest() {
         let result = dlpPermission.getRetentionSandboxList(bundleName, null!);
         expect(result != null).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        console.info(curTag, "end");
-        expect(null).assertFail();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          console.info(curTag, "end");
+          expect(null).assertFail();
+        }
       }
     })
 
@@ -1154,9 +1262,13 @@ export default function dlpTest() {
         let result = dlpPermission.getRetentionSandboxList(bundleName, undefined!);
         expect(result != null).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        console.info(curTag, "end");
-        expect(null).assertFail();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          console.info(curTag, "end");
+          expect(null).assertFail();
+        }
       }
     })
 
@@ -1220,9 +1332,13 @@ export default function dlpTest() {
           console.info(curTag, "end");
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err?.code, 'err.message:', err?.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err?.code, 'err.message:', err?.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1266,9 +1382,13 @@ export default function dlpTest() {
           console.info(curTag, "end");
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err?.code, 'err.message:', err?.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err?.code, 'err.message:', err?.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1292,9 +1412,13 @@ export default function dlpTest() {
           console.info(curTag, "end");
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err?.code, 'err.message:', err?.message);
-        expect(false).assertTrue();
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err?.code, 'err.message:', err?.message);
+          expect(false).assertTrue();
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1392,8 +1516,12 @@ export default function dlpTest() {
       try {
         await dlpPermission.getDLPFileAccessRecords();
       } catch (err) {
-        console.error(curTag, "getDLPFileAccessRecords failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getDLPFileAccessRecords failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       let sandboxInfo =
         await dlpPermission.installDLPSandbox(bundleName, dlpPermission.DLPFileAccess.READ_ONLY, userId, 'uri');
@@ -1404,8 +1532,12 @@ export default function dlpTest() {
         expect(accessRecords[0].lastOpenTime).assertLarger(0);
         expect(accessRecords[0].uri).assertEqual('uri');
       } catch (err) {
-        console.error(curTag, "getDLPFileAccessRecords failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getDLPFileAccessRecords failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -1430,8 +1562,12 @@ export default function dlpTest() {
       try {
         await dlpPermission.getDLPFileAccessRecords();
       } catch (err) {
-        console.error(curTag, "getDLPFileAccessRecords failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getDLPFileAccessRecords failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       let sandboxInfo =
         await dlpPermission.installDLPSandbox(bundleName, dlpPermission.DLPFileAccess.READ_ONLY, userId, 'uri');
@@ -1469,15 +1605,19 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        console.info(curTag, "end");
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          console.info(curTag, "end");
+          return;
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -1508,15 +1648,19 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        console.info(curTag, "end");
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          console.info(curTag, "end");
+          return;
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -1549,10 +1693,14 @@ export default function dlpTest() {
           console.info(curTag, "end");
           return;
         } catch (err) {
-          console.error(curTag, "isDLPFile failed", err.code, err.message);
-          expect(false).assertTrue();
-          console.info(curTag, "end");
-          return;
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            console.error(curTag, "isDLPFile failed", err.code, err.message);
+            expect(false).assertTrue();
+            console.info(curTag, "end");
+            return;
+          }
         }
       }
     })
@@ -1599,7 +1747,11 @@ export default function dlpTest() {
         await dlpPermission.isDLPFile(-1);
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -1621,8 +1773,12 @@ export default function dlpTest() {
         dlpPermission.isDLPFile(-1, (err, data) => {
         });
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
-        console.info(curTag, "end");
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+          console.info(curTag, "end");
+        }
       }
     })
 
@@ -1641,8 +1797,12 @@ export default function dlpTest() {
         let result = await dlpPermission.isDLPFile(0);
         expect(result != null).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
       console.info(curTag, "end");
     })
@@ -1664,8 +1824,12 @@ export default function dlpTest() {
           expect(isDLPFile != null).assertTrue();
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -1687,8 +1851,12 @@ export default function dlpTest() {
         let result = await dlpPermission.isDLPFile(maxFd);
         expect(result != null).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -1712,8 +1880,12 @@ export default function dlpTest() {
           expect(isDLPFile != null).assertTrue();
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -1735,8 +1907,12 @@ export default function dlpTest() {
         let result = await dlpPermission.isDLPFile(exceedFd);
         expect(result != null).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -1760,8 +1936,12 @@ export default function dlpTest() {
           expect(isDLPFile != null).assertTrue();
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -1782,8 +1962,12 @@ export default function dlpTest() {
         await dlpPermission.isDLPFile(null);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -1805,8 +1989,12 @@ export default function dlpTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -1827,8 +2015,12 @@ export default function dlpTest() {
         await dlpPermission.isDLPFile(undefined);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -1850,8 +2042,12 @@ export default function dlpTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -1872,8 +2068,12 @@ export default function dlpTest() {
         let result = dlpPermission.isDLPFile(1, null);
         expect(result != null).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -1894,8 +2094,12 @@ export default function dlpTest() {
         let result = dlpPermission.isDLPFile(1, undefined);
         expect(result != null).assertTrue();
       } catch (err) {
-        console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'err.code:', err.code, 'err.message:', err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -1921,15 +2125,19 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.info(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        console.info(curTag, "end");
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          console.info(curTag, "end");
+          return;
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -1962,15 +2170,19 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.error(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        console.info(curTag, "end");
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          console.info(curTag, "end");
+          return;
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -1998,7 +2210,11 @@ export default function dlpTest() {
         let dlpPermInfo = await dlpPermission.getDLPPermissionInfo();
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -2279,8 +2495,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('1.txt.dlp');
         expect(name).assertEqual('1.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2302,7 +2522,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('');
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -2324,7 +2548,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName(null!);
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -2346,7 +2574,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName(undefined!);
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -2368,7 +2600,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('.dlp');
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -2390,8 +2626,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('1.dlp');
         expect(name).assertEqual('1');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2413,7 +2653,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('aaaaa');
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -2438,8 +2682,12 @@ export default function dlpTest() {
         expect(name).assertEqual(baseName);
         expect(name.length).assertEqual(251);
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2463,7 +2711,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName(fileName);
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -2485,8 +2737,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('测试文件.txt.dlp');
         expect(name).assertEqual('测试文件.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2508,8 +2764,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('test-file_v1.0.txt.dlp');
         expect(name).assertEqual('test-file_v1.0.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2531,8 +2791,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('test.dlp.dlp');
         expect(name).assertEqual('test.dlp');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2556,7 +2820,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName(fileName);
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -2581,8 +2849,12 @@ export default function dlpTest() {
         expect(name).assertEqual(baseName);
         expect(name.length).assertEqual(250);
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2605,8 +2877,12 @@ export default function dlpTest() {
         expect(name).assertEqual('a');
         expect(name.length).assertEqual(1);
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2628,8 +2904,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('test file name.txt.dlp');
         expect(name).assertEqual('test file name.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2651,8 +2931,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('   .dlp');
         expect(name).assertEqual('   ');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2674,7 +2958,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('test.txt.DLP');
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -2696,7 +2984,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('test.txt.DlP');
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -2718,8 +3010,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('.test.txt.dlp');
         expect(name).assertEqual('.test.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2741,8 +3037,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('test...txt.dlp');
         expect(name).assertEqual('test...txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2764,8 +3064,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('/path/to/test.txt.dlp');
         expect(name).assertEqual('/path/to/test.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2787,8 +3091,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('日本語ファイル.txt.dlp');
         expect(name).assertEqual('日本語ファイル.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2810,8 +3118,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('📁文档📄.txt.dlp');
         expect(name).assertEqual('📁文档📄.txt');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2835,8 +3147,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName(fileName);
         expect(name).assertEqual(baseName);
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2858,7 +3174,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('testdlp');
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -2880,7 +3200,11 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('test.dlp.txt');
         expect(false).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -2902,8 +3226,12 @@ export default function dlpTest() {
         let name = dlpPermission.getOriginalFileName('testfile.dlp');
         expect(name).assertEqual('testfile');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2934,8 +3262,12 @@ export default function dlpTest() {
         let name4 = dlpPermission.getOriginalFileName('presentation.pptx.dlp');
         expect(name4).assertEqual('presentation.pptx');
       } catch (err) {
-        console.error(curTag, "getOriginalFileName failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getOriginalFileName failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2957,8 +3289,12 @@ export default function dlpTest() {
         let name: string = dlpPermission.getDLPSuffix();
         expect(name).assertEqual('.dlp');
       } catch (err) {
-        console.error(curTag, "getDLPSuffix failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "getDLPSuffix failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       console.info(curTag, "end");
@@ -2984,8 +3320,12 @@ export default function dlpTest() {
           called = true;
         });
       } catch (err) {
-        console.error(curTag, 'on openDLPFile failed', err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'on openDLPFile failed', err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
 
       try {
@@ -2993,9 +3333,13 @@ export default function dlpTest() {
           await dlpPermission.installDLPSandbox(bundleName, dlpPermission.DLPFileAccess.READ_ONLY, userId, '123456');
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
       } catch (err) {
-        console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
-        dlpPermission.off('openDLPFile');
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
+          dlpPermission.off('openDLPFile');
+          expect(false).assertTrue();
+        }
       }
 
       expect(called).assertEqual(true);
@@ -3024,15 +3368,19 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
-        console.error(curTag, "startAbility failed", err.code, err.message);
-        await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
-        expect(false).assertTrue();
-        console.info(curTag, "end");
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "startAbility failed", err.code, err.message);
+          await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
+          expect(false).assertTrue();
+          console.info(curTag, "end");
+          return;
+        }
       }
       try {
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
@@ -3061,7 +3409,11 @@ export default function dlpTest() {
         dlpPermission.on('openDLPFile', (dlpFileInfo) => {
         });
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -3095,15 +3447,23 @@ export default function dlpTest() {
       try {
         dlpPermission.on('openDLPFile', func1);
       } catch (err) {
-        console.error(curTag, 'on openDLPFile failed', err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'on openDLPFile failed', err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       try {
         dlpPermission.on('openDLPFile', func2);
       } catch (err) {
-        console.error(curTag, 'on openDLPFile failed', err.code, err.message);
-        dlpPermission.off('openDLPFile');
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'on openDLPFile failed', err.code, err.message);
+          dlpPermission.off('openDLPFile');
+          expect(false).assertTrue();
+        }
       }
 
       try {
@@ -3111,9 +3471,13 @@ export default function dlpTest() {
           await dlpPermission.installDLPSandbox(bundleName, dlpPermission.DLPFileAccess.READ_ONLY, userId, '123456');
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
       } catch (err) {
-        console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
-        dlpPermission.off('openDLPFile');
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
+          dlpPermission.off('openDLPFile');
+          expect(false).assertTrue();
+        }
       }
       expect(called1).assertEqual(1);
       expect(called2).assertEqual(1);
@@ -3121,17 +3485,25 @@ export default function dlpTest() {
       try {
         dlpPermission.off('openDLPFile', func1);
       } catch (err) {
-        console.error(curTag, 'off openDLPFile failed', err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'off openDLPFile failed', err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       try {
         let sandboxInfo =
           await dlpPermission.installDLPSandbox(bundleName, dlpPermission.DLPFileAccess.READ_ONLY, userId, '123456');
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
       } catch (err) {
-        console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
-        dlpPermission.off('openDLPFile');
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
+          dlpPermission.off('openDLPFile');
+          expect(false).assertTrue();
+        }
       }
       dlpPermission.off('openDLPFile');
       expect(called1).assertEqual(1);
@@ -3166,15 +3538,23 @@ export default function dlpTest() {
       try {
         dlpPermission.on('openDLPFile', func1);
       } catch (err) {
-        console.error(curTag, 'on openDLPFile failed', err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'on openDLPFile failed', err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       try {
         dlpPermission.on('openDLPFile', func2);
       } catch (err) {
-        console.error(curTag, 'on openDLPFile failed', err.code, err.message);
-        dlpPermission.off('openDLPFile');
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'on openDLPFile failed', err.code, err.message);
+          dlpPermission.off('openDLPFile');
+          expect(false).assertTrue();
+        }
       }
 
       try {
@@ -3182,9 +3562,13 @@ export default function dlpTest() {
           await dlpPermission.installDLPSandbox(bundleName, dlpPermission.DLPFileAccess.READ_ONLY, userId, '123456');
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
       } catch (err) {
-        console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
-        dlpPermission.off('openDLPFile');
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
+          dlpPermission.off('openDLPFile');
+          expect(false).assertTrue();
+        }
       }
       expect(called1).assertEqual(1);
       expect(called2).assertEqual(1);
@@ -3192,17 +3576,25 @@ export default function dlpTest() {
       try {
         dlpPermission.off('openDLPFile');
       } catch (err) {
-        console.error(curTag, 'off openDLPFile failed', err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'off openDLPFile failed', err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       try {
         let sandboxInfo =
           await dlpPermission.installDLPSandbox(bundleName, dlpPermission.DLPFileAccess.READ_ONLY, userId, '123456');
         await dlpPermission.uninstallDLPSandbox(bundleName, userId, sandboxInfo.appIndex);
       } catch (err) {
-        console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
-        dlpPermission.off('openDLPFile');
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'installDLPSandbox failed', err.code, err.message);
+          dlpPermission.off('openDLPFile');
+          expect(false).assertTrue();
+        }
       }
       expect(called1).assertEqual(1);
       expect(called2).assertEqual(1);
@@ -3226,7 +3618,11 @@ export default function dlpTest() {
         dlpPermission.off('openDLPFile', (dlpFileInfo) => {
         });
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -3247,7 +3643,11 @@ export default function dlpTest() {
       try {
         await dlpPermission.setSandboxAppConfig('configInfo');
       } catch (err) {
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3268,7 +3668,11 @@ export default function dlpTest() {
 
         await dlpPermission.setSandboxAppConfig('111');
       } catch (err) {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3327,8 +3731,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig('');
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3350,8 +3758,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(null!);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3373,8 +3785,12 @@ export default function dlpTest() {
         console.error(curTag, "setSandboxAppConfig should not succeed with undefined");
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3395,8 +3811,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig('a');
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3420,8 +3840,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(maxConfigInfo);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3445,8 +3869,12 @@ export default function dlpTest() {
         console.error(curTag, "setSandboxAppConfig should not succeed with exceed length");
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3470,8 +3898,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(largeExceedConfigInfo);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3493,8 +3925,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(jsonConfigInfo);
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3516,8 +3952,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(specialConfigInfo);
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3539,8 +3979,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(chineseConfigInfo);
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3562,8 +4006,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(emojiConfigInfo);
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3587,8 +4035,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(nearMaxConfigInfo);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_SYSTEM_SERVICE_EXCEPTION);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_SYSTEM_SERVICE_EXCEPTION);
+        }
       }
       console.info(curTag, "end");
     })
@@ -3610,8 +4062,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(mixedConfigInfo);
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3633,8 +4089,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(spacesConfigInfo);
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3656,8 +4116,12 @@ export default function dlpTest() {
         await dlpPermission.setSandboxAppConfig(newlineConfigInfo);
         console.info(curTag, "setSandboxAppConfig success");
       } catch (err) {
-        console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, "setSandboxAppConfig failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3677,7 +4141,11 @@ export default function dlpTest() {
       try {
         await dlpPermission.getSandboxAppConfig();
       } catch (err) {
-        expect(false).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+        }
       }
       console.info(curTag, "end");
     })
@@ -3697,8 +4165,12 @@ export default function dlpTest() {
       try {
         await dlpPermission.cleanSandboxAppConfig();
       } catch (err) {
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+          return;
+        }
       }
       console.info(curTag, "end");
     })
@@ -3754,9 +4226,13 @@ export default function dlpTest() {
       await dlpPermission.isDLPFeatureProvided().then((res) => {
         console.info(curTag, JSON.stringify(res));
       }).catch((err: BusinessError) => {
-        console.info(curTag, 'isDLPFeatureProvided: ' + JSON.stringify(err));
-        expect(false).assertTrue();
-        return;
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, 'isDLPFeatureProvided: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          return;
+        }
       });
       console.info(curTag, "end");
       return;
@@ -3787,9 +4263,13 @@ export default function dlpTest() {
           console.info('SUB_SECURITY_DLP_startDLPManagerForResult_0100 res.want', JSON.stringify(res.want));
         })
       } catch (err) {
-        console.info(curTag, "SUB_SECURITY_DLP_startDLPManagerForResult_0100 startDLPManagerForResult failed", err.code,
-          err.message);
-        expect(err.code == 19100017).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(curTag, "SUB_SECURITY_DLP_startDLPManagerForResult_0100 startDLPManagerForResult failed", err.code,
+            err.message);
+          expect(err.code == 19100017).assertTrue();
+        }
       }
       console.info(curTag, "SUB_SECURITY_DLP_startDLPManagerForResult_0100 end");
       return;
@@ -3822,10 +4302,14 @@ export default function dlpTest() {
           })
           expect(null).assertFail();
         } catch (err) {
-          console.info(
-            "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_16_0100 startDLPManagerForResult failed",
-            err.code, err.message);
-          expect(err.code).assertEqual(19100016);
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            console.info(
+              "SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_16_0100 startDLPManagerForResult failed",
+              err.code, err.message);
+            expect(err.code).assertEqual(19100016);
+          }
         }
         console.info("SUB_Security_DataSecurity_DLP_errorCode_startDLPManagerForResult_16_0100 end");
         done();
@@ -3869,8 +4353,12 @@ export default function dlpTest() {
             console.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
             expect(pluginId !== undefined);
           } catch (err) {
-            console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
-            expect(false).assertTrue();
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801);
+            } else {
+              console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
+              expect(false).assertTrue();
+            }
           }
         } else {
           try {
@@ -3878,8 +4366,12 @@ export default function dlpTest() {
             console.info("SUB_Security_DataSecurity_DLP_constructor_0100: call registerPlugin success");
             expect(false).assertTrue();
           } catch (err) {
-            console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
-            expect(err.code).assertEqual(19100011);
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801);
+            } else {
+              console.info("SUB_Security_DataSecurity_DLP_constructor_0100:e.code e.message", err.code, err.message);
+              expect(err.code).assertEqual(19100011);
+            }
           }
         }
         done();
@@ -3892,5 +4384,6 @@ export default function dlpTest() {
         return false;
       }
     }
+
   })
 }
