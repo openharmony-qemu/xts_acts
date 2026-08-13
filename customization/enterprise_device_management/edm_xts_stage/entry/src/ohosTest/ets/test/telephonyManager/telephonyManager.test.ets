@@ -1864,6 +1864,56 @@ function testGetOutgoingCallPolicyNumbers() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_outgoing_call_policy_numbers_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OUTGOING_CALL_POLICY_NUMBERS_JS_0106
+   * @tc.desc   test telephonyManager getOutgoingCallPolicyNumbers with policy parameter null
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_outgoing_call_policy_numbers_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_outgoing_call_policy_numbers_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OUTGOING_CALL_POLICY_NUMBERS_JS_0107
+   * @tc.desc   test telephonyManager getOutgoingCallPolicyNumbers with policy parameter undefined
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_outgoing_call_policy_numbers_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testRemoveOutgoingCallPolicyNumbers() {
@@ -2724,8 +2774,58 @@ function testGetIncomingCallPolicyNumbers() {
   it("test_get_incoming_call_policy_numbers_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let numbers: Array<string> = 
+      let numbers: Array<string> =
         telephonyManager.getIncomingCallPolicyNumbers(undefined, adminManager.Policy.BLOCK_LIST);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_incoming_call_policy_numbers_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INCOMING_CALL_POLICY_NUMBERS_JS_0106
+   * @tc.desc   test telephonyManager getIncomingCallPolicyNumbers with policy parameter null
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_incoming_call_policy_numbers_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_incoming_call_policy_numbers_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INCOMING_CALL_POLICY_NUMBERS_JS_0107
+   * @tc.desc   test telephonyManager getIncomingCallPolicyNumbers with policy parameter undefined
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_incoming_call_policy_numbers_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {
