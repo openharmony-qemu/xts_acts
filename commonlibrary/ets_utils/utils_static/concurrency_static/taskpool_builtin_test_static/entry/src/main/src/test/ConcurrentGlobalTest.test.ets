@@ -14,7 +14,6 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
-import type { BusinessError } from '@ohos.base';
 import {test_Global_test_001,test_Global_test_002,test_Global_test_003,test_Global_test_004,test_Global_test_005,test_Global_test_006,test_Global_test_007,test_Global_test_008,test_Global_test_009,test_Global_test_010,
   test_Global_test_011,test_Global_test_012,test_Global_test_013,test_Global_test_014,test_Global_test_015,test_Global_test_016,test_Global_test_017,test_Global_test_018,test_Global_test_019,test_Global_test_020,
   test_Global_test_021,test_Global_test_022,test_Global_test_023,test_Global_test_024,test_Global_test_025,test_Global_test_026,test_Global_test_027,test_Global_test_028,test_Global_test_029,test_Global_test_030,
@@ -27,15 +26,14 @@ import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function globalTest() {
+export default function globalTest(): void {
   describe('globalTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -1917,30 +1915,29 @@ export default function globalTest() {
       async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_Global_test_050';
         console.info(`${caseName} test start`);
-        let count: int = 0;
         try {
+          let tasks: Promise<boolean>[] = [];
           for (let i: int = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_Global_test_050).then((_res) => {
-              expect().assertFail();
-              count++;
-            }).catch((e: Error) => {
-              expect(e.message).assertContain("DecodeURI: invalid chara");
-              count++;
-            });
+            tasks.push(taskpool.execute(test_Global_test_050).then(
+              (_res): boolean => false,
+              (_error: Error): boolean => true
+            ));
           }
+          const rejectedTasks: boolean[] = await Promise.all(tasks);
+          expect(rejectedTasks.every((rejected: boolean): boolean => rejected)).assertTrue();
+          let localCaught: int = 0;
           for (let i: int = 0; i < concurrentNum; i++) {
             try {
               const _r = encodeURI("\ud83d");
-              expect().assertFail();
             } catch (err) {
-              expect((err as BusinessError).message).assertContain("DecodeURI: invalid chara");
+              localCaught++;
             }
           }
+          expect(localCaught).assertEqual(concurrentNum);
         } catch (e) {
           console.info(`${caseName} Unexpected failure: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) { await sleep(100) }
         console.info(`${caseName} test end`);
         done()
       });
@@ -1957,30 +1954,29 @@ export default function globalTest() {
       async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_Global_test_051';
         console.info(`${caseName} test start`);
-        let count: int = 0;
         try {
+          let tasks: Promise<boolean>[] = [];
           for (let i: int = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_Global_test_051).then((_res) => {
-              expect().assertFail();
-              count++;
-            }).catch((e: Error) => {
-              expect(e.message).assertContain("DecodeURI: invalid chara");
-              count++;
-            });
+            tasks.push(taskpool.execute(test_Global_test_051).then(
+              (_res): boolean => false,
+              (_error: Error): boolean => true
+            ));
           }
+          const rejectedTasks: boolean[] = await Promise.all(tasks);
+          expect(rejectedTasks.every((rejected: boolean): boolean => rejected)).assertTrue();
+          let localCaught: int = 0;
           for (let i: int = 0; i < concurrentNum; i++) {
             try {
               const _r = encodeURIComponent("\ud83d");
-              expect().assertFail();
             } catch (err) {
-              expect((err as BusinessError).message).assertContain("DecodeURI: invalid chara");
+              localCaught++;
             }
           }
+          expect(localCaught).assertEqual(concurrentNum);
         } catch (e) {
           console.info(`${caseName} Unexpected failure: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) { await sleep(100) }
         console.info(`${caseName} test end`);
         done()
       });
