@@ -83,14 +83,13 @@ export default function TaskPoolConcurrentTest(): void {
      */
     it('testTaskPoolExecuteConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<number> = new Array<number>();
+      let arr: Array<number> = [];
       let totalTasks: number = 20;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testTaskPoolExecute, arr, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testTaskPoolExecute, arr, taskCounter));
       }
-      while (taskCounter.load() < totalTasks * 10) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(taskCounter.load()).assertEqual(totalTasks * 10);
     });
 
@@ -104,10 +103,11 @@ export default function TaskPoolConcurrentTest(): void {
      */
     it('testTaskPoolAsyncConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<number> = new Array<number>();
+      let arr: Array<number> = [];
       let totalTasks: number = 10;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(async (a: Array<number>, tc: AtomicInt): Promise<void> => {
+        tasks.push(taskpool.execute(async (a: Array<number>, tc: AtomicInt): Promise<void> => {
           for (let j: number = 0; j < 10; j++) {
             try {
               a.push(j);
@@ -120,11 +120,9 @@ export default function TaskPoolConcurrentTest(): void {
             }
             tc.fetchAdd(1);
           }
-        }, arr, taskCounter).then((): void => { });
+        }, arr, taskCounter));
       }
-      while (taskCounter.load() < totalTasks * 10) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(taskCounter.load()).assertEqual(totalTasks * 10);
     });
 
@@ -140,16 +138,16 @@ export default function TaskPoolConcurrentTest(): void {
       let counter: AtomicInt = new AtomicInt(0);
       let delayedCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: int = 10;
+      let tasks: Promise<Any>[] = [];
       for (let i: int = 0; i < totalTasks; i++) {
         let task: taskpool.Task = new taskpool.Task(testTaskPoolDelayed, delayedCounter);
-        taskpool.executeDelayed(100, task).then((): void => {
+        tasks.push(taskpool.executeDelayed(100, task).then((): void => {
           counter.fetchAdd(1);
-        });
+        }));
       }
-      while (delayedCounter.load() < totalTasks) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(delayedCounter.load()).assertEqual(totalTasks);
+      expect(counter.load()).assertEqual(totalTasks);
     });
 
     /**
@@ -164,22 +162,21 @@ export default function TaskPoolConcurrentTest(): void {
       let periodicCounter: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(testTaskPoolPeriodic, periodicCounter);
       taskpool.executePeriodically(100, task);
-      while (periodicCounter.load() < 10) {
+      let waitCount: number = 0;
+      while (periodicCounter.load() < 10 && waitCount < 100) {
         await Utils.msSleep(100);
+        waitCount++;
       }
-      let beforeCount: number = periodicCounter.load();
+      expect(periodicCounter.load() >= 10).assertTrue();
       try {
         taskpool.cancel(task);
       } catch (e) {
-        // 取消容忍：任务可能已执行完毕导致取消失败
-        if (!(e instanceof Error)) {
-          throw e; // 非预期异常重新抛出
-        }
+        expect().assertFail();
       }
-      // 验证取消后周期任务不再继续执行（最多容忍3次残留执行）
+      await Utils.msSleep(100);
+      let settledCount: number = periodicCounter.load();
       await Utils.msSleep(300);
-      expect(periodicCounter.load() - beforeCount <= 3).assertTrue();
-      expect(periodicCounter.load() >= 10).assertTrue();
+      expect(periodicCounter.load()).assertEqual(settledCount);
     });
 
     /**
@@ -220,9 +217,11 @@ export default function TaskPoolConcurrentTest(): void {
       task.onReceiveData((data: Object): void => {
         receiveCounter.fetchAdd(1);
       });
-      taskpool.execute(task).then((): void => { });
-      while (counter.load() < 10 || receiveCounter.load() < 10) {
+      await taskpool.execute(task);
+      let waitCount: number = 0;
+      while (receiveCounter.load() < 10 && waitCount < 100) {
         await Utils.msSleep(100);
+        waitCount++;
       }
       expect(counter.load()).assertEqual(10);
       expect(receiveCounter.load()).assertEqual(10);
@@ -258,43 +257,37 @@ export default function TaskPoolConcurrentTest(): void {
     it('testTaskPoolCancelConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(testTaskPoolCancel, counter);
-      taskpool.execute(task).then((): void => { });
-      while (counter.load() < 50) {
-        await Utils.msSleep(100);
-      }
+      let taskPromise: Promise<Any> = taskpool.executeDelayed(2000, task);
       try {
         taskpool.cancel(task);
       } catch (e) {
-        // 取消容忍：任务可能已执行完毕导致取消失败
-        if (!(e instanceof Error)) {
-          throw e; // 非预期异常重新抛出
-        }
+        expect().assertFail();
       }
-      expect(counter.load() >= 50).assertTrue();
+      let canceled: boolean = false;
+      try {
+        await taskPromise;
+      } catch (e) {
+        canceled = true;
+      }
+      expect(canceled).assertTrue();
+      expect(counter.load()).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_ASYNCTASK_TASKPOOL_0900
      * @tc.name   testTaskPoolCallbackConcurrent0900
-     * @tc.desc   CON-086 TaskPool then/catch回调并发验证
+     * @tc.desc   CON-086 Verify TaskPool completion callback after concurrent execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testTaskPoolCallbackConcurrent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let counter: AtomicInt = new AtomicInt(0);
       let result: AtomicInt = new AtomicInt(0);
-      taskpool.execute((): int => {
+      await taskpool.execute((): int => {
         return 42;
       }).then((value: Any): void => {
         result.store(value as int);
-        counter.fetchAdd(1);
-      }).catch((): void => {
-        counter.fetchAdd(1);
       });
-      while (counter.load() < 1) {
-        await Utils.msSleep(100);
-      }
       expect(result.load()).assertEqual(42);
     });
 
@@ -310,12 +303,11 @@ export default function TaskPoolConcurrentTest(): void {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 100;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testTaskPoolStress, counter, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testTaskPoolStress, counter, taskCounter));
       }
-      while (taskCounter.load() < totalTasks * 100) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(counter.load()).assertEqual(totalTasks * 100);
     });
   });
