@@ -479,9 +479,9 @@ export default function CameraPhotoSessionMetadata(): void {
                   let metadataObject = metadataObjectArr![0]
                   if (metadataObject.type == camera.MetadataObjectType.HUMAN_BODY) {
                     metadataObject = metadataObject as camera.MetadataHumanBodyObject;
-                    console.info(TAG + testName + " metadataObject timestamp: " + metadataObject.timestamp);
-                    console.info(TAG + testName + " metadataObject isLockFocusTracked: " + metadataObject.isLockFocusTracked);
-                    console.info(TAG + testName + " metadataObject boundingBox: " + JSON.stringify(metadataObject.boundingBox));
+                    console.info(TAG + testName + " metadataObject timestamp： " + metadataObject.timestamp);
+                    console.info(TAG + testName + " metadataObject isLockFocusTracked： " + metadataObject.isLockFocusTracked);
+                    console.info(TAG + testName + " metadataObject boundingBox： " + JSON.stringify(metadataObject.boundingBox));
                   }
                 }
               });
