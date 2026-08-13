@@ -412,7 +412,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -457,7 +457,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -502,7 +502,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': false
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -545,7 +545,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': false
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -685,7 +685,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
@@ -756,7 +756,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
@@ -815,7 +815,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
@@ -883,7 +883,7 @@ export default function dlpTest() {
           'ohos.dlp.params.success': true
         }
       };
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
         expect(result.resultCode).assertEqual(0);
@@ -985,7 +985,7 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -1605,7 +1605,7 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -1648,7 +1648,7 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -2125,7 +2125,7 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -2170,7 +2170,7 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {
@@ -3368,7 +3368,7 @@ export default function dlpTest() {
           'ohos.dlp.params.index': sandboxInfo.appIndex,
         }
       }
-      let result: common.AbilityResult;
+      let result: common.AbilityResult = {} as common.AbilityResult;
       try {
         result = await globalThis.context.startAbilityForResult(want);
       } catch (err) {

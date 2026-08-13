@@ -48,19 +48,20 @@ export default function ActsDlpNDKTest() {
      */
     it('getDlpPermissionInfoTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log("=======> getDlpPermissionInfoTest  ==========");
-      if (canIUse('SystemCapability.Security.DataLossPrevention')) {
-        try {
-          let result = await testNapi.osGetDlpPermissionInfoA();
-          console.log("=======>getDlpPermissionInfoTest result:" + result);
+      try {
+        let result = await testNapi.osGetDlpPermissionInfoA();
+        console.log("=======>getDlpPermissionInfoTest result:" + result);
+        if (result === 801) {
+          expect(result).assertEqual(801);
+        } else {
           expect(result).assertEqual(19100006);
-          done();
-        } catch (error) {
-          console.error("=======>getDlpPermissionInfoTest error:" + error);
-          expect(false).assertTrue();
-          done();
         }
+        done();
+      } catch (error) {
+        console.error("=======>getDlpPermissionInfoTest error:" + error);
+        expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -73,19 +74,20 @@ export default function ActsDlpNDKTest() {
      */
     it('getOriginalFileNameTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> getOriginalFileNameTest  ==========");
-      if (canIUse('SystemCapability.Security.DataLossPrevention')) {
-        try{
-          let result = await testNapi.osGetOriginalFileNameA();
-          console.log("=======>getOriginalFileNameTest result:" + result);
+      try{
+        let result = await testNapi.osGetOriginalFileNameA();
+        console.log("=======>getOriginalFileNameTest result:" + result);
+        if (result === 801) {
+          expect(result).assertEqual(801);
+        } else {
           expect(result).assertEqual('test.txt');
-          done();
-        } catch (error) {
-          console.error("=======>getOriginalFileNameTest error:" + error);
-          expect(false).assertTrue();
-          done();
         }
+        done();
+      } catch (error) {
+        console.error("=======>getOriginalFileNameTest error:" + error);
+        expect(false).assertTrue();
+        done();
       }
-      done();
 
     })
     
@@ -99,19 +101,20 @@ export default function ActsDlpNDKTest() {
      */
     it('isInSandboxTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> isInSandboxTest  ==========");
-      if (canIUse('SystemCapability.Security.DataLossPrevention')) {
-        try{
-          let result = await testNapi.osIsInSandboxA();
-          console.log("=======>isInSandboxTest result:" + result);
+      try{
+        let result = await testNapi.osIsInSandboxA();
+        console.log("=======>isInSandboxTest result:" + result);
+        if (result === 801) {
+          expect(result).assertEqual(801);
+        } else {
           expect(result).assertFalse();
-          done();
-        } catch (error) {
-          console.error("=======>isInSandboxTest error:" + error);
-          expect(false).assertTrue();
-          done();
         }
+        done();
+      } catch (error) {
+        console.error("=======>isInSandboxTest error:" + error);
+        expect(false).assertTrue();
+        done();
       }
-      done();
 
     })
     
@@ -125,19 +128,20 @@ export default function ActsDlpNDKTest() {
      */
     it('setSandboxAppConfigTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> setSandboxAppConfigTest  ==========");
-      if (canIUse('SystemCapability.Security.DataLossPrevention')) {
-        try{
-          let result = await testNapi.osSetSandboxAppConfigA();
-          console.log("=======>setSandboxAppConfigTest result:" + result);
+      try{
+        let result = await testNapi.osSetSandboxAppConfigA();
+        console.log("=======>setSandboxAppConfigTest result:" + result);
+        if (result === 801) {
+          expect(result).assertEqual(801);
+        } else {
           expect(result).assertEqual(0);
-          done();
-        } catch (error) {
-          console.error("=======>setSandboxAppConfigTest error:" + error);
-          expect(false).assertTrue();
-          done();
         }
+        done();
+      } catch (error) {
+        console.error("=======>setSandboxAppConfigTest error:" + error);
+        expect(false).assertTrue();
+        done();
       }
-      done();
 
     })
     
@@ -151,19 +155,20 @@ export default function ActsDlpNDKTest() {
      */
     it('getSandboxAppConfigTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> getSandboxAppConfigTest  ==========");
-      if (canIUse('SystemCapability.Security.DataLossPrevention')) {
-        try{
-          let result = await testNapi.osGetSandboxAppConfigA();
-          console.log("=======>getSandboxAppConfigTest result:" + result);
-		  expect(result).assertContain('configInfo');
-          done();
-        } catch (error) {
-          console.error("=======>getSandboxAppConfigTest error:" + error);
-          expect(false).assertTrue();
-          done();
+      try{
+        let result = await testNapi.osGetSandboxAppConfigA();
+        console.log("=======>getSandboxAppConfigTest result:" + result);
+        if (result === 801) {
+          expect(result).assertEqual(801);
+        } else {
+          expect(result).assertContain('configInfo');
         }
+        done();
+      } catch (error) {
+        console.error("=======>getSandboxAppConfigTest error:" + error);
+        expect(false).assertTrue();
+        done();
       }
-      done();
 
     })
 
@@ -177,19 +182,20 @@ export default function ActsDlpNDKTest() {
      */
     it('cleanSandboxAppConfigTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> cleanSandboxAppConfigTest  ==========");
-      if (canIUse('SystemCapability.Security.DataLossPrevention')) {
-        try{
-          let result = await testNapi.osCleanSandboxAppConfigA();
-          console.log("=======>cleanSandboxAppConfigTest result:" + result);
+      try{
+        let result = await testNapi.osCleanSandboxAppConfigA();
+        console.log("=======>cleanSandboxAppConfigTest result:" + result);
+        if (result === 801) {
+          expect(result).assertEqual(801);
+        } else {
           expect(result).assertEqual(0);
-          done();
-        } catch (error) {
-          console.error("=======>cleanSandboxAppConfigTest error:" + error);
-          expect(false).assertTrue();
-          done();
         }
+        done();
+      } catch (error) {
+        console.error("=======>cleanSandboxAppConfigTest error:" + error);
+        expect(false).assertTrue();
+        done();
       }
-      done();
 
     })
   })
