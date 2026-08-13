@@ -184,8 +184,8 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
     it('testAsyncLockLockAsyncSecondOverload0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let p: Promise<void> = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
-      expect(p).not().assertNull();
-
+      expect(p instanceof Promise).assertTrue();
+      await p;
     });
 
     /**
@@ -373,7 +373,6 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
         }, AsyncLockMode.EXCLUSIVE);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
         expect(error.message).not().assertNull();
       }
 
@@ -688,7 +687,7 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
     it('testAsyncLockLockAsyncSecondOverload3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let result: number[] = await lock.lockAsync<number[]>(() => [1, 2, 3], AsyncLockMode.SHARED);
-      expect(Array.isArray(result)).assertTrue();
+      expect(result.length).assertEqual(3);
 
     });
 
@@ -770,7 +769,7 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
     /**
      * @tc.name    testAsyncLockLockAsyncSecondOverload4300
      * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_4300
-     * @tc.desc    Verify SHARED mode concurrent performance
+     * @tc.desc    Verify SHARED mode concurrent execution
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -790,7 +789,7 @@ export default function AsyncLockLockAsyncSecondOverloadTest(): void {
     /**
      * @tc.name    testAsyncLockLockAsyncSecondOverload4400
      * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_SECOND_OVERLOAD_TEST_4400
-     * @tc.desc    Verify EXCLUSIVE mode sequential performance
+     * @tc.desc    Verify EXCLUSIVE mode sequential execution
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2

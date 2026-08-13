@@ -16,10 +16,6 @@
 
 import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
-interface test1 {
-  id: number
-}
-
 export default function AsyncLockOptionsParameterizedConstructorTest(): void {
   describe('AsyncLockOptionsParameterizedConstructorTest', (): void => {
 

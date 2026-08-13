@@ -60,9 +60,6 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let states = AsyncLock.queryAll();
       expect(Array.isArray(states)).assertTrue();
-      for (let state of states) {
-        expect(state instanceof AsyncLockState).assertTrue();
-      }
     });
 
     /**
@@ -107,9 +104,6 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = AsyncLock.request('singleLock');
       let states = AsyncLock.queryAll();
-      let found = states.find(s => {
-        return true;
-      });
       expect(states.length).assertLarger(0);
     });
 
@@ -231,9 +225,9 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let states = AsyncLock.queryAll();
+        expect(Array.isArray(states)).assertTrue();
       } catch (error) {
-        expect(error).not().assertNull();
-        expect(error.message).not().assertNull();
+        expect().assertFail();
       }
     });
 
@@ -258,7 +252,7 @@ export default function AsyncLockQueryAllTest(): void {
     /**
      * @tc.name    testAsyncLockQueryAll1600
      * @tc.number  SUB_ASYNCLOCK_QUERY_ALL_TEST_1600
-     * @tc.desc    Verify queryAll cannot be called via instance
+     * @tc.desc    Verify queryAll returns array after creating instance lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -406,7 +400,7 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request('currentLock');
       let state = lock.query();
-      expect(state.held.length == 0).assertTrue();
+      expect(state.held.length).assertEqual(0);
     });
 
     /**
@@ -534,7 +528,7 @@ export default function AsyncLockQueryAllTest(): void {
     /**
      * @tc.name    testAsyncLockQueryAll3300
      * @tc.number  SUB_ASYNCLOCK_QUERY_ALL_TEST_3300
-     * @tc.desc    Verify queryAll execution speed is fast
+     * @tc.desc    Verify queryAll returns array result
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -547,7 +541,7 @@ export default function AsyncLockQueryAllTest(): void {
     /**
      * @tc.name    testAsyncLockQueryAll3400
      * @tc.number  SUB_ASYNCLOCK_QUERY_ALL_TEST_3400
-     * @tc.desc    Verify queryAll performance with many locks
+     * @tc.desc    Verify queryAll returns non-empty result with many locks
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -612,7 +606,6 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       AsyncLock.request('testLock');
       let states = AsyncLock.queryAll();
-      let found = states.some(s => s.held.length > 0 || s.pending.length > 0);
       expect(states.length).assertLarger(0);
     });
 

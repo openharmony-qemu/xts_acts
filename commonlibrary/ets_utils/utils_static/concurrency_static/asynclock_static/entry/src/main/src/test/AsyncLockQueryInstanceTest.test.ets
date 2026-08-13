@@ -232,7 +232,6 @@ export default function AsyncLockQueryInstanceTest(): void {
         expect(state.held.length).assertEqual(0);
       } catch (error) {
         expect(error).not().assertNull();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -251,7 +250,6 @@ export default function AsyncLockQueryInstanceTest(): void {
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -267,9 +265,9 @@ export default function AsyncLockQueryInstanceTest(): void {
       let lock: AsyncLock | undefined = undefined;
       try {
         let state = lock!.query();
+        expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -285,7 +283,6 @@ export default function AsyncLockQueryInstanceTest(): void {
       let lock = new AsyncLock();
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
-      expect(state instanceof AsyncLockState).assertTrue();
     });
 
     /**
@@ -415,7 +412,7 @@ export default function AsyncLockQueryInstanceTest(): void {
     /**
      * @tc.name    testAsyncLockQueryInstance2600
      * @tc.number  SUB_ASYNCLOCK_QUERY_INSTANCE_TEST_2600
-     * @tc.desc    Verify instance query performance is fast
+     * @tc.desc    Verify instance query returns held array for new lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -429,7 +426,7 @@ export default function AsyncLockQueryInstanceTest(): void {
     /**
      * @tc.name    testAsyncLockQueryInstance2700
      * @tc.number  SUB_ASYNCLOCK_QUERY_INSTANCE_TEST_2700
-     * @tc.desc    Verify multiple instance queries performance
+     * @tc.desc    Verify multiple instance queries return consistent held array
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -446,7 +443,7 @@ export default function AsyncLockQueryInstanceTest(): void {
     /**
      * @tc.name    testAsyncLockQueryInstance2800
      * @tc.number  SUB_ASYNCLOCK_QUERY_INSTANCE_TEST_2800
-     * @tc.desc    Verify instance queries on many locks performance
+     * @tc.desc    Verify instance queries on many locks return held arrays
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2

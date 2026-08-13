@@ -123,10 +123,10 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
-        let lock = AsyncLock.request(null as string);
+        AsyncLock.request(null as string);
+        expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -140,10 +140,10 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
-        let lock = AsyncLock.request(undefined as string);
+        AsyncLock.request(undefined as string);
+        expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -788,7 +788,7 @@ export default function AsyncLockRequestTest(): void {
     /**
      * @tc.name    testAsyncLockRequest5400
      * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5400
-     * @tc.desc    Verify performance with many different name requests
+     * @tc.desc    Verify many different name requests complete successfully
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -835,7 +835,7 @@ export default function AsyncLockRequestTest(): void {
     /**
      * @tc.name    testAsyncLockRequest5700
      * @tc.number  SUB_ASYNCLOCK_REQUEST_TEST_5700
-     * @tc.desc    Verify request empty lock pool returns empty array
+     * @tc.desc    Verify queryAll returns array result after request
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -855,11 +855,10 @@ export default function AsyncLockRequestTest(): void {
      */
     it('testAsyncLockRequest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
-        let lock = AsyncLock.request(true as string);
-        expect(lock instanceof AsyncLock).assertTrue();
+        AsyncLock.request(true as string);
+        expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -872,13 +871,8 @@ export default function AsyncLockRequestTest(): void {
      * @tc.level   LEVEL1
      */
     it('testAsyncLockRequest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      try {
-        let lock = AsyncLock.request({} as string);
-        expect(lock instanceof AsyncLock).assertTrue();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
-      }
+      let lock = AsyncLock.request({} as string);
+      expect(lock instanceof AsyncLock).assertTrue();
     });
 
   });

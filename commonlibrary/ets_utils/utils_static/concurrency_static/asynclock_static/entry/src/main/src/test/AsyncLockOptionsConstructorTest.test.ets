@@ -33,7 +33,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
      */
     it('testAsyncLockOptionsConstructor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let options = new AsyncLockOptions<string>();
-      expect(options instanceof AsyncLockOptions).assertTrue();
+      expect(options.timeout).assertEqual(0);
     });
 
     /**
@@ -46,7 +46,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
      */
     it('testAsyncLockOptionsConstructor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let options = new AsyncLockOptions<void>();
-      expect(options instanceof AsyncLockOptions).assertTrue();
+      expect(options.timeout).assertEqual(0);
     });
 
     /**
@@ -59,8 +59,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
      */
     it('testAsyncLockOptionsConstructor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let options = new AsyncLockOptions<string>();
-      expect(options).not().assertNull();
-      expect(options instanceof AsyncLockOptions).assertTrue();
+      expect(options.timeout).assertEqual(0);
     });
 
     /**
@@ -191,7 +190,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
       if (needTimeout) {
         options.timeout = 1000;
       }
-      expect(options).not().assertNull();
+      expect(options.isAvailable).assertTrue();
     })
 
     /**
@@ -297,7 +296,7 @@ export default function AsyncLockOptionsConstructorTest(): void {
     /**
      * @tc.name    testAsyncLockOptionsConstructor1700
      * @tc.number  SUB_ASYNCLOCK_OPTIONS_CONSTRUCTOR_TEST_1700
-     * @tc.desc    Verify no-arg constructor after manual settings equivalent to parameterized
+     * @tc.desc    Verify no-arg constructor with manual settings matches parameterized constructor properties
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1

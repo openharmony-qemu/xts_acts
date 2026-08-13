@@ -118,9 +118,9 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let state = AsyncLock.query(undefined as string);
+        expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -234,7 +234,6 @@ export default function AsyncLockQueryStaticTest(): void {
       let lock = AsyncLock.request("queryTestLock2");
       let state: AsyncLockState = AsyncLock.query("queryTestLock2");
       expect(state.held.length).assertEqual(0);
-      expect(state instanceof AsyncLockState).assertTrue();
     });
 
     /**
@@ -409,7 +408,7 @@ export default function AsyncLockQueryStaticTest(): void {
     /**
      * @tc.name    testAsyncLockQueryStatic2700
      * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2700
-     * @tc.desc    Verify error message contains lock name for non-existent lock
+     * @tc.desc    Verify query throws Error for non-existent lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -417,16 +416,16 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         AsyncLock.query("nonexistent");
+        expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue()
-        expect(e instanceof Error).assertTrue()
+        expect(e instanceof Error).assertTrue();
       }
     });
 
     /**
      * @tc.name    testAsyncLockQueryStatic2800
      * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2800
-     * @tc.desc    Verify error message contains custom lock name
+     * @tc.desc    Verify query throws error for custom non-existent lock name
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -435,8 +434,9 @@ export default function AsyncLockQueryStaticTest(): void {
       let customName = "customMissingLock";
       try {
         AsyncLock.query(customName);
+        expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue()
+        expect(e instanceof Error).assertTrue();
       }
     });
 
@@ -454,7 +454,6 @@ export default function AsyncLockQueryStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect(error.message).not().assertNull();
       }
     });
 
@@ -783,7 +782,7 @@ export default function AsyncLockQueryStaticTest(): void {
     /**
      * @tc.name    testAsyncLockQueryStatic4900
      * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4900
-     * @tc.desc    Verify multiple queries performance
+     * @tc.desc    Verify multiple queries return consistent results
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2

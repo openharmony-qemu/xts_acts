@@ -184,7 +184,6 @@ export default function AsyncLockCallbackTest(): void {
       };
       const lock = new AsyncLock();
       const result = await lock.lockAsync<int>(callback);
-      // ArkTS 1.2 static runtime typeof(int) returns "int" (device-validated).
       expect(typeof result).assertEqual("int");
     });
 
@@ -204,7 +203,6 @@ export default function AsyncLockCallbackTest(): void {
 
       const numCallback = () => 42;
       const numResult = await lock.lockAsync<int>(numCallback);
-      // ArkTS 1.2 static runtime typeof(int) returns "int" (device-validated).
       expect(typeof numResult).assertEqual("int");
     });
 

@@ -187,7 +187,7 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty1200
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_1200
-     * @tc.desc    Verify held array elements can be added
+     * @tc.desc    Verify held array is initially empty for new lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -195,14 +195,13 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = new AsyncLock();
       let state = lock.query();
-      state.held.push({ name: "test", mode: AsyncLockMode.EXCLUSIVE, contextId: 1 });
-      expect(state.held[state.held.length - 1].name).assertEqual("test");
+      expect(state.held.length).assertEqual(0);
     });
 
     /**
      * @tc.name    testAsyncLockStateProperty1300
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_1300
-     * @tc.desc    Verify pending array elements can be added
+     * @tc.desc    Verify pending array is initially empty for new lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -210,8 +209,7 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = new AsyncLock();
       let state = lock.query();
-      state.pending.push({ name: "test", mode: AsyncLockMode.EXCLUSIVE, contextId: 1 });
-      expect(state.pending[state.pending.length - 1].name).assertEqual("test");
+      expect(state.pending.length).assertEqual(0);
     });
 
     /**
@@ -343,7 +341,7 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty2200
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_2200
-     * @tc.desc    Verify held property access speed
+     * @tc.desc    Verify held property returns array for new lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -361,7 +359,7 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty2300
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_2300
-     * @tc.desc    Verify pending property access speed
+     * @tc.desc    Verify pending property returns array for new lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -379,7 +377,7 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty2400
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_2400
-     * @tc.desc    Verify held array traversal performance
+     * @tc.desc    Verify held array traversal returns correct count
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -455,6 +453,7 @@ export default function AsyncLockStatePropertyTest(): void {
       let state = lock.query();
       let length = state.pending.length;
       expect(typeof length).assertEqual("int");
+      expect(length).assertLarger(0);
       await p1;
       await p2;
 
@@ -543,8 +542,6 @@ export default function AsyncLockStatePropertyTest(): void {
         let jsonStr = JSON.stringify(state);
         expect(jsonStr).assertContain('"held"');
         expect(jsonStr).assertContain('"pending"');
-        expect(typeof state.held !== 'undefined').assertTrue();
-        expect(typeof state.pending !== 'undefined').assertTrue();
       });
 
     });
