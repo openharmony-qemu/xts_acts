@@ -107,5 +107,53 @@ export default function webRequestHeaderList() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0003 end')
       console.info('SUB_ACE_WEB_WarmupServiceWorker_0003 end')
     })
+
+    /**
+     * @tc.name   testWebView_warmupServiceWorker0004
+     * @tc.number SUB_ACE_WEB_WarmupServiceWorker_0004
+     * @tc.desc   test warmupServiceWorker empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebView_warmupServiceWorker0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0004 start')
+      console.info('SUB_ACE_WEB_WarmupServiceWorker_0004 start')
+      flg = false
+      try {
+        webview.WebviewController.warmupServiceWorker('');
+      } catch (error) {
+        flg = true
+        console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+        expect(error.code).assertEqual("17100002")
+      }
+      expect(flg).assertTrue()
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0004 end')
+      console.info('SUB_ACE_WEB_WarmupServiceWorker_0004 end')
+    })
+
+    /**
+     * @tc.name   testWebView_warmupServiceWorker0005
+     * @tc.number SUB_ACE_WEB_WarmupServiceWorker_0005
+     * @tc.desc   test warmupServiceWorker undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebView_warmupServiceWorker0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0005 start')
+      console.info('SUB_ACE_WEB_WarmupServiceWorker_0005 start')
+      flg = false
+      try {
+        webview.WebviewController.warmupServiceWorker(undefined);
+      } catch (error) {
+        flg = true
+        console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+        expect(error.code).assertEqual("17100002")
+      }
+      expect(flg).assertTrue()
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0005 end')
+      console.info('SUB_ACE_WEB_WarmupServiceWorker_0005 end')
+    })
   })
 }

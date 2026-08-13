@@ -32,6 +32,7 @@ import webTestUserAgentMetadataModel from './WebUserAgentMetadataModel.test';
 import webTestUserAgentMetadataPlatform from './WebUserAgentMetadataPlatform.test';
 import webTestUserAgentMetadataPlatformVersion from './WebUserAgentMetadataPlatformVersion.test';
 import webTestUserAgentMetadataWow64 from './WebUserAgentMetadataWow64.test';
+import webUaCoverageDirect from './WebUaCoverageDirect.test';
 
 export default function testsuite() {
   webSetAppCustomUserAgent();
@@ -52,4 +53,5 @@ export default function testsuite() {
   webTestUserAgentMetadataPlatform();
   webTestUserAgentMetadataPlatformVersion();
   webTestUserAgentMetadataWow64();
+  webUaCoverageDirect();
 }

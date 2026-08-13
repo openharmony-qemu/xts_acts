@@ -1403,6 +1403,18 @@ struct WebFontTest {
               console.log('onPageEnd url:' + event.url);
             }
           })
+
+        // [ARKWEB_COV] null/undefined attribute coverage
+        Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+          .rotateRenderEffect(null)
+          .zoomControlAccess(null)
+          .height(1)
+          .width(1)
+        Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+          .rotateRenderEffect(undefined)
+          .zoomControlAccess(undefined)
+          .height(1)
+          .width(1)
       }
       .width('100%')
     }

@@ -14,12 +14,15 @@ import connectNativeNullUndefinedParameterTest from './ConnectNativeNullUndefine
 import disconnectNativeNullUndefinedParameterTest from './DisconnectNativeNullUndefinedParameter.test'
 import connectionInfoFdParameterTest from './ConnectionInfoFdParameter.test'
 
+import connectNativeCoverageDirect from './ConnectNativeCoverageDirect.test';
+
 export default function testsuite() {
   abilityTest();
   startAbilityForResultTest();
   onConnectParameterTest();
   onFailedParameterTest();
   connectNativeParameterTest();
+  connectNativeCoverageDirect();
   OnDisconnectParameter()
   DisconnectNativeParameter()
   ConnectNativeErrorCode()

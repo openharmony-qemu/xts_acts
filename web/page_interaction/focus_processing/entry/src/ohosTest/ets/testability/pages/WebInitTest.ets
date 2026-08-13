@@ -164,6 +164,20 @@ struct WebInitTest {
             console.log('onPageEnd url:' + event.url);
             this.isPageEnd = 1;
           })
+
+      // Coverage: mixedMode / forceEnableZoom / gestureFocusMode null&undefined
+      Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+        .mixedMode(null)
+        .forceEnableZoom(null)
+        .gestureFocusMode(null)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+        .mixedMode(undefined)
+        .forceEnableZoom(undefined)
+        .gestureFocusMode(undefined)
+        .height(1)
+        .width(1)
       }
     }
   }

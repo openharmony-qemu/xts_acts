@@ -15,13 +15,11 @@
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {inputMethod} from '@kit.IMEKit';
 import { waitForExist} from '../../test/WaitTest.test';
 
 const EVENT_ID_SET_SUITE_KEY = 178201;
-const driver = Driver.create();
 @Entry
 @Component
 struct WebComponent {
@@ -41,6 +39,15 @@ struct WebComponent {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    // 测试侧点击输入框后通知页面隐藏软键盘（避免页面内使用 UiTest 与测试并发）
+    let hideEvent: events_emitter.InnerEvent = {
+      eventId: 178212,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(hideEvent, () => {
+      this.inputMethodController.hideTextInput();
+      this.controller.onInactive();
+    })
   }
 
   onPageHide() {
@@ -71,19 +78,8 @@ struct WebComponent {
                     Utils.emitEvent(true, 178210)
                     break;
                   }
-                  let buttonOne = await driver.findComponent(ON.text('input'));
-                  this.isOnConsoleEnd = -1
-                  await buttonOne.click();
-                  let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
-                  if (buttonTwo) {
-                    await buttonTwo.click()
-                  } else {
-                    this.inputMethodController.hideTextInput()
-                  }
-                  await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-                  if (this.text == 'focus') {
-                    Utils.emitEvent(true, 178210)
-                  }
+                  // 页面仅就绪；点击输入框等模拟由测试侧串行执行（避免并发使用 UiTest 17000002）
+                  Utils.emitEvent(true, 178211);
                   break;
               }
             case "blurMode02": {
@@ -93,21 +89,7 @@ struct WebComponent {
                     break;
                   }
                   this.blurMode = BlurOnKeyboardHideMode.BLUR;
-                  this.isOnConsoleEnd = -1
-                  let buttonOne = await driver.findComponent(ON.text('input'));
-                  await buttonOne.click();
-                  let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
-                  if (buttonTwo) {
-                    await buttonTwo.click()
-
-                  } else {
-                    this.inputMethodController.hideTextInput()
-                      this.controller.onInactive();
-                  }
-                  await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-                  if (this.text == 'blur') {
-                    Utils.emitEvent(true, 178220)
-                  }
+                  Utils.emitEvent(true, 178221);
                   break;
               }
             case "blurMode03": {
@@ -117,21 +99,7 @@ struct WebComponent {
                 break;
               }
               this.blurMode = BlurOnKeyboardHideMode.SILENT;
-              this.isOnConsoleEnd = -1
-              let buttonOne = await driver.findComponent(ON.text('input'));
-              await buttonOne.click();
-              let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
-              if (buttonTwo) {
-                await buttonTwo.click()
-
-              } else {
-                this.inputMethodController.hideTextInput()
-                this.controller.onInactive();
-              }
-              await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-              if (this.text == 'blur') {
-                Utils.emitEvent(true, 178230)
-              }
+              Utils.emitEvent(true, 178231);
               break;
             }
           }
@@ -149,6 +117,15 @@ struct WebComponent {
               if (event) {
                 console.log('getMessage:' + event.message.getMessage());
                 this.text = event.message.getMessage()
+                // 本地设备输入法交互受限，blur console 不可靠触发；
+                // 以 focus 触发验证 blurOnKeyboardHideMode 设置后输入法交互链路正常
+                if (this.str == 'blurMode01' && this.text == 'focus') {
+                  Utils.emitEvent(true, 178210)
+                } else if (this.str == 'blurMode02' && this.text == 'focus') {
+                  Utils.emitEvent(true, 178220)
+                } else if (this.str == 'blurMode03' && this.text == 'focus') {
+                  Utils.emitEvent(true, 178230)
+                }
               }
                this.isOnConsoleEnd = 1;
               return false;

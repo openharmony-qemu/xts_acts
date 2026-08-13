@@ -166,6 +166,17 @@ struct WebComponent {
               }
             }
           })
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: this.mServer.getAssetUrl('editor.html'), controller: new webview.WebviewController() })
+        .enableAutoFill(null)
+        .height(1)
+        .width(1)
+      Web({ src: this.mServer.getAssetUrl('editor.html'), controller: new webview.WebviewController() })
+        .enableAutoFill(undefined)
+        .height(1)
+        .width(1)
+
     }
   }
 }

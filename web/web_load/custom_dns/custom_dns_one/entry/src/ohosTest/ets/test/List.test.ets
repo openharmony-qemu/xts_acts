@@ -14,9 +14,11 @@
  */
 import webViewController from './WebViewController.test'
 import webViewSetHttpDns from './webViewSetHttpDns.test'
+import clearHostIPCoverageDirect from './ClearHostIPCoverageDirect.test'
 
 
 export default function testsuite() {
   webViewSetHttpDns()
   webViewController()
+  clearHostIPCoverageDirect()
 }

@@ -23,6 +23,7 @@ import webCookieManagerFetchCookieIncognito from './WebCookieManagerFetchCookieI
 import webCookieManagerConfigCookie from './WebCookieManagerConfigCookie.test'
 import webCookieManagerConfigCookieSync from './WebCookieManagerConfigCookieSync.test'
 import WebHttpCookies from './WebHttpCookies.test'
+import webCookieCoverageDirect from './WebCookieCoverageDirect.test'
 
 
 export default function testsuite() {
@@ -36,4 +37,5 @@ export default function testsuite() {
   webCookieManagerConfigCookie()
   webCookieManagerConfigCookieSync()
   WebHttpCookies()
+  webCookieCoverageDirect()
 }

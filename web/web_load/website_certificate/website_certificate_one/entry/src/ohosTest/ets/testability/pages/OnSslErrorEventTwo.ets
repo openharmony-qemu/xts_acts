@@ -111,6 +111,7 @@ struct webErrorPageTest {
               console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
               console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
               event.handler.handleCancel(false);
+              // also exercise null/undefined once per page lifetime via flags below
             }
           })
           .width('100%')
@@ -134,6 +135,8 @@ struct webErrorPageTest {
               console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
               console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
               event.handler.handleCancel(true);
+              try { event.handler.handleCancel(null); } catch (e) { console.info("handleCancel null"); }
+              try { event.handler.handleCancel(undefined); } catch (e) { console.info("handleCancel undef"); }
             }
           })
           .width('100%')

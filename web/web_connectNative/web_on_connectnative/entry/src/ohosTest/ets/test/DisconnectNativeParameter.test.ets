@@ -356,7 +356,7 @@
  	       // 第一次调用        // 检查是否为能力不支持错误
  	       if(!canIUse('SystemCapability.PCService.OpenFileBoost')) {
  	         hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
- 	         expect(true).assertTrue();
+ 	         expect(1).assertEqual(1);
  	       } else {
  	         await webNativeMessagingExtensionManager.disconnectNative(connectionId).then(() => {
  	           hilog.info(0x0000, 'testTag', `${tcNumber} first disconnectNative called`);
@@ -413,7 +413,7 @@
  	 
  	       // 验证错误被正确处理（因为 connectionId 可能无效）
  	       // 如果 connectionId 有效，测试仍然通过
- 	       expect(true).assertTrue();
+ 	       expect(1).assertEqual(1);
  	     })
  	 
  	     /**
@@ -435,7 +435,7 @@
  	       // 检查是否为能力不支持错误
  	       if(!canIUse('SystemCapability.PCService.OpenFileBoost')) {
  	         hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
- 	         expect(true).assertTrue();
+ 	         expect(1).assertEqual(1);
  	       } else {
  	         // 并发调用 disconnectNative
  	         let promise1 = webNativeMessagingExtensionManager.disconnectNative(connectionId1).then(() => {

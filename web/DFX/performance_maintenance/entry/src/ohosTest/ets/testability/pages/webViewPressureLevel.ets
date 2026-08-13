@@ -82,6 +82,17 @@ struct WebComponent {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 1;
         })
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: $rawfile('index.html'), controller: new webview.WebviewController() })
+        .optimizeParserBudget(null)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile('index.html'), controller: new webview.WebviewController() })
+        .optimizeParserBudget(undefined)
+        .height(1)
+        .width(1)
+
     }
   }
 }

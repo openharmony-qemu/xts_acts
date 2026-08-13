@@ -16,6 +16,7 @@
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import Utils from './Utils.test';
 import webview from '@ohos.web.webview'
+import { BusinessError } from '@kit.BasicServicesKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -107,6 +108,46 @@ export default function WebAutoPreconnectTest() {
         expect(0).assertEqual(1)
       }
       console.info("testSetAutoPreconnectTrue end")
+      done();
+    })
+
+    /**
+     * @tc.name   testSetAutoPreconnectNull
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0300
+     * @tc.desc   test setAutoPreconnect null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetAutoPreconnectNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("testSetAutoPreconnectNull start");
+      try {
+        webview.WebviewController.setAutoPreconnect(null);
+      } catch (error) {
+        console.error("testSetAutoPreconnectNull error: " + JSON.stringify(error));
+        expect(Number((error as BusinessError).code)).assertEqual(401);
+      }
+      console.info("testSetAutoPreconnectNull end");
+      done();
+    })
+
+    /**
+     * @tc.name   testSetAutoPreconnectUndefined
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETAUTOPRECONNECT_0400
+     * @tc.desc   test setAutoPreconnect undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetAutoPreconnectUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("testSetAutoPreconnectUndefined start");
+      try {
+        webview.WebviewController.setAutoPreconnect(undefined);
+      } catch (error) {
+        console.error("testSetAutoPreconnectUndefined error: " + JSON.stringify(error));
+        expect(Number((error as BusinessError).code)).assertEqual(401);
+      }
+      console.info("testSetAutoPreconnectUndefined end");
       done();
     })
 

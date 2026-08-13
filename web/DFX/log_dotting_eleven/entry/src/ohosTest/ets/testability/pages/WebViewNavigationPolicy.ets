@@ -42,6 +42,19 @@ struct NewWebViewComp {
             this.controller?.close();
           }
         })
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: "www.example.com", controller: new web_webview.WebviewController() })
+        .multiWindowAccess(null)
+        .allowWindowOpenMethod(null)
+        .height(1)
+        .width(1)
+      Web({ src: "www.example.com", controller: new web_webview.WebviewController() })
+        .multiWindowAccess(undefined)
+        .allowWindowOpenMethod(undefined)
+        .height(1)
+        .width(1)
+
     }
   }
 }

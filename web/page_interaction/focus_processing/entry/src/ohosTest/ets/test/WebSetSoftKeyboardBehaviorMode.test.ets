@@ -67,10 +67,12 @@ export default function SetSoftKeyboardBehaviorModeTest() {
      * @tc.level  LEVEL0
      */
     it('emitSetSoftKeyboardBehaviorMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
-      emitKey="emitSetSoftKeyboardBehaviorMode02";
+      emitKey="emitSetSoftKeyboardBehaviorMode01";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent("emitSetSoftKeyboardBehaviorMode01", true, 20251115, () => { isReturn = true });
+      // 等待页面切换动画完成后再点击，避免点击被过渡动画丢弃
+      await Utils.sleep(2000);
       Utils.waitAndClickComponent(driver, "setSoftKeyboardBehaviorModeButton",emitKey);
       await Utils.waitForExist(() => isReturn, "emitSetSoftKeyboardBehaviorMode01" + '_returnCheck', true, 1000);
       done();
@@ -90,7 +92,14 @@ export default function SetSoftKeyboardBehaviorModeTest() {
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent("emitSetSoftKeyboardBehaviorMode02", true, 20251116, () => { isReturn = true });
+      let pageReady = false;
+      Utils.registerEvent("emitSetSoftKeyboardBehaviorMode02", true, 20251121, () => { pageReady = true });
+      await Utils.sleep(2000);
       Utils.waitAndClickComponent(driver, "setSoftKeyboardBehaviorModeButton",emitKey);
+      await Utils.waitForExist(() => pageReady, "emitSetSoftKeyboardBehaviorMode02" + '_pageReady', true, 1000);
+      // 点击输入框激活软键盘（串行模拟，避免与页面并发使用 UiTest）
+      let inputBox = await driver.findComponent(ON.text('textContent'));
+      await inputBox.click();
       await Utils.waitForExist(() => isReturn, "emitSetSoftKeyboardBehaviorMode02" + '_returnCheck', true, 1000);
       done();
     })

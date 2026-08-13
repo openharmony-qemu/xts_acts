@@ -88,6 +88,17 @@ struct WebComponent {
           this.isPageEnd = 0;
         })
 
+
+      // [ARKWEB_COV] null/undefined attribute coverage (local rawfile src)
+      Web({ src: $rawfile('common_index.html'), controller: new web_webview.WebviewController() })
+        .enableWebAVSession(null)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile('common_index.html'), controller: new web_webview.WebviewController() })
+        .enableWebAVSession(undefined)
+        .height(1)
+        .width(1)
+
     }
   }
 }

@@ -14,8 +14,10 @@
  */
 import webViewControllerDownloadTest from './WebViewControllerDownloadTest.test'
 import getReferrerUrlTest from './GetReferrerUrlTest.test'
+import webDownloadUrlCoverageDirect from './WebDownloadUrlCoverageDirect.test'
 
 export default function testsuite() {
   webViewControllerDownloadTest()
   getReferrerUrlTest()
+  webDownloadUrlCoverageDirect()
 }

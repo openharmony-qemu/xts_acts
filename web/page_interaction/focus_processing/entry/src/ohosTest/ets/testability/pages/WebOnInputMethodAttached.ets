@@ -15,12 +15,10 @@
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { webview } from '@kit.ArkWeb';
 import { inputMethod } from '@kit.IMEKit';
 const EVENT_ID_SET_SUITE_KEY = 178219;
-const driver = Driver.create();
 
 const callbackEvent: OnInputmethodAttachedCallback  = ()=> {
   console.log('inputmethod attached');
@@ -71,22 +69,13 @@ struct WebComponent {
           switch (this.str) {
             case "emitOnInputMethodAttached01": {
               this.flag = 1;
-              let RedoButton = await driver.findComponent(ON.id("InputmethodAttachedButton"));
-              await RedoButton.click();
-              await driver.triggerKey(2001);
-              await Utils.sleep(1000);
-              let buttonOne = await driver.findComponent(ON.text('提交'));
-              await  buttonOne.click()
+              // 页面仅设置状态；模拟输入由测试侧串行执行，避免与测试并发使用 UiTest（17000002）
+              Utils.emitEvent(true, 20250420);
               break;
             }
             case "emitOnInputMethodAttached02": {
               this.flag = 2;
-              let RedoButton = await driver.findComponent(ON.id("InputmethodAttachedButton"));
-              await RedoButton.click();
-              await driver.triggerKey(2002);
-              await Utils.sleep(1000);
-              let buttonOne = await driver.findComponent(ON.text('提交'));
-              await  buttonOne.click()
+              Utils.emitEvent(true, 20250421);
               break;
             }
           }

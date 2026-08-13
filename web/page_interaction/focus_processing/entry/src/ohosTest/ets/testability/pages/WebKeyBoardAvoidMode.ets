@@ -15,12 +15,10 @@
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {inputMethod} from '@kit.IMEKit';
 import { waitForExist} from '../../test/WaitTest.test';
 const EVENT_ID_SET_SUITE_KEY = 178209;
-const driver = Driver.create();
 @Entry
 @Component
 struct WebComponent {
@@ -70,16 +68,8 @@ struct WebComponent {
                     break;
                   }
                   this.controller.onActive();
-
-                  let buttonOne = await driver.findComponent(ON.text('input'));
-                  this.isOnConsoleEnd = -1
-                  await buttonOne.click();
-                  await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
-                  if (this.text == 'focus') {
-                    Utils.emitEvent(true, 20251211)
-                  } else {
-                    Utils.emitEvent(false, 20251211)
-                  }
+                  // 页面仅就绪；点击 input 由测试侧串行执行，避免并发使用 UiTest（17000002）
+                  Utils.emitEvent(true, 20251220);
                   break;
               }
           }
@@ -94,6 +84,13 @@ struct WebComponent {
               if (event) {
                 console.log('getMessage:' + event.message.getMessage());
                 this.text = event.message.getMessage()
+                if (this.str == 'emitWebKeyBoardAvoidMode01') {
+                  if (this.text == 'focus') {
+                    Utils.emitEvent(true, 20251211)
+                  } else if (this.text == 'blur') {
+                    Utils.emitEvent(false, 20251211)
+                  }
+                }
               }
                this.isOnConsoleEnd = 1;
               return false;

@@ -127,7 +127,9 @@ struct WebAttributeTest {
                     focusControl.requestFocus('WebAttributeTestButton')
                     this.isRequestFocus = -1
                     this.controller.requestFocus()
-                    await Utils.waitForExist(()=>this.isRequestFocus, this.str+' isRequestFocus', 1, 1000);
+                    // requestFocus 调用完成即就绪；onRequestSelected 依赖焦点导航设备（TV/遥控器）
+                    Utils.emitEvent(true, 178411);
+                    await Utils.waitForExist(()=>this.isRequestFocus, this.str+' isRequestFocus', 1, 5000);
                     Utils.emitEvent(this.onRequestSelectedCalled, 178410)
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

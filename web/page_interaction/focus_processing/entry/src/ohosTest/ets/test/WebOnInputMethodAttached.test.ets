@@ -72,6 +72,16 @@ export default function webViewSrollableJsunit() {
       let isReturn = false;
       Utils.registerEvent("emitOnInputMethodAttached01", true, 20250418, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached01");
+      // 等页面就绪后，由测试侧串行执行模拟输入（页面不再并发使用 UiTest，避免 17000002）
+      let pageReady = false;
+      Utils.registerEvent("emitOnInputMethodAttached01", true, 20250420, () => { pageReady = true });
+      await Utils.waitForExist(() => pageReady, "emitOnInputMethodAttached01" + '_pageReady', true, 1000);
+      let redoButton = await driver.findComponent(ON.id("InputmethodAttachedButton"));
+      await redoButton.click();
+      await driver.triggerKey(2001);
+      await Utils.sleep(1000);
+      let submitButton = await driver.findComponent(ON.text('提交'));
+      await submitButton.click();
       await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached01" + '_returnCheck', true, 1000);
       done();
     })
@@ -90,6 +100,15 @@ export default function webViewSrollableJsunit() {
       let isReturn = false;
       Utils.registerEvent("emitOnInputMethodAttached02", true, 20250419,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebOnInputMethodAttachedButton","emitOnInputMethodAttached02");
+      let pageReady = false;
+      Utils.registerEvent("emitOnInputMethodAttached02", true, 20250421, () => { pageReady = true });
+      await Utils.waitForExist(() => pageReady, "emitOnInputMethodAttached02" + '_pageReady', true, 1000);
+      let redoButton = await driver.findComponent(ON.id("InputmethodAttachedButton"));
+      await redoButton.click();
+      await driver.triggerKey(2002);
+      await Utils.sleep(1000);
+      let submitButton = await driver.findComponent(ON.text('提交'));
+      await submitButton.click();
       await Utils.waitForExist(() => isReturn, "emitOnInputMethodAttached02" + '_returnCheck', true, 1000);
       done();
     })

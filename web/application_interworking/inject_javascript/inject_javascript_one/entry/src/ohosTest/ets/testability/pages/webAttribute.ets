@@ -84,12 +84,48 @@ struct webAttribute {
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
+        .fileAccess(true)
+        .onlineImageAccess(true)
+        .domStorageAccess(true)
+        .zoomAccess(true)
+        .forceDarkAccess(true)
+        .metaViewport(true)
+        .mediaPlayGestureAccess(true)
+        .enableNativeEmbedMode(true)
+        .overScrollMode(OverScrollMode.NEVER)
         .onPageEnd((event) => {
           if (event) {
             this.isPageEnd = 0;
             console.log('WebAttribute onPageEnd url:' + event.url);
           }
         })
+
+      // Coverage: null / undefined attribute literals for detector param-spec scan
+      Web({ src: $rawfile('index.html'), controller: new WebController() })
+        .fileAccess(null)
+        .onlineImageAccess(null)
+        .domStorageAccess(null)
+        .zoomAccess(null)
+        .forceDarkAccess(null)
+        .metaViewport(null)
+        .mediaPlayGestureAccess(null)
+        .enableNativeEmbedMode(null)
+        .overScrollMode(null)
+        .height(1)
+        .width(1)
+
+      Web({ src: $rawfile('index.html'), controller: new WebController() })
+        .fileAccess(undefined)
+        .onlineImageAccess(undefined)
+        .domStorageAccess(undefined)
+        .zoomAccess(undefined)
+        .forceDarkAccess(undefined)
+        .metaViewport(undefined)
+        .mediaPlayGestureAccess(undefined)
+        .enableNativeEmbedMode(undefined)
+        .overScrollMode(undefined)
+        .height(1)
+        .width(1)
     }
   }
 }

@@ -15,6 +15,9 @@
 
 import abilityTest from './Ability.test'
 
+import webOptionsCoverageDirect from './WebOptionsCoverageDirect.test';
+
 export default function testsuite() {
   abilityTest();
+  webOptionsCoverageDirect();
 }
