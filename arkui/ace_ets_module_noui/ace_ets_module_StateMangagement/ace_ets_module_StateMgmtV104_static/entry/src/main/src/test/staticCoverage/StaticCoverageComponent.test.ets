@@ -142,6 +142,27 @@ export default function StaticCoverageComponentTest(): void {
       }
     );
     /**
+     * @tc.number SUB_ARKUI_STCOV_BUILDER_GLOBAL_MAKEBUILDERPARAMETERPROXY_UNDEFINED_0100
+     * @tc.name   SUB_ARKUI_STCOV_BUILDER_GLOBAL_MAKEBUILDERPARAMETERPROXY_UNDEFINED_0100
+     * @tc.desc   Verify the optional proxy initializer accepts undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it(
+      'SUB_ARKUI_STCOV_BUILDER_GLOBAL_MAKEBUILDERPARAMETERPROXY_UNDEFINED_0100',
+      Level.LEVEL1,
+      (): void => {
+        console.info('[ARKUI_NEW] static coverage execute');
+        const source: CoverageRecord = new CoverageRecord();
+        const getters = new Map<string, BuilderParameterCallback>();
+        getters.set('value', (): int => 29);
+        const proxy: CoverageRecord = makeBuilderParameterProxy<CoverageRecord>(
+          source, getters, undefined);
+        expect(proxy !== undefined).assertTrue();
+      }
+    );
+    /**
      * @tc.number SUB_ARKUI_STCOV_BUILDER_GLOBAL_COMPONENTBUILDER_0100
      * @tc.name   SUB_ARKUI_STCOV_BUILDER_GLOBAL_COMPONENTBUILDER_0100
      * @tc.desc   Verify static Annotation coverage for builder.global.ComponentBuilder

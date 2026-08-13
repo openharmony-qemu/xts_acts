@@ -72,6 +72,32 @@ export default function StaticCoverageStorageTest(): void {
       }
     );
     /**
+     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_UNDEFINED_0100
+     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_UNDEFINED_0100
+     * @tc.desc   Verify first connect rejects an undefined default creator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it(
+      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_UNDEFINED_0100',
+      Level.LEVEL1,
+      (): void => {
+        console.info('[ARKUI_NEW] static coverage execute');
+        const key: string = 'static_coverage_app_v2_undefined';
+        const recordType: Class = Class.from<CoverageRecord>();
+        AppStorageV2.remove(key);
+        let rejected: boolean = false;
+        try {
+          AppStorageV2.connect<CoverageRecord>(recordType, key, undefined);
+        } catch (_error) {
+          rejected = true;
+        }
+        expect(rejected).assertTrue();
+        AppStorageV2.remove(key);
+      }
+    );
+    /**
      * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0100
      * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0100
      * @tc.desc   Verify static Method coverage for appStorageV2.AppStorageV2.remove
@@ -585,6 +611,32 @@ export default function StaticCoverageStorageTest(): void {
         const value: CoverageRecord | undefined = PersistenceV2.connect<CoverageRecord>(
           recordType, key, makeRecord, makeBaseConnectOptions());
         expect(value !== undefined).assertTrue();
+        PersistenceV2.remove(key);
+      }
+    );
+    /**
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_UNDEFINED_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_UNDEFINED_0100
+     * @tc.desc   Verify first connect rejects undefined creator and options
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it(
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_UNDEFINED_0100',
+      Level.LEVEL1,
+      (): void => {
+        console.info('[ARKUI_NEW] static coverage execute');
+        const key: string = 'static_coverage_persistence_v2_undefined';
+        const recordType: Class = Class.from<CoverageRecord>();
+        PersistenceV2.remove(key);
+        let rejected: boolean = false;
+        try {
+          PersistenceV2.connect<CoverageRecord>(recordType, key, undefined, undefined);
+        } catch (_error) {
+          rejected = true;
+        }
+        expect(rejected).assertTrue();
         PersistenceV2.remove(key);
       }
     );
