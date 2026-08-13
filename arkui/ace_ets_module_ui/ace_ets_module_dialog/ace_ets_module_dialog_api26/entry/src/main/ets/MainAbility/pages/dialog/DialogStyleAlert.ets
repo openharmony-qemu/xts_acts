@@ -55,7 +55,6 @@ struct DialogStyleAlert {
                   fontColor: Color.Gray,
                   backgroundColor: Color.White,
                   enabled: true,
-                  defaultFocus: false,
                   primary: false,
                   style: DialogButtonStyle.DEFAULT,
                   action: () => {
@@ -67,7 +66,6 @@ struct DialogStyleAlert {
                   fontColor: Color.White,
                   backgroundColor: Color.Blue,
                   enabled: true,
-                  defaultFocus: true,
                   primary: true,
                   style: DialogButtonStyle.HIGHLIGHT,
                   action: () => {

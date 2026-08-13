@@ -80,19 +80,6 @@ struct DialogButtonMatrix {
               }]
             });
           })
-        Button('defaultFocus')
-          .id('btn_matrix_focus')
-          .onClick(async () => {
-            await this.presenter().present({
-              title: 'FocusTitle',
-              message: { content: 'FocusMsg' },
-              buttons: [{
-                value: 'FocusOK',
-                defaultFocus: true,
-                action: () => { this.lastAction = 'FocusOK'; }
-              }]
-            });
-          })
         Button('primary true')
           .id('btn_matrix_primary')
           .onClick(async () => {
@@ -152,7 +139,6 @@ struct DialogButtonMatrix {
                   fontColor: Color.White,
                   backgroundColor: Color.Blue,
                   enabled: true,
-                  defaultFocus: true,
                   primary: true,
                   style: DialogButtonStyle.HIGHLIGHT,
                   action: () => { this.lastAction = 'MixOK'; }
