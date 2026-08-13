@@ -716,7 +716,8 @@ export default function PhotoTest() {
       await sleep(10000);
       done();
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(500);
       getCameraManagerInstance();
       createCaptureSession();
       getSupportedCamerasInstance();
@@ -727,7 +728,7 @@ export default function PhotoTest() {
     })
     afterEach(async (done: Function) => {
       releaseCamera();
-      await sleep(300);
+      await sleep(500);
       done();
     })
     afterAll(() => {
