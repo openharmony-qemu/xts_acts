@@ -21,3 +21,7 @@ export interface ClickInfo {
   itemInfo: ItemInfo;
   clickType: ClickType;
 }
+
+export interface ZoomInfo {
+    scale: number;
+}
