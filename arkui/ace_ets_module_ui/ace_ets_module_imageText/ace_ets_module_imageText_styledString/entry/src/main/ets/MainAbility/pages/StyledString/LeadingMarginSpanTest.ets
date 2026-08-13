@@ -212,7 +212,7 @@ struct StyledStringLeadingMarginSpanDemo {
         .borderWidth(1)
         .clip(true)
       RichEditor(this.options)
-        .width('90%')
+        .width('80%')
         .height('20%')
         .margin({ top: 2})
         .borderWidth(1)

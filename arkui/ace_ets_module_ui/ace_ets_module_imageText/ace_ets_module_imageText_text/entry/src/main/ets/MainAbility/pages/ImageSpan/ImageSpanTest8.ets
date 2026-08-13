@@ -17,8 +17,8 @@
 @Component
 struct TextImageSpan8 {
   @State flag: string = 'Init'
-  @State numWidth: number = 50
-  @State numHeight: number = 50
+  @State numWidth: number = 114
+  @State numHeight: number = 114
   @State count: number = 0
 
   build() {
@@ -27,8 +27,8 @@ struct TextImageSpan8 {
       Text(this.flag).id('ImageSpan_onComplete_8')
       .key('ImageSpan_onComplete_8')
         .onClick(()=>{
-          this.numWidth = 100
-          this.numHeight = 100
+          this.numWidth = 1000
+          this.numHeight = 1000
         })
       Text(this.count.toString()).id('ImageSpan_onComplete_82')
       .key('ImageSpan_onComplete_82')
