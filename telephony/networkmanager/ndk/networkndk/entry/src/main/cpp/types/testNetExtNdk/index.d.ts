@@ -12,6 +12,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-export const OHEthGetNetAddress: () => number;
-export const OHEthGetMacAddress: () => number;
+
+export interface EthernetMacAddressInfo {
+    ifaceName: string;
+    macAddr: string;
+  }
+  
+  export interface EthernetMacAddrInfoList {
+    status: number;
+    macInfoListSize: number;
+    macInfoList: EthernetMacAddressInfo[];
+  }
+  
+  export interface EthernetNetAddr {
+    family: number;
+    prefixlen: number;
+    port: number;
+    address: string;
+  }
+  
+  export interface EthernetNetAddrInfo {
+    ifaceName: string;
+    netAddrInfoSize: number;
+    netAddrInfo: EthernetNetAddr[];
+  }
+  
+  export interface EthernetNetAddrInfoList {
+    status: number;
+    netAddrListSize: number;
+    netAddrList: EthernetNetAddrInfo[];
+  }
+  
+  export interface EthernetAllInterfaceInfo {
+    status: number;
+    ifaceName: string;
+    macAddr: string;
+    netAddr: EthernetNetAddr;
+  }
+  
+  export interface EthernetAllInterfaceInfoList {
+    status: number;
+    allInfoListSize: number;
+    allInfoList: EthernetAllInterfaceInfo[];
+  }
+  
+  export function OHEthGetNetAddress(): EthernetNetAddrInfoList;
+  export function OHEthGetMacAddress(): EthernetMacAddrInfoList;
+  
+  declare namespace _default {
+    function OHEthGetNetAddress(): EthernetNetAddrInfoList;
+    function OHEthGetMacAddress(): EthernetMacAddrInfoList;
+  }
+  export default _default;
+  
