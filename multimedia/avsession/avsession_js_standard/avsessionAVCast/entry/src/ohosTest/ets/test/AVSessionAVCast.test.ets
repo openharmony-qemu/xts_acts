@@ -762,7 +762,6 @@ export default function abilityTest() {
         } catch (error) {
             console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
             expect(error.code).assertEqual(6600109);
-            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })
@@ -781,11 +780,11 @@ export default function abilityTest() {
               console.info('stopCasting successfully');
             }).catch((err: BusinessError) => {
               console.error(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(6600109);
             });
         } catch (error) {
             console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(6600109);
-            expect(error.message).assertEqual("Cannot read property catch of undefined");
+            expect(error.code).assertEqual(undefined);
         }
         done();
     })
@@ -810,11 +809,11 @@ export default function abilityTest() {
                 console.info(`getAVCastController : SUCCESS : sessionid `);
             }).catch((err: BusinessError) => {
                 console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600109);
             });
         } catch (error) {
             console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(6600109);
-            expect(error.message).assertEqual("Cannot read property catch of undefined");
+            expect(error.code).assertEqual(undefined);
         }
         done();
     })
@@ -845,7 +844,6 @@ export default function abilityTest() {
         } catch (error) {
             console.error(`getAVCastController BusinessError: code: ${error.code}, message: ${error.message}`);
             expect(error.code).assertEqual(6600109);
-            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })

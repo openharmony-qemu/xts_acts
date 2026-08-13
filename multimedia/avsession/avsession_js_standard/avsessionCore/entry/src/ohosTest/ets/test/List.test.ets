@@ -21,7 +21,6 @@ import AVSessionEnum from './AVSessionEnum.test'
 import AVSessionERRCode from './AVSessionERRCode.test'
 import AVSessionMetadata2 from './AVSessionMetadata2.test'
 
-
 export default function testsuite() {
   AVSessionCore()
   AVSessionMetadata()
