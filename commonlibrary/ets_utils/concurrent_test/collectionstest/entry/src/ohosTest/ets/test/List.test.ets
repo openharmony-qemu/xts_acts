@@ -11,6 +11,8 @@ import Int32ArrayTest from './normal/TypedArray/Int32Array.test';
 import Uint8ClampedArrayTest from './normal/TypedArray/Uint8ClampedArray.test';
 import Float32ArrayTest from './normal/TypedArray/Float32Array.test';
 import BitVectorTest from './normal/BitVector.test';
+import BitVectorSupplementTest from './normal/BitVector2.test';
+import BitVectorConcurrentTest from './normal/BitVectorConcurrent.test';
 import SetTest from './normal/Set.test';
 
 export default function testsuite() {
@@ -27,5 +29,7 @@ export default function testsuite() {
   Uint8ClampedArrayTest();
   Float32ArrayTest();
   BitVectorTest();
+  BitVectorSupplementTest();
+  BitVectorConcurrentTest();
   SetTest();
 }
