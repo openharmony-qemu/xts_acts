@@ -26,7 +26,7 @@ import events_emitter from '@ohos.events.emitter';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function componentLifeCycleTestOne() {
+export default function componentLifeCycleTestOne(): void {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
