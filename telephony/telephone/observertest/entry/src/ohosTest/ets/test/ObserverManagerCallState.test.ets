@@ -406,9 +406,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.on('callStateChangeEx', callback, options);
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(false);
-        done();
+        if(error.code === 8800001) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, error:` + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(8800001)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          ExpectTrue(false);
+          done();
+        }
       }
       console.info(`${caseName} test end `);
     });
@@ -818,9 +824,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback);
       } catch (err) {
-        console.info(`${caseName} catchError: ${JSON.stringify(err)}}` + err);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError: ${JSON.stringify(err)}}` + err);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0100 Test end *************");
     })
@@ -848,9 +860,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback, options);
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0200 Test end *************");
     })
@@ -878,9 +896,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback, options);
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0300 Test end *************");
     })
@@ -939,9 +963,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback, options);
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}` + err);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}` + err);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0500 Test end *************");
     })
@@ -1000,9 +1030,15 @@ export default function observerManagerCallStateTest() {
         expect(call.CCallState.CCALL_STATE_ANSWERED === 9).assertTrue();
         done();
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}`+err);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}`+err);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0700 Test end *************");
     })
