@@ -15,1196 +15,1192 @@
  */
 
 import { describe, expect, it, Level } from '../../../../hypium/index';
-import { runStaticCoverageProbe } from './StaticCoverageProbe';
+import {
+  AbstractProperty, AppStorageV2, BaseConnectOptions, ColorMode, ConnectOptions,
+  Environment, EnvPropsOptions, FromJSONType, LayoutDirection, LocalStorage,
+  PersistenceV2, PersistentStorage, PersistPropsOptions,
+  StorageDefaultSubCreators, SubscribedAbstractProperty, ToJSONType
+} from '@kit.ArkUI';
+import {
+  contains, CoverageRecord, makeBaseConnectOptions, makeConnectOptions,
+  makePersistOptions, makeRecord, makeSubCreators
+} from './StaticCoverageSupport';
 
 export default function StaticCoverageStorageTest(): void {
   describe('StaticCoverageStorageTest', (): void => {
     /**
-     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0136
-     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0136
+     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0100
+     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0100
      * @tc.desc   Verify static Method coverage for appStorageV2.AppStorageV2.connect
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0136',
+      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          136, 'appStorageV2#AppStorageV2#connect#Method');
-        expect(passed).assertTrue();
+        const key: string = 'static_coverage_app_v2';
+        const recordType: Class = Class.from<CoverageRecord>();
+        AppStorageV2.remove(key);
+        const value: CoverageRecord | undefined = AppStorageV2.connect<CoverageRecord>(
+          recordType, key, makeRecord);
+        expect(value?.value === 7).assertTrue();
+        AppStorageV2.remove(key);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0137
-     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0137
+     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0200
+     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0200
      * @tc.desc   Verify static Method coverage for appStorageV2.AppStorageV2.connect
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0137',
+      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_CONNECT_0200',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          137, 'appStorageV2#AppStorageV2#connect#Method');
-        expect(passed).assertTrue();
+        const recordType: Class = Class.from<CoverageRecord>();
+        AppStorageV2.remove(recordType);
+        const value: CoverageRecord | undefined = AppStorageV2.connect<CoverageRecord>(
+          recordType, makeRecord);
+        expect(value !== undefined).assertTrue();
+        AppStorageV2.remove(recordType);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0138
-     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0138
+     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0100
+     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0100
      * @tc.desc   Verify static Method coverage for appStorageV2.AppStorageV2.remove
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0138',
+      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_REMOVE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          138, 'appStorageV2#AppStorageV2#remove#Method');
-        expect(passed).assertTrue();
+        const key: string = 'static_coverage_missing_key';
+        AppStorageV2.remove(key);
+        expect(!contains(AppStorageV2.keys(), key)).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_KEYS_0139
-     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_KEYS_0139
+     * @tc.number SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_KEYS_0100
+     * @tc.name   SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_KEYS_0100
      * @tc.desc   Verify static Method coverage for appStorageV2.AppStorageV2.keys
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_KEYS_0139',
+      'SUB_ARKUI_STCOV_APPSTORAGEV2_APPSTORAGEV2_KEYS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          139, 'appStorageV2#AppStorageV2#keys#Method');
-        expect(passed).assertTrue();
+        expect(AppStorageV2.keys().length >= 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_GLOBAL_ENVPROPSOPTIONS_0140
-     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_GLOBAL_ENVPROPSOPTIONS_0140
+     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_GLOBAL_ENVPROPSOPTIONS_0100
+     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_GLOBAL_ENVPROPSOPTIONS_0100
      * @tc.desc   Verify static Interface coverage for environment.global.EnvPropsOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_ENVIRONMENT_GLOBAL_ENVPROPSOPTIONS_0140',
+      'SUB_ARKUI_STCOV_ENVIRONMENT_GLOBAL_ENVPROPSOPTIONS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          140, 'environment#global#EnvPropsOptions#Interface');
-        expect(passed).assertTrue();
+        const options: EnvPropsOptions = {
+          key: 'static_coverage_environment', defaultValue: '26'
+        };
+        expect(options.key.length > 0 && options.defaultValue === '26').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_KEY_0141
-     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_KEY_0141
+     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_KEY_0100
+     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_KEY_0100
      * @tc.desc   Verify static Property coverage for environment.EnvPropsOptions.key
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_KEY_0141',
+      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_KEY_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          141, 'environment#EnvPropsOptions#key#Property');
-        expect(passed).assertTrue();
+        const options: EnvPropsOptions = {
+          key: 'static_coverage_environment', defaultValue: '26'
+        };
+        expect(options.key === 'static_coverage_environment').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_DEFAULTVALUE_0142
-     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_DEFAULTVALUE_0142
+     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_DEFAULTVALUE_0100
+     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_DEFAULTVALUE_0100
      * @tc.desc   Verify static Property coverage for environment.EnvPropsOptions.defaultValue
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_DEFAULTVALUE_0142',
+      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVPROPSOPTIONS_DEFAULTVALUE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          142, 'environment#EnvPropsOptions#defaultValue#Property');
-        expect(passed).assertTrue();
+        const options: EnvPropsOptions = {
+          key: 'static_coverage_environment', defaultValue: '26'
+        };
+        expect(options.defaultValue === '26').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROP_0143
-     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROP_0143
+     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROP_0100
+     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROP_0100
      * @tc.desc   Verify static Method coverage for environment.Environment.envProp
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROP_0143',
+      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROP_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          143, 'environment#Environment#envProp#Method');
-        expect(passed).assertTrue();
+        const result: boolean = Environment.envProp('static_coverage_env_single', 1);
+        expect(result || contains(Environment.keys(), 'static_coverage_env_single')).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROPS_0144
-     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROPS_0144
+     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROPS_0100
+     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROPS_0100
      * @tc.desc   Verify static Method coverage for environment.Environment.envProps
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROPS_0144',
+      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_ENVPROPS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          144, 'environment#Environment#envProps#Method');
-        expect(passed).assertTrue();
+        const options: EnvPropsOptions = {
+          key: 'static_coverage_environment', defaultValue: '26'
+        };
+        Environment.envProps([options]);
+        expect(contains(Environment.keys(), options.key)).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_KEYS_0145
-     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_KEYS_0145
+     * @tc.number SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_KEYS_0100
+     * @tc.name   SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_KEYS_0100
      * @tc.desc   Verify static Method coverage for environment.Environment.keys
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_KEYS_0145',
+      'SUB_ARKUI_STCOV_ENVIRONMENT_ENVIRONMENT_KEYS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          145, 'environment#Environment#keys#Method');
-        expect(passed).assertTrue();
+        expect(Environment.keys().length >= 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_REF_0146
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_REF_0146
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_REF_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_REF_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.ref
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_REF_0146',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_REF_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          146, 'localStorage#LocalStorage#ref#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(storage.ref<int>('missing') === undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDREF_0147
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDREF_0147
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDREF_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDREF_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.setAndRef
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDREF_0147',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDREF_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          147, 'localStorage#LocalStorage#setAndRef#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: AbstractProperty<int> = storage.setAndRef<int>('ref', 1);
+        expect(property.get() === 1).assertTrue();
+        property.onChange(undefined);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_LINK_0148
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_LINK_0148
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_LINK_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_LINK_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.link
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_LINK_0148',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_LINK_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          148, 'localStorage#LocalStorage#link#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(storage.link<int>('missing') === undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDLINK_0149
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDLINK_0149
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDLINK_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDLINK_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.setAndLink
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDLINK_0149',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETANDLINK_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          149, 'localStorage#LocalStorage#setAndLink#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: SubscribedAbstractProperty<int> = storage.setAndLink<int>('link', 2);
+        expect(property.get() === 2).assertTrue();
+        property.aboutToBeDeleted();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_HAS_0150
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_HAS_0150
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_HAS_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_HAS_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.has
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_HAS_0150',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_HAS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          150, 'localStorage#LocalStorage#has#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(!storage.has('missing')).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_GET_0151
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_GET_0151
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_GET_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_GET_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.get
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_GET_0151',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_GET_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          151, 'localStorage#LocalStorage#get#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(storage.get<int>('missing') === undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SET_0152
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SET_0152
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SET_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SET_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.set
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SET_0152',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SET_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          152, 'localStorage#LocalStorage#set#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(!storage.set<int>('missing', 3)).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETORCREATE_0153
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETORCREATE_0153
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETORCREATE_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETORCREATE_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.setOrCreate
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETORCREATE_0153',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SETORCREATE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          153, 'localStorage#LocalStorage#setOrCreate#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const created: boolean = storage.setOrCreate<int>('created', 4);
+        expect(created && storage.get<int>('created') === 4).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_KEYS_0154
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_KEYS_0154
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_KEYS_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_KEYS_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.keys
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_KEYS_0154',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_KEYS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          154, 'localStorage#LocalStorage#keys#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        storage.setOrCreate<int>('key', 1);
+        expect(storage.keys().next().value === 'key').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SIZE_0155
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SIZE_0155
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SIZE_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SIZE_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.size
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SIZE_0155',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_SIZE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          155, 'localStorage#LocalStorage#size#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(storage.size() === 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_DELETE_0156
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_DELETE_0156
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_DELETE_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_DELETE_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.delete
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_DELETE_0156',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_DELETE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          156, 'localStorage#LocalStorage#delete#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(!storage.delete('missing')).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_CLEAR_0157
-     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_CLEAR_0157
+     * @tc.number SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_CLEAR_0100
+     * @tc.name   SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_CLEAR_0100
      * @tc.desc   Verify static Method coverage for localStorage.LocalStorage.clear
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_CLEAR_0157',
+      'SUB_ARKUI_STCOV_LOCALSTORAGE_LOCALSTORAGE_CLEAR_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          157, 'localStorage#LocalStorage#clear#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        expect(storage.clear()).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_STORAGEDEFAULTSUBCREATORS_0158
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_STORAGEDEFAULTSUBCREATORS_0158
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_STORAGEDEFAULTSUBCREATORS_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_STORAGEDEFAULTSUBCREATORS_0100
      * @tc.desc   Verify static TypeAlias coverage for persistenceV2.global.StorageDefaultSubCreators
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_STORAGEDEFAULTSUBCREATORS_0158',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_STORAGEDEFAULTSUBCREATORS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          158, 'persistenceV2#global#StorageDefaultSubCreators#TypeAlias');
-        expect(passed).assertTrue();
+        const creators: StorageDefaultSubCreators = makeSubCreators();
+        expect(creators.size === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_CONNECTOPTIONS_0159
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_CONNECTOPTIONS_0159
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_CONNECTOPTIONS_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_CONNECTOPTIONS_0100
      * @tc.desc   Verify static Interface coverage for persistenceV2.global.ConnectOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_CONNECTOPTIONS_0159',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_CONNECTOPTIONS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          159, 'persistenceV2#global#ConnectOptions#Interface');
-        expect(passed).assertTrue();
+        const options: ConnectOptions<CoverageRecord> = makeConnectOptions();
+        expect(options.type === Class.from<CoverageRecord>()).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_DEFAULTCREATOR_0160
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_DEFAULTCREATOR_0160
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_DEFAULTCREATOR_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_DEFAULTCREATOR_0100
      * @tc.desc   Verify static Method coverage for persistenceV2.ConnectOptions.defaultCreator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_DEFAULTCREATOR_0160',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_DEFAULTCREATOR_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          160, 'persistenceV2#ConnectOptions#defaultCreator#Method');
-        expect(passed).assertTrue();
+        const options: ConnectOptions<CoverageRecord> = makeConnectOptions();
+        const created: CoverageRecord | undefined = options.defaultCreator?.();
+        expect(created?.value === 7).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_AREAMODE_0161
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_AREAMODE_0161
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_AREAMODE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_AREAMODE_0100
      * @tc.desc   Verify static Property coverage for persistenceV2.ConnectOptions.areaMode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_AREAMODE_0161',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_AREAMODE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          161, 'persistenceV2#ConnectOptions#areaMode#Property');
-        expect(passed).assertTrue();
+        const options: ConnectOptions<CoverageRecord> = makeConnectOptions();
+        expect(options.areaMode === undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_TOJSON_0162
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_TOJSON_0162
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_TOJSON_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_TOJSON_0100
      * @tc.desc   Verify static Property coverage for persistenceV2.ConnectOptions.toJson
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_TOJSON_0162',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_TOJSON_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          162, 'persistenceV2#ConnectOptions#toJson#Property');
-        expect(passed).assertTrue();
+        const options: ConnectOptions<CoverageRecord> = makeConnectOptions();
+        expect(options.toJson !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_FROMJSON_0163
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_FROMJSON_0163
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_FROMJSON_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_FROMJSON_0100
      * @tc.desc   Verify static Property coverage for persistenceV2.ConnectOptions.fromJson
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_FROMJSON_0163',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_FROMJSON_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          163, 'persistenceV2#ConnectOptions#fromJson#Property');
-        expect(passed).assertTrue();
+        const options: ConnectOptions<CoverageRecord> = makeConnectOptions();
+        expect(options.fromJson !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_ENABLEAUTOSAVE_0164
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_ENABLEAUTOSAVE_0164
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_ENABLEAUTOSAVE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_ENABLEAUTOSAVE_0100
      * @tc.desc   Verify static Property coverage for persistenceV2.ConnectOptions.enableAutoSave
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_ENABLEAUTOSAVE_0164',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_CONNECTOPTIONS_ENABLEAUTOSAVE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          164, 'persistenceV2#ConnectOptions#enableAutoSave#Property');
-        expect(passed).assertTrue();
+        const options: ConnectOptions<CoverageRecord> = makeConnectOptions();
+        expect(options.enableAutoSave === false).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0165
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0165
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0100
      * @tc.desc   Verify static Method coverage for persistenceV2.PersistenceV2.connect
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0165',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          165, 'persistenceV2#PersistenceV2#connect#Method');
-        expect(passed).assertTrue();
+        const recordType: Class = Class.from<CoverageRecord>();
+        PersistenceV2.remove(recordType);
+        const value: CoverageRecord | undefined = PersistenceV2.connect<CoverageRecord>(
+          recordType, makeRecord, makeBaseConnectOptions());
+        expect(value !== undefined).assertTrue();
+        PersistenceV2.remove(recordType);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0166
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0166
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0200
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0200
      * @tc.desc   Verify static Method coverage for persistenceV2.PersistenceV2.connect
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0166',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_CONNECT_0200',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          166, 'persistenceV2#PersistenceV2#connect#Method');
-        expect(passed).assertTrue();
+        const key: string = 'static_coverage_persistence_v2';
+        const recordType: Class = Class.from<CoverageRecord>();
+        PersistenceV2.remove(key);
+        const value: CoverageRecord | undefined = PersistenceV2.connect<CoverageRecord>(
+          recordType, key, makeRecord, makeBaseConnectOptions());
+        expect(value !== undefined).assertTrue();
+        PersistenceV2.remove(key);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_GLOBALCONNECT_0167
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_GLOBALCONNECT_0167
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_GLOBALCONNECT_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_GLOBALCONNECT_0100
      * @tc.desc   Verify static Method coverage for persistenceV2.PersistenceV2.globalConnect
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_GLOBALCONNECT_0167',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_GLOBALCONNECT_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          167, 'persistenceV2#PersistenceV2#globalConnect#Method');
-        expect(passed).assertTrue();
+        const options: ConnectOptions<CoverageRecord> = makeConnectOptions();
+        PersistenceV2.remove(options.key!);
+        const value: CoverageRecord | undefined =
+          PersistenceV2.globalConnect<CoverageRecord>(options);
+        expect(value !== undefined).assertTrue();
+        PersistenceV2.remove(options.key!);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_SAVE_0168
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_SAVE_0168
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_SAVE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_SAVE_0100
      * @tc.desc   Verify static Method coverage for persistenceV2.PersistenceV2.save
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_SAVE_0168',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_SAVE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          168, 'persistenceV2#PersistenceV2#save#Method');
-        expect(passed).assertTrue();
+        PersistenceV2.save('static_coverage_missing_key');
+        expect(true).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_NOTIFYONERROR_0169
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_NOTIFYONERROR_0169
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_NOTIFYONERROR_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_NOTIFYONERROR_0100
      * @tc.desc   Verify static Method coverage for persistenceV2.PersistenceV2.notifyOnError
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_NOTIFYONERROR_0169',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_NOTIFYONERROR_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          169, 'persistenceV2#PersistenceV2#notifyOnError#Method');
-        expect(passed).assertTrue();
+        PersistenceV2.notifyOnError(undefined);
+        expect(true).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_REMOVE_0170
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_REMOVE_0170
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_REMOVE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_REMOVE_0100
      * @tc.desc   Verify static Method coverage for persistenceV2.PersistenceV2.remove
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_REMOVE_0170',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_REMOVE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          170, 'persistenceV2#PersistenceV2#remove#Method');
-        expect(passed).assertTrue();
+        PersistenceV2.remove('static_coverage_missing_key');
+        expect(true).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_KEYS_0171
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_KEYS_0171
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_KEYS_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_KEYS_0100
      * @tc.desc   Verify static Method coverage for persistenceV2.PersistenceV2.keys
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_KEYS_0171',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_PERSISTENCEV2_KEYS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          171, 'persistenceV2#PersistenceV2#keys#Method');
-        expect(passed).assertTrue();
+        expect(PersistenceV2.keys().length >= 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_BASECONNECTOPTIONS_0172
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_BASECONNECTOPTIONS_0172
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_BASECONNECTOPTIONS_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_BASECONNECTOPTIONS_0100
      * @tc.desc   Verify static Interface coverage for persistenceV2.global.BaseConnectOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_BASECONNECTOPTIONS_0172',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_GLOBAL_BASECONNECTOPTIONS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          172, 'persistenceV2#global#BaseConnectOptions#Interface');
-        expect(passed).assertTrue();
+        const options: BaseConnectOptions<CoverageRecord> = makeBaseConnectOptions();
+        expect(options.enableAutoSave === false).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_TOJSON_0173
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_TOJSON_0173
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_TOJSON_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_TOJSON_0100
      * @tc.desc   Verify static Property coverage for persistenceV2.BaseConnectOptions.toJson
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_TOJSON_0173',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_TOJSON_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          173, 'persistenceV2#BaseConnectOptions#toJson#Property');
-        expect(passed).assertTrue();
+        const options: BaseConnectOptions<CoverageRecord> = makeBaseConnectOptions();
+        expect(options.toJson !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_FROMJSON_0174
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_FROMJSON_0174
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_FROMJSON_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_FROMJSON_0100
      * @tc.desc   Verify static Property coverage for persistenceV2.BaseConnectOptions.fromJson
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_FROMJSON_0174',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_FROMJSON_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          174, 'persistenceV2#BaseConnectOptions#fromJson#Property');
-        expect(passed).assertTrue();
+        const options: BaseConnectOptions<CoverageRecord> = makeBaseConnectOptions();
+        expect(options.fromJson !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_ENABLEAUTOSAVE_0175
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_ENABLEAUTOSAVE_0175
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_ENABLEAUTOSAVE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_ENABLEAUTOSAVE_0100
      * @tc.desc   Verify static Property coverage for persistenceV2.BaseConnectOptions.enableAutoSave
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_ENABLEAUTOSAVE_0175',
+      'SUB_ARKUI_STCOV_PERSISTENCEV2_BASECONNECTOPTIONS_ENABLEAUTOSAVE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          175, 'persistenceV2#BaseConnectOptions#enableAutoSave#Property');
-        expect(passed).assertTrue();
+        const options: BaseConnectOptions<CoverageRecord> = makeBaseConnectOptions();
+        expect(options.enableAutoSave === false).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROP_0176
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROP_0176
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROP_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROP_0100
      * @tc.desc   Verify static Method coverage for persistentStorage.PersistentStorage.persistProp
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROP_0176',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROP_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          176, 'persistentStorage#PersistentStorage#persistProp#Method');
-        expect(passed).assertTrue();
+        const options: PersistPropsOptions<int> = makePersistOptions();
+        const persisted: boolean = PersistentStorage.persistProp<int>(
+          options.key, options.defaultValue, options.toJson, options.fromJson);
+        expect(persisted).assertTrue();
+        PersistentStorage.deleteProp(options.key);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_DELETEPROP_0177
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_DELETEPROP_0177
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_DELETEPROP_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_DELETEPROP_0100
      * @tc.desc   Verify static Method coverage for persistentStorage.PersistentStorage.deleteProp
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_DELETEPROP_0177',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_DELETEPROP_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          177, 'persistentStorage#PersistentStorage#deleteProp#Method');
-        expect(passed).assertTrue();
+        PersistentStorage.deleteProp('static_coverage_missing_key');
+        expect(true).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_KEYS_0178
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_KEYS_0178
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_KEYS_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_KEYS_0100
      * @tc.desc   Verify static Method coverage for persistentStorage.PersistentStorage.keys
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_KEYS_0178',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_KEYS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          178, 'persistentStorage#PersistentStorage#keys#Method');
-        expect(passed).assertTrue();
+        expect(PersistentStorage.keys().length >= 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROPS_0179
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROPS_0179
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROPS_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROPS_0100
      * @tc.desc   Verify static Method coverage for persistentStorage.PersistentStorage.persistProps
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROPS_0179',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTENTSTORAGE_PERSISTPROPS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          179, 'persistentStorage#PersistentStorage#persistProps#Method');
-        expect(passed).assertTrue();
+        const key: string = 'static_coverage_persistent';
+        PersistentStorage.persistProps([{ key: key, defaultValue: 9 }]);
+        expect(contains(PersistentStorage.keys(), key)).assertTrue();
+        PersistentStorage.deleteProp(key);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_TOJSONTYPE_0180
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_TOJSONTYPE_0180
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_TOJSONTYPE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_TOJSONTYPE_0100
      * @tc.desc   Verify static TypeAlias coverage for persistentStorage.global.ToJSONType
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_TOJSONTYPE_0180',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_TOJSONTYPE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          180, 'persistentStorage#global#ToJSONType#TypeAlias');
-        expect(passed).assertTrue();
+        const callback: ToJSONType<int> = (_value: int): jsonx.JsonElement => {
+          throw new Error('coverage serializer is compile-only');
+        };
+        expect(callback !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_FROMJSONTYPE_0181
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_FROMJSONTYPE_0181
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_FROMJSONTYPE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_FROMJSONTYPE_0100
      * @tc.desc   Verify static TypeAlias coverage for persistentStorage.global.FromJSONType
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_FROMJSONTYPE_0181',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_FROMJSONTYPE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          181, 'persistentStorage#global#FromJSONType#TypeAlias');
-        expect(passed).assertTrue();
+        const callback: FromJSONType<int> = (_value: jsonx.JsonElement): int => 2;
+        expect(callback !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_PERSISTPROPSOPTIONS_0182
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_PERSISTPROPSOPTIONS_0182
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_PERSISTPROPSOPTIONS_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_PERSISTPROPSOPTIONS_0100
      * @tc.desc   Verify static Interface coverage for persistentStorage.global.PersistPropsOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_PERSISTPROPSOPTIONS_0182',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_GLOBAL_PERSISTPROPSOPTIONS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          182, 'persistentStorage#global#PersistPropsOptions#Interface');
-        expect(passed).assertTrue();
+        const options: PersistPropsOptions<int> = makePersistOptions();
+        expect(options.key.length > 0 && options.defaultValue === 9).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_KEY_0183
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_KEY_0183
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_KEY_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_KEY_0100
      * @tc.desc   Verify static Property coverage for persistentStorage.PersistPropsOptions.key
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_KEY_0183',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_KEY_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          183, 'persistentStorage#PersistPropsOptions#key#Property');
-        expect(passed).assertTrue();
+        const options: PersistPropsOptions<int> = makePersistOptions();
+        expect(options.key === 'static_coverage_persistent').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_DEFAULTVALUE_0184
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_DEFAULTVALUE_0184
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_DEFAULTVALUE_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_DEFAULTVALUE_0100
      * @tc.desc   Verify static Property coverage for persistentStorage.PersistPropsOptions.defaultValue
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_DEFAULTVALUE_0184',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_DEFAULTVALUE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          184, 'persistentStorage#PersistPropsOptions#defaultValue#Property');
-        expect(passed).assertTrue();
+        const options: PersistPropsOptions<int> = makePersistOptions();
+        expect(options.defaultValue === 9).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_TOJSON_0185
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_TOJSON_0185
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_TOJSON_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_TOJSON_0100
      * @tc.desc   Verify static Method coverage for persistentStorage.PersistPropsOptions.toJson
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_TOJSON_0185',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_TOJSON_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          185, 'persistentStorage#PersistPropsOptions#toJson#Method');
-        expect(passed).assertTrue();
+        const options: PersistPropsOptions<int> = makePersistOptions();
+        expect(options.toJson !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_FROMJSON_0186
-     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_FROMJSON_0186
+     * @tc.number SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_FROMJSON_0100
+     * @tc.name   SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_FROMJSON_0100
      * @tc.desc   Verify static Method coverage for persistentStorage.PersistPropsOptions.fromJson
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_FROMJSON_0186',
+      'SUB_ARKUI_STCOV_PERSISTENTSTORAGE_PERSISTPROPSOPTIONS_FROMJSON_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          186, 'persistentStorage#PersistPropsOptions#fromJson#Method');
-        expect(passed).assertTrue();
+        const options: PersistPropsOptions<int> = makePersistOptions();
+        expect(options.fromJson !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ONCHANGETYPE_0187
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ONCHANGETYPE_0187
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ONCHANGETYPE_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ONCHANGETYPE_0100
      * @tc.desc   Verify static TypeAlias coverage for storageProperty.global.OnChangeType
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ONCHANGETYPE_0187',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ONCHANGETYPE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          187, 'storageProperty#global#OnChangeType#TypeAlias');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: AbstractProperty<int> = storage.setAndRef<int>('property', 11);
+        let changed: boolean = false;
+        property.onChange((_name: string, value: int): void => { changed = value === 12; });
+        property.set(12);
+        property.onChange(undefined);
+        expect(changed).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ABSTRACTPROPERTY_0188
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ABSTRACTPROPERTY_0188
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ABSTRACTPROPERTY_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ABSTRACTPROPERTY_0100
      * @tc.desc   Verify static Interface coverage for storageProperty.global.AbstractProperty
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ABSTRACTPROPERTY_0188',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_ABSTRACTPROPERTY_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          188, 'storageProperty#global#AbstractProperty#Interface');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: AbstractProperty<int> = storage.setAndRef<int>('property', 11);
+        expect(property.get() === 11).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_INFO_0189
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_INFO_0189
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_INFO_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_INFO_0100
      * @tc.desc   Verify static Method coverage for storageProperty.AbstractProperty.info
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_INFO_0189',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_INFO_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          189, 'storageProperty#AbstractProperty#info#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: AbstractProperty<int> = storage.setAndRef<int>('property', 11);
+        expect(property.info() === 'property').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_GET_0190
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_GET_0190
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_GET_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_GET_0100
      * @tc.desc   Verify static Method coverage for storageProperty.AbstractProperty.get
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_GET_0190',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_GET_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          190, 'storageProperty#AbstractProperty#get#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: AbstractProperty<int> = storage.setAndRef<int>('property', 11);
+        expect(property.get() === 11).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_SET_0191
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_SET_0191
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_SET_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_SET_0100
      * @tc.desc   Verify static Method coverage for storageProperty.AbstractProperty.set
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_SET_0191',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_SET_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          191, 'storageProperty#AbstractProperty#set#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: AbstractProperty<int> = storage.setAndRef<int>('property', 11);
+        property.set(13);
+        expect(property.get() === 13).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_ONCHANGE_0192
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_ONCHANGE_0192
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_ONCHANGE_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_ONCHANGE_0100
      * @tc.desc   Verify static Method coverage for storageProperty.AbstractProperty.onChange
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_ONCHANGE_0192',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_ABSTRACTPROPERTY_ONCHANGE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          192, 'storageProperty#AbstractProperty#onChange#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: AbstractProperty<int> = storage.setAndRef<int>('property', 11);
+        property.onChange(undefined);
+        expect(property.get() === 11).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_SUBSCRIBEDABSTRACTPROPERTY_0193
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_SUBSCRIBEDABSTRACTPROPERTY_0193
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_SUBSCRIBEDABSTRACTPROPERTY_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_SUBSCRIBEDABSTRACTPROPERTY_0100
      * @tc.desc   Verify static Interface coverage for storageProperty.global.SubscribedAbstractProperty
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_SUBSCRIBEDABSTRACTPROPERTY_0193',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_SUBSCRIBEDABSTRACTPROPERTY_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          193, 'storageProperty#global#SubscribedAbstractProperty#Interface');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: SubscribedAbstractProperty<int> =
+          storage.setAndLink<int>('subscribed', 14);
+        expect(property.get() === 14).assertTrue();
+        property.aboutToBeDeleted();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_SUBSCRIBEDABSTRACTPROPERTY_ABOUTTOBEDELETED_0194
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_SUBSCRIBEDABSTRACTPROPERTY_ABOUTTOBEDELETED_0194
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_SUBSCRIBEDABSTRACTPROPERTY_ABOUTTOBEDELETED_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_SUBSCRIBEDABSTRACTPROPERTY_ABOUTTOBEDELETED_0100
      * @tc.desc   Verify static Method coverage for storageProperty.SubscribedAbstractProperty.aboutToBeDeleted
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_SUBSCRIBEDABSTRACTPROPERTY_ABOUTTOBEDELETED_0194',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_SUBSCRIBEDABSTRACTPROPERTY_ABOUTTOBEDELETED_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          194, 'storageProperty#SubscribedAbstractProperty#aboutToBeDeleted#Method');
-        expect(passed).assertTrue();
+        const storage: LocalStorage = new LocalStorage();
+        const property: SubscribedAbstractProperty<int> =
+          storage.setAndLink<int>('subscribed', 14);
+        property.aboutToBeDeleted();
+        expect(true).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_COLORMODE_0195
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_COLORMODE_0195
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_COLORMODE_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_COLORMODE_0100
      * @tc.desc   Verify static Enum coverage for storageProperty.global.ColorMode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_COLORMODE_0195',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_COLORMODE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          195, 'storageProperty#global#ColorMode#Enum');
-        expect(passed).assertTrue();
+        expect(ColorMode.LIGHT !== ColorMode.DARK).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_LIGHT_0196
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_LIGHT_0196
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_LIGHT_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_LIGHT_0100
      * @tc.desc   Verify static EnumValue coverage for storageProperty.ColorMode.LIGHT
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_LIGHT_0196',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_LIGHT_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          196, 'storageProperty#ColorMode#LIGHT#EnumValue');
-        expect(passed).assertTrue();
+        expect(ColorMode.LIGHT === 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_DARK_0197
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_DARK_0197
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_DARK_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_DARK_0100
      * @tc.desc   Verify static EnumValue coverage for storageProperty.ColorMode.DARK
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_DARK_0197',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_COLORMODE_DARK_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          197, 'storageProperty#ColorMode#DARK#EnumValue');
-        expect(passed).assertTrue();
+        expect(ColorMode.DARK === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_LAYOUTDIRECTION_0198
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_LAYOUTDIRECTION_0198
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_LAYOUTDIRECTION_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_LAYOUTDIRECTION_0100
      * @tc.desc   Verify static Enum coverage for storageProperty.global.LayoutDirection
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_LAYOUTDIRECTION_0198',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_GLOBAL_LAYOUTDIRECTION_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          198, 'storageProperty#global#LayoutDirection#Enum');
-        expect(passed).assertTrue();
+        expect(LayoutDirection.RTL !== LayoutDirection.LTR).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_RTL_0199
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_RTL_0199
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_RTL_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_RTL_0100
      * @tc.desc   Verify static EnumValue coverage for storageProperty.LayoutDirection.RTL
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_RTL_0199',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_RTL_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          199, 'storageProperty#LayoutDirection#RTL#EnumValue');
-        expect(passed).assertTrue();
+        expect(LayoutDirection.RTL === 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_LTR_0200
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_LTR_0200
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_LTR_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_LTR_0100
      * @tc.desc   Verify static EnumValue coverage for storageProperty.LayoutDirection.LTR
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_LTR_0200',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_LTR_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          200, 'storageProperty#LayoutDirection#LTR#EnumValue');
-        expect(passed).assertTrue();
+        expect(LayoutDirection.LTR === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_AUTO_0201
-     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_AUTO_0201
+     * @tc.number SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_AUTO_0100
+     * @tc.name   SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_AUTO_0100
      * @tc.desc   Verify static EnumValue coverage for storageProperty.LayoutDirection.Auto
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_AUTO_0201',
+      'SUB_ARKUI_STCOV_STORAGEPROPERTY_LAYOUTDIRECTION_AUTO_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          201, 'storageProperty#LayoutDirection#Auto#EnumValue');
-        expect(passed).assertTrue();
+        expect(LayoutDirection.Auto === 2).assertTrue();
       }
     );
   });

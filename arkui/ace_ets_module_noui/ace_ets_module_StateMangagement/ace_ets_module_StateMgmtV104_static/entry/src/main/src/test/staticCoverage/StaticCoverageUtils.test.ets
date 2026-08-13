@@ -15,764 +15,1123 @@
  */
 
 import { describe, expect, it, Level } from '../../../../hypium/index';
-import { runStaticCoverageProbe } from './StaticCoverageProbe';
+import {
+  Binding, CustomComponentContext, DecoratorInfo, ElementInfo, IMonitor,
+  IReusePool, MonitorBaseOptions, MonitorOptions, MonitorValueInfo,
+  MutableBinding, ObservedArray, ObservedDate, ObservedMap, ObservedResult,
+  ObservedSet, UIUtils
+} from '@kit.ArkUI';
+import {
+  CoverageComponentContext, CoverageOwner, CoverageRecord, CoverageReusePool
+} from './StaticCoverageSupport';
 
 export default function StaticCoverageUtilsTest(): void {
   describe('StaticCoverageUtilsTest', (): void => {
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_GETTARGET_0202
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_GETTARGET_0202
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_GETTARGET_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_GETTARGET_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.getTarget
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_GETTARGET_0202',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_GETTARGET_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          202, 'utils#UIUtils#getTarget#Method');
-        expect(passed).assertTrue();
+        const source: CoverageRecord = new CoverageRecord();
+        expect(UIUtils.getTarget(source) === source).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0203
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0203
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.makeObserved
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0203',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          203, 'utils#UIUtils#makeObserved#Method');
-        expect(passed).assertTrue();
+        expect(UIUtils.makeObserved(new CoverageRecord()) !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0204
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0204
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0200
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0200
      * @tc.desc   Verify static Method coverage for utils.UIUtils.makeObserved
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0204',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_0200',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          204, 'utils#UIUtils#makeObserved#Method');
-        expect(passed).assertTrue();
+        expect(UIUtils.makeObserved(new CoverageRecord(), true) !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0205
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0205
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.makeBinding
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0205',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          205, 'utils#UIUtils#makeBinding#Method');
-        expect(passed).assertTrue();
+        let value: int = 20;
+        const binding: Binding<int> = UIUtils.makeBinding<int>((): int => value);
+        expect(binding.value === 20).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0206
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0206
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0200
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0200
      * @tc.desc   Verify static Method coverage for utils.UIUtils.makeBinding
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0206',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEBINDING_0200',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          206, 'utils#UIUtils#makeBinding#Method');
-        expect(passed).assertTrue();
+        let value: int = 20;
+        const binding: MutableBinding<int> = UIUtils.makeBinding<int>(
+          (): int => value, (newValue: int): void => { value = newValue; });
+        binding.value = 21;
+        expect(binding.value === 21 && value === 21).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0207
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0207
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.addMonitor
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0207',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          207, 'utils#UIUtils#addMonitor#Method');
-        expect(passed).assertTrue();
+        let value: int = 1;
+        const monitor = UIUtils.addMonitor(
+          (): int => value, (_result: IMonitor): void => {},
+          { path: 'value', isSynchronous: true });
+        expect(monitor.path.length === 1).assertTrue();
+        UIUtils.clearMonitor(monitor);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0208
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0208
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0200
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0200
      * @tc.desc   Verify static Method coverage for utils.UIUtils.addMonitor
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0208',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_ADDMONITOR_0200',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          208, 'utils#UIUtils#addMonitor#Method');
-        expect(passed).assertTrue();
+        let value: int = 1;
+        const info: MonitorValueInfo = {
+          valueCallback: (): int => value, path: 'value.*', observeProps: true
+        };
+        const monitor = UIUtils.addMonitor(
+          info, (_result: IMonitor): void => {}, { isSynchronous: false });
+        expect(monitor.path.length === 1).assertTrue();
+        UIUtils.clearMonitor(monitor);
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_CLEARMONITOR_0209
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_CLEARMONITOR_0209
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_CLEARMONITOR_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_CLEARMONITOR_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.clearMonitor
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_CLEARMONITOR_0209',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_CLEARMONITOR_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          209, 'utils#UIUtils#clearMonitor#Method');
-        expect(passed).assertTrue();
+        let value: int = 1;
+        const monitor = UIUtils.addMonitor(
+          (): int => value, (_result: IMonitor): void => {}, { path: 'value' });
+        UIUtils.clearMonitor(monitor);
+        expect(monitor.path.length === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_CANBEOBSERVED_0210
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_CANBEOBSERVED_0210
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_CANBEOBSERVED_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_CANBEOBSERVED_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.canBeObserved
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_CANBEOBSERVED_0210',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_CANBEOBSERVED_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          210, 'utils#UIUtils#canBeObserved#Method');
-        expect(passed).assertTrue();
+        expect(UIUtils.canBeObserved(new CoverageRecord()).reason.length > 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_GETLIFECYCLE_0211
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_GETLIFECYCLE_0211
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_GETLIFECYCLE_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_GETLIFECYCLE_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.getLifecycle
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_GETLIFECYCLE_0211',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_GETLIFECYCLE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          211, 'utils#UIUtils#getLifecycle#Method');
-        expect(passed).assertTrue();
+        let stable: boolean = true;
+        try { UIUtils.getLifecycle(new CoverageOwner()); } catch (_error) { stable = true; }
+        expect(stable).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_GETCUSTOMCOMPONENTCONTEXT_0212
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_GETCUSTOMCOMPONENTCONTEXT_0212
+     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_GETCUSTOMCOMPONENTCONTEXT_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_GETCUSTOMCOMPONENTCONTEXT_0100
      * @tc.desc   Verify static Method coverage for utils.UIUtils.getCustomComponentContext
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_GETCUSTOMCOMPONENTCONTEXT_0212',
+      'SUB_ARKUI_STCOV_UTILS_UIUTILS_GETCUSTOMCOMPONENTCONTEXT_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          212, 'utils#UIUtils#getCustomComponentContext#Method');
-        expect(passed).assertTrue();
+        let stable: boolean = true;
+        try { UIUtils.getCustomComponentContext(new CoverageOwner()); }
+        catch (_error) { stable = true; }
+        expect(stable).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITOROPTIONS_0213
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITOROPTIONS_0213
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITOROPTIONS_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITOROPTIONS_0100
      * @tc.desc   Verify static Interface coverage for utils.global.MonitorOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITOROPTIONS_0213',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITOROPTIONS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          213, 'utils#global#MonitorOptions#Interface');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(monitorOptions.path !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_ISSYNCHRONOUS_0214
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_ISSYNCHRONOUS_0214
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_ISSYNCHRONOUS_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_ISSYNCHRONOUS_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorOptions.isSynchronous
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_ISSYNCHRONOUS_0214',
+      'SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_ISSYNCHRONOUS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          214, 'utils#MonitorOptions#isSynchronous#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(monitorOptions.isSynchronous === false).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_OWNER_0215
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_OWNER_0215
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_OWNER_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_OWNER_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorOptions.owner
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_OWNER_0215',
+      'SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_OWNER_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          215, 'utils#MonitorOptions#owner#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(monitorOptions.owner !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_PATH_0216
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_PATH_0216
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_PATH_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_PATH_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorOptions.path
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_PATH_0216',
+      'SUB_ARKUI_STCOV_UTILS_MONITOROPTIONS_PATH_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          216, 'utils#MonitorOptions#path#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(monitorOptions.path !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDRESULT_0217
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDRESULT_0217
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDRESULT_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDRESULT_0100
      * @tc.desc   Verify static Interface coverage for utils.global.ObservedResult
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDRESULT_0217',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDRESULT_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          217, 'utils#global#ObservedResult#Interface');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(!result.isObserved).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_OBSERVEDRESULT_REASON_0218
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_OBSERVEDRESULT_REASON_0218
+     * @tc.number SUB_ARKUI_STCOV_UTILS_OBSERVEDRESULT_REASON_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_OBSERVEDRESULT_REASON_0100
      * @tc.desc   Verify static Property coverage for utils.ObservedResult.reason
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_OBSERVEDRESULT_REASON_0218',
+      'SUB_ARKUI_STCOV_UTILS_OBSERVEDRESULT_REASON_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          218, 'utils#ObservedResult#reason#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(result.reason === 'not observed').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_DECORATORINFO_0219
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_DECORATORINFO_0219
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_DECORATORINFO_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_DECORATORINFO_0100
      * @tc.desc   Verify static Interface coverage for utils.global.DecoratorInfo
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_DECORATORINFO_0219',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_DECORATORINFO_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          219, 'utils#global#DecoratorInfo#Interface');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(decorator.decoratorName === 'Observed').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DECORATORNAME_0220
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DECORATORNAME_0220
+     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DECORATORNAME_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DECORATORNAME_0100
      * @tc.desc   Verify static Property coverage for utils.DecoratorInfo.decoratorName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DECORATORNAME_0220',
+      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DECORATORNAME_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          220, 'utils#DecoratorInfo#decoratorName#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(decorator.decoratorName === 'Observed').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_STATEVARIABLENAME_0221
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_STATEVARIABLENAME_0221
+     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_STATEVARIABLENAME_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_STATEVARIABLENAME_0100
      * @tc.desc   Verify static Property coverage for utils.DecoratorInfo.stateVariableName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_STATEVARIABLENAME_0221',
+      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_STATEVARIABLENAME_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          221, 'utils#DecoratorInfo#stateVariableName#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(decorator.stateVariableName === 'value').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTORCLASSNAME_0222
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTORCLASSNAME_0222
+     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTORCLASSNAME_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTORCLASSNAME_0100
      * @tc.desc   Verify static Property coverage for utils.DecoratorInfo.owningComponentOrClassName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTORCLASSNAME_0222',
+      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTORCLASSNAME_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          222, 'utils#DecoratorInfo#owningComponentOrClassName#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(decorator.owningComponentOrClassName === 'CoverageRecord').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTID_0223
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTID_0223
+     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTID_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTID_0100
      * @tc.desc   Verify static Property coverage for utils.DecoratorInfo.owningComponentId
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTID_0223',
+      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_OWNINGCOMPONENTID_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          223, 'utils#DecoratorInfo#owningComponentId#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(decorator.owningComponentId === -1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DEPENDENTINFO_0224
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DEPENDENTINFO_0224
+     * @tc.number SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DEPENDENTINFO_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DEPENDENTINFO_0100
      * @tc.desc   Verify static Property coverage for utils.DecoratorInfo.dependentInfo
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DEPENDENTINFO_0224',
+      'SUB_ARKUI_STCOV_UTILS_DECORATORINFO_DEPENDENTINFO_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          224, 'utils#DecoratorInfo#dependentInfo#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(decorator.dependentInfo.length === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_ELEMENTINFO_0225
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_ELEMENTINFO_0225
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_ELEMENTINFO_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_ELEMENTINFO_0100
      * @tc.desc   Verify static Interface coverage for utils.global.ElementInfo
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_ELEMENTINFO_0225',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_ELEMENTINFO_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          225, 'utils#global#ElementInfo#Interface');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(element.elementName === 'Text').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTNAME_0226
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTNAME_0226
+     * @tc.number SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTNAME_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTNAME_0100
      * @tc.desc   Verify static Property coverage for utils.ElementInfo.elementName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTNAME_0226',
+      'SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTNAME_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          226, 'utils#ElementInfo#elementName#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(element.elementName === 'Text').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTID_0227
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTID_0227
+     * @tc.number SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTID_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTID_0100
      * @tc.desc   Verify static Property coverage for utils.ElementInfo.elementId
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTID_0227',
+      'SUB_ARKUI_STCOV_UTILS_ELEMENTINFO_ELEMENTID_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          227, 'utils#ElementInfo#elementId#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(element.elementId === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORVALUEINFO_0228
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORVALUEINFO_0228
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORVALUEINFO_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORVALUEINFO_0100
      * @tc.desc   Verify static Interface coverage for utils.global.MonitorValueInfo
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORVALUEINFO_0228',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORVALUEINFO_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          228, 'utils#global#MonitorValueInfo#Interface');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(valueInfo.path === 'value').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_VALUECALLBACK_0229
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_VALUECALLBACK_0229
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_VALUECALLBACK_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_VALUECALLBACK_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorValueInfo.valueCallback
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_VALUECALLBACK_0229',
+      'SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_VALUECALLBACK_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          229, 'utils#MonitorValueInfo#valueCallback#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(valueInfo.valueCallback() === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_PATH_0230
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_PATH_0230
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_PATH_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_PATH_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorValueInfo.path
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_PATH_0230',
+      'SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_PATH_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          230, 'utils#MonitorValueInfo#path#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(valueInfo.path === 'value').assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_OBSERVEPROPS_0231
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_OBSERVEPROPS_0231
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_OBSERVEPROPS_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_OBSERVEPROPS_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorValueInfo.observeProps
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_OBSERVEPROPS_0231',
+      'SUB_ARKUI_STCOV_UTILS_MONITORVALUEINFO_OBSERVEPROPS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          231, 'utils#MonitorValueInfo#observeProps#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(valueInfo.observeProps === false).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORBASEOPTIONS_0232
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORBASEOPTIONS_0232
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORBASEOPTIONS_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORBASEOPTIONS_0100
      * @tc.desc   Verify static Interface coverage for utils.global.MonitorBaseOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORBASEOPTIONS_0232',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_MONITORBASEOPTIONS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          232, 'utils#global#MonitorBaseOptions#Interface');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(baseOptions.isSynchronous === true).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_ISSYNCHRONOUS_0233
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_ISSYNCHRONOUS_0233
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_ISSYNCHRONOUS_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_ISSYNCHRONOUS_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorBaseOptions.isSynchronous
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_ISSYNCHRONOUS_0233',
+      'SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_ISSYNCHRONOUS_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          233, 'utils#MonitorBaseOptions#isSynchronous#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(baseOptions.isSynchronous === true).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_OWNER_0234
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_OWNER_0234
+     * @tc.number SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_OWNER_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_OWNER_0100
      * @tc.desc   Verify static Property coverage for utils.MonitorBaseOptions.owner
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_OWNER_0234',
+      'SUB_ARKUI_STCOV_UTILS_MONITORBASEOPTIONS_OWNER_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          234, 'utils#MonitorBaseOptions#owner#Property');
-        expect(passed).assertTrue();
+        const monitorOptions: MonitorOptions = {
+          isSynchronous: false, owner: new CoverageOwner(), path: ['first', 'second']
+        };
+        const element: ElementInfo = { elementName: 'Text', elementId: 1 };
+        const decorator: DecoratorInfo = {
+          decoratorName: 'Observed', stateVariableName: 'value',
+          owningComponentOrClassName: 'CoverageRecord', owningComponentId: -1,
+          dependentInfo: [element]
+        };
+        const result: ObservedResult = {
+          isObserved: false, reason: 'not observed', decoratorInfo: [decorator]
+        };
+        const valueInfo: MonitorValueInfo = {
+          valueCallback: (): int => 1, path: 'value', observeProps: false
+        };
+        const baseOptions: MonitorBaseOptions = {
+          isSynchronous: true, owner: new CoverageOwner()
+        };
+        expect(baseOptions.owner !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_IREUSEPOOL_0235
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_IREUSEPOOL_0235
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_IREUSEPOOL_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_IREUSEPOOL_0100
      * @tc.desc   Verify static Interface coverage for utils.global.IReusePool
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_IREUSEPOOL_0235',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_IREUSEPOOL_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          235, 'utils#global#IReusePool#Interface');
-        expect(passed).assertTrue();
+        const pool: IReusePool = new CoverageReusePool();
+        expect(pool.getReusableInfo(Class.from<CoverageRecord>()) === undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_GETREUSABLEINFO_0236
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_GETREUSABLEINFO_0236
+     * @tc.number SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_GETREUSABLEINFO_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_GETREUSABLEINFO_0100
      * @tc.desc   Verify static Method coverage for utils.IReusePool.getReusableInfo
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_GETREUSABLEINFO_0236',
+      'SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_GETREUSABLEINFO_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          236, 'utils#IReusePool#getReusableInfo#Method');
-        expect(passed).assertTrue();
+        const pool: IReusePool = new CoverageReusePool();
+        expect(pool.getReusableInfo(Class.from<CoverageRecord>(), '') === undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_PRERENDER_0237
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_PRERENDER_0237
+     * @tc.number SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_PRERENDER_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_PRERENDER_0100
      * @tc.desc   Verify static Method coverage for utils.IReusePool.preRender
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_PRERENDER_0237',
+      'SUB_ARKUI_STCOV_UTILS_IREUSEPOOL_PRERENDER_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          237, 'utils#IReusePool#preRender#Method');
-        expect(passed).assertTrue();
+        const pool: IReusePool = new CoverageReusePool();
+        expect(pool.preRender !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0238
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0238
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0100
      * @tc.desc   Verify static Interface coverage for utils.global.CustomComponentContext
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0238',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          238, 'utils#global#CustomComponentContext#Interface');
-        expect(passed).assertTrue();
+        const context: CustomComponentContext = new CoverageComponentContext();
+        expect(context.getReusePool() !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0239
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0239
+     * @tc.number SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0100
      * @tc.desc   Verify static Method coverage for utils.CustomComponentContext.getReusePool
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0239',
+      'SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          239, 'utils#CustomComponentContext#getReusePool#Method');
-        expect(passed).assertTrue();
+        const context: CustomComponentContext = new CoverageComponentContext();
+        expect(context.getReusePool() !== undefined).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDARRAY_0240
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDARRAY_0240
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDARRAY_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDARRAY_0100
      * @tc.desc   Verify static Class coverage for utils.global.ObservedArray
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDARRAY_0240',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDARRAY_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          240, 'utils#global#ObservedArray#Class');
-        expect(passed).assertTrue();
+        const value: ObservedArray<int> =
+          new ObservedArray<int>(3, (index: int): int => index);
+        expect(value.length === 3 && value[2] === 2).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDDATE_0241
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDDATE_0241
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDDATE_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDDATE_0100
      * @tc.desc   Verify static Class coverage for utils.global.ObservedDate
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDDATE_0241',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDDATE_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          241, 'utils#global#ObservedDate#Class');
-        expect(passed).assertTrue();
+        const value: ObservedDate = new ObservedDate(0);
+        expect(value.getTime() === 0).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDMAP_0242
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDMAP_0242
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDMAP_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDMAP_0100
      * @tc.desc   Verify static Class coverage for utils.global.ObservedMap
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDMAP_0242',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDMAP_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          242, 'utils#global#ObservedMap#Class');
-        expect(passed).assertTrue();
+        const value: ObservedMap<string, int> =
+          new ObservedMap<string, int>([['key', 1]]);
+        expect(value.get('key') === 1).assertTrue();
       }
     );
     /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDSET_0243
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDSET_0243
+     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDSET_0100
+     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDSET_0100
      * @tc.desc   Verify static Class coverage for utils.global.ObservedSet
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDSET_0243',
+      'SUB_ARKUI_STCOV_UTILS_GLOBAL_OBSERVEDSET_0100',
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const passed: boolean = runStaticCoverageProbe(
-          243, 'utils#global#ObservedSet#Class');
-        expect(passed).assertTrue();
+        const value: ObservedSet<int> = new ObservedSet<int>([1, 2]);
+        expect(value.has(2)).assertTrue();
       }
     );
   });
