@@ -725,7 +725,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseFulfilledState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseFulfilledState';
         console.info(`${caseName} test start`);
 
@@ -735,6 +735,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -746,7 +747,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseRejectedState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseRejectedState';
         console.info(`${caseName} test start`);
 
@@ -757,6 +758,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -768,7 +770,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseResolve';
         console.info(`${caseName} test start`);
 
@@ -778,6 +780,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -789,7 +792,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseReject';
         console.info(`${caseName} test start`);
 
@@ -800,6 +803,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -811,7 +815,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAsyncFunction';
         console.info(`${caseName} test start`);
 
@@ -821,6 +825,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -832,7 +837,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAfterGet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAfterGet';
         console.info(`${caseName} test start`);
 
@@ -843,6 +848,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -854,7 +860,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAfterSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAfterSet';
         console.info(`${caseName} test start`);
 
@@ -865,6 +871,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -876,7 +883,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAfterGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAfterGetSet';
         console.info(`${caseName} test start`);
 
@@ -887,6 +894,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
 
@@ -900,7 +908,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseBetweenGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseBetweenGetSet';
         console.info(`${caseName} test start`);
 
@@ -911,6 +919,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -922,7 +931,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMixedGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseMixedGetSet';
         console.info(`${caseName} test start`);
 
@@ -946,6 +955,17 @@ export default function isPromiseTest(): void {
         expect(result4).assertTrue();
 
         console.info(`${caseName} test end`);
+        let pendingConsumedCount: number = 4;
+        const consumeSettledPromise = (): void => {
+          pendingConsumedCount--;
+          if (pendingConsumedCount === 0) {
+            done();
+          }
+        };
+        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise4.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
       });
 
     /**
@@ -957,7 +977,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNormalMethodAfterGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNormalMethodAfterGetSet';
         console.info(`${caseName} test start`);
 
@@ -968,6 +988,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -979,7 +1000,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseObjectLiteralAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseObjectLiteralAsync';
         console.info(`${caseName} test start`);
 
@@ -990,6 +1011,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1001,7 +1023,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseObjectLiteralGet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseObjectLiteralGet';
         console.info(`${caseName} test start`);
 
@@ -1012,6 +1034,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1023,7 +1046,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseObjectLiteralSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseObjectLiteralSet';
         console.info(`${caseName} test start`);
 
@@ -1034,6 +1057,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1045,7 +1069,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseStaticAsyncMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseStaticAsyncMethod';
         console.info(`${caseName} test start`);
 
@@ -1055,6 +1079,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1066,7 +1091,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseStaticAsyncAfterGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseStaticAsyncAfterGetSet';
         console.info(`${caseName} test start`);
 
@@ -1076,6 +1101,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1087,7 +1113,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseInheritedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseInheritedAsync';
         console.info(`${caseName} test start`);
 
@@ -1098,6 +1124,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1109,7 +1136,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseOverriddenAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseOverriddenAsync';
         console.info(`${caseName} test start`);
 
@@ -1120,6 +1147,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1131,7 +1159,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseArrowFunction';
         console.info(`${caseName} test start`);
 
@@ -1141,6 +1169,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1152,7 +1181,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAssignedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAssignedAsync';
         console.info(`${caseName} test start`);
 
@@ -1162,6 +1191,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1173,7 +1203,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAsParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAsParameter';
         console.info(`${caseName} test start`);
 
@@ -1183,6 +1213,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1478,17 +1509,19 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSetterValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSetterValue';
         console.info(`${caseName} test start`);
 
         const instance: TestClassWithGetSet = new TestClassWithGetSet();
         instance.id = 10;
         const type: util.types = new util.types();
-        const result: boolean = type.isPromise(instance.methodAfterGetSet());
+        const setterPromise: Promise<string> = instance.methodAfterGetSet();
+        const result: boolean = type.isPromise(setterPromise);
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        setterPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1585,7 +1618,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseThen';
         console.info(`${caseName} test start`);
 
@@ -1595,6 +1628,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1606,7 +1640,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseCatch';
         console.info(`${caseName} test start`);
 
@@ -1617,6 +1651,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1628,7 +1663,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseFinally';
         console.info(`${caseName} test start`);
 
@@ -1639,6 +1674,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
 
@@ -1652,7 +1688,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDelayedResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseDelayedResolve';
         console.info(`${caseName} test start`);
 
@@ -1666,6 +1702,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1677,7 +1714,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMultiLevelThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseMultiLevelThen';
         console.info(`${caseName} test start`);
 
@@ -1690,6 +1727,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1701,7 +1739,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAll';
         console.info(`${caseName} test start`);
 
@@ -1714,6 +1752,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        allPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1725,7 +1764,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseRace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseRace';
         console.info(`${caseName} test start`);
 
@@ -1739,6 +1778,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        racePromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1750,7 +1790,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAllSettled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAllSettled';
         console.info(`${caseName} test start`);
 
@@ -1762,6 +1802,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        allSettledPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1773,7 +1814,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAny', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAny';
         console.info(`${caseName} test start`);
 
@@ -1785,6 +1826,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        anyPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1796,7 +1838,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAllNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAllNested';
         console.info(`${caseName} test start`);
 
@@ -1810,6 +1852,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        allPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1821,7 +1864,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseRaceNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseRaceNested';
         console.info(`${caseName} test start`);
 
@@ -1835,6 +1878,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        racePromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1846,7 +1890,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAllThenChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAllThenChain';
         console.info(`${caseName} test start`);
 
@@ -1861,6 +1905,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        chainedPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1872,7 +1917,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAllEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAllEmptyArray';
         console.info(`${caseName} test start`);
 
@@ -1883,6 +1928,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        allPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1916,7 +1962,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAnyEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAnyEmptyArray';
         console.info(`${caseName} test start`);
 
@@ -1927,6 +1973,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        anyPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1938,7 +1985,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAllSinglePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAllSinglePromise';
         console.info(`${caseName} test start`);
 
@@ -1949,6 +1996,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        allPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1960,7 +2008,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableAsyncMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableAsyncMethod';
         console.info(`${caseName} test start`);
 
@@ -1971,6 +2019,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -1982,7 +2031,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableMultipleMethods', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableMultipleMethods';
         console.info(`${caseName} test start`);
 
@@ -2003,6 +2052,16 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
+        let pendingConsumedCount: number = 3;
+        const consumeSettledPromise = (): void => {
+          pendingConsumedCount--;
+          if (pendingConsumedCount === 0) {
+            done();
+          }
+        };
+        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
       });
 
     /**
@@ -2014,7 +2073,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableStaticAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableStaticAsync';
         console.info(`${caseName} test start`);
 
@@ -2024,6 +2083,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2035,7 +2095,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableInherited', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableInherited';
         console.info(`${caseName} test start`);
 
@@ -2046,6 +2106,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2057,7 +2118,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableOverridden', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableOverridden';
         console.info(`${caseName} test start`);
 
@@ -2068,6 +2129,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2079,7 +2141,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseTaskPoolAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseTaskPoolAsync';
         console.info(`${caseName} test start`);
 
@@ -2090,6 +2152,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2101,7 +2164,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseTaskPoolArrowAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseTaskPoolArrowAsync';
         console.info(`${caseName} test start`);
 
@@ -2112,6 +2175,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2123,7 +2187,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableComplex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableComplex';
         console.info(`${caseName} test start`);
 
@@ -2143,6 +2207,16 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
+        let pendingConsumedCount: number = 3;
+        const consumeSettledPromise = (): void => {
+          pendingConsumedCount--;
+          if (pendingConsumedCount === 0) {
+            done();
+          }
+        };
+        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
       });
 
     /**
@@ -2154,7 +2228,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableGetterSetterSequence', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableGetterSetterSequence';
         console.info(`${caseName} test start`);
 
@@ -2166,6 +2240,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2177,7 +2252,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableGetterAfter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableGetterAfter';
         console.info(`${caseName} test start`);
 
@@ -2189,6 +2264,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2200,7 +2276,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableSetterAfter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableSetterAfter';
         console.info(`${caseName} test start`);
 
@@ -2212,6 +2288,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2223,7 +2300,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseConcurrentDecorated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseConcurrentDecorated';
         console.info(`${caseName} test start`);
 
@@ -2233,6 +2310,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2244,7 +2322,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableCollections', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableCollections';
         console.info(`${caseName} test start`);
 
@@ -2258,6 +2336,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2269,7 +2348,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableParameterPass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableParameterPass';
         console.info(`${caseName} test start`);
 
@@ -2280,6 +2359,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2291,7 +2371,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableVariousReturnTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableVariousReturnTypes';
         console.info(`${caseName} test start`);
 
@@ -2311,6 +2391,16 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
+        let pendingConsumedCount: number = 3;
+        const consumeSettledPromise = (): void => {
+          pendingConsumedCount--;
+          if (pendingConsumedCount === 0) {
+            done();
+          }
+        };
+        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
       });
 
     /**
@@ -2322,7 +2412,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableDecorator';
         console.info(`${caseName} test start`);
 
@@ -2333,6 +2423,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2344,7 +2435,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableMultiDecorators', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSendableMultiDecorators';
         console.info(`${caseName} test start`);
 
@@ -2361,6 +2452,15 @@ export default function isPromiseTest(): void {
         expect(result2).assertTrue();
 
         console.info(`${caseName} test end`);
+        let pendingConsumedCount: number = 2;
+        const consumeSettledPromise = (): void => {
+          pendingConsumedCount--;
+          if (pendingConsumedCount === 0) {
+            done();
+          }
+        };
+        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
       });
 
     /**
@@ -2372,7 +2472,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseConcurrentDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseConcurrentDecorator';
         console.info(`${caseName} test start`);
 
@@ -2382,6 +2482,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2393,7 +2494,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseConcurrentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseConcurrentStatic';
         console.info(`${caseName} test start`);
 
@@ -2403,6 +2504,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2414,7 +2516,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseCustomMethodDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseCustomMethodDecorator';
         console.info(`${caseName} test start`);
 
@@ -2425,6 +2527,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2436,7 +2539,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAccessorDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAccessorDecorator';
         console.info(`${caseName} test start`);
 
@@ -2448,6 +2551,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2459,7 +2563,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMultiDecoratorStack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseMultiDecoratorStack';
         console.info(`${caseName} test start`);
 
@@ -2470,6 +2574,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2481,7 +2586,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNestedDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNestedDecorator';
         console.info(`${caseName} test start`);
 
@@ -2492,6 +2597,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2503,7 +2609,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDecoratorInterfaceImpl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseDecoratorInterfaceImpl';
         console.info(`${caseName} test start`);
 
@@ -2514,6 +2620,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2525,7 +2632,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDecoratorAbstractClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseDecoratorAbstractClass';
         console.info(`${caseName} test start`);
 
@@ -2536,6 +2643,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2547,7 +2655,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDecoratorGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseDecoratorGeneric';
         console.info(`${caseName} test start`);
 
@@ -2558,6 +2666,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2569,7 +2678,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseLocalAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseLocalAsyncFunction';
         console.info(`${caseName} test start`);
 
@@ -2579,6 +2688,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2590,7 +2700,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseLocalAsyncArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseLocalAsyncArrow';
         console.info(`${caseName} test start`);
 
@@ -2600,6 +2710,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2611,7 +2722,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseLocalClassAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseLocalClassAsync';
         console.info(`${caseName} test start`);
 
@@ -2622,6 +2733,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2633,7 +2745,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseInlinePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseInlinePromise';
         console.info(`${caseName} test start`);
 
@@ -2645,6 +2757,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2656,7 +2769,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseInlineAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseInlineAsync';
         console.info(`${caseName} test start`);
 
@@ -2667,6 +2780,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2678,7 +2792,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMixedSources', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseMixedSources';
         console.info(`${caseName} test start`);
 
@@ -2699,6 +2813,16 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
+        let pendingConsumedCount: number = 3;
+        const consumeSettledPromise = (): void => {
+          pendingConsumedCount--;
+          if (pendingConsumedCount === 0) {
+            done();
+          }
+        };
+        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
       });
 
     /**
@@ -2710,7 +2834,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseResolveChained', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseResolveChained';
         console.info(`${caseName} test start`);
 
@@ -2721,6 +2845,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2732,7 +2857,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseInlineClassPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseInlineClassPromise';
         console.info(`${caseName} test start`);
 
@@ -2743,6 +2868,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2754,7 +2880,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseParameterPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseParameterPromise';
         console.info(`${caseName} test start`);
 
@@ -2765,6 +2891,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        resultPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2776,7 +2903,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseReturnPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseReturnPromise';
         console.info(`${caseName} test start`);
 
@@ -2786,6 +2913,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2797,7 +2925,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseArrayPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseArrayPromise';
         console.info(`${caseName} test start`);
 
@@ -2811,6 +2939,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2822,7 +2951,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseRecursive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseRecursive';
         console.info(`${caseName} test start`);
 
@@ -2832,6 +2961,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2843,7 +2973,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseFactory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseFactory';
         console.info(`${caseName} test start`);
 
@@ -2853,6 +2983,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2864,7 +2995,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseCallback';
         console.info(`${caseName} test start`);
 
@@ -2874,6 +3005,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2885,7 +3017,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseContextBinding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseContextBinding';
         console.info(`${caseName} test start`);
 
@@ -2896,6 +3028,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2907,7 +3040,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDynamicCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseDynamicCreate';
         console.info(`${caseName} test start`);
 
@@ -2917,6 +3050,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2928,7 +3062,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNestedPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNestedPromise';
         console.info(`${caseName} test start`);
 
@@ -2943,6 +3077,7 @@ export default function isPromiseTest(): void {
         expect(result2).assertTrue();
 
         console.info(`${caseName} test end`);
+        outerPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2954,7 +3089,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseExportedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseExportedAsync';
         console.info(`${caseName} test start`);
 
@@ -2964,6 +3099,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2975,7 +3111,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseExportedArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseExportedArrow';
         console.info(`${caseName} test start`);
 
@@ -2985,6 +3121,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -2996,7 +3133,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseExportedClassAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseExportedClassAsync';
         console.info(`${caseName} test start`);
 
@@ -3007,6 +3144,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3018,7 +3156,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDefaultExport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseDefaultExport';
         console.info(`${caseName} test start`);
 
@@ -3028,6 +3166,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3039,7 +3178,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseExportedGetSetAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseExportedGetSetAsync';
         console.info(`${caseName} test start`);
 
@@ -3051,6 +3190,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3062,7 +3202,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNamespaceAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNamespaceAsync';
         console.info(`${caseName} test start`);
 
@@ -3072,6 +3212,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3083,7 +3224,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNamespaceArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNamespaceArrow';
         console.info(`${caseName} test start`);
 
@@ -3093,6 +3234,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3104,7 +3246,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNamespaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNamespaceClass';
         console.info(`${caseName} test start`);
 
@@ -3115,6 +3257,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3126,7 +3269,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNestedNamespace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNestedNamespace';
         console.info(`${caseName} test start`);
 
@@ -3136,6 +3279,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3147,7 +3291,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseGenericAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseGenericAsync';
         console.info(`${caseName} test start`);
 
@@ -3157,6 +3301,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3168,7 +3313,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseGenericArrow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseGenericArrow';
         console.info(`${caseName} test start`);
 
@@ -3178,6 +3323,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3189,7 +3335,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseGenericClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseGenericClass';
         console.info(`${caseName} test start`);
 
@@ -3200,6 +3346,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3211,7 +3358,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMultiGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseMultiGeneric';
         console.info(`${caseName} test start`);
 
@@ -3221,6 +3368,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3232,7 +3380,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseConstrainedGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseConstrainedGeneric';
         console.info(`${caseName} test start`);
 
@@ -3242,6 +3390,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3253,7 +3402,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseInterfaceImpl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseInterfaceImpl';
         console.info(`${caseName} test start`);
 
@@ -3264,6 +3413,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3275,7 +3425,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseInterfaceMethodImpl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseInterfaceMethodImpl';
         console.info(`${caseName} test start`);
 
@@ -3286,6 +3436,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3297,7 +3448,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDefaultParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseDefaultParams';
         console.info(`${caseName} test start`);
 
@@ -3307,6 +3458,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3318,7 +3470,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseOverload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseOverload';
         console.info(`${caseName} test start`);
 
@@ -3329,6 +3481,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3340,7 +3493,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseClassOverload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseClassOverload';
         console.info(`${caseName} test start`);
 
@@ -3351,6 +3504,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
 
@@ -3364,7 +3518,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMixedImport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseMixedImport';
         console.info(`${caseName} test start`);
 
@@ -3385,6 +3539,16 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
+        let pendingConsumedCount: number = 3;
+        const consumeSettledPromise = (): void => {
+          pendingConsumedCount--;
+          if (pendingConsumedCount === 0) {
+            done();
+          }
+        };
+        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
       });
 
     /**
@@ -3396,7 +3560,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseReExportedAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseReExportedAsync';
         console.info(`${caseName} test start`);
 
@@ -3406,6 +3570,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3417,7 +3582,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseReExportedClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseReExportedClass';
         console.info(`${caseName} test start`);
 
@@ -3428,6 +3593,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3439,7 +3605,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSingleThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSingleThen';
         console.info(`${caseName} test start`);
 
@@ -3451,6 +3617,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
 
@@ -3464,7 +3631,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThenCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseThenCatch';
         console.info(`${caseName} test start`);
 
@@ -3476,6 +3643,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3487,7 +3655,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThenFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseThenFinally';
         console.info(`${caseName} test start`);
 
@@ -3501,6 +3669,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3512,7 +3681,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseCatchFinally';
         console.info(`${caseName} test start`);
 
@@ -3526,6 +3695,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3537,7 +3707,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThenCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseThenCatchFinally';
         console.info(`${caseName} test start`);
 
@@ -3552,6 +3722,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3563,7 +3734,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAsyncAwaitChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseAsyncAwaitChain';
         console.info(`${caseName} test start`);
 
@@ -3576,6 +3747,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        chainedPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3587,7 +3759,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseResolveThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseResolveThen';
         console.info(`${caseName} test start`);
 
@@ -3599,6 +3771,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3610,7 +3783,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNestedUnwrap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseNestedUnwrap';
         console.info(`${caseName} test start`);
 
@@ -3624,6 +3797,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        unwrappedPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3635,7 +3809,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseComplexChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseComplexChain';
         console.info(`${caseName} test start`);
 
@@ -3654,6 +3828,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3665,7 +3840,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassInstance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSubclassInstance';
         console.info(`${caseName} test start`);
 
@@ -3676,6 +3851,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3687,7 +3863,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSubclassResolve';
         console.info(`${caseName} test start`);
 
@@ -3698,6 +3874,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3709,7 +3886,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSubclassReject';
         console.info(`${caseName} test start`);
 
@@ -3722,6 +3899,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3733,7 +3911,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSubclassThen';
         console.info(`${caseName} test start`);
 
@@ -3746,6 +3924,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        thenPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3757,7 +3936,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSubclassCatch';
         console.info(`${caseName} test start`);
 
@@ -3771,6 +3950,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        catchPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3782,7 +3962,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSubclassFinally';
         console.info(`${caseName} test start`);
 
@@ -3795,6 +3975,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        finallyPromise.then((): void => { done(); }, (error): void => { done(); });
       });
 
     /**
@@ -3806,7 +3987,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSubclassStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (): void => {
+      (done: () => void): void => {
         const caseName = 'testIsPromiseSubclassStatic';
         console.info(`${caseName} test start`);
 
@@ -3817,6 +3998,7 @@ export default function isPromiseTest(): void {
         expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
+        promise.then((): void => { done(); }, (error): void => { done(); });
       });
   })
 }
