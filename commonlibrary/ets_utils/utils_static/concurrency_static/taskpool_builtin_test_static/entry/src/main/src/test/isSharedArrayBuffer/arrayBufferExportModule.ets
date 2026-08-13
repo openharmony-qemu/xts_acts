@@ -15,8 +15,7 @@
  */
 
 // 静态等价模块：动态 sharedArrayBufferExportModule.ets 中 SharedArrayBuffer -> ArrayBuffer；
-// 动态 namespace（sharedArrayBufferNamespace）为静态模型禁用语法，已移除，
-// 其测试点由模块顶层导出函数/类覆盖。
+// Namespace import is verified by importing this module with `import * as`.
 
 export const exportedArrayBuffer: ArrayBuffer = new ArrayBuffer(16);
 

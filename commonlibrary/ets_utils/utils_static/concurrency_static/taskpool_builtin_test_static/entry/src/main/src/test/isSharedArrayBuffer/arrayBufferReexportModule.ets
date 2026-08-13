@@ -14,6 +14,4 @@
  * limitations under the License.
  */
 
-import { exportedArrayBuffer } from './arrayBufferExportModule';
-
-export const reExportedArrayBuffer: ArrayBuffer = exportedArrayBuffer;
+export * from './arrayBufferExportModule';

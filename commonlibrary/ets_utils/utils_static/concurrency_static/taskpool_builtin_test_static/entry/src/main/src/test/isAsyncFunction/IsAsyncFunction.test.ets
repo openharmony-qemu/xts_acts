@@ -619,49 +619,41 @@ export default function IsAsyncFunctionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_0170
      * @tc.name testIsAsyncFunctionNull
-     * @tc.desc Test isAsyncFunction with null should return false
+     * @tc.desc Verify static Object conversion rejects null before async-function detection
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
     it('testIsAsyncFunctionNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const type = new util.types();
-      let result = false;
-      let castFailed = false;
+      let castRejected: boolean = false;
       try {
-        result = type.isAsyncFunction(null as Object);
+        type.isAsyncFunction(null as Object);
+        expect().assertFail();
       } catch (error) {
-        castFailed = true;
-        const err: Error = error as Error;
-        expect(err instanceof Error).assertTrue();
+        castRejected = true;
       }
-      if (!castFailed) {
-        expect(result).assertFalse();
-      }
+      expect(castRejected).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISASYNCFUNCTION_0180
      * @tc.name testIsAsyncFunctionUndefined
-     * @tc.desc Test isAsyncFunction with undefined should return false
+     * @tc.desc Verify static Object conversion rejects undefined before async-function detection
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
     it('testIsAsyncFunctionUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const type = new util.types();
-      let result = false;
-      let castFailed = false;
+      let castRejected: boolean = false;
       try {
-        result = type.isAsyncFunction(undefined as Object);
+        type.isAsyncFunction(undefined as Object);
+        expect().assertFail();
       } catch (error) {
-        castFailed = true;
-        const err: Error = error as Error;
-        expect(err instanceof Error).assertTrue();
+        castRejected = true;
       }
-      if (!castFailed) {
-        expect(result).assertFalse();
-      }
+      expect(castRejected).assertTrue();
     });
 
     /**

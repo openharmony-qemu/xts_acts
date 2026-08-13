@@ -32,7 +32,8 @@ import defaultArrayBuffer, {
   exportedArrayBufferFunc,
   ExportedArrayBufferClass
 } from './arrayBufferExportModule';
-import { reExportedArrayBuffer } from './arrayBufferReexportModule';
+import * as arrayBufferNamespace from './arrayBufferExportModule';
+import * as reExportNamespace from './arrayBufferReexportModule';
 import {
   createArrayBufferTS,
   getArrayBufferMethodTS,
@@ -412,6 +413,60 @@ function concurrentSumBufferSizes(sizes: number[]): int {
     total = total + sizes[i].toInt();
   }
   return total;
+}
+
+// 静态等价：模拟 ArkUI/custom 装饰器用例（来源本身为 simulated 普通逻辑），
+// 装饰器均退化为普通 interface/类/顶层函数；SharedArrayBuffer→ArrayBuffer，number 尺寸→int
+interface ComponentBuffer {
+  size: int;
+}
+
+interface StateBuffer {
+  buffer: ArrayBuffer;
+}
+
+let watchedSize: int = 32;
+
+function onSizeChange(newSize: int): void {
+  watchedSize = newSize;
+}
+
+function buildBuffer(size: int): ArrayBuffer {
+  return new ArrayBuffer(size);
+}
+
+function logMethod(target: () => ArrayBuffer): void {
+  console.info('Method decorated');
+}
+
+function createBufferForDecorator(): ArrayBuffer {
+  return new ArrayBuffer(128);
+}
+
+class CustomDecoratedClass {
+  public bufferSize: int = 128;
+
+  getBuffer(): ArrayBuffer {
+    return new ArrayBuffer(this.bufferSize);
+  }
+}
+
+class AccessorDecoratedClass {
+  private _size: int = 16;
+
+  get size(): int {
+    return this._size;
+  }
+
+  set size(value: int) {
+    this._size = value;
+  }
+}
+
+let stateSize: int = 32;
+
+function watchCallback(newSize: int): void {
+  stateSize = newSize;
 }
 
 export default function IsSharedArrayBufferTest(): void {
@@ -1027,7 +1082,7 @@ export default function IsSharedArrayBufferTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_2800
      * @tc.name testIsSharedArrayBufferNullUndefined
-     * @tc.desc 静态等价：null/undefined 不应识别为缓冲（与 isPromise 静态范式一致的 try/catch 处理）
+     * @tc.desc 静态等价：Object 转换拒绝 null/undefined，缓冲检测不会执行
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL0
@@ -1038,27 +1093,21 @@ export default function IsSharedArrayBufferTest(): void {
         console.info(`${caseName} test start`);
 
         const type: util.types = new util.types();
-        let nullResult: boolean = false;
-        let nullCastFailed: boolean = false;
+        let nullCastRejected: boolean = false;
         try {
-          nullResult = type.isAnyArrayBuffer(null as Object);
+          type.isAnyArrayBuffer(null as Object);
         } catch (error) {
-          nullCastFailed = true;
+          nullCastRejected = true;
         }
-        if (!nullCastFailed) {
-          expect(nullResult).assertFalse();
-        }
+        expect(nullCastRejected).assertTrue();
 
-        let undefinedResult: boolean = false;
-        let undefinedCastFailed: boolean = false;
+        let undefinedCastRejected: boolean = false;
         try {
-          undefinedResult = type.isAnyArrayBuffer(undefined as Object);
+          type.isAnyArrayBuffer(undefined as Object);
         } catch (error) {
-          undefinedCastFailed = true;
+          undefinedCastRejected = true;
         }
-        if (!undefinedCastFailed) {
-          expect(undefinedResult).assertFalse();
-        }
+        expect(undefinedCastRejected).assertTrue();
 
         console.info(`${caseName} test end`);
       });
@@ -2239,11 +2288,26 @@ export default function IsSharedArrayBufferTest(): void {
         const type: util.types = new util.types();
         expect(type.isAnyArrayBuffer(ab)).assertTrue();
         expect(type.isAnyArrayBuffer(sliced)).assertTrue();
-        expect(type.isAnyArrayBuffer(reExportedArrayBuffer)).assertTrue();
-        expect(reExportedArrayBuffer === exportedArrayBuffer).assertTrue();
+        expect(type.isAnyArrayBuffer(reExportNamespace.exportedArrayBuffer)).assertTrue();
+        expect(reExportNamespace.exportedArrayBuffer === exportedArrayBuffer).assertTrue();
 
         console.info(`${caseName} test end`);
       });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1800
+     * @tc.name testNamespaceImport
+     * @tc.desc 静态等价：通过 namespace import 创建并识别跨文件 ArrayBuffer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testNamespaceImport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const buffer: ArrayBuffer = arrayBufferNamespace.exportedArrayBufferFunc(128);
+      const type: util.types = new util.types();
+      expect(type.isAnyArrayBuffer(buffer)).assertTrue();
+      expect(buffer.byteLength).assertEqual(128);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_1900
@@ -2264,6 +2328,21 @@ export default function IsSharedArrayBufferTest(): void {
 
         console.info(`${caseName} test end`);
       });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_CROSSFILE_2000
+     * @tc.name testExportAllFrom
+     * @tc.desc 静态等价：通过 export all re-export 模块创建并识别 ArrayBuffer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testExportAllFrom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const buffer: ArrayBuffer = reExportNamespace.exportedArrayBufferFunc(32);
+      const type: util.types = new util.types();
+      expect(type.isAnyArrayBuffer(buffer)).assertTrue();
+      expect(buffer.byteLength).assertEqual(32);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_EXPORT_0100
@@ -2365,9 +2444,9 @@ export default function IsSharedArrayBufferTest(): void {
         console.info(`${caseName} test start`);
 
         const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(reExportedArrayBuffer)).assertTrue();
-        expect(reExportedArrayBuffer.byteLength).assertEqual(16);
-        expect(reExportedArrayBuffer === exportedArrayBuffer).assertTrue();
+        expect(type.isAnyArrayBuffer(reExportNamespace.exportedArrayBuffer)).assertTrue();
+        expect(reExportNamespace.exportedArrayBuffer.byteLength).assertEqual(16);
+        expect(reExportNamespace.exportedArrayBuffer === exportedArrayBuffer).assertTrue();
 
         console.info(`${caseName} test end`);
       });
@@ -2565,6 +2644,436 @@ export default function IsSharedArrayBufferTest(): void {
         const ab: ArrayBuffer = new ArrayBuffer(result);
         const type: util.types = new util.types();
         expect(type.isAnyArrayBuffer(ab)).assertTrue();
+
+        console.info(`${caseName} test end`);
+      });
+  });
+
+  // 静态等价 simulated 段（原 @Entry/@Component/@State/@Prop/@Link/@Watch/@Builder/@Provide/@Consume
+  // 及自定义装饰器用例，来源本身为 simulated 普通逻辑，装饰器均退化为普通 interface/类/顶层函数）
+  describe('IsSharedArrayBufferDecoratorTest', (): void => {
+    beforeAll((): void => {
+      console.info('beforeAll called');
+    });
+
+    beforeEach((): void => {
+    });
+
+    afterEach((): void => {
+      console.info('afterEach called');
+    });
+
+    afterAll((): void => {
+      console.info('afterAll called');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0700
+     * @tc.name testEntryComponentSharedArrayBuffer
+     * @tc.desc 静态等价 simulated（原 @Entry 组件）：ComponentBuffer.size 驱动 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testEntryComponentSharedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testEntryComponentSharedArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const componentBuffer: ComponentBuffer = {
+          size: 128
+        };
+
+        const ab: ArrayBuffer = new ArrayBuffer(componentBuffer.size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(128);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0800
+     * @tc.name testComponentComponentSharedArrayBuffer
+     * @tc.desc 静态等价 simulated（原 @Component 组件）：ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testComponentComponentSharedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testComponentComponentSharedArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(64);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_0900
+     * @tc.name testStateDecoratorSharedArrayBuffer
+     * @tc.desc 静态等价 simulated（原 @State 装饰器）：StateBuffer 持有 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testStateDecoratorSharedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testStateDecoratorSharedArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const stateBuffer: StateBuffer = {
+          buffer: new ArrayBuffer(32)
+        };
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(stateBuffer.buffer)).assertTrue();
+        expect(stateBuffer.buffer.byteLength).assertEqual(32);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1000
+     * @tc.name testPropDecoratorSharedArrayBuffer
+     * @tc.desc 静态等价 simulated（原 @Prop 装饰器）：ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testPropDecoratorSharedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testPropDecoratorSharedArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(16);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(16);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1100
+     * @tc.name testLinkDecoratorSharedArrayBuffer
+     * @tc.desc 静态等价 simulated（原 @Link 装饰器）：ArrayBuffer 上 Atomics store/load 与缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testLinkDecoratorSharedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testLinkDecoratorSharedArrayBuffer';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(128);
+        const view: Int32Array = new Int32Array(ab);
+        Atomics.store(view, 0, 42);
+
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(Atomics.load(view, 0)).assertEqual(42);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1200
+     * @tc.name testWatchDecoratorCallback
+     * @tc.desc 静态等价 simulated（原 @Watch 回调）：onSizeChange 更新 watchedSize 驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testWatchDecoratorCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testWatchDecoratorCallback';
+        console.info(`${caseName} test start`);
+
+        onSizeChange(64);
+
+        const ab: ArrayBuffer = new ArrayBuffer(watchedSize);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1300
+     * @tc.name testBuilderDecoratorComponent
+     * @tc.desc 静态等价 simulated（原 @Builder 装饰器）：buildBuffer 创建 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testBuilderDecoratorComponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testBuilderDecoratorComponent';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = buildBuffer(128);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(128);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1400
+     * @tc.name testProvideDecoratorComponent
+     * @tc.desc 静态等价 simulated（原 @Provide 装饰器）：ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testProvideDecoratorComponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testProvideDecoratorComponent';
+        console.info(`${caseName} test start`);
+
+        const providedBuffer: ArrayBuffer = new ArrayBuffer(256);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(providedBuffer)).assertTrue();
+        expect(providedBuffer.byteLength).assertEqual(256);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1500
+     * @tc.name testConsumeDecoratorComponent
+     * @tc.desc 静态等价 simulated（原 @Consume 装饰器）：ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testConsumeDecoratorComponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testConsumeDecoratorComponent';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(64);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1600
+     * @tc.name testCustomMethodDecorator
+     * @tc.desc 静态等价 simulated（原自定义方法装饰器）：logMethod + createBufferForDecorator 创建 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testCustomMethodDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testCustomMethodDecorator';
+        console.info(`${caseName} test start`);
+
+        logMethod(createBufferForDecorator);
+
+        const ab: ArrayBuffer = createBufferForDecorator();
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(128);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1700
+     * @tc.name testCustomDecoratorWithParams
+     * @tc.desc 静态等价 simulated（原带参自定义装饰器）：bufferSize 驱动 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testCustomDecoratorWithParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testCustomDecoratorWithParams';
+        console.info(`${caseName} test start`);
+
+        const bufferSize: int = 256;
+
+        const ab: ArrayBuffer = new ArrayBuffer(bufferSize);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(256);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1800
+     * @tc.name testCustomClassDecorator
+     * @tc.desc 静态等价 simulated（原自定义类装饰器）：CustomDecoratedClass 返回 ArrayBuffer 的缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testCustomClassDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testCustomClassDecorator';
+        console.info(`${caseName} test start`);
+
+        const instance: CustomDecoratedClass = new CustomDecoratedClass();
+        const ab: ArrayBuffer = instance.getBuffer();
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(128);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_1900
+     * @tc.name testAccessorDecorator
+     * @tc.desc 静态等价 simulated（原访问器装饰器）：AccessorDecoratedClass.size 驱动 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testAccessorDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testAccessorDecorator';
+        console.info(`${caseName} test start`);
+
+        const instance: AccessorDecoratedClass = new AccessorDecoratedClass();
+        instance.size = 64;
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_2000
+     * @tc.name testMultipleDecoratorsStack
+     * @tc.desc 静态等价 simulated（原多装饰器叠加）：DecoratorBufferGetterSetter.size 驱动 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testMultipleDecoratorsStack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testMultipleDecoratorsStack';
+        console.info(`${caseName} test start`);
+
+        const instance: DecoratorBufferGetterSetter = new DecoratorBufferGetterSetter();
+        instance.size = 128;
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(128);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_2200
+     * @tc.name testStateWatchCombination
+     * @tc.desc 静态等价 simulated（原 @State + @Watch 组合）：watchCallback 更新 stateSize 驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testStateWatchCombination', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testStateWatchCombination';
+        console.info(`${caseName} test start`);
+
+        watchCallback(64);
+
+        const ab: ArrayBuffer = new ArrayBuffer(stateSize);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(64);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_2300
+     * @tc.name testDecoratorSequence
+     * @tc.desc 静态等价 simulated（原装饰器顺序）：ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testDecoratorSequence', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testDecoratorSequence';
+        console.info(`${caseName} test start`);
+
+        const ab: ArrayBuffer = new ArrayBuffer(128);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(128);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_2400
+     * @tc.name testNestedDecoratorClass
+     * @tc.desc 静态等价 simulated（原嵌套装饰器类）：DecoratorBufferSizeClass.size 驱动 ArrayBuffer 缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testNestedDecoratorClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testNestedDecoratorClass';
+        console.info(`${caseName} test start`);
+
+        const instance: DecoratorBufferSizeClass = new DecoratorBufferSizeClass();
+        instance.size = 256;
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.size);
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(256);
+
+        console.info(`${caseName} test end`);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ISSHAREDARRAYBUFFER_DECORATOR_2500
+     * @tc.name testGetterSetterDecorator
+     * @tc.desc 静态等价 simulated（原 getter/setter 装饰器）：DecoratorBufferGetterSetter.getBufferSize 驱动缓冲识别
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
+     */
+    it('testGetterSetterDecorator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const caseName = 'testGetterSetterDecorator';
+        console.info(`${caseName} test start`);
+
+        const instance: DecoratorBufferGetterSetter = new DecoratorBufferGetterSetter();
+        instance.size = 512;
+
+        expect(instance.size).assertEqual(512);
+
+        const ab: ArrayBuffer = new ArrayBuffer(instance.getBufferSize());
+        const type: util.types = new util.types();
+        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        expect(ab.byteLength).assertEqual(512);
 
         console.info(`${caseName} test end`);
       });
