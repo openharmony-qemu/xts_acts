@@ -38,18 +38,18 @@ export default class Utils {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: String) {
+  static getComponentRect(key: String): RectValue {
     let strJson: String = inspector.getInspectorByKey(key);
-    let obj: Record<String, undefined | null | Object> =
-      JSON.parse<Object>(strJson, Class.from<String>()) as Record<String, undefined | null | Object>;
+    let obj: Record<String, Object> =
+      JSON.parse<Object>(strJson, Class.from<String>()) as Record<String, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    Utils.rect_left = Number(rectInfo[0][0] ?? 0);
-    Utils.rect_top = Number(rectInfo[0][1] ?? 0);
-    Utils.rect_right = Number(rectInfo[1][0] ?? 0);
-    Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
+    Utils.rect_left = Number(rectInfo[0][0] );
+    Utils.rect_top = Number(rectInfo[0][1] );
+    Utils.rect_right = Number(rectInfo[1][0] );
+    Utils.rect_bottom = Number(rectInfo[1][1] );
     return Utils.rect_value = {
       left: Utils.rect_left,
       top: Utils.rect_top,
@@ -58,7 +58,7 @@ export default class Utils {
     }
   }
 
-  static sleep(time: Int) {
+  static sleep(time: Int): Promise<void> {
     return new Promise<String>((resolve: (value: String) => void) => {
       setTimeout(() => {
         resolve("ok")

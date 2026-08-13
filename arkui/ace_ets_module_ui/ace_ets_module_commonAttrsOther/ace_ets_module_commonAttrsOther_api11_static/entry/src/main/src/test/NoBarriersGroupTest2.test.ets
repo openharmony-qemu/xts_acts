@@ -50,7 +50,7 @@ let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 
-export default function noBarriersGroupTest() {
+export default function noBarriersGroupTest(): void {
   describe('noBarriersGroupTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("noBarriersGroupTest beforeAll start");

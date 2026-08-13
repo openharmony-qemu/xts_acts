@@ -45,7 +45,7 @@ let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function HoverJsunit5() {
+export default function HoverJsunit5(): void {
 
 
 
