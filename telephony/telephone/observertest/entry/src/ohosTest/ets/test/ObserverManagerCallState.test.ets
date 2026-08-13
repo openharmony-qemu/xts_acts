@@ -1018,7 +1018,7 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0700';
       console.log("************* Telephony_observer_on_cCallStateInfo_0700 Test start *************");
       try {
-        expect(call..CCALL_STATE_UNKNOWN === -1).assertTrue();
+        expect(call.CCallState.CCALL_STATE_UNKNOWN === -1).assertTrue();
         expect(call.CCallState.CCALL_STATE_ACTIVE === 0).assertTrue();
         expect(call.CCallState.CCALL_STATE_HOLDING === 1).assertTrue();
         expect(call.CCallState.CCALL_STATE_DIALING === 2).assertTrue();
