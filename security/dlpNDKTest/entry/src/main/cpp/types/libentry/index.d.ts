@@ -14,7 +14,7 @@
  */
 export const osGetDlpPermissionInfoA: () => number;
 export const osGetOriginalFileNameA: () => number;
-export const osIsInSandboxA: () => boolean;
+export const osIsInSandboxA: () => number;
 export const osSetSandboxAppConfigA: () => number;
 export const osGetSandboxAppConfigA: () => number;
 export const osCleanSandboxAppConfigA: () => number;
