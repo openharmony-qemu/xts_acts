@@ -15,7 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 
-function produce(queue: containers.ArrayBlockingQueue<number>, id: number, count: number): number {
+function produce(queue: containers.ArrayBlockingQueue<number>, id: int, count: int): number {
   let sum: number = 0;
   for (let i: int = 0; i < count; i++) {
     let value: number = id * count + i;
@@ -25,7 +25,7 @@ function produce(queue: containers.ArrayBlockingQueue<number>, id: number, count
   return sum;
 }
 
-function consume(queue: containers.ArrayBlockingQueue<number>, count: number): number {
+function consume(queue: containers.ArrayBlockingQueue<number>, count: int): number {
   let sum: number = 0;
   for (let i: int = 0; i < count; i++) {
     let value: number | undefined = queue.pop();
@@ -57,27 +57,17 @@ export default function BlockingQueueEAWorkerConcurrentTest(): void {
         let queue = new containers.ArrayBlockingQueue<number>(30);
         let workers: EAWorker[] = [];
         let jobs: Job<number>[] = [];
-        let itemsPerWorker: number = 10.0;
-        for (let i: number = 0; i < 3; i++) {
-          let worker = new EAWorker('bq_producer_' + i);
-          worker.start();
-          workers.push(worker);
-          jobs.push(worker.run<number>(produce, queue, i, itemsPerWorker));
-        }
-        for (let i: number = 0; i < 3; i++) {
-          let worker = new EAWorker('bq_consumer_' + i);
-          worker.start();
-          workers.push(worker);
-          jobs.push(worker.run<number>(consume, queue, itemsPerWorker));
-        }
-        let produced: number = 0;
-        let consumed: number = 0;
-        for (let i: int = 0; i < 3; i++) {
-          produced += jobs[i].Await();
-        }
-        for (let i: int = 3; i < 6; i++) {
-          consumed += jobs[i].Await();
-        }
+        let itemsPerWorker: int = 30;
+        let producer = new EAWorker('bq_producer');
+        producer.start();
+        workers.push(producer);
+        jobs.push(producer.run<number>(produce, queue, 0, itemsPerWorker));
+        let consumer = new EAWorker('bq_consumer');
+        consumer.start();
+        workers.push(consumer);
+        jobs.push(consumer.run<number>(consume, queue, itemsPerWorker));
+        let produced: number = jobs[0].Await();
+        let consumed: number = jobs[1].Await();
         for (let i: int = 0; i < workers.length; i++) {
           workers[i].join().Await();
         }

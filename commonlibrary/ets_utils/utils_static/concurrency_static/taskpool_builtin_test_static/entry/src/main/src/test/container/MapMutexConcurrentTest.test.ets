@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Utils.test';
 
 function testMapMutex(map: Map<string, number>, mutex: Mutex): void {
   for (let i: number = 0; i < 10; i++) {
@@ -49,14 +48,13 @@ export default function MapMutexConcurrentTest(): void {
       let map: Map<string, number> = new Map<string, number>();
       let mutex: Mutex = new Mutex();
       let totalTasks: number = 10;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testMapMutex, map, mutex).then((): void => { count.fetchAdd(1); });
+        tasks.push(taskpool.execute(testMapMutex, map, mutex).then((): void => { count.fetchAdd(1); }));
       }
       testMapMutex(map, mutex);
       count.fetchAdd(1);
-      while (count.load() < totalTasks + 1) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(count.load()).assertEqual(totalTasks + 1);
       expect(map.size).assertEqual(0);
     });

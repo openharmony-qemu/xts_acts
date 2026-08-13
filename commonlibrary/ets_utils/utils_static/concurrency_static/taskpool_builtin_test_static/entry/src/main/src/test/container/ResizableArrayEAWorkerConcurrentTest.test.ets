@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Utils.test';
 
 function testResizableArrayEAWorker(arr: Array<number>, count: AtomicInt): void {
   for (let i: number = 0; i < 10; i++) {
@@ -43,10 +42,12 @@ export default function ResizableArrayEAWorkerConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testResizableArrayEAWorkerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testResizableArrayEAWorkerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let count: AtomicInt = new AtomicInt(0);
       let workers: EAWorker[] = [];
-      let totalWorkers: int = 10;
+      // Two workers exercise concurrent isolated execution without exhausting
+      // the process-wide EAWorker coroutine budget during full-suite stress.
+      let totalWorkers: int = 2;
       for (let i: int = 0; i < totalWorkers; i++) {
         let w: EAWorker = new EAWorker('eaWorker_' + i);
         w.start();
@@ -55,13 +56,10 @@ export default function ResizableArrayEAWorkerConcurrentTest(): void {
       for (let i: int = 0; i < totalWorkers; i++) {
         workers[i].run<void>(testResizableArrayEAWorker, new Array<number>(), count);
       }
-      while (count.load() < totalWorkers) {
-        await Utils.msSleep(100);
-      }
-      expect(count.load()).assertEqual(totalWorkers);
       for (let i: int = 0; i < workers.length; i++) {
         workers[i].join().Await();
       }
+      expect(count.load()).assertEqual(totalWorkers);
     });
   });
 }

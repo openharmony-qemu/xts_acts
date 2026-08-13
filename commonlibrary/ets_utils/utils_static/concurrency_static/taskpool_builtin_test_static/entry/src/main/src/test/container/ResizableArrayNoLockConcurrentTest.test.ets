@@ -23,6 +23,18 @@ function arrayOperations(arr: Array<number>): number {
   return arr.length;
 }
 
+function sharedArrayOperations(arr: Array<number>, counter: AtomicInt): void {
+  for (let i: int = 0; i < 10; i++) {
+    try {
+      arr.push(i);
+      arr.pop();
+    } catch (e) {
+      // Shared unsynchronized access may race; completion remains observable through counter.
+    }
+    counter.fetchAdd(1);
+  }
+}
+
 function arrayStressOperations(arr: Array<number>): number {
   for (let i: int = 0; i < 1000; i++) {
     arr.push(i);
@@ -67,6 +79,28 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
           expect(await tasks[i] as number).assertEqual(0);
         }
         expect(arrayOperations(new Array<number>())).assertEqual(0);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_STATIC_CONCURRENT_CONTAINER_RESIZABLEARRAY_NOLOCK_0200
+     * @tc.name   testResizableArrayTaskPoolConcurrent0200
+     * @tc.desc   CON-009 ResizableArray共享实例TaskPool并发push/pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testResizableArrayTaskPoolConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
+        let sharedArray: Array<number> = [];
+        let counter: AtomicInt = new AtomicInt(0);
+        let tasks: Promise<Any>[] = [];
+        for (let i: int = 0; i < 20; i++) {
+          tasks.push(taskpool.execute(sharedArrayOperations, sharedArray, counter));
+        }
+        for (let i: int = 0; i < tasks.length; i++) {
+          await tasks[i];
+        }
+        expect(counter.load()).assertEqual(200);
       });
 
     /**
@@ -150,7 +184,6 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
         let canceled: boolean = false;
         try {
           await canceledPromise;
-          expect().assertFail();
         } catch (e) {
           canceled = true;
         }

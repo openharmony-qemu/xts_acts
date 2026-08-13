@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Utils.test';
 
 function createNumberArray(): Array<number> {
   return new Array<number>();
@@ -47,14 +46,13 @@ export default function ResizableArrayWorkerLocalConcurrentTest(): void {
       let count: AtomicInt = new AtomicInt(0);
       let wl: WorkerLocal<Array<number>> = new WorkerLocal<Array<number>>(createNumberArray);
       let totalTasks: number = 10;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testResizableArrayWorkerLocal, wl).then((): void => { count.fetchAdd(1); });
+        tasks.push(taskpool.execute(testResizableArrayWorkerLocal, wl).then((): void => { count.fetchAdd(1); }));
       }
       testResizableArrayWorkerLocal(wl);
       count.fetchAdd(1);
-      while (count.load() < totalTasks + 1) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(count.load()).assertEqual(totalTasks + 1);
     });
   });

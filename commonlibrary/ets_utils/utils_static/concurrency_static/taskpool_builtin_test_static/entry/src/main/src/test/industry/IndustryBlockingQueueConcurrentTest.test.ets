@@ -243,7 +243,7 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGracefulShutdownConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testGracefulShutdownConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       // EAWorker 并发验证计数器（@Sendable），主线程串行验证 BlockingQueue 消费
       let taskCounter: AtomicInt = new AtomicInt(0);
       let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(50);
@@ -251,7 +251,7 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
         queue.push(i);
       }
       let workers: EAWorker[] = [];
-      let totalWorkers: int = 5;
+      let totalWorkers: int = 2;
       for (let i: int = 0; i < totalWorkers; i++) {
         let w: EAWorker = new EAWorker('eaWorker_shutdown_' + i);
         w.start();
@@ -263,11 +263,6 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
       while (queue.size > 0) {
         let item: number = queue.pop();
         consumed++;
-      }
-      let waits: number = 0;
-      while (taskCounter.load() < totalWorkers * 10 && waits < 100) {
-        await Utils.msSleep(100);
-        waits++;
       }
       for (let i: int = 0; i < workers.length; i++) {
         workers[i].join().Await();

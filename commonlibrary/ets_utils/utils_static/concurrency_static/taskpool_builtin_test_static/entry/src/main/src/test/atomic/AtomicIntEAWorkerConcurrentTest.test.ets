@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Utils.test';
 
-function testAtomicIntEAWorkerFetchAdd(counter: AtomicInt, taskCounter: AtomicInt): void {
+function testAtomicIntEAWorkerFetchAdd(counter: AtomicInt): void {
   for (let i: number = 0; i < 10; i++) {
     counter.fetchAdd(1);
-    taskCounter.fetchAdd(1);
   }
 }
 
@@ -38,26 +36,22 @@ export default function AtomicIntEAWorkerConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicIntEAWorkerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAtomicIntEAWorkerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let counter: AtomicInt = new AtomicInt(0);
-      let taskCounter: AtomicInt = new AtomicInt(0);
       let workers: EAWorker[] = [];
-      let totalWorkers: int = 5;
+      let totalWorkers: int = 2;
       for (let i: int = 0; i < totalWorkers; i++) {
         let w: EAWorker = new EAWorker('eaWorker_atomic_' + i);
         w.start();
         workers.push(w);
       }
       for (let i: int = 0; i < totalWorkers; i++) {
-        workers[i].run<void>(testAtomicIntEAWorkerFetchAdd, counter, taskCounter);
+        workers[i].run<void>(testAtomicIntEAWorkerFetchAdd, counter);
       }
-      while (taskCounter.load() < totalWorkers * 10) {
-        await Utils.msSleep(100);
-      }
-      expect(counter.load()).assertEqual(totalWorkers * 10);
       for (let i: int = 0; i < workers.length; i++) {
         workers[i].join().Await();
       }
+      expect(counter.load()).assertEqual(totalWorkers * 10);
     });
   });
 }

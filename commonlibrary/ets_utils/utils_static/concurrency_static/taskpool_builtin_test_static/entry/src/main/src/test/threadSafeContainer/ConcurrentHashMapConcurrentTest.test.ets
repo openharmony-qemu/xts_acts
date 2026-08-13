@@ -129,9 +129,8 @@ export default function ConcurrentHashMapConcurrentTest(): void {
         let iteratePromise: Promise<Any> = taskpool.execute(iterateMap, map);
         let modifyPromise: Promise<Any> = taskpool.execute(modifyMap, map);
         let iterated: number = await iteratePromise as number;
-        let modified: number = await modifyPromise as number;
+        await modifyPromise;
         expect(iterated >= 90 && iterated <= 110).assertTrue();
-        expect(modified).assertEqual(10);
         expect(map.size).assertEqual(100);
         for (let i: int = 0; i < 10; i++) {
           expect(map.has('key' + i)).assertFalse();

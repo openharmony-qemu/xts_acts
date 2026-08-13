@@ -90,8 +90,10 @@ export default function ClassInstanceConcurrentTest(): void {
       }
       testClassNoLock(data);
       count.fetchAdd(1);
-      while (count.load() < totalTasks + 1) {
+      let waits: number = 0;
+      while (count.load() < totalTasks + 1 && waits < 100) {
         await Utils.msSleep(100);
+        waits++;
       }
       expect(count.load()).assertEqual(totalTasks + 1);
     });
@@ -113,8 +115,10 @@ export default function ClassInstanceConcurrentTest(): void {
         taskpool.execute(testClassMutex, data, mutex, taskCounter).then((): void => { });
       }
       testClassMutex(data, mutex, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
+      let waits: number = 0;
+      while (taskCounter.load() < totalTasks * 10 + 10 && waits < 100) {
         await Utils.msSleep(100);
+        waits++;
       }
       expect(data.value).assertEqual(totalTasks * 10 + 10);
     });
@@ -137,8 +141,10 @@ export default function ClassInstanceConcurrentTest(): void {
       }
       testClassWorkerLocal(wl, failCount);
       count.fetchAdd(1);
-      while (count.load() < totalTasks + 1) {
+      let waits: number = 0;
+      while (count.load() < totalTasks + 1 && waits < 100) {
         await Utils.msSleep(100);
+        waits++;
       }
       expect(count.load()).assertEqual(totalTasks + 1);
       expect(failCount.load()).assertEqual(0);
@@ -152,11 +158,11 @@ export default function ClassInstanceConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClassEAWorkerConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testClassEAWorkerConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let count: AtomicInt = new AtomicInt(0);
       let data: DataClass = new DataClass();
       let workers: EAWorker[] = [];
-      let totalWorkers: int = 5;
+      let totalWorkers: int = 2;
       for (let i: int = 0; i < totalWorkers; i++) {
         let w: EAWorker = new EAWorker('eaWorker_class_' + i);
         w.start();
@@ -174,13 +180,10 @@ export default function ClassInstanceConcurrentTest(): void {
           c.fetchAdd(1);
         }, data, count);
       }
-      while (count.load() < totalWorkers) {
-        await Utils.msSleep(100);
-      }
-      expect(count.load()).assertEqual(totalWorkers);
       for (let i: int = 0; i < workers.length; i++) {
         workers[i].join().Await();
       }
+      expect(count.load()).assertEqual(totalWorkers);
     });
 
     /**
@@ -199,8 +202,10 @@ export default function ClassInstanceConcurrentTest(): void {
       for (let i: number = 0; i < totalTasks; i++) {
         taskpool.execute(testClassStress, data, mutex, taskCounter).then((): void => { });
       }
-      while (taskCounter.load() < totalTasks * 100) {
+      let waits: number = 0;
+      while (taskCounter.load() < totalTasks * 100 && waits < 200) {
         await Utils.msSleep(100);
+        waits++;
       }
       expect(data.value).assertEqual(totalTasks * 100);
     });

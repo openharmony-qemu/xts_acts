@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import Utils from '../Utils.test';
 
 function testAtomicIntFetchAdd(counter: AtomicInt, taskCounter: AtomicInt): void {
   for (let i: number = 0; i < 10; i++) {
@@ -77,13 +76,12 @@ export default function AtomicIntConcurrentTest(): void {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 10;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicIntFetchAdd, counter, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testAtomicIntFetchAdd, counter, taskCounter));
       }
       testAtomicIntFetchAdd(counter, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(counter.load()).assertEqual(totalTasks * 10 + 10);
     });
 
@@ -99,13 +97,12 @@ export default function AtomicIntConcurrentTest(): void {
       let counter: AtomicInt = new AtomicInt(110);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 10;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicIntFetchSub, counter, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testAtomicIntFetchSub, counter, taskCounter));
       }
       testAtomicIntFetchSub(counter, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(counter.load()).assertEqual(0);
     });
 
@@ -121,15 +118,14 @@ export default function AtomicIntConcurrentTest(): void {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 5;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicIntStore, counter, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testAtomicIntStore, counter, taskCounter));
       }
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicIntLoad, counter, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testAtomicIntLoad, counter, taskCounter));
       }
-      while (taskCounter.load() < totalTasks * 10 * 2) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(taskCounter.load()).assertEqual(totalTasks * 10 * 2);
     });
 
@@ -145,12 +141,11 @@ export default function AtomicIntConcurrentTest(): void {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 100;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicIntStress, counter, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testAtomicIntStress, counter, taskCounter));
       }
-      while (taskCounter.load() < totalTasks * 100) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(counter.load()).assertEqual(totalTasks * 100);
     });
 
@@ -166,13 +161,12 @@ export default function AtomicIntConcurrentTest(): void {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 10;
+      let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicIntBigLoop, counter, taskCounter).then((): void => { });
+        tasks.push(taskpool.execute(testAtomicIntBigLoop, counter, taskCounter));
       }
       testAtomicIntBigLoop(counter, taskCounter);
-      while (taskCounter.load() < totalTasks * 10000 + 10000) {
-        await Utils.msSleep(100);
-      }
+      await Promise.all(tasks);
       expect(counter.load()).assertEqual(totalTasks * 10000 + 10000);
     });
   });
