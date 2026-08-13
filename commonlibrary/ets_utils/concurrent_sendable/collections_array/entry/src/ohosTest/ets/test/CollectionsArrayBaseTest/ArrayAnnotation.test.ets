@@ -254,5 +254,6 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
+  });
 
 }
