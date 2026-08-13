@@ -83,8 +83,8 @@ export default function naviDestinationModifierUndefined() {
      */
     it('naviDestinationModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationModifierUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let pageOne = await driver.findComponent(ON.id('pageOne'));
       await (pageOne?.click() as Promise<void>);
       console.info("[naviDestinationModifierUndefined_static_0001] click pageOne");
@@ -117,8 +117,8 @@ export default function naviDestinationModifierUndefined() {
      */
     it('naviDestinationModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationModifierUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('NaviDestinationM_1');
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('title');
       console.info("[naviDestinationModifierUndefined_static_0001] title: " + res);
@@ -152,8 +152,8 @@ export default function naviDestinationModifierUndefined() {
      */
     it('naviDestinationModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationModifierUndefined_static_0003] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let textNode = await driver.findComponent(ON.text('toolbar'));
       expect(textNode).assertNull();
 
@@ -181,8 +181,8 @@ export default function naviDestinationModifierUndefined() {
      */
     it('naviDestinationModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationModifierUndefined_static_0003] START');
-      let driver: Driver = Driver.create();;
-
+      let driver: Driver = await Driver.create();;
+      await CommonFunc.sleep(1000);
       let back = await driver.findComponent(ON.id('NaviDestinationM_back1'));
       await (back?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

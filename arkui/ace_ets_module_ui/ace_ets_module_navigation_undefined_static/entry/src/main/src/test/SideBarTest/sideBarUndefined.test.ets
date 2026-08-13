@@ -83,7 +83,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_1');
@@ -119,7 +119,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_2');
@@ -160,7 +160,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0003] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_1');
@@ -197,7 +197,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0004] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_1');
@@ -234,7 +234,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0005] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_1');
@@ -271,7 +271,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0006] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_1');
@@ -308,7 +308,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0007] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_1');
@@ -345,7 +345,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0008] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('SideBar_3');
@@ -383,7 +383,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0009] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 初始状态：isUndefined9=true，sideBarWidth=undefined，使用默认值 240.000000
@@ -426,7 +426,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0010] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 初始状态：isUndefined10=true，showSideBar=undefined，使用默认值 true
@@ -469,7 +469,7 @@ export default function sideBarUndefined() {
      */
     it('sideBarUndefined_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarUndefined_static_0011] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 初始状态：isUndefined11=true，sideBarPosition=undefined，使用默认值 SideBarPosition.Start

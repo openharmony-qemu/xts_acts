@@ -83,8 +83,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
       console.info("[sideBarModifierUndefined_static_0001] autoHide: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoHide'));
@@ -118,8 +118,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_2');
       console.info("[sideBarModifierUndefined_static_0002] Initial state");
 
@@ -157,8 +157,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0003] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
       console.info("[sideBarModifierUndefined_static_0003] maxSideBarWidth: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('maxSideBarWidth'));
@@ -192,8 +192,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0004] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
       console.info("[sideBarModifierUndefined_static_0004] minContentWidth: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('minContentWidth'));
@@ -227,8 +227,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0005] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
       console.info("[sideBarModifierUndefined_static_0005] minSideBarWidth: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSideBarWidth'));
@@ -262,8 +262,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0006] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000); 
       let strJson = inspector.getInspectorByKey('SideBarM_1');
       console.info("[sideBarModifierUndefined_static_0006] showControlButton: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('showControlButton'));
@@ -297,8 +297,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0007] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
       console.info("[sideBarModifierUndefined_static_0007] divider: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('divider'));
@@ -332,8 +332,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0008] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_3');
       console.info("[sideBarModifierUndefined_static_0008] divider: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('divider'));
@@ -367,7 +367,7 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0009] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 初始状态：isUndefined9=true，sideBarWidth=undefined，使用默认值 240.000000
@@ -410,7 +410,7 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0010] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 初始状态：isUndefined10=true，showSideBar=undefined，使用默认值 true
@@ -453,7 +453,7 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0011] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 初始状态：isUndefined11=true，sideBarPosition=undefined，使用默认值 SideBarPosition.Start

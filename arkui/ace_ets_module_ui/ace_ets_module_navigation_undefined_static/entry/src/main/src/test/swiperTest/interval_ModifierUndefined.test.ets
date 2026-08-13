@@ -74,7 +74,8 @@ export default function interval_ModifierUndefinedTest() {
       console.info('[Initial] interval value: ' + intervalValue);
       expect(intervalValue).assertEqual("1000");
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

@@ -74,7 +74,8 @@ export default function nestedScroll_ModifierUndefinedTest() {
       console.info('[Initial] nestedScroll value: ' + nestedScrollValue);
       expect(nestedScrollValue).assertEqual("SwiperNestedScrollMode.SELF_FIRST");
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

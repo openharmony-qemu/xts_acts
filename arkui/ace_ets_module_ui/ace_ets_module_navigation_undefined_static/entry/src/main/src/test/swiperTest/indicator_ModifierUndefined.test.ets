@@ -76,7 +76,8 @@ export default function indicator_ModifierUndefinedTest() {
       expect(indicatorValue).assertEqual("false");
 
       // 第一次点击：isUndefined 从 false 变为 true，indicator 变为 undefined
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

@@ -61,7 +61,8 @@ export default function getParamByNameUndefined() {
     afterEach(async () => {
       console.info("getParamByNameUndefined afterEach start");
       try {
-        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let driver: Driver = await Driver.create();
         // 尝试返回到初始页面，清理可能残留的页面跳转状态
         await driver.pressBack();
         await CommonFunc.sleep(500);
@@ -79,7 +80,8 @@ export default function getParamByNameUndefined() {
      */
     it('getParamByNameUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[getParamByNameUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 步骤1: 直接点击 getParamByName，此时 PageHome1 还未被 push

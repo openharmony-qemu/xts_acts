@@ -61,7 +61,8 @@ export default function getParamByNameModifierUndefined() {
     afterEach(async () => {
       console.info("getParamByNameModifierUndefined afterEach start");
       try {
-        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let driver: Driver = await Driver.create();
         // 尝试返回到初始页面，清理可能残留的页面跳转状态
         await driver.pressBack();
         await CommonFunc.sleep(500);
@@ -79,7 +80,8 @@ export default function getParamByNameModifierUndefined() {
      */
     it('getParamByNameModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[getParamByNameModifierUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 步骤1: 验证初始状态 - modifier.isUndefined = false

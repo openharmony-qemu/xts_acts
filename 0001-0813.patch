@@ -1,0 +1,1936 @@
+From fe6316c3276ed02ca4ff2de1a1af70a4bf2d0e5a Mon Sep 17 00:00:00 2001
+From: wuzihua <wuzihua3@h-partners.com>
+Date: Thu, 13 Aug 2026 21:33:27 +0800
+Subject: [PATCH] =?UTF-8?q?=E9=80=82=E9=85=8D=E5=A4=9A=E8=AE=BE=E5=A4=8708?=
+ =?UTF-8?q?13?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: wuzihua <wuzihua3@h-partners.com>
+
+AI[0%] Human Fixed[0%] Human[100%] AI Adopted[0%]
+---
+ .../Navigation/navDestinationUndefined.ets    |  5 +++
+ .../indicatorComponentUndefined.test.ets      | 20 +++++-----
+ ...stomNavContentTransitionUndefined.test.ets | 13 +++++--
+ ...ntentTransition_ModifierUndefined.test.ets | 15 +++++---
+ .../getParamByNameUndefined.test.ets          |  6 ++-
+ .../getParamByName_ModifierUndefined.test.ets |  6 ++-
+ .../hideToolBarUndefined.test.ets             |  2 +-
+ .../NavigationTest/modeUndefined.test.ets     |  6 +--
+ .../navDestinationUndefinedTest.test.ets      | 26 +++++++++----
+ .../naviDestinationModifierUndefined.test.ets | 16 ++++----
+ .../naviDestinationUndefined.test.ets         | 16 ++++----
+ .../navigationModifierUndefined.test.ets      | 13 +++----
+ .../navigationUndefined.test.ets              | 22 +++++------
+ .../onNavigationModeChangeUndefined.test.ets  |  2 +-
+ ...ationModeChange_ModifierUndefined.test.ets |  2 +-
+ .../onTitleModeChangeUndefined.test.ets       |  2 +-
+ .../test/NavigationTest/titleMode.test.ets    |  4 +-
+ .../sideBarModifierUndefined.test.ets         | 38 +++++++++----------
+ .../SideBarTest/sideBarUndefined.test.ets     | 22 +++++------
+ .../swiperTest/autoPlayUndefined.test.ets     |  3 +-
+ .../autoPlayWithOptionsUndefined.test.ets     |  3 +-
+ ...PlayWithOptions_ModifierUndefined.test.ets |  3 +-
+ .../autoPlay_ModifierUndefined.test.ets       |  3 +-
+ .../swiperTest/cachedCountUndefined.test.ets  |  3 +-
+ .../cachedCount_ModifierUndefined.test.ets    |  3 +-
+ .../test/swiperTest/curveUndefined.test.ets   |  3 +-
+ .../curve_ModifierUndefined.test.ets          |  3 +-
+ .../customContentTransitionUndefined.test.ets |  7 ++--
+ ...ntentTransition_ModifierUndefined.test.ets |  7 ++--
+ .../swiperTest/disableSwipeUndefined.test.ets |  3 +-
+ .../disableSwipe_ModifierUndefined.test.ets   |  3 +-
+ .../swiperTest/displayArrowUndefined.test.ets |  3 +-
+ .../displayArrow_ModifierUndefined.test.ets   |  3 +-
+ .../swiperTest/displayCountUndefined.test.ets |  3 +-
+ .../displayCount_ModifierUndefined.test.ets   |  3 +-
+ .../swiperTest/displayModeUndefined.test.ets  |  3 +-
+ .../displayMode_ModifierUndefined.test.ets    |  3 +-
+ .../swiperTest/durationUndefined.test.ets     |  3 +-
+ .../duration_ModifierUndefined.test.ets       |  3 +-
+ .../swiperTest/effectModeUndefined.test.ets   |  3 +-
+ .../effectMode_ModifierUndefined.test.ets     |  3 +-
+ .../test/swiperTest/indexUndefined.test.ets   |  3 +-
+ .../index_ModifierUndefined.test.ets          |  3 +-
+ .../indicatorInteractiveUndefined.test.ets    |  3 +-
+ ...atorInteractive_ModifierUndefined.test.ets |  3 +-
+ .../swiperTest/indicatorUndefined.test.ets    |  3 +-
+ .../indicator_ModifierUndefined.test.ets      |  3 +-
+ .../swiperTest/intervalUndefined.test.ets     |  3 +-
+ .../interval_ModifierUndefined.test.ets       |  3 +-
+ .../swiperTest/itemSpaceUndefined.test.ets    |  3 +-
+ .../itemSpace_ModifierUndefined.test.ets      |  3 +-
+ .../test/swiperTest/loopUndefined.test.ets    |  3 +-
+ .../loop_ModifierUndefined.test.ets           |  3 +-
+ .../swiperTest/nestedScrollUndefined.test.ets |  3 +-
+ .../nestedScroll_ModifierUndefined.test.ets   |  3 +-
+ .../swiperTest/nextMarginUndefined.test.ets   |  3 +-
+ .../nextMargin_ModifierUndefined.test.ets     |  3 +-
+ .../onAnimationEndUndefined.test.ets          |  7 ++--
+ .../onAnimationEnd_ModifierUndefined.test.ets |  8 ++--
+ .../onAnimationStartUndefined.test.ets        |  7 ++--
+ ...nAnimationStart_ModifierUndefined.test.ets |  7 ++--
+ .../swiperTest/onChangeUndefined.test.ets     |  3 +-
+ .../onChange_ModifierUndefined.test.ets       |  3 +-
+ .../onContentDidScrollUndefined.test.ets      |  3 +-
+ ...ontentDidScroll_ModifierUndefined.test.ets |  3 +-
+ .../onContentWillScrollUndefined.test.ets     |  7 ++--
+ ...ntentWillScroll_ModifierUndefined.test.ets |  7 ++--
+ .../onGestureSwipeUndefined.test.ets          |  7 ++--
+ .../onGestureSwipe_ModifierUndefined.test.ets |  7 ++--
+ .../swiperTest/onSelectedUndefined.test.ets   |  3 +-
+ .../onSelected_ModifierUndefined.test.ets     |  3 +-
+ .../swiperTest/onUnselectedUndefined.test.ets |  3 +-
+ .../onUnselected_ModifierUndefined.test.ets   |  3 +-
+ .../swiperTest/prevMarginUndefined.test.ets   |  3 +-
+ .../prevMargin_ModifierUndefined.test.ets     |  3 +-
+ .../swiperTest/verticalUndefined.test.ets     |  3 +-
+ .../vertical_ModifierUndefined.test.ets       |  3 +-
+ 77 files changed, 268 insertions(+), 183 deletions(-)
+
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/ets/MainAbility/pages/Navigation/navDestinationUndefined.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/ets/MainAbility/pages/Navigation/navDestinationUndefined.ets
+index 19fd2d98308..bcbb4ef70ea 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/ets/MainAbility/pages/Navigation/navDestinationUndefined.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/ets/MainAbility/pages/Navigation/navDestinationUndefined.ets
+@@ -231,6 +231,11 @@ struct Index {
+         .onClick((e: ClickEvent) => {
+           this.stack.pop()
+         })
++        Button("back") // ← 新增
++        .id('backButton') // ← 新增
++        .onClick((e: ClickEvent) => { // ← 新增
++        this.stack.pop() // ← 新增
++      })
+       Button('isSystemTransition: ' + this.isSystemTransition)
+         .id('NavDestination_systemTransition')
+         .onClick((e: ClickEvent) => {
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/IndicatorComponentTest/indicatorComponentUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/IndicatorComponentTest/indicatorComponentUndefined.test.ets
+index e8851c1511c..5de95a4558b 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/IndicatorComponentTest/indicatorComponentUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/IndicatorComponentTest/indicatorComponentUndefined.test.ets
+@@ -82,8 +82,8 @@ export default function indicatorComponentUndefined() {
+      */
+     it('indicatorComponentUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[indicatorComponentUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
+       console.info("[indicatorComponentUndefined_static_0001] initialIndex: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('initialIndex'));
+@@ -119,8 +119,8 @@ export default function indicatorComponentUndefined() {
+      */
+     it('indicatorComponentUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[indicatorComponentUndefined_static_0002] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
+       console.info("[indicatorComponentUndefined_static_0002] loop: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop'));
+@@ -155,8 +155,8 @@ export default function indicatorComponentUndefined() {
+      */
+     it('indicatorComponentUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[indicatorComponentUndefined_static_0003] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
+       console.info("[indicatorComponentUndefined_static_0003] count: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('count'));
+@@ -191,8 +191,8 @@ export default function indicatorComponentUndefined() {
+      */
+     it('indicatorComponentUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[indicatorComponentUndefined_static_0004] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('IndicatorComponent_1');
+       console.info("[indicatorComponentUndefined_static_0004] vertical: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical'));
+@@ -227,8 +227,8 @@ export default function indicatorComponentUndefined() {
+      */
+     it('indicatorComponentUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[indicatorComponentUndefined_static_0005] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let nextBtn = await driver.findComponent(ON.id('IndicatorComponent_next'));
+       await (nextBtn?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransitionUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransitionUndefined.test.ets
+index a35ec0e98d6..954d7079bd9 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransitionUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransitionUndefined.test.ets
+@@ -68,7 +68,7 @@ export default function customNavContentTransitionUndefined() {
+      */
+     it('customNavContentTransitionUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[customNavContentTransitionUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 验证初始状态：def = true（非 undefined）
+@@ -94,8 +94,10 @@ export default function customNavContentTransitionUndefined() {
+       expect(testText2).assertEqual("0");
+ 
+       // 点击返回按钮返回到初始页面
+-      await driver.pressBack();
+-      await CommonFunc.sleep(1000);
++      let backText = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
++      if (backText) {
++      await backText.click();
++      await CommonFunc.sleep(1000)
+ 
+       // 点击切换按钮，切换为 undefined
+       if (toggleBtn) {
+@@ -125,8 +127,11 @@ export default function customNavContentTransitionUndefined() {
+       expect(testText3).assertEqual("-1");
+ 
+       // 点击返回
+-      await driver.pressBack();
++      let backText2 = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
++      if (backText2) {
++      await backText2.click();
+       await CommonFunc.sleep(1000);
++      }
+ 
+       console.info('[customNavContentTransitionUndefined_static_0001] END');
+       done();
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransition_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransition_ModifierUndefined.test.ets
+index 46fe32a9043..bfa600d5b65 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransition_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/customNavContentTransition_ModifierUndefined.test.ets
+@@ -68,9 +68,9 @@ export default function customNavContentTransitionModifierUndefined() {
+      */
+     it('customNavContentTransitionModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[customNavContentTransitionModifierUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+-
++     
+       // 验证初始状态：isUndefined = false（非 undefined）
+       let toggleBtn = await driver.findComponent(ON.id('toggleButton'));
+       if (toggleBtn) {
+@@ -94,9 +94,11 @@ export default function customNavContentTransitionModifierUndefined() {
+       expect(testText2).assertEqual("0");
+ 
+       // 点击返回按钮返回到初始页面
+-      await driver.pressBack();
++      let backText = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
++      if (backText) {
++      await backText.click();
+       await CommonFunc.sleep(1000);
+-
++      }
+       // 点击切换按钮，切换为 undefined
+       if (toggleBtn) {
+         await toggleBtn.click();
+@@ -125,8 +127,11 @@ export default function customNavContentTransitionModifierUndefined() {
+       expect(testText3).assertEqual("-1");
+ 
+       // 点击返回
+-      await driver.pressBack();
++      let backText2 = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
++      if (backText2) {
++      await backText2.click();
+       await CommonFunc.sleep(1000);
++      }
+ 
+       console.info('[customNavContentTransitionModifierUndefined_static_0001] END');
+       done();
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByNameUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByNameUndefined.test.ets
+index 3a34ecbe0ca..411acbf15b9 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByNameUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByNameUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function getParamByNameUndefined() {
+     afterEach(async () => {
+       console.info("getParamByNameUndefined afterEach start");
+       try {
+-        let driver: Driver = Driver.create();
++        await CommonFunc.sleep(1000);
++        let driver: Driver = await Driver.create();
+         // 尝试返回到初始页面，清理可能残留的页面跳转状态
+         await driver.pressBack();
+         await CommonFunc.sleep(500);
+@@ -78,7 +79,8 @@ export default function getParamByNameUndefined() {
+      */
+     it('getParamByNameUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[getParamByNameUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
++      await CommonFunc.sleep(1000);
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 步骤1: 直接点击 getParamByName，此时 PageHome1 还未被 push
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByName_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByName_ModifierUndefined.test.ets
+index d10e1b78893..f26253dbb8a 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByName_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/getParamByName_ModifierUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function getParamByNameModifierUndefined() {
+     afterEach(async () => {
+       console.info("getParamByNameModifierUndefined afterEach start");
+       try {
+-        let driver: Driver = Driver.create();
++        await CommonFunc.sleep(1000);
++        let driver: Driver = await Driver.create();
+         // 尝试返回到初始页面，清理可能残留的页面跳转状态
+         await driver.pressBack();
+         await CommonFunc.sleep(500);
+@@ -78,7 +79,8 @@ export default function getParamByNameModifierUndefined() {
+      */
+     it('getParamByNameModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[getParamByNameModifierUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
++      await CommonFunc.sleep(1000);
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 步骤1: 验证初始状态 - modifier.isUndefined = false
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/hideToolBarUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/hideToolBarUndefined.test.ets
+index 98fd3b062a3..34a1eeeba89 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/hideToolBarUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/hideToolBarUndefined.test.ets
+@@ -69,7 +69,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('HideToolBarUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[HideToolBarUndefinedTest_static_0001] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create()
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation1');
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/modeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/modeUndefined.test.ets
+index e39be214428..4bfaac72bcc 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/modeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/modeUndefined.test.ets
+@@ -69,7 +69,7 @@ export default function ModeUndefinedTest() {
+      */
+     it('ModeUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[ModeUndefinedTest_static_0001] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation3');
+       await CommonFunc.sleep(1000);
+@@ -106,7 +106,7 @@ export default function ModeUndefinedTest() {
+      */
+     it('ModeUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[ModeUndefinedTest_static_0002] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation3');
+       await CommonFunc.sleep(1000);
+@@ -143,7 +143,7 @@ export default function ModeUndefinedTest() {
+      */
+     it('ModeUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[ModeUndefinedTest_static_0003] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation3');
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navDestinationUndefinedTest.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navDestinationUndefinedTest.test.ets
+index 5a4cca01881..8f427dfb1cb 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navDestinationUndefinedTest.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navDestinationUndefinedTest.test.ets
+@@ -80,7 +80,8 @@ export default function NavDestinationUndefinedTest() {
+      */
+     it('NavDestinationUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavDestinationUndefinedTest_static_0100] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
+       await (Btn_page2?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+@@ -115,7 +116,8 @@ export default function NavDestinationUndefinedTest() {
+      */
+     it('NavDestinationUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavDestinationUndefinedTest_static_0200] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
+       await (BtnPop?.click() as Promise<void>);
+       await CommonFunc.sleep(2000);
+@@ -152,7 +154,7 @@ export default function NavDestinationUndefinedTest() {
+     */
+     it('NavDestinationUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavDestinationUndefinedTest_static_0300] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create()
+       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
+       await (Btn_page2?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+@@ -187,7 +189,7 @@ export default function NavDestinationUndefinedTest() {
+      */
+     it('NavDestinationUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavDestinationUndefinedTest_static_0400] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create()
+       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
+       await (BtnPop?.click() as Promise<void>);
+       await CommonFunc.sleep(2000);
+@@ -224,20 +226,26 @@ export default function NavDestinationUndefinedTest() {
+      */
+     it('NavDestinationUndefinedTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavDestinationUndefinedTest_static_0500] START');
+-      let driver: Driver = Driver.create()
++      await CommonFunc.sleep(500);
++      let driver: Driver = await Driver.create()
++      await CommonFunc.sleep(500);
+       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
++      await CommonFunc.sleep(1000);
+       let changeBtn = await driver.findComponent(ON.id('NavDestination_isBackAndReady'));
+       await (changeBtn?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+ 
+       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
+       await (Btn_page2?.click() as Promise<void>);
++      console.info('[NavDestinationUndefinedTest_static_0500] POP2');
+       await CommonFunc.sleep(1000);
+       await driver.triggerKey(2);
+       await CommonFunc.sleep(1000);
+       BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
+-      await (BtnPop?.click() as Promise<void>);
+       await CommonFunc.sleep(2000);
++      console.info('[NavDestinationUndefinedTest_static_0500] POP3');
++      await (BtnPop?.click() as Promise<void>);
++      await CommonFunc.sleep(3000);
+       let text = await driver.findComponent(ON.id('Navigation_text'));
+       expect(await (text?.getText() as Promise<String>)).assertEqual('appear:3 disappear:3');
+ 
+@@ -245,8 +253,10 @@ export default function NavDestinationUndefinedTest() {
+       await CommonFunc.sleep(1000);
+       await (Btn_page2?.click() as Promise<void>);
+       await CommonFunc.sleep(2000);
+-      await driver.triggerKey(2);
+-      await CommonFunc.sleep(1000);
++      let backButton = await driver.findComponent(ON.id('backButton'));
++      await (backButton?.click() as Promise<void>);
++      await CommonFunc.sleep(2000);
++      text = await driver.findComponent(ON.id('Navigation_text'));
+       expect(await (text?.getText() as Promise<String>)).assertEqual('appear:3 disappear:3');
+       console.info('[NavDestinationUndefinedTest_static_0500] END');
+       done();
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationModifierUndefined.test.ets
+index 52f8f994c7a..87373f771f1 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationModifierUndefined.test.ets
+@@ -82,8 +82,8 @@ export default function naviDestinationModifierUndefined() {
+      */
+     it('naviDestinationModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationModifierUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let pageOne = await driver.findComponent(ON.id('pageOne'));
+       await (pageOne?.click() as Promise<void>);
+       console.info("[naviDestinationModifierUndefined_static_0001] click pageOne");
+@@ -116,8 +116,8 @@ export default function naviDestinationModifierUndefined() {
+      */
+     it('naviDestinationModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationModifierUndefined_static_0002] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('NaviDestinationM_1');
+       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('title');
+       console.info("[naviDestinationModifierUndefined_static_0001] title: " + res);
+@@ -151,8 +151,8 @@ export default function naviDestinationModifierUndefined() {
+      */
+     it('naviDestinationModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationModifierUndefined_static_0003] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let textNode = await driver.findComponent(ON.text('toolbar'));
+       expect(textNode).assertNull();
+ 
+@@ -180,8 +180,8 @@ export default function naviDestinationModifierUndefined() {
+      */
+     it('naviDestinationModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationModifierUndefined_static_0003] START');
+-      let driver: Driver = Driver.create();;
+-
++      let driver: Driver = await Driver.create();;
++      await CommonFunc.sleep(1000);
+       let back = await driver.findComponent(ON.id('NaviDestinationM_back1'));
+       await (back?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationUndefined.test.ets
+index 7eec424a72d..3383d89792a 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/naviDestinationUndefined.test.ets
+@@ -82,8 +82,8 @@ export default function naviDestinationUndefined() {
+      */
+     it('naviDestinationUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let pageOne = await driver.findComponent(ON.id('pageOne'));
+       await (pageOne?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+@@ -114,8 +114,8 @@ export default function naviDestinationUndefined() {
+      */
+     it('naviDestinationUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationUndefined_static_0002] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('NaviDestination_1');
+       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('title');
+       console.info("[naviDestinationUndefined_static_0001] title: " + res);
+@@ -149,8 +149,8 @@ export default function naviDestinationUndefined() {
+      */
+     it('naviDestinationUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationUndefined_static_0003] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let textNode = await driver.findComponent(ON.text('toolbar'));
+       expect(textNode).assertNull();
+ 
+@@ -178,8 +178,8 @@ export default function naviDestinationUndefined() {
+      */
+     it('naviDestinationUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[naviDestinationUndefined_static_0003] START');
+-      let driver: Driver = Driver.create();;
+-
++      let driver: Driver = await Driver.create();;
++      await CommonFunc.sleep(1000);
+       let back = await driver.findComponent(ON.id('NaviDestination_back1'));
+       await (back?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationModifierUndefined.test.ets
+index a13c46d6648..d54cac9ea91 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationModifierUndefined.test.ets
+@@ -82,8 +82,8 @@ export default function navigationModifierUndefined() {
+      */
+     it('navigationModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[navigationModifierUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('NavigationM_1');
+       console.info("[navigationModifierUndefined_static_0001] titleMode: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('titleMode'));
+@@ -119,8 +119,8 @@ export default function navigationModifierUndefined() {
+      */
+     it('navigationModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[navigationModifierUndefined_static_0002] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let textNode = await driver.findComponent(ON.text('toolbar'));
+       expect(textNode).assertNull();
+ 
+@@ -148,9 +148,8 @@ export default function navigationModifierUndefined() {
+      */
+     it('navigationModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[navigationModifierUndefined_static_0003] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+-
+       // 初始状态：isUndefined3=true，minContentWidth=undefined，使用默认值 360
+       let strJson = inspector.getInspectorByKey('NavigationM_1');
+       await CommonFunc.sleep(1000);
+@@ -197,7 +196,7 @@ export default function navigationModifierUndefined() {
+      */
+     it('navigationModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[navigationModifierUndefined_static_0004] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isUndefined4=true，navBarWidthRange=undefined，使用默认值 [240, 432]
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationUndefined.test.ets
+index e66f4982481..b963cc9a019 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/navigationUndefined.test.ets
+@@ -69,7 +69,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0001] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation');
+       await CommonFunc.sleep(1000);
+@@ -105,7 +105,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0002] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation');
+       await CommonFunc.sleep(1000);
+@@ -141,7 +141,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0003] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation');
+       await CommonFunc.sleep(1000);
+@@ -186,7 +186,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0004] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation');
+       await CommonFunc.sleep(1000);
+@@ -225,7 +225,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0005] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('NavBarStateButton');
+       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
+@@ -263,7 +263,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0006] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation');
+       await CommonFunc.sleep(1000);
+@@ -299,7 +299,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0007] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation');
+       await CommonFunc.sleep(1000);
+@@ -342,7 +342,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0008] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('MyNavigation');
+       await CommonFunc.sleep(1000);
+@@ -385,7 +385,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0009] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let changeBtn1 = await driver.findComponent(ON.id('hideNavBar'));
+       await (changeBtn1?.click() as Promise<void>);
+@@ -423,7 +423,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0010] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isMinContentWidth=false，minContentWidth=150
+@@ -472,7 +472,7 @@ export default function NavigationUndefinedTest() {
+      */
+     it('NavigationUndefinedTest_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[NavigationUndefinedTest_static_0011] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isNavBarWidthRange=false，navBarWidthRange=["10vp", "500vp"]
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChangeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChangeUndefined.test.ets
+index 39e17e140f5..26cc6d14b67 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChangeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChangeUndefined.test.ets
+@@ -68,7 +68,7 @@ export default function onNavigationModeChangeUndefined() {
+      */
+     it('onNavigationModeChangeUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[onNavigationModeChangeUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 点击切换 mode 按钮，应该触发 onNavigationModeChange 回调，changeCount 增加
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChange_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChange_ModifierUndefined.test.ets
+index 91277a435ea..0678beb62b6 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChange_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onNavigationModeChange_ModifierUndefined.test.ets
+@@ -68,7 +68,7 @@ export default function onNavigationModeChangeModifierUndefined() {
+      */
+     it('onNavigationModeChangeModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[onNavigationModeChangeModifierUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 点击切换 mode 按钮，应该触发 onNavigationModeChange 回调，changeCount 增加
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onTitleModeChangeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onTitleModeChangeUndefined.test.ets
+index 2791fbacdf1..bcbf9128f5e 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onTitleModeChangeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/onTitleModeChangeUndefined.test.ets
+@@ -69,7 +69,7 @@ export default function OnTitleModeChangeUndefinedTest() {
+      */
+     it('OnTitleModeChangeUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[OnTitleModeChangeUndefinedTest_static_0001] START');
+-      let driver: Driver = Driver.create()
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+       let changeBtn1 = await driver.findComponent(ON.id('flingBottom'));
+       await (changeBtn1?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/titleMode.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/titleMode.test.ets
+index 0ad4939f8c2..8afe5a21a12 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/titleMode.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/NavigationTest/titleMode.test.ets
+@@ -82,7 +82,7 @@ export default function titleMode() {
+      */
+     it('titleMode_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[titleMode_static_0001] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+ 
+       let strJson = inspector.getInspectorByKey('Navigation_1');
+       console.info("[titleMode_static_0001] titleMode: " +
+@@ -119,7 +119,7 @@ export default function titleMode() {
+      */
+     it('toolbar_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[toolbar_static_0002] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+ 
+       let textNode = await driver.findComponent(ON.text('toolbar'));
+       expect(textNode).assertNull();
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarModifierUndefined.test.ets
+index e8528ee04b6..70e93efa007 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarModifierUndefined.test.ets
+@@ -82,8 +82,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('SideBarM_1');
+       console.info("[sideBarModifierUndefined_static_0001] autoHide: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoHide'));
+@@ -117,8 +117,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0002] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('SideBarM_2');
+       console.info("[sideBarModifierUndefined_static_0002] Initial state");
+ 
+@@ -156,8 +156,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0003] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('SideBarM_1');
+       console.info("[sideBarModifierUndefined_static_0003] maxSideBarWidth: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('maxSideBarWidth'));
+@@ -191,8 +191,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0004] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('SideBarM_1');
+       console.info("[sideBarModifierUndefined_static_0004] minContentWidth: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('minContentWidth'));
+@@ -226,8 +226,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0005] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('SideBarM_1');
+       console.info("[sideBarModifierUndefined_static_0005] minSideBarWidth: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSideBarWidth'));
+@@ -261,8 +261,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0006] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000); 
+       let strJson = inspector.getInspectorByKey('SideBarM_1');
+       console.info("[sideBarModifierUndefined_static_0006] showControlButton: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('showControlButton'));
+@@ -296,8 +296,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0007] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('SideBarM_1');
+       console.info("[sideBarModifierUndefined_static_0007] divider: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('divider'));
+@@ -331,8 +331,8 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0008] START');
+-      let driver: Driver = Driver.create();
+-
++      let driver: Driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let strJson = inspector.getInspectorByKey('SideBarM_3');
+       console.info("[sideBarModifierUndefined_static_0008] divider: " +
+       JSON.parseJsonElement(strJson).getElement('$attrs').getString('divider'));
+@@ -366,7 +366,7 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0009] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isUndefined9=true，sideBarWidth=undefined，使用默认值 240.000000
+@@ -409,7 +409,7 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0010] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isUndefined10=true，showSideBar=undefined，使用默认值 true
+@@ -452,7 +452,7 @@ export default function sideBarModifierUndefined() {
+      */
+     it('sideBarModifierUndefined_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarModifierUndefined_static_0011] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isUndefined11=true，sideBarPosition=undefined，使用默认值 SideBarPosition.Start
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarUndefined.test.ets
+index c43a3a767ca..02011abcc8c 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/SideBarTest/sideBarUndefined.test.ets
+@@ -82,7 +82,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0001] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_1');
+@@ -118,7 +118,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0002] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_2');
+@@ -159,7 +159,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0003] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_1');
+@@ -196,7 +196,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0004] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_1');
+@@ -233,7 +233,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0005] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_1');
+@@ -270,7 +270,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0006] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_1');
+@@ -307,7 +307,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0007] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_1');
+@@ -344,7 +344,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0008] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       let strJson = inspector.getInspectorByKey('SideBar_3');
+@@ -382,7 +382,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0009] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isUndefined9=true，sideBarWidth=undefined，使用默认值 240.000000
+@@ -425,7 +425,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0010] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isUndefined10=true，showSideBar=undefined，使用默认值 true
+@@ -468,7 +468,7 @@ export default function sideBarUndefined() {
+      */
+     it('sideBarUndefined_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
+       console.info('[sideBarUndefined_static_0011] START');
+-      let driver: Driver = Driver.create();
++      let driver: Driver = await Driver.create();
+       await CommonFunc.sleep(1000);
+ 
+       // 初始状态：isUndefined11=true，sideBarPosition=undefined，使用默认值 SideBarPosition.Start
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayUndefined.test.ets
+index 593b70d5029..18f9d04fa56 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function autoPlayUndefinedTest() {
+       console.info('Test component obj.autoPlay is: ' + obj.getElement('$attrs').getString('autoPlay'));
+       expect(obj.getElement('$attrs').getString('autoPlay')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptionsUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptionsUndefined.test.ets
+index 6867b89b968..42f90467622 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptionsUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptionsUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function autoPlayWithOptionsUndefinedTest() {
+       console.info('Test component obj.autoPlayWithOptions is: ' + obj.getElement('$attrs').getString('stopWhenTouched'));
+       expect(obj.getElement('$attrs').getString('stopWhenTouched')).assertEqual('false');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptions_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptions_ModifierUndefined.test.ets
+index eebe3d0060d..b83d9f678ac 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptions_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlayWithOptions_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function autoPlayWithOptions_modifierUndefinedTest() {
+       console.info('Test component obj.autoPlayWithOptions is: ' + obj.getElement('$attrs').getString('stopWhenTouched'));
+       expect(obj.getElement('$attrs').getString('stopWhenTouched')).assertEqual('false');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlay_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlay_ModifierUndefined.test.ets
+index 697d6e0f82b..3629a9d8c8a 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlay_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/autoPlay_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function autoPlay_modifierUndefinedTest() {
+       console.info('Test component obj.autoPlay is: ' + obj.getElement('$attrs').getString('autoPlay'));
+       expect(obj.getElement('$attrs').getString('autoPlay')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCountUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCountUndefined.test.ets
+index 27b773acf8a..fcf80ff97bd 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCountUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCountUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function cachedCountUndefinedTest() {
+       console.info('Test component obj.cachedCount is: ' + obj.getElement('$attrs').getDouble('cachedCount'));
+       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCount_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCount_ModifierUndefined.test.ets
+index 04f8a808d3f..8f2fc53486d 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCount_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/cachedCount_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function cachedCount_modifierUndefinedTest() {
+       console.info('Test component obj.cachedCount is: ' + obj.getElement('$attrs').getDouble('cachedCount'));
+       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curveUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curveUndefined.test.ets
+index e66ad0e7683..f9364bdcd19 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curveUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curveUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function curveUndefinedTest() {
+       console.info('Test component obj.curve is: ' + obj.getElement('$attrs').getString('curve'));
+       expect(obj.getElement('$attrs').getString('curve')).assertEqual('Curves.Linear');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curve_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curve_ModifierUndefined.test.ets
+index b4c06b44cfd..76d5ba03819 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curve_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/curve_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function curve_modifierUndefinedTest() {
+       console.info('Test component obj.curve is: ' + obj.getElement('$attrs').getString('curve'));
+       expect(obj.getElement('$attrs').getString('curve')).assertEqual('Curves.Linear');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransitionUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransitionUndefined.test.ets
+index 1a10b8bc6b3..0419f6a84cc 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransitionUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransitionUndefined.test.ets
+@@ -60,13 +60,14 @@ export default function customContentTransitionStartUndefinedTest() {
+       console.info('customContentTransitionUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //滑动触发回调
+       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
+       let bounds = await swiperItem.getBounds();
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -88,7 +89,7 @@ export default function customContentTransitionStartUndefinedTest() {
+       await CommonFunc.sleep(500);
+ 
+       //点击跳转索引不触发回调
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransition_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransition_ModifierUndefined.test.ets
+index 39cb9528f94..bc46c4fee59 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransition_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/customContentTransition_ModifierUndefined.test.ets
+@@ -59,13 +59,14 @@ export default function customContentTransition_ModifierStartUndefinedTest() {
+     it('customContentTransition_ModifierUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+       console.info('customContentTransition_ModifierUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //滑动触发回调
+       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
+       let bounds = await swiperItem.getBounds();
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -86,7 +87,7 @@ export default function customContentTransition_ModifierStartUndefinedTest() {
+       await CommonFunc.sleep(500);
+ 
+       //点击跳转索引不触发回调
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipeUndefined.test.ets
+index 42e209e9bc2..ec02d1dab7c 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipeUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function disableSwipeUndefinedTest() {
+       console.info('Test component obj.disableSwipe is: ' + obj.getElement('$attrs').getString('disableSwipe'));
+       expect(obj.getElement('$attrs').getString('disableSwipe')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipe_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipe_ModifierUndefined.test.ets
+index 4bc3a812fc2..69bcf4a005d 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipe_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/disableSwipe_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function disableSwipe_modifierUndefinedTest() {
+       console.info('Test component obj.disableSwipe is: ' + obj.getElement('$attrs').getString('disableSwipe'));
+       expect(obj.getElement('$attrs').getString('disableSwipe')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrowUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrowUndefined.test.ets
+index f62e79796cc..9987d759fe2 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrowUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrowUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function displayArrowUndefinedTest() {
+       console.info('Test component obj.displayArrow is: ' + obj.getElement('$attrs').getString('displayArrow'));
+       expect(obj.getElement('$attrs').getString('displayArrow')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrow_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrow_ModifierUndefined.test.ets
+index ed6ebe7ad5a..974c09814ce 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrow_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayArrow_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function displayArrow_modifierUndefinedTest() {
+       console.info('Test component obj.displayArrow is: ' + obj.getElement('$attrs').getString('displayArrow'));
+       expect(obj.getElement('$attrs').getString('displayArrow')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCountUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCountUndefined.test.ets
+index a6f3f668f59..b668d8259d9 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCountUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCountUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function displayCountUndefinedTest() {
+       console.info('Test component obj.displayCount is: ' + obj.getElement('$attrs').getDouble('displayCount'));
+       expect(obj.getElement('$attrs').getDouble('displayCount')).assertEqual(2);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCount_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCount_ModifierUndefined.test.ets
+index 4bfd49e0bb3..68c2e34d3ff 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCount_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayCount_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function displayCount_modifierUndefinedTest() {
+       console.info('Test component obj.displayCount is: ' + obj.getElement('$attrs').getDouble('displayCount'));
+       expect(obj.getElement('$attrs').getDouble('displayCount')).assertEqual(2);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayModeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayModeUndefined.test.ets
+index 74e29fe1154..e1dc241d95f 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayModeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayModeUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function displayModeUndefinedTest() {
+       console.info('Test component obj.displayMode is: ' + obj.getElement('$attrs').getString('displayMode'));
+       expect(obj.getElement('$attrs').getString('displayMode')).assertEqual('SwiperDisplayMode.Stretch');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayMode_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayMode_ModifierUndefined.test.ets
+index 29cf744538f..115dd731d31 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayMode_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/displayMode_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function displayMode_modifierUndefinedTest() {
+       console.info('Test component obj.displayMode is: ' + obj.getElement('$attrs').getString('displayMode'));
+       expect(obj.getElement('$attrs').getString('displayMode')).assertEqual('SwiperDisplayMode.Stretch');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/durationUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/durationUndefined.test.ets
+index 43f3dc74f48..f2b9b399ab8 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/durationUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/durationUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function durationUndefinedTest() {
+       console.info('Test component obj.duration is: ' + obj.getElement('$attrs').getString('duration'));
+       expect(obj.getElement('$attrs').getString('duration')).assertEqual('1000');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/duration_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/duration_ModifierUndefined.test.ets
+index 2a032d8732c..eaedcb38e71 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/duration_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/duration_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function duration_modifierUndefinedTest() {
+       console.info('Test component obj.duration is: ' + obj.getElement('$attrs').getString('duration'));
+       expect(obj.getElement('$attrs').getString('duration')).assertEqual('1000');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectModeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectModeUndefined.test.ets
+index ab5743e3a04..ed9f2cdf7ba 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectModeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectModeUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function effectModeUndefinedTest() {
+       console.info('Test component obj.effectMode is: ' + obj.getElement('$attrs').getString('effectMode'));
+       expect(obj.getElement('$attrs').getString('effectMode')).assertEqual('EdgeEffect.Fade');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectMode_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectMode_ModifierUndefined.test.ets
+index dc70ab56755..35226883f6a 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectMode_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/effectMode_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function effectMode_modifierUndefinedTest() {
+       console.info('Test component obj.effectMode is: ' + obj.getElement('$attrs').getString('effectMode'));
+       expect(obj.getElement('$attrs').getString('effectMode')).assertEqual('EdgeEffect.Fade');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indexUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indexUndefined.test.ets
+index 751340e3987..b8bf28b5cc8 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indexUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indexUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function indexUndefinedTest() {
+       console.info('Test component obj.index is: ' + obj.getElement('$attrs').getString('index'));
+       expect(obj.getElement('$attrs').getString('index')).assertEqual('2');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/index_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/index_ModifierUndefined.test.ets
+index 4861fd8b8fe..583a3e43118 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/index_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/index_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function index_modifierUndefinedTest() {
+       console.info('Test component obj.index is: ' + obj.getElement('$attrs').getString('index'));
+       expect(obj.getElement('$attrs').getString('index')).assertEqual('2');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractiveUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractiveUndefined.test.ets
+index 8a09820ad64..0547382606d 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractiveUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractiveUndefined.test.ets
+@@ -69,7 +69,8 @@ export default function indicatorInteractiveUndefinedTest() {
+ 
+       expect(initialTextContent).assertEqual("false");
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractive_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractive_ModifierUndefined.test.ets
+index 7dd50c96d31..c97931e5f30 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractive_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorInteractive_ModifierUndefined.test.ets
+@@ -74,7 +74,8 @@ export default function indicatorInteractive_ModifierUndefinedTest() {
+ 
+       expect(initialTextContent).assertEqual("false");
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorUndefined.test.ets
+index f6bedba8501..f75480bb8bf 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicatorUndefined.test.ets
+@@ -68,7 +68,8 @@ export default function indicatorUndefinedTest() {
+       expect(obj.getElement('$attrs').getString('indicator')).assertEqual("false");
+ 
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicator_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicator_ModifierUndefined.test.ets
+index 5330ab05fbf..4ff7553cd4a 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicator_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/indicator_ModifierUndefined.test.ets
+@@ -75,7 +75,8 @@ export default function indicator_ModifierUndefinedTest() {
+       expect(indicatorValue).assertEqual("false");
+ 
+       // 第一次点击：isUndefined 从 false 变为 true，indicator 变为 undefined
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_change?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/intervalUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/intervalUndefined.test.ets
+index b00d70c2f0d..270a5bf7329 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/intervalUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/intervalUndefined.test.ets
+@@ -68,7 +68,8 @@ export default function intervalUndefinedTest() {
+       expect(obj.getElement('$attrs').getString('interval')).assertEqual('1000');
+ 
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/interval_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/interval_ModifierUndefined.test.ets
+index b6effd2c47d..64f3d997264 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/interval_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/interval_ModifierUndefined.test.ets
+@@ -73,7 +73,8 @@ export default function interval_ModifierUndefinedTest() {
+       console.info('[Initial] interval value: ' + intervalValue);
+       expect(intervalValue).assertEqual("1000");
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_change?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpaceUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpaceUndefined.test.ets
+index 5b1220d4e38..1fbd71d1b2f 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpaceUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpaceUndefined.test.ets
+@@ -68,7 +68,8 @@ export default function itemSpaceUndefinedTest() {
+       expect(obj.getElement('$attrs').getString('itemSpace')).assertEqual('30.00vp');
+ 
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpace_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpace_ModifierUndefined.test.ets
+index 557ec5ee36c..f926e7a1c7f 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpace_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/itemSpace_ModifierUndefined.test.ets
+@@ -73,7 +73,8 @@ export default function itemSpace_ModifierUndefinedTest() {
+       console.info('[Initial] itemSpace value: ' + itemSpaceValue);
+       expect(itemSpaceValue).assertEqual("30.00vp");
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_change?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loopUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loopUndefined.test.ets
+index 3dfaa39915e..a9e11f3ef8d 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loopUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loopUndefined.test.ets
+@@ -68,7 +68,8 @@ export default function loopUndefinedTest() {
+       expect(obj.getElement('$attrs').getString('loop')).assertEqual("false");
+ 
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loop_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loop_ModifierUndefined.test.ets
+index 2ee92660397..fe6794d8b0b 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loop_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/loop_ModifierUndefined.test.ets
+@@ -73,7 +73,8 @@ export default function loop_ModifierUndefinedTest() {
+       console.info('[Initial] loop value: ' + loopValue);
+       expect(loopValue).assertEqual("false");
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_change?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScrollUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScrollUndefined.test.ets
+index f03ef0f330f..7413aaee74a 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScrollUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScrollUndefined.test.ets
+@@ -68,7 +68,8 @@ export default function nestedScrollUndefinedTest() {
+       expect(obj.getElement('$attrs').getString('nestedScroll')).assertEqual("SwiperNestedScrollMode.SELF_FIRST");
+ 
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScroll_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScroll_ModifierUndefined.test.ets
+index 2c6ff0652c6..1a280b50112 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScroll_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nestedScroll_ModifierUndefined.test.ets
+@@ -73,7 +73,8 @@ export default function nestedScroll_ModifierUndefinedTest() {
+       console.info('[Initial] nestedScroll value: ' + nestedScrollValue);
+       expect(nestedScrollValue).assertEqual("SwiperNestedScrollMode.SELF_FIRST");
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_change?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMarginUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMarginUndefined.test.ets
+index f55e014476f..1a4f2450b57 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMarginUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMarginUndefined.test.ets
+@@ -73,7 +73,8 @@ export default function nextMarginUndefinedTest() {
+       expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('50.00vp');
+ 
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMargin_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMargin_ModifierUndefined.test.ets
+index 66a5c3cbbf5..350d7917cac 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMargin_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/nextMargin_ModifierUndefined.test.ets
+@@ -73,7 +73,8 @@ export default function nextMargin_ModifierUndefinedTest() {
+       console.info('[Initial] nextMargin value: ' + nextMarginValue);
+       expect(nextMarginValue).assertEqual("50.00vp");
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_change?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEndUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEndUndefined.test.ets
+index 2bd1ae538cf..ca055d8e493 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEndUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEndUndefined.test.ets
+@@ -67,7 +67,8 @@ export default function onAnimationEndUndefinedTest() {
+       expect(initialContent).assertEqual("0");
+ 
+       console.info('Swiping to trigger onAnimationEnd callback...');
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+ 
+       let swiperItem = await driver.findComponent(ON.text('1')) as Component;
+       let bounds = await swiperItem.getBounds();
+@@ -75,7 +76,7 @@ export default function onAnimationEndUndefinedTest() {
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -107,7 +108,7 @@ export default function onAnimationEndUndefinedTest() {
+       let width2 = bounds2.right - bounds2.left;
+       let height2 = bounds2.bottom - bounds2.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds2.left + width2 - 50).toInt(),
+         (bounds2.top + height2 / 2).toInt(),
+         (bounds2.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEnd_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEnd_ModifierUndefined.test.ets
+index c2b86e71448..7d794ca01ca 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEnd_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationEnd_ModifierUndefined.test.ets
+@@ -73,15 +73,15 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
+       expect(initialContent).assertEqual("0");
+ 
+       console.info('Swiping to trigger onAnimationEnd callback...');
+-      let driver = Driver.create();
+-
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let swiperItem = await driver.findComponent(ON.text('1')) as Component;
+       let bounds = await swiperItem.getBounds();
+ 
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -113,7 +113,7 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
+       let width2 = bounds2.right - bounds2.left;
+       let height2 = bounds2.bottom - bounds2.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds2.left + width2 - 50).toInt(),
+         (bounds2.top + height2 / 2).toInt(),
+         (bounds2.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStartUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStartUndefined.test.ets
+index 096a290a25b..bc19740fd21 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStartUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStartUndefined.test.ets
+@@ -67,7 +67,8 @@ export default function onAnimationStartUndefinedTest() {
+       expect(initialContent).assertEqual("0");
+ 
+       console.info('Swiping to trigger onAnimationStart callback...');
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+ 
+       let swiperItem = await driver.findComponent(ON.text('1')) as Component;
+       let bounds = await swiperItem.getBounds();
+@@ -75,7 +76,7 @@ export default function onAnimationStartUndefinedTest() {
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -113,7 +114,7 @@ export default function onAnimationStartUndefinedTest() {
+       let width2 = bounds2.right - bounds2.left;
+       let height2 = bounds2.bottom - bounds2.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds2.left + width2 - 50).toInt(),
+         (bounds2.top + height2 / 2).toInt(),
+         (bounds2.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStart_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStart_ModifierUndefined.test.ets
+index d66dbd891d1..d625a0d6c61 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStart_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onAnimationStart_ModifierUndefined.test.ets
+@@ -72,7 +72,8 @@ export default function onAnimationStart_ModifierUndefinedTest() {
+       expect(initialContent).assertEqual("0");
+ 
+       console.info('Swiping to trigger onAnimationStart callback...');
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+ 
+       let swiperItem = await driver.findComponent(ON.text('1')) as Component;
+       let bounds = await swiperItem.getBounds();
+@@ -80,7 +81,7 @@ export default function onAnimationStart_ModifierUndefinedTest() {
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -118,7 +119,7 @@ export default function onAnimationStart_ModifierUndefinedTest() {
+       let width2 = bounds2.right - bounds2.left;
+       let height2 = bounds2.bottom - bounds2.top;
+ 
+-      driver.swipe(
++      await driver.swipe(
+         (bounds2.left + width2 - 50).toInt(),
+         (bounds2.top + height2 / 2).toInt(),
+         (bounds2.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChangeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChangeUndefined.test.ets
+index 8f7959c6cac..1d7606b4292 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChangeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChangeUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onChangeStartUndefinedTest() {
+       console.info('onChangeUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChange_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChange_ModifierUndefined.test.ets
+index 922a0d74bd4..ab5437f9928 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChange_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onChange_ModifierUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onChange_ModifierStartUndefinedTest() {
+       console.info('onChange_ModifierUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2Modifier')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScrollUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScrollUndefined.test.ets
+index 16ca88c2811..8db2046b159 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScrollUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScrollUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onContentDidScrollStartUndefinedTest() {
+       console.info('onContentDidScrollUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScroll_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScroll_ModifierUndefined.test.ets
+index efd498480bc..75dc8ab20cd 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScroll_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentDidScroll_ModifierUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onContentDidScroll_ModifierStartUndefinedTest() {
+       console.info('onContentDidScroll_ModifierUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2Modifier')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScrollUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScrollUndefined.test.ets
+index fc92fd006ea..3ee3563137f 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScrollUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScrollUndefined.test.ets
+@@ -60,13 +60,14 @@ export default function onContentWillScrollStartUndefinedTest() {
+       console.info('onContentWillScrollUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //滑动触发回调
+       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
+       let bounds = await swiperItem.getBounds();
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -88,7 +89,7 @@ export default function onContentWillScrollStartUndefinedTest() {
+       await CommonFunc.sleep(500);
+ 
+       //点击跳转索引不触发回调
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScroll_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScroll_ModifierUndefined.test.ets
+index 355156fefbe..7661d5d1fe7 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScroll_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onContentWillScroll_ModifierUndefined.test.ets
+@@ -60,13 +60,14 @@ export default function onContentWillScroll_ModifierStartUndefinedTest() {
+       console.info('onContentWillScroll_ModifierUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //滑动触发回调
+       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
+       let bounds = await swiperItem.getBounds();
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -88,7 +89,7 @@ export default function onContentWillScroll_ModifierStartUndefinedTest() {
+       await CommonFunc.sleep(500);
+ 
+       //点击跳转索引不触发回调
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipeUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipeUndefined.test.ets
+index ddc71ddefad..7a5a6337e5a 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipeUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipeUndefined.test.ets
+@@ -60,13 +60,14 @@ export default function onGestureSwipeStartUndefinedTest() {
+       console.info('onGestureSwipeUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //滑动触发回调
+       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
+       let bounds = await swiperItem.getBounds();
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -88,7 +89,7 @@ export default function onGestureSwipeStartUndefinedTest() {
+       await CommonFunc.sleep(500);
+ 
+       //点击跳转索引不触发回调
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipe_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipe_ModifierUndefined.test.ets
+index b62d84b094d..f6f381e2785 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipe_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onGestureSwipe_ModifierUndefined.test.ets
+@@ -60,13 +60,14 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
+       console.info('onGestureSwipe_ModifierUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //滑动触发回调
+       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
+       let bounds = await swiperItem.getBounds();
+       let width = bounds.right - bounds.left;
+       let height = bounds.bottom - bounds.top;
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+@@ -88,7 +89,7 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
+       await CommonFunc.sleep(500);
+ 
+       //点击跳转索引不触发回调
+-      driver.swipe(
++      await driver.swipe(
+         (bounds.left + width - 50).toInt(),
+         (bounds.top + height / 2).toInt(),
+         (bounds.left + 50).toInt(),
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelectedUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelectedUndefined.test.ets
+index 955a6e41ceb..013d66e0be7 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelectedUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelectedUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onSelectedStartUndefinedTest() {
+       console.info('onSelectedUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelected_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelected_ModifierUndefined.test.ets
+index 72355f4b4b8..bf7716c999d 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelected_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onSelected_ModifierUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onSelected_ModifierStartUndefinedTest() {
+       console.info('onSelected_ModifierUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2Modifier')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselectedUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselectedUndefined.test.ets
+index 2590d5b2081..92f11d892d8 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselectedUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselectedUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onUnselectedStartUndefinedTest() {
+       console.info('onUnselectedUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselected_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselected_ModifierUndefined.test.ets
+index 791a74e9798..5fae4396d38 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselected_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/onUnselected_ModifierUndefined.test.ets
+@@ -60,7 +60,8 @@ export default function onUnselected_ModifierStartUndefinedTest() {
+       console.info('onUnselected_ModifierUndefinedTest_0100 START');
+       await CommonFunc.sleep(500);
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       //点击跳转索引触发回调
+       let goBtn = await driver.findComponent(ON.id('go2Modifier')) as Component;
+       await (goBtn?.click() as Promise<void>);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMarginUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMarginUndefined.test.ets
+index f75d2e42031..f172463814c 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMarginUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMarginUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function prevMarginUndefinedTest() {
+       console.info('Test component obj.prevMargin is: ' + obj.getElement('$attrs').getString('prevMargin'));
+       expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('35.00vp');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMargin_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMargin_ModifierUndefined.test.ets
+index 6939afe8f8c..f47bbc4ce99 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMargin_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/prevMargin_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function prevMargin_modifierUndefinedTest() {
+       console.info('Test component obj.prevMargin is: ' + obj.getElement('$attrs').getString('prevMargin'));
+       expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('35.00vp');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/verticalUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/verticalUndefined.test.ets
+index d5367da34b3..0ae136dc575 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/verticalUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/verticalUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function verticalUndefinedTest() {
+       console.info('Test component obj.vertical is: ' + obj.getElement('$attrs').getString('vertical'));
+       expect(obj.getElement('$attrs').getString('vertical')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+diff --git a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/vertical_ModifierUndefined.test.ets b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/vertical_ModifierUndefined.test.ets
+index b75924bbddc..4ae19056ea7 100644
+--- a/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/vertical_ModifierUndefined.test.ets
++++ b/arkui/ace_ets_module_ui/ace_ets_module_navigation_undefined_static/entry/src/main/src/test/swiperTest/vertical_ModifierUndefined.test.ets
+@@ -66,7 +66,8 @@ export default function vertical_modifierUndefinedTest() {
+       console.info('Test component obj.vertical is: ' + obj.getElement('$attrs').getString('vertical'));
+       expect(obj.getElement('$attrs').getString('vertical')).assertEqual('true');
+ 
+-      let driver = Driver.create();
++      let driver = await Driver.create();
++      await CommonFunc.sleep(1000);
+       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+       await (btn_true?.click() as Promise<void>);
+       await CommonFunc.sleep(1000);
+-- 
+2.49.0.windows.1
+

@@ -83,8 +83,8 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('NavigationM_1');
       console.info("[navigationModifierUndefined_static_0001] titleMode: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('titleMode'));
@@ -120,8 +120,8 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
-
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let textNode = await driver.findComponent(ON.text('toolbar'));
       expect(textNode).assertNull();
 
@@ -149,9 +149,8 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0003] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
-
       // 初始状态：isUndefined3=true，minContentWidth=undefined，使用默认值 360
       let strJson = inspector.getInspectorByKey('NavigationM_1');
       await CommonFunc.sleep(1000);
@@ -198,7 +197,7 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0004] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 初始状态：isUndefined4=true，navBarWidthRange=undefined，使用默认值 [240, 432]

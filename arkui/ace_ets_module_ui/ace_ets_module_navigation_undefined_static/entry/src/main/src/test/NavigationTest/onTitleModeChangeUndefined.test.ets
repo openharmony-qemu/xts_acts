@@ -70,7 +70,7 @@ export default function OnTitleModeChangeUndefinedTest() {
      */
     it('OnTitleModeChangeUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[OnTitleModeChangeUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let changeBtn1 = await driver.findComponent(ON.id('flingBottom'));
       await (changeBtn1?.click() as Promise<void>);

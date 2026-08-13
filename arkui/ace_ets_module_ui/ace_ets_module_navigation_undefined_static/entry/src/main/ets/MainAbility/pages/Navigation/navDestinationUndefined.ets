@@ -231,6 +231,11 @@ struct Index {
         .onClick((e: ClickEvent) => {
           this.stack.pop()
         })
+        Button("back") // ← 新增
+        .id('backButton') // ← 新增
+        .onClick((e: ClickEvent) => { // ← 新增
+        this.stack.pop() // ← 新增
+      })
       Button('isSystemTransition: ' + this.isSystemTransition)
         .id('NavDestination_systemTransition')
         .onClick((e: ClickEvent) => {

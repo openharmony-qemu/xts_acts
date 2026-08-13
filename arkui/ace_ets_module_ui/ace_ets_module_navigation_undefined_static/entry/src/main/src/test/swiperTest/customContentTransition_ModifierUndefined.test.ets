@@ -60,13 +60,14 @@ export default function customContentTransition_ModifierStartUndefinedTest() {
     it('customContentTransition_ModifierUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('customContentTransition_ModifierUndefinedTest_0100 START');
       await CommonFunc.sleep(500);
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       //滑动触发回调
       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
       let bounds = await swiperItem.getBounds();
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
-      driver.swipe(
+      await driver.swipe(
         (bounds.left + width - 50).toInt(),
         (bounds.top + height / 2).toInt(),
         (bounds.left + 50).toInt(),
@@ -87,7 +88,7 @@ export default function customContentTransition_ModifierStartUndefinedTest() {
       await CommonFunc.sleep(500);
 
       //点击跳转索引不触发回调
-      driver.swipe(
+      await driver.swipe(
         (bounds.left + width - 50).toInt(),
         (bounds.top + height / 2).toInt(),
         (bounds.left + 50).toInt(),

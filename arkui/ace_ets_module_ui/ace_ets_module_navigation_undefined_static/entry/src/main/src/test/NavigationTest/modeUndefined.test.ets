@@ -70,7 +70,7 @@ export default function ModeUndefinedTest() {
      */
     it('ModeUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ModeUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation3');
       await CommonFunc.sleep(1000);
@@ -107,7 +107,7 @@ export default function ModeUndefinedTest() {
      */
     it('ModeUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ModeUndefinedTest_static_0002] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation3');
       await CommonFunc.sleep(1000);
@@ -144,7 +144,7 @@ export default function ModeUndefinedTest() {
      */
     it('ModeUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ModeUndefinedTest_static_0003] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation3');
       await CommonFunc.sleep(1000);

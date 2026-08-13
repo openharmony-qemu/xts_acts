@@ -61,7 +61,8 @@ export default function onUnselectedStartUndefinedTest() {
       console.info('onUnselectedUndefinedTest_0100 START');
       await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       //点击跳转索引触发回调
       let goBtn = await driver.findComponent(ON.id('go2')) as Component;
       await (goBtn?.click() as Promise<void>);

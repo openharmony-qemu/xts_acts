@@ -81,7 +81,8 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0100] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
       await (Btn_page2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -116,7 +117,8 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0200] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
       await (BtnPop?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
@@ -153,7 +155,7 @@ export default function NavDestinationUndefinedTest() {
     */
     it('NavDestinationUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0300] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create()
       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
       await (Btn_page2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -188,7 +190,7 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0400] START');
-      let driver: Driver = Driver.create()
+      let driver: Driver = await Driver.create()
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
       await (BtnPop?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
@@ -225,20 +227,26 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0500] START');
-      let driver: Driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let driver: Driver = await Driver.create()
+      await CommonFunc.sleep(500);
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
+      await CommonFunc.sleep(1000);
       let changeBtn = await driver.findComponent(ON.id('NavDestination_isBackAndReady'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
       await (Btn_page2?.click() as Promise<void>);
+      console.info('[NavDestinationUndefinedTest_static_0500] POP2');
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2);
       await CommonFunc.sleep(1000);
       BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
-      await (BtnPop?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
+      console.info('[NavDestinationUndefinedTest_static_0500] POP3');
+      await (BtnPop?.click() as Promise<void>);
+      await CommonFunc.sleep(3000);
       let text = await driver.findComponent(ON.id('Navigation_text'));
       expect(await (text?.getText() as Promise<String>)).assertEqual('appear:3 disappear:3');
 
@@ -246,8 +254,10 @@ export default function NavDestinationUndefinedTest() {
       await CommonFunc.sleep(1000);
       await (Btn_page2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2);
-      await CommonFunc.sleep(1000);
+      let backButton = await driver.findComponent(ON.id('backButton'));
+      await (backButton?.click() as Promise<void>);
+      await CommonFunc.sleep(2000);
+      text = await driver.findComponent(ON.id('Navigation_text'));
       expect(await (text?.getText() as Promise<String>)).assertEqual('appear:3 disappear:3');
       console.info('[NavDestinationUndefinedTest_static_0500] END');
       done();

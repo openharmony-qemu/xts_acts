@@ -69,7 +69,7 @@ export default function onNavigationModeChangeModifierUndefined() {
      */
     it('onNavigationModeChangeModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       // 点击切换 mode 按钮，应该触发 onNavigationModeChange 回调，changeCount 增加

@@ -67,7 +67,8 @@ export default function index_modifierUndefinedTest() {
       console.info('Test component obj.index is: ' + obj.getElement('$attrs').getString('index'));
       expect(obj.getElement('$attrs').getString('index')).assertEqual('2');
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

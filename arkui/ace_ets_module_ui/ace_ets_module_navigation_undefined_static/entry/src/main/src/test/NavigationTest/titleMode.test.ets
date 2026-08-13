@@ -83,7 +83,7 @@ export default function titleMode() {
      */
     it('titleMode_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[titleMode_static_0001] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
 
       let strJson = inspector.getInspectorByKey('Navigation_1');
       console.info("[titleMode_static_0001] titleMode: " +
@@ -120,7 +120,7 @@ export default function titleMode() {
      */
     it('toolbar_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[toolbar_static_0002] START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
 
       let textNode = await driver.findComponent(ON.text('toolbar'));
       expect(textNode).assertNull();
