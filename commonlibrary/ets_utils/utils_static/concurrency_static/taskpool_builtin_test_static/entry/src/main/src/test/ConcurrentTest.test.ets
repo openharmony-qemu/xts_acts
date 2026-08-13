@@ -25,18 +25,13 @@ import {
   Size,
   TestType
 } from '../../../hypium/index';
-import type { BusinessError } from '@ohos.base';
 import {
-  testJsonParse1,
-  testJsonStringify1,
-  testLocaleBaseName1,
   testLocaleCalendar1,
   testLocaleConstructor1,
   testLocaleHourCycle1,
   testLocaleLanguage1,
   testLocaleRegion1,
   testLocaleScript1,
-  testLocaleToString1,
   testMapClear1,
   testMapDelete1,
   testMapEntries1,
@@ -74,7 +69,6 @@ import {
   testSetDelete1,
   testSetEntries1,
   testSetHas1,
-  testSetKeys1,
   testWeakMapDelete1,
   testWeakMapGet1,
   testWeakMapHas1,
@@ -89,20 +83,18 @@ import {
   testWeakSetHas1
 } from '../testability/pages/taskpool1';
 
-import { sleep } from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
 
-export default function globalTest1() {
-  describe('globalTest1', () => {
+export default function globalTest1(): void {
+  describe('globalTest1', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -126,7 +118,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakset_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakset_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -135,21 +127,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakSetConstructor1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -161,7 +162,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakset_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakset_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -170,21 +171,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakSetAdd1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -196,7 +206,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakset_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakset_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -205,21 +215,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakSetHas1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -231,7 +250,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakset_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakset_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -240,21 +259,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakSetDelete1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -266,7 +294,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakref_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakref_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -275,21 +303,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakRefConstructor1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -301,7 +338,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakref_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakref_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -310,21 +347,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakRefDeref)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -336,7 +382,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakmap_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakmap_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -345,21 +391,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakMapSetGet1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -371,7 +426,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakmap_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakmap_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -380,21 +435,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakMapSymbolIterator)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -406,7 +470,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakmap_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakmap_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -415,21 +479,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakMapDelete1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -441,7 +514,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakmap_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakmap_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -450,21 +523,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakMapGet1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -476,7 +558,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakmap_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakmap_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -485,21 +567,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakMapHas1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -511,7 +602,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_weakmap_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_weakmap_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -520,21 +611,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testWeakMapSet1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -546,7 +646,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_set_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_set_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -555,21 +655,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testSetAdd1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -581,7 +690,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_set_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_set_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -590,21 +699,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testSetClear1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -616,7 +734,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_set_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_set_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -625,21 +743,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testSetDelete1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -651,7 +778,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_set_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_set_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -660,21 +787,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testSetEntries1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -686,7 +822,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_set_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_set_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -695,21 +831,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testSetHas1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
 
@@ -722,7 +867,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_regexp_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -731,21 +876,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpExec1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -757,7 +911,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_regexp_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -766,21 +920,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpExecWithGroups1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -792,7 +955,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_regexp_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -801,21 +964,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpExecWithCapture1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -827,7 +999,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_regexp_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -836,21 +1008,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpTest1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -862,7 +1043,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_regexp_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -871,21 +1052,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpTestGlobal1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -897,7 +1087,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_regexp_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -906,21 +1096,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpToString1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -932,7 +1131,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_regexp_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_regexp_007';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -941,21 +1140,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpToStringWithFlags1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -967,7 +1175,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_promise_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_promise_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -976,21 +1184,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testPromiseResolve1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1002,7 +1219,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_promise_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_promise_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1011,21 +1228,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testPromiseReject1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1037,7 +1263,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_promise_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_promise_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1046,21 +1272,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testPromiseConstructor1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1072,7 +1307,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_promise_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_promise_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1081,21 +1316,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testPromiseStaticResolve1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1107,7 +1351,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_promise_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_promise_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1116,21 +1360,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testPromiseStaticReject1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1142,7 +1395,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_promise_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_promise_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1151,21 +1404,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testPromiseAll1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1177,7 +1439,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_promise_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_promise_007';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1186,21 +1448,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testPromiseRace1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1212,7 +1483,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_object_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_object_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1221,21 +1492,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testObjectConstructor1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1247,7 +1527,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_object_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_object_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1256,21 +1536,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testObjectGetOwnPropertyNames1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1282,7 +1571,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1291,21 +1580,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberToExponential1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1317,7 +1615,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1326,21 +1624,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberToFixed1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1352,7 +1659,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1361,21 +1668,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberToPrecision1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1387,7 +1703,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1396,21 +1712,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberToString1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1422,7 +1747,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1431,21 +1756,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberValueOf1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1457,7 +1791,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1466,21 +1800,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberIsFinite1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1492,7 +1835,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_007';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1501,21 +1844,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberIsInteger1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1527,7 +1879,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_number_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_number_008';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1536,21 +1888,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testNumberIsNaN1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1562,7 +1923,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1571,21 +1932,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapSet1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1597,7 +1967,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1606,21 +1976,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapGet1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1632,7 +2011,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1641,21 +2020,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapHas1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1667,7 +2055,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1676,21 +2064,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapDelete1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1702,7 +2099,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1711,21 +2108,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapClear1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1737,7 +2143,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1746,21 +2152,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapSize1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1772,7 +2187,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_007';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1781,21 +2196,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapEntries1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1807,7 +2231,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_map_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_map_008';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1816,21 +2240,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testMapKeys1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1842,7 +2275,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_locale_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_locale_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1851,21 +2284,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testLocaleConstructor1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1877,7 +2319,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_locale_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_locale_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1886,21 +2328,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testLocaleLanguage1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1912,7 +2363,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_locale_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_locale_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1921,21 +2372,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testLocaleRegion1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1947,7 +2407,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_locale_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_locale_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1956,21 +2416,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testLocaleScript1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -1982,7 +2451,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_locale_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_locale_007';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -1991,21 +2460,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testLocaleCalendar1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
 
     /**
@@ -2017,7 +2495,7 @@ export default function globalTest1() {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_locale_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'test_concurrent_builtins_locale_008';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2026,21 +2504,30 @@ export default function globalTest1() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testLocaleHourCycle1)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${result}`);
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done()
       })
   })
 }
