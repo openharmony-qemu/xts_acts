@@ -786,7 +786,7 @@ napi_value VideoEncCapApi0022(napi_env env, napi_callback_info info)
 napi_value VideoDecCapApi0023(napi_env env, napi_callback_info info)
 {
     uint32_t count = 0;
-    if (!access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) { return CreateIntInt32Result(env, 0); }
+    if (access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) { return CreateIntInt32Result(env, 0); }
     OH_AVCapability **capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
     if (capabilityList == nullptr || count == 0) { return CreateIntInt32Result(env, -1); }
     for (uint32_t i = 0; i < count; ++i) {
