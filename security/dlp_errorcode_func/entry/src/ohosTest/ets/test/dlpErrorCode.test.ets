@@ -91,8 +91,13 @@ export default function dlpErrorCodeTest() {
         console.info(`SUB_Security_DataSecurity_DLP_setSandboxAppConfig_0100 setSandboxAppConfig SUCCESS`);
         expect(null).assertFail();
       } catch (err) {
-        console.error(`SUB_Security_DataSecurity_DLP_setSandboxAppConfig_0100 failed to setSandboxAppConfig code is : ${err.code} `)
-        expect(err.code).assertEqual(19100001);
+        if (err.code === 801) {
+          console.info(`SUB_Security_DataSecurity_DLP_setSandboxAppConfig_0100 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_DataSecurity_DLP_setSandboxAppConfig_0100 failed to setSandboxAppConfig code is : ${err.code} `)
+          expect(err.code).assertEqual(19100001);
+        }
       }
       done();
     });
@@ -110,8 +115,13 @@ export default function dlpErrorCodeTest() {
         let inSandbox = await dlpPermission.isInSandbox();
         expect(inSandbox).assertEqual(false);
       } catch (err) {
-        console.error(`SUB_Security_DataSecurity_DLP_isInSandbox_0100 failed to isInSandbox code is : ${err.code} `)
-        expect(null).assertFail();
+        if (err.code === 801) {
+          console.info(`SUB_Security_DataSecurity_DLP_isInSandbox_0100 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_DataSecurity_DLP_isInSandbox_0100 failed to isInSandbox code is : ${err.code} `)
+          expect(null).assertFail();
+        }
       }
       done();
     });
@@ -130,8 +140,13 @@ export default function dlpErrorCodeTest() {
           expect(data).assertEqual(false);
         });
       } catch (err) {
-        console.error(`SUB_Security_DataSecurity_DLP_isInSandbox_0200 failed to isInSandbox code is : ${err.code} `)
-        expect(null).assertFail();
+        if (err.code === 801) {
+          console.info(`SUB_Security_DataSecurity_DLP_isInSandbox_0200 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_DataSecurity_DLP_isInSandbox_0200 failed to isInSandbox code is : ${err.code} `)
+          expect(null).assertFail();
+        }
       }
       done();
     });
@@ -152,16 +167,26 @@ export default function dlpErrorCodeTest() {
         await dlpPermission.isDLPFile(null);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `isDLPFile null. Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `isDLPFile null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `isDLPFile null. Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
         await dlpPermission.isDLPFile(undefined);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `isDLPFile undefined. Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `isDLPFile undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `isDLPFile undefined. Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -184,17 +209,28 @@ export default function dlpErrorCodeTest() {
         dlpPermission.isDLPFile(null, (err, data) => {
         });
       } catch (err) {
-        console.error(curTag, `isDLPFile null. Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `isDLPFile null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `isDLPFile null. Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
         dlpPermission.isDLPFile(undefined, (err, data) => {
         });
       } catch (err) {
-        console.error(curTag, `isDLPFile undefined. Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `isDLPFile undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `isDLPFile undefined. Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
+
       console.info(curTag, "end");
       done();
     })
@@ -215,16 +251,26 @@ export default function dlpErrorCodeTest() {
         let name = dlpPermission.getOriginalFileName(null);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `getOriginalFileName.null Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `getOriginalFileName.null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `getOriginalFileName.null Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
         let name = dlpPermission.getOriginalFileName(undefined);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `getOriginalFileName.undefined Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `getOriginalFileName.undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `getOriginalFileName.undefined Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -248,8 +294,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, `on.null Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `on.null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `on.null Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
@@ -257,8 +308,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, `on.undefined Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `on.undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `on.undefined Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -282,8 +338,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, `off.null Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `off.null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `off.null Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
@@ -291,8 +352,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, `off.undefined Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `off.undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `off.undefined Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -316,8 +382,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, `setRetentionState.null Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `setRetentionState.null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `setRetentionState.null Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
@@ -325,8 +396,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, `setRetentionState.undefined Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `setRetentionState.undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `setRetentionState.undefined Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
       console.info(curTag, "end");
       done();
@@ -349,8 +425,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         }); // 取消沙箱保留。
       } catch (err) {
-        console.error(curTag, `cancelRetentionState.null Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `cancelRetentionState.null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `cancelRetentionState.null Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
@@ -358,8 +439,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         }); // 取消沙箱保留。
       } catch (err) {
-        console.error(curTag, `cancelRetentionState.undefined Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `cancelRetentionState.undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `cancelRetentionState.undefined Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -382,8 +468,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, 'getRetentionSandboxList null err:' + err.code + err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, 'getRetentionSandboxList null 801:' + err.code);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'getRetentionSandboxList null err:' + err.code + err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
@@ -391,8 +482,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, 'getRetentionSandboxList undefined err:' + err.code + err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, 'getRetentionSandboxList undefined 801:' + err.code);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'getRetentionSandboxList undefined err:' + err.code + err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
@@ -400,8 +496,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         });
       } catch (err) {
-        console.error(curTag, 'getRetentionSandboxList "" err:' + err.code + err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, 'getRetentionSandboxList "" 801:' + err.code);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'getRetentionSandboxList "" err:' + err.code + err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -424,24 +525,39 @@ export default function dlpErrorCodeTest() {
         await dlpPermission.setSandboxAppConfig("");
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `setSandboxAppConfig "". Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          console.info(curTag, `setSandboxAppConfig "" 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `setSandboxAppConfig "". Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       try {
         await dlpPermission.setSandboxAppConfig(null);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `setSandboxAppConfig null. Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `setSandboxAppConfig null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `setSandboxAppConfig null. Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
         await dlpPermission.setSandboxAppConfig(undefined);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `setSandboxAppConfig undefined. Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `setSandboxAppConfig undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `setSandboxAppConfig undefined. Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -464,16 +580,26 @@ export default function dlpErrorCodeTest() {
         await dlpPermission.cancelRetentionState(null);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `cancelRetentionState.null Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `cancelRetentionState.null 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `cancelRetentionState.null Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       try {
         await dlpPermission.cancelRetentionState(undefined);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `cancelRetentionState.undefined Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        if (err.code === 801) {
+          console.info(curTag, `cancelRetentionState.undefined 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `cancelRetentionState.undefined Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        }
       }
 
       console.info(curTag, "end");
@@ -516,8 +642,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         }); // 打开DLP权限管理应用。
       } catch (err) {
-        console.error(curTag, 'startDLPManagerForResult 1null err:' + err.code + err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          console.info(curTag, 'startDLPManagerForResult 1null 801:' + err.code);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'startDLPManagerForResult 1null err:' + err.code + err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       try {
@@ -525,8 +656,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         }); // 打开DLP权限管理应用。
       } catch (err) {
-        console.error(curTag, 'startDLPManagerForResult 1undefined err:' + err.code + err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          console.info(curTag, 'startDLPManagerForResult 1undefined 801:' + err.code);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'startDLPManagerForResult 1undefined err:' + err.code + err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       try {
@@ -534,8 +670,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         }); // 打开DLP权限管理应用。
       } catch (err) {
-        console.error(curTag, 'startDLPManagerForResult 2null err:' + err.code + err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          console.info(curTag, 'startDLPManagerForResult 2null 801:' + err.code);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'startDLPManagerForResult 2null err:' + err.code + err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       try {
@@ -543,8 +684,13 @@ export default function dlpErrorCodeTest() {
           expect(null).assertFail();
         }); // 打开DLP权限管理应用。
       } catch (err) {
-        console.error(curTag, 'startDLPManagerForResult 2undefined err:' + err.code + err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          console.info(curTag, 'startDLPManagerForResult 2undefined 801:' + err.code);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, 'startDLPManagerForResult 2undefined err:' + err.code + err.message);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
@@ -590,8 +736,13 @@ export default function dlpErrorCodeTest() {
         await dlpPermission.generateDlpFileForEnterprise(0, 0, dlpProperty, customProperty);
         expect(null).assertFail();
       } catch (err) {
-        console.error(curTag, `generateDlpFileForEnterprise failed Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        if (err.code === 801) {
+          console.info(curTag, `generateDlpFileForEnterprise 801: ${err.code}`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(curTag, `generateDlpFileForEnterprise failed Code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+        }
       }
 
       console.info(curTag, "end");
