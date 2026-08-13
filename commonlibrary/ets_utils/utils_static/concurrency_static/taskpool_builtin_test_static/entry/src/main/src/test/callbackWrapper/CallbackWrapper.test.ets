@@ -15,7 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
-import Utils, { sleep } from '../Utils.test';
+import { sleep } from '../Utils.test';
 import util from '@ohos.util';
 import {
   default as defaultExportedAsyncFunc,
@@ -384,12 +384,12 @@ async function asyncFuncReturnComplex(): Promise<NestedObject> {
 }
 
 async function asyncFuncDelayResolve(): Promise<string> {
-  await sleep(50);
+  await sleep(100);
   return 'delayed';
 }
 
 async function asyncFuncDelayReject(): Promise<string> {
-  await sleep(50);
+  await sleep(100);
   throw new Error('delayed error');
 }
 
@@ -506,7 +506,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperBasicSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperBasicSuccess test start');
 
         const callback = util.callbackWrapper(asyncFuncString);
@@ -527,7 +527,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReturnNumber test start');
 
         const callback = util.callbackWrapper(asyncFuncNumber);
@@ -548,7 +548,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReturnObject test start');
 
         const callback = util.callbackWrapper(asyncFuncObject);
@@ -570,7 +570,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReturnArray test start');
 
         const callback = util.callbackWrapper(asyncFuncArray);
@@ -592,7 +592,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReturnBoolean test start');
 
         const callback = util.callbackWrapper(asyncFuncBoolean);
@@ -613,7 +613,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReturnNull test start');
 
         const callback = util.callbackWrapper(asyncFuncNull);
@@ -634,7 +634,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReturnUndefined test start');
 
         const callback = util.callbackWrapper(asyncFuncUndefined);
@@ -655,7 +655,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperThrowError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperThrowError test start');
 
         const callback = util.callbackWrapper(asyncFuncThrowError);
@@ -676,7 +676,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperPromiseResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperPromiseResolve test start');
 
         const callback = util.callbackWrapper(asyncFuncPromiseResolve);
@@ -697,7 +697,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperPromiseReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperPromiseReject test start');
 
         const callback = util.callbackWrapper(asyncFuncPromiseReject);
@@ -718,7 +718,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperNoReturnValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperNoReturnValue test start');
 
         const callback = util.callbackWrapper(asyncNoReturnFunc);
@@ -739,7 +739,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultiParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperMultiParams test start');
 
         const callback = util.callbackWrapper(asyncFuncMultiParams);
@@ -760,7 +760,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperAfterGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperAfterGetter test start');
 
         const instance = new TestClassWithGetterSetter();
@@ -786,7 +786,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperAfterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperAfterSetter test start');
 
         const instance = new TestClassSetterOnly();
@@ -812,7 +812,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperAfterGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperAfterGetterSetter test start');
 
         const instance = new TestClassWithGetterSetter();
@@ -838,7 +838,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperBeforeGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperBeforeGetter test start');
 
         const instance = new TestClassBeforeGetterSetter();
@@ -863,7 +863,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperBetweenGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperBetweenGetterSetter test start');
 
         const instance = new TestClassGetterSetterMixed();
@@ -890,7 +890,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultipleGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperMultipleGetterSetter test start');
 
         const instance = new TestClassMultipleGetterSetter();
@@ -955,7 +955,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperGetterOnly', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperGetterOnly test start');
 
         const instance = new TestClassGetterOnly();
@@ -980,7 +980,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperObjectLiteral', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperObjectLiteral test start');
 
         const callback = util.callbackWrapper(objectLiteralWithAsyncMethod.getValue);
@@ -1001,7 +1001,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperObjectLiteralAfterGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperObjectLiteralAfterGetter test start');
 
         const callback = util.callbackWrapper(objectLiteralGetterSetter.getValue);
@@ -1022,7 +1022,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperRestParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperRestParams test start');
 
         const callback = util.callbackWrapper(asyncFuncWithOneRestParam);
@@ -1043,7 +1043,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperRestParamsEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperRestParamsEmpty test start');
 
         const callback = util.callbackWrapper(asyncFuncWithEmptyRestParams);
@@ -1064,7 +1064,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperStaticMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperStaticMethod test start');
 
         const callback = util.callbackWrapper(TestClassStaticMethod.staticAsyncMethod);
@@ -1085,7 +1085,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperStaticMethodAfterGetterSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperStaticMethodAfterGetterSetter test start');
 
         const callback = util.callbackWrapper(TestClassStaticMethod.staticAsyncMethodAfterGetterSetter);
@@ -1106,7 +1106,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultipleStaticMethods', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperMultipleStaticMethods test start');
         let callback1Called: boolean = false;
         let callback2Called: boolean = false;
@@ -1157,7 +1157,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperInheritedMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperInheritedMethod test start');
 
         const instance = new TestClassChild();
@@ -1182,7 +1182,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperOverriddenMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperOverriddenMethod test start');
 
         const instance = new TestClassOverrideChild();
@@ -1207,7 +1207,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultiLevelInheritance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperMultiLevelInheritance test start');
 
         const instance = new TestClassGrandChild();
@@ -1232,7 +1232,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperArrowFunction test start');
 
         const callback = util.callbackWrapper(asyncArrowFunc);
@@ -1253,7 +1253,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperAssignedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperAssignedFunction test start');
 
         const callback = util.callbackWrapper(asyncAssignedFunc);
@@ -1274,13 +1274,21 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperAsParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperAsParameter test start');
 
-        const value: string = await takeAsyncFunc(asyncParamFunc);
-        expect(value).assertEqual('param-func');
-        console.info('testCallbackWrapperAsParameter test end');
-        done();
+        takeAsyncFunc(asyncParamFunc)
+          .then((value: string): void => {
+            expect(value).assertEqual('param-func');
+            console.info('testCallbackWrapperAsParameter test end');
+            done();
+          }, (error: Error): void => {
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
       });
 
     /**
@@ -1292,7 +1300,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperReturnedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReturnedFunction test start');
 
         const asyncFunc = returnAsyncFunc();
@@ -1341,17 +1349,17 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL2
      */
     it('testCallbackWrapperNumberParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperNumberParam test start');
 
+        let caught: boolean = false;
         try {
           util.callbackWrapper(123 as Object as Function);
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
 
         console.info('testCallbackWrapperNumberParam test end');
         done();
@@ -1366,17 +1374,17 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL2
      */
     it('testCallbackWrapperStringParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperStringParam test start');
 
+        let caught: boolean = false;
         try {
           util.callbackWrapper('test' as Object as Function);
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
 
         console.info('testCallbackWrapperStringParam test end');
         done();
@@ -1391,18 +1399,18 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL2
      */
     it('testCallbackWrapperObjectParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperObjectParam test start');
 
+        let caught: boolean = false;
         try {
           const obj: TestObjectKey = { key: 'value' };
           util.callbackWrapper(obj as Object as Function);
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
 
         console.info('testCallbackWrapperObjectParam test end');
         done();
@@ -1417,17 +1425,17 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL2
      */
     it('testCallbackWrapperArrayParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperArrayParam test start');
 
+        let caught: boolean = false;
         try {
           util.callbackWrapper([1, 2, 3] as Object as Function);
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
 
         console.info('testCallbackWrapperArrayParam test end');
         done();
@@ -1442,17 +1450,17 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL2
      */
     it('testCallbackWrapperBooleanParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperBooleanParam test start');
 
+        let caught: boolean = false;
         try {
           util.callbackWrapper(true as Object as Function);
           expect(false).assertFail();
-        } catch (error) {
-          const err: Error = error as Error;
-          console.error('callbackWrapper rejected invalid value: ' + err.message);
-          expect(err instanceof Error).assertTrue();
+        } catch (e) {
+          caught = true;
         }
+        expect(caught).assertTrue();
 
         console.info('testCallbackWrapperBooleanParam test end');
         done();
@@ -1467,7 +1475,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL2
      */
     it('testCallbackWrapperNormalFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperNormalFunction test start');
         let result = false
         try {
@@ -1491,7 +1499,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL2
      */
     it('testCallbackWrapperArrowFunctionNonAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperArrowFunctionNonAsync test start');
 
         const arrowFunc = (): number => {
@@ -1519,7 +1527,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperDefaultParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperDefaultParams test start');
 
         const callback = util.callbackWrapper(asyncFuncWithOneDefaultParam);
@@ -1540,7 +1548,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperNestedCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperNestedCallback test start');
 
         const outerCallback = util.callbackWrapper(asyncOuterFunc);
@@ -1567,7 +1575,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperWithPromisify', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperWithPromisify test start');
 
         const callbackified = util.callbackWrapper(asyncFuncString);
@@ -1588,13 +1596,13 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperThenable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperThenable test start');
 
         const callback = util.callbackWrapper(asyncFuncReturnThenable);
         callback.unsafeCall((err: Error | null, value: ThenableObject) => {
           expect(err).assertNull();
-          expect(value !== null).assertTrue();
+          expect(value.then !== undefined && value.then !== null).assertTrue();
           console.info('testCallbackWrapperThenable test end');
           done();
         });
@@ -1609,7 +1617,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperPromiseInstance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperPromiseInstance test start');
 
         const callback = util.callbackWrapper(asyncFuncReturnPromiseInstance);
@@ -1630,7 +1638,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperDelayedResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperDelayedResolve test start');
 
         const callback = util.callbackWrapper(asyncFuncDelayResolve);
@@ -1651,7 +1659,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperDelayedReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperDelayedReject test start');
 
         const callback = util.callbackWrapper(asyncFuncDelayReject);
@@ -1672,7 +1680,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperComplexObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperComplexObject test start');
 
         const callback = util.callbackWrapper(asyncFuncReturnComplex);
@@ -1693,7 +1701,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackWrapperMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperMultipleCalls test start');
 
         const counter = new CallCounter();
@@ -1729,7 +1737,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperExportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperExportedFunction test start');
 
         const callback = util.callbackWrapper(exportedAsyncFunc);
@@ -1750,7 +1758,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperExportedArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperExportedArrowFunction test start');
 
         const callback = util.callbackWrapper(exportedAsyncArrowFunc);
@@ -1771,7 +1779,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperExportedClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperExportedClass test start');
 
         const instance = new ExportedTestClass();
@@ -1797,7 +1805,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperDefaultExportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperDefaultExportedFunction test start');
 
         const callback = util.callbackWrapper(defaultExportedAsyncFunc);
@@ -1818,7 +1826,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperGenericFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperGenericFunction test start');
 
         const genericFunc = genericAsyncFunc<string>;
@@ -1840,7 +1848,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperGenericClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperGenericClass test start');
 
         const instance = new GenericTestClass<number>(100);
@@ -1865,7 +1873,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperInterfaceImplement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperInterfaceImplement test start');
 
         const instance = new InterfaceImplementClass();
@@ -1890,7 +1898,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperAbstractDerivedClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperAbstractDerivedClass test start');
 
         const instance = new AbstractDerivedClass();
@@ -1916,7 +1924,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperNamespaceFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperNamespaceFunction test start');
 
         const callback = util.callbackWrapper(TestNamespace.namespaceAsyncFunc);
@@ -1937,7 +1945,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperNamespaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperNamespaceClass test start');
 
         const instance = new TestNamespace.NamespaceTestClass();
@@ -1963,7 +1971,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperNestedNamespaceFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperNestedNamespaceFunction test start');
 
         const callback = util.callbackWrapper(NestedNamespace.InnerNamespace.nestedAsyncFunc);
@@ -1984,7 +1992,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperReexportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperReexportedFunction test start');
 
         const callback = util.callbackWrapper(reexportedAsyncFunc);
@@ -2005,7 +2013,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperRenamedExportedFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperRenamedExportedFunction test start');
 
         const callback = util.callbackWrapper(renamedAsyncFunc);
@@ -2026,7 +2034,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperJSAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperJSAsyncFunction test start');
 
         const callback = util.callbackWrapper(jsAsyncFunc);
@@ -2047,7 +2055,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperJSAsyncArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperJSAsyncArrowFunction test start');
 
         const callback = util.callbackWrapper(jsAsyncArrowFunc);
@@ -2068,7 +2076,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperJSClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperJSClass test start');
 
         const instance = new JsTestClass();
@@ -2094,7 +2102,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperTSAsyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperTSAsyncFunction test start');
 
         const callback = util.callbackWrapper(tsAsyncFunc);
@@ -2115,7 +2123,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperTSAsyncArrowFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperTSAsyncArrowFunction test start');
 
         const callback = util.callbackWrapper(tsAsyncArrowFunc);
@@ -2136,7 +2144,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperTSClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperTSClass test start');
 
         const instance = new TsTestClass();
@@ -2162,7 +2170,7 @@ export default function CallbackWrapperTest(): void {
      * @tc.level LEVEL1
      */
     it('testCallbackWrapperDualInterfaceClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         console.info('testCallbackWrapperDualInterfaceClass test start');
 
         const instance = new DualInterfaceClass();

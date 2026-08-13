@@ -23,19 +23,17 @@ import { testGlobalDecodeURI,
   testGlobalUnescape} from '../testability/pages/Global';
 
 
-import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function globalTest() {
-  describe('globalTestAdapt001', () => {
+export default function globalTest(): void {
+  describe('globalTestAdapt001', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -59,7 +57,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalEncodeURI', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalEncodeURI';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -68,20 +66,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalEncodeURI)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -93,7 +101,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalDecodeURI', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalDecodeURI';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -102,20 +110,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalDecodeURI)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
 
@@ -128,7 +146,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalEncodeURIComponent', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalEncodeURIComponent';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -137,20 +155,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalEncodeURIComponent)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -162,7 +190,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalDecodeURIComponent', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalDecodeURIComponent';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -171,20 +199,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalDecodeURIComponent)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -196,7 +234,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalEscape', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalEscape';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -205,20 +243,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalEscape)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -230,7 +278,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalUnescape', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalUnescape';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -239,20 +287,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalUnescape)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -264,7 +322,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalIsFinite', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalIsFinite';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -273,20 +331,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalIsFinite)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -298,7 +366,7 @@ export default function globalTest() {
      * @tc.level  LEVEL0
      */
     it('testGlobalIsNaN', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testGlobalIsNaN';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -307,20 +375,30 @@ export default function globalTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testGlobalIsNaN)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
   })

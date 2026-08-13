@@ -14,27 +14,24 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
-import { testBigIntAsIntN, testBigIntPrototypeToString } from '../testability/pages/BigInt';
-import { BusinessError } from '@kit.BasicServicesKit';
 import { testAggregateError, testError,
   testEvalError,
   testRangeError,
+  testReferenceError,
   testSyntaxError,
   testTypeError, testURIError } from '../testability/pages/Error';
 
 
-import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function ErrorTest() {
-  describe('ErrorTest', () => {
+export default function ErrorTest(): void {
+  describe('ErrorTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -58,7 +55,7 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testError';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -67,20 +64,30 @@ export default function ErrorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -92,7 +99,7 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testRangeError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testRangeError';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -101,20 +108,30 @@ export default function ErrorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testRangeError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -126,29 +143,39 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testReferenceError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testReferenceError';
         console.info(`${caseName} test start`);
         let result: int = 0
         try {
           let group = new taskpool.TaskGroup(caseName)
           for (let i: int = 0; i < concurrentNum; i++) {
-            group.addTask(testBigIntPrototypeToString)
+            group.addTask(testReferenceError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -160,8 +187,8 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testTypeError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testReferenceError';
+      (done: () => void): void => {
+        const caseName = 'testTypeError';
         console.info(`${caseName} test start`);
         let result: int = 0
         try {
@@ -169,20 +196,30 @@ export default function ErrorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testTypeError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -194,7 +231,7 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testAggregateError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testAggregateError';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -203,20 +240,30 @@ export default function ErrorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testAggregateError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -228,7 +275,7 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testURIError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testURIError';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -237,20 +284,30 @@ export default function ErrorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testURIError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -262,7 +319,7 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testSyntaxError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testSyntaxError';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -271,20 +328,30 @@ export default function ErrorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testSyntaxError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -296,7 +363,7 @@ export default function ErrorTest() {
      * @tc.level  LEVEL0
      */
     it('testEvalError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testEvalError';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -305,20 +372,30 @@ export default function ErrorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask( testEvalError)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
   })
 }
