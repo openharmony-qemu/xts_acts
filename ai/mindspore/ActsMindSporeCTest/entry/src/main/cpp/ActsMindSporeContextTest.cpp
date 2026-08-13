@@ -413,6 +413,7 @@ int SUBAIMindSporeContextCreate0014()
     size_t retCoreNum;
     int32_t* retCoreList = nullptr;
     retCoreList = const_cast<int32_t*>(OH_AI_ContextGetThreadAffinityCoreList(context, &retCoreNum));
+    ASSERT_NE(retCoreList, nullptr);
     ASSERT_EQ(retCoreNum, coreNum);
     for (size_t i = 0; i < retCoreNum; i++) {
         OHPrintf("==========retCoreList:%d\n", retCoreList[i]);
@@ -449,6 +450,7 @@ int SUBAIMindSporeContextCreate0015()
     size_t retCoreNum;
     int32_t* retCoreList = nullptr;
     retCoreList = const_cast<int32_t*>(OH_AI_ContextGetThreadAffinityCoreList(context, &retCoreNum));
+    ASSERT_NE(retCoreList, nullptr);
     ASSERT_EQ(retCoreNum, coreNum2);
     for (size_t i = 0; i < retCoreNum; i++) {
         OHPrintf("==========retCoreList:%d\n", retCoreList[i]);
@@ -473,6 +475,7 @@ int SUBAIMindSporeContextCreate0016()
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     size_t retCoreNum;
     const int32_t* retCoreList = OH_AI_ContextGetThreadAffinityCoreList(nullptr, &retCoreNum);
+    ASSERT_EQ(retCoreList, nullptr);
     std::cout << retCoreList << std::endl;
     return OH_AI_STATUS_SUCCESS;
 }
@@ -491,6 +494,7 @@ int SUBAIMindSporeContextCreate0017()
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     const int32_t* retCoreList = OH_AI_ContextGetThreadAffinityCoreList(context, nullptr);
+    ASSERT_EQ(retCoreList, nullptr);
     std::cout << retCoreList << std::endl;
     OH_AI_ContextDestroy(&context);
     return OH_AI_STATUS_SUCCESS;
