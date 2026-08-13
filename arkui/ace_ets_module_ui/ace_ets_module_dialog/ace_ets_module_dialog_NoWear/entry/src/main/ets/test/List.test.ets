@@ -70,13 +70,16 @@ export default function testsuite() {
     subwindowDialog();
     showAtAnchorTest();
     showDefaultSelectedIconTest();
-    showInSubWindowValueTest();
+
     SelectJsunit();
 	SelectJsunit02();
 	SelectAttr();
 	selectoptionwithJsSuit();
 	SelectTest();
 	SelectJsunit1();
+
+    showInSubWindowValueTest();
+    
 	menuBackgroundBlurStyle();
 	menuBackgroundColor();
 	selectApiTest1();
