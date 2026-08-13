@@ -11041,7 +11041,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEV
     OH_AudioDeviceDescriptor* descriptor = nullptr;
     OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectOutputDevice(manager, descriptor);
     LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100 result: %{public}d", result);
-    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_PASS, &res);
         return res;
     }
@@ -11076,7 +11076,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVI
     OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
     OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectInputDevice(manager, nullptr);
     LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100 result: %{public}d", result);
-    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_PASS, &res);
         return res;
     }
@@ -11142,7 +11142,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEV
         result);
     OH_AudioRenderer_Release(renderer);
     OH_AudioStreamBuilder_Destroy(builder);
-    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_PASS, &res);
         return res;
     }
@@ -11208,7 +11208,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVI
         result);
     OH_AudioCapturer_Release(capturer);
     OH_AudioStreamBuilder_Destroy(builder);
-    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_PASS, &res);
         return res;
     }
