@@ -197,8 +197,7 @@ export default function longIsGreaterThan1Test(): void {
       let a: Long = new Long(42);
       let b: Long = new Long(0);
       let r: boolean = a.isGreaterThan(b);
-      let same: boolean = r === true;
-      expect(same).assertTrue();
+      expect(r).assertTrue();
     });
 
     /**
