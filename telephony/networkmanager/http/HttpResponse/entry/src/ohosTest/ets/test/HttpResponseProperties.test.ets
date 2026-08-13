@@ -3289,5 +3289,59 @@ export default function HttpResponsePropertiesTest() {
       }
       console.info(`${caseName} test End`);
     });
+    /**
+     * @tc.name   testHttpResponse6200
+     * @tc.number SUB_NetworkMgr_Http_Response_6200
+     * @tc.desc   test responseBodyTiming with POST method request to www.baidu.com
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpResponse6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testHttpResponse6200";
+      console.info(`${caseName} test Start`);
+      const httpRequest: http.HttpRequest = http.createHttp();
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (error) {
+            console.info(`${caseName} getDefaultNet fail, error code: ${error.code}, msg: ${error.message}`);
+            ExpectFail();
+            done();
+          } else {
+            if (data.netId == 0) {
+              console.info(`${caseName} no Network connected`);
+              ExpectFail();
+              done();
+            } else {
+              console.info(`${caseName} Network connected`);
+              httpRequest.request(
+                ADDR_TEST_DOMAIN_HTTPS,
+                {
+                  method: http.RequestMethod.POST,
+                },
+                async (error: BusinessError, data: http.HttpResponse) => {
+                  if (error) {
+                    console.info(`${caseName} request fail, error code: ${error.code}, msg: ${error.message}`);
+                    httpRequest.destroy();
+                    ExpectFail();
+                    done();
+                  } else {
+                    console.info(`${caseName} request data-->:${JSON.stringify(data)}`);
+                    ExpectTrue(data.performanceTiming.responseBodyTiming >= 0);
+                    httpRequest.destroy();
+                    done();
+                  }
+                }
+              );
+            }
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
   });
 }
