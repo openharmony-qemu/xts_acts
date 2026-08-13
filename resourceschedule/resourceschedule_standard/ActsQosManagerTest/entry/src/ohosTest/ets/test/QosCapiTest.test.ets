@@ -181,67 +181,106 @@ export default function QosCapiTest() {
     })
 
     /**
-     * @tc.name   GewuCreateSessionTest
+     * @tc.name   GewuCreateSessionInvalTest
      * @tc.number SUB_RESOURCESCHEDULE_QOS_0100
-     * @tc.desc   Verify the GewuCreateSession function
+     * @tc.desc   Verify CreateSession returns INVAL with empty attributes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('GewuCreateSessionTest', Level.LEVEL1, () => {
+    it('GewuCreateSessionInvalTest', Level.LEVEL1, () => {
       const result = libQosManagerOps.GewuApiTest(0);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   GewuSubmitRequestTest
+     * @tc.name   GewuSubmitRequestInvalTest
      * @tc.number SUB_RESOURCESCHEDULE_QOS_0200
-     * @tc.desc   Verify the GewuSubmitRequest function
+     * @tc.desc   Verify SubmitRequest returns INVAL with null request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('GewuSubmitRequestTest', Level.LEVEL1, () => {
+    it('GewuSubmitRequestInvalTest', Level.LEVEL1, () => {
       const result = libQosManagerOps.GewuApiTest(1);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   GewuAbortRequestTest
+     * @tc.name   GewuAbortRequestInvalTest
      * @tc.number SUB_RESOURCESCHEDULE_QOS_0300
-     * @tc.desc   Verify the GewuAbortRequest function
+     * @tc.desc   Verify AbortRequest returns INVAL with invalid session
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('GewuAbortRequestTest', Level.LEVEL1, () => {
+    it('GewuAbortRequestInvalTest', Level.LEVEL1, () => {
       const result = libQosManagerOps.GewuApiTest(2);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   GewuDestroySessionTest
+     * @tc.name   GewuDestroySessionInvalTest
      * @tc.number SUB_RESOURCESCHEDULE_QOS_0400
-     * @tc.desc   Verify the GewuDestroySession function
+     * @tc.desc   Verify DestroySession returns INVAL with invalid session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GewuDestroySessionInvalTest', Level.LEVEL1, () => {
+      const result = libQosManagerOps.GewuApiTest(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   GewuCreateSessionTest
+     * @tc.number SUB_RESOURCESCHEDULE_QOS_0500
+     * @tc.desc   Test CreateSession with valid attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GewuCreateSessionTest', Level.LEVEL1, () => {
+      const result = libQosManagerOps.GewuApiTest(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   GewuSubmitRequestTest
+     * @tc.number SUB_RESOURCESCHEDULE_QOS_0600
+     * @tc.desc   Test SubmitRequest with valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GewuSubmitRequestTest', Level.LEVEL1, () => {
+      const result = libQosManagerOps.GewuApiTest(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   GewuAbortRequestTest
+     * @tc.number SUB_RESOURCESCHEDULE_QOS_0700
+     * @tc.desc   Test AbortRequest with valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GewuAbortRequestTest', Level.LEVEL1, () => {
+      const result = libQosManagerOps.GewuApiTest(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   GewuDestroySessionTest
+     * @tc.number SUB_RESOURCESCHEDULE_QOS_0800
+     * @tc.desc   Test DestroySession with valid session
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('GewuDestroySessionTest', Level.LEVEL1, () => {
-      const result = libQosManagerOps.GewuApiTest(3);
-      expect(result).assertEqual(0);
-    })
-4
-    /**
-     * @tc.name   GewuErrorCodeTest
-     * @tc.number SUB_RESOURCESCHEDULE_QOS_0500
-     * @tc.desc   Verify the Gewu error code
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('GewuErrorCodeTest', Level.LEVEL1, () => {
-      const result = libQosManagerOps.GewuApiTest(4);
+      const result = libQosManagerOps.GewuApiTest(7);
       expect(result).assertEqual(0);
     })
   })

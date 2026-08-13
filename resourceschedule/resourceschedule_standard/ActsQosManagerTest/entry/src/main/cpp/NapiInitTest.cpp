@@ -81,19 +81,28 @@ static napi_value GewuApiTest(napi_env env, napi_callback_info info)
         int result;
         switch (caseNum) {
             case CASE_NUM_0:
-                result = Acts::QosManager::GewuCreateSessionTest();
+                result = Acts::QosManager::GewuCreateSessionInvalTest();
                 break;
             case CASE_NUM_1:
-                result = Acts::QosManager::GewuSubmitRequestTest();
+                result = Acts::QosManager::GewuSubmitRequestInvalTest();
                 break;
             case CASE_NUM_2:
-                result = Acts::QosManager::GewuAbortRequestTest();
+                result = Acts::QosManager::GewuAbortRequestInvalTest();
                 break;
             case CASE_NUM_3:
-                result = Acts::QosManager::GewuDestroySessionTest();
+                result = Acts::QosManager::GewuDestroySessionInvalTest();
                 break;
             case CASE_NUM_4:
-                result = Acts::QosManager::GewuErrorCodeTest();
+                result = Acts::QosManager::GewuCreateSessionTest();
+                break;
+            case CASE_NUM_5:
+                result = Acts::QosManager::GewuSubmitRequestTest();
+                break;
+            case CASE_NUM_6:
+                result = Acts::QosManager::GewuAbortRequestTest();
+                break;
+            case CASE_NUM_7:
+                result = Acts::QosManager::GewuDestroySessionTest();
                 break;
             default:
                 result = RESULT_ERROR;
