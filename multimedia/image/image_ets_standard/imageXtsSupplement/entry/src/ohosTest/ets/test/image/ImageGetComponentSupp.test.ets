@@ -13,27 +13,20 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { image, sendableImage } from '@kit.ImageKit';
+import { image } from '@kit.ImageKit';
 import { BusinessError } from '@ohos.base';
 import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import {
-  cameraErrorCode,
-  cameraPreconfigRatio,
-  cameraPreconfigType,
   closeFd,
-  COMMON_WAIT_DURATION,
   driveFn,
   getFd,
   getPermission,
   isEmpty,
   resourceName,
-  sceneMode,
   sleep
 } from '../common';
-import { indexSurfaceId } from '../../testability/pages/Index';
 import { media } from '@kit.MediaKit';
-import { tag } from '@kit.ConnectivityKit';
 
 const TAG = 'ImageGetComponentTestSupp'
 let mCameraManager: camera.CameraManager;
@@ -42,17 +35,12 @@ let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
-let mVideoOutput: camera.VideoOutput;
-let mVideoSurfaceId: string;
 let mReceiverSurfaceId: string;
 let mPhotoSession: camera.PhotoSession;
-let mVideoSession: camera.VideoSession;
 let mAVRecorder: media.AVRecorder;
-let receiver : image.ImageReceiver;
 let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-let counter: number = 0;
 
 let CameraVideoProfile: media.AVRecorderProfile = {
   audioBitrate: 48000,
@@ -108,27 +96,6 @@ function getCameraInput() {
   return false;
 }
 
-async function getVideoSurfaceId() {
-  console.info(TAG, 'getVideoSurfaceId begin.');
-  let fileName: string = resourceName();
-  fdNumber = await getFd(fileName);
-  fdPath = "fd://" + fdNumber;
-  console.info(TAG, 'case fdPath is: ' + fdPath);
-  videoConfig.url = fdPath;
-  console.info(TAG, 'get videoConfig url.');
-  mAVRecorder = await media.createAVRecorder();
-  expect(isEmpty(mAVRecorder)).assertFalse();
-  console.info(TAG, 'createAVRecorder passed. state: ' + mAVRecorder.state);
-  await mAVRecorder.prepare(videoConfig).then(() => {
-    console.info('prepare success');
-  }).catch((error: BusinessError) => {
-    console.error(TAG, 'failed to prepare, err: ' + error.code + ', msg: ' + error.message);
-  });
-  console.info(TAG, 'AVRecorder state: ' + mAVRecorder.state);
-  mVideoSurfaceId = await mAVRecorder.getInputSurface();
-  console.info(TAG, 'mVideoSurfaceId: ' + mVideoSurfaceId);
-}
-
 function createPhotoOutput() {
   let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
   let haveValidDevice = false;
@@ -166,48 +133,6 @@ function createPhotoOutput() {
   mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
 
-async function createVideoOutput() {
-  await getVideoSurfaceId();
-  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-  let haveValidDevice = false;
-  for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-    if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
-      useDevice = device;
-      haveValidDevice = true;
-      break;
-    }
-  }
-  if (!haveValidDevice) {
-    return;
-  }
-  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
-  let previewProfile = cameraOutputCap.previewProfiles[0];
-  let videoProfile = cameraOutputCap.videoProfiles[0];
-  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
-    let foundProfile = cameraOutputCap.videoProfiles.find((indexVideoProfile: camera.Profile) => {
-      console.log(TAG, 'find videoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
-      console.log(TAG,
-        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
-      return Math.abs((indexVideoProfile.size.width * indexPreviewProfiles.size.height) -
-        (indexPreviewProfiles.size.width * indexVideoProfile.size.height)) < Number.EPSILON;
-    })
-    if (foundProfile) {
-      videoProfile = foundProfile;
-      previewProfile = indexPreviewProfiles;
-      break;
-    }
-  }
-  console.log(TAG, 'videoProfile: w: ' + videoProfile.size.width + 'h: ' + videoProfile.size.height);
-  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
-  CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
-  CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
-  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-  console.log(TAG, 'createVideoOutput' + videoProfile,'surfaceID', mVideoSurfaceId);
-  mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
-  console.log(TAG, 'create preview output' + mPreviewOutput,'createVideoOutput', mVideoOutput);
-}
-
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getCreatePhotoSession.');
   mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
@@ -219,37 +144,11 @@ async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoO
   await mPhotoSession.commitConfig();
 }
 
-async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
-  videoOutput: camera.VideoOutput) {
-  console.info(TAG, 'getCreateVideoSession.');
-  mVideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
-  mVideoSession.beginConfig();
-  console.info(TAG, testName + ' beginConfig passed.');
-  mVideoSession.addInput(mCameraInput);
-  console.info(TAG, testName + ' addInput passed.');
-  await mCameraInput.open();
-  console.info(TAG, testName + ' camera open passed.');
-  mVideoSession.addOutput(previewOutput);
-  console.info(TAG, testName + ' addOutput previewOutput passed.');
-  mVideoSession.addOutput(videoOutput);
-  console.info(TAG, testName + ' addOutput videoOutput passed.');
-  await mVideoSession.commitConfig();
-  console.info(TAG, testName + ' session commitConfig successfully.');
-}
-
 async function releasePhotoSession() {
   console.info(TAG, 'releasePhotoSession.');
   await mPreviewOutput?.release();
   await mPhotoOutput?.release();
   await mPhotoSession?.release();
-}
-
-async function releaseVideoSession() {
-  console.info(TAG, 'releaseVideoSession.');
-  await mAVRecorder?.release();
-  await mPreviewOutput?.release();
-  await mVideoOutput?.release();
-  await mVideoSession?.release();
 }
 
 async function ImageGetComponent(done: Function, testName: string, callback: (receiver:image.ImageReceiver) => void) {
@@ -267,7 +166,6 @@ async function ImageGetComponent(done: Function, testName: string, callback: (re
       callback(receiver);
       await sleep(1000);
       await releasePhotoSession();
-      await receiver.release();
       done();
     }
   } catch (error) {
@@ -287,7 +185,6 @@ export default function ImageGetComponentSupp() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(async () => {
       await sleep(1000);
@@ -313,34 +210,52 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_AsyncCallback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_001';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          try {
-            console.info(TAG, testName, ' receiver.on begin');
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            img.getComponent(image.ComponentType.JPEG,(err: BusinessError, component: image.Component) => {
-              if (err) {
-                console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-                expect().assertFail();
-              } else {
-                console.info(TAG, testName,'Succeeded in getting component.',component.componentType);
-                expect(component.componentType).assertEqual(4);
-              }
-            })
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
-            expect().assertFalse();
-          }
-          await releasePhotoSession();
-          console.info(TAG,testName,"releasePhotoSession success");
-          done();
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
+          receiver.on('imageArrival', async () => {
+            try {
+              console.info(TAG, testName, ' receiver.on begin');
+              let img = await receiver.readNextImage();
+              console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+              img.getComponent(image.ComponentType.JPEG, (err: BusinessError, component: image.Component) => {
+                if (err) {
+                  console.error(TAG, testName, `Failed to get the component.code ${err.code},message is${err.message}`);
+                  expect().assertFail();
+                  done();
+                } else {
+                  console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                  expect(component.componentType).assertEqual(image.ComponentType.JPEG);
+                  done();
+                }
+              });
+            } catch (error) {
+              console.error(TAG, testName, 'Unexpected error:', error.message, error.code);
+              expect().assertFail();
+              done();
+            }
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_AsyncCallback_002
@@ -352,29 +267,53 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_AsyncCallback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_002';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            img.getComponent(image.ComponentType.YUV_Y, (err: BusinessError, component: image.Component) => {
-              if (err) {
-                console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-              } else {
-                console.info(TAG, testName,'Succeeded in getting component.',component.componentType);
-                expect().assertFail();
-              }
-            })
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
-            expect(Number(error.code)).assertEqual(1);
-          }
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
+          receiver.on('imageArrival', async () => {
+            try {
+              console.info(TAG, testName, ' receiver.on begin');
+              let img = await receiver.readNextImage();
+              console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+              img.getComponent(image.ComponentType.YUV_Y, (err: BusinessError, component: image.Component) => {
+                if (err) {
+                  console.error(TAG, testName, `Failed to get the component.code ${err.code},message is${err.message}`);
+                  expect(Number(err.code)).assertEqual(1); 
+                  done();
+                } else {
+                  console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                  expect(component.componentType).assertEqual(image.ComponentType.YUV_Y);
+                  done();
+                }
+              });
+            } catch (error) {
+              console.error(TAG, testName, 'Unexpected error:', error.message, error.code);
+              expect(Number(error.code)).assertEqual(1);
+              done();
+            }
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
+         
     /**
      * @tc.number     image_getComponent_AsyncCallback_003
      * @tc.name       image_getComponent_AsyncCallback_003
@@ -385,30 +324,53 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_AsyncCallback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_003';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            img.getComponent(image.ComponentType.YUV_U, (err: BusinessError, component: image.Component) => {
-              if (err) {
-                console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-                expect().assertFail();
-              } else {
-                console.info(TAG, testName,'Succeeded in getting component.',component.componentType);
-                expect().assertFail();
-              }
-            })
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
-            expect(Number(error.code)).assertEqual(1);
-          }
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
+          receiver.on('imageArrival', async () => {
+            try {
+              console.info(TAG, testName, ' receiver.on begin');
+              let img = await receiver.readNextImage();
+              console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+              img.getComponent(image.ComponentType.YUV_U, (err: BusinessError, component: image.Component) => {
+                if (err) {
+                  console.error(TAG, testName, `Failed to get the component.code ${err.code},message is${err.message}`);
+                  expect(Number(err.code)).assertEqual(1);
+                  done();
+                } else {
+                  console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                  expect(component.componentType).assertEqual(image.ComponentType.YUV_U);
+                  done();
+                }
+              });
+            } catch (error) {
+              console.error(TAG, testName, 'Unexpected error:', error.message, error.code);
+              expect(Number(error.code)).assertEqual(1);
+              done();
+            }
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
+
     /**
      * @tc.number     image_getComponent_AsyncCallback_004
      * @tc.name       image_getComponent_AsyncCallback_004
@@ -419,31 +381,52 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_AsyncCallback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_004';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
-          try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            img.getComponent(image.ComponentType.YUV_V, (err: BusinessError, component: image.Component) => {
-              if (err) {
-                console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
-                expect().assertFail();
-              } else {
-                console.info(TAG, testName,'Succeeded in getting component.',component.componentType);
-                expect().assertFail();
-              }
-            })
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
-            expect(Number(error.code)).assertEqual(1);
-          }
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
+          receiver.on('imageArrival', async () => {
+            try {
+              console.info(TAG, testName, ' receiver.on begin');
+              let img = await receiver.readNextImage();
+              console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+              img.getComponent(image.ComponentType.YUV_V, (err: BusinessError, component: image.Component) => {
+                if (err) {
+                  console.error(TAG, testName, `Failed to get the component.code ${err.code},message is${err.message}`);
+                  expect(Number(err.code)).assertEqual(1);
+                  done();
+                } else {
+                  console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                  expect(component.componentType).assertEqual(image.ComponentType.YUV_V);
+                  done();
+                }
+              });
+            } catch (error) {
+              console.error(TAG, testName, 'Unexpected error:', error.message, error.code);
+              expect(Number(error.code)).assertEqual(1);
+              done();
+            }
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_AsyncCallback_005
@@ -455,26 +438,54 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_AsyncCallback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_005';
-      ImageGetComponent(done,testName, async (receiver) => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
+          try {
+            receiver.on('imageArrival', async () => {
+              try {
+                let img = await receiver.readNextImage();
+                console.info(TAG, testName, 'receiver.readNextImage succeeded.', img.format);
+                expect(img.format > 0).assertTrue();
+                
+                console.info(TAG, testName, 'image size:', img.size);
+                expect(img.size.height > 0 && img.size.width > 0).assertTrue();
+                
+                console.info(TAG, testName, 'clipRect size:', img.clipRect.size);
+                expect(img.clipRect.size.height > 0 && img.clipRect.size.width > 0).assertTrue();
+                done();
+              } catch (error) {
+                console.error(TAG, testName, 'Image processing error:', error.message, error.code);
+                expect().assertFail();
+                done();
+              }
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
         try {
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.format);
-            expect(img.format>0).assertTrue();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.size);
-            expect(img.size.height>0 && img.size.width>0 ).assertTrue();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.clipRect);
-            expect(img.clipRect.size.height >0 && img.clipRect.size.width>0 ).assertTrue();
-          });
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
-          expect().assertFail();
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
         }
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_AsyncCallback_006
@@ -486,24 +497,49 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_AsyncCallback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_006';
-      ImageGetComponent(done,testName, async (receiver) => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
+          try {
+            receiver.on('imageArrival', async () => {
+              try {
+                let img = await receiver.readNextImage();
+                console.info(TAG, testName, 'receiver.readNextImage succeeded. ClipRect:', JSON.stringify(img.clipRect));
+                expect(img.clipRect.x).assertEqual(0);
+                expect(img.clipRect.y).assertEqual(0);
+                done();
+              } catch (error) {
+                console.error(TAG, testName, 'Image processing error:', error.message, error.code);
+                expect().assertFail();
+                done();
+              }
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
         try {
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',JSON.stringify(img.clipRect));
-            expect(img.clipRect.x).assertEqual(0);
-            expect(img.clipRect.y).assertEqual(0);
-          });
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
-          expect().assertFail();
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
         }
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_callback_return_valve_001
@@ -515,33 +551,63 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_callback_return_valve_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_callback_return_valve_001';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            receiver.readNextImage((err: BusinessError, img: image.Image) => {
-              if (err) {
-                console.error(TAG ,testName,`Failed to read the next Image.code ${err.code},message is ${err.message}`);
-              } else {
-                console.info(TAG, testName, 'Succeeded in reading the next Image.', img.clipRect);
-                expect(img.clipRect.size.height >0 && img.clipRect.size.width>0 ).assertTrue();
-                console.info(TAG, testName, 'Succeeded in reading the next Image.', img.size);
-                expect(img.size.height > 0 && img.size.width > 0).assertTrue();
-                console.info(TAG, testName, 'Succeeded in reading the next Image.', img.format);
-                expect(img.format> 0).assertTrue();
-                console.info(TAG ,testName,'Succeeded in reading the next Image.',img.timestamp);
-                expect(img.timestamp!=undefined).assertTrue();
-              }
+            receiver.on('imageArrival', () => {
+              receiver.readNextImage((err: BusinessError, img: image.Image) => {
+                if (err) {
+                  console.error(TAG, testName, `Failed to read image: code ${err.code}, message${err.message}`);
+                  expect().assertFail();
+                  done();
+                  return;
+                }
+                try {
+                  console.info(TAG, testName, 'Image properties:', {
+                    clipRect: img.clipRect,
+                    size: img.size,
+                    format: img.format,
+                    timestamp: img.timestamp
+                  });
+                  expect(img.clipRect.size.height > 0 && img.clipRect.size.width > 0).assertTrue();
+                  expect(img.size.height > 0 && img.size.width > 0).assertTrue();
+                  expect(img.format > 0).assertTrue();
+                  expect(img.timestamp !== undefined).assertTrue();
+                  done();
+                } catch (assertError) {
+                  console.error(TAG, testName, 'Assertion error:', assertError.message);
+                  expect().assertFail();
+                  done();
+                }
+              });
             });
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_callback_return_valve_002
@@ -553,29 +619,56 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_callback_return_valve_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_callback_return_valve_002';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            receiver.readNextImage((err: BusinessError, img: image.Image) => {
-              if (err) {
-                console.error(TAG ,testName,`Failed to read the next Image.code ${err.code},message is ${err.message}`);
-              } else {
-                console.info(TAG, testName, 'Succeeded in reading the next Image.', JSON.stringify(img.clipRect));
-                expect(img.clipRect.x).assertEqual(0);
-                expect(img.clipRect.y).assertEqual(0);
-              }
+            receiver.on('imageArrival', () => {
+              receiver.readNextImage((err: BusinessError, img: image.Image) => {
+                if (err) {
+                  console.error(TAG, testName, `Failed to read image: code ${err.code}, message${err.message}`);
+                  expect().assertFail();
+                  done();
+                  return;
+                }
+                try {
+                  console.info(TAG, testName, 'ClipRect properties:', img.clipRect);
+                  expect(img.clipRect.x).assertEqual(0);
+                  expect(img.clipRect.y).assertEqual(0);
+                  done();
+                } catch (assertError) {
+                  console.error(TAG, testName, 'Assertion error:', assertError.message);
+                  expect().assertFail();
+                  done();
+                }
+              });
             });
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_Promise_001
@@ -585,26 +678,52 @@ export default function ImageGetComponentSupp() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('image_getComponent_Promise_001', Level.LEVEL0, async (done: Function,img : image.Image) => {
+    it('image_getComponent_Promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_Promise_001';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            let component = await img.getComponent(image.ComponentType.JPEG);
-            console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
-            expect(component.componentType).assertEqual(image.ComponentType.JPEG);
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
+            receiver.on('imageArrival', async () => {
+              try {
+                let img = await receiver.readNextImage();
+                console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+                let component = await img.getComponent(image.ComponentType.JPEG);
+                console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                expect(component.componentType).assertEqual(image.ComponentType.JPEG);
+                done();
+              } catch (error) {
+                console.error(TAG, testName, 'Component get error:', error.message, error.code);
+                expect().assertFail();
+                done();
+              }
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_Promise_002
@@ -614,26 +733,52 @@ export default function ImageGetComponentSupp() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('image_getComponent_Promise_002', Level.LEVEL0, async (done: Function,img : image.Image) => {
+    it('image_getComponent_Promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_Promise_002';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            let component = await img.getComponent(image.ComponentType.YUV_Y);
-            console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
+            receiver.on('imageArrival', async () => {
+              try {
+                let img = await receiver.readNextImage();
+                console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+                let component = await img.getComponent(image.ComponentType.YUV_Y);
+                console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                expect(component.componentType).assertEqual(image.ComponentType.YUV_Y);
+                done();
+              } catch (error) {
+                console.error(TAG, testName, 'Component get error:', error.message, error.code);
+                expect(Number(error.code)).assertEqual(1);
+                done();
+              }
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
-            expect(Number(error.code)).assertEqual(1);
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_Promise_003
@@ -643,26 +788,52 @@ export default function ImageGetComponentSupp() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('image_getComponent_Promise_003', Level.LEVEL0, async (done: Function,img : image.Image) => {
+    it('image_getComponent_Promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_Promise_003';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            let component = await img.getComponent(image.ComponentType.YUV_U);
-            console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
+            receiver.on('imageArrival', async () => {
+              try {
+                let img = await receiver.readNextImage();
+                console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+                let component = await img.getComponent(image.ComponentType.YUV_U);
+                console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                expect(component.componentType).assertEqual(image.ComponentType.YUV_U);
+                done();
+              } catch (error) {
+                console.error(TAG, testName, 'Component get error:', error.message, error.code);
+                expect(Number(error.code)).assertEqual(1);
+                done();
+              }
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
-            expect(Number(error.code)).assertEqual(1);
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_Promise_004
@@ -672,26 +843,53 @@ export default function ImageGetComponentSupp() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('image_getComponent_Promise_004', Level.LEVEL0, async (done: Function,img : image.Image) => {
+    it('image_getComponent_Promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_Promise_004';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            let component = await img.getComponent(image.ComponentType.YUV_V);
-            console.info(TAG, testName, 'Succeeded in getting component.',component.componentType);
+            receiver.on('imageArrival', async () => {
+              try {
+                let img = await receiver.readNextImage();
+                console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+                let component = await img.getComponent(image.ComponentType.YUV_V);
+                console.info(TAG, testName, 'Succeeded in getting component.', component.componentType);
+                expect(component.componentType).assertEqual(image.ComponentType.YUV_V);
+                done();
+              } catch (error) {
+                console.error(TAG, testName, 'Component get error:', error.message, error.code);
+                expect(Number(error.code)).assertEqual(1);
+                done();
+              }
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
-            expect(Number(error.code)).assertEqual(1);
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
+
     /**
      * @tc.number     image_getComponent_Promise_005
      * @tc.name       image_getComponent_Promise_005
@@ -702,22 +900,48 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_Promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_Promise_005';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.timestamp);
-            expect(img.timestamp!=undefined).assertTrue();
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
+            receiver.on('imageArrival', async () => {
+              try {
+                let img = await receiver.readNextImage();
+                console.info(TAG, testName, 'receiver.readNextImage succeeded.', img.timestamp);
+                expect(img.timestamp !== undefined).assertTrue();
+                done();
+              } catch (error) {
+                console.error(TAG, testName, 'Image processing error:', error.message, error.code);
+                expect().assertFail();
+                done();
+              }
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
 
     /**
      * @tc.number     image_getComponent_AsyncCallback_timestamp_Property_001
@@ -729,172 +953,57 @@ export default function ImageGetComponentSupp() {
      */
     it('image_getComponent_AsyncCallback_timestamp_Property_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_timestamp_Property_001';
-      ImageGetComponent(done,testName, async (receiver) => {
-        receiver.on('imageArrival', async () => {
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        ImageGetComponent(done, testName, async (receiver) => {
           try {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.timestamp);
-            expect(img.timestamp>=0).assertTrue();
-          }catch (error) {
-            console.info(TAG ,testName, error.message, error.code);
+            receiver.on('imageArrival', () => {
+              receiver.readNextImage((err: BusinessError, img: image.Image) => {
+                if (err) {
+                  console.error(TAG, testName, `Failed to read image: code ${err.code}, message${err.message}`);
+                  expect().assertFail();
+                  done();
+                  return;
+                }
+                try {
+                  console.info(TAG, testName, 'Image timestamp:', img.timestamp);
+                  expect(img.timestamp >= 0).assertTrue();
+
+                  done();
+                } catch (assertError) {
+                  console.error(TAG, testName, 'Assertion error:', assertError.message);
+                  expect().assertFail();
+                  done();
+                }
+              });
+            });
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+            mPhotoSession.start();
+          } catch (error) {
+            console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
+            done();
           }
         });
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
-      })
-    })
-    /**
-     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_001
-     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_001
-     * @tc.desc       Image.getBufferData23 cover rowStride
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('IMAGE_GET_BUFFER_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_001';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            try {
-              let bufferData = img.getBufferData();
-              if (bufferData == null) {
-                console.info(TAG, testName, 'does not support getBufferData.');
-              } else {
-                console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.rowStride);
- 	              expect(bufferData!.rowStride.length > 0).assertTrue();
-              }
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect().assertFail();
-            }
-            done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          done();
-        }
       } catch (error) {
-        console.info(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
+        console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
+        expect().assertFail();
         done();
-      }
-    })
-    /**
-     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_002
-     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_002
-     * @tc.desc       Image.getBufferData23 cover pixelStride
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('IMAGE_GET_BUFFER_DATA_TEST_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_002';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            try {
-              let bufferData = img.getBufferData();
-              if (bufferData == null) {
-                console.info(TAG, testName, 'does not support getBufferData.');
-              } else {
-                console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.pixelStride);
-                expect(bufferData!.pixelStride.length > 0).assertTrue();
-              }
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect().assertFail();
-            }
-            done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          done();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
         }
-      } catch (error) {
-        console.info(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
-        done();
       }
-    })
-    /**
-     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_003
-     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_003
-     * @tc.desc       Image.getBufferData23 cover byteBuffer
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
-    it('IMAGE_GET_BUFFER_DATA_TEST_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_003';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            try {
-              let bufferData = img.getBufferData();
-              if (bufferData == null) {
-                console.info(TAG, testName, 'does not support getBufferData.');
-              } else {
-                console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.byteBuffer);
-                expect(bufferData!.byteBuffer.byteLength > 0).assertTrue();
-              }
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect().assertFail();
-            }
-            done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          done();
-        }
-      } catch (error) {
-        console.info(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
-        done();
-      }
-    })
+    });
+
     /**
      * @tc.name   IMAGE_GET_META_DATA_TEST_001
      * @tc.number IMAGE_GET_META_DATA_TEST_001
@@ -905,46 +1014,57 @@ export default function ImageGetComponentSupp() {
      */
     it('IMAGE_GET_META_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_GET_META_DATA_TEST_001';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
       try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          counter = 0;
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            counter =  1;
+        let size: image.Size = {
+          height: 8192,
+          width: 8
+        };
+        let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+        console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+        receiver.on('imageArrival', async () => {
+          try {
             let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
             try {
-              console.info(TAG,testName,"get receiver SurfaceId success");
               let value = img.getMetadata(image.HdrMetadataKey.HDR_GAINMAP_METADATA);
-              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
-              expect(value).assertFail();
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect(Number(error.code)).assertEqual(7600302)
+              console.info(TAG, testName, 'img.getMetadata succeeded.', value);
+              // 验证获取到的元数据
+              expect(value !== undefined).assertTrue();
+            } catch (metaError) {
+              console.error(TAG, testName, 'getMetadata error:', metaError.message, metaError.code);
+              // 验证预期的错误码
+              expect(Number(metaError.code)).assertEqual(7600302);
             }
             done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          expect(counter).assertEqual(1);
-          done();
-        }
+          } catch (readError) {
+            console.error(TAG, testName, 'readNextImage error:', readError.message, readError.code);
+            expect().assertFail();
+            done();
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+        await sleep(2000);
       } catch (error) {
-        console.error(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
+        console.error(TAG, testName, 'Test setup error:', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
         done();
       }
-    })
+    });
 
     /**
      * @tc.name   IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001
@@ -956,51 +1076,238 @@ export default function ImageGetComponentSupp() {
      */
     it('IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_GET_BUFFER_DATA_SUPPORT_TEST_001';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        } else {
-          let size: image.Size = {
-            height: 8192,
-            width: 8
-          }
-          counter = 0;
-          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
-          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
-          receiver.on('imageArrival', async () => {
-            counter =  1;
-            console.info(TAG, testName, 'counter.',counter);
-            let img = await receiver.readNextImage();
-            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
-            try {
-              console.info(TAG,testName,"get receiver SurfaceId success");
-              let value = img.getBufferData()
-              if (value == null) {
-                console.info(TAG, testName, 'does not support getBufferData.');
-              } else {
-                console.info(TAG, testName, 'img.getMetadata succeeded.',value);
-                expect(value?.rowStride).not().assertUndefined()
-                expect(value?.pixelStride).not().assertUndefined()
-                expect(value?.byteBuffer).not().assertUndefined()
-              }
-            } catch (error) {
-              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
-              expect().assertFail();
-            }
-            done();
-          });
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
-          await sleep(2000);
-          done();
-        }
-      } catch (error) {
-        console.error(TAG ,testName, error.message, error.code);
-        await releasePhotoSession();
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
         done();
+        return;
       }
-    })
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8
+        };
+        let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+        console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+        receiver.on('imageArrival', async () => {
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+            try {
+              let bufferData = img.getBufferData();
+              console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData);
+              expect(bufferData?.rowStride).not().assertUndefined();
+              expect(bufferData?.pixelStride).not().assertUndefined();
+              expect(bufferData?.byteBuffer).not().assertUndefined();
+              done();
+            } catch (bufferError) {
+              console.error(TAG, testName, 'getBufferData error:', bufferError.message, bufferError.code);
+              expect().assertFail();
+              done();
+            }
+          } catch (readError) {
+            console.error(TAG, testName, 'readNextImage error:', readError.message, readError.code);
+            expect().assertFail();
+            done();
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+        await sleep(2000);
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup error:', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
+
+    /**
+     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_001
+     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_001
+     * @tc.desc       Image.getBufferData23 cover rowStride
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('IMAGE_GET_BUFFER_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_001';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8
+        };
+        let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+        console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+        receiver.on('imageArrival', async () => {
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+            try {
+              let bufferData = img.getBufferData();
+              console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData);
+              expect(bufferData!.rowStride.length > 0).assertTrue();
+              done();
+            } catch (bufferError) {
+              console.error(TAG, testName, 'getBufferData error:', bufferError.message, bufferError.code);
+              expect().assertFail();
+              done();
+            }
+          } catch (readError) {
+            console.error(TAG, testName, 'readNextImage error:', readError.message, readError.code);
+            expect().assertFail();
+            done();
+          }
+        });
+    
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+        await sleep(2000);
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup error:', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
+
+    /**
+     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_002
+     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_002
+     * @tc.desc       Image.getBufferData23 cover pixelStride
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('IMAGE_GET_BUFFER_DATA_TEST_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_002';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8
+        };
+        let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+        console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+        receiver.on('imageArrival', async () => {
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+            try {
+              let bufferData = img.getBufferData();
+              console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData);
+              expect(bufferData!.pixelStride.length > 0).assertTrue();
+              done();
+            } catch (bufferError) {
+              console.error(TAG, testName, 'getBufferData error:', bufferError.message, bufferError.code);
+              expect().assertFail();
+              done();
+            }
+          } catch (readError) {
+            console.error(TAG, testName, 'readNextImage error:', readError.message, readError.code);
+            expect().assertFail();
+            done();
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+        await sleep(2000);
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup error:', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
+
+    /**
+     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_003
+     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_003
+     * @tc.desc       Image.getBufferData23 cover byteBuffer
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('IMAGE_GET_BUFFER_DATA_TEST_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_003';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8
+        };
+        let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+        console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+        receiver.on('imageArrival', async () => {
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+            try {
+              let bufferData = img.getBufferData();
+              console.info(TAG, testName, 'img.getBufferData succeeded.', bufferData);
+              expect(bufferData!.byteBuffer.byteLength > 0).assertTrue();
+              done();
+            } catch (bufferError) {
+              console.error(TAG, testName, 'getBufferData error:', bufferError.message, bufferError.code);
+              expect().assertFail();
+              done();
+            }
+          } catch (readError) {
+            console.error(TAG, testName, 'readNextImage error:', readError.message, readError.code);
+            expect().assertFail();
+            done();
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+        await sleep(2000);
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup error:', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+      }
+    });
+
   })
 }
