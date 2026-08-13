@@ -5313,7 +5313,7 @@ export default function TextPicker() {
         done();
         return;
       }
-      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let pickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
       pickerOptions.pickerColorMode = photoAccessHelper.PickerColorMode.LIGHT;
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
