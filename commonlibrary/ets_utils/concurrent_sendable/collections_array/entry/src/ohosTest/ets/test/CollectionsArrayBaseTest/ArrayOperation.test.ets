@@ -54,7 +54,8 @@ export default function suite() {
       let arr: collections.Array<number> = new collections.Array<number>();
       expect(arr.push(10)).assertEqual(1);
       expect(arr.pop()).assertEqual(10);
-      expect(arr.pop() === null || arr.pop() === undefined).assertTrue();
+      const popped: number | null | undefined = arr.pop();
+      expect(popped === null || popped === undefined).assertTrue();
 
       console.info(`${caseName}, test end`);
     });
@@ -74,7 +75,8 @@ export default function suite() {
       let arr: collections.Array<number> = new collections.Array<number>();
       expect(arr.unshift(10)).assertEqual(1);
       expect(arr.shift()).assertEqual(10);
-      expect(arr.shift() === null || arr.shift() === undefined).assertTrue();
+      const shifted: number | null | undefined = arr.shift();
+      expect(shifted === null || shifted === undefined).assertTrue();
 
       console.info(`${caseName}, test end`);
     });

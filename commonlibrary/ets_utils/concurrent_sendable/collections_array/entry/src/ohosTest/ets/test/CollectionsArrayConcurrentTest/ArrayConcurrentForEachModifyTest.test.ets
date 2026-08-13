@@ -24,11 +24,15 @@ import {
 } from "../SharedLock";
 
 @Concurrent
-async function forEachTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function forEachTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
-    arr.forEach((value: number): void => { count++; });
+    let signaled: boolean = false;
+    arr.forEach((value: number): void => {
+      count++;
+      if (!signaled) { signaled = true; notifySharedSignal(handshake, 0); }
+    });
     return "success";
   } catch (err) {
     const errStr: string = JSON.stringify(err);
@@ -38,10 +42,9 @@ async function forEachTraverse(arr: collections.Array<number>, barrier: SharedAr
 }
 
 @Concurrent
-async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.push(9999); return "success"; }
   catch (err) {
     const e: string = JSON.stringify(err);
@@ -52,10 +55,9 @@ async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBu
 }
 
 @Concurrent
-async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.pop(); return "success"; }
   catch (err) { const e: string = JSON.stringify(err);
     if (e.indexOf("10200201") >= 0) {
@@ -65,10 +67,9 @@ async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuf
 }
 
 @Concurrent
-async function modifySplice(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifySplice(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.splice(100, 10); return "success"; }
   catch (err) {
     const e: string = JSON.stringify(err);
@@ -125,10 +126,9 @@ async function modifyShiftAfterTraverseStarted(arr: collections.Array<number>,
 }
 
 @Concurrent
-async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.unshift(9999); return "success"; }
   catch (err) {
     const e: string = JSON.stringify(err);
@@ -140,10 +140,9 @@ async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArra
 }
 
 @Concurrent
-async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.fill(0); return "success"; }
   catch (err) {
     const e: string = JSON.stringify(err);
@@ -155,10 +154,9 @@ async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBu
 }
 
 @Concurrent
-async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.copyWithin(0, 200, 300); return "success"; }
   catch (err) {
     const e: string = JSON.stringify(err);
@@ -170,10 +168,9 @@ async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedA
 }
 
 @Concurrent
-async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.sort((a: number, b: number): number => a - b); return "success"; }
   catch (err) {
     const e: string = JSON.stringify(err);
@@ -185,10 +182,9 @@ async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBu
 }
 
 @Concurrent
-async function modifyReverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modifyReverse(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.reverse(); return "success"; }
   catch (err) {
     const e: string = JSON.stringify(err);
@@ -207,10 +203,11 @@ function makeArray(count: number): collections.Array<number> {
 
 async function runTest(arr: collections.Array<number>, modifyTask: Function): Promise<boolean> {
   const barrier: SharedArrayBuffer = createSharedBarrier();
+  const handshake: SharedArrayBuffer = createSharedSignal(1);
   try {
     const results: Object[] = await Promise.all([
-      taskpool.execute(forEachTraverse, arr, barrier),
-      taskpool.execute(modifyTask, arr, barrier)
+      taskpool.execute(forEachTraverse, arr, barrier, handshake),
+      taskpool.execute(modifyTask, arr, barrier, handshake)
     ]);
     for (let i: number = 0; i < results.length; i++) {
       if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }

@@ -54,7 +54,8 @@ export default function suite() {
       let arr: collections.Array<number> = new collections.Array<number>(10, 20, 30, 40, 50);
       expect(arr.at(0)).assertEqual(10);
       expect(arr.at(-1)).assertEqual(50);
-      expect(arr.at(10) === null || arr.at(10) === undefined).assertTrue();
+      const atResult = arr.at(10);
+      expect(atResult === null || atResult === undefined).assertTrue();
 
       console.info(`${caseName}, test end`);
     });
@@ -211,7 +212,8 @@ export default function suite() {
         } else {
           expect(result).assertEqual(item.value);
         }
-        expect(arr.at(10) === null || arr.at(10) === undefined).assertTrue();
+        const atResult = arr.at(10);
+      expect(atResult === null || atResult === undefined).assertTrue();
       }
 
       console.info(`${caseName}, test end`);
@@ -430,7 +432,8 @@ export default function suite() {
         let item: StringTestValue = stringValues[i];
         let arr: collections.Array<string> = new collections.Array<string>(item.value);
         expect(arr.at(0)).assertEqual(item.value);
-        expect(arr.at(10) === null || arr.at(10) === undefined).assertTrue();
+        const atResult = arr.at(10);
+      expect(atResult === null || atResult === undefined).assertTrue();
       }
 
       console.info(`${caseName}, test end`);
@@ -1139,7 +1142,8 @@ export default function suite() {
       let arr: collections.Array<lang.ISendable | null | undefined> =
         new collections.Array<lang.ISendable | null | undefined>(undefined);
       expect(arr.at(0)).assertEqual(undefined);
-      expect(arr.at(10) === null || arr.at(10) === undefined).assertTrue();
+      const atResult = arr.at(10);
+      expect(atResult === null || atResult === undefined).assertTrue();
 
       console.info(`${caseName}, test end`);
     });
@@ -1159,7 +1163,8 @@ export default function suite() {
       let arr: collections.Array<lang.ISendable | null | undefined> =
         new collections.Array<lang.ISendable | null | undefined>(null);
       expect(arr.at(0)).assertEqual(null);
-      expect(arr.at(10) === null || arr.at(10) === undefined).assertTrue();
+      const atResult = arr.at(10);
+      expect(atResult === null || atResult === undefined).assertTrue();
 
       console.info(`${caseName}, test end`);
     });

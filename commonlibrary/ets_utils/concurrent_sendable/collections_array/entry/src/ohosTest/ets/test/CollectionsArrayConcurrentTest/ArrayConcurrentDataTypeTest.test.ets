@@ -24,7 +24,6 @@ async function stringForEachTask(arr: collections.Array<string>): Promise<number
 }
 
 @Concurrent
-
 async function numberPushTask(arr: collections.Array<number>, values: number[],
   lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
   return await lock.lockAsync(async (): Promise<number> => {
@@ -41,7 +40,6 @@ async function booleanIncludesTask(arr: collections.Array<boolean>, target: bool
 }
 
 @Concurrent
-
 async function nullPushPopTask(arr: collections.Array<number | null>,
   lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
   return await lock.lockAsync(async (): Promise<number> => {
@@ -52,7 +50,6 @@ async function nullPushPopTask(arr: collections.Array<number | null>,
 }
 
 @Concurrent
-
 async function undefinedPushTask(arr: collections.Array<number | undefined>,
   lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
   return await lock.lockAsync(async (): Promise<number> => {

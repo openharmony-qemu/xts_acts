@@ -15,15 +15,16 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
-import { createSharedBarrier, waitAtSharedBarrier } from "../SharedLock";
+import { createSharedBarrier, waitAtSharedBarrier, createSharedSignal, notifySharedSignal, waitForSharedSignal } from "../SharedLock";
 
 @Concurrent
-async function noLockEntries(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function noLockEntries(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
     const iterator: IterableIterator<[number, number]> = arr.entries();
     let entry: IteratorResult<[number, number]> = iterator.next();
+    notifySharedSignal(handshake, 0);
     while (!entry.done) { count++; entry = iterator.next(); }
     return "success";
   } catch (err) {
@@ -34,10 +35,9 @@ async function noLockEntries(arr: collections.Array<number>, barrier: SharedArra
 }
 
 @Concurrent
-async function noLockSplice(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function noLockSplice(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
+  waitForSharedSignal(handshake, 0, 5000);
   try { arr.splice(10, 5); return "success"; }
   catch (err) { const e: string = JSON.stringify(err); if (e.indexOf("10200201") >= 0) { return "error:10200201"; } return "error:unknown"; }
 }
@@ -51,10 +51,11 @@ function makeArray(count: number): collections.Array<number> {
 async function runNoLockTest(arr: collections.Array<number>, traverseTask: Function,
   modifyTask: Function): Promise<boolean> {
   const barrier: SharedArrayBuffer = createSharedBarrier();
+  const handshake: SharedArrayBuffer = createSharedSignal(1);
   try {
     const results: Object[] = await Promise.all([
-      taskpool.execute(traverseTask, arr, barrier),
-      taskpool.execute(modifyTask, arr, barrier)
+      taskpool.execute(traverseTask, arr, barrier, handshake),
+      taskpool.execute(modifyTask, arr, barrier, handshake)
     ]);
     for (let i: number = 0; i < results.length; i++) {
       if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }

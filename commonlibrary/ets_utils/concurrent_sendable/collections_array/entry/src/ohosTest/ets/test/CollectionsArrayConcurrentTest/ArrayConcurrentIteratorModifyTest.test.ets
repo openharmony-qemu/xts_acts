@@ -15,40 +15,29 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
-import { createSharedBarrier, waitAtSharedBarrier } from "../SharedLock";
+import {
+  createSharedBarrier,
+  createSharedSignal,
+  notifySharedSignal,
+  waitAtSharedBarrier,
+  waitForSharedSignal
+} from "../SharedLock";
 
 @Concurrent
-async function entriesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function entriesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
     const iterator: IterableIterator<[number, number]> = arr.entries();
     let entry: IteratorResult<[number, number]> = iterator.next();
-    while (!entry.done) { count++; entry = iterator.next(); }
-    return "success";
-  } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
-  }
-}
-
-@Concurrent
-async function keysTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
-  waitAtSharedBarrier(barrier, 2);
-  try {
-    let count: number = 0;
-    const iterator: IterableIterator<number> = arr.keys();
-    let key: IteratorResult<number> = iterator.next();
-    while (!key.done) {
+    notifySharedSignal(signal, 0);
+    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+    while (!entry.done) {
       count++;
-      key = iterator.next();
-      if (count % 100 === 0) {
-        const _val: number | undefined = arr[key.value as number];
-      }
-      if (count % 5000 === 0) {
-        let innerDummy: number = 0;
-        for (let j: number = 0; j < 5000; j++) { innerDummy += j; }
+      entry = iterator.next();
+      if (count === 100) {
+        notifySharedSignal(signal, 2);
       }
     }
     return "success";
@@ -60,13 +49,26 @@ async function keysTraverse(arr: collections.Array<number>, barrier: SharedArray
 }
 
 @Concurrent
-async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function keysTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
-    const iterator: IterableIterator<number> = arr.values();
-    let val: IteratorResult<number> = iterator.next();
-    while (!val.done) { count++; val = iterator.next(); }
+    const iterator: IterableIterator<number> = arr.keys();
+    let key: IteratorResult<number> = iterator.next();
+    notifySharedSignal(signal, 0);
+    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+    while (!key.done) {
+      count++;
+      key = iterator.next();
+      if (count === 100) {
+        notifySharedSignal(signal, 2);
+        if (!waitForSharedSignal(signal, 3, 5000)) { return "error:unknown"; }
+      }
+      if (count % 100 === 0) {
+        const _val: number | undefined = arr[key.value as number];
+      }
+    }
     return "success";
   } catch (err) {
     const e: string = JSON.stringify(err);
@@ -76,21 +78,42 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
 }
 
 @Concurrent
-async function modPush(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
-  try { arr.push(9999); return "success"; }
-  catch (err) { const e: string = JSON.stringify(err); if (e.indexOf("10200201") >= 0) { return "error:10200201"; } return "error:unknown"; }
+  try {
+    let count: number = 0;
+    const iterator: IterableIterator<number> = arr.values();
+    let val: IteratorResult<number> = iterator.next();
+    notifySharedSignal(signal, 0);
+    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+    while (!val.done) {
+      count++;
+      val = iterator.next();
+      if (count === 100) {
+        notifySharedSignal(signal, 2);
+      }
+    }
+    return "success";
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
+    return "error:unknown";
+  }
 }
 
 @Concurrent
-async function modPushForKeys(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modPush(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
+  if (!waitForSharedSignal(signal, 0, 3000)) {
+    return "error:unknown";
+  }
+  notifySharedSignal(signal, 1);
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
   try {
-    for (let i: number = 0; i < 20; i++) {
-      let dummy: number = 0;
-      for (let j: number = 0; j < 50000; j++) { dummy += j; }
+    arr.push(9999);
+    for (let i: number = 0; i < 1000; i++) {
       arr.push(9999);
     }
     return "success";
@@ -102,30 +125,95 @@ async function modPushForKeys(arr: collections.Array<number>, barrier: SharedArr
 }
 
 @Concurrent
-async function modPop(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modPushForKeys(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
-  try { arr.pop(); return "success"; }
-  catch (err) { const e: string = JSON.stringify(err); if (e.indexOf("10200201") >= 0) { return "error:10200201"; } return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 0, 3000)) {
+    return "error:unknown";
+  }
+  notifySharedSignal(signal, 1);
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  try {
+    arr.push(9999);
+    notifySharedSignal(signal, 3);
+    for (let i: number = 0; i < 1000; i++) {
+      arr.push(9999);
+    }
+    return "success";
+  } catch (err) {
+    notifySharedSignal(signal, 3);
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
+    return "error:unknown";
+  }
 }
 
 @Concurrent
-async function modSplice(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modPop(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
-  try { arr.splice(10, 5); return "success"; }
-  catch (err) { const e: string = JSON.stringify(err); if (e.indexOf("10200201") >= 0) { return "error:10200201"; } return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 0, 3000)) {
+    return "error:unknown";
+  }
+  notifySharedSignal(signal, 1);
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  try {
+    arr.pop();
+    for (let i: number = 0; i < 1000; i++) {
+      arr.pop();
+    }
+    return "success";
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
+    return "error:unknown";
+  }
 }
 
 @Concurrent
-async function modFill(arr: collections.Array<number>, barrier: SharedArrayBuffer): Promise<string> {
+async function modSplice(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  let dummy: number = 0;
-  for (let j: number = 0; j < 50000; j++) { dummy += j; }
-  try { arr.fill(0); return "success"; }
-  catch (err) { const e: string = JSON.stringify(err); if (e.indexOf("10200201") >= 0) { return "error:10200201"; } return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 0, 3000)) {
+    return "error:unknown";
+  }
+  notifySharedSignal(signal, 1);
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  try {
+    arr.splice(10, 5);
+    notifySharedSignal(signal, 3);
+    for (let i: number = 0; i < 20; i++) {
+      arr.splice(10, 5);
+    }
+    return "success";
+  } catch (err) {
+    notifySharedSignal(signal, 3);
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
+    return "error:unknown";
+  }
+}
+
+@Concurrent
+async function modFill(arr: collections.Array<number>, barrier: SharedArrayBuffer,
+  signal: SharedArrayBuffer): Promise<string> {
+  waitAtSharedBarrier(barrier, 2);
+  if (!waitForSharedSignal(signal, 0, 3000)) {
+    return "error:unknown";
+  }
+  notifySharedSignal(signal, 1);
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  try {
+    arr.fill(0);
+    for (let i: number = 0; i < 5; i++) {
+      arr.fill(0);
+    }
+    return "success";
+  } catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
+    return "error:unknown";
+  }
 }
 
 function makeArray(count: number): collections.Array<number> {
@@ -137,10 +225,11 @@ function makeArray(count: number): collections.Array<number> {
 async function runTest(arr: collections.Array<number>, traverseTask: Function,
   modifyTask: Function): Promise<boolean> {
   const barrier: SharedArrayBuffer = createSharedBarrier();
+  const signal: SharedArrayBuffer = createSharedSignal(4);
   try {
     const results: Object[] = await Promise.all([
-      taskpool.execute(traverseTask, arr, barrier),
-      taskpool.execute(modifyTask, arr, barrier)
+      taskpool.execute(traverseTask, arr, barrier, signal),
+      taskpool.execute(modifyTask, arr, barrier, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
       if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }
@@ -203,7 +292,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentKeysPush0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(500000), keysTraverse, modPushForKeys)).assertTrue();
+        expect(await runTest(makeArray(100000), keysTraverse, modPushForKeys)).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -219,7 +308,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentKeysSplice0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(1000000), keysTraverse, modSplice)).assertTrue();
+        expect(await runTest(makeArray(100000), keysTraverse, modSplice)).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 

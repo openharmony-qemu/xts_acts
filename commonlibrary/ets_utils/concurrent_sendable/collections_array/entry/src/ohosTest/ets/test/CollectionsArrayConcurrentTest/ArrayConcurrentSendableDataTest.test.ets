@@ -17,8 +17,6 @@ import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/h
 import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 import { SendableWrapper } from "./SendableWrapper";
 
-
-
 @Concurrent
 async function sendableClassPushTask(arr: collections.Array<SendableWrapper>,
   lock: ArkTSUtils.locks.AsyncLock): Promise<number> {

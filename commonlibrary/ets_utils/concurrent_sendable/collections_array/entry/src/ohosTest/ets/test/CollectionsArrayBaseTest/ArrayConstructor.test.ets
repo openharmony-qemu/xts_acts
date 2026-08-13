@@ -706,10 +706,11 @@ export default function suite() {
       const caseName: string = 'testArrayConstructor0027';
       console.info(`${caseName}, test start`);
 
-      // 使用联合类型支持 null
+      // 验证使用联合类型且传入 null 时正确存储
       let arr: collections.Array<lang.ISendable | null | undefined> =
-        new collections.Array<lang.ISendable | null | undefined>();
-      expect(arr.length).assertEqual(0);
+      new collections.Array<lang.ISendable | null | undefined>(null);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(null);
 
       console.info(`${caseName}, test end`);
     });

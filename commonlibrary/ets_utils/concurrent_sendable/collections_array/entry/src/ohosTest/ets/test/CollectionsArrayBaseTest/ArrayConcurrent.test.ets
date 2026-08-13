@@ -81,7 +81,8 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testArrayConcurrent0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testArrayConcurrent0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName: string = 'testArrayConcurrent0001';
       console.info(`${caseName}, test start`);
 
@@ -91,6 +92,7 @@ export default function suite() {
       expect(result).assertEqual(15);
 
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -101,7 +103,8 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testArrayConcurrent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testArrayConcurrent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName: string = 'testArrayConcurrent0002';
       console.info(`${caseName}, test start`);
 
@@ -114,6 +117,7 @@ export default function suite() {
       expect(result[2]).assertEqual(6);
 
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -124,7 +128,8 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testArrayConcurrent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testArrayConcurrent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName: string = 'testArrayConcurrent0003';
       console.info(`${caseName}, test start`);
 
@@ -136,6 +141,7 @@ export default function suite() {
       expect(result[1]).assertEqual(5);
 
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -146,7 +152,8 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testArrayConcurrent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testArrayConcurrent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const caseName: string = 'testArrayConcurrent0004';
       console.info(`${caseName}, test start`);
 
@@ -161,6 +168,7 @@ export default function suite() {
       expect(result).assertEqual(5);
 
       console.info(`${caseName}, test end`);
+      done();
     });
   });
 }

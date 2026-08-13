@@ -60,6 +60,14 @@ export default function suite() {
       expect(myArr instanceof collections.Array).assertTrue();
       expect(myArr instanceof MyArray).assertTrue();
 
+      // Verify functional inheritance: inherited methods work on subclass instance
+      myArr.push(42);
+      expect(myArr.length).assertEqual(1);
+      expect(myArr[0]).assertEqual(42);
+      let popped: number | null | undefined = myArr.pop();
+      expect(popped).assertEqual(42);
+      expect(myArr.length).assertEqual(0);
+
       console.info(`${caseName}, test end`);
     });
 
@@ -119,9 +127,15 @@ export default function suite() {
       const caseName: string = 'testArrayInheritance0004';
       console.info(`${caseName}, test start`);
 
+      // Verify subclass works with string type parameter across inherited push/at/length
       let myArr: MyArray<string> = new MyArray<string>();
       expect(myArr instanceof collections.Array).assertTrue();
       expect(myArr.length).assertEqual(0);
+      myArr.push('hello');
+      myArr.push('world');
+      expect(myArr.length).assertEqual(2);
+      expect(myArr[0]).assertEqual('hello');
+      expect(myArr[1]).assertEqual('world');
 
       console.info(`${caseName}, test end`);
     });

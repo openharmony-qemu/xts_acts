@@ -48,11 +48,11 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIndexOf0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
-        for (let i: number = 0; i < 500; i++) {
+        for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];
-        for (let i: number = 0; i < 4; i++) {
+        for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(indexOfTask, arr, 250));
         }
         const results: Object[] = await Promise.all(tasks);
@@ -78,7 +78,7 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIndexOf0002";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
-        for (let i: number = 0; i < 500; i++) {
+        for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];
@@ -108,11 +108,11 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIncludes0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
-        for (let i: number = 0; i < 500; i++) {
+        for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];
-        for (let i: number = 0; i < 4; i++) {
+        for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(includesTask, arr, 100));
         }
         const results: Object[] = await Promise.all(tasks);
@@ -138,7 +138,7 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIncludes0002";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
-        for (let i: number = 0; i < 500; i++) {
+        for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];

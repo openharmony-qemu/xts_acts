@@ -27,7 +27,6 @@ import {
   BooleanTestValue,
   TestValueItem
 } from './test_data/TestDataFactory';
-import { TestHelper } from './test_utils/TestHelper';
 
 export default function suite() {
   describe('ArrayModifyTests', () => {
@@ -322,6 +321,7 @@ export default function suite() {
         arr.push(0);
         arr.sort((a: number, b: number) => a - b);
         expect(arr.length).assertEqual(2);
+        expect(arr[0] <= arr[1]).assertTrue();
       }
 
       console.info(`${caseName}, test end`);
@@ -538,6 +538,7 @@ export default function suite() {
         arr.push('aaa');
         arr.sort();
         expect(arr.length).assertEqual(2);
+        expect(arr[0] <= arr[1]).assertTrue();
       }
 
       console.info(`${caseName}, test end`);
@@ -743,6 +744,7 @@ export default function suite() {
         arr.push(false);
         arr.sort();
         expect(arr.length).assertEqual(2);
+        expect(arr[0] <= arr[1]).assertTrue();
       }
 
       console.info(`${caseName}, test end`);
@@ -768,6 +770,8 @@ export default function suite() {
         arr.push(!item.value);
         arr.reverse();
         expect(arr.length).assertEqual(2);
+        expect(arr[0]).assertEqual(!item.value);
+        expect(arr[1]).assertEqual(item.value);
       }
 
       console.info(`${caseName}, test end`);
@@ -956,6 +960,8 @@ export default function suite() {
           arr.push(item.value);
           arr.sort();
           expect(arr.length).assertEqual(2);
+          expect(arr[0] === item.value).assertTrue();
+          expect(arr[1] === item.value).assertTrue();
         }
       }
 
@@ -1223,6 +1229,8 @@ export default function suite() {
         new collections.Array<lang.ISendable | null | undefined>(undefined, undefined);
       arr.sort();
       expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(undefined);
+      expect(arr[1]).assertEqual(undefined);
 
       console.info(`${caseName}, test end`);
     });
@@ -1243,6 +1251,8 @@ export default function suite() {
         new collections.Array<lang.ISendable | null | undefined>(null, null);
       arr.sort();
       expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(null);
+      expect(arr[1]).assertEqual(null);
 
       console.info(`${caseName}, test end`);
     });
@@ -1263,6 +1273,8 @@ export default function suite() {
         new collections.Array<lang.ISendable | null | undefined>(undefined, undefined);
       arr.reverse();
       expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(undefined);
+      expect(arr[1]).assertEqual(undefined);
 
       console.info(`${caseName}, test end`);
     });
@@ -1283,6 +1295,8 @@ export default function suite() {
         new collections.Array<lang.ISendable | null | undefined>(null, null);
       arr.reverse();
       expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(null);
+      expect(arr[1]).assertEqual(null);
 
       console.info(`${caseName}, test end`);
     });

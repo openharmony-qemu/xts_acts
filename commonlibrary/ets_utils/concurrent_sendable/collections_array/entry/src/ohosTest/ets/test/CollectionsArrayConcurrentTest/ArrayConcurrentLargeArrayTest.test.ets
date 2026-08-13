@@ -201,7 +201,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_LARGE_0500
      * @tc.name      testArrayConcurrentLargeArrayPush0001
-     * @tc.desc      Verify push operations on length=1000 collections.Array with
+     * @tc.desc      Verify push operations on length=10000 collections.Array with
      *               8 concurrent TaskPool tasks and AsyncLock complete within 2000ms.
      * @tc.size      LargeTest
      * @tc.type      Function
@@ -212,7 +212,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const TAG: string = "testArrayConcurrentLargeArrayPush0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
-        for (let i: number = 0; i < 1000; i++) { arr.push(i); }
+        for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const tasks: Promise<Object>[] = [];
         const lockPush: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 8; i++) {
@@ -225,14 +225,14 @@ export default function arrayConcurrentLargeArrayTest(): void {
           expect(elapsed >= 0).assertTrue();
           expect(elapsed < 2000).assertTrue();
         }
-        expect(arr.length).assertEqual(5000);
+        expect(arr.length).assertEqual(14000);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_LARGE_0600
      * @tc.name      testArrayConcurrentLargeArrayPop0001
-     * @tc.desc      Verify pop operations on length=5000 collections.Array with
+     * @tc.desc      Verify pop operations on length=10000 collections.Array with
      *               8 concurrent TaskPool tasks and AsyncLock complete within 2000ms.
      * @tc.size      LargeTest
      * @tc.type      Function
@@ -243,7 +243,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const TAG: string = "testArrayConcurrentLargeArrayPop0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
-        for (let i: number = 0; i < 5000; i++) { arr.push(i); }
+        for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < 8; i++) {
@@ -256,14 +256,14 @@ export default function arrayConcurrentLargeArrayTest(): void {
           expect(elapsed >= 0).assertTrue();
           expect(elapsed < 2000).assertTrue();
         }
-        expect(arr.length).assertEqual(1000);
+        expect(arr.length).assertEqual(6000);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_LARGE_0700
      * @tc.name      testArrayConcurrentLargeArraySplice0001
-     * @tc.desc      Verify splice operations on length=5000 collections.Array with
+     * @tc.desc      Verify splice operations on length=10000 collections.Array with
      *               8 concurrent TaskPool tasks and AsyncLock complete within 3000ms.
      * @tc.size      LargeTest
      * @tc.type      Function
@@ -274,7 +274,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const TAG: string = "testArrayConcurrentLargeArraySplice0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
-        for (let i: number = 0; i < 5000; i++) { arr.push(i); }
+        for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < 8; i++) {
@@ -287,6 +287,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
           expect(elapsed >= 0).assertTrue();
           expect(elapsed < 3000).assertTrue();
         }
+        expect(arr.length).assertEqual(9600);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 

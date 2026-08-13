@@ -104,7 +104,8 @@ export default function suite() {
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_ANNO_0400
      * @tc.name testArrayAnnotation0004
-     * @tc.desc Verify that collections.Array can be transferred across threads.
+     * @tc.desc Verify that collections.Array reference can be assigned to another
+     *               variable and access the same underlying data.
      * @tc.size SmallTest
      * @tc.type Function
      * @tc.level Level 0
@@ -116,6 +117,9 @@ export default function suite() {
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
       let arr2: collections.Array<number> = arr;
       expect(arr2.length).assertEqual(3);
+      expect(arr2[0]).assertEqual(1);
+      expect(arr2[1]).assertEqual(2);
+      expect(arr2[2]).assertEqual(3);
 
       console.info(`${caseName}, test end`);
     });
@@ -176,13 +180,16 @@ export default function suite() {
 
       let allValues: collections.Array<TestValueItem> = getAllTestValues();
       let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>();
+      let pushedCount: number = 0;
       for (let i = 0; i < allValues.length; i++) {
         let item: TestValueItem = allValues[i];
         if (item.value !== null) {
           arr.push(item.value);
+          pushedCount++;
         }
       }
       expect(arr.length > 0).assertTrue();
+      expect(arr.length).assertEqual(pushedCount);
 
       console.info(`${caseName}, test end`);
     });
@@ -247,27 +254,5 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
-    /**
-     * @tc.number SUB_COLLECTIONS_ARRAY_ANNO_1000
-     * @tc.name testArrayAnnotation0010
-     * @tc.desc Verify that non-Sendable type as generic parameter causes compilation error.
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    // 注意：非Sendable类型作为collections.Array泛型参数在编译期会被拦截
-    // 以下代码在编译期会报错，符合预期。因此无法在运行时执行。
-    //
-    // 错误示例1：普通object作为泛型参数（编译期报错）
-    // let obj: object = { name: 'test' };
-    // let arr1: collections.Array<object> = new collections.Array<object>(obj);
-    //
-    // 错误示例2：普通Function作为泛型参数（编译期报错）
-    // let fn: Function = () => {};
-    // let arr2: collections.Array<Function> = new collections.Array<Function>(fn);
-    //
-    // 正确用法：使用Sendable类型
-    // let arr3: collections.Array<number> = new collections.Array<number>(1, 2, 3);
-  });
 
 }
