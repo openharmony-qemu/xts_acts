@@ -5314,7 +5314,7 @@ export default function TextPicker() {
         return;
       }
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      pickerOptions.pickerColorMode = PickerColorMode.LIGHT;
+      pickerOptions.pickerColorMode = photoAccessHelper.PickerColorMode.LIGHT;
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
         photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
