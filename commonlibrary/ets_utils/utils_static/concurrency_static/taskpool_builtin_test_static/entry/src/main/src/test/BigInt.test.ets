@@ -15,21 +15,18 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
 import { testBigIntAsIntN, testBigIntPrototypeToString } from '../testability/pages/BigInt';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 
-import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function BigIntTest() {
-  describe('BigIntTest', () => {
+export default function BigIntTest(): void {
+  describe('BigIntTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(20);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -53,7 +50,7 @@ export default function BigIntTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntAsIntN0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntAsIntN0001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -62,20 +59,30 @@ export default function BigIntTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntAsIntN)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -87,7 +94,7 @@ export default function BigIntTest() {
      * @tc.level  LEVEL0
      */
     it('testBigIntPrototypeToString0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'testBigIntPrototypeToString0002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -96,20 +103,30 @@ export default function BigIntTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigIntPrototypeToString)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
     
   })

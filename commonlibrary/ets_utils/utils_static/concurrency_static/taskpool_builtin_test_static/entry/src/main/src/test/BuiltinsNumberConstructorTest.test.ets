@@ -23,19 +23,17 @@ import { builtinsNumberConstructorTest0200,
   builtinsNumberPrototypeTest0100} from '../testability/pages/BuiltinsNumberets';
 
 
-import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function builtinsNumberConstructorTest() {
-  describe('builtinsNumberConstructorTest', () => {
+export default function builtinsNumberConstructorTest(): void {
+  describe('builtinsNumberConstructorTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      await sleep(100);
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -59,7 +57,7 @@ export default function builtinsNumberConstructorTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsNumberConstructorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'builtinsNumberConstructorTest0200';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -68,20 +66,30 @@ export default function builtinsNumberConstructorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsNumberConstructorTest0200)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -93,7 +101,7 @@ export default function builtinsNumberConstructorTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsNumberIsFiniteTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'builtinsNumberIsFiniteTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -102,20 +110,30 @@ export default function builtinsNumberConstructorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsNumberIsFiniteTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
 
@@ -128,7 +146,7 @@ export default function builtinsNumberConstructorTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsNumberIsIntegerTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'builtinsNumberIsIntegerTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -137,20 +155,30 @@ export default function builtinsNumberConstructorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsNumberIsIntegerTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -162,7 +190,7 @@ export default function builtinsNumberConstructorTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsNumberIsSafeIntegerTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'builtinsNumberIsSafeIntegerTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -171,20 +199,30 @@ export default function builtinsNumberConstructorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsNumberIsSafeIntegerTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -196,7 +234,7 @@ export default function builtinsNumberConstructorTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsNumberParseTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'builtinsNumberParseTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -205,20 +243,30 @@ export default function builtinsNumberConstructorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsNumberParseTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -230,7 +278,7 @@ export default function builtinsNumberConstructorTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsNumberPropertyTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'builtinsNumberPropertyTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -239,20 +287,30 @@ export default function builtinsNumberConstructorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsNumberPropertyTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
     /**
@@ -264,7 +322,7 @@ export default function builtinsNumberConstructorTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsNumberPrototypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const caseName = 'builtinsNumberPrototypeTest0100';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -273,20 +331,30 @@ export default function builtinsNumberConstructorTest() {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(builtinsNumberPrototypeTest0100)
           }
-          await taskpool.execute(group).then((res) => {
+          taskpool.execute(group).then((res: Any[]): void => {
             console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
+            result = res.length;
+            try {
+              expect(result).assertEqual(concurrentNum);
+            } finally {
+              done();
+            }
+          }, (e: Error): void => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
+            try {
+              expect().assertFail();
+            } finally {
+              done();
+            }
+          });
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
+          try {
+            expect().assertFail();
+          } finally {
+            done();
+          }
         }
-        console.info(`${caseName} test end`);
-        done();
       });
 
   })
