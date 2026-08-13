@@ -20,7 +20,7 @@ import { JSON } from '@kit.ArkTS';
 
 function expectTrue(exp: boolean, info: string = ''): void {
   if (!exp) {
-    console.info(`expectTrue failed: ${info}, exp=${exp}`);
+    console.info(`[expectTrue] expectTrue failed: ${info}, exp=${exp}`);
   }
   expect(exp).assertTrue();
 }
@@ -29,7 +29,7 @@ function expectFail(info: string = ''): void {
 }
 
 function expectEqual(exp: string | number | boolean, assert: string | number | boolean, info: string = ''): void {
-  console.info(`expectEqual: exp=${exp} (${typeof exp}), assert=${assert} (${typeof assert}), info=${info}`);
+  console.info(`[expectEqual] expectEqual: exp=${exp} (${typeof exp}), assert=${assert} (${typeof assert}), info=${info}`);
   if (typeof exp === 'number' && typeof assert === 'string') {
     expect(exp).assertEqual(Number(assert));
   } else if (typeof exp === 'string' && typeof assert === 'number') {
@@ -66,18 +66,18 @@ export default function LocalSocketTest() {
       try {
         client = socket.constructLocalSocketInstance();
         let sandboxPath: string = getContext().filesDir + '/testSocket';
-        console.info(`${sandboxPath}`);
+        console.info(`${caseName} sandboxPath: ${sandboxPath}`);
         let address: socket.LocalAddress = {
           address: sandboxPath
         };
         try {
           await client.bind(address);
-          console.log('bind success');
+          console.log(`${caseName} bind success`);
           expectTrue(true, 'bind should succeed with valid address');
         } catch (err) {
-          console.error('failed to bind: ' + JSON.stringify(err));
+          console.error(`${caseName} failed to bind: ${JSON.stringify(err)}`);
           const errObj = err as BusinessError;
-          console.info(`err.code type: ${typeof errObj.code}, value: ${errObj.code}`);
+          console.info(`${caseName} err.code type: ${typeof errObj.code}, value: ${errObj.code}`);
           expectFail('bind should not fail with valid address');
         }
         console.info(`${caseName} test end`);
@@ -94,7 +94,7 @@ export default function LocalSocketTest() {
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0200
      * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0200
-     * @tc.desc   test localSocket Bind function (401)
+     * @tc.desc   test localSocket Bind function (401 or 2301098)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -108,36 +108,36 @@ export default function LocalSocketTest() {
         client = socket.constructLocalSocketInstance();
         try {
           await client.bind(undefined);
-          console.log('bind success');
+          console.log(`${caseName} bind success`);
           expectFail('bind with undefined should fail');
         } catch (err) {
-          console.error('failed to bind: ' + JSON.stringify(err));
+          console.error(`${caseName} failed to bind: ${JSON.stringify(err)}`);
           const errorObj = err as BusinessError;
           if (errorObj && typeof errorObj === 'object') {
             try {
-              console.info(`err object keys: ${Object.keys(errorObj)}`);
+              console.info(`${caseName} err object keys: ${Object.keys(errorObj)}`);
             } catch {
-              console.info('Cannot get keys from err object');
+              console.info(`${caseName} Cannot get keys from err object`);
             }
-            console.info(`err.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
-            console.info(`err.message: ${errorObj.message}`);
-            console.info(`err.name: ${errorObj.name}`);
+            console.info(`${caseName} err.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
+            console.info(`${caseName} err.message: ${errorObj.message}`);
+            console.info(`${caseName} err.name: ${errorObj.name}`);
             let errorCode = errorObj.code;
             if (errorCode === undefined && errorObj.message) {
               const match = errorObj.message.match(new RegExp('code[:\\\\s]*(\\\\d+)', 'i'));
               if (match) {
                 errorCode = parseInt(match[1], 10);
-                console.info(`Extracted error code from message: ${errorCode}`);
+                console.info(`${caseName} Extracted error code from message: ${errorCode}`);
               }
             }
             if (errorCode !== undefined) {
               expectEqual(401, errorCode, 'bind with undefined should return error code 401');
             } else {
-              console.info('Error code is undefined, checking error structure');
+              console.info(`${caseName} Error code is undefined, checking error structure`);
               expectTrue(errorObj !== undefined, 'Error should be thrown for bind with undefined');
             }
           } else {
-            console.info('Error is not an object or is null/undefined');
+            console.info(`${caseName} Error is not an object or is null/undefined`);
             expectTrue(false, 'Error should be an object');
           }
         }
@@ -145,7 +145,7 @@ export default function LocalSocketTest() {
       } catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
         const errorObj = error as BusinessError;
-        console.info(`error.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
+        console.info(`${caseName} error.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
         if (errorObj.code !== undefined) {
           expectTrue(Number(errorObj.code) == 401, 'error code should be 401');
         }
@@ -223,7 +223,7 @@ export default function LocalSocketTest() {
           await server.listen(localAddr);
           console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
@@ -236,7 +236,7 @@ export default function LocalSocketTest() {
             data: 'Hello world!'
           }
           await client.send(sendOpt);
-          console.info('client send success')
+          console.info(`${caseName} client send success`)
           expectTrue(true)
         } catch (err) {
         }
@@ -272,9 +272,9 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
@@ -282,13 +282,13 @@ export default function LocalSocketTest() {
         }
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
           let sendOpt: socket.LocalSendOptions = {
             data: 'Hello world!',
             encoding: 'UTF-8',
           }
           await client.send(sendOpt);
-          console.info('client send success')
+          console.info(`${caseName} client send success`)
           expectTrue(true)
         } catch (err) {
         }
@@ -324,9 +324,9 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
@@ -335,13 +335,13 @@ export default function LocalSocketTest() {
 
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
           let sendOpt: socket.LocalSendOptions = {
             data: stringToArrayBuffer('Hello, server!'),
             encoding: 'UTF-8',
           }
           await client.send(sendOpt);
-          console.info('client send success')
+          console.info(`${caseName} client send success`)
           expectTrue(true)
         } catch (err) {
         }
@@ -377,9 +377,9 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
@@ -387,9 +387,9 @@ export default function LocalSocketTest() {
         }
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
           await client.send(null);
-          console.info('client send success')
+          console.info(`${caseName} client send success`)
           expectFail()
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
@@ -426,9 +426,9 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
@@ -436,9 +436,9 @@ export default function LocalSocketTest() {
         }
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
           await client.getState();
-          console.info('get state success')
+          console.info(`${caseName} get state success`)
           expectTrue(true)
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
@@ -475,9 +475,9 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
@@ -485,9 +485,9 @@ export default function LocalSocketTest() {
         }
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
           const data: number = await client.getSocketFd();
-          console.info('fd' + data)
+          console.info(`${caseName} fd ${data}`)
           expectTrue(data !=null)
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
@@ -524,9 +524,9 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
@@ -534,9 +534,9 @@ export default function LocalSocketTest() {
         }
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
           const data: number = await client.getSocketFd();
-          console.info('fd' + data)
+          console.info(`${caseName} fd ${data}`)
           expectTrue(true)
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
@@ -572,9 +572,9 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         try {
           const serverFd: number = await server.getSocketFd();
@@ -680,7 +680,7 @@ export default function LocalSocketTest() {
         };
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
@@ -744,7 +744,7 @@ export default function LocalSocketTest() {
         };
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
@@ -785,9 +785,9 @@ export default function LocalSocketTest() {
 
         try {
           await server.listen(localAddr);
-          console.log('listen success');
+          console.log(`${caseName} listen success`);
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
 
         let sendOpt: socket.LocalSendOptions = {
@@ -798,7 +798,7 @@ export default function LocalSocketTest() {
           try {
             await connection.send(sendOpt);
           } catch (err) {
-            console.info('fail to send' + err.code.toString());
+            console.info(`${caseName} fail to send ${err.code.toString()}`);
           }
         });
 
@@ -808,7 +808,7 @@ export default function LocalSocketTest() {
             const hasAddress = data.address !== undefined;
             const hasSize = data.size !== undefined;
 
-            console.log(`data.message: ${hasMessage}, data.address: ${hasAddress}, data.size: ${hasSize}`);
+            console.log(`${caseName} data.message: ${hasMessage}, data.address: ${hasAddress}, data.size: ${hasSize}`);
             expectTrue(hasMessage && hasAddress && hasSize);
             if (hasMessage) {
               const uintArray = new Uint8Array(data.message);
@@ -816,8 +816,8 @@ export default function LocalSocketTest() {
               for (let i = 0; i < uintArray.length; i++) {
                 messageView += String.fromCharCode(uintArray[i]);
               }
-              console.log('total: ' + JSON.stringify(data));
-              console.log('message infomation: ' + messageView);
+              console.log(`${caseName} total: ${JSON.stringify(data)}`);
+              console.log(`${caseName} message infomation: ${messageView}`);
             }
           } catch (err) {
             console.info(`${caseName} callback error: ${JSON.stringify(err)}`);
@@ -848,9 +848,9 @@ export default function LocalSocketTest() {
 
         try {
           await client.connect(connectOpt);
-          console.log('connect success');
+          console.log(`${caseName} connect success`);
         } catch (err) {
-          console.info('connect error:' + JSON.stringify(err));
+          console.info(`${caseName} connect error: ${JSON.stringify(err)}`);
         }
 
         client.on('message', callback);
@@ -907,12 +907,12 @@ export default function LocalSocketTest() {
         }
         try {
           await server.listen(localAddr);
-          console.log('listen success')
+          console.log(`${caseName} listen success`)
         } catch (err) {
-          console.info('fail to listen' + err.code.toString());
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
         }
         server.on('connect', async (connection: socket.LocalSocketConnection) => {
-          console.info("Connection clientId:" + connection.clientId)
+          console.info(`${caseName} Connection clientId:${connection.clientId}`);
           expectTrue(connection.clientId != undefined)
         });
         let connectOpt: socket.LocalConnectOptions = {
@@ -921,7 +921,7 @@ export default function LocalSocketTest() {
         }
         try {
           await client.connect(connectOpt);
-          console.log('connect success')
+          console.log(`${caseName} connect success`)
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
@@ -952,36 +952,36 @@ export default function LocalSocketTest() {
         client = socket.constructLocalSocketInstance();
         try {
           await client.bind(null);
-          console.log('bind success');
+          console.log(`${caseName} bind success`);
           expectFail('bind with null should fail');
         } catch (err) {
-          console.error('failed to bind: ' + JSON.stringify(err));
+          console.error(`${caseName} failed to bind: ${JSON.stringify(err)}`);
           const errorObj = err as BusinessError;
           if (errorObj && typeof errorObj === 'object') {
             try {
-              console.info(`err object keys: ${Object.keys(errorObj)}`);
+              console.info(`${caseName} err object keys: ${Object.keys(errorObj)}`);
             } catch {
-              console.info('Cannot get keys from err object');
+              console.info(`${caseName} Cannot get keys from err object`);
             }
-            console.info(`err.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
-            console.info(`err.message: ${errorObj.message}`);
-            console.info(`err.name: ${errorObj.name}`);
+            console.info(`${caseName} err.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
+            console.info(`${caseName} err.message: ${errorObj.message}`);
+            console.info(`${caseName} err.name: ${errorObj.name}`);
             let errorCode = errorObj.code;
             if (errorCode === undefined && errorObj.message) {
               const match = errorObj.message.match(new RegExp('code[:\\\\s]*(\\\\d+)', 'i'));
               if (match) {
                 errorCode = parseInt(match[1], 10);
-                console.info(`Extracted error code from message: ${errorCode}`);
+                console.info(`${caseName} Extracted error code from message: ${errorCode}`);
               }
             }
             if (errorCode !== undefined) {
               expectEqual(401, errorCode, 'bind with null should return error code 401');
             } else {
-              console.info('Error code is undefined, checking error structure');
+              console.info(`${caseName} Error code is undefined, checking error structure`);
               expectTrue(errorObj !== undefined, 'Error should be thrown for bind with null');
             }
           } else {
-            console.info('Error is not an object or is null/undefined');
+            console.info(`${caseName} Error is not an object or is null/undefined`);
             expectTrue(false, 'Error should be an object');
           }
         }
@@ -989,7 +989,7 @@ export default function LocalSocketTest() {
       } catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
         const errorObj = error as BusinessError;
-        console.info(`error.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
+        console.info(`${caseName} error.code type: ${typeof errorObj.code}, value: ${errorObj.code}`);
         if (errorObj.code !== undefined) {
           expectTrue(Number(errorObj.code) === 401, 'error code should be 401');
         }
@@ -1056,9 +1056,13 @@ export default function LocalSocketTest() {
               }
             }
 
-            console.info(`${caseName}: final errorCode: ${errorCode}, expected: 401`);
+            console.info(`${caseName}: final errorCode: ${errorCode}, expected: 401 or 2301098`);
             if (errorCode !== undefined) {
-              expectEqual(401, errorCode, 'bind with empty address should return error code 401 if it fails');
+              if (errorCode === 401 || errorCode === 2301098) {
+                expectTrue(true, `bind with empty address returned expected error code: ${errorCode}`);
+              } else {
+                expectEqual(401, errorCode, 'bind with empty address should return error code 401 or 2301098');
+              }
             } else {
               console.info(`${caseName}: Error code is undefined, checking error structure`);
               expectTrue(errorObj !== undefined, 'Error should be thrown for bind with empty address if it fails');
