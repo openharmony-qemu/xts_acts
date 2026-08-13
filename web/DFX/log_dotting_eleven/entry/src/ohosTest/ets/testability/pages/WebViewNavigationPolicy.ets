@@ -113,6 +113,7 @@ struct Index {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260113)
                 } else {
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   Utils.sleep(1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
