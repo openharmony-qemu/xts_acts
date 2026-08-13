@@ -21,6 +21,7 @@ import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import connection from '@ohos.net.connection';
 import NetExtNDKTest from './NetExtNDK.test';
 import RefreshGlobalHttpProxyNetStackNDKTest from './RefreshGlobalHttpProxyNetStackNDK.test';
+import NetExtNDKErrorCode201NDKTest from './NetExtNDKErrorCode201NDKTest.test';
  	 
 let netHandle = connection.getDefaultNetSync();
 
@@ -37,6 +38,7 @@ export default function testsuite() {
       }
       if (data.bearerTypes[0] === connection.NetBearType.BEARER_ETHERNET) {
         NetExtNDKTest();
+        NetExtNDKErrorCode201NDKTest();
       }
     });
   } else {
