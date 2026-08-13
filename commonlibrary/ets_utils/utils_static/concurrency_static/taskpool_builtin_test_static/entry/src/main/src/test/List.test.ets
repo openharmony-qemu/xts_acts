@@ -44,7 +44,7 @@ import nestedContainerList from './nestedContainer/List.test';
 import asyncTaskList from './asyncTask/List.test';
 import industryList from './industry/List.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   BigIntTest();
   BooleanTest();
   DataViewTest();
