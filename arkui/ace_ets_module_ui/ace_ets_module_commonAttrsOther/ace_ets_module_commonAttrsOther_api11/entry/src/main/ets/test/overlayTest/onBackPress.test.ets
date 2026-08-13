@@ -132,5 +132,25 @@ export default function onBackPress() {
       done();
     });
 
+    /**
+     * @tc.name   NodeIdentity_0100
+     * @tc.number NodeIdentity_0100
+     * @tc.desc   NodeIdentity 类型覆盖：s1 为 string、s2 为 number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('NodeIdentity_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('[NodeIdentity_0100] START');
+      await CommonFunc.sleep(2000);
+      let s1Type: string = AppStorage.get<string>('NodeIdentity_sring') as string;
+      let s2Type: string = AppStorage.get<string>('NodeIdentity_number') as string;
+      console.info('[NodeIdentity_0100] s1Type: ' + s1Type + ', s2Type: ' + s2Type);
+      expect(s1Type).assertEqual('string');
+      expect(s2Type).assertEqual('number');
+      console.info('[NodeIdentity_0100] END');
+      done();
+    });
+
   })
 }
