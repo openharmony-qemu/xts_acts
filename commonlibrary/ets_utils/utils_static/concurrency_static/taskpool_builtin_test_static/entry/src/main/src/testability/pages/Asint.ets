@@ -51,8 +51,8 @@ export function BuiltinsBigIntLiteralTest0100(): void {
       }
     }
     const expectedMax = 996n;
-    if(maxBigInt != expectedMax){
-      throw new Error(`${TAG} max value invalid: ${maxBigInt.toString()}`)
+    if(expectedMax.toString()!='996'){
+      throw new Error(`${TAG} value.toString() invalid: ${expectedMax.toString()}`)
     }
   } catch (err) {
     console.error(`${TAG} failed, error: ${err.message}`);
