@@ -138,7 +138,7 @@ export default function chipGroupOptionsTest(): void {
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
-        .getArray('$children')[0]
+        .getArray('$children')[1]
       console.info('[chipGroupOptionsTest_static_002] component btn1.attrs.accessibilityLevel is: ' +
       JSON.stringify(btn1.getElement('$attrs').getString('accessibilityDescription')));
       expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
@@ -156,7 +156,7 @@ export default function chipGroupOptionsTest(): void {
       await CommonFunc.sleep(1000);
 
       let btn3 = tree.getArray('$children')[0]
-        .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
