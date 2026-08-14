@@ -911,7 +911,7 @@ export default function int16ArrayKeysTestTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_4600
      * @tc.name testInt16ArrayKeysTestTwo046
-     * @tc.desc Verify keys/next (assertEqual)
+     * @tc.desc Verify keys/next keeps buffer (assertTrue)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -923,7 +923,7 @@ export default function int16ArrayKeysTestTwoTest(): void {
       iter.next();
       iter.next();
       let actual1: boolean = arr.buffer === bufBefore;
-      expect(actual1);
+      expect(actual1).assertTrue();
     });
 
     /**

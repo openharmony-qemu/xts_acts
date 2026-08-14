@@ -1,6 +1,6 @@
 'use static';
 
-import int16ArrayFillTestOneTest from './int16Array/Int16ArrayFillTest01.test';
+import int16ArrayFillTestOneTest from './int16Array/Int16ArrayFillTest01.test.ets';
 import int16ArrayFillTestTwoTest from './int16Array/Int16ArrayFillTest02.test.ets';
 import int16ArrayFillTestThreeTest from './int16Array/Int16ArrayFillTest03.test.ets';
 import int16ArrayFillTestFourTest from './int16Array/Int16ArrayFillTest04.test.ets';

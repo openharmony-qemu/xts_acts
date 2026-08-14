@@ -366,7 +366,7 @@ export default function int16ArrayFindTestOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_ONE_2100
      * @tc.name testInt16ArrayFindTestOne021
-     * @tc.desc Verify find predicate returning false for null-intent yields undefined
+     * @tc.desc Verify find returns undefined when predicate always returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
