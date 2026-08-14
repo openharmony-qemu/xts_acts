@@ -79,7 +79,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fontColor')).assertEqual("#FF008000");
 
       let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -92,7 +92,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fontColor')).assertEqual("#FFFF0000");
 
       let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100] END');
       done();
@@ -118,7 +118,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
       let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -131,7 +131,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0200] END');
       done();
@@ -157,7 +157,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
       let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -170,7 +170,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0300] END');
       done();
@@ -196,7 +196,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
       let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -209,7 +209,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0400] END');
       done();
@@ -244,7 +244,7 @@ export default function ChipV2PrefixIconTest(): void {
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
 
       let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       console.info("[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] btnElement fillColor2 is: " +
@@ -255,7 +255,7 @@ export default function ChipV2PrefixIconTest(): void {
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
       
       let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] END');
       done();

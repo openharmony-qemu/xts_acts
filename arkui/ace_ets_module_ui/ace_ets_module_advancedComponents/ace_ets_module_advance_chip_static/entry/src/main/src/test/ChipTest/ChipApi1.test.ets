@@ -73,7 +73,7 @@ export default function ChipApi1(): void {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('ChipApi1_btn1'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
       console.info('ChipApi1_static_0100 Activated click after')
 

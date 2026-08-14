@@ -82,7 +82,7 @@ export default function prefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fontColor')).assertEqual("#FF008000");
 
       let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -95,7 +95,7 @@ export default function prefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fontColor')).assertEqual("#FFFF0000");
 
       let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0010] END');
       done();
@@ -121,7 +121,7 @@ export default function prefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
       let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -134,7 +134,7 @@ export default function prefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0020] END');
       done();
@@ -160,7 +160,7 @@ export default function prefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
       let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -173,7 +173,7 @@ export default function prefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0030] END');
       done();
@@ -199,7 +199,7 @@ export default function prefixIconTest(): void {
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
       let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -212,7 +212,7 @@ export default function prefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0040] END');
       done();
@@ -247,7 +247,7 @@ export default function prefixIconTest(): void {
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
 
       let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
 
       console.info("[prefixIconTest_static_0050] btnElement fillColor2 is: " +
@@ -258,7 +258,7 @@ export default function prefixIconTest(): void {
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
       
       let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      await (btn2?.click() as Promise<void>);
+      btn2?.click();
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0050] END');
       done();

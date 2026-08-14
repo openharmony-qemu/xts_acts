@@ -73,7 +73,7 @@ export default function ChipV2Api1(): void {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('ChipV2Api1_btn1'));
-      await (btn1?.click() as Promise<void>);
+      btn1?.click();
       await CommonFunc.sleep(2000);
       console.info('SUB_ARKUI_API_ChipV2Api1_static_0100 Activated click after')
 
