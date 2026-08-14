@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from '../../../../hypium/index';
+import Utils from '../Util.test';
 
 export default function int16ArrayFillTestOneTest(): void {
   describe('Int16ArrayFillTestOneTest', (): void => {
