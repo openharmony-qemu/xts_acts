@@ -80,7 +80,7 @@ export default function IndustryCacheConcurrentTest(): void {
         taskpool.execute(testRWLockCacheReader, cache, lock, readCounter).then((): void => { });
       }
       for (let i: number = 0; i < totalWriters; i++) {
-        taskpool.execute(testRWLockCacheWriter, cache, lock, writeCounter).then((): void => { });
+        taskpool.execute(testRWLockCacheWriter, cache, lock, writeCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
       }
       while (readCounter.load() < totalReaders * 100 || writeCounter.load() < totalWriters * 100) {
         await Utils.msSleep(100);

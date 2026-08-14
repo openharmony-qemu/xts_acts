@@ -1719,9 +1719,9 @@ export default function isPromiseTest(): void {
         console.info(`${caseName} test start`);
 
         const promise: Promise<string> = Promise.resolve('start')
-          .then((value: string): string => value + ' level1')
-          .then((value: string): string => value + ' level2')
-          .then((value: string): string => value + ' level3');
+          .then((value: string): string => value + ' level1', (error: Error): string => { throw error; })
+          .then((value: string): string => value + ' level2', (error: Error): string => { throw error; })
+          .then((value: string): string => value + ' level3', (error: Error): string => { throw error; });
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(promise);
         expect(result).assertTrue();

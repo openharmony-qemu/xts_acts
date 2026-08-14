@@ -1775,7 +1775,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolReturnArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolReturnArrayBufferSize';
         console.info(`${caseName} test start`);
 
@@ -1792,6 +1792,7 @@ export default function IsSharedArrayBufferTest(): void {
         expect(ab.byteLength).assertEqual(192);
 
         console.info(`${caseName} test end`);
+        done();
       });
 
     /**
@@ -2600,7 +2601,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testConcurrentTaskPoolParallel', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testConcurrentTaskPoolParallel';
         console.info(`${caseName} test start`);
 
@@ -2620,6 +2621,7 @@ export default function IsSharedArrayBufferTest(): void {
         expect(type.isAnyArrayBuffer(ab2)).assertTrue();
 
         console.info(`${caseName} test end`);
+        done();
       });
 
     /**
@@ -2639,11 +2641,15 @@ export default function IsSharedArrayBufferTest(): void {
         const size: int = instance.getBufferSize();
 
         const task: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, size);
-        const result: int = await taskpool.execute(task) as int;
+        try {
+          const result: int = await taskpool.execute(task) as int;
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
+        } catch (err) {
+          expect(err).assertFail();
+        }
 
         console.info(`${caseName} test end`);
       });
