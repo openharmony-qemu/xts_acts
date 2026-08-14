@@ -99,6 +99,7 @@ export default function customNavContentTransitionUndefined() {
       if (backText) {
       await backText.click();
       await CommonFunc.sleep(1000)
+      }
 
       // 点击切换按钮，切换为 undefined
       if (toggleBtn) {
