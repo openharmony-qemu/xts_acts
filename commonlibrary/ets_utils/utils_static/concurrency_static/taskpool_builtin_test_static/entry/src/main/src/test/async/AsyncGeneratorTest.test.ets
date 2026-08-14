@@ -98,7 +98,9 @@ async function asyncGeneratorTest004Fn(): Promise<boolean> {
   try {
     throw new GenError('injected', 404);
   } catch (err) {
-    caughtCode = (err as GenError).errCode;
+    if (err instanceof GenError) {
+      caughtCode = err.errCode;
+    }
   }
   const resValue: string = await Promise.resolve(`caught: ${caughtCode}`);
   return caughtCode === 404 && resValue === 'caught: 404';
@@ -203,7 +205,9 @@ async function asyncGeneratorTest013Fn(): Promise<boolean> {
   try {
     throw new GenError('uncaught', 500);
   } catch (err) {
-    caughtCode = (err as GenError).errCode;
+    if (err instanceof GenError) {
+      caughtCode = err.errCode;
+    }
   }
   return firstValue === 'before-throw' && caughtCode === 500;
 }
@@ -261,11 +265,13 @@ async function asyncGeneratorTest018Fn(): Promise<boolean> {
     try {
       throw new GenError('loop', code);
     } catch (err) {
-      const injected: GenError = err as GenError;
-      if (injected.errCode === 0) {
-        returned = 'exited';
-      } else {
-        caughtValue = `caught: ${injected.errCode}`;
+      if (err instanceof GenError) {
+        const injected: GenError = err;
+        if (injected.errCode === 0) {
+          returned = 'exited';
+        } else {
+          caughtValue = `caught: ${injected.errCode}`;
+        }
       }
     }
   };
@@ -374,7 +380,9 @@ async function asyncGeneratorTest026Fn(): Promise<boolean> {
   try {
     throw new GenError('test-throw', 301);
   } catch (err) {
-    caughtCode = (err as GenError).errCode;
+    if (err instanceof GenError) {
+      caughtCode = err.errCode;
+    }
   }
   const res1: string = await Promise.resolve(`caught: ${caughtCode}`);
   const res2: string = await Promise.resolve('after-throw');
@@ -423,7 +431,7 @@ async function asyncGeneratorTest030Fn(): Promise<boolean> {
   try {
     throw new GenError('close-error', 400);
   } catch (err) {
-    caught = (err as GenError).errCode === 400;
+    caught = err instanceof GenError ? err.errCode === 400 : false;
   }
   const catchYield: string = await Promise.resolve('catch-executed');
   const finallyYield: string = await Promise.resolve('finally-executed');
@@ -508,7 +516,9 @@ async function asyncGeneratorTest035Fn(): Promise<boolean> {
   try {
     throw new GenError('post-yield-error', 402);
   } catch (err) {
-    caughtCode = (err as GenError).errCode;
+    if (err instanceof GenError) {
+      caughtCode = err.errCode;
+    }
   }
   return safe === 'safe' && caughtCode === 402;
 }
@@ -678,7 +688,9 @@ async function asyncGeneratorTest048Fn(): Promise<boolean> {
   try {
     throw new GenError('inner-error', 409);
   } catch (err) {
-    caughtCode = (err as GenError).errCode;
+    if (err instanceof GenError) {
+      caughtCode = err.errCode;
+    }
   }
   const res: string = await Promise.resolve(`caught-inner: ${caughtCode}`);
   return res === 'caught-inner: 409';
@@ -706,7 +718,7 @@ async function asyncGeneratorTest049Fn(): Promise<boolean> {
   try {
     await run(100, 500, 'ok');
   } catch (err) {
-    failCaught = (err as GenError).errCode === 408;
+    failCaught = err instanceof GenError ? err.errCode === 408 : false;
   }
   return resSuccess === 'ok' && failCaught;
 }
@@ -764,7 +776,9 @@ async function asyncGeneratorTest052Fn(): Promise<boolean> {
   try {
     await computeYieldValue();
   } catch (err) {
-    caughtCode = (err as GenError).errCode;
+    if (err instanceof GenError) {
+      caughtCode = err.errCode;
+    }
   }
   return caughtCode === 402;
 }
@@ -820,7 +834,9 @@ async function asyncGeneratorTest057Fn(): Promise<boolean> {
   try {
     throw new GenError('finally-error', 500);
   } catch (err) {
-    caughtCode = (err as GenError).errCode;
+    if (err instanceof GenError) {
+      caughtCode = err.errCode;
+    }
   }
   return tryValue === 'try' && caughtCode === 500;
 }
@@ -912,7 +928,9 @@ async function asyncGeneratorTest064Fn(): Promise<boolean> {
     try {
       return await innerError();
     } catch (err) {
-      middleCaught = `middle-caught: ${(err as GenError).errCode}`;
+      if (err instanceof GenError) {
+        middleCaught = `middle-caught: ${err.errCode}`;
+      }
       throw new GenError('middle-propagate', 504);
     }
   };
@@ -920,7 +938,9 @@ async function asyncGeneratorTest064Fn(): Promise<boolean> {
     try {
       return await middleWrapper();
     } catch (err) {
-      outerCaught = `outer-caught: ${(err as GenError).errCode}`;
+      if (err instanceof GenError) {
+        outerCaught = `outer-caught: ${err.errCode}`;
+      }
     }
     return '';
   };
@@ -1088,7 +1108,7 @@ async function asyncGeneratorTest074Fn(): Promise<boolean> {
   try {
     await l1();
   } catch (err) {
-    const caughtCode: number = (err as GenError).errCode;
+    const caughtCode: number = err instanceof GenError ? err.errCode : 0;
     const codeText: string = caughtCode.toString();
     rootCaught = 'root-caught: ' + codeText;
   }
@@ -1267,7 +1287,9 @@ async function asyncGeneratorTest084Fn(): Promise<boolean> {
     try {
       return await l3();
     } catch (err) {
-      l2Caught = `l2-caught: ${(err as GenError).errCode}`;
+      if (err instanceof GenError) {
+        l2Caught = `l2-caught: ${err.errCode}`;
+      }
       return 'l2-continue';
     }
   };
@@ -1279,7 +1301,7 @@ async function asyncGeneratorTest084Fn(): Promise<boolean> {
   try {
     await l1();
   } catch (err) {
-    const caughtCode: number = (err as GenError).errCode;
+    const caughtCode: number = err instanceof GenError ? err.errCode : 0;
     const codeText: string = caughtCode.toString();
     rootCaught = 'root-caught: ' + codeText;
   }
@@ -1466,7 +1488,9 @@ async function asyncGeneratorTest094Fn(): Promise<boolean> {
       await l3();
       ok = true;
     } catch (err) {
-      values.push(await Promise.resolve(`l2-retry-${retries} (err: ${(err as GenError).errCode})`));
+      if (err instanceof GenError) {
+        values.push(await Promise.resolve(`l2-retry-${retries} (err: ${err.errCode})`));
+      }
       retries -= 1;
       await sleep(10);
     }
@@ -1600,1302 +1624,1802 @@ export default function asyncGeneratorTest(): void {
 
     /**
      * @tc.name   AsyncGeneratorTest001
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_001
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0001
      * @tc.desc   Basic async generator yields fixed sequence 1,2,3 then completes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest001Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest001Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest002
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_002
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0002
      * @tc.desc   Async generator awaits before yielding a single value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest002Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest002Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest003
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_003
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0003
      * @tc.desc   Input passed via next() is embedded into subsequent yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest003Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest003Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest004
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_004
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0004
      * @tc.desc   Error thrown into generator is caught and handled inside the generator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest004Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest004Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest005
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_005
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0005
      * @tc.desc   return() closes the generator immediately
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest005Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest005Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest006
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_006
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0006
      * @tc.desc   for-await collects all yielded values a,b,c
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest006Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest006Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest007
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_007
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0007
      * @tc.desc   yield* delegation flattens inner and outer sequences
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest007Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest007Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest008
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_008
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0008
      * @tc.desc   Promise.all parallel values are yielded in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest008Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest008Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest009
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_009
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0009
      * @tc.desc   Generator return value surfaces on the final next()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest009Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest009Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest010
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_010
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0010
      * @tc.desc   Bare yields produce undefined; explicit null yield produces null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest010Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest010Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest011
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_011
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0011
      * @tc.desc   Factory-created async generator yields wrapped values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest011Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest011Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest012
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_012
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0012
      * @tc.desc   Parameterized generator yields computed values from init
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest012Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest012Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest013
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_013
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0013
      * @tc.desc   Uncaught error inside generator propagates to the caller
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest013Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest013Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest014
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_014
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0014
      * @tc.desc   Nested for-await collection preserves order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest014Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest014Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest015
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_015
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0015
      * @tc.desc   Generator closed by return() reports done with undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest015Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest015Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest016
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_016
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0016
      * @tc.desc   for-await with break collects partial sequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest016Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest016Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest017
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_017
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0017
      * @tc.desc   Generator awaits async helper calls and yields results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest017Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest017Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest018
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_018
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0018
      * @tc.desc   Repeated throw() calls: caught values except exit which returns
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest018Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest018Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest019
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_019
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0019
      * @tc.desc   Promise.race fastest result is yielded
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest019Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest019Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest020
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_020
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0020
      * @tc.desc   Generator yields across short gaps in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest020Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest020Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest021
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_021
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0021
      * @tc.desc   Generator returned from a factory function yields values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest021Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest021Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest022
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_022
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0022
      * @tc.desc   Conditional generator yields per-branch values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest022Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest022Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest023
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_023
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0023
      * @tc.desc   Generator awaits a resolved value and yields 7
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest023Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest023Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest024
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_024
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0024
      * @tc.desc   Bounded loop generator yields count values then completes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest024Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest024Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest025
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_025
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0025
      * @tc.desc   Nested arrow helper multiplies yielded values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest025Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest025Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest026
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_026
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0026
      * @tc.desc   Generator returns a value after throwing and catching
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest026Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest026Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest027
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_027
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0027
      * @tc.desc   Promise.allSettled statuses are yielded in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest027Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest027Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest028
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_028
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0028
      * @tc.desc   Dynamic yield count generator yields exactly count items
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest028Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest028Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest029
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_029
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0029
      * @tc.desc   Async initializer value feeds subsequent yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest029Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest029Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest030
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_030
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0030
      * @tc.desc   Catch and finally blocks both yield values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest030Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest030Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest031
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_031
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0031
      * @tc.desc   Async predicate filters the yielded items
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest031Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest031Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest032
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_032
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0032
      * @tc.desc   Nested yield* chain flattens three levels
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest032Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest032Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest033
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_033
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0033
      * @tc.desc   Input-dependent generator branches on injected input
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest033Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest033Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest034
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_034
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0034
      * @tc.desc   Delayed yields produce values in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest034Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest034Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest035
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_035
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0035
      * @tc.desc   Error thrown after a yield propagates to caller
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest035Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest035Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest036
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_036
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0036
      * @tc.desc   Async mapper transforms each yielded value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest036Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest036Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest037
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_037
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0037
      * @tc.desc   Return inside finally overrides the generator result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest037Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest037Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest038
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_038
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0038
      * @tc.desc   Shared state increments across yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest038Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest038Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest039
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_039
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0039
      * @tc.desc   Generator awaits promises in sequence and yields values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest039Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest039Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest040
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_040
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0040
      * @tc.desc   Empty generator is immediately done with undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest040Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest040Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest041
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_041
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0041
      * @tc.desc   Arrow wrapper async function feeds yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest041Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest041Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest042
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_042
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0042
      * @tc.desc   for-await counting stops after a break
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest042Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest042Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest043
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_043
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0043
      * @tc.desc   Error recovery loop yields catch then success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest043Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest043Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest044
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_044
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0044
      * @tc.desc   Async conditional chain yields per-step results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest044Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest044Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest045
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_045
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0045
      * @tc.desc   Generator parameter doubles the source values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest045Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest045Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest046
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_046
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0046
      * @tc.desc   Explicit return overrides remaining yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest046Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest046Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest047
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_047
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0047
      * @tc.desc   Async while loop yields action results until condition ends
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest047Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest047Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest048
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_048
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0048
      * @tc.desc   Nested error is caught and yielded as a handled value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest048Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest048Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest049
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_049
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0049
      * @tc.desc   Promise race with timeout: value wins, shorter timeout rejects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest049Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest049Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest050
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_050
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0050
      * @tc.desc   Composition of two generators flattens all values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest050Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest050Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest051
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_051
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0051
      * @tc.desc   Set items are yielded with membership preserved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest051Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest051Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest052
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_052
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0052
      * @tc.desc   Throwing yield expression propagates to caller
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest052Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest052Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest053
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_053
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0053
      * @tc.desc   Async reduce yields running accumulations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest053Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest053Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest054
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_054
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0054
      * @tc.desc   Async property getter value is yielded after await
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest054Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest054Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest055
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_055
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0055
      * @tc.desc   Repeated return() calls report the closed state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest055Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest055Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest056
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_056
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0056
      * @tc.desc   for-await collects the number sequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest056Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest056Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest057
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_057
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0057
      * @tc.desc   Error thrown in finally propagates to caller
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest057Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest057Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest058
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_058
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0058
      * @tc.desc   Parameterized async action yields repeated results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest058Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest058Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest059
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_059
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0059
      * @tc.desc   Generator yields across a delay, only values verified
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest059Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest059Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest060
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_060
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0060
      * @tc.desc   Identity pass-through generator preserves source values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest060Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest060Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest061
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_061
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0061
      * @tc.desc   Three-level yield* chain order is preserved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest061Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest061Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest062
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_062
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0062
      * @tc.desc   Async pipeline transforms each input value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest062Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest062Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest063
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_063
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0063
      * @tc.desc   Timed sequence yields values in order, timing check removed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest063Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest063Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest064
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_064
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0064
      * @tc.desc   Errors propagate through two wrapper levels to the root catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest064Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest064Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest065
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_065
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0065
      * @tc.desc   Generator collects two awaited values 1 and 2 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest065Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest065Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest066
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_066
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0066
      * @tc.desc   Async dependency chain builds on previous yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest066Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest066Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest067
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_067
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0067
      * @tc.desc   Parallel batches are yielded flattened in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest067Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest067Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest068
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_068
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0068
      * @tc.desc   Inner generator return value is captured by the outer yield*
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest068Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest068Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest069
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_069
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0069
      * @tc.desc   Timed retry generator fails twice then succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest069Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest069Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest070
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_070
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0070
      * @tc.desc   Filter-map pipeline yields only even doubled values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest070Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest070Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest071
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_071
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0071
      * @tc.desc   Four-level nested delegation keeps the documented order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest071Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest071Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest072
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_072
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0072
      * @tc.desc   Stateful generator applies deltas across yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest072Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest072Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest073
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_073
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0073
      * @tc.desc   Batch generator yields all items across batches then completes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest073Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest073Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest074
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_074
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0074
      * @tc.desc   Error propagates through three levels to the root catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest074Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest074Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest075
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_075
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0075
      * @tc.desc   Nested-step pipeline transforms each string input
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest075Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest075Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest076
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_076
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0076
      * @tc.desc   Sequential async dependencies chain yielded values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest076Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest076Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest077
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_077
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0077
      * @tc.desc   Parallel batches interleaved with a gap stay ordered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest077Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest077Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest078
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_078
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0078
      * @tc.desc   Return values propagate up the yield* chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest078Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest078Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest079
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_079
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0079
      * @tc.desc   Timed state updates produce the expected running state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest079Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest079Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest080
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_080
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0080
      * @tc.desc   Multi-level filter keeps values passing all filters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest080Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest080Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest081
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_081
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0081
      * @tc.desc   Nested async iteration doubles each inner value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest081Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest081Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest082
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_082
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0082
      * @tc.desc   Cascade with returns yields each level composed value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest082Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest082Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest083
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_083
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0083
      * @tc.desc   Timed batch processing yields all transformed values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest083Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest083Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest084
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_084
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0084
      * @tc.desc   Multi-level error handling catches and continues at each level
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest084Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest084Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest085
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_085
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0085
      * @tc.desc   Transformer pipeline normalizes each input
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest085Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest085Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest086
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_086
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0086
      * @tc.desc   Sequential inner factories share a counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest086Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest086Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest087
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_087
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0087
      * @tc.desc   Stateful cascade multiplies state by each step
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest087Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest087Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest088
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_088
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0088
      * @tc.desc   Parallel tasks with errors yield success/failure labels
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest088Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest088Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest089
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_089
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0089
      * @tc.desc   Nested return values compose propagated level messages in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest089Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest089Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest090
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_090
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0090
      * @tc.desc   Timed sequential tasks yield each task result in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest090Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest090Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest091
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_091
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0091
      * @tc.desc   Sequential await chain propagates the computed value (2 to 6)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest091Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest091Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest092
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_092
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0092
      * @tc.desc   Delayed cascade with fixed dependency passing yields chained values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest092Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest092Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest093
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_093
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0093
      * @tc.desc   Multi-batch parallel processing yields tripled values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest093Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest093Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest094
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_094
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0094
      * @tc.desc   Retry cascade yields per-retry values then recovery and root done
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest094Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest094Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest095
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_095
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0095
      * @tc.desc   Composer merges two generators pairwise via combiner
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest095Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest095Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest096
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_096
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0096
      * @tc.desc   Nested stateful generator updates state across inner calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest096Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest096Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest097
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_097
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0097
      * @tc.desc   Parallel cascade with error isolation yields labeled values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest097Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest097Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest098
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_098
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0098
      * @tc.desc   Multi-level input propagation flows inputs down the chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest098Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest098Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest099
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_099
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0099
      * @tc.desc   Promise.all fan-out resolves three values 1,2,3 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest099Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest099Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncGeneratorTest100
-     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_100
+     * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_0100
      * @tc.desc   Collected sequence round-trip gathers values 1,2,3 via awaits
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncGeneratorTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await asyncGeneratorTest100Fn();
-      expect(result).assertEqual(true);
+    it('AsyncGeneratorTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await asyncGeneratorTest100Fn();
+        expect(result).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
   });
 }
