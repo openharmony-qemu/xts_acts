@@ -45,7 +45,7 @@ let isSimActive: boolean = sim.isSimActiveSync(0);
 const phoneNumber: string = "15617922808";
 const zonePhoneNumber: string = "+8615617922808";
 const formatPhoneNumber: string = "156-1792-2808";
-const emergencyPhoneNumber: string = "120";
+const emergencyPhoneNumber: string = "911";
 const landlineNumber: string = "057126885879";
 
 
@@ -1377,7 +1377,7 @@ export default function HasCard2PublicTest() {
      * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 0-1
+     * @tc.level  Level 0
      */
     it("testTelephonyCallManagerIsEmergencyPhoneNumber_static_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber_static_2600';
@@ -1388,7 +1388,7 @@ export default function HasCard2PublicTest() {
         }
         call.isEmergencyPhoneNumber(emergencyPhoneNumber, options).then((data: boolean) => {
           hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
-          ExpectFail();
+          expect(data === true).assertTrue();
           done();
         }).catch((error: Error) => {
           hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(error)}`);
