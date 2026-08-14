@@ -139,6 +139,8 @@ export default function composeListItemV2Page03Test() {
       console.info('[ComposeListItemV2Page03Test_0400] START');
       let driver = await Driver.create();
       await driver.delayMs(2000);
+      let scrollBar = await driver.findComponent(ON.type('Scroll'));
+      let button = await scrollBar.scrollSearch(ON.text('operate toggle'));
 
       let toggleText = await driver.findComponent(ON.text('operate toggle'));
       expect(toggleText !== null).assertTrue();

@@ -135,6 +135,8 @@ export default function composeListItemV2Page02Test() {
       console.info('[composeListItemV2Page02Test_0400] START');
       let driver = await Driver.create();
       await driver.delayMs(2000);
+      let scrollBar = await driver.findComponent(ON.type('Scroll'));
+      let button = await scrollBar.scrollSearch(ON.text('operate button'));
       let symbolStyleText = await driver.findComponent(ON.text('operate symbolStyle'));
       expect(symbolStyleText !== null).assertTrue();
       let buttonText = await driver.findComponent(ON.text('operate button'));

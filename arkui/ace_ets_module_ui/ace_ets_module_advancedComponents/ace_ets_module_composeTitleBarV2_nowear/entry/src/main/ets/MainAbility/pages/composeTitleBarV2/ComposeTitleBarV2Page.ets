@@ -43,7 +43,7 @@ struct ComposeTitleBarV2Example {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 12 }) {
+        Column() {
           Text('基本用法 - 仅标题')
             .fontSize(12)
             .fontWeight(FontWeight.Bold)
@@ -55,7 +55,6 @@ struct ComposeTitleBarV2Example {
           Text('完整用法 - 标题+副标题')
             .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '完整标题',
@@ -65,7 +64,6 @@ struct ComposeTitleBarV2Example {
           Text('左侧头像项')
             .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '带头像的标题',
@@ -82,7 +80,6 @@ struct ComposeTitleBarV2Example {
           Text('右侧菜单项')
             .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '带菜单的标题',
@@ -108,7 +105,6 @@ struct ComposeTitleBarV2Example {
           Text('动态属性测试')
             .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: this.title,
@@ -129,12 +125,10 @@ struct ComposeTitleBarV2Example {
             .onClick(() => {
               this.isMenuEnabled = !this.isMenuEnabled;
             })
-            .margin({ top: 10 })
 
           Text('所有属性组合')
             .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '完整功能标题',
