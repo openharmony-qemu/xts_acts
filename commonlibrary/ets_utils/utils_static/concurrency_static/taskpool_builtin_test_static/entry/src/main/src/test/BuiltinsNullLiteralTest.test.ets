@@ -17,16 +17,18 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BuiltinsNullLiteralTest0900 } from '../testability/pages/BuiltinsNullLiteralTest';
 
 
+import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 export default function BuiltinsNullLiteralTest(): void {
-  describe('BuiltinsNullLiteralTest', (): void => {
+  describe('BuiltinsNullLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach((): void => {
+    beforeEach(async () => {
+      await sleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -50,7 +52,7 @@ export default function BuiltinsNullLiteralTest(): void {
      * @tc.level  LEVEL0
      */
     it('BuiltinsNullLiteralTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'BuiltinsNullLiteralTest0900';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -59,30 +61,20 @@ export default function BuiltinsNullLiteralTest(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(BuiltinsNullLiteralTest0900)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done();
       });
 
 
