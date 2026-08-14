@@ -271,7 +271,7 @@ export default function MessageHandlerSendMessageTest(): void {
         handler.sendMessage(new concurrency.Message(3, handler));
       });
       let waitCount: int = 0;
-      while (received.load() < 3 && waitCount < 2000) {
+      while (received.load() < 3 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -410,17 +410,13 @@ export default function MessageHandlerSendMessageTest(): void {
     it('MessageHandlerSendMessageTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let lock = new AsyncLock();
       let order: int[] = [];
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        lock.lockAsync(() => {
-          order.push(msg.getWhat());
-          if (msg.getWhat() === 1) {
-            let innerMsg = new concurrency.Message(2, msg.getTarget());
-            msg.getTarget().sendMessage(innerMsg);
-          }
-          return Promise.resolve();
-        });
+        order.push(msg.getWhat());
+        if (msg.getWhat() === 1) {
+          let innerMsg = new concurrency.Message(2, msg.getTarget());
+          msg.getTarget().sendMessage(innerMsg);
+        }
       }, eaw);
       let msg = new concurrency.Message(1, handler);
       handler.sendMessage(msg);
@@ -446,19 +442,15 @@ export default function MessageHandlerSendMessageTest(): void {
     it('MessageHandlerSendMessageTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let lock = new AsyncLock();
       let order: int[] = [];
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        lock.lockAsync(() => {
-          order.push(msg.getWhat());
-          if (msg.getWhat() === 10) {
-            let innerMsg1 = new concurrency.Message(20, msg.getTarget());
-            let innerMsg2 = new concurrency.Message(30, msg.getTarget());
-            msg.getTarget().sendMessage(innerMsg1);
-            msg.getTarget().sendMessage(innerMsg2);
-          }
-          return Promise.resolve();
-        });
+        order.push(msg.getWhat());
+        if (msg.getWhat() === 10) {
+          let innerMsg1 = new concurrency.Message(20, msg.getTarget());
+          let innerMsg2 = new concurrency.Message(30, msg.getTarget());
+          msg.getTarget().sendMessage(innerMsg1);
+          msg.getTarget().sendMessage(innerMsg2);
+        }
       }, eaw);
       let msg = new concurrency.Message(10, handler);
       handler.sendMessage(msg);
@@ -565,7 +557,7 @@ export default function MessageHandlerSendMessageTest(): void {
     /**
      * @tc.name   MessageHandlerSendMessageTest2000
      * @tc.number SUB_MESSAGE_HANDLER_SEND_MESSAGE_TEST_2000
-     * @tc.desc   Verify AsyncLock protects shared counter in sendMessage concurrent scenario
+     * @tc.desc   Verify AtomicInt counter records all messages processed in sendMessage concurrent scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -593,7 +585,7 @@ export default function MessageHandlerSendMessageTest(): void {
     /**
      * @tc.name   MessageHandlerSendMessageTest2100
      * @tc.number SUB_MESSAGE_HANDLER_SEND_MESSAGE_TEST_2100
-     * @tc.desc   Verify AsyncLock protects sendMessage calls from multiple threads
+     * @tc.desc   Verify AtomicInt counter records messages sent from multiple threads in sendMessage scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -730,7 +722,7 @@ export default function MessageHandlerSendMessageTest(): void {
     /**
      * @tc.name   MessageHandlerSendMessageTest2500
      * @tc.number SUB_MESSAGE_HANDLER_SEND_MESSAGE_TEST_2500
-     * @tc.desc   Verify AsyncLock protects shared variable in sendMessage concurrent scenario
+     * @tc.desc   Verify AtomicInt shared variable counts messages processed in sendMessage concurrent scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

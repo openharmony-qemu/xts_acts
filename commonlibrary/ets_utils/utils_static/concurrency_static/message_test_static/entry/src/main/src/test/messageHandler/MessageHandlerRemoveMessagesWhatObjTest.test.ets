@@ -681,7 +681,7 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     /**
      * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2600
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2600
-     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) parameter type safety - ArkTS prevents invalid types at compile time
+     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with integer what and string obj removes matching message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -711,7 +711,7 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     /**
      * @tc.name   MessageHandlerRemoveMessagesWhatObjTest2700
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_2700
-     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) obj parameter type safety - null and undefined cannot be passed as Object in ArkTS
+     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) returns true for matching obj and false for different obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -813,7 +813,7 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         waitCount++;
         await Utils.msSleep(100);
       }
-      expect(nestedDone.load() >= 1).assertTrue();
+      expect(nestedDone.load()).assertEqual(1);
     })
 
     /**
@@ -829,33 +829,40 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
       eaw1.start();
       let eaw2 = new EAWorker();
       eaw2.start();
-      let removed = new AtomicInt(0);
-      let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw1);
-      let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw2);
-      handler1.post((): void => {
-        handler1.sendMessage(new concurrency.Message(1, "data", handler1));
-        let r1: boolean = handler1.removeMessages(1, "data");
-        if (r1) { removed.fetchAdd(1); }
-      });
-      handler2.post((): void => {
-        handler2.sendMessage(new concurrency.Message(1, "data", handler2));
-        let r2: boolean = handler2.removeMessages(1, "data");
-        if (r2) { removed.fetchAdd(1); }
-      });
-      let waitCount: int = 0;
-      while (removed.load() < 2 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let removed = new AtomicInt(0);
+        let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw1);
+        let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw2);
+        handler1.post((): void => {
+          handler1.sendMessage(new concurrency.Message(1, "data", handler1));
+          let r1: boolean = handler1.removeMessages(1, "data");
+          if (r1) { removed.fetchAdd(1); }
+        });
+        handler2.post((): void => {
+          handler2.sendMessage(new concurrency.Message(1, "data", handler2));
+          let r2: boolean = handler2.removeMessages(1, "data");
+          if (r2) { removed.fetchAdd(1); }
+        });
+        let waitCount: int = 0;
+        while (removed.load() < 2 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(removed.load()).assertEqual(2);
+      } finally {
+        try {
+          if (eaw1.isAlive()) { eaw1.quit(); }
+          if (eaw2.isAlive()) { eaw2.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
-      expect(removed.load()).assertEqual(2);
-      if (eaw1.isAlive()) { eaw1.quit(); }
-      if (eaw2.isAlive()) { eaw2.quit(); }
     })
 
     /**
@@ -897,7 +904,7 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     /**
      * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3300
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3300
-     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with AtomicInt counter wait instead of Timer
+     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with hasMessages checks before and after removal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -954,7 +961,7 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         waitCount++;
         await Utils.msSleep(100);
       }
-      expect(removed.load() >= 1).assertTrue();
+      expect(removed.load()).assertEqual(1);
     })
 
     /**
@@ -1065,75 +1072,52 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
       eaw1.start();
       let eaw2 = new EAWorker();
       eaw2.start();
-      let removed = new AtomicInt(0);
-      let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw1);
-      let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw2);
-      handler1.post((): void => {
-        handler1.sendMessage(new concurrency.Message(1, "shared", handler1));
-        let r1: boolean = handler1.removeMessages(1, "shared");
-        if (r1) { removed.fetchAdd(1); }
-      });
-      handler2.post((): void => {
-        handler2.sendMessage(new concurrency.Message(1, "shared", handler2));
-        let r2: boolean = handler2.removeMessages(1, "shared");
-        if (r2) { removed.fetchAdd(1); }
-      });
-      let waitCount: int = 0;
-      while (removed.load() < 2 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let removed = new AtomicInt(0);
+        let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw1);
+        let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw2);
+        handler1.post((): void => {
+          handler1.sendMessage(new concurrency.Message(1, "shared", handler1));
+          let r1: boolean = handler1.removeMessages(1, "shared");
+          if (r1) { removed.fetchAdd(1); }
+        });
+        handler2.post((): void => {
+          handler2.sendMessage(new concurrency.Message(1, "shared", handler2));
+          let r2: boolean = handler2.removeMessages(1, "shared");
+          if (r2) { removed.fetchAdd(1); }
+        });
+        let waitCount: int = 0;
+        while (removed.load() < 2 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(removed.load()).assertEqual(2);
+      } finally {
+        try {
+          if (eaw1.isAlive()) { eaw1.quit(); }
+          if (eaw2.isAlive()) { eaw2.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
-      expect(removed.load()).assertEqual(2);
-      if (eaw1.isAlive()) { eaw1.quit(); }
-      if (eaw2.isAlive()) { eaw2.quit(); }
     })
+
 
     /**
      * @tc.name   MessageHandlerRemoveMessagesWhatObjTest3900
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_3900
-     * @tc.desc   Verify MessageHandler removeMessages complete flow: sendMessage then hasMessages then removeMessages then hasMessages
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageHandlerRemoveMessagesWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let verified = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(1, "test", handler));
-        let hasBefore: boolean = handler.hasMessages(1, "test");
-        if (hasBefore) { verified.fetchAdd(1); }
-        let removeResult: boolean = handler.removeMessages(1, "test");
-        if (removeResult) { verified.fetchAdd(1); }
-        let hasAfter: boolean = handler.hasMessages(1, "test");
-        if (!hasAfter) { verified.fetchAdd(1); }
-      });
-      let waitCount: int = 0;
-      while (verified.load() < 3 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(verified.load()).assertEqual(3);
-    })
-
-    /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4000
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) removes all messages with same what and obj at once
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1157,14 +1141,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4100
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4000
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4000
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) only removes messages matching both what and obj, unlike removeMessages(what)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1189,14 +1173,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4200
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4100
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4100
      * @tc.desc   Verify MessageHandler.removeMessages(1, obj1) does not affect hasMessages(1, obj2) for different obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1219,14 +1203,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4300
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4200
      * @tc.desc   Verify MessageHandler.removeMessages(1, obj) does not affect hasMessages(2, obj) for different what
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1249,130 +1233,188 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4400
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4300
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) after sending large number of messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
-      let removed = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, localEaw);
-      // Use post-setup to atomically send, remove and verify on EAWorker thread
-      handler.post((): void => {
-        for (let i: int = 0; i < 100; i++) {
-          handler.sendMessage(new concurrency.Message(i, `obj_${i}`, handler));
+      try {
+        let removed = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, localEaw);
+        // Use post-setup to atomically send, remove and verify on EAWorker thread
+        handler.post((): void => {
+          for (let i: int = 0; i < 100; i++) {
+            handler.sendMessage(new concurrency.Message(i, `obj_${i}`, handler));
+          }
+          let result: boolean = handler.removeMessages(50, "obj_50");
+          if (result) { removed.fetchAdd(1); }
+          let hasResult: boolean = handler.hasMessages(50, "obj_50");
+          if (!hasResult) { removed.fetchAdd(1); }
+          let hasOther: boolean = handler.hasMessages(51, "obj_51");
+          if (hasOther) { removed.fetchAdd(1); }
+        });
+        let waitCount: int = 0;
+        while (removed.load() < 3 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-        let result: boolean = handler.removeMessages(50, "obj_50");
-        if (result) { removed.fetchAdd(1); }
-        let hasResult: boolean = handler.hasMessages(50, "obj_50");
-        if (!hasResult) { removed.fetchAdd(1); }
-        let hasOther: boolean = handler.hasMessages(51, "obj_51");
-        if (hasOther) { removed.fetchAdd(1); }
-      });
-      let waitCount: int = 0;
-      while (removed.load() < 3 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+        expect(removed.load()).assertEqual(3);
+      } finally {
+        try {
+          if (localEaw.isAlive()) { localEaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
-      expect(removed.load()).assertEqual(3);
-      if (localEaw.isAlive()) { localEaw.quit(); }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4500
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4500
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4400
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4400
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) works independently for different handlers with different EAWorkers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
       eaw2.start();
-      let verified = new AtomicInt(0);
-      let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw1);
-      let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw2);
-      handler1.post((): void => {
-        handler1.sendMessage(new concurrency.Message(1, "data", handler1));
-        let r1: boolean = handler1.removeMessages(1, "data");
-        if (r1) { verified.fetchAdd(1); }
-        let has1: boolean = handler1.hasMessages(1, "data");
-        if (!has1) { verified.fetchAdd(1); }
-      });
-      handler2.post((): void => {
-        handler2.sendMessage(new concurrency.Message(1, "data", handler2));
-        let r2: boolean = handler2.removeMessages(1, "data");
-        if (r2) { verified.fetchAdd(1); }
-        let has2: boolean = handler2.hasMessages(1, "data");
-        if (!has2) { verified.fetchAdd(1); }
-      });
-      let waitCount: int = 0;
-      while (verified.load() < 4 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let verified = new AtomicInt(0);
+        let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw1);
+        let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw2);
+        handler1.post((): void => {
+          handler1.sendMessage(new concurrency.Message(1, "data", handler1));
+          let r1: boolean = handler1.removeMessages(1, "data");
+          if (r1) { verified.fetchAdd(1); }
+          let has1: boolean = handler1.hasMessages(1, "data");
+          if (!has1) { verified.fetchAdd(1); }
+        });
+        handler2.post((): void => {
+          handler2.sendMessage(new concurrency.Message(1, "data", handler2));
+          let r2: boolean = handler2.removeMessages(1, "data");
+          if (r2) { verified.fetchAdd(1); }
+          let has2: boolean = handler2.hasMessages(1, "data");
+          if (!has2) { verified.fetchAdd(1); }
+        });
+        let waitCount: int = 0;
+        while (verified.load() < 4 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(verified.load()).assertEqual(4);
+      } finally {
+        try {
+          if (eaw1.isAlive()) { eaw1.quit(); }
+          if (eaw2.isAlive()) { eaw2.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
-      expect(verified.load()).assertEqual(4);
-      if (eaw1.isAlive()) { eaw1.quit(); }
-      if (eaw2.isAlive()) { eaw2.quit(); }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4600
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4600
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4500
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4500
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with same what different obj multiple messages removes correct combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
-      let verified = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, localEaw);
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(1, "obj1", handler));
-        handler.sendMessage(new concurrency.Message(1, "obj2", handler));
-        handler.sendMessage(new concurrency.Message(1, "obj3", handler));
-        let result: boolean = handler.removeMessages(1, "obj2");
-        if (result) { verified.fetchAdd(1); }
-        let has1: boolean = handler.hasMessages(1, "obj1");
-        if (has1) { verified.fetchAdd(1); }
-        let no2: boolean = handler.hasMessages(1, "obj2");
-        if (!no2) { verified.fetchAdd(1); }
-        let has3: boolean = handler.hasMessages(1, "obj3");
-        if (has3) { verified.fetchAdd(1); }
-      });
-      let waitCount: int = 0;
-      while (verified.load() < 4 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let verified = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, localEaw);
+        handler.post((): void => {
+          handler.sendMessage(new concurrency.Message(1, "obj1", handler));
+          handler.sendMessage(new concurrency.Message(1, "obj2", handler));
+          handler.sendMessage(new concurrency.Message(1, "obj3", handler));
+          let result: boolean = handler.removeMessages(1, "obj2");
+          if (result) { verified.fetchAdd(1); }
+          let has1: boolean = handler.hasMessages(1, "obj1");
+          if (has1) { verified.fetchAdd(1); }
+          let no2: boolean = handler.hasMessages(1, "obj2");
+          if (!no2) { verified.fetchAdd(1); }
+          let has3: boolean = handler.hasMessages(1, "obj3");
+          if (has3) { verified.fetchAdd(1); }
+        });
+        let waitCount: int = 0;
+        while (verified.load() < 4 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(verified.load()).assertEqual(4);
+      } finally {
+        try {
+          if (localEaw.isAlive()) { localEaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
-      expect(verified.load()).assertEqual(4);
-      if (localEaw.isAlive()) { localEaw.quit(); }
+    })
+
+    /**
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4600
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4600
+     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) called inside post callback removes matching message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('MessageHandlerRemoveMessagesWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      let localEaw = new EAWorker();
+      localEaw.start();
+      try {
+        let executed = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, localEaw);
+        handler.post((): void => {
+          handler.sendMessage(new concurrency.Message(1, "task", handler));
+          handler.removeMessages(1, "task");
+          executed.fetchAdd(1);
+        });
+        let waitCount: int = 0;
+        while (executed.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(executed.load()).assertEqual(1);
+      } finally {
+        try {
+          if (localEaw.isAlive()) { localEaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
      * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4700
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4700
-     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) Worker destruction timing - ensure no pending tasks before quit
+     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) concurrent remove produces stable queue state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1380,68 +1422,45 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     it('MessageHandlerRemoveMessagesWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
-      let executed = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, localEaw);
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(1, "task", handler));
-        handler.removeMessages(1, "task");
-        executed.fetchAdd(1);
-      });
-      let waitCount: int = 0;
-      while (executed.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let verified = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, localEaw);
+        handler.post((): void => {
+          for (let i: int = 0; i < 10; i++) {
+            handler.sendMessage(new concurrency.Message(i, `obj_${i}`, handler));
+          }
+          for (let i: int = 0; i < 10; i++) {
+            let result: boolean = handler.removeMessages(i, `obj_${i}`);
+            if (result) { verified.fetchAdd(1); }
+          }
+        });
+        let waitCount: int = 0;
+        while (verified.load() < 10 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(verified.load()).assertEqual(10);
+      } finally {
+        try {
+          if (localEaw.isAlive()) { localEaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
-      expect(executed.load()).assertEqual(1);
-      if (localEaw.isAlive()) { localEaw.quit(); }
     })
 
     /**
      * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4800
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4800
-     * @tc.desc   Verify MessageHandler.removeMessages(what, obj) concurrent remove produces stable queue state
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageHandlerRemoveMessagesWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let localEaw = new EAWorker();
-      localEaw.start();
-      let verified = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, localEaw);
-      handler.post((): void => {
-        for (let i: int = 0; i < 10; i++) {
-          handler.sendMessage(new concurrency.Message(i, `obj_${i}`, handler));
-        }
-        for (let i: int = 0; i < 10; i++) {
-          let result: boolean = handler.removeMessages(i, `obj_${i}`);
-          if (result) { verified.fetchAdd(1); }
-        }
-      });
-      let waitCount: int = 0;
-      while (verified.load() < 10 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(verified.load()).assertEqual(10);
-      if (localEaw.isAlive()) { localEaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4900
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) removes what+obj messages while keeping callback messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -1468,54 +1487,57 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5000
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5000
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest4900
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_4900
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) after EAWorker quit and restart returns boolean type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let localEaw = new EAWorker();
       localEaw.start();
-      let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, localEaw);
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(1, "test", handler));
-        if (handler.removeMessages(1, "test")) {
-          removed.fetchAdd(1);
+      try {
+        let removed = new AtomicInt(0);
+        let done = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, localEaw);
+        handler.post((): void => {
+          handler.sendMessage(new concurrency.Message(1, "test", handler));
+          if (handler.removeMessages(1, "test")) {
+            removed.fetchAdd(1);
+          }
+          done.fetchAdd(1);
+        });
+        let waitCount: int = 0;
+        while (done.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-        done.fetchAdd(1);
-      });
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+        expect(removed.load()).assertEqual(1);
+        localEaw.quit();
+        let result2: boolean = handler.removeMessages(1, "test");
+        expect(result2).assertFalse();
+      } finally {
+        try {
+          if (localEaw.isAlive()) { localEaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
-      expect(removed.load()).assertEqual(1);
-      localEaw.quit();
-      let quitWait = 0;
-      while (localEaw.isAlive() && quitWait < 500) {
-        quitWait++;
-        await Utils.msSleep(100);
-      }
-      let result2: boolean = handler.removeMessages(1, "test");
-      expect(result2).assertFalse();
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5100
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5100
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5000
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5000
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with different obj types for same what removes correct combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
@@ -1542,14 +1564,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5200
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5100
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5100
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with Map obj returns true when matching by reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -1574,14 +1596,14 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5300
+     * @tc.name   MessageHandlerRemoveMessagesWhatObjTest5200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_MESSAGES_WHAT_OBJ_TEST_5200
      * @tc.desc   Verify MessageHandler.removeMessages(what, obj) with Set obj returns true when matching by reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveMessagesWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveMessagesWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let removed = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
