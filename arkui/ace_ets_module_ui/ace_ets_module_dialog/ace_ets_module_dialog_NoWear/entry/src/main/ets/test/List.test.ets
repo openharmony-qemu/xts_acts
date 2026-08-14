@@ -51,6 +51,7 @@ import selectJsunit2 from './select/SelectJsunit.test'
 import AdvancedPopupTest from './popup/AdvancedPopup.test';
 
 export default function testsuite() {
+    SelectJsunit();
 	SelectJsunit01();
     selectApi1();
     triggerSelect();
@@ -67,19 +68,16 @@ export default function testsuite() {
     actionSheetBlurStyleOptionsTest();
     openMenuAnchorPositionTest();
     updateMenuAnchorPositionTest(); 
-    subwindowDialog();
+    
     showAtAnchorTest();
     showDefaultSelectedIconTest();
 
-    SelectJsunit();
 	SelectJsunit02();
 	SelectAttr();
 	selectoptionwithJsSuit();
 	SelectTest();
 	SelectJsunit1();
-
     showInSubWindowValueTest();
-    
 	menuBackgroundBlurStyle();
 	menuBackgroundColor();
 	selectApiTest1();
@@ -88,4 +86,5 @@ export default function testsuite() {
 	SliderEnableHapticFeedbackTest();
 	ActsgetcomponentaddTest();
     AdvancedPopupTest();
+    subwindowDialog();
 }
