@@ -319,7 +319,7 @@ export default function PasteboardAppShareOptions() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200 start ************')
       try {
         systemPasteboard.setAppShareOptions(null);
@@ -341,7 +341,7 @@ export default function PasteboardAppShareOptions() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300 start ************')
       try {
         let paramdata = 3;
