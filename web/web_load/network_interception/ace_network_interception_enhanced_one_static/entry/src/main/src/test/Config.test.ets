@@ -16,6 +16,8 @@
 export let URL_HTTPBIN: string = 'http://httpbin.org/basic-auth/admin/123456'
 export let URL_BACKUP_EVILTESTER: string = 'https://testpages.eviltester.com/pages/auth/basic-auth/basic-auth-results.html'
 export let URL_BACKUP_POSTMAN: string = 'https://postman-echo.com/basic-auth'
-export let HTTP_AUTH_URL: string = URL_BACKUP_EVILTESTER
+export let HTTP_AUTH_URL: string = URL_HTTPBIN
+export let HTTP_AUTH_USER_HTTPBIN: string = 'admin'
+export let HTTP_AUTH_PASSWORD_HTTPBIN: string = '123456'
 export let HTTP_AUTH_USER: string = 'authorized'
 export let HTTP_AUTH_PASSWORD: string = 'password001'

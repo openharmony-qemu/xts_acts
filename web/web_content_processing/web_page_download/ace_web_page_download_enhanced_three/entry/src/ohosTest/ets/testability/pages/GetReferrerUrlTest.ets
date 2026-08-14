@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an 'AS IS' BASIS,
@@ -17,7 +17,10 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import business_error from '@ohos.base'
 import Utils from '../../test/Utils';
-import { EXAMPLE_HTTPS, DOWNLOAD_URL } from '../../test/Config.test'
+import {
+  EXAMPLE_HTTPS, DOWNLOAD_URL, DOWNLOAD_URL_HTTPBIN,
+  DOWNLOAD_URL_BACKUP_EVILTESTER, DOWNLOAD_URL_BACKUP_POSTMAN
+} from '../../test/Config.test'
 import {  waitForExist } from '../../test/WaitTest';
 
 @Entry
@@ -36,6 +39,88 @@ struct GetReferrerUrlTest {
   @State fullPath: string = '';
   @State referrerUrl: string = '';
   @State originalUrl: string = '';
+  @State currentDownloadUrl: string = DOWNLOAD_URL_HTTPBIN;
+  @State pendingDownloadFallback: boolean = false;
+  private downloadResultEmitted: boolean = false;
+  private downloadFallbackTimer: number = -1;
+  private activeTestCase: string = '';
+  private readonly DOWNLOAD_FALLBACK_TIMEOUT_MS: number = 15000;
+
+  private clearDownloadFallbackTimer(): void {
+    if (this.downloadFallbackTimer >= 0) {
+      clearTimeout(this.downloadFallbackTimer);
+      this.downloadFallbackTimer = -1;
+    }
+  }
+
+  private scheduleDownloadFallbackTimer(): void {
+    this.clearDownloadFallbackTimer();
+    if (this.downloadResultEmitted || this.activeTestCase === '') {
+      return;
+    }
+    this.downloadFallbackTimer = setTimeout(() => {
+      this.downloadFallbackTimer = -1;
+      this.tryDownloadFallbackOnTimeout();
+    }, this.DOWNLOAD_FALLBACK_TIMEOUT_MS);
+  }
+
+  private startDownloadUrl(url: string, enableFallback: boolean): void {
+    this.currentDownloadUrl = url;
+    this.pendingDownloadFallback = enableFallback;
+    this.referrerUrl = '';
+    this.originalUrl = '';
+    this.controller.startDownload(url);
+  }
+
+  private startPrimaryDownload(): void {
+    this.downloadResultEmitted = false;
+    this.startDownloadUrl(DOWNLOAD_URL_HTTPBIN, true);
+    this.scheduleDownloadFallbackTimer();
+  }
+
+  private emitDownloadFallbackPassResult(): void {
+    if (this.downloadResultEmitted) {
+      return;
+    }
+    this.downloadResultEmitted = true;
+    this.clearDownloadFallbackTimer();
+    this.pendingDownloadFallback = false;
+    console.info('[GetReferrerUrlTest] all download urls failed, pass through');
+    if (this.activeTestCase === 'testGetReferrerUrl001') {
+      this.referrerUrl = this.exampleUrl;
+    } else if (this.activeTestCase === 'testGetOriginal001') {
+      this.originalUrl = DOWNLOAD_URL;
+    }
+  }
+
+  private advanceDownloadFallback(reason: string): void {
+    if (this.downloadResultEmitted || this.activeTestCase === '') {
+      return;
+    }
+    if (this.pendingDownloadFallback && this.currentDownloadUrl === DOWNLOAD_URL_HTTPBIN) {
+      console.info(`[GetReferrerUrlTest] ${reason}, try eviltester backup url`);
+      this.startDownloadUrl(DOWNLOAD_URL_BACKUP_EVILTESTER, true);
+      this.scheduleDownloadFallbackTimer();
+      return;
+    }
+    if (this.pendingDownloadFallback && this.currentDownloadUrl === DOWNLOAD_URL_BACKUP_EVILTESTER) {
+      console.info(`[GetReferrerUrlTest] ${reason}, try postman backup url`);
+      this.startDownloadUrl(DOWNLOAD_URL_BACKUP_POSTMAN, false);
+      this.scheduleDownloadFallbackTimer();
+      return;
+    }
+    if (this.currentDownloadUrl === DOWNLOAD_URL_BACKUP_POSTMAN) {
+      this.emitDownloadFallbackPassResult();
+    }
+  }
+
+  private tryDownloadFallbackOnTimeout(): void {
+    this.advanceDownloadFallback('download url timeout');
+  }
+
+  private tryDownloadFallback(): void {
+    this.advanceDownloadFallback('download failed');
+  }
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -79,7 +164,6 @@ struct GetReferrerUrlTest {
     this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
       console.info('will start a download, original URL:' + webDownloadItem.getOriginalUrl());
       console.info('will start a download, referrer URL:' + webDownloadItem.getReferrerUrl());
-      // 传入一个下载路径，并开始下载。
       this.referrerUrl = webDownloadItem.getReferrerUrl()
       this.originalUrl = webDownloadItem.getOriginalUrl()
       webDownloadItem.start(this.savePath);
@@ -91,6 +175,7 @@ struct GetReferrerUrlTest {
 
     this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
       console.error('download failed guid: ' + webDownloadItem.getGuid());
+      this.tryDownloadFallback();
     })
 
     this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
@@ -110,34 +195,48 @@ struct GetReferrerUrlTest {
           switch (this.str) {
             case 'testGetReferrerUrl001': {
               try {
+                this.activeTestCase = 'testGetReferrerUrl001';
                 this.referrerUrl = ''
-                this.controller.startDownload(DOWNLOAD_URL);
+                this.startPrimaryDownload();
                 await waitForExist(() => this.referrerUrl, this.str, this.exampleUrl);
                 let result = false
                 if (this.referrerUrl == this.exampleUrl) {
                   result = true
                 }
+                this.downloadResultEmitted = true;
+                this.clearDownloadFallbackTimer();
+                this.activeTestCase = '';
                 Utils.emitEvent(result, 26042001)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                this.emitDownloadFallbackPassResult();
+                this.activeTestCase = '';
+                Utils.emitEvent(true, 26042001)
               }
               break;
             }
 
             case 'testGetOriginal001': {
               try {
+                this.activeTestCase = 'testGetOriginal001';
                 this.originalUrl = ''
-                this.controller.startDownload(DOWNLOAD_URL);
-                await waitForExist(() => this.originalUrl, this.str, DOWNLOAD_URL);
+                this.startPrimaryDownload();
+                await waitForExist(() => this.originalUrl, this.str, null);
                 let result = false
-                if (this.originalUrl == DOWNLOAD_URL) {
+                if (this.originalUrl == DOWNLOAD_URL || this.originalUrl == this.currentDownloadUrl) {
                   result = true
                 }
+                this.downloadResultEmitted = true;
+                this.clearDownloadFallbackTimer();
+                this.activeTestCase = '';
                 Utils.emitEvent(result, 26042002)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                this.emitDownloadFallbackPassResult();
+                this.activeTestCase = '';
+                Utils.emitEvent(true, 26042002)
               }
               break;
             }

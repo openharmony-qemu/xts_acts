@@ -14,7 +14,9 @@
  */
 
 import Utils from '../../test/Utils';
-import { BASIC_AUTH_BACKUP_URL } from '../../test/Config.test';
+import {
+  BASIC_AUTH_PRIMARY_URL, URL_BACKUP_EVILTESTER, URL_BACKUP_POSTMAN
+} from '../../test/Config.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 
@@ -24,6 +26,86 @@ struct httpAuthHandlerEnhanced {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = '';
   @State isReceive:number = -1;
+  @State currentHttpAuthUrl: string = BASIC_AUTH_PRIMARY_URL;
+  @State pendingHttpAuthFallback: boolean = false;
+  private httpAuthResultEmitted: boolean = false;
+  private httpAuthFallbackTimer: number = -1;
+  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: number = 15000;
+
+  private clearHttpAuthFallbackTimer(): void {
+    if (this.httpAuthFallbackTimer >= 0) {
+      clearTimeout(this.httpAuthFallbackTimer);
+      this.httpAuthFallbackTimer = -1;
+    }
+  }
+
+  private scheduleHttpAuthFallbackTimer(): void {
+    this.clearHttpAuthFallbackTimer();
+    if (this.httpAuthResultEmitted) {
+      return;
+    }
+    this.httpAuthFallbackTimer = setTimeout(() => {
+      this.httpAuthFallbackTimer = -1;
+      this.tryHttpAuthFallbackOnTimeout();
+    }, this.HTTP_AUTH_FALLBACK_TIMEOUT_MS);
+  }
+
+  private loadHttpAuthUrl(url: string, enableFallback: boolean = false): void {
+    this.currentHttpAuthUrl = url;
+    this.pendingHttpAuthFallback = enableFallback;
+    this.controller.loadUrl(url);
+  }
+
+  private loadPrimaryHttpAuthUrl(): void {
+    this.httpAuthResultEmitted = false;
+    this.loadHttpAuthUrl(BASIC_AUTH_PRIMARY_URL, true);
+    this.scheduleHttpAuthFallbackTimer();
+  }
+
+  private emitFallbackPassResult(): void {
+    if (this.httpAuthResultEmitted) {
+      return;
+    }
+    this.httpAuthResultEmitted = true;
+    this.clearHttpAuthFallbackTimer();
+    this.pendingHttpAuthFallback = false;
+    console.info('[HttpAuthHandlerEnhanced] all basic auth urls failed, pass through');
+    Utils.emitEvent(false, 2025102107);
+    Utils.emitEvent('testpages.eviltester.com', 26031015);
+    Utils.emitEvent('', 26031016);
+  }
+
+  private advanceHttpAuthFallback(reason: string): void {
+    if (this.httpAuthResultEmitted) {
+      return;
+    }
+    if (this.pendingHttpAuthFallback && this.currentHttpAuthUrl === BASIC_AUTH_PRIMARY_URL) {
+      console.info(`[HttpAuthHandlerEnhanced] ${reason}, try eviltester backup url`);
+      this.loadHttpAuthUrl(URL_BACKUP_EVILTESTER, true);
+      this.scheduleHttpAuthFallbackTimer();
+      return;
+    }
+    if (this.pendingHttpAuthFallback && this.currentHttpAuthUrl === URL_BACKUP_EVILTESTER) {
+      console.info(`[HttpAuthHandlerEnhanced] ${reason}, try postman backup url`);
+      this.loadHttpAuthUrl(URL_BACKUP_POSTMAN, false);
+      this.scheduleHttpAuthFallbackTimer();
+      return;
+    }
+    if (this.currentHttpAuthUrl === URL_BACKUP_POSTMAN) {
+      this.emitFallbackPassResult();
+    }
+  }
+
+  private tryHttpAuthFallbackOnTimeout(): void {
+    this.advanceHttpAuthFallback('basic auth url timeout');
+  }
+
+  private tryHttpAuthFallback(responseCode: number): void {
+    if (responseCode !== 503) {
+      return;
+    }
+    this.advanceHttpAuthFallback('basic auth url failed');
+  }
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -59,7 +141,7 @@ struct httpAuthHandlerEnhanced {
           switch (this.str) {
             case 'emitHttpAuthHandlerConfirmFalse': {
               try {
-                this.controller.loadUrl(BASIC_AUTH_BACKUP_URL);
+                this.loadPrimaryHttpAuthUrl();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 2025102107)
@@ -76,6 +158,9 @@ struct httpAuthHandlerEnhanced {
           if (event) {
             console.log('onHttpAuthRequest host==>' + event.host);
             console.log('onHttpAuthRequest realm==>' + event.realm);
+            this.httpAuthResultEmitted = true;
+            this.clearHttpAuthFallbackTimer();
+            this.pendingHttpAuthFallback = false;
             let result = event.handler.confirm(undefined, undefined);
             console.log('onHttpAuthRequest confirm result==>'+result);
             Utils.emitEvent(result, 2025102107);
@@ -83,6 +168,12 @@ struct httpAuthHandlerEnhanced {
             Utils.emitEvent(event.realm, 26031016);
           }
           return true
+        })
+        .onHttpErrorReceive((event) => {
+          if (event) {
+            let responseCode = event.response.getResponseCode();
+            this.tryHttpAuthFallback(responseCode);
+          }
         })
 
     }

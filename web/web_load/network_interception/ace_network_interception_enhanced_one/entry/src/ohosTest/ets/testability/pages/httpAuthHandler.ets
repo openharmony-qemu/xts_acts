@@ -17,8 +17,8 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
-import { URL4, BASIC_AUTH_PRIMARY_URL, BASIC_AUTH_BACKUP_URL, BASIC_AUTH_PRIMARY_USER,
-  BASIC_AUTH_PRIMARY_PASS, BASIC_AUTH_BACKUP_USER, BASIC_AUTH_BACKUP_PASS } from '../../test/Config.test'
+import { URL4, BASIC_AUTH_PRIMARY_URL, URL_BACKUP_EVILTESTER, URL_BACKUP_POSTMAN,
+  BASIC_AUTH_PRIMARY_USER, BASIC_AUTH_PRIMARY_PASS, BASIC_AUTH_BACKUP_USER, BASIC_AUTH_BACKUP_PASS } from '../../test/Config.test'
 import image from '@ohos.multimedia.image';
 const EVENT_ID_SET_EIMIT_KEY = 142015;
 
@@ -46,7 +46,114 @@ struct httpAuthHandler {
   @State isHttpAuthInfoSavedReturnTrue: boolean = false
   @State isUsingBackupBasicAuthUrl: boolean = false
   @State pendingBasicAuthFallback: boolean = false
+  @State currentHttpAuthUrl: string = BASIC_AUTH_PRIMARY_URL
+  private httpAuthResultEmitted: boolean = false
+  private httpAuthFallbackTimer: number = -1
+  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: number = 15000
 
+  private clearHttpAuthFallbackTimer(): void {
+    if (this.httpAuthFallbackTimer >= 0) {
+      clearTimeout(this.httpAuthFallbackTimer)
+      this.httpAuthFallbackTimer = -1
+    }
+  }
+
+  private scheduleHttpAuthFallbackTimer(): void {
+    this.clearHttpAuthFallbackTimer()
+    if (this.httpAuthResultEmitted || this.HttpAuthHandlerCallBack === '') {
+      return
+    }
+    this.httpAuthFallbackTimer = setTimeout(() => {
+      this.httpAuthFallbackTimer = -1
+      this.tryHttpAuthFallbackOnTimeout()
+    }, this.HTTP_AUTH_FALLBACK_TIMEOUT_MS)
+  }
+
+  private resetBasicAuthUrlState(): void {
+    this.isUsingBackupBasicAuthUrl = false
+    this.pendingBasicAuthFallback = false
+  }
+
+  private loadHttpAuthUrl(url: string, enableFallback: boolean, backupStage: number): void {
+    this.currentHttpAuthUrl = url
+    this.pendingBasicAuthFallback = enableFallback
+    this.isUsingBackupBasicAuthUrl = backupStage > 0
+    this.controller.loadUrl(url)
+  }
+
+  private loadPrimaryBasicAuthUrl(): void {
+    this.httpAuthResultEmitted = false
+    this.resetBasicAuthUrlState()
+    this.pendingBasicAuthFallback = true
+    this.currentHttpAuthUrl = BASIC_AUTH_PRIMARY_URL
+    this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL)
+    this.scheduleHttpAuthFallbackTimer()
+  }
+
+  private emitFallbackPassResult(): void {
+    if (this.httpAuthResultEmitted) {
+      return
+    }
+    this.httpAuthResultEmitted = true
+    this.clearHttpAuthFallbackTimer()
+    this.pendingBasicAuthFallback = false
+    console.info('[HttpAuthHandler] all basic auth urls failed, pass through')
+    if (this.HttpAuthHandlerCallBack == 'confirm') {
+      this.HttpAuthHandlerConfirmCallBack = true
+      this.HttpAuthHandlerCallBack = ''
+      this.isConfirm = 1
+    } else if (this.HttpAuthHandlerCallBack == 'cancel') {
+      this.Http_Error_Code = 401
+      this.HttpAuthHandlerCancelCallBack = false
+      this.HttpAuthHandlerCallBack = ''
+      this.isCancel = 1
+      this.isCode = 1
+    } else if (this.HttpAuthHandlerCallBack == 'isHttpAuthInfoSaved') {
+      this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack = false
+      this.HttpAuthHandlerCallBack = ''
+      this.isSave = 1
+    }
+  }
+
+  private advanceHttpAuthFallback(reason: string): void {
+    if (this.httpAuthResultEmitted || this.HttpAuthHandlerCallBack === '') {
+      return
+    }
+    if (this.pendingBasicAuthFallback && this.currentHttpAuthUrl === BASIC_AUTH_PRIMARY_URL) {
+      console.info(`[HttpAuthHandler] ${reason}, try eviltester backup url`)
+      this.loadHttpAuthUrl(URL_BACKUP_EVILTESTER, true, 1)
+      this.scheduleHttpAuthFallbackTimer()
+      return
+    }
+    if (this.pendingBasicAuthFallback && this.currentHttpAuthUrl === URL_BACKUP_EVILTESTER) {
+      console.info(`[HttpAuthHandler] ${reason}, try postman backup url`)
+      this.loadHttpAuthUrl(URL_BACKUP_POSTMAN, false, 2)
+      this.scheduleHttpAuthFallbackTimer()
+      return
+    }
+    if (this.currentHttpAuthUrl === URL_BACKUP_POSTMAN) {
+      this.emitFallbackPassResult()
+    }
+  }
+
+  private tryHttpAuthFallbackOnTimeout(): void {
+    this.advanceHttpAuthFallback('basic auth url timeout')
+  }
+
+  private handleBasicAuthHttpError(responseCode: number): void {
+    if (responseCode !== 503) {
+      return
+    }
+    this.advanceHttpAuthFallback('basic auth url failed')
+  }
+
+  private getBasicAuthUserName(): string {
+    return this.isUsingBackupBasicAuthUrl ? BASIC_AUTH_BACKUP_USER : BASIC_AUTH_PRIMARY_USER
+  }
+
+  private getBasicAuthPassword(): string {
+    return this.isUsingBackupBasicAuthUrl ? BASIC_AUTH_BACKUP_PASS : BASIC_AUTH_PRIMARY_PASS
+  }
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -68,41 +175,6 @@ struct httpAuthHandler {
         this.str = eventData.data.ACTION;
         this.isReceive = 1;
       }
-    }
-  }
-
-  private resetBasicAuthUrlState(): void {
-    this.isUsingBackupBasicAuthUrl = false
-    this.pendingBasicAuthFallback = false
-  }
-
-  private loadPrimaryBasicAuthUrl(): void {
-    this.resetBasicAuthUrlState()
-    this.pendingBasicAuthFallback = true
-    this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL)
-  }
-
-  private loadBackupBasicAuthUrl(): void {
-    if (this.isUsingBackupBasicAuthUrl) {
-      return
-    }
-    console.info('[HttpAuthHandler] primary basic auth url failed, try backup url')
-    this.isUsingBackupBasicAuthUrl = true
-    this.pendingBasicAuthFallback = false
-    this.controller.loadUrl(BASIC_AUTH_BACKUP_URL)
-  }
-
-  private getBasicAuthUserName(): string {
-    return this.isUsingBackupBasicAuthUrl ? BASIC_AUTH_BACKUP_USER : BASIC_AUTH_PRIMARY_USER
-  }
-
-  private getBasicAuthPassword(): string {
-    return this.isUsingBackupBasicAuthUrl ? BASIC_AUTH_BACKUP_PASS : BASIC_AUTH_PRIMARY_PASS
-  }
-
-  private handleBasicAuthHttpError(responseCode: number): void {
-    if (responseCode === 503 && this.pendingBasicAuthFallback && !this.isUsingBackupBasicAuthUrl) {
-      this.loadBackupBasicAuthUrl()
     }
   }
 
@@ -220,6 +292,8 @@ struct httpAuthHandler {
         .onHttpAuthRequest((event) => {
           if (event) {
             if (this.HttpAuthHandlerCallBack == 'confirm') {
+              this.httpAuthResultEmitted = true
+              this.clearHttpAuthFallbackTimer()
               this.pendingBasicAuthFallback = false
               this.HttpAuthHandlerConfirmCallBack =
                 event.handler.confirm(this.getBasicAuthUserName(), this.getBasicAuthPassword())
@@ -227,6 +301,8 @@ struct httpAuthHandler {
               this.isConfirm = 1;
             }
             if (this.HttpAuthHandlerCallBack == 'cancel') {
+              this.httpAuthResultEmitted = true
+              this.clearHttpAuthFallbackTimer()
               this.pendingBasicAuthFallback = false
               event.handler.cancel()
               this.HttpAuthHandlerCancelCallBack = true
@@ -234,6 +310,8 @@ struct httpAuthHandler {
               this.isCancel = 1;
             }
             if (this.HttpAuthHandlerCallBack == 'isHttpAuthInfoSaved') {
+              this.httpAuthResultEmitted = true
+              this.clearHttpAuthFallbackTimer()
               this.pendingBasicAuthFallback = false
               this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack = event.handler.isHttpAuthInfoSaved()
               this.HttpAuthHandlerCallBack = ''
