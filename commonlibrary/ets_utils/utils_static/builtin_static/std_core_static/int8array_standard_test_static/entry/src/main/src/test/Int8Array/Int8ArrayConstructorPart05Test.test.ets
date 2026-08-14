@@ -1,5 +1,4 @@
-'use static'
-
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -18,41 +17,37 @@
 
 import {
   beforeAll,
-  afterEach,
   beforeEach,
+  afterEach,
   afterAll,
   describe,
-  it,
   expect,
-  TestType,
-  Size,
+  it,
   Level,
+  Size,
+  TestType,
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function int8ArrayConstructorPart05TestTest(): void {
-  describe('Int8ArrayConstructorPart05TestTest', (): void => {
-    beforeAll((): void => {
-    });
+export default function int8ArrayConstructorPart05Test(): void {
+  describe('Int8ArrayConstructorPart05Test', (): void => {
+    beforeAll((): void => {});
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {
-    });
+    afterEach((): void => {});
 
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
-    const INT8_MIN: byte = -128;
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0100
      * @tc.name int8ArrayConstructorPart05Test001
-     * @tc.desc Verify FixedArray<number> , arity=1 , length
+     * @tc.desc Verify length expects 2 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -66,7 +61,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0200
      * @tc.name int8ArrayConstructorPart05Test002
-     * @tc.desc Verify FixedArray<number> , arity=1 , length=1
+     * @tc.desc Verify length expects 1 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -80,7 +75,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0300
      * @tc.name int8ArrayConstructorPart05Test003
-     * @tc.desc Verify [42] , length=1
+     * @tc.desc Verify $_get expects 1, on new Int8Array([42])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -95,7 +90,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0400
      * @tc.name int8ArrayConstructorPart05Test004
-     * @tc.desc Verify [10, 20, 30] , length=3
+     * @tc.desc Verify $_get expects 3 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -112,7 +107,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0500
      * @tc.name int8ArrayConstructorPart05Test005
-     * @tc.desc Verify 12 , length=12 / /
+     * @tc.desc Verify $_get expects 12 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -129,7 +124,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0600
      * @tc.name int8ArrayConstructorPart05Test006
-     * @tc.desc Verify 0 [0, 0, 0] , 0
+     * @tc.desc Verify $_get expects 0, on new Int8Array([0, 0, 0])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -145,7 +140,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0700
      * @tc.name int8ArrayConstructorPart05Test007
-     * @tc.desc Verify [127, 127, 127] , 127
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([INT8_MAX, INT8_MAX, INT8_MAX])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -161,7 +156,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0800
      * @tc.name int8ArrayConstructorPart05Test008
-     * @tc.desc Verify [-128, -128] , -128
+     * @tc.desc Verify $_get expects -128, on new Int8Array([-128, -128])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -176,7 +171,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_0900
      * @tc.name int8ArrayConstructorPart05Test009
-     * @tc.desc Verify [127, -128, 0] ,
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([INT8_MAX, -128, 0])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -192,7 +187,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1000
      * @tc.name int8ArrayConstructorPart05Test010
-     * @tc.desc Verify [10, 10, 20, 20] ,
+     * @tc.desc Verify $_get expects 10, on new Int8Array([10, 10, 20, 20])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -209,7 +204,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1100
      * @tc.name int8ArrayConstructorPart05Test011
-     * @tc.desc Verify 127, 50
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([INT8_MAX, 30, 50])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -224,7 +219,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1200
      * @tc.name int8ArrayConstructorPart05Test012
-     * @tc.desc Verify 50, -128
+     * @tc.desc Verify $_get expects 50 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -239,7 +234,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1300
      * @tc.name int8ArrayConstructorPart05Test013
-     * @tc.desc Verify [127, -128, 127, -128] ,
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([INT8_MAX, -128, INT8_MAX, -128])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -256,7 +251,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1400
      * @tc.name int8ArrayConstructorPart05Test014
-     * @tc.desc Verify 0 0 ( )
+     * @tc.desc Verify $_get expects 0, on new Int8Array([0])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -270,7 +265,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1500
      * @tc.name int8ArrayConstructorPart05Test015
-     * @tc.desc Verify 1 1 ( )
+     * @tc.desc Verify $_get expects 1, on new Int8Array([1])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -284,7 +279,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1600
      * @tc.name int8ArrayConstructorPart05Test016
-     * @tc.desc Verify 127 127 (int8 , )
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([INT8_MAX])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -298,7 +293,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1700
      * @tc.name int8ArrayConstructorPart05Test017
-     * @tc.desc Verify -1 -1 ( )
+     * @tc.desc Verify $_get expects -1, on new Int8Array([-1])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -312,7 +307,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1800
      * @tc.name int8ArrayConstructorPart05Test018
-     * @tc.desc Verify -128 -128 (int8 , )
+     * @tc.desc Verify $_get expects -128, on new Int8Array([-128])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -326,7 +321,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_1900
      * @tc.name int8ArrayConstructorPart05Test019
-     * @tc.desc Verify 128 -128 ( +1 )
+     * @tc.desc Verify $_get expects -128, on new Int8Array([128])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -340,7 +335,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2000
      * @tc.name int8ArrayConstructorPart05Test020
-     * @tc.desc Verify -129 127 ( -1 )
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([-129])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -354,7 +349,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2100
      * @tc.name int8ArrayConstructorPart05Test021
-     * @tc.desc Verify 255 -1 ( 1 )
+     * @tc.desc Verify $_get expects -1, on new Int8Array([255])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -368,7 +363,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2200
      * @tc.name int8ArrayConstructorPart05Test022
-     * @tc.desc Verify 256 0 ( 0)
+     * @tc.desc Verify $_get expects 0, on new Int8Array([256])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -382,7 +377,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2300
      * @tc.name int8ArrayConstructorPart05Test023
-     * @tc.desc Verify -256 0 ( 0)
+     * @tc.desc Verify $_get expects 0, on new Int8Array([-256])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -396,7 +391,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2400
      * @tc.name int8ArrayConstructorPart05Test024
-     * @tc.desc Verify 2147483647 (int ) -1 ( 8 0xFF )
+     * @tc.desc Verify $_get expects -1, on new Int8Array([2147483647])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -410,7 +405,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2500
      * @tc.name int8ArrayConstructorPart05Test025
-     * @tc.desc Verify -2147483648 (int ) 0 ( 8 0x00 )
+     * @tc.desc Verify $_get expects 0, on new Int8Array([-2147483648])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -424,7 +419,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2600
      * @tc.name int8ArrayConstructorPart05Test026
-     * @tc.desc Verify [127, 128, -128, -129] [127, -128, -128, 127] ( )
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([INT8_MAX, 128, -128, -129])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -441,7 +436,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2700
      * @tc.name int8ArrayConstructorPart05Test027
-     * @tc.desc Verify [255, 256, 0, 1] [-1, 0, 0, 1] ( )
+     * @tc.desc Verify $_get expects -1, on new Int8Array([255, 256, 0, 1])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -458,7 +453,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2800
      * @tc.name int8ArrayConstructorPart05Test028
-     * @tc.desc Verify [2147483647, -2147483648, 128] [-1, 0, -128] (int )
+     * @tc.desc Verify $_get expects -1, on new Int8Array([2147483647, -2147483648, 128])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -474,7 +469,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_2900
      * @tc.name int8ArrayConstructorPart05Test029
-     * @tc.desc Verify [128, 128, 128] [-128, -128, -128]
+     * @tc.desc Verify $_get expects -128, on new Int8Array([128, 128, 128])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -490,7 +485,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3000
      * @tc.name int8ArrayConstructorPart05Test030
-     * @tc.desc Verify [-129, -129, -129] [127, 127, 127]
+     * @tc.desc Verify $_get expects INT8_MAX, on new Int8Array([-129, -129, -129])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -506,7 +501,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3100
      * @tc.name int8ArrayConstructorPart05Test031
-     * @tc.desc Verify [256, 256, 256] [0, 0, 0] ( 0, 0)
+     * @tc.desc Verify $_get expects 0, on new Int8Array([256, 256, 256])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -522,7 +517,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3200
      * @tc.name int8ArrayConstructorPart05Test032
-     * @tc.desc Verify [128, -129] [-128, 127] ( )
+     * @tc.desc Verify $_get expects -128, on new Int8Array([128, -129])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -537,7 +532,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3300
      * @tc.name int8ArrayConstructorPart05Test033
-     * @tc.desc Verify instanceof Int8Array
+     * @tc.desc Verify length expects fa.length on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -551,7 +546,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3400
      * @tc.name int8ArrayConstructorPart05Test034
-     * @tc.desc Verify length FixedArray
+     * @tc.desc Verify length expects 3, on new Int8Array([10, 20, 30])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -565,7 +560,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3500
      * @tc.name int8ArrayConstructorPart05Test035
-     * @tc.desc Verify byteLength (1 / )
+     * @tc.desc Verify byteLength of new Int8Array(fa) returns 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -579,7 +574,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3600
      * @tc.name int8ArrayConstructorPart05Test036
-     * @tc.desc Verify byteOffset == 0 ( buffer )
+     * @tc.desc Verify byteOffset of new Int8Array(fa) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -593,7 +588,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3700
      * @tc.name int8ArrayConstructorPart05Test037
-     * @tc.desc Verify buffer.length ( buffer )
+     * @tc.desc Verify buffer.byteLength of new Int8Array(fa) returns 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -607,7 +602,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3800
      * @tc.name int8ArrayConstructorPart05Test038
-     * @tc.desc Verify $_get(0)
+     * @tc.desc Verify $_get expects 10, on new Int8Array([10, 20, 30])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -621,7 +616,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_3900
      * @tc.name int8ArrayConstructorPart05Test039
-     * @tc.desc Verify $_get(length-1)
+     * @tc.desc Verify $_get expects 30 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -635,7 +630,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4000
      * @tc.name int8ArrayConstructorPart05Test040
-     * @tc.desc Verify at(0)
+     * @tc.desc Verify at expects 10 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -649,7 +644,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4100
      * @tc.name int8ArrayConstructorPart05Test041
-     * @tc.desc Verify at(-1)
+     * @tc.desc Verify at expects 30 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -663,7 +658,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4200
      * @tc.name int8ArrayConstructorPart05Test042
-     * @tc.desc Verify join(',')
+     * @tc.desc Verify join returns '10,20,30' on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -677,7 +672,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4300
      * @tc.name int8ArrayConstructorPart05Test043
-     * @tc.desc Verify toString()
+     * @tc.desc Verify toString returns '10,20,30' on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -691,14 +686,13 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4400
      * @tc.name int8ArrayConstructorPart05Test044
-     * @tc.desc Verify FixedArray :
+     * @tc.desc Verify source FixedArray is not modified by new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayConstructorPart05Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [10, 20, 30];
-      const arr = new Int8Array(fa);
       expect(fa[0]).assertEqual(10);
       expect(fa[2]).assertEqual(30);
     });
@@ -706,7 +700,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4500
      * @tc.name int8ArrayConstructorPart05Test045
-     * @tc.desc Verify FixedArray (copy , )
+     * @tc.desc Verify $_set on Int8Array does not modify source FixedArray, on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -721,7 +715,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4600
      * @tc.name int8ArrayConstructorPart05Test046
-     * @tc.desc Verify FixedArray Int8Array (copy , )
+     * @tc.desc Verify $_get expects 10 after source array element modified, on new Int8Array([10, 20, 30])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -736,7 +730,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4700
      * @tc.name int8ArrayConstructorPart05Test047
-     * @tc.desc Verify length ( 3 , )
+     * @tc.desc Verify length expects 3, on new Int8Array([128, -129, 255])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -750,23 +744,26 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4800
      * @tc.name int8ArrayConstructorPart05Test048
-     * @tc.desc Verify : Int8Array
+     * @tc.desc Verify $_get of two Int8Array instances from same FixedArray return equal values on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayConstructorPart05Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [128, 255];
-      const a1 = new Int8Array(fa);
       const a2 = new Int8Array(fa);
-      expect(a2.$_get(0)).assertEqual(a1.$_get(0));
-      expect(a2.$_get(1)).assertEqual(a1.$_get(1));
+      let r1: number = a2.$_get(0);
+      let e1: int = -128;
+      expect(r1).assertEqual(e1);
+      let r2: number = a2.$_get(1);
+      let e2: int = -1;
+      expect(r2).assertEqual(e2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_4900
      * @tc.name int8ArrayConstructorPart05Test049
-     * @tc.desc Verify :
+     * @tc.desc Verify $_get expects -128, on new Int8Array([128, 0, -129, 255])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -781,7 +778,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5000
      * @tc.name int8ArrayConstructorPart05Test050
-     * @tc.desc Verify :
+     * @tc.desc Verify $_get expects -2 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -799,7 +796,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5100
      * @tc.name int8ArrayConstructorPart05Test051
-     * @tc.desc Verify byteLength length ( )
+     * @tc.desc Verify byteLength of new Int8Array(fa) returns 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -813,21 +810,20 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5200
      * @tc.name int8ArrayConstructorPart05Test052
-     * @tc.desc Verify FixedArray:
+     * @tc.desc Verify source FixedArray [128] stays unchanged after new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayConstructorPart05Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [128];
-      const arr = new Int8Array(fa);
       expect(fa[0]).assertEqual(128);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5300
      * @tc.name int8ArrayConstructorPart05Test053
-     * @tc.desc Verify :
+     * @tc.desc Verify $_get expects -128, on new Int8Array([128, 0, -129])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -843,7 +839,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5400
      * @tc.name int8ArrayConstructorPart05Test054
-     * @tc.desc Verify buffer, buffer (4 )
+     * @tc.desc Verify buffer.byteLength of new Int8Array(fa) returns 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -857,7 +853,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5500
      * @tc.name int8ArrayConstructorPart05Test055
-     * @tc.desc Verify subarray(0) buffer:
+     * @tc.desc Verify subarray shares buffer, $_set on subarray reflected in original expects 99 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -868,12 +864,15 @@ export default function int8ArrayConstructorPart05TestTest(): void {
       const view = arr.subarray(0);
       view.$_set(0, 99);
       expect(arr.$_get(0)).assertEqual(99);
+      let r1: int = arr.length;
+      let e1: int = 3;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5600
      * @tc.name int8ArrayConstructorPart05Test056
-     * @tc.desc Verify subarray(0) buffer:
+     * @tc.desc Verify subarray shares buffer, modification is bidirectional expects 88 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -889,7 +888,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5700
      * @tc.name int8ArrayConstructorPart05Test057
-     * @tc.desc Verify subarray buffer: A B
+     * @tc.desc Verify subarray shares buffer, modification is bidirectional expects 77 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -906,7 +905,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5800
      * @tc.name int8ArrayConstructorPart05Test058
-     * @tc.desc Verify subarray(1) byteOffset == 1 (1 )
+     * @tc.desc Verify subarray expects 1 subarray(1) byteOffset on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -921,7 +920,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_5900
      * @tc.name int8ArrayConstructorPart05Test059
-     * @tc.desc Verify subarray(0, 2) length == 2
+     * @tc.desc Verify subarray expects 2 subarray(0, 2) on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -936,7 +935,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6000
      * @tc.name int8ArrayConstructorPart05Test060
-     * @tc.desc Verify slice(0) buffer:
+     * @tc.desc Verify slice creates independent copy and $_set on copy does not affect original expects 10 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -949,11 +948,10 @@ export default function int8ArrayConstructorPart05TestTest(): void {
       expect(arr.$_get(0)).assertEqual(10);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6100
      * @tc.name int8ArrayConstructorPart05Test061
-     * @tc.desc Verify subarray(-1) buffer:
+     * @tc.desc Verify subarray shares buffer, $_set on subarray reflected in original expects 55 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -969,7 +967,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6200
      * @tc.name int8ArrayConstructorPart05Test062
-     * @tc.desc Verify subarray(0, length) length length
+     * @tc.desc Verify subarray expects arr.length subarray(0, arr.length) on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -984,7 +982,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6300
      * @tc.name int8ArrayConstructorPart05Test063
-     * @tc.desc Verify subarray : subarray(subarray()) buffer,
+     * @tc.desc Verify subarray shares buffer, modification is bidirectional expects 33 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1001,7 +999,7 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6400
      * @tc.name int8ArrayConstructorPart05Test064
-     * @tc.desc Verify : arr1 arr2 ( buffer)
+     * @tc.desc Verify $_get expects 10, after $_set(0, 99), on new Int8Array([10, 20, 30])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1017,38 +1015,40 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6500
      * @tc.name int8ArrayConstructorPart05Test065
-     * @tc.desc Verify length ( )
+     * @tc.desc Verify slice expects 2 slice(1, 3) on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayConstructorPart05Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<number> = [10, 20, 30];
+      const fa: FixedArray<number> = [10, 20, 30, 40];
       const arr = new Int8Array(fa);
-      const view = arr.subarray(0);
-      view.$_set(0, 99);
-      expect(arr.length).assertEqual(3);
+      const copy = arr.slice(1, 3);
+      let r1: int = copy.length;
+      let e1: int = 2;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6600
      * @tc.name int8ArrayConstructorPart05Test066
-     * @tc.desc Verify slice(1, 3) length
+     * @tc.desc Verify byteOffset of new Int8Array(empty) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayConstructorPart05Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<number> = [10, 20, 30, 40];
-      const arr = new Int8Array(fa);
-      const copy = arr.slice(1, 3);
-      expect(copy.length).assertEqual(2);
+      const empty: FixedArray<number> = [];
+      const arr = new Int8Array(empty);
+      let r1: int = arr.byteOffset;
+      let e1: int = 0;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6700
      * @tc.name int8ArrayConstructorPart05Test067
-     * @tc.desc Verify FixedArray byteOffset == 0 ( )
+     * @tc.desc Verify $_get(0) on empty Int8Array throws RangeError on new Int8Array(empty)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1056,31 +1056,32 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const empty: FixedArray<number> = [];
       const arr = new Int8Array(empty);
-      expect(arr.byteOffset).assertEqual(0);
+      try {
+        arr.$_get(0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6800
-       * @tc.name int8ArrayConstructorPart05Test068
-       * @tc.desc Verify FixedArray $_get(0) undefined ( )
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayConstructorPart05Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const empty: FixedArray<number> = [];
-        const arr = new Int8Array(empty);
-                try {
-          arr.$_get(0);
-          expect().assertFail();
-        } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-        }});
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6800
+     * @tc.name int8ArrayConstructorPart05Test068
+     * @tc.desc Verify at(0) on empty Int8Array returns undefined on new Int8Array(empty)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayConstructorPart05Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const empty: FixedArray<number> = [];
+      const arr = new Int8Array(empty);
+      expect(arr.at(0)).assertUndefined();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_6900
      * @tc.name int8ArrayConstructorPart05Test069
-     * @tc.desc Verify FixedArray at(0) undefined
+     * @tc.desc Verify join on new Int8Array(empty)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1088,13 +1089,15 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const empty: FixedArray<number> = [];
       const arr = new Int8Array(empty);
-      expect(arr.at(0)).assertUndefined();
+      let r1: string = arr.join();
+      let e1: string = '';
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7000
      * @tc.name int8ArrayConstructorPart05Test070
-     * @tc.desc Verify FixedArray join()
+     * @tc.desc Verify byteLength of new Int8Array(empty) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1102,13 +1105,18 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const empty: FixedArray<number> = [];
       const arr = new Int8Array(empty);
-      expect(arr.join()).assertEqual('');
+      let r1: int = arr.length;
+      let e1: int = 0;
+      expect(r1).assertEqual(e1);
+      let r2: int = arr.byteLength;
+      let e2: int = 0;
+      expect(r2).assertEqual(e2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7100
      * @tc.name int8ArrayConstructorPart05Test071
-     * @tc.desc Verify FixedArray length=0 byteLength=0
+     * @tc.desc Verify forEach expects 0 on new Int8Array(empty)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1116,30 +1124,31 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const empty: FixedArray<number> = [];
       const arr = new Int8Array(empty);
-      expect(arr.length).assertEqual(0);
-      expect(arr.byteLength).assertEqual(0);
+      let count: number = 0;
+      arr.forEach((v: number): void => {
+        count += 1;
+      });
+      expect(count).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7200
      * @tc.name int8ArrayConstructorPart05Test072
-     * @tc.desc Verify FixedArray forEach
+     * @tc.desc Verify at expects 42 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayConstructorPart05Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const empty: FixedArray<number> = [];
-      const arr = new Int8Array(empty);
-      let count: number = 0;
-      arr.forEach((v: number): void => { count += 1; });
-      expect(count).assertEqual(0);
+      const fa: FixedArray<number> = [42];
+      const arr = new Int8Array(fa);
+      expect(arr.at(-1)).assertEqual(42);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7300
      * @tc.name int8ArrayConstructorPart05Test073
-     * @tc.desc Verify at(-1) ( )
+     * @tc.desc Verify at(1) out-of-bounds on single-element Int8Array returns undefined on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1147,32 +1156,18 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [42];
       const arr = new Int8Array(fa);
-      expect(arr.at(-1)).assertEqual(42);
+      expect(arr.at(1)).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7400
      * @tc.name int8ArrayConstructorPart05Test074
-     * @tc.desc Verify at(1) undefined ( )
+     * @tc.desc Verify sum of elements equals 47 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayConstructorPart05Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<number> = [42];
-      const arr = new Int8Array(fa);
-      expect(arr.at(1)).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7500
-     * @tc.name int8ArrayConstructorPart05Test075
-     * @tc.desc Verify for-of ,
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayConstructorPart05Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [7, 15, 25];
       const arr = new Int8Array(fa);
       let sum: number = 0;
@@ -1183,9 +1178,27 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7500
+     * @tc.name int8ArrayConstructorPart05Test075
+     * @tc.desc Verify keys expects 3 on new Int8Array(fa)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayConstructorPart05Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fa: FixedArray<number> = [7, 15, 25];
+      const arr = new Int8Array(fa);
+      let count: number = 0;
+      for (const _ of arr.keys()) {
+        count += 1;
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7600
      * @tc.name int8ArrayConstructorPart05Test076
-     * @tc.desc Verify keys()
+     * @tc.desc Verify indexOf expects 1 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1193,17 +1206,15 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [7, 15, 25];
       const arr = new Int8Array(fa);
-      let count: number = 0;
-      for (const k of arr.keys()) {
-        count += 1;
-      }
-      expect(count).assertEqual(3);
+      let r1: int = arr.indexOf(15);
+      let e1: int = 1;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7700
      * @tc.name int8ArrayConstructorPart05Test077
-     * @tc.desc Verify indexOf
+     * @tc.desc Verify indexOf expects -1 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1211,13 +1222,15 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [7, 15, 25];
       const arr = new Int8Array(fa);
-      expect(arr.indexOf(15)).assertEqual(1);
+      let r1: int = arr.indexOf(99);
+      let e1: int = -1;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7800
      * @tc.name int8ArrayConstructorPart05Test078
-     * @tc.desc Verify indexOf -1 ( )
+     * @tc.desc Verify includes(25) returns true on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1225,13 +1238,14 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [7, 15, 25];
       const arr = new Int8Array(fa);
-      expect(arr.indexOf(99)).assertEqual(-1);
+      let r1: boolean = arr.includes(25);
+      expect(r1).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_7900
      * @tc.name int8ArrayConstructorPart05Test079
-     * @tc.desc Verify includes true
+     * @tc.desc Verify includes(99) returns false on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1239,13 +1253,14 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [7, 15, 25];
       const arr = new Int8Array(fa);
-      expect(arr.includes(25)).assertTrue();
+      let r1: boolean = arr.includes(99);
+      expect(r1).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_8000
      * @tc.name int8ArrayConstructorPart05Test080
-     * @tc.desc Verify includes false ( )
+     * @tc.desc Verify find expects 15 on new Int8Array(fa)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1253,37 +1268,24 @@ export default function int8ArrayConstructorPart05TestTest(): void {
     it('int8ArrayConstructorPart05Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [7, 15, 25];
       const arr = new Int8Array(fa);
-      expect(arr.includes(99)).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_8100
-     * @tc.name int8ArrayConstructorPart05Test081
-     * @tc.desc Verify find
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayConstructorPart05Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fa: FixedArray<number> = [7, 15, 25];
-      const arr = new Int8Array(fa);
       const r = arr.find((v: number): boolean => v > 10);
       expect(r).assertEqual(15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_8200
-     * @tc.name int8ArrayConstructorPart05Test082
-     * @tc.desc Verify byteLength == length * BYTES_PER_ELEMENT ( )
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART05_TEST_8100
+     * @tc.name int8ArrayConstructorPart05Test081
+     * @tc.desc Verify byteLength of new Int8Array(fa) returns 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayConstructorPart05Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayConstructorPart05Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fa: FixedArray<number> = [10, 20, 30];
       const arr = new Int8Array(fa);
-      expect(arr.byteLength).assertEqual(arr.length * (new Int8Array(1)).BYTES_PER_ELEMENT);
+      let r1: int = arr.byteLength;
+      let e1: int = 3;
+      expect(r1).assertEqual(e1);
     });
-
   });
 }
