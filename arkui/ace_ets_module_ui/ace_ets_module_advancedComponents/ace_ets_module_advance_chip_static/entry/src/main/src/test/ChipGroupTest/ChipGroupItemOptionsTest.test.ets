@@ -343,8 +343,8 @@ export default function chipGroupOptionsTest(): void {
 
       let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
       let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
-      expect(result1).assertEqual('10.00vp');
-      expect(result2).assertEqual('10.00vp');
+      expect(result1).assertEqual('14.00vp');
+      expect(result2).assertEqual('14.00vp');
       await CommonFunc.sleep(1000);
 
       console.info('[chipGroupOptionsTest_static_006] END');
@@ -389,8 +389,8 @@ export default function chipGroupOptionsTest(): void {
 
       let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
       let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
-      expect(result1).assertEqual('10.00vp');
-      expect(result2).assertEqual('10.00vp');
+      expect(result1).assertEqual('14.00vp');
+      expect(result2).assertEqual('14.00vp');
       await CommonFunc.sleep(1000);
 
       console.info('[chipGroupOptionsTest_static_007] END');
