@@ -838,7 +838,7 @@ export default function int16ArraySubarrayTestFourTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_FOUR_4600
      * @tc.name testInt16ArraySubarrayTestFour046
-     * @tc.desc Verify subarray overflow write truncates to Int16 range on shared buffer
+     * @tc.desc Verify subarray(1, 3) view reads shared buffer element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -847,11 +847,9 @@ export default function int16ArraySubarrayTestFourTest(): void {
       let arr: Int16Array = Int16Array.of(32767, 0, -1, -32768);
       let ret: Int16Array = arr.subarray(1, 3);
       let actual1: number = ret.$_get(0 as int);
-      let expected1: number = arr.$_get(1 as int);
-      expect(actual1).assertEqual(expected1);
+      expect(actual1).assertEqual(0);
       let actual2: number = ret.$_get(1 as int);
-      let expected2: number = arr.$_get(2 as int);
-      expect(actual2).assertEqual(expected2);
+      expect(actual2).assertEqual(-1);
     });
 
     /**

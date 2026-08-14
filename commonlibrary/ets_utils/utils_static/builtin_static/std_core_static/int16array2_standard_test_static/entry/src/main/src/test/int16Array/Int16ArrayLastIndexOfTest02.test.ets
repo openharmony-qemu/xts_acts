@@ -254,7 +254,7 @@ export default function int16ArrayLastIndexOfTestTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_1600
      * @tc.name testInt16ArrayLastIndexOfTestTwo016
-     * @tc.desc Verify lastIndexOf return is finite and not NaN
+     * @tc.desc Verify lastIndexOf(99) returns -1 when element not present
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -262,8 +262,7 @@ export default function int16ArrayLastIndexOfTestTwoTest(): void {
     it('testInt16ArrayLastIndexOfTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array([1, 2, 3]);
       const result: int = arr.lastIndexOf(99);
-      let actual1: boolean = result >= -1;
-      expect(actual1).assertTrue();
+      expect(result).assertEqual(-1);
     });
 
     /**
@@ -945,31 +944,29 @@ export default function int16ArrayLastIndexOfTestTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_6000
      * @tc.name testInt16ArrayLastIndexOfTestTwo060
-     * @tc.desc Verify lastIndexOf return value
+     * @tc.desc Verify lastIndexOf(2) returns last matching index 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testInt16ArrayLastIndexOfTestTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array([1, 2, 3, 2]);
-      const firstResult = arr.lastIndexOf(2);
-      const secondResult = arr.lastIndexOf(2);
-      expect(firstResult).assertEqual(secondResult);
+      const result = arr.lastIndexOf(2);
+      expect(result).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_6100
      * @tc.name testInt16ArrayLastIndexOfTestTwo061
-     * @tc.desc Verify lastIndexOf return value
+     * @tc.desc Verify lastIndexOf(99) returns -1 when element not present
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testInt16ArrayLastIndexOfTestTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array([1, 2, 3]);
-      const firstResult = arr.lastIndexOf(99);
-      const secondResult = arr.lastIndexOf(99);
-      expect(firstResult).assertEqual(secondResult);
+      const result = arr.lastIndexOf(99);
+      expect(result).assertEqual(-1);
     });
 
     /**

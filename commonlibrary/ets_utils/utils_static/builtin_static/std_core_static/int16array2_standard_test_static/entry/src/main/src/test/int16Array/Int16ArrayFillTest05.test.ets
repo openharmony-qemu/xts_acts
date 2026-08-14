@@ -287,8 +287,9 @@ export default function int16ArrayFillTestFiveTest(): void {
       let huge: number = 9007199254740991;
       arr.fill(huge);
       let firstResult: number = arr.$_get(0);
+      expect(firstResult).assertEqual(-1);
       let secondResult: number = arr.$_get(1);
-      expect(firstResult).assertEqual(secondResult);
+      expect(secondResult).assertEqual(-1);
     });
 
     /**
@@ -303,8 +304,9 @@ export default function int16ArrayFillTestFiveTest(): void {
       let arr: Int16Array = Int16Array.of(0, 0);
       arr.fill(1000000);
       let firstValue: number = arr.$_get(0);
+      expect(firstValue).assertEqual(16960);
       let secondValue: number = arr.$_get(1);
-      expect(firstValue).assertEqual(secondValue);
+      expect(secondValue).assertEqual(16960);
     });
 
     /**
@@ -319,9 +321,9 @@ export default function int16ArrayFillTestFiveTest(): void {
       let arr: Int16Array = Int16Array.of(0, 0);
       arr.fill(-1000000);
       let result: number = arr.$_get(0);
+      expect(result).assertEqual(-16960);
       let actual1: number = arr.$_get(1);
-      let expected1: number = result;
-      expect(actual1).assertEqual(expected1);
+      expect(actual1).assertEqual(-16960);
     });
 
     /**
@@ -337,11 +339,11 @@ export default function int16ArrayFillTestFiveTest(): void {
       let val: number = 2147483647;
       arr.fill(val);
       let actual1: number = arr.$_get(0);
-      let expected1: number = arr.$_get(1);
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = arr.$_get(2);
-      let expected2: number = arr.$_get(0);
-      expect(actual2).assertEqual(expected2);
+      expect(actual1).assertEqual(-1);
+      let actual2: number = arr.$_get(1);
+      expect(actual2).assertEqual(-1);
+      let actual3: number = arr.$_get(2);
+      expect(actual3).assertEqual(-1);
     });
 
     /**
@@ -1622,8 +1624,7 @@ export default function int16ArrayFillTestFiveTest(): void {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(0, 2, 4);
       let str: string = arr.join(',');
-      let actual1: int = str.length;
-      expect(actual1).assertLarger(0);
+      expect(str).assertEqual('1,2,0,0,5');
     });
 
     /**
@@ -1657,19 +1658,19 @@ export default function int16ArrayFillTestFiveTest(): void {
     it('testInt16ArrayFillTestFive087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(10, 20, 30);
       arr.fill(55, 0, 2);
-      let checkPass: boolean = true;
       let iterator: IterableIterator<[int, number]> = arr.entries();
       let nextItem: IteratorResult<[int, number]> = iterator.next();
       while (!nextItem.done) {
         let pair: [int, number] = nextItem.value as [int, number];
         let idx: int = pair[0];
         let val: number = pair[1];
-        if (idx < 2 && val !== 55) {
-          checkPass = false;
+        if (idx < 2) {
+          expect(val).assertEqual(55);
+        } else {
+          expect(val).assertEqual(30);
         }
         nextItem = iterator.next();
       }
-      expect(checkPass).assertTrue();
     });
 
     /**

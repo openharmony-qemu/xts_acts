@@ -586,7 +586,6 @@ export default function int16ArrayJoinTestFourTest(): void {
      * @tc.level LEVEL2
      */
     it('testInt16ArrayJoinTestFour034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(0, 1, -1);
       let arr2 = new Int16Array(6);
       arr2.$_set(0, 0);
       arr2.$_set(1, 1);

@@ -53,8 +53,7 @@ export default function int16ArraySubarrayTestFiveTest(): void {
       let src = new Int16Array();
       let sub = src.subarray();
       let actual1: int = sub.length;
-      let expectedR1: int = sub.length;
-      expect(actual1).assertEqual(expectedR1);
+      expect(actual1).assertEqual(0);
     });
 
     /**

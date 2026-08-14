@@ -1169,6 +1169,7 @@ export default function int16ArrayFindTestThreeTest(): void {
           }
           return false;
         });
+        expect().assertFail();
       } catch (e) {
         let actualErrorName: string = e.name;
         let expectedErrorName: string = 'Error';
@@ -1196,6 +1197,7 @@ export default function int16ArrayFindTestThreeTest(): void {
         arr.find((_value: number, _index: int, _array: Int16Array): boolean => {
           throw new Error('fail');
         });
+        expect().assertFail();
       } catch (e) {
         let actualErrorName: string = e.name;
         let expectedErrorName: string = 'Error';
