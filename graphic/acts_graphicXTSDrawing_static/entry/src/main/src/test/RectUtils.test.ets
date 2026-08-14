@@ -2304,15 +2304,15 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.name   testRectUtilsOffsetToMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1501
-     * @tc.desc   testRectUtilsOffsetToMultipleCalls
+     * @tc.name   testRectUtilsOffsetToMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1501
+     * @tc.desc   testRectUtilsOffsetToMultipleCallsStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testRectUtilsOffsetToMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testRectUtilsOffsetToMultipleCalls';
+    it('testRectUtilsOffsetToMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRectUtilsOffsetToMultipleCallsStatic';
       let rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
       for (let i = 0; i < 20; i += 1) {
         try {
@@ -2705,15 +2705,15 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.name   testRectUtilsSetEmptyMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1801
-     * @tc.desc   testRectUtilsSetEmptyMultipleCalls
+     * @tc.name   testRectUtilsSetEmptyMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1801
+     * @tc.desc   testRectUtilsSetEmptyMultipleCallsStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testRectUtilsSetEmptyMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testRectUtilsSetEmptyMultipleCalls';
+    it('testRectUtilsSetEmptyMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRectUtilsSetEmptyMultipleCallsStatic';
       let rect = drawing.RectUtils.makeLtrb(0, 0, 100, 100);
       for (let i = 0; i < 20; i += 1) {
         try {

@@ -12,7 +12,6 @@ import DrawingTsLatticeTest from "./Lattice.test";
 import DrawingTsLatticePart2Test from "./LatticePart2.test";
 import maskFilterTest from './MaskFilter.test';
 import roundRectTest from "./RoundRect.test";
-import RoundRectPart2 from "./RoundRectPart2.test";
 import DrawingTsRoundRectPart2Test from "./RoundRectPart2.test";
 import samplingOptionsTest  from "./SamplingOptions.test";
 import shadowEffectTest from './ShaderEffect.test'
@@ -41,7 +40,6 @@ export default function testsuite() {
   DrawingTsLatticePart2Test();
   maskFilterTest();
   roundRectTest();
-  RoundRectPart2();
   DrawingTsRoundRectPart2Test();
   shadowEffectTest();
   DrawingTsShaderEffectPart2Test();

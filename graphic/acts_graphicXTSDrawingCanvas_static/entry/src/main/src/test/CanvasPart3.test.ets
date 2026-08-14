@@ -20,7 +20,7 @@ import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
-export default function drawingTsCanvasPart3Test() {
+export default function drawingTsCanvasPart3Test(): void {
   describe('DrawingTsCanvasPart3Test', () => {
     let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
