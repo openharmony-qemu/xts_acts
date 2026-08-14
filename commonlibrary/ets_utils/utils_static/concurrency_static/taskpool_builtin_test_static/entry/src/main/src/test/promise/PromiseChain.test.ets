@@ -317,7 +317,7 @@ export default function promiseChainTest(): void {
             expect(arr[1]).assertEqual(2);
             expect(arr[2]).assertEqual(3);
             return arr[1];
-          })
+          }, (error: Error): number => { throw error; })
           .then((value: number): void => {
             expect(value).assertEqual(2);
           })
@@ -428,7 +428,7 @@ export default function promiseChainTest(): void {
           .then((value: null): string => {
             expect(value).assertNull();
             return 'after null';
-          })
+          }, (error: Error): string => { throw error; })
           .then((value: string): void => {
             expect(value).assertEqual('after null');
           })
@@ -614,7 +614,7 @@ export default function promiseChainTest(): void {
           })
           .then((value: string | void): void => {
             expect(value).assertEqual('recovered');
-          })
+          }, (error: Error): void => { throw error; })
           .then((): void => {
             expect(rejected).assertTrue();
 
@@ -716,7 +716,7 @@ export default function promiseChainTest(): void {
           })
           .then((arr: Object[]): void => {
             expect(arr.length).assertEqual(0);
-          })
+          }, (error: Error): void => { throw error; })
           .then((): void => {
             console.info(`${caseName} test end`);
             done();
@@ -2264,7 +2264,7 @@ export default function promiseChainTest(): void {
             .then(() => {
               return Promise.resolve<string>('deep');
             });
-        })
+        }, (error: Error): Promise<string> => { throw error; })
         .then((value: string): void => {
           expect(value).assertEqual('deep');
         })
@@ -2299,7 +2299,7 @@ export default function promiseChainTest(): void {
             .catch((error: Error): string => {
               return 'nested recovered';
             });
-        })
+        }, (error: Error): string => { throw error; })
         .then((value: string): void => {
           expect(value).assertEqual('nested recovered');
         })
@@ -2582,19 +2582,23 @@ export default function promiseChainTest(): void {
       const caseName = 'testPromiseChainAsyncAwaitInThen';
       console.info(`${caseName} test start`);
 
-      await Promise.resolve<string>('start')
-        .then(async (value: string): Promise<string> => {
-          expect(value).assertEqual('start');
-          const delayed: string = await new Promise<string>((resolve: (value: string) => void) => {
-            setTimeout(() => {
-              resolve('delayed');
-            }, 500);
+      try {
+        await Promise.resolve<string>('start')
+          .then(async (value: string): Promise<string> => {
+            expect(value).assertEqual('start');
+            const delayed: string = await new Promise<string>((resolve: (value: string) => void) => {
+              setTimeout(() => {
+                resolve('delayed');
+              }, 500);
+            });
+            return value + '-' + delayed;
+          })
+          .then((value: string): void => {
+            expect(value).assertEqual('start-delayed');
           });
-          return value + '-' + delayed;
-        })
-        .then((value: string): void => {
-          expect(value).assertEqual('start-delayed');
-        });
+      } catch (err) {
+        expect(err).assertFail();
+      }
 
       console.info(`${caseName} test end`);
       done();
@@ -2756,7 +2760,7 @@ export default function promiseChainTest(): void {
         .then((obj: CircularObject): void => {
           expect(obj.name).assertEqual('test');
           expect(obj.self).assertEqual(obj);
-        })
+        }, (error: Error): void => { throw error; })
         .then((): void => {
           console.info(`${caseName} test end`);
           done();
@@ -2867,7 +2871,7 @@ export default function promiseChainTest(): void {
           expect(value.has(1)).assertTrue();
           expect(value.has(2)).assertTrue();
           expect(value.has(3)).assertTrue();
-        })
+        }, (error: Error): void => { throw error; })
         .then((): void => {
           console.info(`${caseName} test end`);
           done();
@@ -2897,7 +2901,7 @@ export default function promiseChainTest(): void {
           expect(json).assertEqual('{"value": 100}');
           const data: ValueObject = { value: 100 };
           return data;
-        })
+        }, (error: Error): ValueObject => { throw error; })
         .then((data: ValueObject): number => {
           expect(data.value).assertEqual(100);
           return data.value * 2;
@@ -2905,7 +2909,7 @@ export default function promiseChainTest(): void {
         .then((result: number): string => {
           expect(result).assertEqual(200);
           return `Result: ${result}`;
-        })
+        }, (error: Error): string => { throw error; })
         .then((output: string): void => {
           expect(output).assertEqual('Result: 200');
         })
@@ -2937,11 +2941,11 @@ export default function promiseChainTest(): void {
         .then((value: number): number => {
           expect(value).assertEqual(0);
           return value;
-        })
+        }, (error: Error): number => { throw error; })
         .then((value: number): string => {
           expect(value).assertEqual(0);
           return value.toString();
-        })
+        }, (error: Error): string => { throw error; })
         .then((value: string): void => {
           expect(value).assertEqual('0');
         })
@@ -2973,7 +2977,7 @@ export default function promiseChainTest(): void {
         .then((value: number): number => {
           expect(value).assertEqual(-100);
           return Math.abs(value);
-        })
+        }, (error: Error): number => { throw error; })
         .then((value: number): void => {
           expect(value).assertEqual(100);
         })
@@ -3049,7 +3053,7 @@ export default function promiseChainTest(): void {
         .then((obj: ComplexNestedObject): void => {
           expect(obj.level1.level2.level3.value).assertEqual('deep value');
           expect(obj.level1.level2.level3.array.length).assertEqual(3);
-        })
+        }, (error: Error): void => { throw error; })
         .then((): void => {
           console.info(`${caseName} test end`);
           done();
@@ -3082,7 +3086,7 @@ export default function promiseChainTest(): void {
         })
         .then((value: string): void => {
           expect(value).assertEqual('你好世界 Hello World 🌍');
-        })
+        }, (error: Error): void => { throw error; })
         .then((): void => {
           console.info(`${caseName} test end`);
           done();
@@ -3442,11 +3446,15 @@ export default function promiseChainTest(): void {
       instance.x = 5;
       instance.y = 10;
 
-      const result1: number = await instance.sendablePromiseMethod1();
-      expect(result1).assertEqual(15);
+      try {
+        const result1: number = await instance.sendablePromiseMethod1();
+        expect(result1).assertEqual(15);
 
-      const result2: number = await instance.sendablePromiseMethod2();
-      expect(result2).assertEqual(30);
+        const result2: number = await instance.sendablePromiseMethod2();
+        expect(result2).assertEqual(30);
+      } catch (err) {
+        expect(err).assertFail();
+      }
 
       console.info(`${caseName} test end`);
       done();

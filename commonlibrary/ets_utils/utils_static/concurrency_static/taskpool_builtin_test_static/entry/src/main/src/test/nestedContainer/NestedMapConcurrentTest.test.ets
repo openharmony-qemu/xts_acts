@@ -87,7 +87,11 @@ export default function NestedMapConcurrentTest(): void {
       }
       testNestedMapOuter(map, taskCounter);
       while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (err) {
+          expect(err).assertFail();
+        }
       }
       expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
     });

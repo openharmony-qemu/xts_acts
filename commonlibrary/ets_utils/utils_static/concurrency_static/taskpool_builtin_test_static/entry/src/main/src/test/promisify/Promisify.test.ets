@@ -1432,12 +1432,17 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testArrayParamCallback1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testArrayParamCallback1000 start');
         const promisified = util.promisify(arrayParamCallback);
-        const result: FixedArray<Any>= await promisified([1, 2, 3, 4, 5]) as FixedArray<Any>;
-        expect(result[0] as PromisifyResultValue).assertEqual(15);
+        try {
+          const result: FixedArray<Any>= await promisified([1, 2, 3, 4, 5]) as FixedArray<Any>;
+          expect(result[0] as PromisifyResultValue).assertEqual(15);
+        } catch (err) {
+          expect(err).assertFail();
+        }
         console.info('testArrayParamCallback1000 end');
+        done();
       });
 
     /**
@@ -1563,7 +1568,7 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testMethodAfterGetterSetter1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testMethodAfterGetterSetter1700 start');
         const instance: BasicCallbackClass = new BasicCallbackClass();
         const promisified = util.promisify((callback: (err: Error | null, ...value: FixedArray<Any>) => void) => {
@@ -1572,6 +1577,7 @@ export default function PromisifyTest(): void {
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('after-getter-setter');
         console.info('testMethodAfterGetterSetter1700 end');
+        done();
       });
 
     /**
@@ -1801,8 +1807,12 @@ export default function PromisifyTest(): void {
       async (): Promise<void> => {
         console.info('testFunctionAsParam2900 start');
 
-        const result: FixedArray<Any> = await wrapper(basicCallback);
-        expect(result[0] as PromisifyResultValue).assertEqual('success');
+        try {
+          const result: FixedArray<Any> = await wrapper(basicCallback);
+          expect(result[0] as PromisifyResultValue).assertEqual('success');
+        } catch (err) {
+          expect(err).assertFail();
+        }
         console.info('testFunctionAsParam2900 end');
       });
 
@@ -1833,13 +1843,14 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testAsyncFunction3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testAsyncFunction3100 start');
         const wrappedCallback = util.callbackWrapper(asyncFunctionForTest);
         const promisified = util.promisify(wrappedCallback);
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('async-result');
         console.info('testAsyncFunction3100 end');
+        done();
       });
 
     /**
@@ -1890,7 +1901,7 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testBindAfterPromisify4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testBindAfterPromisify4700 start');
         const context: ThisContext = { value: 10 };
         const boundFn = (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
@@ -1900,6 +1911,7 @@ export default function PromisifyTest(): void {
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual(30);
         console.info('testBindAfterPromisify4700 end');
+        done();
       });
 
     /**
@@ -1941,8 +1953,12 @@ export default function PromisifyTest(): void {
         expect(result1[0] as PromisifyResultValue).assertEqual('success');
 
         const promisified2 = util.promisify(singleParamCallback);
-        const result2: FixedArray<Any>= await promisified2(5) as FixedArray<Any>;
-        expect(result2[0] as PromisifyResultValue).assertEqual(10);
+        try {
+          const result2: FixedArray<Any>= await promisified2(5) as FixedArray<Any>;
+          expect(result2[0] as PromisifyResultValue).assertEqual(10);
+        } catch (err) {
+          expect(err).assertFail();
+        }
         console.info('testAsyncAwait4900 end');
       });
 
@@ -2059,13 +2075,14 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testCallbackOrder5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testCallbackOrder5700 start');
 
         const promisified = util.promisify(orderedCallback);
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('ordered');
         console.info('testCallbackOrder5700 end');
+        done();
       });
 
     /**
@@ -2077,7 +2094,7 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testErrorObjectType5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testErrorObjectType5800 start');
 
         const promisified = util.promisify(customErrorCallback);
@@ -2090,6 +2107,7 @@ export default function PromisifyTest(): void {
         }
         expect(caught).assertTrue();
         console.info('testErrorObjectType5800 end');
+        done();
       });
 
     /**
@@ -2106,8 +2124,12 @@ export default function PromisifyTest(): void {
 
         const promisified = util.promisify(customErrorFirstCallback);
 
-        const result1: FixedArray<Any>= await promisified('success') as FixedArray<Any>;
-        expect(result1[0] as PromisifyResultValue).assertEqual('processed-success');
+        try {
+          const result1: FixedArray<Any>= await promisified('success') as FixedArray<Any>;
+          expect(result1[0] as PromisifyResultValue).assertEqual('processed-success');
+        } catch (err) {
+          expect(err).assertFail();
+        }
 
         let caught: boolean = false;
         try {
@@ -2129,13 +2151,14 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testSpecialCallbackSignature6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testSpecialCallbackSignature6000 start');
 
         const promisified = util.promisify(specialCallback);
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('result');
         console.info('testSpecialCallbackSignature6000 end');
+        done();
       });
 
     /**
@@ -2203,12 +2226,13 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL1
      */
     it('testSendableStaticCallback7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testSendableStaticCallback7300 start');
         const promisified = util.promisify(SendableStaticCallbackClass.staticCallbackMethod);
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('sendable-static');
         console.info('testSendableStaticCallback7300 end');
+        done();
       });
 
     /**
@@ -2358,7 +2382,7 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testSendableComplexCallback8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testSendableComplexCallback8300 start');
         const instance: SendableComplexCallbackClass = new SendableComplexCallbackClass();
 
@@ -2380,6 +2404,7 @@ export default function PromisifyTest(): void {
         }
         expect(caught).assertTrue();
         console.info('testSendableComplexCallback8300 end');
+        done();
       });
 
     /**
@@ -2413,12 +2438,13 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testConcurrentDecorator8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testConcurrentDecorator8500 start');
         const promisified = util.promisify(concurrentCallbackFn);
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('concurrent-result');
         console.info('testConcurrentDecorator8500 end');
+        done();
       });
 
     /**
@@ -2450,7 +2476,7 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testSendablePrivateField8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testSendablePrivateField8700 start');
         const instance: SendablePrivateFieldClass = new SendablePrivateFieldClass();
         instance.value = 10;
@@ -2460,6 +2486,7 @@ export default function PromisifyTest(): void {
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual(30);
         console.info('testSendablePrivateField8700 end');
+        done();
       });
 
     /**
@@ -2622,27 +2649,6 @@ export default function PromisifyTest(): void {
         console.info('testSendableConcurrencySafety9500 end');
       });
 
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0740
-    //  * @tc.name testSendableDynamicPromisify9600
-    //  * @tc.desc Test promisify with SendableDynamicPromisify9600 - verify callback to Promise conversion
-    //  * @tc.size MEDIUMTEST
-    //  * @tc.type FUNCTION
-    //  * @tc.level LEVEL0
-    //  */
-    // it('testSendableDynamicPromisify9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: Function): Promise<void> => {
-    //     console.info('testSendableDynamicPromisify9600 start');
-    //     const instance: SendableCallbackClass = new SendableCallbackClass();
-    //     instance.value = 20;
-    //
-    //     const promisified = util.promisify(instance.callbackMethod);
-    //     const result: int[] = await promisified();
-    //     expect(result[0] as PromisifyResultValue).assertEqual(40);
-    //     console.info('testSendableDynamicPromisify9600 end');
-    //     done();
-    //   });
-
     // ========== Cross File Test Cases (编号10100-12000) ==========
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_0750
@@ -2709,12 +2715,13 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testETSTSJSConsistency11100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testETSTSJSConsistency11100 start');
         const promisifiedETS = util.promisify(etsCallbackFunction);
         const resultETS: FixedArray<Any>= await promisifiedETS() as FixedArray<Any>;
         expect(resultETS[0] as PromisifyResultValue).assertEqual('ets-success');
         console.info('testETSTSJSConsistency11100 end');
+        done();
       });
 
     /**
@@ -2750,7 +2757,7 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testSendableDecoratorMethod12100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testSendableDecoratorMethod12100 start');
         const instance: SendableDecoratorCallbackClass = new SendableDecoratorCallbackClass();
         instance.value = 10;
@@ -2760,6 +2767,7 @@ export default function PromisifyTest(): void {
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual(20);
         console.info('testSendableDecoratorMethod12100 end');
+        done();
       });
 
     /**
@@ -2831,12 +2839,13 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL0
      */
     it('testNamespaceImport15600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testNamespaceImport15600 start');
         const promisified = util.promisify(CallbackNamespace.namespaceCallback);
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('namespace-callback');
         console.info('testNamespaceImport15600 end');
+        done();
       });
 
     /**
@@ -2874,7 +2883,7 @@ export default function PromisifyTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0001
      * @tc.name testSyncCallback18600
      * @tc.desc Test promisify with synchronous callback (no async delay)
      * @tc.size MEDIUMTEST
@@ -2925,7 +2934,7 @@ export default function PromisifyTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0004
      * @tc.name testNullParam18900
      * @tc.desc Test promisify with null parameter
      * @tc.size MEDIUMTEST
@@ -2953,13 +2962,17 @@ export default function PromisifyTest(): void {
       async (): Promise<void> => {
         console.info('testEmptyStringParam19000 start');
         const promisified = util.promisify(emptyStringCallback);
-        const result: FixedArray<Any>= await promisified('') as FixedArray<Any>;
-        expect(result[0] as PromisifyResultValue).assertEqual('empty-string');
+        try {
+          const result: FixedArray<Any>= await promisified('') as FixedArray<Any>;
+          expect(result[0] as PromisifyResultValue).assertEqual('empty-string');
+        } catch (err) {
+          expect(err).assertFail();
+        }
         console.info('testEmptyStringParam19000 end');
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0006
      * @tc.name testConcurrentCalls19100
      * @tc.desc Test promisify with concurrent calls (10 concurrent)
      * @tc.size MEDIUMTEST
@@ -3017,7 +3030,7 @@ export default function PromisifyTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0010
      * @tc.name testReturnValueUndefined19500
      * @tc.desc Test promisify when return value is undefined
      * @tc.size MEDIUMTEST
@@ -3034,7 +3047,7 @@ export default function PromisifyTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0011
      * @tc.name testBigIntParam19600
      * @tc.desc Test promisify with BigInt parameter
      * @tc.size MEDIUMTEST
@@ -3052,7 +3065,7 @@ export default function PromisifyTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0012
      * @tc.name testBooleanParam19700
      * @tc.desc Test promisify with boolean parameter
      * @tc.size MEDIUMTEST
@@ -3079,17 +3092,18 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL1
      */
     it('testArrayBufferParam19900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testArrayBufferParam19900 start');
         const promisified = util.promisify(arrayBufferCallback);
         const buffer: ArrayBuffer = new ArrayBuffer(16);
         const result: FixedArray<Any>= await promisified(buffer) as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual(16);
         console.info('testArrayBufferParam19900 end');
+        done();
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0015
      * @tc.name testTypedArrayParam20000
      * @tc.desc Test promisify with TypedArray parameter
      * @tc.size MEDIUMTEST
@@ -3122,13 +3136,17 @@ export default function PromisifyTest(): void {
         myMap.set('a', 1);
         myMap.set('b', 2);
         myMap.set('c', 3);
-        const result: FixedArray<Any>= await promisified(myMap) as FixedArray<Any>;
-        expect(result[0] as PromisifyResultValue).assertEqual(3);
+        try {
+          const result: FixedArray<Any>= await promisified(myMap) as FixedArray<Any>;
+          expect(result[0] as PromisifyResultValue).assertEqual(3);
+        } catch (err) {
+          expect(err).assertFail();
+        }
         console.info('testMapParam20100 end');
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0017
      * @tc.name testSetParam20200
      * @tc.desc Test promisify with Set parameter
      * @tc.size MEDIUMTEST
@@ -3183,7 +3201,12 @@ export default function PromisifyTest(): void {
       async (): Promise<void> => {
         console.info('testChainedPromisify20400 start');
         const promisified1 = util.promisify(chainCallback);
-        const result1: FixedArray<Any>= await promisified1() as FixedArray<Any>;
+        try {
+          const result1: FixedArray<Any>= await promisified1() as FixedArray<Any>;
+          expect(result1[0] as PromisifyResultValue).assertEqual('chain-start');
+        } catch (err) {
+          expect(err).assertFail();
+        }
 
         const promisified2 = util.promisify(chainCallback);
         const result2: FixedArray<Any>= await promisified2() as FixedArray<Any>;
@@ -3191,14 +3214,13 @@ export default function PromisifyTest(): void {
         const promisified3 = util.promisify(chainCallback);
         const result3: FixedArray<Any>= await promisified3() as FixedArray<Any>;
 
-        expect(result1[0] as PromisifyResultValue).assertEqual('chain-start');
         expect(result2[0] as PromisifyResultValue).assertEqual('chain-start');
         expect(result3[0] as PromisifyResultValue).assertEqual('chain-start');
         console.info('testChainedPromisify20400 end');
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0021
      * @tc.name testRecursionPromisify20600
      * @tc.desc Test promisify with recursive callback calls
      * @tc.size MEDIUMTEST
@@ -3215,7 +3237,7 @@ export default function PromisifyTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0022
      * @tc.name testZeroDelayCallback20700
      * @tc.desc Test promisify with zero delay setTimeout
      * @tc.size MEDIUMTEST
@@ -3223,12 +3245,13 @@ export default function PromisifyTest(): void {
      * @tc.level LEVEL1
      */
     it('testZeroDelayCallback20700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         console.info('testZeroDelayCallback20700 start');
         const promisified = util.promisify(zeroDelayCallback);
         const result: FixedArray<Any>= await promisified() as FixedArray<Any>;
         expect(result[0] as PromisifyResultValue).assertEqual('zero-delay');
         console.info('testZeroDelayCallback20700 end');
+        done();
       });
 
     /**
@@ -3249,7 +3272,7 @@ export default function PromisifyTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_NODEJS_0024
      * @tc.name testImmediateCallback20900
      * @tc.desc Test promisify with immediate callback (call before return)
      * @tc.size MEDIUMTEST

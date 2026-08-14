@@ -88,7 +88,7 @@ export default function NestedArrayConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNestedArrayOuterConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testNestedArrayOuterConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
       let arr: Array<Array<number>> = new Array<Array<number>>();
       let totalTasks: number = 10;
@@ -100,6 +100,7 @@ export default function NestedArrayConcurrentTest(): void {
         await Utils.msSleep(100);
       }
       expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      done();
     });
 
     /**
@@ -166,7 +167,7 @@ export default function NestedArrayConcurrentTest(): void {
       }
       let totalTasks: number = 50;
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testNestedArrayStress, arr, taskCounter).then((): void => { });
+        taskpool.execute(testNestedArrayStress, arr, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
       }
       while (taskCounter.load() < totalTasks * 50) {
         await Utils.msSleep(100);
