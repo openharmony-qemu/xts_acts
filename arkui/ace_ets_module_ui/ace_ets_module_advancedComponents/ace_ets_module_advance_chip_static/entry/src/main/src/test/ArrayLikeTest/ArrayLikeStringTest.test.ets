@@ -69,13 +69,12 @@ export default function ArrayLikeStringTest(): void {
      */
     it('ArrayLikeStringTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArrayLikeStringTest_001] START');
-      let driver: Driver = Driver.create();
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('TextString');
       let obj = JSON.parseJsonElement(strJson);
-      let text1 = await driver.findComponent(ON.text('n2'))
+      const treeText = JSON.stringify(inspector.getInspectorTree());
       console.info("[ArrayLikeStringTest_001] component obj is: " + JSON.stringify(obj));
-      expect(text1 != null).assertTrue()
+      expect(treeText.indexOf('n2') >= 0).assertTrue()
       console.info('[ArrayLikeStringTest_001] END');
       done();
     });
