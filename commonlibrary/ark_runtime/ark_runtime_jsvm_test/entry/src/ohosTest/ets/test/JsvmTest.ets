@@ -31,7 +31,7 @@ export default function JsvmJsunit() {
 
   describe('JsvmTest',() => {
     const empty = 'hh';
-    let value: string;
+    let value: number | string;
 
     /**
     * run after testcase
