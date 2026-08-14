@@ -65,10 +65,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_001] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 0);
       await CommonFunc.sleep(1000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement('{"$children":[{"$children":[' +
+        inspector.getInspectorByKey('chipGroupOptions_0') + ']}]}');
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray('$children')[0]
@@ -116,10 +116,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_002] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 1);
       await CommonFunc.sleep(1000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement('{"$children":[{"$children":[' +
+        inspector.getInspectorByKey('chipGroupOptions_1') + ']}]}');
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray('$children')[0]
@@ -177,10 +177,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_003] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 2);
       await CommonFunc.sleep(1000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement('{"$children":[{"$children":[' +
+        inspector.getInspectorByKey('chipGroupOptions_2') + ']}]}');
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray('$children')[0]
@@ -216,10 +216,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_004] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 3);
       await CommonFunc.sleep(1000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement('{"$children":[{"$children":[' +
+        inspector.getInspectorByKey('chipGroupOptions_3') + ']}]}');
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
@@ -260,10 +260,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_005] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 4);
       await CommonFunc.sleep(1000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement('{"$children":[{"$children":[' +
+        inspector.getInspectorByKey('chipGroupOptions_4') + ']}]}');
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
@@ -304,10 +304,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_006] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 5);
       await CommonFunc.sleep(1000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement('{"$children":[{"$children":[' +
+        inspector.getInspectorByKey('chipGroupOptions_5') + ']}]}');
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
@@ -348,10 +348,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_007] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 6);
       await CommonFunc.sleep(1000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement('{"$children":[{"$children":[' +
+        inspector.getInspectorByKey('chipGroupOptions_6') + ']}]}');
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
