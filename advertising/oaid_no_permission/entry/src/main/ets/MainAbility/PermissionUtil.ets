@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import common from '@ohos.app.ability.common';
 import type { Permissions } from '@ohos.abilityAccessCtrl';
 
 const TAG = 'PermissionUtil';
@@ -20,7 +21,7 @@ const TAG = 'PermissionUtil';
 export class PermissionUtil {
   private static permissions: Array<Permissions> = ['ohos.permission.READ_CALENDAR'];
 
-  public static async requestOAIDTrackingConsentPermissions(context: any): Promise<void> {
+  public static async requestOAIDTrackingConsentPermissions(context: common.UIAbilityContext): Promise<void> {
     let atManager = abilityAccessCtrl.createAtManager();
     return new Promise<void>(async (resolve, reject) => {
       console.log(TAG, 'requestPermission begin');
@@ -35,11 +36,11 @@ export class PermissionUtil {
           resolve();
         } else {
           console.log(TAG, 'requestPermission user rejected');
-          reject();
+          reject(new Error('permission denied'));
         }
       } else {
         console.log(TAG, 'requestPermission failed');
-        reject();
+        reject(new Error('permission denied'));
       }
       console.log(TAG, 'requestPermission end');
     });
