@@ -11,8 +11,8 @@
 #include "web/arkweb_interface.h"
 #include "web/native_interface_arkweb.h"
 
-constexpr uint32_t kLogDomain = 0x0201;
-constexpr const char* kLogTag = "ArkWebCapiTest";
+constexpr uint32_t K_LOG_DOMAIN = 0x0201;
+constexpr const char* K_LOG_TAG = "ArkWebCapiTest";
 
 // ========== 全局状态变量 ==========
 static int32_t g_testResult = 0;
@@ -29,7 +29,7 @@ static napi_value CreateResult(napi_env env, int32_t resultCode)
 static void OnScrollCallbackImpl(const char* webTag, void* userData, double scrollX, double scrollY)
 {
     g_callbackInvoked = true;
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, kLogDomain, kLogTag,
+    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
         "OnScrollCallback invoked: webTag=%{public}s, scrollX=%{public}f, scrollY=%{public}f",
         webTag, scrollX, scrollY);
 }
@@ -37,7 +37,7 @@ static void OnScrollCallbackImpl(const char* webTag, void* userData, double scro
 static void OnJavaScriptCallbackImpl(const char* result)
 {
     g_callbackInvoked = true;
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, kLogDomain, kLogTag,
+    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
         "OnJavaScriptCallback invoked: result=%{public}s", result);
 }
 
@@ -50,7 +50,7 @@ static char* OnNativeJavaScriptProxyCallbackImpl(const char** argv, int32_t argc
 static void OnDestroyCallbackImpl(const char* webTag)
 {
     g_callbackInvoked = true;
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, kLogDomain, kLogTag,
+    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
         "OnDestroyCallback invoked: webTag=%{public}s", webTag);
 }
 
@@ -58,7 +58,7 @@ static void OnCookieSaveCallbackImpl(ArkWeb_ErrorCode errorCode)
 {
     g_callbackInvoked = true;
     g_testResult = static_cast<int32_t>(errorCode);
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, kLogDomain, kLogTag,
+    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
         "OnCookieSaveCallback invoked: errorCode=%{public}d", errorCode);
 }
 
@@ -66,9 +66,11 @@ static void OnCookieFetchCallbackImpl(ArkWeb_ErrorCode errorCode, char* cookieVa
 {
     g_callbackInvoked = true;
     g_testResult = static_cast<int32_t>(errorCode);
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, kLogDomain, kLogTag,
+    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
         "OnCookieFetchCallback invoked: errorCode=%{public}d", errorCode);
-    if (cookieValue) { OH_ArkWeb_ReleaseString(cookieValue); }
+    if (cookieValue != nullptr) {
+        OH_ArkWeb_ReleaseString(cookieValue);
+    }
 }
 
 // ========== 测试函数 ==========
@@ -546,121 +548,121 @@ static napi_value TestArkWebCookieManager_SaveCookieAsync(napi_env env, napi_cal
 }
 
 // ========== 模块注册 ==========
-static napi_property_descriptor g_napiDescriptors[] = {
-        { "TestArkWeb_RegisterScrollCallback", nullptr, TestArkWeb_RegisterScrollCallback,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebRequestHeaderList_Destroy", nullptr, TestArkWebRequestHeaderList_Destroy,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebRequestHeaderList_GetHeader", nullptr, TestArkWebRequestHeaderList_GetHeader,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_SetUserData", nullptr, TestArkWebResourceRequest_SetUserData,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetMethod", nullptr, TestArkWebResourceRequest_GetMethod,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetUrl", nullptr, TestArkWebResourceRequest_GetUrl,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetResourceType", nullptr, TestArkWebResourceRequest_GetResourceType,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetFrameUrl", nullptr, TestArkWebResourceRequest_GetFrameUrl,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_Destroy", nullptr, TestArkWebResourceRequest_Destroy,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetReferrer", nullptr, TestArkWebResourceRequest_GetReferrer,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetRequestHeaders", nullptr, TestArkWebResourceRequest_GetRequestHeaders,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetHttpBodyStream", nullptr, TestArkWebResourceRequest_GetHttpBodyStream,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_DestroyHttpBodyStream", nullptr, TestArkWebResourceRequest_DestroyHttpBodyStream,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_SetUserData", nullptr, TestArkWebHttpBodyStream_SetUserData,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_SetReadCallback", nullptr, TestArkWebHttpBodyStream_SetReadCallback,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_SetAsyncReadCallback", nullptr, TestArkWebHttpBodyStream_SetAsyncReadCallback,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_Init", nullptr, TestArkWebHttpBodyStream_Init,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_Read", nullptr, TestArkWebHttpBodyStream_Read,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_GetSize", nullptr, TestArkWebHttpBodyStream_GetSize,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_GetPosition", nullptr, TestArkWebHttpBodyStream_GetPosition,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebSchemeHandler_SetUserData", nullptr, TestArkWebSchemeHandler_SetUserData,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResponse_GetHeaderByName", nullptr, TestArkWebResponse_GetHeaderByName,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_Destroy", nullptr, TestArkWebResourceHandler_Destroy,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_DidReceiveResponse", nullptr, TestArkWebResourceHandler_DidReceiveResponse,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_DidReceiveData", nullptr, TestArkWebResourceHandler_DidReceiveData,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_DidFinish", nullptr, TestArkWebResourceHandler_DidFinish,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWeb_ReleaseString", nullptr, TestArkWeb_ReleaseString,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWeb_ReleaseByteArray", nullptr, TestArkWeb_ReleaseByteArray,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_RunJavaScript", nullptr, TestNativeArkWeb_RunJavaScript,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_RegisterJavaScriptProxy", nullptr, TestNativeArkWeb_RegisterJavaScriptProxy,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_UnregisterJavaScriptProxy", nullptr, TestNativeArkWeb_UnregisterJavaScriptProxy,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetJavaScriptProxyValidCallback", nullptr, TestNativeArkWeb_SetJavaScriptProxyValidCallback,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetJavaScriptProxyValidCallback", nullptr, TestNativeArkWeb_GetJavaScriptProxyValidCallback,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy", nullptr,
-            TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetDestroyCallback", nullptr, TestNativeArkWeb_SetDestroyCallback,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetDestroyCallback", nullptr, TestNativeArkWeb_GetDestroyCallback,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_LoadData", nullptr, TestNativeArkWeb_LoadData,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetBlanklessLoadingWithKey", nullptr, TestNativeArkWeb_SetBlanklessLoadingWithKey,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_ClearBlanklessLoadingCache", nullptr, TestNativeArkWeb_ClearBlanklessLoadingCache,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetBlanklessInfoWithKey", nullptr, TestNativeArkWeb_GetBlanklessInfoWithKey,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetBlanklessLoadingCacheCapacity", nullptr,
-            TestNativeArkWeb_SetBlanklessLoadingCacheCapacity,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetActiveWebEngineVersion", nullptr, TestNativeArkWeb_SetActiveWebEngineVersion,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetActiveWebEngineVersion", nullptr, TestNativeArkWeb_GetActiveWebEngineVersion,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_IsActiveWebEngineEvergreen", nullptr, TestNativeArkWeb_IsActiveWebEngineEvergreen,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebCookieManager_SaveCookieAsync", nullptr, TestArkWebCookieManager_SaveCookieAsync,
-        nullptr, nullptr, nullptr, napi_default, nullptr },
+static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
+    {"TestArkWeb_RegisterScrollCallback", nullptr, TestArkWeb_RegisterScrollCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebRequestHeaderList_Destroy", nullptr, TestArkWebRequestHeaderList_Destroy,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebRequestHeaderList_GetHeader", nullptr, TestArkWebRequestHeaderList_GetHeader,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_SetUserData", nullptr, TestArkWebResourceRequest_SetUserData,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetMethod", nullptr, TestArkWebResourceRequest_GetMethod,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetUrl", nullptr, TestArkWebResourceRequest_GetUrl,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetResourceType", nullptr, TestArkWebResourceRequest_GetResourceType,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetFrameUrl", nullptr, TestArkWebResourceRequest_GetFrameUrl,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_Destroy", nullptr, TestArkWebResourceRequest_Destroy,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetReferrer", nullptr, TestArkWebResourceRequest_GetReferrer,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetRequestHeaders", nullptr, TestArkWebResourceRequest_GetRequestHeaders,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_GetHttpBodyStream", nullptr, TestArkWebResourceRequest_GetHttpBodyStream,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceRequest_DestroyHttpBodyStream", nullptr, TestArkWebResourceRequest_DestroyHttpBodyStream,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebHttpBodyStream_SetUserData", nullptr, TestArkWebHttpBodyStream_SetUserData,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebHttpBodyStream_SetReadCallback", nullptr, TestArkWebHttpBodyStream_SetReadCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebHttpBodyStream_SetAsyncReadCallback", nullptr, TestArkWebHttpBodyStream_SetAsyncReadCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebHttpBodyStream_Init", nullptr, TestArkWebHttpBodyStream_Init,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebHttpBodyStream_Read", nullptr, TestArkWebHttpBodyStream_Read,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebHttpBodyStream_GetSize", nullptr, TestArkWebHttpBodyStream_GetSize,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebHttpBodyStream_GetPosition", nullptr, TestArkWebHttpBodyStream_GetPosition,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebSchemeHandler_SetUserData", nullptr, TestArkWebSchemeHandler_SetUserData,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResponse_GetHeaderByName", nullptr, TestArkWebResponse_GetHeaderByName,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceHandler_Destroy", nullptr, TestArkWebResourceHandler_Destroy,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceHandler_DidReceiveResponse", nullptr, TestArkWebResourceHandler_DidReceiveResponse,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceHandler_DidReceiveData", nullptr, TestArkWebResourceHandler_DidReceiveData,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebResourceHandler_DidFinish", nullptr, TestArkWebResourceHandler_DidFinish,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWeb_ReleaseString", nullptr, TestArkWeb_ReleaseString,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWeb_ReleaseByteArray", nullptr, TestArkWeb_ReleaseByteArray,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_RunJavaScript", nullptr, TestNativeArkWeb_RunJavaScript,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_RegisterJavaScriptProxy", nullptr, TestNativeArkWeb_RegisterJavaScriptProxy,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_UnregisterJavaScriptProxy", nullptr, TestNativeArkWeb_UnregisterJavaScriptProxy,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetJavaScriptProxyValidCallback", nullptr, TestNativeArkWeb_SetJavaScriptProxyValidCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetJavaScriptProxyValidCallback", nullptr, TestNativeArkWeb_GetJavaScriptProxyValidCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy", nullptr,
+        TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetDestroyCallback", nullptr, TestNativeArkWeb_SetDestroyCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetDestroyCallback", nullptr, TestNativeArkWeb_GetDestroyCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_LoadData", nullptr, TestNativeArkWeb_LoadData,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetBlanklessLoadingWithKey", nullptr, TestNativeArkWeb_SetBlanklessLoadingWithKey,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_ClearBlanklessLoadingCache", nullptr, TestNativeArkWeb_ClearBlanklessLoadingCache,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetBlanklessInfoWithKey", nullptr, TestNativeArkWeb_GetBlanklessInfoWithKey,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetBlanklessLoadingCacheCapacity", nullptr,
+        TestNativeArkWeb_SetBlanklessLoadingCacheCapacity,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_SetActiveWebEngineVersion", nullptr, TestNativeArkWeb_SetActiveWebEngineVersion,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetActiveWebEngineVersion", nullptr, TestNativeArkWeb_GetActiveWebEngineVersion,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_IsActiveWebEngineEvergreen", nullptr, TestNativeArkWeb_IsActiveWebEngineEvergreen,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkWebCookieManager_SaveCookieAsync", nullptr, TestArkWebCookieManager_SaveCookieAsync,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(env, exports, sizeof(g_napiDescriptors) / sizeof(g_napiDescriptors[0]),
-        g_napiDescriptors);
+    napi_define_properties(env, exports, sizeof(K_NAPI_DESCRIPTORS) / sizeof(K_NAPI_DESCRIPTORS[0]),
+        K_NAPI_DESCRIPTORS);
     return exports;
 }
 EXTERN_C_END
 
-static napi_module demoModule = {
+static napi_module g_demoModule = {
     .nm_version = 1,
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
     .nm_modname = "entry",
-    .nm_priv = ((void *)0),
+    .nm_priv = nullptr,
     .reserved = {0},
 };
 
 extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
 {
-    napi_module_register(&demoModule);
+    napi_module_register(&g_demoModule);
 }

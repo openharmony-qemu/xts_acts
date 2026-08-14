@@ -3,7 +3,7 @@
     "name": "entry_test",
     "type": "feature",
     "description": "Test module",
-    "deviceTypes": ["default", "tablet"],
+    "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
