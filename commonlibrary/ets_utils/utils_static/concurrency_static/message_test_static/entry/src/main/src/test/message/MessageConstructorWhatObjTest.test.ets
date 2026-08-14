@@ -22,6 +22,15 @@ class MessageConstructorWhatObjTestData {
   age: number = 0;
 }
 
+class MessageCircularRefData {
+  name: string = "circular";
+  self: MessageCircularRefData | null = null;
+}
+
+function messagePlainObjFn(): string {
+  return "hi";
+}
+
 export default function MessageConstructorWhatObjTest(): void {
   describe('MessageConstructorWhatObjTest', (): void => {
     beforeAll((): void => {
@@ -498,7 +507,7 @@ export default function MessageConstructorWhatObjTest(): void {
     /**
      * @tc.name   MessageConstructorWhatObjTest2700
      * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_2700
-     * @tc.desc   Verify Message with obj as nested object returns correct getObject
+     * @tc.desc   Verify Message with flat custom object payload round-trip returns correct getObject
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -515,32 +524,16 @@ export default function MessageConstructorWhatObjTest(): void {
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
+
     /**
      * @tc.name   MessageConstructorWhatObjTest2800
      * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_2800
-     * @tc.desc   Verify Message with obj as number zero returns correct getObject
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageConstructorWhatObjTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, 0, messageHandler);
-      expect(msg.getObject() as int).assertEqual(0);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageConstructorWhatObjTest2900
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_2900
      * @tc.desc   Verify Message with obj as arrow function returns correct function reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -551,14 +544,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3000
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3000
+     * @tc.name   MessageConstructorWhatObjTest2900
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_2900
      * @tc.desc   Verify Message with obj as custom class instance returns correct getObject
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -573,14 +566,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3100
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3100
+     * @tc.name   MessageConstructorWhatObjTest3000
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3000
      * @tc.desc   Verify Message.getTarget() returns the same handler passed to constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorWhatObjTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -590,14 +583,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3200
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3200
+     * @tc.name   MessageConstructorWhatObjTest3100
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3100
      * @tc.desc   Verify Message with handler callback via sendToTarget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorWhatObjTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -616,14 +609,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3300
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3300
+     * @tc.name   MessageConstructorWhatObjTest3200
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3200
      * @tc.desc   Verify Message with different MessageHandler instances returns correct target
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
@@ -640,14 +633,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3400
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3400
+     * @tc.name   MessageConstructorWhatObjTest3300
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3300
      * @tc.desc   Verify all normal parameter combination with what, obj and handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorWhatObjTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -661,14 +654,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3500
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3500
+     * @tc.name   MessageConstructorWhatObjTest3400
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3400
      * @tc.desc   Verify boundary value combination with int max and empty obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -679,14 +672,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3600
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3600
+     * @tc.name   MessageConstructorWhatObjTest3500
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3500
      * @tc.desc   Verify boundary value combination with int min and empty obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -698,31 +691,32 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3700
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3700
-     * @tc.desc   Verify constructed Message instanceof concurrency.Message
+     * @tc.name   MessageConstructorWhatObjTest3600
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3600
+     * @tc.desc   Verify Message(what, obj, handler) constructed instance returns what and target
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorWhatObjTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(1, "data", messageHandler);
-      expect(msg instanceof concurrency.Message).assertTrue();
+      expect(msg.getWhat()).assertEqual(1);
+      expect(msg.getTarget() === messageHandler).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3800
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3800
+     * @tc.name   MessageConstructorWhatObjTest3700
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3700
      * @tc.desc   Verify Message.getWhat() returns exact variable value passed to constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorWhatObjTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -735,14 +729,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest3900
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3900
+     * @tc.name   MessageConstructorWhatObjTest3800
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3800
      * @tc.desc   Verify Message.getObject() returns exact value passed to constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -754,14 +748,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4000
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4000
+     * @tc.name   MessageConstructorWhatObjTest3900
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_3900
      * @tc.desc   Verify multiple Message instances are independent with different obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -776,14 +770,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4100
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4100
+     * @tc.name   MessageConstructorWhatObjTest4000
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4000
      * @tc.desc   Verify object reference modification affects Message.getObject result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -797,14 +791,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4200
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4200
+     * @tc.name   MessageConstructorWhatObjTest4100
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4100
      * @tc.desc   Verify Message.equals() returns true for same what, obj and handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -815,14 +809,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4300
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4300
+     * @tc.name   MessageConstructorWhatObjTest4200
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4200
      * @tc.desc   Verify Message.equals() returns false for different what values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -833,14 +827,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4400
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4400
+     * @tc.name   MessageConstructorWhatObjTest4300
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4300
      * @tc.desc   Verify Message.getCallback() returns undefined for 3-param constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -849,42 +843,16 @@ export default function MessageConstructorWhatObjTest(): void {
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
-    /**
-     * @tc.name   MessageConstructorWhatObjTest4500
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4500
-     * @tc.desc   Verify handler callback execution with AtomicInt counter via sendToTarget
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageConstructorWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let counter = new AtomicInt(0);
-      let receivedObj: string = "";
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        counter.fetchAdd(1);
-      }, eaw);
-      let msg = new concurrency.Message(1, "test", messageHandler);
-      msg.sendToTarget();
-      let waitCount = 0;
-      while (counter.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4600
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4600
+     * @tc.name   MessageConstructorWhatObjTest4400
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4400
      * @tc.desc   Verify multiple messages processed in order by same handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -907,14 +875,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4700
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4700
+     * @tc.name   MessageConstructorWhatObjTest4500
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4500
      * @tc.desc   Verify creating Message inside MessageHandler callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let nestedCounter = new AtomicInt(0);
@@ -937,14 +905,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4800
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4800
+     * @tc.name   MessageConstructorWhatObjTest4600
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4600
      * @tc.desc   Verify creating new Message to different handler in callback with obj data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let secondReceived = new AtomicInt(0);
@@ -968,14 +936,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest4900
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4900
+     * @tc.name   MessageConstructorWhatObjTest4700
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4700
      * @tc.desc   Verify AsyncLock protected shared state with Message sendToTarget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let sharedCount = new AtomicInt(0);
@@ -994,14 +962,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5000
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5000
+     * @tc.name   MessageConstructorWhatObjTest4800
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4800
      * @tc.desc   Verify batch Message creation in loop with AtomicInt counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1017,14 +985,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5100
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5100
+     * @tc.name   MessageConstructorWhatObjTest4900
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_4900
      * @tc.desc   Verify AtomicReference stores and updates Message atomically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1039,14 +1007,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5200
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5200
+     * @tc.name   MessageConstructorWhatObjTest5000
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5000
      * @tc.desc   Verify concurrent Message creation with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1061,14 +1029,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5300
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5300
+     * @tc.name   MessageConstructorWhatObjTest5100
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5100
      * @tc.desc   Verify concurrent Message sending to same handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -1094,14 +1062,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5400
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5400
+     * @tc.name   MessageConstructorWhatObjTest5200
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5200
      * @tc.desc   Verify different what values distinguish message types in handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let typeACount = new AtomicInt(0);
@@ -1129,14 +1097,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5500
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5500
+     * @tc.name   MessageConstructorWhatObjTest5300
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5300
      * @tc.desc   Verify complex nested data structure passed via obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1149,14 +1117,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5600
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5600
+     * @tc.name   MessageConstructorWhatObjTest5400
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5400
      * @tc.desc   Verify chained message processing with obj data transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let step = new AtomicInt(0);
@@ -1180,14 +1148,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5700
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5700
+     * @tc.name   MessageConstructorWhatObjTest5500
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5500
      * @tc.desc   Verify Message with large data object passed via obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatObjTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1202,14 +1170,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5800
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5800
+     * @tc.name   MessageConstructorWhatObjTest5600
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5600
      * @tc.desc   Verify complete message lifecycle from creation to processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let processed = new AtomicInt(0);
@@ -1232,14 +1200,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest5900
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5900
+     * @tc.name   MessageConstructorWhatObjTest5700
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5700
      * @tc.desc   Verify while-loop wait pattern for concurrent message processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let completedCount = new AtomicInt(0);
@@ -1261,14 +1229,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest6000
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6000
+     * @tc.name   MessageConstructorWhatObjTest5800
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5800
      * @tc.desc   Verify Message.getTarget() after handler EAWorker terminates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatObjTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1279,14 +1247,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest6100
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6100
+     * @tc.name   MessageConstructorWhatObjTest5900
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_5900
      * @tc.desc   Verify comparison with single-param and two-param constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorWhatObjTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1302,14 +1270,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest6200
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6200
+     * @tc.name   MessageConstructorWhatObjTest6000
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6000
      * @tc.desc   Verify Message handler callback accessing message properties with obj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorWhatObjTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let receivedWhat = new AtomicInt(-1);
@@ -1328,14 +1296,14 @@ export default function MessageConstructorWhatObjTest(): void {
     })
 
     /**
-     * @tc.name   MessageConstructorWhatObjTest6300
-     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6300
-     * @tc.desc   Verify Atomics compareAndSwap for atomic branch Message creation
+     * @tc.name   MessageConstructorWhatObjTest6100
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6100
+     * @tc.desc   Verify AtomicInt.compareAndSwap for atomic branch Message creation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorWhatObjTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorWhatObjTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1349,5 +1317,285 @@ export default function MessageConstructorWhatObjTest(): void {
       expect(createdCount.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
     })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6200
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6200
+     * @tc.desc   Verify Message constructor stores mixed-type array obj by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let mixedData: Object[] = [1, "a", true];
+        let msg = new concurrency.Message(1, mixedData, messageHandler);
+        expect(msg.getObject() === mixedData).assertTrue();
+        expect(mixedData.length).assertEqual(3);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6300
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6300
+     * @tc.desc   Verify Message constructor stores nested array obj by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let matrix: int[][] = [[1, 2], [3, 4]];
+        let msg = new concurrency.Message(1, matrix, messageHandler);
+        expect(msg.getObject() === matrix).assertTrue();
+        expect(matrix[0].length).assertEqual(2);
+        expect(matrix[1].length).assertEqual(2);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6400
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6400
+     * @tc.desc   Verify Message constructor accepts null obj and stores null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, null, messageHandler);
+        expect(msg.getObject() === null).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6500
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6500
+     * @tc.desc   Verify Message constructor accepts undefined obj and stores undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, undefined, messageHandler);
+        expect(msg.getObject() === undefined).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6600
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6600
+     * @tc.desc   Verify Message constructor stores plain named function obj by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let fn: () => string = messagePlainObjFn;
+        let msg = new concurrency.Message(1, fn, messageHandler);
+        expect(msg.getObject() === fn).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6700
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6700
+     * @tc.desc   Verify Message constructor with int min what and null obj stores both correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(-2147483648, null, messageHandler);
+        expect(msg.getWhat()).assertEqual(-2147483648);
+        expect(msg.getObject() === null).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6800
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6800
+     * @tc.desc   Verify Message constructor stores null obj value correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(7, null, messageHandler);
+        expect(msg.getWhat()).assertEqual(7);
+        expect(msg.getObject() === null).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest6900
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_6900
+     * @tc.desc   Verify Message constructor stores undefined obj value correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageConstructorWhatObjTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(8, undefined, messageHandler);
+        expect(msg.getWhat()).assertEqual(8);
+        expect(msg.getObject() === undefined).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest7000
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_7000
+     * @tc.desc   Verify typeof Message(what, obj, handler) instance is object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MessageConstructorWhatObjTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, "data", messageHandler);
+        expect(msg.getWhat()).assertEqual(1);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest7100
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_7100
+     * @tc.desc   Verify Message constructor stores circular reference object by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('MessageConstructorWhatObjTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let circularObj = new MessageCircularRefData();
+        circularObj.self = circularObj;
+        let msg = new concurrency.Message(1, circularObj, messageHandler);
+        expect(msg.getObject() === circularObj).assertTrue();
+        expect(circularObj.name).assertEqual("circular");
+        expect(circularObj.self === circularObj).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatObjTest7200
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_OBJ_TEST_7200
+     * @tc.desc   Verify Message(what, obj, handler) works under ArkTS-Sta environment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MessageConstructorWhatObjTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, "data", messageHandler);
+        expect(msg.getTarget()).assertEqual(messageHandler);
+        expect(msg.getWhat()).assertEqual(1);
+        expect(msg.getObject() as string).assertEqual("data");
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
   })
 }
