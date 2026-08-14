@@ -24,8 +24,8 @@ import {
   Text,
   wrapBuilder
 } from '@ohos.arkui.component';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { Router, UIContext, OverlayManager } from '@ohos.arkui.UIContext';
+import { AppStorage, State, StorageLink } from '@ohos.arkui.stateManagement';
+import { Router, UIContext, OverlayManager, OverlayManagerOptions } from '@ohos.arkui.UIContext';
 import { ComponentContent } from '@kit.ArkUI';
 
 @Builder
@@ -42,6 +42,14 @@ function overlayBuilderB() {
     .fontSize(18);
 }
 
+@Builder
+function overlayBuilderC() {
+  Button('overlay_content_backpress')
+    .id('overlayBackPressBtn')
+    .fontSize(18)
+    .height(40);
+}
+
 @Entry
 @Component
 struct OverlayManagerIndex {
@@ -50,14 +58,21 @@ struct OverlayManagerIndex {
   @State hideStatus: string = 'init';
   @State showAllStatus: string = 'init';
   @State removeStatus: string = 'init';
+  @State backPressStatus: string = 'init';
+  @StorageLink('backPressCount') backPressCount: number = 0;
+  @StorageLink('backPressMode') backPressMode: boolean = true;
+  @State backPressOverlayVisible: string = 'closed';
 
   private uiContext: UIContext = this.getUIContext();
   private contentA: ComponentContent<undefined> =
     new ComponentContent(this.uiContext, wrapBuilder(overlayBuilderA));
   private contentB: ComponentContent<undefined> =
     new ComponentContent(this.uiContext, wrapBuilder(overlayBuilderB));
+  private contentC: ComponentContent<undefined> =
+    new ComponentContent(this.uiContext, wrapBuilder(overlayBuilderC));
   private hasAddedA: boolean = false;
   private hasAddedB: boolean = false;
+  private hasAddedC: boolean = false;
 
   aboutToAppear() {
     try {
@@ -66,6 +81,25 @@ struct OverlayManagerIndex {
     } catch (error) {
       console.error('OverlayManagerIndex aboutToAppear error: ' + error);
     }
+  }
+
+  private registerBackPressOptions(): void {
+    const registered = AppStorage.get<boolean>('backPressRegistered');
+    if (registered === true) {
+      return;
+    }
+    AppStorage.setOrCreate<boolean>('backPressRegistered', true);
+    AppStorage.setOrCreate<boolean>('backPressMode', true);
+    AppStorage.setOrCreate<number>('backPressCount', 0);
+    const options: OverlayManagerOptions = {
+      enableBackPressedEvent: true,
+      onBackPress: (): boolean => {
+        const count: number = AppStorage.get<number>('backPressCount') as number;
+        AppStorage.setOrCreate<number>('backPressCount', count + 1);
+        return AppStorage.get<boolean>('backPressMode') as boolean;
+      }
+    };
+    this.getUIContext().setOverlayManagerOptions(options);
   }
 
   aboutToDisappear() {
@@ -84,8 +118,32 @@ struct OverlayManagerIndex {
     } catch (error) {
       console.error('remove contentB in aboutToDisappear error: ' + error);
     }
+    try {
+      if (this.hasAddedC) {
+        overlayManager.removeComponentContent(this.contentC);
+      }
+    } catch (error) {
+      console.error('remove contentC in aboutToDisappear error: ' + error);
+    }
     this.hasAddedA = false;
     this.hasAddedB = false;
+    this.hasAddedC = false;
+  }
+
+  private safeAddC(): void {
+    const overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
+    if (!this.hasAddedC) {
+      overlayManager.addComponentContent(this.contentC, 0);
+      this.hasAddedC = true;
+      this.backPressOverlayVisible = 'open';
+    }
+  }
+
+  private setBackPressOptions(result: boolean): void {
+    this.registerBackPressOptions();
+    this.backPressMode = result;
+    this.backPressStatus = 'option_set_' + (result ? 'true' : 'false');
+    this.safeAddC();
   }
 
   private safeAddA() {
@@ -108,7 +166,7 @@ struct OverlayManagerIndex {
     Column({ space: 10 } as ColumnOptions) {
       Button('addComponentContent')
         .id('addContent')
-        .height('6%')
+        .height('3.5%')
         .onClick(() => {
           try {
             this.safeAddA();
@@ -119,11 +177,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.addStatus).key('addStatus').height('4%');
+      Text(this.addStatus).key('addStatus').height('3%');
 
       Button('addComponentContentWithOrder')
         .id('addContentWithOrder')
-        .height('6%')
+        .height('3.5%')
         .onClick(() => {
           try {
             this.safeAddB();
@@ -134,11 +192,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.addOrderStatus).key('addOrderStatus').height('4%');
+      Text(this.addOrderStatus).key('addOrderStatus').height('3%');
 
       Button('hideComponentContent')
         .id('hideContent')
-        .height('6%')
+        .height('3.5%')
         .onClick(() => {
           try {
             let overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
@@ -151,11 +209,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.hideStatus).key('hideStatus').height('4%');
+      Text(this.hideStatus).key('hideStatus').height('3%');
 
       Button('showAllComponentContents')
         .id('showAllContents')
-        .height('6%')
+        .height('3.5%')
         .onClick(() => {
           try {
             let overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
@@ -168,11 +226,11 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.showAllStatus).key('showAllStatus').height('4%');
+      Text(this.showAllStatus).key('showAllStatus').height('3%');
 
       Button('removeComponentContent')
         .id('removeContent')
-        .height('6%')
+        .height('3.5%')
         .onClick(() => {
           try {
             let overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
@@ -186,7 +244,58 @@ struct OverlayManagerIndex {
           }
         });
 
-      Text(this.removeStatus).key('removeStatus').height('4%');
+      Text(this.removeStatus).key('removeStatus').height('3%');
+
+      Button('setBackPressReturnTrue')
+        .id('setBackPressTrue')
+        .height('3.5%')
+        .onClick((): void => {
+          try {
+            this.setBackPressOptions(true);
+          } catch (error) {
+            this.backPressStatus = 'set_option_fail';
+            console.error('setOverlayManagerOptions(true) error: ' + error);
+          }
+        });
+
+      Button('setBackPressReturnFalse')
+        .id('setBackPressFalse')
+        .height('3.5%')
+        .onClick((): void => {
+          try {
+            this.setBackPressOptions(false);
+          } catch (error) {
+            this.backPressStatus = 'set_option_fail';
+            console.error('setOverlayManagerOptions(false) error: ' + error);
+          }
+        });
+
+      Button('closeBackPressOverlay')
+        .id('closeBackPressOverlay')
+        .height('3.5%')
+        .onClick((): void => {
+          try {
+            const overlayManager: OverlayManager = this.getUIContext().getOverlayManager() as OverlayManager;
+            if (this.hasAddedC) {
+              overlayManager.removeComponentContent(this.contentC);
+              this.hasAddedC = false;
+            }
+            this.backPressOverlayVisible = 'closed';
+          } catch (error) {
+            this.backPressOverlayVisible = 'close_fail';
+            console.error('closeBackPressOverlay error: ' + error);
+          }
+        });
+
+      Text(this.backPressStatus)
+        .key('backPressStatus')
+        .height('3%');
+      Text('backPressCount: ' + this.backPressCount)
+        .key('backPressCount')
+        .height('3%');
+      Text('overlay: ' + this.backPressOverlayVisible)
+        .key('backPressOverlayVisible')
+        .height('3%');
     }
     .width('100%')
     .height('100%');
