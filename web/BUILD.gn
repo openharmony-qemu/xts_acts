@@ -15,6 +15,7 @@ group("web") {
   testonly = true
   deps = [
     "DFX:DFXTest",
+    "arkweb_capi_coverage:ArkWebCapiCoverageTest",
     "application_interworking:ActsApplicationInterworkingTest",
     "network_management:NetWorkManagement",
     "page_interaction:pageInteraction",

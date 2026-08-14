@@ -1,0 +1,10 @@
+{
+  "devices": {
+    "general": ["default", "tablet"],
+    "custom": [
+      {
+        "default": ["SystemCapability.Web.Webview.Core"]
+      }
+    ]
+  }
+}

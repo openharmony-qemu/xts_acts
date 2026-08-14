@@ -1,0 +1,14 @@
+{
+  "name": "entry",
+  "modelVersion": "6.0.0",
+  "version": "1.0.0",
+  "description": "ArkWeb CAPI Coverage Test",
+  "main": "",
+  "scripts": {},
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "libentry.so": "file:./src/main/cpp/types/libentry"
+  },
+  "dependencies": {}
+}
