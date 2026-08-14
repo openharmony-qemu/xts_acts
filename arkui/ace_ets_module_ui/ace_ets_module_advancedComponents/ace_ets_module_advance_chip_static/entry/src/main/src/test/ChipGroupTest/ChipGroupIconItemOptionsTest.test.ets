@@ -68,7 +68,8 @@ export default function ChipGroupIconItemOptionsTest(): void {
       console.info('[ChipGroupIconItemOptionsTest_static_001] START');
       await CommonFunc.sleep(1000);
 
-      let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let inspectorTree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let btn0 = inspectorTree
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -80,7 +81,7 @@ export default function ChipGroupIconItemOptionsTest(): void {
       expect(btn0.getElement('$attrs').getString('accessibilityDescription')).assertEqual('ChipGroupItem_accessibilityDescription');
       expect(btn0.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
 
-      let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let btn1 = inspectorTree
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -90,7 +91,7 @@ export default function ChipGroupIconItemOptionsTest(): void {
       console.info("[ChipGroupIconItemOptionsTest_static_001] component btn1.attrs.accessibilityLevel is: " + JSON.stringify(btn1.getElement('$attrs').getString('accessibilityLevel')));
       expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no');
 
-      let btn1_image = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let btn1_image = inspectorTree
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -105,7 +106,7 @@ export default function ChipGroupIconItemOptionsTest(): void {
       expect(btn1_image.getElement('$attrs').getString('height')).assertEqual('36.00vp');
 
       // IconItemOptions: accessibilityText accessibilityDescription accessibilityLevel
-      let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let btn3 = inspectorTree
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[1]
@@ -119,7 +120,7 @@ export default function ChipGroupIconItemOptionsTest(): void {
       expect(btn3.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
 
       // IconItemOptions: icon 
-      let btn3_image = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let btn3_image = inspectorTree
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[1]
