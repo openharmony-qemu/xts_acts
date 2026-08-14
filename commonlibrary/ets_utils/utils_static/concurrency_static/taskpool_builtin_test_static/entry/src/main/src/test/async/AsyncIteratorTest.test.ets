@@ -585,122 +585,157 @@ export default function asyncIteratorTest(): void {
 
     /**
      * @tc.name   AsyncIteratorTest001
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_001
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0001
      * @tc.desc   Async iterator yields number 1, next() resolves value 1 with done false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<number> = new SeqIter<number>([1]);
-      const result: SeqStep<number> = await iter.next();
-      expect(result.value).assertEqual(1);
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<number> = new SeqIter<number>([1]);
+        const result: SeqStep<number> = await iter.next();
+        expect(result.value).assertEqual(1);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest002
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_002
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0002
      * @tc.desc   Empty async iterator, first next() resolves done true with undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<number> = new SeqIter<number>([]);
-      const result: SeqStep<number> = await iter.next();
-      expect(result.done).assertEqual(true);
-      expect(result.value).assertUndefined();
+    it('AsyncIteratorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<number> = new SeqIter<number>([]);
+        const result: SeqStep<number> = await iter.next();
+        expect(result.done).assertEqual(true);
+        expect(result.value).assertUndefined();
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest003
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_003
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0003
      * @tc.desc   Async iterator yields 'a' then 'b', third next() resolves done true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<string> = new SeqIter<string>(['a', 'b']);
-      const res1: SeqStep<string> = await iter.next();
-      const res2: SeqStep<string> = await iter.next();
-      const res3: SeqStep<string> = await iter.next();
-      expect(res1.value).assertEqual('a');
-      expect(res2.value).assertEqual('b');
-      expect(res3.done).assertEqual(true);
+    it('AsyncIteratorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<string> = new SeqIter<string>(['a', 'b']);
+        const res1: SeqStep<string> = await iter.next();
+        const res2: SeqStep<string> = await iter.next();
+        const res3: SeqStep<string> = await iter.next();
+        expect(res1.value).assertEqual('a');
+        expect(res2.value).assertEqual('b');
+        expect(res3.done).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest004
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_004
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0004
      * @tc.desc   Async iterator yields bigint 10n, next() resolves value 10n with done false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<bigint> = new SeqIter<bigint>([10n]);
-      const result: SeqStep<bigint> = await iter.next();
-      expect(result.value).assertEqual(10n);
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<bigint> = new SeqIter<bigint>([10n]);
+        const result: SeqStep<bigint> = await iter.next();
+        expect(result.value).assertEqual(10n);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest005
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_005
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0005
      * @tc.desc   Async iterator yields boolean true, next() resolves true with done false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<boolean> = new SeqIter<boolean>([true]);
-      const result: SeqStep<boolean> = await iter.next();
-      expect(result.value).assertEqual(true);
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<boolean> = new SeqIter<boolean>([true]);
+        const result: SeqStep<boolean> = await iter.next();
+        expect(result.value).assertEqual(true);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest006
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_006
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0006
      * @tc.desc   Async iterator yields object { key: 'val' }, field value preserved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<ObjKey> = new SeqIter<ObjKey>([{ key: 'val' }]);
-      const result: SeqStep<ObjKey> = await iter.next();
-      expect(result.value !== undefined).assertTrue();
-      const obj: ObjKey | undefined = result.value;
-      if (obj !== undefined) {
-        expect(obj.key).assertEqual('val');
+    it('AsyncIteratorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<ObjKey> = new SeqIter<ObjKey>([{ key: 'val' }]);
+        const result: SeqStep<ObjKey> = await iter.next();
+        expect(result.value !== undefined).assertTrue();
+        const obj: ObjKey | undefined = result.value;
+        if (obj !== undefined) {
+          expect(obj.key).assertEqual('val');
+        }
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
       }
-      expect(result.done).assertEqual(false);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest007
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_007
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0007
      * @tc.desc   Async iterator over for-loop yields 0,1,2 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      for (let i: int = 0; i < 3; i = i + 1) {
-        values.push(i);
+    it('AsyncIteratorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        for (let i: int = 0; i < 3; i = i + 1) {
+          values.push(i);
+        }
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const collected: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(collected)).assertEqual('[0,1,2]');
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const collected: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(collected)).assertEqual('[0,1,2]');
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest008
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_008
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0008
      * @tc.desc   Async iterator is its own iterable, iterator accessor returns the iterator itself
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -715,784 +750,994 @@ export default function asyncIteratorTest(): void {
 
     /**
      * @tc.name   AsyncIteratorTest009
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_009
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0009
      * @tc.desc   Async iterator awaits a delay before yielding 3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: DelaySeqIter<number> = new DelaySeqIter<number>([3], [10]);
-      const result: SeqStep<number> = await iter.next();
-      expect(result.value).assertEqual(3);
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: DelaySeqIter<number> = new DelaySeqIter<number>([3], [10]);
+        const result: SeqStep<number> = await iter.next();
+        expect(result.value).assertEqual(3);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest010
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_010
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0010
      * @tc.desc   Async iterator throws between yields, its own catch yields 2 after 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: TryCatchYieldIter = new TryCatchYieldIter();
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual(2);
+    it('AsyncIteratorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: TryCatchYieldIter = new TryCatchYieldIter();
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual(2);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest011
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_011
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0011
      * @tc.desc   Async iterator with generator parameters (2,3) yields a+b then a*b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const a: int = 2;
-      const b: int = 3;
-      const iter: SeqIter<number> = new SeqIter<number>([a + b, a * b]);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(5);
-      expect(res2.value).assertEqual(6);
+    it('AsyncIteratorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const a: int = 2;
+        const b: int = 3;
+        const iter: SeqIter<number> = new SeqIter<number>([a + b, a * b]);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(5);
+        expect(res2.value).assertEqual(6);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest012
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_012
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0012
      * @tc.desc   Async iterator delegates to nested iterator yielding 'nested'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent of yield* nested async generator: the outer iterator
-      // delegates to the inner iterator and re-yields its value
-      const inner: SeqIter<string> = new SeqIter<string>(['nested']);
-      const innerStep: SeqStep<string> = await inner.next();
-      const outer: string[] = [];
-      const innerValue: string | undefined = innerStep.value;
-      if (innerValue !== undefined) {
-        outer.push(innerValue);
+    it('AsyncIteratorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent of yield* nested async generator: the outer iterator
+        // delegates to the inner iterator and re-yields its value
+        const inner: SeqIter<string> = new SeqIter<string>(['nested']);
+        const innerStep: SeqStep<string> = await inner.next();
+        const outer: string[] = [];
+        const innerValue: string | undefined = innerStep.value;
+        if (innerValue !== undefined) {
+          outer.push(innerValue);
+        }
+        const iter: SeqIter<string> = new SeqIter<string>(outer);
+        const result: SeqStep<string> = await iter.next();
+        expect(result.value).assertEqual('nested');
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<string> = new SeqIter<string>(outer);
-      const result: SeqStep<string> = await iter.next();
-      expect(result.value).assertEqual('nested');
-      expect(result.done).assertEqual(false);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest013
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_013
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0013
      * @tc.desc   Async iterator with while-loop yields 0,1 then completes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      let count: int = 0;
-      while (count < 2) {
-        values.push(count);
-        count = count + 1;
+    it('AsyncIteratorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        let count: int = 0;
+        while (count < 2) {
+          values.push(count);
+          count = count + 1;
+        }
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        const res3: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(0);
+        expect(res2.value).assertEqual(1);
+        expect(res3.done).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      const res3: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(0);
-      expect(res2.value).assertEqual(1);
-      expect(res3.done).assertEqual(true);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest014
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_014
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0014
      * @tc.desc   Async iterator yields null value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: NullIter = new NullIter();
-      const result: SeqStep<null> = await iter.next();
-      expect(result.value).assertNull();
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: NullIter = new NullIter();
+        const result: SeqStep<null> = await iter.next();
+        expect(result.value).assertNull();
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest015
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_015
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0015
      * @tc.desc   Async iterator yields undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: UndefIter = new UndefIter();
-      const result: SeqStep<undefined> = await iter.next();
-      expect(result.value).assertUndefined();
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: UndefIter = new UndefIter();
+        const result: SeqStep<undefined> = await iter.next();
+        expect(result.value).assertUndefined();
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest016
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_016
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0016
      * @tc.desc   Async iterator over array [10,20,30] yields all items in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const source: number[] = [10, 20, 30];
-      const values: number[] = [];
-      for (const item of source) {
-        values.push(item);
+    it('AsyncIteratorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const source: number[] = [10, 20, 30];
+        const values: number[] = [];
+        for (const item of source) {
+          values.push(item);
+        }
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const collected: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(collected)).assertEqual('[10,20,30]');
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const collected: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(collected)).assertEqual('[10,20,30]');
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest017
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_017
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0017
      * @tc.desc   Async iterator yields awaited resolved promise value 42
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent: the yielded value is the awaited result of a promise
-      const promised: number = await Promise.resolve(42);
-      const iter: SeqIter<number> = new SeqIter<number>([promised]);
-      const result: SeqStep<number> = await iter.next();
-      expect(result.value).assertEqual(42);
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent: the yielded value is the awaited result of a promise
+        const promised: number = await Promise.resolve(42);
+        const iter: SeqIter<number> = new SeqIter<number>([promised]);
+        const result: SeqStep<number> = await iter.next();
+        expect(result.value).assertEqual(42);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest018
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_018
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0018
      * @tc.desc   Async iterator yields 1 then returns 'returnVal' with done true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: ReturnIter<string | number> = new ReturnIter<string | number>([1], 'returnVal');
-      const res1: SeqStep<string | number> = await iter.next();
-      const res2: SeqStep<string | number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual('returnVal');
-      expect(res2.done).assertEqual(true);
+    it('AsyncIteratorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: ReturnIter<string | number> = new ReturnIter<string | number>([1], 'returnVal');
+        const res1: SeqStep<string | number> = await iter.next();
+        const res2: SeqStep<string | number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual('returnVal');
+        expect(res2.done).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest019
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_019
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0019
      * @tc.desc   Async iterator doubles values 5,6 consumed from a nested iterator, yields 10,12
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const inner: SeqIter<number> = new SeqIter<number>([5, 6]);
-      const transformed: number[] = [];
-      let innerStep: SeqStep<number> = await inner.next();
-      while (!innerStep.done) {
-        const innerValue: number | undefined = innerStep.value;
-        if (innerValue !== undefined) {
-          transformed.push(innerValue * 2);
+    it('AsyncIteratorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const inner: SeqIter<number> = new SeqIter<number>([5, 6]);
+        const transformed: number[] = [];
+        let innerStep: SeqStep<number> = await inner.next();
+        while (!innerStep.done) {
+          const innerValue: number | undefined = innerStep.value;
+          if (innerValue !== undefined) {
+            transformed.push(innerValue * 2);
+          }
+          innerStep = await inner.next();
         }
-        innerStep = await inner.next();
+        const iter: SeqIter<number> = new SeqIter<number>(transformed);
+        const values: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(values)).assertEqual('[10,12]');
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(transformed);
-      const values: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(values)).assertEqual('[10,12]');
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest020
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_020
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0020
      * @tc.desc   Async iterator skips a dead branch and yields 2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent: the generator body contains a branch that is never
-      // taken, so only the value after the branch is yielded
-      const values: number[] = [];
-      const deadBranch: boolean = values.length > 0;
-      if (deadBranch) {
-        values.push(1);
+    it('AsyncIteratorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent: the generator body contains a branch that is never
+        // taken, so only the value after the branch is yielded
+        const values: number[] = [];
+        const deadBranch: boolean = values.length > 0;
+        if (deadBranch) {
+          values.push(1);
+        }
+        values.push(2);
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const result: SeqStep<number> = await iter.next();
+        expect(result.value).assertEqual(2);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
       }
-      values.push(2);
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const result: SeqStep<number> = await iter.next();
-      expect(result.value).assertEqual(2);
-      expect(result.done).assertEqual(false);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest021
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_021
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0021
      * @tc.desc   Async iterator with break-out while loop yields 0,1 then completes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      let i: int = 0;
-      while (true) {
-        if (i >= 2) {
-          break;
+    it('AsyncIteratorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        let i: int = 0;
+        while (true) {
+          if (i >= 2) {
+            break;
+          }
+          values.push(i);
+          i = i + 1;
         }
-        values.push(i);
-        i = i + 1;
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        const res3: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(0);
+        expect(res2.value).assertEqual(1);
+        expect(res3.done).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      const res3: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(0);
-      expect(res2.value).assertEqual(1);
-      expect(res3.done).assertEqual(true);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest022
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_022
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0022
      * @tc.desc   Async iterator yields 'first' then 'second' with a delay between yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['first', 'second'], [0, 10]);
-      const res1: SeqStep<string> = await iter.next();
-      const res2: SeqStep<string> = await iter.next();
-      expect(res1.value).assertEqual('first');
-      expect(res2.value).assertEqual('second');
+    it('AsyncIteratorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['first', 'second'], [0, 10]);
+        const res1: SeqStep<string> = await iter.next();
+        const res2: SeqStep<string> = await iter.next();
+        expect(res1.value).assertEqual('first');
+        expect(res2.value).assertEqual('second');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest023
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_023
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0023
      * @tc.desc   Async iterator delegates to array [7,8,9], yields 7,8,9 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent of yield* [7, 8, 9]
-      const iter: SeqIter<number> = new SeqIter<number>([7, 8, 9]);
-      const values: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(values)).assertEqual('[7,8,9]');
+    it('AsyncIteratorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent of yield* [7, 8, 9]
+        const iter: SeqIter<number> = new SeqIter<number>([7, 8, 9]);
+        const values: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(values)).assertEqual('[7,8,9]');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest024
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_024
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0024
      * @tc.desc   Async iterator finally block yields 3 after first yield 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: TryFinallyIter = new TryFinallyIter();
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual(3);
+    it('AsyncIteratorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: TryFinallyIter = new TryFinallyIter();
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual(3);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest025
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_025
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0025
      * @tc.desc   Async iterator uppercases array items a,b,c and yields A,B,C
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const items: string[] = ['a', 'b', 'c'];
-      const upper: string[] = items.map((item: string): string => item.toUpperCase());
-      const iter: SeqIter<string> = new SeqIter<string>(upper);
-      const values: string[] = await collectAll<string>(iter);
-      expect(JSON.stringify(values)).assertEqual('["A","B","C"]');
+    it('AsyncIteratorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const items: string[] = ['a', 'b', 'c'];
+        const upper: string[] = items.map((item: string): string => item.toUpperCase());
+        const iter: SeqIter<string> = new SeqIter<string>(upper);
+        const values: string[] = await collectAll<string>(iter);
+        expect(JSON.stringify(values)).assertEqual('["A","B","C"]');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest026
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_026
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0026
      * @tc.desc   Async iterator yields bigints 1n and 2n in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<bigint> = new SeqIter<bigint>([1n, 2n]);
-      const res1: SeqStep<bigint> = await iter.next();
-      const res2: SeqStep<bigint> = await iter.next();
-      expect(res1.value).assertEqual(1n);
-      expect(res2.value).assertEqual(2n);
+    it('AsyncIteratorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<bigint> = new SeqIter<bigint>([1n, 2n]);
+        const res1: SeqStep<bigint> = await iter.next();
+        const res2: SeqStep<bigint> = await iter.next();
+        expect(res1.value).assertEqual(1n);
+        expect(res2.value).assertEqual(2n);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest027
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_027
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0027
      * @tc.desc   Async iterator yields objects { prop: 1 } and { prop: 2 } preserving fields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<PropObj> = new SeqIter<PropObj>([{ prop: 1 }, { prop: 2 }]);
-      const res1: SeqStep<PropObj> = await iter.next();
-      const res2: SeqStep<PropObj> = await iter.next();
-      expect(res1.value !== undefined).assertTrue();
-      const obj1: PropObj | undefined = res1.value;
-      if (obj1 !== undefined) {
-        expect(obj1.prop).assertEqual(1);
+    it('AsyncIteratorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<PropObj> = new SeqIter<PropObj>([{ prop: 1 }, { prop: 2 }]);
+        const res1: SeqStep<PropObj> = await iter.next();
+        const res2: SeqStep<PropObj> = await iter.next();
+        expect(res1.value !== undefined).assertTrue();
+        const obj1: PropObj | undefined = res1.value;
+        if (obj1 !== undefined) {
+          expect(obj1.prop).assertEqual(1);
+        }
+        expect(res2.value !== undefined).assertTrue();
+        const obj2: PropObj | undefined = res2.value;
+        if (obj2 !== undefined) {
+          expect(obj2.prop).assertEqual(2);
+        }
+      } catch (err) {
+        expect().assertFail();
       }
-      expect(res2.value !== undefined).assertTrue();
-      const obj2: PropObj | undefined = res2.value;
-      if (obj2 !== undefined) {
-        expect(obj2.prop).assertEqual(2);
-      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest028
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_028
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0028
      * @tc.desc   Async iterator with zero-delay await yields 'delayed'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['delayed'], [0]);
-      const result: SeqStep<string> = await iter.next();
-      expect(result.value).assertEqual('delayed');
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['delayed'], [0]);
+        const result: SeqStep<string> = await iter.next();
+        expect(result.value).assertEqual('delayed');
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest029
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_029
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0029
      * @tc.desc   Async iterator with descending for-loop yields 3,2,1 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      for (let i: int = 3; i > 0; i = i - 1) {
-        values.push(i);
+    it('AsyncIteratorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        for (let i: int = 3; i > 0; i = i - 1) {
+          values.push(i);
+        }
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const collected: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(collected)).assertEqual('[3,2,1]');
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const collected: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(collected)).assertEqual('[3,2,1]');
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest030
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_030
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0030
      * @tc.desc   Async iterator with double-nested delegation yields 1,2,3 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent of yield 1; yield* (yield* (yield 2)); yield 3
-      const innermost: number[] = [2];
-      const middle: number[] = [];
-      for (const v of innermost) {
-        middle.push(v);
+    it('AsyncIteratorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent of yield 1; yield* (yield* (yield 2)); yield 3
+        const innermost: number[] = [2];
+        const middle: number[] = [];
+        for (const v of innermost) {
+          middle.push(v);
+        }
+        const flattened: number[] = [1];
+        for (const v of middle) {
+          flattened.push(v);
+        }
+        flattened.push(3);
+        const iter: SeqIter<number> = new SeqIter<number>(flattened);
+        const values: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(values)).assertEqual('[1,2,3]');
+      } catch (err) {
+        expect().assertFail();
       }
-      const flattened: number[] = [1];
-      for (const v of middle) {
-        flattened.push(v);
-      }
-      flattened.push(3);
-      const iter: SeqIter<number> = new SeqIter<number>(flattened);
-      const values: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(values)).assertEqual('[1,2,3]');
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest031
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_031
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0031
      * @tc.desc   Async iterator delegates to array [1,2,3] and yields 1,2,3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent of yield* [1, 2, 3]: delegation to a plain array
-      const source: number[] = [1, 2, 3];
-      const iter: SeqIter<number> = new SeqIter<number>(source);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      const res3: SeqStep<number> = await iter.next();
-      const res4: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual(2);
-      expect(res3.value).assertEqual(3);
-      expect(res4.done).assertEqual(true);
+    it('AsyncIteratorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent of yield* [1, 2, 3]: delegation to a plain array
+        const source: number[] = [1, 2, 3];
+        const iter: SeqIter<number> = new SeqIter<number>(source);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        const res3: SeqStep<number> = await iter.next();
+        const res4: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual(2);
+        expect(res3.value).assertEqual(3);
+        expect(res4.done).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest032
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_032
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0032
      * @tc.desc   Async iterator with parameter x=5 yields x*2 then x*3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const x: int = 5;
-      const iter: SeqIter<number> = new SeqIter<number>([x * 2, x * 3]);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(10);
-      expect(res2.value).assertEqual(15);
+    it('AsyncIteratorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const x: int = 5;
+        const iter: SeqIter<number> = new SeqIter<number>([x * 2, x * 3]);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(10);
+        expect(res2.value).assertEqual(15);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest033
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_033
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0033
      * @tc.desc   Async iterator awaits 1ms then yields 'delayed'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['delayed'], [10]);
-      const result: SeqStep<string> = await iter.next();
-      expect(result.value).assertEqual('delayed');
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['delayed'], [10]);
+        const result: SeqStep<string> = await iter.next();
+        expect(result.value).assertEqual('delayed');
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest034
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_034
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0034
      * @tc.desc   Async iterator catches its own thrown error and yields 2 after 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent: the iterator body throws between two yields and its
-      // own catch block recovers, yielding the recovery value
-      const values: number[] = [1];
+    it('AsyncIteratorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        throw new Error('iter-err');
-      } catch (e) {
-        values.push(2);
+        // static equivalent: the iterator body throws between two yields and its
+        // own catch block recovers, yielding the recovery value
+        const values: number[] = [1];
+        try {
+          throw new Error('iter-err');
+        } catch (e) {
+          values.push(2);
+        }
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual(2);
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual(2);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest035
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_035
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0035
      * @tc.desc   Async iterator with post-increment while-loop yields 0,1 then completes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      let i: int = 0;
-      while (i < 2) {
-        values.push(i);
-        i = i + 1;
+    it('AsyncIteratorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        let i: int = 0;
+        while (i < 2) {
+          values.push(i);
+          i = i + 1;
+        }
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        const res3: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(0);
+        expect(res2.value).assertEqual(1);
+        expect(res3.done).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
       }
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      const res3: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(0);
-      expect(res2.value).assertEqual(1);
-      expect(res3.done).assertEqual(true);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest036
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_036
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0036
      * @tc.desc   Async iterator yields null then undefined in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: NullUndefIter = new NullUndefIter();
-      const res1: SeqStep<null | undefined> = await iter.next();
-      const res2: SeqStep<null | undefined> = await iter.next();
-      expect(res1.value).assertNull();
-      expect(res2.value).assertUndefined();
+    it('AsyncIteratorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: NullUndefIter = new NullUndefIter();
+        const res1: SeqStep<null | undefined> = await iter.next();
+        const res2: SeqStep<null | undefined> = await iter.next();
+        expect(res1.value).assertNull();
+        expect(res2.value).assertUndefined();
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest037
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_037
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0037
      * @tc.desc   Async iterator yields awaited promise value 42 with done false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const promise: Promise<number> = Promise.resolve(42 as number);
-      const iter: SeqIter<number> = new SeqIter<number>([await promise]);
-      const result: SeqStep<number> = await iter.next();
-      expect(result.value).assertEqual(42);
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const promise: Promise<number> = Promise.resolve(42 as number);
+        const iter: SeqIter<number> = new SeqIter<number>([await promise]);
+        const result: SeqStep<number> = await iter.next();
+        expect(result.value).assertEqual(42);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest038
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_038
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0038
      * @tc.desc   Async iterator second next() delivers return value 'returnVal' with done true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: ReturnIter<string | number> = new ReturnIter<string | number>([1], 'returnVal');
-      await iter.next();
-      const res2: SeqStep<string | number> = await iter.next();
-      expect(res2.value).assertEqual('returnVal');
-      expect(res2.done).assertEqual(true);
+    it('AsyncIteratorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: ReturnIter<string | number> = new ReturnIter<string | number>([1], 'returnVal');
+        await iter.next();
+        const res2: SeqStep<string | number> = await iter.next();
+        expect(res2.value).assertEqual('returnVal');
+        expect(res2.done).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest039
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_039
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0039
      * @tc.desc   Async iterator maps nested values 5,6 by doubling, yields 10,12
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const innerValues: number[] = [5, 6];
-      const transformed: number[] = innerValues.map((val: number): number => val * 2);
-      const iter: SeqIter<number> = new SeqIter<number>(transformed);
-      const values: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(values)).assertEqual('[10,12]');
+    it('AsyncIteratorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const innerValues: number[] = [5, 6];
+        const transformed: number[] = innerValues.map((val: number): number => val * 2);
+        const iter: SeqIter<number> = new SeqIter<number>(transformed);
+        const values: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(values)).assertEqual('[10,12]');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest040
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_040
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0040
      * @tc.desc   Async iterator with dead conditional branch yields only 2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      if (false) {
-        values.push(1);
+    it('AsyncIteratorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        if (false) {
+          values.push(1);
+        }
+        values.push(2);
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const result: SeqStep<number> = await iter.next();
+        expect(result.value).assertEqual(2);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
       }
-      values.push(2);
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const result: SeqStep<number> = await iter.next();
-      expect(result.value).assertEqual(2);
-      expect(result.done).assertEqual(false);
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest041
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_041
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0041
      * @tc.desc   Async iterator with do-while loop yields 3,2,1 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      let i: int = 3;
-      do {
-        values.push(i);
-        i = i - 1;
-      } while (i >= 1);
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const collected: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(collected)).assertEqual('[3,2,1]');
+    it('AsyncIteratorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        let i: int = 3;
+        do {
+          values.push(i);
+          i = i - 1;
+        } while (i >= 1);
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const collected: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(collected)).assertEqual('[3,2,1]');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest042
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_042
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0042
      * @tc.desc   Async iterator yields 'a' then 'b' with an await between yields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['a', 'b'], [0, 10]);
-      const res1: SeqStep<string> = await iter.next();
-      const res2: SeqStep<string> = await iter.next();
-      expect(res1.value).assertEqual('a');
-      expect(res2.value).assertEqual('b');
+    it('AsyncIteratorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: DelaySeqIter<string> = new DelaySeqIter<string>(['a', 'b'], [0, 10]);
+        const res1: SeqStep<string> = await iter.next();
+        const res2: SeqStep<string> = await iter.next();
+        expect(res1.value).assertEqual('a');
+        expect(res2.value).assertEqual('b');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest043
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_043
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0043
      * @tc.desc   Async iterator yields Set values 4,5,6 in insertion order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent of yield* new Set([1, 1, 1]): the set's values are
-      // yielded in insertion order
-      const set: Set<number> = new Set<number>([4, 5, 6]);
-      expect(set.size).assertEqual(3);
-      const setValues: number[] = [];
-      if (set.has(4)) {
-        setValues.push(4);
+    it('AsyncIteratorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent of yield* new Set([1, 1, 1]): the set's values are
+        // yielded in insertion order
+        const set: Set<number> = new Set<number>([4, 5, 6]);
+        expect(set.size).assertEqual(3);
+        const setValues: number[] = [];
+        if (set.has(4)) {
+          setValues.push(4);
+        }
+        if (set.has(5)) {
+          setValues.push(5);
+        }
+        if (set.has(6)) {
+          setValues.push(6);
+        }
+        const iter: SeqIter<number> = new SeqIter<number>(setValues);
+        const values: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(values)).assertEqual('[4,5,6]');
+      } catch (err) {
+        expect().assertFail();
       }
-      if (set.has(5)) {
-        setValues.push(5);
-      }
-      if (set.has(6)) {
-        setValues.push(6);
-      }
-      const iter: SeqIter<number> = new SeqIter<number>(setValues);
-      const values: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(values)).assertEqual('[4,5,6]');
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest044
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_044
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0044
      * @tc.desc   Async iterator catch block yields the thrown error message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: CatchMsgIter = new CatchMsgIter();
-      const res1: SeqStep<string | number> = await iter.next();
-      const res2: SeqStep<string | number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual('test-err');
+    it('AsyncIteratorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: CatchMsgIter = new CatchMsgIter();
+        const res1: SeqStep<string | number> = await iter.next();
+        const res2: SeqStep<string | number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual('test-err');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest045
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_045
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0045
      * @tc.desc   Async iterator yields repeated string 'long' x 5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<string> = new SeqIter<string>(['long'.repeat(5)]);
-      const result: SeqStep<string> = await iter.next();
-      expect(result.value).assertEqual('longlonglonglonglong');
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<string> = new SeqIter<string>(['long'.repeat(5)]);
+        const result: SeqStep<string> = await iter.next();
+        expect(result.value).assertEqual('longlonglonglonglong');
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest046
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_046
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0046
      * @tc.desc   Async iterator squares array items 2,3,4 and yields 4,9,16
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const nums: number[] = [2, 3, 4];
-      const squared: number[] = nums.map((num: number): number => num * num);
-      const iter: SeqIter<number> = new SeqIter<number>(squared);
-      const values: number[] = await collectAll<number>(iter);
-      expect(JSON.stringify(values)).assertEqual('[4,9,16]');
+    it('AsyncIteratorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const nums: number[] = [2, 3, 4];
+        const squared: number[] = nums.map((num: number): number => num * num);
+        const iter: SeqIter<number> = new SeqIter<number>(squared);
+        const values: number[] = await collectAll<number>(iter);
+        expect(JSON.stringify(values)).assertEqual('[4,9,16]');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest047
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_047
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0047
      * @tc.desc   Async iterator finally block yields 'finally-val' after first yield 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: TryFinallyValIter = new TryFinallyValIter();
-      const res1: SeqStep<string | number> = await iter.next();
-      const res2: SeqStep<string | number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual('finally-val');
+    it('AsyncIteratorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: TryFinallyValIter = new TryFinallyValIter();
+        const res1: SeqStep<string | number> = await iter.next();
+        const res2: SeqStep<string | number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual('finally-val');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest048
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_048
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0048
      * @tc.desc   Async iterator yields bigint value 999
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      // static equivalent of BigInt(999)
-      const iter: SeqIter<bigint> = new SeqIter<bigint>([999n]);
-      const result: SeqStep<bigint> = await iter.next();
-      expect(result.value).assertEqual(999n);
-      expect(result.done).assertEqual(false);
+    it('AsyncIteratorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        // static equivalent of BigInt(999)
+        const iter: SeqIter<bigint> = new SeqIter<bigint>([999n]);
+        const result: SeqStep<bigint> = await iter.next();
+        expect(result.value).assertEqual(999n);
+        expect(result.done).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest049
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_049
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0049
      * @tc.desc   Async iterator delegates to boolean array and yields true,false,true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const iter: SeqIter<boolean> = new SeqIter<boolean>([true, false, true]);
-      const values: boolean[] = await collectAll<boolean>(iter);
-      expect(JSON.stringify(values)).assertEqual('[true,false,true]');
+    it('AsyncIteratorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const iter: SeqIter<boolean> = new SeqIter<boolean>([true, false, true]);
+        const values: boolean[] = await collectAll<boolean>(iter);
+        expect(JSON.stringify(values)).assertEqual('[true,false,true]');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   AsyncIteratorTest050
-     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_050
+     * @tc.number SUB_BUILTINS_AsyncIterator_TEST_0050
      * @tc.desc   Async iterator with taken conditional branch yields 1,2,3 in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('AsyncIteratorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const values: number[] = [];
-      values.push(1);
-      if (true) {
-        values.push(2);
+    it('AsyncIteratorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const values: number[] = [];
+        values.push(1);
+        if (true) {
+          values.push(2);
+        }
+        values.push(3);
+        const iter: SeqIter<number> = new SeqIter<number>(values);
+        const res1: SeqStep<number> = await iter.next();
+        const res2: SeqStep<number> = await iter.next();
+        const res3: SeqStep<number> = await iter.next();
+        expect(res1.value).assertEqual(1);
+        expect(res2.value).assertEqual(2);
+        expect(res3.value).assertEqual(3);
+      } catch (err) {
+        expect().assertFail();
       }
-      values.push(3);
-      const iter: SeqIter<number> = new SeqIter<number>(values);
-      const res1: SeqStep<number> = await iter.next();
-      const res2: SeqStep<number> = await iter.next();
-      const res3: SeqStep<number> = await iter.next();
-      expect(res1.value).assertEqual(1);
-      expect(res2.value).assertEqual(2);
-      expect(res3.value).assertEqual(3);
+      done();
     });
 
     /**
