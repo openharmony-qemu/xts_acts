@@ -92,15 +92,20 @@ export default function ChipOptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('ChipOptionsMethodTest_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ChipOptionsMethodTest_static_002] START');
-      AppStorage.setOrCreate<string>('chipOptionsMethodAction', 'clicked');
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/ChipOptionsMethodTest' });
-      await CommonFunc.sleep(2000);
-      let clickedTextJson = inspector.getInspectorByKey('ChipOptionsClickedText');
-      console.info('ChipOptionsMethodTest_static_002' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
-      expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
-      console.info('[ChipOptionsMethodTest_static_002] END');
+      try {
+        console.info('[ChipOptionsMethodTest_static_002] START');
+        AppStorage.setOrCreate<string>('chipOptionsMethodAction', 'clicked');
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/ChipOptionsMethodTest' });
+        await CommonFunc.sleep(2000);
+        let clickedTextJson = inspector.getInspectorByKey('ChipOptionsClickedText');
+        console.info('ChipOptionsMethodTest_static_002' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
+        expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
+        console.info('[ChipOptionsMethodTest_static_002] END');
+      } catch (error) {
+        console.error('[ChipOptionsMethodTest_static_002] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 

@@ -88,15 +88,20 @@ export default function ChipV2OptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] START');
-      AppStorage.setOrCreate<string>('chipV2OptionsMethodAction', 'clicked');
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2OptionsMethodTest' });
-      await CommonFunc.sleep(2000);
-      let clickedTextJson = inspector.getInspectorByKey('ChipV2OptionsClickedText');
-      console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
-      expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] END');
+      try {
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] START');
+        AppStorage.setOrCreate<string>('chipV2OptionsMethodAction', 'clicked');
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2OptionsMethodTest' });
+        await CommonFunc.sleep(2000);
+        let clickedTextJson = inspector.getInspectorByKey('ChipV2OptionsClickedText');
+        console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
+        expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] END');
+      } catch (error) {
+        console.error('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 
