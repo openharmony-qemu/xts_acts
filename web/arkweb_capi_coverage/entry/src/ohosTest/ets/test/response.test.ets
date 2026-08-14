@@ -1,0 +1,29 @@
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level }
+    from '@ohos/hypium';
+import { Driver, ON } from '@kit.TestKit';
+import Utils from './Utils.test';
+import nativeFunc from 'libentry.so';
+
+export default function responseTest() {
+  describe('responseTest', () => {
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(500);
+      done();
+    });
+
+    /**
+     * @tc.name TestArkWebResponse_GetHeaderByName
+     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResponse_GetHeaderByName
+     * @tc.desc Test OH_ArkWebResponse_GetHeaderByName
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWebResponse_GetHeaderByName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestArkWebResponse_GetHeaderByName()).assertEqual(0);
+        done();
+      });
+
+  });
+}
