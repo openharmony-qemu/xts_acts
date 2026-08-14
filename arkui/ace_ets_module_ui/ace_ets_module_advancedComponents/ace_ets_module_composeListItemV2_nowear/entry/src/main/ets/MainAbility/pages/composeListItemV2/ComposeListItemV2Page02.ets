@@ -38,9 +38,8 @@ struct ComposeListItemV2Page02 {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 12 }) {
-
-          Text('ComposeListItemV2 with Button').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
+        Column() {
+          Text('ComposeListItemV2 with Button').fontSize(12).fontWeight(FontWeight.Bold)
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               iconStyle: IconTypeV2.NORMAL_ICON,
@@ -55,7 +54,7 @@ struct ComposeListItemV2Page02 {
             })
           })
 
-          Text('ComposeListItemV2 with Description').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
+          Text('ComposeListItemV2 with Description').fontSize(12).fontWeight(FontWeight.Bold)
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               iconStyle: IconTypeV2.HEAD_SCULPTURE,
@@ -66,7 +65,7 @@ struct ComposeListItemV2Page02 {
             })
           })
 
-          Text('ComposeListItemV2 Complete Example').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
+          Text('ComposeListItemV2 Complete Example').fontSize(12).fontWeight(FontWeight.Bold)
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               iconStyle: IconTypeV2.PREVIEW,
@@ -88,7 +87,7 @@ struct ComposeListItemV2Page02 {
             })
           })
 
-          Text('ComposeListItemV2 OperateItemV2 Example').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
+          Text('ComposeListItemV2 OperateItemV2 Example').fontSize(12).fontWeight(FontWeight.Bold)
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               icon: $r('sys.symbol.phone'),
@@ -124,11 +123,8 @@ struct ComposeListItemV2Page02 {
         .alignItems(HorizontalAlign.Center)
         .width('100%')
       }
-      .width('100%')
-      .height('100%')
-      .scrollBar(BarState.Auto)
     }
-     .width(1320)
-     .height(2120)
+    .width('100%')
+    .height('100%')
   }
 }
