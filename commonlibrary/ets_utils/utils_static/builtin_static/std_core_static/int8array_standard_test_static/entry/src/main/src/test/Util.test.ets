@@ -1,6 +1,6 @@
 'use static';
 
-export default class Utils{
+export default class Utils {
   static async msSleep(count: int): Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
@@ -10,6 +10,6 @@ export default class Utils{
   }
 
   static async releaseAfterEachTest(): Promise<void> {
-    await Utils.msSleep(30);
+    await Utils.msSleep(120);
   }
 }
