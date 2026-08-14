@@ -86,7 +86,7 @@ export default function ClassInstanceConcurrentTest(): void {
       let data: DataClass = new DataClass();
       let totalTasks: number = 10;
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testClassNoLock, data).then((): void => { count.fetchAdd(1); });
+        taskpool.execute(testClassNoLock, data).then((): void => { count.fetchAdd(1); }, (err: Error): void => { expect(err).assertFail(); });
       }
       testClassNoLock(data);
       count.fetchAdd(1);
@@ -194,7 +194,7 @@ export default function ClassInstanceConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClassMutexStressConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testClassMutexStressConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
       let data: DataClass = new DataClass();
       let mutex: Mutex = new Mutex();
@@ -208,6 +208,7 @@ export default function ClassInstanceConcurrentTest(): void {
         waits++;
       }
       expect(data.value).assertEqual(totalTasks * 100);
+      done();
     });
   });
 }

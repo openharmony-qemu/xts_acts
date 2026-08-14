@@ -57,7 +57,7 @@ export default function AtomicBoolConcurrentTest(): void {
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 10;
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicBoolExchange, flag, taskCounter).then((): void => { });
+        taskpool.execute(testAtomicBoolExchange, flag, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
       }
       testAtomicBoolExchange(flag, taskCounter);
       while (taskCounter.load() < totalTasks * 10 + 10) {

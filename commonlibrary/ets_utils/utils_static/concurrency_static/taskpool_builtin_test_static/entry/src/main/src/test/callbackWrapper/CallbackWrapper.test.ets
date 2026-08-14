@@ -1509,7 +1509,9 @@ export default function CallbackWrapperTest(): void {
         try {
           const callback = util.callbackWrapper(arrowFunc);
           callback.unsafeCall((err: Error | null, value: number) => {
-
+            if (err !== null) {
+              expect(err).assertFail();
+            }
           });
         } catch (e) {
           result = true
