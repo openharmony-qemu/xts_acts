@@ -93,6 +93,7 @@ static void AsyncCallback(int errCode)
 static napi_value OH_PasteboardSubscriber_Create0100(napi_env env, napi_callback_info info)
 {
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     napi_value result = nullptr;
     napi_create_int32(env, observer != nullptr, &result);
     OH_PasteboardObserver_Destroy(observer);
@@ -104,8 +105,10 @@ static napi_value OH_PasteboardObserver_SetData0100(napi_env env, napi_callback_
 {
     napi_value returncode = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     void* context = static_cast<void*>(pasteboard);
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     int setRes1 = OH_PasteboardObserver_SetData(observer, context, CallbackFunc, ContextFinalizeFunc);
     napi_create_int32(env, setRes1 == ERR_OK, &returncode);
     OH_PasteboardObserver_Destroy(observer);
@@ -117,8 +120,10 @@ static napi_value OH_PasteboardObserver_SetData0200(napi_env env, napi_callback_
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     void* context = static_cast<void*>(pasteboard);
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
 
     int setRes1 = OH_PasteboardObserver_SetData(nullptr, context, CallbackFunc, ContextFinalizeFunc);
 
@@ -133,8 +138,10 @@ static napi_value OH_PasteboardObserver_SetData0300(napi_env env, napi_callback_
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     void* context = static_cast<void*>(pasteboard);
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     int setRes2 = OH_PasteboardObserver_SetData(observer, context, nullptr, ContextFinalizeFunc);
     napi_create_int32(env, setRes2 == ERR_INVALID_PARAMETER, &result);
     OH_PasteboardObserver_Destroy(observer);
@@ -146,8 +153,10 @@ static napi_value OH_PasteboardObserver_SetData0400(napi_env env, napi_callback_
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     void* context = static_cast<void*>(pasteboard);
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     int setRes3 = OH_PasteboardObserver_SetData(observer, context, CallbackFunc, nullptr);
     napi_create_int32(env, setRes3 == ERR_INVALID_PARAMETER, &result);
     OH_PasteboardObserver_Destroy(observer);
@@ -159,6 +168,7 @@ static napi_value OH_Pasteboard_Create0100(napi_env env, napi_callback_info info
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     napi_create_int32(env, pasteboard != nullptr, &result);
     OH_Pasteboard_Destroy(pasteboard);
     return result;
@@ -168,7 +178,9 @@ static napi_value OH_Pasteboard_Subscribe0100(napi_env env, napi_callback_info i
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int res = OH_Pasteboard_Subscribe(pasteboard, NOTIFY_LOCAL_DATA_CHANGE, observer);
     napi_create_int32(env, res == ERR_OK, &result);
@@ -181,7 +193,9 @@ static napi_value OH_Pasteboard_Subscribe0200(napi_env env, napi_callback_info i
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int resRepeat = OH_Pasteboard_Subscribe(pasteboard, NOTIFY_LOCAL_DATA_CHANGE, observer);
     napi_create_int32(env, resRepeat == ERR_OK, &result);
@@ -194,7 +208,9 @@ static napi_value OH_Pasteboard_Subscribe0300(napi_env env, napi_callback_info i
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
 
     int resRepeat = OH_Pasteboard_Subscribe(nullptr, NOTIFY_LOCAL_DATA_CHANGE, observer);
@@ -209,7 +225,9 @@ static napi_value OH_Pasteboard_Subscribe0400(napi_env env, napi_callback_info i
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int res = OH_Pasteboard_Subscribe(pasteboard, 10, observer);
     napi_create_int32(env, res == ERR_INVALID_PARAMETER, &result);
@@ -224,7 +242,9 @@ static napi_value OH_Pasteboard_Subscribe0500(napi_env env, napi_callback_info i
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int res = OH_Pasteboard_Subscribe(pasteboard, -1, observer);
     napi_create_int32(env, res == ERR_INVALID_PARAMETER, &result);
@@ -239,7 +259,9 @@ static napi_value OH_Pasteboard_Subscribe0600(napi_env env, napi_callback_info i
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int res = OH_Pasteboard_Subscribe(pasteboard, NOTIFY_LOCAL_DATA_CHANGE, nullptr);
     napi_create_int32(env, res == ERR_INVALID_PARAMETER, &result);
@@ -253,7 +275,9 @@ static napi_value OH_Pasteboard_Unsubcribe0100(napi_env env, napi_callback_info 
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     OH_Pasteboard_Subscribe(pasteboard, NOTIFY_LOCAL_DATA_CHANGE, observer);
 
@@ -269,7 +293,9 @@ static napi_value OH_Pasteboard_Unsubcribe0200(napi_env env, napi_callback_info 
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
 
     int res = OH_Pasteboard_Unsubscribe(nullptr, NOTIFY_LOCAL_DATA_CHANGE, observer);
@@ -284,7 +310,9 @@ static napi_value OH_Pasteboard_Unsubcribe0300(napi_env env, napi_callback_info 
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int res = OH_Pasteboard_Unsubscribe(pasteboard, 10, observer);
     napi_create_int32(env, res == ERR_INVALID_PARAMETER, &result);
@@ -298,7 +326,9 @@ static napi_value OH_Pasteboard_Unsubcribe0400(napi_env env, napi_callback_info 
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int res = OH_Pasteboard_Unsubscribe(pasteboard, -1, observer);
     napi_create_int32(env, res == ERR_INVALID_PARAMETER, &result);
@@ -312,7 +342,9 @@ static napi_value OH_Pasteboard_Unsubcribe0500(napi_env env, napi_callback_info 
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    NAPI_ASSERT(env, observer != nullptr, "OH_PasteboardObserver_Create is fail");
     OH_PasteboardObserver_SetData(observer, nullptr, CallbackFunc, ContextFinalizeFunc);
     int res = OH_Pasteboard_Unsubscribe(pasteboard, NOTIFY_LOCAL_DATA_CHANGE, nullptr);
     napi_create_int32(env, res == ERR_INVALID_PARAMETER, &result);
@@ -326,6 +358,7 @@ static napi_value OH_Pasteboard_IsRemoteData0100(napi_env env, napi_callback_inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
 
     bool res = OH_Pasteboard_IsRemoteData(pasteboard);
     napi_create_int32(env, res == false, &result);
@@ -338,6 +371,7 @@ static napi_value OH_Pasteboard_GetDataSrouce0100(napi_env env, napi_callback_in
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
@@ -360,6 +394,7 @@ static napi_value OH_Pasteboard_HasType0100(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
@@ -381,6 +416,7 @@ static napi_value OH_Pasteboard_HasType0200(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
@@ -407,6 +443,7 @@ static napi_value OH_Pasteboard_HasType0300(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
@@ -435,6 +472,7 @@ static napi_value OH_Pasteboard_HasType0400(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsHtml* htmlText = OH_UdsHtml_Create();
@@ -464,6 +502,7 @@ static napi_value OH_Pasteboard_HasType0500(napi_env env, napi_callback_info inf
     napi_value result = nullptr;
     const char *udmfUri = "file://PasteboardNdkTest/data/storage/el2/base/files/file.txt";
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsFileUri *uFileUri = OH_UdsFileUri_Create();
@@ -492,6 +531,7 @@ static napi_value OH_Pasteboard_HasType0600(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
@@ -528,6 +568,7 @@ static napi_value OH_Pasteboard_HasType0700(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsHtml* htmlText = OH_UdsHtml_Create();
@@ -564,6 +605,7 @@ static napi_value OH_Pasteboard_HasType0800(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
@@ -585,6 +627,7 @@ static napi_value OH_Pasteboard_HasData0100(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_Pasteboard_ClearData(pasteboard);
     bool res = OH_Pasteboard_HasData(pasteboard);
     NAPI_ASSERT(env, res == false, "createTable is fail.");
@@ -609,6 +652,7 @@ static napi_value OH_Pasteboard_ClearData0100(napi_env env, napi_callback_info i
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     bool res = OH_Pasteboard_ClearData(pasteboard);
     NAPI_ASSERT(env, res == ERR_OK, "OH_Pasteboard_ClearData is fail.");
     napi_create_int32(env, res == ERR_OK, &result);
@@ -621,6 +665,7 @@ static napi_value OH_Pasteboard_SetData0100(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData *setData = OH_UdmfData_Create();
     OH_UdmfRecord *record = OH_UdmfRecord_Create();
     OH_UdsPlainText *plainText = OH_UdsPlainText_Create();
@@ -644,6 +689,7 @@ static napi_value OH_Pasteboard_GetData0100(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
@@ -685,6 +731,7 @@ static napi_value OH_Pasteboard_GetData0200(napi_env env, napi_callback_info inf
     int num = 3;
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
@@ -738,6 +785,7 @@ static napi_value OH_Pasteboard_GetData0300(napi_env env, napi_callback_info inf
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfData_AddRecord(setData, record);
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     int res = OH_Pasteboard_SetData(pasteboard, setData);
     NAPI_ASSERT(env, res == ERR_OK, "OH_SetData is fail.");
 
@@ -769,6 +817,7 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0100(napi_env env, napi_
     g_asyncErrCode = -1;
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_Pasteboard_SyncDelayedDataAsync(nullptr, nullptr);
     NAPI_ASSERT(env, g_asyncErrCode == -1, "OH_Pasteboard_SyncDelayedDataAsyncTest is fail.");
 
@@ -788,6 +837,7 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0200(napi_env env, napi_
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
@@ -824,6 +874,7 @@ static napi_value OH_Pasteboard_SyncDelayedDataAsyncTest0300(napi_env env, napi_
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
@@ -876,6 +927,7 @@ static napi_value OH_Pasteboard_HasRemoteData0100(napi_env env, napi_callback_in
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_Pasteboard_ClearData(pasteboard);
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
@@ -899,6 +951,7 @@ static napi_value OH_Pasteboard_HasRemoteData0200(napi_env env, napi_callback_in
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsHtml* htmlText = OH_UdsHtml_Create();
@@ -924,6 +977,7 @@ static napi_value OH_Pasteboard_HasRemoteData0300(napi_env env, napi_callback_in
     napi_value result = nullptr;
     const char *udmfUri = "file://PasteboardNdkTest/data/storage/el2/base/files/file.txt";
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsFileUri *uFileUri = OH_UdsFileUri_Create();

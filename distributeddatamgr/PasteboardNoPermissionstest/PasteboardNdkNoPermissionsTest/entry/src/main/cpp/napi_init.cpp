@@ -131,6 +131,7 @@ static napi_value OH_Pasteboard_GetDataWithNoProgress001(napi_env env, napi_call
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail.");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -160,6 +161,7 @@ static napi_value OH_Pasteboard_GetData0100(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail.");
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdsPlainText* plainText = OH_UdsPlainText_Create();

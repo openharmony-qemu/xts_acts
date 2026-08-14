@@ -310,5 +310,50 @@ export default function PasteboardAppShareOptions() {
       }
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1100 end ************')
     })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200
+     * @tc.desc   PasteData setAppShareOptions param null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200 start ************')
+      try {
+        systemPasteboard.setAppShareOptions(null);
+        console.info(TAG + 'setAppShareOptions004 setAppShareOptions localDevice success');
+        expect().assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.info(TAG + `setAppShareOptions004 setAppShareOptions fail, code:${error.code}, msg:${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1200 end ************')
+    })
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300
+     * @tc.desc   PasteData setAppShareOptions param 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300 start ************')
+      try {
+        let paramdata = 3;
+        systemPasteboard.setAppShareOptions(paramdata);
+        console.info(TAG + 'setAppShareOptions004 setAppShareOptions localDevice success');
+        expect().assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.info(TAG + `setAppShareOptions004 setAppShareOptions fail, code:${error.code}, msg:${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1300 end ************')
+    })
   })
 }
